@@ -20,11 +20,11 @@ evidence_status: partial
 
 | 函数 | 对应正文 | 固定问题 |
 | --- | --- | --- |
-| `detect_101` | [[计算机知识/30-计算机系统/10-组成原理系统课程/01-布尔逻辑与时序电路|布尔逻辑与时序电路]] | Moore FSM 怎样保留可重叠后缀 |
-| `ripple_add` | [[计算机知识/30-计算机系统/10-组成原理系统课程/02-整数浮点与算术电路|整数、浮点与算术电路]] | carry、定宽结果与 signed overflow 怎样分开 |
-| `trace_lru_cache` | [[计算机知识/30-计算机系统/10-组成原理系统课程/05-缓存地址划分与AMAT|缓存地址划分与 AMAT]] | tag/index/offset 与 true LRU 淘汰怎样逐地址变化 |
-| `decode_toy_dram` | [[计算机知识/30-计算机系统/23-DRAM组织行缓冲刷新与ECC|DRAM 组织、行缓冲、刷新与 ECC]] | 声明过的 16-bit toy 映射如何拆位 |
-| `translate_two_stage` | [[计算机知识/30-计算机系统/24-虚拟化执行地址翻译与虚拟IO推演|虚拟化执行、地址翻译与虚拟 I/O 推演]] | GVA→GPA→HPA 如何保留 page offset |
+| `detect_101` | [[计算机知识/30-计算机系统/10-组成原理系统课程/01-布尔逻辑与时序电路\|布尔逻辑与时序电路]] | Moore FSM 怎样保留可重叠后缀 |
+| `ripple_add` | [[计算机知识/30-计算机系统/10-组成原理系统课程/02-整数浮点与算术电路\|整数、浮点与算术电路]] | carry、定宽结果与 signed overflow 怎样分开 |
+| `trace_lru_cache` | [[计算机知识/30-计算机系统/10-组成原理系统课程/05-缓存地址划分与AMAT\|缓存地址划分与 AMAT]] | tag/index/offset 与 true LRU 淘汰怎样逐地址变化 |
+| `decode_toy_dram` | [[计算机知识/30-计算机系统/23-DRAM组织行缓冲刷新与ECC\|DRAM 组织、行缓冲、刷新与 ECC]] | 声明过的 16-bit toy 映射如何拆位 |
+| `translate_two_stage` | [[计算机知识/30-计算机系统/24-虚拟化执行地址翻译与虚拟IO推演\|虚拟化执行、地址翻译与虚拟 I/O 推演]] | GVA→GPA→HPA 如何保留 page offset |
 
 脚本拒绝一部分无效输入，例如非二进制状态机字符串、非正二次幂 line size、越界定宽整数和缺页映射。这种拒绝用于防止算例静默换模型，不代表真实硬件采用 Python 异常。
 

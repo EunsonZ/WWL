@@ -1,6 +1,7 @@
 ---
 type: deep-lesson
 status: reviewed
+evidence_status: partial
 updated: '2026-09-06'
 review_round: 深化研究-02
 tags:
@@ -83,6 +84,42 @@ $$
 若 $Q(s,a)=1,r=2,\gamma=0.9,\max Q(s',\cdot)=4,\alpha=0.1$，TD error 为 $2+3.6-1=4.6$，新值为 1.46。若 $s'$ 是终止状态，后续项应为 0；把 episode 因时间上限截断和真正终止混成同一个 done 标志会造成错误目标。
 
 Q-learning 的目标使用 greedy 最大值，行为策略可以探索，因此是 off-policy。SARSA 的目标使用实际下一动作 $Q(s',a')$，在探索策略下学习的是该策略的价值。函数逼近、bootstrap 与 off-policy 三者组合可能不稳定；经验回放和目标网络是工程缓解，不是普遍收敛证明。
+
+### 同一个有限环境，逐回合观察 MC、TD 与 Q-learning
+
+用两非终止状态 $s_0,s_1$ 和终止状态 end，固定 $\gamma=.5$、步长 $\alpha=.5$。每条边是确定性转移，标出动作和立即奖励：
+
+```mermaid
+flowchart LR
+    S0["s₀"] -->|"go, r=0"| S1["s₁"]
+    S0 -->|"quit, r=0.5"| END["end: terminated"]
+    S1 -->|"finish, r=2"| END
+    S1 -->|"quit, r=0"| END
+```
+
+先手算最优目标：$Q^*(s_1,finish)=2$、$Q^*(s_1,quit)=0$；$Q^*(s_0,go)=0+.5\times2=1$，而 $Q^*(s_0,quit)=.5$。这里可以枚举全部三个完整行动序列验证最优回报为 1；已知模型的解是对照，下面仍模拟只用样本更新的学习者。
+
+所有估计从 0 开始。同一批六个完整回合依次是 `(go,finish)` 三次、`(quit)` 一次、`(go,quit)` 两次。MC 回合结束后用完整回报更新 $V\leftarrow V+.5(G-V)$；TD(0) 与 Q-learning 沿时间正序逐步在线更新。每回合无状态重访，first-visit 与 every-visit MC 在这里相同。固定步长和脚本行为让轨迹易跟算，不满足本页就能宣称收敛或最优探索的条件。[^RLworked]
+
+| 回合与行为 | $G(s_0)$ | MC $V(s_0)$ | TD $V(s_0)$ | 两种V法的 $V(s_1)$ | Q $(s_0,go)$ | Q $(s_0,quit)$ | Q $(s_1,finish)$ |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 go,finish | 1 | .5 | 0 | 1 | 0 | 0 | 1 |
+| 2 go,finish | 1 | .75 | .25 | 1.5 | .25 | 0 | 1.5 |
+| 3 go,finish | 1 | .875 | .5 | 1.75 | .5 | 0 | 1.75 |
+| 4 quit | .5 | .6875 | .5 | 1.75 | .5 | .25 | 1.75 |
+| 5 go,quit | 0 | .34375 | .6875 | .875 | .6875 | .25 | 1.75 |
+| 6 go,quit | 0 | .171875 | .5625 | .4375 | .78125 | .25 | 1.75 |
+
+$Q(s_1,quit)$ 始终 0。第一回合 TD 更新 $s_0$ 时下一状态值仍是 0，所以还学不到未来的 2；MC 等到终局就拿到回报 1。第五回合即使实际最终奖励为 0，TD 先读取旧 $V(s_1)=1.75$，$s_0$ 的目标 .875，把 .5 更新为 .6875，随后才把 $V(s_1)$ 降至 .875。不能把“回合结束后的值”倒填到先前在线更新。第六回合 TD 目标为 $.5\times.875=.4375$，而 Q-learning 的目标继续取 $.5\max(1.75,0)=.875$，于是两个 $s_0$ 估计分开：Q-learning 保留未被后来 quit 样本改写的 finish 动作估值。MC/TD 此处估计样本行为的状态价值，Q-learning 尝试学 greedy 控制价值；数值大小本身不是算法优劣排名。
+
+**真正终止与外部截断改变哪一步？** 定义 bootstrap 目标 $r+\gamma(1-\text{terminated})\widehat V(s')$。假设 `go` 后采样器因外部时间上限停下来，最后观察仍是 $s_1$，且 $\widehat V(s_1)=2$：`terminated=False,truncated=True` 时目标是 $0+.5\times2=1$；若这个转移真正进入终止状态，即使表里误存“下一值 2”，目标仍应是 0。两标志同时为真也按真正终止屏蔽。[^Timeworked]
+
+这一区别只适用于时间上限是环境外的采样限制。若任务本身有有限时域，剩余时间须纳入 Markov 状态，任务时域结束可是真正终止。MC 无完整未来时不能把截断前缀直接当全回报；实验 `mdp_learning` 拒绝没有终止的回合，而 `bootstrap_target` 单独核对两标志，防止“为了跑通”把缺失未来设为零。
+
+到 [[AI/90-资源/实验/ai_worked_examples_20260917/README|五个可跟算实验]] 的 RL 部分运行 `mdp_learning` 与 `bootstrap_target`，查看所有 Q 项和逐回合数值。迁移题：若改为回合末反向更新 TD，第一个回合 $V(s_0)$ 还是 0 吗？不是：先更新 $V(s_1)=1$ 后，$s_0$ 会变为 .25；这已经改变更新时序，不能拿它去匹配上表。
+
+[^RLworked]: David Silver 作者课程：[Lecture 4: Model-Free Prediction，第 10–12 张](https://davidstarsilver.wordpress.com/wp-content/uploads/2025/04/lecture-4-model-free-prediction-.pdf)，给固定步长 MC 与 TD(0) 更新；[Lecture 5: Model-Free Control，Q-learning 部分](https://davidstarsilver.wordpress.com/wp-content/uploads/2025/04/lecture-5-model-free-control-.pdf)，给 off-policy 最大值目标。2026-09-17 核对；环境与六回合轨迹为教学构造，Sutton/Barto 教材入口沿用文末。
+[^Timeworked]: [Gymnasium 官方：Handling Time Limits](https://gymnasium.farama.org/tutorials/gymnasium_basics/handling_time_limits/)：环境外截断保留 bootstrap、真正终止屏蔽及有限时域状态条件；2026-09-17 核对。
 
 ## 探索是信息问题，不只是加随机噪声
 

@@ -13,8 +13,11 @@ tags:
 
 # 2026-09-04_1519-Codex-新增NewAgents协作与知识编写指南
 
+> [!info] 历史入口说明
+> 下文记录2026-09-04时的职责、文件名与验证。当时的 `agents.md`、`CONTRIBUTING.md` 原文件当前未取得，因此保留文件名而不提供失效跳转。现行维护请读 [[AGENTS|当前协作约定]] 与 [[00-工作台/维护指南|维护指南]]；这两处当前入口不代表旧文件的同版恢复，也不重新认证下文历史结果。
+
 > [!summary] 结果
-> 根目录新增 [[NewAgents.md|NewAgents.md — WorkWithLLM Agent 实践与知识编写指南]]，将 Obsidian 操作、目录归属、通用知识写作、分学科正确性规范、链接管理、目录迁移、多 Agent 协作和验证证据整理为一份可直接执行的手册。[[agents.md|agents.md]] 继续是唯一权威仓库规范；新指南明确从属于它，没有建立第二份 Baseline。
+> 根目录新增 [[NewAgents.md|NewAgents.md — WorkWithLLM Agent 实践与知识编写指南]]，将 Obsidian 操作、目录归属、通用知识写作、分学科正确性规范、链接管理、目录迁移、多 Agent 协作和验证证据整理为一份可直接执行的手册。`agents.md` 继续是唯一权威仓库规范；新指南明确从属于它，没有建立第二份 Baseline。
 
 ## 一、职责边界
 
@@ -47,8 +50,8 @@ tags:
 以下稳定入口增加了最小连接：
 
 - [[README.md|WorkWithLLM Knowledge Vault]]；
-- [[CONTRIBUTING.md|参与维护 WorkWithLLM]]；
-- [[agents.md|Agent 权威操作规范]]；
+- `CONTRIBUTING.md`（历史贡献入口）；
+- `agents.md`（历史 Agent 权威操作规范）；
 - [[Obsidian知识/90-资源/04-AI协作工具箱/00-AI协作工具箱-MOC|AI 协作工具箱]]。
 
 `config/vault-contract.json` 将 `NewAgents.md` 与本日志加入 `requiredPaths`，使后续误删能够由检查器发现。没有把指南机械加入六个知识域的每一篇首页或课程。

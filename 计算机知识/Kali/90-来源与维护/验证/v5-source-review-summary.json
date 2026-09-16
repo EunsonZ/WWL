@@ -1,0 +1,414 @@
+{
+  "baseline_source_records": 196,
+  "v5_registered_read_urls": 98,
+  "v5_read_source_keys": 98,
+  "v5_footnote_source_keys": 98,
+  "v5_reused_existing_records": 41,
+  "v5_added_records": 57,
+  "current_source_records": 253,
+  "existing_records_not_reread": 155,
+  "unused_read_keys": [],
+  "canonical_ledger": "90-来源与维护/验证/sources.json",
+  "key_mapping": {
+    "nmap-tech": "nmaptech",
+    "nmap-vscan": "v5-nmap-vscan",
+    "ws-reassembly": "v5-ws-reassembly",
+    "ws-offload": "v5-ws-offload",
+    "dns-negative": "dnsnegative",
+    "dnssec": "dnssec",
+    "nmap-probes": "v5-nmap-probes",
+    "tshark": "tshark",
+    "netns": "netns",
+    "nftables": "nftmanual",
+    "nuclei-match": "nucleimatch",
+    "cvss4": "cvss4",
+    "epss": "epss",
+    "http11": "v5-http11",
+    "http-cache": "httpcache",
+    "tls-name": "v3_rfc9525",
+    "tls13": "tls13",
+    "http2": "http2",
+    "http3": "http3",
+    "fetch": "v5-fetch",
+    "burp-tools": "v5-burp-tools",
+    "burp-sequencer": "v5-burp-sequencer",
+    "zap-passive": "v5-zap-passive",
+    "oauth-bcp": "oauth9700",
+    "tcp": "tcp",
+    "nse": "v5-nse",
+    "ssh": "ssh",
+    "hash-collision": "v5-hash-collision",
+    "oidc": "v5-oidc",
+    "jwt-bcp": "jwtbcp",
+    "uri": "v5-uri",
+    "origin": "v5-origin",
+    "site": "v5-site",
+    "openssl-client": "v3_openssl_client",
+    "openssl-verify": "v3_openssl_options",
+    "zap-spider": "v5-zap-spider",
+    "zap-ajax": "v5-zap-ajax",
+    "ffuf": "ffuf",
+    "gobuster": "gobuster",
+    "graphql": "graphql",
+    "intruder-types": "v5-intruder-types",
+    "sequencer-results": "v5-sequencer-results",
+    "ssrf": "ssrf",
+    "kerberos": "kerberos4120",
+    "acl": "v5-acl",
+    "capabilities": "capabilities",
+    "userns": "v5-userns",
+    "accesscheck": "winaccesscheck",
+    "ace-order": "v5-ace-order",
+    "bh-edges": "v5-bh-edges",
+    "impacket": "v5-impacket",
+    "netexec": "v5-netexec",
+    "pg-rls": "v3_pg_rls",
+    "pg-membership": "v5-pg-membership",
+    "accesschk": "v5-accesschk",
+    "procexp": "v5-procexp",
+    "procmon": "v5-procmon",
+    "argon2": "argon9106",
+    "hashcat": "hashcat",
+    "john-faq": "v5-john-faq",
+    "kismet-hop": "v5-kismet-hop",
+    "wlan-decrypt": "v5-wlan-decrypt",
+    "aircrack": "aircrack",
+    "supplicant": "wpasupplicant",
+    "owe": "v5-owe",
+    "k8s-admission": "v5-k8s-admission",
+    "trivy-vuln": "v5-trivy-vuln",
+    "cosign": "v5-cosign",
+    "adb": "adb",
+    "jadx": "v5-jadx",
+    "apktool": "v5-apktool",
+    "frida": "v5-frida",
+    "hash-second": "v5-hash-second",
+    "tsk-fls": "fls",
+    "tsk-icat": "icat",
+    "vol-layers": "v5-vol-layers",
+    "vol-psscan": "v5-vol-psscan",
+    "vol-pslist": "v5-vol-pslist",
+    "binwalk": "v5-binwalk",
+    "pcode": "v5-pcode",
+    "pcode-extra": "v5-pcode-extra",
+    "pcode-ops": "v5-pcode-ops",
+    "gdb-stop": "v5-gdb-stop",
+    "strace": "strace",
+    "yara-cli": "v3_yara_cli",
+    "suricata-http": "v5-suricata-http",
+    "suricata-actions": "v5-suricata-actions",
+    "zeek-http-fields": "v5-zeek-http-fields",
+    "asan": "clang-asan",
+    "ubsan": "v5-ubsan",
+    "libfuzzer": "v5-libfuzzer",
+    "sqlmap-tech": "v5-sqlmap-tech",
+    "sql-params": "sqli",
+    "xss-context": "xss",
+    "msf-check": "v5-msf-check",
+    "searchsploit": "v5-searchsploit",
+    "hydra-upstream": "v5-hydra-upstream",
+    "auth-throttle": "authcheat"
+  },
+  "used_in": {
+    "xss-context": [
+      "03-Web与API安全/07-XSSCSRF与浏览器安全边界.md"
+    ],
+    "sqlmap-tech": [
+      "03-Web与API安全/06-SQL注入原理与sqlmap限界验证.md"
+    ],
+    "sql-params": [
+      "03-Web与API安全/06-SQL注入原理与sqlmap限界验证.md"
+    ],
+    "tls13": [
+      "03-Web与API安全/10-TLS证书与服务配置评估.md"
+    ],
+    "openssl-client": [
+      "03-Web与API安全/10-TLS证书与服务配置评估.md"
+    ],
+    "openssl-verify": [
+      "03-Web与API安全/10-TLS证书与服务配置评估.md"
+    ],
+    "ffuf": [
+      "03-Web与API安全/05-ffufGobuster与内容发现.md"
+    ],
+    "gobuster": [
+      "03-Web与API安全/05-ffufGobuster与内容发现.md"
+    ],
+    "burp-tools": [
+      "03-Web与API安全/03-BurpSuite工作流.md"
+    ],
+    "intruder-types": [
+      "03-Web与API安全/03-BurpSuite工作流.md"
+    ],
+    "sequencer-results": [
+      "03-Web与API安全/03-BurpSuite工作流.md"
+    ],
+    "http11": [
+      "03-Web与API安全/13-HTTP中间层与消息解释.md"
+    ],
+    "http2": [
+      "03-Web与API安全/13-HTTP中间层与消息解释.md"
+    ],
+    "http3": [
+      "03-Web与API安全/13-HTTP中间层与消息解释.md"
+    ],
+    "tls-name": [
+      "03-Web与API安全/13-HTTP中间层与消息解释.md"
+    ],
+    "uri": [
+      "03-Web与API安全/09-SSRF路径上传与解析边界.md",
+      "03-Web与API安全/13-HTTP中间层与消息解释.md"
+    ],
+    "http-cache": [
+      "03-Web与API安全/13-HTTP中间层与消息解释.md"
+    ],
+    "oidc": [
+      "03-Web与API安全/08-认证会话越权与API测试.md"
+    ],
+    "oauth-bcp": [
+      "03-Web与API安全/08-认证会话越权与API测试.md"
+    ],
+    "jwt-bcp": [
+      "03-Web与API安全/08-认证会话越权与API测试.md"
+    ],
+    "graphql": [
+      "03-Web与API安全/12-现代API业务逻辑与并发边界.md"
+    ],
+    "ssrf": [
+      "03-Web与API安全/09-SSRF路径上传与解析边界.md"
+    ],
+    "zap-spider": [
+      "03-Web与API安全/04-ZAP代理与被动扫描.md"
+    ],
+    "zap-ajax": [
+      "03-Web与API安全/04-ZAP代理与被动扫描.md"
+    ],
+    "zap-passive": [
+      "03-Web与API安全/04-ZAP代理与被动扫描.md"
+    ],
+    "nmap-tech": [
+      "00-导航与方法/04-从观察到结论的安全方法.md",
+      "02-信息收集与网络测量/03-Nmap主机发现与端口状态.md"
+    ],
+    "nmap-vscan": [
+      "02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md"
+    ],
+    "nmap-probes": [
+      "02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md"
+    ],
+    "nse": [
+      "02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md"
+    ],
+    "dns-negative": [
+      "02-信息收集与网络测量/02-DNS域名与证书信息.md"
+    ],
+    "dnssec": [
+      "02-信息收集与网络测量/02-DNS域名与证书信息.md"
+    ],
+    "nuclei-match": [
+      "02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md"
+    ],
+    "cvss4": [
+      "02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md"
+    ],
+    "epss": [
+      "02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md"
+    ],
+    "ssh": [
+      "02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md"
+    ],
+    "tshark": [
+      "02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md"
+    ],
+    "ws-reassembly": [
+      "02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md"
+    ],
+    "ws-offload": [
+      "02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md"
+    ],
+    "bh-edges": [
+      "04-服务身份与主机评估/05-BloodHound权限图与修复验证.md"
+    ],
+    "pg-membership": [
+      "04-服务身份与主机评估/09-数据库服务与最小权限审计.md"
+    ],
+    "pg-rls": [
+      "04-服务身份与主机评估/09-数据库服务与最小权限审计.md"
+    ],
+    "impacket": [
+      "04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md"
+    ],
+    "netexec": [
+      "04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md"
+    ],
+    "searchsploit": [
+      "04-服务身份与主机评估/06-SearchsploitMetasploit与漏洞验证.md"
+    ],
+    "msf-check": [
+      "04-服务身份与主机评估/06-SearchsploitMetasploit与漏洞验证.md"
+    ],
+    "accesscheck": [
+      "04-服务身份与主机评估/08-Windows权限边界与本机审计.md"
+    ],
+    "ace-order": [
+      "04-服务身份与主机评估/08-Windows权限边界与本机审计.md"
+    ],
+    "accesschk": [
+      "04-服务身份与主机评估/08-Windows权限边界与本机审计.md"
+    ],
+    "procexp": [
+      "04-服务身份与主机评估/08-Windows权限边界与本机审计.md"
+    ],
+    "procmon": [
+      "04-服务身份与主机评估/08-Windows权限边界与本机审计.md"
+    ],
+    "kerberos": [
+      "04-服务身份与主机评估/03-LDAPKerberos与AD基础.md"
+    ],
+    "capabilities": [
+      "04-服务身份与主机评估/07-Linux权限边界与配置审计.md"
+    ],
+    "userns": [
+      "04-服务身份与主机评估/07-Linux权限边界与配置审计.md"
+    ],
+    "acl": [
+      "04-服务身份与主机评估/07-Linux权限边界与配置审计.md"
+    ],
+    "binwalk": [
+      "06-取证逆向与检测/04-文件元数据Binwalk与ExifTool.md"
+    ],
+    "tsk-fls": [
+      "06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md"
+    ],
+    "tsk-icat": [
+      "06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md"
+    ],
+    "gdb-stop": [
+      "06-取证逆向与检测/06-GDBGefStrace与动态观察.md"
+    ],
+    "strace": [
+      "06-取证逆向与检测/06-GDBGefStrace与动态观察.md"
+    ],
+    "hash-collision": [
+      "06-取证逆向与检测/01-取证流程镜像与时间线.md"
+    ],
+    "hash-second": [
+      "06-取证逆向与检测/01-取证流程镜像与时间线.md"
+    ],
+    "libfuzzer": [
+      "06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md"
+    ],
+    "asan": [
+      "06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md"
+    ],
+    "ubsan": [
+      "06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md"
+    ],
+    "zeek-http-fields": [
+      "06-取证逆向与检测/08-SuricataZeek与网络检测.md"
+    ],
+    "suricata-http": [
+      "06-取证逆向与检测/08-SuricataZeek与网络检测.md"
+    ],
+    "suricata-actions": [
+      "06-取证逆向与检测/08-SuricataZeek与网络检测.md"
+    ],
+    "vol-layers": [
+      "06-取证逆向与检测/03-Volatility3与内存证据.md"
+    ],
+    "vol-pslist": [
+      "06-取证逆向与检测/03-Volatility3与内存证据.md"
+    ],
+    "vol-psscan": [
+      "06-取证逆向与检测/03-Volatility3与内存证据.md"
+    ],
+    "pcode": [
+      "06-取证逆向与检测/05-GhidraRadare2与静态逆向.md"
+    ],
+    "pcode-extra": [
+      "06-取证逆向与检测/05-GhidraRadare2与静态逆向.md"
+    ],
+    "pcode-ops": [
+      "06-取证逆向与检测/05-GhidraRadare2与静态逆向.md"
+    ],
+    "yara-cli": [
+      "06-取证逆向与检测/07-YARA日志与检测规则.md"
+    ],
+    "supplicant": [
+      "05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md"
+    ],
+    "aircrack": [
+      "05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md"
+    ],
+    "wlan-decrypt": [
+      "05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md"
+    ],
+    "owe": [
+      "05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md"
+    ],
+    "adb": [
+      "05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md"
+    ],
+    "jadx": [
+      "05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md"
+    ],
+    "apktool": [
+      "05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md"
+    ],
+    "frida": [
+      "05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md"
+    ],
+    "hashcat": [
+      "05-密码无线与专门领域/02-HashcatJohn与离线审计.md"
+    ],
+    "john-faq": [
+      "05-密码无线与专门领域/02-HashcatJohn与离线审计.md"
+    ],
+    "argon2": [
+      "05-密码无线与专门领域/01-哈希口令KDF与估算.md"
+    ],
+    "hydra-upstream": [
+      "05-密码无线与专门领域/03-HydraMedusa与认证控制验证.md"
+    ],
+    "auth-throttle": [
+      "05-密码无线与专门领域/03-HydraMedusa与认证控制验证.md"
+    ],
+    "k8s-admission": [
+      "05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md"
+    ],
+    "trivy-vuln": [
+      "05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md"
+    ],
+    "cosign": [
+      "05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md"
+    ],
+    "kismet-hop": [
+      "05-密码无线与专门领域/05-KismetBluetooth与无线风险.md"
+    ],
+    "tcp": [
+      "01-系统与网络基础/06-TCPIP路由DNS与TLS.md"
+    ],
+    "nftables": [
+      "01-系统与网络基础/09-状态防火墙与网络命名空间.md"
+    ],
+    "netns": [
+      "01-系统与网络基础/09-状态防火墙与网络命名空间.md"
+    ],
+    "origin": [
+      "01-系统与网络基础/07-HTTP浏览器会话与信任边界.md"
+    ],
+    "site": [
+      "01-系统与网络基础/07-HTTP浏览器会话与信任边界.md"
+    ],
+    "fetch": [
+      "01-系统与网络基础/07-HTTP浏览器会话与信任边界.md"
+    ],
+    "burp-sequencer": []
+  },
+  "limitations": [
+    "A webpage read is not an independent implementation test.",
+    "Historical sources without revision_v5_review were not reread in v5.",
+    "Latest/current URLs refer to observed documentation; no installed version compatibility claimed.",
+    "No claim that all material facts in the entire vault were reverified."
+  ]
+}

@@ -1,0 +1,18 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="前向计算数值；反向累加梯度", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+x [label="x=2"];
+w [label="w=3"];
+b [label="b=1"];
+mul [label="wx=6"];
+z [label="z=wx+b=7"];
+loss [label="L=(z−5)²/2=2"];
+grad [label="dL/dz=2\ndL/dw=4\ndL/db=2\ndL/dx=6"];
+x -> mul;
+w -> mul;
+mul -> z;
+b -> z;
+z -> loss;
+loss -> grad;
+}

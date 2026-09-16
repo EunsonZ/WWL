@@ -1,0 +1,20 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="学习地图：统计与张量 → 框架与结构 → 训练推理与验证", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+m [label="机器学习与统计\n目标 / 拆分 / 泛化"];
+p [label="PyTorch\n张量 / 梯度 / 训练"];
+c [label="CNN / ViT\n局部与空间表示"];
+l [label="Transformer / LLM\n表示 / 架构 / 训练"];
+v [label="VLM / 语音 / 扩散\n多模态核心课程"];
+e [label="RAG / Agent / 部署\n验证 / 资源 / 权限"];
+x [label="CPU 实验与数值断言\n原有六组进阶实践"];
+m -> p;
+p -> c;
+p -> l;
+c -> v;
+l -> v;
+l -> e;
+p -> x;
+l -> x;
+}

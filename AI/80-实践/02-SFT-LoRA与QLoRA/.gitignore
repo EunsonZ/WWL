@@ -1,0 +1,17 @@
+# Only the small, reviewed teaching fixtures and configuration contracts belong in Git.
+# A real run can contain private samples, licensed weights, large checkpoints, and keys.
+artifacts/
+checkpoints/
+logs/
+models/
+outputs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+wandb/
+__pycache__/
+.pytest_cache/
+.env

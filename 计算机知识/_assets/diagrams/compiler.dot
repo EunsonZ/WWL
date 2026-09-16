@@ -1,0 +1,12 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=TB;
+a [label="源文本"];b [label="词法：token + 源位置"];c [label="语法：AST / CST"];
+d [label="名称解析 + 类型与语义检查"];e [label="IR / CFG / SSA"];
+f [label="分析与优化\n满足语义前提"];g [label="指令选择 + 寄存器分配 + ABI"];
+h [label="目标文件 + 链接 + 装载"];i [label="实际执行与运行时"];
+a->b->c->d->e->f->g->h->i;
+
+}

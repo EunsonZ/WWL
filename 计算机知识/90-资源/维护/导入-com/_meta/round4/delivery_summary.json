@@ -1,0 +1,89 @@
+{
+  "revision": "2026-09-06-round4",
+  "baseline": "com_deep_revised_2026-09-06.zip",
+  "files": 923,
+  "markdown": 476,
+  "markdown_characters": 2428197,
+  "baseline_files": 802,
+  "baseline_markdown": 434,
+  "new_files": 121,
+  "new_markdown": 42,
+  "changed_original_files": 99,
+  "preserved_original_paths": 802,
+  "new_deep_lessons": 37,
+  "new_deep_lesson_characters": 156095,
+  "subject_deep_lessons": 34,
+  "crosslayer_cases": 3,
+  "canonical_subject_indexes": 13,
+  "old_pages_with_question_bridges": 59,
+  "new_diagrams": 14,
+  "new_diagram_files": 42,
+  "source_records": 95,
+  "static_counts": {
+    "files": 923,
+    "markdown": 476,
+    "original_files": 802,
+    "original_markdown": 434,
+    "original_paths_missing": 0,
+    "original_files_changed": 99,
+    "wiki_occurrences": 6462,
+    "unresolved_wiki_occurrences": 145,
+    "unresolved_wiki_unique_targets": 44,
+    "ambiguous_wiki_occurrences": 0,
+    "anchor_review_occurrences": 0,
+    "embedded_local_items": 16,
+    "external_image_links": 0,
+    "svg_files": 84,
+    "unclosed_fences": 0,
+    "missing_original_link_entries": 0,
+    "missing_original_link_occurrences": 0
+  },
+  "external_links_exactly_preserved": true,
+  "math": {
+    "total": 733,
+    "passed": 733,
+    "errors": 0,
+    "delimiter_review": 0
+  },
+  "source_syntax": {
+    "python": {
+      "items": 76,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "shell": {
+      "items": 6,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "yaml": {
+      "items": 409,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "table_review": {
+      "items": 0,
+      "FAIL": 0,
+      "SKIP": 0
+    }
+  },
+  "lab_checks": {
+    "PASS": 12,
+    "FAIL": 0,
+    "SKIP": 1
+  },
+  "python_unittest_cases": 63,
+  "previous_round_regression": {
+    "PASS": 16,
+    "FAIL": 0,
+    "SKIP": 1
+  },
+  "limits": [
+    "PostgreSQL two-session manual script",
+    "Actual power-loss recovery",
+    "Real packet capture, TLS peers, CPU/MMU behavior and privileged Linux administration",
+    "Tokio runtime execution and full Obsidian GUI/plugin rendering",
+    "MathJax syntax conversion is not a semantic proof.",
+    "No complete Obsidian GUI/theme/plugin session was tested."
+  ]
+}

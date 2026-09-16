@@ -1,0 +1,70 @@
+filters:
+  and:
+    - file.ext == "md"
+    - or:
+        - file.inFolder("数学")
+        - file.inFolder("AI")
+        - file.inFolder("计算机知识")
+        - file.inFolder("编程知识")
+        - file.inFolder("哲学与文化")
+        - file.inFolder("社会科学")
+        - file.inFolder("Obsidian知识")
+    - '!file.inFolder("计算机知识/90-资源/维护")'
+    - '!file.inFolder("AI/90-资源/维护")'
+    - '!file.inFolder("Obsidian知识/30-实践/01-实验区")'
+    - '!file.inFolder("Obsidian知识/90-资源/01-模板")'
+formulas:
+  content_label: if(note.content_status, note.content_status, "未记录")
+  evidence_label: if(note.evidence_status, note.evidence_status, "未记录")
+properties:
+  file.name:
+    displayName: 笔记
+  file.folder:
+    displayName: 位置
+  note.type:
+    displayName: 现有类型
+  formula.content_label:
+    displayName: 内容状态
+  formula.evidence_label:
+    displayName: 证据状态
+  note.evidence_record:
+    displayName: 证据记录
+views:
+  - type: table
+    name: 知识浏览
+    order:
+      - file.name
+      - file.folder
+      - type
+      - formula.content_label
+      - formula.evidence_label
+    sort:
+      - property: file.path
+        direction: ASC
+  - type: table
+    name: 证据未记录
+    filters:
+      and:
+        - "!note.evidence_status"
+    order:
+      - file.name
+      - file.folder
+      - type
+      - formula.evidence_label
+    sort:
+      - property: file.path
+        direction: ASC
+  - type: table
+    name: 局部核验与待复核
+    filters:
+      or:
+        - note.evidence_status == "partial"
+        - note.evidence_status == "unreviewed"
+    order:
+      - file.name
+      - file.folder
+      - formula.evidence_label
+      - evidence_record
+    sort:
+      - property: file.path
+        direction: ASC

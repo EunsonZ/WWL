@@ -1,0 +1,58 @@
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /mnt/data/kb_round2/cpp-build
+[  6%] Building CXX object CMakeFiles/types_functions.dir/types_functions.cpp.o
+[ 12%] Building CXX object CMakeFiles/toolchain.dir/toolchain.cpp.o
+[ 18%] Linking CXX executable types_functions
+[ 25%] Linking CXX executable toolchain
+[ 25%] Built target types_functions
+[ 25%] Built target toolchain
+[ 31%] Building CXX object CMakeFiles/raii.dir/raii.cpp.o
+[ 37%] Building CXX object CMakeFiles/lifetime.dir/lifetime.cpp.o
+[ 43%] Linking CXX executable lifetime
+[ 43%] Built target lifetime
+[ 50%] Linking CXX executable raii
+[ 56%] Building CXX object CMakeFiles/move.dir/move.cpp.o
+[ 56%] Built target raii
+[ 62%] Building CXX object CMakeFiles/errors.dir/errors.cpp.o
+[ 68%] Linking CXX executable move
+[ 68%] Built target move
+[ 75%] Building CXX object CMakeFiles/concurrency.dir/concurrency.cpp.o
+[ 81%] Linking CXX executable errors
+[ 81%] Built target errors
+[ 87%] Building CXX object CMakeFiles/layout.dir/layout.cpp.o
+[ 93%] Linking CXX executable layout
+[100%] Linking CXX executable concurrency
+[100%] Built target layout
+[100%] Built target concurrency
+Internal ctest changing into directory: /mnt/data/kb_round2/cpp-build
+Test project /mnt/data/kb_round2/cpp-build
+    Start 1: toolchain
+1/8 Test #1: toolchain ........................   Passed    0.00 sec
+    Start 2: types_functions
+2/8 Test #2: types_functions ..................   Passed    0.00 sec
+    Start 3: lifetime
+3/8 Test #3: lifetime .........................   Passed    0.00 sec
+    Start 4: raii
+4/8 Test #4: raii .............................   Passed    0.00 sec
+    Start 5: move
+5/8 Test #5: move .............................   Passed    0.00 sec
+    Start 6: errors
+6/8 Test #6: errors ...........................   Passed    0.00 sec
+    Start 7: concurrency
+7/8 Test #7: concurrency ......................   Passed    0.00 sec
+    Start 8: layout
+8/8 Test #8: layout ...........................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 8
+
+Total Test time (real) =   0.01 sec

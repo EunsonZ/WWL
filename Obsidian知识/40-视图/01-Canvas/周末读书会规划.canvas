@@ -1,0 +1,34 @@
+{
+	"nodes":[
+		{"id":"c30f0030f0030c01","type":"group","x":-80,"y":-120,"width":560,"height":860,"color":"3","label":"1. 准备"},
+		{"id":"c30f0030f0030c02","type":"group","x":560,"y":-120,"width":560,"height":860,"color":"4","label":"2. 共读与讨论"},
+		{"id":"c30f0030f0030c03","type":"group","x":1200,"y":-120,"width":560,"height":860,"color":"6","label":"3. 决定与复盘"},
+		{"id":"c30f0030f0030c11","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/00-周末读书会项目主页.md","x":0,"y":-20,"width":400,"height":160,"color":"3"},
+		{"id":"c30f0030f0030c12","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/书目/卡片笔记写作法.md","x":0,"y":210,"width":400,"height":160,"color":"3"},
+		{"id":"c30f0030f0030c13","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/人物/林晨.md","x":0,"y":440,"width":180,"height":140,"color":"3"},
+		{"id":"c30f0030f0030c14","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/人物/周野.md","x":220,"y":440,"width":180,"height":140,"color":"3"},
+		{"id":"c30f0030f0030c15","type":"text","text":"准备检查\n- 每人带来 1 个问题\n- 会前读完选定章节\n- 在人物页确认本次角色","x":0,"y":620,"width":400,"height":90},
+		{"id":"c30f0030f0030c21","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/01-读书会启动会议.md","x":640,"y":-20,"width":400,"height":160,"color":"4"},
+		{"id":"c30f0030f0030c22","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/概念/双向链接.md","x":640,"y":220,"width":180,"height":140,"color":"4"},
+		{"id":"c30f0030f0030c23","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/概念/原子笔记.md","x":860,"y":220,"width":180,"height":140,"color":"4"},
+		{"id":"c30f0030f0030c24","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/概念/渐进式总结.md","x":640,"y":430,"width":400,"height":150,"color":"4"},
+		{"id":"c30f0030f0030c25","type":"text","text":"讨论节奏\n10 分钟：各自摘录\n30 分钟：围绕概念讨论\n10 分钟：写下决定与下一步","x":640,"y":630,"width":400,"height":80},
+		{"id":"c30f0030f0030c31","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/决定/下次分享主题.md","x":1280,"y":-20,"width":400,"height":160,"color":"6"},
+		{"id":"c30f0030f0030c32","type":"file","file":"Obsidian知识/30-实践/03-示例项目/周末读书会/02-第一周复盘.md","x":1280,"y":230,"width":400,"height":170,"color":"6"},
+		{"id":"c30f0030f0030c33","type":"text","text":"本周成功标准\n- 会议页有结论而不只有流水账\n- 至少建立 3 条有语义的链接\n- 决定页写明负责人和验证日期","x":1280,"y":500,"width":400,"height":110}
+	],
+	"edges":[
+		{"id":"e30f0030f0030c01","fromNode":"c30f0030f0030c11","fromSide":"bottom","toNode":"c30f0030f0030c12","toSide":"top","toEnd":"arrow","label":"选定书目"},
+		{"id":"e30f0030f0030c02","fromNode":"c30f0030f0030c13","fromSide":"right","toNode":"c30f0030f0030c21","toSide":"left","toEnd":"arrow","label":"主持"},
+		{"id":"e30f0030f0030c03","fromNode":"c30f0030f0030c14","fromSide":"right","toNode":"c30f0030f0030c21","toSide":"left","toEnd":"arrow","label":"记录"},
+		{"id":"e30f0030f0030c04","fromNode":"c30f0030f0030c12","fromSide":"right","toNode":"c30f0030f0030c21","toSide":"left","toEnd":"arrow","label":"带着摘录进入会议"},
+		{"id":"e30f0030f0030c05","fromNode":"c30f0030f0030c21","fromSide":"bottom","toNode":"c30f0030f0030c22","toSide":"top","toEnd":"arrow","label":"提炼"},
+		{"id":"e30f0030f0030c06","fromNode":"c30f0030f0030c21","fromSide":"bottom","toNode":"c30f0030f0030c23","toSide":"top","toEnd":"arrow","label":"提炼"},
+		{"id":"e30f0030f0030c07","fromNode":"c30f0030f0030c22","fromSide":"bottom","toNode":"c30f0030f0030c24","toSide":"top","toEnd":"arrow","label":"参与总结"},
+		{"id":"e30f0030f0030c08","fromNode":"c30f0030f0030c23","fromSide":"bottom","toNode":"c30f0030f0030c24","toSide":"top","toEnd":"arrow","label":"参与总结"},
+		{"id":"e30f0030f0030c09","fromNode":"c30f0030f0030c21","fromSide":"right","toNode":"c30f0030f0030c31","toSide":"left","toEnd":"arrow","label":"作出决定"},
+		{"id":"e30f0030f0030c10","fromNode":"c30f0030f0030c24","fromSide":"right","toNode":"c30f0030f0030c32","toSide":"left","toEnd":"arrow","label":"带入复盘"},
+		{"id":"e30f0030f0030c11","fromNode":"c30f0030f0030c31","fromSide":"bottom","toNode":"c30f0030f0030c32","toSide":"top","toEnd":"arrow","label":"检查执行"},
+		{"id":"e30f0030f0030c12","fromNode":"c30f0030f0030c32","fromSide":"left","toNode":"c30f0030f0030c11","toSide":"right","toEnd":"arrow","label":"更新下一轮"}
+	]
+}

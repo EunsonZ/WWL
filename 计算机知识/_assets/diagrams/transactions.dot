@@ -1,0 +1,13 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=TB;
+start [label="初始：医生 A、B 都在岗"];
+a1 [label="事务 A 读取快照\n看到 B 在岗"]; b1 [label="事务 B 读取快照\n看到 A 在岗"];
+a2 [label="事务 A 修改 A 为离岗"]; b2 [label="事务 B 修改 B 为离岗"];
+end [label="若两者均提交：无人值班\n跨行不变量被破坏",fillcolor="#FFF7ED"];
+start->a1;start->b1;a1->a2;b1->b2;a2->end;b2->end;
+{rank=same;a1;b1;} {rank=same;a2;b2;}
+
+}

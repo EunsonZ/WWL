@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="SSA 合流：φ 根据实际前驱选择值",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"entry" [label="entry\nif cond"];
+"then" [label="then\nx1=1"];
+"else" [label="else\nx2=2"];
+"merge" [label="merge\nx3=φ(x1 from then, x2 from else)\ny1=x3+3"];
+"entry" -> "then" [label="true"];
+"entry" -> "else" [label="false"];
+"then" -> "merge";
+"else" -> "merge";
+
+}

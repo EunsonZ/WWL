@@ -1,0 +1,16 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="WAL：日志持久化约束先于相关数据页落盘",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"tx" [label="事务修改\n生成日志与脏页"];
+"log" [label="日志写入持久存储"];
+"commit" [label="提交记录达到约定持久点\n可确认提交"];
+"page" [label="脏数据页后续写回"];
+"rec" [label="崩溃恢复\n按日志恢复合法状态"];
+"tx" -> "log";
+"log" -> "commit";
+"log" -> "page" [label="先日志后数据"];
+"log" -> "rec";
+"page" -> "rec";
+
+}

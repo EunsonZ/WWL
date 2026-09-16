@@ -1,0 +1,4499 @@
+{
+  "counts": {
+    "files": 802,
+    "markdown": 434,
+    "original_files": 449,
+    "original_markdown": 296,
+    "original_paths_missing": 0,
+    "original_files_changed": 136,
+    "wiki_occurrences": 5431,
+    "unresolved_wiki_occurrences": 145,
+    "unresolved_wiki_unique_targets": 44,
+    "ambiguous_wiki_occurrences": 0,
+    "anchor_review_occurrences": 0,
+    "embedded_local_items": 16,
+    "external_image_links": 0,
+    "svg_files": 70,
+    "unclosed_fences": 0,
+    "missing_original_link_entries": 0,
+    "missing_original_link_occurrences": 0
+  },
+  "unresolved_wiki": [
+    {
+      "source": "编程知识/00-开始/00-编程知识-首页.md",
+      "line": 91,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "编程知识/00-开始/00-编程知识-首页.md",
+      "line": 92,
+      "target": "Obsidian知识/00-开始/00-Playground-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "编程知识/10-基础/01-正则表达式/07-Unicode与引擎差异.md",
+      "line": 55,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "编程知识/10-基础/01-正则表达式/00-正则表达式-MOC.md",
+      "line": 114,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "编程知识/10-基础/01-正则表达式/00-正则表达式-MOC.md",
+      "line": 116,
+      "target": "AI/00-开始/04-环境安全许可证与资源边界",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "编程知识/10-基础/01-正则表达式/00-正则表达式-MOC.md",
+      "line": 144,
+      "target": "Obsidian知识/10-基础/01-Markdown基础/03-引用代码与Callout",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/90-资源/05-数据结构与算法速查.md",
+      "line": 82,
+      "target": "数学/00-数学-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/90-资源/07-媒体编码与FFmpeg速查.md",
+      "line": 69,
+      "target": "AI/20-LLM/00-LLM-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/90-资源/09-编译原理速查.md",
+      "line": 137,
+      "target": "AI/00-开始/00-AI-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/90-资源/09-编译原理速查.md",
+      "line": 137,
+      "target": "AI/20-LLM/50-实现/04-llama.cpp构建后端与调用链",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/90-资源/00-计算机知识资源-MOC.md",
+      "line": 44,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/90-资源/00-计算机知识资源-MOC.md",
+      "line": 51,
+      "target": "数学/60-数值计算与量化/00-数值计算与量化-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/90-资源/08-编码格式容器与Codec选择矩阵.md",
+      "line": 66,
+      "target": "AI/20-LLM/60-模型格式与量化/00-模型格式与量化-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/90-资源/08-编码格式容器与Codec选择矩阵.md",
+      "line": 66,
+      "target": "数学/00-数学-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/07-中间表示Lowering与三地址码.md",
+      "line": 292,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/18-AI编译栈图捕获融合Shape与张量Kernel.md",
+      "line": 45,
+      "target": "AI/10-机器学习与深度学习基础/03-张量形状广播与批处理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/18-AI编译栈图捕获融合Shape与张量Kernel.md",
+      "line": 46,
+      "target": "AI/10-机器学习与深度学习基础/04-计算图与自动微分",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/18-AI编译栈图捕获融合Shape与张量Kernel.md",
+      "line": 202,
+      "target": "AI/20-LLM/50-实现/06-GGML张量计算图分配器与Backend",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/18-AI编译栈图捕获融合Shape与张量Kernel.md",
+      "line": 242,
+      "target": "数学/60-数值计算与量化/01-二进制浮点精度与数值稳定性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/02-词法分析正则自动机Unicode与源位置.md",
+      "line": 114,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/09-数据流分析格不动点活跃性与到达定义.md",
+      "line": 152,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/09-数据流分析格不动点活跃性与到达定义.md",
+      "line": 420,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/00-编译原理-MOC.md",
+      "line": 54,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/00-编译原理-MOC.md",
+      "line": 139,
+      "target": "AI/10-机器学习与深度学习基础/03-张量形状广播与批处理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/00-编译原理-MOC.md",
+      "line": 139,
+      "target": "AI/10-机器学习与深度学习基础/04-计算图与自动微分",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/00-编译原理-MOC.md",
+      "line": 189,
+      "target": "AI/20-LLM/50-实现/06-GGML张量计算图分配器与Backend",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/03-上下文无关文法AST-CST与歧义.md",
+      "line": 64,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/06-类型系统约束求解泛型与语义检查.md",
+      "line": 41,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/08-控制流图支配关系与SSA.md",
+      "line": 65,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/00-编程语言-MOC.md",
+      "line": 58,
+      "target": "AI/00-开始/00-AI-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/00-并行与异构计算-MOC.md",
+      "line": 24,
+      "target": "AI/20-LLM/50-实现/04-llama.cpp构建后端与调用链",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/00-并行与异构计算-MOC.md",
+      "line": 57,
+      "target": "数学/20-线性代数与几何/02-矩阵乘法线性映射与Einsum",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/00-并行与异构计算-MOC.md",
+      "line": 58,
+      "target": "数学/50-信息论/02-指数对数Softmax与LogSumExp",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/00-并行与异构计算-MOC.md",
+      "line": 59,
+      "target": "数学/60-数值计算与量化/01-二进制浮点精度与数值稳定性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/00-并行与异构计算-MOC.md",
+      "line": 71,
+      "target": "AI/00-开始/00-AI-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/00-操作系统-MOC.md",
+      "line": 37,
+      "target": "AI/00-开始/00-AI-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/02-进程虚拟地址空间与内存映射.md",
+      "line": 113,
+      "target": "AI/20-LLM/50-实现/04-llama.cpp构建后端与调用链",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/05-并发并行SIMD与加速器.md",
+      "line": 142,
+      "target": "AI/20-LLM/50-实现/04-llama.cpp构建后端与调用链",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/05-并发并行SIMD与加速器.md",
+      "line": 142,
+      "target": "AI/20-LLM/50-实现/05-llama.cpp源码阅读与小型扩展",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+      "line": 8,
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+      "line": 133,
+      "target": "数学/60-数值计算与量化/02-量化Scale-Zero-Point-Group与误差",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/14-网络栈Socket与端到端数据路径.md",
+      "line": 182,
+      "target": "AI/20-LLM/70-工程应用与工具链/05-私有部署认证TLS与边界",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/14-网络栈Socket与端到端数据路径.md",
+      "line": 231,
+      "target": "AI/20-LLM/40-推理/03-批处理调度延迟吞吐与投机解码",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/14-网络栈Socket与端到端数据路径.md",
+      "line": 313,
+      "target": "AI/20-LLM/70-工程应用与工具链/05-私有部署认证TLS与边界",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/01-数据表示字节序与对齐.md",
+      "line": 72,
+      "target": "数学/60-数值计算与量化/01-二进制浮点精度与数值稳定性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/01-数据表示字节序与对齐.md",
+      "line": 127,
+      "target": "数学/60-数值计算与量化/02-量化Scale-Zero-Point-Group与误差",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/01-数据表示字节序与对齐.md",
+      "line": 129,
+      "target": "AI/20-LLM/60-模型格式与量化/03-GGUF结构转换与验证",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/15-性能分析可观测性与系统设计.md",
+      "line": 151,
+      "target": "AI/20-LLM/40-推理/03-批处理调度延迟吞吐与投机解码",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/15-性能分析可观测性与系统设计.md",
+      "line": 197,
+      "target": "AI/20-LLM/70-工程应用与工具链/04-评测回归与可观测性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/15-性能分析可观测性与系统设计.md",
+      "line": 380,
+      "target": "AI/20-LLM/40-推理/03-批处理调度延迟吞吐与投机解码",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "line": 108,
+      "target": "AI/20-LLM/60-模型格式与量化/03-GGUF结构转换与验证",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "line": 108,
+      "target": "AI/20-LLM/50-实现/04-llama.cpp构建后端与调用链",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "line": 178,
+      "target": "AI/00-开始/00-AI-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "line": 179,
+      "target": "数学/00-数学-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "line": 180,
+      "target": "Obsidian知识/00-开始/00-Playground-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/16-媒体质量评估PSNR-SSIM-VMAF与听感边界.md",
+      "line": 107,
+      "target": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/16-媒体质量评估PSNR-SSIM-VMAF与听感边界.md",
+      "line": 129,
+      "target": "数学/30-概率与统计/05-统计估计置信度与模型评测",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/16-媒体质量评估PSNR-SSIM-VMAF与听感边界.md",
+      "line": 129,
+      "target": "AI/20-LLM/70-工程应用与工具链/04-评测回归与可观测性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/03-二进制文件格式魔数字节序对齐与校验.md",
+      "line": 137,
+      "target": "AI/20-LLM/60-模型格式与量化/02-safetensors结构读取与安全边界",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/06-数字音频采样量化PCM与响度.md",
+      "line": 34,
+      "target": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/06-数字音频采样量化PCM与响度.md",
+      "line": 269,
+      "target": "00-语音与音频模型-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/04-压缩原理熵编码字典编码与有损压缩.md",
+      "line": 42,
+      "target": "数学/60-数值计算与量化/02-量化Scale-Zero-Point-Group与误差",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/04-压缩原理熵编码字典编码与有损压缩.md",
+      "line": 52,
+      "target": "数学/50-信息论/01-熵交叉熵KL散度与互信息",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/01-表示编码序列化压缩与容器的边界.md",
+      "line": 61,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/07-音频编码变换心理声学码率与延迟.md",
+      "line": 36,
+      "target": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/07-音频编码变换心理声学码率与延迟.md",
+      "line": 36,
+      "target": "数学/50-信息论/00-信息论-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/07-音频编码变换心理声学码率与延迟.md",
+      "line": 265,
+      "target": "00-语音与音频模型-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/02-字符编码Unicode-UTF-8与换行.md",
+      "line": 92,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/05-图像表示色彩空间采样与图像编码.md",
+      "line": 36,
+      "target": "数学/70-信号处理与多模态数学/01-空间几何Patch卷积与频域",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/08-数字视频帧率扫描色彩采样与时间基.md",
+      "line": 210,
+      "target": "AI/20-LLM/20-架构/07-编码器解码器与多模态接口",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/08-数字视频帧率扫描色彩采样与时间基.md",
+      "line": 210,
+      "target": "AI/30-VLM/00-VLM-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/08-数字视频帧率扫描色彩采样与时间基.md",
+      "line": 264,
+      "target": "数学/70-信号处理与多模态数学/01-空间几何Patch卷积与频域",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/08-数字视频帧率扫描色彩采样与时间基.md",
+      "line": 266,
+      "target": "AI/30-VLM/00-VLM-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/09-视频编码预测变换量化熵编码与GOP.md",
+      "line": 116,
+      "target": "数学/70-信号处理与多模态数学/01-空间几何Patch卷积与频域",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/09-视频编码预测变换量化熵编码与GOP.md",
+      "line": 152,
+      "target": "数学/50-信息论/00-信息论-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/09-视频编码预测变换量化熵编码与GOP.md",
+      "line": 264,
+      "target": "数学/70-信号处理与多模态数学/01-空间几何Patch卷积与频域",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/09-视频编码预测变换量化熵编码与GOP.md",
+      "line": 264,
+      "target": "数学/50-信息论/00-信息论-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/00-数据编码与媒体系统-MOC.md",
+      "line": 131,
+      "target": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/00-数据编码与媒体系统-MOC.md",
+      "line": 132,
+      "target": "数学/50-信息论/01-熵交叉熵KL散度与互信息",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/00-数据编码与媒体系统-MOC.md",
+      "line": 134,
+      "target": "AI/30-VLM/00-VLM-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/00-数据编码与媒体系统-MOC.md",
+      "line": 134,
+      "target": "AI/40-语音与音频模型/00-语音与音频模型-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/60-数据编码与媒体系统/00-数据编码与媒体系统-MOC.md",
+      "line": 134,
+      "target": "AI/50-扩散模型/00-扩散模型-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/19-概率型数据结构流式摘要与误差合同.md",
+      "line": 47,
+      "target": "数学/30-概率与统计/05-统计估计置信度与模型评测",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/19-概率型数据结构流式摘要与误差合同.md",
+      "line": 124,
+      "target": "数学/30-概率与统计/02-期望方差协方差与抽样",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-贪心算法与正确性证明.md",
+      "line": 35,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-贪心算法与正确性证明.md",
+      "line": 132,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+      "line": 99,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+      "line": 131,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+      "line": 132,
+      "target": "数学/30-概率与统计/01-概率分布条件概率与贝叶斯关系",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+      "line": 135,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+      "line": 136,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+      "line": 136,
+      "target": "数学/30-概率与统计/05-统计估计置信度与模型评测",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/09-二分查找分治与递归.md",
+      "line": 148,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "评测应分离检索与生成",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/15-如何选择数据结构与建立不变量.md",
+      "line": 39,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/13-字符串匹配前缀函数与自动机.md",
+      "line": 45,
+      "target": "AI/20-LLM/10-原理/01-文本Unicode-Token与词表",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "line": 8,
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "line": 10,
+      "target": "数学/20-线性代数与几何/03-点积范数距离与余弦相似度",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "line": 44,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "line": 44,
+      "target": "AI/20-LLM/10-原理/03-Embedding表示与语义空间",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "line": 196,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/07-图的表示BFS-DFS与拓扑排序.md",
+      "line": 182,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "精确定义与四类边界",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/06-平衡树B树Trie与索引结构.md",
+      "line": 126,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/04-哈希表集合与冲突处理.md",
+      "line": 115,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/14-回溯搜索剪枝与计算复杂性边界.md",
+      "line": 122,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/17-强连通分量凝聚DAG与工作列表不动点.md",
+      "line": 42,
+      "target": "数学/10-数学语言与基础/03-集合映射命题与合法推理",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/08-排序选择与稳定性.md",
+      "line": 191,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "评测应分离检索与生成",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-网络存储日志与故障排查.md",
+      "line": 191,
+      "target": "AI/20-LLM/70-工程应用与工具链/05-私有部署认证TLS与边界",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/00-Linux基础-MOC.md",
+      "line": 111,
+      "target": "AI/20-LLM/40-推理/04-推理显存量化与硬件路线",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/14-Linux开发容器与AI工作负载边界.md",
+      "line": 126,
+      "target": "AI/20-LLM/70-工程应用与工具链/05-私有部署认证TLS与边界",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/14-Linux开发容器与AI工作负载边界.md",
+      "line": 126,
+      "target": "AI/20-LLM/40-推理/04-推理显存量化与硬件路线",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/14-Linux开发容器与AI工作负载边界.md",
+      "line": 162,
+      "target": "AI/20-LLM/40-推理/04-推理显存量化与硬件路线",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/09-设备驱动内核模块与udev.md",
+      "line": 327,
+      "target": "AI/20-LLM/40-推理/04-推理显存量化与硬件路线",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/10-PyTorch扩展-Triton与llama.cpp后端.md",
+      "line": 201,
+      "target": "AI/20-LLM/00-LLM-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/08-Reduction-Softmax与GEMM.md",
+      "line": 37,
+      "target": "数学/20-线性代数与几何/02-矩阵乘法线性映射与Einsum",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/08-Reduction-Softmax与GEMM.md",
+      "line": 38,
+      "target": "数学/60-数值计算与量化/01-二进制浮点精度与数值稳定性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/08-Reduction-Softmax与GEMM.md",
+      "line": 39,
+      "target": "数学/50-信息论/02-指数对数Softmax与LogSumExp",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/08-Reduction-Softmax与GEMM.md",
+      "line": 40,
+      "target": "数学/30-概率与统计/04-温度Top-k与Top-p采样",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/08-Reduction-Softmax与GEMM.md",
+      "line": 232,
+      "target": "AI/20-LLM/20-架构/01-Transformer完整数据流",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/07-FP16-BF16-FP8与Tensor-Core.md",
+      "line": 35,
+      "target": "数学/60-数值计算与量化/01-二进制浮点精度与数值稳定性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/00-CUDA-MOC.md",
+      "line": 66,
+      "target": "数学/60-数值计算与量化/01-二进制浮点精度与数值稳定性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/40-并行与异构计算/01-CUDA/00-CUDA-MOC.md",
+      "line": 67,
+      "target": "数学/20-线性代数与几何/02-矩阵乘法线性映射与Einsum",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/03-C++/00-C++实验室.md",
+      "line": 37,
+      "target": "AI/20-LLM/50-实现/04-llama.cpp构建后端与调用链",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/03-C++/00-C++实验室.md",
+      "line": 37,
+      "target": "AI/20-LLM/50-实现/05-llama.cpp源码阅读与小型扩展",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/03-C++/00-C++实验室.md",
+      "line": 37,
+      "target": "AI/20-LLM/60-模型格式与量化/03-GGUF结构转换与验证",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/07-媒体编码与FFmpeg/00-媒体编码与FFmpeg实践-MOC.md",
+      "line": 46,
+      "target": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/07-媒体编码与FFmpeg/00-媒体编码与FFmpeg实践-MOC.md",
+      "line": 46,
+      "target": "00-语音与音频模型-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/07-媒体编码与FFmpeg/00-媒体编码与FFmpeg实践-MOC.md",
+      "line": 46,
+      "target": "AI/30-VLM/00-VLM-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/07-媒体编码与FFmpeg/03-Filtergraph时间戳与音画同步.md",
+      "line": 26,
+      "target": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/README.md",
+      "line": 78,
+      "target": "数学/30-概率与统计/05-统计估计置信度与模型评测",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/README.md",
+      "line": 78,
+      "target": "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/README.md",
+      "line": 16,
+      "target": "AI/20-LLM/50-实现/04-llama.cpp构建后端与调用链",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/README.md",
+      "line": 16,
+      "target": "AI/20-LLM/50-实现/05-llama.cpp源码阅读与小型扩展",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/README.md",
+      "line": 16,
+      "target": "AI/20-LLM/60-模型格式与量化/03-GGUF结构转换与验证",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/80-实践/03-C++/04-布局缓存与并行归约/README.md",
+      "line": 35,
+      "target": "数学/60-数值计算与量化/01-二进制浮点精度与数值稳定性",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/00-Python基础-MOC.md",
+      "line": 139,
+      "target": "AI/00-开始/00-AI-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/02-基础语法与数据类型.md",
+      "line": 312,
+      "target": "数学/60-数值计算与量化/00-数值计算与量化-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/02-基础语法与数据类型.md",
+      "line": 312,
+      "target": "AI/00-开始/00-AI-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/13-常用Package生态与用法.md",
+      "line": 376,
+      "target": "数学/00-数学-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/13-常用Package生态与用法.md",
+      "line": 377,
+      "target": "AI/00-开始/00-AI-首页",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/00-C++-MOC.md",
+      "line": 67,
+      "target": "AI/20-LLM/00-LLM-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/00-C++-MOC.md",
+      "line": 69,
+      "target": "数学/60-数值计算与量化/00-数值计算与量化-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-阅读大型C++仓库与llama-cpp调用链.md",
+      "line": 38,
+      "target": "AI/20-LLM/50-实现/04-llama.cpp构建后端与调用链",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-阅读大型C++仓库与llama-cpp调用链.md",
+      "line": 62,
+      "target": "AI/20-LLM/60-模型格式与量化/03-GGUF结构转换与验证",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-阅读大型C++仓库与llama-cpp调用链.md",
+      "line": 77,
+      "target": "AI/20-LLM/00-LLM-MOC",
+      "anchor": "",
+      "in_original": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/05-struct类模板与STL.md",
+      "line": 19,
+      "target": "Logs/2026-09-04_1519-Codex-新增NewAgents协作与知识编写指南",
+      "anchor": "",
+      "in_original": true
+    }
+  ],
+  "ambiguous_wiki": [],
+  "anchor_review": [],
+  "markdown_local_links": [
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/c-object.svg",
+      "resolved": [
+        "_assets/diagrams/round3/c-object.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/c-object.png",
+      "resolved": [
+        "_assets/diagrams/round3/c-object.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/c-object.dot",
+      "resolved": [
+        "_assets/diagrams/round3/c-object.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/c-realloc.svg",
+      "resolved": [
+        "_assets/diagrams/round3/c-realloc.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/c-realloc.png",
+      "resolved": [
+        "_assets/diagrams/round3/c-realloc.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/c-realloc.dot",
+      "resolved": [
+        "_assets/diagrams/round3/c-realloc.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/cpp-raii.svg",
+      "resolved": [
+        "_assets/diagrams/round3/cpp-raii.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/cpp-raii.png",
+      "resolved": [
+        "_assets/diagrams/round3/cpp-raii.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/cpp-raii.dot",
+      "resolved": [
+        "_assets/diagrams/round3/cpp-raii.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/release-acquire.svg",
+      "resolved": [
+        "_assets/diagrams/round3/release-acquire.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/release-acquire.png",
+      "resolved": [
+        "_assets/diagrams/round3/release-acquire.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/release-acquire.dot",
+      "resolved": [
+        "_assets/diagrams/round3/release-acquire.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/rust-borrow.svg",
+      "resolved": [
+        "_assets/diagrams/round3/rust-borrow.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/rust-borrow.png",
+      "resolved": [
+        "_assets/diagrams/round3/rust-borrow.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/rust-borrow.dot",
+      "resolved": [
+        "_assets/diagrams/round3/rust-borrow.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/rust-sharing.svg",
+      "resolved": [
+        "_assets/diagrams/round3/rust-sharing.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/rust-sharing.png",
+      "resolved": [
+        "_assets/diagrams/round3/rust-sharing.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/rust-sharing.dot",
+      "resolved": [
+        "_assets/diagrams/round3/rust-sharing.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/future-state.svg",
+      "resolved": [
+        "_assets/diagrams/round3/future-state.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/future-state.png",
+      "resolved": [
+        "_assets/diagrams/round3/future-state.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/future-state.dot",
+      "resolved": [
+        "_assets/diagrams/round3/future-state.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/python-object.svg",
+      "resolved": [
+        "_assets/diagrams/round3/python-object.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/python-object.png",
+      "resolved": [
+        "_assets/diagrams/round3/python-object.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/python-object.dot",
+      "resolved": [
+        "_assets/diagrams/round3/python-object.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/python-async.svg",
+      "resolved": [
+        "_assets/diagrams/round3/python-async.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/python-async.png",
+      "resolved": [
+        "_assets/diagrams/round3/python-async.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/python-async.dot",
+      "resolved": [
+        "_assets/diagrams/round3/python-async.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ts-boundary.svg",
+      "resolved": [
+        "_assets/diagrams/round3/ts-boundary.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ts-boundary.png",
+      "resolved": [
+        "_assets/diagrams/round3/ts-boundary.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ts-boundary.dot",
+      "resolved": [
+        "_assets/diagrams/round3/ts-boundary.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/event-loop.svg",
+      "resolved": [
+        "_assets/diagrams/round3/event-loop.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/event-loop.png",
+      "resolved": [
+        "_assets/diagrams/round3/event-loop.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/event-loop.dot",
+      "resolved": [
+        "_assets/diagrams/round3/event-loop.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/hash-probe.svg",
+      "resolved": [
+        "_assets/diagrams/round3/hash-probe.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/hash-probe.png",
+      "resolved": [
+        "_assets/diagrams/round3/hash-probe.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/hash-probe.dot",
+      "resolved": [
+        "_assets/diagrams/round3/hash-probe.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/avl-rotation.svg",
+      "resolved": [
+        "_assets/diagrams/round3/avl-rotation.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/avl-rotation.png",
+      "resolved": [
+        "_assets/diagrams/round3/avl-rotation.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/avl-rotation.dot",
+      "resolved": [
+        "_assets/diagrams/round3/avl-rotation.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/bplus-pages.svg",
+      "resolved": [
+        "_assets/diagrams/round3/bplus-pages.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/bplus-pages.png",
+      "resolved": [
+        "_assets/diagrams/round3/bplus-pages.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/bplus-pages.dot",
+      "resolved": [
+        "_assets/diagrams/round3/bplus-pages.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/fenwick-blocks.svg",
+      "resolved": [
+        "_assets/diagrams/round3/fenwick-blocks.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/fenwick-blocks.png",
+      "resolved": [
+        "_assets/diagrams/round3/fenwick-blocks.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/fenwick-blocks.dot",
+      "resolved": [
+        "_assets/diagrams/round3/fenwick-blocks.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/sequential-path.svg",
+      "resolved": [
+        "_assets/diagrams/round3/sequential-path.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/sequential-path.png",
+      "resolved": [
+        "_assets/diagrams/round3/sequential-path.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/sequential-path.dot",
+      "resolved": [
+        "_assets/diagrams/round3/sequential-path.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/datapath.svg",
+      "resolved": [
+        "_assets/diagrams/round3/datapath.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/datapath.png",
+      "resolved": [
+        "_assets/diagrams/round3/datapath.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/datapath.dot",
+      "resolved": [
+        "_assets/diagrams/round3/datapath.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/pipeline.svg",
+      "resolved": [
+        "_assets/diagrams/round3/pipeline.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/pipeline.png",
+      "resolved": [
+        "_assets/diagrams/round3/pipeline.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/pipeline.dot",
+      "resolved": [
+        "_assets/diagrams/round3/pipeline.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/cache-address.svg",
+      "resolved": [
+        "_assets/diagrams/round3/cache-address.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/cache-address.png",
+      "resolved": [
+        "_assets/diagrams/round3/cache-address.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/cache-address.dot",
+      "resolved": [
+        "_assets/diagrams/round3/cache-address.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tlb-walk.svg",
+      "resolved": [
+        "_assets/diagrams/round3/tlb-walk.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tlb-walk.png",
+      "resolved": [
+        "_assets/diagrams/round3/tlb-walk.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tlb-walk.dot",
+      "resolved": [
+        "_assets/diagrams/round3/tlb-walk.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/numa-sharing.svg",
+      "resolved": [
+        "_assets/diagrams/round3/numa-sharing.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/numa-sharing.png",
+      "resolved": [
+        "_assets/diagrams/round3/numa-sharing.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/numa-sharing.dot",
+      "resolved": [
+        "_assets/diagrams/round3/numa-sharing.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dma-path.svg",
+      "resolved": [
+        "_assets/diagrams/round3/dma-path.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dma-path.png",
+      "resolved": [
+        "_assets/diagrams/round3/dma-path.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dma-path.dot",
+      "resolved": [
+        "_assets/diagrams/round3/dma-path.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/process-state.svg",
+      "resolved": [
+        "_assets/diagrams/round3/process-state.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/process-state.png",
+      "resolved": [
+        "_assets/diagrams/round3/process-state.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/process-state.dot",
+      "resolved": [
+        "_assets/diagrams/round3/process-state.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/fd-sharing.svg",
+      "resolved": [
+        "_assets/diagrams/round3/fd-sharing.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/fd-sharing.png",
+      "resolved": [
+        "_assets/diagrams/round3/fd-sharing.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/fd-sharing.dot",
+      "resolved": [
+        "_assets/diagrams/round3/fd-sharing.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/bounded-queue.svg",
+      "resolved": [
+        "_assets/diagrams/round3/bounded-queue.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/bounded-queue.png",
+      "resolved": [
+        "_assets/diagrams/round3/bounded-queue.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/bounded-queue.dot",
+      "resolved": [
+        "_assets/diagrams/round3/bounded-queue.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/deadlock.svg",
+      "resolved": [
+        "_assets/diagrams/round3/deadlock.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/deadlock.png",
+      "resolved": [
+        "_assets/diagrams/round3/deadlock.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/deadlock.dot",
+      "resolved": [
+        "_assets/diagrams/round3/deadlock.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/vm-layers.svg",
+      "resolved": [
+        "_assets/diagrams/round3/vm-layers.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/vm-layers.png",
+      "resolved": [
+        "_assets/diagrams/round3/vm-layers.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/vm-layers.dot",
+      "resolved": [
+        "_assets/diagrams/round3/vm-layers.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/durable-replace.svg",
+      "resolved": [
+        "_assets/diagrams/round3/durable-replace.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/durable-replace.png",
+      "resolved": [
+        "_assets/diagrams/round3/durable-replace.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/durable-replace.dot",
+      "resolved": [
+        "_assets/diagrams/round3/durable-replace.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/network-layers.svg",
+      "resolved": [
+        "_assets/diagrams/round3/network-layers.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/network-layers.png",
+      "resolved": [
+        "_assets/diagrams/round3/network-layers.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/network-layers.dot",
+      "resolved": [
+        "_assets/diagrams/round3/network-layers.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/switch-learning.svg",
+      "resolved": [
+        "_assets/diagrams/round3/switch-learning.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/switch-learning.png",
+      "resolved": [
+        "_assets/diagrams/round3/switch-learning.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/switch-learning.dot",
+      "resolved": [
+        "_assets/diagrams/round3/switch-learning.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/route-prefix.svg",
+      "resolved": [
+        "_assets/diagrams/round3/route-prefix.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/route-prefix.png",
+      "resolved": [
+        "_assets/diagrams/round3/route-prefix.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/route-prefix.dot",
+      "resolved": [
+        "_assets/diagrams/round3/route-prefix.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tcp-sequence.svg",
+      "resolved": [
+        "_assets/diagrams/round3/tcp-sequence.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tcp-sequence.png",
+      "resolved": [
+        "_assets/diagrams/round3/tcp-sequence.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tcp-sequence.dot",
+      "resolved": [
+        "_assets/diagrams/round3/tcp-sequence.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dns-chain.svg",
+      "resolved": [
+        "_assets/diagrams/round3/dns-chain.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dns-chain.png",
+      "resolved": [
+        "_assets/diagrams/round3/dns-chain.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dns-chain.dot",
+      "resolved": [
+        "_assets/diagrams/round3/dns-chain.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tls-boundary.svg",
+      "resolved": [
+        "_assets/diagrams/round3/tls-boundary.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tls-boundary.png",
+      "resolved": [
+        "_assets/diagrams/round3/tls-boundary.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/tls-boundary.dot",
+      "resolved": [
+        "_assets/diagrams/round3/tls-boundary.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/frame-parser.svg",
+      "resolved": [
+        "_assets/diagrams/round3/frame-parser.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/frame-parser.png",
+      "resolved": [
+        "_assets/diagrams/round3/frame-parser.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/frame-parser.dot",
+      "resolved": [
+        "_assets/diagrams/round3/frame-parser.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/er-enrollment.svg",
+      "resolved": [
+        "_assets/diagrams/round3/er-enrollment.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/er-enrollment.png",
+      "resolved": [
+        "_assets/diagrams/round3/er-enrollment.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/er-enrollment.dot",
+      "resolved": [
+        "_assets/diagrams/round3/er-enrollment.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/sql-order.svg",
+      "resolved": [
+        "_assets/diagrams/round3/sql-order.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/sql-order.png",
+      "resolved": [
+        "_assets/diagrams/round3/sql-order.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/sql-order.dot",
+      "resolved": [
+        "_assets/diagrams/round3/sql-order.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/write-skew.svg",
+      "resolved": [
+        "_assets/diagrams/round3/write-skew.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/write-skew.png",
+      "resolved": [
+        "_assets/diagrams/round3/write-skew.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/write-skew.dot",
+      "resolved": [
+        "_assets/diagrams/round3/write-skew.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/slotted-page.svg",
+      "resolved": [
+        "_assets/diagrams/round3/slotted-page.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/slotted-page.png",
+      "resolved": [
+        "_assets/diagrams/round3/slotted-page.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/slotted-page.dot",
+      "resolved": [
+        "_assets/diagrams/round3/slotted-page.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/query-plan.svg",
+      "resolved": [
+        "_assets/diagrams/round3/query-plan.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/query-plan.png",
+      "resolved": [
+        "_assets/diagrams/round3/query-plan.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/query-plan.dot",
+      "resolved": [
+        "_assets/diagrams/round3/query-plan.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/wal-order.svg",
+      "resolved": [
+        "_assets/diagrams/round3/wal-order.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/wal-order.png",
+      "resolved": [
+        "_assets/diagrams/round3/wal-order.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/wal-order.dot",
+      "resolved": [
+        "_assets/diagrams/round3/wal-order.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dp-grid.svg",
+      "resolved": [
+        "_assets/diagrams/round3/dp-grid.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dp-grid.png",
+      "resolved": [
+        "_assets/diagrams/round3/dp-grid.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dp-grid.dot",
+      "resolved": [
+        "_assets/diagrams/round3/dp-grid.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/residual-flow.svg",
+      "resolved": [
+        "_assets/diagrams/round3/residual-flow.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/residual-flow.png",
+      "resolved": [
+        "_assets/diagrams/round3/residual-flow.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/residual-flow.dot",
+      "resolved": [
+        "_assets/diagrams/round3/residual-flow.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/reduction.svg",
+      "resolved": [
+        "_assets/diagrams/round3/reduction.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/reduction.png",
+      "resolved": [
+        "_assets/diagrams/round3/reduction.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/reduction.dot",
+      "resolved": [
+        "_assets/diagrams/round3/reduction.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dfa-ab.svg",
+      "resolved": [
+        "_assets/diagrams/round3/dfa-ab.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dfa-ab.png",
+      "resolved": [
+        "_assets/diagrams/round3/dfa-ab.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/dfa-ab.dot",
+      "resolved": [
+        "_assets/diagrams/round3/dfa-ab.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ast-precedence.svg",
+      "resolved": [
+        "_assets/diagrams/round3/ast-precedence.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ast-precedence.png",
+      "resolved": [
+        "_assets/diagrams/round3/ast-precedence.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ast-precedence.dot",
+      "resolved": [
+        "_assets/diagrams/round3/ast-precedence.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/type-unify.svg",
+      "resolved": [
+        "_assets/diagrams/round3/type-unify.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/type-unify.png",
+      "resolved": [
+        "_assets/diagrams/round3/type-unify.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/type-unify.dot",
+      "resolved": [
+        "_assets/diagrams/round3/type-unify.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ssa-diamond.svg",
+      "resolved": [
+        "_assets/diagrams/round3/ssa-diamond.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ssa-diamond.png",
+      "resolved": [
+        "_assets/diagrams/round3/ssa-diamond.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/ssa-diamond.dot",
+      "resolved": [
+        "_assets/diagrams/round3/ssa-diamond.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/register-interference.svg",
+      "resolved": [
+        "_assets/diagrams/round3/register-interference.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/register-interference.png",
+      "resolved": [
+        "_assets/diagrams/round3/register-interference.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/register-interference.dot",
+      "resolved": [
+        "_assets/diagrams/round3/register-interference.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/compiler-pipeline.svg",
+      "resolved": [
+        "_assets/diagrams/round3/compiler-pipeline.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/compiler-pipeline.png",
+      "resolved": [
+        "_assets/diagrams/round3/compiler-pipeline.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/compiler-pipeline.dot",
+      "resolved": [
+        "_assets/diagrams/round3/compiler-pipeline.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/shell-argv.svg",
+      "resolved": [
+        "_assets/diagrams/round3/shell-argv.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/shell-argv.png",
+      "resolved": [
+        "_assets/diagrams/round3/shell-argv.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/shell-argv.dot",
+      "resolved": [
+        "_assets/diagrams/round3/shell-argv.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/linux-fd.svg",
+      "resolved": [
+        "_assets/diagrams/round3/linux-fd.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/linux-fd.png",
+      "resolved": [
+        "_assets/diagrams/round3/linux-fd.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/linux-fd.dot",
+      "resolved": [
+        "_assets/diagrams/round3/linux-fd.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/service-lifecycle.svg",
+      "resolved": [
+        "_assets/diagrams/round3/service-lifecycle.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/service-lifecycle.png",
+      "resolved": [
+        "_assets/diagrams/round3/service-lifecycle.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/service-lifecycle.dot",
+      "resolved": [
+        "_assets/diagrams/round3/service-lifecycle.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/container-boundaries.svg",
+      "resolved": [
+        "_assets/diagrams/round3/container-boundaries.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/container-boundaries.png",
+      "resolved": [
+        "_assets/diagrams/round3/container-boundaries.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/container-boundaries.dot",
+      "resolved": [
+        "_assets/diagrams/round3/container-boundaries.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/diagnosis-tree.svg",
+      "resolved": [
+        "_assets/diagrams/round3/diagnosis-tree.svg"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/diagnosis-tree.png",
+      "resolved": [
+        "_assets/diagrams/round3/diagnosis-tree.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "08-本地图示索引.md",
+      "target": "_assets/diagrams/round3/diagnosis-tree.dot",
+      "resolved": [
+        "_assets/diagrams/round3/diagnosis-tree.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "07-学习方法与阶段验收.md",
+      "target": "_assets/diagrams/round3/course-dependencies.svg",
+      "resolved": [
+        "_assets/diagrams/round3/course-dependencies.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "07-学习方法与阶段验收.md",
+      "target": "_assets/diagrams/round3/course-dependencies.png",
+      "resolved": [
+        "_assets/diagrams/round3/course-dependencies.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "07-学习方法与阶段验收.md",
+      "target": "_assets/diagrams/round3/course-dependencies.dot",
+      "resolved": [
+        "_assets/diagrams/round3/course-dependencies.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/NET/计算机网络-实验说明.md",
+      "target": "network_models.py",
+      "resolved": [
+        "_labs/round3/NET/network_models.py"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/RUST/Rust-实验说明.md",
+      "target": "borrow_compile_fail.rs",
+      "resolved": [
+        "_labs/round3/RUST/borrow_compile_fail.rs"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/RUST/Rust-实验说明.md",
+      "target": "ownership.rs",
+      "resolved": [
+        "_labs/round3/RUST/ownership.rs"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/C/C语言-实验说明.md",
+      "target": "vector.c",
+      "resolved": [
+        "_labs/round3/C/vector.c"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/PY/Python-实验说明.md",
+      "target": "test_python.py",
+      "resolved": [
+        "_labs/round3/PY/test_python.py"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/ALG/算法设计-实验说明.md",
+      "target": "algorithms.py",
+      "resolved": [
+        "_labs/round3/ALG/algorithms.py"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/CO/计算机组成原理-实验说明.md",
+      "target": "hardware_models.py",
+      "resolved": [
+        "_labs/round3/CO/hardware_models.py"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/LINUX/Linux-实验说明.md",
+      "target": "shell_lab.sh",
+      "resolved": [
+        "_labs/round3/LINUX/shell_lab.sh"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/OS/操作系统-实验说明.md",
+      "target": "os_models.py",
+      "resolved": [
+        "_labs/round3/OS/os_models.py"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/TS/TypeScript-实验说明.md",
+      "target": "contracts.ts",
+      "resolved": [
+        "_labs/round3/TS/contracts.ts"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/TS/TypeScript-实验说明.md",
+      "target": "type_checks.ts",
+      "resolved": [
+        "_labs/round3/TS/type_checks.ts"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/DS/数据结构-实验说明.md",
+      "target": "structures.py",
+      "resolved": [
+        "_labs/round3/DS/structures.py"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/COMP/编译原理-实验说明.md",
+      "target": "compiler_lab.py",
+      "resolved": [
+        "_labs/round3/COMP/compiler_lab.py"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/CPP/C++-实验说明.md",
+      "target": "raii_queue.cpp",
+      "resolved": [
+        "_labs/round3/CPP/raii_queue.cpp"
+      ],
+      "image": false
+    },
+    {
+      "source": "_labs/round3/DB/数据库-实验说明.md",
+      "target": "sqlite_lab.py",
+      "resolved": [
+        "_labs/round3/DB/sqlite_lab.py"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "target": "../../README.md",
+      "resolved": [],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/04-多路树外存与持久化.md",
+      "target": "../../../_assets/diagrams/round3/bplus-pages.svg",
+      "resolved": [
+        "_assets/diagrams/round3/bplus-pages.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/04-多路树外存与持久化.md",
+      "target": "../../../_assets/diagrams/round3/bplus-pages.png",
+      "resolved": [
+        "_assets/diagrams/round3/bplus-pages.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/04-多路树外存与持久化.md",
+      "target": "../../../_assets/diagrams/round3/bplus-pages.dot",
+      "resolved": [
+        "_assets/diagrams/round3/bplus-pages.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/03-平衡搜索树旋转与增广.md",
+      "target": "../../../_assets/diagrams/round3/avl-rotation.svg",
+      "resolved": [
+        "_assets/diagrams/round3/avl-rotation.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/03-平衡搜索树旋转与增广.md",
+      "target": "../../../_assets/diagrams/round3/avl-rotation.png",
+      "resolved": [
+        "_assets/diagrams/round3/avl-rotation.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/03-平衡搜索树旋转与增广.md",
+      "target": "../../../_assets/diagrams/round3/avl-rotation.dot",
+      "resolved": [
+        "_assets/diagrams/round3/avl-rotation.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/05-区间聚合Fenwick与线段树.md",
+      "target": "../../../_assets/diagrams/round3/fenwick-blocks.svg",
+      "resolved": [
+        "_assets/diagrams/round3/fenwick-blocks.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/05-区间聚合Fenwick与线段树.md",
+      "target": "../../../_assets/diagrams/round3/fenwick-blocks.png",
+      "resolved": [
+        "_assets/diagrams/round3/fenwick-blocks.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/05-区间聚合Fenwick与线段树.md",
+      "target": "../../../_assets/diagrams/round3/fenwick-blocks.dot",
+      "resolved": [
+        "_assets/diagrams/round3/fenwick-blocks.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/02-顺序链式结构与哈希设计.md",
+      "target": "../../../_assets/diagrams/round3/hash-probe.svg",
+      "resolved": [
+        "_assets/diagrams/round3/hash-probe.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/02-顺序链式结构与哈希设计.md",
+      "target": "../../../_assets/diagrams/round3/hash-probe.png",
+      "resolved": [
+        "_assets/diagrams/round3/hash-probe.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/10-数据结构系统课程/02-顺序链式结构与哈希设计.md",
+      "target": "../../../_assets/diagrams/round3/hash-probe.dot",
+      "resolved": [
+        "_assets/diagrams/round3/hash-probe.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/07-复杂性归约与指数算法.md",
+      "target": "../../../_assets/diagrams/round3/reduction.svg",
+      "resolved": [
+        "_assets/diagrams/round3/reduction.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/07-复杂性归约与指数算法.md",
+      "target": "../../../_assets/diagrams/round3/reduction.png",
+      "resolved": [
+        "_assets/diagrams/round3/reduction.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/07-复杂性归约与指数算法.md",
+      "target": "../../../_assets/diagrams/round3/reduction.dot",
+      "resolved": [
+        "_assets/diagrams/round3/reduction.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/04-动态规划状态设计与优化.md",
+      "target": "../../../_assets/diagrams/round3/dp-grid.svg",
+      "resolved": [
+        "_assets/diagrams/round3/dp-grid.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/04-动态规划状态设计与优化.md",
+      "target": "../../../_assets/diagrams/round3/dp-grid.png",
+      "resolved": [
+        "_assets/diagrams/round3/dp-grid.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/04-动态规划状态设计与优化.md",
+      "target": "../../../_assets/diagrams/round3/dp-grid.dot",
+      "resolved": [
+        "_assets/diagrams/round3/dp-grid.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/05-图算法网络流与匹配证明.md",
+      "target": "../../../_assets/diagrams/round3/residual-flow.svg",
+      "resolved": [
+        "_assets/diagrams/round3/residual-flow.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/05-图算法网络流与匹配证明.md",
+      "target": "../../../_assets/diagrams/round3/residual-flow.png",
+      "resolved": [
+        "_assets/diagrams/round3/residual-flow.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/20-算法设计系统课程/05-图算法网络流与匹配证明.md",
+      "target": "../../../_assets/diagrams/round3/residual-flow.dot",
+      "resolved": [
+        "_assets/diagrams/round3/residual-flow.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/07-一致性内存序NUMA与性能.md",
+      "target": "../../../_assets/diagrams/round3/numa-sharing.svg",
+      "resolved": [
+        "_assets/diagrams/round3/numa-sharing.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/07-一致性内存序NUMA与性能.md",
+      "target": "../../../_assets/diagrams/round3/numa-sharing.png",
+      "resolved": [
+        "_assets/diagrams/round3/numa-sharing.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/07-一致性内存序NUMA与性能.md",
+      "target": "../../../_assets/diagrams/round3/numa-sharing.dot",
+      "resolved": [
+        "_assets/diagrams/round3/numa-sharing.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/08-总线DMA中断与系统全景.md",
+      "target": "../../../_assets/diagrams/round3/dma-path.svg",
+      "resolved": [
+        "_assets/diagrams/round3/dma-path.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/08-总线DMA中断与系统全景.md",
+      "target": "../../../_assets/diagrams/round3/dma-path.png",
+      "resolved": [
+        "_assets/diagrams/round3/dma-path.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/08-总线DMA中断与系统全景.md",
+      "target": "../../../_assets/diagrams/round3/dma-path.dot",
+      "resolved": [
+        "_assets/diagrams/round3/dma-path.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/06-虚拟地址TLB与存储系统.md",
+      "target": "../../../_assets/diagrams/round3/tlb-walk.svg",
+      "resolved": [
+        "_assets/diagrams/round3/tlb-walk.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/06-虚拟地址TLB与存储系统.md",
+      "target": "../../../_assets/diagrams/round3/tlb-walk.png",
+      "resolved": [
+        "_assets/diagrams/round3/tlb-walk.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/06-虚拟地址TLB与存储系统.md",
+      "target": "../../../_assets/diagrams/round3/tlb-walk.dot",
+      "resolved": [
+        "_assets/diagrams/round3/tlb-walk.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/05-缓存地址划分与AMAT.md",
+      "target": "../../../_assets/diagrams/round3/cache-address.svg",
+      "resolved": [
+        "_assets/diagrams/round3/cache-address.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/05-缓存地址划分与AMAT.md",
+      "target": "../../../_assets/diagrams/round3/cache-address.png",
+      "resolved": [
+        "_assets/diagrams/round3/cache-address.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/05-缓存地址划分与AMAT.md",
+      "target": "../../../_assets/diagrams/round3/cache-address.dot",
+      "resolved": [
+        "_assets/diagrams/round3/cache-address.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/04-流水线冒险与乱序执行.md",
+      "target": "../../../_assets/diagrams/round3/pipeline.svg",
+      "resolved": [
+        "_assets/diagrams/round3/pipeline.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/04-流水线冒险与乱序执行.md",
+      "target": "../../../_assets/diagrams/round3/pipeline.png",
+      "resolved": [
+        "_assets/diagrams/round3/pipeline.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/04-流水线冒险与乱序执行.md",
+      "target": "../../../_assets/diagrams/round3/pipeline.dot",
+      "resolved": [
+        "_assets/diagrams/round3/pipeline.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/03-指令集寻址与数据通路.md",
+      "target": "../../../_assets/diagrams/round3/datapath.svg",
+      "resolved": [
+        "_assets/diagrams/round3/datapath.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/03-指令集寻址与数据通路.md",
+      "target": "../../../_assets/diagrams/round3/datapath.png",
+      "resolved": [
+        "_assets/diagrams/round3/datapath.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/03-指令集寻址与数据通路.md",
+      "target": "../../../_assets/diagrams/round3/datapath.dot",
+      "resolved": [
+        "_assets/diagrams/round3/datapath.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/01-布尔逻辑与时序电路.md",
+      "target": "../../../_assets/diagrams/round3/sequential-path.svg",
+      "resolved": [
+        "_assets/diagrams/round3/sequential-path.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/01-布尔逻辑与时序电路.md",
+      "target": "../../../_assets/diagrams/round3/sequential-path.png",
+      "resolved": [
+        "_assets/diagrams/round3/sequential-path.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/30-计算机系统/10-组成原理系统课程/01-布尔逻辑与时序电路.md",
+      "target": "../../../_assets/diagrams/round3/sequential-path.dot",
+      "resolved": [
+        "_assets/diagrams/round3/sequential-path.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/05-虚拟内存置换与工作集.md",
+      "target": "../../../../_assets/diagrams/round3/vm-layers.svg",
+      "resolved": [
+        "_assets/diagrams/round3/vm-layers.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/05-虚拟内存置换与工作集.md",
+      "target": "../../../../_assets/diagrams/round3/vm-layers.png",
+      "resolved": [
+        "_assets/diagrams/round3/vm-layers.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/05-虚拟内存置换与工作集.md",
+      "target": "../../../../_assets/diagrams/round3/vm-layers.dot",
+      "resolved": [
+        "_assets/diagrams/round3/vm-layers.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/06-文件系统I_O与崩溃一致性.md",
+      "target": "../../../../_assets/diagrams/round3/durable-replace.svg",
+      "resolved": [
+        "_assets/diagrams/round3/durable-replace.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/06-文件系统I_O与崩溃一致性.md",
+      "target": "../../../../_assets/diagrams/round3/durable-replace.png",
+      "resolved": [
+        "_assets/diagrams/round3/durable-replace.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/06-文件系统I_O与崩溃一致性.md",
+      "target": "../../../../_assets/diagrams/round3/durable-replace.dot",
+      "resolved": [
+        "_assets/diagrams/round3/durable-replace.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/01-进程线程与调度推演.md",
+      "target": "../../../../_assets/diagrams/round3/process-state.svg",
+      "resolved": [
+        "_assets/diagrams/round3/process-state.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/01-进程线程与调度推演.md",
+      "target": "../../../../_assets/diagrams/round3/process-state.png",
+      "resolved": [
+        "_assets/diagrams/round3/process-state.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/01-进程线程与调度推演.md",
+      "target": "../../../../_assets/diagrams/round3/process-state.dot",
+      "resolved": [
+        "_assets/diagrams/round3/process-state.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/03-同步条件变量与经典问题.md",
+      "target": "../../../../_assets/diagrams/round3/bounded-queue.svg",
+      "resolved": [
+        "_assets/diagrams/round3/bounded-queue.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/03-同步条件变量与经典问题.md",
+      "target": "../../../../_assets/diagrams/round3/bounded-queue.png",
+      "resolved": [
+        "_assets/diagrams/round3/bounded-queue.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/03-同步条件变量与经典问题.md",
+      "target": "../../../../_assets/diagrams/round3/bounded-queue.dot",
+      "resolved": [
+        "_assets/diagrams/round3/bounded-queue.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/04-死锁银行家与资源分配.md",
+      "target": "../../../../_assets/diagrams/round3/deadlock.svg",
+      "resolved": [
+        "_assets/diagrams/round3/deadlock.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/04-死锁银行家与资源分配.md",
+      "target": "../../../../_assets/diagrams/round3/deadlock.png",
+      "resolved": [
+        "_assets/diagrams/round3/deadlock.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/04-死锁银行家与资源分配.md",
+      "target": "../../../../_assets/diagrams/round3/deadlock.dot",
+      "resolved": [
+        "_assets/diagrams/round3/deadlock.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/02-系统调用IPC与进程生命周期.md",
+      "target": "../../../../_assets/diagrams/round3/fd-sharing.svg",
+      "resolved": [
+        "_assets/diagrams/round3/fd-sharing.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/02-系统调用IPC与进程生命周期.md",
+      "target": "../../../../_assets/diagrams/round3/fd-sharing.png",
+      "resolved": [
+        "_assets/diagrams/round3/fd-sharing.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/02-系统调用IPC与进程生命周期.md",
+      "target": "../../../../_assets/diagrams/round3/fd-sharing.dot",
+      "resolved": [
+        "_assets/diagrams/round3/fd-sharing.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/02-文件描述符管道与进程控制.md",
+      "target": "../../../../_assets/diagrams/round3/linux-fd.svg",
+      "resolved": [
+        "_assets/diagrams/round3/linux-fd.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/02-文件描述符管道与进程控制.md",
+      "target": "../../../../_assets/diagrams/round3/linux-fd.png",
+      "resolved": [
+        "_assets/diagrams/round3/linux-fd.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/02-文件描述符管道与进程控制.md",
+      "target": "../../../../_assets/diagrams/round3/linux-fd.dot",
+      "resolved": [
+        "_assets/diagrams/round3/linux-fd.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/01-Shell展开引用与可靠脚本.md",
+      "target": "../../../../_assets/diagrams/round3/shell-argv.svg",
+      "resolved": [
+        "_assets/diagrams/round3/shell-argv.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/01-Shell展开引用与可靠脚本.md",
+      "target": "../../../../_assets/diagrams/round3/shell-argv.png",
+      "resolved": [
+        "_assets/diagrams/round3/shell-argv.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/01-Shell展开引用与可靠脚本.md",
+      "target": "../../../../_assets/diagrams/round3/shell-argv.dot",
+      "resolved": [
+        "_assets/diagrams/round3/shell-argv.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/06-网络命名空间容器与隔离.md",
+      "target": "../../../../_assets/diagrams/round3/container-boundaries.svg",
+      "resolved": [
+        "_assets/diagrams/round3/container-boundaries.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/06-网络命名空间容器与隔离.md",
+      "target": "../../../../_assets/diagrams/round3/container-boundaries.png",
+      "resolved": [
+        "_assets/diagrams/round3/container-boundaries.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/06-网络命名空间容器与隔离.md",
+      "target": "../../../../_assets/diagrams/round3/container-boundaries.dot",
+      "resolved": [
+        "_assets/diagrams/round3/container-boundaries.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/04-启动服务日志与资源管理.md",
+      "target": "../../../../_assets/diagrams/round3/service-lifecycle.svg",
+      "resolved": [
+        "_assets/diagrams/round3/service-lifecycle.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/04-启动服务日志与资源管理.md",
+      "target": "../../../../_assets/diagrams/round3/service-lifecycle.png",
+      "resolved": [
+        "_assets/diagrams/round3/service-lifecycle.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/04-启动服务日志与资源管理.md",
+      "target": "../../../../_assets/diagrams/round3/service-lifecycle.dot",
+      "resolved": [
+        "_assets/diagrams/round3/service-lifecycle.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/07-性能观测与故障定位.md",
+      "target": "../../../../_assets/diagrams/round3/diagnosis-tree.svg",
+      "resolved": [
+        "_assets/diagrams/round3/diagnosis-tree.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/07-性能观测与故障定位.md",
+      "target": "../../../../_assets/diagrams/round3/diagnosis-tree.png",
+      "resolved": [
+        "_assets/diagrams/round3/diagnosis-tree.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/20-操作系统/01-Linux/10-系统课程/07-性能观测与故障定位.md",
+      "target": "../../../../_assets/diagrams/round3/diagnosis-tree.dot",
+      "resolved": [
+        "_assets/diagrams/round3/diagnosis-tree.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/07-Socket分帧背压与排障.md",
+      "target": "../../../_assets/diagrams/round3/frame-parser.svg",
+      "resolved": [
+        "_assets/diagrams/round3/frame-parser.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/07-Socket分帧背压与排障.md",
+      "target": "../../../_assets/diagrams/round3/frame-parser.png",
+      "resolved": [
+        "_assets/diagrams/round3/frame-parser.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/07-Socket分帧背压与排障.md",
+      "target": "../../../_assets/diagrams/round3/frame-parser.dot",
+      "resolved": [
+        "_assets/diagrams/round3/frame-parser.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/06-HTTP_TLS_QUIC与应用协议.md",
+      "target": "../../../_assets/diagrams/round3/tls-boundary.svg",
+      "resolved": [
+        "_assets/diagrams/round3/tls-boundary.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/06-HTTP_TLS_QUIC与应用协议.md",
+      "target": "../../../_assets/diagrams/round3/tls-boundary.png",
+      "resolved": [
+        "_assets/diagrams/round3/tls-boundary.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/06-HTTP_TLS_QUIC与应用协议.md",
+      "target": "../../../_assets/diagrams/round3/tls-boundary.dot",
+      "resolved": [
+        "_assets/diagrams/round3/tls-boundary.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/04-传输层状态序号与拥塞.md",
+      "target": "../../../_assets/diagrams/round3/tcp-sequence.svg",
+      "resolved": [
+        "_assets/diagrams/round3/tcp-sequence.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/04-传输层状态序号与拥塞.md",
+      "target": "../../../_assets/diagrams/round3/tcp-sequence.png",
+      "resolved": [
+        "_assets/diagrams/round3/tcp-sequence.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/04-传输层状态序号与拥塞.md",
+      "target": "../../../_assets/diagrams/round3/tcp-sequence.dot",
+      "resolved": [
+        "_assets/diagrams/round3/tcp-sequence.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测.md",
+      "target": "../../../_assets/diagrams/round3/switch-learning.svg",
+      "resolved": [
+        "_assets/diagrams/round3/switch-learning.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测.md",
+      "target": "../../../_assets/diagrams/round3/switch-learning.png",
+      "resolved": [
+        "_assets/diagrams/round3/switch-learning.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测.md",
+      "target": "../../../_assets/diagrams/round3/switch-learning.dot",
+      "resolved": [
+        "_assets/diagrams/round3/switch-learning.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/03-IP编址路由与IPv6.md",
+      "target": "../../../_assets/diagrams/round3/route-prefix.svg",
+      "resolved": [
+        "_assets/diagrams/round3/route-prefix.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/03-IP编址路由与IPv6.md",
+      "target": "../../../_assets/diagrams/round3/route-prefix.png",
+      "resolved": [
+        "_assets/diagrams/round3/route-prefix.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/03-IP编址路由与IPv6.md",
+      "target": "../../../_assets/diagrams/round3/route-prefix.dot",
+      "resolved": [
+        "_assets/diagrams/round3/route-prefix.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/01-分层封装与网络性能.md",
+      "target": "../../../_assets/diagrams/round3/network-layers.svg",
+      "resolved": [
+        "_assets/diagrams/round3/network-layers.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/01-分层封装与网络性能.md",
+      "target": "../../../_assets/diagrams/round3/network-layers.png",
+      "resolved": [
+        "_assets/diagrams/round3/network-layers.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/01-分层封装与网络性能.md",
+      "target": "../../../_assets/diagrams/round3/network-layers.dot",
+      "resolved": [
+        "_assets/diagrams/round3/network-layers.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/05-DNS命名与应用基础设施.md",
+      "target": "../../../_assets/diagrams/round3/dns-chain.svg",
+      "resolved": [
+        "_assets/diagrams/round3/dns-chain.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/05-DNS命名与应用基础设施.md",
+      "target": "../../../_assets/diagrams/round3/dns-chain.png",
+      "resolved": [
+        "_assets/diagrams/round3/dns-chain.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/35-计算机网络/10-系统课程/05-DNS命名与应用基础设施.md",
+      "target": "../../../_assets/diagrams/round3/dns-chain.dot",
+      "resolved": [
+        "_assets/diagrams/round3/dns-chain.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/01-关系模型ER与约束设计.md",
+      "target": "../../../_assets/diagrams/round3/er-enrollment.svg",
+      "resolved": [
+        "_assets/diagrams/round3/er-enrollment.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/01-关系模型ER与约束设计.md",
+      "target": "../../../_assets/diagrams/round3/er-enrollment.png",
+      "resolved": [
+        "_assets/diagrams/round3/er-enrollment.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/01-关系模型ER与约束设计.md",
+      "target": "../../../_assets/diagrams/round3/er-enrollment.dot",
+      "resolved": [
+        "_assets/diagrams/round3/er-enrollment.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/04-可串行化锁与MVCC.md",
+      "target": "../../../_assets/diagrams/round3/write-skew.svg",
+      "resolved": [
+        "_assets/diagrams/round3/write-skew.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/04-可串行化锁与MVCC.md",
+      "target": "../../../_assets/diagrams/round3/write-skew.png",
+      "resolved": [
+        "_assets/diagrams/round3/write-skew.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/04-可串行化锁与MVCC.md",
+      "target": "../../../_assets/diagrams/round3/write-skew.dot",
+      "resolved": [
+        "_assets/diagrams/round3/write-skew.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/07-恢复复制与分布式事务.md",
+      "target": "../../../_assets/diagrams/round3/wal-order.svg",
+      "resolved": [
+        "_assets/diagrams/round3/wal-order.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/07-恢复复制与分布式事务.md",
+      "target": "../../../_assets/diagrams/round3/wal-order.png",
+      "resolved": [
+        "_assets/diagrams/round3/wal-order.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/07-恢复复制与分布式事务.md",
+      "target": "../../../_assets/diagrams/round3/wal-order.dot",
+      "resolved": [
+        "_assets/diagrams/round3/wal-order.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/05-页布局索引与查询代价.md",
+      "target": "../../../_assets/diagrams/round3/slotted-page.svg",
+      "resolved": [
+        "_assets/diagrams/round3/slotted-page.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/05-页布局索引与查询代价.md",
+      "target": "../../../_assets/diagrams/round3/slotted-page.png",
+      "resolved": [
+        "_assets/diagrams/round3/slotted-page.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/05-页布局索引与查询代价.md",
+      "target": "../../../_assets/diagrams/round3/slotted-page.dot",
+      "resolved": [
+        "_assets/diagrams/round3/slotted-page.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/03-SQL查询语义与窗口函数.md",
+      "target": "../../../_assets/diagrams/round3/sql-order.svg",
+      "resolved": [
+        "_assets/diagrams/round3/sql-order.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/03-SQL查询语义与窗口函数.md",
+      "target": "../../../_assets/diagrams/round3/sql-order.png",
+      "resolved": [
+        "_assets/diagrams/round3/sql-order.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/03-SQL查询语义与窗口函数.md",
+      "target": "../../../_assets/diagrams/round3/sql-order.dot",
+      "resolved": [
+        "_assets/diagrams/round3/sql-order.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/06-查询优化器连接与执行模型.md",
+      "target": "../../../_assets/diagrams/round3/query-plan.svg",
+      "resolved": [
+        "_assets/diagrams/round3/query-plan.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/06-查询优化器连接与执行模型.md",
+      "target": "../../../_assets/diagrams/round3/query-plan.png",
+      "resolved": [
+        "_assets/diagrams/round3/query-plan.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/55-数据库/10-系统课程/06-查询优化器连接与执行模型.md",
+      "target": "../../../_assets/diagrams/round3/query-plan.dot",
+      "resolved": [
+        "_assets/diagrams/round3/query-plan.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-系统课程/06-原子内存序与并发设计.md",
+      "target": "../../../../_assets/diagrams/round3/release-acquire.svg",
+      "resolved": [
+        "_assets/diagrams/round3/release-acquire.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-系统课程/06-原子内存序与并发设计.md",
+      "target": "../../../../_assets/diagrams/round3/release-acquire.png",
+      "resolved": [
+        "_assets/diagrams/round3/release-acquire.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-系统课程/06-原子内存序与并发设计.md",
+      "target": "../../../../_assets/diagrams/round3/release-acquire.dot",
+      "resolved": [
+        "_assets/diagrams/round3/release-acquire.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-系统课程/01-对象生命周期与RAII.md",
+      "target": "../../../../_assets/diagrams/round3/cpp-raii.svg",
+      "resolved": [
+        "_assets/diagrams/round3/cpp-raii.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-系统课程/01-对象生命周期与RAII.md",
+      "target": "../../../../_assets/diagrams/round3/cpp-raii.png",
+      "resolved": [
+        "_assets/diagrams/round3/cpp-raii.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/02-C++/10-系统课程/01-对象生命周期与RAII.md",
+      "target": "../../../../_assets/diagrams/round3/cpp-raii.dot",
+      "resolved": [
+        "_assets/diagrams/round3/cpp-raii.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/06-异步Future与Pin.md",
+      "target": "../../../../_assets/diagrams/round3/future-state.svg",
+      "resolved": [
+        "_assets/diagrams/round3/future-state.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/06-异步Future与Pin.md",
+      "target": "../../../../_assets/diagrams/round3/future-state.png",
+      "resolved": [
+        "_assets/diagrams/round3/future-state.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/06-异步Future与Pin.md",
+      "target": "../../../../_assets/diagrams/round3/future-state.dot",
+      "resolved": [
+        "_assets/diagrams/round3/future-state.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/01-所有权借用与切片推演.md",
+      "target": "../../../../_assets/diagrams/round3/rust-borrow.svg",
+      "resolved": [
+        "_assets/diagrams/round3/rust-borrow.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/01-所有权借用与切片推演.md",
+      "target": "../../../../_assets/diagrams/round3/rust-borrow.png",
+      "resolved": [
+        "_assets/diagrams/round3/rust-borrow.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/01-所有权借用与切片推演.md",
+      "target": "../../../../_assets/diagrams/round3/rust-borrow.dot",
+      "resolved": [
+        "_assets/diagrams/round3/rust-borrow.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/05-智能指针内部可变性与线程.md",
+      "target": "../../../../_assets/diagrams/round3/rust-sharing.svg",
+      "resolved": [
+        "_assets/diagrams/round3/rust-sharing.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/05-智能指针内部可变性与线程.md",
+      "target": "../../../../_assets/diagrams/round3/rust-sharing.png",
+      "resolved": [
+        "_assets/diagrams/round3/rust-sharing.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/10-系统课程/05-智能指针内部可变性与线程.md",
+      "target": "../../../../_assets/diagrams/round3/rust-sharing.dot",
+      "resolved": [
+        "_assets/diagrams/round3/rust-sharing.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/02-联合收窄与运行时验证.md",
+      "target": "../../../../_assets/diagrams/round3/ts-boundary.svg",
+      "resolved": [
+        "_assets/diagrams/round3/ts-boundary.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/02-联合收窄与运行时验证.md",
+      "target": "../../../../_assets/diagrams/round3/ts-boundary.png",
+      "resolved": [
+        "_assets/diagrams/round3/ts-boundary.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/02-联合收窄与运行时验证.md",
+      "target": "../../../../_assets/diagrams/round3/ts-boundary.dot",
+      "resolved": [
+        "_assets/diagrams/round3/ts-boundary.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/05-事件循环Promise与取消.md",
+      "target": "../../../../_assets/diagrams/round3/event-loop.svg",
+      "resolved": [
+        "_assets/diagrams/round3/event-loop.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/05-事件循环Promise与取消.md",
+      "target": "../../../../_assets/diagrams/round3/event-loop.png",
+      "resolved": [
+        "_assets/diagrams/round3/event-loop.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/05-事件循环Promise与取消.md",
+      "target": "../../../../_assets/diagrams/round3/event-loop.dot",
+      "resolved": [
+        "_assets/diagrams/round3/event-loop.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/03-C语言/10-系统课程/04-动态内存与失败原子性.md",
+      "target": "../../../../_assets/diagrams/round3/c-realloc.svg",
+      "resolved": [
+        "_assets/diagrams/round3/c-realloc.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/03-C语言/10-系统课程/04-动态内存与失败原子性.md",
+      "target": "../../../../_assets/diagrams/round3/c-realloc.png",
+      "resolved": [
+        "_assets/diagrams/round3/c-realloc.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/03-C语言/10-系统课程/04-动态内存与失败原子性.md",
+      "target": "../../../../_assets/diagrams/round3/c-realloc.dot",
+      "resolved": [
+        "_assets/diagrams/round3/c-realloc.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/03-C语言/10-系统课程/02-声明数组指针与字符串契约.md",
+      "target": "../../../../_assets/diagrams/round3/c-object.svg",
+      "resolved": [
+        "_assets/diagrams/round3/c-object.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/03-C语言/10-系统课程/02-声明数组指针与字符串契约.md",
+      "target": "../../../../_assets/diagrams/round3/c-object.png",
+      "resolved": [
+        "_assets/diagrams/round3/c-object.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/03-C语言/10-系统课程/02-声明数组指针与字符串契约.md",
+      "target": "../../../../_assets/diagrams/round3/c-object.dot",
+      "resolved": [
+        "_assets/diagrams/round3/c-object.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/10-系统课程/01-对象图复制与数值语义.md",
+      "target": "../../../../_assets/diagrams/round3/python-object.svg",
+      "resolved": [
+        "_assets/diagrams/round3/python-object.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/10-系统课程/01-对象图复制与数值语义.md",
+      "target": "../../../../_assets/diagrams/round3/python-object.png",
+      "resolved": [
+        "_assets/diagrams/round3/python-object.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/10-系统课程/01-对象图复制与数值语义.md",
+      "target": "../../../../_assets/diagrams/round3/python-object.dot",
+      "resolved": [
+        "_assets/diagrams/round3/python-object.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/10-系统课程/04-异步任务取消与结构化并发.md",
+      "target": "../../../../_assets/diagrams/round3/python-async.svg",
+      "resolved": [
+        "_assets/diagrams/round3/python-async.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/10-系统课程/04-异步任务取消与结构化并发.md",
+      "target": "../../../../_assets/diagrams/round3/python-async.png",
+      "resolved": [
+        "_assets/diagrams/round3/python-async.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/10-编程语言/01-Python/10-系统课程/04-异步任务取消与结构化并发.md",
+      "target": "../../../../_assets/diagrams/round3/python-async.dot",
+      "resolved": [
+        "_assets/diagrams/round3/python-async.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/03-语法分析FIRST_FOLLOW与LR.md",
+      "target": "../../../_assets/diagrams/round3/ast-precedence.svg",
+      "resolved": [
+        "_assets/diagrams/round3/ast-precedence.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/03-语法分析FIRST_FOLLOW与LR.md",
+      "target": "../../../_assets/diagrams/round3/ast-precedence.png",
+      "resolved": [
+        "_assets/diagrams/round3/ast-precedence.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/03-语法分析FIRST_FOLLOW与LR.md",
+      "target": "../../../_assets/diagrams/round3/ast-precedence.dot",
+      "resolved": [
+        "_assets/diagrams/round3/ast-precedence.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/04-类型推断统一与语义分析.md",
+      "target": "../../../_assets/diagrams/round3/type-unify.svg",
+      "resolved": [
+        "_assets/diagrams/round3/type-unify.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/04-类型推断统一与语义分析.md",
+      "target": "../../../_assets/diagrams/round3/type-unify.png",
+      "resolved": [
+        "_assets/diagrams/round3/type-unify.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/04-类型推断统一与语义分析.md",
+      "target": "../../../_assets/diagrams/round3/type-unify.dot",
+      "resolved": [
+        "_assets/diagrams/round3/type-unify.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/08-链接运行时与编译器工程.md",
+      "target": "../../../_assets/diagrams/round3/compiler-pipeline.svg",
+      "resolved": [
+        "_assets/diagrams/round3/compiler-pipeline.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/08-链接运行时与编译器工程.md",
+      "target": "../../../_assets/diagrams/round3/compiler-pipeline.png",
+      "resolved": [
+        "_assets/diagrams/round3/compiler-pipeline.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/08-链接运行时与编译器工程.md",
+      "target": "../../../_assets/diagrams/round3/compiler-pipeline.dot",
+      "resolved": [
+        "_assets/diagrams/round3/compiler-pipeline.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/07-指令选择寄存器分配与后端.md",
+      "target": "../../../_assets/diagrams/round3/register-interference.svg",
+      "resolved": [
+        "_assets/diagrams/round3/register-interference.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/07-指令选择寄存器分配与后端.md",
+      "target": "../../../_assets/diagrams/round3/register-interference.png",
+      "resolved": [
+        "_assets/diagrams/round3/register-interference.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/07-指令选择寄存器分配与后端.md",
+      "target": "../../../_assets/diagrams/round3/register-interference.dot",
+      "resolved": [
+        "_assets/diagrams/round3/register-interference.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/01-形式语言正则与自动机.md",
+      "target": "../../../_assets/diagrams/round3/dfa-ab.svg",
+      "resolved": [
+        "_assets/diagrams/round3/dfa-ab.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/01-形式语言正则与自动机.md",
+      "target": "../../../_assets/diagrams/round3/dfa-ab.png",
+      "resolved": [
+        "_assets/diagrams/round3/dfa-ab.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/01-形式语言正则与自动机.md",
+      "target": "../../../_assets/diagrams/round3/dfa-ab.dot",
+      "resolved": [
+        "_assets/diagrams/round3/dfa-ab.dot"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/05-中间表示CFG与SSA.md",
+      "target": "../../../_assets/diagrams/round3/ssa-diamond.svg",
+      "resolved": [
+        "_assets/diagrams/round3/ssa-diamond.svg"
+      ],
+      "image": true
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/05-中间表示CFG与SSA.md",
+      "target": "../../../_assets/diagrams/round3/ssa-diamond.png",
+      "resolved": [
+        "_assets/diagrams/round3/ssa-diamond.png"
+      ],
+      "image": false
+    },
+    {
+      "source": "计算机知识/70-编译原理/10-系统课程/05-中间表示CFG与SSA.md",
+      "target": "../../../_assets/diagrams/round3/ssa-diamond.dot",
+      "resolved": [
+        "_assets/diagrams/round3/ssa-diamond.dot"
+      ],
+      "image": false
+    }
+  ],
+  "missing_local_markdown_links": [
+    {
+      "source": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "target": "../../README.md",
+      "resolved": [],
+      "image": false
+    }
+  ],
+  "embedded_items": [
+    {
+      "source": "00-总学习地图.md",
+      "line": 31,
+      "target": "计算机知识/_assets/diagrams/curriculum.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/curriculum.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/70-编译原理/19-从表达式到机器码的贯通推演.md",
+      "line": 19,
+      "target": "计算机知识/_assets/diagrams/compiler.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/compiler.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/55-数据库/05-页索引执行计划与查询优化.md",
+      "line": 25,
+      "target": "计算机知识/_assets/diagrams/indexes.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/indexes.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/55-数据库/04-事务隔离锁MVCC与并发异常.md",
+      "line": 25,
+      "target": "计算机知识/_assets/diagrams/transactions.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/transactions.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/55-数据库/06-WAL恢复复制与分布式一致性.md",
+      "line": 23,
+      "target": "计算机知识/_assets/diagrams/wal.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/wal.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/35-计算机网络/01-分层封装与性能模型.md",
+      "line": 19,
+      "target": "计算机知识/_assets/diagrams/network.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/network.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/35-计算机网络/04-UDP-TCP可靠传输与应用分帧.md",
+      "line": 27,
+      "target": "计算机知识/_assets/diagrams/framing.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/framing.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/30-计算机系统/21-逻辑电路整数运算与CPU性能推演.md",
+      "line": 25,
+      "target": "计算机知识/_assets/diagrams/cpu.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/cpu.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/30-计算机系统/22-缓存地址翻译一致性与存储层级推演.md",
+      "line": 29,
+      "target": "计算机知识/_assets/diagrams/memory.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/memory.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/24-图算法网络流匹配与残量网络.md",
+      "line": 25,
+      "target": "计算机知识/_assets/diagrams/flow.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/flow.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/50-数据结构与算法/22-平衡树区间结构与结构扩展地图.md",
+      "line": 25,
+      "target": "计算机知识/_assets/diagrams/segment.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/segment.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/20-操作系统/02-操作系统原理/02-同步条件变量死锁与并发证明.md",
+      "line": 23,
+      "target": "计算机知识/_assets/diagrams/synchronization.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/synchronization.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/10-编程语言/03-C语言/02-指针数组字符串与生命周期.md",
+      "line": 37,
+      "target": "计算机知识/_assets/diagrams/ownership.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/ownership.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/10-编程语言/05-TypeScript/04-Promise事件循环并发与取消.md",
+      "line": 25,
+      "target": "计算机知识/_assets/diagrams/async.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/async.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/05-智能指针并发与异步取消.md",
+      "line": 29,
+      "target": "计算机知识/_assets/diagrams/async.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/async.svg"
+      ]
+    },
+    {
+      "source": "计算机知识/10-编程语言/04-Rust/02-所有权借用与生命周期推演.md",
+      "line": 34,
+      "target": "计算机知识/_assets/diagrams/ownership.svg",
+      "anchor": "",
+      "in_original": true,
+      "resolved": [
+        "计算机知识/_assets/diagrams/ownership.svg"
+      ]
+    }
+  ],
+  "remote_images": [],
+  "svg": [
+    {
+      "path": "_assets/diagrams/round3/service-lifecycle.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/bounded-queue.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/release-acquire.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/tcp-sequence.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/shell-argv.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/dma-path.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/tlb-walk.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/cpp-raii.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/query-plan.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/future-state.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/datapath.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/tls-boundary.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/python-object.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/slotted-page.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/vm-layers.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/python-async.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/ssa-diamond.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/residual-flow.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/dfa-ab.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/container-boundaries.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/rust-borrow.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/sql-order.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/er-enrollment.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/event-loop.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/sequential-path.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/c-object.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/write-skew.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/avl-rotation.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/switch-learning.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/process-state.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/network-layers.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/route-prefix.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/deadlock.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/linux-fd.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/durable-replace.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/fd-sharing.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/cache-address.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/frame-parser.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/numa-sharing.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/bplus-pages.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/reduction.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/dp-grid.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/compiler-pipeline.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/course-dependencies.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/type-unify.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/rust-sharing.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/pipeline.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/ast-precedence.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/dns-chain.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/c-realloc.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/hash-probe.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/register-interference.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/wal-order.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/diagnosis-tree.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/ts-boundary.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "_assets/diagrams/round3/fenwick-blocks.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/flow.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/segment.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/async.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/synchronization.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/cpu.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/compiler.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/curriculum.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/network.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/wal.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/ownership.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/memory.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/transactions.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/indexes.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/framing.svg",
+      "xml_valid": true,
+      "external_dependencies": []
+    }
+  ],
+  "unclosed_fences": [],
+  "other_issues": [],
+  "original_missing_paths": [],
+  "original_changed_paths": [
+    "02-按问题寻找知识.md",
+    "03-全库文件索引.md",
+    "00-总学习地图.md",
+    "01-先修依赖与学习顺序.md",
+    "04-学科覆盖与深度分层.md",
+    "_meta/05-公式检查.md",
+    "_meta/01-本轮修订与交付报告.md",
+    "_meta/file_manifest.json",
+    "_meta/source_syntax_results.json",
+    "_meta/02-静态检查结果.md",
+    "_meta/04-实验验证记录.md",
+    "_labs/README.md",
+    "编程知识/90-资源/01-正则表达式速查表.md",
+    "编程知识/00-开始/00-编程知识-首页.md",
+    "编程知识/10-基础/01-正则表达式/02-字符类边界与转义.md",
+    "计算机知识/70-编译原理/19-从表达式到机器码的贯通推演.md",
+    "计算机知识/70-编译原理/11-优化正确性语义保持与验证测试.md",
+    "计算机知识/70-编译原理/02-词法分析正则自动机Unicode与源位置.md",
+    "计算机知识/70-编译原理/12-运行时对象布局栈堆闭包异常与GC.md",
+    "计算机知识/70-编译原理/10-优化Pass别名分析与阶段排序.md",
+    "计算机知识/70-编译原理/09-数据流分析格不动点活跃性与到达定义.md",
+    "计算机知识/70-编译原理/17-LLVM-IR-Pass与MLIR方言-Lowering.md",
+    "计算机知识/70-编译原理/00-编译原理-MOC.md",
+    "计算机知识/70-编译原理/16-解释器字节码VM-JIT与去优化.md",
+    "计算机知识/70-编译原理/15-目标文件符号重定位链接与装载.md",
+    "计算机知识/70-编译原理/04-递归下降Pratt-LL与LR解析及错误恢复.md",
+    "计算机知识/70-编译原理/20-数据流优化正确性与编译知识全景.md",
+    "计算机知识/70-编译原理/06-类型系统约束求解泛型与语义检查.md",
+    "计算机知识/70-编译原理/08-控制流图支配关系与SSA.md",
+    "计算机知识/10-编程语言/00-编程语言-MOC.md",
+    "计算机知识/55-数据库/05-页索引执行计划与查询优化.md",
+    "计算机知识/55-数据库/04-事务隔离锁MVCC与并发异常.md",
+    "计算机知识/55-数据库/06-WAL恢复复制与分布式一致性.md",
+    "计算机知识/55-数据库/07-运维安全分析系统与数据库全景.md",
+    "计算机知识/55-数据库/02-SQL连接聚合子查询窗口与NULL.md",
+    "计算机知识/35-计算机网络/01-分层封装与性能模型.md",
+    "计算机知识/35-计算机网络/07-安全排障与网络知识全景.md",
+    "计算机知识/35-计算机网络/04-UDP-TCP可靠传输与应用分帧.md",
+    "计算机知识/35-计算机网络/02-以太网WiFi交换VLAN与差错控制.md",
+    "计算机知识/35-计算机网络/03-IP子网路由IPv6与控制平面.md",
+    "计算机知识/35-计算机网络/06-DNS-TLS-HTTP与端到端请求.md",
+    "计算机知识/35-计算机网络/05-流量拥塞RTT与带宽时延积.md",
+    "计算机知识/30-计算机系统/21-逻辑电路整数运算与CPU性能推演.md",
+    "计算机知识/30-计算机系统/02-进程虚拟地址空间与内存映射.md",
+    "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+    "计算机知识/30-计算机系统/11-存储设备块层页缓存与持久化.md",
+    "计算机知识/30-计算机系统/18-CPU拓扑缓存一致性NUMA与设备亲和性.md",
+    "计算机知识/30-计算机系统/15-性能分析可观测性与系统设计.md",
+    "计算机知识/30-计算机系统/00-计算机系统-MOC.md",
+    "计算机知识/30-计算机系统/22-缓存地址翻译一致性与存储层级推演.md",
+    "计算机知识/30-计算机系统/19-容器虚拟机Namespace-Cgroup与虚拟IO.md",
+    "计算机知识/30-计算机系统/17-通用内存分配器Arena碎片与驻留.md",
+    "计算机知识/00-开始/00-计算机知识-首页.md",
+    "计算机知识/50-数据结构与算法/24-图算法网络流匹配与残量网络.md",
+    "计算机知识/50-数据结构与算法/11-动态规划状态转移与空间优化.md",
+    "计算机知识/50-数据结构与算法/10-贪心算法与正确性证明.md",
+    "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+    "计算机知识/50-数据结构与算法/18-外存模型分块缓存感知与页式索引.md",
+    "计算机知识/50-数据结构与算法/13-字符串匹配前缀函数与自动机.md",
+    "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+    "计算机知识/50-数据结构与算法/05-树二叉搜索树堆与优先队列.md",
+    "计算机知识/50-数据结构与算法/12-最短路最小生成树与并查集.md",
+    "计算机知识/50-数据结构与算法/07-图的表示BFS-DFS与拓扑排序.md",
+    "计算机知识/50-数据结构与算法/06-平衡树B树Trie与索引结构.md",
+    "计算机知识/50-数据结构与算法/25-动态规划进阶随机近似与算法全景.md",
+    "计算机知识/50-数据结构与算法/01-复杂度模型渐近分析与摊还分析.md",
+    "计算机知识/50-数据结构与算法/04-哈希表集合与冲突处理.md",
+    "计算机知识/50-数据结构与算法/23-正确性证明反例与复杂度边界.md",
+    "计算机知识/50-数据结构与算法/14-回溯搜索剪枝与计算复杂性边界.md",
+    "计算机知识/50-数据结构与算法/08-排序选择与稳定性.md",
+    "计算机知识/50-数据结构与算法/22-平衡树区间结构与结构扩展地图.md",
+    "计算机知识/00-开始/课程地图/06-数据结构-课程地图.md",
+    "计算机知识/00-开始/课程地图/01-C语言-课程地图.md",
+    "计算机知识/00-开始/课程地图/08-操作系统-课程地图.md",
+    "计算机知识/00-开始/课程地图/05-TypeScript-课程地图.md",
+    "计算机知识/00-开始/课程地图/07-计算机组成原理-课程地图.md",
+    "计算机知识/00-开始/课程地图/12-编译原理-课程地图.md",
+    "计算机知识/00-开始/课程地图/03-Rust-课程地图.md",
+    "计算机知识/00-开始/课程地图/11-算法设计-课程地图.md",
+    "计算机知识/00-开始/课程地图/02-C++-课程地图.md",
+    "计算机知识/00-开始/课程地图/13-Linux-课程地图.md",
+    "计算机知识/00-开始/课程地图/10-数据库-课程地图.md",
+    "计算机知识/00-开始/课程地图/04-Python-课程地图.md",
+    "计算机知识/00-开始/课程地图/09-计算机网络-课程地图.md",
+    "计算机知识/20-操作系统/01-Linux/10-网络存储日志与故障排查.md",
+    "计算机知识/20-操作系统/01-Linux/15-Shell文件进程与可靠脚本边界.md",
+    "计算机知识/20-操作系统/01-Linux/06-用户权限进程与作业控制.md",
+    "计算机知识/20-操作系统/01-Linux/00-Linux基础-MOC.md",
+    "计算机知识/20-操作系统/01-Linux/14-Linux开发容器与AI工作负载边界.md",
+    "计算机知识/20-操作系统/01-Linux/04-Shell命令行与帮助系统.md",
+    "计算机知识/20-操作系统/01-Linux/03-目录结构挂载与文件系统.md",
+    "计算机知识/20-操作系统/01-Linux/11-ArchLinux安装前规划.md",
+    "计算机知识/20-操作系统/01-Linux/01-计算机系统与Linux分层.md",
+    "计算机知识/20-操作系统/01-Linux/05-文件目录与文本处理命令.md",
+    "计算机知识/20-操作系统/01-Linux/07-环境变量Shell启动与PATH.md",
+    "计算机知识/20-操作系统/01-Linux/16-服务资源容器与分层故障定位.md",
+    "计算机知识/20-操作系统/01-Linux/12-ArchLinux安装实战.md",
+    "计算机知识/20-操作系统/01-Linux/13-ArchLinux安装后配置维护与安全.md",
+    "计算机知识/20-操作系统/02-操作系统原理/04-保护安全虚拟化与系统知识全景.md",
+    "计算机知识/20-操作系统/02-操作系统原理/01-进程线程调度与定量指标.md",
+    "计算机知识/20-操作系统/02-操作系统原理/03-虚拟内存置换文件系统与崩溃边界.md",
+    "计算机知识/20-操作系统/02-操作系统原理/02-同步条件变量死锁与并发证明.md",
+    "计算机知识/10-编程语言/01-Python/03-控制流函数与作用域.md",
+    "计算机知识/10-编程语言/01-Python/06-面向对象数据类与类型标注.md",
+    "计算机知识/10-编程语言/01-Python/08-pip与PyPI依赖管理.md",
+    "计算机知识/10-编程语言/01-Python/14-测试调试与代码质量.md",
+    "计算机知识/10-编程语言/01-Python/15-对象协议描述符闭包与类型边界.md",
+    "计算机知识/10-编程语言/01-Python/00-Python基础-MOC.md",
+    "计算机知识/10-编程语言/01-Python/16-异步并发取消性能与可靠工程.md",
+    "计算机知识/10-编程语言/01-Python/02-基础语法与数据类型.md",
+    "计算机知识/10-编程语言/03-C语言/04-函数接口预处理与多文件构建.md",
+    "计算机知识/10-编程语言/03-C语言/02-指针数组字符串与生命周期.md",
+    "计算机知识/10-编程语言/03-C语言/03-结构体动态内存与资源协议.md",
+    "计算机知识/10-编程语言/03-C语言/01-程序执行类型与表达式.md",
+    "计算机知识/10-编程语言/03-C语言/06-内存模型并发与进阶知识边界.md",
+    "计算机知识/10-编程语言/03-C语言/05-标准库输入输出解析与错误处理.md",
+    "计算机知识/10-编程语言/05-TypeScript/03-泛型类型运算结构化兼容.md",
+    "计算机知识/10-编程语言/05-TypeScript/01-JavaScript执行模型与TypeScript基础.md",
+    "计算机知识/10-编程语言/05-TypeScript/02-联合类型收窄与运行时验证.md",
+    "计算机知识/10-编程语言/05-TypeScript/05-模块工程测试安全与生态地图.md",
+    "计算机知识/10-编程语言/04-Rust/03-Trait泛型迭代器与动态分派.md",
+    "计算机知识/10-编程语言/04-Rust/05-智能指针并发与异步取消.md",
+    "计算机知识/10-编程语言/04-Rust/01-语法数据建模与Cargo.md",
+    "计算机知识/10-编程语言/04-Rust/06-Unsafe-FFI与完整知识边界.md",
+    "计算机知识/10-编程语言/04-Rust/02-所有权借用与生命周期推演.md",
+    "计算机知识/10-编程语言/04-Rust/04-错误处理模块测试与工程边界.md",
+    "计算机知识/10-编程语言/02-C++/00-C++-MOC.md",
+    "计算机知识/10-编程语言/02-C++/09-内存布局ABI缓存与SIMD.md",
+    "计算机知识/10-编程语言/02-C++/12-泛型推导容器算法与约束.md",
+    "计算机知识/10-编程语言/02-C++/10-阅读大型C++仓库与llama-cpp调用链.md",
+    "计算机知识/10-编程语言/02-C++/13-并发内存模型与系统接口审计.md",
+    "计算机知识/10-编程语言/02-C++/05-struct类模板与STL.md",
+    "计算机知识/10-编程语言/02-C++/03-指针引用const与生命周期.md",
+    "计算机知识/10-编程语言/02-C++/11-对象模型值类别与异常安全.md",
+    "计算机知识/10-编程语言/02-C++/07-错误测试调试与Sanitizer.md",
+    "_meta/tools/audit_vault.py"
+  ],
+  "original_link_entries_removed": [],
+  "original_link_occurrences_removed": [],
+  "table_alias_repairs": {}
+}

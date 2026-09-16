@@ -1,0 +1,18 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="Future：poll、唤醒与取消",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"new" [label="创建 Future\n尚未完成"];
+"poll" [label="执行 poll"];
+"pend" [label="Pending\n保存状态，登记唤醒"];
+"wake" [label="Waker 通知执行器"];
+"ready" [label="Ready(value)\n已完成"];
+"drop" [label="被 drop\n释放保存状态，外部副作用不回滚"];
+"new" -> "poll";
+"poll" -> "pend" [label="等待"];
+"pend" -> "wake";
+"wake" -> "poll" [label="重新调度"];
+"poll" -> "ready" [label="完成"];
+"pend" -> "drop" [label="取消"];
+
+}

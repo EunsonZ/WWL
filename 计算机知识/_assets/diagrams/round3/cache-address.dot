@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="32 KiB / 64 B / 4 路：地址分解必须由容量算出",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"addr" [label="32 位地址 0x12345678"];
+"tag" [label="标记 tag：19 位\n0x91a2"];
+"set" [label="组索引：7 位\n0x59 = 89"];
+"off" [label="块内偏移：6 位\n0x38 = 56"];
+"ways" [label="共 128 组，每组 4 路\n选组后并行比较有效 tag"];
+"addr" -> "tag";
+"addr" -> "set";
+"addr" -> "off";
+"set" -> "ways";
+
+}

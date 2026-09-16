@@ -1,0 +1,593 @@
+{
+  "compiler": "/usr/bin/gcc",
+  "compiler_version": "gcc (Debian 14.2.0-19) 14.2.0",
+  "sanitizer": "undefined",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "source_sha256": {
+    "hello.c": "037c40b63558eceab94d40dc1cf5c1ce6b74c3b33e4d1f8ac6982d15d9f7d9dd",
+    "length_record.c": "d5cc8164723c1e045b8f4a124ff3f0326a8d66652ef1008ead712c44a0356e5a"
+  },
+  "builds": [
+    {
+      "source": "hello.c",
+      "flags": [
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fno-omit-frame-pointer",
+        "-fsanitize=undefined"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "length_record.c",
+      "flags": [
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fno-omit-frame-pointer",
+        "-fsanitize=undefined"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "cases": [
+    {
+      "program": "hello",
+      "args": [],
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "Hello, learner. This is a local teaching program.\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "hello",
+      "args": [
+        "Ethan"
+      ],
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "Hello, Ethan. This is a local teaching program.\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "hello",
+      "args": [
+        "one",
+        "two"
+      ],
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "usage: hello [name]\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "empty-file",
+      "input_hex": "",
+      "input_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "invalid header\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "empty-payload",
+      "input_hex": "4c00",
+      "input_sha256": "1f6f527973a21d4c7d6b16476ef4f57b433b130041ab9fe5100fb72c93066c9e",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "0\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "AB",
+      "input_hex": "4c024142",
+      "input_sha256": "d67bf4e0e924fb54660713cfe8845b55026b6b191da883505eb34a69a6e03c10",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "131\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "short",
+      "input_hex": "4c034142",
+      "input_sha256": "2d38d1535187782292b53a0435fe94f0032ee06f8817f48cffa2253ab5a76a63",
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "invalid length or trailing data\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "trailing",
+      "input_hex": "4c0041",
+      "input_sha256": "040f8a4333770f8f9cb6fba294abeba8cedd226e395a0b4f405cfabbc60e0d27",
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "invalid length or trailing data\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "max-payload",
+      "input_hex": "4c20ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "input_sha256": "9ed37a1bf96c3e3fd43579bed1922a5bf4dd0ab81d269602a932983a2a8bb9ba",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "8160\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-0",
+      "input_hex": "4c00",
+      "input_sha256": "1f6f527973a21d4c7d6b16476ef4f57b433b130041ab9fe5100fb72c93066c9e",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "0\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-1",
+      "input_hex": "4c0103",
+      "input_sha256": "4e28b743ae34ad607b4c1a785d8272a3ac4ef0438d57ccd1dae8a78f37f5c69a",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "3\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-2",
+      "input_hex": "4c020314",
+      "input_sha256": "c0745ac6c1b2a4bd7d701f564aacdb3e125615c6501cac78db63e26c3f6dd610",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "23\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-3",
+      "input_hex": "4c03031425",
+      "input_sha256": "97a6f27c7ff1fbf9af5d78df263218aca3c02ddd52e4cf64494d64d27a4b1021",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "60\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-4",
+      "input_hex": "4c0403142536",
+      "input_sha256": "75964f0904c996af608e3751d62a12074ed2244885d0594544eaf6bd95856213",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "114\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-5",
+      "input_hex": "4c050314253647",
+      "input_sha256": "9f8dc6ea370e17c1a7d5269de1eb475cfc6210199ad51d5cc70eca688a0bca11",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "185\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-6",
+      "input_hex": "4c06031425364758",
+      "input_sha256": "b929595135fd7232c27bc0173e862bd53ddb68bfda1ee5f02437fd802d9959d7",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "273\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-7",
+      "input_hex": "4c0703142536475869",
+      "input_sha256": "b8a6a8398e7d8b034101621ee9475d128b4b37d34be2c142c7a907d254f06135",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "378\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-8",
+      "input_hex": "4c08031425364758697a",
+      "input_sha256": "00174ef64b2c6a1e1523dd3f22ab96b65a96e65299cce6d8ffe133050736c86c",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "500\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-9",
+      "input_hex": "4c09031425364758697a8b",
+      "input_sha256": "03b1e25b022b783cdbe528258a7e688116db4ce5b3d00082f0d661b3250aedde",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "639\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-10",
+      "input_hex": "4c0a031425364758697a8b9c",
+      "input_sha256": "00515178711034adfc9a5caa3db90c8e92cb0e22112237f90e7163ba9d29bbb1",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "795\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-11",
+      "input_hex": "4c0b031425364758697a8b9cad",
+      "input_sha256": "3ce77167df8feacc63d18fcbd0d5030d552a428f8c6a30c482a388784754c881",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "968\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-12",
+      "input_hex": "4c0c031425364758697a8b9cadbe",
+      "input_sha256": "640d7be317d3eb03e5b4dc95492eeccf045aad45f3a468f138d9ae4b5f69356c",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "1158\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-13",
+      "input_hex": "4c0d031425364758697a8b9cadbecf",
+      "input_sha256": "7ced5a9646ef399f29d2cb78fc98b8a0a4fec8408f548629b8784414271f33b4",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "1365\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-14",
+      "input_hex": "4c0e031425364758697a8b9cadbecfe0",
+      "input_sha256": "8a517a534a52a111df2dd182d16ec5b2025f156b3eaba51c5ddcc301ab261ca3",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "1589\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-15",
+      "input_hex": "4c0f031425364758697a8b9cadbecfe0f1",
+      "input_sha256": "760a808d1088f317c10ca78e47e495f0d1260c8c80ae1c075141e0380171dd6f",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "1830\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-16",
+      "input_hex": "4c10031425364758697a8b9cadbecfe0f102",
+      "input_sha256": "b13e4a9bf81ba70c85865d774c1b09dc4ab28c16f6dbc930819c6ef7d892b82c",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "1832\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-17",
+      "input_hex": "4c11031425364758697a8b9cadbecfe0f10213",
+      "input_sha256": "2beda7c0943b4b3caed3c60b7dd4fa5535f5ca9fafa7ddfef8c3d492c1e25d19",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "1851\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-18",
+      "input_hex": "4c12031425364758697a8b9cadbecfe0f1021324",
+      "input_sha256": "c6b36b3de720c0b8f8c9163711e5688e48b96904fcd706906d87fbced5154bf8",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "1887\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-19",
+      "input_hex": "4c13031425364758697a8b9cadbecfe0f102132435",
+      "input_sha256": "18b6c319af856711d6abd03218b9098fb9f0c4ed1e9a0dd2866ed2745d84ca66",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "1940\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-20",
+      "input_hex": "4c14031425364758697a8b9cadbecfe0f10213243546",
+      "input_sha256": "fea9aaa335ba99adb76ab3d4fdb58e2f3e43316a08c423af43031276bb136111",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "2010\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-21",
+      "input_hex": "4c15031425364758697a8b9cadbecfe0f1021324354657",
+      "input_sha256": "1246af083687684fd33de1f7c571b6e55cdd6c65160dacdffc3666ae0912dbd1",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "2097\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-22",
+      "input_hex": "4c16031425364758697a8b9cadbecfe0f102132435465768",
+      "input_sha256": "71fb2106cc78b004dbdd6e4ae4a3fe0acc687b53b5e3df108ea973407e8f2962",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "2201\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-23",
+      "input_hex": "4c17031425364758697a8b9cadbecfe0f10213243546576879",
+      "input_sha256": "5109258c29593fe9377f77a9286af56f62cace66bdb2fa7fb18532ab47021360",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "2322\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-24",
+      "input_hex": "4c18031425364758697a8b9cadbecfe0f102132435465768798a",
+      "input_sha256": "bdf5767b9507e570eca18917a7c42258e1264645f8f9526f868ac45da2bd5f57",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "2460\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-25",
+      "input_hex": "4c19031425364758697a8b9cadbecfe0f102132435465768798a9b",
+      "input_sha256": "5562d77100f0efbac4ca4b6b927ca0b924a1fcbdf00540d00fec256fc3b838bc",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "2615\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-26",
+      "input_hex": "4c1a031425364758697a8b9cadbecfe0f102132435465768798a9bac",
+      "input_sha256": "93ffcfa486f1c125e22ef1ab1c69d41d1a6ddc0f30e6ebdfd8575bf67e4484d9",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "2787\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-27",
+      "input_hex": "4c1b031425364758697a8b9cadbecfe0f102132435465768798a9bacbd",
+      "input_sha256": "4bbd3587e9a588073410a610e978d2a348731b1c382c724e6c8d9f8deaae84f3",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "2976\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-28",
+      "input_hex": "4c1c031425364758697a8b9cadbecfe0f102132435465768798a9bacbdce",
+      "input_sha256": "51c3133124c77edc157edc86f79575cd2d20bea1c4553228183e73161f4cbd71",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "3182\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-29",
+      "input_hex": "4c1d031425364758697a8b9cadbecfe0f102132435465768798a9bacbdcedf",
+      "input_sha256": "e87e534debdd3fb58c8f622e0d3c64a610c47c6e4308b82042d2cc8d0b3357f8",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "3405\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-30",
+      "input_hex": "4c1e031425364758697a8b9cadbecfe0f102132435465768798a9bacbdcedff0",
+      "input_sha256": "69c059998aa52f43240756a4d1f508c31e4baa9c26396a3e8052fed15580d7f9",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "3645\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-31",
+      "input_hex": "4c1f031425364758697a8b9cadbecfe0f102132435465768798a9bacbdcedff001",
+      "input_sha256": "b7f7c5f6e7e87a0edc0d56e06b4990a25b5230c4ae64091b9c60945bfbf56017",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "3646\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "valid-length-32",
+      "input_hex": "4c20031425364758697a8b9cadbecfe0f102132435465768798a9bacbdcedff00112",
+      "input_sha256": "ea3d26465b25bf1f98306f76bcbf980d234642b08f883700a3e8f1e76422e901",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "3664\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "header-only",
+      "input_hex": "4c",
+      "input_sha256": "72dfcfb0c470ac255cde83fb8fe38de8a128188e03ea5ba5b2a93adbea1062fa",
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "invalid header\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "wrong-magic",
+      "input_hex": "5800",
+      "input_sha256": "a6083775b471cc24c0a1fd922bf996fcffad2259b6796da72a38837b4a530027",
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "invalid header\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "declared-33",
+      "input_hex": "4c21414141414141414141414141414141414141414141414141414141414141414141",
+      "input_sha256": "bc2c7afcb59283e8f316f4dfc11acc5396dc90b89fb05cb0357e6dca96bd0820",
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "invalid length or trailing data\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "declared-255",
+      "input_hex": "4cff414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141",
+      "input_sha256": "b58817847c8069eb7c436a4417e90462f71bdf64e48d14144a3ea8f795c2d675",
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "invalid length or trailing data\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "max-plus-trailing",
+      "input_hex": "4c20414141414141414141414141414141414141414141414141414141414141414141",
+      "input_sha256": "bc0395a23da7a9fc241050d1603e79c618abe47e14f8a33471ada77f0029417d",
+      "expected_rc": 2,
+      "actual_rc": 2,
+      "stdout": "",
+      "stderr": "invalid length or trailing data\n",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "embedded-zero",
+      "input_hex": "4c03410042",
+      "input_sha256": "b45f125f2a7d5f1796740aadb39eeb686c9c2a232a11f6390d696462a68d5c0c",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "131\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "program": "length_record",
+      "case": "all-ff",
+      "input_hex": "4c20ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "input_sha256": "9ed37a1bf96c3e3fd43579bed1922a5bf4dd0ab81d269602a932983a2a8bb9ba",
+      "expected_rc": 0,
+      "actual_rc": 0,
+      "stdout": "8160\n",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "not_run": [
+    "AFL++",
+    "libFuzzer",
+    "GDB",
+    "Kali native tool execution"
+  ],
+  "passed": 49,
+  "total": 49,
+  "status": "passed"
+}

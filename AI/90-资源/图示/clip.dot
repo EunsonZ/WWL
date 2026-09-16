@@ -1,0 +1,16 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="CLIP：N 对图文，形成 N×N 匹配任务", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+i [label="N 张图像"];
+t [label="N 段文本"];
+ie [label="图像编码器\nL2 归一化"];
+te [label="文本编码器\nL2 归一化"];
+s [label="相似度矩阵 S\nsᵢⱼ = uᵢᵀvⱼ / τ"];
+l [label="行与列交叉熵\n对角配对为正样本"];
+i -> ie;
+t -> te;
+ie -> s;
+te -> s;
+s -> l;
+}

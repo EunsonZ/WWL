@@ -1,0 +1,16 @@
+{
+  "batch": "2026-09-08_双来源知识增量导入",
+  "purpose": "restore the historical evidence paths identified as missing; no current review is asserted",
+  "known_diagnostic": "Logs/2026-09-08_TBM结构整理/artifacts/known-diagnostics.json",
+  "required_target_reference": "Logs/2026-09-05_改造证据/内容审阅记录",
+  "entries": [
+    {"source": "source1", "source_path": "Logs/2026-09-05_改造证据/内容审阅记录.md", "sha256": "2110d70a82b7b5e365ed548ccd4efa2d2f71f14888d79f3e172628aeff7af2aa", "target": "Logs/2026-09-05_改造证据/内容审阅记录.md", "role": "historical-content-review-record", "version_relation": "byte-identical historical evidence; restores missing referenced path"},
+    {"source": "source1", "source_path": "Logs/2026-09-05_改造证据/review-scopes.json", "sha256": "c6e745f0be2b2264e52e945d94b1a83d175048e74530e6eff17321672ba15322", "target": "Logs/2026-09-05_改造证据/review-scopes.json", "role": "historical-review-scope", "version_relation": "byte-identical companion evidence"},
+    {"source": "source1", "source_path": "Logs/2026-09-05_改造证据/file-disposition.json", "sha256": "29474e7062ebdc1d879950cc34ff5e6ceb1ef937cad20b237501de06e340b97f", "target": "Logs/2026-09-05_改造证据/file-disposition.json", "role": "historical-disposition-index", "version_relation": "byte-identical companion evidence"},
+    {"source": "source1", "source_path": "Logs/2026-09-05_改造证据/validation-layers.json", "sha256": "9d5232433e89f2cea8d298b1412e4b6b170d4e62aab66dddd4813399004b6846", "target": "Logs/2026-09-05_改造证据/validation-layers.json", "role": "historical-validation-plan", "version_relation": "byte-identical companion evidence"},
+    {"source": "source1", "source_path": "Logs/2026-09-05_改造证据/validation-results.json", "sha256": "a61f365c6e59514b93e7a3c2e9dd1da355c4b0a412237f6171aed959aae4f8fb", "target": "Logs/2026-09-05_改造证据/validation-results.json", "role": "historical-validation-result", "version_relation": "byte-identical companion evidence"},
+    {"source": "source1", "source_path": "Logs/2026-09-05_改造证据/inventory-summary.json", "sha256": "adea32d0e362e32fbd0decf6bc472121cc25e6eb88c847220656d55949a16b7c", "target": "Logs/2026-09-05_改造证据/inventory-summary.json", "role": "historical-inventory-summary", "version_relation": "byte-identical companion evidence"},
+    {"source": "source1", "source_path": "Logs/2026-09-04_1519-Codex-新增NewAgents协作与知识编写指南.md", "sha256": "9bb8bfd46e68efe1dfca144989e08518db268c58b93d09227f28f12d57d0877d", "target": "Logs/2026-09-04_1519-Codex-新增NewAgents协作与知识编写指南.md", "role": "historical-stl-deletion-status", "version_relation": "byte-identical historical evidence; restores cited deletion-status path", "safety_scan": "token category present; no secret value recorded"},
+    {"source": "source1", "source_path": "Logs/2026-09-01_2322-Codex-建设AI-LLM数学与计算机先修知识域.md", "sha256": "8ce9e9f002b27b73b4d3deb4d7cb770d58260a48be625743d4b4e066559afcab", "target": "Logs/2026-09-01_2322-Codex-建设AI-LLM数学与计算机先修知识域.md", "role": "historical-ai-construction-record", "version_relation": "byte-identical historical evidence; restores cited construction-record path", "safety_scan": "token category present; no secret value recorded"}
+  ]
+}

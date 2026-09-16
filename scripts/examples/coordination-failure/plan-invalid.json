@@ -1,0 +1,54 @@
+{
+  "schema": 2,
+  "batch": "fixture",
+  "rules": {
+    "version": "C1",
+    "files": [
+      "rules.txt"
+    ]
+  },
+  "human_files": [],
+  "shared_files": [],
+  "tasks": [
+    {
+      "id": "a0",
+      "kind": "author",
+      "goal": "Explain a bounded reader question a0",
+      "writes": [
+        "notes/0.md"
+      ],
+      "reads": [],
+      "risk": "normal",
+      "acceptance": [
+        "Verify exact explanation and units"
+      ],
+      "review_by": [
+        "r0"
+      ],
+      "forbidden": [],
+      "searches": []
+    },
+    {
+      "id": "r0",
+      "kind": "review",
+      "goal": "Explain a bounded reader question r0",
+      "writes": [],
+      "reads": [
+        {
+          "kind": "artifact",
+          "task": "a0",
+          "path": "notes/0.md",
+          "require": "candidate"
+        }
+      ],
+      "risk": "normal",
+      "acceptance": [
+        "Verify exact explanation and units"
+      ],
+      "review_by": [],
+      "forbidden": [],
+      "searches": []
+    }
+  ],
+  "protected_files": []
+}

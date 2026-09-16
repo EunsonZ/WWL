@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "requests": [
+    {
+      "kind": "hypothetical",
+      "provider": "openai",
+      "billing_scope": "direct-api",
+      "request_id": "example-1",
+      "timestamp": "2026-09-15T08:00:00Z",
+      "price_version": "openai-standard-reference-2026-09-15",
+      "price_sha256": "ae5760d568938e986b50141f1f0d6bb4a31bd544ab1bddd719544384dbaf4a7a",
+      "model": "gpt-5.6-luna",
+      "service_tier": "standard",
+      "input_total": 1000,
+      "noncached_input": 600,
+      "cache_read": 300,
+      "cache_write": 100,
+      "output": 200,
+      "reasoning": 150,
+      "cache_policy": "disjoint_v1",
+      "output_policy": "includes_reasoning",
+      "tools": {
+        "none": true,
+        "evidence": "Teaching assumption: no tool calls; no actual API call was made."
+      },
+      "problem_id": "one-reader-question",
+      "prompt_ref": "same-public-fixture"
+    },
+    {
+      "kind": "hypothetical",
+      "provider": "openai",
+      "billing_scope": "direct-api",
+      "request_id": "example-1",
+      "timestamp": "2026-09-15T08:00:00Z",
+      "price_version": "openai-standard-reference-2026-09-15",
+      "price_sha256": "ae5760d568938e986b50141f1f0d6bb4a31bd544ab1bddd719544384dbaf4a7a",
+      "model": "gpt-5.6-luna",
+      "service_tier": "standard",
+      "input_total": 1000,
+      "noncached_input": 600,
+      "cache_read": 300,
+      "cache_write": 100,
+      "output": 200,
+      "reasoning": 150,
+      "cache_policy": "disjoint_v1",
+      "output_policy": "includes_reasoning",
+      "tools": {
+        "none": true,
+        "evidence": "Teaching assumption: no tool calls; no actual API call was made."
+      },
+      "problem_id": "one-reader-question",
+      "prompt_ref": "same-public-fixture"
+    },
+    {
+      "kind": "hypothetical",
+      "provider": "openai",
+      "billing_scope": "direct-api",
+      "request_id": "example-2",
+      "timestamp": "2026-09-15T08:00:00Z",
+      "price_version": "openai-standard-reference-2026-09-15",
+      "price_sha256": "ae5760d568938e986b50141f1f0d6bb4a31bd544ab1bddd719544384dbaf4a7a",
+      "model": "gpt-5.6-luna",
+      "service_tier": "standard",
+      "input_total": 1000,
+      "noncached_input": 600,
+      "cache_read": 300,
+      "cache_write": 100,
+      "output": 200,
+      "reasoning": 150,
+      "cache_policy": "disjoint_v1",
+      "output_policy": "includes_reasoning",
+      "tools": {
+        "none": true,
+        "evidence": "Teaching assumption: no tool calls; no actual API call was made."
+      },
+      "problem_id": "one-reader-question",
+      "prompt_ref": "same-public-fixture"
+    }
+  ]
+}

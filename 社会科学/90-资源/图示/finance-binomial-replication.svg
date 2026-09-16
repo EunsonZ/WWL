@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-labelledby="title desc">
+  <title id="title">一期二叉树与看涨期权复制</title>
+  <desc id="desc">股票从一百分为上涨到一百二十与下跌到八十两种状态。执行价一百的欧式看涨分别支付二十与零。持有零点五股并借入三十八点零九五二在两状态复制这两个支付。</desc>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3z" fill="#42607d"/></marker>
+    <style>.edge{stroke:#42607d;stroke-width:3;fill:none;marker-end:url(#a)}.node{fill:#f6f9fc;stroke:#42607d;stroke-width:2}.pay{fill:#ecf8f2;stroke:#16856b;stroke-width:2}.t{font:19px -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;fill:#243447}.s{font-size:16px}.h{font-weight:600}</style>
+  </defs>
+  <rect width="960" height="470" fill="#fff"/>
+  <text x="40" y="42" class="t h">一期模型：复制组合逐状态匹配看涨支付</text>
+  <rect x="80" y="185" width="190" height="76" rx="10" class="node"/><text x="175" y="215" class="t" text-anchor="middle">今天 S_0 = 100</text><text x="175" y="242" class="t s" text-anchor="middle">r = 5%，K = 100</text>
+  <path d="M270 205 L520 115" class="edge"/><path d="M270 242 L520 330" class="edge"/>
+  <text x="395" y="142" class="t s" text-anchor="middle">上涨 u=1.2</text><text x="395" y="322" class="t s" text-anchor="middle">下跌 d=0.8</text>
+  <rect x="525" y="70" width="180" height="92" rx="10" class="node"/><text x="615" y="104" class="t" text-anchor="middle">S_u = 120</text><text x="615" y="136" class="t" text-anchor="middle">C_u = 20</text>
+  <rect x="525" y="285" width="180" height="92" rx="10" class="node"/><text x="615" y="319" class="t" text-anchor="middle">S_d = 80</text><text x="615" y="351" class="t" text-anchor="middle">C_d = 0</text>
+  <rect x="740" y="70" width="180" height="92" rx="10" class="pay"/><text x="830" y="100" class="t s" text-anchor="middle">复制组合到期</text><text x="830" y="128" class="t s" text-anchor="middle">0.5×120−40=20</text>
+  <rect x="740" y="285" width="180" height="92" rx="10" class="pay"/><text x="830" y="315" class="t s" text-anchor="middle">复制组合到期</text><text x="830" y="343" class="t s" text-anchor="middle">0.5×80−40=0</text>
+  <path d="M705 116 L740 116" class="edge"/><path d="M705 331 L740 331" class="edge"/>
+  <rect x="220" y="405" width="520" height="44" rx="8" class="pay"/><text x="480" y="433" class="t s" text-anchor="middle">今天：0.5 股 − 借款 38.0952 = 复制成本 11.9048</text>
+</svg>

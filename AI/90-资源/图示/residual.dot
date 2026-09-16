@@ -1,0 +1,13 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="恒等路径与可学习修正", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+x [label="输入 x"];
+f [label="可学习支路 F(x)\n卷积 / Attention / FFN"];
+sum [label="逐元素相加\ny=x+F(x)"];
+j [label="雅可比：I + J_F\n不保证任意深度都稳定"];
+x -> f;
+f -> sum;
+x -> sum [label="恒等路径"];
+sum -> j;
+}

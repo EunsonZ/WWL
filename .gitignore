@@ -1,0 +1,20 @@
+# Local app state and private learning records
+/.[!.]*/
+/TaskNotes/
+/Tags/
+/资料/个人规划/
+
+# Environment, generated files, and local credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+*.log
+node_modules/

@@ -1,0 +1,17 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="dup 共享偏移，独立 open 通常不共享",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"f1" [label="fd 3\n第一次 open"];
+"f2" [label="fd 4\ndup(3)"];
+"f3" [label="fd 5\n第二次 open 同一路径"];
+"o1" [label="打开文件描述 A\n共享 offset"];
+"o2" [label="打开文件描述 B\n独立 offset"];
+"ino" [label="同一个文件对象"];
+"f1" -> "o1";
+"f2" -> "o1";
+"f3" -> "o2";
+"o1" -> "ino";
+"o2" -> "ino";
+
+}

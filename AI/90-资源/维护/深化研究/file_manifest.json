@@ -1,0 +1,1781 @@
+{
+  "algorithm": "SHA-256",
+  "root": "AI",
+  "excluded": [
+    "file_manifest.json itself",
+    "__pycache__",
+    "*.pyc"
+  ],
+  "files": [
+    {
+      "path": "00-交付说明.md",
+      "bytes": 3126,
+      "sha256": "a106c7cea006d092efd3ea62713d140f57b220c625efddde56516b6925b36d07"
+    },
+    {
+      "path": "00-开始/00-AI-首页.md",
+      "bytes": 8977,
+      "sha256": "9d3bce9d0dd72e775778925a1f641091b66d51faef3528baa237dc0cc5bf4f68"
+    },
+    {
+      "path": "00-开始/01-AI知识地图.md",
+      "bytes": 6840,
+      "sha256": "5894c3d3efe22f2f874919686a093a3a9b72fa45932464efa34b1a6f5aef6639"
+    },
+    {
+      "path": "00-开始/02-学习路线与先修诊断.md",
+      "bytes": 10529,
+      "sha256": "7c056492c357931ecf6c8d1c4a452ec32e14b3bbc4085efcd5df37243d88b7be"
+    },
+    {
+      "path": "00-开始/03-8GB-16GB与24GB实践路线.md",
+      "bytes": 8677,
+      "sha256": "17d02ce13cc04644b5baac28e96cc608cbff02f3ddd87934f6a365c7550f2eb1"
+    },
+    {
+      "path": "00-开始/04-环境安全许可证与资源边界.md",
+      "bytes": 7745,
+      "sha256": "afc061c7a8ab47ca7549fcb0d47abb9ca56c1721de443a76bfa6672deecd095c"
+    },
+    {
+      "path": "00-开始/05-问题驱动知识图谱与难点导航.md",
+      "bytes": 8505,
+      "sha256": "dfa97a05728107c0561ecbf2930be21383aca5b22f579c2aae4f9ac6d38b10e6"
+    },
+    {
+      "path": "00-开始/06-统一符号形状与公式阅读方法.md",
+      "bytes": 6001,
+      "sha256": "977a8704a7dcf8b4a6ced3b09e0e4e29b0c5f3a2be171cb25d7a1be12dbc5e61"
+    },
+    {
+      "path": "00-开始/07-学科覆盖矩阵与分层学习清单.md",
+      "bytes": 8977,
+      "sha256": "7bf2ee217c5936112710bd8cb8af9a105589596696ce2133c9665e84cf545e9f"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/00-机器学习与深度学习基础-MOC.md",
+      "bytes": 6481,
+      "sha256": "07a4185aef6ad479ed3facdc53216d447d9c8cc600ba3602f68c82b491cfb6b5"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/01-AI机器学习深度学习与生成模型的边界.md",
+      "bytes": 4761,
+      "sha256": "048727b5e61062a0ca774600553d5b4d97d3987db61429dd536e0ea9513e4660"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/02-模型特征参数目标与泛化.md",
+      "bytes": 4494,
+      "sha256": "5b600283cb0307a363f68778c5bf53228d012816e461cd7056636eefc85d36a6"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/03-张量形状广播与批处理.md",
+      "bytes": 4683,
+      "sha256": "e87435400e7b4841ced7c39bfa5fb81f660128453c221f8e473ccbed530e2983"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/03_张量形状广播与批处理.py",
+      "bytes": 634,
+      "sha256": "a1d4972a10920be1b25c51e5255757564fe8db2154bc33c433934d7548418e73"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/04-计算图与自动微分.md",
+      "bytes": 4788,
+      "sha256": "053f04cb9624134ef0ff31b3b53d61e7de2ea0c33b727ff5582dab4d2d96d0f5"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/04_计算图与自动微分.py",
+      "bytes": 631,
+      "sha256": "f437ab8e6c7ec12f01de11ca91d2fe9396a1efdaa8e2179ed1c709cde110e17e"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/05-数据集拆分清洗与泄漏.md",
+      "bytes": 4329,
+      "sha256": "65e871dfd898db562116f51380cd2ae52ad77bf0f03ab5aaa650d317243171e9"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/06-损失函数优化与训练循环.md",
+      "bytes": 6965,
+      "sha256": "43074e439d65ef3d22e9ac3f07b0c25a1c57ef76711b74c803c2befef8bb8727"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/06_损失函数优化与训练循环.py",
+      "bytes": 999,
+      "sha256": "c5903d40b5106c40ddc228bb3629786583e97cf085db0682d35aa795c5564f26"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/07-过拟合正则化归一化与可复现.md",
+      "bytes": 4433,
+      "sha256": "d72b21d2e58ad6ca29de97df4519c4706fae2c1dab9d769423f999864e4954de"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/08-PyTorch与LLM训练生态职责.md",
+      "bytes": 4961,
+      "sha256": "7c46e7db43fbe0178e7c9e3381caee1c25ec12b45a4cd5f2956d279393519274"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/09-神经网络层激活函数与表示学习.md",
+      "bytes": 7126,
+      "sha256": "638329108a4f1203272e3fba08a3ae3cba6c500b918cf5aefc2373d2231fe391"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/10-基线指标阈值误差分析与分布偏移.md",
+      "bytes": 11481,
+      "sha256": "fef58030f07b868849f05907fbc9f7c40880f0d05f93e47e9e77a0426ad5b158"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/11-经典机器学习基线与模型选择.md",
+      "bytes": 13633,
+      "sha256": "4b8e07a37a0254c453b2ccdbd2675f9ad24ba20985d60aae88c318cff825a08b"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/11_经典机器学习基线与模型选择.py",
+      "bytes": 4076,
+      "sha256": "cf38011bcfad2e7a87f46663b36b14df541d5bd62521cea44fe33559a3dd727d"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/12-统计学习泛化与实验设计.md",
+      "bytes": 5043,
+      "sha256": "79b89561bb809109d47af9d5c29f405b4983cefe02642e50f841d08d0d16f097"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/13-树集成核方法与无监督学习.md",
+      "bytes": 4979,
+      "sha256": "053a0a54e005870bd7ff28b39096a0282961bf87abd2e534546ab3a93e1a7dfc"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/14-线性回归逻辑回归与概率建模.md",
+      "bytes": 5314,
+      "sha256": "2d6163da74b9be20f4dc40bea85cb6a36b63299c5d2cfcb2b0a71e86048c9972"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/15-核方法树集成与归纳偏置.md",
+      "bytes": 5305,
+      "sha256": "c9605e97629b6fe83f2f082bf56fae94758711a9b6b44a403da8c107feff8d4a"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/16-PCA聚类EM与表示学习.md",
+      "bytes": 5157,
+      "sha256": "eb05411e8d05bb84e530d1356e73bb49bc4e76e14b96029bfa8cbb36583b9a29"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/17-概率校准保形预测与分布偏移.md",
+      "bytes": 5530,
+      "sha256": "63dfef9fad20c36ef247d1e2725ef5afc3711be6a7d36b76bcc26d6faa4e469e"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/18-嵌套验证配对实验与指标陷阱.md",
+      "bytes": 5300,
+      "sha256": "8c8850896f80e6894431980e17ff777f783f7d6ab8fec3f342a46942f68b3407"
+    },
+    {
+      "path": "10-机器学习与深度学习基础/19-强化学习MDP价值函数与策略梯度.md",
+      "bytes": 5535,
+      "sha256": "31aa54bb127a81b0d1af440a31650a8040fc0a3461ab7383801aa30796b3cc0d"
+    },
+    {
+      "path": "11-数学与统计桥梁/00-数学与统计桥梁-MOC.md",
+      "bytes": 4226,
+      "sha256": "5ab7fb62225c0cb837a114c199f5cf65f25ec053dadf4a87ea69e5483ef2977c"
+    },
+    {
+      "path": "11-数学与统计桥梁/01-向量空间投影SVD与低秩.md",
+      "bytes": 6113,
+      "sha256": "ac44b1b21a1c6b9918b5fbf82af71045d320ad683ec46e5cf25470184d6c8adf"
+    },
+    {
+      "path": "11-数学与统计桥梁/02-矩阵微积分VJP与反向传播.md",
+      "bytes": 5739,
+      "sha256": "bfe333d942ab6c67aae4d837742661c2da7091c319a0f6fd2b9cd9581922cf66"
+    },
+    {
+      "path": "11-数学与统计桥梁/03-概率似然贝叶斯与信息论.md",
+      "bytes": 5855,
+      "sha256": "4800842ad8d9244b91bac8a78897c017eca6dfa09f8f76eb418b9092bd616f88"
+    },
+    {
+      "path": "11-数学与统计桥梁/04-优化曲率条件数与AdamW.md",
+      "bytes": 6016,
+      "sha256": "91af9fc5f4bd08f65dc037cf6292719e91c6785ab1e113814b0bd6e2d35bb5d0"
+    },
+    {
+      "path": "11-数学与统计桥梁/05-统计估计置信区间与因果边界.md",
+      "bytes": 6330,
+      "sha256": "5e196e04fda2e6ff5e7ebc88b4390a3135b5e91f508a6bf1f95a759039ce6c3e"
+    },
+    {
+      "path": "12-PyTorch/00-PyTorch-MOC.md",
+      "bytes": 2201,
+      "sha256": "364b6a73f7dbd743af0c7562079b169a223a373726da5af4b6aeaed98209d39c"
+    },
+    {
+      "path": "12-PyTorch/01-张量存储索引广播与设备.md",
+      "bytes": 3924,
+      "sha256": "4ff51baf29ee9f7608f2c05fc75ce9596b7a63813d644a2beade18f06b102f09"
+    },
+    {
+      "path": "12-PyTorch/02-自动微分模块与参数管理.md",
+      "bytes": 4246,
+      "sha256": "c2fede2439231d0da31ea2e07e5ed83ba4a82608f930d54d2e80741dcfb57afe"
+    },
+    {
+      "path": "12-PyTorch/03-数据训练验证与保存恢复.md",
+      "bytes": 4997,
+      "sha256": "22a61a3a9b3cf2c481c093c656cb4430e94829533b21d1adb923916c4d5f4b70"
+    },
+    {
+      "path": "12-PyTorch/04-混合精度分布式编译与性能诊断.md",
+      "bytes": 4393,
+      "sha256": "eb74e1131a01a36929faa6a18b0464645e41d7f432cd3cc68af9a550bb75c1e6"
+    },
+    {
+      "path": "12-PyTorch/05-变长批处理Packing与有效Token归一化.md",
+      "bytes": 5867,
+      "sha256": "1d953f59317d8921c8c599f8fcb7f45d4258b0499b76134045158a31e489dd86"
+    },
+    {
+      "path": "12-PyTorch/06-梯度诊断数值验证与自定义算子.md",
+      "bytes": 5050,
+      "sha256": "901552977f642b105caecbf30c2a5f437cf6f96520815586b5c584d0419c7870"
+    },
+    {
+      "path": "12-PyTorch/07-完整训练状态恢复与可复现实验.md",
+      "bytes": 4781,
+      "sha256": "57fffe434e3712825506f551125a12c4cd1402d3b35c40e1d123759f760ec3ea"
+    },
+    {
+      "path": "12-PyTorch/08-DDP全局目标通信与分片边界.md",
+      "bytes": 5226,
+      "sha256": "84a56a6eed0c75ce28caf76036f48df17893f529962c800183d9a853acd36e61"
+    },
+    {
+      "path": "12-PyTorch/09-性能剖析编译动态形状与内存账本.md",
+      "bytes": 4817,
+      "sha256": "5512d5d4b71e63f1c81209ebcbeb6202ba759e8e500092389016477d916388f7"
+    },
+    {
+      "path": "15-卷积神经网络/00-卷积神经网络-MOC.md",
+      "bytes": 1846,
+      "sha256": "99c0679433269abca31487daa6d63c921ddad5b072e93ea9b8de4cbf05033cf4"
+    },
+    {
+      "path": "15-卷积神经网络/01-卷积互相关形状与参数共享.md",
+      "bytes": 3696,
+      "sha256": "45f76a3818fb6dd096387403eb1915ac3cebcf52f25c02a507c4d49dcf740451"
+    },
+    {
+      "path": "15-卷积神经网络/02-感受野残差归一化与经典架构.md",
+      "bytes": 3745,
+      "sha256": "cc544aef6bdd6038dc92d1242a1faa21bee7f4265580f369f426ba9ef3e22e3f"
+    },
+    {
+      "path": "15-卷积神经网络/03-视觉任务迁移学习与ViT桥梁.md",
+      "bytes": 3838,
+      "sha256": "02ed3e75531682d16f64cb0dc49deb20bed1a64a19d48b190c614f4d0a86e189"
+    },
+    {
+      "path": "15-卷积神经网络/04-卷积反向传播与转置卷积.md",
+      "bytes": 4759,
+      "sha256": "a49046b5f99aaa13583d26cb8e302e0e1464cdf21e49ffbb44df607a6be8e5fd"
+    },
+    {
+      "path": "15-卷积神经网络/05-采样混叠感受野与平移鲁棒性.md",
+      "bytes": 4903,
+      "sha256": "42ec37a19a6c632ab9fb67f93adb7cc121c9eaeec6eef341f92200a964dc011c"
+    },
+    {
+      "path": "15-卷积神经网络/06-检测分割匹配损失与评估协议.md",
+      "bytes": 5104,
+      "sha256": "73b07432e4504609181fa78c2bf7108d5d782dbde50034569423dc9890336cc0"
+    },
+    {
+      "path": "15-卷积神经网络/07-残差网络轻量卷积与训练配方.md",
+      "bytes": 4880,
+      "sha256": "986b2e4eb63a809dc063e40739d64ddaeb038009352c66862f74f2b33dd2754e"
+    },
+    {
+      "path": "20-LLM/00-LLM-MOC.md",
+      "bytes": 9110,
+      "sha256": "aeaa41bb90c68333c38829dc29a37675a51f23284345da0c4562d1ef96a4bffe"
+    },
+    {
+      "path": "20-LLM/10-原理/00-LLM原理-MOC.md",
+      "bytes": 6677,
+      "sha256": "f714d7ca517f8597976c8827a6455ecc7a02d92464fd89334f583c0d73c5004d"
+    },
+    {
+      "path": "20-LLM/10-原理/01-文本Unicode-Token与词表.md",
+      "bytes": 8090,
+      "sha256": "55fae7c1b821c57b2fa0453e3f9cc1c4444aa650e826f1a7100b9e5239cf1297"
+    },
+    {
+      "path": "20-LLM/10-原理/02-自回归建模Logits损失与困惑度.md",
+      "bytes": 7384,
+      "sha256": "92f39a557fb6a15a0914991a1ce503b8bbb62155ae466fab8677b0ab1c4e6ec7"
+    },
+    {
+      "path": "20-LLM/10-原理/03-Embedding表示与语义空间.md",
+      "bytes": 6618,
+      "sha256": "91f02f7f85b06bd8aa53115381a402851bcdac9341b789cba2674fa4ecf9c70c"
+    },
+    {
+      "path": "20-LLM/10-原理/04-上下文学习提示与条件生成.md",
+      "bytes": 5910,
+      "sha256": "e03b8166fc40e4858972228b5c876096b5f14b634f25a4f86f2d06c16f729646"
+    },
+    {
+      "path": "20-LLM/10-原理/05-Scaling数据质量与能力边界.md",
+      "bytes": 6361,
+      "sha256": "105f8aa8c47a8b089270c978f441824cf9ecbde7b9d81ab3960e7522a7c5612f"
+    },
+    {
+      "path": "20-LLM/10-原理/06-幻觉不确定性与模型边界.md",
+      "bytes": 6808,
+      "sha256": "80e6652afcb197aec90518f0ee2769bb5c30c2b99b2584c2a1cfd03d10480b75"
+    },
+    {
+      "path": "20-LLM/10-原理/07-语言模型目标分词粒度与评测可比性.md",
+      "bytes": 5252,
+      "sha256": "d40619e03f8a5b785957dfa19ed44871919adfe6e96cb1d1b356b69f0a5aebdb"
+    },
+    {
+      "path": "20-LLM/10-原理/08-上下文学习机制假说与可证伪实验.md",
+      "bytes": 5172,
+      "sha256": "807faf6396d5a1038fc163015d287bd672bd4426b4cfec3d8fb43f6299f73955"
+    },
+    {
+      "path": "20-LLM/10-原理/09-Scaling推导数据配比与计算预算.md",
+      "bytes": 4471,
+      "sha256": "1ecb8cb40ad33c79c09907bb8acf3b000eb503527bd24aaffd120da2717406f6"
+    },
+    {
+      "path": "20-LLM/20-架构/00-LLM架构-MOC.md",
+      "bytes": 10939,
+      "sha256": "7422aee74371a2e659d51fe928122c1827fa3159a1c011e4f2d4b9d550a62d7c"
+    },
+    {
+      "path": "20-LLM/20-架构/01-Transformer完整数据流.md",
+      "bytes": 14877,
+      "sha256": "c7f9eca8f1207b086598592659d1a9b7043caa8710fae7a3b394b2e2ad5dd911"
+    },
+    {
+      "path": "20-LLM/20-架构/02-注意力MHA-MQA与GQA.md",
+      "bytes": 14972,
+      "sha256": "f153e532d5ba0d8973ee7f40efb3d97ca9a55e659b1a832007f0053d2632c820"
+    },
+    {
+      "path": "20-LLM/20-架构/03-FFN归一化残差与SwiGLU.md",
+      "bytes": 13172,
+      "sha256": "921b07937a37242eb935979a6d7c9fbfdb45494d0c9f5c14073eb59ee16e93b8"
+    },
+    {
+      "path": "20-LLM/20-架构/04-位置编码RoPE与上下文.md",
+      "bytes": 17592,
+      "sha256": "25219082a3eb2b87697deacb279f238ac16519083bd1e554d438aa6bb4178448"
+    },
+    {
+      "path": "20-LLM/20-架构/05-Llama主线与模型家族比较.md",
+      "bytes": 14648,
+      "sha256": "805c4f284b1385337c2a126c1d851f00c9002f478fccb405625d3df2b9579cb2"
+    },
+    {
+      "path": "20-LLM/20-架构/06-MoE架构与路由.md",
+      "bytes": 13029,
+      "sha256": "6e8051fb3870309c82f4d7bace58f334bf2d5a3e8012ba635b32f6e2198ae819"
+    },
+    {
+      "path": "20-LLM/20-架构/07-编码器解码器与多模态接口.md",
+      "bytes": 15897,
+      "sha256": "6f36a2858d4c09149275aa376daf1ebb239e6f099aeb2b337182f90a0109f3a4"
+    },
+    {
+      "path": "20-LLM/20-架构/08-MLA低秩缓存与位置解耦.md",
+      "bytes": 3606,
+      "sha256": "c1f90e1afc00132537b859c13997856e402d3a1dbbf837f8c2ed6f1b36515660"
+    },
+    {
+      "path": "20-LLM/20-架构/09-状态空间线性注意力与混合架构.md",
+      "bytes": 3351,
+      "sha256": "91097d884ce048b05b5a16f422ae04d511b6ebad6492b5350f0c7f9485ad6371"
+    },
+    {
+      "path": "20-LLM/20-架构/10-注意力反向传播与Softmax竞争.md",
+      "bytes": 4715,
+      "sha256": "f9986cc843960cfd0444a07089213dc6f78ef108d2c6e694c5a207fd99713e9e"
+    },
+    {
+      "path": "20-LLM/20-架构/11-RoPE相对位置缓存偏移与长度外推.md",
+      "bytes": 4635,
+      "sha256": "99bdd3e4e2df0f664371e9aebb0cdd65ccd3c1d352c7b9aea5d2c562f4461bff"
+    },
+    {
+      "path": "20-LLM/20-架构/12-MLA线性注意力与状态空间的记忆取舍.md",
+      "bytes": 4907,
+      "sha256": "486a4a6254098a7af017ecd7d7dedb06f71eb838090b379d4cfe70dc39afa078"
+    },
+    {
+      "path": "20-LLM/20-架构/13-MoE路由梯度负载均衡与通信成本.md",
+      "bytes": 4713,
+      "sha256": "deab9b8fb13f43d7e1ceecb8c3ca1d6725f6f5680b2cc12b5ac18b8ae8c15a84"
+    },
+    {
+      "path": "20-LLM/30-训练/00-LLM训练-MOC.md",
+      "bytes": 17629,
+      "sha256": "7a189a8be1922d8cfbf7267db0af58794e4a4817bf1cddef6459bd0eed2685e2"
+    },
+    {
+      "path": "20-LLM/30-训练/01-数据Tokenization与预训练流程.md",
+      "bytes": 22794,
+      "sha256": "5ec42b84df1caac0882cf3ee4fceb6a6aa1d0f63ef2c965087b7deb3550ac09d"
+    },
+    {
+      "path": "20-LLM/30-训练/02-训练循环Checkpoint与复现.md",
+      "bytes": 19136,
+      "sha256": "2eb7a8d94c8d3504a083126c02ef11d74bdf5736287d0179077b245c49f7d3aa"
+    },
+    {
+      "path": "20-LLM/30-训练/03-SFT-LoRA与QLoRA.md",
+      "bytes": 19619,
+      "sha256": "8d9cbaedbc490663983927bd4900d8f1d669a5b468b8705c2eac2496a2e79167"
+    },
+    {
+      "path": "20-LLM/30-训练/04-偏好优化RLHF-DPO-ORPO与KTO.md",
+      "bytes": 18427,
+      "sha256": "c0965c548c4e21d8a4829348a7558a09ce8137b19334232816ed794d3e615f74"
+    },
+    {
+      "path": "20-LLM/30-训练/05-Unsloth原理环境与工作流.md",
+      "bytes": 16658,
+      "sha256": "ba2381bf1f123810e7e5d27a6b99257034c3ca2d158049d4f627f1f66f0879a9"
+    },
+    {
+      "path": "20-LLM/30-训练/06-LLaMA-Factory数据配置训练与导出.md",
+      "bytes": 16938,
+      "sha256": "81b5fe86a018d0eb66e9ef81b307fb5e3e18acf34e82341ecddacae5b3159a34"
+    },
+    {
+      "path": "20-LLM/30-训练/07-模型对齐拒答方向与Heretic.md",
+      "bytes": 34232,
+      "sha256": "911c32a9065cb5f47c818effef83f8fc30d91668dc9cff61798ef0c4da94d888"
+    },
+    {
+      "path": "20-LLM/30-训练/08-分布式训练FSDP-DeepSpeed与Megatron.md",
+      "bytes": 21003,
+      "sha256": "a60b2bb245ed970d03055ad97c85ac7f844b862eb95d7b4084ddb5e6c7199bea"
+    },
+    {
+      "path": "20-LLM/30-训练/09-数据污染评测泄漏与训练治理.md",
+      "bytes": 20264,
+      "sha256": "c0a4f9f45263daad55575d9b161260237766c39c780caf3cfef23ddfb3c8c74f"
+    },
+    {
+      "path": "20-LLM/30-训练/10-推理强化学习RLVR与GRPO.md",
+      "bytes": 4175,
+      "sha256": "2a29524562f56f4eb3d09de59aca8e4a7c80a093123bcd68506a812e82074745"
+    },
+    {
+      "path": "20-LLM/30-训练/11-蒸馏合成数据与持续学习.md",
+      "bytes": 3263,
+      "sha256": "91f26409f8e9d1f01ab2973ff97f76b05928819f9516c8aba46109c8e54066bd"
+    },
+    {
+      "path": "20-LLM/30-训练/12-从KL约束到DPO的逐步推导.md",
+      "bytes": 4783,
+      "sha256": "728f2fb61bb48b55786e1e6a1de6ddf89b83a570d246486228c290cd47ea876c"
+    },
+    {
+      "path": "20-LLM/30-训练/13-GRPO重要性比率归一化与奖励偏差.md",
+      "bytes": 5151,
+      "sha256": "b2f1f635e95149cf7d44ba045f9f5b636510d158847681fbf85ac27fea18a8d4"
+    },
+    {
+      "path": "20-LLM/30-训练/14-预训练数据配方去重课程与消融.md",
+      "bytes": 5617,
+      "sha256": "41234b4f9d9d34a5c768e58968030413a9ea6a14abf34df5ada79240d327ffb7"
+    },
+    {
+      "path": "20-LLM/30-训练/15-LoRA低秩几何QLoRA与蒸馏边界.md",
+      "bytes": 4781,
+      "sha256": "4367825c46552ed728fc089636aad931a8376e529950e7938cd0b235f0571987"
+    },
+    {
+      "path": "20-LLM/30-训练/16-持续学习遗忘评测与模型合并.md",
+      "bytes": 4743,
+      "sha256": "ed9f49356c85bd19fea1d877ae079ca1d3ad74f2f6f563f00482f7879fae2116"
+    },
+    {
+      "path": "20-LLM/30-训练/unsloth_preflight.sh",
+      "bytes": 315,
+      "sha256": "e480003200e42b62494775d4143920f804b78f88b8091b703b635e68523548d8"
+    },
+    {
+      "path": "20-LLM/40-推理/00-LLM推理-MOC.md",
+      "bytes": 7036,
+      "sha256": "c2ebdbbe046a84e9719c78466ad95a85a50ff10804a02aff1d58d1c65395ca5a"
+    },
+    {
+      "path": "20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md",
+      "bytes": 10051,
+      "sha256": "f8d4e14ad5d73a86a5301e46408a369389f7c165c646dd95b0034bd627bcc9e2"
+    },
+    {
+      "path": "20-LLM/40-推理/02-采样停止条件与生成控制.md",
+      "bytes": 9573,
+      "sha256": "2c8c54d80dbcd75b96aae3cc23923127714ee2cf91f5172aa8a5743e25c33705"
+    },
+    {
+      "path": "20-LLM/40-推理/03-批处理调度延迟吞吐与投机解码.md",
+      "bytes": 12114,
+      "sha256": "22021ea976f3dab1331d7f5ecfbd211d7e559767f71e6b097efbf52015343f93"
+    },
+    {
+      "path": "20-LLM/40-推理/04-推理显存量化与硬件路线.md",
+      "bytes": 12229,
+      "sha256": "10508acd414708bce8c9d5bbb4875f849f52f1cdec61694f222257ad92d648e7"
+    },
+    {
+      "path": "20-LLM/40-推理/05-推理引擎与服务选择.md",
+      "bytes": 11571,
+      "sha256": "88df8770f4c0d7be80fac9702c2f74f240d1c381154d146ef7d2e30bd7185d65"
+    },
+    {
+      "path": "20-LLM/40-推理/06-FlashAttention在线Softmax与SDPA掩码.md",
+      "bytes": 4307,
+      "sha256": "112a99e48f69bbfb2e241d54f5277b1f9b0c9f0ab93a86dc6b8a0a2cea37fe98"
+    },
+    {
+      "path": "20-LLM/40-推理/07-测试时计算搜索与验证器.md",
+      "bytes": 3279,
+      "sha256": "8fdb6b9cda4ae8bdc53bdaf62c55f22bbdc31260ab470c8636c944471409f642"
+    },
+    {
+      "path": "20-LLM/40-推理/08-投机解码接受拒绝与分布不变性.md",
+      "bytes": 4475,
+      "sha256": "cb07715bc745be396bcfafbff0b884407fb11000b9d5608ca2ba0313d3b0fe9b"
+    },
+    {
+      "path": "20-LLM/40-推理/09-KV缓存分页滑窗与前缀复用.md",
+      "bytes": 5046,
+      "sha256": "c333e3c05c0a21d15f2addc801bd41a2e05cc05f00933902050dc7f9124dfe5c"
+    },
+    {
+      "path": "20-LLM/40-推理/10-测试时计算验证器误差与预算公平性.md",
+      "bytes": 4753,
+      "sha256": "bed0e2ec2197db0371da3084b37ac941eb306901da7e320411a4a81266cdae9a"
+    },
+    {
+      "path": "20-LLM/50-实现/00-LLM实现-MOC.md",
+      "bytes": 6518,
+      "sha256": "11d720756a52b54b41c8c2f5a41e8e786b5451ef1988399861c3b7f1dfc884de"
+    },
+    {
+      "path": "20-LLM/50-实现/01-最小Tokenizer与Embedding.md",
+      "bytes": 8775,
+      "sha256": "3940f7147886abe837310e938f990535bec598df9e01241f1a7a101e938e8fa4"
+    },
+    {
+      "path": "20-LLM/50-实现/02-从零实现Attention-RoPE与DecoderBlock.md",
+      "bytes": 19906,
+      "sha256": "3349af471e452b92948acf1326b37ce00a8aa5df511a3fb08f050a7c09fe0a24"
+    },
+    {
+      "path": "20-LLM/50-实现/03-训练循环Generation与KV-Cache实现.md",
+      "bytes": 17800,
+      "sha256": "03ef66797b31e3bccf62829ad725a6a7354ed3113237d00ecbdcef01ef1c7779"
+    },
+    {
+      "path": "20-LLM/50-实现/04-llama.cpp构建后端与调用链.md",
+      "bytes": 33266,
+      "sha256": "8e9f3888a275f7e95d4c00f584d81b0eda6d90848250c4e3e0c167537727a08f"
+    },
+    {
+      "path": "20-LLM/50-实现/05-llama.cpp源码阅读与小型扩展.md",
+      "bytes": 27996,
+      "sha256": "fc9db572cd6011e204d812ad155c47752550d01d26fee445b8fb23f01f62cae7"
+    },
+    {
+      "path": "20-LLM/50-实现/06-GGML张量计算图分配器与Backend.md",
+      "bytes": 29481,
+      "sha256": "2ea0b1207ee63d26211ab37111934b78fc9eed670407750ca1ce9fdbbd64b7df"
+    },
+    {
+      "path": "20-LLM/50-实现/tiny_decoder.py",
+      "bytes": 10361,
+      "sha256": "7a2e82df0f9d8e2a6c2cf8c5cb1949795151645009c75e48790fa2da61ad1f00"
+    },
+    {
+      "path": "20-LLM/50-实现/tiny_tokenizer_embedding.py",
+      "bytes": 2883,
+      "sha256": "0e1acd856b29a21719e122f22cfa488f2fb3c935fef41934ffd86eb98c0d7c7a"
+    },
+    {
+      "path": "20-LLM/50-实现/tiny_train_generate.py",
+      "bytes": 7534,
+      "sha256": "4e4c56b0aaa09a3b74b3712c40ce8b0566ff741a74541fa53b70d771206c75d4"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/00-模型格式与量化-MOC.md",
+      "bytes": 7559,
+      "sha256": "66f8687141baedd78c6f057c411aaa0369f260844e1f81add75cca15b1565894"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/01-编码序列化与数值表示的三层边界.md",
+      "bytes": 10836,
+      "sha256": "0f2dc33aa42fb9e2531fa6517508228b013f7c61fadfea2e9c9e195ba6526830"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/02-safetensors结构读取与安全边界.md",
+      "bytes": 9215,
+      "sha256": "74361d987435f3c30d6a1bc35180c2a74ca3b78a037d2277ed70de742660d951"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/03-GGUF结构转换与验证.md",
+      "bytes": 14389,
+      "sha256": "7b723e1597bf9e23153829879d8f41388aa5cec4368bea1f5be635b1dd6028a7"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/04-浮点精度INT8-NF4-GPTQ与AWQ.md",
+      "bytes": 12248,
+      "sha256": "998849ab1bd8069fec2a86787679007186a17ea06f381674dd72bbdf42e20749"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/05-K-quants-IQ与Q4_K_M.md",
+      "bytes": 11414,
+      "sha256": "56601826dd96feb552f4783dcefffdeede2256efcf012f8a7fe315b6ef5951e4"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/06-格式量化选择与质量评测.md",
+      "bytes": 14615,
+      "sha256": "7b1d873a00f4034e64582fe26f73fe6b3f9d31901b428fd8f0009b4cf00237ef"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/07-一手来源快照与现场复核清单.md",
+      "bytes": 8204,
+      "sha256": "cdf6894a0139b074950f8f62a3f998c298f876d67cb8d3245eac8b58d1e0ca9f"
+    },
+    {
+      "path": "20-LLM/60-模型格式与量化/08-量化误差传播校准目标与端到端评测.md",
+      "bytes": 4847,
+      "sha256": "687cd78dab3f9671dcfcde94b79f92d48a4166968624128d40e29c2f5f203876"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/00-工程应用与工具链-MOC.md",
+      "bytes": 5717,
+      "sha256": "7169ccb94e9841b6d76bc0ca38991368bc3d1317d3ecb319c5a18d22ca8f33a6"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/01-HuggingFace与PyTorch工具链.md",
+      "bytes": 8133,
+      "sha256": "6ddcbe979b304a4cdc18993400e01006636c3f1fa558a9a2fcda250a920d1778"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG.md",
+      "bytes": 14435,
+      "sha256": "96aea85e00045d19f6dd62cbfd17d74d4aa94a0d2d85c5ba31dc2167b5775806"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/02_最小RAG_Schema与评测.py",
+      "bytes": 7038,
+      "sha256": "611d906c4303c691684c6ecd63c9d3c46d8722e1ed41fed8ab7cffd7f625fd7d"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/03-结构化输出Schema与错误恢复.md",
+      "bytes": 6311,
+      "sha256": "87842dd08fda1639cd6ce37b0566ac8b6a4ef6d66123eb3267b0d9d51f75bd87"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/04-评测回归与可观测性.md",
+      "bytes": 6882,
+      "sha256": "9ba08186594a5b872670baf899e4fefc347efcc1eca75d0ecfa771914e859d25"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/05-私有部署认证TLS与边界.md",
+      "bytes": 9885,
+      "sha256": "12abcfc7f18bf0f6d0d6f3002fa671459cbe747021803e5ec206ac432e7b0360"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/06-Agent工具调用状态与最小循环.md",
+      "bytes": 9029,
+      "sha256": "151724e56019fb4768ac6762f90e776eebb0a119f42bbdca2bd6a60f49b0149e"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/07-生产推理安全资源与许可证.md",
+      "bytes": 13534,
+      "sha256": "99c90ff166dbbd66c8e0134c50b18b16736f02827a967f6cdce349f33169fac7"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/08-混合检索重排RAG误差分解与证据.md",
+      "bytes": 5337,
+      "sha256": "c31c9466cf54fff6209d0216859e763d94d402d305153d5cca96741bc33b8e26"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/09-Agent状态机幂等执行与提示注入边界.md",
+      "bytes": 5167,
+      "sha256": "e5ba7b152f45f527eb26828149fb2caaba3634959e88471a7882097122486859"
+    },
+    {
+      "path": "20-LLM/70-工程应用与工具链/10-LLM评测污染裁判偏差与统计检验.md",
+      "bytes": 5279,
+      "sha256": "d85af531448978b9402e464ecbf9b8d33f779d305bf4a18af62849fc1a71aa1b"
+    },
+    {
+      "path": "20-LLM/80-研究拓展/00-研究拓展与学科覆盖.md",
+      "bytes": 4640,
+      "sha256": "682a436286d27e57b47c53b3e56d38e022f550f07c5d2ff9263e90f50fcf9851"
+    },
+    {
+      "path": "20-LLM/80-研究拓展/01-机制可解释性Probe干预与稀疏特征.md",
+      "bytes": 4976,
+      "sha256": "a314a02559210c83b2d6100aad0707b90a8ed5f1bbf89bc1cf41633a3a96d0de"
+    },
+    {
+      "path": "20-LLM/80-研究拓展/02-离散扩散语言模型与自回归对照.md",
+      "bytes": 4636,
+      "sha256": "a6dd95c9cef0e05e0941f1c8a60f3fbcdda3cca19fabd0b6cb876399f74a6c20"
+    },
+    {
+      "path": "20-LLM/80-研究拓展/03-从论文主张到可复现实验.md",
+      "bytes": 5622,
+      "sha256": "a82e2f6b4855e31dd940f23ba5bfb402e39c5e49375a9718d344cb8dafd81d31"
+    },
+    {
+      "path": "20-LLM/80-研究拓展/04-隐私记忆成员推断与机器遗忘.md",
+      "bytes": 4863,
+      "sha256": "61a02693cc8cae6af612165638b2691ede0f90fe259e3d8aa9fc21de754022e5"
+    },
+    {
+      "path": "30-VLM/00-VLM-MOC.md",
+      "bytes": 11869,
+      "sha256": "2f5d7a1735242b1086f7331cd371f7b9d2ac11d601274dc1df2d7a7310e67dc7"
+    },
+    {
+      "path": "30-VLM/01-视觉表示ViT与图像输入管线.md",
+      "bytes": 3033,
+      "sha256": "a3c6bc04dba1163a9a2fd4b9c5c13c6d0fe57a8aee88c7441ba5b27dbcab5444"
+    },
+    {
+      "path": "30-VLM/02-CLIP图文对齐连接器与VLM训练.md",
+      "bytes": 3311,
+      "sha256": "c9ecf114feb1b04265b0e88cebc4a16f9c963c1c551ef75e4d5c043f4398bed1"
+    },
+    {
+      "path": "30-VLM/03-视觉语言对齐信息瓶颈与反事实评测.md",
+      "bytes": 4549,
+      "sha256": "3d4698972226ff9a5f5094a57157af7b7daa240f9d113821c1a6c05a9cc96181"
+    },
+    {
+      "path": "40-语音与音频模型/00-语音与音频模型-MOC.md",
+      "bytes": 11247,
+      "sha256": "1b94f817223e6ee07e8bb8d1ea0cfebd49dc43a94d94cdd398a9e9d173d539d9"
+    },
+    {
+      "path": "40-语音与音频模型/01-波形频谱CTC与语音识别.md",
+      "bytes": 3365,
+      "sha256": "e166851fe2bb65a96a4f7eb1399afc86e0589cdb10bb884040f1cef0ef1407b7"
+    },
+    {
+      "path": "40-语音与音频模型/02-语音生成音频Token与实时交互.md",
+      "bytes": 3421,
+      "sha256": "157b5f6cc76b86e7a9b2b8427ff336e0c7caadb106514b39931e1339ec262680"
+    },
+    {
+      "path": "40-语音与音频模型/03-CTC路径求和流式延迟与语音评测.md",
+      "bytes": 4507,
+      "sha256": "8b6503a69d1f9727350d9d90df0e638de228074e6a302b520ef777a1e9f3fda3"
+    },
+    {
+      "path": "50-扩散模型/00-扩散模型-MOC.md",
+      "bytes": 11565,
+      "sha256": "627c7832be5e208abe4b9e2d1646c0b23cc2eb9ecb2d446bb9856064e4375792"
+    },
+    {
+      "path": "50-扩散模型/01-DDPM加噪去噪与训练目标.md",
+      "bytes": 3346,
+      "sha256": "a4e2104e31b24a30aa030f0d7c93f30d2c769066ae057e1ee4cc847f0e450fcb"
+    },
+    {
+      "path": "50-扩散模型/02-Latent条件控制CFG与FlowMatching.md",
+      "bytes": 3738,
+      "sha256": "3a3b13710cc7eee6e5d4eef83fa40e65b53f81d6da7a520e6ade886c68541d60"
+    },
+    {
+      "path": "50-扩散模型/03-Score去噪FlowMatching与CFG的联系.md",
+      "bytes": 4904,
+      "sha256": "8065a06df84dd7adc2caa95207217da0d106287e4e3035b89d4a5236c3bb71a8"
+    },
+    {
+      "path": "80-实践/00-AI实践-MOC.md",
+      "bytes": 7842,
+      "sha256": "5c706e0214d795703a7ff1527f82529562dc1ca1d07bb1d61000e3e946020459"
+    },
+    {
+      "path": "80-实践/01-微型Transformer预训练/00-微型Transformer预训练.md",
+      "bytes": 11867,
+      "sha256": "f48fe1e2bb010fbbffe2e0edef68b0a4b56b75ac1bc372236177da20c8a3ef94"
+    },
+    {
+      "path": "80-实践/01-微型Transformer预训练/01-完整源码与测试附录.md",
+      "bytes": 56804,
+      "sha256": "73f958eaeaa3c3759348dcc16a3546246ad0d46a31bcb0a06ef2bff4509d44fa"
+    },
+    {
+      "path": "80-实践/01-微型Transformer预训练/config.json",
+      "bytes": 339,
+      "sha256": "1f1f1d345477291cf27963d99fb47e2302ad2b93cf5b29af7464bf561013a74a"
+    },
+    {
+      "path": "80-实践/01-微型Transformer预训练/corpus.jsonl",
+      "bytes": 3141,
+      "sha256": "e050e0c2d75035304c817b71506cabb7fcb1e71bb318abc8ee9bcf2d28658dc2"
+    },
+    {
+      "path": "80-实践/01-微型Transformer预训练/data_pipeline.py",
+      "bytes": 7888,
+      "sha256": "f259f25d6c8deaa3fad3b0c56e60dab38d4ca668cbd95762feb6e204f0a665bb"
+    },
+    {
+      "path": "80-实践/01-微型Transformer预训练/preflight.py",
+      "bytes": 5291,
+      "sha256": "4b0ff87630d210e6363cde2ad2f1e206b52747af8118a642b2eaf6c640d657e7"
+    },
+    {
+      "path": "80-实践/01-微型Transformer预训练/test_tiny_transformer.py",
+      "bytes": 11454,
+      "sha256": "9cd53ea9727a6f2b7d0ae2550c2878b1f56ceee9968eed9142ec6eabaccfa594"
+    },
+    {
+      "path": "80-实践/01-微型Transformer预训练/tiny_transformer.py",
+      "bytes": 25734,
+      "sha256": "400a95992adf6e93a716dc820fe083c2b283137440b7ac8a6ed3e12d0f295a7d"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/.gitignore",
+      "bytes": 309,
+      "sha256": "62e5b790ea43ffbe146e24b7d7f741597d5417767f0649d7bccc06e45a24b95e"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/00-SFT-LoRA与QLoRA.md",
+      "bytes": 11871,
+      "sha256": "5a958b57082bd6b70f66c4586d58ce2dddba2a2679a511efce841ff94def07a5"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/01-可运行源码与配置预检.md",
+      "bytes": 22545,
+      "sha256": "1aa9a21336503f5120aea1efbdeaf40138e34dfda2ec4d8afae0f6fd0f2ff154"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/configs/16gb-lora.json",
+      "bytes": 1308,
+      "sha256": "15d8a8c12875d2061d3978103864586f52600e562419bd7f97aa8ac24ad0aa7c"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/configs/24gb-qlora.json",
+      "bytes": 1340,
+      "sha256": "3f5d1477d8f9db81c616c3e3e36a5bee1cb869b0c8419eebf4333c4be4eca0eb"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/configs/8gb-qlora.json",
+      "bytes": 1305,
+      "sha256": "1dd2de6845ced4c176f4683443ef27549b2c2baf11083c506b5b60f673857cef"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/configs/data-contract.json",
+      "bytes": 889,
+      "sha256": "1cda965d44293cef2a545e2c80f512936570f0def8645fc95b81f9505d88d5e2"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/data/LICENSE.md",
+      "bytes": 656,
+      "sha256": "21a86c3f2023e713f321a1618120a932a6768ea07a57209f3d56a174e6311028"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/data/sample_chat.jsonl",
+      "bytes": 839,
+      "sha256": "3324da4207995b5807325877d3d3cb5d2c329ce15bf1c592aca4826828a80e91"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/lora_toy.py",
+      "bytes": 6319,
+      "sha256": "02ef6234f25fe3be52917c74b4f87dcc711987402f3f21b3694b27a88368be6c"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/preflight.py",
+      "bytes": 9799,
+      "sha256": "4f0f3e3c4837678d13bd35d05bc37a7f0d68b9723dad7a0f5e53dc4e108d2b05"
+    },
+    {
+      "path": "80-实践/02-SFT-LoRA与QLoRA/test_practice.py",
+      "bytes": 5665,
+      "sha256": "3abb446d8aec0c274d186734028ff7646353b8d6302b4b4c975522184e45b1e5"
+    },
+    {
+      "path": "80-实践/03-safetensors到GGUF与量化/00-safetensors到GGUF与量化.md",
+      "bytes": 34271,
+      "sha256": "29b2fd2dffc8d9fe357ac023d204ced32687818781ea395f8658a9b5de3d762b"
+    },
+    {
+      "path": "80-实践/03-safetensors到GGUF与量化/gguf_toy_validator.py",
+      "bytes": 10030,
+      "sha256": "9066b65b76564e405e40b2311c1f9d4a1b4afb6c2b871992d63235121be8a17b"
+    },
+    {
+      "path": "80-实践/03-safetensors到GGUF与量化/preflight.template.sh",
+      "bytes": 4909,
+      "sha256": "9f8802486df6688f5c22c693baf736b1d6b11f04c2ff37e173e5a5678cdbd2f1"
+    },
+    {
+      "path": "80-实践/03-safetensors到GGUF与量化/run-manifest.template.json",
+      "bytes": 2573,
+      "sha256": "410693324fefd80038ef75f6d713816626ac832a5b3f06a44f118252069df2b9"
+    },
+    {
+      "path": "80-实践/03-safetensors到GGUF与量化/test_gguf_toy_validator.py",
+      "bytes": 2245,
+      "sha256": "e8738d07e5903fd9e9a7ee66f2af2ced865833dde02aca3de0ace24a222412da"
+    },
+    {
+      "path": "80-实践/03-safetensors到GGUF与量化/test_preflight.py",
+      "bytes": 3380,
+      "sha256": "749439a03115717a60cdbf9bfd65877d250d311ef66497fd8c4fd6c62c9a74ec"
+    },
+    {
+      "path": "80-实践/04-llama.cpp构建分析与扩展/00-llama.cpp构建分析与扩展.md",
+      "bytes": 20405,
+      "sha256": "b8c0a95eef2acb43e51cde4a58a294de173c66e07755d18b4680b5109343f687"
+    },
+    {
+      "path": "80-实践/04-llama.cpp构建分析与扩展/01-trace小扩展与补丁模板.md",
+      "bytes": 4768,
+      "sha256": "1e5ec03333e9965179535669e32f55c01dc110dcd4cda325e2fbe09c6b2328c6"
+    },
+    {
+      "path": "80-实践/04-llama.cpp构建分析与扩展/02-验证清单与记录规范.md",
+      "bytes": 22547,
+      "sha256": "9d4034080b3b8cdfd74fedc218d3bf6795a238e9b3baf5818a8bda0df91a7b72"
+    },
+    {
+      "path": "80-实践/04-llama.cpp构建分析与扩展/experiment-manifest.template.json",
+      "bytes": 3973,
+      "sha256": "850f10a37237dc922017114395b21b5e739c8cb1bae2a91ff95d33e99fbfee73"
+    },
+    {
+      "path": "80-实践/04-llama.cpp构建分析与扩展/test_validate_manifest.py",
+      "bytes": 4498,
+      "sha256": "ba7564774e1c624c76f11d366bb8cbe4d938d3bb0977bc65312513e0b309f65a"
+    },
+    {
+      "path": "80-实践/04-llama.cpp构建分析与扩展/validate_manifest.py",
+      "bytes": 12460,
+      "sha256": "209b2b34b4f0aa1fd8afd458aec58271a4a7d9c89397c7077354f1cea8510584"
+    },
+    {
+      "path": "80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md",
+      "bytes": 7658,
+      "sha256": "55783df0cef2f6f99fa16a636bec8cc27987c3eeb6f4fbafd215c6053b6594ac"
+    },
+    {
+      "path": "80-实践/05-RAG评测与私有服务/01-完整源码与测试附录.md",
+      "bytes": 40466,
+      "sha256": "ac571cd4d954df21101d116ba11fb10565fa2a7ab7c8f31c020a062b85cf265c"
+    },
+    {
+      "path": "80-实践/05-RAG评测与私有服务/rag_service.py",
+      "bytes": 20541,
+      "sha256": "2c7aac05dead7563dad824266e35bd750e143659b538a85e678b2c7ff9b32721"
+    },
+    {
+      "path": "80-实践/05-RAG评测与私有服务/test_rag_service.py",
+      "bytes": 9826,
+      "sha256": "a30989bd0e45931e221419dc23b1a1703a4191db7b7af25dc59a40db8bec0624"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/.gitignore",
+      "bytes": 770,
+      "sha256": "aaf634924248acb1ca04bb54768e49da1845fa417843b575e65ea80ad8469ad5"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/00-Heretic模型编辑评测与私有部署.md",
+      "bytes": 32166,
+      "sha256": "15902bde8deebbcf178c043d994cc8abbd2f8a89b54cf61932cf8e2efb90457d"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/01-清单模板源码与测试附录.md",
+      "bytes": 73666,
+      "sha256": "f84eaa152c61a2fae233d5f1ce98fc0a55e0afc64b18cff9b2fbbde590961a84"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/edited-model.manifest.template.json",
+      "bytes": 2065,
+      "sha256": "0b736ff8c30367be945575e2a640b4d2d39c00b89b79b6c24cf74c1ecf57edc4"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/evaluation-plan.template.json",
+      "bytes": 2875,
+      "sha256": "9af20668f1569e42d95febc27bb0fe757d477292992b01427ddbcc0ff7e742c1"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/evaluation-report.template.md",
+      "bytes": 6216,
+      "sha256": "9590c88fe07947a90dd060ee918a4a84be2331c72487fc06d01da77ebb3cc91b"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/experiment.manifest.template.json",
+      "bytes": 3745,
+      "sha256": "f293b7c70db72f7ca71843665ad36ee235f484d55860b3cd5d79e74c6a437fca"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/heretic_math_manifest_demo.py",
+      "bytes": 45502,
+      "sha256": "627c9b5339849515185a058f7afd2c03088def1a189118811ef3f4942f4dc037"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/original-model.manifest.template.json",
+      "bytes": 1279,
+      "sha256": "8399df235f729f7cb28bb684803541743e29a2e2adafd364005a40e0e4f84af1"
+    },
+    {
+      "path": "80-实践/06-Heretic模型编辑评测与私有部署/test_heretic_math_manifest_demo.py",
+      "bytes": 9651,
+      "sha256": "b2997c35a2776fe639f509afc9c9d3de8dd88879c4db5bc41614e6e4228b28f9"
+    },
+    {
+      "path": "80-实践/07-PyTorch与核心公式CPU实验/.gitignore",
+      "bytes": 41,
+      "sha256": "6f36cdc2f5c2c97f05c38fe057cd41139abddca0c820f05d92ee9c47e040b17c"
+    },
+    {
+      "path": "80-实践/07-PyTorch与核心公式CPU实验/00-CPU实验与使用说明.md",
+      "bytes": 4524,
+      "sha256": "e512fd69a55c11d4128b6fd89138913b120ff38202f0f9d253dd317eba615b5e"
+    },
+    {
+      "path": "80-实践/07-PyTorch与核心公式CPU实验/core_checks.py",
+      "bytes": 2209,
+      "sha256": "de4bd259744eb287b6cac8a9a06c11e2d63719fe13ab06cf416e248e87cb1054"
+    },
+    {
+      "path": "80-实践/07-PyTorch与核心公式CPU实验/test_core.py",
+      "bytes": 6492,
+      "sha256": "2d4401d66edcf45dde8168a3f0c5a85d7b11e00a7c47c312df65a135ae46e9e7"
+    },
+    {
+      "path": "80-实践/07-PyTorch与核心公式CPU实验/train_cnn.py",
+      "bytes": 4244,
+      "sha256": "896f2b47bacbcde49ce11a782c2facf165411f2b284932f31b125e43594f3628"
+    },
+    {
+      "path": "80-实践/08-深层机制数值实验/00-数值实验导航与验收.md",
+      "bytes": 5527,
+      "sha256": "2494545bbef48ccd0cbd19ac2b7aa8d7cf9d6b7887fa1ed68d7a02555b3d8dea"
+    },
+    {
+      "path": "80-实践/08-深层机制数值实验/mechanisms.py",
+      "bytes": 8313,
+      "sha256": "d18321c3c78d76040476faf66f40f7826f67db5c362e7c40f1f1df602ad38194"
+    },
+    {
+      "path": "80-实践/08-深层机制数值实验/test_mechanisms.py",
+      "bytes": 22233,
+      "sha256": "cf2102dc3de36a53e7156bc2a2c2565eede3873f1398e0111d52278606c4d4ef"
+    },
+    {
+      "path": "90-资源/00-AI资源-MOC.md",
+      "bytes": 3363,
+      "sha256": "74be5ee2bfcdff9af301695c2bbd8616406feee9002c1b3ad56158599e3b89e1"
+    },
+    {
+      "path": "90-资源/01-概念数学实现与工具映射.md",
+      "bytes": 6768,
+      "sha256": "d705eb8ea1377d773553849e1369d767a5e95975d81ab6b74833b08f7576b2fd"
+    },
+    {
+      "path": "90-资源/02-模型格式与工具选择矩阵.md",
+      "bytes": 6468,
+      "sha256": "d779dc9a168517c1c809a4982a56ec8e11e0456943e64237cf0a152b239417e4"
+    },
+    {
+      "path": "90-资源/03-GPU显存与资源预算表.md",
+      "bytes": 6543,
+      "sha256": "f8752c08642d77bcf63e19cbaddce619367f9f56faf20a3f6811fb03ad958a57"
+    },
+    {
+      "path": "90-资源/04-术语表.md",
+      "bytes": 10838,
+      "sha256": "ab247f9e3874e332d7186a46d85f73d7edd5361550bc6bd27149eafa58f814b9"
+    },
+    {
+      "path": "90-资源/05-官方资料与版本核验记录.md",
+      "bytes": 21311,
+      "sha256": "f5cb5f87f29923c2bd544a619d183170f77b1e91bd2aae082d60a71c25a5266a"
+    },
+    {
+      "path": "90-资源/06-修订与验收报告.md",
+      "bytes": 6534,
+      "sha256": "670d6b3d914a87cb54ccd2e4eda0dfdde1b8eb9ce4ee18832d932b5afe62c59f"
+    },
+    {
+      "path": "90-资源/07-本轮研究来源与证据台账.md",
+      "bytes": 15041,
+      "sha256": "2f2355a827d44f5fd066bf3841587e0ce2542c60540e4883d6bc3f82caaee11b"
+    },
+    {
+      "path": "90-资源/08-本轮深化修订与验收报告.md",
+      "bytes": 9159,
+      "sha256": "d8bd5380622afae959a3effbe1e7f050d0786af8e5bbc2a0d509412b26da400f"
+    },
+    {
+      "path": "90-资源/图示/README.md",
+      "bytes": 1436,
+      "sha256": "099a013411b9775315bd47de3e5a9880d0e4de3c4c5d36550c9689501d0345ff"
+    },
+    {
+      "path": "90-资源/图示/audio.dot",
+      "bytes": 670,
+      "sha256": "9492fb2f9148f100d15b533f60859d7839d280f87f49b8342b44a7167c49770d"
+    },
+    {
+      "path": "90-资源/图示/audio.png",
+      "bytes": 95041,
+      "sha256": "eb38f880d5e9791c83d4e1ef0d00e3821692e51739a2c5c4eac002ff3fe16e34"
+    },
+    {
+      "path": "90-资源/图示/audio.svg",
+      "bytes": 5537,
+      "sha256": "12aed8c608b378327f7e53b438587b65884008ea2527dda1c4bd95f90c37afc1"
+    },
+    {
+      "path": "90-资源/图示/autograd.dot",
+      "bytes": 586,
+      "sha256": "4046054433cbbfbfd0d8190fd6693df706cd56d07008e39e2e5270a6ce853046"
+    },
+    {
+      "path": "90-资源/图示/autograd.png",
+      "bytes": 61182,
+      "sha256": "2da6245731b0c17194478beb8ca12e35dde699c8e119f9a9868d92f3c14e8075"
+    },
+    {
+      "path": "90-资源/图示/autograd.svg",
+      "bytes": 5602,
+      "sha256": "2a46e87013165c326a36b2bcfef8ffb89f81acc417a85e91e2538144b2fb700a"
+    },
+    {
+      "path": "90-资源/图示/cache_mask.png",
+      "bytes": 49806,
+      "sha256": "16f7b6a2be91c12dcdb366cc0cc72b4befbd1077fa6d28912579dd232147b11e"
+    },
+    {
+      "path": "90-资源/图示/cache_mask.svg",
+      "bytes": 2894,
+      "sha256": "96d7476ce37b5895f1fb26f47a82e03df6b859830ddbf76beb1cd4588363667c"
+    },
+    {
+      "path": "90-资源/图示/clip.dot",
+      "bytes": 652,
+      "sha256": "98ef3eb3dd811cbfdff32107124d995775a01348e5aa1814bfe64ecb9733993f"
+    },
+    {
+      "path": "90-资源/图示/clip.png",
+      "bytes": 80874,
+      "sha256": "bae67e75e52f6b204449be11b72305ac6c08e4c3abc35f7902e5d37ddfc9b8f0"
+    },
+    {
+      "path": "90-资源/图示/clip.svg",
+      "bytes": 5074,
+      "sha256": "deb9108b0c768cb0da8d22786311214b18fab7705f4bd744f339f8134f43214b"
+    },
+    {
+      "path": "90-资源/图示/convolution.png",
+      "bytes": 46606,
+      "sha256": "5b663b036f6d84010e487d1442cdfde46660c542ca137de6bc07aab11560457d"
+    },
+    {
+      "path": "90-资源/图示/convolution.svg",
+      "bytes": 3382,
+      "sha256": "a4e643e0ed77ce6fd39fea91c44765f7376f14ccb3fea58bea0e51334c2e4572"
+    },
+    {
+      "path": "90-资源/图示/course_map.dot",
+      "bytes": 842,
+      "sha256": "7310bab632dc1d5f1f935958bf1091d249eb3c4f4cd34d6bae6fdd106c82dad3"
+    },
+    {
+      "path": "90-资源/图示/course_map.png",
+      "bytes": 139767,
+      "sha256": "214d778cfa4b756d0d3c54e91675f121d5dde65ed32a7e335010cb7235de8e4e"
+    },
+    {
+      "path": "90-资源/图示/course_map.svg",
+      "bytes": 6950,
+      "sha256": "028d9742a1caefc9b1395b3031aefb5fd8b6f4a17d97241924476d8273aeac7a"
+    },
+    {
+      "path": "90-资源/图示/diffusion.dot",
+      "bytes": 640,
+      "sha256": "28b03293d818fc1e3f1e2db26ff570c2f27a8a18318cffc3ae0e72b3cee5a19e"
+    },
+    {
+      "path": "90-资源/图示/diffusion.png",
+      "bytes": 73523,
+      "sha256": "d2a3c9ed5fa244396190b0bd4c10977a22ee625e0994bcffb206244f76834ab8"
+    },
+    {
+      "path": "90-资源/图示/diffusion.svg",
+      "bytes": 4334,
+      "sha256": "919abd4b223f8a196b22fa605bc17e0145f1e042d8d9229db470b12a154072bb"
+    },
+    {
+      "path": "90-资源/图示/distributed.dot",
+      "bytes": 659,
+      "sha256": "1598122d744f145458eb2b76cd0304393525aa36c036f02e9800e3d3b2ddf835"
+    },
+    {
+      "path": "90-资源/图示/distributed.png",
+      "bytes": 83119,
+      "sha256": "34f5fd22999b4fe00c38ae991b7c73a3eb51bd169b350a4fea03ea6bc4374b83"
+    },
+    {
+      "path": "90-资源/图示/distributed.svg",
+      "bytes": 4537,
+      "sha256": "db4beabba2ff3d2a6c54f3a89ffc7a2cb365303ebb695360bd2975c4c1e0e0ee"
+    },
+    {
+      "path": "90-资源/图示/flash.dot",
+      "bytes": 678,
+      "sha256": "f43a655557d1d18d4499b0e27a308642f99f4b10c62fd8115cca1ebff8662967"
+    },
+    {
+      "path": "90-资源/图示/flash.png",
+      "bytes": 90208,
+      "sha256": "977735af9c36a4a5391842813660a4b334c07ef7c22c99186e5844f1d2144784"
+    },
+    {
+      "path": "90-资源/图示/flash.svg",
+      "bytes": 4551,
+      "sha256": "6a16dda96ed2af09f9f72d8210c3f252577c9f5e1ca31e2971fff28370d18616"
+    },
+    {
+      "path": "90-资源/图示/flow.dot",
+      "bytes": 597,
+      "sha256": "089235eed44cd95b040a0094fd8b930d715b71c2d2af3d797fa0f8e1755f39b9"
+    },
+    {
+      "path": "90-资源/图示/flow.png",
+      "bytes": 69336,
+      "sha256": "b4f7aa8c98214c0ec102248a2a0ac0713e9a864d1f46f3c76852ebea0988fb02"
+    },
+    {
+      "path": "90-资源/图示/flow.svg",
+      "bytes": 4222,
+      "sha256": "301089751926c6114bd78766a3b5979c43026379db0d1e3a66ecd74825d1543e"
+    },
+    {
+      "path": "90-资源/图示/generate_figures.py",
+      "bytes": 9581,
+      "sha256": "6138d8905b8b8c4ce02a463eec7c8a26803f35c5aee8607dfd43b42016631084"
+    },
+    {
+      "path": "90-资源/图示/mla.dot",
+      "bytes": 742,
+      "sha256": "4797b53d70ab377fd057e60f6471cd0004954a0c087e1b57e9ecda0676442885"
+    },
+    {
+      "path": "90-资源/图示/mla.png",
+      "bytes": 129441,
+      "sha256": "ae3f9b37f4ed05fccdf771cb5723dc508bd86a82652cc86c0b003c5e4b63f4dd"
+    },
+    {
+      "path": "90-资源/图示/mla.svg",
+      "bytes": 6723,
+      "sha256": "bd364e9e9524fc1247abe7cdb651ac1ecada9e75a94cb1948e1947423243e943"
+    },
+    {
+      "path": "90-资源/图示/reasoning.dot",
+      "bytes": 667,
+      "sha256": "8f70b7cf3f9b9f5ea615e87d53abc6480c054a47fdb3de423065fb1bc90af3cd"
+    },
+    {
+      "path": "90-资源/图示/reasoning.png",
+      "bytes": 87449,
+      "sha256": "2178760824726f2e4eea7cbcfab60499b523bdc4bbe84d16f1327533af17271b"
+    },
+    {
+      "path": "90-资源/图示/reasoning.svg",
+      "bytes": 4364,
+      "sha256": "a8d3e575187960cc2577ff7a288dcdd47a38cb5793cdd4600856097d4337cab7"
+    },
+    {
+      "path": "90-资源/图示/receptive_field.dot",
+      "bytes": 599,
+      "sha256": "9dd3adf4b094ed4ba1f79cb14f46750de9fb764434651bff1cd0dd771b07b0c2"
+    },
+    {
+      "path": "90-资源/图示/receptive_field.png",
+      "bytes": 54743,
+      "sha256": "4d73e636c3baf4fa9add9b309e849f97ff8fcbb61e49a059a8669029b1fa63a7"
+    },
+    {
+      "path": "90-资源/图示/receptive_field.svg",
+      "bytes": 4383,
+      "sha256": "aed7ce6163b8f548dc7685cb2b7c60b0735ce0e461928b5544b7fd2fb9859232"
+    },
+    {
+      "path": "90-资源/图示/residual.dot",
+      "bytes": 587,
+      "sha256": "d471a5d164fb43c3b5b28275e07491c75a2ec625bd77dc808a28b5c8f40c19dc"
+    },
+    {
+      "path": "90-资源/图示/residual.png",
+      "bytes": 65804,
+      "sha256": "167c03ffbb5c9f647ccfe693c3fd694e4f3b9534504caafeb0aba2613f4c2f3c"
+    },
+    {
+      "path": "90-资源/图示/residual.svg",
+      "bytes": 4042,
+      "sha256": "0be244b3f0124739896749639d597d0caaeaf1f52dddab1e1d3dc582cfc798d5"
+    },
+    {
+      "path": "90-资源/图示/rl.dot",
+      "bytes": 688,
+      "sha256": "7f92c59d5a46f74e075d7177dae393777b895da778f659642d65355b353bfeec"
+    },
+    {
+      "path": "90-资源/图示/rl.png",
+      "bytes": 89951,
+      "sha256": "872ce3f328742aeaf5b65f6a140f4082f7477ec0d34fef081578efbcf48d5e21"
+    },
+    {
+      "path": "90-资源/图示/rl.svg",
+      "bytes": 5127,
+      "sha256": "082d6d9408016a4a606a52b957b7017b39adf27fd867684d058049816e4b2047"
+    },
+    {
+      "path": "90-资源/图示/ssm.dot",
+      "bytes": 641,
+      "sha256": "9083272f27443c006672d0660fc782e794114031ccbb50a3ed9c014e65a15baa"
+    },
+    {
+      "path": "90-资源/图示/ssm.png",
+      "bytes": 78434,
+      "sha256": "a2c2da0fa35622c35db33af99f39c58e5e88186d5895802a70c427ff337e3025"
+    },
+    {
+      "path": "90-资源/图示/ssm.svg",
+      "bytes": 5040,
+      "sha256": "50cdc35375c2e9a64e4015828c35432de05735974f3c80828046ff084dbc4f76"
+    },
+    {
+      "path": "90-资源/图示/transformer.dot",
+      "bytes": 677,
+      "sha256": "9bc0d431e849c91ebba809c2e2a342c0ff6e1f7360695e0341f694d9e7c16666"
+    },
+    {
+      "path": "90-资源/图示/transformer.png",
+      "bytes": 86252,
+      "sha256": "8f3d9acaef30ce93e27a14c64b077d0c1c335cb8bffc716f43b1ab4e3e845f0d"
+    },
+    {
+      "path": "90-资源/图示/transformer.svg",
+      "bytes": 5207,
+      "sha256": "4bfa93401aa3041dca77eb14a443066987e1e3d1560fa41b341048f6d3d04454"
+    },
+    {
+      "path": "90-资源/图示/vit.dot",
+      "bytes": 660,
+      "sha256": "4c3b05cdc2d6c91f8cfabf5c11839474885506a793fc94a833367c753afcb233"
+    },
+    {
+      "path": "90-资源/图示/vit.png",
+      "bytes": 77121,
+      "sha256": "e55b1ac38e5ff42a884ec48cf80ee7c6b61e4be671fb22f27ddd26377cdefce1"
+    },
+    {
+      "path": "90-资源/图示/vit.svg",
+      "bytes": 5005,
+      "sha256": "f2fc46b85607100ad797fc6d40675358b9fdcf4d453f659ef787e319cc2c2c1f"
+    },
+    {
+      "path": "90-资源/图示/vlm.dot",
+      "bytes": 669,
+      "sha256": "e001870db5e232f0873984bdbfdb7a08eaacfce269d62ce2480712d560428a0e"
+    },
+    {
+      "path": "90-资源/图示/vlm.png",
+      "bytes": 87058,
+      "sha256": "2d0eaabbd24c4ac60b1272d018b0b525909be865fda69390ae852378402d5cf0"
+    },
+    {
+      "path": "90-资源/图示/vlm.svg",
+      "bytes": 5126,
+      "sha256": "9ef30fd1a219b889cd614bca19bd43f394c6528c5ddbbd450876cd62b0e53626"
+    },
+    {
+      "path": "90-资源/图示/深化研究/README.md",
+      "bytes": 740,
+      "sha256": "9b1b756d49e8f0b1b16c925abbefbfe4fe83e9a604378942610037499310680b"
+    },
+    {
+      "path": "90-资源/图示/深化研究/aliasing.dot",
+      "bytes": 969,
+      "sha256": "32bf7172b600c68cacc6afb431a0d2e5352906ff60f58695c63b906f308ee236"
+    },
+    {
+      "path": "90-资源/图示/深化研究/aliasing.png",
+      "bytes": 83930,
+      "sha256": "cedb0f135408ee6ee1fefa4e89d7b67a5295b5e31933d023d4c08a8bd691c7b5"
+    },
+    {
+      "path": "90-资源/图示/深化研究/aliasing.svg",
+      "bytes": 5601,
+      "sha256": "c64f47c585b06cf6db4b807dc8a86f11f80816af60fcb5c4c41ed5874a9a722e"
+    },
+    {
+      "path": "90-资源/图示/深化研究/attention_backward.dot",
+      "bytes": 1025,
+      "sha256": "1a1e37b93c1feade212eacbcfbd2d7a9a6670dba9f97632ab82ddf171175fa4a"
+    },
+    {
+      "path": "90-资源/图示/深化研究/attention_backward.png",
+      "bytes": 98566,
+      "sha256": "21dbdf5e1d155ce8b540690a6ba25e355c63fe8a1cbacb7dba342bef433c7e14"
+    },
+    {
+      "path": "90-资源/图示/深化研究/attention_backward.svg",
+      "bytes": 7223,
+      "sha256": "b7b6ffd93926f604d19027c244547ee0b8a420316dcbf8b1fd835874b5f72524"
+    },
+    {
+      "path": "90-资源/图示/深化研究/conformal.dot",
+      "bytes": 989,
+      "sha256": "8bdbabdd9b8b931d6ca22180894c0094193618464b8fbc0f8cfb217d84abded5"
+    },
+    {
+      "path": "90-资源/图示/深化研究/conformal.png",
+      "bytes": 81543,
+      "sha256": "344b5e7b1ab1c5f45c94c273e8a4edd48b4eede8b707477b01c8acb3abe544f4"
+    },
+    {
+      "path": "90-资源/图示/深化研究/conformal.svg",
+      "bytes": 5246,
+      "sha256": "f562cbd73663c1e4a7132dd90377594b11a3f3a208dbf6b14cea11705ca90309"
+    },
+    {
+      "path": "90-资源/图示/深化研究/conv_adjoint.dot",
+      "bytes": 928,
+      "sha256": "4eefcea2fc2b08a6cbbbd54bd7b091947815cc3996dc47b7812d39f1ccd2371e"
+    },
+    {
+      "path": "90-资源/图示/深化研究/conv_adjoint.png",
+      "bytes": 74044,
+      "sha256": "8486e4ab616efa00330350cd87acebdd73827585a4cc63227b8ad9f3bd4c6e39"
+    },
+    {
+      "path": "90-资源/图示/深化研究/conv_adjoint.svg",
+      "bytes": 5555,
+      "sha256": "f2d12ee88790b02933edba448ec86b7af3110c3a51ddf5ab91cdf1295e6ad4b4"
+    },
+    {
+      "path": "90-资源/图示/深化研究/course_graph.dot",
+      "bytes": 1303,
+      "sha256": "f273d58d5b689d338ea247d2b94400050ff7382b10aaca544ee52065f0f7b449"
+    },
+    {
+      "path": "90-资源/图示/深化研究/course_graph.png",
+      "bytes": 162233,
+      "sha256": "5864080d31d9d268d7e0d096e576bbbf52d29631682e17a9926f66cb033c8f77"
+    },
+    {
+      "path": "90-资源/图示/深化研究/course_graph.svg",
+      "bytes": 9874,
+      "sha256": "ab84a239571ba900ea6667d6fb6af67a9f00b02eac9b6990282db81d9bbc65ed"
+    },
+    {
+      "path": "90-资源/图示/深化研究/dpo.dot",
+      "bytes": 1110,
+      "sha256": "4b5e255c018e77f2cec1e06767abafc17ee9fb96c20ac28d537f493d267a0b16"
+    },
+    {
+      "path": "90-资源/图示/深化研究/dpo.png",
+      "bytes": 123888,
+      "sha256": "c4ef9b38aa20d026d5eaef7fe07f5e66cff097f258654703f110d3b5fe71d65c"
+    },
+    {
+      "path": "90-资源/图示/深化研究/dpo.svg",
+      "bytes": 6110,
+      "sha256": "c92a3fa51edee9b5f67bad5065087c8f85d6bba4105effd2aa6e0807b6c7af3f"
+    },
+    {
+      "path": "90-资源/图示/深化研究/evaluation.dot",
+      "bytes": 1082,
+      "sha256": "63faad61073e48671c4a14cda1857ce6b3f1755ccee8d59a433b27b226b3c707"
+    },
+    {
+      "path": "90-资源/图示/深化研究/evaluation.png",
+      "bytes": 120163,
+      "sha256": "c05b17780ea90e78acfb8d0ed306ef655e5a49316ded70db8c2543859829aac4"
+    },
+    {
+      "path": "90-资源/图示/深化研究/evaluation.svg",
+      "bytes": 7512,
+      "sha256": "3566e0e1af4b8ad9cab8d1e4dd4a33141fca137ed547335ce8ae1e5ef7043a3e"
+    },
+    {
+      "path": "90-资源/图示/深化研究/generate_figures.py",
+      "bytes": 9568,
+      "sha256": "b36355b3b05b3110446eba1b22318c9c4c97a111a54462ee609a277bce7a765c"
+    },
+    {
+      "path": "90-资源/图示/深化研究/memory_tradeoff.dot",
+      "bytes": 1043,
+      "sha256": "2583ac998b962ec7ed08706a483cbbce872d3d41451a414cb12805373ba90651"
+    },
+    {
+      "path": "90-资源/图示/深化研究/memory_tradeoff.png",
+      "bytes": 110654,
+      "sha256": "ccc313e320ecc7d019895d12b1752dbf6b4f77b044a7da6e973c4420a6e463a3"
+    },
+    {
+      "path": "90-资源/图示/深化研究/memory_tradeoff.svg",
+      "bytes": 6045,
+      "sha256": "a8a133f418291aea6697eb7a62ec4a10470a22e215fd39e36f9d8ec92ecdac9c"
+    },
+    {
+      "path": "90-资源/图示/深化研究/rag_evidence.dot",
+      "bytes": 1049,
+      "sha256": "8353e86d74d9eb8e61732459d4bd00e4e35dae800a2bc899b9c01c82f429480a"
+    },
+    {
+      "path": "90-资源/图示/深化研究/rag_evidence.png",
+      "bytes": 111869,
+      "sha256": "13eaa367c12adb023b08e394802aa8cfeb70d78d9ab5e25136681ab89d607187"
+    },
+    {
+      "path": "90-资源/图示/深化研究/rag_evidence.svg",
+      "bytes": 6164,
+      "sha256": "2e13043da9f1926e33a7bbec2e92f3386dd4034f93e6499f982a2d68103d2f2c"
+    },
+    {
+      "path": "90-资源/图示/深化研究/rope_cache.dot",
+      "bytes": 1371,
+      "sha256": "ba0d029a7527c192ede006d5f77023db0a554b2ecb47e114f87b01dc4b62bcb2"
+    },
+    {
+      "path": "90-资源/图示/深化研究/rope_cache.png",
+      "bytes": 108218,
+      "sha256": "8c944a499208ddf519ccb51c91045376a1735f26be36177d1c23490cf49937ce"
+    },
+    {
+      "path": "90-资源/图示/深化研究/rope_cache.svg",
+      "bytes": 9286,
+      "sha256": "303fb24f9470fcae6cd4592870a97daa0956873ccfb1c4deb49b5ebdeb8d167a"
+    },
+    {
+      "path": "90-资源/图示/深化研究/token_weight.dot",
+      "bytes": 1001,
+      "sha256": "5846c5213f5acab26d353f662dff8a3bd0b91dee3adf1d6913bcd6b6fb39f0f6"
+    },
+    {
+      "path": "90-资源/图示/深化研究/token_weight.png",
+      "bytes": 104870,
+      "sha256": "6f64ea5ada091a79c9c86ff403b177cebb6cc00ad860eb6d92dec46d07a06da6"
+    },
+    {
+      "path": "90-资源/图示/深化研究/token_weight.svg",
+      "bytes": 5605,
+      "sha256": "fb906423af3f5a3c423b3527fb93a02680d57e9b4805b441994587bb3478e3a3"
+    },
+    {
+      "path": "90-资源/图示/深化研究/vjp.dot",
+      "bytes": 958,
+      "sha256": "ab3856159e7a9c7745732d3c4dfbb0eadb94caa8c11d220db9c0011cf158ff67"
+    },
+    {
+      "path": "90-资源/图示/深化研究/vjp.png",
+      "bytes": 85656,
+      "sha256": "4e39617b53b33215906e086ae83cdda3d975ba60ae280875375dd87da8742f96"
+    },
+    {
+      "path": "90-资源/图示/深化研究/vjp.svg",
+      "bytes": 5678,
+      "sha256": "5f9e2383d8f113fabea5cdd7ca2b814ce7ebea6b8faa0bf8776b120ec44123d5"
+    },
+    {
+      "path": "90-资源/维护/README.md",
+      "bytes": 2284,
+      "sha256": "012937abd12f69f3edb3e7cd5ec6f4d6b6f785a417e79702125f095b7d8f6c3b"
+    },
+    {
+      "path": "90-资源/维护/check_math.cjs",
+      "bytes": 1737,
+      "sha256": "26e095f307926383c46f5733f61d3525b437d979aacbbb8f34b099ea59d690e0"
+    },
+    {
+      "path": "90-资源/维护/check_vault.py",
+      "bytes": 7202,
+      "sha256": "ae1ce59f3dc8f0f4a3eaef3348d1a5ed79bd4bbad7ba8020eb4cfd2f1b0f4f06"
+    },
+    {
+      "path": "90-资源/维护/cnn_metrics.json",
+      "bytes": 2111,
+      "sha256": "d95895ce1b1416f689577d7a0c202f8cda743cbc7881a64405a0dce75f908417"
+    },
+    {
+      "path": "90-资源/维护/environment.json",
+      "bytes": 287,
+      "sha256": "4e2b101896406fa4276073078723b11b05ca48c68749f36b53ff805901da1158"
+    },
+    {
+      "path": "90-资源/维护/external_vault_links.json",
+      "bytes": 69997,
+      "sha256": "d714dc9f3b03a5bb22819063ec8b8776cf4589be582c09865e0a3f69955c6c08"
+    },
+    {
+      "path": "90-资源/维护/file_manifest_sha256.json",
+      "bytes": 44321,
+      "sha256": "cccd3df09a32637c2691be7317c2814f403e7ba0ccf54273d44923818660279e"
+    },
+    {
+      "path": "90-资源/维护/format_repairs.json",
+      "bytes": 2794,
+      "sha256": "4f07638334a32c5f348eb5c1960bf8e485d7356d0ed5220d867df4ea378ac57b"
+    },
+    {
+      "path": "90-资源/维护/math_render.json",
+      "bytes": 96,
+      "sha256": "f9477d7fccd0446f21d7bca3d1ff56713350bc9e77e550e89c0fa2b33586e6e9"
+    },
+    {
+      "path": "90-资源/维护/new_tests.log",
+      "bytes": 1641,
+      "sha256": "fee43a7ec2e202570c8e70e0343d6d5bb130d4a84c3a5f91409833f3c425a356"
+    },
+    {
+      "path": "90-资源/维护/original_tests.json",
+      "bytes": 12475,
+      "sha256": "9164ea056564b544b71b0bc80dce9e87020d4311b671446a83b1121f55a8414a"
+    },
+    {
+      "path": "90-资源/维护/preservation.json",
+      "bytes": 3771,
+      "sha256": "7d2f7140e318f0c97fc1bf8a98c80603283982d40b20b6cf0900ed4243bc8cea"
+    },
+    {
+      "path": "90-资源/维护/static_audit.json",
+      "bytes": 74010,
+      "sha256": "b6df61bdd654b8a4f2afcdc387542dfbc87f473934c528e922e5bd09b3af4dd9"
+    },
+    {
+      "path": "90-资源/维护/supplemental_checks.json",
+      "bytes": 132,
+      "sha256": "a006cc93d25ae1fb943ad5a83a69b4960a404ea8b30f77e9d8c5f9544442882f"
+    },
+    {
+      "path": "90-资源/维护/深化研究/acceptance_status.json",
+      "bytes": 800,
+      "sha256": "2110f18a8e2b1811368c7b583a82cc21f947cd9846d6363d5577cfa9434df7db"
+    },
+    {
+      "path": "90-资源/维护/深化研究/delivery_summary.json",
+      "bytes": 1912,
+      "sha256": "7058836f687b245cebaa184b2251582362162b1e05f25c53ff12b91f16b01941"
+    },
+    {
+      "path": "90-资源/维护/深化研究/editorial_changes.json",
+      "bytes": 13561,
+      "sha256": "143a22956f0a0bbf57440103ec2f311a444ae363463fe86d7629a38d4888b049"
+    },
+    {
+      "path": "90-资源/维护/深化研究/environment.json",
+      "bytes": 499,
+      "sha256": "e0597fb8a10ba911aca64f24103e81c3dbec0b7a410cf564ff7ddc073bb7aee2"
+    },
+    {
+      "path": "90-资源/维护/深化研究/extended_audit.json",
+      "bytes": 8481,
+      "sha256": "715d57fac8ac4052a7c8c2efebf5076ee4286a57510e66610ebe5db7a7208f7c"
+    },
+    {
+      "path": "90-资源/维护/深化研究/extended_audit.py",
+      "bytes": 4889,
+      "sha256": "a05d19fb38a1b2023865db7102ffca4d5fadb4a0a6e938e8b2fb40ebbae04971"
+    },
+    {
+      "path": "90-资源/维护/深化研究/external_references.json",
+      "bytes": 69452,
+      "sha256": "82eb44b7896a9e6fc2ec5152fbcd0df978c775caec884c710c3b62047d1c939a"
+    },
+    {
+      "path": "90-资源/维护/深化研究/file_changes.json",
+      "bytes": 51659,
+      "sha256": "478f386756f863c0ae3032ec77a6e84c4c17415bdcaaa54a78e2f6b8105b0e60"
+    },
+    {
+      "path": "90-资源/维护/深化研究/formulas.json",
+      "bytes": 197968,
+      "sha256": "b1161035e845fd56397840a5adbf7ea4c5f1dc50e2032bad0c5172f76eb97f50"
+    },
+    {
+      "path": "90-资源/维护/深化研究/mathjax_report.json",
+      "bytes": 98,
+      "sha256": "ef392d6aee1ab6ef17e784fba7b4dd8b03114cc710e112fb4060fed8b29a9501"
+    },
+    {
+      "path": "90-资源/维护/深化研究/original_file_preservation.json",
+      "bytes": 74818,
+      "sha256": "73f0463f215f8119dd8e7165009ea5663878987351ab068daf21f256caa577ec"
+    },
+    {
+      "path": "90-资源/维护/深化研究/original_inventory.json",
+      "bytes": 92243,
+      "sha256": "2b7f67738ce187b0eb96474f8787d96dadba67c036fc30522edd1f968f20827a"
+    },
+    {
+      "path": "90-资源/维护/深化研究/original_tests_rerun.json",
+      "bytes": 14317,
+      "sha256": "22e3ad17ac469ba3d887c547c9617072b0c683aeb92e158aadeac1e5bf0a4aac"
+    },
+    {
+      "path": "90-资源/维护/深化研究/original_vault_audit.json",
+      "bytes": 74010,
+      "sha256": "b6df61bdd654b8a4f2afcdc387542dfbc87f473934c528e922e5bd09b3af4dd9"
+    },
+    {
+      "path": "90-资源/维护/深化研究/python_syntax.json",
+      "bytes": 3379,
+      "sha256": "36283eb4c3f5a03c88398bf749cb67319d933b4bf0f75e64e3a19d98bc1dca0f"
+    },
+    {
+      "path": "90-资源/维护/深化研究/run_acceptance.py",
+      "bytes": 4584,
+      "sha256": "bf8575093f9601f8ef434445a0defd5db61b4528632b743e899521a94e748bb9"
+    },
+    {
+      "path": "90-资源/维护/深化研究/shell_syntax.json",
+      "bytes": 227,
+      "sha256": "d3528276f95edf05ee8b08b0a191ee4812ac4ce12ecd0359aa11ff7b520780b0"
+    },
+    {
+      "path": "90-资源/维护/深化研究/sources.json",
+      "bytes": 14213,
+      "sha256": "8db9eddd140d555e5328e9d0eb61a17f04d40a2696e95386a29a7d19713c614c"
+    },
+    {
+      "path": "90-资源/维护/深化研究/test_runs.json",
+      "bytes": 21499,
+      "sha256": "1d80025199e16721ebc51e309167f0e5f8e2fd20e46fc1b2dced88150c166408"
+    },
+    {
+      "path": "90-资源/维护/深化研究/vault_audit.json",
+      "bytes": 74011,
+      "sha256": "7f9fc7527f8f9892b215f894f8cb7079dfd03f85ef4d460cc71f36f116086fa2"
+    },
+    {
+      "path": "90-资源/维护/深化研究/verify_manifest.py",
+      "bytes": 1054,
+      "sha256": "86362deb404622ad2c4dd75480b354a610359a4d11aed464e33121b888c36511"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2167,
+      "sha256": "4c47d8720b2485fa2de4269507eeeda2224fad03265a766e0949f25d06694175"
+    }
+  ]
+}

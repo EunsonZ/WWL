@@ -1,0 +1,35 @@
+{
+  "batch": "path-adapters",
+  "scope": {
+    "edited_copy": "/private/tmp/wwl-structure-q7y1fsjr/stage",
+    "live_vault_edited": false,
+    "algorithm_or_experiment_semantics_changed": false
+  },
+  "baseline": {
+    "observed_failure": {
+      "command": "PYTHONPYCACHEPREFIX=/private/tmp/wwl-structure-q7y1fsjr/pycache python3 计算机知识/_labs/round3/PY/test_python.py",
+      "result": "FileNotFoundError: stage/计算机知识/计算机知识/10-编程语言/01-Python/03-控制流函数与作用域.md",
+      "cause": "The moved lab treated 计算机知识 as the vault root and added the course directory a second time."
+    }
+  },
+  "path_contract": {
+    "vault_root": "Found by upward search for AGENTS.md.",
+    "course_source": "<vault-root>/计算机知识",
+    "new_reports": "<vault-root>/Logs/运行/<named-batch>/<run-timestamp>/计算机知识/",
+    "historical_meta": "计算机知识/90-资源/维护/导入-com/_meta is read as historical material and is not a default output target.",
+    "package_verifier": "verify_delivery.py remains byte-for-byte unchanged and is documented as a verifier for an external, untouched original com package snapshot only."
+  },
+  "verification": {
+    "py_compile": "PASS: eight changed Python entry points plus the path regression script, with pycache redirected to /private/tmp/wwl-structure-q7y1fsjr/pycache.",
+    "path_regression": "PASS: tools/test_path_adapters.py imports only path helpers, verifies each timestamped default output directory, runs the three static maintenance tools against an empty temporary directory with explicit output directories, and verifies their reports.",
+    "documentation_scan": "PASS: no remaining python _labs/ command, historical _meta default-output phrase, or relative [[_meta/ link in the adapted lab/navigation documentation.",
+    "historical_bytes": {
+      "verify_delivery.py_sha256": "5291a139b399ea475e90c71b6eedb6a1cca8b03fd8c4bd0d43ba7438b18625eb",
+      "file_manifest.json_sha256": "c0bb6e65b3ef4dae4fe8eb605f22008aa70cd70cc01f6c0b833ab1e310211851"
+    },
+    "not_run": [
+      "Full round3, round4, and integration experiment suites",
+      "Compiler/resource builds, services, and Obsidian GUI verification"
+    ]
+  }
+}

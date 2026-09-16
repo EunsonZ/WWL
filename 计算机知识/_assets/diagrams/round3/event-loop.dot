@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="事件循环：以浏览器常见模型示意，Node 阶段不同",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"stack" [label="当前任务\n同步调用栈"];
+"micro" [label="微任务检查点\nPromise 回调等"];
+"render" [label="浏览器可选择更新渲染\n不是每轮必定绘制"];
+"task" [label="下一项可运行任务\n定时器 / I/O 等"];
+"stack" -> "micro";
+"micro" -> "micro" [label="新微任务继续排队"];
+"micro" -> "render" [label="清空后"];
+"render" -> "task";
+"task" -> "stack";
+
+}

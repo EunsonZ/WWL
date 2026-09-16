@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="有界队列：条件变量等待的是谓词",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"p" [label="生产者\n锁内 while 满且未关闭：wait"];
+"q" [label="共享状态\n队列 + 容量 + closed\n由同一互斥锁保护"];
+"c" [label="消费者\n锁内 while 空且未关闭：wait"];
+"close" [label="关闭\n修改 closed 后通知所有等待者"];
+"p" -> "q" [label="加入后通知非空"];
+"q" -> "c" [label="移除后通知非满"];
+"close" -> "q";
+"q" -> "p" [label="空位谓词满足"];
+"c" -> "q" [label="空队列时重新检查"];
+
+}

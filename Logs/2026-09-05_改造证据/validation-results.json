@@ -1,0 +1,127 @@
+{
+  "observed_at": "2026-09-05T05:53:52.900140+00:00",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "records": [
+    {
+      "name": "checker-and-numeric",
+      "cwd": ".",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-v",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "tests": 54,
+      "skipped": 0,
+      "status": "pass",
+      "output": "test_matching_block_ignores_one_terminal_newline (test_check_code_sync.CodeSyncTests.test_matching_block_ignores_one_terminal_newline) ... ok\ntest_obsidian_knowledge_javascript_is_not_reverse_checked (test_check_code_sync.CodeSyncTests.test_obsidian_knowledge_javascript_is_not_reverse_checked) ... ok\ntest_programming_orphan_javascript_is_reported (test_check_code_sync.CodeSyncTests.test_programming_orphan_javascript_is_reported) ... ok\ntest_programming_python_and_javascript_sources_have_sync_blocks (test_check_code_sync.CodeSyncTests.test_programming_python_and_javascript_sources_have_sync_blocks) ... ok\ntest_rejects_escape_and_duplicate_marker (test_check_code_sync.CodeSyncTests.test_rejects_escape_and_duplicate_marker) ... ok\ntest_reports_cmake_source_without_reverse_link (test_check_code_sync.CodeSyncTests.test_reports_cmake_source_without_reverse_link) ... ok\ntest_reports_mismatch_and_unclosed_fence (test_check_code_sync.CodeSyncTests.test_reports_mismatch_and_unclosed_fence) ... ok\ntest_reports_runnable_source_without_reverse_link (test_check_code_sync.CodeSyncTests.test_reports_runnable_source_without_reverse_link) ... ok\ntest_unknown_language_is_not_a_false_positive (test_check_code_sync.CodeSyncTests.test_unknown_language_is_not_a_false_positive) ... ok\ntest_alias_and_markdown_formatting_and_escaped_pipe (test_check_wikilinks.WikilinkHeadingTests.test_alias_and_markdown_formatting_and_escaped_pipe) ... ok\ntest_block_reference_is_checked_and_code_is_ignored (test_check_wikilinks.WikilinkHeadingTests.test_block_reference_is_checked_and_code_is_ignored) ... ok\ntest_comment_and_fence_do_not_define_anchors (test_check_wikilinks.WikilinkHeadingTests.test_comment_and_fence_do_not_define_anchors) ... ok\ntest_comments_and_nested_fences_are_inactive (test_check_wikilinks.WikilinkHeadingTests.test_comments_and_nested_fences_are_inactive) ... ok\ntest_duplicate_heading_is_warning (test_check_wikilinks.WikilinkHeadingTests.test_duplicate_heading_is_warning) ... ok\ntest_escaped_pipe_alias_in_table (test_check_wikilinks.WikilinkHeadingTests.test_escaped_pipe_alias_in_table) ... ok\ntest_existing_full_path_and_same_page_heading (test_check_wikilinks.WikilinkHeadingTests.test_existing_full_path_and_same_page_heading) ... ok\ntest_explicit_wrong_directory_does_not_fallback (test_check_wikilinks.WikilinkHeadingTests.test_explicit_wrong_directory_does_not_fallback) ... ok\ntest_missing_heading_is_error (test_check_wikilinks.WikilinkHeadingTests.test_missing_heading_is_error) ... ok\ntest_non_markdown_fence_does_not_parse_code_as_wikilink (test_check_wikilinks.WikilinkHeadingTests.test_non_markdown_fence_does_not_parse_code_as_wikilink) ... ok\ntest_valid_block_and_embed (test_check_wikilinks.WikilinkHeadingTests.test_valid_block_and_embed) ... ok\ntest_base_references_and_obsidian_types (test_contract_v2.ContractTests.test_base_references_and_obsidian_types) ... ok\ntest_frontmatter_yaml_is_actually_parsed (test_contract_v2.ContractTests.test_frontmatter_yaml_is_actually_parsed) ... ok\ntest_malformed_nested_types_are_diagnostic (test_contract_v2.ContractTests.test_malformed_nested_types_are_diagnostic) ... ok\ntest_no_broad_or_critical_waiver (test_contract_v2.ContractTests.test_no_broad_or_critical_waiver) ... ok\ntest_profiles_and_optional_change (test_contract_v2.ContractTests.test_profiles_and_optional_change) ... ok\ntest_real_contract_is_valid (test_contract_v2.ContractTests.test_real_contract_is_valid) ... ok\ntest_roles_types_and_prerequisite_cycle (test_contract_v2.ContractTests.test_roles_types_and_prerequisite_cycle) ... ok\ntest_severity_cannot_downgrade_confirmed_errors (test_contract_v2.ContractTests.test_severity_cannot_downgrade_confirmed_errors) ... ok\ntest_style_waiver_is_exact_and_visible (test_contract_v2.ContractTests.test_style_waiver_is_exact_and_visible) ... ok\ntest_version_and_unknown_fields (test_contract_v2.ContractTests.test_version_and_unknown_fields) ... ok\ntest_ignore_code_comments_and_urls (test_markdown_links.MarkdownLinks.test_ignore_code_comments_and_urls) ... ok\ntest_valid_inline_reference_encoded_and_footnote (test_markdown_links.MarkdownLinks.test_valid_inline_reference_encoded_and_footnote) ... ok\ntest_wrong_path_and_heading (test_markdown_links.MarkdownLinks.test_wrong_path_and_heading) ... ok\ntest_adam_dpo_and_dft_independent_values (test_numeric_contracts.NumericContracts.test_adam_dpo_and_dft_independent_values) ... ok\ntest_causality_and_cache (test_numeric_contracts.NumericContracts.test_causality_and_cache) ... ok\ntest_checkpoint_load_fails_closed (test_numeric_contracts.NumericContracts.test_checkpoint_load_fails_closed) ... ok\ntest_cosine_scale_and_domain (test_numeric_contracts.NumericContracts.test_cosine_scale_and_domain) ... ok\ntest_graph_overflow_unreachable_and_direct_input (test_numeric_contracts.NumericContracts.test_graph_overflow_unreachable_and_direct_input) ... ok\ntest_huge_equal_logits_and_old_counterexample (test_numeric_contracts.NumericContracts.test_huge_equal_logits_and_old_counterexample) ... ok\ntest_key_semantics (test_numeric_contracts.NumericContracts.test_key_semantics) ... ok\ntest_lora_path_symlinks_and_containment (test_numeric_contracts.NumericContracts.test_lora_path_symlinks_and_containment) ... ok\ntest_mask_is_not_a_finite_score_floor (test_numeric_contracts.NumericContracts.test_mask_is_not_a_finite_score_floor) ... ok\ntest_ppl_has_no_silent_cap_and_is_strict_json (test_numeric_contracts.NumericContracts.test_ppl_has_no_silent_cap_and_is_strict_json) ... ok\ntest_sampling_boundaries_and_reproducibility (test_numeric_contracts.NumericContracts.test_sampling_boundaries_and_reproducibility) ... ok\ntest_softmax_gradient_and_translation (test_numeric_contracts.NumericContracts.test_softmax_gradient_and_translation) ... ok\ntest_softmax_invalid_and_extreme (test_numeric_contracts.NumericContracts.test_softmax_invalid_and_extreme) ... ok\ntest_token_ids (test_numeric_contracts.NumericContracts.test_token_ids) ... ok\ntest_allowed_path_secret_is_blocked_without_value_in_error (test_share_vault.ShareTests.test_allowed_path_secret_is_blocked_without_value_in_error) ... ok\ntest_nested_env_and_unsafe_archive_names (test_share_vault.ShareTests.test_nested_env_and_unsafe_archive_names) ... ok\ntest_real_local_config_excluded_and_archive_rechecked (test_share_vault.ShareTests.test_real_local_config_excluded_and_archive_rechecked) ... ok\ntest_symlink_and_final_archive_injection (test_share_vault.ShareTests.test_symlink_and_final_archive_injection) ... ok\ntest_allows_text_whitespace (test_text_integrity.ControlCharacterTests.test_allows_text_whitespace) ... ok\ntest_reports_null_and_other_c0_characters (test_text_integrity.ControlCharacterTests.test_reports_null_and_other_c0_characters) ... ok\ntest_reports_vertical_tab_with_line_number (test_text_integrity.ControlCharacterTests.test_reports_vertical_tab_with_line_number) ... ok\n\n----------------------------------------------------------------------\nRan 54 tests in 0.156s\n\nOK\n"
+    },
+    {
+      "name": "rag",
+      "cwd": "AI/80-实践/05-RAG评测与私有服务",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_rag_service.py"
+      ],
+      "exit_code": 0,
+      "tests": 15,
+      "skipped": 0,
+      "status": "pass",
+      "output": "test_acl_filters_before_ranking (test_rag_service.OfflineRAGTests.test_acl_filters_before_ranking) ... ok\ntest_answer_has_evidence_schema_and_safe_trace (test_rag_service.OfflineRAGTests.test_answer_has_evidence_schema_and_safe_trace) ... ok\ntest_bad_generation_stays_in_denominator (test_rag_service.OfflineRAGTests.test_bad_generation_stays_in_denominator) ... ok\ntest_chunking_preserves_raw_text_boundaries_and_overlap (test_rag_service.OfflineRAGTests.test_chunking_preserves_raw_text_boundaries_and_overlap) ... ok\ntest_chunking_retains_identity_and_reconstructible_metadata (test_rag_service.OfflineRAGTests.test_chunking_retains_identity_and_reconstructible_metadata) ... ok\ntest_content_snapshot_changes_without_algorithm_change (test_rag_service.OfflineRAGTests.test_content_snapshot_changes_without_algorithm_change) ... ok\ntest_delete_document_removes_derived_chunks (test_rag_service.OfflineRAGTests.test_delete_document_removes_derived_chunks) ... ok\ntest_http_payload_cannot_self_assert_a_privileged_principal (test_rag_service.OfflineRAGTests.test_http_payload_cannot_self_assert_a_privileged_principal) ... ok\ntest_http_server_rejects_non_loopback_before_binding (test_rag_service.OfflineRAGTests.test_http_server_rejects_non_loopback_before_binding) ... ok\ntest_multi_gold_and_empty_evaluation (test_rag_service.OfflineRAGTests.test_multi_gold_and_empty_evaluation) ... ok\ntest_prompt_injection_is_document_data_not_an_authority_change (test_rag_service.OfflineRAGTests.test_prompt_injection_is_document_data_not_an_authority_change) ... ok\ntest_request_read_timeout_is_configured_without_binding_a_socket (test_rag_service.OfflineRAGTests.test_request_read_timeout_is_configured_without_binding_a_socket) ... ok\ntest_retrieval_and_generation_are_evaluated_separately (test_rag_service.OfflineRAGTests.test_retrieval_and_generation_are_evaluated_separately) ... ok\ntest_schema_rejects_citation_outside_retrieved_set (test_rag_service.OfflineRAGTests.test_schema_rejects_citation_outside_retrieved_set) ... ok\ntest_structurally_valid_citation_can_fail_fact_coverage (test_rag_service.OfflineRAGTests.test_structurally_valid_citation_can_fail_fact_coverage) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.004s\n\nOK\n"
+    },
+    {
+      "name": "retrieval",
+      "cwd": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_retrieval_lab.py"
+      ],
+      "exit_code": 0,
+      "tests": 10,
+      "skipped": 0,
+      "status": "pass",
+      "output": "test_bloom_duplicate_insertions_do_not_raise_theoretical_fpr (test_retrieval_lab.ProbabilisticStructureTests.test_bloom_duplicate_insertions_do_not_raise_theoretical_fpr) ... ok\ntest_bloom_has_no_false_negative_for_inserted_items (test_retrieval_lab.ProbabilisticStructureTests.test_bloom_has_no_false_negative_for_inserted_items) ... ok\ntest_count_min_never_underestimates_non_negative_stream (test_retrieval_lab.ProbabilisticStructureTests.test_count_min_never_underestimates_non_negative_stream) ... ok\ntest_probability_structures_reject_broken_budgets (test_retrieval_lab.ProbabilisticStructureTests.test_probability_structures_reject_broken_budgets) ... ok\ntest_reservoir_is_bounded_and_reproducible (test_retrieval_lab.ProbabilisticStructureTests.test_reservoir_is_bounded_and_reproducible) ... ok\ntest_exact_cosine_is_oracle_and_honors_visibility (test_retrieval_lab.RetrievalTests.test_exact_cosine_is_oracle_and_honors_visibility) ... ok\ntest_inverted_postings_and_filter_before_top_k (test_retrieval_lab.RetrievalTests.test_inverted_postings_and_filter_before_top_k) ... ok\ntest_report_labels_latency_and_memory_as_measurements (test_retrieval_lab.RetrievalTests.test_report_labels_latency_and_memory_as_measurements) ... ok\ntest_toy_lsh_is_reproducible_but_evaluated_by_recall (test_retrieval_lab.RetrievalTests.test_toy_lsh_is_reproducible_but_evaluated_by_recall) ... ok\ntest_vector_and_k_preconditions (test_retrieval_lab.RetrievalTests.test_vector_and_k_preconditions) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "name": "graph",
+      "cwd": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_graph_algorithms.py"
+      ],
+      "exit_code": 0,
+      "tests": 3,
+      "skipped": 0,
+      "status": "pass",
+      "output": "test_bfs_and_dijkstra_choose_different_questions (test_graph_algorithms.GraphAlgorithmsTests.test_bfs_and_dijkstra_choose_different_questions) ... ok\ntest_rejects_missing_start_and_negative_weight (test_graph_algorithms.GraphAlgorithmsTests.test_rejects_missing_start_and_negative_weight) ... ok\ntest_single_vertex_boundary (test_graph_algorithms.GraphAlgorithmsTests.test_single_vertex_boundary) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "name": "transformer",
+      "cwd": "AI/80-实践/01-微型Transformer预训练",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_tiny_transformer.py"
+      ],
+      "exit_code": 0,
+      "tests": 15,
+      "skipped": 2,
+      "status": "pass_with_skips",
+      "output": "WARNING: output is outside this Vault; confirm its privacy and Git-ignore policy before using private prompts.\nWARNING: output is outside this Vault; confirm its privacy and Git-ignore policy before using private prompts.\ntest_checkpoint_filename_step_must_match_payload (test_tiny_transformer.DataPipelineTests.test_checkpoint_filename_step_must_match_payload) ... ok\ntest_checkpoint_save_refuses_existing_destination_without_torch (test_tiny_transformer.DataPipelineTests.test_checkpoint_save_refuses_existing_destination_without_torch) ... ok\ntest_config_is_rope_compatible (test_tiny_transformer.DataPipelineTests.test_config_is_rope_compatible) ... ok\ntest_corpus_has_no_exact_cross_split_duplicates (test_tiny_transformer.DataPipelineTests.test_corpus_has_no_exact_cross_split_duplicates) ... ok\ntest_in_place_resume_rejects_non_latest_checkpoint (test_tiny_transformer.DataPipelineTests.test_in_place_resume_rejects_non_latest_checkpoint) ... ok\ntest_old_checkpoint_can_branch_only_into_empty_output (test_tiny_transformer.DataPipelineTests.test_old_checkpoint_can_branch_only_into_empty_output) ... ok\ntest_output_inside_vault_must_use_ignored_practice_directory (test_tiny_transformer.DataPipelineTests.test_output_inside_vault_must_use_ignored_practice_directory) ... ok\ntest_packing_one_target_remainder_keeps_boundary_target (test_tiny_transformer.DataPipelineTests.test_packing_one_target_remainder_keeps_boundary_target) ... ok\ntest_packing_preserves_eos_to_bos_document_boundary (test_tiny_transformer.DataPipelineTests.test_packing_preserves_eos_to_bos_document_boundary) ... ok\ntest_packing_target_count_divisible_by_block_size (test_tiny_transformer.DataPipelineTests.test_packing_target_count_divisible_by_block_size) ... ok\ntest_preflight_is_read_only_and_complete (test_tiny_transformer.DataPipelineTests.test_preflight_is_read_only_and_complete) ... ok\ntest_text_digest_is_stable_without_exposing_raw_text (test_tiny_transformer.DataPipelineTests.test_text_digest_is_stable_without_exposing_raw_text) ... ok\ntest_tokenizer_is_fitted_only_on_supplied_train_text (test_tiny_transformer.DataPipelineTests.test_tokenizer_is_fitted_only_on_supplied_train_text) ... ok\ntest_causal_mask_blocks_future_information (test_tiny_transformer.TorchModelTests.test_causal_mask_blocks_future_information) ... skipped 'PyTorch is not installed; CPU model tests skipped safely'\ntest_checkpoint_resume_matches_uninterrupted_next_step (test_tiny_transformer.TorchModelTests.test_checkpoint_resume_matches_uninterrupted_next_step) ... skipped 'PyTorch is not installed; CPU model tests skipped safely'\n\n----------------------------------------------------------------------\nRan 15 tests in 0.004s\n\nOK (skipped=2)\n"
+    },
+    {
+      "name": "lora",
+      "cwd": "AI/80-实践/02-SFT-LoRA与QLoRA",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_practice.py"
+      ],
+      "exit_code": 0,
+      "tests": 6,
+      "skipped": 0,
+      "status": "pass",
+      "output": "test_cli_checkpoint_must_stay_in_practice_artifacts (test_practice.LoraToyTests.test_cli_checkpoint_must_stay_in_practice_artifacts) ... ok\ntest_low_rank_training_reduces_loss_and_resume_preserves_state (test_practice.LoraToyTests.test_low_rank_training_reduces_loss_and_resume_preserves_state) ... ok\ntest_base_license_review_cannot_be_a_placeholder_for_real_validation (test_practice.PreflightTests.test_base_license_review_cannot_be_a_placeholder_for_real_validation) ... ok\ntest_data_license_must_be_explicitly_approved (test_practice.PreflightTests.test_data_license_must_be_explicitly_approved) ... ok\ntest_split_group_cannot_cross_splits (test_practice.PreflightTests.test_split_group_cannot_cross_splits) ... ok\ntest_template_is_static_valid_only_with_explicit_placeholder_mode (test_practice.PreflightTests.test_template_is_static_valid_only_with_explicit_placeholder_mode) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.070s\n\nOK\n"
+    }
+  ],
+  "not_run": [
+    "Obsidian UI",
+    "GPU",
+    "real-model training",
+    "real PyTorch checkpoint load"
+  ],
+  "test_source_sha256": {
+    "scripts/test_contract_v2.py": "010c3384836707115bcf20cfc27d6edbb6eb20fc85b3bba5a83bc3b55754aefc",
+    "scripts/test_text_integrity.py": "2cb1daf3851505f6261257e8014dd4b75ee3f8716d571fe16fa6d29a5a9edb5a",
+    "scripts/test_check_code_sync.py": "9282fba3ff2ec14904f3d14f39c4f42c86785fad098ab916e8d70fe03b7db5c5",
+    "scripts/test_numeric_contracts.py": "b9cdd1c0afd1c91e56c16839967859a93b4be4f3f8b861e2062ffaebbf10f7ce",
+    "scripts/test_share_vault.py": "6c1da5f7696b61bfb4e5ab064045a6150ed742ff9b79e72953c5ca638430005f",
+    "scripts/test_markdown_links.py": "83a9f79d3ab3771f4c45ac65c31a3d2f446d938d1332a222ec2f32414d855fcc",
+    "scripts/test_check_wikilinks.py": "bc6046eab386fca57a500ccdec7526f6869b64dd266bb66b25db7a2f56915788"
+  }
+}

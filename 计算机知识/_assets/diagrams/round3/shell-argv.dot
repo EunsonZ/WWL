@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="引用保留参数边界：程序收到数组，不是原命令行",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"s" [label="name='a b.txt'"];
+"good" [label="\"$name\"\n一个参数：a b.txt"];
+"bad" [label="$name\n分词及可能的路径名展开"];
+"g" [label="argv = [\"a b.txt\"]"];
+"b" [label="常见结果 argv = [\"a\", \"b.txt\"]"];
+"s" -> "good";
+"s" -> "bad";
+"good" -> "g";
+"bad" -> "b";
+
+}

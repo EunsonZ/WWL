@@ -1,0 +1,2643 @@
+{
+  "unique_destinations": 1789,
+  "source_files": 2045,
+  "changed_targets": 375,
+  "changed_by_role": {
+    "governance": 2,
+    "navigation": 46,
+    "content": 320,
+    "code": 7
+  },
+  "unchanged_targets": 1414,
+  "protected_historical_and_original": 153,
+  "AGENTS_unchanged": true,
+  "CHANGE_prefix_unchanged": true,
+  "TaskNotes_unchanged": true,
+  "changed_files": [
+    {
+      "path": "CHANGE.md",
+      "role": "governance",
+      "old": "CHANGE.md",
+      "original_sha256": "130823f955fda4e46255ea726d7577267b1116b9cbafbd7d7d333a9dd33c6624",
+      "final_sha256": "0e5763f5306c6d26f93c88300f3b9deeb2b331288cc1cd8871a68eeb234c9892"
+    },
+    {
+      "path": "NewAgents.md",
+      "role": "governance",
+      "old": "NewAgents.md",
+      "original_sha256": "9dc95fc8d575b4986cb2c0749ccdca333fac127b7d3f297c489117409ee6481e",
+      "final_sha256": "8f5a7dc97c171535b4a5d5b73ed3d03f9229ff9bee5ba826b620e377634ba3cd"
+    },
+    {
+      "path": "AI/00-开始/00-AI-首页.md",
+      "role": "navigation",
+      "old": "TBM/AI/00-开始/00-AI-首页.md",
+      "original_sha256": "9d3bce9d0dd72e775778925a1f641091b66d51faef3528baa237dc0cc5bf4f68",
+      "final_sha256": "d0e50e5db48a69d46615a21f6ee0a14e1f1e5bcb42f3e8190531b90b1392d283"
+    },
+    {
+      "path": "AI/00-开始/01-AI知识地图.md",
+      "role": "navigation",
+      "old": "TBM/AI/00-开始/01-AI知识地图.md",
+      "original_sha256": "8a420cb6361d1bb6d7702c69bc97a14006edd9769db345f4947ba54cabe8f1f3",
+      "final_sha256": "af8cbf7da9a6488968698c4fd69ef5a24c996f0031facef1691ce0639909e904"
+    },
+    {
+      "path": "AI/00-开始/02-学习路线与先修诊断.md",
+      "role": "navigation",
+      "old": "TBM/AI/00-开始/02-学习路线与先修诊断.md",
+      "original_sha256": "7c056492c357931ecf6c8d1c4a452ec32e14b3bbc4085efcd5df37243d88b7be",
+      "final_sha256": "79aa149c8846be4e2d69800a15ffd9a611b56e3799747184704e360c2a8c2aba"
+    },
+    {
+      "path": "AI/00-开始/03-8GB-16GB与24GB实践路线.md",
+      "role": "navigation",
+      "old": "TBM/AI/00-开始/03-8GB-16GB与24GB实践路线.md",
+      "original_sha256": "17d02ce13cc04644b5baac28e96cc608cbff02f3ddd87934f6a365c7550f2eb1",
+      "final_sha256": "463361b887d4a3319017cf046e5cba55d9dbca595aa6a9ed8c785c7a63f5012d"
+    },
+    {
+      "path": "AI/20-LLM/10-原理/06-幻觉不确定性与模型边界.md",
+      "role": "content",
+      "old": "TBM/AI/20-LLM/10-原理/06-幻觉不确定性与模型边界.md",
+      "original_sha256": "80e6652afcb197aec90518f0ee2769bb5c30c2b99b2584c2a1cfd03d10480b75",
+      "final_sha256": "a75934f2c9e9c3fe6a5a9c1a075cbd020f58faae613a783dff32926a4ef445cb"
+    },
+    {
+      "path": "AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA.md",
+      "role": "content",
+      "old": "TBM/AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA.md",
+      "original_sha256": "f153e532d5ba0d8973ee7f40efb3d97ca9a55e659b1a832007f0053d2632c820",
+      "final_sha256": "761e07b82d97abdc09d9950695fdc43c255918abea22dcd69df42dfe70bb7b7a"
+    },
+    {
+      "path": "AI/20-LLM/30-训练/04-偏好优化RLHF-DPO-ORPO与KTO.md",
+      "role": "content",
+      "old": "TBM/AI/20-LLM/30-训练/04-偏好优化RLHF-DPO-ORPO与KTO.md",
+      "original_sha256": "c0965c548c4e21d8a4829348a7558a09ce8137b19334232816ed794d3e615f74",
+      "final_sha256": "f17c907a5762c92c9134a2b6b54c364a43244e5bbbedcaa698b370a87caa080c"
+    },
+    {
+      "path": "AI/20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md",
+      "role": "content",
+      "old": "TBM/AI/20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md",
+      "original_sha256": "f8d4e14ad5d73a86a5301e46408a369389f7c165c646dd95b0034bd627bcc9e2",
+      "final_sha256": "22c7c3c97ffb481217bc8d7f87bf9c7a60e9702af9484cd5805d2857122848b0"
+    },
+    {
+      "path": "AI/20-LLM/50-实现/02-从零实现Attention-RoPE与DecoderBlock.md",
+      "role": "content",
+      "old": "TBM/AI/20-LLM/50-实现/02-从零实现Attention-RoPE与DecoderBlock.md",
+      "original_sha256": "3349af471e452b92948acf1326b37ce00a8aa5df511a3fb08f050a7c09fe0a24",
+      "final_sha256": "3e6f5e2bd6878da9b03d5918b5584424d1d18f5d5c4970246282c60512559bd0"
+    },
+    {
+      "path": "AI/80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md",
+      "role": "content",
+      "old": "TBM/AI/80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md",
+      "original_sha256": "55783df0cef2f6f99fa16a636bec8cc27987c3eeb6f4fbafd215c6053b6594ac",
+      "final_sha256": "97224fb06867615307198dd4f773c78cc2e4140efdb1cdae991bc0797bca0001"
+    },
+    {
+      "path": "AI/90-资源/00-AI资源-MOC.md",
+      "role": "navigation",
+      "old": "TBM/AI/90-资源/00-AI资源-MOC.md",
+      "original_sha256": "74be5ee2bfcdff9af301695c2bbd8616406feee9002c1b3ad56158599e3b89e1",
+      "final_sha256": "c5de6bb6b23772ca3056d6be282f2cc31d250cb59453b4bd4722bbc365d5ce57"
+    },
+    {
+      "path": "AI/README.md",
+      "role": "navigation",
+      "old": "TBM/AI/README.md",
+      "original_sha256": "4c47d8720b2485fa2de4269507eeeda2224fad03265a766e0949f25d06694175",
+      "final_sha256": "db85eced26e270068442d630435beedfa00de94d8ed9bf8179174cfe05b30be0"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/00-总学习地图.md",
+      "role": "navigation",
+      "old": "TBM/com/00-总学习地图.md",
+      "original_sha256": "9a7e05949de72d0dd96869cbdbf4805398e41a97ae3d55d742dca8ac95c5ea07",
+      "final_sha256": "7db3e9a199a8f6b85aac244ac23dceefc014271c81de3b7d34159ac18544a655"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/01-先修依赖与学习顺序.md",
+      "role": "navigation",
+      "old": "TBM/com/01-先修依赖与学习顺序.md",
+      "original_sha256": "cf3a0daf8fecf4959ba16aae96bf7fa27a18bbfd0e5ac2b646735a89b85a13be",
+      "final_sha256": "0aa32fe2e7c0aef76f1a5b1f46254979f16bee34230c5117a50c5bc9428e2533"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/02-按问题寻找知识.md",
+      "role": "navigation",
+      "old": "TBM/com/02-按问题寻找知识.md",
+      "original_sha256": "b83d22bea428dfd9a4fd13869cefa791adf13e074cb99d7099efffdfddec32eb",
+      "final_sha256": "59a03f84efd4ab84099d01528d348cc5ada614cd66b6ebdbf099ec708687101a"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/03-全库文件索引.md",
+      "role": "navigation",
+      "old": "TBM/com/03-全库文件索引.md",
+      "original_sha256": "5c27af0ddb9eb0409b6f3d80399afd72f9d673bb85874550a32c18e8a03251e1",
+      "final_sha256": "90f11d146427dc62e1bd36d154f9ef3c193136ae7c379538204a7d4cebc11bbb"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/04-学科覆盖与深度分层.md",
+      "role": "navigation",
+      "old": "TBM/com/04-学科覆盖与深度分层.md",
+      "original_sha256": "cc65ec411f67d4e7fe880d83c0702f0919f8a613cbc3f9080b07e8324318b4a5",
+      "final_sha256": "fc28a3114cc2764196f0c09395d50e5336f27d8d699114d7123ca4e8736cb275"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/05-知识覆盖与逐科查漏.md",
+      "role": "navigation",
+      "old": "TBM/com/05-知识覆盖与逐科查漏.md",
+      "original_sha256": "ef1aafcd6c73984e31527810ba2d299c860eca6e9ff0ae21d3ea27d34cdc82af",
+      "final_sha256": "199bd5a776590e14914a074e880beb959a2e2adb29b0323f9fcae0fc90a2c9bb"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/07-学习方法与阶段验收.md",
+      "role": "navigation",
+      "old": "TBM/com/07-学习方法与阶段验收.md",
+      "original_sha256": "e6f21baea978400e257140b97695c15faaf87d09df9603f8dab9f5a7b805edbc",
+      "final_sha256": "cb04b825f8816ff9337acd7c8dc473187ce3e0ad47b9f759aa641c13c71f15e6"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/08-本地图示索引.md",
+      "role": "navigation",
+      "old": "TBM/com/08-本地图示索引.md",
+      "original_sha256": "d4405ee74c541b2fc3c619885ce8345ac098d8936b9866c3665d2162b3c006fa",
+      "final_sha256": "c6005ae3cadd3fdece26b434a52171b3aac0a4cdc334cdebc6229058fd98153d"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/09-本地实验与验证入口.md",
+      "role": "navigation",
+      "old": "TBM/com/09-本地实验与验证入口.md",
+      "original_sha256": "1b630095efdc0f5ffbb4d34e79b370186eb224f70097a9b3311be0e5c956e382",
+      "final_sha256": "e4d20d8cc520ecb1deaf026ba23e160c8a38e80934670902b804d16cc1654ab6"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/10-目录约定与合并说明.md",
+      "role": "navigation",
+      "old": "TBM/com/10-目录约定与合并说明.md",
+      "original_sha256": "26d7dc7235e0a3ffb1076199892383de87f346152666413eaf6ddfc1255bacab",
+      "final_sha256": "803e519147304ff23725e880006f21f12af1b5188352b9bab17a3fa4dc95aea6"
+    },
+    {
+      "path": "计算机知识/00-开始/全局导航/11-难点导读与研究证据.md",
+      "role": "navigation",
+      "old": "TBM/com/11-难点导读与研究证据.md",
+      "original_sha256": "341b02439c2b51cc13a6c24144fff4f412ef06a25a45b731c8935652e397996f",
+      "final_sha256": "7bd40a84320bfd22b21494fe3e27e738c8a704211cd6936ace6ea26b6a556148"
+    },
+    {
+      "path": "计算机知识/_labs/README.md",
+      "role": "navigation",
+      "old": "TBM/com/_labs/README.md",
+      "original_sha256": "88c1327ab0f4c9905a072f766a5c9c3e0ea97b630667dd2ef558277aaea5d1e3",
+      "final_sha256": "74f36fc9d7eca21e2aa5494a3163caf2121b5241f1891ace3fcb9fc1cd54ee82"
+    },
+    {
+      "path": "计算机知识/_labs/integration/run_all.py",
+      "role": "code",
+      "old": "TBM/com/_labs/integration/run_all.py",
+      "original_sha256": "e240d2bf1c267fed7da13b5abcb43f80d41f027335a936036d5c80fe2695b044",
+      "final_sha256": "38095a3eceaf957e9701c10de8d5a452cd6d9da2d968e01f6f118cf815d9d130"
+    },
+    {
+      "path": "计算机知识/_labs/round3/ALG/算法设计-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/ALG/算法设计-实验说明.md",
+      "original_sha256": "24f5de65f20b11e412c7b3a0b81a372903ce433ab8876d335e47780cc61ba6b6",
+      "final_sha256": "4aad0cf98496fe0f5b0dd1cac0b9c4f96a48eb0f97dad9dc1ec9a5de9efe5744"
+    },
+    {
+      "path": "计算机知识/_labs/round3/C/C语言-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/C/C语言-实验说明.md",
+      "original_sha256": "cb0a9558d0313fdc26bec27c2d42ee01fe80a4367c44b29dea08270372565dde",
+      "final_sha256": "a6cf27147af0e7a18aa872ef15d5b2fd7edc3eb6f00a778aab57eb7fcfe6cb80"
+    },
+    {
+      "path": "计算机知识/_labs/round3/CO/计算机组成原理-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/CO/计算机组成原理-实验说明.md",
+      "original_sha256": "011030dc95a05b660c2df800d4add49d42b4bd228da8bc588213c0ab78e58f2f",
+      "final_sha256": "6c35c3d0a50b7b96f7574fe184bd5755516f5a0e2352370dfb02c87fae750548"
+    },
+    {
+      "path": "计算机知识/_labs/round3/COMP/编译原理-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/COMP/编译原理-实验说明.md",
+      "original_sha256": "2d38712b482d3c4f670eb2f5400d850f9ddab7de2b8366e1f4be479eb2ac145d",
+      "final_sha256": "87c051bd6752c6b205d0d0fc06b9ce68d16c6a7d07a573e2e58c1f7e9abb6772"
+    },
+    {
+      "path": "计算机知识/_labs/round3/CPP/C++-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/CPP/C++-实验说明.md",
+      "original_sha256": "aa94bc1b8b85cd6ca5abe1cb1eafc098bdacd5c095c86966e53100c1e25b34b3",
+      "final_sha256": "852deff602f15bc1a9ae4754cb57b61469ffcdd2067bc7912888c7f2863e765f"
+    },
+    {
+      "path": "计算机知识/_labs/round3/DB/数据库-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/DB/数据库-实验说明.md",
+      "original_sha256": "64eb1962396ca04af73d48b09e340afe4c2f06f3f8c0acaf56b19d63a67061e2",
+      "final_sha256": "128484f0504bbd3ffde28650c2f4829c0625e5a9778e893197979a870b44f3d9"
+    },
+    {
+      "path": "计算机知识/_labs/round3/DS/数据结构-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/DS/数据结构-实验说明.md",
+      "original_sha256": "51690532913aaff427e927a62f5a7bef323989815cc7177ee2614fe00bd2f37b",
+      "final_sha256": "8860634f8f66688a2c3d3a3f2b0a244aa8238fa10a32b6d7073f368a06249b3f"
+    },
+    {
+      "path": "计算机知识/_labs/round3/LINUX/Linux-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/LINUX/Linux-实验说明.md",
+      "original_sha256": "0ce04b176dee7ff203e2336b0fbc425800917a6f351c73db4d22e46d828467e6",
+      "final_sha256": "022dcf933b813f6441a6303f0c8521e94c045ba584f29f2181233f91bb464e12"
+    },
+    {
+      "path": "计算机知识/_labs/round3/NET/计算机网络-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/NET/计算机网络-实验说明.md",
+      "original_sha256": "3ce7afbad1cc02d4c1ce740bb46d7d8e3ae8e2e3a871f06691e8143b1cb5a7c6",
+      "final_sha256": "997abbb6e8af1397782c01ee03bd678fe5a9bc8380d2530d7814fffdeb8d6006"
+    },
+    {
+      "path": "计算机知识/_labs/round3/OS/操作系统-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/OS/操作系统-实验说明.md",
+      "original_sha256": "01c548883d7063b0b04375e3a567785047c294a557a630a143a5704c0d6c6a4f",
+      "final_sha256": "5a3145d49565b314d5cc8cbd3c3c8a933baff3665298e54aa792b5b30373bc01"
+    },
+    {
+      "path": "计算机知识/_labs/round3/PY/Python-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/PY/Python-实验说明.md",
+      "original_sha256": "65bbfcce63eaeadeb4cc7557cbc89ea04c16ed989286df69494b6019cc7e9ee2",
+      "final_sha256": "31f2da8b2e6c1ad013338efd705fa07627593c4f71f2d314b0a3e105de616340"
+    },
+    {
+      "path": "计算机知识/_labs/round3/PY/test_python.py",
+      "role": "code",
+      "old": "TBM/com/_labs/round3/PY/test_python.py",
+      "original_sha256": "8aa04cb122cc810c9306fa3ed89ff34a7e6391549f0177f48da6a7ac6f34c921",
+      "final_sha256": "9d54be88b136e67dc5ff9adb788bebf35c1620137e24a5d67ca1cb9a360d0046"
+    },
+    {
+      "path": "计算机知识/_labs/round3/RUST/Rust-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/RUST/Rust-实验说明.md",
+      "original_sha256": "89c35157718c96972e47e017776fade6226bdcc5fab6783d3dbedb1b8f429bb3",
+      "final_sha256": "e15853a11197824f0c8ff8538e7b190af661db1f317564cc12bdb13a3709e7d5"
+    },
+    {
+      "path": "计算机知识/_labs/round3/TS/TypeScript-实验说明.md",
+      "role": "content",
+      "old": "TBM/com/_labs/round3/TS/TypeScript-实验说明.md",
+      "original_sha256": "beb682f310377271c6fdd4ecc0af1e3a7ce5357c7420c270e3641321bd51ddb0",
+      "final_sha256": "705eff788deab427132ad77291ac0bf3ee15d4373982bf0456250e81d36514cc"
+    },
+    {
+      "path": "计算机知识/_labs/round3/run_all.py",
+      "role": "code",
+      "old": "TBM/com/_labs/round3/run_all.py",
+      "original_sha256": "4a53e3df112a1a3788c9bd4fe08c7e82eb77735f104c5443c62fb8aeae02d3b3",
+      "final_sha256": "60e3282095f75f34c7bb5150d3922bf0626a5fa3593c1b0eb4ddcba46b710a09"
+    },
+    {
+      "path": "计算机知识/_labs/round4/README.md",
+      "role": "navigation",
+      "old": "TBM/com/_labs/round4/README.md",
+      "original_sha256": "e782b2bc39161f7569a497a8847ca0eba8bd3b82e9fbfd6cd5bc0103bd2c2bdf",
+      "final_sha256": "48d11835545946e93c830444f46a13c734168be50c5d7381c4b5aa3a66d13189"
+    },
+    {
+      "path": "计算机知识/_labs/round4/run_all.py",
+      "role": "code",
+      "old": "TBM/com/_labs/round4/run_all.py",
+      "original_sha256": "9512b4e26ba3ed86136e4960847f08f4ad7b85e4e7fdea8e5466c2936b26d787",
+      "final_sha256": "b6cc583844e1d85983aae34731ad71a0f5d219b65386eac85ec4713de6be062d"
+    },
+    {
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/tools/README.md",
+      "role": "navigation",
+      "old": "TBM/com/_meta/tools/README.md",
+      "original_sha256": "5a566e8d2717a0d9666bf76ef2a8d9ff846ed1ba5255ad16731683258b89b343",
+      "final_sha256": "a9b0491deec53b23fc1e7562be988a4d668665d644c3b7d460214287780bce31"
+    },
+    {
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/tools/audit_vault.py",
+      "role": "code",
+      "old": "TBM/com/_meta/tools/audit_vault.py",
+      "original_sha256": "f7436260cc0a6581b2950fbdfb3aa4fc56764bf91002cd3322b48093bd8ff5b3",
+      "final_sha256": "d8c446be90ecf161c5aa494ae0bb8bb0b38711ee57aa78d6576e15db64923613"
+    },
+    {
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/tools/check_sources.py",
+      "role": "code",
+      "old": "TBM/com/_meta/tools/check_sources.py",
+      "original_sha256": "e2952a3ec85866a5a344774aa925daf6bbaccd38c50186cd50d5764940e636a2",
+      "final_sha256": "22f61a15012c4a6cabc243b0a2e883d0f4f63e7e96b633600b6918bc8c1763e9"
+    },
+    {
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/tools/extract_math.py",
+      "role": "code",
+      "old": "TBM/com/_meta/tools/extract_math.py",
+      "original_sha256": "ef100ceff2c9cc33e057de192921e56f9c2e51054a1220c3742064fe3bc660c1",
+      "final_sha256": "c61f732a90006f268a3fc4a56abbc414534943207bbd87107309c1fc95b8a765"
+    },
+    {
+      "path": "编程知识/00-开始/00-编程知识-首页.md",
+      "role": "navigation",
+      "old": "TBM/com/编程知识/00-开始/00-编程知识-首页.md",
+      "original_sha256": "28c12550d51381db69757ffa5c896056446184a520db424e5b50dfa0de03a559",
+      "final_sha256": "4475cc043d3e1673fe3ab4e9c7b4d6b6714c0d6861c2442d3ce4fa422a18a82a"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/00-正则表达式-MOC.md",
+      "role": "navigation",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/00-正则表达式-MOC.md",
+      "original_sha256": "7427c3695353fd00cdde29c45ab58f0a35c75e6edd2c7778b47480f81b383a9b",
+      "final_sha256": "d75954d72911f7cc84546adf488631cf43eca595899b878d18abfff4da8b36e2"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/01-匹配思维与最小单位.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/01-匹配思维与最小单位.md",
+      "original_sha256": "2efa7d81a143c41055ab57f7345e1ab93aa797d9a27c38830347910f9dfaa331",
+      "final_sha256": "963dbb0e7da3abdc85864a75092a2e6fd7811158d17e52acc65f5aca7774fe3e"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/02-字符类边界与转义.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/02-字符类边界与转义.md",
+      "original_sha256": "f4aca75c1b9ef0a62da072e6cf3a747be9221b54c895e255487e73d0d0239fc5",
+      "final_sha256": "01b673639ac2acb7e091f953c293f04a55a83858ff7c99609fe36993ef053cc2"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/03-量词分组与选择.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/03-量词分组与选择.md",
+      "original_sha256": "be807da5d963eca02e027696d512f46169224505dea16494b97a1909af698d9c",
+      "final_sha256": "9365f4d659be492b99f09f9399325b2f5e82f59e83ae15b165bee05f38699b85"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/04-捕获引用与替换.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/04-捕获引用与替换.md",
+      "original_sha256": "6be3fd29e57f06d495ab7bc9cc5d8acc0e14fd13c25110b4e4843e6561f74398",
+      "final_sha256": "6ddcabfd4039e50b6402993e4137118ce6df9ce300fc57efa83a18458ae2816e"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/05-贪婪惰性与回溯.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/05-贪婪惰性与回溯.md",
+      "original_sha256": "30b81c371da0dd55b7e57790e3b3900eeaca59bc0dfce4aaf3c1a3069eb441f9",
+      "final_sha256": "e14b51e5729d25ef4a81ec8ee1d01d2cca0563629e2a57863f01e8537bad8aad"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/06-断言与上下文.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/06-断言与上下文.md",
+      "original_sha256": "7688e4b1e8c715ed272466b5795e65b1758fabe63d1dd6bc0da123baf45885ef",
+      "final_sha256": "f746ee29732d9bf8f89cb5502cd7e5fb2a380a2344dbab1dc8578402dabcca44"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/07-Unicode与引擎差异.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/07-Unicode与引擎差异.md",
+      "original_sha256": "695bc579ed08e21d187daf52b6bd9cda6d93a382272fa5025762456676d4cf88",
+      "final_sha256": "10e1ecc4e2718898cd496ba1f1b28e72a5424c1c637e74bd6d05dd1817deed86"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/08-性能安全与可维护性.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/08-性能安全与可维护性.md",
+      "original_sha256": "8c08bc8e6a8c1480bdfd7e4fa712f3b5450bf28a413209421b5656704870b6a7",
+      "final_sha256": "14299adde679d0c1b11a180ea1200f4bb5b948f28438e36faaf796ef1e8e9feb"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/09-综合实战.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/10-基础/01-正则表达式/09-综合实战.md",
+      "original_sha256": "9bf3285c7d9062afd176ef20287ca4cd8fc01910cdda36fca9b00279d3766d43",
+      "final_sha256": "f21dd48d2701e00eeabefae5dd8d04c0fd95c2346af14e13d50b7b8978b8954f"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/00-正则表达式实验室.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/30-实践/01-正则表达式实验区/00-正则表达式实验室.md",
+      "original_sha256": "08fec81b70378e87d816a099357eb363aefd62baf9d4dca947cf1a18490ab948",
+      "final_sha256": "fd4b4e03daa3db7ab2d881a91e645b73003e0490c1a23d9f33e1dc16913f8e7e"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/01-测试样本.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/30-实践/01-正则表达式实验区/01-测试样本.md",
+      "original_sha256": "baec244799f04fb12f472cd24aed03cbc2c93eb55a985d60e0c5bad7684ee114",
+      "final_sha256": "996c665cb6038e8493ba7e0ee2194e909595c1a9a962717e54880bf1c7e0348d"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/02-练习场.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/30-实践/01-正则表达式实验区/02-练习场.md",
+      "original_sha256": "23dd4b1ae2024d3a8ebedf1c94184815dc9b999a8f37f55e80404aeb9ff50715",
+      "final_sha256": "5dbd5988721b1c297880b29a6fb8a5f6e1491f13ed6fff7618cf4c6967a1aff6"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/03-练习答案与解释.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/30-实践/01-正则表达式实验区/03-练习答案与解释.md",
+      "original_sha256": "da304be15d5a917dac5a7e8bc949634d534bd87acba3daf376d69aed817a1980",
+      "final_sha256": "b082bea0f2e1b9629cf7785100f63b9aa42af48b40b28252b85ef275380d87d5"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/04-5分钟运行与测试模板.md",
+      "role": "content",
+      "old": "TBM/com/编程知识/30-实践/01-正则表达式实验区/04-5分钟运行与测试模板.md",
+      "original_sha256": "2746c4063114708053492b6d5620b50694152fb4719579c6aee3654f10dd80be",
+      "final_sha256": "6d2daaae107bf5931f3bbfe7e28b0566919fe2f8a14f57cced8c92ddc954b6f2"
+    },
+    {
+      "path": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/00-计算机知识-首页.md",
+      "original_sha256": "2f6537c1009ef48c0adf4054d6b515de424be04d5d420a69764d7d493dd56c81",
+      "final_sha256": "ba6dd3d2d85dc3000e08b9069bfe5f066abab0efcd78b72de852d04fba5ce64e"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/01-C语言-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/01-C语言-课程地图.md",
+      "original_sha256": "8aa24df022dfea6b0f28e62c4e975b9f4962d3280d55ada8b4497de2e618e53d",
+      "final_sha256": "536522e1d6b956c48b36c39f7012c327300abed7f82d0c5cf39c6a55a5550b9f"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/02-C++-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/02-C++-课程地图.md",
+      "original_sha256": "ed55245f0eb00aad421ee0849e5170352c926aa712685e13df217445213321d3",
+      "final_sha256": "1e9d4a0d90f2b60d1d2b72c1604ec50b967b2c002bb9cf3ffe0e108d79fc4fbc"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/03-Rust-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/03-Rust-课程地图.md",
+      "original_sha256": "3693f8d1ce8e55a947097d2b540ed5d827af57450100f126baa9dd0ae70e8a61",
+      "final_sha256": "78d06a254ddf0112d88d9043e6fc31c092ee68dd9fd34d23eeade32313d4fd4b"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/04-Python-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/04-Python-课程地图.md",
+      "original_sha256": "db13b64049bd05b197f23dadb98d854ef5b4cf6557592d459967a7ec63fed436",
+      "final_sha256": "3bcdc6874756aff040deec37bcacdca191c3d1917d0d5c4ae270337c91776fd0"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/05-TypeScript-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/05-TypeScript-课程地图.md",
+      "original_sha256": "4bfc04b4c71a5f7f0ff47f5d39303972c70fd4530a317a31c186d2fba01bd8aa",
+      "final_sha256": "ad16ddf767ed9264b192cb0c867812c181a1e231045fd09e9f0fc050c31027b6"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/06-数据结构-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/06-数据结构-课程地图.md",
+      "original_sha256": "35d7714596a27ccd889debb83d4de520b9dd007f552ea1694a5c9f16d7c52a09",
+      "final_sha256": "bfa14d705a1322c3afe9358462fd43e27c11070f0562fa009e613b4adf4c7272"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/07-计算机组成原理-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/07-计算机组成原理-课程地图.md",
+      "original_sha256": "65c7d6b338aa0c19b811469232026f572e7801a5b10a14db5888067d002279b2",
+      "final_sha256": "a8e6977be7dead08e3dafd52b017d1f2d6c0582765111946db48e8291f0cb19a"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/08-操作系统-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/08-操作系统-课程地图.md",
+      "original_sha256": "f5969a9d42f8c7ca1917b0fe14b93d01cd373f3a2024be5cc2e0cb9d341d99c2",
+      "final_sha256": "cf1b2325c29c65115676038acc496ab2e1fbd333f4d5d23dc21989209f557d22"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/09-计算机网络-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/09-计算机网络-课程地图.md",
+      "original_sha256": "0d107a82e08531859ee0961f5258f3c72555b1cc2bdec25fd847e950a7f4ec8c",
+      "final_sha256": "62bdd79ed8e8d6adb4bafc2115a977d44c1a3be4807f78c5203e2e928989161e"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/10-数据库-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/10-数据库-课程地图.md",
+      "original_sha256": "c78ff22a479100593e3b1743039966f6cd6c754b33a6249cabafd4383cc1e4ea",
+      "final_sha256": "7279133c714eaf074663ffe829e619fab4c9914c5444ef979666d1048f804773"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/11-算法设计-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/11-算法设计-课程地图.md",
+      "original_sha256": "3359b480a9354d885519aecc2decdde431d66c4548bee4fefb5faecfbd73f3c0",
+      "final_sha256": "55e18593e58b2cb612024eb9bef9e885435809af064ccdb65fd274e658796165"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/12-编译原理-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/12-编译原理-课程地图.md",
+      "original_sha256": "22c915991c88c6a8863d7268e716a0b63831d57c5649eb46bbba72f18fb44900",
+      "final_sha256": "1b6b165fb7e2a5073c0ca8592244efe9d3d33a1799204d48d4e5609b4be1cbc1"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/13-Linux-课程地图.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/00-开始/课程地图/13-Linux-课程地图.md",
+      "original_sha256": "e1f3134802b01a3157a784946a7745ba84fd9364ccf786bd4f154673f446a195",
+      "final_sha256": "1a4d31dfc573fe784d0cb44225e75f8605408f8278a8340bce0a8cc56051fcf1"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/00-Python基础-MOC.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/00-Python基础-MOC.md",
+      "original_sha256": "04276713b06bb092870e946c5d25355d72c8332feac35d0bc9e3453729b22e1d",
+      "final_sha256": "d028d540c35d923463106532c13fab553a6ad544d26aac80e6ab95a6a042b4c2"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/01-安装配置与运行模型.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/01-安装配置与运行模型.md",
+      "original_sha256": "177dbbf454da5c81b9a092e499dc6ae84c12fc26d3b770b905849e3090938223",
+      "final_sha256": "65766476da830f809353d3f579717424823e08d3155e3fc897d27ce118a939b6"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/02-基础语法与数据类型.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/02-基础语法与数据类型.md",
+      "original_sha256": "6b7baa3b8296c614090c1dda742aca1005463f858895711aa5ab731aa3928e44",
+      "final_sha256": "7fde3952c80d6851a44dcc5d5be728c528212e0722e565208d9ae3f2b77b2d4b"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/03-控制流函数与作用域.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/03-控制流函数与作用域.md",
+      "original_sha256": "b1dbbb1f5023b0f27c8d5a28353dd3c7055888b248da5ab9029375ede1c8ab9c",
+      "final_sha256": "caff917cfb0609f998dcd73945cafbf4d4a6d1daae15b75e8796f4cff90e2d78"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/04-容器迭代器生成器与推导式.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/04-容器迭代器生成器与推导式.md",
+      "original_sha256": "6adba65e21a0573caa016ec41a445cd8cc916c86692b4db333f9d00c921d6396",
+      "final_sha256": "e11417c76a934fb2fbc0e2bb150b7d5027ce186666c2c425cbdaeb329e499342"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/05-异常文件IO与上下文管理.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/05-异常文件IO与上下文管理.md",
+      "original_sha256": "1ec439ee727b05a6ae330efc5c7e878a4ce128de271d20bfc8ce585e7a3cb96a",
+      "final_sha256": "5534da8eff94a5d0207b80fd3b5aaead0e858d8c4b58fe9378ca84139fa9e37a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/06-面向对象数据类与类型标注.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/06-面向对象数据类与类型标注.md",
+      "original_sha256": "e5d3e5d6386f46b5d1b5b7fb825e5b933da6ccea9c4b352b74106ab5b6a72404",
+      "final_sha256": "61fda53a0b2e66ffc1f13b7fe7d4b67625183716fbfe6df0d4d6941d7f6ca017"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/07-模块包导入与项目结构.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/07-模块包导入与项目结构.md",
+      "original_sha256": "dc5db26519d663cdb5b260ae4d471ef49cbd966a463975ddbcd918179737f1d0",
+      "final_sha256": "b7dbb1f69781695c9e267e3953002bc379f65491b2cdf26984ace8c155efe0a5"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/08-pip与PyPI依赖管理.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/08-pip与PyPI依赖管理.md",
+      "original_sha256": "da1cf67aef07db8c35f0558b1e3fe946eb4cd0c07bbf90a8ce848b06c3f82bda",
+      "final_sha256": "c352960283ae755074d6227e97a346421b4105c162f98eba4e73fc037d2e164b"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/09-venv与虚拟环境原理.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/09-venv与虚拟环境原理.md",
+      "original_sha256": "a709bcbbaee8ef5d4a4d4024a4f643e11c9a004b1d5ed94b469df8d7d5676cf1",
+      "final_sha256": "dae5968c2e7a6f4b56663834cff8a1ad42a04f132072b9ceaa24569d3130075c"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-Conda-Anaconda与Miniconda.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-Conda-Anaconda与Miniconda.md",
+      "original_sha256": "f0d2f6b106a45cdedc4c781077356fdc86ab38ac31131856bf09a9599f347b1e",
+      "final_sha256": "a1f4e970afca970b5543bf56e6d97c1fcb24ee02d306c3adbeb8e0a8971fe5f6"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/00-Python系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/00-Python系统课程索引.md",
+      "original_sha256": "e6c66774eb7828f11a7336867b4e7f12904cd629f72707538e1e05d4be0e711e",
+      "final_sha256": "9a9c49320017bf6da3bf0d65915b3dfad79cfaf9b7c0c6edee8554dc8652a0f6"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/01-对象图复制与数值语义.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/01-对象图复制与数值语义.md",
+      "original_sha256": "9e1c98fdb6c85e42d7217ec3bd96c13745e2684d28445080f54d55844883b3a5",
+      "final_sha256": "8edc5750dc927f394beef9b606af8a526a69a30b0b661682b40a845eaa0a335b"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/02-描述符方法解析与元编程.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/02-描述符方法解析与元编程.md",
+      "original_sha256": "07b8981d881791718fbab62777569548353f7d2d0ff7c8d7e78257d0ee64fefe",
+      "final_sha256": "25e4332f9aa6a03310b2d943cf04371e626834a0e1306a7845f9718e16110ffc"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/03-生成器闭包与上下文协议.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/03-生成器闭包与上下文协议.md",
+      "original_sha256": "c2b5dc68195bc11ddabca0d8d36a1e99a087dfa46abbd9a5716003bb5b92e5ac",
+      "final_sha256": "0fbdaea911faf57d4810221416485d4b6a7bfe619448935a6bba0c4213704875"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/04-异步任务取消与结构化并发.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/04-异步任务取消与结构化并发.md",
+      "original_sha256": "7b34b0f6c5169aca0ac62dbd0429977bb11cff713525ee00ac0f50039de29c43",
+      "final_sha256": "2b6c88c7e4e416cbb7e2d0ad40286515d4173e3c166b390eee7f9daf2619a1e5"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/05-线程进程与解释器边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/05-线程进程与解释器边界.md",
+      "original_sha256": "777e5d116e6d1adc4429a617f3e3d946f486c56c7174f15f0cba1786a6036170",
+      "final_sha256": "43598eae642a9b1d66a6026146f4a81b59d88202b3fb52237a6e7ad16e3c6600"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/06-测试属性验证与性能方法.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/06-测试属性验证与性能方法.md",
+      "original_sha256": "d2fd4fdd45b4055a4c703c294d90dd83340ca271f8aebafb42ee5d8f476600a6",
+      "final_sha256": "0cb1a9fd80cc45f8f459443257b4ee39e07dbc5825b7ed0d0c7f8226de6468c7"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/07-类型协议数据边界与安全.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/07-类型协议数据边界与安全.md",
+      "original_sha256": "287b1c94ce1aa7e917a2a00b14fe7aa1e652c8bec8e571633535850dc6aac8cc",
+      "final_sha256": "f08aebb24f0efe3e55cd3979362f9641a7d10237b5a80200ac683774674ca3e9"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/08-标准库工程与扩展全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/08-标准库工程与扩展全景.md",
+      "original_sha256": "3ef3acb1243e49842ec5ffff7f5d5aa4b6fb3d198535ac38259c4c13b58034d9",
+      "final_sha256": "44bddd15a88046c4e08885baed5e668f140be24ee8dcb4efc8f5031a733ecd87"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/09-属性查找C3与导入循环推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/09-属性查找C3与导入循环推演.md",
+      "original_sha256": "542aabe672e999fdb752cf39e4db528faf293aa55837fc834745ea6b41118522",
+      "final_sha256": "50cde9534cffe89965e17f28f4a871b8dff9b1e9a4b116d8b9512988de981a3d"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/10-异步取消异常组与有界流水线.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/10-系统课程/10-异步取消异常组与有界流水线.md",
+      "original_sha256": "44be0928000fcd46e46a695f7c214e549c478df87c096b7f33c169f72ac7228d",
+      "final_sha256": "c6ef8530d2b85b2e0f8fced2ba12ed61b7fe93652797b4645ae596c1c78497a9"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/11-uv项目依赖与工具管理.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/11-uv项目依赖与工具管理.md",
+      "original_sha256": "1473aae94b31bf5bee0b688fb2c6e7f3c07683d5d8acc886ceabf8c6bf738091",
+      "final_sha256": "d312aae868a8c4c3ec1ce3c0bbfc0cbc1bcaf9e217535371a8935f2c73221e6e"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/12-包管理器选择锁定与迁移.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/12-包管理器选择锁定与迁移.md",
+      "original_sha256": "85cb46e3c00aea528d525c4c1b739bc5937a63bdd30a121bf8043adb4c062076",
+      "final_sha256": "4127aa7dafd10eb2d7489bcc83d7219ba29c64fd1455ded133757c938c4149f5"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/13-常用Package生态与用法.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/13-常用Package生态与用法.md",
+      "original_sha256": "9b728d92913cf6920b2c99d2e7f1a250edc3d971697505357e503528e8161e07",
+      "final_sha256": "4784e172d517cf834517bcd3721d5393aed5e6bc73226f9f72459a57164f4d65"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/14-测试调试与代码质量.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/14-测试调试与代码质量.md",
+      "original_sha256": "0964384106acc8e4c5385985dd05e186ee872239221a2be1f83cdc010c4a05d8",
+      "final_sha256": "a3b337fbf91b63dd21b101c2a1c71b1844b8267ddc00717bc1e6cee7c35fefed"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/15-对象协议描述符闭包与类型边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/15-对象协议描述符闭包与类型边界.md",
+      "original_sha256": "20b80455138aee077c910c1a48713a0e02e4c8e51eb226bea29720a8070a64ad",
+      "final_sha256": "d061c3c86ed7adbfef757bf1939d8bad0e6deefbd0920075123c5357151a87f9"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/16-异步并发取消性能与可靠工程.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/01-Python/16-异步并发取消性能与可靠工程.md",
+      "original_sha256": "7a703816b42d36cfd263761c4b054e2c2d6b9ec0b1854368a3452853a6c3dad7",
+      "final_sha256": "bccdaff17b19094561a7902d1269746fcf4d3571448bb4143b30b7714e450d5b"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/00-C++-MOC.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/00-C++-MOC.md",
+      "original_sha256": "b8830bf469776d42c488a87a9d74faec483992eea14f8058459988e6bf18b506",
+      "final_sha256": "c1d0f0dd467734ddf813c5fbdc03c38e82622c577418407ca6c2cfe12dd45225"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md",
+      "original_sha256": "da7af03d76f6f12efb2f8ae1e7f39bc75b27ca7dd4f474f033e26f9cb38f6633",
+      "final_sha256": "45a900bbbf113133d8493bd5452e293994ba038347440efe4cd70fbb2dae6dde"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/02-语法类型与函数.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/02-语法类型与函数.md",
+      "original_sha256": "373cdb5a669a6c3dd04c0346d31bc1837b2943b679bd59ea5de5e4f259221eb0",
+      "final_sha256": "0263581bb3ed5b0c1a6cde626bc4df6e9eb2a8f88f4959cd48dbee700b48f36a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/03-指针引用const与生命周期.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/03-指针引用const与生命周期.md",
+      "original_sha256": "f4371edae21d112bcb9f2abc76ac00829a38b20ba152b2da2d7b7dd9b15665f6",
+      "final_sha256": "1c85b7a5f9ada492ec72648a9b3665316c49d34e1d708b4347040fc63eb2b490"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/04-栈堆RAII与智能指针.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/04-栈堆RAII与智能指针.md",
+      "original_sha256": "41ed090c47eefc97118f066ae41a2c669c40b4723ad0ce8de28558dc7e83682b",
+      "final_sha256": "45d7fb8dbe9790e3a2add47e11862ec00f26f1850bbf8f11e61006c8c299045a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/05-struct类模板与STL.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/05-struct类模板与STL.md",
+      "original_sha256": "fab6490ef1a9ffd200fac9c1c0bc87d1543de34e40aa14770b2bdcd0e483a963",
+      "final_sha256": "41e687017c21a34537a3dd796ff63025e1e6045840da4da038790a97c559b407"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/06-move语义与零拷贝.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/06-move语义与零拷贝.md",
+      "original_sha256": "aeae797c62d2c77dfca109ec977240e0aeb7e986e820b64d8d948ec9f99215f1",
+      "final_sha256": "2e47a275ded32f0fedbbafa5745d33faa6d6f3f995f16bcee5d5c249a8345ec1"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/07-错误测试调试与Sanitizer.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/07-错误测试调试与Sanitizer.md",
+      "original_sha256": "5c4e019d88ce3760c2e00808172fa0546ae2b1176fedaa0a0dbddbbbf7067a47",
+      "final_sha256": "fd5b05167b004e283ca1834674272f031d182749268c717c31bd16d311bd224b"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/08-线程锁与原子.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/08-线程锁与原子.md",
+      "original_sha256": "2bbd55d5d0434eb012adbe2f45fddb9e6c5b90ab9977f4b9f331c96034032258",
+      "final_sha256": "91a5710ccfc1d4104b572e925be0b578132d2b0df02ba2bb1bf786259f859a71"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/09-内存布局ABI缓存与SIMD.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/09-内存布局ABI缓存与SIMD.md",
+      "original_sha256": "0f9ec38cdea519a117a4d08fcb26b60647b9b2ca5f40e7f2220f0f4aae955a0f",
+      "final_sha256": "1a5ccf559ca449f3f0075fda7b8c3100bcb9eae7cccab20bd45a2a4d2a5f9657"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/00-C++系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/00-C++系统课程索引.md",
+      "original_sha256": "b9271607c1d91e7891ad873cb663a482013a3a6cf9c6c5962a38036e7bde49f9",
+      "final_sha256": "4107ded8d5ecfc2e7a751c770da25de5a1cff5d31feecb978ca953a616233834"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/01-对象生命周期与RAII.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/01-对象生命周期与RAII.md",
+      "original_sha256": "9de2ae3e8059f560e7be8b3afe1d34eed7a3112c15c6999de95e1da045173579",
+      "final_sha256": "594c7538afd2a7b7a8f6d8fae794a3a14869e8a63377ff02a35c009ba8214054"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/02-拷贝移动与异常保证.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/02-拷贝移动与异常保证.md",
+      "original_sha256": "fcc78172c09776f0be32e0270a41979f3007b7f4c902f878d0cd0f998b32231b",
+      "final_sha256": "b0acc7ad8041e315cc7c0d8554de2e22bae9fdcb9520f8e68a5e355102b2ef48"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/03-模板推导约束与重载.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/03-模板推导约束与重载.md",
+      "original_sha256": "a26c5bea3b82806609357b7a5b5f98511feb33fc283b22b1a545e25e3b7c3fd6",
+      "final_sha256": "2aa3e9dda312b078bef04ab3eaeaf28d79399b855db4f539cb10ba253387f957"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/04-容器迭代器算法与Ranges.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/04-容器迭代器算法与Ranges.md",
+      "original_sha256": "160ca0930b429a647ca03ff39565bd601ece4cfc2286ef1948017e9313bad2d8",
+      "final_sha256": "dc44530dc0982d068986e3277f22ce1c0f61a3bcb8f13cabebff626cd0b930ca"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/05-多态错误处理与API建模.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/05-多态错误处理与API建模.md",
+      "original_sha256": "909e03a3a6a57ee564a7d44c09f3c859ca1e36d4c6f4034d2132e07f6ce743d5",
+      "final_sha256": "78578b1588bdc97d5472be22c36d763084794b2e4a4f8586c951fa43460d921c"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/06-原子内存序与并发设计.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/06-原子内存序与并发设计.md",
+      "original_sha256": "1fe036929dff863b47c66710924cfbc2ca8c5c916a8f81d79461b6dbba1b589a",
+      "final_sha256": "e725b4604fbf3aa3ac38791633d6f97ae12d097a863f5992bec7e3bf74e2f61f"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/07-内存资源布局与性能证据.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/07-内存资源布局与性能证据.md",
+      "original_sha256": "cb5d5950ba472b5c97c074946558e40bc526f210afd0a55dcd99735eedafbf50",
+      "final_sha256": "817822879cc721f6c73c7262a3d45c635674b3237e8dc3630dcc7eb72afa5d1a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/08-模块ABI协程与工程边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/08-模块ABI协程与工程边界.md",
+      "original_sha256": "bd5df60c8ae24dbe5bb1d83b819af90740943966f90dd3a0d0db0bdbe7bb6ae6",
+      "final_sha256": "3e011175b2da8ee0863f5efa097dfa0e18fb66b499432a69f413e3e5522d813a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/09-推导引用折叠与完美转发.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/09-推导引用折叠与完美转发.md",
+      "original_sha256": "6e403bb4a03e17877042ac61a59c35a1a9aab64ec315218f4cc957820547da78",
+      "final_sha256": "bbc2a7ee9d06efa2689708a91077615aa7f1c8f3db02252b4e9a8462981c47a9"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/10-借用视图失效与异常提交.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/10-借用视图失效与异常提交.md",
+      "original_sha256": "828673523973dc96eccaf5859e65cdd218acfed99ae7bfa7273f50a63830bd13",
+      "final_sha256": "6afad5c2d919e55ad4db05ddb81f6254ca86bae2d6ecc8521d9c4eac225b16c5"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/11-原子发布线性化与回收边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-系统课程/11-原子发布线性化与回收边界.md",
+      "original_sha256": "7ab2f7b6be1f74bcfa95bb5d851481c9dd2d4161ddf630ec034807dc0d38937d",
+      "final_sha256": "aed9cbc1367d9d7f7d1dbf981aff19aa5d37e2a990a2d3b2968bf74a3f7e8db3"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-阅读大型C++仓库与llama-cpp调用链.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/10-阅读大型C++仓库与llama-cpp调用链.md",
+      "original_sha256": "d86363d4b4f9ae89b29ae21e6314cec9173b9a7b4603054c306cbfe1cbf9ddad",
+      "final_sha256": "0b39a4d13f60e72fbcc8f8cfc3aea2a6253ad2cb2826b704cb72e1e952e8c1f4"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/11-对象模型值类别与异常安全.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/11-对象模型值类别与异常安全.md",
+      "original_sha256": "75ff61a9289fcf98d41edb5ad0316aff98ecd42671d5235c0c715f7e64a785d2",
+      "final_sha256": "96df3f41d3c05f552bc6bf40658137ab7f2b0107ed37e051c286c73778e9759a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/12-泛型推导容器算法与约束.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/12-泛型推导容器算法与约束.md",
+      "original_sha256": "c87a5f11041706c4ff47518fad3b77396df3689296b61cbe8f1f7c9c397cf4de",
+      "final_sha256": "6b7d4774aa55950771c8a8d97d94bcf9a579fd443a8817fad10d7cb0e4d252b6"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/13-并发内存模型与系统接口审计.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/02-C++/13-并发内存模型与系统接口审计.md",
+      "original_sha256": "4e7d46762bacf8fe362876fccd1aad47e008e8e96b3269e69b62b371d846cf71",
+      "final_sha256": "e07a6bca0098b62e78e7ebbb4c9ac4a21189f1856a68fc8dd8da42025a8baa5c"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/01-程序执行类型与表达式.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/01-程序执行类型与表达式.md",
+      "original_sha256": "afa56369548872675e00d59745543d59e6eebd6b13b2b148c0a2234d01cda669",
+      "final_sha256": "31dfae5a79111965e1e0b36ac4521fcc1bb9354cd01bc1b120412529f8132444"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/02-指针数组字符串与生命周期.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/02-指针数组字符串与生命周期.md",
+      "original_sha256": "a2d27fce9f44c487dff4490049d5525ab37dcdf55121ab38e2a0459418fb1850",
+      "final_sha256": "bb1b31acc2d24ce7058163d780ba16fa4bb71d2e26e51d8b04838846eb9724e6"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/03-结构体动态内存与资源协议.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/03-结构体动态内存与资源协议.md",
+      "original_sha256": "2fd424fa9fe28cbfa80b09a584ac3cbb8df5673289b634e35eef10990734d31a",
+      "final_sha256": "0072d19b61c5698e5214aee7d34a5958e48d96056fb803aca8007b887e00a936"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/04-函数接口预处理与多文件构建.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/04-函数接口预处理与多文件构建.md",
+      "original_sha256": "ec3fe9cf3881ce2c78d28df785a3bb84d19f6b2c6c0ca5a9c18205c3d8341f9e",
+      "final_sha256": "4e46c9cb808c58be712dbb4d0b3b9fb2f061ee0c9028800f8bfc71e0d979cf30"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/05-标准库输入输出解析与错误处理.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/05-标准库输入输出解析与错误处理.md",
+      "original_sha256": "2a44aa838a6eac68f70b8bc0f54d72a99a35a3e5749da404fc41ec3f912a46d5",
+      "final_sha256": "c7529272121bbbe079d28c6821db0c6fc9b7badf39c235f90de0d046f7d32661"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/06-内存模型并发与进阶知识边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/06-内存模型并发与进阶知识边界.md",
+      "original_sha256": "a41ce251655bef39c619bb70007d031a43cce5577971279b886a7f126c49414b",
+      "final_sha256": "06e40d77b3d919cdd5aa68eabfb0d281fc4bff0150934cac0c0bf879b5fb4fdf"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/00-C语言系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/00-C语言系统课程索引.md",
+      "original_sha256": "ab62cee14b759b2d0cd294b9c3761f64ae291afbdb19c3b2b825b4a9eb8145be",
+      "final_sha256": "75163601c437b7258e5126c3f3957dbe66578e2face92f8fa0ff815739dc578f"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/01-整数表达式与可移植计算.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/01-整数表达式与可移植计算.md",
+      "original_sha256": "6b799f4dd841b5265aee1778ac4216fa87720627c57218f63ec934c24059675f",
+      "final_sha256": "85c5d43cd64f4a8a515e4a11906f64f7811000d1d5b9c82b7307a7db33cbb0c9"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/02-声明数组指针与字符串契约.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/02-声明数组指针与字符串契约.md",
+      "original_sha256": "b9c3fb906256b7bfea8f21801b4daeeac9f6fc1724473f238dbc718917d9b113",
+      "final_sha256": "0a0379fc824547c1d6e930ce7ce18e5a3ee7c5ef8d81a64fa0a661282fbd79b3"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/03-结构体布局联合体与序列化.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/03-结构体布局联合体与序列化.md",
+      "original_sha256": "d43020eff326ef1dbd7f705ff09f6c663ca4fa76215e2947439fe6e2a887addb",
+      "final_sha256": "82964d357d94d98521a813c938c37562ada32c0cb7883b93cd2e32e274992560"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/04-动态内存与失败原子性.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/04-动态内存与失败原子性.md",
+      "original_sha256": "5710c33b770bdf51d7b225698072e67f2dceeacddef3db563d6e4f07b353070d",
+      "final_sha256": "8115e595375c26989c893d37aaa357858750fba454f86009597b04b6287f2e97"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/05-函数回调模块与构建边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/05-函数回调模块与构建边界.md",
+      "original_sha256": "efeaf1c8dd3b66bcd3aa0ec939381c90ffbc1c967de23dd0aeec758812bb0492",
+      "final_sha256": "34f3501e5ab5802f9e9d44cde8894a9af9afb3ae660d23d0673ac9d7cb018360"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/06-输入输出解析与错误模型.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/06-输入输出解析与错误模型.md",
+      "original_sha256": "621dc236f1746f6d545f2cce3868160f1af588edb5f24bda366bd69eba6f500b",
+      "final_sha256": "616eb6152acdf96d6cd4e1e879a72cd49c2068547e8cd6beef7a3d339715e107"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/07-未定义行为别名与优化.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/07-未定义行为别名与优化.md",
+      "original_sha256": "d2268c1cc86b8d052d5313f230ec9e034361efb0118ef759d47ba5ab2704c2d4",
+      "final_sha256": "d189ceb0cba270b7d4dba0a1153cb4613f437e96337d1c5de84bda31ceb176c6"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/08-标准库并发泛型与工程全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/08-标准库并发泛型与工程全景.md",
+      "original_sha256": "5f89ef924428245c5e7763fd8b4dfe604e8df6d93dee5379af2528e332820ba1",
+      "final_sha256": "2f58b0090df519342a6ca7512100031bb044887f8cf6eab79e22ae3d245f913c"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/09-指针步长二维数组与接口形状.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/09-指针步长二维数组与接口形状.md",
+      "original_sha256": "cdb9079b2a13730e034fd6def92ad50a0bb2f37905a2b27f3afa65ad699f0393",
+      "final_sha256": "cfcd778ef31d062cda94bf8f97d213a8051b1b544ac3a06b4bdc873765d52ccf"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/10-对象表示别名与二进制解析.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/03-C语言/10-系统课程/10-对象表示别名与二进制解析.md",
+      "original_sha256": "7aa28913b6cb79dcaa7437e5afb9fe591b59ed1986600b45a630a21fb2f8c454",
+      "final_sha256": "d0e5e86739c28a74c47938d763a2eb7c75feae76f558d3dc3e0f5ab59f7d4072"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/01-语法数据建模与Cargo.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/01-语法数据建模与Cargo.md",
+      "original_sha256": "0e48a23912db9a85407e874921eaaf0f3679aa22e248c35d44318bfebdce4def",
+      "final_sha256": "aee2b6a42913a173daf71c12ecdeb415717a53bc43218f7f2dbba7b0a2df1742"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/02-所有权借用与生命周期推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/02-所有权借用与生命周期推演.md",
+      "original_sha256": "a35a15770e2196f248249ccf68d3a872bbaa667852866d447909423d6793eeb2",
+      "final_sha256": "e976d55ef202444fe8eb856defc2b0a770fe4cf0b5d41aeb09c5a06566d1a76b"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/03-Trait泛型迭代器与动态分派.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/03-Trait泛型迭代器与动态分派.md",
+      "original_sha256": "0acb8b5463b26b034ec599773f408f2a40b523c7ca5ce944c99fc2ea7f1e550b",
+      "final_sha256": "b7c62020bf8aa59fccaeb0c255391e6a799067da6eeff02213ec2a07a79b3587"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/04-错误处理模块测试与工程边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/04-错误处理模块测试与工程边界.md",
+      "original_sha256": "248ffc79ace0f285c5a56e7b97dffef24802ea783e64db93a5ff6ee110563c00",
+      "final_sha256": "d1a29f4b487c2d350627830d81bc08a8ff156eba4d49d1827bff2adb0cd9d64f"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/05-智能指针并发与异步取消.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/05-智能指针并发与异步取消.md",
+      "original_sha256": "28c26e6bc747cc25ae8d280011e5dc528057a2f87c558c1dd520723f1786d9d0",
+      "final_sha256": "9b9956b947f8f242f3c6e46e3ace69351fc5ea09bf144ecfb58df00aa1a86f50"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/06-Unsafe-FFI与完整知识边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/06-Unsafe-FFI与完整知识边界.md",
+      "original_sha256": "0c1fc0670199dc7aac30ca28578b20fa4c6db0e4020d086c386dc246222e1b0a",
+      "final_sha256": "7e3d2a4e6e0671657b1a75623fe55f87706919d6f6950a003b8e22ea5b562f1f"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/00-Rust系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/00-Rust系统课程索引.md",
+      "original_sha256": "89a80ca6ab4678c54c70f035c3152601f8c68fab1460841da7ffbe84738517f1",
+      "final_sha256": "b07e6ab5359c4f1259b4ed34d2f2d19de37f64399208799fc4f9fb4f53b26c68"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/01-所有权借用与切片推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/01-所有权借用与切片推演.md",
+      "original_sha256": "eee425455e4a43febcfd9310248fd6d97a820f7015aef992584049ca48ce2308",
+      "final_sha256": "cdedc4aa098a4f5967b93035dbdd065861c8d5fadb3f5e1255b014c59d6103ff"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/02-生命周期方差与高级借用.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/02-生命周期方差与高级借用.md",
+      "original_sha256": "cde8cec3498be61030ece762fe8c2e6fe95e0e2c33fda69d4bb0f11646425ca9",
+      "final_sha256": "6a503d38f8d4e115e4bd204184a7fd0ddf91ef0cfc8dd4aba1a9904e9f17d8bb"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/03-Trait泛型对象与关联类型.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/03-Trait泛型对象与关联类型.md",
+      "original_sha256": "20f3245f159d05f0e20502004e1e2de9153a131562c65b36180ece5ba3f779fb",
+      "final_sha256": "da6579a184afc930aa8dd539f1bcd63a057f1e5487a0aaf5c55e364153da74d4"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/04-错误处理模块与测试.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/04-错误处理模块与测试.md",
+      "original_sha256": "e40765bd2e3b72bbeed6aff7c39c48c9781e019f83142498e2c691051c424c44",
+      "final_sha256": "fae1ffe39d275bebb664ada0a737b079db139ae3833b881f36df0f7dbb876d5c"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/05-智能指针内部可变性与线程.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/05-智能指针内部可变性与线程.md",
+      "original_sha256": "3b810155709c6d91e4e204d977ba58c47e1ebcc07ac7f97dbe2ce14b2b246d13",
+      "final_sha256": "4cfa41bc12f4e23237b1dbe80abfd8f7f371ed25935669f68e907306689aeba0"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/06-异步Future与Pin.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/06-异步Future与Pin.md",
+      "original_sha256": "f8a63bfb05038c338e63629c7e278ad051395a50b145916cc68e24a80843ed16",
+      "final_sha256": "dc1197e187be7607bb2a7dfa8654992af78b83367646b23730179ff197f75b13"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/07-Unsafe别名FFI与表示.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/07-Unsafe别名FFI与表示.md",
+      "original_sha256": "f5a4c629955cb164682f2e81a162e9d0d96e41d47811543001c90d9234b35c37",
+      "final_sha256": "bb75a44600f423dc45b36834c061c886abc242177693d54e81949c8d2c6a5423"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/08-集合宏工程与生态全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/08-集合宏工程与生态全景.md",
+      "original_sha256": "260c95783e132a31ce8a4668ba1c2e7cb683caecdf74ed5fb4057cac83b9dc8b",
+      "final_sha256": "52faad2efbeadc5a109d8fbc8a07f4cd34b4d86402df333715e3cb5f96c27b74"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/09-借用检查中的量词方差与重借用.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/09-借用检查中的量词方差与重借用.md",
+      "original_sha256": "64a875780994296072c88696c07933a54d324407df1a76eb12ae296aba915a80",
+      "final_sha256": "b2a5b7742f6db31e8c7b692213fbed99f32c3da76c145f92734053ba683ae1b3"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/10-Pin投影任务所有权与取消协议.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/04-Rust/10-系统课程/10-Pin投影任务所有权与取消协议.md",
+      "original_sha256": "b39024f5934e2466d8ee1ce124a6753522bae41aff92404d3f4f1fc448087ef5",
+      "final_sha256": "7e3f2e7a81704b5066a1d6c4d4181395bd8c3a011dea940005e942e15dc86a1b"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/01-JavaScript执行模型与TypeScript基础.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/01-JavaScript执行模型与TypeScript基础.md",
+      "original_sha256": "676a11edeb570d059699e4be616d45d06e4ddfec79e1c9257a3d6be761fbba26",
+      "final_sha256": "5aec0be492d2fe15fdf7bf5e8d9eec1c871b161644d8aacee81a66fcb7d018fa"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/02-联合类型收窄与运行时验证.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/02-联合类型收窄与运行时验证.md",
+      "original_sha256": "d78f582ddbca51c0d40bf9b2496367ad1a66b83d4acadb893a3654e80d3fde9e",
+      "final_sha256": "2a6d43fc6a9b6c498c055e9122017b85795f1199ef7039838dd3ec610fe9905b"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/03-泛型类型运算结构化兼容.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/03-泛型类型运算结构化兼容.md",
+      "original_sha256": "ced413b3198a045fc23cb0ea6339e48d9ea805662088b0d152a39f6dfdeeb965",
+      "final_sha256": "6775846fec70eaa6616ec012b14c4d7838b7bd0521d3de2c790ff1256f287d56"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/04-Promise事件循环并发与取消.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/04-Promise事件循环并发与取消.md",
+      "original_sha256": "659b58f31fc6f74ecea5add834b1d174f446d844c2802564f304f83615655282",
+      "final_sha256": "2258380c833d85d4752a078f9048fd0c1c68fe2024cd6eb6b9ce254761f8552a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/05-模块工程测试安全与生态地图.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/05-模块工程测试安全与生态地图.md",
+      "original_sha256": "147549190a6a734136b2e7f36ea1cff6ba22b9b617b8f57448f278ef09935cd1",
+      "final_sha256": "a030332ef4c034f2831496d1c5001eb5c9772d1c2daaf6bd061842090cc8ec5a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/00-TypeScript系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/00-TypeScript系统课程索引.md",
+      "original_sha256": "44275b72c0b8840a0d2f44c2f26d15e92f3f166c47161e4c2621006ee10b299d",
+      "final_sha256": "b412cdf33a43679371e039e52eae6191f5e427b92bebae7e384b2d832600b6c1"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/01-JavaScript语义与类型边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/01-JavaScript语义与类型边界.md",
+      "original_sha256": "c82ba9f700fe8a6f6093b23977b9e4e375bd3c5e1826af3d2d6e3ba3c4d5e16e",
+      "final_sha256": "cb5b563076c1523c9f57cbd01b8a2ba8f88a0b5db3b518ff8d8d2a0227dfa59a"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/02-联合收窄与运行时验证.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/02-联合收窄与运行时验证.md",
+      "original_sha256": "5fc7676f9c8b9056d477ba04fe8f2c7a5296d83637180ee4a0a49ae13885a244",
+      "final_sha256": "47b321b5ce648242929fdee5ce1a6cc6799e423418b80e78ca8d074e11f069da"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/03-泛型方差与API设计.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/03-泛型方差与API设计.md",
+      "original_sha256": "af8060c250cfd225425bb27c4493c6a28957d816715f74065398e051f821b47a",
+      "final_sha256": "a6998285ac5272e64d6f050127bd7d8daad59413f169cb8a257046a23a53042e"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/04-条件映射类型与声明文件.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/04-条件映射类型与声明文件.md",
+      "original_sha256": "b067f992bfcb03ab9642fb10b58d9eea1a47b4601fb923bcc0fe061526fa490c",
+      "final_sha256": "ce51d044e3f9e26f72e8dacbee5ff783fede4114967593a588769573cd8ccc1c"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/05-事件循环Promise与取消.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/05-事件循环Promise与取消.md",
+      "original_sha256": "aac0f993f11c27830d280612f2eb2dbe5c654c6eebc1ade64dfbcfa10a75ae6b",
+      "final_sha256": "81d5704abdc35455d1383a40c33f2b660ed8a2321b9a598efc34caf7dd9f7987"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/06-模块构建测试与发布.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/06-模块构建测试与发布.md",
+      "original_sha256": "0511d05c9271e8e2b47da9a69d1f9b967d4ee7e5b5d9b68e735bd3b2679e9914",
+      "final_sha256": "1cd0773fcd82f132de5fc93af1adebcfc958553041b52936c28f56852fb90791"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/07-Web边界安全与全栈协议.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/07-Web边界安全与全栈协议.md",
+      "original_sha256": "148f01823a6fd0fbf12075af8fa5d54e77e611d94dc9b4ac820ff991c456a235",
+      "final_sha256": "b489491fc3b9694f462df291fda235848f3cc05cc2209b8feaf9f6606a5e123f"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/08-语言全景与综合项目.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/08-语言全景与综合项目.md",
+      "original_sha256": "cc006293e6b1655b3ed9533ebd9b59e8df2ec21d447ec27309a6fb40b7f36c17",
+      "final_sha256": "1531aaed7d511a00cbeb457c4dcb16d38490b211a0cd8aab5da4f4023ec76561"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/09-条件类型never与可选属性推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/09-条件类型never与可选属性推演.md",
+      "original_sha256": "3cb5077ad51861d9e5f6acb97152f5c84fa191df7fe884577f7f7ec3a53e2d85",
+      "final_sha256": "909c4ec6f1be95d496974fb7d1a4328188356dcb4dd341d16d4cd295101e5698"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/10-运行时边界状态机与取消安全.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/10-编程语言/05-TypeScript/10-系统课程/10-运行时边界状态机与取消安全.md",
+      "original_sha256": "4e821be3ddbe069c2b21b7d08cc5d4cf7a785a71d33bde357eaca948bb59cb82",
+      "final_sha256": "9459247966560a6991acc491eb61c71e8166a5f951565934ec5a6422d0acda0c"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/00-Linux基础-MOC.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/00-Linux基础-MOC.md",
+      "original_sha256": "dc7cc86e4724c37d1c2444b7bcd550a6f8ee190ce0e5e76d648ace056b3750f6",
+      "final_sha256": "79411d4cbb9144f76c6c33f26abd2baf7eafb36cc51548db5bc617b2dd8d5c8e"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/01-计算机系统与Linux分层.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/01-计算机系统与Linux分层.md",
+      "original_sha256": "5b4096af753429b7a1d7c09b1a6cc00361173e938af864f6e1e9867208e4d254",
+      "final_sha256": "9d34e02f781bcfe7473887b644c9e109d3b658b6edbd57caa84545cf48f57624"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/02-启动链Kernel与systemd.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/02-启动链Kernel与systemd.md",
+      "original_sha256": "ad92043d0b5c9e04c25e76211483ca569b38ea9adf7f8ef2f9a40ef987e77819",
+      "final_sha256": "57732027c57f1ffc6dc343f487c951697a0880c9f0d324d3a0170b1a7349b791"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/03-目录结构挂载与文件系统.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/03-目录结构挂载与文件系统.md",
+      "original_sha256": "e1d45e17d4e7babb1a2c53c7e24a3b41ee253e5272c94e0486623e99a00076f5",
+      "final_sha256": "f1cb1c31fe6a391fc9c250baca8159f808ee4e2e87f72fb4f6cd72c1b202397f"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/04-Shell命令行与帮助系统.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/04-Shell命令行与帮助系统.md",
+      "original_sha256": "92a26053b36ec8a5c59c3f53148223c4f4e4ccdb1f2672c5236d441fadf45d93",
+      "final_sha256": "c23c4be28a205b286469f80f34d10dee5200829211c946fd315bc7d0a58ea38a"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/05-文件目录与文本处理命令.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/05-文件目录与文本处理命令.md",
+      "original_sha256": "454d7432b59bbdfdae5ae0bb9397460073d0a385b7942d3a234427bc799d1358",
+      "final_sha256": "777d34b6316ea7ba12caa04b962e5c968017c9dbbadbc79483049111f6ed533e"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/06-用户权限进程与作业控制.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/06-用户权限进程与作业控制.md",
+      "original_sha256": "9f9ccac23c1b2a0f7807c7b7b04c73879afe2234edfd5862dabb56152028b70d",
+      "final_sha256": "4d12e21b62b4a75dabfcec384c3f318c6e890e70ca754ec02fbcfa5086157bc6"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/07-环境变量Shell启动与PATH.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/07-环境变量Shell启动与PATH.md",
+      "original_sha256": "2748ee07471bca96438e27b50bbcd24fcc8cfc63651316112bfeea66751fd23f",
+      "final_sha256": "21d6e6bf363588c82fa6e1c5505f8a06d99cc5a5187cd36deee156aebded2805"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/08-pacman-apt-dnf与yum包管理.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/08-pacman-apt-dnf与yum包管理.md",
+      "original_sha256": "6ff905effacc787e3edbc2ea542d70521b7a67e6e2b2843c6e1a24c6833530d1",
+      "final_sha256": "b30d5b3dd501578b5023470d2e776e3880651d0f787f5b8e88134ac07baff9b2"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/09-设备驱动内核模块与udev.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/09-设备驱动内核模块与udev.md",
+      "original_sha256": "c68981b7e95c658e4626ab0634a9fe2f937912c2475422cf4b9f319d2dee4281",
+      "final_sha256": "195021332ef6532b0ec07c41dbd0c03ca0106a90eef009d0b380f392000233d4"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/00-Linux系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/00-Linux系统课程索引.md",
+      "original_sha256": "da69abd80063905a9e2c90cb685e5dcf976c7d13f6a52e4bce8e7df1e8371ce6",
+      "final_sha256": "b675f22492d67e5ede0ce4df94a5cb945267d2d8191274e7099c78633ec4676a"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/01-Shell展开引用与可靠脚本.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/01-Shell展开引用与可靠脚本.md",
+      "original_sha256": "5e62f9923813b457332b37b14a6cf42a3faea0212a0b7fa9274f0c38a302a8a1",
+      "final_sha256": "1e479688cc6dc20af1761b6c382ad6e38ca55ac4f057448e988061322c2dae07"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/02-文件描述符管道与进程控制.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/02-文件描述符管道与进程控制.md",
+      "original_sha256": "88fcc447cec50b59e677795322304dce071db4dfe47f6f22aa107d79e36612d4",
+      "final_sha256": "0cad36b53be9da10e30968e693c29402906046b783d37e7af98434ae15758db7"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/03-权限身份与最小授权.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/03-权限身份与最小授权.md",
+      "original_sha256": "8d0a68cfc1e83329fa43b201bbd9982587807de6876cc823d9c8b8c6a5bf7558",
+      "final_sha256": "7a2a717a9ed6243398cfb452a2c71c68ced9c1edc04519072c9315c36ca33d3d"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/04-启动服务日志与资源管理.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/04-启动服务日志与资源管理.md",
+      "original_sha256": "42300e39fb51bda495f46829ed477d730abf97ca462c0263677951521d5ea612",
+      "final_sha256": "02f75fcc9c1a3247a6d14103ca55898bf5034f2d708488d07ed18e0c818407b0"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/05-软件管理构建与可复现环境.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/05-软件管理构建与可复现环境.md",
+      "original_sha256": "5aaa349ae29f8e6443ccf5022c505cd56859edb3165e4908b9389903352a168f",
+      "final_sha256": "c6b24d02b9d0a0e68dd0f379a158bbbf23cb5e8793c23d46cba3e4a7357e19aa"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/06-网络命名空间容器与隔离.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/06-网络命名空间容器与隔离.md",
+      "original_sha256": "6ae74bb14b703c85f15ac2060a9e48c5a6f35631c8d65f10ae53eee2d3862b85",
+      "final_sha256": "1412bff926683ae13f73fc5e8d44a6f484c51122903b011f54ff8653b8e2b4a9"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/07-性能观测与故障定位.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/07-性能观测与故障定位.md",
+      "original_sha256": "c96c5f082c45e5cf7fc663c878f415a862cd938cc3fff29a73d9e4bfea49d122",
+      "final_sha256": "ae2cf81f0a22393f68c1804a33b9c3a713bdc2f09cc864c0a58a5f7404f4f3ac"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/08-安全备份运维与综合实验.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/08-安全备份运维与综合实验.md",
+      "original_sha256": "851c11f8c10248b1f0ce929fc5fdac7f8fa8bb75724b10bc08e79ac67a5c7470",
+      "final_sha256": "2317994c5d97740435c2e049da7d5f63ff665f7ab6de06a0436a0c84c57a8aaf"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/09-FD共享epoll与非阻塞状态机.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/09-FD共享epoll与非阻塞状态机.md",
+      "original_sha256": "3705e1bfccb2632c8b56b5666135808eecca77f81fc8e030744fa433fabfa819",
+      "final_sha256": "b90535b1394df7af6dda73ed0ed7477905c952c332f0fd0de841af72606b238d"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/10-路径解析权限竞态与可靠部署.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-系统课程/10-路径解析权限竞态与可靠部署.md",
+      "original_sha256": "8f2d9e7d9ec0a4649ab12db1cc613523b2504904b85c87cce29368cc29f7123f",
+      "final_sha256": "8bf1729145109a047e4161f6d341e6265acf483656dc9bf2acc7258af17f4fef"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-网络存储日志与故障排查.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/10-网络存储日志与故障排查.md",
+      "original_sha256": "3442ea0a23f365f2779bd98419083fbae2ca62470bb7a4888c66a51d83ad7f4b",
+      "final_sha256": "2b685e77cdfbc5f019a10043706676a9b72867fd6f1483a980528223f3ad582f"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/11-ArchLinux安装前规划.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/11-ArchLinux安装前规划.md",
+      "original_sha256": "a068d71c57385fad06b82285f3dafc51f4de7b318c1841a5535ac46e543a77e8",
+      "final_sha256": "69376ec2cc003dd77c61d85805b52a61864d972f1ff7d56349a72a2aea9e0075"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/12-ArchLinux安装实战.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/12-ArchLinux安装实战.md",
+      "original_sha256": "c73321b2e8306b3c9d0e2734d4013e69fcd537804579416f66eb4e7bf9eabde7",
+      "final_sha256": "47cd83b5821fd22c5b9444528ec967b9a2d24417c2abce4caf922adc7dcc88c4"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/13-ArchLinux安装后配置维护与安全.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/13-ArchLinux安装后配置维护与安全.md",
+      "original_sha256": "be3e091d58dd5d9cae8474c6584c7b8c0787c3c179f40a28cd797e94ef0e57f9",
+      "final_sha256": "57243e5978c59ad4bcd1201f7f4df6614e403c102b7c353736ff3ca7018392d3"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/14-Linux开发容器与AI工作负载边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/14-Linux开发容器与AI工作负载边界.md",
+      "original_sha256": "5ab79e7b0abf4e454d150a8cc23a1a8ad6827f74b713d27b7c4d87c12508a7b7",
+      "final_sha256": "2b77cb84cfcae928a7bd30af13ff88e703759164c0193d0939437d1c843d9cf3"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/15-Shell文件进程与可靠脚本边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/15-Shell文件进程与可靠脚本边界.md",
+      "original_sha256": "08267b0041e0c7238f21374f7d0f2ed274d55f79d6beef99739e2b0a2b52626c",
+      "final_sha256": "b07a6409bf34b9e71fe8296fd9610f583d92df97d9517030178778ed7d70a06b"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/16-服务资源容器与分层故障定位.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/01-Linux/16-服务资源容器与分层故障定位.md",
+      "original_sha256": "31fdfdacc23a4fc5262608e73e9b1f25e1b0e5e588d834c741af8552fa2ce1df",
+      "final_sha256": "c44efd93457ef4ce24482eb9ceb69ac19730f9f051286417ca7507cbc5d32cd8"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/01-进程线程调度与定量指标.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/01-进程线程调度与定量指标.md",
+      "original_sha256": "ee6cf119574bd21ca09773be05664ee947f88e573a48a5d12fa8ce9ebc5f17bd",
+      "final_sha256": "9bcf6111a7513e2af7b274798528329c7fab72800079716bca4ca3f1e10509b5"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/02-同步条件变量死锁与并发证明.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/02-同步条件变量死锁与并发证明.md",
+      "original_sha256": "d899a13458e1ffd94b466ed8c1a71c6f3518382a505bcbdb19fc416926ae1425",
+      "final_sha256": "bf2f1a9e3c144c0d1d24f12119449c51098d088d4156865a8943a78e2ef6b3d0"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/03-虚拟内存置换文件系统与崩溃边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/03-虚拟内存置换文件系统与崩溃边界.md",
+      "original_sha256": "2ed082e9ea58f003e84fa812c63a11edea35150f45dab3c84cb22d29954dca61",
+      "final_sha256": "05bf993183abde93f73fa79993bfa515b8f5d74eaf3e64e23574c3aa3a36bc4c"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/04-保护安全虚拟化与系统知识全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/04-保护安全虚拟化与系统知识全景.md",
+      "original_sha256": "3dbec75bd2f49a777b9b631792ba7e23a34959c5089041366f1bd2fb7891b970",
+      "final_sha256": "98fdcbada07fa74b647499b4699995bdf1504152a6537e8b509f05fa0d6247b1"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/00-操作系统系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/00-操作系统系统课程索引.md",
+      "original_sha256": "248abec92e5ec1251ae6cbffb6e9cd80238d8aff3246cf50c6a82bdf1db4e818",
+      "final_sha256": "b98ea9b02a051b925ea3a18aa1e9ee6c42f0cd863f6b35fe3d91ae720c2dbbc2"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/01-进程线程与调度推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/01-进程线程与调度推演.md",
+      "original_sha256": "0fb36ef8ce77b09048f8103fe783e859fde938010d6a39f7f68bbcbfdf543858",
+      "final_sha256": "70589ed3bc743981c521ffaf9404b4fe28b28b66638af3b897f0604fac3135df"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/02-系统调用IPC与进程生命周期.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/02-系统调用IPC与进程生命周期.md",
+      "original_sha256": "fa7017f4afe9d14e26ea80cf15fb8bff5c1f61f83ae3af4e89ad81ff97adfcfa",
+      "final_sha256": "87bb4fc7c2fbcc012cb87ec3d9383c7ed571e86dc7d5d68aaa88cf17251bc0e2"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/03-同步条件变量与经典问题.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/03-同步条件变量与经典问题.md",
+      "original_sha256": "20a15819d7961b6cfc5531a594bb6a39593f69d140934859deb29f9255cf35de",
+      "final_sha256": "1f7841e83c2ecdb84c6104711467eee4690a98596d115437f965e4a56e7d3f2c"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/04-死锁银行家与资源分配.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/04-死锁银行家与资源分配.md",
+      "original_sha256": "9a106b027c16639c0e5803a34fbdeba7ac3e7490a7a2ec6017a49bd52047c431",
+      "final_sha256": "a8133e9db592939b52bbae43678649ae4af9a2dc0c15d5df587defbc3fc0194c"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/05-虚拟内存置换与工作集.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/05-虚拟内存置换与工作集.md",
+      "original_sha256": "e4659e410ddf7b8a41d20b254400a216b714179aee44751faecc9a1f7a81f665",
+      "final_sha256": "66c2c9d46013306e3982a7559422f00a5052799bca9fe12e6428523784c19503"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/06-文件系统I_O与崩溃一致性.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/06-文件系统I_O与崩溃一致性.md",
+      "original_sha256": "50e08ee54727dd42e981cf040047ca9f21735a31c7ff2ece57b8379fd4ef0a2d",
+      "final_sha256": "c96afec687260222162737b7fcbed2cb0ee2b2a0fb037173905662d5c14da8b7"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/07-保护机制内核架构与分布式接口.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/07-保护机制内核架构与分布式接口.md",
+      "original_sha256": "0795b069f2c78cfb2a5ce5b668deb9a4c2b9ca6bb68ed32c9de5036e47367de7",
+      "final_sha256": "ab1feb534e64b8c2b32ad9808866122114a4932edc53f52c2a9ada8aad5cfb7c"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/08-虚拟化实时系统与安全.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/08-虚拟化实时系统与安全.md",
+      "original_sha256": "6295cd07f06e8c084de9597d6d2c14c6660a805ab850dd8c3d5736753bc3932e",
+      "final_sha256": "1e1841c28d217784911fed4eeba9cde896b70fcb970d87e552456b127d63b5f1"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/09-页表写时复制与TLB失效.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/09-页表写时复制与TLB失效.md",
+      "original_sha256": "5dd355ffaacf8a9216379cbaa07ac193b0fb3e10003428ee310d9c1ea6981ca4",
+      "final_sha256": "147076e3681d0fa7c132937cd701424ca161bfba156b4b9a5b07509d8a7bcc7b"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/10-条件变量丢失唤醒与活性证明.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/10-条件变量丢失唤醒与活性证明.md",
+      "original_sha256": "07bd2125b3c559c99e0aa83797f73801231f08fd15f7b52d6183b168221a7310",
+      "final_sha256": "8858de2755f445cd5d85d9b161b6276a7c32996e6aa16ad8f698b8d5af4e91b1"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/11-崩溃一致性与恢复状态机.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/20-操作系统/02-操作系统原理/10-系统课程/11-崩溃一致性与恢复状态机.md",
+      "original_sha256": "d9da81d22430ff6526ddd3a4a5022dc6278f8a8eec41526ac0f9b8534e3f0725",
+      "final_sha256": "c87e4427778800a2c2f2dec06407e47181d171388b74c31cb46156fb987d0bec"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+      "original_sha256": "46f72ffdd91f1971907c19ed86ada0ef904e4aef34386d904505892ab06d2939",
+      "final_sha256": "d15b58d4014d5c6acf76132a1854810c139977c1ea5490951e4fe29a56f17882"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/00-计算机组成原理系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/00-计算机组成原理系统课程索引.md",
+      "original_sha256": "213086a3bf98e0c3e10d32a70a366af0b4be8ca61d69072658eb281feb617740",
+      "final_sha256": "2ae79b932d20450b28ddb3e6a131a7787734cd54398039f9d2db0d26fd8a007a"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/01-布尔逻辑与时序电路.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/01-布尔逻辑与时序电路.md",
+      "original_sha256": "c3997423d907e2afdcb2f858a6c51cb0f92b811e63c20563fa9904e4ee85cef4",
+      "final_sha256": "30cb1b9a965c74d0bae94c69b3b4e463a6340398f01032b0508e1691341a464f"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/02-整数浮点与算术电路.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/02-整数浮点与算术电路.md",
+      "original_sha256": "22db0cb7d0dce6d7ebcb56de123581feea61c55faae6bfe557a15849612c3965",
+      "final_sha256": "b9a71249eac12119925e99a10da903e5d388d13e22c1a2618115b1c89d9432af"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/03-指令集寻址与数据通路.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/03-指令集寻址与数据通路.md",
+      "original_sha256": "50e3def1385882a3fa2dfe75cd93c1b8e1de78fc16e88451b1b6a2da56280a2b",
+      "final_sha256": "e1a1b49e3cd225c4f491c8743a0981e50b926467085e320ea32e801e9e03cbca"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/04-流水线冒险与乱序执行.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/04-流水线冒险与乱序执行.md",
+      "original_sha256": "5f062ee93c14d4f8fecb1853ce135400ceffdf46f3cfd53b9d7b8fe90ba07ac5",
+      "final_sha256": "1860f15c98e8c98b090d7d395c528672dcf8387a7160260d094300cec5e0f82c"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/05-缓存地址划分与AMAT.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/05-缓存地址划分与AMAT.md",
+      "original_sha256": "95ea1034ff3bdc978ad51a03360e3174c86b9ac4c08ec8b34a8d1ff58ae56361",
+      "final_sha256": "4c8f4887f6705b7f8289a445e38708e17c87c5d9e00b8d347cf6e1a6ac92d691"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/06-虚拟地址TLB与存储系统.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/06-虚拟地址TLB与存储系统.md",
+      "original_sha256": "df634588f10ca986bc3617cb27a1bf5f5f33438e216db821690a7b98a8be4791",
+      "final_sha256": "6782e4aa3ce09f979372cdb11b843489c10e4b1d4fae066b4d72d4c0ebafb4d2"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/07-一致性内存序NUMA与性能.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/07-一致性内存序NUMA与性能.md",
+      "original_sha256": "1888c5c9748674a9a152bad878595632665f72280b9beb3aa56af78ea1116e3e",
+      "final_sha256": "170c7b7f91b5c03ec13cba153d2886b2e4d67745bcc0d9a23c0019bcb36a886d"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/08-总线DMA中断与系统全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/08-总线DMA中断与系统全景.md",
+      "original_sha256": "331ddeb801dad210f7083a5a64ca56396fcdff0ff3dc69c81293051f8923eb1e",
+      "final_sha256": "b8b3cd07ea0180bc522dd65f66bcba8ca64a5428ceaeb28421387de95803d216"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/09-浮点舍入消去与数值稳定性.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/09-浮点舍入消去与数值稳定性.md",
+      "original_sha256": "0a9f70b6e843e1f83d5206f1d4f07be3c3a36643f39a20e466fe6a54638ef8ba",
+      "final_sha256": "34dd29fc7762d6ac3da2d1064edb702d03d2d23b7f078cbc81751cf5042bcfcf"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/10-流水线乱序与精确异常推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/10-组成原理系统课程/10-流水线乱序与精确异常推演.md",
+      "original_sha256": "e99779657c6e01d40feae62cfdac7e7fd285320b1e6299f8db70955224a3a489",
+      "final_sha256": "cd4ca1ee2a1cd799c8c8bce32cce8094550d80ffff8fd2b39efc95f62150c56d"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/21-逻辑电路整数运算与CPU性能推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/21-逻辑电路整数运算与CPU性能推演.md",
+      "original_sha256": "e3acc4257e88b2f2acabccc9cf7bd19f5b1dd6fd27d0b804b7ca15a20011e1e6",
+      "final_sha256": "1e9f628962b5191a8b9db46f9e354b50133817f324a707e7411b4912351d3e74"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/22-缓存地址翻译一致性与存储层级推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/30-计算机系统/22-缓存地址翻译一致性与存储层级推演.md",
+      "original_sha256": "b4dc98abeb5d872f1190b6ffa86f9bee569942096c07c2473d92612d1ba1c2e3",
+      "final_sha256": "5af9492952f79e7bd08da29b06340c203be9ff96f2e5c4699f1c5035347003d7"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/01-分层封装与性能模型.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/01-分层封装与性能模型.md",
+      "original_sha256": "1245f21d6f3fef9a1da2d35a8568f9500153a2fd9dd28b89ddccd620b618dfcc",
+      "final_sha256": "f5afbd0fc9f70a7736dcb6afeaaf3754897cf40897ce8b75f06411c1d6b331c6"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/02-以太网WiFi交换VLAN与差错控制.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/02-以太网WiFi交换VLAN与差错控制.md",
+      "original_sha256": "83b5ae45d32eb37cd5045fff9ab004653b260918287918b8f3322f94ecd58f8b",
+      "final_sha256": "d2b1055751467a6484381467279e0d4ac6bdea96e0a984103464456abb0aa701"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/03-IP子网路由IPv6与控制平面.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/03-IP子网路由IPv6与控制平面.md",
+      "original_sha256": "fe165a35ea99bf824049e4167e1fc399ef3740eba18f5438f81b1d9dbcbfd543",
+      "final_sha256": "d40d55fd9632cd23c40966f159af2ed33b1d74c701d8be05e8ff6efc00d55f5d"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/04-UDP-TCP可靠传输与应用分帧.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/04-UDP-TCP可靠传输与应用分帧.md",
+      "original_sha256": "9971d83fe221e97dd952c6bceda0e91286b7ed696e8a63a4c3f4ab6477b89ca5",
+      "final_sha256": "31ea1ca62a9ce4ecc3ea86e34e75fb9bea4a2e8c6ec2d23f530154f822bfee50"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/05-流量拥塞RTT与带宽时延积.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/05-流量拥塞RTT与带宽时延积.md",
+      "original_sha256": "f3341a851eb48330c5067cdc0ecfcf2b67e4b1222e4726a84ff77ad25d04137f",
+      "final_sha256": "d759bd92a811dac7465be7f59faa30a1120f4a546cf8af359bf4823698c1bf5d"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/06-DNS-TLS-HTTP与端到端请求.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/06-DNS-TLS-HTTP与端到端请求.md",
+      "original_sha256": "621aeb6a2ac151c3f035b94ceecba0aefa6d312af7e05eb1f7a84aebdfd6ca8c",
+      "final_sha256": "3645242f61db9898ff3afedb82eb77bf959ad5142f94c152e467ed8bf8c04524"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/07-安全排障与网络知识全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/07-安全排障与网络知识全景.md",
+      "original_sha256": "dbb8189a9af45ff2350e573b057a5a31b20b2687a77726d8ff4018663cae680d",
+      "final_sha256": "c6783f6fecbb2400db161d1f2ef300e2d72bc31ffafaf4cd4611658d23525d7c"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/00-计算机网络系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/00-计算机网络系统课程索引.md",
+      "original_sha256": "4c7fc1d254e0263c36714b00e62f127c5ebe41c2031a48619b1802d8e2d83b2f",
+      "final_sha256": "63c15439be64b5eec1de798a7d634613530a4108a66aded39fad2c9b009f0e11"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/01-分层封装与网络性能.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/01-分层封装与网络性能.md",
+      "original_sha256": "8650106b84776b432b12afe6eeeee6323eb5ea4b640db78a2cd6d8c88db01e44",
+      "final_sha256": "7c236868e3be33eaeb413ca04dd7b601439337b6ecfebf01d46e7f81010019dd"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测.md",
+      "original_sha256": "3a50c10d975a68ed0bb967745d6ee85e540dd6398f55a58a4bb3d9f7face0e17",
+      "final_sha256": "d73c4d50f847b0bd721b79fdff69bcb8f58be54cf76cc1872d785ab41c8105b7"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/03-IP编址路由与IPv6.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/03-IP编址路由与IPv6.md",
+      "original_sha256": "c78a1df4c69b058970aac487d14d5b8ebeac0e0549b0bd22bc365698e184c828",
+      "final_sha256": "4a51a7d1fe7df1d89bb1079df816bad1f14b18f4e9c3fee266ddcf6011c310a4"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/04-传输层状态序号与拥塞.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/04-传输层状态序号与拥塞.md",
+      "original_sha256": "ad1069c404613495ff03d2cad47c0f9b2743cd741b08ea8c657c3d54c016e4b3",
+      "final_sha256": "7d7c3ab699501b7238ef89fd87eaff9b1f443412acda4f583025547af8ec04e0"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/05-DNS命名与应用基础设施.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/05-DNS命名与应用基础设施.md",
+      "original_sha256": "dbc019b79d91141187302697f7698ecf50b4a9ed143c565593595c2ef3f5ab88",
+      "final_sha256": "01da0caa4d365dad64c96f2f0094363c37af84020f16b21c35b1c8654574ad44"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/06-HTTP_TLS_QUIC与应用协议.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/06-HTTP_TLS_QUIC与应用协议.md",
+      "original_sha256": "a2774365354e8a0f58833fb2e2eddf714507c021d2370f47772a0ebc202b13b0",
+      "final_sha256": "6eede22a30510af8e78b2c8bea6bb308a7a55dd155a77f09284ec721e72c4cb3"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/07-Socket分帧背压与排障.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/07-Socket分帧背压与排障.md",
+      "original_sha256": "01123d6d0f724d5a31dd0ce7c1f21976f573cd1cd33b3cfba30bb1785721b8c1",
+      "final_sha256": "3bd96ecd33e46972aad775557a5b3c9a02e8c2e5fa9f20edb7617b00f606750c"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/08-网络安全分布式边界与全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/08-网络安全分布式边界与全景.md",
+      "original_sha256": "9b24b2b6ef3a6c54e996bacad1fd763458a86d9c72fbed4700e37732ff747e72",
+      "final_sha256": "1472f3e53377d880a3801f2ba960a927e2dadb464bb0e29227afd2dfe9bbebf2"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/09-路由邻居发现分片与PMTU.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/09-路由邻居发现分片与PMTU.md",
+      "original_sha256": "a4bf792ec5848d29e27f031f923715272f71ef0be5810e68dbcd40c7766c4a98",
+      "final_sha256": "42ca39c9135b233d98a7318452b0ab39c4ff174b1a70b9cd58647b196e3c3b2d"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/10-TCP窗口RTO与拥塞控制手算.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/10-TCP窗口RTO与拥塞控制手算.md",
+      "original_sha256": "83e43508031604fa252a87ffd519ce217a0c5f71e9cf7f7965c888eda5067f4a",
+      "final_sha256": "93e52b80e941b29bf3fb82dcc7babc47ef68a02fc7edd405f9a4ed7230212b3c"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/11-TLS身份验证重放与信任边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/35-计算机网络/10-系统课程/11-TLS身份验证重放与信任边界.md",
+      "original_sha256": "3310f64e75528e4e2e457477926d0f3bd48cbdfa691bf5b711413c323933af38",
+      "final_sha256": "783f2b86866f22d28eb31ecfc778c80de8e41eeb08f71952a5d64c1257bc4c85"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/00-数据结构系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/00-数据结构系统课程索引.md",
+      "original_sha256": "9ad5896d324202e9ac324c0a19152b6b01669bf1bee41771bf083bf942b81341",
+      "final_sha256": "29b433ca6ce200e6701b1d2812eeb3e2d0d296388dcfc839bf0d35203304b8d5"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/01-抽象数据类型与均摊分析.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/01-抽象数据类型与均摊分析.md",
+      "original_sha256": "795857726bdbe2ddf96710f8ef185bd935a61a60ca3c6f25837a56a0831babfc",
+      "final_sha256": "83ffb0e4d7c850f73276e45bac46669947acf2db59e28e5867adab94d8fb3179"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/02-顺序链式结构与哈希设计.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/02-顺序链式结构与哈希设计.md",
+      "original_sha256": "f1ad9dc8fe01c6b341fc1761a3a75624f7b35c9aaa83a2e2f12a60c9ba0e97be",
+      "final_sha256": "1b58da6bd4d0555bd980c2aa56aef6b3ad5da4dfe11548fe951a38059cc15650"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/03-平衡搜索树旋转与增广.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/03-平衡搜索树旋转与增广.md",
+      "original_sha256": "8b72b9b8d9abad6598c47f4b71f5c9f7f34506c3c563fccb71b9b6df9e3d622f",
+      "final_sha256": "ab75c91723761e806b9922dc07373cdda902ffaf2d8f3dfc74cf1f9093f06306"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/04-多路树外存与持久化.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/04-多路树外存与持久化.md",
+      "original_sha256": "dd6defd1fed57eb48802810df13931d348449cebb27611b82c12033792571330",
+      "final_sha256": "0932b408860f277fbd10ef75b157a9cd0e7f1cdf8ed537c6026b5df80cbb968d"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/05-区间聚合Fenwick与线段树.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/05-区间聚合Fenwick与线段树.md",
+      "original_sha256": "3cc07bd39047fadc9f1c99f192d61a44b82a1fd31c027eaa4c190580185c5d4a",
+      "final_sha256": "3e89b93c1b31e6b377730e79cdeea618ca792958bc09ce767210d0f5521f9980"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/06-字符串索引自动机与后缀结构.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/06-字符串索引自动机与后缀结构.md",
+      "original_sha256": "f1bba773e14ddf6ef2f9c3c993e9b22e63664f8ac7f683e45bb21b86115c09dd",
+      "final_sha256": "1b3d31631967baf36e1bdde7b525289c0858cd2da3b05b42b2ed2ee6aad734af"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/07-图表示并查集与动态关系.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/07-图表示并查集与动态关系.md",
+      "original_sha256": "41519a4eb8b7fd0971776dc0487ba85a8815a0cea95176302e1cddcc8b9873bc",
+      "final_sha256": "3eca8f0d6c27bda68a6de90a6c973c7ad8700563c20807be587c9c61c52290a5"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/08-概率结构空间结构与知识全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/08-概率结构空间结构与知识全景.md",
+      "original_sha256": "b79710d6bd27c5a0aa5cafd224623b480c85dc7a17d9aebced0d7f68424588eb",
+      "final_sha256": "39be7d1000193a9a10560a9ad38621801b5c9e27402581b07996cd4202a2909d"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/09-懒标记的代数与完整实现.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/09-懒标记的代数与完整实现.md",
+      "original_sha256": "5342c5e1693a23c7eab8b2765972b3d73522ea849eb9f2599281ce1377609d38",
+      "final_sha256": "5a14ca96611f9664396b4b9e939498fe40c8121e9bc108cb3e0db337d1a1171e"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/10-可持久化结构与回滚并查集.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/10-可持久化结构与回滚并查集.md",
+      "original_sha256": "2a3ca9b74f2fed02d0f6f04e8a78eb8320e4c2f491ce971402e751c9f63084c5",
+      "final_sha256": "09f01b6e6f343c123d5d9766fd51fd9e20bd7a0955226529fd23ab19cfd7cc52"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/11-字符串索引LCP与自动机状态.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/10-数据结构系统课程/11-字符串索引LCP与自动机状态.md",
+      "original_sha256": "3d743ea2f5ee92efa4777fef1527e47313c7e96fcb493e50bc0718bb61b82601",
+      "final_sha256": "e3a19fac1400aa5f33e5fd01b7428014fb88376daf576b2944a4eee3849a373b"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "original_sha256": "e2e1d58caf3ba6b1214583cb201111ca681261bf976f5426bb7f5234294192b1",
+      "final_sha256": "85a2aa13655b3e76a339fbba82b6a5f6072a4fc787f9d279461dde0519d83ef1"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/00-算法设计系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/00-算法设计系统课程索引.md",
+      "original_sha256": "cfccb860d12a562b866222e14c24bcb7ee2b8ad99bc6838926988ed0abc72c92",
+      "final_sha256": "0cb285b72a75a4bef4ea3505ef2563065bec5422542c78e63e171cfbbc50e4e1"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/01-问题规格证明与复杂度.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/01-问题规格证明与复杂度.md",
+      "original_sha256": "8bfb673f7a777eae239b64726470cc1f69d99dbb55a8ce23e1b555ff9904a568",
+      "final_sha256": "f886dc56634caa0067a1948a268bd2917a4f91babb7275f90109cce700ff24ef"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/02-分治排序选择与递推式.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/02-分治排序选择与递推式.md",
+      "original_sha256": "f77733433caaac307a9223878577f7fab7720ea14725bd6b42867f67cb3d2787",
+      "final_sha256": "07eff9e67fc930206e5edaca485d066009a0ce3b5172c94f8a5424e069ec70a6"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/03-贪心交换论证与结构条件.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/03-贪心交换论证与结构条件.md",
+      "original_sha256": "179ab23dafcd3715300e668c6e51b42623ff13085294daa48086906c87a0ecda",
+      "final_sha256": "aefd7c19a59cfd8df20381e1f1385a1eb3d1ffb6eec739a1469b2808406186df"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/04-动态规划状态设计与优化.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/04-动态规划状态设计与优化.md",
+      "original_sha256": "3f8cddc9cd2056a7bb7dc9b9dcbebfebb4633404679834b4fc98078d4738a751",
+      "final_sha256": "14bfba5da95f7aa3cbea496179b7df1016b30286c3810bd77c294ebcd6f5e075"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/05-图算法网络流与匹配证明.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/05-图算法网络流与匹配证明.md",
+      "original_sha256": "566170e37c757d2115ded209b68ecb5dff76e6deb5dbb30041e2fcc145828827",
+      "final_sha256": "3405064a0b9d04a153bf19c827e77fc6d3147bb277de6011a1a56aefcb6b4e8b"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/06-随机近似与在线算法.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/06-随机近似与在线算法.md",
+      "original_sha256": "9122e54a3355ca7b25d46e133bb084e4333dd066bbf8091bc14046b5327b4b23",
+      "final_sha256": "898402a1c43e60775ac5708039a1a06ca67c70ff66fc7637506daa1dfa570d8f"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/07-复杂性归约与指数算法.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/07-复杂性归约与指数算法.md",
+      "original_sha256": "0700af3b7be7cdd14c2ec664c2d7b59aceff98af9dd0b40943eac6e083d2819e",
+      "final_sha256": "956a4af10f763d4612dce1c0d4d72681d088b295d7c8672a7bc5d1906fe35d57"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/08-数值几何并行与综合设计.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/08-数值几何并行与综合设计.md",
+      "original_sha256": "fdb41505b00e62d9e65872b560ac41d8b88b1b10e79fcfad91b9d68e8dc40468",
+      "final_sha256": "25edb792ab0a6fc71f2979f03f26211d3ec861ac91d8cbb16dbefc9a21bf1b27"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/09-动态规划状态充分性与优化前提.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/09-动态规划状态充分性与优化前提.md",
+      "original_sha256": "48bd07b363d0936e8820686668482e6ced1eccc40d4ab56dbd3696451593d20b",
+      "final_sha256": "ddb4dae3af3645f68d4a8301fcd2396d33836f55d8fc2cd42b33c2fb4b3c8525"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/10-残量网络最小割与匹配对偶.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/10-残量网络最小割与匹配对偶.md",
+      "original_sha256": "0597ce6a7c272e5ffdb52036c8dcd193edcecfd4476e4a099c57888125cb37fe",
+      "final_sha256": "d1416e959ddde21722501b839e00eb064aa57efb343778d85b1407393b998297"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/11-归约方向随机误差与近似保证.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/20-算法设计系统课程/11-归约方向随机误差与近似保证.md",
+      "original_sha256": "ff56a145a5c46acb068b575c962f8e72fde66ed6814a05c7e0e6031e96345c08",
+      "final_sha256": "13abc56f806d54b7612d731c4220e36a7b94d6b848f3d5f5b55ddfbcae9e5a18"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/21-动态结构不变量与摊还分析推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/21-动态结构不变量与摊还分析推演.md",
+      "original_sha256": "778c14913c107a19b44d5a61f2ca88670454a5143f715d12a9747a7080460ee0",
+      "final_sha256": "8bd83c0475afd46a11148938d988c6eb8c77bddb67fa985ef257622138ba9b10"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/22-平衡树区间结构与结构扩展地图.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/22-平衡树区间结构与结构扩展地图.md",
+      "original_sha256": "569d7d11b0fe24acb4b977b0085f33ae83b6b072e1fdedc723095a706a12f299",
+      "final_sha256": "258202e7a4645ce54e1c26932a4704e57e7963099d243b96f96953aff4b358a1"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/23-正确性证明反例与复杂度边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/23-正确性证明反例与复杂度边界.md",
+      "original_sha256": "277e3c5bdba5882a73abb2ea40b7bae8ca43a2e3973d667614420cf792ff30f4",
+      "final_sha256": "8a14e691199ce26574975a3f3725571ea7b75c12524ec14b72b02b46064bbfbc"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/24-图算法网络流匹配与残量网络.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/24-图算法网络流匹配与残量网络.md",
+      "original_sha256": "f4775014d8c71afb9d5f11c1c415f446151013db7b55567fb5b72b2252a11095",
+      "final_sha256": "a163af4b02102cbe17ae75423ed949b8301d988daaf99483a5fefad2b73c2200"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/25-动态规划进阶随机近似与算法全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/50-数据结构与算法/25-动态规划进阶随机近似与算法全景.md",
+      "original_sha256": "21ab93243e61ba741d5b925e712e51b1b303ade78033317341235f1075724125",
+      "final_sha256": "0cd41ff3d43a8f5f762b5ca3313f86604130fba01cf1a9469c530ef977e1fb6c"
+    },
+    {
+      "path": "计算机知识/55-数据库/01-关系模型约束与数据建模.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/01-关系模型约束与数据建模.md",
+      "original_sha256": "1cbf06efbee7e0dd0777554693bb4faaf7db0c54f9038764446e2c0b1d8cde5e",
+      "final_sha256": "c6effd25225fa9a0b09a540c00238a4522824b551e3e88ca26a31d2b2452cbf8"
+    },
+    {
+      "path": "计算机知识/55-数据库/02-SQL连接聚合子查询窗口与NULL.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/02-SQL连接聚合子查询窗口与NULL.md",
+      "original_sha256": "b66eaf9adc1d68b7d79870a6243e37035cd7fd19d4899a92054d67e8d5d59310",
+      "final_sha256": "7b5702f62b8c8ebfddb474cb95c437bac7301239a2cc4855df6aae6e4a87347c"
+    },
+    {
+      "path": "计算机知识/55-数据库/03-函数依赖范式与模式分解.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/03-函数依赖范式与模式分解.md",
+      "original_sha256": "53dc99bd749252ffb1cd49bb096bc45f69fd8a6a669dc02ca1d5153f60f6880d",
+      "final_sha256": "1cb6d8bf660bc75d9280706b96fd7403e96436d4500853f66e979b539282b695"
+    },
+    {
+      "path": "计算机知识/55-数据库/04-事务隔离锁MVCC与并发异常.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/04-事务隔离锁MVCC与并发异常.md",
+      "original_sha256": "97a7ec8138ccc02be6862c90d684f66acab66acf9430458dc148777f6265ef0d",
+      "final_sha256": "3fb8aee2776225b484aed38ca68b89ceb6be6b91c71c50da27458866df76a0e1"
+    },
+    {
+      "path": "计算机知识/55-数据库/05-页索引执行计划与查询优化.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/05-页索引执行计划与查询优化.md",
+      "original_sha256": "67673cc44d05da05a450fab6200e030abc60cab737d597964f48abaec9d231e9",
+      "final_sha256": "66df5492274ac59c48919c79c4e71d44c92e5705b655893ab204982d1b7a8f28"
+    },
+    {
+      "path": "计算机知识/55-数据库/06-WAL恢复复制与分布式一致性.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/06-WAL恢复复制与分布式一致性.md",
+      "original_sha256": "f53d8ed1b4781dfd17bb7b51afbeeabeb292be068bd2c668feb47d99f01dc725",
+      "final_sha256": "3dc0bc835799ea3fb889650b96d7347c689d492b2fb3ab91a391a955a2f971f9"
+    },
+    {
+      "path": "计算机知识/55-数据库/07-运维安全分析系统与数据库全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/07-运维安全分析系统与数据库全景.md",
+      "original_sha256": "545c7d8a6cb8edc6cf828cf9a97c58965d34a4addf47ccb36f86a4a8b08b612b",
+      "final_sha256": "41a3a9fc739efd536448b41c28347ab87ea6bcf3432f547b0046caa78be51364"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/00-数据库系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/00-数据库系统课程索引.md",
+      "original_sha256": "ec232f77a1d54dee3729a3992da4d71c58851107e411d992bd54511521565a26",
+      "final_sha256": "3d0df02a1f2dae081dea6dbe87ba12ec4c329f38ca24708f97a08bdd2cd1fede"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/01-关系模型ER与约束设计.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/01-关系模型ER与约束设计.md",
+      "original_sha256": "2326c1c53ea16d4d7d825193127ccfb92f9da32792428bf85473d20c5be8fe05",
+      "final_sha256": "42cfc62aa8b104c9ad51f98bbe4ba0462b22f581b938858b3a6582c15dd759c0"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/02-函数依赖规范化与设计权衡.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/02-函数依赖规范化与设计权衡.md",
+      "original_sha256": "1fe1e1e8dff18769053956fda15f51fbc45406cd2591689595336e88006085a7",
+      "final_sha256": "b32889dce2681d5bb6d9f946da479a971441b113b24b9ebbc67c0fa2f49ae042"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/03-SQL查询语义与窗口函数.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/03-SQL查询语义与窗口函数.md",
+      "original_sha256": "88bfcef14bf728e8bf644b75af2d6e93d636c057794e6379b127af12e5b46793",
+      "final_sha256": "eb7a2a68b692af245e8ee1e42e147cecd24a1ce06dfe85393042d20e51da6c7e"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/04-可串行化锁与MVCC.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/04-可串行化锁与MVCC.md",
+      "original_sha256": "a8ea68c2acef6b27e73a55caaccd21ecc1cfe9e3c48980fcf2f53a1fd052a643",
+      "final_sha256": "da343dc2be3266e81357eaa49b726bdc9d2d0bf48458797dc4f6367ade524469"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/05-页布局索引与查询代价.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/05-页布局索引与查询代价.md",
+      "original_sha256": "b5043e04e4b4cda3e420eabc08894bfc54cb164299db726da26233353f2e16f0",
+      "final_sha256": "d812b385be7b4b121d73b5ab8090b2c6a0ae4a4a7a39a4343ae7f9b17d6bd562"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/06-查询优化器连接与执行模型.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/06-查询优化器连接与执行模型.md",
+      "original_sha256": "2188976b3a6cf6624b55aeb2d2c1031bf376f471ea4759eaebfb9a4e26e8aded",
+      "final_sha256": "4457cab6ae0cef466d8fc7d44a0e0cc1351ccf23d9cab8eb52e00e5022986b6a"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/07-恢复复制与分布式事务.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/07-恢复复制与分布式事务.md",
+      "original_sha256": "487656434441b97271c8d9e867bf320e6abeac9d225cfaf77ba36f58b7c8023c",
+      "final_sha256": "b14476c2f61eede9f7e54888ec4acdf23fe7a3ac98bb949397d6ba435ad2ece0"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/08-数据库工程安全与扩展专题.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/08-数据库工程安全与扩展专题.md",
+      "original_sha256": "856d778ff81c23c331de0524aeccc10a560428977805d7974ee633962d668e28",
+      "final_sha256": "bdbe74b3ee45081e4839ff6d1dce49655990dff5ae3c20d8bb2d26583ac7f682"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/09-候选键最小覆盖与无损分解推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/09-候选键最小覆盖与无损分解推演.md",
+      "original_sha256": "159e370ff39b8340fd0d9bd2ea241e792b079b722bfbfe8a5c450223e3f2f9a1",
+      "final_sha256": "0366ddc8616f781eb7bf312c2a3714ac13267d9bf4f763b60611176fa230a811"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/10-MVCC快照写偏斜与重试协议.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/10-MVCC快照写偏斜与重试协议.md",
+      "original_sha256": "2a574658874c9c60dd5bb751495fc86f0390fa1c86cc51f0ba04185d30f7568c",
+      "final_sha256": "31d52b921c65aaea2279700e78ef73587f46d7edefd519ae51f2d873721bfede"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/11-连接基数索引选择与优化器误估.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/11-连接基数索引选择与优化器误估.md",
+      "original_sha256": "2431479041ba479aa9f67ade2b5d569ee0f37bc351a75ce479b447e6761dbd80",
+      "final_sha256": "5d82b6634af2c67bc2f82a339d3393e4c6578e04ca8f8e9cebe45cdc99f56f54"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/12-WAL日志恢复与副本确认边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/55-数据库/10-系统课程/12-WAL日志恢复与副本确认边界.md",
+      "original_sha256": "78bb63e727504e85beb6427b899c437dc1fbf0450abaaea9d6f8f588cc47189a",
+      "final_sha256": "4ad61014efb1bb125685949efe6b753e663b24535390059f5af6b4d4875dcb29"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/06-数字音频采样量化PCM与响度.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/60-数据编码与媒体系统/06-数字音频采样量化PCM与响度.md",
+      "original_sha256": "e8b6657712800805af54d45fe1368862f31e30ce1a22e59550cd142dd9a3ca98",
+      "final_sha256": "c836c05fd207085db0aff1813069c958959bf33560ee9ec0b8a39db84e85f039"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/07-音频编码变换心理声学码率与延迟.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/60-数据编码与媒体系统/07-音频编码变换心理声学码率与延迟.md",
+      "original_sha256": "f1c645cca1dfda52f1bab7eb9dafed6032539aa206ba45e312353a8a656041d9",
+      "final_sha256": "2f6bda743d127e0d0c41b8f6567d503416b4725086ceff08200ef3e0d2556ffd"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/00-编译原理系统课程索引.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/00-编译原理系统课程索引.md",
+      "original_sha256": "230c3660fd6ee690c8771bf17bf98fbff8499e030fcac537c589b7e9972e442b",
+      "final_sha256": "090bcffe83fb6edf7e79e37e64e3cde543b2935efa90dced77b63797098b3cee"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/01-形式语言正则与自动机.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/01-形式语言正则与自动机.md",
+      "original_sha256": "bc23410650b4dbac55a365d9d0ed90a34c51b5ffbf9c2d36ab4aa5316f9b4b52",
+      "final_sha256": "a8e5645adfa5f8967350429a4f5fbef28f3a677bcd5d7a4a7f59bb63eb3ced0a"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/02-词法分析Token与错误定位.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/02-词法分析Token与错误定位.md",
+      "original_sha256": "c8a6a5f35bbafbd07051e20e2e9a4f355156fd8940c3fb3425d4bcc184a8ecb9",
+      "final_sha256": "dad464fe229d1289a83e0498a08213dd1f56625fd6a1f32241af4a7938f5cf0c"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/03-语法分析FIRST_FOLLOW与LR.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/03-语法分析FIRST_FOLLOW与LR.md",
+      "original_sha256": "8d98aa4d1fb14940f60e075ccc4953bf90c1d5f40f6d6095b7cb1740a979bed7",
+      "final_sha256": "ad508f4398b8604669d1ee00caefd6a8c7df5dbc1378fd23d5cc1aebfccc35fe"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/04-类型推断统一与语义分析.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/04-类型推断统一与语义分析.md",
+      "original_sha256": "0d30f0a6f4ab6f2594565d23fbdd41f8e61ff7a6bd3703421d6f1d60d5d2ab43",
+      "final_sha256": "3b88fd236ae354b56d3974c43799dbb7323966c9f503eb53c83eaf914b513539"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/05-中间表示CFG与SSA.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/05-中间表示CFG与SSA.md",
+      "original_sha256": "60025100405c09b0f4a75c58d37a2c9432d13d3816e64ac27de4e2f2093b5b2a",
+      "final_sha256": "c2b293f0b21e7eca07a8ed3053cc20c700b21bb404fadc39e2ddefa3085854ee"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/06-优化等价性数据流与陷阱.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/06-优化等价性数据流与陷阱.md",
+      "original_sha256": "188b0ab97cc135c854eb0523d774ce27f474f3d5d50ad45954671de6327579f7",
+      "final_sha256": "28b7ca7bfa6d0f83a29504ca483d057739c0ee547c6e2c02971582a979e7569b"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/07-指令选择寄存器分配与后端.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/07-指令选择寄存器分配与后端.md",
+      "original_sha256": "fa35de163987583e37e91e1ea768f3d1f92fcb01fa182d8b9c932abd84c760e6",
+      "final_sha256": "759d398ea4e18c85fb74589c95e877ed7e548e46cfa52f70b2414fb0aea4eafa"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/08-链接运行时与编译器工程.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/08-链接运行时与编译器工程.md",
+      "original_sha256": "d11f88ebfa742824c5ba4f894f6e8276bdda793766a394319533d9943162801d",
+      "final_sha256": "d904c368ba659afeec4744ea682bc6b8b6d849a7c9dcacc60bf56a9f1769ea4d"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/09-从项目集到SLR分析表完整推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/09-从项目集到SLR分析表完整推演.md",
+      "original_sha256": "2d3c9b3e99ffb6c912c6563b746065e9ef07b4f8a1813b329c52abe9a5ec4630",
+      "final_sha256": "433dbc0b36a32da3197b9b2b42615d7ceb2c82b21df63258078e9fb21c4d7835"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/10-活跃性不动点与抽象解释.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/10-活跃性不动点与抽象解释.md",
+      "original_sha256": "6bda12b0f5e5a2262601b1235830f754256e7943770b17b7d9cd4df878c22730",
+      "final_sha256": "39dca3392193a4584f4edf407193c0f0d20d6cc770bef6383f288dbc35a6ba23"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/11-类型统一泛化与值限制.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/10-系统课程/11-类型统一泛化与值限制.md",
+      "original_sha256": "9d62b984d24562c322cbf370d066146a63f3334bf9a046c1a75e80d4d01848e9",
+      "final_sha256": "fb565308c0b2b93e9c22691346a96ec4f51e131272df68780c17a22b8cd260c3"
+    },
+    {
+      "path": "计算机知识/70-编译原理/19-从表达式到机器码的贯通推演.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/19-从表达式到机器码的贯通推演.md",
+      "original_sha256": "7e89efc742bb3c787ec7f3e31aa558adbc96d47df17988a59aaafc5854adcb0b",
+      "final_sha256": "41dbda9af5e27e2dfecba6ebba1f668f5cf3ce1c73a22c5fb25d52ead84d509d"
+    },
+    {
+      "path": "计算机知识/70-编译原理/20-数据流优化正确性与编译知识全景.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/70-编译原理/20-数据流优化正确性与编译知识全景.md",
+      "original_sha256": "e354d73ba90507dd41ae9c7b6b37933eccacf06a6ff7ee3164b87594cdd2639c",
+      "final_sha256": "e3335cae93f6b16e228131ce6b38fe0d1dc08bfa6719ead355eab9b0bb31b84e"
+    },
+    {
+      "path": "计算机知识/80-实践/01-Python/00-Python实验室.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/01-Python/00-Python实验室.md",
+      "original_sha256": "1f94a4ba9ac151df06ee5e1ad63e704ee04bdf2ea24a80a3135cd510ddc25136",
+      "final_sha256": "648596a5a76aa193c980491179bb7cea1321420187e69c32d2d006a5a8a6b13e"
+    },
+    {
+      "path": "计算机知识/80-实践/01-Python/01-语法与文件练习.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/01-Python/01-语法与文件练习.md",
+      "original_sha256": "f28bda8fa14bd04bd8f55631c5831c0a4bee34cc17329f1256996f25279dd20b",
+      "final_sha256": "f4428268468c9d36faa6060769370afe6ebbf915481bfa227122f1d02b36eb37"
+    },
+    {
+      "path": "计算机知识/80-实践/01-Python/02-环境与依赖实验.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/01-Python/02-环境与依赖实验.md",
+      "original_sha256": "2c1ff4774356c8efbed9a02ac1522eb1a09a96770c8f4497109a913abaf40535",
+      "final_sha256": "e9a6fd90e9527f186f1067d767e27e577313471f7e84c57755cce7b7f6994552"
+    },
+    {
+      "path": "计算机知识/80-实践/01-Python/03-练习答案与解释.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/01-Python/03-练习答案与解释.md",
+      "original_sha256": "3c7ee9335d7c3906e577d86fad505b5cbc53c47c47b8016aba62d7aa25d7c084",
+      "final_sha256": "bf4d7b519c566090ed4c31ca77424ce3a6b64d9f8559f9e254ee057bc4af9352"
+    },
+    {
+      "path": "计算机知识/80-实践/02-Linux/00-Linux实验室.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/02-Linux/00-Linux实验室.md",
+      "original_sha256": "5e8ab71086ad15ad6b6f35732751de8c48f19299706adf56f02f50a494cdb9fb",
+      "final_sha256": "99679e290115f847cdbdcc625eddd36e3349e51de2088f092e1320930c24da1a"
+    },
+    {
+      "path": "计算机知识/80-实践/02-Linux/01-安全命令行练习.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/02-Linux/01-安全命令行练习.md",
+      "original_sha256": "d7b09f27e9aa685b6a91c2bc646d0c2378aaa481bfa80193ec7a21b8ed51ac58",
+      "final_sha256": "2d07b102fc90adc86448e17dd5703719884c90f47a597f975d1b748154722254"
+    },
+    {
+      "path": "计算机知识/80-实践/02-Linux/02-系统观察与故障定位.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/02-Linux/02-系统观察与故障定位.md",
+      "original_sha256": "2532769245a971d94bb66f452ec55c032d07457481e3564008e53b452f4a5915",
+      "final_sha256": "fe616c979253265a1bc1df7b32a00a8afd842a9673e33524d36be269639ccefa"
+    },
+    {
+      "path": "计算机知识/80-实践/02-Linux/03-Arch虚拟机安装检查单.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/02-Linux/03-Arch虚拟机安装检查单.md",
+      "original_sha256": "5898935698733c412c33bec235c7f2878c99b017da3671e39a4590efb0ea1590",
+      "final_sha256": "d3edfdc7ea1d0286a0fa5ae60d7d847b6fe491c61f316eb442d8da1521f85235"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/00-CUDA实验室.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/04-CUDA/00-CUDA实验室.md",
+      "original_sha256": "2a340549a15f5b87d8a8028d078273fd516a23c33270264a196e162fdc8af319",
+      "final_sha256": "d4057e4cc1c17051a5eb906c455ca20c505139d236fedd52bc37ab68b1a508dc"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/01-索引与Vector-Add实验.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/04-CUDA/01-索引与Vector-Add实验.md",
+      "original_sha256": "bc0eab96ef2b81f4eea10f259a085f8f28af3a97ef3a541a012f0e9472b8c75d",
+      "final_sha256": "3679b8b03c7867517a465d36cb9133f5446857bad51b98c9c91b4769aa369414"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/02-Coalescing与Reduction.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/04-CUDA/02-Coalescing与Reduction.md",
+      "original_sha256": "4a2aae935eeed883503f6f80adc7ae03c6f74dc0a2f9bdd59e0fc4e184d30ef7",
+      "final_sha256": "2b081e5f959d8e1729e0ee323be35d6195ccb5091f839e7da638872f6d842154"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/03-Softmax与矩阵乘法实验.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/04-CUDA/03-Softmax与矩阵乘法实验.md",
+      "original_sha256": "17a108fe794728f48345935d6bb24b39896cdaf9023092f34055ea890e1d4aef",
+      "final_sha256": "26223f7635078acfa7249055d037406147e47516034044137af7305c81d376ca"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/04-Profiling与Offload观察.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/04-CUDA/04-Profiling与Offload观察.md",
+      "original_sha256": "ff02d80856415eff45d3c56db8665b3efdd119d24c7d6baf3f6b8d9164916f03",
+      "final_sha256": "5986f6dfbede4137ac10531d1e64585413f2c9092edabdd087a5a82f03d652bf"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/00-媒体编码与FFmpeg实践-MOC.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/80-实践/07-媒体编码与FFmpeg/00-媒体编码与FFmpeg实践-MOC.md",
+      "original_sha256": "e30c0746b095f16b2b9a10c97fc70ff733213bc6e30567996a911db9588a5161",
+      "final_sha256": "d8419a5348fd6adb80930e5a06b169fec7a96d4361623ea43c19bd14ba9c0b4b"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/01-生成合成音视频并用ffprobe诊断.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/07-媒体编码与FFmpeg/01-生成合成音视频并用ffprobe诊断.md",
+      "original_sha256": "3e14a4b0d27c00fd06a3385932b714484b9232ae7e2381e1c3bd33e95905c0c3",
+      "final_sha256": "68e98930e45a3a47112cca870ea3b878e179aaa4fc73e615a7976af50a223dda"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/02-转封装转码裁剪与客观对比.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/07-媒体编码与FFmpeg/02-转封装转码裁剪与客观对比.md",
+      "original_sha256": "9284e32cf9407f9ded3e9af81c40d5dd6c0f6ecbce466d780b6d21605e3ba83e",
+      "final_sha256": "5d3b6e40ccdc50dff7903eaf625facbd49b0dec0a5fe0c00b41d9fb0e75adc56"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/03-Filtergraph时间戳与音画同步.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/07-媒体编码与FFmpeg/03-Filtergraph时间戳与音画同步.md",
+      "original_sha256": "3aa3c1d3b22ae200c8e9c7763f9ea1f85e6a3542e5e7498b5e0e2e7350f63b86",
+      "final_sha256": "6d84443b7be9abe025d91555405772a2150bebf2174ad52c729dc5e7115e41ed"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/04-批处理Manifest与不可信输入边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/80-实践/07-媒体编码与FFmpeg/04-批处理Manifest与不可信输入边界.md",
+      "original_sha256": "b20d1d9f5c772f71fb85f0f5017593ccac773ae8b7b08ce08d919f63822acf3c",
+      "final_sha256": "83574263fdd075a553accdeec26cd72152a89bda49e41905e21022e18542d5e4"
+    },
+    {
+      "path": "计算机知识/85-综合贯通/01-一次订单请求贯通十三学科.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/85-综合贯通/01-一次订单请求贯通十三学科.md",
+      "original_sha256": "4f65e00757b7d0c54bee72e32af76f1d1b93c4cffdfec03336e377cab77300b4",
+      "final_sha256": "2abb35fe72c77ff286a88c909b5e5e975d6e5ec01502da07d87df1ac408cafd3"
+    },
+    {
+      "path": "计算机知识/85-综合贯通/02-超时重试幂等与事务发件箱.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/85-综合贯通/02-超时重试幂等与事务发件箱.md",
+      "original_sha256": "ec60e20367a1a7085526108b26d1ebb7a4588f83c52e2bea5de2fc8465b4dc8b",
+      "final_sha256": "e398f240c4be0ad90446e9e358cf34a07a3c58e29b578915a2d3da7f65a54790"
+    },
+    {
+      "path": "计算机知识/85-综合贯通/03-从复杂度到尾延迟的性能证据链.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/85-综合贯通/03-从复杂度到尾延迟的性能证据链.md",
+      "original_sha256": "dde367baa2261bb0820e485b663a070bc57d551b6254ba8aba7dab5e048b892e",
+      "final_sha256": "9031c6bf7afb7c8273d3f65509454bea0fc257ebc62246eae807b6eab5004e97"
+    },
+    {
+      "path": "计算机知识/85-综合贯通/04-跨层保证与反例矩阵.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/85-综合贯通/04-跨层保证与反例矩阵.md",
+      "original_sha256": "8717b4faffc980091f836c5063e6644410abf4dc1a83e744d1039e3c6c1c516d",
+      "final_sha256": "cb7adcf8cd5a0623dccbb1762a4028aababc6c4aee9fa2c1fb664b14bff218a7"
+    },
+    {
+      "path": "计算机知识/90-资源/00-计算机知识资源-MOC.md",
+      "role": "navigation",
+      "old": "TBM/com/计算机知识/90-资源/00-计算机知识资源-MOC.md",
+      "original_sha256": "1d0064a5217706a527a40e23be9c8ec5a5d3962ad0bf389bf2dcbe5df7437836",
+      "final_sha256": "e7f5fd5d18e587134a10fe70532e5aef45f1c569921582e3470bc340094c4979"
+    },
+    {
+      "path": "计算机知识/90-资源/01-Python语法与项目速查.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/90-资源/01-Python语法与项目速查.md",
+      "original_sha256": "554f3e5b530918f95c4a7727dfc60c5ce2e10ec7e4c46cc47c75112213ae32bb",
+      "final_sha256": "121ca28996d99ebe201c7407194b6486049fe3485179f90b649b492575ca4119"
+    },
+    {
+      "path": "计算机知识/90-资源/02-Linux目录与命令速查.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/90-资源/02-Linux目录与命令速查.md",
+      "original_sha256": "277205378f8574d04aa6bd751614a2abf831f91329a1cb99477f204e1d2b1060",
+      "final_sha256": "b5c702ce5df46e7193b775541be856823129c4fd257a12289b3ef40b222d7b0c"
+    },
+    {
+      "path": "计算机知识/90-资源/03-Python环境与包管理选择矩阵.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/90-资源/03-Python环境与包管理选择矩阵.md",
+      "original_sha256": "318a8dc60065b0e1ca26393117c7ec3d0442f74a9a3fb6bf96cb08373a1beb19",
+      "final_sha256": "54f91b0b80970c8112fef6362f26d7f1729c351423f96648db88426fa419bd98"
+    },
+    {
+      "path": "计算机知识/90-资源/04-计算机系统与Linux术语表.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/90-资源/04-计算机系统与Linux术语表.md",
+      "original_sha256": "1e83fb465aff2868d30c45d80d38996c9c6de1985f8e1686628831714f22c369",
+      "final_sha256": "b3a6f3ec75f5395c24f62288e35dda55c156492aec5e4f2c8b3cb19e54ffffc5"
+    },
+    {
+      "path": "计算机知识/90-资源/10-本轮权威资料与版本边界.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/90-资源/10-本轮权威资料与版本边界.md",
+      "original_sha256": "4e94a960f99b5b924e3bc30e0c31747800fd7cc50519b1db51eb43c2e263db06",
+      "final_sha256": "3c82ee98160d1616d26c8035c48147979f477369004bbbba82b1b851e19fc7c1"
+    },
+    {
+      "path": "计算机知识/90-资源/11-跨学科概念辨析.md",
+      "role": "content",
+      "old": "TBM/com/计算机知识/90-资源/11-跨学科概念辨析.md",
+      "original_sha256": "1be59110fd1a20ce246738ad07746c75be2e78a5af7d6f65afa7887b40b9e7fc",
+      "final_sha256": "b10109691d87993aa731e2418ce1ca89477880cbe2f75fb19d3cb3b3361b0cf9"
+    },
+    {
+      "path": "哲学与文化/00-开始/00-哲学与文化-首页.md",
+      "role": "navigation",
+      "old": "TBM/哲学与文化/00-开始/00-哲学与文化-首页.md",
+      "original_sha256": "9199440dfd14634f1e996879254bb8ddbb3d0b1ad3978bde5b8a5231a687a3db",
+      "final_sha256": "5fe9bd63f60b4b68abd2ddc64fd5306e52ddb0f05ad55668ceee775291b7e63e"
+    },
+    {
+      "path": "哲学与文化/90-资源/01-原始材料与参考来源索引.md",
+      "role": "content",
+      "old": "TBM/哲学与文化/90-资源/01-原始材料与参考来源索引.md",
+      "original_sha256": "864a91ec033425afc1f34f2d92118f3a28d295d3f48ed86aef0ffeb2d336d25e",
+      "final_sha256": "eaf9ea60910ebe3d943df7a33d5313bd8453e7021d506fd886b25779f26686e3"
+    },
+    {
+      "path": "数学/00-数学-首页.md",
+      "role": "navigation",
+      "old": "TBM/数学/00-数学-首页.md",
+      "original_sha256": "5b8dd8a95364f5641b2a1fef9d6901319b1f34308ab81710ea33255225c5a2bf",
+      "final_sha256": "409fd9fefce7e5a0562fc1f2fa704c90c2065f51cde81bcd43c6a4ac780539ba"
+    },
+    {
+      "path": "数学/01-数学学习路线.md",
+      "role": "content",
+      "old": "TBM/数学/01-数学学习路线.md",
+      "original_sha256": "7a6c5185e122049ebd8d59e16eb01a55d6f6f35d4e955114c79f7c189f38bb57",
+      "final_sha256": "4b3bf9634ed238f76fe85c61f076f5cd3b64e705ef8bb38798a2a3b189860788"
+    },
+    {
+      "path": "数学/20-线性代数与几何/01-向量矩阵与张量.md",
+      "role": "content",
+      "old": "TBM/数学/20-线性代数与几何/01-向量矩阵与张量.md",
+      "original_sha256": "da54a3708634f786452d822f2304cf07e02fb828c7256650393792c81fd1e579",
+      "final_sha256": "01a3f97c21f773857e3714e042a019a60a7ebf45a1a6691de17f5442f5164068"
+    },
+    {
+      "path": "数学/20-线性代数与几何/03-点积范数距离与余弦相似度.md",
+      "role": "content",
+      "old": "TBM/数学/20-线性代数与几何/03-点积范数距离与余弦相似度.md",
+      "original_sha256": "71484c7487debd91df63d56b52f06157ec18c4cb53b0ed214163daa2def30467",
+      "final_sha256": "ceb3a9fa07816320016778c7f2f11d3ad6631782fe8ce7c4aa34c073cedc9897"
+    },
+    {
+      "path": "数学/20-线性代数与几何/04-特征值SVD与低秩近似.md",
+      "role": "content",
+      "old": "TBM/数学/20-线性代数与几何/04-特征值SVD与低秩近似.md",
+      "original_sha256": "31cdbb5bc39416311b56ab49ca6daa81a0480f838ba082e70e4d078814f1b8a2",
+      "final_sha256": "79823f33dabd6ed534164974cca99c1f045a3a9aa3f12569174e7bb5d2316e6d"
+    },
+    {
+      "path": "数学/20-线性代数与几何/05-正交投影子空间与方向消除.md",
+      "role": "content",
+      "old": "TBM/数学/20-线性代数与几何/05-正交投影子空间与方向消除.md",
+      "original_sha256": "4ea6e0c11705818d4c3c857da73f392c7a24743e4c5913f79ecfdfbfda61f670",
+      "final_sha256": "b99c816ce7eeb17a3042ab45e0999590e5dc5bdc4d2ba01d045581f1a87401be"
+    },
+    {
+      "path": "数学/30-概率与统计/05-统计估计置信度与模型评测.md",
+      "role": "content",
+      "old": "TBM/数学/30-概率与统计/05-统计估计置信度与模型评测.md",
+      "original_sha256": "10ad3f11135bd318992cca61ffbcea432baa8f8482f9f4434e1517ac2289e7e0",
+      "final_sha256": "dcb40cc0a00fd0b9e7333e1eaab807bfe66c4abfe02f6970d084201b68623deb"
+    },
+    {
+      "path": "数学/40-微积分与优化/02-梯度方向导数与Jacobian.md",
+      "role": "content",
+      "old": "TBM/数学/40-微积分与优化/02-梯度方向导数与Jacobian.md",
+      "original_sha256": "19d6cfe776a8faee9a68c5bbc4f124288dcb1cac7940b5269910504e0168c631",
+      "final_sha256": "f966ea54a9ae8bc9dcab522b892695176753d8c5c9fd5e7646fa4fcf52495252"
+    },
+    {
+      "path": "数学/40-微积分与优化/04-SGD-Momentum-Adam与AdamW.md",
+      "role": "content",
+      "old": "TBM/数学/40-微积分与优化/04-SGD-Momentum-Adam与AdamW.md",
+      "original_sha256": "1fe12f7a61c38650e3d20df03b4b3653838225aab8b654235aeccb5f4b3103bd",
+      "final_sha256": "6ff4040a51b99fc075ab7515ea6adbaa53384c381ecfd9dd901a4b916ceab961"
+    },
+    {
+      "path": "数学/40-微积分与优化/06-曲率Hessian与学习率稳定性.md",
+      "role": "content",
+      "old": "TBM/数学/40-微积分与优化/06-曲率Hessian与学习率稳定性.md",
+      "original_sha256": "1b2acdc2ca03e9391e72a23ef9775f096d745f1017d723ed27d074e1ce42983c",
+      "final_sha256": "49245644a20e427d15fd143ee650e159638fe828a2ce0a841494d12188326803"
+    },
+    {
+      "path": "数学/50-信息论/00-信息论-MOC.md",
+      "role": "navigation",
+      "old": "TBM/数学/50-信息论/00-信息论-MOC.md",
+      "original_sha256": "dbd333c512f0a9b2e00693a2d2a4b1151f7b40901628e85094661cebe5f33e11",
+      "final_sha256": "f3b67353272eecad19cc6be2e1a3113965a19f39ed1f939f37fd1f2d4a76c571"
+    },
+    {
+      "path": "数学/50-信息论/01-熵交叉熵KL散度与互信息.md",
+      "role": "content",
+      "old": "TBM/数学/50-信息论/01-熵交叉熵KL散度与互信息.md",
+      "original_sha256": "3264428760e0f6bfe1399540aebbde39ad6a1c030435d8a2105326bc202cb4fa",
+      "final_sha256": "2d74fb1869644ecebf0d788f033f9623dca966a4edbff798c74e53c39443c05a"
+    },
+    {
+      "path": "数学/50-信息论/02-指数对数Softmax与LogSumExp.md",
+      "role": "content",
+      "old": "TBM/数学/50-信息论/02-指数对数Softmax与LogSumExp.md",
+      "original_sha256": "ee53abeac0320f8b3119a969ff0ccc5d05d4501b6f5398b08075b8e6131238b9",
+      "final_sha256": "76397df9919e4dfe72a74a9c7140c1e1dc9555cb159f30673264e068a865265f"
+    },
+    {
+      "path": "数学/50-信息论/80-Softmax数值稳定性实验.md",
+      "role": "content",
+      "old": "TBM/数学/50-信息论/80-Softmax数值稳定性实验.md",
+      "original_sha256": "e84535c7fb1722b0292b9e3f5bfefdd9fa3ba2032ce28fb8bc7838d743eb9420",
+      "final_sha256": "8ab84472e3083edb0268a7229de9cc0a9d9f33c804a524a895639009fa8453bb"
+    },
+    {
+      "path": "数学/70-信号处理与多模态数学/00-信号处理与多模态数学-MOC.md",
+      "role": "navigation",
+      "old": "TBM/数学/70-信号处理与多模态数学/00-信号处理与多模态数学-MOC.md",
+      "original_sha256": "f8b3964eb3fb9b3ee97ce5e3d1bbf273bc7abc57508333509989b9234bc22947",
+      "final_sha256": "0a580ed515005eae480c06383663556d22e587be0a4d597ecb2b85a8880990d3"
+    },
+    {
+      "path": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱.md",
+      "role": "content",
+      "old": "TBM/数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱.md",
+      "original_sha256": "3075245b01a2bdb76eee3cfad383f628004a2c9203b9f5cf70f6c440e0518eca",
+      "final_sha256": "c93e53dfc9967831356a22599463e198b5439ec6975c36dae30ff9f968183b64"
+    },
+    {
+      "path": "数学/90-资源/01-公式到AI应用映射.md",
+      "role": "content",
+      "old": "TBM/数学/90-资源/01-公式到AI应用映射.md",
+      "original_sha256": "582702fdfc3a8a0f23fdce3d649cd4bcc63a9d171150285608184c16c1c4b0ef",
+      "final_sha256": "c71d02e8ce99e34a3e2235ac0fd4488a1e61d0fb1a7841ca611a1f98e829d055"
+    },
+    {
+      "path": "计算机知识/Kali/00-导航与方法/00-Kali知识地图.md",
+      "role": "content",
+      "old": "TBM/计算机知识/Kali/00-导航与方法/00-Kali知识地图.md",
+      "original_sha256": "513bae672f19bcb336ea2fab4536d3281553527b97c797f9d142798cb0f53f72",
+      "final_sha256": "a3eb97e6c46b0c7d1073a1e70e753413ee4acb7c99181dcf88823a9ab7f66cf2"
+    },
+    {
+      "path": "README.md",
+      "role": "navigation",
+      "old": "Welcome.md",
+      "original_sha256": "ecd0dfb6b21143ff52cfe36f93636df57e5b21773c101491b86f10ce17556ca8",
+      "final_sha256": "5a90edad5117843a8274296294104cd15d19636c107c2462d00db45adf176c3d"
+    }
+  ]
+}

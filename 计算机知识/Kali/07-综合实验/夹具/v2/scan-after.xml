@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<!-- SYNTHETIC reasoning-v2.0; not an executed Nmap scan. -->
+<nmaprun scanner="nmap" version="SYNTHETIC" args="NOT-EXECUTED">
+<scaninfo type="syn" protocol="tcp" numservices="2" services="443,8000"/><scaninfo type="udp" protocol="udp" numservices="1" services="53"/>
+<host><status state="up" reason="user-set"/><address addr="127.0.0.1" addrtype="ipv4"/><ports><port protocol="tcp" portid="443"><state state="open" reason="synthetic"/></port><port protocol="tcp" portid="8000"><state state="closed" reason="synthetic"/></port><port protocol="udp" portid="53"><state state="open|filtered" reason="synthetic"/></port></ports></host>
+<runstats><finished exit="error"/></runstats></nmaprun>

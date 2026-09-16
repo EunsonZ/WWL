@@ -1,0 +1,26 @@
+[
+  {
+    "id": "invalid-first-valid-last",
+    "input": "[]\n{\"status\":200}\n",
+    "command": [
+      "jq",
+      "-e",
+      "type == \"object\""
+    ],
+    "returncode": 0,
+    "stdout": "false\ntrue\n",
+    "stderr": ""
+  },
+  {
+    "id": "valid-first-invalid-last",
+    "input": "{\"status\":200}\n[]\n",
+    "command": [
+      "jq",
+      "-e",
+      "type == \"object\""
+    ],
+    "returncode": 1,
+    "stdout": "true\nfalse\n",
+    "stderr": ""
+  }
+]

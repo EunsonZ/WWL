@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "status": "template-not-run",
+  "scope": "Record a real safetensors to GGUF experiment. Do not place tokens, signed download URLs, private paths, prompts, or model bytes in this file.",
+  "source_model": {
+    "publisher": "",
+    "repository_id": "",
+    "immutable_revision": "",
+    "model_card_url": "",
+    "weight_license": "",
+    "acceptable_use_or_access_terms_checked": false,
+    "files": [
+      {
+        "relative_name": "",
+        "bytes": null,
+        "sha256": ""
+      }
+    ],
+    "config": {
+      "relative_name": "config.json",
+      "sha256": "",
+      "architecture_checks": ["model_type", "num_hidden_layers", "hidden_size", "vocab_size"]
+    },
+    "tokenizer": {
+      "files": [],
+      "sha256_by_file": {},
+      "special_token_ids_checked": false,
+      "chat_template_checked": false
+    }
+  },
+  "toolchain": {
+    "llama_cpp_repository": "https://github.com/ggml-org/llama.cpp",
+    "immutable_commit": "",
+    "converter_command_observed_from_that_commit": "",
+    "runtime_binary": "",
+    "runtime_version_output": "",
+    "environment": {
+      "os": "",
+      "cpu": "",
+      "ram_bytes": null,
+      "gpu": "",
+      "driver_or_runtime": ""
+    }
+  },
+  "outputs": [
+    {
+      "kind": "high-precision-gguf",
+      "relative_name": "",
+      "sha256": "",
+      "bytes": null,
+      "gguf_checks": {
+        "header_version": null,
+        "metadata_keys_checked": [],
+        "tensor_count": null,
+        "tensor_shapes_checked": false,
+        "alignment_checked": false
+      }
+    },
+    {
+      "kind": "quantized-gguf",
+      "quantization_label": "",
+      "relative_name": "",
+      "sha256": "",
+      "bytes": null,
+      "derived_from_sha256": ""
+    }
+  ],
+  "measurements": {
+    "fixed_prompt_set_identifier": "",
+    "prompt_set_license_or_origin": "",
+    "generation_settings": {
+      "context_tokens": null,
+      "max_tokens": null,
+      "temperature": null,
+      "seed": null,
+      "threads": null,
+      "gpu_layers": null
+    },
+    "file_size_bytes": {},
+    "peak_host_ram_bytes": {},
+    "peak_vram_bytes": {},
+    "prefill_tokens_per_second": {},
+    "decode_tokens_per_second": {},
+    "quality_metric": {
+      "name": "",
+      "baseline": null,
+      "candidates": {},
+      "failure_examples_redacted_or_public": []
+    }
+  },
+  "acceptance": {
+    "high_precision_load_passed": false,
+    "quantized_load_passed": false,
+    "comparison_is_same_hardware_backend_and_settings": false,
+    "known_failures": [],
+    "cleanup_paths_created_by_this_run_only": []
+  }
+}

@@ -1,0 +1,14 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="在线 softmax：合并统计量，不是平均分块输出", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+a [label="已处理块\nm_A, ℓ_A, u_A"];
+b [label="新块\nm_B, ℓ_B, u_B"];
+m [label="m′ = max(m_A,m_B)\n各块按新最大值重标定"];
+s [label="合并权重和 ℓ′\n合并加权向量和 u′"];
+o [label="最终输出 u′/ℓ′\n避免保存完整 T×T 矩阵"];
+a -> m;
+b -> m;
+m -> s;
+s -> o;
+}

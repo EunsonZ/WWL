@@ -1,0 +1,49 @@
+{
+  "checker_version": "1.0",
+  "scope": "计算机知识/Kali",
+  "status": "failed",
+  "counts": {
+    "markdown": 76,
+    "wikilinks_including_prerequisites": 1122,
+    "headings": 546,
+    "block_ids": 3,
+    "reachable_notes": 76,
+    "unique_frontmatter_source_urls": 120,
+    "canvas": 1,
+    "canvas_nodes": 12,
+    "canvas_edges": 13,
+    "python_sources": 4,
+    "files_at_check": 117
+  },
+  "issues": [
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/01-系统与网络基础/05-进程服务日志与本机加固.md",
+      "detail": "missing explicit target: 计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+      "detail": "missing explicit target: 计算机知识/Kali/07-综合实验/10-实验G路由与扫描状态推理.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+      "detail": "missing explicit target: 计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md"
+    }
+  ],
+  "not_run": [
+    "Obsidian UI/rendering",
+    "Kali tool execution",
+    "external URL availability sweep"
+  ],
+  "limitations": [
+    "Limited Markdown dialect; not a full Obsidian parser",
+    "Specific secret patterns only, not a comprehensive secret detector",
+    "Reads this topic only, not the rest of an existing Vault",
+    "Trusted local filesystem assumed; not a race-resistant hostile-input sandbox"
+  ]
+}

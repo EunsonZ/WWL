@@ -1,0 +1,905 @@
+{
+  "basis_zip_sha256": "a47884d162581c4efc95eab75aed64c77bd95a33c5d72595a21acb1d8d8c555e",
+  "scope": "Merge-relevant files; machine evidence, its recursive hashes, and MANIFEST excluded here. Final MANIFEST covers every packaged file except itself.",
+  "modified_existing_markdown": 73,
+  "new_markdown": 3,
+  "substantive_existing_courses": 23,
+  "substantive_paths": [
+    "01-系统与网络基础/03-APT软件源与Python环境.md",
+    "01-系统与网络基础/04-Shell文件权限与文本处理.md",
+    "01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+    "01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+    "01-系统与网络基础/08-BashPython与可复核自动化.md",
+    "02-信息收集与网络测量/02-DNS域名与证书信息.md",
+    "02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+    "02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+    "02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+    "03-Web与API安全/02-curlHTTPie与接口重放.md",
+    "03-Web与API安全/03-BurpSuite工作流.md",
+    "03-Web与API安全/05-ffufGobuster与内容发现.md",
+    "03-Web与API安全/08-认证会话越权与API测试.md",
+    "03-Web与API安全/10-TLS证书与服务配置评估.md",
+    "03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+    "04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+    "04-服务身份与主机评估/09-数据库服务与最小权限审计.md",
+    "05-密码无线与专门领域/02-HashcatJohn与离线审计.md",
+    "05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md",
+    "06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md",
+    "06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+    "06-取证逆向与检测/07-YARA日志与检测规则.md",
+    "06-取证逆向与检测/08-SuricataZeek与网络检测.md"
+  ],
+  "records": [
+    {
+      "path": "00-导航与方法/00-Kali知识地图.md",
+      "status": "modified",
+      "before_sha256": "dc46b1362a9f4c7aa62f4f665921c5edca8b4d0bb05787b47c0bb7963dce5d4d",
+      "after_sha256": "bc030b3a4321b53d7aac07885b9650326e947a64a1ffe3d0247a9bc68097c4fd",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "将 12 个实验和当前验收接回首页，保留历史入口",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "00-导航与方法/01-学习路线与贯穿案例.md",
+      "status": "modified",
+      "before_sha256": "5a26d0bd721eaa83603ac18ee38411265b37928dd40bafdd71332891e3b0bdf3",
+      "after_sha256": "ecf2f8cdfb930309d1fd2396fa2460e8b40f12d21b72f1a7e46ceba3701429bc",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "新增路径以实验连接原理，不平行复制课程"
+      ]
+    },
+    {
+      "path": "00-导航与方法/03-实验室拓扑与证据目录.md",
+      "status": "modified",
+      "before_sha256": "c97904d1acb458a16d447369533f8156738db170e6dee4aeb0008bb35e31a057",
+      "after_sha256": "a38a13ff48725b1668eba935049e28cf250b3c2bd2f4c1dd2d6ca233d1528762",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "00-导航与方法/04-从观察到结论的安全方法.md",
+      "status": "modified",
+      "before_sha256": "9a10486e350030ca59a57aa2df522faae7250649e108c6556cbc0e463049b30b",
+      "after_sha256": "9a86504545158b808b3c4648d64f504fb458f4ac21fa6f95f391c9cc25f80c55",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "00-导航与方法/05-常用工具覆盖矩阵.md",
+      "status": "modified",
+      "before_sha256": "32dd10e931722f95546e26eafccb1de9532cc1cda73e08c80de6ef947d679330",
+      "after_sha256": "0f22db2fd4529d9061c77b09c93f459e155737ebfdc37fc22ae945398c3dcd2e",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留",
+        "保持239项检索规模，只深化 OpenSSL SQLite sqlite3 jq 的准确覆盖和入口"
+      ]
+    },
+    {
+      "path": "00-导航与方法/06-命令阅读与故障定位.md",
+      "status": "modified",
+      "before_sha256": "731080426a8e9374a260c61b9b7644d95b6dc94d56f83ea702e572e9a35653bd",
+      "after_sha256": "29ac278d5787b4d1aaa3784eaec5c967e0400d8c9f617d355fef842a5f33eedd",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "00-导航与方法/Kali学习路径.canvas",
+      "status": "modified",
+      "before_sha256": "40c37bf79835b603564aaeb0d0bd663482847080279dbb53f9039a33858cc51e",
+      "after_sha256": "ccf88183fafbbd474b65f3aa8ee8ba2e224c07dd14b0a8237d9c01be68a84a17",
+      "change_role": "code_or_integration",
+      "reasons": []
+    },
+    {
+      "path": "01-系统与网络基础/01-Kali定位与安装校验.md",
+      "status": "modified",
+      "before_sha256": "143e89471a53fb22d4f15f0a9826666c19b7b9d4470766dad7860fcfa5ffbfc7",
+      "after_sha256": "13ce2f01a45a7482e662b629c847ec915ef6944f95c81e8b820be3deb0532c63",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "01-系统与网络基础/02-虚拟机快照与网络隔离.md",
+      "status": "modified",
+      "before_sha256": "078aa8b5da4195fc362b00d37bcbb4ff1eb44195b04d86b89c0c0f78b8e03058",
+      "after_sha256": "120faab3e0a07512f97c1586015dcdb4f864129efa3ebc4acaf89a741d749d44",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "01-系统与网络基础/03-APT软件源与Python环境.md",
+      "status": "modified",
+      "before_sha256": "f3ffeeaf353874505c4a2a7eb7e4de387e60c0eb10951274d60c7b3e765e9cd6",
+      "after_sha256": "1764159d71d8ea6e95361ad2e6b4c92f8d1d8bf83212ea659cba3ed88c23124d",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐包状态四层、模拟操作边界、错误分流与回滚条件",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "01-系统与网络基础/04-Shell文件权限与文本处理.md",
+      "status": "modified",
+      "before_sha256": "19d72ba3db5156ba05260a6e4130b4549971f70100f656b830bdd10a1259255b",
+      "after_sha256": "9633f7c20c118ecb241f8fbfc5a4db900df99e3ed4c9a98f9f7ec80c9ae83325",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "回滚仅本轮未完成的第一处补丁；修正补丁器对末尾换行的比较，不改变有效检查",
+        "纠正 jq -e 多输入退出码不能证明逐记录全通过的错误解释",
+        "加入已复现的顺序敏感反例、小文件整体 schema 判断与空输入/JSONL边界",
+        "文档使用经过测试的独立jq真源；保留字段与JSONL边界解释",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "01-系统与网络基础/05-进程服务日志与本机加固.md",
+      "status": "modified",
+      "before_sha256": "48ba62584e6e2717d6a9e086e75ac94e757509e0e29df6d62ae55656f01e25e1",
+      "after_sha256": "cbfe516cf5062fad796c8514ec894ebe3a84e27ba16811b915028387995c57e4",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+      "status": "modified",
+      "before_sha256": "925e99708696d3afeef0a6dc0952ca902acf23782a8fdfaedf66f28b25b6ccc9",
+      "after_sha256": "26fb45aeffd1bf7287b46cfa9fe8f13f5233e4a5bad4a9dc2a2a2c74df3a38af",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐双栈监听、作用域、地址族覆盖和分层诊断",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+      "status": "modified",
+      "before_sha256": "e10b2837b27c846aeeb57328624af0985e718d00da94b38a439edf76f4fae794",
+      "after_sha256": "4238183f974cc982e4f84fb44235a18e0ac2b57ced20122d616880719b22c050",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐缓存三阶段、带中间量的年龄计算和304证据解释",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "01-系统与网络基础/08-BashPython与可复核自动化.md",
+      "status": "modified",
+      "before_sha256": "972ab0da8fc592594ef715854fe5b9bd4b4c1dbc1452806434105348923e052b",
+      "after_sha256": "3f09911753c30c8147ef63c8d3f3cbf282be59c7a5aa639bb1676dd92e94d4be",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐半成品发布、过程状态和反例驱动验收；连接真实事务实验",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "02-信息收集与网络测量/01-资产范围与被动信息收集.md",
+      "status": "modified",
+      "before_sha256": "29cfdf60cb1068993f6109eef9292adf639891dcd072a16cb80c073bdc500bd0",
+      "after_sha256": "f641fbc5d8fa34f177b604040829e696c42f7a8ca2ec8310db0d69d58688a3f5",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "02-信息收集与网络测量/02-DNS域名与证书信息.md",
+      "status": "modified",
+      "before_sha256": "60188db244702e58429b487ece4baa09102d6e17c44d673e6a87f00bd9af9934",
+      "after_sha256": "0172703cf1a62dee7182c11ec46b091970ebeafd67cc63ac53ae785730901e1b",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐解析器路径、地址族和传输方式对照，避免只看short结果",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+      "status": "modified",
+      "before_sha256": "5c30f4c4327e3e20a4dbab20719a2fc708a9aea33958c999a271d0c631cf1d2c",
+      "after_sha256": "6ee4083207ab39935d31a4287d8160065bcf43e97d96ef5d70775518517f3a74",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+      "status": "modified",
+      "before_sha256": "6a710e53c68270a05e45cba7a1b1cc59aaaac28c7cbcd9321d9770d52f96ce32",
+      "after_sha256": "1eae1a4f06c99c9c44fd16e8082a35620398ddbf882c91ad295bb60d5e6ff3db",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "将 XML 置信字段明确为实际属性 conf，避免解析不存在的 confidence 字段",
+        "用两条合成 XML 区分映射与实探，补齐证据阶梯和探测预算解释",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+      "status": "modified",
+      "before_sha256": "6c7b4df375018c0add9bb55e74f322989686de64cd8f6d8f6b6789f6a2c7246c",
+      "after_sha256": "753a75fe39ce8f989ede26052aa8f9d2de36bb57a6db5c157b02335e5f6d36fe",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐重叠序号的手算、ACK与应用提交区别、解析设置和数据出处",
+        "将字节序号与确认的机制定位到RFC9293，数值示例维持原创标识",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "02-信息收集与网络测量/06-ScapyNping与协议实验.md",
+      "status": "modified",
+      "before_sha256": "d5464bb381524f8bc97a95e23c09edf0e63269e1a9b3ba42f98ed94621a1644f",
+      "after_sha256": "24b4f79ae049d1eeb3e1ee0b64f61028091a22e99e9946925d688d1af92e385b",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+      "status": "modified",
+      "before_sha256": "7dc682663098c065c1471e6cf0e2afa20d6d119accb3cd6e30b86cf030ce7910",
+      "after_sha256": "d02b2bf4b015fad650005b9bc7c558330abd64a3fcfd6ab158775c02a81ea88d",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+      "status": "modified",
+      "before_sha256": "b3d5c9310e9b21a7f371171c98d3b0766768a5d118afed71bc3acbe9a211dc77",
+      "after_sha256": "6f6c40c10186b7a6f4b49d03e54f11ee31d6fb738a57d3e0e885b1fa2578437b",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐转发四端点、远端名字解析与只建立监听的假阳性",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/01-Web测试模型与手工基线.md",
+      "status": "modified",
+      "before_sha256": "703551c5e68854ede30b823108e97f90bf86795651ea675531cde9ee93989f8b",
+      "after_sha256": "1434650c5333070d0ad2450cc05cab5db74efe60884b8330a1e60bd5648904e6",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/02-curlHTTPie与接口重放.md",
+      "status": "modified",
+      "before_sha256": "4d4d6e3e07df1dc2d4248b42feffee4e0a1f3ad046b170a6f565be56200f46d6",
+      "after_sha256": "0fe62a26db30931e477fc43afee24137f7d192dfbf80497d982dd22c5902b1cd",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐配置污染、阶段时间、重试副作用和表示字节区别",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/03-BurpSuite工作流.md",
+      "status": "modified",
+      "before_sha256": "44df2010294d062bdcf9411d0543f2da4c13fc47e58504d5e212030814209a78",
+      "after_sha256": "ce6760358a2390adb750e3db3e877ed5426b2c49a0730b379f93625af68ba419",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐ABA对照与写操作不可简单重复，连接两个能力不同的实验",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/04-ZAP代理与被动扫描.md",
+      "status": "modified",
+      "before_sha256": "50cc13b702ba018a338c869f244cbaf75c887ecc0bc17949de914c95cb1f49e8",
+      "after_sha256": "0b0af9c5dbc1f0fcddb5f6d13298c0da9e64e743794c8a5b2477360d6c8a33e3",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/05-ffufGobuster与内容发现.md",
+      "status": "modified",
+      "before_sha256": "6f361cae1b050e942d858bbbb0878d16e8a825d5d558f96d56fd7e4da249807f",
+      "after_sha256": "b056d0ee70b049c70c3a5119a300d8ee4d666875f332213fc05582b4cb139f93",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "加入可手算的误报漏报反例与限流导致实验失效的停止条件",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/06-SQL注入原理与sqlmap限界验证.md",
+      "status": "modified",
+      "before_sha256": "b0d019ce0585782ca23f0b4836cd8b9ce482f6f16bb066155ea1ad72a45abb1f",
+      "after_sha256": "a6776ec9e4b36d77a37b9d62eed4ec1be1d247f14d64dd4c3044d98bd079a272",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/07-XSSCSRF与浏览器安全边界.md",
+      "status": "modified",
+      "before_sha256": "2fcc144427f71dd00d5450eafb393940d3de723b976df52c0d0c74666788f11c",
+      "after_sha256": "7758c80de153d7e0b687d748d1de7997a31d93cf1652917748542a130626a0dc",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/08-认证会话越权与API测试.md",
+      "status": "modified",
+      "before_sha256": "b671bf3f2194708e7f93824b53320312f824a368f5552e5dfc6f160090362016",
+      "after_sha256": "e5cbe67ebc1bc67618d4fac2b5520c260566e5293ed244858c4935dfce4e1fd2",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "修正实验 I 纯函数被正文误称能测试实际状态改变的文档代码不一致",
+        "将主体对象动作版本绑定为完整授权问题，区分拒绝、冲突和未完成的检查",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/09-SSRF路径上传与解析边界.md",
+      "status": "modified",
+      "before_sha256": "fc917ab8e8db3c850a5a4bd388ad54e6d8faa97c29c5c7f7af40fa23a10bbd72",
+      "after_sha256": "2bc6325ec325513e730d6d3f2b9c1d7b5d6668076c8191a7625f76eed5d884b3",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/10-TLS证书与服务配置评估.md",
+      "status": "modified",
+      "before_sha256": "200daaff1d2be9e926a6a485430d9583aff7988e1759be3df2652f351255fe29",
+      "after_sha256": "5541080ef042e915abdf29b3cb3a37af3b4e7c03f298927af22707b17a059576",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "更新旧的证书输入范围说明，区分手工命令与新增动态离线实验",
+        "建立身份链用途时间签名的反例矩阵并连接11项真实离线OpenSSL验证",
+        "当前验收入口指向 v3；历史正文和证据保留",
+        "区分旧在线扩展与新离线证书实验的实际前提"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/11-Web服务器CMS与依赖评估.md",
+      "status": "modified",
+      "before_sha256": "56a847592848f548c6d01dca668a3a19ba2387a2f5f6f2bd06fb42b46c36bfa1",
+      "after_sha256": "541eaf585f16e11e362abcfc529cdb4425ef87168eda48de76d2176ce9abdea1",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+      "status": "modified",
+      "before_sha256": "3f665dd677a16d5a24c20b682380c23a4e22cc2dd8bbbb3eef94b04ec0732dd1",
+      "after_sha256": "6e391de725d0511eb2026caf12591b93669410efc07d31711e3e46ef58f3f5d4",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐带版本的条件更新、原结果重放、显式事务与外部副作用边界"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/01-SSHFTPSMTP与SNMP服务.md",
+      "status": "modified",
+      "before_sha256": "c2210729208c1c0a402fa0ad9b527181a98d1b8dfb7fdb0a1869274e237198aa",
+      "after_sha256": "d53c90c4fe10129d1c0b670a66a2c0d8df497839f0de364a9f46754e04c5a5cd",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/02-SMBNFS与目录共享.md",
+      "status": "modified",
+      "before_sha256": "cadf36cd91c8dfed4c3273a4c621285bce18cb2227ff1e3842eb0e425d25b4aa",
+      "after_sha256": "ab5aae78ec8126ca4f0ce14f427f79c9b8241d8f38ac38f0db2d36d17c25335c",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/03-LDAPKerberos与AD基础.md",
+      "status": "modified",
+      "before_sha256": "8425aeff408c936016eedb136ccf53cd64ac59d5258b7e7a274ccb6dc1365545",
+      "after_sha256": "eb594f80f07d7ddcfbcc6f71cad44dec3f699ffd83104c1736f8d87bc8ba7248",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md",
+      "status": "modified",
+      "before_sha256": "4fc3e68e1a5629311f9fd9a19d5561bbebe452dfe3e6fd39b0bac6262ff1dd47",
+      "after_sha256": "ca0621aff3420f8210785adbc62a34bc6aeec7c755428d92315a64713938c043",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/05-BloodHound权限图与修复验证.md",
+      "status": "modified",
+      "before_sha256": "46544bd8825549dca7b37320b363b10dd901106a934aaa5e775f7a1bde346349",
+      "after_sha256": "6536f529c24de6d540918bf66d5cc468b07602519a1cddec0034584491db8c1a",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/06-SearchsploitMetasploit与漏洞验证.md",
+      "status": "modified",
+      "before_sha256": "a695aabf42422be08a67b48114d1f21f75c17808fa313f8df3e297a5f14c9bb5",
+      "after_sha256": "a24c6be8dcb8b8f393ba2b47f5a537498f0c8b75df19513755e7f2c5782ed83b",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+      "status": "modified",
+      "before_sha256": "155b4f8a8c2b9264bc5cae422bd37c2a83ce45d9225dc82772728b5d2298e039",
+      "after_sha256": "1712fc06e85c53dae4ead982c6fc555dbe5597dc7a7841b0cc1d48f8e9f93d24",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐ACL命名用户与mask手算、无fallback反例和默认ACL边界",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/08-Windows权限边界与本机审计.md",
+      "status": "modified",
+      "before_sha256": "97f7af093874a12b504de45f34183a893860d2881dc81b47b61f68b5de78acd8",
+      "after_sha256": "043c1417e6f54270dc8903db2af04921ba10a4396736295b74a6d2272b657e9d",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "04-服务身份与主机评估/09-数据库服务与最小权限审计.md",
+      "status": "modified",
+      "before_sha256": "fa2a91b558b185c2f5bd6e6d1a8b4eefef370c856394257dfaa0325dd7d6ccf4",
+      "after_sha256": "573ae932c5ed498174109a8cc4c61c525b0abf5caabd42943f898183767f6356",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐行级安全读写差异、特权绕过和连接池身份边界"
+      ]
+    },
+    {
+      "path": "05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "status": "modified",
+      "before_sha256": "2cb58bbb18bd1fc0d8e00d2f8384a476b4b998e4b0029b7e4d9786d1bd18bed9",
+      "after_sha256": "3ef4b9ddd259721b34a9dfc592547ecffdd387409d1c6a88ab40f6709e63854d",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "05-密码无线与专门领域/02-HashcatJohn与离线审计.md",
+      "status": "modified",
+      "before_sha256": "42ced06365e690d3769b66973fcea55170befd942aa22bc6a4b25d131f4ab0b0",
+      "after_sha256": "d05af35197c86498db7cbba5bfb5eb782e8a8f898ff72720d37f3842c80d789f",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐字符到字节的输入合同和三轮缓存归因实验",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "05-密码无线与专门领域/03-HydraMedusa与认证控制验证.md",
+      "status": "modified",
+      "before_sha256": "1d617180fd85b46867d8237f7777c4f93674652166f809d6aa3d5c10cb48bcf4",
+      "after_sha256": "62aa393fe92f9cf2e77a2ddb4c73ed54014760ba538715ff25443bfdea09b581",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md",
+      "status": "modified",
+      "before_sha256": "558a35d53b3994ef4a0a5a30459ed5706a9cbd727ec98c1b8b1612b1d0704e51",
+      "after_sha256": "b91ad76ec9e53319d23ab874d7b2781ae5c852de48feeb38094aaf0a6394d060",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+      "status": "modified",
+      "before_sha256": "e5533da0b23e991d9ac8eac60a8bf1b82adbbff04b52e27b28b0ed2035bf4fd9",
+      "after_sha256": "859696cd7cc566494cf518e441cd687c7d6e7900704eaa714a109de935cc994f",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md",
+      "status": "modified",
+      "before_sha256": "354e6912191d6969b00d5aabcaa4d72a28d111e0d56ea1377145f268c899a250",
+      "after_sha256": "1ac191d837220137fd55aabff11f9725254fc2a77dec8391bbcc8a0fa268471e",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "用AND与OR实际YAML片段解释策略范围，补齐ICMP与应用连接的验收差异",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md",
+      "status": "modified",
+      "before_sha256": "b07b261aae491270a40db66727e938f955ca78af40bfb37b10de2b6c4cc258a5",
+      "after_sha256": "0ddfa85ad5bd73805556e4703007a3d87cc9069f19cd07bc692b6c6c7d50a83d",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "05-密码无线与专门领域/08-社会工程与高风险工具边界.md",
+      "status": "modified",
+      "before_sha256": "673fe3800c6bf800932863a68beb736fd2919f01165296e32e0736864725efbb",
+      "after_sha256": "cb467355e7062c6c6ed87ccd3d1af7f2043751e42da38488c70bd5682fb0cb27",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/01-取证流程镜像与时间线.md",
+      "status": "modified",
+      "before_sha256": "77a4aa9d135a518997798ddc8661bfe29ed6b5a858c87094321b8db962f24a0f",
+      "after_sha256": "545c111a31ca94b823d26c548123b89a73380a4acdc535fb032e06dd56906880",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md",
+      "status": "modified",
+      "before_sha256": "7b1a26664270b81f0269434df697cb5ec934898dcd0aec9462100fbae13bb04f",
+      "after_sha256": "49a0b924526153b27caf9fc83d6d5c32615ad3b6201c1788fad61a356b1f6403",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐镜像对象导出三重身份、数据属性和稀疏洞区的长度反例",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/03-Volatility3与内存证据.md",
+      "status": "modified",
+      "before_sha256": "65405382916a9cce76b51ca4040ef5304aa71cbe5980f39a653e5cb5a6549ed2",
+      "after_sha256": "0891be3c4ef81863ac9b876312796b9288e210b0681a7645e0d583d0bdb4cb3f",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/04-文件元数据Binwalk与ExifTool.md",
+      "status": "modified",
+      "before_sha256": "e4ff8113dcbf274ba1ffa1f4887b13dc7bbf37f776734d25ea1f73e8a9811f67",
+      "after_sha256": "5ab7d4a4dc6f2137b5dd2d0272625e7a8edfd782b95d4e95f4c3eace6a776228",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+      "status": "modified",
+      "before_sha256": "2bda3f4bb4de7bd2ecf700b2f3efc50001f15cce59a8d8ef9e66d1013a5cca8e",
+      "after_sha256": "b36f359b7b785813d4a7b5fec74f733ec21b597556c5a41bbe57b35c55ba74b0",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "加入文件区间和内存区间的带中间步骤换算与越界反例",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/06-GDBGefStrace与动态观察.md",
+      "status": "modified",
+      "before_sha256": "5084316be193aec76a6e170980138472aaefb7642dd7baae1afb2254a532d955",
+      "after_sha256": "13f5cb641b07a8f89c3ab2d11eb929b6d71c0c2c627628d9b4dcb6d9a247613c",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/07-YARA日志与检测规则.md",
+      "status": "modified",
+      "before_sha256": "cc677bd8c7587d3181dab24129351b50c4ff7b2e13dfbb38a8dac92e55282c40",
+      "after_sha256": "34ec3a4eaf8b24c1c63a81e86e820d722007b7e8dafd40e39cf1614b8d367954",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐扫描覆盖分母、跳过与阴性区别、字符串输出与递归风险",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/08-SuricataZeek与网络检测.md",
+      "status": "modified",
+      "before_sha256": "8ceebf084124c5ba6208b33b9981ee7f3422291e2dc397144f56c6b405250b46",
+      "after_sha256": "f9019e1c9cc1155a1c3ebe2933c30d36fd32a91a1c835e946080a3c519f0d4f6",
+      "change_role": "substantive_existing_course",
+      "reasons": [
+        "补齐多表关联行数膨胀、运行作用域和大整数标识保存",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md",
+      "status": "modified",
+      "before_sha256": "880a82ac10d3c171534f005476ce896e6435ecd162490f3eaf6a69bbe582e119",
+      "after_sha256": "348fbdfc8725b867d6511397ff97c41e3d1a37e701bce8dd68bee58152cd1e34",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "07-综合实验/01-离线实验准备与夹具说明.md",
+      "status": "modified",
+      "before_sha256": "b211776014872b944ccfdf4cf281f826b98972ea762ebc3a0ec32b5185f7d358",
+      "after_sha256": "679dd5df57945bc4a108ff8838ecb554e10b8604e3f9e9e6149f9226e25e5774",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "解释动态输入和依赖，防止已有实验目录被覆盖",
+        "当前验收入口指向 v3；历史正文和证据保留",
+        "准备页标明 L 比原有实验更严格的解释器前提"
+      ]
+    },
+    {
+      "path": "07-综合实验/02-实验A从路由到HTTP与Nmap.md",
+      "status": "modified",
+      "before_sha256": "f2f12386abcd011037dffe092957e268856cb5145a1db9efdcf788f3ed19ddc6",
+      "after_sha256": "85833d1f88a0b1c205efda6be703a02ff27a1f67ff65ba8a7d2ba7a920e61142",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "07-综合实验/03-实验B抓包重组与证据交叉验证.md",
+      "status": "modified",
+      "before_sha256": "1536fd42b0494bac9dfdf8d42c5cb0c4390c936477c8528cc6fec3ff765519b7",
+      "after_sha256": "3a6b974c90a29a8945d76cf9b2f52b8a430c58e85a2d205b50e3d91d55091749",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "07-综合实验/04-实验CWeb请求与访问控制.md",
+      "status": "modified",
+      "before_sha256": "27f6b357ebd43381b55d791ec54921df3277fc6ae18914a94c15161344962977",
+      "after_sha256": "9c9347c20d4fb4b8a2361daa4f5f8548bf7cb76255d0f20d822299ffe76c4d0e",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "07-综合实验/06-实验E文件分析与YARA.md",
+      "status": "modified",
+      "before_sha256": "01bf799022289a1f7078f41d08ca83b4e4a280d50f12104be20137733f36762a",
+      "after_sha256": "be197ca3689e0e056ac0a5a30699cb01998af2c7d3ca62f1080dd9585680a387",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "07-综合实验/08-自检题与答案定位.md",
+      "status": "modified",
+      "before_sha256": "8a361710e67918a9487345d416f97e0a1726a9b8e2e9058d069bc8a4085aa251",
+      "after_sha256": "9cfe2c4472f5723d300ebad9c399333f4851741bde1f581d31c0ed28881268f2",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "补充 12 个有定位的解释、诊断与迁移检查点"
+      ]
+    },
+    {
+      "path": "07-综合实验/09-实验代码合同与复现.md",
+      "status": "modified",
+      "before_sha256": "ff3bfb6e10eb425b111ff7a5fdd91a98d0acf89089ced59da0ae3c33d21b3636",
+      "after_sha256": "36c7e039b4f1fb2c58a4586772f1231d6a2c3b85a407d095cbd65249a5563b6b",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "单一源码入口和副作用合同覆盖新增可执行内容",
+        "当前验收入口指向 v3；历史正文和证据保留",
+        "将锁冲突验证从宽泛 OperationalError 收紧为实际 SQLITE_BUSY，独立失败先于修复",
+        "代码合同同步最小解释器版本"
+      ]
+    },
+    {
+      "path": "07-综合实验/12-实验I多租户字段与动作授权.md",
+      "status": "modified",
+      "before_sha256": "9b576b9ababf742153f6145ea83aac367411800f7a3c663eb986cb82caccef9e",
+      "after_sha256": "220571c359d7f4ebb863e05eea74e500ba4a8996f854c42f10dab607f27a5563",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "消除实验 I 能修改状态的语义误解并接入 L",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "07-综合实验/14-实验K离线证书链与身份校验.md",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "4211f5ca50d22f55e78546e7572f93ebd22ec63870285e624d85b4ec3a11a7c0",
+      "change_role": "new_lab",
+      "reasons": [
+        "新增不监听端口的真实证书工具实验；明确随机输入、11项反例和判读器范围"
+      ]
+    },
+    {
+      "path": "07-综合实验/15-实验L事务幂等与并发控制.md",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "775cf64edfb8fe4bd4e57389ee3719d1c407447b53434c9fe8d58407da6f4152",
+      "change_role": "new_lab",
+      "reasons": [
+        "新增真实SQLite事务实验；27项授权状态幂等锁冲突与故障注入回归",
+        "将锁冲突验证从宽泛 OperationalError 收紧为实际 SQLITE_BUSY，独立失败先于修复",
+        "同步实验 L 原有依赖句，移除与新增 3.11 诊断要求的矛盾"
+      ]
+    },
+    {
+      "path": "07-综合实验/代码/test_cli_workflows.py",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "5b57097de04ecf2e097146cc82e0ad87b42d20f84fafc75f147e5201cfff1bc9",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "新增真实jq回归与独立数值例子测试；缺依赖不静默通过"
+      ]
+    },
+    {
+      "path": "07-综合实验/代码/test_tls_verify_lab.py",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "75a3d314e8547931ff0fa4a94ae22f862bc7612691fa25f70183760efca691e9",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "18项独立结果判读与无副作用测试；不替代实际11项OpenSSL实验"
+      ]
+    },
+    {
+      "path": "07-综合实验/代码/test_transaction_lab.py",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "bbd50bd2a95da8b74299ae24573c71dbed2c989c8686d2e6238654a059137d06",
+      "change_role": "code_or_integration",
+      "reasons": []
+    },
+    {
+      "path": "07-综合实验/代码/tls_verify_lab.py",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "7d9bc201f8899300395887db471608760b976a36d025516a2551f86334979004",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "独立反例发现任何非零都可误记预期拒绝；改为核对X509错误码与验证失败语义"
+      ]
+    },
+    {
+      "path": "07-综合实验/代码/transaction_lab.py",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "f71c8286785ee9a2b580293c7c7024e5eec7ad29a3dd34da16dd0d12b6b6f1e1",
+      "change_role": "code_or_integration",
+      "reasons": []
+    },
+    {
+      "path": "07-综合实验/代码/validate_status.jq",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "5775a49ecd7b8c84af23e8c0d479402ae895baf87fab05a40b39f9d8438af8f9",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "将整体status验收放入可执行单一真源，避免文档与测试维护不同表达式"
+      ]
+    },
+    {
+      "path": "08-模板与速查/02-实验记录模板.md",
+      "status": "modified",
+      "before_sha256": "2fba867e671a1efacbe44839b03974a4e9a31003f104decd629c2fb1be4cc5b0",
+      "after_sha256": "2a19afef978fdfd972056bd6c6fa2bcbce5f452d1b049f8acc340a674b3ed309",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "将错误归因与覆盖率带入真实记录模板，不预填结果"
+      ]
+    },
+    {
+      "path": "08-模板与速查/03-发现与复测模板.md",
+      "status": "modified",
+      "before_sha256": "450504a1e0a0bd2b08ee9052dff0487e37a5720825b7a0519e0537709c9c4787",
+      "after_sha256": "02272eff9e4167180e147dc4d91187c9248f3d56fde242ac454c24f108ee1a73",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "补充正反例可比性与失败归因的复测合同"
+      ]
+    },
+    {
+      "path": "90-来源与维护/01-来源索引与核验边界.md",
+      "status": "modified",
+      "before_sha256": "b66a989bd64f915eb70a5a9188e5b0d447cbff5670892dc6f5d357af7313f52c",
+      "after_sha256": "3746d1cd456e6e5632841f95ba642eeebf180ab203c926902c65ed88dc192383",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留",
+        "按单一来源账本重建表格，区分本轮读取与历史未重读",
+        "不凭来源键名称推断历史首次读取版本；原始账本保留精确来源"
+      ]
+    },
+    {
+      "path": "90-来源与维护/02-导入维护与扩展规范.md",
+      "status": "modified",
+      "before_sha256": "2a34d1176cc5945779de1525db3fc09ba19adefc8fff9d89b213dc152a0774ba",
+      "after_sha256": "54269d9906aeedc05e2dc854000e13dd8ba5bc90a046cadca025be2c32384874",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    },
+    {
+      "path": "90-来源与维护/05-v3深度审阅与变更记录.md",
+      "status": "added",
+      "before_sha256": null,
+      "after_sha256": "44f5a2fdf83c747a1ef42368bc64a15d17b0047e0abbffe6fcb7d113a1b8578d",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "建立 v3 证据与回滚单一入口，准确保留中途失败和未运行范围",
+        "将锁冲突验证从宽泛 OperationalError 收紧为实际 SQLITE_BUSY，独立失败先于修复",
+        "保留 SQL 错误归因的失败、版本变化与新最低版本边界",
+        "用实际 159/11/49×3/16/5/24 结果填入验收，分开静态与运行边界"
+      ]
+    },
+    {
+      "path": "README-导入与范围.md",
+      "status": "modified",
+      "before_sha256": "cd35baeeaf39c424d009b0ca0c565a7fc47fdf3ae97dae8973e5975f7d9743c8",
+      "after_sha256": "333fc93af02ddf0447f7d1f9d5120800272ccc87b381ed558a4c36b858c78935",
+      "change_role": "code_or_integration",
+      "reasons": [
+        "导入入口指向完整 v3；区分现有个人改动与输入基线",
+        "当前验收入口指向 v3；历史正文和证据保留"
+      ]
+    }
+  ],
+  "deletions": [],
+  "unseen_user_changes": "not available; compare before merging into personal Vault"
+}

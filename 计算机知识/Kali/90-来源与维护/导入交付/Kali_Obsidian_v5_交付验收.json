@@ -1,0 +1,1813 @@
+{
+  "release": "v5",
+  "date": "2026-09-06",
+  "status": "passed_with_explicit_scope_limits",
+  "baseline": {
+    "file": "Kali_Obsidian_知识库_v3_深度补全_2026-09-05.zip",
+    "sha256": "b518c4300b88877491f9c23cdfedf5934b06297b9cb7ce4e631216c643661b63",
+    "v4": "not provided / not present in current mounted files; not merged",
+    "full_user_vault": "not provided; no local edits merged"
+  },
+  "archive": {
+    "file": "Kali_Obsidian_知识库_v5_深度研究与结构梳理_2026-09-06.zip",
+    "sha256": "4c484185fe593477264551cfac9e0235d9c4869c50f8a6085415c7bb8ee374d3",
+    "bytes": 846591,
+    "file_members": 236,
+    "expanded_bytes": 2424507,
+    "crc": "passed",
+    "exact_allowlist": "passed",
+    "unique_safe_normalized_paths": "passed",
+    "member_modes": "regular files 0644; not a preservation claim about original file metadata",
+    "manifest_entries": 235,
+    "manifest_excludes_itself": true,
+    "roundtrip_byte_equality": "passed",
+    "roundtrip_static_validation": "passed"
+  },
+  "content": {
+    "markdown_notes": 91,
+    "existing_markdown_modified": 70,
+    "existing_technical_notes_substantively_deepened": 42,
+    "new_technical_bridge_notes": 1,
+    "existing_notes_h2_reordered": 42,
+    "counts_overlap": "substantive and reordered sets overlap; do not sum",
+    "new_markdown_notes": [
+      "00-导航与方法/07-问题驱动的工具选择与理论路线.md",
+      "03-Web与API安全/13-HTTP中间层与消息解释.md",
+      "90-来源与维护/06-v5深度研究与结构梳理记录.md"
+    ],
+    "original_labs_preserved": 12,
+    "new_selfcheck_questions": 32,
+    "tool_index_entries": 239,
+    "canvas_nodes": 28,
+    "canvas_edges": 35,
+    "markdown_characters_including_metadata_sources": 511361
+  },
+  "verification": {
+    "primary_static": {
+      "checker_version": "1.0",
+      "scope": "计算机知识/Kali",
+      "status": "passed",
+      "counts": {
+        "markdown": 91,
+        "wikilinks_including_prerequisites": 1684,
+        "headings": 974,
+        "block_ids": 3,
+        "reachable_notes": 91,
+        "unique_frontmatter_source_urls": 248,
+        "canvas": 1,
+        "canvas_nodes": 28,
+        "canvas_edges": 35,
+        "python_sources": 13,
+        "files_at_check": 236
+      },
+      "issues": [],
+      "not_run": [
+        "Obsidian UI/rendering",
+        "Kali tool execution",
+        "external URL availability sweep"
+      ],
+      "limitations": [
+        "Limited Markdown dialect; not a full Obsidian parser",
+        "Specific secret patterns only, not a comprehensive secret detector",
+        "Reads this topic only, not the rest of an existing Vault",
+        "Trusted local filesystem assumed; not a race-resistant hostile-input sandbox"
+      ]
+    },
+    "independent_counts": {
+      "markdown_count": 91,
+      "file_count": 236,
+      "wikilinks_checked": 1686,
+      "heading_links_checked": 120,
+      "block_links_checked": 4
+    },
+    "original_validator_regressions": 16,
+    "additional_validator_regressions": 8,
+    "numerical_and_question_contract_checks": 23,
+    "protected_files_byte_identical": 126,
+    "original_fenced_blocks_unchanged_by_per_note_multiset": 162,
+    "new_executable_source_files": 0,
+    "json_files_parseable": 83,
+    "roundtrip_primary": {
+      "checker_version": "1.0",
+      "scope": "计算机知识/Kali",
+      "status": "passed",
+      "counts": {
+        "markdown": 91,
+        "wikilinks_including_prerequisites": 1684,
+        "headings": 974,
+        "block_ids": 3,
+        "reachable_notes": 91,
+        "unique_frontmatter_source_urls": 248,
+        "canvas": 1,
+        "canvas_nodes": 28,
+        "canvas_edges": 35,
+        "python_sources": 13,
+        "files_at_check": 236
+      },
+      "issues": [],
+      "not_run": [
+        "Obsidian UI/rendering",
+        "Kali tool execution",
+        "external URL availability sweep"
+      ],
+      "limitations": [
+        "Limited Markdown dialect; not a full Obsidian parser",
+        "Specific secret patterns only, not a comprehensive secret detector",
+        "Reads this topic only, not the rest of an existing Vault",
+        "Trusted local filesystem assumed; not a race-resistant hostile-input sandbox"
+      ]
+    },
+    "roundtrip_independent_errors": []
+  },
+  "sources": {
+    "baseline_source_records": 196,
+    "v5_registered_read_urls": 98,
+    "v5_read_source_keys": 98,
+    "v5_footnote_source_keys": 98,
+    "v5_reused_existing_records": 41,
+    "v5_added_records": 57,
+    "current_source_records": 253,
+    "existing_records_not_reread": 155,
+    "unused_read_keys": [],
+    "canonical_ledger": "90-来源与维护/验证/sources.json",
+    "limitations": [
+      "A webpage read is not an independent implementation test.",
+      "Historical sources without revision_v5_review were not reread in v5.",
+      "Latest/current URLs refer to observed documentation; no installed version compatibility claimed.",
+      "No claim that all material facts in the entire vault were reverified."
+    ]
+  },
+  "not_run": [
+    "Kali tool execution",
+    "existing Python/C/OpenSSL/SQLite lab test suites",
+    "real AD/database/Kubernetes/network/hardware targets",
+    "Obsidian graphical interface/search/Canvas rendering",
+    "exhaustive re-verification of all old software behavior claims",
+    "verification or merging of absent v4 contents"
+  ],
+  "change_counts": {
+    "modified": 73,
+    "unchanged": 141,
+    "added": 22
+  },
+  "all_members_with_baseline_and_delivery_hashes": [
+    {
+      "file": "计算机知识/Kali/00-导航与方法/00-Kali知识地图.md",
+      "status": "modified",
+      "baseline_sha256": "bc030b3a4321b53d7aac07885b9650326e947a64a1ffe3d0247a9bc68097c4fd",
+      "delivered_sha256": "513bae672f19bcb336ea2fab4536d3281553527b97c797f9d142798cb0f53f72",
+      "delivered_bytes": 17848
+    },
+    {
+      "file": "计算机知识/Kali/00-导航与方法/01-学习路线与贯穿案例.md",
+      "status": "modified",
+      "baseline_sha256": "ecf2f8cdfb930309d1fd2396fa2460e8b40f12d21b72f1a7e46ceba3701429bc",
+      "delivered_sha256": "f3538569a624409561ecbf7fae6c79fcf858186ba3a21d7fcabb2cf51df2071f",
+      "delivered_bytes": 11193
+    },
+    {
+      "file": "计算机知识/Kali/00-导航与方法/02-授权范围与风险分级.md",
+      "status": "unchanged",
+      "baseline_sha256": "ae3e4de9272761e656853d9ec84c725c9cba3189f4d452bbaf5d2ba701326365",
+      "delivered_sha256": "ae3e4de9272761e656853d9ec84c725c9cba3189f4d452bbaf5d2ba701326365",
+      "delivered_bytes": 3754
+    },
+    {
+      "file": "计算机知识/Kali/00-导航与方法/03-实验室拓扑与证据目录.md",
+      "status": "modified",
+      "baseline_sha256": "a38a13ff48725b1668eba935049e28cf250b3c2bd2f4c1dd2d6ca233d1528762",
+      "delivered_sha256": "11d59236e54a9107dcdbe93f8042f2fcf34d13e5324d60a6a8c023aca1f21e6b",
+      "delivered_bytes": 5013
+    },
+    {
+      "file": "计算机知识/Kali/00-导航与方法/04-从观察到结论的安全方法.md",
+      "status": "modified",
+      "baseline_sha256": "9a86504545158b808b3c4648d64f504fb458f4ac21fa6f95f391c9cc25f80c55",
+      "delivered_sha256": "a2b80946ab563e0d5e73156973dff524ffedc2af64ca11065714bb94233a7e5f",
+      "delivered_bytes": 8640
+    },
+    {
+      "file": "计算机知识/Kali/00-导航与方法/05-常用工具覆盖矩阵.md",
+      "status": "modified",
+      "baseline_sha256": "0f22db2fd4529d9061c77b09c93f459e155737ebfdc37fc22ae945398c3dcd2e",
+      "delivered_sha256": "444963438917692a7ed184c2a128e1f1ca5a1afd2956f0e95ccc69ab46b9095b",
+      "delivered_bytes": 48128
+    },
+    {
+      "file": "计算机知识/Kali/00-导航与方法/06-命令阅读与故障定位.md",
+      "status": "modified",
+      "baseline_sha256": "29ac278d5787b4d1aaa3784eaec5c967e0400d8c9f617d355fef842a5f33eedd",
+      "delivered_sha256": "ba11293d17ee13f1179ba50a9f60a9582c2ff56d5a093b628bf330838c51d195",
+      "delivered_bytes": 5000
+    },
+    {
+      "file": "计算机知识/Kali/00-导航与方法/07-问题驱动的工具选择与理论路线.md",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "65515e9e7d410535983169bb54f511600630e0d7580262db7c952aa5baeab050",
+      "delivered_bytes": 17874
+    },
+    {
+      "file": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+      "status": "modified",
+      "baseline_sha256": "ccf88183fafbbd474b65f3aa8ee8ba2e224c07dd14b0a8237d9c01be68a84a17",
+      "delivered_sha256": "5c9b343aafd9b03e1047c0b01d37679add288e00a92db362a2f157b438786ea4",
+      "delivered_bytes": 12273
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/01-Kali定位与安装校验.md",
+      "status": "modified",
+      "baseline_sha256": "13ce2f01a45a7482e662b629c847ec915ef6944f95c81e8b820be3deb0532c63",
+      "delivered_sha256": "8e4977356030e7c3b6ec1beb69adecf67a3cfbcb4aeccb64d79e08daa3b70f2a",
+      "delivered_bytes": 8085
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/02-虚拟机快照与网络隔离.md",
+      "status": "modified",
+      "baseline_sha256": "120faab3e0a07512f97c1586015dcdb4f864129efa3ebc4acaf89a741d749d44",
+      "delivered_sha256": "0d548511494704f3dc36438522ad6b2390b3dcbbd4ff5e679e3705ed2e7a5cdd",
+      "delivered_bytes": 7442
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/03-APT软件源与Python环境.md",
+      "status": "modified",
+      "baseline_sha256": "1764159d71d8ea6e95361ad2e6b4c92f8d1d8bf83212ea659cba3ed88c23124d",
+      "delivered_sha256": "0a0c04a25301637908d0a03abf2073f66a1af5bdf0d3cc6c9d3cc832dd7f2562",
+      "delivered_bytes": 11831
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/04-Shell文件权限与文本处理.md",
+      "status": "modified",
+      "baseline_sha256": "9633f7c20c118ecb241f8fbfc5a4db900df99e3ed4c9a98f9f7ec80c9ae83325",
+      "delivered_sha256": "1fc240f56cd7a9087dd375f54629c3600112ea4a97a269a79f0b5a50a0e79127",
+      "delivered_bytes": 12124
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/05-进程服务日志与本机加固.md",
+      "status": "modified",
+      "baseline_sha256": "cbfe516cf5062fad796c8514ec894ebe3a84e27ba16811b915028387995c57e4",
+      "delivered_sha256": "b43abee780fea106b5d61fc9407ebee3e787055080a0f990eae61f7303dff2df",
+      "delivered_bytes": 7673
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+      "status": "modified",
+      "baseline_sha256": "26fb45aeffd1bf7287b46cfa9fe8f13f5233e4a5bad4a9dc2a2a2c74df3a38af",
+      "delivered_sha256": "3840d1f24c5b65a3ae44bf7a3641477a2f5591acbf51d9f9c6f592d5bc4c522a",
+      "delivered_bytes": 16486
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+      "status": "modified",
+      "baseline_sha256": "4238183f974cc982e4f84fb44235a18e0ac2b57ced20122d616880719b22c050",
+      "delivered_sha256": "36adc61a7875188d12f5a604d108d93ec38274e7a652be715424e8477f143a85",
+      "delivered_bytes": 15797
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/08-BashPython与可复核自动化.md",
+      "status": "modified",
+      "baseline_sha256": "3f09911753c30c8147ef63c8d3f3cbf282be59c7a5aa639bb1676dd92e94d4be",
+      "delivered_sha256": "fcbeed5b3f0d342bb6fd87e8bc1f052f09b3927a54db48b424cc71c4913293f0",
+      "delivered_bytes": 9989
+    },
+    {
+      "file": "计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+      "status": "modified",
+      "baseline_sha256": "645f7770be6cfd0523fe875df3a4c751d45455ffe03c9b16f72cbe88836801ef",
+      "delivered_sha256": "cc41b84083a879597fa835db036ec887484123ac05ab5dce03e35e0c26f45f25",
+      "delivered_bytes": 9665
+    },
+    {
+      "file": "计算机知识/Kali/02-信息收集与网络测量/01-资产范围与被动信息收集.md",
+      "status": "modified",
+      "baseline_sha256": "f641fbc5d8fa34f177b604040829e696c42f7a8ca2ec8310db0d69d58688a3f5",
+      "delivered_sha256": "48b67fb7c06ed92b35a827f77c0fe2fccb94aba5fbb2a4002a158dee4bc33286",
+      "delivered_bytes": 7088
+    },
+    {
+      "file": "计算机知识/Kali/02-信息收集与网络测量/02-DNS域名与证书信息.md",
+      "status": "modified",
+      "baseline_sha256": "0172703cf1a62dee7182c11ec46b091970ebeafd67cc63ac53ae785730901e1b",
+      "delivered_sha256": "87ed534e6f5bfdb36e3320b6a9809d0c165a400e93d2e63f8d478ab9c8ad0a5e",
+      "delivered_bytes": 14861
+    },
+    {
+      "file": "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+      "status": "modified",
+      "baseline_sha256": "6ee4083207ab39935d31a4287d8160065bcf43e97d96ef5d70775518517f3a74",
+      "delivered_sha256": "a0e85ad74e7299f85017376ab4a1923151cec0a8bf8daf0647a58af2708dead0",
+      "delivered_bytes": 14083
+    },
+    {
+      "file": "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+      "status": "modified",
+      "baseline_sha256": "1eae1a4f06c99c9c44fd16e8082a35620398ddbf882c91ad295bb60d5e6ff3db",
+      "delivered_sha256": "603162d56192de1112465ad56146852c51dde4903b3d4843d2566749fe7bd991",
+      "delivered_bytes": 14852
+    },
+    {
+      "file": "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+      "status": "modified",
+      "baseline_sha256": "753a75fe39ce8f989ede26052aa8f9d2de36bb57a6db5c157b02335e5f6d36fe",
+      "delivered_sha256": "9b937e6ac96e27129849eb1397cf4360a98243265ad7f5c804b0ad6d20a8b9a6",
+      "delivered_bytes": 15694
+    },
+    {
+      "file": "计算机知识/Kali/02-信息收集与网络测量/06-ScapyNping与协议实验.md",
+      "status": "modified",
+      "baseline_sha256": "24b4f79ae049d1eeb3e1ee0b64f61028091a22e99e9946925d688d1af92e385b",
+      "delivered_sha256": "3ede059d9b1514bc5f2b0eb45eea0752ba3c33cd633dbeb1ca592af8a4942e08",
+      "delivered_bytes": 6964
+    },
+    {
+      "file": "计算机知识/Kali/02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+      "status": "modified",
+      "baseline_sha256": "d02b2bf4b015fad650005b9bc7c558330abd64a3fcfd6ab158775c02a81ea88d",
+      "delivered_sha256": "da07efe05ab53d6256f7fff4009a3386cb54d29aa2c30ee314e47d983b3bdc3f",
+      "delivered_bytes": 13911
+    },
+    {
+      "file": "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+      "status": "modified",
+      "baseline_sha256": "6f6c40c10186b7a6f4b49d03e54f11ee31d6fb738a57d3e0e885b1fa2578437b",
+      "delivered_sha256": "75f859d95d5153ace05c2a7b36892c6339db6cb79cb9cc54fb78af218afafceb",
+      "delivered_bytes": 12913
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/01-Web测试模型与手工基线.md",
+      "status": "modified",
+      "baseline_sha256": "1434650c5333070d0ad2450cc05cab5db74efe60884b8330a1e60bd5648904e6",
+      "delivered_sha256": "ca28bdd9c7c9d34aaec6e3bed37863319d0505d00f59851d4b0d21934a4ba517",
+      "delivered_bytes": 8325
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/02-curlHTTPie与接口重放.md",
+      "status": "modified",
+      "baseline_sha256": "0fe62a26db30931e477fc43afee24137f7d192dfbf80497d982dd22c5902b1cd",
+      "delivered_sha256": "9c636871e87128e033962c3158070e04d2d1c0f7a7f3af20b5e29a8721e78009",
+      "delivered_bytes": 10936
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/03-BurpSuite工作流.md",
+      "status": "modified",
+      "baseline_sha256": "ce6760358a2390adb750e3db3e877ed5426b2c49a0730b379f93625af68ba419",
+      "delivered_sha256": "4c5bd655ebbfc60f8c44a2e6068f494a4e96d47ca098abbd8f1250afe1dc2981",
+      "delivered_bytes": 15119
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/04-ZAP代理与被动扫描.md",
+      "status": "modified",
+      "baseline_sha256": "0b0af9c5dbc1f0fcddb5f6d13298c0da9e64e743794c8a5b2477360d6c8a33e3",
+      "delivered_sha256": "2350b2fd49419f5f19d49f9eb2994ad8616ddbdb09779aa1366b6d9630c8f3a7",
+      "delivered_bytes": 10250
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/05-ffufGobuster与内容发现.md",
+      "status": "modified",
+      "baseline_sha256": "b056d0ee70b049c70c3a5119a300d8ee4d666875f332213fc05582b4cb139f93",
+      "delivered_sha256": "3a6d94001ebb058747f2c41a8bf2b4903782404ecb1233c0c7201c1a2397ac81",
+      "delivered_bytes": 11500
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/06-SQL注入原理与sqlmap限界验证.md",
+      "status": "modified",
+      "baseline_sha256": "a6776ec9e4b36d77a37b9d62eed4ec1be1d247f14d64dd4c3044d98bd079a272",
+      "delivered_sha256": "a0523fe79094290fe2ab95de002ebcfa24db508cdb4f113d2999595161aa373b",
+      "delivered_bytes": 12256
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/07-XSSCSRF与浏览器安全边界.md",
+      "status": "modified",
+      "baseline_sha256": "7758c80de153d7e0b687d748d1de7997a31d93cf1652917748542a130626a0dc",
+      "delivered_sha256": "5308fd8a272303c62f64b809ebbe02f917da7830735df2bed25a686cfc9479f7",
+      "delivered_bytes": 10750
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/08-认证会话越权与API测试.md",
+      "status": "modified",
+      "baseline_sha256": "e5cbe67ebc1bc67618d4fac2b5520c260566e5293ed244858c4935dfce4e1fd2",
+      "delivered_sha256": "f9e6550d06d3c1d3a69beaa621a8679623a51a4bd8c0e13d26a365e304359f0a",
+      "delivered_bytes": 14824
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/09-SSRF路径上传与解析边界.md",
+      "status": "modified",
+      "baseline_sha256": "2bc6325ec325513e730d6d3f2b9c1d7b5d6668076c8191a7625f76eed5d884b3",
+      "delivered_sha256": "7f9f41a109499214d9dd9c953949809e1b37c5d6fb7b1266458baadbfc6f9fe7",
+      "delivered_bytes": 11455
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/10-TLS证书与服务配置评估.md",
+      "status": "modified",
+      "baseline_sha256": "5541080ef042e915abdf29b3cb3a37af3b4e7c03f298927af22707b17a059576",
+      "delivered_sha256": "b98607228ed013be94372163fe0c2175ea9f5d6eb6885318abfd86968f735844",
+      "delivered_bytes": 14751
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/11-Web服务器CMS与依赖评估.md",
+      "status": "modified",
+      "baseline_sha256": "541eaf585f16e11e362abcfc529cdb4425ef87168eda48de76d2176ce9abdea1",
+      "delivered_sha256": "d3e3a7a576f083432f3b80a8c9a21f84a685ee61d9696a758a184b8690260dc4",
+      "delivered_bytes": 7347
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+      "status": "modified",
+      "baseline_sha256": "6e391de725d0511eb2026caf12591b93669410efc07d31711e3e46ef58f3f5d4",
+      "delivered_sha256": "6c40959c71fae060b4c84384e55a69a38d96147b8ddec88d978db78b07e9930d",
+      "delivered_bytes": 13079
+    },
+    {
+      "file": "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释.md",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "6ad0344e1d0f3caaf98cf54dade6d537e2bd2778a0bf8627947bb2d071a71706",
+      "delivered_bytes": 9385
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/01-SSHFTPSMTP与SNMP服务.md",
+      "status": "modified",
+      "baseline_sha256": "d53c90c4fe10129d1c0b670a66a2c0d8df497839f0de364a9f46754e04c5a5cd",
+      "delivered_sha256": "62aa5d7b49d051899469bb7c7d8a49951f581a32ad2a45d912175a4f9cd8d1ed",
+      "delivered_bytes": 9369
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/02-SMBNFS与目录共享.md",
+      "status": "modified",
+      "baseline_sha256": "ab5aae78ec8126ca4f0ce14f427f79c9b8241d8f38ac38f0db2d36d17c25335c",
+      "delivered_sha256": "82dbc801b68c05d815229f824b9d51cd2ef56c0562cde7510facb40817c58c28",
+      "delivered_bytes": 8062
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/03-LDAPKerberos与AD基础.md",
+      "status": "modified",
+      "baseline_sha256": "eb594f80f07d7ddcfbcc6f71cad44dec3f699ffd83104c1736f8d87bc8ba7248",
+      "delivered_sha256": "98ed5b770559c4787e07ca17ecc9aa2bc806a4d22070a6ba45f156f3b96a47dd",
+      "delivered_bytes": 11602
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md",
+      "status": "modified",
+      "baseline_sha256": "ca0621aff3420f8210785adbc62a34bc6aeec7c755428d92315a64713938c043",
+      "delivered_sha256": "bb0089225a5a7280872c9274266a07ec8ea4132900bcbf116bfb04e5dced70a2",
+      "delivered_bytes": 9951
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/05-BloodHound权限图与修复验证.md",
+      "status": "modified",
+      "baseline_sha256": "6536f529c24de6d540918bf66d5cc468b07602519a1cddec0034584491db8c1a",
+      "delivered_sha256": "1d8eb82e23ea3888de0330e079fbdfebb4039485bf7c0cfcdfab2babbc614802",
+      "delivered_bytes": 9991
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/06-SearchsploitMetasploit与漏洞验证.md",
+      "status": "modified",
+      "baseline_sha256": "a24c6be8dcb8b8f393ba2b47f5a537498f0c8b75df19513755e7f2c5782ed83b",
+      "delivered_sha256": "9612b8764aa37926c14fabc4bb08cdb54343b927ec1cd313b67711c850fa16e0",
+      "delivered_bytes": 10722
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+      "status": "modified",
+      "baseline_sha256": "1712fc06e85c53dae4ead982c6fc555dbe5597dc7a7841b0cc1d48f8e9f93d24",
+      "delivered_sha256": "868e63262b6f78ee565563d8a09fd746d02f16d6eb9a30ac5f3650407e64e526",
+      "delivered_bytes": 13511
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/08-Windows权限边界与本机审计.md",
+      "status": "modified",
+      "baseline_sha256": "043c1417e6f54270dc8903db2af04921ba10a4396736295b74a6d2272b657e9d",
+      "delivered_sha256": "85c5f5134ae2bb017cec754a4e7a683dda8b7992f40c164c7cb4029e7d81bd93",
+      "delivered_bytes": 12101
+    },
+    {
+      "file": "计算机知识/Kali/04-服务身份与主机评估/09-数据库服务与最小权限审计.md",
+      "status": "modified",
+      "baseline_sha256": "573ae932c5ed498174109a8cc4c61c525b0abf5caabd42943f898183767f6356",
+      "delivered_sha256": "5b2f94da1db774fdecb2ed1a1061ad719c6e07951359ee2ec9292a85260f9c98",
+      "delivered_bytes": 11890
+    },
+    {
+      "file": "计算机知识/Kali/05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "status": "modified",
+      "baseline_sha256": "3ef4b9ddd259721b34a9dfc592547ecffdd387409d1c6a88ab40f6709e63854d",
+      "delivered_sha256": "9ead6543430c8a1e6654bee5aa1414b0679ffad9d102a7f404e02a0d123e5eba",
+      "delivered_bytes": 11442
+    },
+    {
+      "file": "计算机知识/Kali/05-密码无线与专门领域/02-HashcatJohn与离线审计.md",
+      "status": "modified",
+      "baseline_sha256": "d05af35197c86498db7cbba5bfb5eb782e8a8f898ff72720d37f3842c80d789f",
+      "delivered_sha256": "29f822bc233337061c1ed940bede94d7952b2387a0b423d07ba16071c8fe71c3",
+      "delivered_bytes": 14232
+    },
+    {
+      "file": "计算机知识/Kali/05-密码无线与专门领域/03-HydraMedusa与认证控制验证.md",
+      "status": "modified",
+      "baseline_sha256": "62aa393fe92f9cf2e77a2ddb4c73ed54014760ba538715ff25443bfdea09b581",
+      "delivered_sha256": "7d33695e228b849dfd29c10c082466dd71dd2db13874e3c9a297ae65cec27ffd",
+      "delivered_bytes": 10747
+    },
+    {
+      "file": "计算机知识/Kali/05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md",
+      "status": "modified",
+      "baseline_sha256": "b91ad76ec9e53319d23ab874d7b2781ae5c852de48feeb38094aaf0a6394d060",
+      "delivered_sha256": "0f30e91c6cc1d8971390fe9825ed20f806962116eecfe8799188729939acd23e",
+      "delivered_bytes": 11969
+    },
+    {
+      "file": "计算机知识/Kali/05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+      "status": "modified",
+      "baseline_sha256": "859696cd7cc566494cf518e441cd687c7d6e7900704eaa714a109de935cc994f",
+      "delivered_sha256": "893549678a37dc142b3364b83e624649b2f5d6f861932928f7f2a1aac875e520",
+      "delivered_bytes": 10054
+    },
+    {
+      "file": "计算机知识/Kali/05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md",
+      "status": "modified",
+      "baseline_sha256": "1ac191d837220137fd55aabff11f9725254fc2a77dec8391bbcc8a0fa268471e",
+      "delivered_sha256": "17407091dd61a514b31940e7a691648b94b23eab690137f22880ba0c7e533528",
+      "delivered_bytes": 16028
+    },
+    {
+      "file": "计算机知识/Kali/05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md",
+      "status": "modified",
+      "baseline_sha256": "0ddfa85ad5bd73805556e4703007a3d87cc9069f19cd07bc692b6c6c7d50a83d",
+      "delivered_sha256": "5ea9db0bc23924e00c8325d854cbb5ba4c680de26c03d57f9d06f6b9c56aff9e",
+      "delivered_bytes": 10928
+    },
+    {
+      "file": "计算机知识/Kali/05-密码无线与专门领域/08-社会工程与高风险工具边界.md",
+      "status": "modified",
+      "baseline_sha256": "cb467355e7062c6c6ed87ccd3d1af7f2043751e42da38488c70bd5682fb0cb27",
+      "delivered_sha256": "af5eaa5cc8aca8c1e0906e4cd6c8286444880464bdf630a94b676ed0ed9ae492",
+      "delivered_bytes": 6867
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/01-取证流程镜像与时间线.md",
+      "status": "modified",
+      "baseline_sha256": "545c111a31ca94b823d26c548123b89a73380a4acdc535fb032e06dd56906880",
+      "delivered_sha256": "b5d089b9595c36ce134de96044cc5ba1ce909121be0cae2a3fb1f0fcfc0be9a0",
+      "delivered_bytes": 12113
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md",
+      "status": "modified",
+      "baseline_sha256": "49a0b924526153b27caf9fc83d6d5c32615ad3b6201c1788fad61a356b1f6403",
+      "delivered_sha256": "265e6e39fbcce3592e8065baa56243ebe57bfdeb1aec9dbaf1267c4cc4fbfb98",
+      "delivered_bytes": 13863
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/03-Volatility3与内存证据.md",
+      "status": "modified",
+      "baseline_sha256": "0891be3c4ef81863ac9b876312796b9288e210b0681a7645e0d583d0bdb4cb3f",
+      "delivered_sha256": "0abf0e6c30534285600866b9fe5afa4cd1ff21c19d0a80ffb63e2f34a5e618fb",
+      "delivered_bytes": 11139
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/04-文件元数据Binwalk与ExifTool.md",
+      "status": "modified",
+      "baseline_sha256": "5ab7d4a4dc6f2137b5dd2d0272625e7a8edfd782b95d4e95f4c3eace6a776228",
+      "delivered_sha256": "0c588383f4b155b53fe8a36aa42e5dff43017d4be169638008fb0308ce4e1c66",
+      "delivered_bytes": 9509
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+      "status": "modified",
+      "baseline_sha256": "b36f359b7b785813d4a7b5fec74f733ec21b597556c5a41bbe57b35c55ba74b0",
+      "delivered_sha256": "cd04252acc302602c5671e860e43d42ffde917404a5d70d80d23c19b93c42196",
+      "delivered_bytes": 13707
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/06-GDBGefStrace与动态观察.md",
+      "status": "modified",
+      "baseline_sha256": "13f5cb641b07a8f89c3ab2d11eb929b6d71c0c2c627628d9b4dcb6d9a247613c",
+      "delivered_sha256": "20aa92ec205a526479e61670748883cb0c3660a59a6371910b97fde1ed06bf49",
+      "delivered_bytes": 10584
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/07-YARA日志与检测规则.md",
+      "status": "modified",
+      "baseline_sha256": "34ec3a4eaf8b24c1c63a81e86e820d722007b7e8dafd40e39cf1614b8d367954",
+      "delivered_sha256": "16ddc9b46b185a08f9c6da0f673aef7f68bb4fcd89817546ce9ff2283116dde8",
+      "delivered_bytes": 11534
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/08-SuricataZeek与网络检测.md",
+      "status": "modified",
+      "baseline_sha256": "f9019e1c9cc1155a1c3ebe2933c30d36fd32a91a1c835e946080a3c519f0d4f6",
+      "delivered_sha256": "d9c98eb114cddb620b99118c47246fe7dd447302ef338e0186e69ecebada847f",
+      "delivered_bytes": 14958
+    },
+    {
+      "file": "计算机知识/Kali/06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md",
+      "status": "modified",
+      "baseline_sha256": "348fbdfc8725b867d6511397ff97c41e3d1a37e701bce8dd68bee58152cd1e34",
+      "delivered_sha256": "bd650d888fcd9cd2de5bd58e8f0c254b9c10b25a93d7cb0c8b7985d932d16b67",
+      "delivered_bytes": 10371
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/01-离线实验准备与夹具说明.md",
+      "status": "unchanged",
+      "baseline_sha256": "679dd5df57945bc4a108ff8838ecb554e10b8604e3f9e9e6149f9226e25e5774",
+      "delivered_sha256": "679dd5df57945bc4a108ff8838ecb554e10b8604e3f9e9e6149f9226e25e5774",
+      "delivered_bytes": 6763
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/02-实验A从路由到HTTP与Nmap.md",
+      "status": "modified",
+      "baseline_sha256": "85833d1f88a0b1c205efda6be703a02ff27a1f67ff65ba8a7d2ba7a920e61142",
+      "delivered_sha256": "bbdf5f84ab19ca5df9e0ffb6720b3eaa30b17e3c22641c65f03c731b774b8e21",
+      "delivered_bytes": 5888
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/03-实验B抓包重组与证据交叉验证.md",
+      "status": "modified",
+      "baseline_sha256": "3a6b974c90a29a8945d76cf9b2f52b8a430c58e85a2d205b50e3d91d55091749",
+      "delivered_sha256": "81eeede30898090583a11af2509ea0ea2e43e36934158dfc44a9f86a96349f0f",
+      "delivered_bytes": 5146
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/04-实验CWeb请求与访问控制.md",
+      "status": "modified",
+      "baseline_sha256": "9c9347c20d4fb4b8a2361daa4f5f8548bf7cb76255d0f20d822299ffe76c4d0e",
+      "delivered_sha256": "19a5a97fdde055eaa435390299831d6e317a4280b6f2455158bd257697d0a90e",
+      "delivered_bytes": 5886
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/05-实验D口令哈希与预算.md",
+      "status": "unchanged",
+      "baseline_sha256": "d81e797eacd54adfbd706c7e21fec18c80d2d7b9fea03fdfa91d7eb640c12b8d",
+      "delivered_sha256": "d81e797eacd54adfbd706c7e21fec18c80d2d7b9fea03fdfa91d7eb640c12b8d",
+      "delivered_bytes": 3624
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/06-实验E文件分析与YARA.md",
+      "status": "modified",
+      "baseline_sha256": "be197ca3689e0e056ac0a5a30699cb01998af2c7d3ca62f1080dd9585680a387",
+      "delivered_sha256": "2e0624147a38e7d0f85fbbc0eb01cbded7a97379bc9bbc0831ee4e9419eba63e",
+      "delivered_bytes": 4935
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/07-实验F从发现到报告复测.md",
+      "status": "unchanged",
+      "baseline_sha256": "6e4e8aabffd0564f3bf481b9da9470306a2b9f31e5559e42a95b2c53607f35e0",
+      "delivered_sha256": "6e4e8aabffd0564f3bf481b9da9470306a2b9f31e5559e42a95b2c53607f35e0",
+      "delivered_bytes": 5458
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/08-自检题与答案定位.md",
+      "status": "modified",
+      "baseline_sha256": "9cfe2c4472f5723d300ebad9c399333f4851741bde1f581d31c0ed28881268f2",
+      "delivered_sha256": "5a4893c7cbf30683c2d6b487f1128dfc7547aae78f6510ff027a00c77e15ceab",
+      "delivered_bytes": 29871
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/09-实验代码合同与复现.md",
+      "status": "unchanged",
+      "baseline_sha256": "36c7e039b4f1fb2c58a4586772f1231d6a2c3b85a407d095cbd65249a5563b6b",
+      "delivered_sha256": "36c7e039b4f1fb2c58a4586772f1231d6a2c3b85a407d095cbd65249a5563b6b",
+      "delivered_bytes": 9030
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/10-实验G路由与扫描状态推理.md",
+      "status": "unchanged",
+      "baseline_sha256": "5ea5133c715a6674477408f9345c91d05830b1fff8214e500cfa66a2a724cc17",
+      "delivered_sha256": "5ea5133c715a6674477408f9345c91d05830b1fff8214e500cfa66a2a724cc17",
+      "delivered_bytes": 5977
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/11-实验H扫描XML差异与不确定性.md",
+      "status": "unchanged",
+      "baseline_sha256": "c60565478ddf946640d14c3e62c3119be6cf6848dae3a7504af9c11399ddb8e1",
+      "delivered_sha256": "c60565478ddf946640d14c3e62c3119be6cf6848dae3a7504af9c11399ddb8e1",
+      "delivered_bytes": 5538
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/12-实验I多租户字段与动作授权.md",
+      "status": "unchanged",
+      "baseline_sha256": "220571c359d7f4ebb863e05eea74e500ba4a8996f854c42f10dab607f27a5563",
+      "delivered_sha256": "220571c359d7f4ebb863e05eea74e500ba4a8996f854c42f10dab607f27a5563",
+      "delivered_bytes": 6009
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/13-实验J时间线与检测基率.md",
+      "status": "unchanged",
+      "baseline_sha256": "d25295cde015f58ef50f0d82b9130990efadaa8293a27931a074a7408f4baa2e",
+      "delivered_sha256": "d25295cde015f58ef50f0d82b9130990efadaa8293a27931a074a7408f4baa2e",
+      "delivered_bytes": 6020
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/14-实验K离线证书链与身份校验.md",
+      "status": "unchanged",
+      "baseline_sha256": "4211f5ca50d22f55e78546e7572f93ebd22ec63870285e624d85b4ec3a11a7c0",
+      "delivered_sha256": "4211f5ca50d22f55e78546e7572f93ebd22ec63870285e624d85b4ec3a11a7c0",
+      "delivered_bytes": 8481
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/15-实验L事务幂等与并发控制.md",
+      "status": "unchanged",
+      "baseline_sha256": "775cf64edfb8fe4bd4e57389ee3719d1c407447b53434c9fe8d58407da6f4152",
+      "delivered_sha256": "775cf64edfb8fe4bd4e57389ee3719d1c407447b53434c9fe8d58407da6f4152",
+      "delivered_bytes": 9086
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/generate_fixtures.py",
+      "status": "unchanged",
+      "baseline_sha256": "deb8926355f29dad29df1301926937336527e90b95af713f4e7bfcdc04542c51",
+      "delivered_sha256": "deb8926355f29dad29df1301926937336527e90b95af713f4e7bfcdc04542c51",
+      "delivered_bytes": 8403
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/generate_reasoning_fixtures.py",
+      "status": "unchanged",
+      "baseline_sha256": "6715e04d89e7ce10fcf28b3fd8402b5d316622fb608d8f566d05109283e4fa9c",
+      "delivered_sha256": "6715e04d89e7ce10fcf28b3fd8402b5d316622fb608d8f566d05109283e4fa9c",
+      "delivered_bytes": 5920
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/hello.c",
+      "status": "unchanged",
+      "baseline_sha256": "037c40b63558eceab94d40dc1cf5c1ce6b74c3b33e4d1f8ac6982d15d9f7d9dd",
+      "delivered_sha256": "037c40b63558eceab94d40dc1cf5c1ce6b74c3b33e4d1f8ac6982d15d9f7d9dd",
+      "delivered_bytes": 381
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/length_record.c",
+      "status": "unchanged",
+      "baseline_sha256": "d5cc8164723c1e045b8f4a124ff3f0326a8d66652ef1008ead712c44a0356e5a",
+      "delivered_sha256": "d5cc8164723c1e045b8f4a124ff3f0326a8d66652ef1008ead712c44a0356e5a",
+      "delivered_bytes": 1090
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/offline_lab.py",
+      "status": "unchanged",
+      "baseline_sha256": "78e395db539258de1f496fdcfea94f6c81349f0a42555b84c6d6263e1a4b5660",
+      "delivered_sha256": "78e395db539258de1f496fdcfea94f6c81349f0a42555b84c6d6263e1a4b5660",
+      "delivered_bytes": 5574
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/public-health.yaml",
+      "status": "unchanged",
+      "baseline_sha256": "ff0e911b5cbe1fa90fcbbe44d15a5ffdeb544ece766832e5e5dc181bb9cd88cc",
+      "delivered_sha256": "ff0e911b5cbe1fa90fcbbe44d15a5ffdeb544ece766832e5e5dc181bb9cd88cc",
+      "delivered_bytes": 633
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/reasoning_lab.py",
+      "status": "unchanged",
+      "baseline_sha256": "d4f38485e755e669f5f9e28d78f96abbf1a3fcfe1ed311ab5cac764642bad600",
+      "delivered_sha256": "d4f38485e755e669f5f9e28d78f96abbf1a3fcfe1ed311ab5cac764642bad600",
+      "delivered_bytes": 17722
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_cli_workflows.py",
+      "status": "unchanged",
+      "baseline_sha256": "5b57097de04ecf2e097146cc82e0ad87b42d20f84fafc75f147e5201cfff1bc9",
+      "delivered_sha256": "5b57097de04ecf2e097146cc82e0ad87b42d20f84fafc75f147e5201cfff1bc9",
+      "delivered_bytes": 5500
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_offline_lab.py",
+      "status": "unchanged",
+      "baseline_sha256": "2f984b68a18873fd1b34739159abc35491f85b2f39e9cb8f768649ab984cb06a",
+      "delivered_sha256": "2f984b68a18873fd1b34739159abc35491f85b2f39e9cb8f768649ab984cb06a",
+      "delivered_bytes": 8806
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_reasoning_lab.py",
+      "status": "unchanged",
+      "baseline_sha256": "3d804913a716cbeab2f90abf4ed93c15ca99d76d502f5a329492e04e8e940656",
+      "delivered_sha256": "3d804913a716cbeab2f90abf4ed93c15ca99d76d502f5a329492e04e8e940656",
+      "delivered_bytes": 16642
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_tls_verify_lab.py",
+      "status": "unchanged",
+      "baseline_sha256": "75a3d314e8547931ff0fa4a94ae22f862bc7612691fa25f70183760efca691e9",
+      "delivered_sha256": "75a3d314e8547931ff0fa4a94ae22f862bc7612691fa25f70183760efca691e9",
+      "delivered_bytes": 3206
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_transaction_lab.py",
+      "status": "unchanged",
+      "baseline_sha256": "bbd50bd2a95da8b74299ae24573c71dbed2c989c8686d2e6238654a059137d06",
+      "delivered_sha256": "bbd50bd2a95da8b74299ae24573c71dbed2c989c8686d2e6238654a059137d06",
+      "delivered_bytes": 8097
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/tls_verify_lab.py",
+      "status": "unchanged",
+      "baseline_sha256": "7d9bc201f8899300395887db471608760b976a36d025516a2551f86334979004",
+      "delivered_sha256": "7d9bc201f8899300395887db471608760b976a36d025516a2551f86334979004",
+      "delivered_bytes": 9720
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/toy_markers.yar",
+      "status": "unchanged",
+      "baseline_sha256": "6185adfc6136b94fc7ee6d7c73e257159436a70f66f8ba6c59a1831d298b18f7",
+      "delivered_sha256": "6185adfc6136b94fc7ee6d7c73e257159436a70f66f8ba6c59a1831d298b18f7",
+      "delivered_bytes": 308
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/transaction_lab.py",
+      "status": "unchanged",
+      "baseline_sha256": "f71c8286785ee9a2b580293c7c7024e5eec7ad29a3dd34da16dd0d12b6b6f1e1",
+      "delivered_sha256": "f71c8286785ee9a2b580293c7c7024e5eec7ad29a3dd34da16dd0d12b6b6f1e1",
+      "delivered_bytes": 9596
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/validate_status.jq",
+      "status": "unchanged",
+      "baseline_sha256": "5775a49ecd7b8c84af23e8c0d479402ae895baf87fab05a40b39f9d8438af8f9",
+      "delivered_sha256": "5775a49ecd7b8c84af23e8c0d479402ae895baf87fab05a40b39f9d8438af8f9",
+      "delivered_bytes": 310
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/verify_c_examples.py",
+      "status": "unchanged",
+      "baseline_sha256": "b898fc37c974151e7ca2cf0d49e81a4a7108ee6f4ac9b774af9949eb7e90e002",
+      "delivered_sha256": "b898fc37c974151e7ca2cf0d49e81a4a7108ee6f4ac9b774af9949eb7e90e002",
+      "delivered_bytes": 5971
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/access.jsonl",
+      "status": "unchanged",
+      "baseline_sha256": "ee947ca4c5a4c56c58b72fb8785d07fe588f39ccc8705ba8d23bac84d6d54ef7",
+      "delivered_sha256": "ee947ca4c5a4c56c58b72fb8785d07fe588f39ccc8705ba8d23bac84d6d54ef7",
+      "delivered_bytes": 480
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/candidate-words.txt",
+      "status": "unchanged",
+      "baseline_sha256": "e1512688d00b6e7b360324cab053bcc292bb4f600e13d5fc8e1e1d75516c19b9",
+      "delivered_sha256": "e1512688d00b6e7b360324cab053bcc292bb4f600e13d5fc8e1e1d75516c19b9",
+      "delivered_bytes": 52
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/expected.json",
+      "status": "unchanged",
+      "baseline_sha256": "3c277ac7a58ad6d41b0c9108995f79d4288cf9d4561d2063e43e594d4b8abdeb",
+      "delivered_sha256": "3c277ac7a58ad6d41b0c9108995f79d4288cf9d4561d2063e43e594d4b8abdeb",
+      "delivered_bytes": 2170
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/files/negative.txt",
+      "status": "unchanged",
+      "baseline_sha256": "172b273484a999bbe440f36f0d6448d2f43fdfff0fc48163123abfd134827c32",
+      "delivered_sha256": "172b273484a999bbe440f36f0d6448d2f43fdfff0fc48163123abfd134827c32",
+      "delivered_bytes": 82
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/files/positive.txt",
+      "status": "unchanged",
+      "baseline_sha256": "5e9797c0b1f21e2dabf962edf24f12417ade0b4f31b8ddac3f7de7d445ae6df0",
+      "delivered_sha256": "5e9797c0b1f21e2dabf962edf24f12417ade0b4f31b8ddac3f7de7d445ae6df0",
+      "delivered_bytes": 58
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/hashes-sha256.txt",
+      "status": "unchanged",
+      "baseline_sha256": "55c582ee64f20246fa077027e0d7bb8f031f9a8d71d1be129eee7998424784bc",
+      "delivered_sha256": "55c582ee64f20246fa077027e0d7bb8f031f9a8d71d1be129eee7998424784bc",
+      "delivered_bytes": 130
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/http-lab.pcap",
+      "status": "unchanged",
+      "baseline_sha256": "a7948316b3faede347436efb5553eb03a7e5d5ca0126d6fbb4fe9b90675491c6",
+      "delivered_sha256": "a7948316b3faede347436efb5553eb03a7e5d5ca0126d6fbb4fe9b90675491c6",
+      "delivered_bytes": 963
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/iac/pod.yaml",
+      "status": "unchanged",
+      "baseline_sha256": "19f87bb653e64bf5307052152b65568648e71d5df8d6443b7a5b919d9d5efb0a",
+      "delivered_sha256": "19f87bb653e64bf5307052152b65568648e71d5df8d6443b7a5b919d9d5efb0a",
+      "delivered_bytes": 237
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/nmap-after.xml",
+      "status": "unchanged",
+      "baseline_sha256": "34a4c8b706ecfa2358b68d77abfd5c5aef65bd1474d29c48eb507d374ec53f50",
+      "delivered_sha256": "34a4c8b706ecfa2358b68d77abfd5c5aef65bd1474d29c48eb507d374ec53f50",
+      "delivered_bytes": 641
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/nmap-before.xml",
+      "status": "unchanged",
+      "baseline_sha256": "b32ca6177807c8a0409195be1b9ba027d984ad3c86f600fe2dfd514bb32398cf",
+      "delivered_sha256": "b32ca6177807c8a0409195be1b9ba027d984ad3c86f600fe2dfd514bb32398cf",
+      "delivered_bytes": 634
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/paths.txt",
+      "status": "unchanged",
+      "baseline_sha256": "20b5a845fc74cf4da3aadc1cdb152f1d522d88eb22a2e7056559c167c6f7c1bd",
+      "delivered_sha256": "20b5a845fc74cf4da3aadc1cdb152f1d522d88eb22a2e7056559c167c6f7c1bd",
+      "delivered_bytes": 53
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/authorization-cases.json",
+      "status": "unchanged",
+      "baseline_sha256": "7b566bfb4b9cecee7b22a45d9d954d9203149b51d98a3518f12f46bb3242e171",
+      "delivered_sha256": "7b566bfb4b9cecee7b22a45d9d954d9203149b51d98a3518f12f46bb3242e171",
+      "delivered_bytes": 862
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/expected-v2.json",
+      "status": "unchanged",
+      "baseline_sha256": "5891b58d1019d2e62cc3eb576d49e30525d21f69d2955834e1e89787f5ec67b2",
+      "delivered_sha256": "5891b58d1019d2e62cc3eb576d49e30525d21f69d2955834e1e89787f5ec67b2",
+      "delivered_bytes": 813
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/metrics.json",
+      "status": "unchanged",
+      "baseline_sha256": "dfb2c82775effa4aaddfa79980d33746d6e366af189d6505106ed115823ce08c",
+      "delivered_sha256": "dfb2c82775effa4aaddfa79980d33746d6e366af189d6505106ed115823ce08c",
+      "delivered_bytes": 270
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/records.json",
+      "status": "unchanged",
+      "baseline_sha256": "4581a94feb8b67fccbe1aa2295ded9b0b8ad21d77182c18b7cd18281429fd4f0",
+      "delivered_sha256": "4581a94feb8b67fccbe1aa2295ded9b0b8ad21d77182c18b7cd18281429fd4f0",
+      "delivered_bytes": 741
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/route-cases.json",
+      "status": "unchanged",
+      "baseline_sha256": "cad440b0f44a45b39c12e2c1cf61a280af8135d62e21bbcd8054e1b884ae4938",
+      "delivered_sha256": "cad440b0f44a45b39c12e2c1cf61a280af8135d62e21bbcd8054e1b884ae4938",
+      "delivered_bytes": 739
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/scan-after.xml",
+      "status": "unchanged",
+      "baseline_sha256": "f6c65346806c3ddc852c72ce93e36b0c054193b8c7369e146a405f21677240e5",
+      "delivered_sha256": "f6c65346806c3ddc852c72ce93e36b0c054193b8c7369e146a405f21677240e5",
+      "delivered_bytes": 746
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/scan-aggregate.xml",
+      "status": "unchanged",
+      "baseline_sha256": "cf32f418716e54a28e9e9bfbabbae9c735bd4bec93f16da7ea3c3180e4f5d78a",
+      "delivered_sha256": "cf32f418716e54a28e9e9bfbabbae9c735bd4bec93f16da7ea3c3180e4f5d78a",
+      "delivered_bytes": 550
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/scan-before.xml",
+      "status": "unchanged",
+      "baseline_sha256": "92d75a90d735e8fd4533106d69c4ea139702e1c5dcde8997d246293033a26cdb",
+      "delivered_sha256": "92d75a90d735e8fd4533106d69c4ea139702e1c5dcde8997d246293033a26cdb",
+      "delivered_bytes": 744
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/timeline.json",
+      "status": "unchanged",
+      "baseline_sha256": "b5a634d00639b398d4e5eb54dd80d745505910f3a6906bc0036a9c725f1dc4a8",
+      "delivered_sha256": "b5a634d00639b398d4e5eb54dd80d745505910f3a6906bc0036a9c725f1dc4a8",
+      "delivered_bytes": 411
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/web/api/status.json",
+      "status": "unchanged",
+      "baseline_sha256": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c",
+      "delivered_sha256": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c",
+      "delivered_bytes": 33
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/web/health",
+      "status": "unchanged",
+      "baseline_sha256": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c",
+      "delivered_sha256": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c",
+      "delivered_bytes": 33
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/web/index.html",
+      "status": "unchanged",
+      "baseline_sha256": "8eddeb401292fa70acab401b63459d178ee5946c86c5d0871289de4fb277dc72",
+      "delivered_sha256": "8eddeb401292fa70acab401b63459d178ee5946c86c5d0871289de4fb277dc72",
+      "delivered_bytes": 168
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/web/robots.txt",
+      "status": "unchanged",
+      "baseline_sha256": "c2fd4f79a8c5c07559b28fae5f8099b449d8de490ce51fc8e2cfeb26794a37d2",
+      "delivered_sha256": "c2fd4f79a8c5c07559b28fae5f8099b449d8de490ce51fc8e2cfeb26794a37d2",
+      "delivered_bytes": 83
+    },
+    {
+      "file": "计算机知识/Kali/08-模板与速查/01-授权范围模板.md",
+      "status": "unchanged",
+      "baseline_sha256": "6464f9b58ad1503c3d7f718ef523da364f3f0862ecf5fef0b62d841bd4147c94",
+      "delivered_sha256": "6464f9b58ad1503c3d7f718ef523da364f3f0862ecf5fef0b62d841bd4147c94",
+      "delivered_bytes": 2132
+    },
+    {
+      "file": "计算机知识/Kali/08-模板与速查/02-实验记录模板.md",
+      "status": "unchanged",
+      "baseline_sha256": "2a19afef978fdfd972056bd6c6fa2bcbce5f452d1b049f8acc340a674b3ed309",
+      "delivered_sha256": "2a19afef978fdfd972056bd6c6fa2bcbce5f452d1b049f8acc340a674b3ed309",
+      "delivered_bytes": 2844
+    },
+    {
+      "file": "计算机知识/Kali/08-模板与速查/03-发现与复测模板.md",
+      "status": "unchanged",
+      "baseline_sha256": "02272eff9e4167180e147dc4d91187c9248f3d56fde242ac454c24f108ee1a73",
+      "delivered_sha256": "02272eff9e4167180e147dc4d91187c9248f3d56fde242ac454c24f108ee1a73",
+      "delivered_bytes": 2818
+    },
+    {
+      "file": "计算机知识/Kali/08-模板与速查/04-版本环境与命令速查.md",
+      "status": "unchanged",
+      "baseline_sha256": "0495439e1da53f3c447aa4e0b21f26bed16e7e980013efca2f62c606da753436",
+      "delivered_sha256": "0495439e1da53f3c447aa4e0b21f26bed16e7e980013efca2f62c606da753436",
+      "delivered_bytes": 4209
+    },
+    {
+      "file": "计算机知识/Kali/08-模板与速查/05-术语与概念桥梁.md",
+      "status": "modified",
+      "baseline_sha256": "8f1b1a3c12a5830600c69f4902895383bc5bc6ff178bc824f229a6bcf8c521f6",
+      "delivered_sha256": "493703950210b5503fca0eab83159237780f57202406c9c1c4c4ba411b4b65b8",
+      "delivered_bytes": 11413
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/01-来源索引与核验边界.md",
+      "status": "modified",
+      "baseline_sha256": "3746d1cd456e6e5632841f95ba642eeebf180ab203c926902c65ed88dc192383",
+      "delivered_sha256": "4867395f679bf2bab3e753e9a604959803be5dd587fea698508106de9b7e5aaf",
+      "delivered_bytes": 52704
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/02-导入维护与扩展规范.md",
+      "status": "modified",
+      "baseline_sha256": "54269d9906aeedc05e2dc854000e13dd8ba5bc90a046cadca025be2c32384874",
+      "delivered_sha256": "019a7d97c91bd465c320994e672b583dff962026fcab913eedefa58e89a50317",
+      "delivered_bytes": 5107
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/03-验收与构建记录.md",
+      "status": "unchanged",
+      "baseline_sha256": "6b9e351819eff18f7d6b75e8892b8ec380f550a0172554bd2dd1765f41f543a0",
+      "delivered_sha256": "6b9e351819eff18f7d6b75e8892b8ec380f550a0172554bd2dd1765f41f543a0",
+      "delivered_bytes": 6054
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/04-v2深度审阅与变更记录.md",
+      "status": "unchanged",
+      "baseline_sha256": "0dea27d5fa9b3f95ca08d635b45eb8718733fc9aaf4c418494da76ff2974408c",
+      "delivered_sha256": "0dea27d5fa9b3f95ca08d635b45eb8718733fc9aaf4c418494da76ff2974408c",
+      "delivered_bytes": 13726
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/05-v3深度审阅与变更记录.md",
+      "status": "unchanged",
+      "baseline_sha256": "44f5a2fdf83c747a1ef42368bc64a15d17b0047e0abbffe6fcb7d113a1b8578d",
+      "delivered_sha256": "44f5a2fdf83c747a1ef42368bc64a15d17b0047e0abbffe6fcb7d113a1b8578d",
+      "delivered_bytes": 12083
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/06-v5深度研究与结构梳理记录.md",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "b80d949f5dd9369b74e2ea70384099394a5a947d8b22273334b6f4598668f76b",
+      "delivered_bytes": 12342
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/工具/check_vault.py",
+      "status": "unchanged",
+      "baseline_sha256": "4621ebd0d94212711ce679abc316fe5f9c901fc8ed4d7b234b1ca0580cc91839",
+      "delivered_sha256": "4621ebd0d94212711ce679abc316fe5f9c901fc8ed4d7b234b1ca0580cc91839",
+      "delivered_bytes": 16359
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/附件/AGENTS-原始上传.txt",
+      "status": "unchanged",
+      "baseline_sha256": "2213785559e0e77bd9020ae18d779c04067334c273f2645c4d7c34c577f9b87c",
+      "delivered_sha256": "2213785559e0e77bd9020ae18d779c04067334c273f2645c4d7c34c577f9b87c",
+      "delivered_bytes": 20382
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/baseline.json",
+      "status": "unchanged",
+      "baseline_sha256": "3ea69efb9f08381993e52af18e68c0abee0a80debfa439ebdb8e5f811eb849a7",
+      "delivered_sha256": "3ea69efb9f08381993e52af18e68c0abee0a80debfa439ebdb8e5f811eb849a7",
+      "delivered_bytes": 859
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/batch-checks.jsonl",
+      "status": "unchanged",
+      "baseline_sha256": "5900d78f370314a63cbbded98c9d828ff3cfda029e301d922e90e16d4ab57196",
+      "delivered_sha256": "5900d78f370314a63cbbded98c9d828ff3cfda029e301d922e90e16d4ab57196",
+      "delivered_bytes": 1787
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/c-tests.json",
+      "status": "unchanged",
+      "baseline_sha256": "7a4d5322f5760a7514285161d6d1e8e39faf21f45b2cda89181ebce5a5f59bfe",
+      "delivered_sha256": "7a4d5322f5760a7514285161d6d1e8e39faf21f45b2cda89181ebce5a5f59bfe",
+      "delivered_bytes": 3046
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/environment.json",
+      "status": "unchanged",
+      "baseline_sha256": "5aa11864c6a8c7dbc4f479a942175d5c01fd71c53fe15c1c9066083aa6359762",
+      "delivered_sha256": "5aa11864c6a8c7dbc4f479a942175d5c01fd71c53fe15c1c9066083aa6359762",
+      "delivered_bytes": 459
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/offline-demo.json",
+      "status": "unchanged",
+      "baseline_sha256": "1854426a3e3a7bfc586f06cb665614ae7217a7c01af98d3ae50d39d02cbf0f1e",
+      "delivered_sha256": "1854426a3e3a7bfc586f06cb665614ae7217a7c01af98d3ae50d39d02cbf0f1e",
+      "delivered_bytes": 523
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/offline-tests.txt",
+      "status": "unchanged",
+      "baseline_sha256": "8eb24803cb8919d595f33cc0aed322188f1e536bc82842cddb5ebc3130f04569",
+      "delivered_sha256": "8eb24803cb8919d595f33cc0aed322188f1e536bc82842cddb5ebc3130f04569",
+      "delivered_bytes": 2690
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/pcap-file-identification.json",
+      "status": "unchanged",
+      "baseline_sha256": "5d7c8dc1fabf92e4dd286f2bf87677300981800424df9b47d65ecdff639a7e69",
+      "delivered_sha256": "5d7c8dc1fabf92e4dd286f2bf87677300981800424df9b47d65ecdff639a7e69",
+      "delivered_bytes": 316
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/B1-static.json",
+      "status": "unchanged",
+      "baseline_sha256": "de8f9b6ba6d243bcd3c17f6f591c1f45fee3619e4ddbe043881e0c9747be0116",
+      "delivered_sha256": "de8f9b6ba6d243bcd3c17f6f591c1f45fee3619e4ddbe043881e0c9747be0116",
+      "delivered_bytes": 1703
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/B3-static.json",
+      "status": "unchanged",
+      "baseline_sha256": "4a19a52f344e37e0bed3e5f6ee28f32b95a3374d9da967a77402f803aa7a4a28",
+      "delivered_sha256": "4a19a52f344e37e0bed3e5f6ee28f32b95a3374d9da967a77402f803aa7a4a28",
+      "delivered_bytes": 3008
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/B7-static.json",
+      "status": "unchanged",
+      "baseline_sha256": "ba069c59d28d170a23a9790bbe75fe3f3f60bc6981f4e95c144efb9fdbcf5139",
+      "delivered_sha256": "ba069c59d28d170a23a9790bbe75fe3f3f60bc6981f4e95c144efb9fdbcf5139",
+      "delivered_bytes": 1676
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/acceptance-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "0f0710f4f455c11964a210c83e1b3449865eb00a18fb0149e16237693585da22",
+      "delivered_sha256": "0f0710f4f455c11964a210c83e1b3449865eb00a18fb0149e16237693585da22",
+      "delivered_bytes": 3313
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/baseline.json",
+      "status": "unchanged",
+      "baseline_sha256": "72256fe3e18c6891a189bacde171bf9e78a24ea133680764d504efdf01bd7a86",
+      "delivered_sha256": "72256fe3e18c6891a189bacde171bf9e78a24ea133680764d504efdf01bd7a86",
+      "delivered_bytes": 18320
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/batch-changes.jsonl",
+      "status": "unchanged",
+      "baseline_sha256": "f5c06ec059c1455f25b8e02a2d010ae531763b80c85b2b55b1c8156e2ad6feb8",
+      "delivered_sha256": "f5c06ec059c1455f25b8e02a2d010ae531763b80c85b2b55b1c8156e2ad6feb8",
+      "delivered_bytes": 35867
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/build-issues.json",
+      "status": "unchanged",
+      "baseline_sha256": "82555838b9512fb808740de7eaebb6ab2adc06f6bebf4f51f6453eb624f93562",
+      "delivered_sha256": "82555838b9512fb808740de7eaebb6ab2adc06f6bebf4f51f6453eb624f93562",
+      "delivered_bytes": 1829
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/c-clang-asan-ubsan.json",
+      "status": "unchanged",
+      "baseline_sha256": "576188a84b5d5e087ae6aacd815d214c5a8ed8a1d4183c35d7e2eb89bacdcf77",
+      "delivered_sha256": "576188a84b5d5e087ae6aacd815d214c5a8ed8a1d4183c35d7e2eb89bacdcf77",
+      "delivered_bytes": 18111
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/c-gcc-normal.json",
+      "status": "unchanged",
+      "baseline_sha256": "d14914e7c0b1af94fc73e53289ea63a140e187e2925af4c7a2ed8b0355b139b5",
+      "delivered_sha256": "d14914e7c0b1af94fc73e53289ea63a140e187e2925af4c7a2ed8b0355b139b5",
+      "delivered_bytes": 17920
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/c-gcc-ubsan.json",
+      "status": "unchanged",
+      "baseline_sha256": "09515eb7693660baa4cb527c3f5fe825822fdea3aba6d4035ef95c53873122de",
+      "delivered_sha256": "09515eb7693660baa4cb527c3f5fe825822fdea3aba6d4035ef95c53873122de",
+      "delivered_bytes": 17989
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/changed-files.json",
+      "status": "unchanged",
+      "baseline_sha256": "0c5b529c7f4183589ff604222bd1a7929ef4f6d1b257faad34993767512c0933",
+      "delivered_sha256": "0c5b529c7f4183589ff604222bd1a7929ef4f6d1b257faad34993767512c0933",
+      "delivered_bytes": 40209
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/checker-regression-final.txt",
+      "status": "unchanged",
+      "baseline_sha256": "524c603b3ed6c096518a14a423286c2ea082effadf3de125b35bae43bfe4526a",
+      "delivered_sha256": "524c603b3ed6c096518a14a423286c2ea082effadf3de125b35bae43bfe4526a",
+      "delivered_bytes": 1649
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/content-stats.json",
+      "status": "unchanged",
+      "baseline_sha256": "21c2167c55976e4467311ef65a527811178f80fc42ad95914593bf6e99c736aa",
+      "delivered_sha256": "21c2167c55976e4467311ef65a527811178f80fc42ad95914593bf6e99c736aa",
+      "delivered_bytes": 309
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/environment-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "35562446653a1c3de872a8a01772a44a55420144263e10cd570670eecefbaa74",
+      "delivered_sha256": "35562446653a1c3de872a8a01772a44a55420144263e10cd570670eecefbaa74",
+      "delivered_bytes": 1049
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/index-fixture-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "9ffc267419c84175f8fb651f67dca013c3867d986a9ed23dbbc1137c6126d95e",
+      "delivered_sha256": "9ffc267419c84175f8fb651f67dca013c3867d986a9ed23dbbc1137c6126d95e",
+      "delivered_bytes": 6252
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/offline-regression-final.txt",
+      "status": "unchanged",
+      "baseline_sha256": "80ad1aa6a96477f00c80b55b11843e0b023c06235a3f28d436c0d3d027fb2af7",
+      "delivered_sha256": "80ad1aa6a96477f00c80b55b11843e0b023c06235a3f28d436c0d3d027fb2af7",
+      "delivered_bytes": 9301
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/reasoning-after-fix.txt",
+      "status": "unchanged",
+      "baseline_sha256": "f676f353a3280380a26e8158c8bb648d892b05535476fd07dd5513ccd1f77a90",
+      "delivered_sha256": "f676f353a3280380a26e8158c8bb648d892b05535476fd07dd5513ccd1f77a90",
+      "delivered_bytes": 5681
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/reasoning-before-fix.txt",
+      "status": "unchanged",
+      "baseline_sha256": "bf600e6183dcb1d600d2ede5885c6a4befca50fa24f406b08ed5dcb53edaef37",
+      "delivered_sha256": "bf600e6183dcb1d600d2ede5885c6a4befca50fa24f406b08ed5dcb53edaef37",
+      "delivered_bytes": 7255
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/reasoning-fixtures-tests.txt",
+      "status": "unchanged",
+      "baseline_sha256": "51ada15c5a78425e20728c7ddc41e20f05dbf04603f7abf9e80115c41bbceba1",
+      "delivered_sha256": "51ada15c5a78425e20728c7ddc41e20f05dbf04603f7abf9e80115c41bbceba1",
+      "delivered_bytes": 6710
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/snippet-syntax-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "c0a08729238a0e587a398dcdec307de3ce183b861a2175b6b1384f13b2670742",
+      "delivered_sha256": "c0a08729238a0e587a398dcdec307de3ce183b861a2175b6b1384f13b2670742",
+      "delivered_bytes": 29500
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/static-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "47f507b13d7f0e1fd54d07b12a5b79afcef83708236eff929afed92d1e4ec546",
+      "delivered_sha256": "47f507b13d7f0e1fd54d07b12a5b79afcef83708236eff929afed92d1e4ec546",
+      "delivered_bytes": 836
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/baseline-preservation-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "f9624becce5dbe480ddfe519f9f2a8c94bbcb6c7542d1f8b94198ce0bdae3d22",
+      "delivered_sha256": "f9624becce5dbe480ddfe519f9f2a8c94bbcb6c7542d1f8b94198ce0bdae3d22",
+      "delivered_bytes": 15006
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/baseline-static.json",
+      "status": "unchanged",
+      "baseline_sha256": "bdcafa2a5a447a9c66a10a424db3c2d4c191e8b250d0ae402da480530508808d",
+      "delivered_sha256": "bdcafa2a5a447a9c66a10a424db3c2d4c191e8b250d0ae402da480530508808d",
+      "delivered_bytes": 836
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/baseline.json",
+      "status": "unchanged",
+      "baseline_sha256": "53b61b76902368135a853c495a1f5dfa14042c6e1ca706bbc02ebc9b89080287",
+      "delivered_sha256": "53b61b76902368135a853c495a1f5dfa14042c6e1ca706bbc02ebc9b89080287",
+      "delivered_bytes": 25609
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/batch-changes.jsonl",
+      "status": "unchanged",
+      "baseline_sha256": "1bb5edcb657a0f16360f49b31657c0d42a96fd2ad93fecaf8e894c4c703e38ff",
+      "delivered_sha256": "1bb5edcb657a0f16360f49b31657c0d42a96fd2ad93fecaf8e894c4c703e38ff",
+      "delivered_bytes": 49489
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/build-issues.json",
+      "status": "unchanged",
+      "baseline_sha256": "0f7b16d1a3ad727317b6f5ead5cad4fae7101743d9a9530bc091846811a57309",
+      "delivered_sha256": "0f7b16d1a3ad727317b6f5ead5cad4fae7101743d9a9530bc091846811a57309",
+      "delivered_bytes": 2468
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-clang-asan-ubsan-driver.txt",
+      "status": "unchanged",
+      "baseline_sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb",
+      "delivered_sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb",
+      "delivered_bytes": 49
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-clang-asan-ubsan-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "576188a84b5d5e087ae6aacd815d214c5a8ed8a1d4183c35d7e2eb89bacdcf77",
+      "delivered_sha256": "576188a84b5d5e087ae6aacd815d214c5a8ed8a1d4183c35d7e2eb89bacdcf77",
+      "delivered_bytes": 18111
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-normal-driver.txt",
+      "status": "unchanged",
+      "baseline_sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb",
+      "delivered_sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb",
+      "delivered_bytes": 49
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-normal-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "d14914e7c0b1af94fc73e53289ea63a140e187e2925af4c7a2ed8b0355b139b5",
+      "delivered_sha256": "d14914e7c0b1af94fc73e53289ea63a140e187e2925af4c7a2ed8b0355b139b5",
+      "delivered_bytes": 17920
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-ubsan-driver.txt",
+      "status": "unchanged",
+      "baseline_sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb",
+      "delivered_sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb",
+      "delivered_bytes": 49
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-ubsan-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "09515eb7693660baa4cb527c3f5fe825822fdea3aba6d4035ef95c53873122de",
+      "delivered_sha256": "09515eb7693660baa4cb527c3f5fe825822fdea3aba6d4035ef95c53873122de",
+      "delivered_bytes": 17989
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/checker-tests-final.txt",
+      "status": "unchanged",
+      "baseline_sha256": "400ac83a710f0ba2fc8648b52dc063f0e2131680b9357a3e0a133041e882ed65",
+      "delivered_sha256": "400ac83a710f0ba2fc8648b52dc063f0e2131680b9357a3e0a133041e882ed65",
+      "delivered_bytes": 1650
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/cli-workflow-tests.txt",
+      "status": "unchanged",
+      "baseline_sha256": "0d8771b3860c254ab1e956327955c2e407354c0ee37f54508284ddf4b8f52bb3",
+      "delivered_sha256": "0d8771b3860c254ab1e956327955c2e407354c0ee37f54508284ddf4b8f52bb3",
+      "delivered_bytes": 2701
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/content-changes-v2-to-v3.json",
+      "status": "unchanged",
+      "baseline_sha256": "de8f422864282718771275e25a9e30d08de81f563329df6bde3060b07966994a",
+      "delivered_sha256": "de8f422864282718771275e25a9e30d08de81f563329df6bde3060b07966994a",
+      "delivered_bytes": 41941
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/document-reproduction-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "1ea09b94b153b86de75daf92013a2cbdce038e448f30d3cdbf2c014197d8a11f",
+      "delivered_sha256": "1ea09b94b153b86de75daf92013a2cbdce038e448f30d3cdbf2c014197d8a11f",
+      "delivered_bytes": 22791
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/environment-before-strict-sql.json",
+      "status": "unchanged",
+      "baseline_sha256": "c0604833c26f7df5a55027fcdd014328a32b7054166361467740dd5a4ec3b94e",
+      "delivered_sha256": "c0604833c26f7df5a55027fcdd014328a32b7054166361467740dd5a4ec3b94e",
+      "delivered_bytes": 2536
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/environment-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "75da8ce7688e9f1c4d7f3ab351df4fa328cb4dcb54ab56d99ad9eb08644ddc8f",
+      "delivered_sha256": "75da8ce7688e9f1c4d7f3ab351df4fa328cb4dcb54ab56d99ad9eb08644ddc8f",
+      "delivered_bytes": 2861
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/export-audit-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "180e2c56581ef975718f61398ec8d3cb78e4c26a564c8d5619e50fe6f2ea8089",
+      "delivered_sha256": "180e2c56581ef975718f61398ec8d3cb78e4c26a564c8d5619e50fe6f2ea8089",
+      "delivered_bytes": 627
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/fixture-reproduction-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "dd9e47142af72cf9b9309566b765e6689765658567c255f6fd5c24d6d1e75060",
+      "delivered_sha256": "dd9e47142af72cf9b9309566b765e6689765658567c255f6fd5c24d6d1e75060",
+      "delivered_bytes": 4928
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/integration-static.json",
+      "status": "unchanged",
+      "baseline_sha256": "89a0295a6693e41712608579708366c59d26900b3b92d35b7f0b298b794a49ab",
+      "delivered_sha256": "89a0295a6693e41712608579708366c59d26900b3b92d35b7f0b298b794a49ab",
+      "delivered_bytes": 837
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/intermediate-static.json",
+      "status": "unchanged",
+      "baseline_sha256": "5f4f3bb5281151b08e06ae2e699746be93281c82ab8579365facd9583ebf0eb3",
+      "delivered_sha256": "5f4f3bb5281151b08e06ae2e699746be93281c82ab8579365facd9583ebf0eb3",
+      "delivered_bytes": 1396
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/jq-before-fix.json",
+      "status": "unchanged",
+      "baseline_sha256": "59ed79778f419df896c0f8fbc816ea623b7d13c59f5c700126c62fc66d01e248",
+      "delivered_sha256": "59ed79778f419df896c0f8fbc816ea623b7d13c59f5c700126c62fc66d01e248",
+      "delivered_bytes": 463
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/python-tests-before-strict-sql.txt",
+      "status": "unchanged",
+      "baseline_sha256": "6a7166d79c597b466d99b8b94a03b8375d593f8ea12ec4f73ee541b0fe92131a",
+      "delivered_sha256": "6a7166d79c597b466d99b8b94a03b8375d593f8ea12ec4f73ee541b0fe92131a",
+      "delivered_bytes": 17178
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/python-tests-final.txt",
+      "status": "unchanged",
+      "baseline_sha256": "86cbb5d20b1a3770124d41963a96eeaaed985f0e0c4db2f807a53a11696b84cc",
+      "delivered_sha256": "86cbb5d20b1a3770124d41963a96eeaaed985f0e0c4db2f807a53a11696b84cc",
+      "delivered_bytes": 17344
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/runtime-before-strict-sql.json",
+      "status": "unchanged",
+      "baseline_sha256": "dd052a07ac0652e1d8019594f54f14e09ad12386d5b93873b4119eb297f408e2",
+      "delivered_sha256": "dd052a07ac0652e1d8019594f54f14e09ad12386d5b93873b4119eb297f408e2",
+      "delivered_bytes": 3324
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/runtime-summary.json",
+      "status": "unchanged",
+      "baseline_sha256": "7aa921edf8dae7e039f082c2ea39491269ae011b099398f83bd40a1d433b9a24",
+      "delivered_sha256": "7aa921edf8dae7e039f082c2ea39491269ae011b099398f83bd40a1d433b9a24",
+      "delivered_bytes": 3318
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/source-review-summary.json",
+      "status": "unchanged",
+      "baseline_sha256": "68bd3542a9880451cf48436c1a5b73b677e73d4c82060a2696120815097a867f",
+      "delivered_sha256": "68bd3542a9880451cf48436c1a5b73b677e73d4c82060a2696120815097a867f",
+      "delivered_bytes": 14464
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/sources-v2-snapshot.json",
+      "status": "unchanged",
+      "baseline_sha256": "086f1d064b3a201ab33f8edcebaa268bc24c438722eaf5f1fd36b63792bd7721",
+      "delivered_sha256": "086f1d064b3a201ab33f8edcebaa268bc24c438722eaf5f1fd36b63792bd7721",
+      "delivered_bytes": 59805
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/static-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "8fa7037e8ff569bad138cc60cbb154f68e3b7cc8331b73e0b1546e1ac480ee39",
+      "delivered_sha256": "8fa7037e8ff569bad138cc60cbb154f68e3b7cc8331b73e0b1546e1ac480ee39",
+      "delivered_bytes": 837
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/syntax-and-citations-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "19c2de1dbf5883c6abc6085f9470c7df3305e06b82a7d7286a96660e73b12c67",
+      "delivered_sha256": "19c2de1dbf5883c6abc6085f9470c7df3305e06b82a7d7286a96660e73b12c67",
+      "delivered_bytes": 32591
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-oracle-before-fix.json",
+      "status": "unchanged",
+      "baseline_sha256": "947602e56ae50165039a2ee569149f0940d1f535b5efc5ce6fe7eee5154d4aa0",
+      "delivered_sha256": "947602e56ae50165039a2ee569149f0940d1f535b5efc5ce6fe7eee5154d4aa0",
+      "delivered_bytes": 466
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-oracle-tests.txt",
+      "status": "unchanged",
+      "baseline_sha256": "ebc225745c0714139ee3a5f3aa9281b2b271a997fe3c9d610470d97591211a6f",
+      "delivered_sha256": "ebc225745c0714139ee3a5f3aa9281b2b271a997fe3c9d610470d97591211a6f",
+      "delivered_bytes": 2023
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-v3-initial-source.txt",
+      "status": "unchanged",
+      "baseline_sha256": "468bfda9e5200e03b2f58c137403d933f017f4b97b2766bc9d326f218b13c467",
+      "delivered_sha256": "468bfda9e5200e03b2f58c137403d933f017f4b97b2766bc9d326f218b13c467",
+      "delivered_bytes": 8379
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-verification-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "a2392cae1b45e9ed6f292f4a4c7d6ff9b014cc85880155e983aa9cd72893e8ae",
+      "delivered_sha256": "a2392cae1b45e9ed6f292f4a4c7d6ff9b014cc85880155e983aa9cd72893e8ae",
+      "delivered_bytes": 12405
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-verification-initial.json",
+      "status": "unchanged",
+      "baseline_sha256": "392fb26debc6e3bf550b2155704f088662fc7caeb505a296a258173fd5ef7c67",
+      "delivered_sha256": "392fb26debc6e3bf550b2155704f088662fc7caeb505a296a258173fd5ef7c67",
+      "delivered_bytes": 11522
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-verification-isolated-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "2a5b844fd2ea8fe6a2c9d10618e6b3e1e4d0432df46899a9968bae1762594897",
+      "delivered_sha256": "2a5b844fd2ea8fe6a2c9d10618e6b3e1e4d0432df46899a9968bae1762594897",
+      "delivered_bytes": 12405
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tool-coverage-v2-snapshot.json",
+      "status": "unchanged",
+      "baseline_sha256": "85a898a29ac1638170f6e3166544d9d714b5e342958eda8f5d70b33e792daf2f",
+      "delivered_sha256": "85a898a29ac1638170f6e3166544d9d714b5e342958eda8f5d70b33e792daf2f",
+      "delivered_bytes": 30913
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tool-note-map-v2-snapshot.json",
+      "status": "unchanged",
+      "baseline_sha256": "9ea41311432f68c83cb67cdebb965b74bef2427ba836cfd8fadd4c03ded0c101",
+      "delivered_sha256": "9ea41311432f68c83cb67cdebb965b74bef2427ba836cfd8fadd4c03ded0c101",
+      "delivered_bytes": 4712
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-demo-before-strict-sql.txt",
+      "status": "unchanged",
+      "baseline_sha256": "a081b083979a2f8689f7a077078ebd8cd946390927ba212d1e45ec64d91f2f89",
+      "delivered_sha256": "a081b083979a2f8689f7a077078ebd8cd946390927ba212d1e45ec64d91f2f89",
+      "delivered_bytes": 782
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-demo-final.json",
+      "status": "unchanged",
+      "baseline_sha256": "52e40abc06c3a25a76e329c00e88c8965cfa97d0e97112976314d6c109a72bc8",
+      "delivered_sha256": "52e40abc06c3a25a76e329c00e88c8965cfa97d0e97112976314d6c109a72bc8",
+      "delivered_bytes": 810
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-error-after-fix.txt",
+      "status": "unchanged",
+      "baseline_sha256": "594149199743c01ba7a543e3ee310530c20b2fa21ffd85dd1d5f757b6875abdd",
+      "delivered_sha256": "594149199743c01ba7a543e3ee310530c20b2fa21ffd85dd1d5f757b6875abdd",
+      "delivered_bytes": 3615
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-error-before-fix.txt",
+      "status": "unchanged",
+      "baseline_sha256": "623dc97c2c6f54a3407584024f07c4b49e5f70cd54fd152d6111bbaa4ba8c149",
+      "delivered_sha256": "623dc97c2c6f54a3407584024f07c4b49e5f70cd54fd152d6111bbaa4ba8c149",
+      "delivered_bytes": 983
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-tests-initial.txt",
+      "status": "unchanged",
+      "baseline_sha256": "55fdc81cc51ce5af0bcefd610eee3f5a5aa7c9fe4d7520d7f76afdee30729315",
+      "delivered_sha256": "55fdc81cc51ce5af0bcefd610eee3f5a5aa7c9fe4d7520d7f76afdee30729315",
+      "delivered_bytes": 3448
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-v3-initial-source.txt",
+      "status": "unchanged",
+      "baseline_sha256": "77b483af64f347e8ed6018ce232b4dfb17cb10618f3ddb8bbdb95b27e8b8face",
+      "delivered_sha256": "77b483af64f347e8ed6018ce232b4dfb17cb10618f3ddb8bbdb95b27e8b8face",
+      "delivered_bytes": 9220
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/snippet-syntax.json",
+      "status": "unchanged",
+      "baseline_sha256": "1da00975316a9523eb2776a377894b2e6d18d8c6e1ad3d92fb54bfd57f022cb7",
+      "delivered_sha256": "1da00975316a9523eb2776a377894b2e6d18d8c6e1ad3d92fb54bfd57f022cb7",
+      "delivered_bytes": 161
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/sources-v1-snapshot.json",
+      "status": "unchanged",
+      "baseline_sha256": "c6c1b63515f17e439a397f7fde589cda24c57674abf29a52e2d338bdaaafe5cd",
+      "delivered_sha256": "c6c1b63515f17e439a397f7fde589cda24c57674abf29a52e2d338bdaaafe5cd",
+      "delivered_bytes": 27076
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/sources-v3-snapshot.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "f883c05ac93402a50a29cc6e3bdaa51d514d18f73b845443f8b6a576124dfd1d",
+      "delivered_bytes": 74866
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/sources.json",
+      "status": "modified",
+      "baseline_sha256": "f883c05ac93402a50a29cc6e3bdaa51d514d18f73b845443f8b6a576124dfd1d",
+      "delivered_sha256": "33f58f1004dc941e1b29547dea2ca0a3ae7903361975c1323d0497fef79e0f74",
+      "delivered_bytes": 127897
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/static-check.json",
+      "status": "unchanged",
+      "baseline_sha256": "7a96faf9c027bb09da7e6108997fc20bf1fa3b98dc323898aad5a0d773d4927f",
+      "delivered_sha256": "7a96faf9c027bb09da7e6108997fc20bf1fa3b98dc323898aad5a0d773d4927f",
+      "delivered_bytes": 836
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/static-first.json",
+      "status": "unchanged",
+      "baseline_sha256": "6aa54152cbdc52215ec37c0885708c4d54e23f39119f7c6e17a77b2b9b8a0e7e",
+      "delivered_sha256": "6aa54152cbdc52215ec37c0885708c4d54e23f39119f7c6e17a77b2b9b8a0e7e",
+      "delivered_bytes": 1048
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/tool-coverage-v1-snapshot.json",
+      "status": "unchanged",
+      "baseline_sha256": "9ad3ff627d70776451e09f4c91c0add3a47faeb308f2f3b850449ce5d936a5f8",
+      "delivered_sha256": "9ad3ff627d70776451e09f4c91c0add3a47faeb308f2f3b850449ce5d936a5f8",
+      "delivered_bytes": 29374
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/tool-coverage.json",
+      "status": "unchanged",
+      "baseline_sha256": "93051a80396c3f49bf0988ad66f7a643c07f32d3f9175b43bb960fc62831ca6e",
+      "delivered_sha256": "93051a80396c3f49bf0988ad66f7a643c07f32d3f9175b43bb960fc62831ca6e",
+      "delivered_bytes": 31131
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/tool-note-map.json",
+      "status": "unchanged",
+      "baseline_sha256": "7691ba0f2c0a2b25aee05074f114bf138767ad284614e741284b29c585298bd4",
+      "delivered_sha256": "7691ba0f2c0a2b25aee05074f114bf138767ad284614e741284b29c585298bd4",
+      "delivered_bytes": 4894
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-batch-audits.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "e220a3f84a7f33dab6c74a20c789b759133d204bbb0ef52cd265195f566d358d",
+      "delivered_bytes": 25602
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-batch-plan.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "086f1f8d44d1d8666715013aec8846fc983c8c3a9fe9b7f7b24572948d221db0",
+      "delivered_bytes": 1535
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-build-environment.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "93f6d3cd36ac2d3fd66ecec50f27b09eee677bc7c47aed86ce2feb9bc33fd815",
+      "delivered_bytes": 936
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-canvas-change.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "9ef0b7deccfb3a996f3b11af1c6b4a481b6fb569557cf7bde246ebe08245f2c0",
+      "delivered_bytes": 143
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-checker-run-commands.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "8cab0960c24ccf8ce521dee53a0d05f08616a08a98787267c619a6f72448fc86",
+      "delivered_bytes": 690
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-content-changes.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "089a38d5a61d5019bf70d3642fd4fa16bfa37f9d9a008c977c27ed263289065f",
+      "delivered_bytes": 37722
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-editorial-corrections.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "f451587fde32644e5ca14729a4b28914feeac8122d974e4e2c36de16787b93ff",
+      "delivered_bytes": 983
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-evidence-footer-changes.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "989b0c199015b7a79855311adca40a9f76e710c59770c6db7bf45a5fa551054e",
+      "delivered_bytes": 3918
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-extra-validator-tests.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "7830393dce4d657e5e70197711e88b5238ee0bc856bd1f0e021653740c3c7037",
+      "delivered_bytes": 1437
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-heading-map.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "96bfb64a1a9d683faa8d48f912ed617064393bd78681ecd95e6b7de1803c1e31",
+      "delivered_bytes": 549
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-independent-check.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "59bac52201314fc2392c43bf47963919f2902f929c933f5794e7a6ea2c0cdd69",
+      "delivered_bytes": 8597
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-numeric-checks.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "4a37a83da36adee6cd18ca0ef557b3a972f138d98142bf80b37e6f297e398aca",
+      "delivered_bytes": 7875
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-preservation-check.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "9aae1ad7632529e15efd001aaa2b405ada8088d5a85ff36bdccd62e3d244567a",
+      "delivered_bytes": 24171
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-source-read-limitations.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "d9d254dbb66caff53b1426c2506d8587df8a144cd0cc2f0d517f523982a08614",
+      "delivered_bytes": 2699
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-source-review-summary.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "03c3b054a282bb6eb5b4924c7f5b3acac6efdb84fad316d038e9c8a3d2c749fc",
+      "delivered_bytes": 13302
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-static-check.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "cd83c69d86df8b70c0402de7fc3c601940e39b541f4dc2c6e4e021eabd451d4b",
+      "delivered_bytes": 837
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-structure-changes.json",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "f07f7539bfa59a85cf12ffcbd51ece87fb5ced9b5d7138249d0c75c0a86c586a",
+      "delivered_bytes": 59334
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/v5-validator-tests.txt",
+      "status": "added",
+      "baseline_sha256": null,
+      "delivered_sha256": "524c603b3ed6c096518a14a423286c2ea082effadf3de125b35bae43bfe4526a",
+      "delivered_bytes": 1649
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/validator-tests.txt",
+      "status": "unchanged",
+      "baseline_sha256": "5208307adbb25a59657ea0a79adb1c12902c67069dc895f42a364d3bd416b7ec",
+      "delivered_sha256": "5208307adbb25a59657ea0a79adb1c12902c67069dc895f42a364d3bd416b7ec",
+      "delivered_bytes": 1649
+    },
+    {
+      "file": "计算机知识/Kali/MANIFEST.sha256",
+      "status": "modified",
+      "baseline_sha256": "6cfa8667235662ab1ae9ca60677293b0b0b643f9de45170f0f48884936b2c097",
+      "delivered_sha256": "035f5aa88fb95bdb3a13846504f94bfe5d662c69e6ab1eefa54e0c20920a0a3f",
+      "delivered_bytes": 33442
+    },
+    {
+      "file": "计算机知识/Kali/README-导入与范围.md",
+      "status": "modified",
+      "baseline_sha256": "333fc93af02ddf0447f7d1f9d5120800272ccc87b381ed558a4c36b858c78935",
+      "delivered_sha256": "02b7f2ef6cf09e4270123367a9c3be7f9cd6360b3dc4de274ef96478b624c4cb",
+      "delivered_bytes": 5278
+    }
+  ],
+  "scope_notes": [
+    "Hash equality is a practical integrity check, not author identity authentication.",
+    "The Markdown validator uses a limited dialect, not the full Obsidian parser.",
+    "Specific secret-pattern checks are not comprehensive secret detection.",
+    "No newly delivered executable code; external build helpers are not included."
+  ]
+}

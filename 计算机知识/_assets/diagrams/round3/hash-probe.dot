@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="开放寻址：墓碑不能当作从未占用",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"h" [label="h(k)=k mod 7\n10、17、24 均从槽 3 开始"];
+"s3" [label="槽 3：10"];
+"s4" [label="槽 4：墓碑\n17 已删除"];
+"s5" [label="槽 5：24"];
+"s6" [label="槽 6：空\n从未占用"];
+"h" -> "s3";
+"s3" -> "s4" [label="继续探测"];
+"s4" -> "s5" [label="查找不能在墓碑停"];
+"s5" -> "s6" [label="不存在时到空槽结束"];
+
+}

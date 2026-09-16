@@ -1,0 +1,43 @@
+{
+  "checker_version": "1.0",
+  "scope": "计算机知识/Kali",
+  "status": "failed",
+  "counts": {
+    "markdown": 87,
+    "wikilinks_including_prerequisites": 1348,
+    "headings": 816,
+    "block_ids": 3,
+    "reachable_notes": 87,
+    "unique_frontmatter_source_urls": 193,
+    "canvas": 1,
+    "canvas_nodes": 20,
+    "canvas_edges": 21,
+    "python_sources": 13,
+    "files_at_check": 181
+  },
+  "issues": [
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/07-综合实验/14-实验K离线证书链与身份校验.md",
+      "detail": "missing explicit target: 计算机知识/Kali/90-来源与维护/05-v3深度审阅与变更记录.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/07-综合实验/15-实验L事务幂等与并发控制.md",
+      "detail": "missing explicit target: 计算机知识/Kali/90-来源与维护/05-v3深度审阅与变更记录.md"
+    }
+  ],
+  "not_run": [
+    "Obsidian UI/rendering",
+    "Kali tool execution",
+    "external URL availability sweep"
+  ],
+  "limitations": [
+    "Limited Markdown dialect; not a full Obsidian parser",
+    "Specific secret patterns only, not a comprehensive secret detector",
+    "Reads this topic only, not the rest of an existing Vault",
+    "Trusted local filesystem assumed; not a race-resistant hostile-input sandbox"
+  ]
+}

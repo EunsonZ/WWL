@@ -1,0 +1,21 @@
+digraph G {
+    graph [rankdir=TB, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="DPO：从 KL 约束策略到成对偏好损失"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    obj [label="最大化：Eπ[r] − β KL(π || πref)
+β > 0，参考策略覆盖候选支持集"];
+    opt [label="最优形式
+π*(y|x) ∝ πref(y|x) exp(r(x,y)/β)"];
+    diff [label="同一提示的奖励差
+归一化常数 log Z(x) 抵消"];
+    bt [label="Bradley–Terry 偏好模型
+P(y⁺ ≻ y⁻ | x) = sigmoid(r⁺ − r⁻)"];
+    loss [label="DPO：−log sigmoid(β Δ)
+Δ = log(πθ⁺/πref⁺) − log(πθ⁻/πref⁻)", fillcolor="#e6f3e9"];
+    note [label="序列概率：token 对数概率求和
+改为均值会改变目标
+偏好标签不等于事实真值", fillcolor="#fff3de"];
+    obj -> opt -> diff -> bt -> loss -> note;
+    
+    }

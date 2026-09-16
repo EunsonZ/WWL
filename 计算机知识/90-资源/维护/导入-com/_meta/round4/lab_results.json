@@ -1,0 +1,266 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "tools": {
+    "cc": {
+      "path": "/usr/bin/cc",
+      "version": "cc (Debian 14.2.0-19) 14.2.0"
+    },
+    "g++": {
+      "path": "/usr/bin/g++",
+      "version": "g++ (Debian 14.2.0-19) 14.2.0"
+    },
+    "node": {
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/node",
+      "version": "v22.16.0"
+    },
+    "tsc": {
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/tsc",
+      "version": "Version 5.8.3"
+    },
+    "rustc": {
+      "available": false
+    },
+    "bash": {
+      "path": "/usr/bin/bash",
+      "version": "GNU bash, version 5.2.37(1)-release (x86_64-pc-linux-gnu)"
+    }
+  },
+  "results": [
+    {
+      "name": "Python structures_algorithms",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_structures_algorithms"
+      ],
+      "scope": "List/brute-force/min-cut oracles; fixed seeds; bounded exhaustive cases.",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cover_complement_and_two_approximation (test_structures_algorithms.AlgorithmTests.test_cover_complement_and_two_approximation) ... ok\ntest_intervals_worked_and_bruteforce (test_structures_algorithms.AlgorithmTests.test_intervals_worked_and_bruteforce) ... ok\ntest_knapsack_against_subsets (test_structures_algorithms.AlgorithmTests.test_knapsack_against_subsets) ... ok\ntest_knapsack_direction_and_exact_fill (test_structures_algorithms.AlgorithmTests.test_knapsack_direction_and_exact_fill) ... ok\ntest_matching_against_exhaustive_edge_subsets (test_structures_algorithms.AlgorithmTests.test_matching_against_exhaustive_edge_subsets) ... ok\ntest_maxflow_against_every_cut (test_structures_algorithms.AlgorithmTests.test_maxflow_against_every_cut) ... ok\ntest_random_error_union_bound (test_structures_algorithms.AlgorithmTests.test_random_error_union_bound) ... ok\ntest_reverse_residual_edge_cancels_bad_choice (test_structures_algorithms.AlgorithmTests.test_reverse_residual_edge_cancels_bad_choice) ... ok\ntest_affine_random_against_list (test_structures_algorithms.StructureTests.test_affine_random_against_list) ... ok\ntest_affine_worked_example_and_bounds (test_structures_algorithms.StructureTests.test_affine_worked_example_and_bounds) ... ok\ntest_composition_order_and_law (test_structures_algorithms.StructureTests.test_composition_order_and_law) ... ok\ntest_kmp_all_short_binary_strings (test_structures_algorithms.StructureTests.test_kmp_all_short_binary_strings) ... ok\ntest_persistent_forks_share_unchanged_subtrees (test_structures_algorithms.StructureTests.test_persistent_forks_share_unchanged_subtrees) ... ok\ntest_rollback_nested_and_noop (test_structures_algorithms.StructureTests.test_rollback_nested_and_noop) ... ok\ntest_suffix_lcp_and_distinct_substrings (test_structures_algorithms.StructureTests.test_suffix_lcp_and_distinct_substrings) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.060s\n\nOK\n",
+      "status": "PASS",
+      "unittest_cases": 15,
+      "seconds": 0.6475
+    },
+    {
+      "name": "Python compiler",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_compiler"
+      ],
+      "scope": "Generated SLR table, enumerated words, liveness fixed point and finite type unification.",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_epsilon_reduction_pops_zero (test_compiler.CompilerTests.test_epsilon_reduction_pops_zero) ... ok\ntest_instantiation_and_environment_free_variables (test_compiler.CompilerTests.test_instantiation_and_environment_free_variables) ... ok\ntest_interval_cover_and_lost_correlation (test_compiler.CompilerTests.test_interval_cover_and_lost_correlation) ... ok\ntest_liveness_fixed_point (test_compiler.CompilerTests.test_liveness_fixed_point) ... ok\ntest_slr_against_independent_language (test_compiler.CompilerTests.test_slr_against_independent_language) ... ok\ntest_slr_context_loss_conflict (test_compiler.CompilerTests.test_slr_context_loss_conflict) ... ok\ntest_slr_states_table_and_trace (test_compiler.CompilerTests.test_slr_states_table_and_trace) ... ok\ntest_unification_composition_and_occurs (test_compiler.CompilerTests.test_unification_composition_and_occurs) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.004s\n\nOK\n",
+      "status": "PASS",
+      "unittest_cases": 8,
+      "seconds": 0.5965
+    },
+    {
+      "name": "Python systems",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_systems"
+      ],
+      "scope": "Explicit numeric/toy models plus safe temporary-file, pipe, FD and epoll operations; no power cut or real network.",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cow_and_stale_tlb_are_separate_state (test_systems.HardwareTests.test_cow_and_stale_tlb_are_separate_state) ... ok\ntest_float_cancellation_and_stable_rewrite (test_systems.HardwareTests.test_float_cancellation_and_stable_rewrite) ... ok\ntest_reorder_completion_is_not_commit (test_systems.HardwareTests.test_reorder_completion_is_not_commit) ... ok\ntest_summation_and_nan_guard (test_systems.HardwareTests.test_summation_and_nan_guard) ... ok\ntest_sv39_indices_and_page_counts (test_systems.HardwareTests.test_sv39_indices_and_page_counts) ... ok\ntest_dup_offset_and_fd_flags (test_systems.LinuxTests.test_dup_offset_and_fd_flags) ... ok\ntest_epoll_drain_eagain_and_eof (test_systems.LinuxTests.test_epoll_drain_eagain_and_eof) ... ok\ntest_partial_write_keeps_unsent_suffix (test_systems.LinuxTests.test_partial_write_keeps_unsent_suffix) ... ok\ntest_shell_redirection_order (test_systems.LinuxTests.test_shell_redirection_order) ... ok\ntest_symlink_escape_in_temporary_tree (test_systems.LinuxTests.test_symlink_escape_in_temporary_tree) ... ok\ntest_framing_every_two_split_and_bytewise (test_systems.NetworkTests.test_framing_every_two_split_and_bytewise) ... ok\ntest_ipv4_fragment_sizes_offsets (test_systems.NetworkTests.test_ipv4_fragment_sizes_offsets) ... ok\ntest_route_longest_prefix_offline (test_systems.NetworkTests.test_route_longest_prefix_offline) ... ok\ntest_tcp_window_rto_and_bdp (test_systems.NetworkTests.test_tcp_window_rto_and_bdp) ... ok\ntest_condition_queue_close_and_drain (test_systems.OSTests.test_condition_queue_close_and_drain) ... ok\ntest_crash_ordering_model (test_systems.OSTests.test_crash_ordering_model) ... ok\ntest_safe_local_replace_and_old_fd (test_systems.OSTests.test_safe_local_replace_and_old_fd) ... ok\ntest_wait_checks_predicate_not_notification (test_systems.OSTests.test_wait_checks_predicate_not_notification) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.007s\n\nOK\n",
+      "status": "PASS",
+      "unittest_cases": 18,
+      "seconds": 0.5874
+    },
+    {
+      "name": "Python database_crosslayer",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_database_crosslayer"
+      ],
+      "scope": "FD derivations and in-memory SQLite; toy concurrency/recovery and outbox failure points; not PostgreSQL execution.",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cardinality_and_pages_model (test_database_crosslayer.DatabaseTests.test_cardinality_and_pages_model) ... ok\ntest_closure_keys_and_minimal_cover (test_database_crosslayer.DatabaseTests.test_closure_keys_and_minimal_cover) ... ok\ntest_lossless_steps_and_dependency_preservation (test_database_crosslayer.DatabaseTests.test_lossless_steps_and_dependency_preservation) ... ok\ntest_redo_undo_toy_not_postgresql (test_database_crosslayer.DatabaseTests.test_redo_undo_toy_not_postgresql) ... ok\ntest_snapshot_write_skew_model_and_guard (test_database_crosslayer.DatabaseTests.test_snapshot_write_skew_model_and_guard) ... ok\ntest_spurious_join (test_database_crosslayer.DatabaseTests.test_spurious_join) ... ok\ntest_sql_null_outer_join_and_count (test_database_crosslayer.DatabaseTests.test_sql_null_outer_join_and_count) ... ok\ntest_consumer_mark_and_effect_same_transaction (test_database_crosslayer.OutboxTests.test_consumer_mark_and_effect_same_transaction) ... ok\ntest_crash_before_commit_rolls_back_all (test_database_crosslayer.OutboxTests.test_crash_before_commit_rolls_back_all) ... ok\ntest_fencing_requires_resource_check (test_database_crosslayer.OutboxTests.test_fencing_requires_resource_check) ... ok\ntest_lost_response_and_publish_duplicate (test_database_crosslayer.OutboxTests.test_lost_response_and_publish_duplicate) ... ok\ntest_same_intent_replay_and_scope (test_database_crosslayer.OutboxTests.test_same_intent_replay_and_scope) ... ok\ntest_percentiles_do_not_add (test_database_crosslayer.PerformanceTests.test_percentiles_do_not_add) ... ok\ntest_queue_and_amdahl_models (test_database_crosslayer.PerformanceTests.test_queue_and_amdahl_models) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.003s\n\nOK\n",
+      "status": "PASS",
+      "unittest_cases": 14,
+      "seconds": 0.541
+    },
+    {
+      "name": "Python python",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_python"
+      ],
+      "scope": "Actual descriptors, C3, circular-import partial state, TaskGroup cancellation and bounded queues.",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bounded_pipeline_and_sentinel_accounting (test_python.AsyncTests.test_bounded_pipeline_and_sentinel_accounting) ... ok\ntest_bounded_queue_applies_backpressure (test_python.AsyncTests.test_bounded_queue_applies_backpressure) ... ok\ntest_explicit_cancel_runs_finally (test_python.AsyncTests.test_explicit_cancel_runs_finally) ... ok\ntest_taskgroup_exception_cancels_sibling (test_python.AsyncTests.test_taskgroup_exception_cancels_sibling) ... ok\ntest_c3_and_inconsistent_mro (test_python.ObjectTests.test_c3_and_inconsistent_mro) ... ok\ntest_circular_import_fails_during_partial_initialization (test_python.ObjectTests.test_circular_import_fails_during_partial_initialization) ... ok\ntest_descriptor_and_method_shadow (test_python.ObjectTests.test_descriptor_and_method_shadow) ... ok\ntest_set_only_descriptor_does_not_override_instance_read (test_python.ObjectTests.test_set_only_descriptor_does_not_override_instance_read) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.702s\n\nOK\n",
+      "status": "PASS",
+      "unittest_cases": 8,
+      "seconds": 1.3034
+    },
+    {
+      "name": "C compile",
+      "command": [
+        "cc",
+        "-std=c17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fsanitize=undefined",
+        "-fno-sanitize-recover=all",
+        "c_contracts.c",
+        "-o",
+        "/tmp/obsidian-round4-odfwkgzq/c"
+      ],
+      "scope": "C17; warnings as errors; UndefinedBehaviorSanitizer.",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS",
+      "seconds": 0.0813
+    },
+    {
+      "name": "C run",
+      "command": [
+        "/tmp/obsidian-round4-odfwkgzq/c"
+      ],
+      "scope": "Array shape, size overflow, unchanged failure output and byte parser contracts.",
+      "returncode": 0,
+      "stdout": "C contract checks passed\n",
+      "stderr": "",
+      "status": "PASS",
+      "seconds": 0.0019
+    },
+    {
+      "name": "C expected shape rejection",
+      "command": [
+        "cc",
+        "-std=c17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-c",
+        "c_shape_reject.c",
+        "-o",
+        "/tmp/obsidian-round4-odfwkgzq/bad.o"
+      ],
+      "scope": "Nonzero compile result must mention incompatible pointer types; no undefined example is executed.",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "c_shape_reject.c: In function ‘main’:\nc_shape_reject.c:3:50: error: passing argument 1 of ‘needs_rows’ from incompatible pointer type [-Wincompatible-pointer-types]\n    3 | int main(void){int matrix[2][3]={{0}};needs_rows(matrix);}\n      |                                                  ^~~~~~\n      |                                                  |\n      |                                                  int (*)[3]\nc_shape_reject.c:2:23: note: expected ‘int **’ but argument is of type ‘int (*)[3]’\n    2 | void needs_rows(int **p) {(void)p;}\n      |                 ~~~~~~^\n",
+      "status": "PASS",
+      "seconds": 0.0091
+    },
+    {
+      "name": "C++ compile",
+      "command": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fsanitize=undefined",
+        "-fno-sanitize-recover=all",
+        "-pthread",
+        "cpp_contracts.cpp",
+        "-o",
+        "/tmp/obsidian-round4-odfwkgzq/cpp"
+      ],
+      "scope": "C++20; warnings as errors; UndefinedBehaviorSanitizer; not a race detector.",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS",
+      "seconds": 0.9212
+    },
+    {
+      "name": "C++ run",
+      "command": [
+        "/tmp/obsidian-round4-odfwkgzq/cpp"
+      ],
+      "scope": "Type deduction, valid views, 12 copy-failure injection points and 50 one-shot release/acquire runs.",
+      "returncode": 0,
+      "stdout": "C++ deduction, lifetime-safe views, 12 copy-failure points and publication checks passed\n",
+      "stderr": "",
+      "status": "PASS",
+      "seconds": 0.0044
+    },
+    {
+      "name": "TypeScript compile",
+      "command": [
+        "tsc",
+        "--strict",
+        "--noUncheckedIndexedAccess",
+        "--exactOptionalPropertyTypes",
+        "--target",
+        "ES2022",
+        "--module",
+        "commonjs",
+        "--lib",
+        "ES2022,DOM",
+        "--outDir",
+        "/tmp/obsidian-round4-odfwkgzq/ts",
+        "typescript_contracts.ts"
+      ],
+      "scope": "Static type equality assertions and four @ts-expect-error expected rejections.",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS",
+      "seconds": 0.8974
+    },
+    {
+      "name": "TypeScript run",
+      "command": [
+        "node",
+        "/tmp/obsidian-round4-odfwkgzq/ts/typescript_contracts.js"
+      ],
+      "scope": "Plain-data validation, state transitions, stale-result rejection and independent Promise completion.",
+      "returncode": 0,
+      "stdout": "TypeScript runtime contracts and four expected type rejections passed\n",
+      "stderr": "",
+      "status": "PASS",
+      "seconds": 0.0239
+    },
+    {
+      "name": "Rust",
+      "status": "SKIP",
+      "reason": "rustc unavailable; all Rust compilation and execution unperformed, including the rejection fixture."
+    }
+  ],
+  "summary": {
+    "PASS": 12,
+    "FAIL": 0,
+    "SKIP": 1
+  },
+  "python_unittest_cases": 63,
+  "unperformed": [
+    "PostgreSQL two-session manual script",
+    "Actual power-loss recovery",
+    "Real packet capture, TLS peers, CPU/MMU behavior and privileged Linux administration",
+    "Tokio runtime execution and full Obsidian GUI/plugin rendering"
+  ],
+  "limits": [
+    "Passing local cases is not a proof of all implementations or all prose.",
+    "Toy crash, MVCC, pipeline and WAL models state their simplifications in notes and source."
+  ]
+}

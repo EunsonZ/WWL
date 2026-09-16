@@ -1,0 +1,161 @@
+{
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5"
+  },
+  "scripts": [
+    {
+      "path": "20-线性代数与几何/low_rank_approximation.py",
+      "passed": true,
+      "returncode": 0,
+      "seconds": 0.584,
+      "stdout": "singular values: [8.1248 1.4585 0.165  0.1186 0.0707 0.0688]\nrank | reconstruction error | discarded-value formula | error to clean\n   1 |             1.475902 |                1.475902 |       1.515645\n   2 |             0.225931 |                0.225931 |       0.205885\n   3 |             0.154304 |                0.154304 |       0.263871\n   4 |             0.098669 |                0.098669 |       0.289367\n   5 |             0.068778 |                0.068778 |       0.296926\n   6 |             0.000000 |                0.000000 |       0.304548\nnoise error: 0.304548\nrank-2 error to clean: 0.205885\n",
+      "stderr": ""
+    },
+    {
+      "path": "30-概率与统计/sampling_evaluation_lab.py",
+      "passed": true,
+      "returncode": 0,
+      "seconds": 0.6,
+      "stdout": "一、概率事实与经验采样频率\n原始 理论解码概率: A=0.5000, B=0.3000, C=0.1500, D=0.0500\n原始 经验采样频率: A=0.5050, B=0.2955, C=0.1489, D=0.0507\n低温后 Top-k=2 理论解码概率: A=0.6748, B=0.3252, C=0.0000, D=0.0000\n低温后 Top-k=2 经验采样频率: A=0.6758, B=0.3241, C=0.0000, D=0.0000\nTop-p=0.81 理论解码概率: A=0.5263, B=0.3158, C=0.1579, D=0.0000\nTop-p=0.81 经验采样频率: A=0.5322, B=0.3107, C=0.1572, D=0.0000\n\n二、负对数似然与困惑度\nNLL=2.0794, 每 token perplexity=2.8284\n\n三、经验准确率与区间\n经验准确率=0.800, Wilson 95% 区间=[0.739, 0.850]\n\n四、同题配对模型差异\nA-B 经验准确率差=+0.150, 配对 bootstrap 95% 区间=[-0.100, +0.400]\n区间较宽是在提醒：20 道题不足以支撑精细排名。\n",
+      "stderr": ""
+    },
+    {
+      "path": "40-微积分与优化/gradient_check.py",
+      "passed": true,
+      "returncode": 0,
+      "seconds": 0.542,
+      "stdout": "loss=0.05925728\nchecked_parameters=13\nmax_parameter_scaled_error=1.902e-11\ndirectional_scaled_error=7.499e-12\nPASS: manual backprop matches finite differences\n",
+      "stderr": ""
+    },
+    {
+      "path": "50-信息论/softmax_stability.py",
+      "passed": true,
+      "returncode": 0,
+      "seconds": 0.55,
+      "stdout": "1) 普通 logits：朴素与稳定 Softmax 应一致\n   朴素： [0.665241, 0.244728, 0.090031]\n   稳定： [0.665241, 0.244728, 0.090031]\n\n2) 大 logits：朴素实现溢出，稳定实现仍有效\n   预期中的朴素实现失败： OverflowError\n   稳定： [0.665241, 0.244728, 0.090031]\n\n3) 平移不变：所有 logits 加 12345 后概率不变\n   平移后： [0.665241, 0.244728, 0.090031]\n\n4) 稳定 log-softmax 与 one-hot 交叉熵\n   log-prob： [-0.407606, -1.407606, -2.407606]\n   target=2 的损失：2.407606\n\n5) H(P,Q) = H(P) + D_KL(P || Q)\n   H(P)=0.801819, H(P,Q)=0.807606, KL(P||Q)=0.005787\n\n6) 温度：低温更尖锐，高温更平坦\n   T=0.5: [0.866813, 0.117310, 0.015876], H=0.441057\n   T=1.0: [0.665241, 0.244728, 0.090031], H=0.832396\n   T=2.0: [0.506480, 0.307196, 0.186324], H=1.020191\n\n7) KL 方向审计：基线 P 到修改后 Q 不等于反方向\n   KL(base||modified)=0.098591\n   KL(modified||base)=0.119889\n\n8) 非法分布输入必须被拒绝\n   拒绝 [0.6, 0.5]: P 的概率总和必须为 1\n   拒绝 [1.1, -0.1]: P 不能包含负概率\n\n9) 非有限 logits 与温度必须被拒绝\n   拒绝无穷 logit: logits 必须非空且仅含有限实数\n   拒绝NaN logit: logits 必须非空且仅含有限实数\n   拒绝无穷温度: temperature 必须是大于 0 的有限实数\n\n全部断言通过。\n",
+      "stderr": ""
+    },
+    {
+      "path": "60-数值计算与量化/80-量化误差实验.py",
+      "passed": true,
+      "returncode": 0,
+      "seconds": 0.541,
+      "stdout": "1) No-clipping bound\nscale=0.200000, max_error=0.090000, scale/2=0.100000\n\n2) One-sided asymmetric ranges include zero\npositive codes=(128, 255), zero_point=0; negative codes=(0, 127), zero_point=255\n\n3) Outlier, grouping, and clipping\nper-tensor 4-bit           MAE=0.388929 RMSE=0.478367 MAX=0.824286 COS=0.98794867\nper-group(4) 4-bit         MAE=0.130536 RMSE=0.282931 MAX=0.764286 COS=0.99572792\nper-tensor p90 clip        MAE=0.713929 RMSE=2.750210 MAX=11.000000 COS=0.57500260\ngroup scales: 1.714286, 0.042857, 0.061429, 0.150000\np90 clipped values: 1\nbulk RMSE (outlier excluded): min-max=0.494055, p90=0.035117\nThe p90 choice improves the bulk but clips the outlier; global RMSE tells the other side.\n\n4) Asymmetric 8-bit integer dot product\nweight scale=0.05078431, zero_point=19; activation scale=0.00901961, zero_point=122\ninteger accumulator=18254\nreference dot=8.32650000, dequantized dot=8.36132857, absolute error=0.03482857\n",
+      "stderr": ""
+    },
+    {
+      "path": "60-数值计算与量化/81-浮点舍入与稳定公式实验.py",
+      "passed": true,
+      "returncode": 0,
+      "seconds": 0.573,
+      "stdout": "1) Decimal fractions are rounded to a binary grid\n0.1 + 0.2 = 0.30000000000000004; exact comparison with 0.3 is False\n\n2) Summation order and retained low bits matter\nleft_fold(1e+16, 1.0, -1e+16)=0.0; math.fsum(1e+16, 1.0, -1e+16)=1.0\n\n3) An equivalent formula avoids catastrophic cancellation\ndirect=0.0; rationalized=5.0000000000000001e-09\n\n4) log1p preserves an increment lost by 1 + x\nlog(1 + 1e-16)=0.0; log1p(1e-16)=9.9999999999999998e-17\n\n5) This runtime exposes gradual underflow below the normal range\nmin normal=2.22507385850720138e-308\nhalf min normal=1.11253692925360069e-308\nmin subnormal=4.94065645841246544e-324\n\nAll assertions passed.\n",
+      "stderr": ""
+    },
+    {
+      "path": "70-信号处理与多模态数学/80-多模态数学最小实验.py",
+      "passed": true,
+      "returncode": 0,
+      "seconds": 0.55,
+      "stdout": "Patch 均值：[1.0, 4.0, 2.0, 8.0]\n6 Hz 信号以 8 Hz 采样后的主频：2.0 Hz\n单帧三角滤波器原始平方幅度特征：16.000000\n条件 score 两种算法一致：0.426467\nSDE 四分之一步长的噪声尺度：0.100\n",
+      "stderr": ""
+    }
+  ],
+  "code_sync": [
+    {
+      "source": "20-线性代数与几何/80-低秩近似数值实验.md",
+      "target": "20-线性代数与几何/low_rank_approximation.py",
+      "passed": true
+    },
+    {
+      "source": "50-信息论/80-Softmax数值稳定性实验.md",
+      "target": "50-信息论/softmax_stability.py",
+      "passed": true
+    },
+    {
+      "source": "40-微积分与优化/80-梯度与反向传播检查实验.md",
+      "target": "40-微积分与优化/gradient_check.py",
+      "passed": true
+    },
+    {
+      "source": "70-信号处理与多模态数学/80-多模态数学最小实验.md",
+      "target": "70-信号处理与多模态数学/80-多模态数学最小实验.py",
+      "passed": true
+    },
+    {
+      "source": "60-数值计算与量化/80-量化误差实验.md",
+      "target": "60-数值计算与量化/80-量化误差实验.py",
+      "passed": true
+    },
+    {
+      "source": "60-数值计算与量化/81-浮点舍入与稳定公式实验.md",
+      "target": "60-数值计算与量化/81-浮点舍入与稳定公式实验.py",
+      "passed": true
+    },
+    {
+      "source": "30-概率与统计/80-采样与评测实验.md",
+      "target": "30-概率与统计/sampling_evaluation_lab.py",
+      "passed": true
+    }
+  ],
+  "input_contracts": [
+    {
+      "name": "SVD浮点秩",
+      "passed": true,
+      "exception": "rank 必须是整数，不接受浮点数或布尔值"
+    },
+    {
+      "name": "SVD布尔秩",
+      "passed": true,
+      "exception": "rank 必须是整数，不接受浮点数或布尔值"
+    },
+    {
+      "name": "SVD非有限输入",
+      "passed": true,
+      "exception": "matrix entries must all be finite"
+    },
+    {
+      "name": "量化浮点bits",
+      "passed": true,
+      "exception": "this lesson supports bit widths from 2 through 16"
+    },
+    {
+      "name": "量化布尔bits",
+      "passed": true,
+      "exception": "this lesson supports bit widths from 2 through 16"
+    },
+    {
+      "name": "分组浮点大小",
+      "passed": true,
+      "exception": "group_size must be positive"
+    },
+    {
+      "name": "Patch非矩形",
+      "passed": true,
+      "exception": "image 必须是非空矩形网格"
+    },
+    {
+      "name": "Patch非有限",
+      "passed": true,
+      "exception": "image 必须只包含有限实数"
+    },
+    {
+      "name": "DFT非有限",
+      "passed": true,
+      "exception": "samples 必须是非空有限实数序列"
+    },
+    {
+      "name": "采样率非正",
+      "passed": true,
+      "exception": "sample_rate 必须是正的有限数"
+    }
+  ],
+  "summary": {
+    "scripts_total": 7,
+    "scripts_passed": 7,
+    "code_sync_total": 7,
+    "code_sync_passed": 7,
+    "contracts_total": 10,
+    "contracts_passed": 10
+  }
+}

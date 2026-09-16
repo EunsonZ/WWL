@@ -1,0 +1,14 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="理论感受野 r 与原图采样间距 j", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+a [label="输入\nr=1, j=1"];
+b [label="3×3；stride=2\nr=3, j=2"];
+c [label="3×3；stride=2\nr=7, j=4"];
+d [label="3×3；stride=1\nr=15, j=4"];
+e [label="r_new = r_old + (k−1)·d·j_old\nj_new = j_old·stride"];
+a -> b;
+b -> c;
+c -> d;
+d -> e;
+}

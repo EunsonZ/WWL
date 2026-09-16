@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"start","type":"text","text":"# 从一个问题开始\n\n模型为什么换数据就变差？程序为什么慢或占内存？算法为什么能用又会失效？\n\n双击下方文件卡片，直接进入与问题相配的正文段落。边只说明阅读关系，不表示现实因果。","x":20,"y":-720,"width":600,"height":190,"color":"1"},
+		{"id":"linear","type":"file","file":"数学/20-线性代数与几何/00-线性代数与几何-MOC.md","subpath":"#本科系统课程","x":-620,"y":-230,"width":320,"height":210,"color":"4"},
+		{"id":"probability","type":"file","file":"数学/30-概率与统计/00-概率与统计-MOC.md","subpath":"#双轨学习路线","x":-100,"y":-230,"width":320,"height":210,"color":"4"},
+		{"id":"ml","type":"file","file":"AI/10-机器学习与深度学习基础/00-机器学习与深度学习基础-MOC.md","subpath":"#本科核心进阶路线","x":420,"y":-230,"width":320,"height":210,"color":"2"},
+		{"id":"systems","type":"file","file":"计算机知识/30-计算机系统/00-计算机系统-MOC.md","subpath":"#主学习路线","x":-100,"y":150,"width":320,"height":210,"color":"5"},
+		{"id":"algorithms","type":"file","file":"计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md","subpath":"#主学习路线","x":420,"y":150,"width":320,"height":210,"color":"5"},
+		{"id":"society-question","type":"text","text":"# 当技术问题变成社会问题\n\n谁受益、谁承担风险？制度规则和价值目标是什么？\n\n从技术指标转到社会解释时，先分开事实、机制、因果与价值。","x":20,"y":540,"width":600,"height":190,"color":"6"},
+		{"id":"economics","type":"file","file":"社会科学/20-经济流动与宏观/00-经济流动与宏观-MOC.md","subpath":"#三条读法","x":-620,"y":900,"width":320,"height":210,"color":"3"},
+		{"id":"finance","type":"file","file":"社会科学/30-金融市场与风险/00-金融市场与风险-MOC.md","subpath":"#主路线","x":160,"y":900,"width":320,"height":210,"color":"3"},
+		{"id":"policy","type":"file","file":"社会科学/40-公共政策与社会学/00-公共政策与社会学-MOC.md","subpath":"#主路线：从目标走到可检验结论","x":940,"y":900,"width":320,"height":210,"color":"3"}
+	],
+	"edges":[
+		{"id":"e-start-linear","fromNode":"start","fromSide":"bottom","toNode":"linear","toSide":"top","label":"先修：表示"},
+		{"id":"e-start-probability","fromNode":"start","fromSide":"bottom","toNode":"probability","toSide":"top","label":"先修：样本"},
+		{"id":"e-linear-ml","fromNode":"linear","fromSide":"top","toNode":"ml","toSide":"top","label":"先修：向量"},
+		{"id":"e-probability-ml","fromNode":"probability","fromSide":"right","toNode":"ml","toSide":"left","label":"先修：评估"},
+		{"id":"e-ml-systems","fromNode":"ml","fromSide":"bottom","toNode":"systems","toSide":"top","label":"应用：资源"},
+		{"id":"e-ml-algorithms","fromNode":"ml","fromSide":"bottom","toNode":"algorithms","toSide":"top","label":"比较：成本"},
+		{"id":"e-systems-algorithms","fromNode":"systems","fromSide":"right","toNode":"algorithms","toSide":"left","label":"比较：机器"},
+		{"id":"e-start-society","fromNode":"start","fromSide":"bottom","toNode":"society-question","toSide":"top","label":"应用：社会"},
+		{"id":"e-society-economics","fromNode":"society-question","fromSide":"bottom","toNode":"economics","toSide":"top","label":"应用：家庭"},
+		{"id":"e-society-finance","fromNode":"society-question","fromSide":"bottom","toNode":"finance","toSide":"top","label":"应用：风险"},
+		{"id":"e-society-policy","fromNode":"society-question","fromSide":"bottom","toNode":"policy","toSide":"top","label":"应用：制度"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

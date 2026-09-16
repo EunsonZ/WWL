@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="排障从假设到证据：不要先随机调参数",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"s" [label="症状：请求尾延迟上升"];
+"cpu" [label="CPU / 运行队列\n采样热点、调度证据"];
+"mem" [label="内存 / 回收\n缺页、压力、配额"];
+"io" [label="I/O / 网络 / 锁\n分阶段时间、等待栈"];
+"test" [label="提出可证伪预测\n一次主要改动，重复测量"];
+"r" [label="保留或拒绝假设\n记录结果与回滚"];
+"s" -> "cpu";
+"s" -> "mem";
+"s" -> "io";
+"cpu" -> "test";
+"mem" -> "test";
+"io" -> "test";
+"test" -> "r";
+
+}

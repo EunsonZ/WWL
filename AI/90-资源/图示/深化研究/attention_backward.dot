@@ -1,0 +1,23 @@
+digraph G {
+    graph [rankdir=TB, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="注意力反向传播：Softmax 让同一行位置彼此竞争"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    qk [label="S = QKᵀ / √d
+S：Tq × Tk"];
+    p [label="P = softmax(S)，逐行
+P：Tq × Tk"];
+    o [label="O = PV
+上游 G = ∂L/∂O"];
+    dv [label="dV = PᵀG
+dP = GVᵀ", fillcolor="#e6f3e9"];
+    ds [label="每行：dS = P ⊙ (dP − Σ P⊙dP)
+行梯度和为 0", fillcolor="#e6f3e9"];
+    dq [label="dQ = dS K / √d
+dK = dSᵀ Q / √d", fillcolor="#e6f3e9"];
+    note [label="例：P=(0.25,0.75)，dP=(2,0)
+dS=(0.375,−0.375)
+整行屏蔽须单独定义行为", fillcolor="#fff3de"];
+    qk -> p -> o;o -> dv -> ds -> dq;ds -> note;
+    
+    }

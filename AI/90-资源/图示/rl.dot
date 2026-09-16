@@ -1,0 +1,16 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="LLM 强化学习：采样、验证与受约束更新", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+p [label="prompt / 任务"];
+g [label="旧策略采样\nG 个回答"];
+r [label="验证器 / 奖励\n正确性 + 其他约束"];
+a [label="组内基线 / 优势\n处理零方差与长度"];
+o [label="clipped 目标\n可选 KL 约束"];
+u [label="更新当前策略\n独立留出评测"];
+p -> g;
+g -> r;
+r -> a;
+a -> o;
+o -> u;
+}

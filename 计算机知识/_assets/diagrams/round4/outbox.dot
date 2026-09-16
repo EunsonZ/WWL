@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="把本地原子提交和跨系统投递分开"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  request [label="请求键 = 主体 + 操作 + 稳定请求 ID\n另核对参数摘要"];
+  tx [label="同一本地数据库事务\n订单 + 幂等结果 + outbox 事件一起提交",fillcolor="#e6eff8"];
+  replay [label="响应丢失后重试\n返回已记录的同一业务结果"];
+  relay [label="投递器读取未完成事件\n发送到消息系统"];
+  gap [label="已发送，但尚未标记已发送时崩溃\n恢复后可能再次发送",fillcolor="#fff0df"];
+  consumer [label="消费者本地事务\n去重记录 + 业务效果一起提交"];
+  ext [label="外部付款等另一个系统\n仍需对方幂等协议，不能靠本地事务回滚"];
+  request->tx;tx->replay;tx->relay;relay->gap;gap->consumer;consumer->ext[style=dashed];
+
+}

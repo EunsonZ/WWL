@@ -1,0 +1,155 @@
+{
+  "schema": 2,
+  "batch": "fixture",
+  "current": {
+    "a0": {
+      "generation": 1,
+      "attempt": "a0-attempt"
+    },
+    "r0": {
+      "generation": 1,
+      "attempt": "r0-attempt"
+    }
+  },
+  "attempts": [
+    {
+      "id": "a0-attempt",
+      "task": "a0",
+      "contract": "0000000000000000000000000000000000000000000000000000000000000000",
+      "generation": 1,
+      "session": "a0-real-session",
+      "actor": "a0-actor",
+      "mode": "formal",
+      "status": "finished",
+      "baseline": {
+        "contract": "0000000000000000000000000000000000000000000000000000000000000000",
+        "inputs": {
+          "rules.txt": {
+            "kind": "file",
+            "sha256": "f9384b62a46319abe01d7b2697be8de2d626669512067daead28bc51da8c90e1"
+          },
+          "notes/0.md": {
+            "kind": "file",
+            "sha256": "421591fa6c4445aafcb5cebb07c3bb5fd7abb745c1fb75b8f4ccbf9d49778a54"
+          }
+        },
+        "searches": []
+      },
+      "artifact_inputs": [],
+      "outputs": [
+        "a0-artifact"
+      ],
+      "requested": {
+        "model": "unknown",
+        "effort": "unknown",
+        "supported_efforts": "unknown"
+      },
+      "observed": {
+        "model": "unknown",
+        "effort": "unknown",
+        "supported_efforts": "unknown"
+      },
+      "usage_ref": null
+    },
+    {
+      "id": "r0-attempt",
+      "task": "r0",
+      "contract": "0f9b1019b552bd0049a9a262fad22e3fe87cfad1ce88fc643c2d28aa8c8972b1",
+      "generation": 1,
+      "session": "r0-real-session",
+      "actor": "r0-actor",
+      "mode": "review",
+      "status": "finished",
+      "baseline": {
+        "contract": "0f9b1019b552bd0049a9a262fad22e3fe87cfad1ce88fc643c2d28aa8c8972b1",
+        "inputs": {
+          "rules.txt": {
+            "kind": "file",
+            "sha256": "f9384b62a46319abe01d7b2697be8de2d626669512067daead28bc51da8c90e1"
+          }
+        },
+        "searches": []
+      },
+      "artifact_inputs": [
+        {
+          "task": "a0",
+          "path": "notes/0.md",
+          "require": "candidate",
+          "artifact": "a0-artifact",
+          "producer_attempt": "a0-attempt",
+          "state": {
+            "kind": "file",
+            "sha256": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14"
+          }
+        }
+      ],
+      "outputs": [],
+      "requested": {
+        "model": "unknown",
+        "effort": "unknown",
+        "supported_efforts": "unknown"
+      },
+      "observed": {
+        "model": "unknown",
+        "effort": "unknown",
+        "supported_efforts": "unknown"
+      },
+      "usage_ref": null
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a0-artifact",
+      "task": "a0",
+      "attempt": "a0-attempt",
+      "path": "notes/0.md",
+      "state": {
+        "kind": "file",
+        "sha256": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14"
+      },
+      "storage": "outputs/0.md"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "a0-r0-receipt",
+      "task": "a0",
+      "producer_attempt": "a0-attempt",
+      "review_attempt": "r0-attempt",
+      "artifact_ids": [
+        "a0-artifact"
+      ],
+      "input_digest": "a8b0041c1ce4be7eedf52ffb77af724d816d0c8a5b1d32c7988ef53c43654df0",
+      "output_digest": "8bead83dca868b6f18975b204d67a7f60eece986a59c0674b2ba12145d825b7e",
+      "acceptance_digest": "205c6861a8070a27bf66e0edc967f03a081ccbcaca3c05c6f66fe8cfce3bb74a",
+      "decision": "accept",
+      "basis": "Independent exact fixture review",
+      "evidence_refs": [
+        {
+          "path": "evidence/review.txt",
+          "sha256": "6dfb4d31dfe7d6ff003e72d482efbd3487197894fd9b213224100310fff79348"
+        }
+      ]
+    }
+  ],
+  "release": {
+    "tasks": [
+      "a0"
+    ],
+    "artifacts": [
+      "a0-artifact"
+    ],
+    "publisher": {
+      "session": "coordinator",
+      "confirmed": true,
+      "contenders": [
+        "coordinator"
+      ],
+      "targets_saved": null,
+      "external_writers_controlled": true,
+      "cancellation_state": "none"
+    },
+    "combination": null
+  },
+  "checks": []
+}

@@ -1,0 +1,20 @@
+digraph G {
+    graph [rankdir=TB, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="RAG：把检索、证据使用与引用拆开评估"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    q [label="问题 + 身份权限
+明确所需证据"];
+    ret [label="稀疏 / 稠密检索
+按权限过滤 + 合并排序"];
+    rank [label="重排与上下文组装
+保留来源、版本、块位置"];
+    gen [label="生成答案
+外部文本视为资料，不是授权指令"];
+    eval [label="分开测量
+检索召回 / 证据蕴含 / 引用覆盖", fillcolor="#e6f3e9"];
+    oracle [label="诊断对照
+无检索 / 真实检索 / 理想证据 / 干扰证据", fillcolor="#fff3de"];
+    q -> ret -> rank -> gen -> eval;oracle -> ret [style=dashed];oracle -> gen [style=dashed];
+    
+    }

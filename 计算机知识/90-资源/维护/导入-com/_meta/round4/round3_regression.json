@@ -1,0 +1,286 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "tools": {
+    "cc": {
+      "path": "/usr/bin/cc",
+      "version": "cc (Debian 14.2.0-19) 14.2.0"
+    },
+    "g++": {
+      "path": "/usr/bin/g++",
+      "version": "g++ (Debian 14.2.0-19) 14.2.0"
+    },
+    "node": {
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/node",
+      "version": "v22.16.0"
+    },
+    "tsc": {
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/tsc",
+      "version": "Version 5.8.3"
+    },
+    "rustc": {
+      "available": false
+    },
+    "bash": {
+      "path": "/usr/bin/bash",
+      "version": "GNU bash, version 5.2.37(1)-release (x86_64-pc-linux-gnu)"
+    }
+  },
+  "results": [
+    {
+      "name": "C compile",
+      "status": "PASS",
+      "command": [
+        "cc",
+        "-std=c17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fsanitize=undefined",
+        "-fno-sanitize-recover=all",
+        "C/vector.c",
+        "-o",
+        "/tmp/obsidian-labs-49eggukm/C"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "scope": "warnings as errors; UndefinedBehaviorSanitizer instrumented",
+      "seconds": 0.0747
+    },
+    {
+      "name": "C run",
+      "status": "PASS",
+      "command": [
+        "/tmp/obsidian-labs-49eggukm/C"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: vector growth, contents, overflow rejection, allocation failure atomicity\n",
+      "stderr": "",
+      "scope": "reviewed bounded local test; does not prove absence of all UB/data races",
+      "seconds": 0.0032
+    },
+    {
+      "name": "CPP compile",
+      "status": "PASS",
+      "command": [
+        "g++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fsanitize=undefined",
+        "-fno-sanitize-recover=all",
+        "-pthread",
+        "CPP/raii_queue.cpp",
+        "-o",
+        "/tmp/obsidian-labs-49eggukm/CPP"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "scope": "warnings as errors; UndefinedBehaviorSanitizer instrumented",
+      "seconds": 0.9053
+    },
+    {
+      "name": "CPP run",
+      "status": "PASS",
+      "command": [
+        "/tmp/obsidian-labs-49eggukm/CPP"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: reverse cleanup, unique ownership, bounded queue close/drain\n",
+      "stderr": "",
+      "scope": "reviewed bounded local test; does not prove absence of all UB/data races",
+      "seconds": 0.0225
+    },
+    {
+      "name": "PY",
+      "status": "PASS",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/round4_work/com/_labs/round3/PY/test_python.py"
+      ],
+      "returncode": 0,
+      "stdout": "有效读数 2 个，总和 8\nPASS: actual Markdown regressions, aliasing, TaskGroup cancellation cleanup\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.5844
+    },
+    {
+      "name": "DS",
+      "status": "PASS",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/round4_work/com/_labs/round3/DS/structures.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: 32000 Fenwick comparisons, 80000 DSU connectivity comparisons\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.6083
+    },
+    {
+      "name": "ALG",
+      "status": "PASS",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/round4_work/com/_labs/round3/ALG/algorithms.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: 100 maxflow/mincut certificates + 100 knapsack/brute-force comparisons\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.5814
+    },
+    {
+      "name": "CO",
+      "status": "PASS",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/round4_work/com/_labs/round3/CO/hardware_models.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: cache split/reassembly, page offset, 8 adder cases, 112 Hamming corrections\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.5873
+    },
+    {
+      "name": "OS",
+      "status": "PASS",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/round4_work/com/_labs/round3/OS/os_models.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: FIFO Belady 9/10, safe/unsafe banker states, FCFS/SJF exact fractions\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.6271
+    },
+    {
+      "name": "NET",
+      "status": "PASS",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/round4_work/com/_labs/round3/NET/network_models.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: every two-way split, bytewise framing, EOF, limits, CRC, subnet, local sockets\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.6602
+    },
+    {
+      "name": "DB",
+      "status": "PASS",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/round4_work/com/_labs/round3/DB/sqlite_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: SQLite 3.46.1 constraints, LEFT JOIN, NULL, window, rollback\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.7476
+    },
+    {
+      "name": "COMP",
+      "status": "PASS",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/round4_work/com/_labs/round3/COMP/compiler_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: precedence, associativity, invalid input and bytecode, 500 generated AST/VM/reference comparisons\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.6641
+    },
+    {
+      "name": "TS compile",
+      "status": "PASS",
+      "command": [
+        "tsc",
+        "--strict",
+        "--noUncheckedIndexedAccess",
+        "--exactOptionalPropertyTypes",
+        "--target",
+        "ES2022",
+        "--module",
+        "commonjs",
+        "--lib",
+        "ES2022,DOM",
+        "--outDir",
+        "/tmp/obsidian-labs-49eggukm/ts",
+        "TS/contracts.ts",
+        "TS/type_checks.ts"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "scope": "Includes 3 @ts-expect-error rejection checks",
+      "seconds": 0.955
+    },
+    {
+      "name": "TS run",
+      "status": "PASS",
+      "command": [
+        "node",
+        "/tmp/obsidian-labs-49eggukm/ts/contracts.js"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: strict runtime boundary + current task before Promise job\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.0257
+    },
+    {
+      "name": "JS regex regression",
+      "status": "PASS",
+      "command": [
+        "node",
+        "-e",
+        "const assert=require(\"node:assert/strict\");assert.throws(()=>new RegExp(\"\\\\A\",\"u\"),SyntaxError);assert.equal(new RegExp(\"\\\\A\").test(\"A\"),true);console.log(\"PASS: engine-specific buffer-anchor regression\")"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: engine-specific buffer-anchor regression\n",
+      "stderr": "",
+      "scope": "Node engine version recorded; not a universal future-JavaScript claim",
+      "seconds": 0.0241
+    },
+    {
+      "name": "RUST",
+      "status": "SKIP",
+      "reason": "rustc unavailable; source and expected-failure fixture included but not compiled here"
+    },
+    {
+      "name": "LINUX",
+      "status": "PASS",
+      "command": [
+        "bash",
+        "LINUX/shell_lab.sh"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: argument boundaries, redirection order, pipeline failure, scoped cleanup\n",
+      "stderr": "",
+      "scope": "",
+      "seconds": 0.0122
+    }
+  ],
+  "summary": {
+    "PASS": 16,
+    "FAIL": 0,
+    "SKIP": 1
+  },
+  "limits": [
+    "Only listed labs executed.",
+    "PostgreSQL concurrency, CUDA/GPU, privileged Linux administration and full Obsidian GUI not executed.",
+    "Passing tests is not a complete proof of all notes or programs."
+  ]
+}

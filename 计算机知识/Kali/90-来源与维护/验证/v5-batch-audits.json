@@ -1,0 +1,411 @@
+{
+  "kind": "actual intermediate snapshots; not final acceptance",
+  "resolution": "B1 had two forward references to the planned HTTP bridge. B2 created the real note; subsequent snapshots contain no missing target. Final static report is separate.",
+  "batches": [
+    {
+      "batch": "B1-static",
+      "snapshot": {
+        "markdown_count": 88,
+        "file_count": 214,
+        "markdown_chars": 422197,
+        "errors": [
+          [
+            "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+            "wikilink_missing",
+            "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释|反向代理与 TLS 终止"
+          ],
+          [
+            "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+            "wikilink_missing",
+            "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释|HTTP 中间层"
+          ]
+        ],
+        "wikilinks_checked": 1422,
+        "heading_links_checked": 16,
+        "block_links_checked": 4,
+        "unreachable_markdown": [],
+        "canvas": [
+          {
+            "file": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+            "nodes": 22,
+            "edges": 25
+          }
+        ],
+        "existing_markdown_fence_changes": [],
+        "unexpected_nonmarkdown_changes": [],
+        "changed": [
+          "计算机知识/Kali/00-导航与方法/04-从观察到结论的安全方法.md",
+          "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+          "计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+          "计算机知识/Kali/02-信息收集与网络测量/02-DNS域名与证书信息.md",
+          "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+          "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+          "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+          "计算机知识/Kali/02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+          "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md"
+        ],
+        "deleted": [],
+        "new": []
+      }
+    },
+    {
+      "batch": "B2-static",
+      "snapshot": {
+        "markdown_count": 89,
+        "file_count": 215,
+        "markdown_chars": 439174,
+        "errors": [],
+        "wikilinks_checked": 1445,
+        "heading_links_checked": 19,
+        "block_links_checked": 4,
+        "unreachable_markdown": [],
+        "canvas": [
+          {
+            "file": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+            "nodes": 22,
+            "edges": 25
+          }
+        ],
+        "existing_markdown_fence_changes": [],
+        "unexpected_nonmarkdown_changes": [],
+        "changed": [
+          "计算机知识/Kali/00-导航与方法/04-从观察到结论的安全方法.md",
+          "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+          "计算机知识/Kali/01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+          "计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+          "计算机知识/Kali/02-信息收集与网络测量/02-DNS域名与证书信息.md",
+          "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+          "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+          "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+          "计算机知识/Kali/02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+          "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+          "计算机知识/Kali/03-Web与API安全/03-BurpSuite工作流.md",
+          "计算机知识/Kali/03-Web与API安全/04-ZAP代理与被动扫描.md",
+          "计算机知识/Kali/03-Web与API安全/05-ffufGobuster与内容发现.md",
+          "计算机知识/Kali/03-Web与API安全/08-认证会话越权与API测试.md",
+          "计算机知识/Kali/03-Web与API安全/09-SSRF路径上传与解析边界.md",
+          "计算机知识/Kali/03-Web与API安全/10-TLS证书与服务配置评估.md",
+          "计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md"
+        ],
+        "deleted": [],
+        "new": [
+          "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释.md"
+        ]
+      }
+    },
+    {
+      "batch": "B3-static",
+      "snapshot": {
+        "markdown_count": 89,
+        "file_count": 215,
+        "markdown_chars": 448162,
+        "errors": [],
+        "wikilinks_checked": 1451,
+        "heading_links_checked": 19,
+        "block_links_checked": 4,
+        "unreachable_markdown": [],
+        "canvas": [
+          {
+            "file": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+            "nodes": 22,
+            "edges": 25
+          }
+        ],
+        "existing_markdown_fence_changes": [],
+        "unexpected_nonmarkdown_changes": [],
+        "changed": [
+          "计算机知识/Kali/00-导航与方法/04-从观察到结论的安全方法.md",
+          "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+          "计算机知识/Kali/01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+          "计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+          "计算机知识/Kali/02-信息收集与网络测量/02-DNS域名与证书信息.md",
+          "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+          "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+          "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+          "计算机知识/Kali/02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+          "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+          "计算机知识/Kali/03-Web与API安全/03-BurpSuite工作流.md",
+          "计算机知识/Kali/03-Web与API安全/04-ZAP代理与被动扫描.md",
+          "计算机知识/Kali/03-Web与API安全/05-ffufGobuster与内容发现.md",
+          "计算机知识/Kali/03-Web与API安全/08-认证会话越权与API测试.md",
+          "计算机知识/Kali/03-Web与API安全/09-SSRF路径上传与解析边界.md",
+          "计算机知识/Kali/03-Web与API安全/10-TLS证书与服务配置评估.md",
+          "计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+          "计算机知识/Kali/04-服务身份与主机评估/03-LDAPKerberos与AD基础.md",
+          "计算机知识/Kali/04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md",
+          "计算机知识/Kali/04-服务身份与主机评估/05-BloodHound权限图与修复验证.md",
+          "计算机知识/Kali/04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/08-Windows权限边界与本机审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/09-数据库服务与最小权限审计.md"
+        ],
+        "deleted": [],
+        "new": [
+          "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释.md"
+        ]
+      }
+    },
+    {
+      "batch": "B4-static",
+      "snapshot": {
+        "markdown_count": 89,
+        "file_count": 215,
+        "markdown_chars": 457352,
+        "errors": [],
+        "wikilinks_checked": 1459,
+        "heading_links_checked": 19,
+        "block_links_checked": 4,
+        "unreachable_markdown": [],
+        "canvas": [
+          {
+            "file": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+            "nodes": 22,
+            "edges": 25
+          }
+        ],
+        "existing_markdown_fence_changes": [],
+        "unexpected_nonmarkdown_changes": [],
+        "changed": [
+          "计算机知识/Kali/00-导航与方法/04-从观察到结论的安全方法.md",
+          "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+          "计算机知识/Kali/01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+          "计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+          "计算机知识/Kali/02-信息收集与网络测量/02-DNS域名与证书信息.md",
+          "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+          "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+          "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+          "计算机知识/Kali/02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+          "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+          "计算机知识/Kali/03-Web与API安全/03-BurpSuite工作流.md",
+          "计算机知识/Kali/03-Web与API安全/04-ZAP代理与被动扫描.md",
+          "计算机知识/Kali/03-Web与API安全/05-ffufGobuster与内容发现.md",
+          "计算机知识/Kali/03-Web与API安全/08-认证会话越权与API测试.md",
+          "计算机知识/Kali/03-Web与API安全/09-SSRF路径上传与解析边界.md",
+          "计算机知识/Kali/03-Web与API安全/10-TLS证书与服务配置评估.md",
+          "计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+          "计算机知识/Kali/04-服务身份与主机评估/03-LDAPKerberos与AD基础.md",
+          "计算机知识/Kali/04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md",
+          "计算机知识/Kali/04-服务身份与主机评估/05-BloodHound权限图与修复验证.md",
+          "计算机知识/Kali/04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/08-Windows权限边界与本机审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/09-数据库服务与最小权限审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+          "计算机知识/Kali/05-密码无线与专门领域/02-HashcatJohn与离线审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md",
+          "计算机知识/Kali/05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+          "计算机知识/Kali/05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md"
+        ],
+        "deleted": [],
+        "new": [
+          "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释.md"
+        ]
+      }
+    },
+    {
+      "batch": "B5-static",
+      "snapshot": {
+        "markdown_count": 89,
+        "file_count": 215,
+        "markdown_chars": 471503,
+        "errors": [],
+        "wikilinks_checked": 1476,
+        "heading_links_checked": 19,
+        "block_links_checked": 4,
+        "unreachable_markdown": [],
+        "canvas": [
+          {
+            "file": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+            "nodes": 22,
+            "edges": 25
+          }
+        ],
+        "existing_markdown_fence_changes": [],
+        "unexpected_nonmarkdown_changes": [],
+        "changed": [
+          "计算机知识/Kali/00-导航与方法/04-从观察到结论的安全方法.md",
+          "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+          "计算机知识/Kali/01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+          "计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+          "计算机知识/Kali/02-信息收集与网络测量/02-DNS域名与证书信息.md",
+          "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+          "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+          "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+          "计算机知识/Kali/02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+          "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+          "计算机知识/Kali/03-Web与API安全/03-BurpSuite工作流.md",
+          "计算机知识/Kali/03-Web与API安全/04-ZAP代理与被动扫描.md",
+          "计算机知识/Kali/03-Web与API安全/05-ffufGobuster与内容发现.md",
+          "计算机知识/Kali/03-Web与API安全/08-认证会话越权与API测试.md",
+          "计算机知识/Kali/03-Web与API安全/09-SSRF路径上传与解析边界.md",
+          "计算机知识/Kali/03-Web与API安全/10-TLS证书与服务配置评估.md",
+          "计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+          "计算机知识/Kali/04-服务身份与主机评估/03-LDAPKerberos与AD基础.md",
+          "计算机知识/Kali/04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md",
+          "计算机知识/Kali/04-服务身份与主机评估/05-BloodHound权限图与修复验证.md",
+          "计算机知识/Kali/04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/08-Windows权限边界与本机审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/09-数据库服务与最小权限审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+          "计算机知识/Kali/05-密码无线与专门领域/02-HashcatJohn与离线审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md",
+          "计算机知识/Kali/05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+          "计算机知识/Kali/05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md",
+          "计算机知识/Kali/06-取证逆向与检测/01-取证流程镜像与时间线.md",
+          "计算机知识/Kali/06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md",
+          "计算机知识/Kali/06-取证逆向与检测/03-Volatility3与内存证据.md",
+          "计算机知识/Kali/06-取证逆向与检测/04-文件元数据Binwalk与ExifTool.md",
+          "计算机知识/Kali/06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+          "计算机知识/Kali/06-取证逆向与检测/06-GDBGefStrace与动态观察.md",
+          "计算机知识/Kali/06-取证逆向与检测/07-YARA日志与检测规则.md",
+          "计算机知识/Kali/06-取证逆向与检测/08-SuricataZeek与网络检测.md",
+          "计算机知识/Kali/06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md"
+        ],
+        "deleted": [],
+        "new": [
+          "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释.md"
+        ]
+      }
+    },
+    {
+      "batch": "B6-static",
+      "snapshot": {
+        "markdown_count": 89,
+        "file_count": 215,
+        "markdown_chars": 476874,
+        "errors": [],
+        "wikilinks_checked": 1483,
+        "heading_links_checked": 19,
+        "block_links_checked": 4,
+        "unreachable_markdown": [],
+        "canvas": [
+          {
+            "file": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+            "nodes": 22,
+            "edges": 25
+          }
+        ],
+        "existing_markdown_fence_changes": [],
+        "unexpected_nonmarkdown_changes": [],
+        "changed": [
+          "计算机知识/Kali/00-导航与方法/04-从观察到结论的安全方法.md",
+          "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+          "计算机知识/Kali/01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+          "计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+          "计算机知识/Kali/02-信息收集与网络测量/02-DNS域名与证书信息.md",
+          "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+          "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+          "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+          "计算机知识/Kali/02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+          "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+          "计算机知识/Kali/03-Web与API安全/03-BurpSuite工作流.md",
+          "计算机知识/Kali/03-Web与API安全/04-ZAP代理与被动扫描.md",
+          "计算机知识/Kali/03-Web与API安全/05-ffufGobuster与内容发现.md",
+          "计算机知识/Kali/03-Web与API安全/06-SQL注入原理与sqlmap限界验证.md",
+          "计算机知识/Kali/03-Web与API安全/07-XSSCSRF与浏览器安全边界.md",
+          "计算机知识/Kali/03-Web与API安全/08-认证会话越权与API测试.md",
+          "计算机知识/Kali/03-Web与API安全/09-SSRF路径上传与解析边界.md",
+          "计算机知识/Kali/03-Web与API安全/10-TLS证书与服务配置评估.md",
+          "计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+          "计算机知识/Kali/04-服务身份与主机评估/03-LDAPKerberos与AD基础.md",
+          "计算机知识/Kali/04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md",
+          "计算机知识/Kali/04-服务身份与主机评估/05-BloodHound权限图与修复验证.md",
+          "计算机知识/Kali/04-服务身份与主机评估/06-SearchsploitMetasploit与漏洞验证.md",
+          "计算机知识/Kali/04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/08-Windows权限边界与本机审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/09-数据库服务与最小权限审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+          "计算机知识/Kali/05-密码无线与专门领域/02-HashcatJohn与离线审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/03-HydraMedusa与认证控制验证.md",
+          "计算机知识/Kali/05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md",
+          "计算机知识/Kali/05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+          "计算机知识/Kali/05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md",
+          "计算机知识/Kali/06-取证逆向与检测/01-取证流程镜像与时间线.md",
+          "计算机知识/Kali/06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md",
+          "计算机知识/Kali/06-取证逆向与检测/03-Volatility3与内存证据.md",
+          "计算机知识/Kali/06-取证逆向与检测/04-文件元数据Binwalk与ExifTool.md",
+          "计算机知识/Kali/06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+          "计算机知识/Kali/06-取证逆向与检测/06-GDBGefStrace与动态观察.md",
+          "计算机知识/Kali/06-取证逆向与检测/07-YARA日志与检测规则.md",
+          "计算机知识/Kali/06-取证逆向与检测/08-SuricataZeek与网络检测.md",
+          "计算机知识/Kali/06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md"
+        ],
+        "deleted": [],
+        "new": [
+          "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释.md"
+        ]
+      }
+    },
+    {
+      "batch": "B7a-static",
+      "snapshot": {
+        "markdown_count": 89,
+        "file_count": 215,
+        "markdown_chars": 476874,
+        "errors": [],
+        "wikilinks_checked": 1483,
+        "heading_links_checked": 19,
+        "block_links_checked": 4,
+        "unreachable_markdown": [],
+        "canvas": [
+          {
+            "file": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+            "nodes": 22,
+            "edges": 25
+          }
+        ],
+        "existing_markdown_fence_changes": [],
+        "unexpected_nonmarkdown_changes": [],
+        "changed": [
+          "计算机知识/Kali/00-导航与方法/04-从观察到结论的安全方法.md",
+          "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+          "计算机知识/Kali/01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+          "计算机知识/Kali/01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+          "计算机知识/Kali/02-信息收集与网络测量/02-DNS域名与证书信息.md",
+          "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+          "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+          "计算机知识/Kali/02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+          "计算机知识/Kali/02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+          "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+          "计算机知识/Kali/03-Web与API安全/03-BurpSuite工作流.md",
+          "计算机知识/Kali/03-Web与API安全/04-ZAP代理与被动扫描.md",
+          "计算机知识/Kali/03-Web与API安全/05-ffufGobuster与内容发现.md",
+          "计算机知识/Kali/03-Web与API安全/06-SQL注入原理与sqlmap限界验证.md",
+          "计算机知识/Kali/03-Web与API安全/07-XSSCSRF与浏览器安全边界.md",
+          "计算机知识/Kali/03-Web与API安全/08-认证会话越权与API测试.md",
+          "计算机知识/Kali/03-Web与API安全/09-SSRF路径上传与解析边界.md",
+          "计算机知识/Kali/03-Web与API安全/10-TLS证书与服务配置评估.md",
+          "计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+          "计算机知识/Kali/04-服务身份与主机评估/03-LDAPKerberos与AD基础.md",
+          "计算机知识/Kali/04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md",
+          "计算机知识/Kali/04-服务身份与主机评估/05-BloodHound权限图与修复验证.md",
+          "计算机知识/Kali/04-服务身份与主机评估/06-SearchsploitMetasploit与漏洞验证.md",
+          "计算机知识/Kali/04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/08-Windows权限边界与本机审计.md",
+          "计算机知识/Kali/04-服务身份与主机评估/09-数据库服务与最小权限审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+          "计算机知识/Kali/05-密码无线与专门领域/02-HashcatJohn与离线审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/03-HydraMedusa与认证控制验证.md",
+          "计算机知识/Kali/05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md",
+          "计算机知识/Kali/05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+          "计算机知识/Kali/05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md",
+          "计算机知识/Kali/05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md",
+          "计算机知识/Kali/06-取证逆向与检测/01-取证流程镜像与时间线.md",
+          "计算机知识/Kali/06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md",
+          "计算机知识/Kali/06-取证逆向与检测/03-Volatility3与内存证据.md",
+          "计算机知识/Kali/06-取证逆向与检测/04-文件元数据Binwalk与ExifTool.md",
+          "计算机知识/Kali/06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+          "计算机知识/Kali/06-取证逆向与检测/06-GDBGefStrace与动态观察.md",
+          "计算机知识/Kali/06-取证逆向与检测/07-YARA日志与检测规则.md",
+          "计算机知识/Kali/06-取证逆向与检测/08-SuricataZeek与网络检测.md",
+          "计算机知识/Kali/06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md"
+        ],
+        "deleted": [],
+        "new": [
+          "计算机知识/Kali/03-Web与API安全/13-HTTP中间层与消息解释.md"
+        ]
+      }
+    }
+  ]
+}

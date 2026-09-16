@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "action": "edit",
+      "expected": true,
+      "identity": "alice",
+      "report_id": 17
+    },
+    {
+      "action": "edit",
+      "expected": false,
+      "identity": "bob",
+      "report_id": 17
+    },
+    {
+      "action": "approve",
+      "expected": true,
+      "identity": "bob",
+      "report_id": 18
+    },
+    {
+      "action": "approve",
+      "expected": false,
+      "identity": "bob",
+      "report_id": 20
+    },
+    {
+      "action": "read",
+      "expected": false,
+      "identity": "carol",
+      "report_id": 18
+    },
+    {
+      "action": "submit",
+      "expected": false,
+      "identity": "alice",
+      "report_id": 21
+    }
+  ],
+  "fixture_version": "reasoning-v2.0",
+  "model": "Separate from the v1 owner-only model; this file contains expected policy decisions, not credentials.",
+  "synthetic": true
+}

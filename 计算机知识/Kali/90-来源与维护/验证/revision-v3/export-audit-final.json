@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "scope": "topic-only explicit roots and file extension allow-list; forbidden live config/cache paths; no symlinks or Unicode/case collisions; selected secret patterns",
+  "files_checked_before_report_and_final_refresh": 213,
+  "findings": [],
+  "secrets_limit": "Pattern scan is not a proof that arbitrary secrets never exist. Fixed original teaching passwords are intentionally public synthetic fixtures.",
+  "temporary_keys": "No .key files or private key PEM blocks exported; TLS reports contain commands, public certificate metadata and error results only.",
+  "original_inputs_unchanged": true
+}

@@ -1,0 +1,25 @@
+{
+  "status": "passed_with_explicit_scope_limits",
+  "checks": {
+    "unit_test_methods": 136,
+    "new_test_methods": 42,
+    "python_syntax": 35,
+    "shell_syntax": 2,
+    "mathjax_parse": 1409,
+    "internal_static_errors": 0,
+    "footnote_errors": 0,
+    "all_markdown_reachable": 180,
+    "original_files_retained": 239,
+    "external_refs_retained": 430
+  },
+  "not_run": [
+    "真实 GPU/多机分布式测试",
+    "真实大型模型训练及生产部署",
+    "Obsidian 桌面逐页点击验收"
+  ],
+  "notes": [
+    "MathJax parsing is not a proof of mathematical correctness.",
+    "DDP tests in the new lab simulate the averaging algebra in one CPU process.",
+    "The original code and data are retained; only the existing static checker was adjusted to count nested figures."
+  ]
+}

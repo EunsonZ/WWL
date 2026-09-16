@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="扩容：失败保留旧状态，成功再提交",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"s" [label="旧状态\np, size, capacity"];
+"t" [label="tmp = realloc(p, new_bytes)\n先检查乘法溢出"];
+"f" [label="tmp == NULL\n保留 p 与旧容量"];
+"ok" [label="tmp != NULL\n提交 p=tmp 与新容量"];
+"s" -> "t";
+"t" -> "f" [label="失败"];
+"t" -> "ok" [label="成功"];
+
+}

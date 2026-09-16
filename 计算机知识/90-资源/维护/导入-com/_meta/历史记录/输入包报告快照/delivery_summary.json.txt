@@ -1,0 +1,56 @@
+{
+  "revision": "2026-09-06 round 2",
+  "counts": {
+    "files": 449,
+    "markdown": 296,
+    "original_files": 317,
+    "original_markdown": 217,
+    "original_paths_missing": 0,
+    "original_files_changed": 197,
+    "wiki_occurrences": 3621,
+    "unresolved_wiki_occurrences": 145,
+    "unresolved_wiki_unique_targets": 44,
+    "ambiguous_wiki_occurrences": 0,
+    "anchor_review_occurrences": 0,
+    "embedded_local_items": 16,
+    "external_image_links": 0,
+    "svg_files": 14,
+    "unclosed_fences": 0,
+    "missing_original_link_entries": 0,
+    "new_explanatory_lessons": 51,
+    "course_maps": 13,
+    "original_notes_with_navigation": 188,
+    "graphviz_sources": 14,
+    "table_alias_separator_repairs": 376,
+    "structural_table_rows_repaired": 6,
+    "python_syntax_files": 54,
+    "shell_syntax_files": 5,
+    "yaml_frontmatter_files": 268,
+    "new_unresolved_wiki_occurrences": 0
+  },
+  "tests": {
+    "integration_python": {
+      "run": 39,
+      "status": "PASS"
+    },
+    "original_python": {
+      "run": 95,
+      "suites": 19,
+      "status": "PASS"
+    },
+    "cpp_course_ctest": {
+      "run": 8,
+      "status": "PASS"
+    },
+    "integration_c": "PASS",
+    "integration_cpp": "PASS",
+    "integration_typescript": "PASS",
+    "rust": "SKIP: compiler unavailable"
+  },
+  "math": {
+    "total": 498,
+    "passed": 498,
+    "errors": 0
+  },
+  "scope": "完整目录打包，不代表所有知识点已达到专著深度或所有代码块已执行。"
+}

@@ -1,0 +1,49 @@
+# 双来源导入：写回后独立保全复核
+
+- 复核时间：2026-09-09T00:32:04+08:00
+- 结论：**通过；未发现剩余保全阻断。**
+- 范围：初始事务、备份、受保护 live 状态、来源与原文哈希、Canvas 本机规范化及可见文件集合差。
+- 边界：没有写 live 或来源；没有语义审阅协调者正在修改的 12 个教学入口和来源模板说明。
+
+## 初始事务与备份
+
+初始清单共 298 个文件：263 个新增、35 个修改、0 个删除。`write-plan.json` 与备份 `transaction.json` 的 SHA-256 均为 `c40ed08996d92ac53c37b6fa11e5cd344b43abd0c243f42cbd8809de76d23fcc`，解析对象完全相同。
+
+备份目录为 `/Users/ysz/Misc/Obsidian/Valults/WLM/WWL-backups/20260909-001337_dual-import`，权限 `0700`。35 个修改行对应 35 个备份文件，路径集合完全相同；逐文件重算后 35/35 等于清单中的 `before` SHA-256。`apply-journal.json` 记录 298 个已写路径、`pending=null`，顺序与清单一致。
+
+## 受保护状态
+
+- `AGENTS.md` 与 baseline 相同，SHA-256 为 `67f62bf2e064e3e7d88756b98c2053ddfcc1a7bcd0071fff452c064aabbc592b`。
+- `NewAgents.md` 与 baseline 相同，SHA-256 为 `8f5a7dc97c171535b4a5d5b73ed3d03f9229ff9bee5ba826b620e377634ba3cd`。
+- 旧 `CHANGE.md` 备份为 47,316 bytes；当前 live 为 48,071 bytes，旧文件的全部字节是 live 的精确前缀。旧任务状态与 1–27 节未被改写，本批说明只追加在末尾。
+- `Logs/2026-09-08_TBM结构整理/` 的 baseline 与 live 均为 51 个文件，路径和 SHA-256 全部一致。
+- `TaskNotes/` 按包含隐藏文件的口径比较 stage 与 live：均为 8 个文件，哈希差异为 0。
+- `Tags/` 按相同口径在 stage 与 live 均为 0 个文件，没有新增或删除。
+
+## 来源与原文
+
+依据 2606 行来源映射，重新流式计算 2598 个允许读取的来源文件：路径、大小和 SHA-256 差异均为 0。另 8 个保护项严格没有读取正文或计算哈希，只核对存在性、大小和符号链接状态；8/8 存在、大小等于映射、均不是符号链接。
+
+`copy-original` 共 55 行并对应 55 个不同 live 目标。逐目标重算后 55/55 等于来源映射中的 SHA-256，无缺失或内容漂移。
+
+## Canvas 本机自动元数据
+
+本批新增 3 个 Canvas。`周末读书会规划.canvas` 与 `链接网络演示.canvas` 仍和初始写入哈希完全相同。`Obsidian功能地图.canvas` 的 live 文件新增了一个根字段：
+
+```json
+{"metadata":{"version":"1.0-1.0","frontmatter":{}}}
+```
+
+移除该字段后，完整 JSON 与初始文件相等；`nodes` 和 `edges` 的顺序、ID、文件目标、文本、标签、坐标及所有其他字段没有变化。因此这次差异只构成当前本机 Obsidian 的序列化／UI 规范化，不改变图结构或知识内容。这个归因来自精确 JSON diff，不外推为所有 Obsidian 版本的保证。
+
+另观察到 `示例笔记目录.base` 只删除空行；Ruby/Psych 解析后的对象与初始文件相等，也不构成语义变化。
+
+## 额外文件事件
+
+第一次集合差发现 live 比 `baseline + 263 个计划新增` 多 16 个可见文件。其中 15 个位于 `fragments/runtime-doc-patch/`，经协调者定位为导航代理把候选错误写到 live。它们已移回 `/private/tmp/wwl-dual-import-75zcpdpm/fragments/runtime-doc-patch`，临时候选 15/15 存在，live 下该目录和文件残留为 0。
+
+剩余唯一额外文件是 `Clippings/从选择性协调到公共可纠错性.md`。它不在 baseline、stage 或 write plan 中，因此按并发的非本批用户／协作者状态保留；本复核没有读取或修改它。
+
+清理后的可见集合为 2110：预期 baseline 加本批新增共 2109，无任何预期路径缺失；唯一额外项就是上述非本批 Clipping。
+
+机器可读明细见同目录 `postapply-preservation-review.json`。本复核只证明迁移与保全边界；不替代正在进行的教学正文复核、最终静态验证或 Obsidian UI 验收。

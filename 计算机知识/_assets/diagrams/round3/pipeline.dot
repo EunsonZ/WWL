@@ -1,0 +1,12 @@
+digraph G {
+ graph [bgcolor="white",pad="0.25",fontname="Noto Sans CJK SC",fontsize=21,
+ label="五级流水线：load-use 等待一个周期",labelloc=t];
+ node [shape=plain,fontname="Noto Sans CJK SC",fontsize=15];
+ timeline [label=<
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" COLOR="#44566C">
+ <TR><TD BGCOLOR="#E4EBF3">指令 / 周期</TD><TD>1</TD><TD>2</TD><TD>3</TD><TD>4</TD><TD>5</TD><TD>6</TD><TD>7</TD></TR>
+ <TR><TD ALIGN="LEFT">lw x1,0(x3)</TD><TD>IF</TD><TD>ID</TD><TD>EX</TD><TD>MEM</TD><TD>WB</TD><TD>—</TD><TD>—</TD></TR>
+ <TR><TD ALIGN="LEFT">add x2,x1,x4</TD><TD>—</TD><TD>IF</TD><TD>ID</TD><TD BGCOLOR="#FFF0CE">ID 等待</TD><TD>EX</TD><TD>MEM</TD><TD>WB</TD></TR>
+ <TR><TD COLSPAN="8" ALIGN="LEFT">第 4 周期：EX 插入气泡，消费者停留在 ID。<BR ALIGN="LEFT"/>lw 在 MEM 末尾得到数据；旁路供给第 5 周期 add 的 EX。<BR ALIGN="LEFT"/>具体停顿与旁路取决于数据通路，这不是 ISA 固定性质。</TD></TR>
+ </TABLE>>];
+}

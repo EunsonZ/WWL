@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="两个先后约束：日志先于脏页，提交日志先于耐久确认"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  change [label="事务修改缓冲页\n生成日志记录及其 LSN"];
+  wal [label="更新日志达到要求的稳定存储位置",fillcolor="#e6eff8"];
+  page [label="相关脏页才可写回数据文件\n不能让数据页领先其恢复日志"];
+  commit [label="追加提交记录\n与前面的更新日志保持顺序"];
+  durable [label="提交记录也达到要求的稳定位置\n可与更新日志合并刷盘",fillcolor="#e6eff8"];
+  ack [label="返回相应等级的提交确认\n不是所有副本都已应用",fillcolor="#e6eff8"];
+  recovery [label="崩溃后依赖日志和页状态恢复\n检查点不等于删除一切历史日志"];
+  change->wal;change->commit;wal->page[label="WAL 约束"];commit->durable;wal->durable[style=dashed,label="日志前缀条件"];durable->ack[label="耐久提交条件"];page->recovery;durable->recovery;
+
+}

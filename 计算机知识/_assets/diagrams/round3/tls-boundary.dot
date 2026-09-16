@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="TLS 的保护范围由终止点决定",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"client" [label="客户端"];
+"proxy" [label="反向代理\nTLS 在此终止"];
+"app" [label="后端应用"];
+"db" [label="数据库"];
+"client" -> "proxy" [label="TLS 通道 1"];
+"proxy" -> "app" [label="需另行定义安全通道"];
+"app" -> "db" [label="独立认证与授权"];
+
+}

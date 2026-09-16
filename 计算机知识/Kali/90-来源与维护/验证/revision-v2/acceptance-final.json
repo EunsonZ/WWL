@@ -1,0 +1,105 @@
+{
+  "revision": "v2-depth-review",
+  "date": "2026-09-05",
+  "status": "content_and_recorded_checks_passed_with_explicit_unrun_scopes",
+  "source_zip_sha256": "82b941a983d1a48ba8f2542a7e7a8e97e194e939d22c14e7778e30dbbb772d7d",
+  "content": {
+    "markdown": 85,
+    "modified_existing_markdown": 70,
+    "core_existing_courses_substantively_deepened": 51,
+    "new_courses": 4,
+    "new_labs": 4,
+    "new_audit_notes": 1,
+    "comprehensive_labs": 10,
+    "tool_command_component_entries": 239,
+    "source_records": 177,
+    "new_source_reads": 65,
+    "existing_sources_reread": 33,
+    "existing_sources_retained_without_reread": 79,
+    "canvas_nodes": 20,
+    "canvas_edges": 21
+  },
+  "checks": {
+    "python_unittest": {
+      "status": "passed",
+      "total": 89,
+      "v1": 28,
+      "v2": 61,
+      "report": "offline-regression-final.txt"
+    },
+    "checker_regression": {
+      "status": "passed",
+      "total": 16,
+      "report": "checker-regression-final.txt"
+    },
+    "c_behavior": {
+      "same_distinct_case_set": 49,
+      "configurations": [
+        {
+          "report": "c-gcc-normal.json",
+          "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+          "sanitizer": "none",
+          "cases": 49,
+          "status": "passed"
+        },
+        {
+          "report": "c-gcc-ubsan.json",
+          "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+          "sanitizer": "undefined",
+          "cases": 49,
+          "status": "passed"
+        },
+        {
+          "report": "c-clang-asan-ubsan.json",
+          "compiler": "clang version 17.0.0 (https://github.com/swiftlang/llvm-project.git 10999b6d034fe318f3d56c83bddb6572593a8bb0)",
+          "sanitizer": "address-undefined",
+          "cases": 49,
+          "status": "passed"
+        }
+      ],
+      "not_147_distinct_cases": true
+    },
+    "snippet_syntax": {
+      "status": "passed",
+      "bash_n": 128,
+      "python_ast": 4,
+      "not_general_command_execution": true,
+      "report": "snippet-syntax-final.json"
+    },
+    "vault_structure": {
+      "status": "passed",
+      "report": "static-final.json"
+    },
+    "index_fixture_and_selected_example_execution": {
+      "status": "passed",
+      "report": "index-fixture-final.json",
+      "v1_fixture_files": 15,
+      "v2_fixture_files": 9,
+      "reviewed_bash_blocks": 7,
+      "cli_entries": 2
+    }
+  },
+  "archive_checks": "Recorded in external delivery receipt after sealing; no ZIP hash is claimed here.",
+  "environment": "Debian 13 container, Python 3.13.5, preinstalled tools only; environment-final.json",
+  "not_run": [
+    "Obsidian UI/rendering",
+    "Kali tool execution",
+    "external URL availability sweep",
+    "Live database/AD/authentication services",
+    "Wireless/Android hardware",
+    "Nuclei/YARA/Suricata/Zeek engine execution",
+    "AFL++/libFuzzer",
+    "User complete Vault and post-import personal modifications"
+  ],
+  "preservation": {
+    "original_uploaded_files_unchanged": true,
+    "v1_code_and_fixtures_byte_preserved": true,
+    "no_original_topic_file_removed": true
+  },
+  "limits": [
+    "No production assurance or proof of absence of vulnerabilities",
+    "Source lookup is not runtime testing",
+    "No user learning status inferred",
+    "Generated manifest, not this JSON, provides final per-file identity"
+  ]
+}

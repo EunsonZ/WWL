@@ -1,0 +1,252 @@
+{
+  "epsilon-delta": {
+    "file": "assets/figures/epsilon-delta.svg",
+    "construction": "f=x², a=2, ε=0.65, δ=min(1,ε/5)=0.13；使用严格不等式容差。",
+    "remote_dependencies": false
+  },
+  "tangent-error": {
+    "file": "assets/figures/tangent-error.svg",
+    "construction": "x² 在 a=1 的切线 2x−1，垂直距离为 (x−1)²。",
+    "remote_dependencies": false
+  },
+  "mean-value": {
+    "file": "assets/figures/mean-value.svg",
+    "construction": "f=x² 于[0,2]，割线斜率2=f′(1)。",
+    "remote_dependencies": false
+  },
+  "taylor-sine": {
+    "file": "assets/figures/taylor-sine.svg",
+    "construction": "sin x 的三次、五次 Maclaurin 多项式。",
+    "remote_dependencies": false
+  },
+  "riemann-sums": {
+    "file": "assets/figures/riemann-sums.svg",
+    "construction": "[0,1] 上 x² 的8段中点和；这里只展示一个分割，不作为可积性证明。",
+    "remote_dependencies": false
+  },
+  "quadrature-error": {
+    "file": "assets/figures/quadrature-error.svg",
+    "construction": "积分 exp(x) 从0到1；n=2^1 至2^13。低于机器精度的显示下限设为 ε，不能据此推断继续四阶。",
+    "remote_dependencies": false
+  },
+  "improper-tail": {
+    "file": "assets/figures/improper-tail.svg",
+    "construction": "比较1/x与1/x²从1到R的截断积分。",
+    "remote_dependencies": false
+  },
+  "series-partial-sums": {
+    "file": "assets/figures/series-partial-sums.svg",
+    "construction": "部分和 H_N 与1−2^(−N)，N≤100。",
+    "remote_dependencies": false
+  },
+  "helix": {
+    "file": "assets/figures/helix.svg",
+    "construction": "r(t)=(cos t,sin t,t/3)，切箭头起点为t=2.4处，方向r′。",
+    "remote_dependencies": false
+  },
+  "tangent-plane": {
+    "file": "assets/figures/tangent-plane.svg",
+    "construction": "z=x²+y² 于(.7,.7)的切平面 z=1.4x+1.4y−.98。",
+    "remote_dependencies": false
+  },
+  "lagrange": {
+    "file": "assets/figures/lagrange.svg",
+    "construction": "f=x+y 在单位圆上的极值±√2；等值线x+y=c，梯度方向(1,1)。",
+    "remote_dependencies": false
+  },
+  "jacobian-grid": {
+    "file": "assets/figures/jacobian-grid.svg",
+    "construction": "线性变换A=[[1.5,.7],[.2,1.2]]，det=1.66；输出平移仅用于并排展示。",
+    "remote_dependencies": false
+  },
+  "vortex-field": {
+    "file": "assets/figures/vortex-field.svg",
+    "construction": "F=(−y,x)/(x²+y²)，图只归一化箭头方向；原点去除，单位圆环流2π。",
+    "remote_dependencies": false
+  },
+  "surface-normal": {
+    "file": "assets/figures/surface-normal.svg",
+    "construction": "曲面z=1−x−y，r_x=(1,0,−1)，r_y=(0,1,−1)，叉积(1,1,1)朝上。",
+    "remote_dependencies": false
+  },
+  "boundary-cancellation": {
+    "file": "assets/figures/boundary-cancellation.svg",
+    "construction": "四个正向平面方格，共享边出现两次且方向相反；边箭头略向各自单元内平移以便辨认。",
+    "remote_dependencies": false
+  },
+  "limsup-liminf": {
+    "file": "assets/figures/limsup-liminf.svg",
+    "construction": "a_n=(−1)^n+1/n；水平线是上下极限，不是每一项的上下界。",
+    "remote_dependencies": false
+  },
+  "uniform-convergence": {
+    "file": "assets/figures/uniform-convergence.svg",
+    "construction": "[0,1]上的x^n；极限在[0,1)为0，在1为1。",
+    "remote_dependencies": false
+  },
+  "flat-function": {
+    "file": "assets/figures/flat-function.svg",
+    "construction": "f(0)=0，x≠0时exp(−1/x²)，在0处所有阶导数0，但任意邻域不恒零。",
+    "remote_dependencies": false
+  },
+  "fourier-gibbs": {
+    "file": "assets/figures/fourier-gibbs.svg",
+    "construction": "f(x)=x 于(−π,π)的周期延拓，b_n=2(−1)^(n+1)/n；端点级数收敛到0。",
+    "remote_dependencies": false
+  },
+  "moving-spike": {
+    "file": "assets/figures/moving-spike.svg",
+    "construction": "n 1_(0,1/n)，端点取值不影响积分；阶梯仅表达几乎处处值。",
+    "remote_dependencies": false
+  },
+  "fixed-point": {
+    "file": "assets/figures/fixed-point.svg",
+    "construction": "cos把[0,1]映入[0,1]，Lipschitz上界sin(1)<1；从0.1作10次蛛网迭代。",
+    "remote_dependencies": false
+  },
+  "determinant-area": {
+    "file": "assets/figures/determinant-area.svg",
+    "construction": "A=[[2,1],[0,1]]；列向量张成平行四边形面积2。",
+    "remote_dependencies": false
+  },
+  "four-subspaces": {
+    "file": "assets/figures/four-subspaces.svg",
+    "construction": "实m×n秩r矩阵；复空间用共轭转置。框图仅表达关系与维数。",
+    "remote_dependencies": false
+  },
+  "linear-flow": {
+    "file": "assets/figures/linear-flow.svg",
+    "construction": "常微分系统x′=x,y′=−y，原点鞍点。",
+    "remote_dependencies": false
+  },
+  "orthogonal-projection": {
+    "file": "assets/figures/orthogonal-projection.svg",
+    "construction": "v=(1,2)投影到span(2,1)，Pv=(1.6,.8)，残差(−.6,1.2)垂直。",
+    "remote_dependencies": false
+  },
+  "quadratic-levels": {
+    "file": "assets/figures/quadratic-levels.svg",
+    "construction": "Q=3x²+2xy+2y²，实对称矩阵[[3,1],[1,2]]；主轴使用eigh计算。",
+    "remote_dependencies": false
+  },
+  "svd-ellipse": {
+    "file": "assets/figures/svd-ellipse.svg",
+    "construction": "A=[[2,1],[0,1]]，长短轴由左奇异向量×奇异值给出。",
+    "remote_dependencies": false
+  },
+  "conditioning": {
+    "file": "assets/figures/conditioning.svg",
+    "construction": "diag(1,.08) 的二范数条件数12.5。",
+    "remote_dependencies": false
+  },
+  "jordan-chains": {
+    "file": "assets/figures/jordan-chains.svg",
+    "construction": "两条幂零链长度3与2，箭头N的作用方向由高索引指向低索引，末端0。",
+    "remote_dependencies": false
+  },
+  "galois-lattice": {
+    "file": "assets/figures/galois-lattice.svg",
+    "construction": "Q(√2,√3)/Q 的全部中间域；子群仅以阶数标注，三个不同阶2子群对应三个二次子域。",
+    "remote_dependencies": false
+  },
+  "complex-square": {
+    "file": "assets/figures/complex-square.svg",
+    "construction": "将−1.6≤Re z,Im z≤1.6的直角网格经w=z²映射，临界点z0不保角。",
+    "remote_dependencies": false
+  },
+  "log-branch": {
+    "file": "assets/figures/log-branch.svg",
+    "construction": "主支arg∈(−π,π)，定义域排除非正实轴。单位圆在切线两岸保留小缺口。",
+    "remote_dependencies": false
+  },
+  "residue-contour": {
+    "file": "assets/figures/residue-contour.svg",
+    "construction": "f=1/(z⁴+1)，上半平面极点e^(iπ/4),e^(3iπ/4)，有限R2.2围道正向。",
+    "remote_dependencies": false
+  },
+  "argument-principle": {
+    "file": "assets/figures/argument-principle.svg",
+    "construction": "p(z)=z⁵+3z+1，z=e^(it)；Rouché：|z⁵+1|≤2<3，所以绕数1。",
+    "remote_dependencies": false
+  },
+  "mobius-grid": {
+    "file": "assets/figures/mobius-grid.svg",
+    "construction": "w=(z−i)/(z+i)，上半平面水平/竖直网格像；实轴边界对应单位圆但∞处用极限理解。",
+    "remote_dependencies": false
+  },
+  "poisson-kernel": {
+    "file": "assets/figures/poisson-kernel.svg",
+    "construction": "(1−r²)/(2π(1−2r cosθ+r²))，θ∈[−π,π]的积分1。",
+    "remote_dependencies": false
+  },
+  "characteristics": {
+    "file": "assets/figures/characteristics.svg",
+    "construction": "u_t+xu_x=0的特征线x(t)=ξe^t，图中t竖直。",
+    "remote_dependencies": false
+  },
+  "sturm-modes": {
+    "file": "assets/figures/sturm-modes.svg",
+    "construction": "−X″=λX，X0=X1=0，Xn=sin(nπx)。展示未归一化模式。",
+    "remote_dependencies": false
+  },
+  "heat-modes": {
+    "file": "assets/figures/heat-modes.svg",
+    "construction": "κ1，区间(0,π)双端零值；u=e^(−t)sinx+(1/3)e^(−9t)sin3x。",
+    "remote_dependencies": false
+  },
+  "heat-kernel": {
+    "file": "assets/figures/heat-kernel.svg",
+    "construction": "一维κ1热核，x∈[−5,5]；全实线质量1，图外尾部并未截断为零。",
+    "remote_dependencies": false
+  },
+  "wave-cone": {
+    "file": "assets/figures/wave-cone.svg",
+    "construction": "c1，观察点(0,2)，过去锥 |x|≤2−t,0≤t≤2。",
+    "remote_dependencies": false
+  },
+  "annulus-harmonic": {
+    "file": "assets/figures/annulus-harmonic.svg",
+    "construction": ".3<r<1，u=log r/log(.3)，内边界1外边界0；去掉中心奇点。",
+    "remote_dependencies": false
+  },
+  "bessel-modes": {
+    "file": "assets/figures/bessel-modes.svg",
+    "construction": "J0(j0n r)，j0n为J0前三个正零点，单位圆盘径向Dirichlet模式。",
+    "remote_dependencies": false
+  },
+  "green-function": {
+    "file": "assets/figures/green-function.svg",
+    "construction": "−d²/dx²在(0,1)零边界Green函数min(x,ξ)(1−max(x,ξ))，斜率跳−1。",
+    "remote_dependencies": false
+  },
+  "burgers-fan": {
+    "file": "assets/figures/burgers-fan.svg",
+    "construction": "uL0,uR1的熵解，扇内0≤x/t≤1；实线扇区特征线，虚线外侧平行特征线。",
+    "remote_dependencies": false
+  },
+  "heat-stability": {
+    "file": "assets/figures/heat-stability.svg",
+    "construction": "FTCS热方程放大因子1−4μsin²(θ/2)，稳定需0≤μ≤.5。",
+    "remote_dependencies": false
+  },
+  "fem-hats": {
+    "file": "assets/figures/fem-hats.svg",
+    "construction": "区间均分5单元，4个内部节点的分段线性帽函数，端点均零。",
+    "remote_dependencies": false
+  },
+  "course-dependencies": {
+    "file": "assets/figures/course-dependencies.svg",
+    "construction": "课程先修关系示意；可并行学习，箭头不代表全部依赖，高等代数对PDE部分谱理论也是补充。",
+    "remote_dependencies": false
+  },
+  "convergence-map": {
+    "file": "assets/figures/convergence-map.svg",
+    "construction": "假设底空间测度有限，1≤p<∞，比较差函数；无限测度时一致到Lp、几乎处处到依测度的箭头不能照搬；一致到依测度仍成立。",
+    "remote_dependencies": false
+  },
+  "robin-spectrum": {
+    "file": "assets/figures/robin-spectrum.svg",
+    "construction": "L1，X0=0,X′1+hX1=0；负特征值−α²对应h=−αcothα，范围h<−1。",
+    "remote_dependencies": false
+  }
+}

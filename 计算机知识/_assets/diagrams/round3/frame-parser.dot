@@ -1,0 +1,18 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="长度前缀分帧：任何位置都可能暂时缺数据",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"head" [label="等待 4 B 长度头"];
+"check" [label="解析大端长度\n检查上限"];
+"body" [label="等待 n B 正文"];
+"emit" [label="输出一帧\n继续处理剩余字节"];
+"fail" [label="超长 / EOF 截断\n协议错误并关闭"];
+"head" -> "check" [label="头完整"];
+"check" -> "body" [label="长度合法"];
+"check" -> "fail" [label="超过上限"];
+"body" -> "emit" [label="正文完整"];
+"emit" -> "head" [label="还有下一帧"];
+"head" -> "fail" [label="EOF 且残留"];
+"body" -> "fail" [label="EOF 且不完整"];
+
+}

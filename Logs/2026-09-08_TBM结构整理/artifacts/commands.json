@@ -1,0 +1,59 @@
+[
+  {
+    "phase": "backup",
+    "command": "python3 /private/tmp/wwl-structure-q7y1fsjr/tools/backup.py",
+    "result": "2045 scoped original files copied and SHA-256 verified",
+    "note": "Initial request including hidden credentials was rejected by automatic review. Scoped TBM/root documents backup approved; hidden configuration excluded."
+  },
+  {
+    "phase": "stage",
+    "command": "python3 /private/tmp/wwl-structure-q7y1fsjr/tools/prepare_stage.py",
+    "result": "2045 mapping rows, 1789 unique targets, 256 exact merge rows"
+  },
+  {
+    "phase": "links",
+    "command": "links.rewrite_tree(stage, mapping)",
+    "result": "327 files; 1060 references; see link-rewrite.json"
+  },
+  {
+    "phase": "unit tests",
+    "command": "python3 -m unittest discover -s Logs/2026-09-08_TBM结构整理/tools -p 'test_*.py' -v",
+    "result": "20 passed: 17 link parser and 3 mirror parser tests; tested delivered tools in staging"
+  },
+  {
+    "phase": "path adapters",
+    "command": "python3 Logs/2026-09-08_TBM结构整理/tools/test_path_adapters.py",
+    "result": "PASS in staging and live; root detection/output location and three empty-fixture static tool runs only"
+  },
+  {
+    "phase": "apply",
+    "command": "python3 /private/tmp/wwl-structure-q7y1fsjr/tools/apply_stage.py --apply",
+    "result": "applied; 1816 writes; 2042 old source paths retired; TBM removed; journal records this initial writeback, subsequent verification changes separately recorded"
+  },
+  {
+    "phase": "structure",
+    "command": "python3 Logs/2026-09-08_TBM结构整理/tools/validate_structure.py .",
+    "result": "no_new_structure_errors; exact existing missing/mirror baseline retained; final output structure-final.json"
+  },
+  {
+    "phase": "Obsidian cache",
+    "command": "obsidian vault=WWL unresolved format=json",
+    "result": "16 unique original targets to 1 existing missing evidence-log target; full dispositions recorded"
+  },
+  {
+    "phase": "Obsidian UI",
+    "command": "obsidian vault=WWL open path=<recorded sample>; obsidian vault=WWL eval code=<core workspace/metadata/DOM inspection>; obsidian vault=WWL dev:screenshot path=<evidence>",
+    "result": "9 sampled pages/canvas plus focused math formula; final screenshots visually inspected",
+    "note": "Initial screenshots were stale or obscured by an existing plugin onboarding modal and were rejected as evidence. Awaited rendered frames and closed the modal UI; no plugin enable/install/config change. One same-path screenshot request timed out; dev:cdp command unavailable. Neither counted as pass."
+  },
+  {
+    "phase": "rollback tool",
+    "command": "isolated rollback.py preview/apply fixtures",
+    "result": "7 independent fixtures passed; see rollback-review.json"
+  },
+  {
+    "phase": "live recovery preview",
+    "command": "python3 Logs/2026-09-08_TBM结构整理/tools/rollback.py Logs/2026-09-08_TBM结构整理/artifacts/rollback-manifest.json",
+    "result": "preview_passed; 2045 restore_sources; 1838 batch_outputs; actual restore not executed"
+  }
+]

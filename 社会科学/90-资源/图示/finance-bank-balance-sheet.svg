@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490" role="img" aria-labelledby="title desc">
+  <title id="title">银行期限转换资产负债表</title>
+  <desc id="desc">银行资产侧有现金准备金十和长期贷款九十，负债权益侧有可随时提取存款九十和权益十。贷款发放同时增加贷款资产和存款负债，提款则要求现金结算，不直接等于贷款损失。</desc>
+  <defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#4a6480"/></marker><style>.t{font:19px -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;fill:#25394c}.s{font-size:16px}.head{font-weight:600}.box{fill:#f7f9fc;stroke:#4a6480;stroke-width:2}.cash{fill:#eaf7f1;stroke:#16856b;stroke-width:2}.long{fill:#fff6e5;stroke:#b47a25;stroke-width:2}.arr{stroke:#4a6480;stroke-width:2.5;fill:none;marker-end:url(#m)}</style></defs>
+  <rect width="960" height="490" fill="#fff"/>
+  <text x="40" y="42" class="t head">同一张表上的三件事：资本、现金与存款创造</text>
+  <text x="235" y="82" class="t head" text-anchor="middle">资产</text><text x="695" y="82" class="t head" text-anchor="middle">负债与权益</text>
+  <rect x="70" y="100" width="330" height="82" rx="8" class="cash"/><text x="235" y="136" class="t" text-anchor="middle">现金 / 准备金 10</text><text x="235" y="162" class="t s" text-anchor="middle">短期结算能力</text>
+  <rect x="70" y="198" width="330" height="130" rx="8" class="long"/><text x="235" y="244" class="t" text-anchor="middle">长期贷款 90</text><text x="235" y="272" class="t s" text-anchor="middle">有信用与期限风险</text><text x="235" y="300" class="t s" text-anchor="middle">不能保证立即按账面变现</text>
+  <rect x="560" y="100" width="330" height="130" rx="8" class="box"/><text x="725" y="150" class="t" text-anchor="middle">可随时提取存款 90</text><text x="725" y="180" class="t s" text-anchor="middle">银行负债，期限较短</text>
+  <rect x="560" y="246" width="330" height="82" rx="8" class="cash"/><text x="725" y="280" class="t" text-anchor="middle">权益 10</text><text x="725" y="306" class="t s" text-anchor="middle">先吸收资产损失</text>
+  <text x="480" y="382" class="t s" text-anchor="middle">贷款 +20</text><text x="480" y="408" class="t s" text-anchor="middle">同时存款 +20；权益初始不变</text><path d="M398 427 C460 470 505 470 562 427" class="arr"/>
+  <text x="235" y="353" class="t s" text-anchor="middle">资产价值下降 → 侵蚀权益</text><text x="725" y="353" class="t s" text-anchor="middle">提款 → 需要现金或融资</text>
+</svg>

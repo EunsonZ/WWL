@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-09-05T21:45:19.219695+00:00",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "packages": {
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "PyYAML": "6.0.3",
+    "matplotlib": "3.10.8",
+    "pytest": "9.0.2",
+    "Pillow": "12.3.0"
+  },
+  "cuda_available": false,
+  "scope": "CPU unit tests; DDP math is single-process simulation; no GPU or real large-model training"
+}

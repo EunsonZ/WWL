@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "checked_at": "2026-09-08T22:14:08+08:00",
+  "scope": {
+    "mapping": "/private/tmp/wwl-structure-q7y1fsjr/mapping.json",
+    "backup": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL-backups/20260908-220407/baseline-private.json",
+    "backup_scope": "TBM and root documents only; all hidden configuration, TaskNotes and Tags excluded",
+    "live_or_stage_hashes_used": false
+  },
+  "coverage": {
+    "mapping_entries": 2045,
+    "backup_files": 2045,
+    "sources_without_target": [],
+    "sources_with_target_count": 2045,
+    "backup_files_without_mapping": []
+  },
+  "merge_primary_hashes": {
+    "merge_count": 256,
+    "verified_count": 256,
+    "missing_primary": [],
+    "hash_mismatch": []
+  },
+  "target_integrity": {
+    "content_conflicts": [],
+    "unicode_case_collisions": [],
+    "escape_paths": []
+  },
+  "original_roles": {
+    "count": 4,
+    "backup_paths_missing": [],
+    "entries": [
+      {"path": "TBM/哲学与文化/universality_organization_comparative_history_zh.md", "target": "哲学与文化/90-资源/原稿/universality_organization_comparative_history_zh.md", "sha256": "bdd8e12379cf52d326a58c3b96f00ea071da7aaf49269bfbd083b022bd7c40de"},
+      {"path": "TBM/哲学与文化/universality_organization_comparative_history_zh_zhihu (1).md", "target": "哲学与文化/90-资源/原稿/universality_organization_comparative_history_zh_zhihu (1).md", "sha256": "0466447e194310b8cf47c2639bb39ca15003e360c8079ea6b11fddf5deb49b88"},
+      {"path": "TBM/哲学与文化/分析文化政治影响.md", "target": "Clippings/分析文化政治影响.md", "sha256": "0d1450d0038f285df732e3f5c350b3b276170a0ce4fa65c21ee62a9c54bf4e95"},
+      {"path": "TBM/计算机知识/Kali/90-来源与维护/附件/AGENTS-原始上传.txt", "target": "计算机知识/Kali/90-来源与维护/附件/AGENTS-原始上传.txt", "sha256": "2213785559e0e77bd9020ae18d779c04067334c273f2645c4d7c34c577f9b87c"}
+    ]
+  },
+  "action_counts": {"merge": 256, "move": 1786, "retain": 3},
+  "role_counts": {"asset": 463, "code": 196, "content": 950, "data": 132, "governance": 3, "historical": 156, "navigation": 141, "original": 4},
+  "notes": ["Validation covers the frozen mapping and private baseline only.", "Stage is concurrently edited and was intentionally excluded from preservation judgment."]
+}

@@ -1,0 +1,42 @@
+{
+  "revision": "v5",
+  "actual_baseline": "v3 ZIP b518c4300b88877491f9c23cdfedf5934b06297b9cb7ce4e631216c643661b63",
+  "missing_input": "v4 ZIP absent; earlier narrative is not a merge source",
+  "date": "2026-09-06",
+  "root_scope": "Standalone export 计算机知识/Kali only; user complete Vault not available",
+  "CHANGE.md": "absent from provided standalone archive; no claim about user Vault",
+  "goals": [
+    "Clarify difficult mechanisms through explicit inputs, assumptions, intermediate steps and counterexamples",
+    "Reorganize selected existing sections instead of mass renaming",
+    "Tie tools to evidence objects and link canonical explanations",
+    "No new production code, no modifications to existing executable materials"
+  ],
+  "batches": [
+    "measurement and inference",
+    "HTTP parsing, tools and trust",
+    "identity and authorization",
+    "passwords, wireless and cloud",
+    "forensics and detection",
+    "navigation, source ledger and export audit"
+  ],
+  "preserve": [
+    "all existing executable files",
+    "fixtures",
+    "historical verification logs",
+    "uploaded contract snapshot",
+    "original ZIPs"
+  ],
+  "validation": [
+    "baseline diff and code-fence identity",
+    "wikilink paths, heading targets, block IDs, frontmatter and Canvas",
+    "hand-calculable new examples",
+    "source-to-claim mapping",
+    "safe archive and SHA-256 roundtrip"
+  ],
+  "not_run": [
+    "Kali binaries",
+    "existing runtime test suites",
+    "Obsidian UI",
+    "real services or hardware"
+  ]
+}

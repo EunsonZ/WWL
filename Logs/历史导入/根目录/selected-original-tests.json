@@ -1,0 +1,47 @@
+{
+  "scope": "Three reviewed CPU-only suites; no server, model training, or checkpoint deserialization",
+  "runs": [
+    {
+      "directory": "AI/80-实践/05-RAG评测与私有服务",
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_rag_service.py"
+      ],
+      "exit_code": 0,
+      "test_count": 12,
+      "output": "test_acl_filters_before_ranking (test_rag_service.OfflineRAGTests.test_acl_filters_before_ranking) ... ok\ntest_answer_has_evidence_schema_and_safe_trace (test_rag_service.OfflineRAGTests.test_answer_has_evidence_schema_and_safe_trace) ... ok\ntest_chunking_preserves_raw_text_boundaries_and_overlap (test_rag_service.OfflineRAGTests.test_chunking_preserves_raw_text_boundaries_and_overlap) ... ok\ntest_chunking_retains_identity_and_reconstructible_metadata (test_rag_service.OfflineRAGTests.test_chunking_retains_identity_and_reconstructible_metadata) ... ok\ntest_delete_document_removes_derived_chunks (test_rag_service.OfflineRAGTests.test_delete_document_removes_derived_chunks) ... ok\ntest_http_payload_cannot_self_assert_a_privileged_principal (test_rag_service.OfflineRAGTests.test_http_payload_cannot_self_assert_a_privileged_principal) ... ok\ntest_http_server_rejects_non_loopback_before_binding (test_rag_service.OfflineRAGTests.test_http_server_rejects_non_loopback_before_binding) ... ok\ntest_prompt_injection_is_document_data_not_an_authority_change (test_rag_service.OfflineRAGTests.test_prompt_injection_is_document_data_not_an_authority_change) ... ok\ntest_request_read_timeout_is_configured_without_binding_a_socket (test_rag_service.OfflineRAGTests.test_request_read_timeout_is_configured_without_binding_a_socket) ... ok\ntest_retrieval_and_generation_are_evaluated_separately (test_rag_service.OfflineRAGTests.test_retrieval_and_generation_are_evaluated_separately) ... ok\ntest_schema_rejects_citation_outside_retrieved_set (test_rag_service.OfflineRAGTests.test_schema_rejects_citation_outside_retrieved_set) ... ok\ntest_structurally_valid_citation_can_fail_fact_coverage (test_rag_service.OfflineRAGTests.test_structurally_valid_citation_can_fail_fact_coverage) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "directory": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测",
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_retrieval_lab.py"
+      ],
+      "exit_code": 0,
+      "test_count": 10,
+      "output": "test_bloom_duplicate_insertions_do_not_raise_theoretical_fpr (test_retrieval_lab.ProbabilisticStructureTests.test_bloom_duplicate_insertions_do_not_raise_theoretical_fpr) ... ok\ntest_bloom_has_no_false_negative_for_inserted_items (test_retrieval_lab.ProbabilisticStructureTests.test_bloom_has_no_false_negative_for_inserted_items) ... ok\ntest_count_min_never_underestimates_non_negative_stream (test_retrieval_lab.ProbabilisticStructureTests.test_count_min_never_underestimates_non_negative_stream) ... ok\ntest_probability_structures_reject_broken_budgets (test_retrieval_lab.ProbabilisticStructureTests.test_probability_structures_reject_broken_budgets) ... ok\ntest_reservoir_is_bounded_and_reproducible (test_retrieval_lab.ProbabilisticStructureTests.test_reservoir_is_bounded_and_reproducible) ... ok\ntest_exact_cosine_is_oracle_and_honors_visibility (test_retrieval_lab.RetrievalTests.test_exact_cosine_is_oracle_and_honors_visibility) ... ok\ntest_inverted_postings_and_filter_before_top_k (test_retrieval_lab.RetrievalTests.test_inverted_postings_and_filter_before_top_k) ... ok\ntest_report_labels_latency_and_memory_as_measurements (test_retrieval_lab.RetrievalTests.test_report_labels_latency_and_memory_as_measurements) ... ok\ntest_toy_lsh_is_reproducible_but_evaluated_by_recall (test_retrieval_lab.RetrievalTests.test_toy_lsh_is_reproducible_but_evaluated_by_recall) ... ok\ntest_vector_and_k_preconditions (test_retrieval_lab.RetrievalTests.test_vector_and_k_preconditions) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "directory": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路",
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_graph_algorithms.py"
+      ],
+      "exit_code": 0,
+      "test_count": 3,
+      "output": "test_bfs_and_dijkstra_choose_different_questions (test_graph_algorithms.GraphAlgorithmsTests.test_bfs_and_dijkstra_choose_different_questions) ... ok\ntest_rejects_missing_start_and_negative_weight (test_graph_algorithms.GraphAlgorithmsTests.test_rejects_missing_start_and_negative_weight) ... ok\ntest_single_vertex_boundary (test_graph_algorithms.GraphAlgorithmsTests.test_single_vertex_boundary) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    }
+  ]
+}

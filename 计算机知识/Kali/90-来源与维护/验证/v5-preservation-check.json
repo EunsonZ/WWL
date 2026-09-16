@@ -1,0 +1,521 @@
+{
+  "status": "passed",
+  "protected_file_count": 126,
+  "protected_files": [
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/generate_fixtures.py",
+      "sha256": "deb8926355f29dad29df1301926937336527e90b95af713f4e7bfcdc04542c51"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/generate_reasoning_fixtures.py",
+      "sha256": "6715e04d89e7ce10fcf28b3fd8402b5d316622fb608d8f566d05109283e4fa9c"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/hello.c",
+      "sha256": "037c40b63558eceab94d40dc1cf5c1ce6b74c3b33e4d1f8ac6982d15d9f7d9dd"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/length_record.c",
+      "sha256": "d5cc8164723c1e045b8f4a124ff3f0326a8d66652ef1008ead712c44a0356e5a"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/offline_lab.py",
+      "sha256": "78e395db539258de1f496fdcfea94f6c81349f0a42555b84c6d6263e1a4b5660"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/public-health.yaml",
+      "sha256": "ff0e911b5cbe1fa90fcbbe44d15a5ffdeb544ece766832e5e5dc181bb9cd88cc"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/reasoning_lab.py",
+      "sha256": "d4f38485e755e669f5f9e28d78f96abbf1a3fcfe1ed311ab5cac764642bad600"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_cli_workflows.py",
+      "sha256": "5b57097de04ecf2e097146cc82e0ad87b42d20f84fafc75f147e5201cfff1bc9"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_offline_lab.py",
+      "sha256": "2f984b68a18873fd1b34739159abc35491f85b2f39e9cb8f768649ab984cb06a"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_reasoning_lab.py",
+      "sha256": "3d804913a716cbeab2f90abf4ed93c15ca99d76d502f5a329492e04e8e940656"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_tls_verify_lab.py",
+      "sha256": "75a3d314e8547931ff0fa4a94ae22f862bc7612691fa25f70183760efca691e9"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/test_transaction_lab.py",
+      "sha256": "bbd50bd2a95da8b74299ae24573c71dbed2c989c8686d2e6238654a059137d06"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/tls_verify_lab.py",
+      "sha256": "7d9bc201f8899300395887db471608760b976a36d025516a2551f86334979004"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/toy_markers.yar",
+      "sha256": "6185adfc6136b94fc7ee6d7c73e257159436a70f66f8ba6c59a1831d298b18f7"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/transaction_lab.py",
+      "sha256": "f71c8286785ee9a2b580293c7c7024e5eec7ad29a3dd34da16dd0d12b6b6f1e1"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/validate_status.jq",
+      "sha256": "5775a49ecd7b8c84af23e8c0d479402ae895baf87fab05a40b39f9d8438af8f9"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/代码/verify_c_examples.py",
+      "sha256": "b898fc37c974151e7ca2cf0d49e81a4a7108ee6f4ac9b774af9949eb7e90e002"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/access.jsonl",
+      "sha256": "ee947ca4c5a4c56c58b72fb8785d07fe588f39ccc8705ba8d23bac84d6d54ef7"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/candidate-words.txt",
+      "sha256": "e1512688d00b6e7b360324cab053bcc292bb4f600e13d5fc8e1e1d75516c19b9"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/expected.json",
+      "sha256": "3c277ac7a58ad6d41b0c9108995f79d4288cf9d4561d2063e43e594d4b8abdeb"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/files/negative.txt",
+      "sha256": "172b273484a999bbe440f36f0d6448d2f43fdfff0fc48163123abfd134827c32"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/files/positive.txt",
+      "sha256": "5e9797c0b1f21e2dabf962edf24f12417ade0b4f31b8ddac3f7de7d445ae6df0"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/hashes-sha256.txt",
+      "sha256": "55c582ee64f20246fa077027e0d7bb8f031f9a8d71d1be129eee7998424784bc"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/http-lab.pcap",
+      "sha256": "a7948316b3faede347436efb5553eb03a7e5d5ca0126d6fbb4fe9b90675491c6"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/iac/pod.yaml",
+      "sha256": "19f87bb653e64bf5307052152b65568648e71d5df8d6443b7a5b919d9d5efb0a"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/nmap-after.xml",
+      "sha256": "34a4c8b706ecfa2358b68d77abfd5c5aef65bd1474d29c48eb507d374ec53f50"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/nmap-before.xml",
+      "sha256": "b32ca6177807c8a0409195be1b9ba027d984ad3c86f600fe2dfd514bb32398cf"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/paths.txt",
+      "sha256": "20b5a845fc74cf4da3aadc1cdb152f1d522d88eb22a2e7056559c167c6f7c1bd"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/authorization-cases.json",
+      "sha256": "7b566bfb4b9cecee7b22a45d9d954d9203149b51d98a3518f12f46bb3242e171"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/expected-v2.json",
+      "sha256": "5891b58d1019d2e62cc3eb576d49e30525d21f69d2955834e1e89787f5ec67b2"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/metrics.json",
+      "sha256": "dfb2c82775effa4aaddfa79980d33746d6e366af189d6505106ed115823ce08c"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/records.json",
+      "sha256": "4581a94feb8b67fccbe1aa2295ded9b0b8ad21d77182c18b7cd18281429fd4f0"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/route-cases.json",
+      "sha256": "cad440b0f44a45b39c12e2c1cf61a280af8135d62e21bbcd8054e1b884ae4938"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/scan-after.xml",
+      "sha256": "f6c65346806c3ddc852c72ce93e36b0c054193b8c7369e146a405f21677240e5"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/scan-aggregate.xml",
+      "sha256": "cf32f418716e54a28e9e9bfbabbae9c735bd4bec93f16da7ea3c3180e4f5d78a"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/scan-before.xml",
+      "sha256": "92d75a90d735e8fd4533106d69c4ea139702e1c5dcde8997d246293033a26cdb"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/v2/timeline.json",
+      "sha256": "b5a634d00639b398d4e5eb54dd80d745505910f3a6906bc0036a9c725f1dc4a8"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/web/api/status.json",
+      "sha256": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/web/health",
+      "sha256": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/web/index.html",
+      "sha256": "8eddeb401292fa70acab401b63459d178ee5946c86c5d0871289de4fb277dc72"
+    },
+    {
+      "file": "计算机知识/Kali/07-综合实验/夹具/web/robots.txt",
+      "sha256": "c2fd4f79a8c5c07559b28fae5f8099b449d8de490ce51fc8e2cfeb26794a37d2"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/03-验收与构建记录.md",
+      "sha256": "6b9e351819eff18f7d6b75e8892b8ec380f550a0172554bd2dd1765f41f543a0"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/04-v2深度审阅与变更记录.md",
+      "sha256": "0dea27d5fa9b3f95ca08d635b45eb8718733fc9aaf4c418494da76ff2974408c"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/05-v3深度审阅与变更记录.md",
+      "sha256": "44f5a2fdf83c747a1ef42368bc64a15d17b0047e0abbffe6fcb7d113a1b8578d"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/工具/check_vault.py",
+      "sha256": "4621ebd0d94212711ce679abc316fe5f9c901fc8ed4d7b234b1ca0580cc91839"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/附件/AGENTS-原始上传.txt",
+      "sha256": "2213785559e0e77bd9020ae18d779c04067334c273f2645c4d7c34c577f9b87c"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/baseline.json",
+      "sha256": "3ea69efb9f08381993e52af18e68c0abee0a80debfa439ebdb8e5f811eb849a7"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/batch-checks.jsonl",
+      "sha256": "5900d78f370314a63cbbded98c9d828ff3cfda029e301d922e90e16d4ab57196"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/c-tests.json",
+      "sha256": "7a4d5322f5760a7514285161d6d1e8e39faf21f45b2cda89181ebce5a5f59bfe"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/environment.json",
+      "sha256": "5aa11864c6a8c7dbc4f479a942175d5c01fd71c53fe15c1c9066083aa6359762"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/offline-demo.json",
+      "sha256": "1854426a3e3a7bfc586f06cb665614ae7217a7c01af98d3ae50d39d02cbf0f1e"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/offline-tests.txt",
+      "sha256": "8eb24803cb8919d595f33cc0aed322188f1e536bc82842cddb5ebc3130f04569"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/pcap-file-identification.json",
+      "sha256": "5d7c8dc1fabf92e4dd286f2bf87677300981800424df9b47d65ecdff639a7e69"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/B1-static.json",
+      "sha256": "de8f9b6ba6d243bcd3c17f6f591c1f45fee3619e4ddbe043881e0c9747be0116"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/B3-static.json",
+      "sha256": "4a19a52f344e37e0bed3e5f6ee28f32b95a3374d9da967a77402f803aa7a4a28"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/B7-static.json",
+      "sha256": "ba069c59d28d170a23a9790bbe75fe3f3f60bc6981f4e95c144efb9fdbcf5139"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/acceptance-final.json",
+      "sha256": "0f0710f4f455c11964a210c83e1b3449865eb00a18fb0149e16237693585da22"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/baseline.json",
+      "sha256": "72256fe3e18c6891a189bacde171bf9e78a24ea133680764d504efdf01bd7a86"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/batch-changes.jsonl",
+      "sha256": "f5c06ec059c1455f25b8e02a2d010ae531763b80c85b2b55b1c8156e2ad6feb8"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/build-issues.json",
+      "sha256": "82555838b9512fb808740de7eaebb6ab2adc06f6bebf4f51f6453eb624f93562"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/c-clang-asan-ubsan.json",
+      "sha256": "576188a84b5d5e087ae6aacd815d214c5a8ed8a1d4183c35d7e2eb89bacdcf77"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/c-gcc-normal.json",
+      "sha256": "d14914e7c0b1af94fc73e53289ea63a140e187e2925af4c7a2ed8b0355b139b5"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/c-gcc-ubsan.json",
+      "sha256": "09515eb7693660baa4cb527c3f5fe825822fdea3aba6d4035ef95c53873122de"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/changed-files.json",
+      "sha256": "0c5b529c7f4183589ff604222bd1a7929ef4f6d1b257faad34993767512c0933"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/checker-regression-final.txt",
+      "sha256": "524c603b3ed6c096518a14a423286c2ea082effadf3de125b35bae43bfe4526a"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/content-stats.json",
+      "sha256": "21c2167c55976e4467311ef65a527811178f80fc42ad95914593bf6e99c736aa"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/environment-final.json",
+      "sha256": "35562446653a1c3de872a8a01772a44a55420144263e10cd570670eecefbaa74"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/index-fixture-final.json",
+      "sha256": "9ffc267419c84175f8fb651f67dca013c3867d986a9ed23dbbc1137c6126d95e"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/offline-regression-final.txt",
+      "sha256": "80ad1aa6a96477f00c80b55b11843e0b023c06235a3f28d436c0d3d027fb2af7"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/reasoning-after-fix.txt",
+      "sha256": "f676f353a3280380a26e8158c8bb648d892b05535476fd07dd5513ccd1f77a90"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/reasoning-before-fix.txt",
+      "sha256": "bf600e6183dcb1d600d2ede5885c6a4befca50fa24f406b08ed5dcb53edaef37"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/reasoning-fixtures-tests.txt",
+      "sha256": "51ada15c5a78425e20728c7ddc41e20f05dbf04603f7abf9e80115c41bbceba1"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/snippet-syntax-final.json",
+      "sha256": "c0a08729238a0e587a398dcdec307de3ce183b861a2175b6b1384f13b2670742"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v2/static-final.json",
+      "sha256": "47f507b13d7f0e1fd54d07b12a5b79afcef83708236eff929afed92d1e4ec546"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/baseline-preservation-final.json",
+      "sha256": "f9624becce5dbe480ddfe519f9f2a8c94bbcb6c7542d1f8b94198ce0bdae3d22"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/baseline-static.json",
+      "sha256": "bdcafa2a5a447a9c66a10a424db3c2d4c191e8b250d0ae402da480530508808d"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/baseline.json",
+      "sha256": "53b61b76902368135a853c495a1f5dfa14042c6e1ca706bbc02ebc9b89080287"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/batch-changes.jsonl",
+      "sha256": "1bb5edcb657a0f16360f49b31657c0d42a96fd2ad93fecaf8e894c4c703e38ff"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/build-issues.json",
+      "sha256": "0f7b16d1a3ad727317b6f5ead5cad4fae7101743d9a9530bc091846811a57309"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-clang-asan-ubsan-driver.txt",
+      "sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-clang-asan-ubsan-final.json",
+      "sha256": "576188a84b5d5e087ae6aacd815d214c5a8ed8a1d4183c35d7e2eb89bacdcf77"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-normal-driver.txt",
+      "sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-normal-final.json",
+      "sha256": "d14914e7c0b1af94fc73e53289ea63a140e187e2925af4c7a2ed8b0355b139b5"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-ubsan-driver.txt",
+      "sha256": "aaebde3e85f62345e22c18bd5767641749205591935260ec4877a2c9de03cfeb"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-ubsan-final.json",
+      "sha256": "09515eb7693660baa4cb527c3f5fe825822fdea3aba6d4035ef95c53873122de"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/checker-tests-final.txt",
+      "sha256": "400ac83a710f0ba2fc8648b52dc063f0e2131680b9357a3e0a133041e882ed65"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/cli-workflow-tests.txt",
+      "sha256": "0d8771b3860c254ab1e956327955c2e407354c0ee37f54508284ddf4b8f52bb3"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/content-changes-v2-to-v3.json",
+      "sha256": "de8f422864282718771275e25a9e30d08de81f563329df6bde3060b07966994a"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/document-reproduction-final.json",
+      "sha256": "1ea09b94b153b86de75daf92013a2cbdce038e448f30d3cdbf2c014197d8a11f"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/environment-before-strict-sql.json",
+      "sha256": "c0604833c26f7df5a55027fcdd014328a32b7054166361467740dd5a4ec3b94e"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/environment-final.json",
+      "sha256": "75da8ce7688e9f1c4d7f3ab351df4fa328cb4dcb54ab56d99ad9eb08644ddc8f"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/export-audit-final.json",
+      "sha256": "180e2c56581ef975718f61398ec8d3cb78e4c26a564c8d5619e50fe6f2ea8089"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/fixture-reproduction-final.json",
+      "sha256": "dd9e47142af72cf9b9309566b765e6689765658567c255f6fd5c24d6d1e75060"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/integration-static.json",
+      "sha256": "89a0295a6693e41712608579708366c59d26900b3b92d35b7f0b298b794a49ab"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/intermediate-static.json",
+      "sha256": "5f4f3bb5281151b08e06ae2e699746be93281c82ab8579365facd9583ebf0eb3"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/jq-before-fix.json",
+      "sha256": "59ed79778f419df896c0f8fbc816ea623b7d13c59f5c700126c62fc66d01e248"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/python-tests-before-strict-sql.txt",
+      "sha256": "6a7166d79c597b466d99b8b94a03b8375d593f8ea12ec4f73ee541b0fe92131a"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/python-tests-final.txt",
+      "sha256": "86cbb5d20b1a3770124d41963a96eeaaed985f0e0c4db2f807a53a11696b84cc"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/runtime-before-strict-sql.json",
+      "sha256": "dd052a07ac0652e1d8019594f54f14e09ad12386d5b93873b4119eb297f408e2"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/runtime-summary.json",
+      "sha256": "7aa921edf8dae7e039f082c2ea39491269ae011b099398f83bd40a1d433b9a24"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/source-review-summary.json",
+      "sha256": "68bd3542a9880451cf48436c1a5b73b677e73d4c82060a2696120815097a867f"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/sources-v2-snapshot.json",
+      "sha256": "086f1d064b3a201ab33f8edcebaa268bc24c438722eaf5f1fd36b63792bd7721"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/static-final.json",
+      "sha256": "8fa7037e8ff569bad138cc60cbb154f68e3b7cc8331b73e0b1546e1ac480ee39"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/syntax-and-citations-final.json",
+      "sha256": "19c2de1dbf5883c6abc6085f9470c7df3305e06b82a7d7286a96660e73b12c67"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-oracle-before-fix.json",
+      "sha256": "947602e56ae50165039a2ee569149f0940d1f535b5efc5ce6fe7eee5154d4aa0"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-oracle-tests.txt",
+      "sha256": "ebc225745c0714139ee3a5f3aa9281b2b271a997fe3c9d610470d97591211a6f"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-v3-initial-source.txt",
+      "sha256": "468bfda9e5200e03b2f58c137403d933f017f4b97b2766bc9d326f218b13c467"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-verification-final.json",
+      "sha256": "a2392cae1b45e9ed6f292f4a4c7d6ff9b014cc85880155e983aa9cd72893e8ae"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-verification-initial.json",
+      "sha256": "392fb26debc6e3bf550b2155704f088662fc7caeb505a296a258173fd5ef7c67"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tls-verification-isolated-final.json",
+      "sha256": "2a5b844fd2ea8fe6a2c9d10618e6b3e1e4d0432df46899a9968bae1762594897"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tool-coverage-v2-snapshot.json",
+      "sha256": "85a898a29ac1638170f6e3166544d9d714b5e342958eda8f5d70b33e792daf2f"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/tool-note-map-v2-snapshot.json",
+      "sha256": "9ea41311432f68c83cb67cdebb965b74bef2427ba836cfd8fadd4c03ded0c101"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-demo-before-strict-sql.txt",
+      "sha256": "a081b083979a2f8689f7a077078ebd8cd946390927ba212d1e45ec64d91f2f89"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-demo-final.json",
+      "sha256": "52e40abc06c3a25a76e329c00e88c8965cfa97d0e97112976314d6c109a72bc8"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-error-after-fix.txt",
+      "sha256": "594149199743c01ba7a543e3ee310530c20b2fa21ffd85dd1d5f757b6875abdd"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-error-before-fix.txt",
+      "sha256": "623dc97c2c6f54a3407584024f07c4b49e5f70cd54fd152d6111bbaa4ba8c149"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-tests-initial.txt",
+      "sha256": "55fdc81cc51ce5af0bcefd610eee3f5a5aa7c9fe4d7520d7f76afdee30729315"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/revision-v3/transaction-v3-initial-source.txt",
+      "sha256": "77b483af64f347e8ed6018ce232b4dfb17cb10618f3ddb8bbdb95b27e8b8face"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/snippet-syntax.json",
+      "sha256": "1da00975316a9523eb2776a377894b2e6d18d8c6e1ad3d92fb54bfd57f022cb7"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/sources-v1-snapshot.json",
+      "sha256": "c6c1b63515f17e439a397f7fde589cda24c57674abf29a52e2d338bdaaafe5cd"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/static-check.json",
+      "sha256": "7a96faf9c027bb09da7e6108997fc20bf1fa3b98dc323898aad5a0d773d4927f"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/static-first.json",
+      "sha256": "6aa54152cbdc52215ec37c0885708c4d54e23f39119f7c6e17a77b2b9b8a0e7e"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/tool-coverage-v1-snapshot.json",
+      "sha256": "9ad3ff627d70776451e09f4c91c0add3a47faeb308f2f3b850449ce5d936a5f8"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/tool-coverage.json",
+      "sha256": "93051a80396c3f49bf0988ad66f7a643c07f32d3f9175b43bb960fc62831ca6e"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/tool-note-map.json",
+      "sha256": "7691ba0f2c0a2b25aee05074f114bf138767ad284614e741284b29c585298bd4"
+    },
+    {
+      "file": "计算机知识/Kali/90-来源与维护/验证/validator-tests.txt",
+      "sha256": "5208307adbb25a59657ea0a79adb1c12902c67069dc895f42a364d3bd416b7ec"
+    }
+  ],
+  "original_markdown_files": 88,
+  "original_fenced_blocks": 162,
+  "comparison": "Exact per-note multiset of complete fenced blocks; section order may change. All original protected file bytes equal.",
+  "original_python_source_files": 13,
+  "new_executable_source_files": [],
+  "deleted_original_files": [],
+  "canvas_original_nodes_edges_preserved": true,
+  "canvas_node_rectangle_overlaps": [],
+  "historical_source_entries_preserved": 196,
+  "issues": [],
+  "ui": "not_run"
+}

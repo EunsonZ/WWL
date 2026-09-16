@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="单实例资源等待环：每人持有一个并等待另一个",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"p1" [label="进程 P1"];
+"r1" [label="资源 R1"];
+"p2" [label="进程 P2"];
+"r2" [label="资源 R2"];
+"r1" -> "p1" [label="已分配"];
+"p1" -> "r2" [label="请求"];
+"r2" -> "p2" [label="已分配"];
+"p2" -> "r1" [label="请求"];
+
+}

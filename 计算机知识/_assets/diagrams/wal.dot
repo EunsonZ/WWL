@@ -1,0 +1,11 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=TB;
+a [label="修改缓冲中的状态"];b [label="生成相应日志"];c [label="提交所需日志达到持久化边界"];
+d [label="可以确认提交（依具体配置）"];e [label="数据页可稍后写回"];f [label="确认后、数据页写回前崩溃"];
+g [label="恢复读取日志\n重建已承诺状态"];
+a->b->c->d; c->e;d->f->g;e->g [style=dashed,label="已落盘页与日志共同恢复"];
+
+}

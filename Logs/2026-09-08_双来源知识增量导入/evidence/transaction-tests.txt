@@ -1,0 +1,37 @@
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.019s
+
+OK
+{"add": 1, "modify": 2, "delete": 0, "bytes": 9}
+{"backup": "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/wwl-transaction-review-sq4_peig/backup", "verified": 2}
+{"written": 3, "all_verified": true}
+{
+  "mode": "preview",
+  "restore": 2,
+  "remove_added": 1,
+  "not_written_or_already_restored": [],
+  "conflicts": []
+}
+{
+  "mode": "apply",
+  "restore": 2,
+  "remove_added": 1,
+  "not_written_or_already_restored": [],
+  "conflicts": []
+}
+{"add": 1, "modify": 2, "delete": 0, "bytes": 9}
+{"backup": "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/wwl-transaction-review-w0te9r7v/backup", "verified": 2}
+{"add": 1, "modify": 2, "delete": 0, "bytes": 9}
+{"backup": "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/wwl-transaction-review-an8_o2ma/backup", "verified": 2}
+{"add": 1, "modify": 2, "delete": 0, "bytes": 9}
+{"backup": "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/wwl-transaction-review-70awmtjy/backup", "verified": 2}
+{
+  "mode": "apply",
+  "restore": 1,
+  "remove_added": 1,
+  "not_written_or_already_restored": [
+    "b.md"
+  ],
+  "conflicts": []
+}

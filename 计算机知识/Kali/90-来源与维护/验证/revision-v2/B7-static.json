@@ -1,0 +1,49 @@
+{
+  "checker_version": "1.0",
+  "scope": "计算机知识/Kali",
+  "status": "failed",
+  "counts": {
+    "markdown": 84,
+    "wikilinks_including_prerequisites": 1223,
+    "headings": 735,
+    "block_ids": 3,
+    "reachable_notes": 84,
+    "unique_frontmatter_source_urls": 174,
+    "canvas": 1,
+    "canvas_nodes": 12,
+    "canvas_edges": 13,
+    "python_sources": 8,
+    "files_at_check": 147
+  },
+  "issues": [
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md",
+      "detail": "missing explicit target: 计算机知识/Kali/90-来源与维护/04-v2深度审阅与变更记录.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/07-综合实验/09-实验代码合同与复现.md",
+      "detail": "missing explicit target: 计算机知识/Kali/90-来源与维护/04-v2深度审阅与变更记录.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/07-综合实验/12-实验I多租户字段与动作授权.md",
+      "detail": "missing explicit target: 计算机知识/Kali/90-来源与维护/04-v2深度审阅与变更记录.md"
+    }
+  ],
+  "not_run": [
+    "Obsidian UI/rendering",
+    "Kali tool execution",
+    "external URL availability sweep"
+  ],
+  "limitations": [
+    "Limited Markdown dialect; not a full Obsidian parser",
+    "Specific secret patterns only, not a comprehensive secret detector",
+    "Reads this topic only, not the rest of an existing Vault",
+    "Trusted local filesystem assumed; not a race-resistant hostile-input sandbox"
+  ]
+}

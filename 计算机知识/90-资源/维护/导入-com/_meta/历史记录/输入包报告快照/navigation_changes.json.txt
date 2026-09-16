@@ -1,0 +1,942 @@
+[
+  {
+    "path": "计算机知识/10-编程语言/01-Python/00-Python基础-MOC.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/01-安装配置与运行模型.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/02-基础语法与数据类型.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/03-控制流函数与作用域.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/04-容器迭代器生成器与推导式.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/05-异常文件IO与上下文管理.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/06-面向对象数据类与类型标注.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/07-模块包导入与项目结构.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/08-pip与PyPI依赖管理.md",
+    "course": "PY",
+    "deepening": "PY02"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/09-venv与虚拟环境原理.md",
+    "course": "PY",
+    "deepening": "PY02"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/10-Conda-Anaconda与Miniconda.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/11-uv项目依赖与工具管理.md",
+    "course": "PY",
+    "deepening": "PY02"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/12-包管理器选择锁定与迁移.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/13-常用Package生态与用法.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/14-测试调试与代码质量.md",
+    "course": "PY",
+    "deepening": "PY02"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/00-C++-MOC.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md",
+    "course": "CPP",
+    "deepening": "CPP02"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/02-语法类型与函数.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/03-指针引用const与生命周期.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/04-栈堆RAII与智能指针.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/05-struct类模板与STL.md",
+    "course": "CPP",
+    "deepening": "CPP02"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/06-move语义与零拷贝.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/07-错误测试调试与Sanitizer.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/08-线程锁与原子.md",
+    "course": "CPP",
+    "deepening": "CPP03"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/09-内存布局ABI缓存与SIMD.md",
+    "course": "CPP",
+    "deepening": "CPP03"
+  },
+  {
+    "path": "计算机知识/10-编程语言/02-C++/10-阅读大型C++仓库与llama-cpp调用链.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/20-操作系统/00-操作系统-MOC.md",
+    "course": "OS",
+    "deepening": "OS01"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/00-Linux基础-MOC.md",
+    "course": "LIN",
+    "deepening": "LIN01"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/01-计算机系统与Linux分层.md",
+    "course": "LIN",
+    "deepening": "LIN01"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/02-启动链Kernel与systemd.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/03-目录结构挂载与文件系统.md",
+    "course": "LIN",
+    "deepening": "LIN01"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/04-Shell命令行与帮助系统.md",
+    "course": "LIN",
+    "deepening": "LIN01"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/05-文件目录与文本处理命令.md",
+    "course": "LIN",
+    "deepening": "LIN01"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/06-用户权限进程与作业控制.md",
+    "course": "LIN",
+    "deepening": "LIN01"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/07-环境变量Shell启动与PATH.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/08-pacman-apt-dnf与yum包管理.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/09-设备驱动内核模块与udev.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/10-网络存储日志与故障排查.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/11-ArchLinux安装前规划.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/12-ArchLinux安装实战.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/13-ArchLinux安装后配置维护与安全.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/20-操作系统/01-Linux/14-Linux开发容器与AI工作负载边界.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/00-计算机系统-MOC.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/01-数据表示字节序与对齐.md",
+    "course": "ORG",
+    "deepening": "ORG01"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/02-进程虚拟地址空间与内存映射.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/03-ABI调用约定与静态动态链接.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/05-并发并行SIMD与加速器.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/06-指令系统汇编与程序执行.md",
+    "course": "ORG",
+    "deepening": "ORG01"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/07-CPU数据通路流水线分支预测与乱序执行.md",
+    "course": "ORG",
+    "deepening": "ORG01"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/08-异常中断系统调用与特权级.md",
+    "course": "ORG",
+    "deepening": "ORG01"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/09-进程线程调度同步与IPC.md",
+    "course": "OS",
+    "deepening": "OS02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/10-IO设备总线DMA与中断.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/11-存储设备块层页缓存与持久化.md",
+    "course": "OS",
+    "deepening": "OS03"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/12-VFS文件描述符Inode目录与路径解析.md",
+    "course": "OS",
+    "deepening": "OS03"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/13-文件系统布局日志CoW与一致性.md",
+    "course": "OS",
+    "deepening": "OS03"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/14-网络栈Socket与端到端数据路径.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/15-性能分析可观测性与系统设计.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/16-地址翻译TLB页表遍历与大页.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/17-通用内存分配器Arena碎片与驻留.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/18-CPU拓扑缓存一致性NUMA与设备亲和性.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/19-容器虚拟机Namespace-Cgroup与虚拟IO.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/30-计算机系统/20-时间时钟计时器Deadline与跨主机关联.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/00-并行与异构计算-MOC.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/00-CUDA-MOC.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/01-CPU与GPU异构执行模型.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/02-CUDA软件栈与Linux部署边界.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/03-Kernel与Grid-Block-Thread-Warp.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/04-内存层级合并访问与BankConflict.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/05-同步原子操作与分支发散.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/06-Stream-Event与异步流水线.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/07-FP16-BF16-FP8与Tensor-Core.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/08-Reduction-Softmax与GEMM.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/09-Roofline与Nsight性能方法.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/40-并行与异构计算/01-CUDA/10-PyTorch扩展-Triton与llama.cpp后端.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/01-复杂度模型渐近分析与摊还分析.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/02-数组动态数组链表与内存布局.md",
+    "course": "DS",
+    "deepening": "DS01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/03-栈队列双端队列与单调结构.md",
+    "course": "DS",
+    "deepening": "DS01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/04-哈希表集合与冲突处理.md",
+    "course": "DS",
+    "deepening": "DS01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/05-树二叉搜索树堆与优先队列.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/06-平衡树B树Trie与索引结构.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/07-图的表示BFS-DFS与拓扑排序.md",
+    "course": "ALG",
+    "deepening": "ALG02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/08-排序选择与稳定性.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/09-二分查找分治与递归.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/10-贪心算法与正确性证明.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/11-动态规划状态转移与空间优化.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/12-最短路最小生成树与并查集.md",
+    "course": "ALG",
+    "deepening": "ALG02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/13-字符串匹配前缀函数与自动机.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/14-回溯搜索剪枝与计算复杂性边界.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/15-如何选择数据结构与建立不变量.md",
+    "course": "DS",
+    "deepening": "DS01"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/16-前缀聚合差分扫描线与区间数据结构.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/17-强连通分量凝聚DAG与工作列表不动点.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/18-外存模型分块缓存感知与页式索引.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/19-概率型数据结构流式摘要与误差合同.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/00-数据编码与媒体系统-MOC.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/01-表示编码序列化压缩与容器的边界.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/02-字符编码Unicode-UTF-8与换行.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/03-二进制文件格式魔数字节序对齐与校验.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/04-压缩原理熵编码字典编码与有损压缩.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/05-图像表示色彩空间采样与图像编码.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/06-数字音频采样量化PCM与响度.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/07-音频编码变换心理声学码率与延迟.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/08-数字视频帧率扫描色彩采样与时间基.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/09-视频编码预测变换量化熵编码与GOP.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/10-封装格式Codec-Container-Mux-Demux.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/11-流媒体时间戳同步Seek与协议边界.md",
+    "course": "NET",
+    "deepening": "NET01"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/12-FFmpeg架构Demux-Decode-Filter-Encode-Mux.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/13-ffprobe媒体诊断与可复现检查.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/14-FFmpeg常用转码裁剪拼接字幕与音频处理.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/15-FFmpeg滤镜图时间基映射与硬件加速.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/16-媒体质量评估PSNR-SSIM-VMAF与听感边界.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/17-媒体工程安全许可隐私与可复现性.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/60-数据编码与媒体系统/18-从文件系统到媒体流水线的数据路径.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/70-编译原理/00-编译原理-MOC.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/01-编译器流水线诊断与可复现构建.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/02-词法分析正则自动机Unicode与源位置.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/03-上下文无关文法AST-CST与歧义.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/04-递归下降Pratt-LL与LR解析及错误恢复.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/05-作用域名称解析与符号表.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/06-类型系统约束求解泛型与语义检查.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/07-中间表示Lowering与三地址码.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/08-控制流图支配关系与SSA.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/09-数据流分析格不动点活跃性与到达定义.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/70-编译原理/10-优化Pass别名分析与阶段排序.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/70-编译原理/11-优化正确性语义保持与验证测试.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/70-编译原理/12-运行时对象布局栈堆闭包异常与GC.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/70-编译原理/13-指令选择ABI-Lowering与代码生成.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/14-寄存器分配指令调度与目标代价模型.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/70-编译原理/15-目标文件符号重定位链接与装载.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/70-编译原理/16-解释器字节码VM-JIT与去优化.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/70-编译原理/17-LLVM-IR-Pass与MLIR方言-Lowering.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/70-编译原理/18-AI编译栈图捕获融合Shape与张量Kernel.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/80-实践/01-Python/00-Python实验室.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/80-实践/01-Python/01-语法与文件练习.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/80-实践/01-Python/02-环境与依赖实验.md",
+    "course": "PY",
+    "deepening": "PY02"
+  },
+  {
+    "path": "计算机知识/80-实践/01-Python/03-练习答案与解释.md",
+    "course": "PY",
+    "deepening": "PY01"
+  },
+  {
+    "path": "计算机知识/80-实践/02-Linux/00-Linux实验室.md",
+    "course": "LIN",
+    "deepening": "LIN01"
+  },
+  {
+    "path": "计算机知识/80-实践/02-Linux/01-安全命令行练习.md",
+    "course": "LIN",
+    "deepening": "LIN01"
+  },
+  {
+    "path": "计算机知识/80-实践/02-Linux/02-系统观察与故障定位.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/80-实践/02-Linux/03-Arch虚拟机安装检查单.md",
+    "course": "LIN",
+    "deepening": "LIN02"
+  },
+  {
+    "path": "计算机知识/80-实践/03-C++/00-C++实验室.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/80-实践/03-C++/01-构建与调试小项目/README.md",
+    "course": "CPP",
+    "deepening": "CPP02"
+  },
+  {
+    "path": "计算机知识/80-实践/03-C++/02-RAII与张量缓冲区/README.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/README.md",
+    "course": "CPP",
+    "deepening": "CPP01"
+  },
+  {
+    "path": "计算机知识/80-实践/03-C++/04-布局缓存与并行归约/README.md",
+    "course": "CPP",
+    "deepening": "CPP03"
+  },
+  {
+    "path": "计算机知识/80-实践/04-CUDA/00-CUDA实验室.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/04-CUDA/01-索引与Vector-Add实验.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/04-CUDA/02-Coalescing与Reduction.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/04-CUDA/03-Softmax与矩阵乘法实验.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/04-CUDA/04-Profiling与Offload观察.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/00-数据结构与算法实践-MOC.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/01-线性结构与摊还/README.md",
+    "course": "DS",
+    "deepening": "DS01"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/02-哈希堆与树/README.md",
+    "course": "DS",
+    "deepening": "DS01"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/README.md",
+    "course": "ALG",
+    "deepening": "ALG02"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/04-排序二分与动态规划/README.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/05-栈队列与单调结构/README.md",
+    "course": "DS",
+    "deepening": "DS01"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/06-贪心选择与失败反例/README.md",
+    "course": "ALG",
+    "deepening": "ALG01"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/07-KMP与重叠匹配/README.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/08-回溯与安全剪枝/README.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/09-图分解与数据流不动点/README.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/10-区间结构与外存代价/README.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/README.md",
+    "course": "DS",
+    "deepening": "DS02"
+  },
+  {
+    "path": "计算机知识/80-实践/06-计算机系统/00-计算机系统实践-MOC.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/06-计算机系统/01-数据表示与对齐/README.md",
+    "course": "ORG",
+    "deepening": "ORG01"
+  },
+  {
+    "path": "计算机知识/80-实践/06-计算机系统/02-虚拟内存mmap与页错误/README.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/06-计算机系统/03-缓存局部性benchmark/README.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/06-计算机系统/04-文件描述符pipe-dup与进程/README.md",
+    "course": "OS",
+    "deepening": "OS03"
+  },
+  {
+    "path": "计算机知识/80-实践/06-计算机系统/05-文件系统原子替换与fsync/README.md",
+    "course": "OS",
+    "deepening": "OS03"
+  },
+  {
+    "path": "计算机知识/80-实践/06-计算机系统/06-地址翻译分配器与拓扑观察/README.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/06-计算机系统/07-资源视图与时间预算/README.md",
+    "course": "ORG",
+    "deepening": "ORG02"
+  },
+  {
+    "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/00-媒体编码与FFmpeg实践-MOC.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/01-生成合成音视频并用ffprobe诊断.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/02-转封装转码裁剪与客观对比.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/03-Filtergraph时间戳与音画同步.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/04-批处理Manifest与不可信输入边界.md",
+    "course": "NET",
+    "deepening": "NET04"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/00-编译原理实践-MOC.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/01-MiniLang词法解析与诊断/README.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/02-名称解析类型检查与错误定位/README.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/03-三地址码CFG与SSA/README.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/04-数据流优化与差分验证/README.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/05-字节码VM内联缓存与JIT观察/README.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/06-指令选择寄存器分配与重定位/README.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/07-LLVM与MLIR工具链探针/README.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/08-AI计算图Lowering融合与Shape特化/README.md",
+    "course": "COMP",
+    "deepening": "COMP02"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/README.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  },
+  {
+    "path": "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/源码与测试镜像.md",
+    "course": "COMP",
+    "deepening": "COMP01"
+  }
+]

@@ -1,0 +1,46 @@
+filters:
+  and:
+    - file.inFolder("Obsidian知识")
+    - file.hasTag("playground/course")
+    - or:
+      - type == "lesson"
+      - type == "challenge"
+
+properties:
+  file.name:
+    displayName: 课程
+  note.module:
+    displayName: 模块
+  note.level:
+    displayName: 难度
+  note.status:
+    displayName: 状态
+  note.order:
+    displayName: 顺序
+  note.plugins:
+    displayName: 相关插件
+
+views:
+  - type: table
+    name: 课程进度
+    order:
+      - file.name
+      - module
+      - level
+      - status
+      - order
+      - plugins
+      - file.tags
+    sort:
+      - property: module
+        direction: ASC
+      - property: order
+        direction: ASC
+  - type: cards
+    name: 课程卡片
+    order:
+      - file.name
+      - module
+      - level
+      - status
+      - plugins

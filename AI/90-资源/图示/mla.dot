@@ -1,0 +1,20 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="MLA：缓存潜表示，并保留必要的位置分支", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+h [label="隐藏状态 h"];
+c [label="低秩 c=W_DKV h\n缓存内容潜表示"];
+k [label="内容 key = W_UK c"];
+v [label="value = W_UV c"];
+q [label="当前 query\n可吸收内容上投影"];
+r [label="解耦 RoPE key\n缓存必要位置状态"];
+o [label="内容分数 + 位置分数\n混合潜表示后输出"];
+h -> c;
+c -> k;
+c -> v;
+q -> o;
+k -> o;
+v -> o;
+h -> r;
+r -> o;
+}

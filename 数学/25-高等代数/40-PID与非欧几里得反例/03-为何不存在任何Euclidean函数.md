@@ -17,7 +17,10 @@ $$
 $$
 使每个 $a,b\in R$、$b\ne0$ 都能写成
 $$
-a=qb+r,\qquad r=0\quad\text{或}\quad\delta(r)<\delta(b).
+\begin{gathered}
+a=qb+r,\\
+r=0\quad\text{或}\quad\delta(r)<\delta(b).
+\end{gathered}
 $$
 这里不要求 $\delta$ 乘法、不要求它等于域范数，也不要求 $\delta(a)\le\delta(ab)$。
 
@@ -54,8 +57,10 @@ $$
 
 两者都无根，矛盾。因此假设的 $\delta$ 不存在：
 $$
-\boxed{R\text{ 不是 Euclidean 整环，且这里排除了任意 Euclidean 函数}.}
+\boxed{R\text{ 不是 Euclidean 整环}.}
 $$
+
+这里排除的是任意 Euclidean 函数，而不仅是当前的域范数。
 
 ## 与域范数的角色分工
 

@@ -23,10 +23,12 @@ prerequisites:
 本小课沿用[[AI/45-机器人与具身智能/01-坐标变换与平面运动学#运动学说明怎样走，动力学说明怎样改变速度|原课程的双积分器动力学]]，只取一个世界轴做可手算切片。连续模型仍是 $\dot p=v,\dot v=u$；为让八步例可读，这里独立取 $\Delta t=0.2\ \mathrm s$，并不把原闭环实验的 0.05 s 控制器参数直接搬过来。状态
 
 $$
-x_k=\begin{bmatrix}p_k\\v_k\end{bmatrix},\quad
-A=\begin{bmatrix}1&0.2\\0&1\end{bmatrix},\quad
-B=\begin{bmatrix}0.02\\0.2\end{bmatrix},\quad
-x_{k+1}=Ax_k+Bu_k.
+\begin{aligned}
+x_k&=\begin{bmatrix}p_k\\v_k\end{bmatrix},\\
+A&=\begin{bmatrix}1&0.2\\0&1\end{bmatrix},\\
+B&=\begin{bmatrix}0.02\\0.2\end{bmatrix},\\
+x_{k+1}&=Ax_k+Bu_k.
+\end{aligned}
 $$
 
 $p$ 用 m，$v$ 用 m/s，$u$ 用 m/s²。贯穿数值例取 $x_0=(0.5,0)^T$、$N=8$、$|u_k|\le0.8\ \mathrm{m/s^2}$，并用尺度 $p_s=1\ \mathrm m$、$v_s=1\ \mathrm{m/s}$、$u_s=1\ \mathrm{m/s^2}$ 把代价归一为无量纲：$Q=\operatorname{diag}(1,0.1)$、$R=0.05$、$Q_f=\operatorname{diag}(8,2)$。权重表达偏好，不是传感噪声协方差；后者仍由[[AI/45-机器人与具身智能/02-Bayes滤波与Kalman状态估计|Kalman 页]]承担。
@@ -44,4 +46,3 @@ $p$ 用 m，$v$ 用 m/s，$u$ 用 m/s²。贯穿数值例取 $x_0=(0.5,0)^T$、$
 当速度等状态不能直接测量时，继续[[AI/45-机器人与具身智能/20-状态估计与LQG/00-状态估计与LQG-MOC|状态估计与LQG]]，检查Kalman条件化、分离原理以及饱和与硬安全边界；LQR的Riccati推导仍以本课为主解释。
 
 完成后应能区分三层结论：有限时域无约束 LQR 的精确最优性；带线性动力学和凸二次代价、盒约束时 QP 的有限问题最优性；带合适终端集合/控制律且初始可行、模型精确时 MPC 的递归可行性。它们都不自动证明真实机器人全局稳定、饱和非线性全局稳定、连续时间碰撞安全或带未知扰动的硬约束安全。
-

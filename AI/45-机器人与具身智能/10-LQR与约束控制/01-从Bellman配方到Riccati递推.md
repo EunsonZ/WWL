@@ -23,9 +23,17 @@ prerequisites:
 在已知初态 $x_0$ 下，有限时域问题是
 
 $$
-\min_{u_0,\ldots,u_{N-1}}J_N
-=\sum_{k=0}^{N-1}(x_k^TQx_k+u_k^TRu_k)+x_N^TQ_fx_N,
-\quad x_{k+1}=Ax_k+Bu_k.
+\begin{aligned}
+J_N
+  &:=\sum_{k=0}^{N-1}
+     \left(x_k^TQx_k+u_k^TRu_k\right)
+     +x_N^TQ_fx_N,\\
+\underset{u_0,\ldots,u_{N-1}}{\operatorname{minimize}}
+  &\quad J_N,\\
+\text{subject to}
+  &\quad x_{k+1}=Ax_k+Bu_k,
+  \quad k=0,\ldots,N-1.
+\end{aligned}
 $$
 
 $x_k\in\mathbb R^n$、$u_k\in\mathbb R^m$、$Q,Q_f\succeq0$、$R\succ0$。本例 $n=2,m=1$。因为位置、速度和加速度单位不同，不能直接说“$Q$ 的第一个数比第二个大十倍，所以位置重要十倍”。更稳妥的写法是
@@ -61,16 +69,24 @@ $$
 由于 $R\succ0$ 且 $S_{k+1}\succeq0$，$G_k$ 正定。利用[[数学/20-线性代数与几何/18-分块矩阵Schur补与矩阵指数#正定性的消元解释|Schur 补与配方]]可写成
 
 $$
-u^TG_ku+2u^TB^TS_{k+1}Ax
-=(u+K_kx)^TG_k(u+K_kx)-x^TK_k^TG_kK_kx.
+\begin{aligned}
+&u^TG_ku+2u^TB^TS_{k+1}Ax\\
+&\quad=(u+K_kx)^TG_k(u+K_kx)\\
+&\qquad-x^TK_k^TG_kK_kx.
+\end{aligned}
 $$
 
 第一项唯一在 $u_k^*=-K_kx_k$ 取零。因此
 
 $$
-S_k=Q+A^TS_{k+1}A-A^TS_{k+1}B
-(R+B^TS_{k+1}B)^{-1}B^TS_{k+1}A,
-\qquad S_N=Q_f.
+\begin{aligned}
+S_k
+  ={}&Q+A^TS_{k+1}A\\
+    &-A^TS_{k+1}B
+      (R+B^TS_{k+1}B)^{-1}\\
+    &\qquad\cdot B^TS_{k+1}A,\\
+S_N={}&Q_f.
+\end{aligned}
 $$
 
 上式中换行前后的乘法应连读；尺寸依次为 $n\times n$。计算时用线性方程求 $K_k$，无需显式求逆。该动态规划推导与 [Stanford EE363 离散有限时域 LQR 讲义](https://ee363.stanford.edu/archive/lectures/dlqr.pdf) 的平方完成、以及 [MIT Underactuated 的离散 Riccati 小节](https://underactuated.mit.edu/lqr.html) 相互对照。

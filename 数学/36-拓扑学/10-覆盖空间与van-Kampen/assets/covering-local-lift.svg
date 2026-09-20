@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+  <title id="title">等分覆盖邻域中的三片与一条路径提升</title>
+  <desc id="desc">下方蓝色底空间邻域U上方有三个互不相交的片。底空间路径从左向右，选定第二片起点后提升路径唯一留在第二片。</desc>
+  <defs>
+    <marker id="arrowBlue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#7c3aed"/>
+    </marker>
+    <style>
+      .label{font:18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#172033}
+      .small{font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}
+      .sheet{fill:#eef2ff;stroke:#6366f1;stroke-width:2}
+    </style>
+  </defs>
+  <rect x="92" y="328" width="576" height="66" rx="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="42" y="368" class="label">U</text>
+  <path d="M145 365 C255 330, 410 390, 604 352" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrowBlue)"/>
+  <circle cx="145" cy="365" r="7" fill="#1d4ed8"/>
+  <text x="620" y="348" class="small">γ</text>
+
+  <rect x="112" y="36" width="536" height="66" rx="30" class="sheet"/>
+  <rect x="112" y="139" width="536" height="66" rx="30" class="sheet"/>
+  <rect x="112" y="242" width="536" height="66" rx="30" class="sheet"/>
+  <text x="58" y="77" class="label">V₁</text>
+  <text x="58" y="180" class="label">V₂</text>
+  <text x="58" y="283" class="label">V₃</text>
+
+  <path d="M165 175 C270 145, 422 198, 594 164" fill="none" stroke="#7c3aed" stroke-width="5" marker-end="url(#arrowPurple)"/>
+  <circle cx="165" cy="175" r="8" fill="#6d28d9"/>
+  <text x="610" y="160" class="small">γ̃</text>
+
+  <path d="M230 103 L230 326 M380 206 L380 326 M530 103 L530 326" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrowBlue)"/>
+  <text x="680" y="220" class="label">p</text>
+  <text x="182" y="22" class="small">每个 p|Vᵢ 都是到 U 的同胚</text>
+  <text x="415" y="221" class="small">选定起点后，只能沿这一片</text>
+</svg>

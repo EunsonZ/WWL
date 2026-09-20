@@ -22,13 +22,16 @@ prerequisites:
 设 $a\in\mathbb R^n$、$b\in\mathbb R^p$ 联合 Gaussian：
 
 $$
+\begin{gathered}
 \begin{bmatrix}a\\b\end{bmatrix}
 \sim\mathcal N\!\left(
 \begin{bmatrix}\mu_a\\\mu_b\end{bmatrix},
 \begin{bmatrix}\Sigma_{aa}&\Sigma_{ab}\\
 \Sigma_{ba}&\Sigma_{bb}
 \end{bmatrix}
-\right),\qquad \Sigma_{bb}\succ0.
+\right),\\
+\Sigma_{bb}\succ0.
+\end{gathered}
 $$
 
 把联合密度指数中的二次型对 $b$ 固定并配方，等价于对分块精度矩阵做消元；[[数学/20-线性代数与几何/18-分块矩阵Schur补与矩阵指数|Schur补]]给出
@@ -50,29 +53,35 @@ $$
 测量前已有
 
 $$
-x_k\mid\mathcal Y_{k-1}\sim\mathcal N(\hat x_k^-,P_k^-),
-\qquad y_k=Hx_k+r_k,\qquad r_k\sim\mathcal N(0,R),
+\begin{gathered}
+x_k\mid\mathcal Y_{k-1}\sim\mathcal N(\hat x_k^-,P_k^-),\\
+y_k=Hx_k+r_k,\\
+r_k\sim\mathcal N(0,R),
+\end{gathered}
 $$
 
 其中 $r_k$ 与 $x_k$ 条件独立。于是
 
 $$
+\begin{gathered}
 \begin{bmatrix}x_k\\y_k\end{bmatrix}\Bigm|\mathcal Y_{k-1}
-\sim\mathcal N\!\left(
-\begin{bmatrix}\hat x_k^-\\H\hat x_k^-\end{bmatrix},
-\begin{bmatrix}
+\sim\mathcal N(m_k,C_k),\\
+m_k=\begin{bmatrix}\hat x_k^-\\H\hat x_k^-\end{bmatrix},\\
+C_k=\begin{bmatrix}
 P_k^-&P_k^-H^\mathsf T\\
 HP_k^-&HP_k^-H^\mathsf T+R
-\end{bmatrix}
-\right).
+\end{bmatrix}.
+\end{gathered}
 $$
 
 定义创新、创新协方差和 Kalman 增益
 
 $$
-\nu_k=y_k-H\hat x_k^-,\qquad
-S_k=HP_k^-H^\mathsf T+R,\qquad
+\begin{gathered}
+\nu_k=y_k-H\hat x_k^-,\\
+S_k=HP_k^-H^\mathsf T+R,\\
 L_k=P_k^-H^\mathsf T S_k^{-1}.
+\end{gathered}
 $$
 
 条件化公式直接给出
@@ -82,7 +91,10 @@ $$
 $$
 
 $$
-P_k=(I-L_kH)P_k^-(I-L_kH)^\mathsf T+L_kRL_k^\mathsf T.
+\begin{aligned}
+P_k={}&(I-L_kH)P_k^-(I-L_kH)^\mathsf T\\
+&+L_kRL_k^\mathsf T.
+\end{aligned}
 $$
 
 第二式是 Joseph 形式。展开并使用 $L_kS_k=P_k^-H^\mathsf T$，可化成 $P_k=P_k^--P_k^-H^\mathsf TS_k^{-1}HP_k^-$；Joseph 形式把舍入前的结果写成两个半正定项之和。对精确增益两式代数等价，Joseph 形式也不会修复错误的模型或错误的 $R$。
@@ -107,15 +119,19 @@ $$
 后验经过已知控制和独立过程噪声：
 
 $$
-\hat x_{k+1}^-=A\hat x_k+Bu_k,
-\qquad P_{k+1}^-=AP_kA^\mathsf T+W.
+\begin{gathered}
+\hat x_{k+1}^-=A\hat x_k+Bu_k,\\
+P_{k+1}^-=AP_kA^\mathsf T+W.
+\end{gathered}
 $$
 
 取每段恒定加速度扰动 $\eta_k\sim\mathcal N(0,0.2^2)$ m/s²，$w_k=B\eta_k$，则
 
 $$
-W=0.2^2BB^\mathsf T
-=\begin{bmatrix}0.000016&0.00016\\0.00016&0.0016\end{bmatrix}.
+\begin{aligned}
+W&=0.2^2BB^\mathsf T\\
+&=\begin{bmatrix}0.000016&0.00016\\0.00016&0.0016\end{bmatrix}.
+\end{aligned}
 $$
 
 $W$ 是秩一半正定矩阵，因为同一个未知加速度同时改变下一步位置和速度；它不是“数值坏掉”。这一离散噪声模型也不能直接替换成连续白噪声积分的协方差。
@@ -125,58 +141,75 @@ $W$ 是秩一半正定矩阵，因为同一个未知加速度同时改变下一�
 令
 
 $$
-\hat x_0^-=\begin{bmatrix}0\\0\end{bmatrix},\quad
-P_0^-=\begin{bmatrix}0.04&0\\0&0.25\end{bmatrix},\quad
+\begin{gathered}
+\hat x_0^-=\begin{bmatrix}0\\0\end{bmatrix},\\
+P_0^-=\begin{bmatrix}0.04&0\\0&0.25\end{bmatrix},\\
 R=0.01,
+\end{gathered}
 $$
 
 $$
-(y_0,y_1,y_2)=(0.10,0.14,0.18)\ \mathrm m,\qquad
+\begin{gathered}
+(y_0,y_1,y_2)=(0.10,0.14,0.18)\ \mathrm m,\\
 (u_0,u_1)=(0.5,-0.2)\ \mathrm{m/s^2}.
+\end{gathered}
 $$
 
 在 $k=0$，$S_0=0.05$、$L_0=[0.8,0]^\mathsf T$，所以
 
 $$
-\hat x_0=\begin{bmatrix}0.08\\0\end{bmatrix},\qquad
+\begin{gathered}
+\hat x_0=\begin{bmatrix}0.08\\0\end{bmatrix},\\
 P_0=\begin{bmatrix}0.008&0\\0&0.25\end{bmatrix}.
+\end{gathered}
 $$
 
 施加 $u_0=0.5$ 后，
 
 $$
-\hat x_1^-=\begin{bmatrix}0.09\\0.10\end{bmatrix},\qquad
+\begin{gathered}
+\hat x_1^-=\begin{bmatrix}0.09\\0.10\end{bmatrix},\\
 P_1^-=\begin{bmatrix}0.018016&0.05016\\0.05016&0.2516\end{bmatrix}.
+\end{gathered}
 $$
 
 现在位置—速度交叉项不再为零。$y_1=0.14$ 给出
 
 $$
-\nu_1=0.05,\quad S_1=0.028016,\quad
+\begin{gathered}
+\nu_1=0.05,\\
+S_1=0.028016,\\
 L_1=\begin{bmatrix}0.64306111\\1.79040548\end{bmatrix},
+\end{gathered}
 $$
 
 $$
-\hat x_1=\begin{bmatrix}0.12215306\\0.18952027\end{bmatrix},\qquad
+\begin{gathered}
+\hat x_1=\begin{bmatrix}0.12215306\\0.18952027\end{bmatrix},\\
 P_1=\begin{bmatrix}
 0.00643061&0.01790405\\
 0.01790405&0.16179326
 \end{bmatrix}.
+\end{gathered}
 $$
 
 再施加 $u_1=-0.2$ 并用 $y_2=0.18$ 更新，得到
 
 $$
-\nu_2=0.02394289,\quad
+\begin{gathered}
+\nu_2=0.02394289,\\
 L_2=\begin{bmatrix}0.66755279\\1.67628884\end{bmatrix},
+\end{gathered}
 $$
 
 $$
-\hat x_2=\begin{bmatrix}0.17204025\\0.18965547\end{bmatrix},\qquad
+\begin{gathered}
+\hat x_2=\begin{bmatrix}0.17204025\\0.18965547\end{bmatrix},\\
 P_2=\begin{bmatrix}
 0.00667553&0.01676289\\
 0.01676289&0.07887024
 \end{bmatrix}.
+\end{gathered}
 $$
 
 第二、三次位置创新都修正了速度，因为动力学在 $P^-$ 中建立了交叉协方差。
@@ -197,11 +230,13 @@ $$
 $$
 
 $$
-\operatorname{Cov}(x_2\mid Y)=
-\begin{bmatrix}
+\begin{gathered}
+\operatorname{Cov}(x_2\mid Y)\\
+=\begin{bmatrix}
 0.006675527875&0.016762888396\\
 0.016762888396&0.078870239948
 \end{bmatrix}.
+\end{gathered}
 $$
 
 递推与一次性条件化的最大绝对差分别为 $2.78\times10^{-17}$ 和 $1.11\times10^{-16}$。这是同一概率模型的两条代数路径；固定浮点一致性没有证明模型符合真实传感器。

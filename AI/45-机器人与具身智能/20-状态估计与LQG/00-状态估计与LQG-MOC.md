@@ -23,29 +23,41 @@ prerequisites:
 这组课沿用[[AI/45-机器人与具身智能/10-LQR与约束控制/00-LQR与约束控制-MOC|LQR课程]]的一维双积分器。状态、输入和位置观测为
 
 $$
-x_k=\begin{bmatrix}p_k\\v_k\end{bmatrix},\qquad
-x_{k+1}=Ax_k+Bu_k+w_k,\qquad y_k=Hx_k+r_k,
+\begin{gathered}
+x_k=\begin{bmatrix}p_k\\v_k\end{bmatrix},\\
+x_{k+1}=Ax_k+Bu_k+w_k,\\
+y_k=Hx_k+r_k,
+\end{gathered}
 $$
 
 $$
-A=\begin{bmatrix}1&0.2\\0&1\end{bmatrix},\quad
-B=\begin{bmatrix}0.02\\0.2\end{bmatrix},\quad
+\begin{gathered}
+A=\begin{bmatrix}1&0.2\\0&1\end{bmatrix},\\
+B=\begin{bmatrix}0.02\\0.2\end{bmatrix},\\
 H=\begin{bmatrix}1&0\end{bmatrix}.
+\end{gathered}
 $$
 
 $p$ 用 m，$v$ 用 m/s，$u$ 用 m/s²，采样时间是 $0.2$ s。只有 $p$ 被直接读取；速度信息来自跨时刻动力学形成的位置—速度交叉协方差。
 
 ```mermaid
 flowchart TD
-    Y[带噪位置 y_k] --> KF[Kalman 条件化]
-    U0[已施加 u_0:k-1] --> KF
-    KF --> XH[状态后验 x_hat_k, P_k]
-    XH --> C[LQR: u_k = -K x_hat_k]
+    Y[位置读数] --> KF[Kalman 更新]
+    KF --> XH[状态后验]
+    XH --> C[LQR 控制]
     C --> PLANT[线性动力学]
     PLANT --> Y
-    BIAS[偏置 / Q,R 设错 / 饱和] -.破坏假设.-> KF
-    BIAS -.破坏线性分离.-> C
 ```
+
+图中的位置读数是 $y_k$；状态后验由条件均值 $\hat x_k$ 与协方差 $P_k$ 描述；LQR 施加 $u_k=-K\hat x_k$。下一次预测还要使用**已经实际施加**的历史输入 $u_0,\ldots,u_{k-1}$，不能用未执行的命令值替代。
+
+把闭环与失效原因分开看：
+
+- **传感器偏置、噪声协方差设错**：Kalman 使用的统计模型与真实读数不符，后验均值或置信范围可能失真。
+- **执行器饱和**：实际动作与 LQR 请求值不同，无约束最优性不能沿用；若预测仍用请求值，估计也会失配。
+- **两端共享的模型前提失效**：不能再仅凭“估计器稳定＋控制器稳定”套用下文的线性分离结论。
+
+各类失效的可复算例子见本组第 04 课；这张信息流图本身不证明最优性或稳定性。
 
 ## 按卡点阅读
 

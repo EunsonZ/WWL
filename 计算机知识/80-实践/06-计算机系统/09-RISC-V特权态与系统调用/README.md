@@ -22,13 +22,13 @@ evidence_status: partial
 
 ```mermaid
 flowchart TD
-    M["M 态启动：PMP 放行实验地址；medeleg 委托 cause 2/8"] -->|"mret，MPP=S"| S["S 态：安装 stvec、sscratch、sepc"]
-    S -->|"sret，SPP=0"| U["U 态：a7=编号，a0=参数"]
-    U -->|"ecall"| HW["硬件：scause=8；sepc 指向 ecall；SPP=0"]
-    HW --> V["入口汇编：sscratch 换栈；保存 31 个整数寄存器"]
-    V --> D["C 分派：读取 trapframe.a7/a0；写回 trapframe.a0"]
-    D --> R["软件令 sepc=sepc+4；汇编恢复寄存器"]
-    R -->|"sret"| U2["U 态从 ecall 后一条指令继续"]
+    M["M 态启动<br/>PMP 放行实验地址<br/>medeleg 委托 cause 2/8"] -->|"mret<br/>MPP=S"| S["S 态<br/>安装 stvec、sscratch、sepc"]
+    S -->|"sret<br/>SPP=0"| U["U 态<br/>a7=编号<br/>a0=参数"]
+    U -->|"ecall"| HW["硬件<br/>scause=8<br/>sepc 指向 ecall<br/>SPP=0"]
+    HW --> V["入口汇编<br/>sscratch 换栈<br/>保存 31 个整数寄存器"]
+    V --> D["C 分派<br/>读取 trapframe.a7/a0<br/>写回 trapframe.a0"]
+    D --> R["软件令 sepc=sepc+4<br/>汇编恢复寄存器"]
+    R -->|"sret"| U2["U 态<br/>从 ecall 后一条指令继续"]
 ```
 
 硬件没有替内核保存所有通用寄存器，也没有替内核查系统调用表。硬件把原因和返回位置写进 S 态 CSR，并按 `stvec` 转移；入口汇编再把用户整数寄存器保存到 `trapframe`。本实验定义的教学 ABI 才规定 `a7` 是编号、`a0` 是首参数兼返回值。编号 1 的服务计算 `a0+1`：输入 41，返回 42。
@@ -46,11 +46,11 @@ $$
 `trapframe.h` 是 C 结构真源，`trapframe_offsets.h` 是汇编偏移真源；C 的 `_Static_assert` 会让二者一旦错位就编译失败。帧覆盖 `ra/sp/gp/tp`、`t0–t6`、`s0–s11`、`a0–a7`，并附加 `sepc/scause/stval`。U 态返回后把 31 个整数寄存器逐项写入 `user_snapshot`，下一次系统调用由 S 态逐项核对；只有返回寄存器 `a0` 按 ABI 从 41 改为 42。
 
 ```mermaid
-flowchart LR
-    US["U 栈：user_stack_top"] -->|"trap 时 csrrw sp, sscratch, sp"| TF["trapframe：保存用户 sp 和 x1–x31"]
-    TF -->|"调用 C 前 la sp, s_stack_top"| SS["S 栈：16 字节对齐"]
-    SS -->|"C 返回 trapframe 指针"| TF2["恢复 x1–x31；写 sepc；sscratch 留帧地址"]
-    TF2 -->|"最后恢复用户 sp；sret"| US2["原 U 栈"]
+flowchart TD
+    US["U 栈<br/>user_stack_top"] -->|"trap 时<br/>csrrw sp, sscratch, sp"| TF["trapframe<br/>保存用户 sp<br/>保存 x1–x31"]
+    TF -->|"调用 C 前<br/>la sp, s_stack_top"| SS["S 栈<br/>16 字节对齐"]
+    SS -->|"C 返回<br/>trapframe 指针"| TF2["恢复 x1–x31<br/>写 sepc<br/>sscratch 留帧地址"]
+    TF2 -->|"最后恢复用户 sp<br/>sret"| US2["原 U 栈"]
 ```
 
 入口先用 `csrrw` 交换 `sp/sscratch`，因此在还没有可用临时寄存器时也不会丢掉用户 `sp`；保存完用户寄存器才切到独立 S 栈调用 C。返回时反向恢复，最后才恢复用户 `sp`。逐指令说明见 [[计算机知识/80-实践/06-计算机系统/09-RISC-V特权态与系统调用/01-从ecall到sret的逐指令路径|从 ecall 到 sret 的逐指令路径]]。

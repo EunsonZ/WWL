@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">正向边界、左法向与洞的方向</title>
+  <desc id="desc">外圆逆时针、内圆顺时针，使阴影区域始终位于行进方向左侧；右侧放大一个切向、左法向和角点外转角。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#2459a6"/>
+    </marker>
+    <marker id="green-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#198754"/>
+    </marker>
+    <marker id="red-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#b63737"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="760" height="360" rx="16" fill="#fbfcfe"/>
+  <text x="190" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#1f2937">区域在左：外圈与洞反向</text>
+  <path d="M54,181a136,116 0 1,0 272,0a136,116 0 1,0 -272,0 M135,181a55,46 0 1,1 110,0a55,46 0 1,1 -110,0" fill="#dcecff" fill-rule="evenodd" stroke="#517aa4" stroke-width="2"/>
+  <path d="M245,72 C180,50 102,69 75,117" fill="none" stroke="#2459a6" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M226,203 C211,230 163,234 144,205" fill="none" stroke="#2459a6" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="76" y="308" font-family="sans-serif" font-size="16" fill="#334155">外边界逆时针</text>
+  <text x="207" y="280" font-family="sans-serif" font-size="16" fill="#334155">内边界顺时针</text>
+  <text x="176" y="187" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#64748b">洞</text>
+  <line x1="396" y1="54" x2="396" y2="320" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="576" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#1f2937">切向、左法向与外转角</text>
+  <path d="M450,230 L545,230 L545,110" fill="none" stroke="#4b5563" stroke-width="5"/>
+  <line x1="470" y1="230" x2="535" y2="230" stroke="#2459a6" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="545" y1="220" x2="545" y2="135" stroke="#198754" stroke-width="4" marker-end="url(#green-arrow)"/>
+  <line x1="545" y1="180" x2="475" y2="180" stroke="#b63737" stroke-width="4" marker-end="url(#red-arrow)"/>
+  <path d="M610,230 A65,65 0 0 0 545,165" fill="none" stroke="#7c3aed" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+  <text x="485" y="253" font-family="sans-serif" font-size="17" fill="#2459a6">T⁻</text>
+  <text x="557" y="139" font-family="sans-serif" font-size="17" fill="#198754">T⁺</text>
+  <text x="467" y="170" font-family="sans-serif" font-size="17" fill="#b63737">JT（左）</text>
+  <text x="617" y="203" font-family="sans-serif" font-size="17" fill="#6d28d9">α</text>
+  <text x="576" y="302" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#475569">凸角：α = π − 内角 &gt; 0</text>
+</svg>

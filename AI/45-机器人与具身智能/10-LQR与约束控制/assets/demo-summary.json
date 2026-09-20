@@ -1,0 +1,24 @@
+{
+  "schema": "wwl-lqr-mpc-demo-v1",
+  "dt_s": 0.2,
+  "horizon": 8,
+  "umax_m_per_s2": 0.8,
+  "x0": [
+    0.5,
+    0.0
+  ],
+  "costs": {
+    "unconstrained": 1.071919948925636,
+    "clipped": 1.8471655856219145,
+    "box_qp": 1.1608503889191786,
+    "terminal_mpc": 1.2109959999999997
+  },
+  "box_kkt_violation": 5.551115123125783e-17,
+  "terminal_residual": 1.1188630228279524e-16,
+  "shifted_terminal_residual": 1.0239512985120001e-16,
+  "figures": [
+    "finite-horizon-trajectories.svg",
+    "clip-versus-box-qp.svg",
+    "terminal-shift-witness.svg"
+  ]
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620" role="img" aria-labelledby="title desc">
+  <title id="title">利率变化的直接现金流和第二轮反馈</title>
+  <desc id="desc">政策利率变化经过合同重定价，对低资产借款家庭、高资产储蓄家庭、企业、银行和政府央行分析性合并组产生不同年度净利息流量变化，单位为亿元每教学年，并可能通过消费、信贷、资产价格、就业和物价继续反馈。</desc>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#475569"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#475569;stroke-width:2;rx:12}.neg{fill:#fff1f2;stroke:#be123c}.pos{fill:#ecfdf5;stroke:#047857}.mid{fill:#eff6ff;stroke:#1d4ed8}.t{font:700 21px -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;fill:#0f172a}.s{font:16px -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;fill:#334155}.a{stroke:#475569;stroke-width:2;fill:none;marker-end:url(#arr)}.dash{stroke-dasharray:7 6}
+    </style>
+  </defs>
+  <rect class="bg" width="1120" height="620"/>
+  <text class="t" x="40" y="42">利率变化：直接现金流为零和，宏观结果不是自动零和</text>
+  <rect class="box mid" x="400" y="78" width="320" height="74"/><text class="t" x="444" y="110">政策利率与预期路径变化</text><text class="s" x="456" y="137">先经过合同利率、期限和重定价</text>
+  <path class="a" d="M560 152 L560 198"/>
+  <rect class="box" x="110" y="205" width="190" height="88"/><text class="t" x="139" y="238">低资产家庭</text><text class="s" x="142" y="267">净利息变化 -1</text>
+  <rect class="box pos" x="320" y="205" width="190" height="88"/><text class="t" x="347" y="238">高资产家庭</text><text class="s" x="353" y="267">净利息变化 +3</text>
+  <rect class="box neg" x="530" y="205" width="170" height="88"/><text class="t" x="583" y="238">企业</text><text class="s" x="556" y="267">净利息变化 -1</text>
+  <rect class="box pos" x="720" y="205" width="150" height="88"/><text class="t" x="770" y="238">银行</text><text class="s" x="742" y="267">净利息变化 +0.5</text>
+  <rect class="box neg" x="890" y="205" width="180" height="88"/><text class="t" x="902" y="238">G＋C分析性合并</text><text class="s" x="928" y="267">净变化 -1.5</text>
+  <path class="a" d="M560 152 C430 175 240 175 205 205"/><path class="a" d="M560 152 C500 175 430 175 415 205"/><path class="a" d="M560 152 L615 205"/><path class="a" d="M560 152 C680 175 780 175 795 205"/><path class="a" d="M560 152 C780 165 950 175 980 205"/>
+  <text class="s" x="340" y="330">直接现金流变化合计：-1 + 3 - 1 + 0.5 - 1.5 = 0（亿元/教学年）</text>
+  <rect class="box mid" x="90" y="385" width="205" height="104"/><text class="t" x="132" y="418">消费与储蓄</text><text class="s" x="112" y="447">取决于流动性约束与MPC</text><text class="s" x="125" y="474">并非人人反应相同</text>
+  <rect class="box mid" x="315" y="385" width="205" height="104"/><text class="t" x="362" y="418">信贷供给</text><text class="s" x="337" y="447">利差、资本、违约和抵押品</text><text class="s" x="365" y="474">方向可能冲突</text>
+  <rect class="box mid" x="540" y="385" width="205" height="104"/><text class="t" x="582" y="418">资产价格</text><text class="s" x="568" y="447">期限、贴现率与持有结构</text><text class="s" x="580" y="474">改变财富分布</text>
+  <rect class="box mid" x="765" y="385" width="265" height="104"/><text class="t" x="833" y="418">产出、就业与价格</text><text class="s" x="797" y="447">取决于供给能力、预期、汇率</text><text class="s" x="826" y="474">以及财政和外部反馈</text>
+  <path class="a dash" d="M205 293 L192 385"/><path class="a dash" d="M415 293 L192 385"/><path class="a dash" d="M615 293 L417 385"/><path class="a dash" d="M795 293 L417 385"/><path class="a dash" d="M980 293 L897 385"/>
+  <path class="a dash" d="M295 438 L315 438"/><path class="a dash" d="M520 438 L540 438"/><path class="a dash" d="M745 438 L765 438"/>
+  <text class="s" x="88" y="552">实线：合同现金流的第一轮。虚线：需模型与因果证据的第二轮；本图不表示箭头强度或必然方向。</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="680" viewBox="0 0 1120 680" role="img" aria-labelledby="title desc">
+  <title id="title">合成经济的部门账户与主要资金流</title>
+  <desc id="desc">低资产家庭、高资产家庭、企业、银行、政府和央行之间的工资、消费、税收、转移、政府购买、国债与贷款流。框内期初期末存量单位为亿元，箭头期间流量单位为亿元每教学年。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2;rx:14}.hh{fill:#eff6ff}.firm{fill:#ecfdf5}.bank{fill:#fff7ed}.gov{fill:#f5f3ff}.cb{fill:#fdf2f8}
+      .t{font:700 22px -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;fill:#0f172a}.s{font:16px -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;fill:#334155}.a{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}.fiscal{stroke:#7c3aed}.credit{stroke:#c2410c}.real{stroke:#047857}
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1120" height="680"/>
+  <text class="t" x="42" y="42">合成封闭经济：逐笔资金流</text>
+  <text class="s" x="42" y="68">框内存量：亿元；箭头期间流量：亿元/教学年。绿色＝生产/消费，紫色＝财政，橙色＝金融/信用</text>
+  <rect class="box hh" x="50" y="115" width="250" height="116"/><text class="t" x="75" y="150">低资产家庭 Hₗ</text><text class="s" x="75" y="180">期初：存款20／贷款30</text><text class="s" x="75" y="207">期末：存款49／贷款40</text>
+  <rect class="box hh" x="50" y="440" width="250" height="116"/><text class="t" x="75" y="475">高资产家庭 Hₕ</text><text class="s" x="75" y="505">期初：存款80／国债60</text><text class="s" x="75" y="532">期末：存款52／国债75</text>
+  <rect class="box firm" x="435" y="115" width="250" height="116"/><text class="t" x="462" y="150">企业 F</text><text class="s" x="462" y="180">工资60；销售80</text><text class="s" x="462" y="207">期末：存款60／贷款100</text>
+  <rect class="box bank" x="435" y="440" width="250" height="132"/><text class="t" x="462" y="475">商业银行 B</text><text class="s" x="462" y="505">期末资产：准备金35／贷款140／国债20</text><text class="s" x="462" y="532">负债：存款161；权益34</text>
+  <rect class="box gov" x="820" y="115" width="250" height="116"/><text class="t" x="846" y="150">政府 G</text><text class="s" x="846" y="180">税30／转移25／购买20</text><text class="s" x="846" y="207">期末：央行存款15／国债145</text>
+  <rect class="box cb" x="820" y="440" width="250" height="132"/><text class="t" x="846" y="475">央行 C</text><text class="s" x="846" y="505">资产：国债50</text><text class="s" x="846" y="532">负债：准备金35／政府存款15</text>
+  <path class="a real" d="M435 150 C380 110 350 110 300 150"/><text class="s" x="325" y="112">工资40</text>
+  <path class="a real" d="M300 205 C350 250 385 250 435 205"/><text class="s" x="332" y="270">消费40</text>
+  <path class="a real" d="M435 180 C380 350 350 420 300 470"/><text class="s" x="310" y="350">工资20／消费20</text>
+  <path class="a fiscal" d="M820 165 C760 120 740 120 685 165"/><text class="s" x="700" y="112">政府购买20</text>
+  <path class="a fiscal" d="M820 210 C650 330 420 320 300 210"/><text class="s" x="525" y="315">转移25；私人缴税30（反向）</text>
+  <path class="a credit" d="M435 470 C350 390 315 300 270 230"/><text class="s" x="305" y="370">新贷款10</text>
+  <path class="a credit" d="M300 500 C500 630 730 390 820 195"/><rect x="422" y="576" width="300" height="34" fill="#f8fafc"/><text class="s" x="438" y="600">家庭用存款15认购新国债</text>
+  <path class="a" d="M685 505 C740 505 765 505 820 505"/><text class="s" x="720" y="490">准备金35</text>
+  <path class="a" d="M945 440 L945 231"/><text class="s" x="958" y="355">政府存款15</text>
+  <text class="s" x="50" y="658">期末：私人净金融资产130 ↔ G＋C分析性合并组净金融负债130。相等是核算恒等式，不是福利判断。</text>
+</svg>

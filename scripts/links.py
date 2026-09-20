@@ -380,6 +380,29 @@ def check_reference(index, notes, source, line, target, style="wiki", embedded=F
     return issues, resolved
 
 
+def table_wiki_alias_issues(text, path):
+    """Flag an alias separator only inside a header+delimiter Markdown table."""
+    syntax, _, _, _ = scan(text, inline=True)
+    lines = syntax.splitlines()
+    delimiter = re.compile(r"^[ \t]*\|?[ \t]*:?-{3,}:?[ \t]*(?:\|[ \t]*:?-{3,}:?[ \t]*)+\|?[ \t]*$")
+    alias = re.compile(r"(?<!\\)\[\[[^\]\n]*?(?<!\\)\|[^\]\n]*?\]\]")
+    active = set()
+    for index, line in enumerate(lines):
+        if not delimiter.fullmatch(line) or index == 0:
+            continue
+        header = lines[index - 1]
+        if not header.strip() or "|" not in header:
+            continue
+        active.add(index - 1)
+        cursor = index + 1
+        while cursor < len(lines) and lines[cursor].strip() and "|" in lines[cursor]:
+            active.add(cursor)
+            cursor += 1
+    for index in sorted(active):
+        if alias.search(lines[index]):
+            yield diagnostic("table_wiki_alias_unescaped", path, index + 1)
+
+
 def audit(root, paths=None, aliases=None):
     root = Path(root).resolve()
     paths, issues = inventory(root) if paths is None else (paths, [])
@@ -408,6 +431,7 @@ def audit(root, paths=None, aliases=None):
     for path, text in notes.items():
         _, _, _, syntax = scan(text)
         issues.extend(diagnostic(rule, path, line) for rule, line in syntax)
+        issues.extend(table_wiki_alias_issues(text, path))
         for line, target, style, embedded in references(text):
             checked += 1
             found, resolved = check_reference(index, notes, path, line, target, style, embedded)

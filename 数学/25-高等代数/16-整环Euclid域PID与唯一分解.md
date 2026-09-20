@@ -57,11 +57,11 @@ $$N(\alpha-q\beta)=N(\beta)N(\alpha/\beta-q)\le\tfrac12N(\beta)<N(\beta).$$
 
 **UFD 不必 PID。** $\mathbb Z[x]$ 是 UFD（下一节 Gauss 的推论），但理想 $(2,x)$ 不主生成。若 $(2,x)=(f)$，则 $f\mid2$，次数比较使 $f$ 是常整数，且 $f\mid x$ 使 $f=\pm1$，故理想应为全环。然而模 2 后令 $x=0$ 的同态把 $(2,x)$ 全送到 0，把 1 送到 1，说明它是真理想，矛盾。于是这里 gcd$(2,x)=1$，却没有 $u(x)2+v(x)x=1$。UFD 的 gcd 不能自动提供 PID 的 Bézout。
 
-**PID 不必 Euclidean。** 标准例为 $R=\mathbb Z[\omega]$、$\omega=(1+\sqrt{-19})/2$。它是 PID 的正向核验在 [Sharifi Example 5.4.26 与 Proposition 5.4.25](https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html) 使用 Dedekind–Hasse 范数；该逐情形验证是本页明确的进阶依据，本页没有提供其完整展开，也不凭“小范围搜索找不到余数”证明它非 Euclidean。
+**PID 不必 Euclidean。** 标准例为 $R=\mathbb Z[\omega]$、$\omega=(1+\sqrt{-19})/2$。[[数学/25-高等代数/40-PID与非欧几里得反例/00-PID与非欧几里得反例-MOC|负十九二次整数环课程]] 补全正向证明：先证 $R=\mathcal O_{\mathbb Q(\sqrt{-19})}$、$\Delta=-19$，再用 Minkowski 理想类界把任意理想类压到范数 $1$ 或 $2$，以 $X^2+X+1$ 在 $\mathbb F_2$ 无根排除范数 $2$ 理想，故类群平凡、$R$ 是 PID。这里有限检查只在一般界覆盖任意理想类之后使用；[[数学/25-高等代数/40-PID与非欧几里得反例/03-为何不存在任何Euclidean函数|任意 Euclidean 函数的排除]] 则与下段的直接余数证明互相核对。
 
 非 Euclidean 一侧可以在这里证明，排除**任何**满足本页定义的 $\delta$。若有这样的 $\delta$，选所有非零非单位中 $\delta$ 最小的 $b$；每个余数 $r$ 只能是 0 或单位。乘法范数
 $$N(a+c\omega)=a^2+ac+5c^2=(a+c/2)^2+19c^2/4$$
-显示非整数元素范数至少 5，单位只有 $\pm1$。除整数 2 得 $2=qb+r$、$r\in\{0,1,-1\}$，故非单位 $N(b)>1$ 整除 1、4 或 9。方程 $N(b)=3,9$ 若 $c\ne0$，$|c|\ge2$ 已使范数至少 19；$c=\pm1$ 时 $a^2\pm a+5=3$ 或 9 无整数解。因此可能的 $b$ 只能为 $\pm2,\pm3$，范数为 4 或 9。再除 $\omega$，余数仍只能为 0、1、−1，然而 $N(\omega)=N(\omega-1)=5$、$N(\omega+1)=7$ 均不能被 4 或 9 整除，矛盾。[Sharifi Lemma 5.4.22、Example 5.4.23](https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html)
+显示非整数元素范数至少 5，单位只有 $\pm1$。除整数 2 得 $2=qb+r$、$r\in\{0,1,-1\}$，故非单位 $N(b)>1$ 整除 1、4 或 9，候选只有 $2,3,4,9$。若 $c\ne0$，正定式先给 $N(b)\ge5$，排除 $2,3,4$；若 $|c|\ge2$，范数至少 19，而 $c=\pm1$ 时 $a^2\pm a+5=9$ 无整数解。于是只能有 $c=0$、$a^2=4$ 或 9，即 $b=\pm2,\pm3$，范数为 4 或 9。再除 $\omega$，余数仍只能为 0、1、−1，然而 $N(\omega)=N(\omega-1)=5$、$N(\omega+1)=7$ 均不能被 4 或 9 整除，矛盾。[Sharifi Lemma 5.4.22、Example 5.4.23](https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html)
 
 **整环不必 UFD，不可约不必素。** 在 $\mathbb Z[\sqrt{-5}]\subset\mathbb C$，$N(a+b\sqrt{-5})=a^2+5b^2$ 乘法性成立；单位仅为 $\pm1$。没有范数为 2 或 3 的元素。2 的范数为 4，非单位分解只能要求两个范数为 2；3 的范数为 9，只能要求两个范数为 3，均不可能。$1\pm\sqrt{-5}$ 的范数为 6，非单位分解需要范数 2 和 3，也不可能。因此这四个元素都不可约；单位只有 $\pm1$，它们两两不关联，却有
 $$6=2\cdot3=(1+\sqrt{-5})(1-\sqrt{-5}).$$

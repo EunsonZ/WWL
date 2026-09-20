@@ -49,7 +49,7 @@ tags:
 
 以下稳定入口增加了最小连接：
 
-- [[README.md|WorkWithLLM Knowledge Vault]]；
+- [WorkWithLLM Knowledge Vault](../README.md)；
 - `CONTRIBUTING.md`（历史贡献入口）；
 - `agents.md`（历史 Agent 权威操作规范）；
 - [[Obsidian知识/90-资源/04-AI协作工具箱/00-AI协作工具箱-MOC|AI 协作工具箱]]。

@@ -84,6 +84,44 @@ class LinkTests(VaultFixture):
         self.assertEqual({x["rule"] for x in report["issues"]}, {"alias_target_needs_ui_review"})
         self.assertEqual({x["resolved"] for x in report["resolved_links"]}, {"a/topic.md"})
 
+    def test_table_alias_requires_escape_but_non_table_and_code_do_not(self):
+        self.write("target.md", "# target\n")
+        self.write("n.md", """| name | target |
+| --- | --- |
+| ok | [[target\\|display]] |
+| bad | [[target|display]] |
+
+normal [[target|display]] text
+| value | $a|b$ |
+`| [[target|code]] |`
+```md
+| [[target|fence]] |
+```
+""")
+        report = self.report()
+        hits = [x for x in report["issues"] if x["rule"] == "table_wiki_alias_unescaped"]
+        self.assertEqual([(x["path"], x["line"] ) for x in hits], [("n.md", 4)])
+
+    def test_table_alias_requires_real_context_and_accepts_no_outer_pipe(self):
+        self.write("target.md", "# target\n")
+        self.write("n.md", """H | V
+--- | ---
+[[target|display]] | x
+
+| lone | [[target|display]] |
+
+| H | V |
+| -- | -- |
+| [[target|display]] | x |
+
+| H | V |
+
+| --- | --- |
+| [[target|display]] | x |
+""")
+        hits = [x for x in self.report()["issues"] if x["rule"] == "table_wiki_alias_unescaped"]
+        self.assertEqual([(x["path"], x["line"]) for x in hits], [("n.md", 3)])
+
     def test_inline_alias_list_and_dotted_note(self):
         self.write("a/llama.cpp.md", '---\naliases: ["别名 A", \'别名 B\', plain]\n---\n')
         self.write("n.md", "[[别名 A]] [[别名 B]] [[plain]] [[a/llama.cpp]]")

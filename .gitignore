@@ -1,5 +1,16 @@
 # Local app state and private learning records
 /.[!.]*/
+
+# Only these non-sensitive project agent declarations may be tracked
+!/.codex/
+/.codex/*
+!/.codex/config.toml
+!/.codex/agents/
+/.codex/agents/*
+!/.codex/agents/wwl_scout.toml
+!/.codex/agents/wwl_author.toml
+!/.codex/agents/wwl_reviewer.toml
+!/.codex/agents/wwl_expert.toml
 /TaskNotes/
 /Tags/
 /资料/个人规划/

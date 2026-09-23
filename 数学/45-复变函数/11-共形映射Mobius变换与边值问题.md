@@ -59,7 +59,7 @@ $$\Delta(u\circ f)=|f'|^2(\Delta u)\circ f=0.$$
 
 ## 跨学科连接
 
-[[数学/46-数理方程/11-Laplace-Poisson方程与最大值原理|Laplace-Poisson方程与最大值原理]]。建议比较定义、适用条件与所用范数，再迁移方法。
+[[数学/46-数理方程/11-Laplace-Poisson方程与最大值原理|Laplace-Poisson方程与最大值原理]]。去读调和函数的平均值、最大值与 Dirichlet 唯一性，再用 $\Delta(u\circ f)=|f'|^2(\Delta u)\circ f$ 搬运无源 Laplace 问题；Poisson 右端会变换，且边界值搬运还需映射和边界条件可用。
 
 ## 核验与延伸阅读
 

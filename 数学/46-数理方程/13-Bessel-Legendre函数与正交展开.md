@@ -59,7 +59,7 @@ $$P_\ell(x)=\frac1{2^\ell\ell!}\frac{d^\ell}{dx^\ell}(x^2-1)^\ell$$
 
 ## 跨学科连接
 
-[[数学/16-数学分析/13-Fourier级数正交展开与收敛|Fourier级数正交展开与收敛]]。建议比较定义、适用条件与所用范数，再迁移方法。
+[[数学/16-数学分析/13-Fourier级数正交展开与收敛|Fourier级数正交展开与收敛]]：把 Fourier 基的正交投影与 Bessel/Legendre 的 Sturm–Liouville 展开并列，但投影必须分别使用圆盘径向的权重 $r$、Legendre 的权重 1 或球面的面积测度；$L^2$ 收敛不自动给出逐点边界恢复。
 
 ## 核验与延伸阅读
 

@@ -61,6 +61,8 @@ tags:
 
 ### 3. 验证双向编辑
 
+修改前记下三篇练习笔记的原始 `rating` 和 `status`，便于最后恢复。
+
 1. 在 Table 中把一本书的 `rating` 改成另一个数字。
 2. 打开对应 `.md`，切到 Source mode，观察 YAML 已改变。
 3. 直接在 YAML 中修改 `status`。
@@ -77,6 +79,12 @@ tags:
 ![[Library.base#Gallery]]
 ```
 
+### 5. 退出与恢复
+
+在设置的核心插件中关闭 Bases 后，书籍笔记的正文和 Properties 仍在原 `.md` 文件中，`Library.base` 也仍保存视图配置；只是不能继续使用 Bases 视图。重新启用 Bases 并打开同一个 `Library.base`，即可继续使用这些视图。
+
+停用插件不会撤销之前从表格写入 YAML 的改动。要恢复练习数据，打开三篇 Markdown 笔记，将 `rating` 和 `status` 改回事先记下的原值；保留或清理自建的练习文件由你决定，不需改动其他笔记。
+
 ## 成功标准
 
 - [ ] 我的 Base 只显示带 `playground/book` 标签的笔记
@@ -90,9 +98,10 @@ tags:
 - 无过滤条件时 Base 会覆盖整个 Vault；教学 Base 必须按路径、标签或类型过滤。
 - 当前可以设置多个排序条件，但一次只能按一个属性分组。
 - Bases 中每一行代表一个文件，不是脱离文件存在的任意数据库记录。
-- Table、Cards、List 是核心能力；Map 视图需要另装 Obsidian 团队维护的 **Maps 社区插件**。
-- Maps 虽由 Obsidian 团队维护，仍受社区插件安装、安全和更新模型约束。
-- Kanban、Calendar 与 Bases 的发布支持应以当前官方 Roadmap 为准，不要把规划项写成已交付功能。
+- Table、Cards、List 是核心布局；官方当前文档分别标示最低应用版本为 1.9、1.9、1.10。
+- Map 视图最低需要 Obsidian 1.10，且需要另装 Obsidian 团队维护的 **Maps 社区插件**。Maps 虽由 Obsidian 团队维护，仍受社区插件安装、安全和更新模型约束。
+- 官方当前文档标示 Kanban view 最低需要 Obsidian 1.14；官方 Roadmap 当前将它列为 Active。Calendar view 仍在 Roadmap 的 Planned 项中，不能把 Calendar 写成已交付的 Bases 布局。
+- 以上是 2026-09-23 核对的官方文档和 Roadmap 状态。本批实际运行的 WWL 与临时验证库均为 Obsidian 1.13.7，不满足文档所列的 Kanban 最低版本；本课未验证 Kanban、Calendar 或 Maps，也未为这些布局升级应用或安装插件。
 
 ## 官方文档链接
 
@@ -100,6 +109,7 @@ tags:
 - [Bases views](https://obsidian.md/help/bases/views)
 - [Bases syntax](https://obsidian.md/help/bases/syntax)
 - [Map view and Maps plugin](https://obsidian.md/help/bases/views/map)
+- [Obsidian Roadmap](https://obsidian.md/roadmap/)
 - [Properties](https://obsidian.md/help/properties)
 
 ---

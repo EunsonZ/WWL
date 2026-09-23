@@ -52,6 +52,9 @@ SORT rating DESC
 ```
 ````
 
+> [!note] 命令顺序决定当前行集
+> 这个示例没有 `FLATTEN`，所以每个符合条件的页面最多显示一行。DQL 的数据命令按书写顺序处理：`FLATTEN` 可将一个页面的列表展开为多行，`LIMIT` 截取它所在位置的当前行集。例如先 `SORT` 再 `LIMIT 5` 是取排序后的前五行；先 `LIMIT 5` 再 `SORT` 只排序已截取的五行。展开后的行数不能当作笔记数；`LIMIT` 也不承诺之前只扫描同样数量的页面。复杂查询先用 `FROM` 缩小范围，再明确每一步处理的是页面、展开项还是分组行。
+
 ## 观察重点
 
 | 问题 | Bases | Dataview DQL |
@@ -85,6 +88,7 @@ DataviewJS 具有插件级权限，可改写、创建、删除文件并联网。
 
 - [Obsidian Bases](https://obsidian.md/help/bases)
 - [Dataview](https://github.com/blacksmithgu/obsidian-dataview)
+- [Dataview Data Commands：命令顺序、FLATTEN 与 LIMIT](https://blacksmithgu.github.io/obsidian-dataview/queries/data-commands/)
 - [Dataview JavaScript security note](https://github.com/blacksmithgu/obsidian-dataview#javascript-queries-security-note)
 
 ---

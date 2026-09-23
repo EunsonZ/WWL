@@ -47,6 +47,8 @@ cmake --build build --config Release -j
 ctest --test-dir build --output-on-failure
 ```
 
+`CMAKE_BUILD_TYPE` 对单配置生成器生效；若使用多配置生成器，最后一条测试命令要加 `-C Release`，与构建时的 `--config Release` 对齐。
+
 具体后端开关会随版本和平台演进，尤其 CUDA、Metal、Vulkan、BLAS 和 RPC；不要把网上旧变量名直接写进团队构建。先执行 `cmake -S . -B build`，查看配置摘要、可用 preset 与本地依赖探测，再只启用你有权限和硬件支持的后端。模型权重是大文件/许可对象，不是这个入门构建的前置条件。
 
 ## 一处小幅扩展的安全顺序
@@ -57,7 +59,7 @@ ctest --test-dir build --output-on-failure
 4. 以最小 diff 实现，CPU 路径先通过；后端特有改动须有 feature guard 和不支持时的清楚报错。
 5. 运行目标测试、全量相关测试、Debug + sanitizer（可用时）和至少一个 Release 构建；记录平台与 revision。
 
-把构建 target 也画进调用链：可执行 target 通过链接依赖获得公共 API，公共 API 再连接实现库/后端；运行时可选后端是否编进主程序、作为共享库加载或根本未启用，必须以当前 revision 的 target 图和配置摘要为准。可用 `cmake --build build --target help`、`compile_commands.json` 与最终链接命令取证，不要仅凭目录名推断产物关系。
+把构建 target 也画进调用链：可执行 target 通过链接依赖获得公共 API，公共 API 再连接实现库/后端；运行时可选后端是否编进主程序、作为共享库加载或根本未启用，必须以当前 revision 的 target 图和配置摘要为准。可用最终链接命令取证；生成器支持时，也可用 `cmake --build build --target help` 与 `compile_commands.json`。不要仅凭目录名推断产物关系。
 
 GGUF 是文件格式边界，不是 C++ 对象布局的转储。读取时先验证 magic/version、元数据类型、维度乘积与字节长度，再把张量交给模型/图层；格式与量化验证进入 [[AI/20-LLM/60-模型格式与量化/03-GGUF结构转换与验证|GGUF 结构、转换与验证]]。可运行的受控桥梁是 [[计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/README|token 概率与耗时 trace]]：其纯数学测试无需模型，集成 target 则要求用户提供固定 revision 的本地 checkout 与合法本地 GGUF，并明确禁用自动下载。
 

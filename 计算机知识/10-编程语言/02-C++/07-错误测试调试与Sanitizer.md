@@ -66,6 +66,8 @@ cmake -S . -B build-asan -DCMAKE_BUILD_TYPE=Debug \
 cmake --build build-asan
 ```
 
+这些命令以单配置生成器为例。使用多配置生成器时，两处 `cmake --build` 都要加 `--config Debug`，`lldb` 的目标路径也要按该生成器的实际配置子目录调整。
+
 ASan 主要捕捉越界、use-after-free 等地址错误；UBSan 检查一部分未定义行为。它们不会证明线程协议、算法正确性或所有平台行为。线程问题可另用 ThreadSanitizer，但其平台支持和组合限制要现场确认。
 
 ## 写测试前先定义契约

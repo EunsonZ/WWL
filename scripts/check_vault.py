@@ -13,7 +13,7 @@ import re
 
 import check_mirrors
 from config_checks import check_codex_config, tomllib
-from links import audit, check_reference, diagnostic, inventory, references, split_frontmatter
+from links import audit, check_reference, diagnostic, inventory, read_notes, references, split_frontmatter
 
 
 def load_yaml():
@@ -21,6 +21,29 @@ def load_yaml():
         return importlib.import_module("yaml")
     except ImportError:
         return None
+
+
+def unique_yaml_loader(yaml):
+    """Reject explicit duplicate keys while preserving SafeLoader YAML merges."""
+    class UniqueLoader(yaml.SafeLoader):
+        pass
+
+    def construct_mapping(loader, node, deep=False):
+        seen = set()
+        merge_key = object()
+        for key, _ in node.value:
+            # Let SafeLoader flatten merges after checking explicit keys.
+            name = (merge_key if key.tag == "tag:yaml.org,2002:merge"
+                    else loader.construct_object(key, deep=deep))
+            if name in seen:
+                raise ValueError("duplicate YAML property")
+            seen.add(name)
+        return yaml.SafeLoader.construct_mapping(loader, node, deep=deep)
+
+    UniqueLoader.add_constructor(
+        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, construct_mapping,
+    )
+    return UniqueLoader
 
 
 def strict_json(text):
@@ -42,6 +65,148 @@ def strict_json(text):
                       parse_constant=reject_constant, parse_float=finite_float)
 
 
+_CANVAS_NODE_TYPES = {"text", "file", "link", "group"}
+_CANVAS_SIDES = {"top", "right", "bottom", "left"}
+_CANVAS_ENDS = {"none", "arrow"}
+
+
+def canvas_integer(value):
+    """Accept JSON numbers whose finite mathematical value is an integer."""
+    return (type(value) is int or
+            (type(value) is float and math.isfinite(value) and value.is_integer()))
+
+
+def canvas_check(data, index, notes, path):
+    """Validate JSON Canvas 1.0 structure without rewriting extensions or order."""
+    if not isinstance(data, dict):
+        raise ValueError("canvas object required")
+    nodes = data.get("nodes", [])
+    edges = data.get("edges", [])
+    if not isinstance(nodes, list) or not isinstance(edges, list):
+        raise ValueError("canvas collections must be arrays")
+
+    node_ids = set()
+    file_targets = []
+    for node in nodes:
+        if not isinstance(node, dict):
+            raise ValueError("canvas node must be an object")
+        node_id = node.get("id")
+        node_type = node.get("type")
+        if not isinstance(node_id, str) or node_id in node_ids:
+            raise ValueError("canvas node id must be a unique string")
+        if not isinstance(node_type, str) or node_type not in _CANVAS_NODE_TYPES:
+            raise ValueError("unknown canvas node type")
+        if any(not canvas_integer(node.get(field))
+               for field in ("x", "y", "width", "height")):
+            raise ValueError("canvas geometry must use integers")
+        if "color" in node and not isinstance(node["color"], str):
+            raise ValueError("canvas node color must be a string")
+        node_ids.add(node_id)
+
+        if node_type == "text":
+            if not isinstance(node.get("text"), str):
+                raise ValueError("text node requires text")
+        elif node_type == "file":
+            if not isinstance(node.get("file"), str):
+                raise ValueError("file node requires a file path")
+            subpath = ""
+            if "subpath" in node:
+                subpath = node["subpath"]
+                if not isinstance(subpath, str) or not subpath.startswith("#"):
+                    raise ValueError("file node subpath must start with #")
+            file_targets.append(node["file"] + subpath)
+        elif node_type == "link":
+            if not isinstance(node.get("url"), str):
+                raise ValueError("link node requires a URL")
+        else:
+            for field in ("label", "background"):
+                if field in node and not isinstance(node[field], str):
+                    raise ValueError("group text fields must be strings")
+            if ("backgroundStyle" in node and
+                    (not isinstance(node["backgroundStyle"], str) or
+                     node["backgroundStyle"] not in {"cover", "ratio", "repeat"})):
+                raise ValueError("invalid group background style")
+
+    edge_ids = set()
+    for edge in edges:
+        if not isinstance(edge, dict):
+            raise ValueError("canvas edge must be an object")
+        edge_id = edge.get("id")
+        if not isinstance(edge_id, str) or edge_id in edge_ids:
+            raise ValueError("canvas edge id must be a unique string")
+        edge_ids.add(edge_id)
+        for field in ("fromNode", "toNode"):
+            if (not isinstance(edge.get(field), str) or edge[field] not in node_ids):
+                raise ValueError("canvas edge must reference an existing node")
+        for field in ("fromSide", "toSide"):
+            if (field in edge and
+                    (not isinstance(edge[field], str) or edge[field] not in _CANVAS_SIDES)):
+                raise ValueError("invalid canvas edge side")
+        for field in ("fromEnd", "toEnd"):
+            if (field in edge and
+                    (not isinstance(edge[field], str) or edge[field] not in _CANVAS_ENDS)):
+                raise ValueError("invalid canvas edge end")
+        if "color" in edge and not isinstance(edge["color"], str):
+            raise ValueError("canvas edge color must be a string")
+        if "label" in edge and not isinstance(edge["label"], str):
+            raise ValueError("canvas edge label must be a string")
+
+    issues = []
+    for target in file_targets:
+        found, _ = check_reference(index, notes, path, None, target, "wiki")
+        issues.extend(found)
+    return issues
+
+
+_ISO_DATE_TEXT = re.compile(r"\d{4}-\d{2}-\d{2}")
+_ISO_DATETIME_TEXT = re.compile(
+    r"\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}"
+    r"(?::\d{2}(?:\.\d{1,6})?)?(?:Z|[+-]\d{2}:\d{2})?"
+)
+_KNOWN_TEMPLATE_PREFIXES = (
+    "00-工作台/模板/",
+    "Obsidian知识/90-资源/01-模板/",
+)
+_TEMPLATE_TOKEN = (
+    r"(?:\{\{[A-Za-z][A-Za-z0-9_-]*(?::[^{}\r\n]+)?\}\}|"
+    r"<%(?:(?!<%|%>)[^\r\n])*%>)"
+)
+_TEMPLATE_VALUE = re.compile(
+    _TEMPLATE_TOKEN + r"(?:[ \t]+" + _TEMPLATE_TOKEN + r")*"
+)
+
+
+def iso_string_kind(value):
+    """Return an exact ISO scalar kind without coercing ordinary text."""
+    if not isinstance(value, str):
+        return None
+    if _ISO_DATE_TEXT.fullmatch(value):
+        try:
+            datetime.date.fromisoformat(value)
+        except ValueError:
+            return None
+        return "date"
+    if _ISO_DATETIME_TEXT.fullmatch(value):
+        candidate = value[:-1] + "+00:00" if value.endswith("Z") else value
+        try:
+            datetime.datetime.fromisoformat(candidate)
+        except ValueError:
+            return None
+        return "datetime"
+    return None
+
+
+def pending_template_kind(value, path):
+    """Recognize bounded pending values without validating template execution."""
+    if not isinstance(value, str):
+        return None
+    if value == "":
+        return ("empty" if any(path.startswith(prefix)
+                               for prefix in _KNOWN_TEMPLATE_PREFIXES)
+                else None)
+    return "expression" if _TEMPLATE_VALUE.fullmatch(value) else None
+
+
 def yaml_check(notes, yaml):
     issues, metadata, aliases = [], {}, {}
     if yaml is None:
@@ -51,22 +216,14 @@ def yaml_check(notes, yaml):
         return issues, metadata, None
     # SafeLoader plus duplicate mapping detection; exception text is never
     # returned because YAML errors may quote a private property value.
-    class UniqueLoader(yaml.SafeLoader):
-        pass
-    def construct_mapping(loader, node, deep=False):
-        seen = set()
-        for key, _ in node.value:
-            name = loader.construct_object(key, deep=deep)
-            if name in seen:
-                raise ValueError("duplicate YAML property")
-            seen.add(name)
-        return yaml.SafeLoader.construct_mapping(loader, node, deep=deep)
-    UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, construct_mapping)
+    loader = unique_yaml_loader(yaml)
     scalar_fields = {"domain", "type", "course_role", "content_status", "evidence_status", "subject_note"}
     list_fields = {"aliases", "sources", "prerequisites"}
     enums = {"content_status": {"draft", "usable", "deprecated"},
              "evidence_status": {"unreviewed", "partial", "reviewed"}}
     property_types = defaultdict(lambda: defaultdict(list))
+    iso_strings = defaultdict(lambda: defaultdict(list))
+    pending_templates = defaultdict(lambda: defaultdict(list))
     for path, text in notes.items():
         front, _, closing = split_frontmatter(text)
         if front is None:
@@ -75,7 +232,7 @@ def yaml_check(notes, yaml):
             issues.append(diagnostic("frontmatter_unclosed", path, 1))
             continue
         try:
-            data = yaml.load(front, Loader=UniqueLoader)
+            data = yaml.load(front, Loader=loader)
         except Exception:
             issues.append(diagnostic("yaml_invalid", path, 1))
             continue
@@ -90,6 +247,10 @@ def yaml_check(notes, yaml):
         for key, value in data.items():
             if value is None:
                 continue  # Missing has meaning; never fill missing values.
+            template_kind = pending_template_kind(value, path)
+            if template_kind:
+                pending_templates[key][template_kind].append(path)
+                continue
             if isinstance(value, bool):
                 kind = "checkbox"
             elif isinstance(value, (int, float)):
@@ -102,6 +263,9 @@ def yaml_check(notes, yaml):
                 kind = "date"
             elif isinstance(value, str):
                 kind = "text"
+                iso_kind = iso_string_kind(value)
+                if iso_kind:
+                    iso_strings[key][iso_kind].append(path)
             else:
                 kind = "mapping"
             property_types[key][kind].append(path)
@@ -120,8 +284,46 @@ def yaml_check(notes, yaml):
                 values = [values]
             if isinstance(values, list):
                 for value in values:
-                    if isinstance(value, str) and not list(references(value)):
+                    if (isinstance(value, str) and
+                            not pending_template_kind(value, path) and
+                            not list(references(value))):
                         issues.append(diagnostic("property_link_required", path, 1, field=field))
+
+    for field, candidates in iso_strings.items():
+        types = property_types[field]
+        representations = {}
+        for kind, quoted_paths in candidates.items():
+            if kind not in types:
+                continue
+            native_paths = list(types[kind])
+            quoted_set = set(quoted_paths)
+            remaining_text = [path for path in types.get("text", [])
+                              if path not in quoted_set]
+            if remaining_text:
+                types["text"] = remaining_text
+            else:
+                types.pop("text", None)
+            types[kind] = native_paths + quoted_paths
+            representations[kind] = {
+                "yaml": sorted(native_paths),
+                "quoted_iso": sorted(quoted_paths),
+            }
+        if representations:
+            paths = sorted(path for forms in representations.values()
+                           for values in forms.values() for path in values)
+            issues.append(diagnostic(
+                "property_representation_variant", paths[0],
+                severity="review", field=field,
+                representations=representations,
+            ))
+
+    for field, forms in pending_templates.items():
+        paths = sorted(path for values in forms.values() for path in values)
+        issues.append(diagnostic(
+            "property_template_pending", paths[0],
+            severity="review", field=field,
+            forms={kind: sorted(values) for kind, values in forms.items()},
+        ))
     for field, types in property_types.items():
         if len(types) > 1:
             # Paths/types only; never print original metadata values.
@@ -136,6 +338,7 @@ def config_check(root, paths, index, notes, yaml, metadata=None):
     targets = [root / ".obsidian" / (name + ".json") for name in sorted(allowlist)]
     targets += [root / p for p in paths if p.startswith("config/") and p.endswith(".json")]
     parsed = {}
+    base_loader = None
     for path in targets:
         if not path.exists():
             continue
@@ -169,12 +372,14 @@ def config_check(root, paths, index, notes, yaml, metadata=None):
                   "multitext": lambda v: isinstance(v, list),
                   "aliases": lambda v: isinstance(v, list),
                   "tags": lambda v: isinstance(v, (list, str)),
-                  "date": lambda v: isinstance(v, (str, datetime.date)),
-                  "datetime": lambda v: isinstance(v, (str, datetime.datetime))}
+                  "date": lambda v: type(v) is datetime.date or iso_string_kind(v) == "date",
+                  "datetime": lambda v: isinstance(v, datetime.datetime) or iso_string_kind(v) == "datetime"}
         for path, data in metadata.items():
             for field, value in data.items():
                 declared = declarations.get(field)
-                if value is not None and declared in checks and not checks[declared](value):
+                if (value is not None and
+                        not pending_template_kind(value, path) and
+                        declared in checks and not checks[declared](value)):
                     issues.append(diagnostic("declared_property_type", path, 1, field=field))
     enabled = parsed.get(".obsidian/community-plugins.json", [])
     if not isinstance(enabled, list) or any(not isinstance(x, str) or not re.fullmatch(r"[A-Za-z0-9_-]+", x) for x in enabled):
@@ -193,20 +398,15 @@ def config_check(root, paths, index, notes, yaml, metadata=None):
             checked += 1
             try:
                 data = strict_json(path.read_text(encoding="utf-8"))
-                if not isinstance(data, dict) or not isinstance(data.get("nodes", []), list):
-                    raise ValueError()
-                for node in data.get("nodes", []):
-                    if isinstance(node, dict) and node.get("type") == "file":
-                        if not isinstance(node.get("file"), str):
-                            raise ValueError()
-                        found, _ = check_reference(index, notes, rel, None, node["file"], "wiki")
-                        issues.extend(found)
+                issues.extend(canvas_check(data, index, notes, rel))
             except (ValueError, OSError, UnicodeError):
                 issues.append(diagnostic("canvas_invalid", rel))
         elif rel.endswith(".base") and yaml is not None:
             checked += 1
             try:
-                data = yaml.safe_load(path.read_text(encoding="utf-8"))
+                if base_loader is None:
+                    base_loader = unique_yaml_loader(yaml)
+                data = yaml.load(path.read_text(encoding="utf-8"), Loader=base_loader)
                 if not isinstance(data, dict):
                     raise ValueError()
             except Exception:
@@ -219,13 +419,13 @@ def check(root, require_yaml=False):
     if not root.is_dir():
         raise ValueError("root must be an existing directory")
     paths, issues = inventory(root)
-    link_report, notes, index = audit(root, paths)
+    notes, note_issues = read_notes(root, paths)
     yaml = load_yaml()
     yaml_issues, metadata, aliases = yaml_check(notes, yaml)
-    if yaml is not None:
-        link_report, _, index = audit(root, paths, aliases)
-    else:
+    if yaml is None:
         issues.append(diagnostic("yaml_unavailable", "", severity="error" if require_yaml else "review"))
+    link_report, _, index = audit(root, paths, aliases, notes=notes,
+                                  note_issues=note_issues)
     issues.extend(link_report["issues"])
     issues.extend(yaml_issues)
     config_issues, config_count = config_check(root, paths, index, notes, yaml, metadata)

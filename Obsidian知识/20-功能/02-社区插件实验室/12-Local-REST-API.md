@@ -37,7 +37,9 @@ tags:
 
 WorkWithLLM 快照中插件已安装并作为 integration exception 启用。对 WWL 而言，以下是条件教学要求，不是当前状态声明：
 
-WorkWithLLM 于 2026-09-02 的只读复核确认 `obsidian-local-rest-api` 的 `manifest.json` 版本为 `5.1.0`，且插件 ID 在当时的启用列表中。本课程没有读取敏感 `data.json`、调用 REST/MCP 或连接端口；因此下列内容是条件化的安全合同要求，不是 WWL 服务运行态的证明。
+WorkWithLLM 于 2026-09-02 的历史只读复核记录的是 `5.1.0` 与当时的启用列表。WWL 于 2026-09-23 的 manifest 显示 `5.2.0`；manifest 只说明所标安装版本，不能证明 enabled、loaded、HTTPS 配置或服务可达性。
+
+维护者于 2026-06-04 发布的 GHSA-62gx-5q78-wrvx 列明受影响版本为 `<=4.1.2`，修复版本为 `4.1.3`。`5.2.0` 不在该公告的受影响范围内；这不证明没有其他漏洞或当前配置正确。下面仍是条件化的配置要求，不是 WWL 服务运行态的证明。
 
 - 仅 loopback。
 - 使用 HTTPS 和 Bearer authentication。

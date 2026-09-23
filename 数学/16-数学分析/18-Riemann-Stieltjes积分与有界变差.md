@@ -28,7 +28,7 @@ $$V_a^b(\alpha)=\sup_P\sum_i|\alpha(x_i)-\alpha(x_{i-1})|.$$
 
 ## 跳跃、密度与奇异部分
 
-若 $\alpha\in C^1$，积分退化为 $\int f\alpha'\,dx$。若 $\alpha$ 在内部点 $c$ 有单位跳跃、其他处常数，连续 $f$ 的积分为 $f(c)$。采用右连续分布函数和其 Lebesgue–Stieltjes 测度时，区间质量满足 $\mu((s,t])=\alpha(t)-\alpha(s)$，端点原子因此有明确归属。
+若 $\alpha\in C^1$，积分退化为 $\int f\alpha'\,dx$。若 $\alpha$ 在内部点 $c$ 有单位跳跃、其他处常数，连续 $f$ 的积分为 $f(c)$。若 $\alpha$ 是定义在实轴上的单调不减右连续实值函数，其 Lebesgue–Stieltjes 测度满足 $\mu((s,t])=\alpha(t)-\alpha(s)$。对连续 $f$，本页从 $\alpha(a)$ 开始取增量的 Riemann–Stieltjes 分割和对应 $(a,b]$ 上的积分：$b$ 处的跳跃计入，$a$ 处的原子 $\alpha(a)-\alpha(a-)$ 不计；若改为对 $[a,b]$ 作 Lebesgue–Stieltjes 积分，还需加上 $f(a)[\alpha(a)-\alpha(a-)]$。
 
 概率的期望 $\mathbb E[g(X)]=\int g\,dF_X$ 可统一离散与连续情况。并不是每个无原子的分布都有密度：Cantor 分布函数连续、几乎处处导数为零，却从 $0$ 增到 $1$。所以 $\int\alpha'$ 未必恢复 $\alpha$ 的总增量。
 
@@ -64,7 +64,7 @@ $$\int_0^1 x\,d\alpha=\int_0^1 2x^2\,dx+\frac12=\frac76.$$
 
 ## 跨学科连接
 
-[[数学/46-数理方程/16-分布导数弱解与Sobolev空间|分布导数弱解与Sobolev空间]]。建议比较定义、适用条件与所用范数，再迁移方法。
+[[数学/46-数理方程/16-分布导数弱解与Sobolev空间|分布导数弱解与Sobolev空间]]。单调不减且右连续的 $\alpha$ 如何给出正的 Lebesgue--Stieltjes 测度，而一般实值有界变差函数在选定右连续代表后，其分布导数为何是有限符号测度？若 $\alpha$ 在区间内部点 $c$ 的跳跃为 $\alpha(c)-\alpha(c-)$，相应测度在 $c$ 有同符号的原子。目标页再区分 $W^{1,p}$ 所要求的、可由 $L^p$ 函数表示的弱导数；含 Dirac 原子的分布导数并不因此属于 $L^1$ 或 $L^2$，更不能自动落入 Sobolev 空间。
 
 ## 核验与延伸阅读
 

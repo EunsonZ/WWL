@@ -21,9 +21,50 @@ SQL 通常保留重复行；没有 ORDER BY 就没有可依赖的输出顺序。
 
 ## NULL 的三值逻辑要用反例记住
 
-`NULL = NULL` 不是 TRUE；`IS NULL` 才用于空值判断。WHERE 只保留条件为 TRUE 的行，FALSE 与 UNKNOWN 都被过滤。若集合含 NULL，`x NOT IN (...)` 可能成为 UNKNOWN，导致意外没有结果。表达反连接时常用相关 NOT EXISTS，并明确 NULL 是否应视为匹配。
+`NULL = NULL` 不是 TRUE；`IS NULL` 才用于空值判断。WHERE 只保留条件为 TRUE 的行，FALSE 与 UNKNOWN 都被过滤。
+
+### 把反连接的三种结果逐行算完
+
+令外层 `o.x` 依次为 `{1, 2, NULL}`，子查询 `r.y` 为 `{1, NULL}`。下面按 PostgreSQL 17 的三值语义推演；本例未实跑数据库。
+
+```sql
+WITH outer_values(x) AS (VALUES (1), (2), (NULL)),
+     rhs(y) AS (VALUES (1), (NULL))
+SELECT o.x,
+       o.x NOT IN (SELECT y FROM rhs) AS not_in,
+       NOT EXISTS (SELECT 1 FROM rhs AS r WHERE r.y = o.x) AS not_exists
+FROM outer_values AS o;
+```
+
+| `o.x` | `NOT IN` 结果 | 等值 `NOT EXISTS` 结果 |
+| --- | --- | --- |
+| `1` | FALSE，过滤 | FALSE，过滤 |
+| `2` | UNKNOWN，过滤 | TRUE，保留 |
+| `NULL` | UNKNOWN，过滤 | TRUE，保留 |
+
+表中“保留/过滤”指把相应条件放入 `WHERE` 时的结果：`NOT IN` 不留任何行，等值 `NOT EXISTS` 保留 `2` 与外层 NULL。`2 NOT IN (1, NULL)` 要同时满足 `2 <> 1` 与 `2 <> NULL`；后一项为 UNKNOWN，所以整体不是 TRUE。外层为 NULL 时，比较也为 UNKNOWN。相反，相关 `NOT EXISTS` 只问等值谓词是否产生 TRUE 的匹配行；`r.y = NULL` 不会为 TRUE，因此默认等值语义把外层 NULL 当作“未匹配”而保留。
+
+这不是无需约束的等价替换。若业务规定外层 NULL 是未知键、不得进入反连接结果，应明确写为：
+
+```sql
+WHERE o.x IS NOT NULL
+  AND NOT EXISTS (SELECT 1 FROM rhs AS r WHERE r.y = o.x)
+```
+
+在本表中它只保留 `2`。若业务反而规定两个 NULL 代表同一可匹配缺失类别，应使用 PostgreSQL 的 `IS NOT DISTINCT FROM` 明确定义该比较，不能假定普通 `=` 会匹配两个 NULL。
 
 COUNT(*) 计行，COUNT(col) 忽略该列 NULL；SUM 在没有输入行时通常返回 NULL，而不是自动返回 0。业务要求 0 时显式 COALESCE，但不要把“未知金额”随意等同于 0。
+
+空集合是另一件事：
+
+```sql
+SELECT COUNT(*) AS n, SUM(amount) AS total
+FROM (VALUES (10), (NULL), (20)) AS t(amount)
+WHERE FALSE;
+-- n = 0, total = NULL
+```
+
+`COUNT(*)` 对空输入给 0；`SUM` 与除 `count` 外的一般聚合对空输入给 NULL。这里的 NULL 表示没有可聚合的行，和某一已有行的 `amount` 为 NULL 要分开理解。
 
 ## 外连接过滤的位置决定是否保留空匹配
 
@@ -59,7 +100,7 @@ ROW_NUMBER 给每行编号；RANK 对并列共享名次并跳号；DENSE_RANK �
 
 相关子查询按外层变量表达依赖，不代表引擎必然逐行重新运行。CTE 可以改善可读性，其物化与内联策略依方言和版本而变；递归 CTE 必须考虑终止条件与环。UPDATE/DELETE 需要约束目标集合并在事务中验证影响行数，MERGE/UPSERT 的冲突语义也有引擎差异。
 
-**练习**：金额为 10、NULL、20 时 COUNT(*)、COUNT(amount)、SUM(amount) 分别是什么？分别为 3、2、30。接着让输入为空，比较 COUNT 与 SUM；这样才能看清“忽略 NULL”和“空输入的结果”是两个问题。
+**练习**：金额为 10、NULL、20 时 COUNT(*)、COUNT(amount)、SUM(amount) 分别是什么？分别为 3、2、30。再把输入筛成空集合：COUNT(*) 为 0，SUM(amount) 为 NULL；这样才能看清“忽略 NULL”和“空输入的结果”是两个问题。
 
 ## 关联阅读
 
@@ -70,6 +111,8 @@ ROW_NUMBER 给每行编号；RANK 对并列共享名次并跳号；DENSE_RANK �
 ## 依据与继续查证
 
 - [PostgreSQL 17 文档（案例方言，不代表所有数据库）](https://www.postgresql.org/docs/17/)
+- [PostgreSQL 17：子查询表达式（EXISTS、IN、NOT IN）](https://www.postgresql.org/docs/17/functions-subquery.html)
+- [PostgreSQL 17：聚合函数（count 与空输入）](https://www.postgresql.org/docs/17/functions-aggregate.html)
 - [SQLite 文档（本地实验引擎）](https://www.sqlite.org/docs.html)
 - [CMU 15-445/645（数据库系统原课程）](https://15445.courses.cs.cmu.edu/fall2024/)
 

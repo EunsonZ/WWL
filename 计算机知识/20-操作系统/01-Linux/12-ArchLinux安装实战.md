@@ -317,12 +317,17 @@ lsblk -f "$TARGET_DISK"
 
 ## 阶段 4：挂载目标文件系统
 
-先挂 root，再在其内部挂 ESP；层级顺序很重要：
+仍在同一 live shell 内，先重新确认原始变量仍解析到格式化门禁绑定的规范化路径，再挂 root 和 ESP；层级顺序很重要：
 
 ```bash
-mount "$ROOT_PART" /mnt
-mount --mkdir "$ESP_PART" /mnt/boot
+test "$FORMAT_GATE" = "approved:$FORMAT_EXPECTED" && \
+  test "$(readlink -f -- "$ROOT_PART")" = "$ROOT_PART_REAL" && \
+  test "$(readlink -f -- "$ESP_PART")" = "$ESP_PART_REAL" && \
+  mount "$ROOT_PART_REAL" /mnt && \
+  mount --mkdir "$ESP_PART_REAL" /mnt/boot
 ```
+
+`&&` 只停止后续调用，不会撤销已经成功的挂载。若 ESP 挂载失败，root 可能仍挂在 `/mnt`；先用 `findmnt -R /mnt` 核对本课目标，再按下方“阶段 4 回退点”正常卸载，确认后重做本阶段；不要在半挂载树上继续 `pacstrap`。
 
 核对挂载源、文件系统和层级：
 

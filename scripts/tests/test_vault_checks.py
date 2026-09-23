@@ -279,6 +279,48 @@ class MirrorTests(VaultFixture):
 
 
 class CheckerTests(VaultFixture):
+    def test_t1_single_markdown_read_feeds_final_alias_audit_and_mirrors(self):
+        self.write("target.md", "---\naliases: [alias-name]\n---\n# Anchor\n")
+        self.write("snippet.py", "print(1)\n")
+        self.write("n.md", "[[alias-name#Anchor]]\n"
+                   "<!-- code-sync: ./snippet.py -->\n"
+                   "```python\nprint(1)\n```\n")
+        unreadable = self.write("unreadable.md", "# unreadable\n").resolve()
+        resolved_root = self.root.resolve()
+        original_read_bytes = Path.read_bytes
+        reads, seen_notes = [], []
+
+        def guarded_read_bytes(path):
+            if path.suffix == ".md":
+                reads.append(path.relative_to(resolved_root).as_posix())
+            if path == unreadable:
+                raise OSError("simulated unreadable note")
+            return original_read_bytes(path)
+
+        def parsed_aliases(notes, _yaml):
+            seen_notes.append(notes)
+            return [], {}, {"target.md": ["alias-name"], "n.md": []}
+
+        with mock.patch.object(check_vault, "load_yaml", return_value=object()), \
+             mock.patch.object(check_vault, "yaml_check", side_effect=parsed_aliases), \
+             mock.patch.object(check_vault, "audit", wraps=check_vault.audit) as audited, \
+             mock.patch.object(Path, "read_bytes", guarded_read_bytes):
+            report = check_vault.check(self.root)
+
+        self.assertEqual(audited.call_count, 1)
+        self.assertIs(audited.call_args.kwargs["notes"], seen_notes[0])
+        self.assertEqual(sorted(reads), ["n.md", "target.md", "unreadable.md"])
+        self.assertEqual(
+            report["resolved_links"],
+            [{"path": "n.md", "line": 1, "target": "alias-name#Anchor",
+              "resolved": "target.md"}],
+        )
+        rules = [item["rule"] for item in report["issues"]]
+        self.assertEqual(rules.count("note_unreadable"), 1)
+        self.assertIn("alias_target_needs_ui_review", rules)
+        self.assertNotIn("link_missing_anchor", rules)
+        self.assertEqual(report["scope"]["mirrors_checked"], 1)
+
     def test_missing_yaml_is_partial_or_error_not_pass(self):
         self.write("README.md", "# Home\n")
         with mock.patch.object(check_vault, "load_yaml", return_value=None):
@@ -332,10 +374,113 @@ class CheckerTests(VaultFixture):
 
     def test_canvas_file_targets_and_wrong_shape(self):
         self.write("a.md", "# A\n")
-        self.write("ok.canvas", json.dumps({"nodes": [{"type": "file", "file": "a.md"}]}))
+        self.write("ok.canvas", json.dumps({"nodes": [{
+            "id": "file-a", "type": "file", "file": "a.md", "subpath": "#A",
+            "x": 0, "y": 0, "width": 200, "height": 100,
+        }]}))
         self.write("bad.canvas", "[]")
         report = check_vault.check(self.root)
         self.assertEqual([x["path"] for x in report["issues"] if x["rule"] == "canvas_invalid"], ["bad.canvas"])
+
+    def test_canvas_optional_collections_extensions_and_order(self):
+        self.write("background.png", "image")
+        canvas = {
+            "metadata": {"extension": "kept"},
+            "nodes": [
+                {
+                    "id": "group", "type": "group",
+                    "x": 0, "y": 0, "width": 800, "height": 600,
+                    "label": "Group", "background": "background.png",
+                    "backgroundStyle": "cover",
+                    "extension": {"collapsed": False},
+                },
+                {
+                    "id": "text", "type": "text",
+                    "x": 20.0, "y": 30, "width": 200, "height": 100,
+                    "text": "**Text**", "color": "#abc",
+                },
+                {
+                    "id": "link", "type": "link",
+                    "x": 250, "y": 30, "width": 200, "height": 100,
+                    "url": "https://example.com",
+                },
+            ],
+            "edges": [{
+                "id": "edge", "fromNode": "text", "toNode": "link",
+                "fromSide": "right", "fromEnd": "none",
+                "toSide": "left", "toEnd": "arrow",
+                "color": "6", "label": "next", "extension": True,
+            }],
+        }
+        original = json.dumps(canvas, ensure_ascii=False)
+        path = self.write("extended.canvas", original)
+        self.write("empty.canvas", "{}")
+        report = check_vault.check(self.root)
+        self.assertFalse([x for x in report["issues"] if x["rule"] == "canvas_invalid"])
+        self.assertEqual(path.read_text(encoding="utf-8"), original)
+
+    def test_canvas_rejects_invalid_ids_references_geometry_and_types(self):
+        def node(node_id, node_type="text", **values):
+            result = {
+                "id": node_id, "type": node_type,
+                "x": 0, "y": 0, "width": 100, "height": 50,
+            }
+            if node_type == "text":
+                result["text"] = "text"
+            result.update(values)
+            return result
+
+        def edge(edge_id="edge", **values):
+            result = {"id": edge_id, "fromNode": "a", "toNode": "b"}
+            result.update(values)
+            return result
+
+        pair = [node("a"), node("b", x=200)]
+        invalid = {
+            "bad-nodes-shape.canvas": {"nodes": {}},
+            "bad-edges-shape.canvas": {"edges": {}},
+            "bad-node-id.canvas": {"nodes": [node("same"), node("same")]},
+            "bad-node-geometry.canvas": {"nodes": [node("a", x=True)]},
+            "bad-node-fractional-geometry.canvas": {"nodes": [node("a", width=100.5)]},
+            "bad-node-type.canvas": {"nodes": [node("a", "video")]},
+            "bad-text-node.canvas": {"nodes": [node("a", text=3)]},
+            "bad-file-node.canvas": {"nodes": [{
+                "id": "a", "type": "file", "x": 0, "y": 0, "width": 100, "height": 50,
+            }]},
+            "bad-file-subpath.canvas": {"nodes": [{
+                "id": "a", "type": "file", "file": "a.md", "subpath": "Heading",
+                "x": 0, "y": 0, "width": 100, "height": 50,
+            }]},
+            "bad-link-node.canvas": {"nodes": [node("a", "link")]},
+            "bad-group-node.canvas": {"nodes": [node("a", "group", backgroundStyle="stretch")]},
+            "bad-node-color-type.canvas": {"nodes": [node("a", color=1)]},
+            "bad-edge-id.canvas": {"nodes": pair, "edges": [edge(), edge()]},
+            "bad-edge-reference.canvas": {"nodes": [node("a")], "edges": [edge(toNode="missing")]},
+            "bad-edge-fields.canvas": {"nodes": pair, "edges": [edge(fromSide="center", label=3)]},
+        }
+        for path, data in invalid.items():
+            self.write(path, json.dumps(data))
+        report = check_vault.check(self.root)
+        self.assertEqual(
+            {x["path"] for x in report["issues"] if x["rule"] == "canvas_invalid"}, set(invalid),
+        )
+
+    @unittest.skipUnless(check_vault.load_yaml() is not None,
+                         "PyYAML unavailable; Base syntax checks not run")
+    def test_base_yaml_duplicate_keys_are_invalid_without_semantic_execution(self):
+        self.write(
+            "valid.base",
+            "defaults: &defaults\n  type: table\n  limit: 10\n"
+            "views:\n  - <<: *defaults\n    limit: 20\n    name: Main\n",
+        )
+        self.write("duplicate.base", "views: []\nviews: []\n")
+        self.write("nested-duplicate.base", "views:\n  - type: table\n    name: First\n    name: Second\n")
+        report = check_vault.check(self.root)
+        self.assertEqual(
+            [x["path"] for x in report["issues"] if x["rule"] == "base_yaml_invalid"],
+            ["duplicate.base", "nested-duplicate.base"],
+        )
+        self.assertEqual(report["layers"]["base_syntax"], "checked_yaml_only")
 
     def test_t28_checker_does_not_require_change_and_detects_active_dependency(self):
         self.write("README.md", "[Maintenance](CHANGES.md)\n")
@@ -388,6 +533,61 @@ class CheckerTests(VaultFixture):
         self.assertIn("property_link_required", {x["rule"] for x in issues})
         self.assertIn("property_type_conflict", {x["rule"] for x in issues})
         self.assertEqual(len([x for x in issues if x["rule"] == "property_type"]), 2)
+
+
+    @unittest.skipUnless(check_vault.load_yaml() is not None, "PyYAML unavailable; metadata semantic checks not run")
+    def test_iso_date_text_is_representation_review_while_real_conflicts_remain(self):
+        notes = {
+            "native.md": "---\nupdated: 2026-09-22\ncaptured: 2026-09-22T10:30:00+08:00\nrevision: 2\ncheckpoint: 2026-02-28\n---\n",
+            "quoted.md": '---\nupdated: "2026-09-22"\ncaptured: "2026-09-22T10:30:00+08:00"\nrevision: 2026-09-22\ncheckpoint: "2026-02-30"\n---\n',
+            "ordinary.md": '---\ntitle: "2026-09-22"\n---\n',
+            "ordinary-2.md": "---\ntitle: ordinary text\n---\n",
+        }
+        issues, _, _ = check_vault.yaml_check(notes, check_vault.load_yaml())
+        representations = [x for x in issues if x["rule"] == "property_representation_variant"]
+        conflicts = {x["field"] for x in issues if x["rule"] == "property_type_conflict"}
+        self.assertEqual({x["field"] for x in representations}, {"updated", "captured"})
+        self.assertEqual({x["severity"] for x in representations}, {"review"})
+        self.assertEqual(conflicts, {"checkpoint", "revision"})
+        self.assertNotIn("title", {x["field"] for x in representations})
+
+    @unittest.skipUnless(check_vault.load_yaml() is not None, "PyYAML unavailable; metadata semantic checks not run")
+    def test_template_values_are_pending_without_directory_or_syntax_exemption(self):
+        notes = {
+            "actual.md": "---\nrating: 5\nmalformed_placeholder: 1\nbroken_placeholder: 2\n---\n",
+            "Obsidian知识/90-资源/01-模板/核心模板/placeholders.md": (
+                '---\nrating: ""\ncreated: "{{date}} {{time}}"\n'
+                'verified_on: "<% tp.date.now(\'YYYY-MM-DD\') %>"\nstage: "{{stage}}"\n---\n'),
+            "Obsidian知识/90-资源/01-模板/核心模板/malformed.md": (
+                '---\nmalformed_placeholder: "prefix {{date}}"\nbroken_placeholder: "{{date}"\n---\n'),
+            "Obsidian知识/90-资源/01-模板/核心模板/duplicate.md": (
+                '---\ncreated: "{{date}}"\ncreated: "{{date}}"\n---\n'),
+        }
+        issues, _, _ = check_vault.yaml_check(notes, check_vault.load_yaml())
+        self.assertEqual({x["field"] for x in issues if x["rule"] == "property_template_pending"},
+                         {"created", "rating", "stage", "verified_on"})
+        self.assertEqual({x["field"] for x in issues if x["rule"] == "property_type_conflict"},
+                         {"broken_placeholder", "malformed_placeholder"})
+        self.assertNotIn("stage", {x["field"] for x in issues if x["rule"] == "property_type"})
+        self.assertEqual({x["path"] for x in issues if x["rule"] == "yaml_invalid"},
+                         {"Obsidian知识/90-资源/01-模板/核心模板/duplicate.md"})
+
+    @unittest.skipUnless(check_vault.load_yaml() is not None, "PyYAML unavailable; metadata semantic checks not run")
+    def test_declared_dates_are_strict_and_plain_empty_number_is_not_pending(self):
+        self.write(".obsidian/types.json", json.dumps({"types": {
+            "valid_date": "date", "invalid_date": "date", "valid_datetime": "datetime",
+            "invalid_datetime": "datetime", "pending_date": "date", "rating": "number",
+            "template_rating": "number"}}))
+        self.write("dates.md", '---\nvalid_date: "2026-02-28"\ninvalid_date: "2026-02-30"\n'
+                   'valid_datetime: "2026-02-28T10:30:00+08:00"\n'
+                   'invalid_datetime: "2026-02-28 at noon"\npending_date: "{{date}}"\nrating: ""\n---\n')
+        self.write("00-工作台/模板/pending.md", '---\ntemplate_rating: ""\n---\n')
+        report = check_vault.check(self.root)
+        self.assertEqual({x["field"] for x in report["issues"] if x["rule"] == "declared_property_type"},
+                         {"invalid_date", "invalid_datetime", "rating"})
+        pending = {x["field"] for x in report["issues"] if x["rule"] == "property_template_pending"}
+        self.assertTrue({"pending_date", "template_rating"}.issubset(pending))
+        self.assertNotIn("rating", pending)
 
 
 if __name__ == "__main__":

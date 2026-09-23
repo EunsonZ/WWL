@@ -9,7 +9,11 @@
 		{"id":"society-question","type":"text","text":"# 当技术问题变成社会问题\n\n谁受益、谁承担风险？制度规则和价值目标是什么？\n\n从技术指标转到社会解释时，先分开事实、机制、因果与价值。","x":20,"y":540,"width":600,"height":190,"color":"6"},
 		{"id":"economics","type":"file","file":"社会科学/20-经济流动与宏观/00-经济流动与宏观-MOC.md","subpath":"#三条读法","x":-620,"y":900,"width":320,"height":210,"color":"3"},
 		{"id":"finance","type":"file","file":"社会科学/30-金融市场与风险/00-金融市场与风险-MOC.md","subpath":"#主路线","x":160,"y":900,"width":320,"height":210,"color":"3"},
-		{"id":"policy","type":"file","file":"社会科学/40-公共政策与社会学/00-公共政策与社会学-MOC.md","subpath":"#主路线：从目标走到可检验结论","x":940,"y":900,"width":320,"height":210,"color":"3"}
+		{"id":"policy","type":"file","file":"社会科学/40-公共政策与社会学/00-公共政策与社会学-MOC.md","subpath":"#主路线：从目标走到可检验结论","x":940,"y":900,"width":320,"height":210,"color":"3"},
+		{"id":"gradient-route","type":"group","label":"共享计算图 → VJP → 注意力反传","x":-660,"y":1250,"width":1440,"height":290,"color":"2"},
+		{"id":"calc-graph","type":"file","file":"数学/40-微积分与优化/03-计算图反向传播与自动微分.md","subpath":"#推导轨一：手算一张图","x":-620,"y":1320,"width":320,"height":170,"color":"4"},
+		{"id":"vjp","type":"file","file":"AI/11-数学与统计桥梁/02-矩阵微积分VJP与反向传播.md","subpath":"#用一个局部线性近似理解导数","x":-100,"y":1320,"width":320,"height":170,"color":"2"},
+		{"id":"attention-backward","type":"file","file":"AI/20-LLM/20-架构/10-注意力反向传播与Softmax竞争.md","subpath":"#逆着信息流逐步求导","x":420,"y":1320,"width":320,"height":170,"color":"2"}
 	],
 	"edges":[
 		{"id":"e-start-linear","fromNode":"start","fromSide":"bottom","toNode":"linear","toSide":"top","label":"先修：表示"},
@@ -22,7 +26,9 @@
 		{"id":"e-start-society","fromNode":"start","fromSide":"bottom","toNode":"society-question","toSide":"top","label":"应用：社会"},
 		{"id":"e-society-economics","fromNode":"society-question","fromSide":"bottom","toNode":"economics","toSide":"top","label":"应用：家庭"},
 		{"id":"e-society-finance","fromNode":"society-question","fromSide":"bottom","toNode":"finance","toSide":"top","label":"应用：风险"},
-		{"id":"e-society-policy","fromNode":"society-question","fromSide":"bottom","toNode":"policy","toSide":"top","label":"应用：制度"}
+		{"id":"e-society-policy","fromNode":"society-question","fromSide":"bottom","toNode":"policy","toSide":"top","label":"应用：制度"},
+		{"id":"e-calc-graph-vjp","fromNode":"calc-graph","fromSide":"right","toNode":"vjp","toSide":"left","label":"先修：累加"},
+		{"id":"e-vjp-attention-backward","fromNode":"vjp","fromSide":"right","toNode":"attention-backward","toSide":"left","label":"应用：反传"}
 	],
 	"metadata":{
 		"version":"1.0-1.0",

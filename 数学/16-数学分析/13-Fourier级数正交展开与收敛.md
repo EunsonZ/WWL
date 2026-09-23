@@ -79,7 +79,7 @@ $$
 
 ## 跨学科连接
 
-[[数学/46-数理方程/06-Fourier方法与Sturm-Liouville谱|Fourier方法与Sturm-Liouville谱]]。建议比较定义、适用条件与所用范数，再迁移方法。
+[[数学/46-数理方程/06-Fourier方法与Sturm-Liouville谱|Fourier方法与Sturm-Liouville谱]]。正交投影得到的 Fourier 系数如何变成边值问题的特征函数展开，边界条件又如何决定可用的谱？目标页将展开用于 PDE；$L^2$ 收敛、逐点收敛和边界处的级数值不是同一结论。
 
 ## 核验与延伸阅读
 

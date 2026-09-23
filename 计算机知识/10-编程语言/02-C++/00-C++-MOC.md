@@ -42,7 +42,7 @@ ctest --test-dir build --output-on-failure
 ./build/toolchain
 ```
 
-`ctest` 会运行九个短程序，最后一条直接观察第一个程序的输出；其余程序也可直接运行，例如 `./build/errors`、`./build/layout`。构建产物均在 `build/`，可以安全删除后重建；不要把它提交到课程目录。
+`ctest` 会运行八个短程序，最后一条直接观察第一个程序的输出；其余程序也可直接运行，例如 `./build/errors`、`./build/layout`。构建产物均在 `build/`，可以安全删除后重建；不要把它提交到课程目录。
 
 ## 主路线
 

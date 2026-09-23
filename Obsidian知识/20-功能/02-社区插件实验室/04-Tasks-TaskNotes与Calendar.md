@@ -14,7 +14,6 @@ plugins:
   - tasknotes
   - calendar
 native_alternative:
-  - core/tasks
   - core/search
   - core/bases
   - core/daily-notes
@@ -29,7 +28,7 @@ tags:
 
 ## 原生替代
 
-普通 `- [ ]` checkbox、核心 Search 的 `task-todo:`、Daily Notes、日期 Properties 和 Bases 已能组成轻量任务系统。
+普通 `- [ ]` checkbox、核心 Search 的 `task-todo:`、Daily Notes、日期 Properties 和 Bases 已能组成轻量任务系统。checkbox 是 Markdown 语法；任务搜索属于核心 Search，并没有一个名为 `core/tasks` 的核心插件。
 
 ## 安装与启用状态
 
@@ -50,9 +49,19 @@ TaskNotes：每个任务是一篇带 YAML 的 Markdown 文件
 
 不要让两个插件同时管理同一批任务，也不要绑定相同的 checkbox 快捷键。
 
+TaskNotes 的即时转换会创建独立 TaskNote，并按转换设置处理来源任务行；是否保留原 checkbox 必须在操作前核对。转换后的独立文件和来源改动都属于恢复范围，不能只删除生成文件就假定原任务已恢复。
+
 ## 实验 A：Tasks
 
-打开 [[Obsidian知识/30-实践/01-实验区/插件/04-Tasks查询实验|04-Tasks查询实验]]，在其中创建一条普通任务，再通过 Tasks UI 添加一个测试日期。观察预置 Tasks 查询，从结果勾选任务，然后回到源任务行查看变化。
+在 [[Obsidian知识/30-实践/01-实验区/插件/04-Tasks查询实验|04-Tasks查询实验]] 中创建一条测试任务。若已在独立实验 Vault 启用 Tasks，将以下查询放入实验笔记，先把范围限定在实验区：
+
+````markdown
+```tasks
+path includes Obsidian知识/30-实践/01-实验区/插件
+```
+````
+
+通过 Tasks UI 为该测试任务添加日期，再从查询结果勾选它，回到源任务行核对变化。查询只决定显示哪些任务；勾选结果仍会回写来源 Markdown。
 
 成功标准：任务始终可作为普通 Markdown 阅读；查询结果勾选会准确修改唯一的源任务行。
 

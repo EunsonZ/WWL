@@ -28,7 +28,7 @@ $$
 
 ## Gauss 散度定理：体积源汇与外向通量
 
-设 $\Omega\subset\mathbb R^3$ 为适当的有界分片光滑区域，$\mathbf F\in C^1$ 于其闭包邻域，则
+设 $\Omega\subset\mathbb R^3$ 为有界区域，$\partial\Omega$ 是分片 $C^1$ 的闭合可定向曲面，取外单位法向 $\mathbf n$；$\mathbf F\in C^1$ 于包含 $\overline\Omega$ 的开集，则
 
 $$
 \iint_{\partial\Omega}\mathbf F\cdot\mathbf n\,dS
@@ -39,7 +39,7 @@ $$
 
 ## Stokes 定理：曲面旋度与边界环流
 
-对有向分片光滑曲面 $S$，边界方向由右手规则与法向相容，$\mathbf F$ 在曲面邻域 $C^1$，
+对紧致有向分片光滑曲面 $S$，边界方向由右手规则与法向相容，$\mathbf F$ 在曲面邻域 $C^1$，
 
 $$
 \oint_{\partial S}\mathbf F\cdot d\mathbf r
@@ -79,7 +79,7 @@ $$
 
 ## 跨学科连接
 
-[[数学/46-数理方程/11-Laplace-Poisson方程与最大值原理|Laplace-Poisson方程与最大值原理]]。建议比较定义、适用条件与所用范数，再迁移方法。
+[[数学/46-数理方程/11-Laplace-Poisson方程与最大值原理|Laplace-Poisson方程与最大值原理]]。取 $\mathbf F=\nabla u$，Gauss 定理给出 $\int_\Omega\Delta u\,dV=\int_{\partial\Omega}\partial_nu\,dS$；结合 $-\Delta u=f$，即可读出 Neumann 数据 $g=\partial_nu$ 必须满足 $\int_\Omega f+\int_{\partial\Omega}g=0$。
 
 ## 核验与延伸阅读
 

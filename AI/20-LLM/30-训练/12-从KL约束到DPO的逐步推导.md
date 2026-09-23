@@ -17,7 +17,11 @@ aliases: []
 固定提示 $x$，设策略 $\pi(y\mid x)$、参考策略 $\pi_0(y\mid x)$、标量奖励 $r(x,y)$。考虑
 
 $$
-\max_\pi\sum_y\pi(y\mid x)r(x,y)-\beta\sum_y\pi(y\mid x)\log\frac{\pi(y\mid x)}{\pi_0(y\mid x)},\qquad\beta>0.
+\begin{aligned}
+\max_\pi\;\Bigl[&\sum_y\pi(y\mid x)r(x,y)\\
+&-\beta\sum_y\pi(y\mid x)\log\frac{\pi(y\mid x)}{\pi_0(y\mid x)}\Bigr],
+\qquad\beta>0.
+\end{aligned}
 $$
 
 第二项限制策略偏离参考分布，避免只追求奖励代理的极端解。这里假设参考在讨论的支持集上为正，配分函数有限，且先在不受神经网络参数化限制的分布空间推导。它不是对任意有限数据训练过程收敛性的保证。
@@ -33,24 +37,70 @@ $$
 把与 $y$ 无关的项收进归一化常数，得到
 
 $$
-\pi_*(y\mid x)=\frac{\pi_0(y\mid x)e^{r(x,y)/\beta}}{Z(x)},\quad
-r(x,y)=\beta\log\frac{\pi_*(y\mid x)}{\pi_0(y\mid x)}+\beta\log Z(x).
+\begin{aligned}
+\pi_*(y\mid x)&=\frac{\pi_0(y\mid x)e^{r(x,y)/\beta}}{Z(x)},\\
+r(x,y)&=\beta\log\frac{\pi_*(y\mid x)}{\pi_0(y\mid x)}+\beta\log Z(x).
+\end{aligned}
 $$
 
 奖励越高，参考概率被乘上越大的因子；$\beta$ 越大，在这个固定奖励问题中分布偏移越保守。这个关于最优分布的解释，不等于 DPO 中改变 $\beta$ 后每一步梯度一定更小。
+
+把原目标记为 $J(\pi)$，代入 $\log\pi_*=\log\pi_0+r/\beta-\log Z$，还可写成
+
+$$
+J(\pi)=\beta\log Z(x)-\beta\,\mathrm{KL}(\pi\|\pi_*).
+$$
+
+这里仍固定同一个 $x$；$\pi$ 的支持须在 $\pi_0>0$ 的范围内，$Z(x)$ 有限，且上述期望和 KL 项有定义。在这些条件下，KL 非负说明 $\pi_*$ 是分布层面目标的最大化解；这不保证神经网络参数化、有限样本或实际优化过程达到该解。
 
 ## 偏好比较为什么消去了难算的常数
 
 假设同一提示的成对偏好服从 Bradley–Terry 模型：$P(y_w\succ y_l\mid x)=\sigma(r(x,y_w)-r(x,y_l))$。代入上式，$\log Z(x)$ 相减消失。用可训练策略替代最优策略的参数化，得到
 
 $$
-z_\theta=\beta\left[\log\frac{\pi_\theta(y_w\mid x)}{\pi_0(y_w\mid x)}-\log\frac{\pi_\theta(y_l\mid x)}{\pi_0(y_l\mid x)}\right],\qquad
-L_{\rm DPO}=-\log\sigma(z_\theta).
+\begin{aligned}
+z_\theta&=\beta\left[\log\frac{\pi_\theta(y_w\mid x)}{\pi_0(y_w\mid x)}
+-\log\frac{\pi_\theta(y_l\mid x)}{\pi_0(y_l\mid x)}\right],\\
+L_{\rm DPO}&=-\log\sigma(z_\theta).
+\end{aligned}
 $$
 
 这条推导是 DPO 的核心。[^S15] 它利用了 KL 正则问题和特定偏好模型的对应，不需要另行显式训练奖励网络；不代表参考分布、偏好假设和数据覆盖问题全部消失。
 
 ![从正则化奖励到偏好损失](../../90-资源/图示/深化研究/dpo.png)
+
+## 两个候选的解析例
+
+固定提示 $x$，只考虑 $y_1,y_2$。沿用本页 Bradley–Terry 的单位尺度约定，奖励用无量纲自然对数刻度，取
+
+$$
+\pi_0=(1/2,1/2),\qquad r=(\ln3,0),\qquad\beta=1.
+$$
+
+先算未归一化权重，再计算分母：
+
+$$
+\begin{aligned}
+(w_1,w_2)&=(\tfrac12 e^{\ln3},\tfrac12 e^0)
+=(\tfrac32,\tfrac12),\\
+Z&=w_1+w_2=2,\\
+\pi_*&=(w_1/Z,w_2/Z)=(\tfrac34,\tfrac14).
+\end{aligned}
+$$
+
+这个 $\pi_*$ 是所构造奖励、参考策略和温度下的解析最优分布，不是从人类数据直接观测到的频率。若偏好标签为 $y_1\succ y_2$，本例奖励差为 $\ln3$，Bradley–Terry 给出偏好概率 $\sigma(\ln3)=3/4$。把 $\pi_\theta=\pi_*$ 代入刚才的 DPO logit：
+
+$$
+\begin{aligned}
+z_\theta
+&=\ln\frac{3/4}{1/2}-\ln\frac{1/4}{1/2}=\ln3,\\
+L_{\rm DPO}
+&=-\ln\sigma(z_\theta)=-\ln\tfrac34
+\approx0.287682.
+\end{aligned}
+$$
+
+策略概率和成对偏好概率在这个特定构造中恰好同为 $3/4$，它们的对象不同；$0.287682$ 则是一个已标注偏好对的负对数似然。这些数不说明真实偏好已被正确识别，也不保证有限数据训练的效果。改变奖励刻度时须同时检查 $r/\beta$ 与偏好模型的尺度约定，不能只比较不同实现中同名的 $\beta$。
 
 ## 梯度给出最简单的单元测试
 

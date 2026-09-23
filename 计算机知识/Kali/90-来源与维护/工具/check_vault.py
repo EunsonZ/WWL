@@ -115,10 +115,13 @@ def validate(root: Path) -> dict:
                 issue("yaml_type", rel, field + " must be a list of strings")
         if "stage" in metadata and type(metadata["stage"]) is not int:
             issue("yaml_type", rel, "stage must be an integer, not bool/text")
-        if metadata.get("content_status") not in {"usable", "draft", "deprecated"}:
+        content_status = metadata.get("content_status")
+        if not isinstance(content_status, str) or content_status not in {"usable", "draft", "deprecated"}:
             issue("status", rel, "invalid content_status")
-        if "evidence_status" in metadata and metadata["evidence_status"] not in {"partial", "unreviewed", "reviewed"}:
-            issue("status", rel, "invalid evidence_status")
+        if "evidence_status" in metadata:
+            evidence_status = metadata["evidence_status"]
+            if not isinstance(evidence_status, str) or evidence_status not in {"partial", "unreviewed", "reviewed"}:
+                issue("status", rel, "invalid evidence_status")
         active, unclosed = active_markdown(body)
         if unclosed: issue("fence", rel, "unclosed fenced code block")
         if re.search(r"\{\{[^{}]+\}\}", active): issue("placeholder", rel, "unexpanded build link")
@@ -245,6 +248,30 @@ def self_test() -> int:
         def test_yaml_wrong_type(self):
             p=self.root/self.target;t=p.read_text();p.write_text(t.replace('type: course','type: course\nsources: not-a-list'))
             self.assertIn('yaml_type',self.rules())
+        def test_invalid_status_values_reported(self):
+            target = self.root / self.target
+            original = target.read_text()
+            for field, valid in [("content_status", "usable"), ("evidence_status", "partial")]:
+                for literal in ["[]", "{}", "null", "true", "1", "unknown"]:
+                    with self.subTest(field=field, literal=literal):
+                        target.write_text(original.replace(field + ": " + valid, field + ": " + literal))
+                        report = validate(self.root)
+                        self.assertEqual(report["status"], "failed")
+                        json.dumps(report)
+                        matching = {x["rule"] for x in report["issues"]
+                                    if x["path"] == self.target and field in x["detail"]}
+                        self.assertIn("status", matching)
+                        if field == "content_status" and literal != "unknown":
+                            self.assertIn("yaml_type", matching)
+                        if field == "evidence_status":
+                            self.assertNotIn("yaml_type", matching)
+        def test_status_presence_requirements(self):
+            target = self.root / self.target
+            original = target.read_text()
+            target.write_text(original.replace("content_status: usable\n", ""))
+            self.assertIn("status", self.rules())
+            target.write_text(original.replace("evidence_status: partial\n", ""))
+            self.assertEqual(self.rules(), set())
         def test_table_alias_escape(self):
             self.write(HOME,"| A | B |\n| --- | --- |\n| [["+self.target[:-3]+r"\|OK]] | text |"+"\n")
             self.assertEqual(self.rules(),set())

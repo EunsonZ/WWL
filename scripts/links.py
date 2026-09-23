@@ -403,16 +403,28 @@ def table_wiki_alias_issues(text, path):
             yield diagnostic("table_wiki_alias_unescaped", path, index + 1)
 
 
-def audit(root, paths=None, aliases=None):
+def read_notes(root, paths):
+    """Load visible Markdown once and keep unreadable-file diagnostics separate."""
     root = Path(root).resolve()
-    paths, issues = inventory(root) if paths is None else (paths, [])
-    notes = {}
+    notes, issues = {}, []
     for path in paths:
         if path.endswith(".md"):
             try:
                 notes[path] = (root / path).read_bytes().decode("utf-8")
             except (UnicodeError, OSError):
                 issues.append(diagnostic("note_unreadable", path))
+    return notes, issues
+
+
+def audit(root, paths=None, aliases=None, *, notes=None, note_issues=()):
+    """Audit links, optionally reusing one already loaded Markdown snapshot."""
+    root = Path(root).resolve()
+    paths, issues = inventory(root) if paths is None else (paths, [])
+    if notes is None:
+        notes, loaded_issues = read_notes(root, paths)
+        issues.extend(loaded_issues)
+    else:
+        issues.extend(note_issues)
     alias_map = defaultdict(list)
     for path, text in notes.items():
         extracted, unsupported = simple_aliases(text)

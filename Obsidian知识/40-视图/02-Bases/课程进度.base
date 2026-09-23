@@ -1,46 +1,57 @@
 filters:
-  and:
-    - file.inFolder("Obsidian知识")
-    - file.hasTag("playground/course")
+  or:
+  - and:
+    - file.inFolder("Obsidian知识/10-基础")
     - or:
       - type == "lesson"
+      - type == "exercise"
       - type == "challenge"
-
+  - and:
+    - file.inFolder("Obsidian知识/20-功能/01-官方插件实验室")
+    - type == "lesson"
+    - file.name != "00-官方插件实验室-MOC"
+  - and:
+    - file.inFolder("Obsidian知识/20-功能/02-社区插件实验室")
+    - type == "plugin-lab"
+    - file.name != "00-社区插件实验室-MOC"
 properties:
   file.name:
     displayName: 课程
-  note.module:
-    displayName: 模块
-  note.level:
-    displayName: 难度
-  note.status:
-    displayName: 状态
+  file.folder:
+    displayName: 目录/单元
+  note.type:
+    displayName: 类型
+  note.stage:
+    displayName: 课程阶段
   note.order:
-    displayName: 顺序
-  note.plugins:
-    displayName: 相关插件
-
+    displayName: 单元顺序
+  note.difficulty:
+    displayName: 难度
+  note.level:
+    displayName: 难度级别
+  note.status:
+    displayName: 作者标记状态
 views:
-  - type: table
-    name: 课程进度
-    order:
-      - file.name
-      - module
-      - level
-      - status
-      - order
-      - plugins
-      - file.tags
-    sort:
-      - property: module
-        direction: ASC
-      - property: order
-        direction: ASC
-  - type: cards
-    name: 课程卡片
-    order:
-      - file.name
-      - module
-      - level
-      - status
-      - plugins
+- type: table
+  name: 课程目录
+  order:
+  - file.name
+  - file.folder
+  - type
+  - stage
+  - order
+  - difficulty
+  - level
+  - status
+  sort:
+  - property: file.path
+    direction: ASC
+- type: cards
+  name: 课程卡片
+  order:
+  - file.name
+  - file.folder
+  - type
+  - difficulty
+  - level
+  - status

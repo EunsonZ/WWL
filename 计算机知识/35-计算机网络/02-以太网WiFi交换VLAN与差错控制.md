@@ -2,7 +2,7 @@
 type: lesson
 domain: computer-science
 status: expanded
-revision: 2026-09-06
+revision_date: 2026-09-06
 tags: [computer-science, revision-2]
 ---
 

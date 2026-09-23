@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="470" viewBox="0 0 600 470" role="img" aria-labelledby="title desc">
+  <title id="title">共享节点的两条输入边</title>
+  <desc id="desc">标量 w 等于 3，x 等于 2，共同产生唯一节点 a 等于 6。a 通过两个输入位置进入加法 b，得到 b 等于 12，再得到 L 等于 b 的平方除以 2，等于 72。反向时两条输入边的贡献都要累加。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#385d8a"/></marker>
+    <style>text{font-family:"Arial Unicode MS","Heiti SC",sans-serif;fill:#16314f;text-anchor:middle}.node{fill:#f1f6fc;stroke:#385d8a;stroke-width:2}.edge{fill:none;stroke:#385d8a;stroke-width:2.5;marker-end:url(#arrow)}.label{font-size:17px}.value{font-size:22px;font-weight:600}</style>
+  </defs>
+  <rect width="600" height="470" rx="12" fill="#fff"/>
+  <text x="300" y="32" font-size="20" font-weight="600">一个节点，两次使用</text>
+  <rect class="node" x="122" y="55" width="124" height="50" rx="8"/>
+  <rect class="node" x="354" y="55" width="124" height="50" rx="8"/>
+  <text class="value" x="184" y="87">w = 3</text><text class="value" x="416" y="87">x = 2</text>
+  <path class="edge" d="M184 105 L260 151"/><path class="edge" d="M416 105 L340 151"/>
+  <rect class="node" x="214" y="155" width="172" height="56" rx="8"/>
+  <text class="value" x="300" y="189">a = wx = 6</text>
+  <path class="edge" d="M253 211 C215 238 215 254 253 283"/>
+  <path class="edge" d="M347 211 C385 238 385 254 347 283"/>
+  <text class="label" x="128" y="247">输入 1：a₁ = a</text>
+  <text class="label" x="472" y="247">输入 2：a₂ = a</text>
+  <rect class="node" x="200" y="287" width="200" height="56" rx="8"/>
+  <text class="value" x="300" y="321">b = a₁ + a₂ = 12</text>
+  <path class="edge" d="M300 343 L300 381"/>
+  <rect class="node" x="214" y="385" width="172" height="56" rx="8"/>
+  <text class="value" x="300" y="419">L = b² / 2 = 72</text>
+  <text x="300" y="460" font-size="14">箭头表示前向依赖；反向沿两条边分别贡献 12。</text>
+</svg>

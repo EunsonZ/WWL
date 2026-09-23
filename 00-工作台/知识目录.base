@@ -42,10 +42,37 @@ views:
       - property: file.path
         direction: ASC
   - type: table
-    name: 证据未记录
+    name: 正文证据未记录
     filters:
       and:
-        - "!note.evidence_status"
+        - note.evidence_status.isEmpty()
+        - not:
+            - type == "moc"
+            - type == "MOC"
+            - type == "hub"
+            - type == "map"
+            - type == "practice-hub"
+            - type == "index"
+            - type == "resource-index"
+            - type == "template"
+            - type == "report-template"
+            - type == "source"
+            - type == "source-mirror"
+            - file.basename.endsWith("-MOC")
+            - file.basename.endsWith("-导航")
+            - file.inFolder("计算机知识/00-开始/全局导航")
+            - file.inFolder("哲学与文化/90-资源/原稿")
+            - file.basename.endsWith("系统课程索引")
+            - file.path == "AI/80-实践/08-深层机制数值实验/00-数值实验导航与验收.md"
+            - file.path == "哲学与文化/90-资源/01-原始材料与参考来源索引.md"
+            - file.path == "数学/90-资源/10-图示索引与生成说明.md"
+            - file.path == "计算机知识/35-计算机网络/80-真实协议测量/05-最小解析器源码镜像.md"
+            - file.path == "AI/00-交付说明.md"
+            - file.path == "AI/90-资源/06-修订与验收报告.md"
+            - file.path == "AI/90-资源/08-本轮深化修订与验收报告.md"
+            - file.path == "数学/90-资源/09-修订说明与验收报告.md"
+            - file.path == "计算机知识/Kali/90-来源与维护/导入交付/Kali_Obsidian_v5_深度研究与结构梳理_修订说明.md"
+            - file.path == "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/源码与测试镜像.md"
     order:
       - file.name
       - file.folder

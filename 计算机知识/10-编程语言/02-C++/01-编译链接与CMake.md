@@ -80,7 +80,7 @@ cmake --build build --target toolchain
 3. **链接失败**：声明存在但定义没有参与目标、库顺序错误、ABI 不兼容；检查 target 的源文件和 `target_link_libraries`。
 4. **运行失败**：程序启动后才出现；用测试、调试器和 sanitizer，而不是继续改 CMake。
 
-配置后打开 `build/compile_commands.json`，能看到每个翻译单元实际使用的编译器、标准、include 路径和选项。它比“我记得 CMake 应该这样编译”更可靠。`PUBLIC`、`PRIVATE`、`INTERFACE` 描述的是依赖使用要求怎样沿 target 图传播，不是源文件访问权限：一个库的公共头文件若依赖另一个库的头文件，相关 include/链接要求往往要公开传播；只影响本库实现的依赖应保持 `PRIVATE`。
+使用 Makefile 或 Ninja 生成器时，配置后打开 `build/compile_commands.json`，能看到每个翻译单元实际使用的编译器、标准、include 路径和选项；其他生成器会忽略 `CMAKE_EXPORT_COMPILE_COMMANDS`，因此文件缺失本身不表示配置失败（见 [CMake 官方说明](https://cmake.org/cmake/help/latest/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html)）。`PUBLIC`、`PRIVATE`、`INTERFACE` 描述的是依赖使用要求怎样沿 target 图传播，不是源文件访问权限：一个库的公共头文件若依赖另一个库的头文件，相关 include/链接要求往往要公开传播；只影响本库实现的依赖应保持 `PRIVATE`。
 
 > [!note] 单配置与多配置生成器
 > `-DCMAKE_BUILD_TYPE=Debug` 对 Ninja/Unix Makefiles 这类单配置生成器生效；Visual Studio、Xcode 等多配置生成器通常在构建/测试时用 `--config Debug` 选择配置。判断方式是看 CMake 配置摘要和生成器，而不是假定所有平台产物都位于同一目录。
@@ -90,7 +90,7 @@ cmake --build build --target toolchain
 
 ## 练习与成功标准
 
-在 `toolchain.cpp` 中将输出改成你的短消息，重新构建指定 target；再从 `build/compile_commands.json` 找到它的完整编译命令。成功标准：只改源文件时 CMake 自动只重编该 target，命令包含 C++20 与本课 warning 选项，且删除 `build/` 后重新配置仍可完成。链接、加载与 ABI 的下一层解释见 [[计算机知识/30-计算机系统/03-ABI调用约定与静态动态链接|ABI、调用约定与静态/动态链接]]。
+在 `toolchain.cpp` 中将输出改成你的短消息，重新构建指定 target。若使用 Makefile 或 Ninja 生成器，再从 `build/compile_commands.json` 找到它的完整编译命令。成功标准：只改源文件时 CMake 自动只重编该 target；该文件存在时，命令包含 C++20 与本课 warning 选项；且删除 `build/` 后重新配置仍可完成。链接、加载与 ABI 的下一层解释见 [[计算机知识/30-计算机系统/03-ABI调用约定与静态动态链接|ABI、调用约定与静态/动态链接]]。
 
 **上一站**：[[计算机知识/10-编程语言/02-C++/00-C++-MOC|C++ MOC]] · **下一站**：[[计算机知识/10-编程语言/02-C++/02-语法类型与函数|语法、类型与函数]]
 

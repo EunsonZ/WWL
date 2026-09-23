@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """生成知识库中的精确数学 SVG；所有参数均在此公开，不使用远程图片或字体文件。
-运行：python 生成教学图示.py [--preview-dir PATH]
-依赖：numpy scipy matplotlib。SVG 将字形转为路径，阅读不需要安装中文字体。
+运行：python 生成教学图示.py [--preview-dir PATH] [--only-helix]
+依赖：numpy、matplotlib；完整生成（非 `--only-helix`）另需 scipy。SVG 将字形转为路径，阅读不需要安装中文字体。
 """
 from __future__ import annotations
 import argparse, json
@@ -12,7 +12,6 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, Polygon, Circle
 from matplotlib import font_manager
-from scipy.special import jv, jn_zeros
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT/'assets'/'figures'
@@ -44,11 +43,12 @@ def base(title: str, xlabel: str='x', ylabel: str='y', equal: bool=False, three:
     if not three: a.grid(True,alpha=.22)
     return f,a
 
-def save(name: str, f, description: str) -> None:
-    f.savefig(OUT/(name+'.svg'),metadata={'Title':name,'Description':description,'Creator':'数学知识库：本地精确绘图脚本','Date':None})
+def save(name: str, f, description: str, *, tight_bbox: bool=False) -> None:
+    save_options={'bbox_inches':'tight','pad_inches':.1} if tight_bbox else {}
+    f.savefig(OUT/(name+'.svg'),metadata={'Title':name,'Description':description,'Creator':'数学知识库：本地精确绘图脚本','Date':None},**save_options)
     if PREVIEW is not None:
         PREVIEW.mkdir(parents=True,exist_ok=True)
-        f.savefig(PREVIEW/(name+'.png'),dpi=125)
+        f.savefig(PREVIEW/(name+'.png'),dpi=125,**save_options)
     META[name]={'file':'assets/figures/'+name+'.svg','construction':description,'remote_dependencies':False}
     plt.close(f)
 
@@ -56,7 +56,14 @@ def arrow(a, p, q, label: str='') -> None:
     a.annotate('',xy=q,xytext=p,arrowprops={'arrowstyle':'->','lw':1.4})
     if label: a.text((p[0]+q[0])/2,(p[1]+q[1])/2+.14,label,fontsize=10)
 
+def generate_helix() -> None:
+    f,a=base('螺旋线：切向量沿曲线出发',three=True)
+    t=np.linspace(0,4*np.pi,700);a.plot(np.cos(t),np.sin(t),t/3);t0=2.4;p=np.array([np.cos(t0),np.sin(t0),t0/3]);v=np.array([-np.sin(t0),np.cos(t0),1/3]);a.quiver(*p,*v,length=.8,normalize=True);a.set_zlabel('z');a.set_box_aspect((1,1,1.5))
+    a.set_xticks([-1,-.5,0,.5,1]);a.set_yticks([-1,-.5,0,.5,1])
+    save('helix',f,'r(t)=(cos t,sin t,t/3)，切箭头起点为t=2.4处，方向r′。',tight_bbox=True)
+
 def generate() -> None:
+    from scipy.special import jv, jn_zeros
     f,a=base('极限：输入容差控制输出误差')
     x=np.linspace(1.25,2.7,500); eps=.65; d=min(1,eps/5)
     a.plot(x,x*x,label=r'$f(x)=x^2$'); a.axhline(4+eps,ls='--',label=r'$4\pm\varepsilon$'); a.axhline(4-eps,ls='--')
@@ -90,9 +97,7 @@ def generate() -> None:
     f,a=base('部分和：收敛不是“看起来增长不快”','N','部分和')
     n=np.arange(1,101);a.plot(n,np.cumsum(1/n),label='调和级数');a.plot(n,1-2.**(-n),label=r'$\sum_{k=1}^N2^{-k}$');a.legend()
     save('series-partial-sums',f,'部分和 H_N 与1−2^(−N)，N≤100。')
-    f,a=base('螺旋线：切向量沿曲线出发',three=True)
-    t=np.linspace(0,4*np.pi,700);a.plot(np.cos(t),np.sin(t),t/3);t0=2.4;p=np.array([np.cos(t0),np.sin(t0),t0/3]);v=np.array([-np.sin(t0),np.cos(t0),1/3]);a.quiver(*p,*v,length=.8,normalize=True);a.set_zlabel('z');a.set_box_aspect((1,1,1.5))
-    save('helix',f,'r(t)=(cos t,sin t,t/3)，切箭头起点为t=2.4处，方向r′。')
+    generate_helix()
     f,a=base('曲面与切平面：同时控制全部方向',three=True)
     u=np.linspace(.1,1.4,35);X,Y=np.meshgrid(u,u);a.plot_surface(X,Y,X*X+Y*Y,alpha=.55);a.plot_wireframe(X,Y,2*.7*X+2*.7*Y-2*.7**2,rstride=4,cstride=4,alpha=.8);a.scatter([.7],[.7],[.98]);a.set_zlabel('z')
     save('tangent-plane',f,'z=x²+y² 于(.7,.7)的切平面 z=1.4x+1.4y−.98。')
@@ -274,5 +279,11 @@ def generate() -> None:
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--preview-dir',type=Path)
+    parser.add_argument('--only-helix',action='store_true',help='只生成 helix.svg，不改写图示参数清单')
     args=parser.parse_args();PREVIEW=args.preview_dir
-    setup();generate();print(f'已生成 {len(META)} 幅本地 SVG：{OUT}')
+    setup()
+    if args.only_helix:
+        generate_helix()
+    else:
+        generate()
+    print(f'已生成 {len(META)} 幅本地 SVG：{OUT}')

@@ -1,4 +1,7 @@
-"""Deterministic boundary tests of the v2 teaching contracts, no external tools or I/O."""
+"""Offline v2 teaching tests; read packaged fixtures and write temporary files only.
+
+Run in the source 代码/夹具 layout or the documented copied code/fixtures layout.
+"""
 from __future__ import annotations
 import importlib
 import math
@@ -219,6 +222,17 @@ class FixtureV2Tests(unittest.TestCase):
         self.assertEqual(set(manifest['sha256']),set(data)-{'expected-v2.json'})
         for name,digest in manifest['sha256'].items():
             self.assertEqual(hashlib.sha256(data[name]).hexdigest(),digest)
+    def test_packaged_fixtures_match_generator(self):
+        code_dir = Path(__file__).resolve().parent
+        fixture_names = {'代码': '夹具', 'code': 'fixtures'}
+        self.assertIn(code_dir.name, fixture_names,
+                      'Keep the source 代码/夹具 or copied code/fixtures layout')
+        packaged = code_dir.parent / fixture_names[code_dir.name] / 'v2'
+        expected = fixtures.contents()
+        self.assertEqual({path.name for path in packaged.iterdir()}, set(expected))
+        for name, data in expected.items():
+            with self.subTest(fixture=name):
+                self.assertEqual((packaged / name).read_bytes(), data)
     def test_generate_existing_target_is_not_overwritten(self):
         with tempfile.TemporaryDirectory() as d:
             target=Path(d)/'new';fixtures.generate(target)

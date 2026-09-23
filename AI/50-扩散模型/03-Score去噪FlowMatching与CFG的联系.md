@@ -14,12 +14,12 @@ aliases: []
 
 ## 先统一时间方向，避免同一个t代表相反过程
 
-本页先用 $x_t=\alpha_t x_0+\sigma_t\epsilon$ 描述数据 $x_0$ 加噪，$\epsilon\sim\mathcal N(0,I)$。稍后流匹配另用从噪声到数据的时间 $u$，避免把两种文献约定混为一谈。DDPM 将去噪预测与生成过程相连。[^S64]
+本页先用 $x_t=a_t x_0+\sigma_t\epsilon$ 描述数据 $x_0$ 加噪，$\epsilon\sim\mathcal N(0,I)$。对应上一课的 DDPM 记号，局部映射为 $a_t=\sqrt{\overline\alpha_t}$、$\sigma_t=\sqrt{1-\overline\alpha_t}$；这里的 $a_t$ 不是 DDPM 的单步 $\alpha_t=1-\beta_t$。稍后流匹配另用从噪声到数据的时间 $u$，避免把两种文献约定混为一谈。DDPM 将去噪预测与生成过程相连。[^S64]
 
-给定 $x_0$，$x_t$ 的高斯条件密度梯度为
+给定 $x_0$，在 $\sigma_t>0$ 时，$x_t$ 的高斯条件密度梯度为
 
 $$
-\nabla_{x_t}\log q(x_t\mid x_0)=-\frac{x_t-\alpha_t x_0}{\sigma_t^2}=-\epsilon/\sigma_t.
+\nabla_{x_t}\log q(x_t\mid x_0)=-\frac{x_t-a_t x_0}{\sigma_t^2}=-\epsilon/\sigma_t.
 $$
 
 所以在给定噪声等级下，预测噪声与预测条件 score 之间有直接换算。但生成真正需要的是边缘分布 $q_t(x_t)$ 的 score，而不是已知干净样本条件下的单条噪声。
@@ -33,6 +33,21 @@ $$
 $$
 
 因此最优噪声预测为 $\mathbb E[\epsilon\mid x_t,t]$。在适当可微和积分交换条件下，对条件 score 取后验平均得到边缘 score，于是 $s_\theta(x_t,t)\approx-\epsilon_\theta(x_t,t)/\sigma_t$。模型不是神奇地从每个含噪样本中唯一还原当初那一份噪声，而是在不确定性下估计条件均值。
+
+把它与上一课的固定样本分开，再看一个可精算的随机模型。令 $X_0,\epsilon\overset{\mathrm{ind}}{\sim}\mathcal N(0,1)$，并令 $X_t=0.8X_0+0.6\epsilon$。此时
+
+$$
+\operatorname{Var}(X_t)=0.8^2+0.6^2=1,\qquad
+\operatorname{Cov}(\epsilon,X_t)=0.6.
+$$
+
+由于 $(\epsilon,X_t)$ 联合高斯，$\mathbb E[\epsilon\mid X_t=x]=0.6x$。因此在 $X_t=1$ 时，噪声的最小均方误差预测是 $0.6$，不是上一课那次固定构造中预先选定的样本噪声 $-1$。同时 $X_t\sim\mathcal N(0,1)$，所以边缘 score 为 $\nabla_x\log q_t(x)=-x$；条件 score 经后验平均也给出同一结果：
+
+$$
+\mathbb E\!\left[\nabla_x\log q_t(x\mid X_0)\mid X_t=x\right]
+=-\frac{\mathbb E[\epsilon\mid X_t=x]}{0.6}
+=-x.
+$$
 
 预测 $x_0$、$\epsilon$ 或速度参数化可以互相代数转换，但训练时对不同时间的误差权重未必相同；在 $\sigma_t$ 很小的端点直接除法也可能不稳定。参数化、时间采样和 SNR 权重必须一起说明。
 

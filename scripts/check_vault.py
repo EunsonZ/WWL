@@ -340,12 +340,14 @@ def config_check(root, paths, index, notes, yaml, metadata=None):
     parsed = {}
     base_loader = None
     for path in targets:
-        if not path.exists():
-            continue
         rel = path.relative_to(root).as_posix()
         inside = path.relative_to(root).parts
         if any(root.joinpath(*inside[:end]).is_symlink() for end in range(1, len(inside) + 1)):
             issues.append(diagnostic("config_symlink_not_read", rel))
+            continue
+        # exists() follows links and is false for a dangling link. Diagnose
+        # every linked path before testing presence; never read its target.
+        if not path.exists():
             continue
         checked += 1
         try:

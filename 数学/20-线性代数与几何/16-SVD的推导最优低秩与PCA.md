@@ -16,7 +16,7 @@ tags:
 
 对 $A\in\mathbb C^{m\times n}$，$A^*A$ 是半正定 Hermitian 矩阵，有正交归一特征向量 $v_i$ 与非负特征值 $\sigma_i^2$。对 $\sigma_i>0$ 定义 $u_i=Av_i/\sigma_i$，则
 $$u_i^*u_j=\frac{v_i^*A^*Av_j}{\sigma_i\sigma_j}=\delta_{ij}.$$
-将两组向量扩充成正交基，得到 $A=U\Sigma V^*$。零奇异值方向就是核；非零奇异值数量就是秩。这一推导只依赖谱定理，不要求方阵或可对角化。
+将两组向量扩充成正交基，得到 $A=U\Sigma V^*$。更精确地，$\ker A=\operatorname{span}\{v_i:\sigma_i=0\}$ 是**右核**；$\ker A^*=\operatorname{span}\{u_i:\sigma_i=0\}$ 是输出空间中的**左核**（完整 SVD 的补齐左向量）。非零奇异值数量就是秩。这一推导只依赖谱定理，不要求方阵或可对角化。
 
 ## 几何与完整算例
 

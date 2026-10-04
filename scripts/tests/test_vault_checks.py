@@ -362,6 +362,39 @@ class CheckerTests(VaultFixture):
         report = check_vault.check(self.root)
         self.assertIn(".obsidian/templates.json", {x["path"] for x in report["issues"] if x["rule"] == "config_json_invalid"})
 
+    def test_dangling_configuration_link_is_diagnosed_without_reading(self):
+        self.write(".obsidian/types.json", '{"types":{}}')
+        target = self.root.parent / "absent-private-config.json"
+        link = self.root / ".obsidian" / "app.json"
+        link.symlink_to(target)
+        original = Path.read_text
+
+        def guarded(path, *args, **kwargs):
+            if path in (link, target):
+                raise AssertionError("linked configuration was read")
+            return original(path, *args, **kwargs)
+
+        with mock.patch.object(Path, "read_text", guarded):
+            report = check_vault.check(self.root)
+        self.assertIn(
+            ("config_symlink_not_read", ".obsidian/app.json"),
+            {(x["rule"], x["path"]) for x in report["issues"]},
+        )
+        self.assertFalse(target.exists())
+
+    def test_dangling_configuration_directory_is_diagnosed(self):
+        target = self.root.parent / "absent-private-directory"
+        (self.root / ".obsidian").symlink_to(target, target_is_directory=True)
+        issues, count = check_vault.config_check(self.root, [], None, {}, None)
+        linked = {x["path"] for x in issues if x["rule"] == "config_symlink_not_read"}
+        self.assertEqual(linked, {
+            ".obsidian/" + name + ".json"
+            for name in ("app", "appearance", "graph", "types", "templates",
+                         "core-plugins", "community-plugins")
+        })
+        self.assertEqual(count, 0)
+        self.assertFalse(target.exists())
+
     def test_configuration_shapes_and_declared_type_contract(self):
         self.write(".obsidian/app.json", "[]")
         self.write(".obsidian/types.json", '{"types":{"stage":"text", "property":"nonexistent"}}')

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="720" viewBox="0 0 425 720" role="img" aria-labelledby="title desc">
+  <title id="title">有引用回答到可交付行动的边界</title>
+  <desc id="desc">纵向流程图：问题、观察时刻和主体先经过授权可见资料、候选检索、引用支持和回答；失败支路进入人工核对。回答后的行动独立经过授权、ETag 与幂等键门，通向拒绝、查询 pending 或一次物化提交。</desc>
+  <style>.bg{fill:#fff}text{font-family:'Arial Unicode MS','Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',Arial,sans-serif;fill:#172033;font-size:16px}.small{font-size:14px}.box{fill:#f7f9fc;stroke:#40516f;stroke-width:1.8}.gate{fill:#fff9e7;stroke:#826b1e;stroke-width:1.8}.stop{fill:#fff2f1;stroke:#9a3f38;stroke-width:1.8}.ok{fill:#eff8f2;stroke:#257245;stroke-width:1.8}.line{stroke:#40516f;stroke-width:2;fill:none;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9z" fill="#40516f"/></marker></defs>
+  <rect class="bg" width="425" height="720" rx="10"/>
+  <rect class="box" x="92" y="20" width="240" height="58" rx="8"/><text x="148" y="47">问题＋观察时刻</text><text x="190" y="68">主体</text>
+  <rect class="gate" x="92" y="115" width="240" height="62" rx="8"/><text x="157" y="142">授权可见集合</text><text x="152" y="163">时间／ACL 先过滤</text>
+  <rect class="box" x="92" y="214" width="240" height="62" rx="8"/><text x="166" y="241">检索候选</text><text x="150" y="262">schema／citation 边界</text>
+  <rect class="box" x="92" y="313" width="240" height="62" rx="8"/><text x="166" y="340">引用支持</text><text x="146" y="361">人工语义再核对</text>
+  <rect class="box" x="92" y="412" width="240" height="52" rx="8"/><text x="194" y="444">回答</text>
+  <rect class="stop" x="14" y="214" width="58" height="112" rx="8"/><text class="small" x="25" y="246">拒绝</text><text class="small" x="18" y="268">或人工</text><text class="small" x="25" y="290">核对</text>
+  <rect class="gate" x="92" y="510" width="240" height="63" rx="8"/><text x="145" y="537">行动：授权／ETag</text><text x="157" y="558">幂等键＋载荷绑定</text>
+  <rect class="ok" x="92" y="612" width="240" height="60" rx="8"/><text x="166" y="639">一次物化提交</text><text x="171" y="660">receipt；可核对</text>
+  <text class="small" x="48" y="697">pending／超时先查，不等于已提交</text>
+  <path class="line" d="M212 78L212 115"/><path class="line" d="M212 177L212 214"/><path class="line" d="M212 276L212 313"/><path class="line" d="M212 375L212 412"/><path class="line" d="M92 245L72 265"/><path class="line" d="M212 464L212 510"/><path class="line" d="M212 573L212 612"/>
+</svg>

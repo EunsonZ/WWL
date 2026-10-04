@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="810" viewBox="0 0 425 810" role="img" aria-labelledby="title desc">
+  <title id="title">政策范围：局部支持与改变条件的失败面板</title>
+  <desc id="desc">非数据的二维教学图。左栏从旧项目比较，经A箭头得到局部句子，再经B虚线向新政策提出外推请求；右栏并列三种C失败条件：只改变人群、只改变制度、同时改变二者。箭头是论证动作，不是因果DAG；框大小不表示效应或样本比例。共同的容量与分配问题在图底部。完整文字解释在相邻正文。</desc>
+  <defs>
+    <marker id="solid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#304457"/></marker>
+    <marker id="dash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#76512b"/></marker>
+  </defs>
+  <rect width="425" height="810" fill="#fbfaf7"/>
+  <g font-family="PingFang SC, Noto Sans CJK SC, Hiragino Sans GB, sans-serif" fill="#182b3a">
+    <text x="212.5" y="29" text-anchor="middle" font-size="20" font-weight="700">局部支持与改变条件的失败</text>
+    <text x="212.5" y="56" text-anchor="middle" font-size="16">非数据示意 · 不是真实 MTO 图或因果 DAG</text>
+    <text x="212.5" y="80" text-anchor="middle" font-size="15">框面积不表大小；实线＝局部论证，虚线＝待核</text>
+    <text x="108" y="116" text-anchor="middle" font-size="18" font-weight="700">左：旧项目范围</text>
+    <text x="317" y="116" text-anchor="middle" font-size="18" font-weight="700">右：条件改变</text>
+    <g stroke="#304457" stroke-width="1.5" fill="#e9eff3">
+      <rect x="16" y="132" width="185" height="108" rx="8"/>
+      <rect x="16" y="304" width="185" height="120" rx="8"/>
+      <rect x="16" y="503" width="185" height="130" rx="8" fill="#faf2e6"/>
+    </g>
+    <g text-anchor="middle" font-size="16">
+      <text x="108" y="159" font-weight="700">已有项目比较</text>
+      <text x="108" y="185">限定人群与方案</text>
+      <text x="108" y="209">固定时期和结果窗口</text>
+      <text x="108" y="233">证据仍须符合设计</text>
+      <text x="108" y="332" font-weight="700">可支持的局部句子</text>
+      <text x="108" y="359">谁被邀请、比谁</text>
+      <text x="108" y="385">某窗口、某结果</text>
+      <text x="108" y="411">不增加机制或价值</text>
+      <text x="108" y="532" font-weight="700">新政策外推请求</text>
+      <text x="108" y="559">人群是否相同？</text>
+      <text x="108" y="585">规则与执行何时变？</text>
+      <text x="108" y="611">新效果可以是未知</text>
+    </g>
+    <path d="M108 240V295" stroke="#304457" stroke-width="2.5" marker-end="url(#solid)" fill="none"/>
+    <text x="122" y="275" font-size="16">A 局部论证</text>
+    <path d="M108 424V494" stroke="#76512b" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#dash)" fill="none"/>
+    <text x="122" y="465" font-size="16" fill="#76512b">B 需要外推桥</text>
+    <g stroke="#76512b" stroke-width="1.5" fill="#faf2e6">
+      <rect x="224" y="132" width="185" height="162" rx="8"/>
+      <rect x="224" y="310" width="185" height="162" rx="8"/>
+      <rect x="224" y="488" width="185" height="162" rx="8"/>
+    </g>
+    <g text-anchor="middle" font-size="16">
+      <text x="316" y="160" font-weight="700">1. 只改变人群</text>
+      <text x="316" y="187">较小儿童改为青少年</text>
+      <text x="316" y="257">旧效应属于旧人群</text>
+      <text x="316" y="282">不能直接照搬</text>
+      <text x="316" y="338" font-weight="700">2. 只改变制度</text>
+      <text x="316" y="365">另加学区优先规则</text>
+      <text x="316" y="435">处理包已经改变</text>
+      <text x="316" y="460">重问方案的效果</text>
+      <text x="316" y="516" font-weight="700">3. 两者同时改变</text>
+      <text x="316" y="543">新家庭 + 新规则</text>
+      <text x="316" y="613">两个外推缺口并存</text>
+      <text x="316" y="638">暂无法裁决可合格</text>
+    </g>
+    <g stroke="#76512b" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-end="url(#dash)">
+      <path d="M316 199V228"/><path d="M316 377V406"/><path d="M316 555V584"/>
+    </g>
+    <g font-size="15" fill="#76512b"><text x="330" y="217">C</text><text x="330" y="395">C</text><text x="330" y="573">C</text></g>
+    <rect x="16" y="681" width="393" height="110" rx="8" fill="#f1f2ef" stroke="#4b5a58" stroke-width="1.5"/>
+    <text x="212.5" y="709" text-anchor="middle" font-size="17" font-weight="700">两栏都要问：容量、分配与规范理由</text>
+    <text x="212.5" y="735" text-anchor="middle" font-size="16">租金、学校与未获支持者怎样变化？</text>
+    <text x="212.5" y="761" text-anchor="middle" font-size="16">“应扩容”需要目标、权利、成本和替代方案</text>
+    <text x="212.5" y="783" text-anchor="middle" font-size="14">C 表示旧结论失去许可，不表示新政策必然有害</text>
+  </g>
+</svg>

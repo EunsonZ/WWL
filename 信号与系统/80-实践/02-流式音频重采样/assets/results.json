@@ -1,0 +1,53 @@
+{
+  "cutoff_hz": 7000,
+  "evidence": "CPU teaching only; no sound device, WCET, ADC or production run",
+  "factor": 3,
+  "fixed": {
+    "acc_bits": 40,
+    "coefficient_clips": 0,
+    "input_clips": 0,
+    "mac_clips": 0,
+    "output_clips": 0,
+    "worst_acc_bound": 2277146624
+  },
+  "fixed_max_error": 0.00010056337652397662,
+  "fs_in": 48000,
+  "fs_out": 16000,
+  "group_delay_input_samples": 96,
+  "input_count": 12000,
+  "output_count": 4064,
+  "pass_edge_hz": 6000,
+  "phase": 0,
+  "polyphase_max_error": 8.881784197001252e-16,
+  "q15_specs": {
+    "enclosure_excludes_float_roundoff": true,
+    "grid_pass_error": 0.00034090329965574817,
+    "grid_stop_max": 0.0003012602603985715,
+    "lipschitz_margin": 9.774084844151729e-05,
+    "pass_error_enclosure": 0.00043864414809726543,
+    "stop_max_enclosure": 0.0003990011088400888
+  },
+  "schema": "u3-resample-v1",
+  "specs": {
+    "enclosure_excludes_float_roundoff": true,
+    "grid_pass_error": 0.00017051562961589717,
+    "grid_stop_max": 0.00017195945300521598,
+    "lipschitz_margin": 9.777757523389377e-05,
+    "pass_error_enclosure": 0.00026829320484979095,
+    "stop_max_enclosure": 0.00026973702823910976
+  },
+  "spectrum": {
+    "bin_hz": 4.166666666666667,
+    "count": 3840,
+    "filtered_1k": 0.6000001261482123,
+    "filtered_6k": 3.0278660471982544e-06,
+    "first_output_index": 64,
+    "kind": "one-sided peak amplitude",
+    "naive_6k": 0.2999999999999999,
+    "units": "V",
+    "window": "rectangular"
+  },
+  "stop_edge_hz": 8000,
+  "stream_max_error": 3.3306690738754696e-16,
+  "taps": 193
+}

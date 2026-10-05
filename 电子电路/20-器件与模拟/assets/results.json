@@ -1,0 +1,49 @@
+{
+  "diode": {
+    "voltage": 0.5374569750624225,
+    "current": 0.0009494772393484209,
+    "rd": 27.383489456218054,
+    "kcl_A": -1.0842021724855044e-19
+  },
+  "diode_transfer": {
+    "voltage": 0.5416913334826617,
+    "current": 0.001117413030235154,
+    "rd": 23.268030059807337,
+    "kcl_A": -2.168404344971009e-19
+  },
+  "mos": {
+    "current": 0.0010576923076923077,
+    "vd": 2.8846153846153846,
+    "gm": 0.0021153846153846153,
+    "ro": 49999.99999999999,
+    "kcl_A": 0.0
+  },
+  "opamp_transfer": {
+    "dc_gain": 19.98001998001998,
+    "dc_relative_error": 0.000999000999000999,
+    "fc": 100100.0,
+    "normalized_magnitude": 0.9806183360051356,
+    "sr_required": 251327.41228718346,
+    "sr_ok": true
+  },
+  "linearization": {
+    "diode_5mV_exact_delta_A": 0.00020133037849239563,
+    "diode_5mV_linear_delta_A": 0.00018259177699008096,
+    "mos_5mV_exact_delta_A": 1.0024999999999661e-05,
+    "mos_5mV_linear_delta_A": 1e-05
+  },
+  "periodic_a035": {
+    "mean_current": 0.0010612500000000001,
+    "mean_vd": 2.8775,
+    "vc": 2.8775,
+    "vd": 1.6087499999999995,
+    "current": 0.0018225000000000001,
+    "load_current": -0.00012687500000000006,
+    "vov": 1.35,
+    "saturation_margin": 0.25874999999999937,
+    "instantaneous_saturation_ok": true,
+    "kcl_A": 2.710505431213761e-20
+  },
+  "periodic_boundary": 0.39539559753613385,
+  "periodic_transfer_boundary": 0.1832159566199232
+}

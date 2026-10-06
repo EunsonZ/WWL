@@ -1,0 +1,17 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="同一快照下的不同写集合仍可能破坏共同约束"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  init [label="约束：至少一名医生值班\n初始 A=true，B=true",fillcolor="#e6eff8"];
+  ra [label="事务 TA 的快照\n看见 A、B 都值班"];
+  rb [label="事务 TB 的快照\n也看见 A、B 都值班"];
+  wa [label="TA：只更新 A=false"];
+  wb [label="TB：只更新 B=false"];
+  ca [label="TA 提交"];
+  cb [label="TB 提交"];
+  end [label="最终 A=false，B=false\n没有同一行写冲突，约束却已破坏",fillcolor="#fff0df"];
+  init->ra;init->rb;ra->wa;rb->wb;wa->ca;wb->cb;ca->end;cb->end;
+  {rank=same;ra;rb};{rank=same;wa;wb};{rank=same;ca;cb};
+
+}

@@ -1,0 +1,14 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="扩散：训练已知加噪，生成学习反向过程", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+x [label="真实样本 x₀"];
+n [label="采样 t 与 ε\nx_t=√ᾱ_t x₀+√(1−ᾱ_t) ε"];
+p [label="网络预测 ε_θ(x_t,t)"];
+l [label="与真实 ε 比较\nMSE 训练"];
+s [label="生成：从噪声 x_T 出发\n逐步反向采样"];
+x -> n;
+n -> p;
+p -> l;
+p -> s;
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "c-stride",
+    "title": "相同起点，不同指针步长",
+    "scope": "地址偏移只在本图明确假定的 int 大小下成立；数组指针与指针数组不是同一种表示。",
+    "files": [
+      "_assets/diagrams/round4/c-stride.dot",
+      "_assets/diagrams/round4/c-stride.svg",
+      "_assets/diagrams/round4/c-stride.png"
+    ]
+  },
+  {
+    "slug": "pin-owner",
+    "title": "固定的是被指对象；句柄所有权另算",
+    "scope": "不讨论 unsafe 绕过合同；阻塞任务和不能让出执行权的任务还有各自的取消边界。",
+    "files": [
+      "_assets/diagrams/round4/pin-owner.dot",
+      "_assets/diagrams/round4/pin-owner.svg",
+      "_assets/diagrams/round4/pin-owner.png"
+    ]
+  },
+  {
+    "slug": "python-lookup",
+    "title": "普通 object.__getattribute__ 的优先级",
+    "scope": "自定义 __getattribute__ 可以改变路径；隐式特殊方法查找另有规则。",
+    "files": [
+      "_assets/diagrams/round4/python-lookup.dot",
+      "_assets/diagrams/round4/python-lookup.svg",
+      "_assets/diagrams/round4/python-lookup.png"
+    ]
+  },
+  {
+    "slug": "lazy-compose",
+    "title": "新标记作用于旧标记之后",
+    "scope": "标记复合必须结合，但不必交换；摘要还必须支持对子区间合并的兼容映射。",
+    "files": [
+      "_assets/diagrams/round4/lazy-compose.dot",
+      "_assets/diagrams/round4/lazy-compose.svg",
+      "_assets/diagrams/round4/lazy-compose.png"
+    ]
+  },
+  {
+    "slug": "persistent-roots",
+    "title": "路径复制：版本不同，共享未修改子树",
+    "scope": "只复制更新路径，不改旧节点；内存中的历史版本不等于掉电后的持久存储。",
+    "files": [
+      "_assets/diagrams/round4/persistent-roots.dot",
+      "_assets/diagrams/round4/persistent-roots.svg",
+      "_assets/diagrams/round4/persistent-roots.png"
+    ]
+  },
+  {
+    "slug": "rob-commit",
+    "title": "乱序完成，按序提交",
+    "scope": "教学 ROB 模型不表示所有 CPU 微架构；架构提交也不自动消除缓存等微架构副作用。",
+    "files": [
+      "_assets/diagrams/round4/rob-commit.dot",
+      "_assets/diagrams/round4/rob-commit.svg",
+      "_assets/diagrams/round4/rob-commit.png"
+    ]
+  },
+  {
+    "slug": "cow-tlb",
+    "title": "写时复制：改页表之后还要处理旧翻译",
+    "scope": "图示为确实需要复制的分支；独占页可能只恢复权限。PTE 更新与失效次序须遵守 ISA/内核协议。",
+    "files": [
+      "_assets/diagrams/round4/cow-tlb.dot",
+      "_assets/diagrams/round4/cow-tlb.svg",
+      "_assets/diagrams/round4/cow-tlb.png"
+    ]
+  },
+  {
+    "slug": "route-mtu",
+    "title": "每跳换链路封装，端到端 IP 目的地不随之改写",
+    "scope": "不含 NAT、隧道等改变封装/地址的特殊路径；PMTU 是整条路径瓶颈，不只是本机接口 MTU。",
+    "files": [
+      "_assets/diagrams/round4/route-mtu.dot",
+      "_assets/diagrams/round4/route-mtu.svg",
+      "_assets/diagrams/round4/route-mtu.png"
+    ]
+  },
+  {
+    "slug": "mvcc-skew",
+    "title": "同一快照下的不同写集合仍可能破坏共同约束",
+    "scope": "对应快照隔离的写偏斜模式；PostgreSQL Serializable 可中止事务，应用须重试整个决策。",
+    "files": [
+      "_assets/diagrams/round4/mvcc-skew.dot",
+      "_assets/diagrams/round4/mvcc-skew.svg",
+      "_assets/diagrams/round4/mvcc-skew.png"
+    ]
+  },
+  {
+    "slug": "wal-order",
+    "title": "两个先后约束：日志先于脏页，提交日志先于耐久确认",
+    "scope": "数据页与确认之间未强加多余顺序；复制确认/应用、同步设置和存储可信性需另行声明。",
+    "files": [
+      "_assets/diagrams/round4/wal-order.dot",
+      "_assets/diagrams/round4/wal-order.svg",
+      "_assets/diagrams/round4/wal-order.png"
+    ]
+  },
+  {
+    "slug": "slr-automaton",
+    "title": "七个项目集：移进边与 GOTO 边",
+    "scope": "c、d 是移进的终结符；S、C 是归约后查 GOTO 使用的非终结符。状态编号与正文测试一致。",
+    "files": [
+      "_assets/diagrams/round4/slr-automaton.dot",
+      "_assets/diagrams/round4/slr-automaton.svg",
+      "_assets/diagrams/round4/slr-automaton.png"
+    ]
+  },
+  {
+    "slug": "fd-sharing",
+    "title": "文件描述符不是打开文件状态本身",
+    "scope": "fork 继承也可能共享 OFD；原生 dup 与语言运行时封装的默认可继承性须分别核对。",
+    "files": [
+      "_assets/diagrams/round4/fd-sharing.dot",
+      "_assets/diagrams/round4/fd-sharing.svg",
+      "_assets/diagrams/round4/fd-sharing.png"
+    ]
+  },
+  {
+    "slug": "outbox",
+    "title": "把本地原子提交和跨系统投递分开",
+    "scope": "Outbox 不自动提供跨所有系统的 exactly-once；本图区分至少一次投递与重复业务效果的抑制。",
+    "files": [
+      "_assets/diagrams/round4/outbox.dot",
+      "_assets/diagrams/round4/outbox.svg",
+      "_assets/diagrams/round4/outbox.png"
+    ]
+  },
+  {
+    "slug": "queue-load",
+    "title": "负载接近服务能力时，尾延迟可急剧增长",
+    "scope": "μ 不变而 λ 接近 μ 时，差值变小；小幅吞吐增长不代表延迟仅小幅变化。",
+    "files": [
+      "_assets/diagrams/round4/queue-load.dot",
+      "_assets/diagrams/round4/queue-load.svg",
+      "_assets/diagrams/round4/queue-load.png"
+    ]
+  }
+]

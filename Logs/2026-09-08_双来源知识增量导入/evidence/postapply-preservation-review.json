@@ -1,0 +1,194 @@
+{
+  "schema": "wwl-dual-import-postapply-preservation-review-v1",
+  "reviewed_at": "2026-09-09T00:32:04+08:00",
+  "reviewer_scope": "Independent batch hash and structure review; no live or source writes; concurrently changing teaching text excluded from semantic review.",
+  "status": "pass",
+  "blockers": [],
+  "initial_transaction": {
+    "write_plan_sha256": "c40ed08996d92ac53c37b6fa11e5cd344b43abd0c243f42cbd8809de76d23fcc",
+    "backup_transaction_sha256": "c40ed08996d92ac53c37b6fa11e5cd344b43abd0c243f42cbd8809de76d23fcc",
+    "manifest_equal": true,
+    "planned_files": 298,
+    "added": 263,
+    "modified": 35,
+    "deleted": 0,
+    "planned_bytes": 988671505,
+    "backup": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL-backups/20260909-001337_dual-import",
+    "backup_directory_mode": "0700",
+    "expected_backup_files": 35,
+    "actual_backup_files": 35,
+    "backup_path_set_equal": true,
+    "backup_before_hash_mismatches": [],
+    "apply_journal_written": 298,
+    "apply_journal_pending": null,
+    "apply_journal_matches_plan_order": true
+  },
+  "protected_live_state": {
+    "AGENTS.md": {
+      "baseline_and_live_equal": true,
+      "sha256": "67f62bf2e064e3e7d88756b98c2053ddfcc1a7bcd0071fff452c064aabbc592b"
+    },
+    "NewAgents.md": {
+      "baseline_and_live_equal": true,
+      "sha256": "8f5a7dc97c171535b4a5d5b73ed3d03f9229ff9bee5ba826b620e377634ba3cd"
+    },
+    "CHANGE.md": {
+      "backed_up_before_sha256": "0e5763f5306c6d26f93c88300f3b9deeb2b331288cc1cd8871a68eeb234c9892",
+      "old_bytes": 47316,
+      "live_bytes_at_review": 48071,
+      "old_document_is_exact_live_prefix": true,
+      "interpretation": "Old task state and sections are byte-preserved; the authorized batch section is appended."
+    },
+    "Logs/2026-09-08_TBM结构整理": {
+      "baseline_files": 51,
+      "live_files": 51,
+      "missing_or_added_or_hash_changed": []
+    },
+    "TaskNotes": {
+      "baseline_files": 8,
+      "stage_files_including_hidden": 8,
+      "live_files_including_hidden": 8,
+      "missing_or_added_or_hash_changed": []
+    },
+    "Tags": {
+      "baseline_files": 0,
+      "stage_files_including_hidden": 0,
+      "live_files_including_hidden": 0,
+      "missing_or_added_or_hash_changed": []
+    }
+  },
+  "source_preservation": {
+    "mapping_files": 2606,
+    "body_hashed_sources": 2598,
+    "source_hash_or_size_mismatches": [],
+    "protected_path_size_only_count": 8,
+    "protected_paths_body_not_read": true,
+    "protected_paths": [
+      {
+        "source": "source1",
+        "path": "AGENTS.md",
+        "expected_size": 20382,
+        "actual_size": 20382,
+        "exists": true,
+        "is_symlink": false
+      },
+      {
+        "source": "source1",
+        "path": "Temp/AGENTS.md",
+        "expected_size": 19832,
+        "actual_size": 19832,
+        "exists": true,
+        "is_symlink": false
+      },
+      {
+        "source": "source1",
+        "path": "Temp/round2-observations.json",
+        "expected_size": 8273,
+        "actual_size": 8273,
+        "exists": true,
+        "is_symlink": false
+      },
+      {
+        "source": "source1",
+        "path": "Temp/selected-original-tests.json",
+        "expected_size": 5060,
+        "actual_size": 5060,
+        "exists": true,
+        "is_symlink": false
+      },
+      {
+        "source": "source1",
+        "path": "Temp/第二轮深入审计与改造设计.md",
+        "expected_size": 19828,
+        "actual_size": 19828,
+        "exists": true,
+        "is_symlink": false
+      },
+      {
+        "source": "source1",
+        "path": "Temp/部署与使用说明.md",
+        "expected_size": 4601,
+        "actual_size": 4601,
+        "exists": true,
+        "is_symlink": false
+      },
+      {
+        "source": "source2",
+        "path": "20-Notes/机场订阅.md",
+        "expected_size": 1591,
+        "actual_size": 1591,
+        "exists": true,
+        "is_symlink": false
+      },
+      {
+        "source": "source2",
+        "path": "SG170-IOS-MNAT-PF-Acc-SG-170.conf",
+        "expected_size": 578,
+        "actual_size": 578,
+        "exists": true,
+        "is_symlink": false
+      }
+    ]
+  },
+  "raw_originals": {
+    "copy_original_rows": 55,
+    "distinct_live_targets": 55,
+    "missing_or_hash_changed": []
+  },
+  "canvas_local_normalization": {
+    "planned_canvas_files": 3,
+    "byte_identical_to_initial_after": 2,
+    "normalized_files": [
+      {
+        "path": "Obsidian知识/40-视图/01-Canvas/Obsidian功能地图.canvas",
+        "initial_sha256": "c0ac187774f1125ef944cd745b6cef191eb9088c3d5b64ba6ba818ea90dcbca0",
+        "live_sha256": "4cc8e22bef9339f77f60aaca87089bc234f59c37297d3e523ecf2db4da4d9600",
+        "added_root_keys": [
+          "metadata"
+        ],
+        "removed_root_keys": [],
+        "metadata": {
+          "version": "1.0-1.0",
+          "frontmatter": {}
+        },
+        "nodes_and_edges_exactly_equal": true,
+        "knowledge_or_graph_change": false
+      }
+    ],
+    "interpretation": "Observed local Obsidian serialization metadata only. The complete nodes and edges arrays, including ids, file targets, labels, coordinates and ordering, are equal. This is an inference from the JSON diff, not a claim about every Obsidian version."
+  },
+  "other_local_normalization": {
+    "path": "Obsidian知识/40-视图/02-Bases/示例笔记目录.base",
+    "difference": "blank-line removal only",
+    "ruby_psych_semantic_equal": true
+  },
+  "unexpected_visible_file_event": {
+    "initial_extra_files": 16,
+    "explained_batch_temporary_files": {
+      "count": 15,
+      "live_prefix": "fragments/runtime-doc-patch/",
+      "cause": "A navigation worker wrote review candidates under live instead of the assigned temporary work path.",
+      "resolution": "Moved to /private/tmp/wwl-dual-import-75zcpdpm/fragments/runtime-doc-patch and removed the now-empty live directory.",
+      "live_residual_count": 0,
+      "temporary_copy_count": 15
+    },
+    "preserved_non_batch_file": {
+      "path": "Clippings/从选择性协调到公共可纠错性.md",
+      "action": "preserved without reading or modifying",
+      "reason": "Absent from baseline, stage and write plan; therefore treated as concurrent non-batch user/collaborator state."
+    },
+    "final_visible_inventory": {
+      "baseline_plus_planned_additions": 2109,
+      "live_visible": 2110,
+      "missing_expected_paths": [],
+      "extra_paths": [
+        "Clippings/从选择性协调到公共可纠错性.md"
+      ]
+    }
+  },
+  "limitations": [
+    "The concurrently changing 12 teaching entry pages and source-template wording were intentionally not semantically reviewed in this preservation pass.",
+    "Canvas metadata attribution is based on an exact parsed JSON comparison; it is not an official version-wide serialization guarantee.",
+    "The protected eight source files were checked by path, existence, size and symlink status only; their bodies and hashes were not read in this pass."
+  ]
+}

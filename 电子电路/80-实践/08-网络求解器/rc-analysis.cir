@@ -1,0 +1,11 @@
+* Teaching input only; not executed in this batch.
+V1 in 0 DC 1 AC 1 PULSE(0 1 0 1u 1u 10m 20m)
+R1 in out 1k
+C1 out 0 1u
+.temp 26.85
+.op
+.dc V1 0 1 0.1
+.ac dec 20 10 100k
+.tran 10u 5m
+.noise V(out) V1 dec 20 10 100k
+.end

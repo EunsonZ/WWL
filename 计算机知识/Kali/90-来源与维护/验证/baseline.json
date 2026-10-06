@@ -1,0 +1,23 @@
+{
+  "goal": "编写可导入 Obsidian 的 Kali 专题与授权实验，保留理论、工具、证据和复测链条",
+  "input": "/mnt/data/AGENTS(2).md",
+  "input_sha256": "2213785559e0e77bd9020ae18d779c04067334c273f2645c4d7c34c577f9b87c",
+  "available_vault": "未提供既有 Vault；仅有维护契约附件",
+  "visible_change_md": false,
+  "mode": "独立新建分享包，不声称检查了用户未提供的 Vault",
+  "output_root": "/mnt/data/Kali_Obsidian_交付",
+  "prohibited_changes": [
+    "原始附件",
+    "未提供的既有 Vault",
+    ".obsidian",
+    "Git 配置",
+    "凭据或用户学习成果"
+  ],
+  "validation": [
+    "分批 YAML 与围栏",
+    "全量路径双链、标题与块 ID",
+    "离线代码单元测试与确定性复现",
+    "最终白名单与哈希归档",
+    "Kali 与 Obsidian GUI 未运行须披露"
+  ]
+}

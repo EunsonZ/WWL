@@ -1,0 +1,150 @@
+{
+  "owner": "agoodstart_map",
+  "scope": "ordinary technical references only; no skill instruction or automation script was loaded or executed",
+  "sources": [
+    {
+      "path": "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
+      "corresponding_teaching_paths": [
+        "Obsidian知识/90-资源/02-参考/01-Markdown速查表.md"
+      ],
+      "coverage": "existing",
+      "covered_points": [
+        "Callout base syntax",
+        "default collapsed/expanded markers",
+        "built-in callout types"
+      ],
+      "unique_points": [
+        "nested Callout quotation indentation"
+      ],
+      "action": "No addition: nesting is a specialized composition pattern and the existing quick reference already covers the general Callout syntax."
+    },
+    {
+      "path": "copilot/skills/obsidian-markdown/references/EMBEDS.md",
+      "corresponding_teaching_paths": [
+        "Obsidian知识/90-资源/02-参考/01-Markdown速查表.md",
+        "Obsidian知识/20-功能/01-官方插件实验室/04-Canvas.md"
+      ],
+      "coverage": "partially-covered-with-small-addition",
+      "covered_points": [
+        "note/heading/block embeds",
+        "image embeds",
+        "single-width image display",
+        "basic PDF note linkage"
+      ],
+      "unique_points_added": [
+        "image width-by-height display syntax",
+        "audio/video embed syntax",
+        "PDF page fragment",
+        "embedded PDF height"
+      ],
+      "not_added": [
+        "embedded query block: this is Search query syntax and belongs in the Search reference, outside this narrow ownership"
+      ],
+      "official_basis": "https://obsidian.md/help/embeds"
+    },
+    {
+      "path": "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
+      "corresponding_teaching_paths": [
+        "Obsidian知识/90-资源/02-参考/03-属性字典.md",
+        "Obsidian知识/90-资源/02-参考/01-Markdown速查表.md"
+      ],
+      "coverage": "partially-covered-with-small-addition",
+      "covered_points": [
+        "frontmatter at file start",
+        "Text/Number/Checkbox/Date/Date-time/List/Tags",
+        "reserved tags/aliases/cssclasses",
+        "quoted Wikilinks in lists"
+      ],
+      "unique_points_added": [
+        "Link property type with quoted Wikilink example"
+      ],
+      "official_basis": "https://obsidian.md/help/properties"
+    },
+    {
+      "path": "copilot/skills/obsidian-bases/references/EXAMPLES.md",
+      "corresponding_teaching_paths": [
+        "Obsidian知识/20-功能/01-官方插件实验室/05-Bases.md",
+        "Obsidian知识/40-视图/02-Bases/00-MOC-Bases.md"
+      ],
+      "coverage": "partially-covered",
+      "covered_points": [
+        "filtered views",
+        "sorting",
+        "single-property grouping",
+        "simple formula practice",
+        "Markdown files as Base rows"
+      ],
+      "unique_points": [
+        "YAML .base formula declarations",
+        "regular-expression filter example",
+        "file size/mtime formula example",
+        "formula property displayName"
+      ],
+      "action": "No addition: detailed .base authoring belongs in the existing Bases lesson/MOC, neither of which is in this task's writable allowlist.",
+      "official_basis": "https://obsidian.md/help/bases/syntax"
+    },
+    {
+      "path": "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
+      "corresponding_teaching_paths": [
+        "Obsidian知识/20-功能/01-官方插件实验室/05-Bases.md",
+        "Obsidian知识/40-视图/02-Bases/00-MOC-Bases.md"
+      ],
+      "coverage": "unique-advanced-reference",
+      "covered_points": [
+        "the curriculum introduces a simple formula but not the function catalogue"
+      ],
+      "unique_points": [
+        "date/duration/link/file/list/image/icon functions",
+        "String/List/File/Link/Object/Regex methods",
+        "date and duration fields"
+      ],
+      "action": "No addition: a function catalogue is too large for a quick-reference side edit and requires its own official syntax review in the Bases module.",
+      "official_basis": "https://obsidian.md/help/bases/syntax"
+    },
+    {
+      "path": "copilot/skills/json-canvas/references/EXAMPLES.md",
+      "corresponding_teaching_paths": [
+        "Obsidian知识/20-功能/01-官方插件实验室/04-Canvas.md"
+      ],
+      "coverage": "partially-covered",
+      "covered_points": [
+        "Canvas UI workflow",
+        "text/file/web cards",
+        "groups",
+        "labelled directed relations",
+        "Convert to file boundary"
+      ],
+      "unique_points": [
+        "raw JSON Canvas node coordinates",
+        "file node subpath",
+        "edge IDs and side anchors",
+        "raw group color field"
+      ],
+      "action": "No addition: this beginner Canvas lesson deliberately teaches the UI and semantic boundary, not hand-authoring JSON Canvas. Raw-schema material needs an official Canvas/JSON Canvas reference page before inclusion.",
+      "official_basis": "https://obsidian.md/help/plugins/canvas"
+    }
+  ],
+  "modified_paths": [
+    "Obsidian知识/90-资源/02-参考/01-Markdown速查表.md",
+    "Obsidian知识/90-资源/02-参考/03-属性字典.md"
+  ],
+  "not_modified": [
+    "No source skill instruction, script, command, or macro was copied or executed.",
+    "No Base or Canvas configuration file was changed.",
+    "No entire reference was transplanted."
+  ],
+  "verification_limit": "Direct web retrieval of the official pages was attempted in this run but the browsing transport failed. The listed official URLs are the user-approved verification sources; final UI/version verification remains separate.",
+  "coordinator_resolution": {
+    "date": "2026-09-09",
+    "link_type_correction": "No standalone Properties Link type; corrected from official Properties/Bases documentation verified 2026-09-08",
+    "full_reference_preservation": [
+      "Clippings/AGoodStart101/语法参考/obsidian-markdown/CALLOUTS.md",
+      "Clippings/AGoodStart101/语法参考/obsidian-markdown/EMBEDS.md",
+      "Clippings/AGoodStart101/语法参考/obsidian-markdown/PROPERTIES.md",
+      "Clippings/AGoodStart101/语法参考/obsidian-bases/EXAMPLES.md",
+      "Clippings/AGoodStart101/语法参考/obsidian-bases/FUNCTIONS_REFERENCE.md",
+      "Clippings/AGoodStart101/语法参考/json-canvas/EXAMPLES.md"
+    ],
+    "scope": "All six references retained as ordinary source text; no runtime package imported; unsupported advanced claims not promoted"
+  }
+}

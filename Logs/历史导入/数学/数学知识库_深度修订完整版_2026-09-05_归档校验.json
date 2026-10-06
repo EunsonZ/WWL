@@ -1,0 +1,36 @@
+{
+  "root": "数学/",
+  "counts": {
+    ".md": 173,
+    ".py": 11,
+    ".json": 14,
+    ".cjs": 1,
+    ".svg": 50
+  },
+  "total_files": 249,
+  "uncompressed_bytes": 3844387,
+  "archives": [
+    {
+      "file": "数学知识库_深度修订完整版_2026-09-05.zip",
+      "bytes": 1295657,
+      "sha256": "38f9d5404d8572ae93b400dd784a41bb7ca8537f6cdc1156af09da5db8b05f60",
+      "file_count": 249,
+      "all_entries_read_back_and_verified": true
+    },
+    {
+      "file": "数学知识库_深度修订完整版_2026-09-05.tar.zst",
+      "bytes": 713606,
+      "sha256": "64a9964a11e8396ab39b3d3a7aa93c2b9ac1fa6e4e9f2ab4a4155494f5f56433",
+      "file_count": 249,
+      "all_entries_read_back_and_verified": true
+    }
+  ],
+  "original_paths_preserved": 57,
+  "original_external_occurrences_preserved": 130,
+  "local_audit_errors": 0,
+  "notes": [
+    "ZIP已检查全部CRC并逐文件与原目录SHA-256比对。",
+    "tar.zst已验证压缩流、完整解压回读并逐文件比对。",
+    "不含字体文件、Python缓存、远程图片依赖或原知识库其他目录。"
+  ]
+}

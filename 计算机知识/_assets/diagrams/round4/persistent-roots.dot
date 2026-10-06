@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="路径复制：版本不同，共享未修改子树"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  r0 [label="版本 v0\n[0,4) sum=10"];
+  r1 [label="版本 v1：把 a[0] 改为 9\n[0,4) sum=18",fillcolor="#e6eff8"];
+  left0 [label="[0,2) sum=3"];
+  left1 [label="[0,2) sum=11",fillcolor="#e6eff8"];
+  right [label="[2,4) sum=7\n两个版本共享",fillcolor="#e9f3e5"];
+  one [label="a[0]=1"];nine [label="a[0]=9",fillcolor="#e6eff8"];two [label="a[1]=2\n共享",fillcolor="#e9f3e5"];
+  tail [label="a[2]=3    a[3]=4\n原子树保持不变",fillcolor="#e9f3e5"];
+  {rank=same;r0;r1};r0->left0;r0->right;r1->left1;r1->right;left0->one;left0->two;left1->nine;left1->two;right->tail;
+
+}

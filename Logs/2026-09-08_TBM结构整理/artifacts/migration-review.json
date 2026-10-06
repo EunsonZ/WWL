@@ -1,0 +1,159 @@
+{
+  "schema": "wwl-migration-review-v1",
+  "reviewed_at": "2026-09-08T22:34:56+08:00",
+  "scope": {
+    "mode": "read_only",
+    "files": [
+      "tools/apply_stage.py",
+      "tools/prepare_stage.py",
+      "tools/links.py",
+      "tools/test_links.py",
+      "mapping.json",
+      "run-state.json"
+    ],
+    "live_apply_executed": false,
+    "repository_state": "Vault root has no Git repository, so git diff was unavailable",
+    "excluded": [
+      "TaskNotes mutation",
+      "hidden configuration mutation",
+      "vault experiments",
+      "MCP and plugin capabilities"
+    ]
+  },
+  "decision": {
+    "status": "approved_for_live_writeback",
+    "blocker_count": 0,
+    "reason": "The two original transaction blockers were fixed and independently rechecked. Current preflight passes for 1789 destinations and 2045 sources; no mapping collision, forced overwrite, backup mismatch, or preservation drift was found. This approval applies to the reviewed hashes and requires the coordinator to keep stage writers stopped for the apply invocation."
+  },
+  "blockers": [],
+  "resolved_findings": [
+    {
+      "id": "MIG-B01",
+      "severity": "resolved_blocker",
+      "title": "Backup existence and hashes are enforced by apply preflight",
+      "location": [
+        "tools/apply_stage.py:21",
+        "tools/apply_stage.py:59"
+      ],
+      "finding": "preflight() now loads baseline-private.json, requires a real non-symlink snapshot directory, and verifies each of the 2045 mapping source paths against both the baseline hash and current snapshot bytes before any journal or destination write.",
+      "evidence": {
+        "negative_missing_snapshot_file": "An isolated one-file fixture with the snapshot file removed returned backup_missing_or_mismatched.",
+        "negative_mismatched_snapshot_file": "An isolated one-file fixture with changed snapshot bytes returned backup_missing_or_mismatched.",
+        "current_backup_observation": "All 2045 current snapshot files passed the same baseline/mapping/content hash condition.",
+        "current_backup_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL-backups/20260908-220407"
+      },
+      "resolution": "Meets the current batch requirement. The current baseline has exactly 2045 unique rows, so additional duplicate/extra-row schema hardening is unnecessary for this writeback."
+    },
+    {
+      "id": "MIG-B02",
+      "severity": "resolved_blocker",
+      "title": "Frozen target digest is rechecked immediately before each source unlink",
+      "location": [
+        "tools/apply_stage.py:65",
+        "tools/apply_stage.py:95"
+      ],
+      "finding": "apply now freezes a digest for every destination, journals frozen_stage before writing, reads staged bytes once and checks them against that frozen digest, globally verifies all written targets, and then rechecks the corresponding live target against the frozen digest immediately before each source unlink.",
+      "evidence": {
+        "source_order_review": "The per-source target regular-file/hash check is at line 100 and the source unlink follows at line 101.",
+        "stage_consistency": "The bytes written at lines 77-85 are the same data object checked against frozen_stage at line 73.",
+        "current_state": "No live apply or source unlink was run during this review."
+      },
+      "resolution": "Meets the requested write-verify-retire order and materially narrows the normal concurrent-edit race. A filesystem-level check/unlink race cannot be eliminated without locking or descriptor-relative platform-specific operations; stopping stage writers and avoiding concurrent live edits during this short one-off apply is an adequate operational boundary."
+    }
+  ],
+  "recordable_limits": [
+    {
+      "id": "MIG-L02",
+      "severity": "suggestion",
+      "title": "prepare_stage trusts baseline paths without an explicit containment check",
+      "location": [
+        "tools/prepare_stage.py:61",
+        "tools/prepare_stage.py:76"
+      ],
+      "finding": "destination() and the copy loop concatenate paths from baseline-private.json without rejecting absolute paths or '..' components. A malformed baseline could copy from or write outside the intended snapshot/stage roots.",
+      "current_relevance": "The current frozen mapping was checked: all 2045 old and new paths are relative, contain no '..' component, and have no destination file-as-parent conflicts. prepare_stage has already completed, so this is not a blocker for the current writeback.",
+      "recommended_action": "Add the same lexical and resolved containment validation used by apply_stage.safe() before future stage generation."
+    },
+    {
+      "id": "MIG-L03",
+      "severity": "recorded_parser_limit",
+      "title": "Canvas text nodes and domain-prefixed Markdown-relative paths are outside current rewrite coverage",
+      "location": [
+        "tools/links.py:177",
+        "tools/links.py:513",
+        "tools/test_links.py:124"
+      ],
+      "finding": "Canvas rewriting handles type=file nodes only; the test explicitly preserves wikilinks inside type=text nodes. Also, _logical_candidate is consulted before Markdown-relative resolution, so a Markdown destination beginning with a known domain name can be interpreted as vault-root-like rather than source-relative.",
+      "current_relevance": "A scan of the current stage found no Canvas text node containing wikilinks/Markdown links and no Markdown destination beginning with AI/, 数学/, 计算机知识/, 编程知识/, 哲学与文化/, Kali/, _labs/, or _meta/. No current writeback blocker was demonstrated.",
+      "recommended_action": "Record the coverage boundary. Add a targeted fixture only if later audit or Obsidian validation finds one of these forms."
+    },
+    {
+      "id": "MIG-L04",
+      "severity": "operational_limit",
+      "title": "Durability is claimed without fsync",
+      "location": [
+        "tools/apply_stage.py:45",
+        "tools/apply_stage.py:76"
+      ],
+      "finding": "The comment says destination bytes are durable, but neither file contents nor containing directories nor the journal are fsynced. Hash verification proves readable bytes in the current OS cache, not persistence across sudden power loss.",
+      "current_relevance": "The validated external backup materially reduces recovery risk, and adding full crash-consistency machinery would be disproportionate for this one-off local Vault migration.",
+      "recommended_action": "Change the comment/report wording to 'written and verified', or fsync only if power-loss durability is an explicit requirement."
+    }
+  ],
+  "verified_positive_properties": {
+    "mapping": {
+      "source_rows": 2045,
+      "unique_old_paths": 2045,
+      "unique_destinations": 1789,
+      "actions": {
+        "move": 1786,
+        "merge": 256,
+        "retain": 3
+      },
+      "duplicate_destination_groups": 252,
+      "duplicate_rows_removed": 256,
+      "nonidentical_duplicate_groups": 0,
+      "unsafe_old_paths": 0,
+      "unsafe_new_paths": 0,
+      "destination_file_parent_conflicts": 0
+    },
+    "overwrite_behavior": "Current preflight rejects every existing non-retained destination. The only retained live paths are AGENTS.md, CHANGE.md, and NewAgents.md; apply replaces one only after its live hash still equals the frozen prior hash. No forced overwrite path was found for the current mapping.",
+    "backup": "All 2045 expected source files were present in the private snapshot and matched recorded SHA-256 values during this review.",
+    "preservation": {
+      "historical_and_original_stage_targets_changed_from_snapshot": 0,
+      "historical_and_original_stage_targets_missing": 0,
+      "governance_stage_targets_changed_from_snapshot": 0,
+      "stage_symlinks": 0,
+      "TaskNotes_writeback": "TaskNotes is copied only as read-only validation context and is excluded from destinations by apply preflight."
+    },
+    "write_order": "apply freezes and journals every stage target digest, writes and hashes all destinations before entering source retirement, rechecks each source hash, and rechecks the corresponding live target against its frozen digest immediately before unlink.",
+    "dry_run": {
+      "command": "PYTHONPYCACHEPREFIX=/private/tmp/wwl-structure-q7y1fsjr/pycache python3 tools/apply_stage.py",
+      "exit_code": 0,
+      "result": {
+        "preflight": "passed",
+        "destinations": 1789,
+        "source_files": 2045
+      }
+    },
+    "link_tests": {
+      "command": "PYTHONPYCACHEPREFIX=/private/tmp/wwl-structure-q7y1fsjr/pycache python3 -m unittest -v test_links.py",
+      "passed": 17,
+      "failed": 0,
+      "coverage_observed": [
+        "explicit wrong directories do not fall back by basename",
+        "slashless regular files resolve only as exact siblings",
+        "dotted note titles try exact files and then .md notes",
+        "aliases, embeds, anchors, URL encoding, references, fences, inline code, comments, Canvas file nodes, duplicate stems, historical preservation, and Kali root handling"
+      ]
+    }
+  },
+  "reviewed_artifact_hashes": {
+    "mapping.json": "2a13518e4f11030ef95cb6b4c6473def69811fc13a1ff21de0253e24fbd4a35c",
+    "run-state.json": "c7bfa592da82d5703381c2012d36f99dd61cdacd4a5da2e35c1e2c30640a17f7",
+    "tools/apply_stage.py": "f065be59bc835fa0f19db46de994ccffdec13522df7af0b3f9c783898a0d3d43",
+    "tools/prepare_stage.py": "aa5e1cdc8bf2270050cb383f132cf0af40589e191e344245999b7821b7736107",
+    "tools/links.py": "47e5312c464e89e66fb6744b1c1ee10778103fcb578b418180604a6316162632",
+    "tools/test_links.py": "30b901e4d67711356fa58217f173d0bbde2a7ad7ebd297ca98ad573610adbb18"
+  }
+}

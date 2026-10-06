@@ -1,0 +1,111 @@
+{
+  "layer": "analytic predictions only; no instrument measurements",
+  "source_ledger": {
+    "i_a_to_b_A": 0.001,
+    "source1_abs_W": -0.005,
+    "source2_abs_W": 0.001,
+    "resistor_abs_W": 0.004
+  },
+  "divider": {
+    "vs_V": 5,
+    "r1_ohm": 4000,
+    "r2_ohm": 1000,
+    "loads_ohm": [
+      null,
+      1000,
+      4000,
+      10000
+    ],
+    "predictions_V": [
+      1.0,
+      0.5555555555555556,
+      0.8333333333333334,
+      0.9259259259259258
+    ]
+  },
+  "probe_assumptions": {
+    "Rth_ohm": 100000,
+    "Rp_ohm": 1000000,
+    "Cp_F": 1e-10,
+    "f_Hz": 10000,
+    "H_real": 0.6854504278026554,
+    "H_imag": -0.3915283687972369,
+    "magnitude": 0.7893901142957571,
+    "phase_deg": -29.734950117642995
+  },
+  "two_nodes": {
+    "ground_resistors_ohm": 2000,
+    "link_ohm": 1000,
+    "injected_A": [
+      0.001,
+      0
+    ],
+    "predicted_V": [
+      1.2,
+      0.8
+    ]
+  },
+  "MNA_scales": {
+    "V0_V": 1,
+    "I0_A": 0.001,
+    "Khat": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "kappa2": 2.618033988749895
+  },
+  "netlists": {
+    "source_absorption": [
+      [
+        "S5",
+        "a",
+        "0",
+        "5 V"
+      ],
+      [
+        "S1",
+        "b",
+        "0",
+        "1 V"
+      ],
+      [
+        "R",
+        "a",
+        "b",
+        "4000 ohm"
+      ]
+    ],
+    "two_nodes": [
+      [
+        "I",
+        "0",
+        "a",
+        "0.001 A"
+      ],
+      [
+        "Ra",
+        "a",
+        "0",
+        "2000 ohm"
+      ],
+      [
+        "Rab",
+        "a",
+        "b",
+        "1000 ohm"
+      ],
+      [
+        "Rb",
+        "b",
+        "0",
+        "2000 ohm"
+      ]
+    ]
+  }
+}

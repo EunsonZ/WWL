@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="类型推断：生成约束，再求统一替换",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"0" [label="表达式：fun x → x + 1"];
+"1" [label="给 x 类型变量 α"];
+"2" [label="加法要求\nα = int"];
+"3" [label="统一替换\nα ↦ int"];
+"4" [label="结果：int → int"];
+"0" -> "1";
+"1" -> "2";
+"2" -> "3";
+"3" -> "4";
+
+}

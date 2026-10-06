@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="浅复制：外层不同，内部对象仍共享",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"a" [label="a = [[1], [2]]"];
+"b" [label="b = a.copy()"];
+"l1" [label="内部列表 [1]"];
+"l2" [label="内部列表 [2]"];
+"a" -> "l1" [label="a[0]"];
+"a" -> "l2" [label="a[1]"];
+"b" -> "l1" [label="b[0]"];
+"b" -> "l2" [label="b[1]"];
+
+}

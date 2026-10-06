@@ -1,0 +1,18 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="普通 object.__getattribute__ 的优先级"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  start [label="读取 obj.x\n沿 type(obj).__mro__ 寻找同名候选",fillcolor="#e6eff8"];
+  data [label="候选有 __get__，且类型\n定义 __set__ 或 __delete__？",shape=diamond];
+  get1 [label="调用描述符 __get__\n即使实例字典也有 x"];
+  inst [label="实例字典中有 x？",shape=diamond];
+  get2 [label="返回实例字典中的值"];
+  cls [label="类候选仍存在？",shape=diamond];
+  get3 [label="非数据描述符：调用 __get__\n其他类属性：返回属性本身"];
+  fail [label="查找失败后才可能调用 __getattr__\n否则抛 AttributeError",fillcolor="#fff0df"];
+  {rank=same;data;get1};{rank=same;inst;get2};{rank=same;cls;get3};
+  start->data;data->get1[label="是"];data->inst[label="否",weight=8];inst->get2[label="是"];
+  inst->cls[label="否",weight=8];cls->get3[label="是"];cls->fail[label="否",weight=8];
+
+}

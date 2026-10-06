@@ -1,0 +1,244 @@
+{
+  "purpose": "Original-snapshot observations, not proof that fixes have been applied",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "source_hashes": {
+    "AI/80-实践/05-RAG评测与私有服务/rag_service.py": "ef1f546220565af15aaac8ddbbe479d112aac057a2372a4b347531d658b0417b",
+    "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/retrieval_lab.py": "511d4cc94d39f2c70cf21ab5252ed6e19b40cb746cb9531824976cd7622769a4",
+    "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/graph_algorithms.py": "74212e794ad952f22c30714addce608c8783227e625e21f8029debb619847dfd",
+    "AI/80-实践/02-SFT-LoRA与QLoRA/lora_toy.py": "76576d4df4cf913159ac345394f4c18d7226dd45394fcc77eec71a7786a2cfe4",
+    "AI/20-LLM/50-实现/tiny_decoder.py": "24bc0bc7c19cce2f6a788b37c1df0b0bd96e21462f51b8d6356e0bfc049b393b",
+    "AI/20-LLM/50-实现/tiny_tokenizer_embedding.py": "67aa33bd8bca5a6ca2b254eb430cdd8071d05dddac24a1813ebf76e7cdb877af",
+    "AI/20-LLM/50-实现/tiny_train_generate.py": "64b9a05be49da4e3af19fdbbb17bed0713d9c4716bc6071127726936d7209ec0",
+    "AI/80-实践/01-微型Transformer预训练/tiny_transformer.py": "bb5cb20db868e73ab9a0cd94d6d2df26bbd52c7cac2164115c4d264f69ba3d5a"
+  },
+  "probe_count": 14,
+  "observations": [
+    {
+      "issue": "R2-02",
+      "probe": "Adam first update, epsilon omitted for comparison",
+      "actual": {
+        "m": 0.19999999999999996,
+        "v": 0.0040000000000000036,
+        "uncorrected_direction": 3.1622776601683773,
+        "corrected_direction": 1.0
+      },
+      "expectation": "The uncorrected normalized update is about 3.162 times the corrected one, not ten times smaller."
+    },
+    {
+      "issue": "R2-03",
+      "probe": "Shifted impulse: complete DFT versus magnitude-only display",
+      "actual": {
+        "X": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "Y": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            6.123233995736766e-17,
+            -1.0
+          ],
+          [
+            -1.0,
+            -1.2246467991473532e-16
+          ],
+          [
+            -1.8369701987210297e-16,
+            1.0
+          ]
+        ],
+        "equal_magnitudes": true,
+        "inverse_x_max_error": 1.1704836984704332e-16,
+        "inverse_y_max_error": 7.204529898187539e-17
+      },
+      "expectation": "Full complex DFT preserves timing; magnitude alone does not distinguish these impulses."
+    },
+    {
+      "issue": "R2-04",
+      "probe": "DFT normalization comparison, N=8, rectangular window",
+      "actual": {
+        "time_energy": 4.0,
+        "full_raw_squared_magnitude_sum": 31.999999999999993,
+        "one_sided_raw_squared_magnitude_sum": 16.0
+      },
+      "expectation": "Raw one-sided squared magnitudes are a legitimate feature convention, not automatically normalized energy or PSD."
+    },
+    {
+      "issue": "R2-05",
+      "probe": "Two gold chunks, only one retrieved",
+      "actual": {
+        "recall_at_k": 1.0,
+        "mrr_at_k": 1.0
+      },
+      "expectation": "Hit@1=1; per-query Recall@1=1/2. Do not report one as the other."
+    },
+    {
+      "issue": "R2-07",
+      "probe": "Content deletion and index provenance",
+      "actual": {
+        "before": {
+          "revision": "demo-index-v1",
+          "chunk_ids": [
+            "refund-policy:1",
+            "refund-policy:2",
+            "shipping-policy:1",
+            "shipping-policy:2",
+            "support-privacy:1",
+            "support-privacy:2",
+            "untrusted-note:1",
+            "untrusted-note:2"
+          ]
+        },
+        "after": {
+          "revision": "demo-index-v1",
+          "chunk_ids": [
+            "shipping-policy:1",
+            "shipping-policy:2",
+            "support-privacy:1",
+            "support-privacy:2",
+            "untrusted-note:1",
+            "untrusted-note:2"
+          ]
+        }
+      },
+      "expectation": "Content snapshots should be distinguishable; code revision and data snapshot are separate identifiers."
+    },
+    {
+      "issue": "R2-06",
+      "probe": "Schema-invalid generator response",
+      "actual": {
+        "raised": "ValueError",
+        "message": "输出键必须恰为 answer、citations、confidence"
+      },
+      "expectation": "Record a per-case validation failure; the evaluation currently aborts before schema_valid_rate is computed."
+    },
+    {
+      "issue": "R2-08",
+      "probe": "No cache, nonzero start position, change a future token",
+      "actual": {
+        "first_query_weights": [
+          0.3802679919962174,
+          0.37587175033226633,
+          0.24386025767151617
+        ],
+        "first_output_max_delta": 0.772702786818086
+      },
+      "expectation": "Either reject unsupported offset-without-cache or retain causal independence using consistent key/query positions."
+    },
+    {
+      "issue": "R2-09",
+      "probe": "Finite logits and positive finite tiny temperature",
+      "actual": {
+        "raised": "ValueError",
+        "message": "Probabilities contain NaN",
+        "warnings": [
+          "overflow encountered in divide",
+          "invalid value encountered in subtract"
+        ]
+      },
+      "expectation": "Centering before temperature scaling can handle this case; otherwise clearly reject the supported numeric domain before producing NaNs."
+    },
+    {
+      "issue": "R2-10",
+      "probe": "Cosine of parallel vectors at extreme finite scales",
+      "actual": {
+        "large": {
+          "returned": "nan"
+        },
+        "small": {
+          "raised": "ValueError",
+          "message": "cosine similarity is undefined for a zero vector"
+        }
+      },
+      "expectation": "Both are nonzero parallel vectors with cosine 1; use scaling and explicit finite-domain validation."
+    },
+    {
+      "issue": "R2-15",
+      "probe": "Equal dictionaries with differing repr order",
+      "actual": {
+        "python_equal": true,
+        "repr_equal": false,
+        "original_found": true,
+        "equal_object_found": false
+      },
+      "expectation": "Define key equality/encoding. repr-stability is not stable serialization for arbitrary objects."
+    },
+    {
+      "issue": "R2-11",
+      "probe": "Reachable path whose sum exceeds float range",
+      "actual": {
+        "bfs_reachable": [
+          "a",
+          "b",
+          "c"
+        ],
+        "distances": {
+          "a": 0.0,
+          "b": 1e+308,
+          "c": "inf"
+        }
+      },
+      "expectation": "Do not silently give a reachable overflow the same meaning as unreachable infinity; declare and enforce a representable-length contract."
+    },
+    {
+      "issue": "R2-12",
+      "probe": "Isolated evaluate_model return expression, NLL=25",
+      "actual": {
+        "reported": {
+          "nll": 25.0,
+          "ppl": 485165195.4097903,
+          "tokens": 1
+        },
+        "uncapped_ppl": 72004899337.38588,
+        "ratio": 148.41315910257663
+      },
+      "expectation": "PPL is exp(NLL); display caps must not silently replace the measured metric."
+    },
+    {
+      "issue": "R2-13",
+      "probe": "Mocked old torch loader, no real deserialization",
+      "actual": {
+        "load_calls": [
+          {
+            "map_location": "cpu",
+            "weights_only": true
+          },
+          {
+            "map_location": "cpu"
+          }
+        ],
+        "warning": "WARNING: this older PyTorch lacks weights_only loading. Continue only for a checkpoint produced by this lab whose source you trust."
+      },
+      "expectation": "Fail closed instead of retrying unrestricted deserialization merely after a warning."
+    },
+    {
+      "issue": "R2-14",
+      "probe": "Internal symlink checked after resolve",
+      "actual": {
+        "original_is_symlink": true,
+        "accepted": true,
+        "accepted_target_is_regular": true,
+        "returned_is_symlink": false
+      },
+      "expectation": "resolve follows the link. The current test does not enforce a literal no-symlink policy; this does not demonstrate root escape."
+    }
+  ]
+}

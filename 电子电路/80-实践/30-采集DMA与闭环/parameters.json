@@ -1,0 +1,24 @@
+{
+  "version": "embedded-v1",
+  "ADC_bits": 12,
+  "Vref_V": 3.3,
+  "period_ns": 1000000,
+  "block_samples": 4,
+  "IRQ_delay_ns": 300000,
+  "CPU_WCET_ns": 2000000,
+  "plant_tau_s": 0.02,
+  "actuator_tau_s": 0.005,
+  "gain_V_per_V": 3,
+  "calibration_codes": [
+    0,
+    1000,
+    2000,
+    3000
+  ],
+  "calibration_V": [
+    0.01,
+    0.811,
+    1.612,
+    2.409
+  ]
+}

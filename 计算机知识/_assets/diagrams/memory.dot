@@ -1,0 +1,13 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=TB;
+a [label="虚拟地址 = 页号 + 页内偏移"];b [shape=diamond,label="TLB 命中？"];
+c [label="页表遍历"];d [shape=diamond,label="映射与权限允许？"];e [label="物理地址"];
+f [label="操作系统处理页异常\n按原因分配 / 复制 / 调入 / 拒绝"];
+g [label="访问数据缓存层级"];h [label="必要时访问主存"];
+a->b;b->e [label="是"];b->c [label="否"];c->d;d->e [label="是"];d->f [label="否"];
+f->a [style=dashed,label="可修复后重试"];e->g->h [label="未命中"];
+
+}

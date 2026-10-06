@@ -1,0 +1,22 @@
+test_audit_positive_negative_anchors_images_and_fences (test_links.AuditTreeTests.test_audit_positive_negative_anchors_images_and_fences) ... ok
+test_dotted_note_titles_try_exact_file_then_markdown_suffix (test_links.AuditTreeTests.test_dotted_note_titles_try_exact_file_then_markdown_suffix) ... ok
+test_exact_dotted_file_wins_over_same_title_markdown_note (test_links.AuditTreeTests.test_exact_dotted_file_wins_over_same_title_markdown_note) ... ok
+test_footnote_is_not_reference_definition_and_wikilinks_are_root_relative (test_links.AuditTreeTests.test_footnote_is_not_reference_definition_and_wikilinks_are_root_relative) ... ok
+test_invalid_visible_json_and_canvas_and_historical_scope (test_links.AuditTreeTests.test_invalid_visible_json_and_canvas_and_historical_scope) ... ok
+test_original_and_governance_diagnostics_are_not_counted_active (test_links.AuditTreeTests.test_original_and_governance_diagnostics_are_not_counted_active) ... ok
+test_slashless_duplicate_is_ambiguous_but_sibling_readme_wins (test_links.AuditTreeTests.test_slashless_duplicate_is_ambiguous_but_sibling_readme_wins) ... ok
+test_slashless_regular_file_resolves_only_as_exact_sibling (test_links.AuditTreeTests.test_slashless_regular_file_resolves_only_as_exact_sibling) ... ok
+test_canvas_file_nodes_are_rewritten_only (test_links.RewriteTreeTests.test_canvas_file_nodes_are_rewritten_only) ... ok
+test_com_root_navigation_and_unique_readme_resolution (test_links.RewriteTreeTests.test_com_root_navigation_and_unique_readme_resolution) ... ok
+test_explicit_wrong_directory_is_not_basename_fallback (test_links.RewriteTreeTests.test_explicit_wrong_directory_is_not_basename_fallback) ... ok
+test_historical_and_original_entries_are_never_rewritten (test_links.RewriteTreeTests.test_historical_and_original_entries_are_never_rewritten) ... ok
+test_kali_package_uses_its_distinct_old_logical_root (test_links.RewriteTreeTests.test_kali_package_uses_its_distinct_old_logical_root) ... ok
+test_many_old_paths_may_merge_and_new_only_page_uses_new_space (test_links.RewriteTreeTests.test_many_old_paths_may_merge_and_new_only_page_uses_new_space) ... ok
+test_markdown_escaped_spaces_and_parentheses_resolve (test_links.RewriteTreeTests.test_markdown_escaped_spaces_and_parentheses_resolve) ... ok
+test_markdown_relative_encoding_parentheses_and_reference_definition (test_links.RewriteTreeTests.test_markdown_relative_encoding_parentheses_and_reference_definition) ... ok
+test_rewrites_wiki_alias_embed_frontmatter_and_skips_code (test_links.RewriteTreeTests.test_rewrites_wiki_alias_embed_frontmatter_and_skips_code) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.025s
+
+OK

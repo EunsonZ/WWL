@@ -1,0 +1,108 @@
+[
+  {
+    "name": "python-tests-final",
+    "status": "passed",
+    "unittest_methods": 159,
+    "returncode": 0,
+    "scope": "explicit five modules; relocated copied code and fixtures in fresh HOME",
+    "raw_output": "python-tests-final.txt",
+    "command": "python -B -m unittest -v test_offline_lab test_reasoning_lab test_transaction_lab test_tls_verify_lab test_cli_workflows",
+    "breakdown": {
+      "original_offline": 28,
+      "reasoning_v2": 61,
+      "transaction_v3": 28,
+      "tls_oracle": 18,
+      "cli_workflows": 24
+    }
+  },
+  {
+    "name": "checker-tests-final",
+    "argv": [
+      "python",
+      "-B",
+      "/mnt/data/kali_v3_work/计算机知识/Kali/90-来源与维护/工具/check_vault.py",
+      "--self-test"
+    ],
+    "working_directory": "/mnt/data/kali_v3_work/计算机知识/Kali/07-综合实验/代码",
+    "returncode": 0,
+    "duration_seconds": 0.651,
+    "output": "checker-tests-final.txt",
+    "unittest_methods": 16,
+    "status": "passed"
+  },
+  {
+    "name": "c-gcc-normal-driver",
+    "argv": [
+      "python",
+      "-B",
+      "/mnt/data/kali_v3_work/计算机知识/Kali/07-综合实验/代码/verify_c_examples.py",
+      "--compiler",
+      "gcc",
+      "--sanitizer",
+      "none",
+      "--report",
+      "/mnt/data/kali_v3_work/计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-normal-final.json"
+    ],
+    "working_directory": "/mnt/data/kali_v3_work/计算机知识/Kali/07-综合实验/代码",
+    "returncode": 0,
+    "duration_seconds": 0.79,
+    "output": "c-gcc-normal-driver.txt",
+    "status": "passed",
+    "cases": 49,
+    "passed_cases": 49
+  },
+  {
+    "name": "c-gcc-ubsan-driver",
+    "argv": [
+      "python",
+      "-B",
+      "/mnt/data/kali_v3_work/计算机知识/Kali/07-综合实验/代码/verify_c_examples.py",
+      "--compiler",
+      "gcc",
+      "--sanitizer",
+      "undefined",
+      "--report",
+      "/mnt/data/kali_v3_work/计算机知识/Kali/90-来源与维护/验证/revision-v3/c-gcc-ubsan-final.json"
+    ],
+    "working_directory": "/mnt/data/kali_v3_work/计算机知识/Kali/07-综合实验/代码",
+    "returncode": 0,
+    "duration_seconds": 0.754,
+    "output": "c-gcc-ubsan-driver.txt",
+    "status": "passed",
+    "cases": 49,
+    "passed_cases": 49
+  },
+  {
+    "name": "c-clang-asan-ubsan-driver",
+    "argv": [
+      "python",
+      "-B",
+      "/mnt/data/kali_v3_work/计算机知识/Kali/07-综合实验/代码/verify_c_examples.py",
+      "--compiler",
+      "clang",
+      "--sanitizer",
+      "address-undefined",
+      "--report",
+      "/mnt/data/kali_v3_work/计算机知识/Kali/90-来源与维护/验证/revision-v3/c-clang-asan-ubsan-final.json"
+    ],
+    "working_directory": "/mnt/data/kali_v3_work/计算机知识/Kali/07-综合实验/代码",
+    "returncode": 0,
+    "duration_seconds": 1.141,
+    "output": "c-clang-asan-ubsan-driver.txt",
+    "status": "passed",
+    "cases": 49,
+    "passed_cases": 49
+  },
+  {
+    "name": "transaction-demo-final",
+    "status": "passed",
+    "evidence": "document-reproduction-final.json and transaction-demo-final.json"
+  },
+  {
+    "name": "openssl-cases-final",
+    "status": "passed",
+    "cases": 11,
+    "evidence": "tls-verification-isolated-final.json",
+    "scope": "offline certificate verification, not TLS handshake"
+  }
+]

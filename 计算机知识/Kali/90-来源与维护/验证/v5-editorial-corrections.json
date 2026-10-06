@@ -1,0 +1,14 @@
+[
+  {
+    "id": "Q07-input-answer-mismatch",
+    "phase": "v5 draft review",
+    "file": "07-综合实验/08-自检题与答案定位.md",
+    "before": "三个输入位置、每处两个候选，四种 Intruder 组合模式的请求数为何不同？",
+    "after": "两个位置分别有 3 与 4 个候选；单载荷集模式使用公共的 3 项集合。四种 Intruder 模式的请求数为何不同？",
+    "reason": "The 6/3/3/12 answer requires two positions, a shared set of three for Sniper/Battering ram, and separate sets of three/four for Pitchfork/Cluster bomb. Original draft question described three positions of two and was inconsistent.",
+    "evidence": "Canonical Burp chapter; PortSwigger Intruder types reread 2026-09-06",
+    "source_url": "https://portswigger.net/burp/documentation/desktop/tools/intruder/configure-attack/attack-types",
+    "web_ref": "turn924752view1",
+    "status": "corrected; canonical question inputs and nominal counts checked"
+  }
+]

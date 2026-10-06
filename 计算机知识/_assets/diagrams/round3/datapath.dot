@@ -1,0 +1,20 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="教学 load 数据通路：lw x5,12(x6)",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"pc" [label="PC"];
+"im" [label="指令存储器"];
+"dec" [label="译码\nrs1=x6，rd=x5，imm=12"];
+"reg" [label="寄存器堆\n读 x6"];
+"alu" [label="ALU\nx6 + 12"];
+"mem" [label="数据存储器\n读有效地址"];
+"wb" [label="写回 x5"];
+"pc" -> "im";
+"im" -> "dec";
+"dec" -> "reg";
+"reg" -> "alu";
+"dec" -> "alu" [label="立即数"];
+"alu" -> "mem";
+"mem" -> "wb";
+
+}

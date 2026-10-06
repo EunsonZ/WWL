@@ -1,0 +1,97 @@
+filters:
+  and:
+    - file.ext == "md"
+    - or:
+        - file.inFolder("数学")
+        - file.inFolder("AI")
+        - file.inFolder("计算机知识")
+        - file.inFolder("编程知识")
+        - file.inFolder("哲学与文化")
+        - file.inFolder("社会科学")
+        - file.inFolder("Obsidian知识")
+    - '!file.inFolder("计算机知识/90-资源/维护")'
+    - '!file.inFolder("AI/90-资源/维护")'
+    - '!file.inFolder("Obsidian知识/30-实践/01-实验区")'
+    - '!file.inFolder("Obsidian知识/90-资源/01-模板")'
+formulas:
+  content_label: if(note.content_status, note.content_status, "未记录")
+  evidence_label: if(note.evidence_status, note.evidence_status, "未记录")
+properties:
+  file.name:
+    displayName: 笔记
+  file.folder:
+    displayName: 位置
+  note.type:
+    displayName: 现有类型
+  formula.content_label:
+    displayName: 内容状态
+  formula.evidence_label:
+    displayName: 证据状态
+  note.evidence_record:
+    displayName: 证据记录
+views:
+  - type: table
+    name: 知识浏览
+    order:
+      - file.name
+      - file.folder
+      - type
+      - formula.content_label
+      - formula.evidence_label
+    sort:
+      - property: file.path
+        direction: ASC
+  - type: table
+    name: 正文证据未记录
+    filters:
+      and:
+        - note.evidence_status.isEmpty()
+        - not:
+            - type == "moc"
+            - type == "MOC"
+            - type == "hub"
+            - type == "map"
+            - type == "practice-hub"
+            - type == "index"
+            - type == "resource-index"
+            - type == "template"
+            - type == "report-template"
+            - type == "source"
+            - type == "source-mirror"
+            - file.basename.endsWith("-MOC")
+            - file.basename.endsWith("-导航")
+            - file.inFolder("计算机知识/00-开始/全局导航")
+            - file.inFolder("哲学与文化/90-资源/原稿")
+            - file.basename.endsWith("系统课程索引")
+            - file.path == "AI/80-实践/08-深层机制数值实验/00-数值实验导航与验收.md"
+            - file.path == "哲学与文化/90-资源/01-原始材料与参考来源索引.md"
+            - file.path == "数学/90-资源/10-图示索引与生成说明.md"
+            - file.path == "计算机知识/35-计算机网络/80-真实协议测量/05-最小解析器源码镜像.md"
+            - file.path == "AI/00-交付说明.md"
+            - file.path == "AI/90-资源/06-修订与验收报告.md"
+            - file.path == "AI/90-资源/08-本轮深化修订与验收报告.md"
+            - file.path == "数学/90-资源/09-修订说明与验收报告.md"
+            - file.path == "计算机知识/Kali/90-来源与维护/导入交付/Kali_Obsidian_v5_深度研究与结构梳理_修订说明.md"
+            - file.path == "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/源码与测试镜像.md"
+    order:
+      - file.name
+      - file.folder
+      - type
+      - formula.evidence_label
+    sort:
+      - property: file.path
+        direction: ASC
+  - type: table
+    name: 局部核验与待复核
+    filters:
+      or:
+        - note.evidence_status == "partial"
+        - note.evidence_status == "unreviewed"
+    order:
+      - file.name
+      - file.folder
+      - formula.evidence_label
+      - evidence_record
+    sort:
+      - property: file.path
+        direction: ASC

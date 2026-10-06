@@ -1,0 +1,17 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="语音：连续采样到未知对齐的文本", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+w [label="波形\n采样率 / 时长 / 声道"];
+f [label="分帧 / STFT\nlog-Mel 等特征"];
+e [label="音频编码器"];
+c [label="CTC\n路径求和 / blank"];
+d [label="自回归 decoder\n文本条件生成"];
+o [label="文本与评测\nCER / WER / 关键错误"];
+w -> f;
+f -> e;
+e -> c;
+e -> d;
+c -> o;
+d -> o;
+}

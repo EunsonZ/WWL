@@ -1,0 +1,16 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="AVL 左右双旋：保持中序序列 10、20、30",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"a" [label="原树：30"];
+"b" [label="10"];
+"c" [label="20"];
+"d" [label="旋转后：20"];
+"e" [label="10"];
+"f" [label="30"];
+"a" -> "b" [label="左"];
+"b" -> "c" [label="右"];
+"d" -> "e" [label="左"];
+"d" -> "f" [label="右"];
+a -> d [style=dashed,label="先左旋 10，再右旋 30",constraint=false]; {rank=same;a;d;}
+}

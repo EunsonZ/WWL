@@ -1,0 +1,38 @@
+# Machine-local app state; personal learning notes are backed up privately
+/.[!.]*/
+
+# Only these non-sensitive project agent declarations may be tracked
+!/.codex/
+/.codex/*
+!/.codex/config.toml
+!/.codex/agents/
+/.codex/agents/*
+!/.codex/agents/wwl_scout.toml
+!/.codex/agents/wwl_author.toml
+!/.codex/agents/wwl_reviewer.toml
+!/.codex/agents/wwl_expert.toml
+# Private learning records are included in the user-authorized private backup.
+# Secrets and machine-local state remain excluded.
+!/.githooks/
+!/.githooks/post-commit
+!/.githooks/pre-push
+# Plugin databases, including nested Tags/.../.space directories
+.space/
+.smart-env/
+.makemd/
+.venv/
+
+# Environment, generated files, and local credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+*.log
+node_modules/

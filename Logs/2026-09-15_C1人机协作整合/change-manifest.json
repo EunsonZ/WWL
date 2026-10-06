@@ -1,0 +1,480 @@
+{
+  "schema": "wwl-c1-change-manifest-v1",
+  "state": "applied_and_verified",
+  "self_hash": "excluded to avoid recursive self hash; complete manifest hash retained in private publisher ledger",
+  "entries": [
+    {
+      "path": ".codex/agents/wwl_author.toml",
+      "before": "absent",
+      "after": "fece4cfefb13d24c9ad8166013b260e938902cafe73e17fa8295b8c4ef88335c",
+      "operation": "add"
+    },
+    {
+      "path": ".codex/agents/wwl_expert.toml",
+      "before": "absent",
+      "after": "1ad762474860b6bd9c6d81e00199b7ae225f44a5c273ec2dc516679a0ba6b082",
+      "operation": "add"
+    },
+    {
+      "path": ".codex/agents/wwl_reviewer.toml",
+      "before": "absent",
+      "after": "26792b88c80325027ec88ee921c3bca8820856bf2dcdb26daf3b54b5d9be8928",
+      "operation": "add"
+    },
+    {
+      "path": ".codex/agents/wwl_scout.toml",
+      "before": "absent",
+      "after": "dff356df17d1ee76ac4c1e3602567790be08aac412b28782975dc88c6dca9084",
+      "operation": "add"
+    },
+    {
+      "path": ".codex/config.toml",
+      "before": "absent",
+      "after": "d7005171e985b70ddc59ceb9e63ae767fd427d764e6236810e7b9c8a0ef21031",
+      "operation": "add"
+    },
+    {
+      "path": ".obsidian/app.json",
+      "before": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "after": "ab79b64ea1ee2ad5a31001510b9cd9b08417ebb05197d201f65108b0e168b82f",
+      "operation": "modify"
+    },
+    {
+      "path": ".obsidian/templates.json",
+      "before": "absent",
+      "after": "a5f068c11d35fff551ccdbe57691011bbf26f4a78fbc976496583b7f30656cc3",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/README.md",
+      "before": "absent",
+      "after": "2f6d5db6088c48f36bbb2d47ea3b8987140f53ee8364518b8811fe2146de27ee",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/并行协作与模型路由.md",
+      "before": "absent",
+      "after": "a7c0440bc1c613591e6514189e46f4122706fdc9d3acd4224eb6d8f63b4c0237",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/按问题找知识.md",
+      "before": "absent",
+      "after": "aa5a74ad5c4c3ba6d43355bff329f1568d181ec906071ff2ac70c8cb3627ae56",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/插件取舍.md",
+      "before": "absent",
+      "after": "dc3a1e402e489200914512a27121073a6e67b5e2bbe32134d4f70012acdcc75e",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/收件箱/README.md",
+      "before": "absent",
+      "after": "ad8420b2db32f11b6bc8dbe413c2a66b00883f3fd7af8dbc51bab859fcabacd1",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/模板/学习记录.md",
+      "before": "absent",
+      "after": "32f0a241e32e91712ac4800a3a04090defd7b24862afef9a6e84f4b8bd939b01",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/模板/知识页.md",
+      "before": "absent",
+      "after": "878cb17ae9ca7a81aeebe3ee253d410a6d99130edb07cb5810d9ea6fd4bd1e5b",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/知识目录.base",
+      "before": "absent",
+      "after": "d36ad37772d07f2b525e19ea2827da6ed2a34bd10228345b62374162ac1f4324",
+      "operation": "add"
+    },
+    {
+      "path": "00-工作台/维护指南.md",
+      "before": "absent",
+      "after": "f1dd92e0b72dba423d82afd76c1085504b930db4ee7225fe177b70edb4e6274d",
+      "operation": "add"
+    },
+    {
+      "path": "AGENTS.md",
+      "before": "67f62bf2e064e3e7d88756b98c2053ddfcc1a7bcd0071fff452c064aabbc592b",
+      "after": "e9be3c47d2c28c811e9c67feba0f94e59ffb1e22db9a4f3d8e93f463c61fa4ed",
+      "operation": "modify"
+    },
+    {
+      "path": "AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA.md",
+      "before": "9023fc8602e885b45dd11387939328b6b2817b6cfcc2638a2980fff364f2fbab",
+      "after": "2efdc04c555b9b38d5eec9e2dcb639512ce1a2069f730c43077444e4ba6bfd19",
+      "operation": "modify"
+    },
+    {
+      "path": "AI/20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md",
+      "before": "934f7d99dae6e2cb701434094765f77683be60f21de2a4e9e2b2bbfc6ddad07a",
+      "after": "f2e343dcb2c295f66781e256f1b8c3633a4301eca38ca8e8267ea79f0b9ac448",
+      "operation": "modify"
+    },
+    {
+      "path": "AI/80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md",
+      "before": "40ea5ecdcf744e4d686d64806b52e5772a475e6c833c9085d52d9f343065ce1a",
+      "after": "61c413659fa901b3f4181be642ff5714403c1d30051c13c12f39f16950ab290c",
+      "operation": "modify"
+    },
+    {
+      "path": "CHANGES.md",
+      "before": "absent",
+      "after": "de7da5fdb687c78aa0965fadd132aa5f807a4af2cefed159f1ca8ca3927f8559",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/diagnostic-baseline.json",
+      "before": "absent",
+      "after": "28501a8b2505e66438352f3725724fb645f6b4c710df78b00a61ead5680f16b0",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals-index.json",
+      "before": "absent",
+      "after": "b237cee093103a5f3c45252ccaa70c8d10bc56410f783588efcf7c5c7f2c2a7f",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/.obsidian/app.json.txt",
+      "before": "absent",
+      "after": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/AGENTS.md.txt",
+      "before": "absent",
+      "after": "67f62bf2e064e3e7d88756b98c2053ddfcc1a7bcd0071fff452c064aabbc592b",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA.md.txt",
+      "before": "absent",
+      "after": "9023fc8602e885b45dd11387939328b6b2817b6cfcc2638a2980fff364f2fbab",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/AI/20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md.txt",
+      "before": "absent",
+      "after": "934f7d99dae6e2cb701434094765f77683be60f21de2a4e9e2b2bbfc6ddad07a",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/AI/80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md.txt",
+      "before": "absent",
+      "after": "40ea5ecdcf744e4d686d64806b52e5772a475e6c833c9085d52d9f343065ce1a",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/CHANGE.md.txt",
+      "before": "absent",
+      "after": "d0f4f54ab704b71a05d37dbe7b2b52441407e1038cf8fc763650334fe9e5d396",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/NewAgents.md.txt",
+      "before": "absent",
+      "after": "8f5a7dc97c171535b4a5d5b73ed3d03f9229ff9bee5ba826b620e377634ba3cd",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/README.md.txt",
+      "before": "absent",
+      "after": "6946edfcaba76e3588390796f80f3c27fd7854cd339cae7b44300e50476662d4",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/originals/计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md.txt",
+      "before": "absent",
+      "after": "45a900bbbf113133d8493bd5452e293994ba038347440efe4cd70fbb2dae6dde",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/source-checks.json",
+      "before": "absent",
+      "after": "46a0f9e0b2af25134136bc580f3f1fd7614c3c6f2e97b5154d4e35e4e099b8d7",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/verification-summary.json",
+      "before": "absent",
+      "after": "5c3d8fc2fb9a1901ff3a40dced9659737824569819e7c18853d6eb5ee9d2000f",
+      "operation": "add"
+    },
+    {
+      "path": "Logs/2026-09-15_C1人机协作整合/验收记录.md",
+      "before": "absent",
+      "after": "e4090757980a505a20d07eca8e56377abb64a68b80bda38e7ca8fc3d70159a40",
+      "operation": "add"
+    },
+    {
+      "path": "NewAgents.md",
+      "before": "8f5a7dc97c171535b4a5d5b73ed3d03f9229ff9bee5ba826b620e377634ba3cd",
+      "after": "041e74b4a0592ef1482aa183e9e3bf8e85cd62876472a7f38af25a6f0bb68c97",
+      "operation": "modify"
+    },
+    {
+      "path": "README.md",
+      "before": "6946edfcaba76e3588390796f80f3c27fd7854cd339cae7b44300e50476662d4",
+      "after": "aa76506de9a3a9f7dee26a85f78c28cb5cb5db10d920a4e1a5d60722eba7e290",
+      "operation": "modify"
+    },
+    {
+      "path": "scripts/CHECKS.md",
+      "before": "absent",
+      "after": "c39d30b273d57b7f73b51af7099b956d659bf9a4823aee582414e803984c2b4d",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/COORDINATION.md",
+      "before": "absent",
+      "after": "fd25d7ea18abdbe3467794ca205dd81740d6852acc277c4de21c382691d8c183",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/MODEL_COST.md",
+      "before": "absent",
+      "after": "d4f74d40a1dd4375930049bc9466a1727563d45a21ecd700411d0302e16293f8",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/check_mirrors.py",
+      "before": "absent",
+      "after": "b1d04836b7fe7007d166776be84ed107db41a9a270548b45fd3436750cd8624f",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/check_vault.py",
+      "before": "absent",
+      "after": "1bc2ca36ec2173e077d8e302256e2f444e3a1ecaec9a84d00833837d826278ab",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/config_checks.py",
+      "before": "absent",
+      "after": "7e0833e4829209ca99faf5ed3590f816271f7d7849fc0e31774202c73d1a8a52",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/coordination.py",
+      "before": "absent",
+      "after": "60f012b34476f9736428d7d77a31b18394eeccb2fd3c5894a6a79b8765f3c4a7",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/candidate-unclaimed/unclaimed.tmp",
+      "before": "absent",
+      "after": "18f6081fc9b70a6f62356d09ce3eba105ba10fd90ae1b3eaea9ff6483e6c9f2d",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/candidate/notes/0.md",
+      "before": "absent",
+      "after": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/current/notes/0.md",
+      "before": "absent",
+      "after": "421591fa6c4445aafcb5cebb07c3bb5fd7abb745c1fb75b8f4ccbf9d49778a54",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/current/rules.txt",
+      "before": "absent",
+      "after": "f9384b62a46319abe01d7b2697be8de2d626669512067daead28bc51da8c90e1",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/plan-invalid.json",
+      "before": "absent",
+      "after": "160d22508efb42727e4d1c5d9cbc42ca454d756307ebbbf332cfaf2cd31a662f",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/plan-missing-input.json",
+      "before": "absent",
+      "after": "98056294db8364953bfac00ea0d419f8e853bfc35bcc0c83fd00549536640b68",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/plan.json",
+      "before": "absent",
+      "after": "d45b595179b3ea66675e1aa31908f035db22292d19dc0f1410ee919e1241e634",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/records-stale.json",
+      "before": "absent",
+      "after": "9d216a163d7991690615154c58f7bc8a1df8828160e985d53c02e489f721bd7c",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/records.json",
+      "before": "absent",
+      "after": "4065d1f6372bb8c48512470571742ce34df28bb5bb3dbb299452110d68f1220b",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/work/evidence/review.txt",
+      "before": "absent",
+      "after": "6dfb4d31dfe7d6ff003e72d482efbd3487197894fd9b213224100310fff79348",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-failure/work/outputs/0.md",
+      "before": "absent",
+      "after": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-success/candidate/notes/0.md",
+      "before": "absent",
+      "after": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-success/current/notes/0.md",
+      "before": "absent",
+      "after": "421591fa6c4445aafcb5cebb07c3bb5fd7abb745c1fb75b8f4ccbf9d49778a54",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-success/current/rules.txt",
+      "before": "absent",
+      "after": "f9384b62a46319abe01d7b2697be8de2d626669512067daead28bc51da8c90e1",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-success/plan.json",
+      "before": "absent",
+      "after": "d45b595179b3ea66675e1aa31908f035db22292d19dc0f1410ee919e1241e634",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-success/records.json",
+      "before": "absent",
+      "after": "eb2e402a564a33961fb0d09e64806c67d932193d03b69e56a35d3de12c2a04d4",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-success/work/evidence/review.txt",
+      "before": "absent",
+      "after": "6dfb4d31dfe7d6ff003e72d482efbd3487197894fd9b213224100310fff79348",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/coordination-success/work/outputs/0.md",
+      "before": "absent",
+      "after": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/usage-budget-denied.json",
+      "before": "absent",
+      "after": "2740d232f02165c8d1029c73b822b2a56653870134d8dd969e4df11d5fd5670f",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/usage-budget-ok.json",
+      "before": "absent",
+      "after": "d876803c4367748eb9ddc4771ea61f029a0b38c8343841ce2b1a6221cff89a65",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/usage-hypothetical.json",
+      "before": "absent",
+      "after": "e20e9373ce5931a4562403fb8e986f47ab6723d57966cec526689ea75604c557",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/usage-invalid.json",
+      "before": "absent",
+      "after": "a9e3aeae9d2e6ffe42846efda587bfbe79c18cffdb2e768896e7c08a7ff28edf",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/usage-retry-invalid.json",
+      "before": "absent",
+      "after": "70e151438dd593a45f098ce0d4e49fc5811cfff9eadd81775dd55bb8cdd7edac",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/usage-retry-ok.json",
+      "before": "absent",
+      "after": "39abdb01d0153b6d69a64f858e2fb40edd9ff5a4b32f3cde6bd82625c163356d",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/examples/usage-unknown.json",
+      "before": "absent",
+      "after": "5322fa5982a258a629ad0b451e8fdb416c18acbe6854614799b274dda317fb73",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/links.py",
+      "before": "absent",
+      "after": "b1f52e2f208077eb459232a3e0d5ca601cfdf3df904e2eccdb5f9f3a13a9af00",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/model-prices.json",
+      "before": "absent",
+      "after": "ae5760d568938e986b50141f1f0d6bb4a31bd544ab1bddd719544384dbaf4a7a",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/model_cost.py",
+      "before": "absent",
+      "after": "f5f70b556683fefa37793ebf1b109c07797bac363a9b1e256c6ba38dac55abf5",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/tests/test_config_checks.py",
+      "before": "absent",
+      "after": "607bf35987bfdc7018381bdcd84202c6afe146ac42fe95549bd9ea52f12d2ee7",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/tests/test_coordination.py",
+      "before": "absent",
+      "after": "9e43556605d113f6bbc5bfdf30a3cc10893860ce051f697fe6e175d771c10416",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/tests/test_model_cost.py",
+      "before": "absent",
+      "after": "dcdf4067977843875bf8f4cdf7ff8d5220de6fbc2c24c397fdc7d8cf47bba959",
+      "operation": "add"
+    },
+    {
+      "path": "scripts/tests/test_vault_checks.py",
+      "before": "absent",
+      "after": "4a780c44970019b6f7f2c564b77daea891d1cd540f0cfab29b165e4dfc14d439",
+      "operation": "add"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md",
+      "before": "45a900bbbf113133d8493bd5452e293994ba038347440efe4cd70fbb2dae6dde",
+      "after": "3e35f5fe0b742186ebe62d78a4cb4a718d7fa752d6053b12254cdb07626cfe13",
+      "operation": "modify"
+    },
+    {
+      "path": "CHANGE.md",
+      "before": "d0f4f54ab704b71a05d37dbe7b2b52441407e1038cf8fc763650334fe9e5d396",
+      "after": "absent",
+      "operation": "delete",
+      "status": "verified"
+    }
+  ],
+  "directory_additions": [
+    "00-工作台/附件"
+  ],
+  "originals_index": "originals-index.json"
+}

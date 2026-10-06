@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="Fenwick 前缀 13：用 lowbit 去掉最低位分块",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"0" [label="i=13 (1101)\n取 [13,13]，lowbit=1"];
+"1" [label="i=12 (1100)\n取 [9,12]，lowbit=4"];
+"2" [label="i=8 (1000)\n取 [1,8]，lowbit=8"];
+"3" [label="i=0\n累计完成"];
+"0" -> "1";
+"1" -> "2";
+"2" -> "3";
+
+}

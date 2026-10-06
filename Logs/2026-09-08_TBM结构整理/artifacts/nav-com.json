@@ -1,0 +1,50 @@
+{
+  "scope": "navigation-only structure normalization for the staged com import",
+  "edited": {
+    "computer_home": [
+      "计算机知识/00-开始/00-计算机知识-首页.md"
+    ],
+    "global_navigation": [
+      "计算机知识/00-开始/全局导航/00-总学习地图.md",
+      "计算机知识/00-开始/全局导航/01-先修依赖与学习顺序.md",
+      "计算机知识/00-开始/全局导航/02-按问题寻找知识.md",
+      "计算机知识/00-开始/全局导航/03-全库文件索引.md",
+      "计算机知识/00-开始/全局导航/04-学科覆盖与深度分层.md",
+      "计算机知识/00-开始/全局导航/05-知识覆盖与逐科查漏.md",
+      "计算机知识/00-开始/全局导航/06-跨学科机制与误区索引.md",
+      "计算机知识/00-开始/全局导航/07-学习方法与阶段验收.md",
+      "计算机知识/00-开始/全局导航/08-本地图示索引.md",
+      "计算机知识/00-开始/全局导航/09-本地实验与验证入口.md",
+      "计算机知识/00-开始/全局导航/10-目录约定与合并说明.md",
+      "计算机知识/00-开始/全局导航/11-难点导读与研究证据.md"
+    ],
+    "course_maps": "计算机知识/00-开始/课程地图/01-C语言-课程地图.md through 13-Linux-课程地图.md",
+    "programming_home": [
+      "编程知识/00-开始/00-编程知识-首页.md"
+    ]
+  },
+  "changes": [
+    "The computer home now uses canonical links to the total map and its global-navigation pages.",
+    "All course maps return to the canonical total map and use canonical locations for labs and the coverage page.",
+    "Global-navigation references now point to 计算机知识/_labs and 计算机知识/90-资源/维护/导入-com/_meta; figure links use the new relative location under 计算机知识/_assets.",
+    "The experiment commands distinguish the historical com-root command from the current Vault-root command.",
+    "The programming home retains its regex-only remit and includes a return link to the total map.",
+    "The unresolved Obsidian Playground target is preserved as an explicit original path marked not collected in this Vault."
+  ],
+  "not_edited": [
+    "Live Vault files",
+    "Course body content and historical report conclusions",
+    "计算机知识/Kali/README.md (not present in the staged tree)"
+  ],
+  "verification": {
+    "checked": [
+      "The staged destinations 计算机知识/_assets, 计算机知识/_labs, and 计算机知识/90-资源/维护/导入-com/_meta exist.",
+      "All 13 staged course maps contain the canonical total-map, lab, and coverage navigation targets.",
+      "A search found no remaining staged wiki links beginning with [[_labs or [[_meta, and no stale Markdown figure links beginning with (_assets/."
+    ],
+    "not_run": [
+      "Obsidian GUI navigation validation",
+      "Full-vault link checker; broader mechanical link migration is assigned separately"
+    ]
+  }
+}

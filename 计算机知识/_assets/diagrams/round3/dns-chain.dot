@@ -1,0 +1,20 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="DNS 冷缓存查找：递归器沿委派链继续询问",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"app" [label="客户端"];
+"rec" [label="递归解析器"];
+"root" [label="根服务器"];
+"tld" [label="顶级域服务器"];
+"auth" [label="权威服务器"];
+"ans" [label="缓存并返回记录\nTTL 约束复用时间"];
+"app" -> "rec";
+"rec" -> "root" [label="查询"];
+"root" -> "rec" [label="委派信息"];
+"rec" -> "tld" [label="查询"];
+"tld" -> "rec" [label="委派信息"];
+"rec" -> "auth" [label="查询"];
+"auth" -> "ans" [label="权威记录"];
+"ans" -> "app";
+
+}

@@ -1,0 +1,61 @@
+{
+  "owner": "agoodstart_map",
+  "scope": "stage/Obsidian知识/20-功能/03-完整工作流 and stage/Obsidian知识/90-资源/01-模板",
+  "source": {
+    "path": "/Users/ysz/Documents/Obsidian Vault/AGoodStart101/AGoodStart101/00-Inbox/Obsidian1.md",
+    "title": "Obsidian 从零入门：一套简单、规范、能长期扩展的使用方法",
+    "used_sections": [
+      "文档生命周期：捕获、分流、规范化、加工、连接、使用、复查与归档",
+      "知识、来源与项目的角色边界",
+      "模板中的主张、证据、反证、局限与决策记录"
+    ],
+    "provenance_copy": "Clippings/AGoodStart101/Obsidian1.md",
+    "copy_owner": "delta_com_culture"
+  },
+  "modified": [
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/00-完整工作流-MOC.md",
+      "change": "补充来源、知识、项目、复查之间的职责与证据边界。"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/01-从收件箱到常青笔记.md",
+      "change": "把收件箱明确分流为来源、知识、项目或临时记录，并加入来源不等于证明的判断点。"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/04-阅读批注到知识卡片.md",
+      "change": "增加主张、可定位证据、反例或替代解释、适用范围和项目用途的抽取审计。"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/快速捕获.md",
+      "change": "区分来源原话和个人判断，保留捕获阶段不作证实的边界。"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/常青知识卡.md",
+      "change": "增加最小主张、支持、反证/替代解释和范围表。"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/阅读.md",
+      "change": "增加来源主张、定位证据、个人判断与边界表。"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/项目.md",
+      "change": "增加项目判断、支持材料、反面风险、决定与复查条件表。"
+    }
+  ],
+  "not_modified": [
+    "未新增空模板或目录。",
+    "未变更学习状态、用户记录、插件配置或 Templater 宏。",
+    "未执行 Templater、QuickAdd 或任何模板代码。"
+  ],
+  "validation": {
+    "performed": [
+      "jq parsed this fragment successfully",
+      "all seven modified Markdown files have balanced fenced-code delimiter counts",
+      "manual scope review: no Templater template, plugin configuration, learning state, or user record was edited"
+    ],
+    "not_run": [
+      "Obsidian UI rendering and Bases behavior require the integrator's staged UI validation",
+      "Templater/QuickAdd execution was intentionally not run"
+    ]
+  }
+}

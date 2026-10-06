@@ -1,0 +1,13 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=TB;
+L [label="先选一门语言\nC / C++ / Rust / Python / TypeScript"];
+D [label="数据结构\n表示与操作不变量"]; A [label="算法设计\n证明、选择与代价"];
+H [label="计算机组成原理\n指令、缓存与地址"]; O [label="操作系统\n资源、同步与保护"];
+N [label="计算机网络\n交付、协议与反馈"]; B [label="数据库\n查询、事务与恢复"];
+C [label="编译原理\n表示变化与语义保持"]; X [label="Linux\n观察、操作与故障恢复"];
+L->D; D->A; L->H; H->O; O->N; O->X; D->B; O->B; A->C; H->C;
+
+}

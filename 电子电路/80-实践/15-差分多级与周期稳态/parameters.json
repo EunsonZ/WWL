@@ -1,0 +1,31 @@
+{
+  "status": "teaching parameters, no vendor or hardware guarantee",
+  "units": {
+    "voltage": "V",
+    "current": "A",
+    "resistance": "ohm",
+    "capacitance": "F",
+    "gm": "S",
+    "frequency": "Hz",
+    "thermal_resistance": "K/W",
+    "temperature": "K"
+  },
+  "mos": {
+    "tail_A": 0.001,
+    "beta_A_per_V2": 0.002
+  },
+  "cgd": {
+    "rg_ohm": 10000.0,
+    "rout_ohm": 10000.0,
+    "gm_S": 0.001,
+    "cgs_F": 2e-11,
+    "cgd_F": 2e-12,
+    "co_F": 1e-11
+  },
+  "periodic": {
+    "a_V": 0.35,
+    "frequency_Hz": 100,
+    "capacitance_F": 1e-06,
+    "assumption": "legacy saturation candidate; lambda=0; check region before interpreting"
+  }
+}

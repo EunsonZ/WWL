@@ -1,0 +1,61 @@
+{
+  "batch": "2026-09-08_双来源知识增量导入",
+  "scope": "Obsidian foundation additions in stage only",
+  "source": {
+    "path": "/Users/ysz/Documents/Obsidian Vault/AGoodStart101/AGoodStart101/00-Inbox/Obsidian1.md",
+    "preserved_target": "Clippings/AGoodStart101/Obsidian1.md",
+    "sections_used": [
+      {
+        "lines": "76-265",
+        "purpose": "separate folder, property, link, and body roles; naming and one-main-question note guidance"
+      },
+      {
+        "lines": "1450-1662",
+        "purpose": "minimal metadata and the boundary between structured fields and explanatory prose"
+      },
+      {
+        "lines": "4343-4506",
+        "purpose": "source-to-knowledge-to-use evidence path and relation-bearing links"
+      },
+      {
+        "lines": "4865-5047",
+        "purpose": "page-level PDF references, immutable source material, and reading-to-synthesis workflow"
+      }
+    ]
+  },
+  "changes": [
+    {
+      "path": "Obsidian知识/00-开始/01-如何使用这个-Vault.md",
+      "addition": "four-role organization rule and explicit separation of course metadata from user learning evidence",
+      "boundary": "does not introduce the source manuscript's directory taxonomy or status vocabulary"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/05-MOC、原子笔记与渐进式总结.md",
+      "addition": "one-main-question note rule and source-to-reading-note-to-concept-to-project evidence path",
+      "boundary": "does not turn link count into a quality criterion"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/09-PDF++.md",
+      "addition": "local canonical-PDF, page-link, reading-note, and immutable-source boundary; 2026-09-08 official verification of core #page and #height embed syntax",
+      "boundary": "does not enable PDF++, change PDF files, or claim untested plugin behavior"
+    },
+    {
+      "path": "Obsidian知识/00-开始 and Obsidian知识/10-基础",
+      "addition": "replaced short .base, .canvas, and .svg references with exact vault paths; repaired the ambiguous 双向链接 reference and replaced the absent 00-工作台 link with the real TaskNotes and Clippings roles",
+      "boundary": "only exact unique targets were rewritten; no basename fallback was used"
+    }
+  ],
+  "validation": {
+    "performed": [
+      "confirmed all edited paths exist in stage",
+      "confirmed the new internal Clippings source link and adjacent course links are syntactically present",
+      "reviewed only the cited source manuscript sections",
+      "verified the PDF #page and #height syntax against https://obsidian.md/help/embeds on 2026-09-08"
+    ],
+    "not_run": [
+      "Obsidian UI rendering and PDF page-link behavior",
+      "plugin behavior, installation state, and community-plugin version compatibility",
+      "full-vault link checker"
+    ]
+  }
+}

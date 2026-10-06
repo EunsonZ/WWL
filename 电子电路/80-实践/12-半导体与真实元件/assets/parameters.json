@@ -1,0 +1,42 @@
+{
+  "class": "teaching; no device fit",
+  "units": "SI unless explicitly stated",
+  "pn": {
+    "na_m-3": 1e+22,
+    "nd_m-3": 2e+22,
+    "ni_m-3": 1e+16,
+    "t_k": 300,
+    "eps_relative": 11.7,
+    "vd_bias_v": [
+      0.2,
+      -1
+    ]
+  },
+  "diode": {
+    "vs_v": 5,
+    "r_ohm": 1000,
+    "is_a": 1e-12,
+    "eta": 1,
+    "t_k": 300
+  },
+  "charge": {
+    "c0_f": 1e-05,
+    "vb_v": 2
+  },
+  "recovery": {
+    "if_a": 0.001,
+    "ir_a": 0.001,
+    "tau_s": 1e-07
+  },
+  "temperature": {
+    "is0_a": 1e-12,
+    "t0_k": 300,
+    "eg_ev": 1.12
+  },
+  "cap_equivalent": {
+    "c_f": 1e-07,
+    "esl_h": 1e-09,
+    "esr_ohm": 0.05,
+    "rleak_ohm": 1000000000.0
+  }
+}

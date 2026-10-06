@@ -1,0 +1,63 @@
+{
+  "scope": "staged Obsidian views and teaching navigation",
+  "tasknotes_views": {
+    "action": "deduplicated from the teaching stage",
+    "source_of_truth": "source2:TaskNotes/Views",
+    "paths": [
+      "agenda-default.base",
+      "calendar-default.base",
+      "kanban-default.base",
+      "mini-calendar-default.base",
+      "pomodoro-stats.base",
+      "relationships.base",
+      "tasks-default.base"
+    ],
+    "hash_result": "all seven staged files matched their source2 counterparts before removal",
+    "teaching_behavior": "Start Here shows five embed syntaxes in fenced text and does not embed or query TaskNotes data"
+  },
+  "bases": {
+    "moc": "stage/Obsidian知识/40-视图/02-Bases/00-MOC-Bases.md",
+    "retained": [
+      "课程进度.base",
+      "插件实验目录.base",
+      "示例笔记目录.base",
+      "示例项目资料.base"
+    ],
+    "scope": "Obsidian知识 teaching materials only; the MOC presents them as read-only navigation and schema examples",
+    "filter_change": "课程进度.base now requires file.inFolder(Obsidian知识) in addition to its existing course tag and type filters"
+  },
+  "schema_conflict_resolution": {
+    "problem": "WWL uses reviewed as a Date, while the three teaching sample notes used reviewed as a Boolean checkbox.",
+    "action": "renamed only the Boolean teaching-example field to fixture_reviewed and updated its sample, Base, search, challenge, answer, dictionary, and cheatsheet references.",
+    "sample_files": [
+      "Obsidian知识/30-实践/01-实验区/数据/甲-晨间笔记.md",
+      "Obsidian知识/30-实践/01-实验区/数据/乙-阅读卡片.md",
+      "Obsidian知识/30-实践/01-实验区/数据/丙-项目记录.md"
+    ],
+    "semantic_boundary": "fixture_reviewed is a fictional teaching review checkbox. It is neither a learner-mastery record nor a content-certification claim. Existing date-valued reviewed fields outside this teaching fixture were not changed."
+  },
+  "canvas": {
+    "retained": [
+      "Obsidian功能地图.canvas",
+      "周末读书会规划.canvas",
+      "链接网络演示.canvas"
+    ],
+    "validation": "each canvas parsed as JSON and includes nodes and edges; file nodes use staged Obsidian知识 paths"
+  },
+  "removed_from_teaching_stage": {
+    "real_drafts": [
+      "Obsidian知识/30-实践/01-实验区/收件箱/Untitled.md",
+      "Obsidian知识/30-实践/01-实验区/收件箱/Untitled 1.md",
+      "Obsidian知识/30-实践/01-实验区/收件箱/Untitled 2.md"
+    ],
+    "empty_timestamp_captures": [
+      "Obsidian知识/30-实践/01-实验区/收件箱/202608301844.md",
+      "Obsidian知识/30-实践/01-实验区/收件箱/202608301845.md"
+    ],
+    "retained_template": "Obsidian知识/30-实践/01-实验区/收件箱/在这里创建第一篇笔记.md"
+  },
+  "not_run": [
+    "Obsidian GUI/plugin rendering",
+    "installation, configuration, or execution of Bases, TaskNotes, Tasks, Dataview, Templater, or QuickAdd"
+  ]
+}

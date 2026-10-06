@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="相同起点，不同指针步长"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  a [label="假定 sizeof(int)=4\nint a[2][3] 连续存放",fillcolor="#e6eff8"];
+  row0 [label="第 0 行\na[0][0]  +0    a[0][1]  +4    a[0][2]  +8"];
+  row1 [label="第 1 行\na[1][0] +12   a[1][1] +16   a[1][2] +20"];
+  p [label="a 衰变为 int (*)[3]\na+1 跨过一整行：12 字节"];
+  q [label="a[0] 衰变为 int *\na[0]+1 跨过一个元素：4 字节"];
+  bad [label="int ** 要求先读取一个 int * 对象\n二维数组的行首放的是 int，不是行指针",fillcolor="#fff0df"];
+  a -> row0;row0 -> row1 [label="连续内存",color="#8a9baa"];
+  a -> p;a -> q;{rank=same;p;q};p->bad;q->bad;
+
+}

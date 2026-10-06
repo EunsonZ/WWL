@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="每跳换链路封装，端到端 IP 目的地不随之改写"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  host [label="本机 10.0.1.7\n目的 IP 203.0.113.10"];
+  route [label="最长前缀匹配\n选出接口和下一跳 10.0.1.1",fillcolor="#e6eff8"];
+  neigh [label="ARP 查询 IPv4 下一跳的 MAC\nIPv6 使用邻居发现，不使用 ARP"];
+  frame [label="以太帧目的 MAC：本地网关\n帧内 IP 目的地：203.0.113.10"];
+  router [label="网关去掉旧链路头并查路由\nTTL / Hop Limit 递减，重新封装"];
+  mtu [label="某跳 MTU 太小？\nIPv4 分片受 DF 等条件限制\nIPv6 路由器不分片，返回 Packet Too Big",fillcolor="#fff0df"];
+  host->route;route->neigh;neigh->frame;frame->router;router->mtu;
+
+}

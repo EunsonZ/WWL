@@ -1,0 +1,4816 @@
+{
+  "revision": "2026-09-06",
+  "scope": "All delivered files except this manifest itself. Hashes describe the distributed state, before users edit files or rerun report-generating tools.",
+  "delivered_files": 802,
+  "listed_files": 801,
+  "input_file_paths_preserved": 449,
+  "markdown_files": 434,
+  "entries": [
+    {
+      "path": "00-总学习地图.md",
+      "bytes": 4796,
+      "sha256": "3bf5b3b2ba7c2f45fa9a72d5ca23bb33a9b856c5f4403bd9e2a12d83d8df96ff",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "01-先修依赖与学习顺序.md",
+      "bytes": 4245,
+      "sha256": "cf3a0daf8fecf4959ba16aae96bf7fa27a18bbfd0e5ac2b646735a89b85a13be",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "02-按问题寻找知识.md",
+      "bytes": 7759,
+      "sha256": "1c0d1a43a9610a74706d78f76489d0a4c455089962ec04643a9f6f79ebebbd44",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "03-全库文件索引.md",
+      "bytes": 61846,
+      "sha256": "378f2d264b3203b496d7e6774688a87adf33fa3d8f135b443d2ebc3ac547e324",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "04-学科覆盖与深度分层.md",
+      "bytes": 5004,
+      "sha256": "7fcb62d5b47cb2aca226a9b377b22452c45c7bf2178f1369fc0ea4f94a039698",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "05-知识覆盖与逐科查漏.md",
+      "bytes": 29804,
+      "sha256": "1af0bed99304685892c97f10f3708d330857e451ddef0d5f400f50aaedfdb3c4",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "06-跨学科机制与误区索引.md",
+      "bytes": 13226,
+      "sha256": "31d94160786bb995ff2fbfb50c681e9a431b296f774e52c5ee0b6fa394d91a67",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "07-学习方法与阶段验收.md",
+      "bytes": 2721,
+      "sha256": "8f90ae5a1e56bc55595715ebdc7e832932609be5e4a5b81e6b8d7f89e41d89fe",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "08-本地图示索引.md",
+      "bytes": 18220,
+      "sha256": "012cbf61720dfd37a97bb5fbf623afc5376a06a681c999b61c9d903b77f09882",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "09-本地实验与验证入口.md",
+      "bytes": 2743,
+      "sha256": "c8b5373a9b3f03fbbaf29cc218b0b2cc920cc62727bf8321ea04d0eee2853806",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "10-目录约定与合并说明.md",
+      "bytes": 2644,
+      "sha256": "4d6dc9596addf64ec1d362635e0d083316e8fb2fbda2d4c4e2faf0c7ae886521",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ast-precedence.dot",
+      "bytes": 598,
+      "sha256": "e2377dac7aad6384d66cc8342873d77dadfa6986b9ec8d7cc09783509e4fbb60",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ast-precedence.png",
+      "bytes": 31650,
+      "sha256": "4fb22799d5d9983667bd2ffa7b56a39f62aaff90facc91945f9480cba0670439",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ast-precedence.svg",
+      "bytes": 4066,
+      "sha256": "8f84a8081820fbf1f2395f2401d91812523052c61a3e127a30975008b0d45357",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/avl-rotation.dot",
+      "bytes": 751,
+      "sha256": "5be78346ebb7207b4aa30540633b856063d825497dc5de32ae45544dc38a2f96",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/avl-rotation.png",
+      "bytes": 44442,
+      "sha256": "637bf0a1d64323746a2059c43ecf17f69b4f30e378810877945a93458c5684a9",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/avl-rotation.svg",
+      "bytes": 5324,
+      "sha256": "69b09eb3c2a3fa05c002358c78308ee3b1a7d4ac5df50d90b89df9a254a0d80d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/bounded-queue.dot",
+      "bytes": 884,
+      "sha256": "ecec2747b4eb00cad32c93a8ad00101eff2daf877101a16c5dfd754ad5016839",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/bounded-queue.png",
+      "bytes": 93959,
+      "sha256": "c76282315dcb855c6384f8b29125d6d7ab54acb0cf0d859a2aba33f244ad28f2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/bounded-queue.svg",
+      "bytes": 5260,
+      "sha256": "5be6a20e9181e995d5576d0b5e28399031578442b241617112fb04f4e3de814b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/bplus-pages.dot",
+      "bytes": 731,
+      "sha256": "a274717732d1ec951dc6020a80b162293fac40ded63b45162e93b8e59151d0d6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/bplus-pages.png",
+      "bytes": 47071,
+      "sha256": "99ce9bca905eacc0a551d9ea38d4be32838398a49a9acfe74f5ce9fa092a5c0c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/bplus-pages.svg",
+      "bytes": 4801,
+      "sha256": "6d3db5c20d09e21ba9251b27e63d9384c2dc10591675636f22ae1b223b3ce3d8",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/c-object.dot",
+      "bytes": 777,
+      "sha256": "42f832a693a8b138bb946501eece65c69bbaa8d7208ff486beaac3fd5f170fb1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/c-object.png",
+      "bytes": 65862,
+      "sha256": "b6221121fe47ff99d07916fde9db82dc3580080023ce6ad20720e3fbacc4ecfe",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/c-object.svg",
+      "bytes": 4298,
+      "sha256": "7031e5b22f5e26e5fa629a6ab214f43282e68bd611d9bd31f8111d9d4cf9368d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/c-realloc.dot",
+      "bytes": 710,
+      "sha256": "294a447421d3cf37d768332428fb8367587ee2345f0623e31aafa6ae264959e7",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/c-realloc.png",
+      "bytes": 64681,
+      "sha256": "c0871543832f21903206012ee7bca97576eeec88b8c355855a439c194f375a77",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/c-realloc.svg",
+      "bytes": 4053,
+      "sha256": "b4e978c9dba051fc48feabbe4de14ea6d065863332488716702487092bc06f81",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/cache-address.dot",
+      "bytes": 761,
+      "sha256": "9eaba47e01a8bf6f48ce97b3fc9eb04926ebd52254a84dbcb50f37673242ebaf",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/cache-address.png",
+      "bytes": 72093,
+      "sha256": "3acb40c03179c70927335ed0d8e4e630f723b7b67e06a93b7a47ad101a1b3172",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/cache-address.svg",
+      "bytes": 5052,
+      "sha256": "4c82ec8eeb890c43b46ad7332e127f88323659be0f775fd62f34d026891d0a8d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/compiler-pipeline.dot",
+      "bytes": 726,
+      "sha256": "5a29766cbc9656ce73fb73316b702724521983e70729c886a376fb822aafffe9",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/compiler-pipeline.png",
+      "bytes": 69606,
+      "sha256": "17b9a9e0a3aa3f7f2900f22ba3c4ee0bc4e2c233474c38f6d63f188ab875f945",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/compiler-pipeline.svg",
+      "bytes": 5129,
+      "sha256": "fe49c8566c310411e2ef889ebabcf35a4092c26db7eab7f4d2c3cdfd5a4ed6b6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/container-boundaries.dot",
+      "bytes": 834,
+      "sha256": "de01a58e74ed5c045f3b8dc13a2504df40b0b47c7fcf30a36408f93e84427bae",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/container-boundaries.png",
+      "bytes": 92839,
+      "sha256": "fbc7e1209ddbab8a1982cc4ef17ffd754837add21d4879f9eaf3a1473d708b14",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/container-boundaries.svg",
+      "bytes": 6322,
+      "sha256": "c73199c1757c4e2e597aee693b3556a5d8384c10cfc5862fac7498a91465ebd8",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/course-dependencies.dot",
+      "bytes": 1048,
+      "sha256": "2fdb2f99cb1b3822aa0654ba0abbcc1372f9a467fe1e8c1c1678bd5bd787f3d8",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/course-dependencies.png",
+      "bytes": 136524,
+      "sha256": "ce2b4ac4e08290c286bc625547fffc661588961d9f0ce184bb0e37aa12808021",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/course-dependencies.svg",
+      "bytes": 10670,
+      "sha256": "0a22a67cdd9204c64db1d7994a5ced76ee2fa7c798008671bdf999890bc5ee15",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/cpp-raii.dot",
+      "bytes": 633,
+      "sha256": "6d43a3a1b7906b183c46aeacd742b7585e1f8155fe2d5ba2b8a7747dc20a0346",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/cpp-raii.png",
+      "bytes": 52104,
+      "sha256": "6512e2b7aebe104e261976fc42092c7e84b22b846852822d02b318df1f5e1b18",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/cpp-raii.svg",
+      "bytes": 4369,
+      "sha256": "3e6a59be2664b528870d03bae065d4e535ed29df93fc7c1a9c62223d7ac512cd",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/datapath.dot",
+      "bytes": 788,
+      "sha256": "e8fa3d44774a52e2cba0210aa62afc1430dd290c5c48005a1357e3d31a74f214",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/datapath.png",
+      "bytes": 71574,
+      "sha256": "2b8b62d7e86f9e866723c68740bc9d788e0a74647f703bc74b39005e7754deed",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/datapath.svg",
+      "bytes": 6632,
+      "sha256": "ee9ce190f1de8888f99b1f19062cde396f5d29a85d61152929085cb9e3571664",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/deadlock.dot",
+      "bytes": 673,
+      "sha256": "78f02928f582ffeb12cb55258d028f0d8eae60f335e03226fe241a186f711099",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/deadlock.png",
+      "bytes": 40270,
+      "sha256": "72cabbb78c7c3d5c3e6e0d41ee459cdc146d1124ad9667b1e7f1daf56e457303",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/deadlock.svg",
+      "bytes": 3975,
+      "sha256": "30bcdb948b63aabdc2c162474e9630b648c4d933556bab94f65a564446b35585",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dfa-ab.dot",
+      "bytes": 706,
+      "sha256": "3e824cb51d9d2efe19d93f14499ae5e98a13a964692050fad8b8087a28ff59ff",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dfa-ab.png",
+      "bytes": 48534,
+      "sha256": "d68e6aad0cb02d7bab616ad5c1aa34d7a80df5bd693351c19635d6a2008dbb3b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dfa-ab.svg",
+      "bytes": 5076,
+      "sha256": "158e5f397c2dd27b489f337cef3c69193e1a227be7765d707515520fdf4d98cb",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/diagnosis-tree.dot",
+      "bytes": 902,
+      "sha256": "1802fe169f0d96dfc4d9909eeab48c33333f17149668189d9d22eee63dace528",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/diagnosis-tree.png",
+      "bytes": 97945,
+      "sha256": "3a996f526c732e578014f769fec80736ab19afbed9aef2ae547b1fdf6bf99f89",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/diagnosis-tree.svg",
+      "bytes": 6225,
+      "sha256": "76543e967ac6c56982edbaf84cce9e4a53e3e41c2bc080526af5113b14377da0",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dma-path.dot",
+      "bytes": 873,
+      "sha256": "41e5cd6dd5e71d72efdfba0c5509d00b99a33d61e894c26329fc5c1b45a3291f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dma-path.png",
+      "bytes": 94706,
+      "sha256": "c10928e6fba78feeb4c9cc6ac51fc16609e39bf2bdbfb8c835ec8f4ef38b34d5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dma-path.svg",
+      "bytes": 6583,
+      "sha256": "0faee14563bdb784c1c976ae989be6abaccd5036fdb0056dd5a70bccf48ba6cb",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dns-chain.dot",
+      "bytes": 907,
+      "sha256": "6e9b4cf9ce5801b741bfd2b8e4ef9ec81809287fa52d5220f97772dde232eb5a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dns-chain.png",
+      "bytes": 85750,
+      "sha256": "b4c7841951f9360376ee78253cea1e03581da04784459d89a1350ce71a054e55",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dns-chain.svg",
+      "bytes": 6730,
+      "sha256": "1994faa83d51a69ea1c0981bcae1458add16c147058b62c91254c88f894c6ca8",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dp-grid.dot",
+      "bytes": 710,
+      "sha256": "e04ded789b2bdcc605ad1ed6679020dd1326fd2c725e44ded7da1ddba98b03ce",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dp-grid.png",
+      "bytes": 49083,
+      "sha256": "e7b60a91c780535defa30ad31d6667289e1f9f8873a94f3751f371771a8a19e5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/dp-grid.svg",
+      "bytes": 4373,
+      "sha256": "a6fb0deac98d25fd7f242964c7c9233effa21d226fad307cfc0c835ba8b3d487",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/durable-replace.dot",
+      "bytes": 700,
+      "sha256": "65d6d14d79dae200a16c3484cdb36ae62876434a88834d599874c3fab06248c2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/durable-replace.png",
+      "bytes": 64322,
+      "sha256": "6f722a5ed9843ff0b4f3e295acbec6e2261d912be1fe2f01bdd50b2f71b6de3a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/durable-replace.svg",
+      "bytes": 4355,
+      "sha256": "52ef69ff2de5399a8a46f3964f79996ec9c7801b33517dd9467077bc4b8e6726",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/er-enrollment.dot",
+      "bytes": 645,
+      "sha256": "139a030723e710282937b67ebb7c8393b400431abcf9850ed38c8d9c78f23aab",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/er-enrollment.png",
+      "bytes": 53953,
+      "sha256": "f5ee6b7605bd2b1f74bf8082b14bcbb63cdfc8380ca292841a9201a09a4f2f4c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/er-enrollment.svg",
+      "bytes": 3582,
+      "sha256": "7bc53566fecc0e20d4c4f96ccba89349e97308b122e64a3297ff75c0697cda1a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/event-loop.dot",
+      "bytes": 843,
+      "sha256": "bc471c11cc0419444cc41c987b98a0e62e3ad92c8842503023d77fc9c70bfb8e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/event-loop.png",
+      "bytes": 79878,
+      "sha256": "b9b6d7f813f2fbd1bcaf93c288b2caa7893ba1d43527d348dbb77881ed77a34a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/event-loop.svg",
+      "bytes": 4750,
+      "sha256": "c2d2aa24bd0cdd1fdfcde6239297e7009b73822ed92d239c7312d0033e8983ff",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/fd-sharing.dot",
+      "bytes": 696,
+      "sha256": "7134f300d4be52b78fafae369e8aa1912bb69a686490b351cc11fbfb074f7806",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/fd-sharing.png",
+      "bytes": 56224,
+      "sha256": "977500ba87f1985182ca7dd12a906c65f571c749ec254ee42d364d29173913f6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/fd-sharing.svg",
+      "bytes": 4279,
+      "sha256": "4d85622a8b285fcbc5c142a01cc9011407de13e1b989acd4f0e79b45a7472775",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/fenwick-blocks.dot",
+      "bytes": 647,
+      "sha256": "481b6f67a7c609dfdd0647389e3f60655027a11834094dc2d862506aa0056acc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/fenwick-blocks.png",
+      "bytes": 56536,
+      "sha256": "9d730167dd5b8dc07e0c96f19183c81d02c8eefd10443df90aed662cf1b5804e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/fenwick-blocks.svg",
+      "bytes": 4008,
+      "sha256": "2cf5f31b87b5c2c8253fb023052a73f5dbdfc7d2b53bc2dcb1b85115a698c25e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/frame-parser.dot",
+      "bytes": 973,
+      "sha256": "2b9543d5c1f7cbe4471e170e4f314f58462d7f111deaba45000a1bb366c65ef1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/frame-parser.png",
+      "bytes": 93574,
+      "sha256": "9b2e102e03538d6e30d922215416a00c7b43b0081fb1a8a93d2c986b8f28f3b6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/frame-parser.svg",
+      "bytes": 6458,
+      "sha256": "c0fefde0a91fc4cebd98e2908a85fbf0ff418d0aa6e98c0f9112d2596bf799ab",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/future-state.dot",
+      "bytes": 876,
+      "sha256": "f3869bc42b57854fbf35f01920a68b0feddfe859a666e120a8d7c0223f506f25",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/future-state.png",
+      "bytes": 85276,
+      "sha256": "0d7f63820d1d5421df16eb304f3ccc8f761cee2fc8f967479e6df630cf1e61d1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/future-state.svg",
+      "bytes": 6643,
+      "sha256": "9e5afe57587745b0fc386f4aafdc0a24e3e9aa075b3f77748b3ac655b828bf44",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/hash-probe.dot",
+      "bytes": 775,
+      "sha256": "ad5e9c89232773eb4d3b9dfcad88252af6d14869ada2983d3c25b01229f74d70",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/hash-probe.png",
+      "bytes": 65532,
+      "sha256": "ad6864bc56aeb84f601ec27a092dfb734f95503b7b9956a98dac4ae22cdcbdd4",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/hash-probe.svg",
+      "bytes": 5060,
+      "sha256": "f6507e3625d1da20800138e115d0152e5f8f1de65bca4ee3bbfc2a1b3a48d738",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/linux-fd.dot",
+      "bytes": 753,
+      "sha256": "c4ef574f329b2cdfadcce0d70aa40e2a4ca43a435f4262d5444434fd46f1640f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/linux-fd.png",
+      "bytes": 67955,
+      "sha256": "1079d7d80275244cc5ccb450d2dbc47f5a579443a5c31c95350c3e29623b8894",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/linux-fd.svg",
+      "bytes": 5406,
+      "sha256": "204111cab1c3f1cc8322f2f4fd2e799fe42172c90dcb4bb5d22ef726d89ed5c2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/network-layers.dot",
+      "bytes": 716,
+      "sha256": "d17804cc4f31640bf1d5807f118fd8609f0d9cff293452394dc66402c08f38e1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/network-layers.png",
+      "bytes": 63207,
+      "sha256": "0a66e42aa83547f6261f9cab52d769d21906ac9de1aeceb4587bba3fc1ce23c7",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/network-layers.svg",
+      "bytes": 4822,
+      "sha256": "1eb89cf93e0529e75b5505c010e15b6130fbc81a9823e0bafef8dd26a381662f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/numa-sharing.dot",
+      "bytes": 821,
+      "sha256": "b89676e42b7079c072ab98874908b6f858f9758664cce26bd3b033f1a658a2c1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/numa-sharing.png",
+      "bytes": 75209,
+      "sha256": "531b1aca389c632332824cf1243871396f1011670f5ca7641ac87519e90af0a8",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/numa-sharing.svg",
+      "bytes": 5577,
+      "sha256": "4ec5a12f429ced5565e753af20bca64700a63c4af2b18bb3e55b6d6a203eefb5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/pipeline.dot",
+      "bytes": 1012,
+      "sha256": "3f9e0d39b1df222327dc0ccf4d67437e87d11aba6ee058d723f85cdb26dd7072",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/pipeline.png",
+      "bytes": 70298,
+      "sha256": "310ada1281b1de3f1900818806f64faf2495630f08c0c55e4ff7e081cecde199",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/pipeline.svg",
+      "bytes": 6574,
+      "sha256": "a4850c9dc8af9ee4f3f277a02075c3fab99250e77dcbcc1c8abc68fb8de9693d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/process-state.dot",
+      "bytes": 757,
+      "sha256": "3dac8eab021292a5922fc8776c49c05060fe6c025dbc7d1c43f991fb3793d22d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/process-state.png",
+      "bytes": 50796,
+      "sha256": "61adaf871f08bd4d2f89255e6f2fe017392f49abb42f41e265d8b909ea7a228b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/process-state.svg",
+      "bytes": 5249,
+      "sha256": "8c06aab39900aae443f1c5145da2a5202e9394bd70d2604f3875d057989129ad",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/python-async.dot",
+      "bytes": 798,
+      "sha256": "cdeb12ad38f6991b5499c03e6c49696d42b28a3c9db9d13f8b1b091612d50b8b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/python-async.png",
+      "bytes": 73120,
+      "sha256": "c46de042bd91054bd172e1806125f20958425ee068b933bc0f577e60b1c655e4",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/python-async.svg",
+      "bytes": 5226,
+      "sha256": "0bf225e386aa767849c170e0d14868b539e1fb6894b3941b2a15d5c0ff6727ca",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/python-object.dot",
+      "bytes": 660,
+      "sha256": "6a5e7cbeaab43027086020a2c3d623a52955c4c72b7397cc6af1f06e3dab6aa2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/python-object.png",
+      "bytes": 46361,
+      "sha256": "d7c8418a25de12c4f8dfec4c4d74b1535b775e84c592ed0192b55ebd78d5608d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/python-object.svg",
+      "bytes": 4150,
+      "sha256": "2a73304c22d65ed31dd0c538a7b0ab69c2429d148a7746e9aa816dbfd9cc7fe3",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/query-plan.dot",
+      "bytes": 679,
+      "sha256": "d5297b4baffcf235d8a9645c0a5a3f79808445b489b06baaa35ebbbc5da93f25",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/query-plan.png",
+      "bytes": 58987,
+      "sha256": "6331d7005b007b89c215a6bcee3f02d848df2ac96264580f3f8d01d50d66ead9",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/query-plan.svg",
+      "bytes": 4180,
+      "sha256": "7f2cc75c7cab4f2fec72973c62629f5fde66046dfe86c4a5cfd963ea0d4d8bf6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/reduction.dot",
+      "bytes": 685,
+      "sha256": "5e4c686a937bc24017b0f0e818ed5cb70f8aa1107e5c729c910b91e6c36f9427",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/reduction.png",
+      "bytes": 58917,
+      "sha256": "d319c4ca7ba08a3b9cf2471bd59b81dd2b58ff5b2ab1a32e7034be7481f3ad52",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/reduction.svg",
+      "bytes": 4444,
+      "sha256": "6e8be7aba05e3bf37d2d27ee67a3d719180cf803efcea8f334fa67e3dfa507bf",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/register-interference.dot",
+      "bytes": 642,
+      "sha256": "ff3cf8adbf60432e7dcc8a91439f055da2318e357e64edfd02ac0b43e35ad312",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/register-interference.png",
+      "bytes": 38795,
+      "sha256": "59d74c9de5128ca986ba35efc3153419978f70eee17ff0966f4d72c6087e22bd",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/register-interference.svg",
+      "bytes": 3403,
+      "sha256": "ecc48951199bab845e9a6dee38127157380d347eae97edbbea567ad948984be5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/release-acquire.dot",
+      "bytes": 721,
+      "sha256": "aabfd0d87b5eb429acf286baaa7ca6bc47d470ea1914a911f93629b5b7100b1f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/release-acquire.png",
+      "bytes": 66689,
+      "sha256": "1822143e741dce659cc9d31fe3d6df86f749df48c060137dfc02c43468447ebf",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/release-acquire.svg",
+      "bytes": 4052,
+      "sha256": "cd89187fd1fbcecf83dfc0e0004ab9e3ae28be3826c525ea542771b69c779d8d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/residual-flow.dot",
+      "bytes": 762,
+      "sha256": "a24a5ce43c1d638429d3924de849036116895c9ccdf68177c146a4fe703d7d21",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/residual-flow.png",
+      "bytes": 56979,
+      "sha256": "ff260424010911b4376978e51a598adaf86c0f33890dba0caf825a48076c2a52",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/residual-flow.svg",
+      "bytes": 5094,
+      "sha256": "271c58160f278c4ff4b6c56ba8ed3f427a79636fe9e3f1235b55fe203aea9e10",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/route-prefix.dot",
+      "bytes": 698,
+      "sha256": "45b4183cf6abcb6a8529741fbc98469dc4b32f953ebeceed3168dbd80d68fd5a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/route-prefix.png",
+      "bytes": 54753,
+      "sha256": "15166057fb6bea40b83aa9ac0413199f67a356aa18c2e3fe904eb8e6d6d4fc94",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/route-prefix.svg",
+      "bytes": 3913,
+      "sha256": "0a01fe6758f4b18300bc5658bf66d910ca852d90c832c796108c2cc16a1760a0",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/rust-borrow.dot",
+      "bytes": 832,
+      "sha256": "195e0e3d6d33e58d8906a961a69c8a9283a6c6d7fd2bc3aa3ff031181704f485",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/rust-borrow.png",
+      "bytes": 76409,
+      "sha256": "2a806722d8f7c231176a6dec95b3a889a84bf3fc821509e6ca18c19bf2fe0c4d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/rust-borrow.svg",
+      "bytes": 5109,
+      "sha256": "c0464f86038e4e84d1789b12269b78bfe9f4ce8c921e7a04813a3fb3671e94ce",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/rust-sharing.dot",
+      "bytes": 835,
+      "sha256": "a063ef09bfb229fabda8b54a3f0eb4830b0fe0146c80d297dd60df60353136f6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/rust-sharing.png",
+      "bytes": 82276,
+      "sha256": "b5603aafc697f389ba7f844ae7ea7c9c339b3e3910f053012163b4ed48392d34",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/rust-sharing.svg",
+      "bytes": 5255,
+      "sha256": "be38830d55e13a3d06f7602b3e086bb2864ca06fa957de3d8bc6c15a498b1ddc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/sequential-path.dot",
+      "bytes": 588,
+      "sha256": "c9d6fc22bd3ec6192244c3e43cf0bd46dc28e84c0c0a97a7fbc7749ee7206e5c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/sequential-path.png",
+      "bytes": 42193,
+      "sha256": "7c7499a4546b43d4438071ff78b18de0fd2de970550f9460b518b070b11df26b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/sequential-path.svg",
+      "bytes": 3020,
+      "sha256": "9a185dfa41de9e38c72316f72fbc37f56ca76073eaa541c2fb2d3aebaf1f70df",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/service-lifecycle.dot",
+      "bytes": 689,
+      "sha256": "34462336f29cd2e273cacdadb2a8f605b40243e226e7bf4f392c72efea17ca2f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/service-lifecycle.png",
+      "bytes": 63082,
+      "sha256": "eafb61ee6722101f159599762282b4d3a838893e9037108b92d2dfc70f46583b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/service-lifecycle.svg",
+      "bytes": 4490,
+      "sha256": "6633156739a0819655acb2f3e31d9fa3ec5b6d3d2f10ccc969cb9c4027512a78",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/shell-argv.dot",
+      "bytes": 730,
+      "sha256": "6018e93efff23b4c461a90203d6e53804e19cfc65191238bd651b0187692ea46",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/shell-argv.png",
+      "bytes": 64582,
+      "sha256": "c08c4719f5eac67dce8c7e3d2e4a3307000e77011df2cc144f9d1915e73b2cf7",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/shell-argv.svg",
+      "bytes": 4794,
+      "sha256": "48e7f8f28c594cf08ca20289c08aeb9df281874bacdbadb67871c8d2f85fd969",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/slotted-page.dot",
+      "bytes": 798,
+      "sha256": "245a99b2ee9f8996ef3f67ae65889535d1f764ebb016673791018075e0b3eb46",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/slotted-page.png",
+      "bytes": 79324,
+      "sha256": "8b1610ffb826152ec63a796ce3cb8eb165effe30761e9fbf9250ec537adb48fe",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/slotted-page.svg",
+      "bytes": 4726,
+      "sha256": "9a0872011a9c1c7d573a1adbd882527f93d855c20c866590c3a9b79459fbf3a5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/sql-order.dot",
+      "bytes": 660,
+      "sha256": "44c94473e2c8fed2b0451c16714b0981fc1d6523d7ec245855fa5db622ab6ccb",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/sql-order.png",
+      "bytes": 53010,
+      "sha256": "920ac0b0836e451061c7793188282df00d50209e93dc44e9c2e432fafda5a2b7",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/sql-order.svg",
+      "bytes": 4949,
+      "sha256": "f71b23db8ac862ef3dbd64e81370138e195a18fe06ba0553655f1474211f42dd",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ssa-diamond.dot",
+      "bytes": 687,
+      "sha256": "2ddc54d194d0578b0226068ad7b5ee80e1b051b4b24488cb07a51c24127ecba6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ssa-diamond.png",
+      "bytes": 49146,
+      "sha256": "9eca079a2ec032a45f829ac3bbdf07869bdc27dc2601480390f6d41b9429b23e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ssa-diamond.svg",
+      "bytes": 4635,
+      "sha256": "e380f028c94cf684340434ac6b9a38dd96cbc5c5432ec801dff88fec701cd576",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/switch-learning.dot",
+      "bytes": 744,
+      "sha256": "cbab3dca55700ff4cc7ee98d43a1678047aa699155e6b3e2e570579e58ae009f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/switch-learning.png",
+      "bytes": 59720,
+      "sha256": "1952c9554810f0b217c28463c28bade4eb6cd1ccebaf4d5c4a417533ffb4e094",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/switch-learning.svg",
+      "bytes": 4729,
+      "sha256": "eeab26df3c54ab45faaa5d07924476ad29a5d220ca600e5be9bbef9fcc927ca4",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tcp-sequence.dot",
+      "bytes": 783,
+      "sha256": "aa22abd975dcc3269c545d5e06df6da844147806970a8e307bb0e9fab21a6d00",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tcp-sequence.png",
+      "bytes": 80286,
+      "sha256": "b11fec65b1cb8ce912c953688f9f94e274ab5e950610a3da28cd0c746f603117",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tcp-sequence.svg",
+      "bytes": 4603,
+      "sha256": "caaed80a4b7d82e0e1400d4edd3e8cdc94d29b5578f2ebf7389245a7c09a8a4f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tlb-walk.dot",
+      "bytes": 829,
+      "sha256": "25dbd949de00bc08371975ebf55a889d63391c3e37726a4ec530ae584be93f55",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tlb-walk.png",
+      "bytes": 82807,
+      "sha256": "39f918b6a27d374b8b9eb62ddc314b65e36d7b71716e9b4907f5cd677b8f9f30",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tlb-walk.svg",
+      "bytes": 5413,
+      "sha256": "75ccda8d3f0d71a6c56dd75320ba384a4e58b98420b58c8582e7acec8e1be20a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tls-boundary.dot",
+      "bytes": 697,
+      "sha256": "b36443f21387e67c1b6650985af15a13ce0a8162e0129b22813c12963fd5832b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tls-boundary.png",
+      "bytes": 48689,
+      "sha256": "e82a6957d02962148ef066dcf3d8cded92372c0615473761df5da59e0b92964c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/tls-boundary.svg",
+      "bytes": 4182,
+      "sha256": "17baed655ab01bfc465721bec1d82a339dd29c25610c3facf4f7c280ada8ab6b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ts-boundary.dot",
+      "bytes": 671,
+      "sha256": "01df0d9c1c1ae177c81ea308eaf84e92ffe427906cf9d16883a67d616474e2a9",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ts-boundary.png",
+      "bytes": 58824,
+      "sha256": "d5dde151792e9fce7752d2efde81bd1681ccd31900bef40c79f0c020d2b5bdf6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/ts-boundary.svg",
+      "bytes": 4383,
+      "sha256": "fbacd85397422566c3bf16eef74b03d793e20303b44d94859e3410cc94aabee2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/type-unify.dot",
+      "bytes": 667,
+      "sha256": "f08a41075ae0b680e619810634911b9bdb5d6f1f8cce406c9dee687dfb57ed76",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/type-unify.png",
+      "bytes": 52496,
+      "sha256": "d1d04fa6e17295ecdf4d8b4dc45a830f0807aa5b708efb22821764190d7416c7",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/type-unify.svg",
+      "bytes": 4460,
+      "sha256": "5e15b9d321187e903ecdfb5f54d5943474bf6ab81e17191c08d402a996803d69",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/vm-layers.dot",
+      "bytes": 813,
+      "sha256": "b872c2fb418fa75b9c2fc94532feb17eae0f85c93e971e7122621c223b950871",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/vm-layers.png",
+      "bytes": 70850,
+      "sha256": "4df744be64c87e6b1e19b9c0780fe7c3faca8f4910748334f4d5ba4b2b342f5a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/vm-layers.svg",
+      "bytes": 5017,
+      "sha256": "916777e791dc3751feba71705fe0296b567404b3f68608c5dee33b7eb378d4a5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/wal-order.dot",
+      "bytes": 810,
+      "sha256": "ea8c2ddb4d7b0aa372be5a94e33d27fa90c859d7b4518cf83a20c6fd0f3e3404",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/wal-order.png",
+      "bytes": 85704,
+      "sha256": "31cfdc66253dc01fa1188cb1b45f217d9746f861319a084d76e5cfb3aa24c0f5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/wal-order.svg",
+      "bytes": 4964,
+      "sha256": "75be3434b68ca4dd1369bd00d40dabe94c8254843d7c015cafa098d0d1f23a71",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/write-skew.dot",
+      "bytes": 721,
+      "sha256": "79bdf2f20336b4d9bca0f309e4f63857bbdecee6471432728896345c665ef714",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/write-skew.png",
+      "bytes": 63322,
+      "sha256": "21ade081fc8292c8f739a77814560ce5b5460ab450f032e432b8c7c3e81cf9b3",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_assets/diagrams/round3/write-skew.svg",
+      "bytes": 4320,
+      "sha256": "a5415d99f8be7d0602ac0a2c0dcc9b6b91a11c00a7f62b18826b6c64a0887d01",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/README.md",
+      "bytes": 2377,
+      "sha256": "d86c0b32226de389be6f9db0295ff6b6632d76fb0291962e3bc62a6675e885b4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_labs/integration/boundary.ts",
+      "bytes": 1652,
+      "sha256": "5e7f0a79884b0ff1453986aa29410d3e0a525c65f85fd793f00bde7b0e9b64d1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_labs/integration/lab_core.py",
+      "bytes": 12491,
+      "sha256": "5abd6088d894ab10fb24fbe071aa5293b169118ed4a913d74cac270fd2ea189e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_labs/integration/raii.cpp",
+      "bytes": 1672,
+      "sha256": "83b81e9069bbab8b8400f5f856f4113ab288a1230c57d367f056392d71537611",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_labs/integration/run_all.py",
+      "bytes": 4787,
+      "sha256": "e240d2bf1c267fed7da13b5abcb43f80d41f027335a936036d5c80fe2695b044",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_labs/integration/rust_tests.rs",
+      "bytes": 1444,
+      "sha256": "36862a12d4d4fe3ca522ac9dcfced33b8843d2d4398070b4983322108bc35036",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_labs/integration/test_core.py",
+      "bytes": 13504,
+      "sha256": "a9d8d2953aac3dd4b7243f56d1fea8be0cff857074b0ec272584b18dae510323",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_labs/integration/vector.c",
+      "bytes": 1639,
+      "sha256": "dcfc5dcc51973ed0ba79aee776f4ba4850220dbe3a99ea4c808943e305634868",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_labs/round3/ALG/algorithms.py",
+      "bytes": 1772,
+      "sha256": "52da239aade296c66d5a09a4666aeb8167d779904e28d207e8e8685109b97287",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/ALG/算法设计-实验说明.md",
+      "bytes": 1805,
+      "sha256": "24f5de65f20b11e412c7b3a0b81a372903ce433ab8876d335e47780cc61ba6b6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/C/C语言-实验说明.md",
+      "bytes": 1756,
+      "sha256": "cb0a9558d0313fdc26bec27c2d42ee01fe80a4367c44b29dea08270372565dde",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/C/vector.c",
+      "bytes": 1423,
+      "sha256": "e01c486e18ef170043314b5baa79cd74d6bed9a0dc631b7d662aa429edfd72c0",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/CO/hardware_models.py",
+      "bytes": 1279,
+      "sha256": "059f35b2216f9c7308abaf1414071cd368c5fc1b95fee136fba19590a47b27fc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/CO/计算机组成原理-实验说明.md",
+      "bytes": 1810,
+      "sha256": "011030dc95a05b660c2df800d4add49d42b4bd228da8bc588213c0ab78e58f2f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/COMP/compiler_lab.py",
+      "bytes": 3271,
+      "sha256": "2e3ee5bdaa988f738d365120c320ddbc5d7f5c5bf65f024a0b94c2e28b578ee5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/COMP/编译原理-实验说明.md",
+      "bytes": 1795,
+      "sha256": "2d38712b482d3c4f670eb2f5400d850f9ddab7de2b8366e1f4be479eb2ac145d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/CPP/C++-实验说明.md",
+      "bytes": 1777,
+      "sha256": "aa94bc1b8b85cd6ca5abe1cb1eafc098bdacd5c095c86966e53100c1e25b34b3",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/CPP/raii_queue.cpp",
+      "bytes": 1981,
+      "sha256": "5b43ef63d7a5dabb11be654ee3338111e47770461624e29fc6b1ee31beb59cd7",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/DB/sqlite_lab.py",
+      "bytes": 2171,
+      "sha256": "3a19ae69f5ffe612505b5dc937c471436e44e2bd768e3a42e154c538f801d477",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/DB/数据库-实验说明.md",
+      "bytes": 1770,
+      "sha256": "64eb1962396ca04af73d48b09e340afe4c2f06f3f8c0acaf56b19d63a67061e2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/DS/structures.py",
+      "bytes": 1725,
+      "sha256": "96e0097ebab3a89da2a32979ffaeef80e9d1abe03608618d215f95274d3170dc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/DS/数据结构-实验说明.md",
+      "bytes": 1791,
+      "sha256": "51690532913aaff427e927a62f5a7bef323989815cc7177ee2614fe00bd2f37b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/LINUX/Linux-实验说明.md",
+      "bytes": 1756,
+      "sha256": "0ce04b176dee7ff203e2336b0fbc425800917a6f351c73db4d22e46d828467e6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/LINUX/shell_lab.sh",
+      "bytes": 864,
+      "sha256": "1f43958aab390e4fa584fce46089bcb304e944f72af744a26183b31609c54ef8",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/NET/network_models.py",
+      "bytes": 2001,
+      "sha256": "4c9aacad5e8845e64d0d34fc37280fd300309f7dee0f4694f6d6911c0afdcbce",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/NET/计算机网络-实验说明.md",
+      "bytes": 1820,
+      "sha256": "3ce7afbad1cc02d4c1ce740bb46d7d8e3ae8e2e3a871f06691e8143b1cb5a7c6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/OS/os_models.py",
+      "bytes": 1391,
+      "sha256": "155b8d0ee237d5a16847405065af6db6401d0266532210b04fc585a26a269a45",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/OS/操作系统-实验说明.md",
+      "bytes": 1779,
+      "sha256": "01c548883d7063b0b04375e3a567785047c294a557a630a143a5704c0d6c6a4f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/PY/Python-实验说明.md",
+      "bytes": 1794,
+      "sha256": "65bbfcce63eaeadeb4cc7557cbc89ea04c16ed989286df69494b6019cc7e9ee2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/PY/test_python.py",
+      "bytes": 2089,
+      "sha256": "8aa04cb122cc810c9306fa3ed89ff34a7e6391549f0177f48da6a7ac6f34c921",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/RUST/Rust-实验说明.md",
+      "bytes": 1859,
+      "sha256": "89c35157718c96972e47e017776fade6226bdcc5fab6783d3dbedb1b8f429bb3",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/RUST/borrow_compile_fail.rs",
+      "bytes": 179,
+      "sha256": "1b784a3a38fd1f5e76d536dbcfa9052121c1cd53fe7de89aa5747be9ccc3c8b4",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/RUST/ownership.rs",
+      "bytes": 1407,
+      "sha256": "167af20f524a392026ac648a160d42964270964d4826960bef2106cc06af99f8",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/TS/TypeScript-实验说明.md",
+      "bytes": 1801,
+      "sha256": "beb682f310377271c6fdd4ecc0af1e3a7ce5357c7420c270e3641321bd51ddb0",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/TS/contracts.ts",
+      "bytes": 1022,
+      "sha256": "030d05560e7271112ea962362c1369f1e43d18abbc5ae987a123d4d58360aee3",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/TS/type_checks.ts",
+      "bytes": 571,
+      "sha256": "e1e0bfa7d63b9d91555130e64076ba8eb99b6532b2ad5a5499eb95af844af30c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_labs/round3/run_all.py",
+      "bytes": 5139,
+      "sha256": "4a53e3df112a1a3788c9bd4fe08c7e82eb77735f104c5443c62fb8aeae02d3b3",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/01-本轮修订与交付报告.md",
+      "bytes": 4344,
+      "sha256": "8459bb13b98fb91d433a4226a98d077b60a2212c65344653936085f60be3f192",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/02-静态检查结果.md",
+      "bytes": 2282,
+      "sha256": "1a42edf3f65ebfca551e1dbbc1d0c3b88acd22f396f39cbf226fae479b98dc08",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/03-跨库链接保留清单.md",
+      "bytes": 16312,
+      "sha256": "72390dee653fea099961970221122e58139842eb1530965235fbd52fabf040ec",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/04-实验验证记录.md",
+      "bytes": 2523,
+      "sha256": "9bcc31474e462d139175a36c12807d5f8cd5674b4b1edcbc8237fc06fb138a4e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/05-公式检查.md",
+      "bytes": 1653,
+      "sha256": "aa6a12c712f1c97be9d2083eb883204882e289ca6ca9d75de99de3d3633a8d00",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/06-深度修订交付报告.md",
+      "bytes": 10417,
+      "sha256": "2ad0ac3258f50c05520d6a4d8477657cab744429d7b465f95d484fddc54a3bb8",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/cpp_course_build.log",
+      "bytes": 2487,
+      "sha256": "95dc9539b2910d1379e0d17a27c1afe2f57c3ce8355b1df4b30566e4299e7c2f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/delivery_summary.json",
+      "bytes": 1481,
+      "sha256": "b62491c2946fff8bedd1883a6b2665f99f6e0657d354c86f29b8458422628c18",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/diagram_manifest.json",
+      "bytes": 2509,
+      "sha256": "d762cc4dff70916dc69c3590a27e93dd2ab494e4bada597c571e3a49d75ebcac",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/integration_test_results.json",
+      "bytes": 7227,
+      "sha256": "fa15068e423af87113b2e381d3b6b64e3af7ed779a3df9771c741a1840075271",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/math_check_results.json",
+      "bytes": 206,
+      "sha256": "6a5b68ee3d1d8fcb4eca2f2f853faa7111574d4ad1ec744e61faf3ac48594266",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/math_expressions.json",
+      "bytes": 94953,
+      "sha256": "8b8d660ef99d7aa2dcf115d8b6e7ccb2eedfb6389cff943345605fbc147b2431",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/navigation_changes.json",
+      "bytes": 28426,
+      "sha256": "5aa7c5373ed71443ec4f35dc187512299e4f388c6554b41639abfd19b7b81b02",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/new_content_registry.json",
+      "bytes": 14692,
+      "sha256": "f021b986643ca0a8c30bdedeef8c88edf992bcb143a480f0db8487f069bd3053",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/original_course_test_results.json",
+      "bytes": 14732,
+      "sha256": "143dc966d8967bae2a79b1daba35d1f27b1a82734e054b730fb0db64866706e6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/repair_log.json",
+      "bytes": 906,
+      "sha256": "78e3ca3290de76a62ca72dc9db93889de1d506f50a07aba1c5b2276656642951",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/round3_changed_original_files.json",
+      "bytes": 60112,
+      "sha256": "455778eb319964910d37519c4e2a9768fca359866351dbb1fd911110085155f9",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_delivery_summary.json",
+      "bytes": 970,
+      "sha256": "1d838d1cda64895fd5ff9a68ce701037a012f46f8b664ce1199ba908593436b2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_diagrams.json",
+      "bytes": 15054,
+      "sha256": "8f6c0465954562e6febe6d79231d7560c9e9056a0a6f5288d67961b46b2dfcea",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_external_link_preservation.json",
+      "bytes": 30794,
+      "sha256": "fe0a2f233a3db8aedf157fe1ce4667e3227203c86769ea2ed4de3432ecdfcdb4",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_known_repairs.json",
+      "bytes": 6270,
+      "sha256": "95a49216015ae0069e153001ba2e03ae1d8ab128de5ba567c393a9ad7632229a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_lab_results.json",
+      "bytes": 7808,
+      "sha256": "3f788639eef6f6f904f8fd00e0cc04f370b10088fcd622d1a2ac9cec7e8334ef",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_math_audit.json",
+      "bytes": 206,
+      "sha256": "7ab4fa75a227f3c1c180d35d40e9eeaea2b927af0820b46eebffb685fdf6a365",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_new_content_registry.json",
+      "bytes": 47896,
+      "sha256": "907e6718a15a571f3cadee5d02e6a047d5d8a4b6a55543375762122c4ef6fe16",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_old_new_bridges.json",
+      "bytes": 28394,
+      "sha256": "b2c08984ec7fe14e446089b6461943a320d9a448fbc197473f7b8358a59c9cac",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_source_syntax_results.json",
+      "bytes": 61543,
+      "sha256": "fcedaf8fe9e16fd8e93f16ca184bc3b15463a31d5e2d1780e6c38cd1dcd8aca6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/round3_static_audit.json",
+      "bytes": 151824,
+      "sha256": "9c73e3c96cfae7e9bf200e9a9dbc6ee1ae23e4e3e543e0c6e246560eee163d47",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/source_syntax_results.json",
+      "bytes": 61543,
+      "sha256": "fcedaf8fe9e16fd8e93f16ca184bc3b15463a31d5e2d1780e6c38cd1dcd8aca6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/static_audit.json",
+      "bytes": 62280,
+      "sha256": "d7ba35a7c0d5a8f1f6432cef3406b024c806bee8570e90a46aa3bc4318c012c0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/table_repairs.json",
+      "bytes": 3341,
+      "sha256": "4894f192c6847fcad3a57873949e26b5d4610142d57ec6f681316e8857062d41",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/tools/README.md",
+      "bytes": 3067,
+      "sha256": "0511447dafa89c1f5669c5770a55d642be999fde61ec156c5929436083b7f40c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/tools/audit_vault.py",
+      "bytes": 10096,
+      "sha256": "f7436260cc0a6581b2950fbdfb3aa4fc56764bf91002cd3322b48093bd8ff5b3",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/tools/check_math.cjs",
+      "bytes": 1781,
+      "sha256": "75949a92f3ee21bc4c3d729580b964809422476d1d4706718f72c21f4eec8b52",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/tools/check_sources.py",
+      "bytes": 2461,
+      "sha256": "e2952a3ec85866a5a344774aa925daf6bbaccd38c50186cd50d5764940e636a2",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/tools/extract_math.py",
+      "bytes": 1905,
+      "sha256": "ef100ceff2c9cc33e057de192921e56f9c2e51054a1220c3742064fe3bc660c1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "_meta/tools/verify_delivery.py",
+      "bytes": 2030,
+      "sha256": "5291a139b399ea475e90c71b6eedb6a1cca8b03fd8c4bd0d43ba7438b18625eb",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/01-本轮修订与交付报告.md.txt",
+      "bytes": 4059,
+      "sha256": "6e45080e0f14e71681d5026b5ccfe84a900d0c70e37af7407e4bdf5690f2334f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/02-静态检查结果.md.txt",
+      "bytes": 1997,
+      "sha256": "6551cf4c50202e18b41463c9616fec75ceba30ef961f20983625156c046a6e36",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/03-跨库链接保留清单.md.txt",
+      "bytes": 16312,
+      "sha256": "72390dee653fea099961970221122e58139842eb1530965235fbd52fabf040ec",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/04-实验验证记录.md.txt",
+      "bytes": 2238,
+      "sha256": "1be50f8b0d39be314db431595c4a3346a70517ee875e930a7a7338d2c22b0354",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/05-公式检查.md.txt",
+      "bytes": 1368,
+      "sha256": "2b3e3b30b79125f428cac27c99a0a1e7e2d11060867296260cbbd4b204f363cf",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/cpp_course_build.log.txt",
+      "bytes": 2487,
+      "sha256": "95dc9539b2910d1379e0d17a27c1afe2f57c3ce8355b1df4b30566e4299e7c2f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/delivery_summary.json.txt",
+      "bytes": 1481,
+      "sha256": "b62491c2946fff8bedd1883a6b2665f99f6e0657d354c86f29b8458422628c18",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/diagram_manifest.json.txt",
+      "bytes": 2509,
+      "sha256": "d762cc4dff70916dc69c3590a27e93dd2ab494e4bada597c571e3a49d75ebcac",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/file_manifest.json.txt",
+      "bytes": 142419,
+      "sha256": "a4f7470c7c6b903045a79509e2083a86bd8b505b5ba5a40bc7f923c9e1f8220f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/integration_test_results.json.txt",
+      "bytes": 7227,
+      "sha256": "fa15068e423af87113b2e381d3b6b64e3af7ed779a3df9771c741a1840075271",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/math_check_results.json.txt",
+      "bytes": 206,
+      "sha256": "6a5b68ee3d1d8fcb4eca2f2f853faa7111574d4ad1ec744e61faf3ac48594266",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/math_expressions.json.txt",
+      "bytes": 94953,
+      "sha256": "8b8d660ef99d7aa2dcf115d8b6e7ccb2eedfb6389cff943345605fbc147b2431",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/navigation_changes.json.txt",
+      "bytes": 28426,
+      "sha256": "5aa7c5373ed71443ec4f35dc187512299e4f388c6554b41639abfd19b7b81b02",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/new_content_registry.json.txt",
+      "bytes": 14692,
+      "sha256": "f021b986643ca0a8c30bdedeef8c88edf992bcb143a480f0db8487f069bd3053",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/original_course_test_results.json.txt",
+      "bytes": 14732,
+      "sha256": "143dc966d8967bae2a79b1daba35d1f27b1a82734e054b730fb0db64866706e6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/repair_log.json.txt",
+      "bytes": 906,
+      "sha256": "78e3ca3290de76a62ca72dc9db93889de1d506f50a07aba1c5b2276656642951",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/source_syntax_results.json.txt",
+      "bytes": 44828,
+      "sha256": "e5092f5f298c0a743c42213fe7b900c7608cd5f1d40c0f43b3c84bb66c434bbd",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/static_audit.json.txt",
+      "bytes": 62280,
+      "sha256": "d7ba35a7c0d5a8f1f6432cef3406b024c806bee8570e90a46aa3bc4318c012c0",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "_meta/历史记录/输入包报告快照/table_repairs.json.txt",
+      "bytes": 3341,
+      "sha256": "4894f192c6847fcad3a57873949e26b5d4610142d57ec6f681316e8857062d41",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "编程知识/00-开始/00-编程知识-首页.md",
+      "bytes": 6013,
+      "sha256": "28c12550d51381db69757ffa5c896056446184a520db424e5b50dfa0de03a559",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/00-正则表达式-MOC.md",
+      "bytes": 9444,
+      "sha256": "7427c3695353fd00cdde29c45ab58f0a35c75e6edd2c7778b47480f81b383a9b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/01-匹配思维与最小单位.md",
+      "bytes": 4983,
+      "sha256": "2efa7d81a143c41055ab57f7345e1ab93aa797d9a27c38830347910f9dfaa331",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/02-字符类边界与转义.md",
+      "bytes": 5363,
+      "sha256": "f4aca75c1b9ef0a62da072e6cf3a747be9221b54c895e255487e73d0d0239fc5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/03-量词分组与选择.md",
+      "bytes": 3787,
+      "sha256": "be807da5d963eca02e027696d512f46169224505dea16494b97a1909af698d9c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/04-捕获引用与替换.md",
+      "bytes": 5650,
+      "sha256": "6be3fd29e57f06d495ab7bc9cc5d8acc0e14fd13c25110b4e4843e6561f74398",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/05-贪婪惰性与回溯.md",
+      "bytes": 4254,
+      "sha256": "30b81c371da0dd55b7e57790e3b3900eeaca59bc0dfce4aaf3c1a3069eb441f9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/06-断言与上下文.md",
+      "bytes": 4065,
+      "sha256": "7688e4b1e8c715ed272466b5795e65b1758fabe63d1dd6bc0da123baf45885ef",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/07-Unicode与引擎差异.md",
+      "bytes": 9731,
+      "sha256": "695bc579ed08e21d187daf52b6bd9cda6d93a382272fa5025762456676d4cf88",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/08-性能安全与可维护性.md",
+      "bytes": 9033,
+      "sha256": "8c08bc8e6a8c1480bdfd7e4fa712f3b5450bf28a413209421b5656704870b6a7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/10-基础/01-正则表达式/09-综合实战.md",
+      "bytes": 5746,
+      "sha256": "9bf3285c7d9062afd176ef20287ca4cd8fc01910cdda36fca9b00279d3766d43",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/00-正则表达式实验室.md",
+      "bytes": 3789,
+      "sha256": "08fec81b70378e87d816a099357eb363aefd62baf9d4dca947cf1a18490ab948",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/01-测试样本.md",
+      "bytes": 3489,
+      "sha256": "baec244799f04fb12f472cd24aed03cbc2c93eb55a985d60e0c5bad7684ee114",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/02-练习场.md",
+      "bytes": 5863,
+      "sha256": "23dd4b1ae2024d3a8ebedf1c94184815dc9b999a8f37f55e80404aeb9ff50715",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/03-练习答案与解释.md",
+      "bytes": 7590,
+      "sha256": "da304be15d5a917dac5a7e8bc949634d534bd87acba3daf376d69aed817a1980",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/04-5分钟运行与测试模板.md",
+      "bytes": 8036,
+      "sha256": "2746c4063114708053492b6d5620b50694152fb4719579c6aee3654f10dd80be",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/05-Python差异断言.py",
+      "bytes": 790,
+      "sha256": "22eec0dd003d6177cf3b90591510782a7611d7ea784e4b7ae095e25196160dc5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/30-实践/01-正则表达式实验区/06-JavaScript差异断言.js",
+      "bytes": 968,
+      "sha256": "e29bf40de958358d3096856e83693d84d704a9dd556de935d0b08c4fcc8f68b0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "编程知识/90-资源/01-正则表达式速查表.md",
+      "bytes": 6351,
+      "sha256": "adf38f400265a756caf31d3207c870e0a3b60d43be55b0ea257f65befeb970f4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "bytes": 15520,
+      "sha256": "2f6537c1009ef48c0adf4054d6b515de424be04d5d420a69764d7d493dd56c81",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/01-C语言-课程地图.md",
+      "bytes": 4504,
+      "sha256": "4b8630137f65224ebbe2b4b647f87bed64cb8d0f9e1e04cd10bfa9af1f4407bd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/02-C++-课程地图.md",
+      "bytes": 5284,
+      "sha256": "8c38c86c03ffeb31d60203f5b3c643ac7e89a99d1b62ef7fa1d78c88012abd9f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/03-Rust-课程地图.md",
+      "bytes": 4476,
+      "sha256": "29c60a8db1eded564ef0bf98bd66360630c246a660472fdcbe87e30aea0dae97",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/04-Python-课程地图.md",
+      "bytes": 5686,
+      "sha256": "8589e545131739595ce473a3df2eb4d1f4b3757dc4d20bf62f2678658151c9c3",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/05-TypeScript-课程地图.md",
+      "bytes": 4366,
+      "sha256": "10e226e2fee0b7cdc36f8116d31a33a4b0a4459d8973d5ac272f6ac299cd8bcb",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/06-数据结构-课程地图.md",
+      "bytes": 5918,
+      "sha256": "61c72e78a270d852efe5315c45d492a82d883cf0f428a2d4fdda5f156e1efd4d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/07-计算机组成原理-课程地图.md",
+      "bytes": 5669,
+      "sha256": "dc23261d00fe48d7a88353c4ccaa909de12fa0762455a474bc3502f22fac6b67",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/08-操作系统-课程地图.md",
+      "bytes": 6055,
+      "sha256": "8434a3f99df1f18e3b34da04a23de668f6ca7545b130d8cfed9b145a145735a5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/09-计算机网络-课程地图.md",
+      "bytes": 4405,
+      "sha256": "bf24f32d022bdc00733666fbbee632d5ef807b714669c003f24a9bbe05212cae",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/10-数据库-课程地图.md",
+      "bytes": 4431,
+      "sha256": "274ebaab7bb602b31e2d754c8d990138c7b530d76486cd04b6c2d1b76b06cc2b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/11-算法设计-课程地图.md",
+      "bytes": 5833,
+      "sha256": "4801747500a9dfe73a07d78441e308443e642cfbeeb5a37e1b2860f555bf3a81",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/12-编译原理-课程地图.md",
+      "bytes": 6341,
+      "sha256": "859fe715f1203965b21760cbe4d943b6b82c77ca2451895af472e037d5aabf5d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/00-开始/课程地图/13-Linux-课程地图.md",
+      "bytes": 5727,
+      "sha256": "65cf20a0574ffeadb2897e8fea00cd9350c1e0bee3689a6d0b613176ca11605f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/00-编程语言-MOC.md",
+      "bytes": 4504,
+      "sha256": "145e1c628b76bdf03270d29040291a60de8dd3e3401e76a318d895e9741b6f63",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/00-Python基础-MOC.md",
+      "bytes": 10960,
+      "sha256": "04276713b06bb092870e946c5d25355d72c8332feac35d0bc9e3453729b22e1d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/01-安装配置与运行模型.md",
+      "bytes": 20679,
+      "sha256": "177dbbf454da5c81b9a092e499dc6ae84c12fc26d3b770b905849e3090938223",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/02-基础语法与数据类型.md",
+      "bytes": 14686,
+      "sha256": "6b7baa3b8296c614090c1dda742aca1005463f858895711aa5ab731aa3928e44",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/03-控制流函数与作用域.md",
+      "bytes": 16190,
+      "sha256": "b1dbbb1f5023b0f27c8d5a28353dd3c7055888b248da5ab9029375ede1c8ab9c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/04-容器迭代器生成器与推导式.md",
+      "bytes": 15840,
+      "sha256": "6adba65e21a0573caa016ec41a445cd8cc916c86692b4db333f9d00c921d6396",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/05-异常文件IO与上下文管理.md",
+      "bytes": 15767,
+      "sha256": "1ec439ee727b05a6ae330efc5c7e878a4ce128de271d20bfc8ce585e7a3cb96a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/06-面向对象数据类与类型标注.md",
+      "bytes": 19151,
+      "sha256": "e5d3e5d6386f46b5d1b5b7fb825e5b933da6ccea9c4b352b74106ab5b6a72404",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/07-模块包导入与项目结构.md",
+      "bytes": 23437,
+      "sha256": "9b1cf5890a777c035766ec2484af6a1e65f64ff28d1d8c67c4dace62b3625fa3",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/08-pip与PyPI依赖管理.md",
+      "bytes": 29651,
+      "sha256": "da1cf67aef07db8c35f0558b1e3fe946eb4cd0c07bbf90a8ce848b06c3f82bda",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/09-venv与虚拟环境原理.md",
+      "bytes": 17286,
+      "sha256": "a709bcbbaee8ef5d4a4d4024a4f643e11c9a004b1d5ed94b469df8d7d5676cf1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-Conda-Anaconda与Miniconda.md",
+      "bytes": 22843,
+      "sha256": "f0d2f6b106a45cdedc4c781077356fdc86ab38ac31131856bf09a9599f347b1e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/00-Python系统课程索引.md",
+      "bytes": 2580,
+      "sha256": "2baec76fa483224c63c623e2d1d141804d8145f9e19964ac93a745b828b25c74",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/01-对象图复制与数值语义.md",
+      "bytes": 5830,
+      "sha256": "9e1c98fdb6c85e42d7217ec3bd96c13745e2684d28445080f54d55844883b3a5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/02-描述符方法解析与元编程.md",
+      "bytes": 6086,
+      "sha256": "0fe077ae6007657b8796ea7521cc88473df0cbf12eba2960a940f07d0a8289ff",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/03-生成器闭包与上下文协议.md",
+      "bytes": 5712,
+      "sha256": "c2b5dc68195bc11ddabca0d8d36a1e99a087dfa46abbd9a5716003bb5b92e5ac",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/04-异步任务取消与结构化并发.md",
+      "bytes": 6283,
+      "sha256": "916c81b2cc372c05bba093d8992c3b43541ab629a3fb0890ec7ab8b53842c14b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/05-线程进程与解释器边界.md",
+      "bytes": 5451,
+      "sha256": "0bcd18b3b5af3ffd8cd54287051bad71c16e6ec428779c85bca9f694d5e54374",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/06-测试属性验证与性能方法.md",
+      "bytes": 5680,
+      "sha256": "d2fd4fdd45b4055a4c703c294d90dd83340ca271f8aebafb42ee5d8f476600a6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/07-类型协议数据边界与安全.md",
+      "bytes": 5772,
+      "sha256": "287b1c94ce1aa7e917a2a00b14fe7aa1e652c8bec8e571633535850dc6aac8cc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/10-系统课程/08-标准库工程与扩展全景.md",
+      "bytes": 5490,
+      "sha256": "3ef3acb1243e49842ec5ffff7f5d5aa4b6fb3d198535ac38259c4c13b58034d9",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/11-uv项目依赖与工具管理.md",
+      "bytes": 20134,
+      "sha256": "1473aae94b31bf5bee0b688fb2c6e7f3c07683d5d8acc886ceabf8c6bf738091",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/12-包管理器选择锁定与迁移.md",
+      "bytes": 16793,
+      "sha256": "85cb46e3c00aea528d525c4c1b739bc5937a63bdd30a121bf8043adb4c062076",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/13-常用Package生态与用法.md",
+      "bytes": 18397,
+      "sha256": "9b728d92913cf6920b2c99d2e7f1a250edc3d971697505357e503528e8161e07",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/14-测试调试与代码质量.md",
+      "bytes": 11044,
+      "sha256": "0964384106acc8e4c5385985dd05e186ee872239221a2be1f83cdc010c4a05d8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/15-对象协议描述符闭包与类型边界.md",
+      "bytes": 4801,
+      "sha256": "20b80455138aee077c910c1a48713a0e02e4c8e51eb226bea29720a8070a64ad",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/01-Python/16-异步并发取消性能与可靠工程.md",
+      "bytes": 4524,
+      "sha256": "7a703816b42d36cfd263761c4b054e2c2d6b9ec0b1854368a3452853a6c3dad7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/00-C++-MOC.md",
+      "bytes": 7382,
+      "sha256": "b8830bf469776d42c488a87a9d74faec483992eea14f8058459988e6bf18b506",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md",
+      "bytes": 5243,
+      "sha256": "da7af03d76f6f12efb2f8ae1e7f39bc75b27ca7dd4f474f033e26f9cb38f6633",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/02-语法类型与函数.md",
+      "bytes": 2648,
+      "sha256": "373cdb5a669a6c3dd04c0346d31bc1837b2943b679bd59ea5de5e4f259221eb0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/03-指针引用const与生命周期.md",
+      "bytes": 3412,
+      "sha256": "f4371edae21d112bcb9f2abc76ac00829a38b20ba152b2da2d7b7dd9b15665f6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/04-栈堆RAII与智能指针.md",
+      "bytes": 3148,
+      "sha256": "41ed090c47eefc97118f066ae41a2c669c40b4723ad0ce8de28558dc7e83682b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/05-struct类模板与STL.md",
+      "bytes": 4209,
+      "sha256": "fab6490ef1a9ffd200fac9c1c0bc87d1543de34e40aa14770b2bdcd0e483a963",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/06-move语义与零拷贝.md",
+      "bytes": 3496,
+      "sha256": "aeae797c62d2c77dfca109ec977240e0aeb7e986e820b64d8d948ec9f99215f1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/07-错误测试调试与Sanitizer.md",
+      "bytes": 5224,
+      "sha256": "5c4e019d88ce3760c2e00808172fa0546ae2b1176fedaa0a0dbddbbbf7067a47",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/08-线程锁与原子.md",
+      "bytes": 4299,
+      "sha256": "2bbd55d5d0434eb012adbe2f45fddb9e6c5b90ab9977f4b9f331c96034032258",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/09-内存布局ABI缓存与SIMD.md",
+      "bytes": 5432,
+      "sha256": "0f9ec38cdea519a117a4d08fcb26b60647b9b2ca5f40e7f2220f0f4aae955a0f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/00-C++系统课程索引.md",
+      "bytes": 2527,
+      "sha256": "531fa047200b088ffff4bb0e29fc21afbef8b9d0c1c73ca8fb24517885a8ee46",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/01-对象生命周期与RAII.md",
+      "bytes": 6623,
+      "sha256": "80067570daeda2ea937db3691635d070623cff0f8cc355f043e58ae34a2ddb05",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/02-拷贝移动与异常保证.md",
+      "bytes": 6201,
+      "sha256": "7f29477c6d88cde587396c2f770124ae9a4b89e8efe8ed0141dbfe4fc8f6deab",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/03-模板推导约束与重载.md",
+      "bytes": 6655,
+      "sha256": "6f5943373f7ed18021b09980ae7f60643dc64d4dc08eb8b2612d6383d63ff523",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/04-容器迭代器算法与Ranges.md",
+      "bytes": 6199,
+      "sha256": "5803991c741d71dce2f8c16237e621ce9ca118bb0bded15d72c79889acd4a1ac",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/05-多态错误处理与API建模.md",
+      "bytes": 6292,
+      "sha256": "909e03a3a6a57ee564a7d44c09f3c859ca1e36d4c6f4034d2132e07f6ce743d5",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/06-原子内存序与并发设计.md",
+      "bytes": 6796,
+      "sha256": "9a10a2def582af276b9aeba87a0f35cc258e01586a96f34828426d095cf55e63",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/07-内存资源布局与性能证据.md",
+      "bytes": 6183,
+      "sha256": "cb5d5950ba472b5c97c074946558e40bc526f210afd0a55dcd99735eedafbf50",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-系统课程/08-模块ABI协程与工程边界.md",
+      "bytes": 6276,
+      "sha256": "bd5df60c8ae24dbe5bb1d83b819af90740943966f90dd3a0d0db0bdbe7bb6ae6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/10-阅读大型C++仓库与llama-cpp调用链.md",
+      "bytes": 6080,
+      "sha256": "d86363d4b4f9ae89b29ae21e6314cec9173b9a7b4603054c306cbfe1cbf9ddad",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/11-对象模型值类别与异常安全.md",
+      "bytes": 5237,
+      "sha256": "75ff61a9289fcf98d41edb5ad0316aff98ecd42671d5235c0c715f7e64a785d2",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/12-泛型推导容器算法与约束.md",
+      "bytes": 4791,
+      "sha256": "c87a5f11041706c4ff47518fad3b77396df3689296b61cbe8f1f7c9c397cf4de",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/13-并发内存模型与系统接口审计.md",
+      "bytes": 4589,
+      "sha256": "4e7d46762bacf8fe362876fccd1aad47e008e8e96b3269e69b62b371d846cf71",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/CMakeLists.txt",
+      "bytes": 901,
+      "sha256": "dddc01638a1caa91e00045980ba88375d40180f2d53502545f6f4021b0a87892",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/concurrency.cpp",
+      "bytes": 1144,
+      "sha256": "bd070c2fa5f10c510160571b3ba82603e63c68f6491d4fc4b161a63ec5b493e4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/errors.cpp",
+      "bytes": 697,
+      "sha256": "3eb5b8afac5053929328092eb2b4adab148f45e1e27bd99d1704dcdebf55738d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/layout.cpp",
+      "bytes": 690,
+      "sha256": "521d91fc4e00402a7de8f8ead8d1013c3b201b139ee18c8d8ef7a8f980217186",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/lifetime.cpp",
+      "bytes": 224,
+      "sha256": "1249b49e088ef40b3b2b632070efd0f097ab4aa32ee8cc342d82581dfab762cc",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/move.cpp",
+      "bytes": 374,
+      "sha256": "94d7da6cd482f903529920f2a669c2a394b778de0d0712cd03f10aaf4d2f8fac",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/raii.cpp",
+      "bytes": 429,
+      "sha256": "c2ff70ffd3f41068fe477c28bf7a27b5f896250981579d5ac39026a558df63b9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/toolchain.cpp",
+      "bytes": 97,
+      "sha256": "037bfb4bc744d2f3fce040cacb277d64699df1541fbcc4199a4d9f3368df1b92",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/types_functions.cpp",
+      "bytes": 275,
+      "sha256": "36d04c4ed9cfb7e137778d015b3b0810acd5284feaf22e922ee0cd14a05202dc",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/01-程序执行类型与表达式.md",
+      "bytes": 4826,
+      "sha256": "afa56369548872675e00d59745543d59e6eebd6b13b2b148c0a2234d01cda669",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/02-指针数组字符串与生命周期.md",
+      "bytes": 4681,
+      "sha256": "a2d27fce9f44c487dff4490049d5525ab37dcdf55121ab38e2a0459418fb1850",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/03-结构体动态内存与资源协议.md",
+      "bytes": 4769,
+      "sha256": "2fd424fa9fe28cbfa80b09a584ac3cbb8df5673289b634e35eef10990734d31a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/04-函数接口预处理与多文件构建.md",
+      "bytes": 4609,
+      "sha256": "ec3fe9cf3881ce2c78d28df785a3bb84d19f6b2c6c0ca5a9c18205c3d8341f9e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/05-标准库输入输出解析与错误处理.md",
+      "bytes": 4508,
+      "sha256": "2a44aa838a6eac68f70b8bc0f54d72a99a35a3e5749da404fc41ec3f912a46d5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/06-内存模型并发与进阶知识边界.md",
+      "bytes": 4694,
+      "sha256": "a41ce251655bef39c619bb70007d031a43cce5577971279b886a7f126c49414b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/00-C语言系统课程索引.md",
+      "bytes": 2584,
+      "sha256": "e54e8a0789ee0fca2af33f7a10c5c8abc289cdf9189c7601b837e591711475db",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/01-整数表达式与可移植计算.md",
+      "bytes": 6641,
+      "sha256": "6b799f4dd841b5265aee1778ac4216fa87720627c57218f63ec934c24059675f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/02-声明数组指针与字符串契约.md",
+      "bytes": 7263,
+      "sha256": "7dcdaabc3cd3b4d84b0ecf843722c8f718f607c014c427d4c5a7a833a2e703ab",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/03-结构体布局联合体与序列化.md",
+      "bytes": 7258,
+      "sha256": "09f852ea1cf3fef05f72b74d8ea4b6ad2e59d7b962d6f3d22ca60db3eab0fc46",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/04-动态内存与失败原子性.md",
+      "bytes": 7362,
+      "sha256": "5710c33b770bdf51d7b225698072e67f2dceeacddef3db563d6e4f07b353070d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/05-函数回调模块与构建边界.md",
+      "bytes": 6824,
+      "sha256": "efeaf1c8dd3b66bcd3aa0ec939381c90ffbc1c967de23dd0aeec758812bb0492",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/06-输入输出解析与错误模型.md",
+      "bytes": 6899,
+      "sha256": "621dc236f1746f6d545f2cce3868160f1af588edb5f24bda366bd69eba6f500b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/07-未定义行为别名与优化.md",
+      "bytes": 6419,
+      "sha256": "901acc660772cdbb42210845c1e8cf708584daeef3cab178c1409a92560953e7",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/03-C语言/10-系统课程/08-标准库并发泛型与工程全景.md",
+      "bytes": 7104,
+      "sha256": "5f89ef924428245c5e7763fd8b4dfe604e8df6d93dee5379af2528e332820ba1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/01-语法数据建模与Cargo.md",
+      "bytes": 4072,
+      "sha256": "0e48a23912db9a85407e874921eaaf0f3679aa22e248c35d44318bfebdce4def",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/02-所有权借用与生命周期推演.md",
+      "bytes": 4729,
+      "sha256": "a35a15770e2196f248249ccf68d3a872bbaa667852866d447909423d6793eeb2",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/03-Trait泛型迭代器与动态分派.md",
+      "bytes": 4565,
+      "sha256": "0acb8b5463b26b034ec599773f408f2a40b523c7ca5ce944c99fc2ea7f1e550b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/04-错误处理模块测试与工程边界.md",
+      "bytes": 4461,
+      "sha256": "248ffc79ace0f285c5a56e7b97dffef24802ea783e64db93a5ff6ee110563c00",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/05-智能指针并发与异步取消.md",
+      "bytes": 4589,
+      "sha256": "28c26e6bc747cc25ae8d280011e5dc528057a2f87c558c1dd520723f1786d9d0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/06-Unsafe-FFI与完整知识边界.md",
+      "bytes": 4436,
+      "sha256": "0c1fc0670199dc7aac30ca28578b20fa4c6db0e4020d086c386dc246222e1b0a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/00-Rust系统课程索引.md",
+      "bytes": 2561,
+      "sha256": "11a8620b4593faf8d1c437cce4aae2610d3e328c18ae9f7958cd97e9afe5e384",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/01-所有权借用与切片推演.md",
+      "bytes": 6268,
+      "sha256": "025859675c11707f859fa145402c9efc831f36e02119a4727f543579607c4513",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/02-生命周期方差与高级借用.md",
+      "bytes": 6168,
+      "sha256": "b1d67e81ab7c274dbae856d5aa22e72f70ab2fc1332ade2536b603dbf6af411f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/03-Trait泛型对象与关联类型.md",
+      "bytes": 6343,
+      "sha256": "20f3245f159d05f0e20502004e1e2de9153a131562c65b36180ece5ba3f779fb",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/04-错误处理模块与测试.md",
+      "bytes": 6441,
+      "sha256": "e40765bd2e3b72bbeed6aff7c39c48c9781e019f83142498e2c691051c424c44",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/05-智能指针内部可变性与线程.md",
+      "bytes": 6183,
+      "sha256": "3b810155709c6d91e4e204d977ba58c47e1ebcc07ac7f97dbe2ce14b2b246d13",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/06-异步Future与Pin.md",
+      "bytes": 6224,
+      "sha256": "3a2a679f30b46f4e59944d9e9354fae9d518d84f0b15195a2c171865249c0717",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/07-Unsafe别名FFI与表示.md",
+      "bytes": 5559,
+      "sha256": "920d48e5a07b5829cf9b72d3ee7d7d02e802f49f3d6f58a79d57c823c9770f1e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/04-Rust/10-系统课程/08-集合宏工程与生态全景.md",
+      "bytes": 5852,
+      "sha256": "260c95783e132a31ce8a4668ba1c2e7cb683caecdf74ed5fb4057cac83b9dc8b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/01-JavaScript执行模型与TypeScript基础.md",
+      "bytes": 4371,
+      "sha256": "676a11edeb570d059699e4be616d45d06e4ddfec79e1c9257a3d6be761fbba26",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/02-联合类型收窄与运行时验证.md",
+      "bytes": 4361,
+      "sha256": "d78f582ddbca51c0d40bf9b2496367ad1a66b83d4acadb893a3654e80d3fde9e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/03-泛型类型运算结构化兼容.md",
+      "bytes": 4366,
+      "sha256": "ced413b3198a045fc23cb0ea6339e48d9ea805662088b0d152a39f6dfdeeb965",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/04-Promise事件循环并发与取消.md",
+      "bytes": 3628,
+      "sha256": "659b58f31fc6f74ecea5add834b1d174f446d844c2802564f304f83615655282",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/05-模块工程测试安全与生态地图.md",
+      "bytes": 4378,
+      "sha256": "147549190a6a734136b2e7f36ea1cff6ba22b9b617b8f57448f278ef09935cd1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/00-TypeScript系统课程索引.md",
+      "bytes": 2591,
+      "sha256": "edce4d84e3e22ba692e97849e10c796e231fa1718fd7ddfbdea9e488cf854f21",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/01-JavaScript语义与类型边界.md",
+      "bytes": 5472,
+      "sha256": "c82ba9f700fe8a6f6093b23977b9e4e375bd3c5e1826af3d2d6e3ba3c4d5e16e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/02-联合收窄与运行时验证.md",
+      "bytes": 5646,
+      "sha256": "2f94d18b943029027a03848b8f2e70c2de58937a6a46b35fcb5d53721d986e9d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/03-泛型方差与API设计.md",
+      "bytes": 5645,
+      "sha256": "24e8ffdfbd0f2b8073ac4017fb03df45ac8bf082286480e48896433c77aec02a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/04-条件映射类型与声明文件.md",
+      "bytes": 5451,
+      "sha256": "ebc6f217b95a30e09d1a680801af5ef35ab5355c23e00747230d17aa5055623b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/05-事件循环Promise与取消.md",
+      "bytes": 5445,
+      "sha256": "01cad39ef151b5015c3e633d9acfd7826edd59e8de34ecaff07b3cd6083d5196",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/06-模块构建测试与发布.md",
+      "bytes": 5361,
+      "sha256": "0511d05c9271e8e2b47da9a69d1f9b967d4ee7e5b5d9b68e735bd3b2679e9914",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/07-Web边界安全与全栈协议.md",
+      "bytes": 5244,
+      "sha256": "44057cf4b622a2f4b04db665b2aedd3d510f6422a399c6da3dd8a1573a130e7a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/10-编程语言/05-TypeScript/10-系统课程/08-语言全景与综合项目.md",
+      "bytes": 5759,
+      "sha256": "cc006293e6b1655b3ed9533ebd9b59e8df2ec21d447ec27309a6fb40b7f36c17",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/00-操作系统-MOC.md",
+      "bytes": 3252,
+      "sha256": "9ce5f4484a4ad5c6a61e0a9623783891941ad6764b24de7bffbfc80aae98eebe",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/00-Linux基础-MOC.md",
+      "bytes": 12242,
+      "sha256": "dc7cc86e4724c37d1c2444b7bcd550a6f8ee190ce0e5e76d648ace056b3750f6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/01-计算机系统与Linux分层.md",
+      "bytes": 22021,
+      "sha256": "5b4096af753429b7a1d7c09b1a6cc00361173e938af864f6e1e9867208e4d254",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/02-启动链Kernel与systemd.md",
+      "bytes": 30989,
+      "sha256": "ad92043d0b5c9e04c25e76211483ca569b38ea9adf7f8ef2f9a40ef987e77819",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/03-目录结构挂载与文件系统.md",
+      "bytes": 22151,
+      "sha256": "e1d45e17d4e7babb1a2c53c7e24a3b41ee253e5272c94e0486623e99a00076f5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/04-Shell命令行与帮助系统.md",
+      "bytes": 12955,
+      "sha256": "92a26053b36ec8a5c59c3f53148223c4f4e4ccdb1f2672c5236d441fadf45d93",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/05-文件目录与文本处理命令.md",
+      "bytes": 22621,
+      "sha256": "454d7432b59bbdfdae5ae0bb9397460073d0a385b7942d3a234427bc799d1358",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/06-用户权限进程与作业控制.md",
+      "bytes": 20664,
+      "sha256": "9f9ccac23c1b2a0f7807c7b7b04c73879afe2234edfd5862dabb56152028b70d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/07-环境变量Shell启动与PATH.md",
+      "bytes": 23545,
+      "sha256": "2748ee07471bca96438e27b50bbcd24fcc8cfc63651316112bfeea66751fd23f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/08-pacman-apt-dnf与yum包管理.md",
+      "bytes": 19790,
+      "sha256": "6ff905effacc787e3edbc2ea542d70521b7a67e6e2b2843c6e1a24c6833530d1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/09-设备驱动内核模块与udev.md",
+      "bytes": 36350,
+      "sha256": "c68981b7e95c658e4626ab0634a9fe2f937912c2475422cf4b9f319d2dee4281",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/00-Linux系统课程索引.md",
+      "bytes": 2539,
+      "sha256": "b047e2d69706337f6b46157be4bdf03720333db8ee6328542d983f6dd7fb913f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/01-Shell展开引用与可靠脚本.md",
+      "bytes": 5518,
+      "sha256": "5e62f9923813b457332b37b14a6cf42a3faea0212a0b7fa9274f0c38a302a8a1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/02-文件描述符管道与进程控制.md",
+      "bytes": 5609,
+      "sha256": "fc88092ad33977d24991bc2b30d7c59f88e241c39cab08aa433c84b7dd6a5af1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/03-权限身份与最小授权.md",
+      "bytes": 5504,
+      "sha256": "815f5431424071bd147b3d40e30f38fbfa805dfe1c8a43cd6ebce547197411dc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/04-启动服务日志与资源管理.md",
+      "bytes": 5747,
+      "sha256": "42300e39fb51bda495f46829ed477d730abf97ca462c0263677951521d5ea612",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/05-软件管理构建与可复现环境.md",
+      "bytes": 4842,
+      "sha256": "5aaa349ae29f8e6443ccf5022c505cd56859edb3165e4908b9389903352a168f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/06-网络命名空间容器与隔离.md",
+      "bytes": 5419,
+      "sha256": "6ae74bb14b703c85f15ac2060a9e48c5a6f35631c8d65f10ae53eee2d3862b85",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/07-性能观测与故障定位.md",
+      "bytes": 5265,
+      "sha256": "2de00b77a93aebe592761995f77451c01c86a41c40453e7a38fa85fb7d6d2574",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-系统课程/08-安全备份运维与综合实验.md",
+      "bytes": 5908,
+      "sha256": "6685e4022e3d09970463c0160cd2abf867f086f07342a542718f0990485106cc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/10-网络存储日志与故障排查.md",
+      "bytes": 20683,
+      "sha256": "3442ea0a23f365f2779bd98419083fbae2ca62470bb7a4888c66a51d83ad7f4b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/11-ArchLinux安装前规划.md",
+      "bytes": 24838,
+      "sha256": "a068d71c57385fad06b82285f3dafc51f4de7b318c1841a5535ac46e543a77e8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/12-ArchLinux安装实战.md",
+      "bytes": 40624,
+      "sha256": "c73321b2e8306b3c9d0e2734d4013e69fcd537804579416f66eb4e7bf9eabde7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/13-ArchLinux安装后配置维护与安全.md",
+      "bytes": 44685,
+      "sha256": "be3e091d58dd5d9cae8474c6584c7b8c0787c3c179f40a28cd797e94ef0e57f9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/14-Linux开发容器与AI工作负载边界.md",
+      "bytes": 13801,
+      "sha256": "5ab79e7b0abf4e454d150a8cc23a1a8ad6827f74b713d27b7c4d87c12508a7b7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/15-Shell文件进程与可靠脚本边界.md",
+      "bytes": 4460,
+      "sha256": "08267b0041e0c7238f21374f7d0f2ed274d55f79d6beef99739e2b0a2b52626c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/01-Linux/16-服务资源容器与分层故障定位.md",
+      "bytes": 4600,
+      "sha256": "31fdfdacc23a4fc5262608e73e9b1f25e1b0e5e588d834c741af8552fa2ce1df",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/01-进程线程调度与定量指标.md",
+      "bytes": 4154,
+      "sha256": "ee6cf119574bd21ca09773be05664ee947f88e573a48a5d12fa8ce9ebc5f17bd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/02-同步条件变量死锁与并发证明.md",
+      "bytes": 4397,
+      "sha256": "d899a13458e1ffd94b466ed8c1a71c6f3518382a505bcbdb19fc416926ae1425",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/03-虚拟内存置换文件系统与崩溃边界.md",
+      "bytes": 4367,
+      "sha256": "2ed082e9ea58f003e84fa812c63a11edea35150f45dab3c84cb22d29954dca61",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/04-保护安全虚拟化与系统知识全景.md",
+      "bytes": 4451,
+      "sha256": "3dbec75bd2f49a777b9b631792ba7e23a34959c5089041366f1bd2fb7891b970",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/00-操作系统系统课程索引.md",
+      "bytes": 2736,
+      "sha256": "37d70829396b9f339923d756cf203ed32a974a42a27ba2544a0dd5aecab1410b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/01-进程线程与调度推演.md",
+      "bytes": 5945,
+      "sha256": "0fb36ef8ce77b09048f8103fe783e859fde938010d6a39f7f68bbcbfdf543858",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/02-系统调用IPC与进程生命周期.md",
+      "bytes": 5965,
+      "sha256": "fa7017f4afe9d14e26ea80cf15fb8bff5c1f61f83ae3af4e89ad81ff97adfcfa",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/03-同步条件变量与经典问题.md",
+      "bytes": 5832,
+      "sha256": "b3a05b5f09d98542606d5c4df4156e8e9054a86bd58e59c5569538ebcdfc9050",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/04-死锁银行家与资源分配.md",
+      "bytes": 5918,
+      "sha256": "74b2958453184394c8ef71c91163837860e686ac07b1841825f7955f1b3b4bc2",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/05-虚拟内存置换与工作集.md",
+      "bytes": 6154,
+      "sha256": "d24b61dc2a18279c02c953679b29d8c63ce75e9ad30138c2dd6c9117817f7adb",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/06-文件系统I_O与崩溃一致性.md",
+      "bytes": 6009,
+      "sha256": "56a864bff76d39b385fe93e68351805f2ff1475f6cc33e4b9e372ece4975ad2d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/07-保护机制内核架构与分布式接口.md",
+      "bytes": 5153,
+      "sha256": "0795b069f2c78cfb2a5ce5b668deb9a4c2b9ca6bb68ed32c9de5036e47367de7",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/20-操作系统/02-操作系统原理/10-系统课程/08-虚拟化实时系统与安全.md",
+      "bytes": 5581,
+      "sha256": "6295cd07f06e8c084de9597d6d2c14c6660a805ab850dd8c3d5736753bc3932e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/00-计算机系统-MOC.md",
+      "bytes": 20396,
+      "sha256": "9d5ac1d431f00267be270fb8e4d4d888d381f50ffac89d809415e823629cd35f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/01-数据表示字节序与对齐.md",
+      "bytes": 9246,
+      "sha256": "a97508d1e1cb9057ad961a26685284788464159261880644932357bec05d9762",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/02-进程虚拟地址空间与内存映射.md",
+      "bytes": 12745,
+      "sha256": "7ae2342b08ed45984ae645c984b626300fbb26aa23555c539495062505ad71f0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/03-ABI调用约定与静态动态链接.md",
+      "bytes": 9317,
+      "sha256": "c4701da3d86a84c33dcd7c3bc1ba93f8a9e525078ffb57de8da76404912270be",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+      "bytes": 10950,
+      "sha256": "46f72ffdd91f1971907c19ed86ada0ef904e4aef34386d904505892ab06d2939",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/05-并发并行SIMD与加速器.md",
+      "bytes": 11615,
+      "sha256": "2dfaa0ddfcddcdc9eed8833bdbc445fff6743e3e23787314256210ea7fbc195b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/06-指令系统汇编与程序执行.md",
+      "bytes": 19450,
+      "sha256": "599d28d44a767a11105c5e2e7b83af1c5e50b0be7b42ee5474210c5e7c8a16f4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/07-CPU数据通路流水线分支预测与乱序执行.md",
+      "bytes": 16936,
+      "sha256": "ad1eeb86c1e68d21bc80ef926d93d65cbe2ca6e0e538121def8ee7a257e0752d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/08-异常中断系统调用与特权级.md",
+      "bytes": 22413,
+      "sha256": "de3d5695c3156ef0e2b97944733cc4ab9997d3d2f7bd630d4c7d27d23ec380aa",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/09-进程线程调度同步与IPC.md",
+      "bytes": 16448,
+      "sha256": "d3387233b402eb30f738558dddb4031a42c2750592b2e852fd621c6ed128efda",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-IO设备总线DMA与中断.md",
+      "bytes": 14423,
+      "sha256": "fd15c94308db9c950a7f1ae662803c14b36f5be0ed132aa76061dc7a3188835f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/00-计算机组成原理系统课程索引.md",
+      "bytes": 2625,
+      "sha256": "c09706bfe07019bb187b758f83604303e42157939825b9e34af3822562c249ed",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/01-布尔逻辑与时序电路.md",
+      "bytes": 5375,
+      "sha256": "c3997423d907e2afdcb2f858a6c51cb0f92b811e63c20563fa9904e4ee85cef4",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/02-整数浮点与算术电路.md",
+      "bytes": 5856,
+      "sha256": "c4f11b038cc544c0cab499ed59712bfba6133ca9e7b95b015459be9f07cb6b5a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/03-指令集寻址与数据通路.md",
+      "bytes": 5503,
+      "sha256": "50e3def1385882a3fa2dfe75cd93c1b8e1de78fc16e88451b1b6a2da56280a2b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/04-流水线冒险与乱序执行.md",
+      "bytes": 5450,
+      "sha256": "7cb6465b50c1d1e63124fd4cc7115152bad4e392ec8e9d3c1e45b1744434ef6f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/05-缓存地址划分与AMAT.md",
+      "bytes": 5581,
+      "sha256": "95ea1034ff3bdc978ad51a03360e3174c86b9ac4c08ec8b34a8d1ff58ae56361",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/06-虚拟地址TLB与存储系统.md",
+      "bytes": 5624,
+      "sha256": "892d5bcf8803b4d611ab585bc630b19d46154a52e5c2e160b90ab02a847b6685",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/07-一致性内存序NUMA与性能.md",
+      "bytes": 5983,
+      "sha256": "1888c5c9748674a9a152bad878595632665f72280b9beb3aa56af78ea1116e3e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/10-组成原理系统课程/08-总线DMA中断与系统全景.md",
+      "bytes": 5467,
+      "sha256": "331ddeb801dad210f7083a5a64ca56396fcdff0ff3dc69c81293051f8923eb1e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/11-存储设备块层页缓存与持久化.md",
+      "bytes": 20514,
+      "sha256": "b5c6e0a2c38efb76052796da1631eb18b3c91eaf7dc6430ef397b18afd0d570c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/12-VFS文件描述符Inode目录与路径解析.md",
+      "bytes": 23687,
+      "sha256": "c19e0b6cbbf4f317ba039a965ae4dc5479e815d7db0acfef702fa0415e4d6bb8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/13-文件系统布局日志CoW与一致性.md",
+      "bytes": 29046,
+      "sha256": "6d919fb2e77e46e82757cec81ec50d00aea879b57bc246701d109e20afaa3841",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/14-网络栈Socket与端到端数据路径.md",
+      "bytes": 22982,
+      "sha256": "eaf7f6c66241f62551add2578224988e774899a4d1c27dcf8623e18b4d67de0d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/15-性能分析可观测性与系统设计.md",
+      "bytes": 26719,
+      "sha256": "b51b3ea4a0f37be8b7bb14e7da4c2deda1509e5727684d2f50bb994af7d90cd4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/16-地址翻译TLB页表遍历与大页.md",
+      "bytes": 12543,
+      "sha256": "3a883b89379734168b40fa3f95cea6c4f4f255f89b7154d36009850a3089707f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/17-通用内存分配器Arena碎片与驻留.md",
+      "bytes": 11768,
+      "sha256": "4df82e6e3d74b16b22f8ea6579823be84783fb6825ba9f4e7a0d735e4d4c63ef",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/18-CPU拓扑缓存一致性NUMA与设备亲和性.md",
+      "bytes": 13618,
+      "sha256": "651dd7dc0e4453a0fe7f36c3ceec2920dac1d0476f16e36c3edfbaa0e8ee70b2",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/19-容器虚拟机Namespace-Cgroup与虚拟IO.md",
+      "bytes": 23268,
+      "sha256": "37b3e61afbd5e471f3cb2292d4c72a41fdd302c0af839b23e586f7ede4d42a4d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/20-时间时钟计时器Deadline与跨主机关联.md",
+      "bytes": 21047,
+      "sha256": "f53b6a1598dab6db6fc9bcd927fddb9bf0e2e2dfe2ba992055da9669e1c4438a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/21-逻辑电路整数运算与CPU性能推演.md",
+      "bytes": 4447,
+      "sha256": "e3acc4257e88b2f2acabccc9cf7bd19f5b1dd6fd27d0b804b7ca15a20011e1e6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/22-缓存地址翻译一致性与存储层级推演.md",
+      "bytes": 4347,
+      "sha256": "b4dc98abeb5d872f1190b6ffa86f9bee569942096c07c2473d92612d1ba1c2e3",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/01-分层封装与性能模型.md",
+      "bytes": 4518,
+      "sha256": "1245f21d6f3fef9a1da2d35a8568f9500153a2fd9dd28b89ddccd620b618dfcc",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/02-以太网WiFi交换VLAN与差错控制.md",
+      "bytes": 4233,
+      "sha256": "83b5ae45d32eb37cd5045fff9ab004653b260918287918b8f3322f94ecd58f8b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/03-IP子网路由IPv6与控制平面.md",
+      "bytes": 4272,
+      "sha256": "fe165a35ea99bf824049e4167e1fc399ef3740eba18f5438f81b1d9dbcbfd543",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/04-UDP-TCP可靠传输与应用分帧.md",
+      "bytes": 4356,
+      "sha256": "9971d83fe221e97dd952c6bceda0e91286b7ed696e8a63a4c3f4ab6477b89ca5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/05-流量拥塞RTT与带宽时延积.md",
+      "bytes": 3985,
+      "sha256": "f3341a851eb48330c5067cdc0ecfcf2b67e4b1222e4726a84ff77ad25d04137f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/06-DNS-TLS-HTTP与端到端请求.md",
+      "bytes": 4359,
+      "sha256": "621aeb6a2ac151c3f035b94ceecba0aefa6d312af7e05eb1f7a84aebdfd6ca8c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/07-安全排障与网络知识全景.md",
+      "bytes": 4376,
+      "sha256": "dbb8189a9af45ff2350e573b057a5a31b20b2687a77726d8ff4018663cae680d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/00-计算机网络系统课程索引.md",
+      "bytes": 2492,
+      "sha256": "7f4a5ffeab2f9bde806c33b7881b0ee21bac08e5ebf17d0f75237fe887be9b2e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/01-分层封装与网络性能.md",
+      "bytes": 5896,
+      "sha256": "c65e6b37e1a74e5e2267c63a1491b8ca947af3176032b0d04c39ebebc652ab4c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测.md",
+      "bytes": 5205,
+      "sha256": "7c0fdc73bc143ea387b1e18d8bf00f7815555078a9c300c88f34a0366b331271",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/03-IP编址路由与IPv6.md",
+      "bytes": 5476,
+      "sha256": "ac09251e4272fc38a5be8840750082a4a090964231b2c5c0abaa0a020b785353",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/04-传输层状态序号与拥塞.md",
+      "bytes": 5981,
+      "sha256": "9c81e47c1699645a7af897fb520200a6b9a1d9a97e5b7d90cc07ab0d1f026b8c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/05-DNS命名与应用基础设施.md",
+      "bytes": 5833,
+      "sha256": "dbc019b79d91141187302697f7698ecf50b4a9ed143c565593595c2ef3f5ab88",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/06-HTTP_TLS_QUIC与应用协议.md",
+      "bytes": 6064,
+      "sha256": "b7eab4401a2b8f071fea327a75a419a4fd628dcce3f7f504a4ef1e868f498e18",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/07-Socket分帧背压与排障.md",
+      "bytes": 5785,
+      "sha256": "01123d6d0f724d5a31dd0ce7c1f21976f573cd1cd33b3cfba30bb1785721b8c1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/08-网络安全分布式边界与全景.md",
+      "bytes": 5626,
+      "sha256": "242df943dd231c75c3989301a27040a4526e383d4a145ea5cb4e9da6a5650d9e",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/00-并行与异构计算-MOC.md",
+      "bytes": 4089,
+      "sha256": "c03c643f73b33bbec8e5ec29457aead835b38b414eab3e23d67809c0b8aff556",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/00-CUDA-MOC.md",
+      "bytes": 8702,
+      "sha256": "79266eb05646e2b859f3fa47d6ad198c4aa899d65163c7050b951c7e27e10bbd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/01-CPU与GPU异构执行模型.md",
+      "bytes": 7146,
+      "sha256": "c52f3baf3e08e1a022252b4d6fbb42594a1f813db923cf3be61650b766e91624",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/02-CUDA软件栈与Linux部署边界.md",
+      "bytes": 9825,
+      "sha256": "d3be55c7225eef2838e58bf64f6f591b15c843527a19b48680dfb3b560619d3c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/03-Kernel与Grid-Block-Thread-Warp.md",
+      "bytes": 9530,
+      "sha256": "30ab50ba6f1c1abe3423dcdaa93da51f29fddb55bafbe22ca6211200804d43ca",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/04-内存层级合并访问与BankConflict.md",
+      "bytes": 8070,
+      "sha256": "2eadd829f8411250baf30a597cdbc3e1ec0033470743ff1003089bf4cc03c32c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/05-同步原子操作与分支发散.md",
+      "bytes": 8627,
+      "sha256": "acde1a2f0dcb6513409b13356a13506998ae18f4f52d469d5c00f96ccefe7e06",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/06-Stream-Event与异步流水线.md",
+      "bytes": 10703,
+      "sha256": "d132b586d0b6dac76c17a72cef836e176e93ab515477b9af2bfe97ea1ff564a5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/07-FP16-BF16-FP8与Tensor-Core.md",
+      "bytes": 6798,
+      "sha256": "a7ebc1408e434ff2bc9244ced59caa8dd0ad7fab20461a6f964a8111cf84326a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/08-Reduction-Softmax与GEMM.md",
+      "bytes": 9947,
+      "sha256": "e0134f2389515882e3322ba2fcd07a2fe20b3066396d98df81d98cb3321b566f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/09-Roofline与Nsight性能方法.md",
+      "bytes": 9426,
+      "sha256": "43878673d3b1fd0d0829ea88486d75dd5d0bbe4f62dbb3c98dd0cfef040c41d8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/10-PyTorch扩展-Triton与llama.cpp后端.md",
+      "bytes": 10630,
+      "sha256": "2f73565be51f36bb6cd3393dc465f14153fcdf932a101e8aaf6e51dc1d00f5c5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/reduction.cu",
+      "bytes": 2949,
+      "sha256": "0350cf8c8ba2a389cff83947a2189e384963aab5ca5b6c9b5326b688399d502c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/stream_event_pipeline.cu",
+      "bytes": 4040,
+      "sha256": "2410b11743c76a9e45f4ed28bce3794fac5eedde885103646a4f94e0e2763751",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/40-并行与异构计算/01-CUDA/vector_add.cu",
+      "bytes": 2269,
+      "sha256": "262fe85bfddc81e99b630230b236ee02062c509abd7584d1426d35e4a73dc131",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/00-数据结构与算法-MOC.md",
+      "bytes": 13894,
+      "sha256": "c2991000a2d34e7c93287a9f808ef51b020717e04265f3557aafa83d97649686",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/01-复杂度模型渐近分析与摊还分析.md",
+      "bytes": 10642,
+      "sha256": "662dff127ed5e30eb0613e18d946b723e842e2e48e5827f48b63a4f0adfd4165",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/02-数组动态数组链表与内存布局.md",
+      "bytes": 9179,
+      "sha256": "ba6fd74fa32986850455dc202ccd6cb0320c91bca7a794428043e29a5dc6076a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/03-栈队列双端队列与单调结构.md",
+      "bytes": 10696,
+      "sha256": "0edecf61b45a2e2494c676c15b82ba8dc4a633a1a9a4432a224f5a67dfff0c93",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/04-哈希表集合与冲突处理.md",
+      "bytes": 11104,
+      "sha256": "b30be51a0901d041021a51f1b288206b66c02d05e653d72b749dc5c2e80ac27f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/05-树二叉搜索树堆与优先队列.md",
+      "bytes": 9755,
+      "sha256": "b7ffa399a74325c2fd7510ab0a18a2814e5da8ddfd8578b8ff16a88eaf5b7f09",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/06-平衡树B树Trie与索引结构.md",
+      "bytes": 13115,
+      "sha256": "71185e822c7a73501a405850c497e2b14d7128ae1d21d2e3bbea20647d31ad23",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/07-图的表示BFS-DFS与拓扑排序.md",
+      "bytes": 14100,
+      "sha256": "15539d33dc9c55baa0b8d51ecff046b4fd751bab95dd15660a2ebff8350f61b9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/08-排序选择与稳定性.md",
+      "bytes": 14010,
+      "sha256": "c3518e7df2352a89d03f69d0a6a29967c6122eaa0543a8c8207f643ace613bb8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/09-二分查找分治与递归.md",
+      "bytes": 10173,
+      "sha256": "34b5b76765ac9d207a529a068604a038e2687510b22d8582296ce7b28fd6e11d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/00-数据结构系统课程索引.md",
+      "bytes": 2693,
+      "sha256": "543d17b2a43f22b3c21afea89ad7d3f7db5eaa824f2e27fed382be0cbb0ed1f3",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/01-抽象数据类型与均摊分析.md",
+      "bytes": 5020,
+      "sha256": "795857726bdbe2ddf96710f8ef185bd935a61a60ca3c6f25837a56a0831babfc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/02-顺序链式结构与哈希设计.md",
+      "bytes": 5638,
+      "sha256": "f1ad9dc8fe01c6b341fc1761a3a75624f7b35c9aaa83a2e2f12a60c9ba0e97be",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/03-平衡搜索树旋转与增广.md",
+      "bytes": 6084,
+      "sha256": "8b72b9b8d9abad6598c47f4b71f5c9f7f34506c3c563fccb71b9b6df9e3d622f",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/04-多路树外存与持久化.md",
+      "bytes": 5846,
+      "sha256": "474389394bba431ebd34c781afe3c675776fa3f89d329addaac60d180ef9d776",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/05-区间聚合Fenwick与线段树.md",
+      "bytes": 6136,
+      "sha256": "77f171d537ed0d5cc54ce51c8add520d743eaa0cd35d43022ffa018f6123f23b",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/06-字符串索引自动机与后缀结构.md",
+      "bytes": 5868,
+      "sha256": "a28eca7df935c14495094ffa67452ad0bb1e2311afafefce1766f8c4ca5596de",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/07-图表示并查集与动态关系.md",
+      "bytes": 6030,
+      "sha256": "394fd3929ffbb3cea62e2cb3135548b83f3e4c489fdde62b28699585ebb47aa1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-数据结构系统课程/08-概率结构空间结构与知识全景.md",
+      "bytes": 5311,
+      "sha256": "b79710d6bd27c5a0aa5cafd224623b480c85dc7a17d9aebced0d7f68424588eb",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/10-贪心算法与正确性证明.md",
+      "bytes": 9199,
+      "sha256": "a872e819f1c7b81490f20496cec7b1d4f6e7e6995177e5671f8ba2fca9f5d30a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/11-动态规划状态转移与空间优化.md",
+      "bytes": 10070,
+      "sha256": "3fa4df9a7be087269781a5dbfb35019f6881517a7366f72ca7e71d3775b3cd71",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/12-最短路最小生成树与并查集.md",
+      "bytes": 15080,
+      "sha256": "8b7d124051814d30d2d5b441ecd51ef4684ae6a2e94002c71255f5c07c307f4b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/13-字符串匹配前缀函数与自动机.md",
+      "bytes": 13938,
+      "sha256": "9041651fe39a8f6e75bbe471758714813c1750f021c523a6e0290e67efbde239",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/14-回溯搜索剪枝与计算复杂性边界.md",
+      "bytes": 12039,
+      "sha256": "746c067c462d8342fc7a4a1bb33e5d5815e8d8d8d09711ac19c623b682472608",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/15-如何选择数据结构与建立不变量.md",
+      "bytes": 13802,
+      "sha256": "2b923f0e7b101fa31c08b2f7c69565c36e072d8dfe026b0f2574ab516425fa6e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/16-前缀聚合差分扫描线与区间数据结构.md",
+      "bytes": 8267,
+      "sha256": "dedc28fccbad59cd98d7b4404ee139af8118b854c076749ce3741e70238affe3",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/17-强连通分量凝聚DAG与工作列表不动点.md",
+      "bytes": 8896,
+      "sha256": "3a458ca43a60151d88d228f9f6eaa4cc68664c8b35a8fbc859215423d63dd2a5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/18-外存模型分块缓存感知与页式索引.md",
+      "bytes": 10020,
+      "sha256": "d9dfda272fa3b3fc9452fcdb3196fe73fe7d0ab8a92fd1894ded416109e6daaf",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/19-概率型数据结构流式摘要与误差合同.md",
+      "bytes": 11658,
+      "sha256": "8e99cf63fdd2cc8dcf3c8a7c18a013576e07975c5e050eb475ef031015b95c50",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "bytes": 14389,
+      "sha256": "e2e1d58caf3ba6b1214583cb201111ca681261bf976f5426bb7f5234294192b1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/00-算法设计系统课程索引.md",
+      "bytes": 2700,
+      "sha256": "1811739b8b531ad6676627ddb202aa1706fc8a7784811423cb807879908a4299",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/01-问题规格证明与复杂度.md",
+      "bytes": 5734,
+      "sha256": "8bfb673f7a777eae239b64726470cc1f69d99dbb55a8ce23e1b555ff9904a568",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/02-分治排序选择与递推式.md",
+      "bytes": 5637,
+      "sha256": "f77733433caaac307a9223878577f7fab7720ea14725bd6b42867f67cb3d2787",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/03-贪心交换论证与结构条件.md",
+      "bytes": 5623,
+      "sha256": "179ab23dafcd3715300e668c6e51b42623ff13085294daa48086906c87a0ecda",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/04-动态规划状态设计与优化.md",
+      "bytes": 6062,
+      "sha256": "d45ce4c58b03bf53b22b80e1900d25fb5bcc5fd3bdb5399fc4b7085ad9646265",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/05-图算法网络流与匹配证明.md",
+      "bytes": 5702,
+      "sha256": "efa38c1b9a055c6e7e572e4d3991c22ba1825ddba31581a976ba0d67d5c36af1",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/06-随机近似与在线算法.md",
+      "bytes": 5127,
+      "sha256": "a8ef3b8b248745031afcfa745d6441a46172e3db711f497a5017878f74d96711",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/07-复杂性归约与指数算法.md",
+      "bytes": 6015,
+      "sha256": "5f5b3bc797008dc83f0684d7093386fa01d2dc83e432c9506e99588fee648abd",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-算法设计系统课程/08-数值几何并行与综合设计.md",
+      "bytes": 5271,
+      "sha256": "fdb41505b00e62d9e65872b560ac41d8b88b1b10e79fcfad91b9d68e8dc40468",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/21-动态结构不变量与摊还分析推演.md",
+      "bytes": 4050,
+      "sha256": "778c14913c107a19b44d5a61f2ca88670454a5143f715d12a9747a7080460ee0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/22-平衡树区间结构与结构扩展地图.md",
+      "bytes": 4618,
+      "sha256": "569d7d11b0fe24acb4b977b0085f33ae83b6b072e1fdedc723095a706a12f299",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/23-正确性证明反例与复杂度边界.md",
+      "bytes": 4468,
+      "sha256": "277e3c5bdba5882a73abb2ea40b7bae8ca43a2e3973d667614420cf792ff30f4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/24-图算法网络流匹配与残量网络.md",
+      "bytes": 4298,
+      "sha256": "f4775014d8c71afb9d5f11c1c415f446151013db7b55567fb5b72b2252a11095",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/25-动态规划进阶随机近似与算法全景.md",
+      "bytes": 4917,
+      "sha256": "21ab93243e61ba741d5b925e712e51b1b303ade78033317341235f1075724125",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/55-数据库/01-关系模型约束与数据建模.md",
+      "bytes": 3688,
+      "sha256": "1cbf06efbee7e0dd0777554693bb4faaf7db0c54f9038764446e2c0b1d8cde5e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/55-数据库/02-SQL连接聚合子查询窗口与NULL.md",
+      "bytes": 4108,
+      "sha256": "b66eaf9adc1d68b7d79870a6243e37035cd7fd19d4899a92054d67e8d5d59310",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/55-数据库/03-函数依赖范式与模式分解.md",
+      "bytes": 3912,
+      "sha256": "53dc99bd749252ffb1cd49bb096bc45f69fd8a6a669dc02ca1d5153f60f6880d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/55-数据库/04-事务隔离锁MVCC与并发异常.md",
+      "bytes": 4307,
+      "sha256": "97a7ec8138ccc02be6862c90d684f66acab66acf9430458dc148777f6265ef0d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/55-数据库/05-页索引执行计划与查询优化.md",
+      "bytes": 3951,
+      "sha256": "67673cc44d05da05a450fab6200e030abc60cab737d597964f48abaec9d231e9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/55-数据库/06-WAL恢复复制与分布式一致性.md",
+      "bytes": 4307,
+      "sha256": "f53d8ed1b4781dfd17bb7b51afbeeabeb292be068bd2c668feb47d99f01dc725",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/55-数据库/07-运维安全分析系统与数据库全景.md",
+      "bytes": 4228,
+      "sha256": "545c7d8a6cb8edc6cf828cf9a97c58965d34a4addf47ccb36f86a4a8b08b612b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/00-数据库系统课程索引.md",
+      "bytes": 2446,
+      "sha256": "929a1718c18b2a1d10ca72ea3ad366cfdd765f344615d6db2576d359a3fb6e7c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/01-关系模型ER与约束设计.md",
+      "bytes": 5330,
+      "sha256": "2326c1c53ea16d4d7d825193127ccfb92f9da32792428bf85473d20c5be8fe05",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/02-函数依赖规范化与设计权衡.md",
+      "bytes": 5359,
+      "sha256": "5590e3fd764d3710fbb1e70a3c9588e7c0615e51cea69b378956164d02904fd3",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/03-SQL查询语义与窗口函数.md",
+      "bytes": 5802,
+      "sha256": "88bfcef14bf728e8bf644b75af2d6e93d636c057794e6379b127af12e5b46793",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/04-可串行化锁与MVCC.md",
+      "bytes": 5768,
+      "sha256": "06cfbc0b00d70ba07560c2e64067f7279b3effcf24578c7cc1cfb9196f1b2043",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/05-页布局索引与查询代价.md",
+      "bytes": 5631,
+      "sha256": "ca67dfea184757a6b2ee610d20d8873022045b8c04a8501ebb8c64ee4c9c7a03",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/06-查询优化器连接与执行模型.md",
+      "bytes": 5765,
+      "sha256": "8745e26705e55e1aa354271a6586cc9e422773e9a1536e21211ebf0be92f3e85",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/07-恢复复制与分布式事务.md",
+      "bytes": 5879,
+      "sha256": "15da251185211d733256756656f141ba78bc86752e6766ba3fc1af4866fe6e3c",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/55-数据库/10-系统课程/08-数据库工程安全与扩展专题.md",
+      "bytes": 5896,
+      "sha256": "856d778ff81c23c331de0524aeccc10a560428977805d7974ee633962d668e28",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/00-数据编码与媒体系统-MOC.md",
+      "bytes": 12550,
+      "sha256": "d9f513bb95032787c2f599b97f4cd2be806ed036dfc30f9b2250a119a6fa8221",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/01-表示编码序列化压缩与容器的边界.md",
+      "bytes": 9685,
+      "sha256": "44917b0a95be05c03da29d1c010c77cada6ad620cec29a47c75cb5a25a7160b1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/02-字符编码Unicode-UTF-8与换行.md",
+      "bytes": 9097,
+      "sha256": "2268fc3df9ee5fec9a36bef07b782011913b13a6c663bc3a037cbdb61e04e424",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/03-二进制文件格式魔数字节序对齐与校验.md",
+      "bytes": 9117,
+      "sha256": "fde598cc093b04c5909c9c86bf00bdd940bcfcc6eb8ebdb426b9116f48f0088a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/04-压缩原理熵编码字典编码与有损压缩.md",
+      "bytes": 10217,
+      "sha256": "b23d2168c84afee53b7ad43978ae748994311be322ef3ef8dd8b0b7d65bcfe97",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/05-图像表示色彩空间采样与图像编码.md",
+      "bytes": 16283,
+      "sha256": "e0c2e9787d45648d2da39634f3bdf10e05e1843a3a4628040cb73e05aa3c914e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/06-数字音频采样量化PCM与响度.md",
+      "bytes": 14642,
+      "sha256": "e8b6657712800805af54d45fe1368862f31e30ce1a22e59550cd142dd9a3ca98",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/07-音频编码变换心理声学码率与延迟.md",
+      "bytes": 17561,
+      "sha256": "f1c645cca1dfda52f1bab7eb9dafed6032539aa206ba45e312353a8a656041d9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/08-数字视频帧率扫描色彩采样与时间基.md",
+      "bytes": 16299,
+      "sha256": "a2dbef18c1aa6d977ae1dc2017db1c118e90093afdf525331dfd9fd27e3f04e2",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/09-视频编码预测变换量化熵编码与GOP.md",
+      "bytes": 15951,
+      "sha256": "5db891a9f700313927be1e6b663f248d7e5bfbe88da59e8e979077cd5354cb01",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/10-封装格式Codec-Container-Mux-Demux.md",
+      "bytes": 16601,
+      "sha256": "4d1366af201a724b16d4a29bb098506df088f4e4799c30e20f3ffdf45d01d65f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/11-流媒体时间戳同步Seek与协议边界.md",
+      "bytes": 20975,
+      "sha256": "1d047b4498b5ec80af42a963c9b0fbc9403b461ca41f9bd42388682aa37a6793",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/12-FFmpeg架构Demux-Decode-Filter-Encode-Mux.md",
+      "bytes": 18285,
+      "sha256": "5ecc841006212ee0b50adf0a67f84dc5610f4f36805a58a4d8cfe5853281df6c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/13-ffprobe媒体诊断与可复现检查.md",
+      "bytes": 17949,
+      "sha256": "3f526bfc532b1d9d97cb97e269b526f579ccc0bef70d4c13b82c7888fe6a5728",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/14-FFmpeg常用转码裁剪拼接字幕与音频处理.md",
+      "bytes": 19575,
+      "sha256": "dc9314262d6866000d1e89d16b568e16074236e4bdc7f5c1a0f67ea2866d644f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/15-FFmpeg滤镜图时间基映射与硬件加速.md",
+      "bytes": 20464,
+      "sha256": "93e8f912adfd0404338764b831dd9fd39e0546c167c612007d306756b9f1e419",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/16-媒体质量评估PSNR-SSIM-VMAF与听感边界.md",
+      "bytes": 12747,
+      "sha256": "3d7f8f3791e422ee4c903e34db6ddf86bbcce1a1931ceb6e03da2c2258a0c9c9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/17-媒体工程安全许可隐私与可复现性.md",
+      "bytes": 17033,
+      "sha256": "f480eb2290f81e0571dea5db780f2d6ff51ab82a91bc457e10b16560f5dbe08f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/18-从文件系统到媒体流水线的数据路径.md",
+      "bytes": 14834,
+      "sha256": "88015a49fac816e541a4027b1f387a810a749eb25b645105f45d9b792c9988e9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/00-编译原理-MOC.md",
+      "bytes": 19492,
+      "sha256": "40706c53aa6678fb2b80eadebd323839b4d59b3d4b23f19239df88218f6b4cf0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/01-编译器流水线诊断与可复现构建.md",
+      "bytes": 11340,
+      "sha256": "50cfd842b97ba0c6efe4722eaad4afd378fcd1ba87649c4afdd4f6f65926ee30",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/02-词法分析正则自动机Unicode与源位置.md",
+      "bytes": 12616,
+      "sha256": "68dff98f0bb4f1adb60e9bd44eb7a046baed1e89167c6939aa4078fce16a50bf",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/03-上下文无关文法AST-CST与歧义.md",
+      "bytes": 11227,
+      "sha256": "e91f1abe8d3bcbb2fdc86674ba8006488236382910b095c818fe3efb2a5c31cd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/04-递归下降Pratt-LL与LR解析及错误恢复.md",
+      "bytes": 18081,
+      "sha256": "0489245ccd5db40fdebe9a0316bdd0502e3b17ca2e7db11cc49108ae97f8603f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/05-作用域名称解析与符号表.md",
+      "bytes": 16381,
+      "sha256": "647f3ea0fd67c42f42a0bfc2a278b389ed4752b0ee363452103379878db24b03",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/06-类型系统约束求解泛型与语义检查.md",
+      "bytes": 18439,
+      "sha256": "4073e71732d88ba313156180abeaa823409515f74433b7afe485daa7402cbb64",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/07-中间表示Lowering与三地址码.md",
+      "bytes": 19368,
+      "sha256": "0e2cd17bf0081146747a22b77ab6689aaf80212b1764efec9ce3e1741306aa5d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/08-控制流图支配关系与SSA.md",
+      "bytes": 19811,
+      "sha256": "dbd4883513681a7ee1488d9eb5da104829cd1dd38875ba688984bdb27aba5feb",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/09-数据流分析格不动点活跃性与到达定义.md",
+      "bytes": 23418,
+      "sha256": "a57d5fb9c8f56de0e32e81ad0044314c893c9963c7f85b000d88db57fa9c8e12",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-优化Pass别名分析与阶段排序.md",
+      "bytes": 13358,
+      "sha256": "fdfedae5a6faaf48a1717309a909fcae25a319534154828e44ff9f4723adcdb9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/00-编译原理系统课程索引.md",
+      "bytes": 2484,
+      "sha256": "ec244ef9efacb94408707b7620b8d8e644be8809faead7914807bd4a67e224c9",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/01-形式语言正则与自动机.md",
+      "bytes": 5596,
+      "sha256": "bc23410650b4dbac55a365d9d0ed90a34c51b5ffbf9c2d36ab4aa5316f9b4b52",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/02-词法分析Token与错误定位.md",
+      "bytes": 5743,
+      "sha256": "c8a6a5f35bbafbd07051e20e2e9a4f355156fd8940c3fb3425d4bcc184a8ecb9",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/03-语法分析FIRST_FOLLOW与LR.md",
+      "bytes": 5415,
+      "sha256": "59171970cafc408b4e15428cb5bb374a9ed1446919d142df671f34ffcea67611",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/04-类型推断统一与语义分析.md",
+      "bytes": 5917,
+      "sha256": "31254be3d2545aa20a41104f6c0c10b01ccc2d4f7ad4a29d69a5999c05dc04dc",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/05-中间表示CFG与SSA.md",
+      "bytes": 5659,
+      "sha256": "60025100405c09b0f4a75c58d37a2c9432d13d3816e64ac27de4e2f2093b5b2a",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/06-优化等价性数据流与陷阱.md",
+      "bytes": 5611,
+      "sha256": "2a3e3707d47f1b04151cc263d5816ea5daee37094af07a0608546a7a30048097",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/07-指令选择寄存器分配与后端.md",
+      "bytes": 5154,
+      "sha256": "fa35de163987583e37e91e1ea768f3d1f92fcb01fa182d8b9c932abd84c760e6",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/10-系统课程/08-链接运行时与编译器工程.md",
+      "bytes": 5910,
+      "sha256": "d11f88ebfa742824c5ba4f894f6e8276bdda793766a394319533d9943162801d",
+      "origin": "added-in-this-revision"
+    },
+    {
+      "path": "计算机知识/70-编译原理/11-优化正确性语义保持与验证测试.md",
+      "bytes": 14412,
+      "sha256": "0a2cb59454d86dd7b79d0ac2f8d1760111f2e5459b5fe020331e5aec6f0e5328",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/12-运行时对象布局栈堆闭包异常与GC.md",
+      "bytes": 16341,
+      "sha256": "e306b85ee3dc344e43d7e57c09e6972018b3a91f1dba2189720f3721463eaa6e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/13-指令选择ABI-Lowering与代码生成.md",
+      "bytes": 20408,
+      "sha256": "e78bc179e7060a07445496ed76efea8692e0cd2315c583799cef3ff39a5a0cc8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/14-寄存器分配指令调度与目标代价模型.md",
+      "bytes": 21470,
+      "sha256": "23e9d6bd8ff74f7455b935c0723446abc7201b59694105c7b14324e43a7f435c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/15-目标文件符号重定位链接与装载.md",
+      "bytes": 26393,
+      "sha256": "8e3dec13763064e059003f416a1335125202419e7ca8f9e17565e08a7098d770",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/16-解释器字节码VM-JIT与去优化.md",
+      "bytes": 17209,
+      "sha256": "8e2303ed14a66f4c9aecb1184d389986c385b581169fd356960caf8a4dc318f6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/17-LLVM-IR-Pass与MLIR方言-Lowering.md",
+      "bytes": 16905,
+      "sha256": "ce13c1a643831bc7db558996024d0ca5e7d2e6feb92aeb599f086fb763b0c1bd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/18-AI编译栈图捕获融合Shape与张量Kernel.md",
+      "bytes": 20551,
+      "sha256": "e0b4655a6784324b9f3b38954038ef8e4ba50d91041d6fc50a69e8ba207a644e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/19-从表达式到机器码的贯通推演.md",
+      "bytes": 4321,
+      "sha256": "7e89efc742bb3c787ec7f3e31aa558adbc96d47df17988a59aaafc5854adcb0b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/70-编译原理/20-数据流优化正确性与编译知识全景.md",
+      "bytes": 4792,
+      "sha256": "e354d73ba90507dd41ae9c7b6b37933eccacf06a6ff7ee3164b87594cdd2639c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/01-Python/00-Python实验室.md",
+      "bytes": 2596,
+      "sha256": "1f94a4ba9ac151df06ee5e1ad63e704ee04bdf2ea24a80a3135cd510ddc25136",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/01-Python/01-语法与文件练习.md",
+      "bytes": 5127,
+      "sha256": "f28bda8fa14bd04bd8f55631c5831c0a4bee34cc17329f1256996f25279dd20b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/01-Python/02-环境与依赖实验.md",
+      "bytes": 11295,
+      "sha256": "2c1ff4774356c8efbed9a02ac1522eb1a09a96770c8f4497109a913abaf40535",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/01-Python/03-练习答案与解释.md",
+      "bytes": 4809,
+      "sha256": "3c7ee9335d7c3906e577d86fad505b5cbc53c47c47b8016aba62d7aa25d7c084",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/02-Linux/00-Linux实验室.md",
+      "bytes": 2636,
+      "sha256": "5e8ab71086ad15ad6b6f35732751de8c48f19299706adf56f02f50a494cdb9fb",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/02-Linux/01-安全命令行练习.md",
+      "bytes": 6762,
+      "sha256": "d7b09f27e9aa685b6a91c2bc646d0c2378aaa481bfa80193ec7a21b8ed51ac58",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/02-Linux/02-系统观察与故障定位.md",
+      "bytes": 3591,
+      "sha256": "2532769245a971d94bb66f452ec55c032d07457481e3564008e53b452f4a5915",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/02-Linux/03-Arch虚拟机安装检查单.md",
+      "bytes": 6414,
+      "sha256": "5898935698733c412c33bec235c7f2878c99b017da3671e39a4590efb0ea1590",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/00-C++实验室.md",
+      "bytes": 3856,
+      "sha256": "d296b9faf5103f7061304bf5be269f6ae95c4a6ed77c8d2d739470f25f444f97",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/01-构建与调试小项目/CMakeLists.txt",
+      "bytes": 966,
+      "sha256": "871d6638ad4070947d8bdd215d96b243148663b455cfa4093a33bf341adbc6b5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/01-构建与调试小项目/README.md",
+      "bytes": 6862,
+      "sha256": "ef248d3f8f19b460480f9ad2ce81f7602b811224f5f7e93e4e87b65fa911feee",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/01-构建与调试小项目/main.cpp",
+      "bytes": 462,
+      "sha256": "adb7f9feccf39df636ea11880d2c930fa5f1fd4f5f24d45af38423f965d7764f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/01-构建与调试小项目/tests.cpp",
+      "bytes": 348,
+      "sha256": "f3fd0f9ee1b3cdd53fc9ce1c7c4fec655bfb59db8b78edb7246d7c756945bfac",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/01-构建与调试小项目/word_counter.cpp",
+      "bytes": 527,
+      "sha256": "2ee657c422a02d193885a6be997371ab0b978401bd777774ec9b307a1df5f552",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/01-构建与调试小项目/word_counter.hpp",
+      "bytes": 161,
+      "sha256": "82d9da7d4b1b484d006514f4ec116a8ad121e567f7486aeabaf1a6b99cbc0680",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/02-RAII与张量缓冲区/CMakeLists.txt",
+      "bytes": 643,
+      "sha256": "bb3e404143396f5cae4c8b4e697bb5af84006146d735abb40f7fa00edca59f59",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/02-RAII与张量缓冲区/README.md",
+      "bytes": 6611,
+      "sha256": "efdfe211a78a9b146ef3bafbed8f008ab896e98d56389085b28b89daf257583e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/02-RAII与张量缓冲区/main.cpp",
+      "bytes": 268,
+      "sha256": "a0008a8d6858dff3bdd71450107c283de5e96beb0a0da7650088286d8420c6a9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/02-RAII与张量缓冲区/tensor_buffer.hpp",
+      "bytes": 1783,
+      "sha256": "e41cebdb7174ea7c558afeb87347851e64ffc34604c2b465444a0a20ad02c3de",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/02-RAII与张量缓冲区/tests.cpp",
+      "bytes": 657,
+      "sha256": "126f707bab305f14865ce7f19770fe216c0301c179147e5beae0374f6cbf9f0a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/CMakeLists.txt",
+      "bytes": 1418,
+      "sha256": "3698c713e42818f8dbad1dfc297bea1932b320e0372c832c68fece57ebcbcfda",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/README.md",
+      "bytes": 15660,
+      "sha256": "cd656ffc5f3d703f86fd0b47402572dfc85c9882743d668ebb02d88d9a11b029",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/llama_token_trace.cpp",
+      "bytes": 4297,
+      "sha256": "a76909659189d9f848da41282156fdc1859ddaa563f94e8d5cdd240ea1874852",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/trace_math.hpp",
+      "bytes": 2047,
+      "sha256": "76e763807397bcceb21b8cf113fbad0b9e577ff4c38a8409a11c773ec07eeeea",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/trace_math_tests.cpp",
+      "bytes": 1695,
+      "sha256": "2347f61d1bbdf43819e09049e186c04bad7a851638a3ac0762701fb42d3254dc",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/04-布局缓存与并行归约/CMakeLists.txt",
+      "bytes": 854,
+      "sha256": "9569b509a0d168284e0464e8bdd97ada9177d65920dda64e8cda1dabc4af57cc",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/04-布局缓存与并行归约/README.md",
+      "bytes": 10483,
+      "sha256": "e4b5d0ebcf9c18566f382938384bc91d03572b0c95afea633608b5509b0032d2",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/04-布局缓存与并行归约/layout_benchmark.cpp",
+      "bytes": 1904,
+      "sha256": "aa5879e32d6743c34cc26379a48dcbe3fedf2b210edd7176b1d45e29628750c9",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/04-布局缓存与并行归约/layout_math.hpp",
+      "bytes": 1672,
+      "sha256": "7a04955ce6b18b6bd120e27e2def9deeb5d1934e79c8aeba17a9a3d65a0f071d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/03-C++/04-布局缓存与并行归约/layout_tests.cpp",
+      "bytes": 1150,
+      "sha256": "d63b0c9c134a58b7d9272f6143c54c4e98e94c2b1451e15790e84eddc5b427f1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/00-CUDA实验室.md",
+      "bytes": 7173,
+      "sha256": "2a340549a15f5b87d8a8028d078273fd516a23c33270264a196e162fdc8af319",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/01-索引与Vector-Add实验.md",
+      "bytes": 4750,
+      "sha256": "bc0eab96ef2b81f4eea10f259a085f8f28af3a97ef3a541a012f0e9472b8c75d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/01_vector_add.cu",
+      "bytes": 2756,
+      "sha256": "557d3c333ac8be90516463454b0e892bc1cdd306352d36ee6402f5decaeeffda",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/02-Coalescing与Reduction.md",
+      "bytes": 6087,
+      "sha256": "4a2aae935eeed883503f6f80adc7ae03c6f74dc0a2f9bdd59e0fc4e184d30ef7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/02_reduction.cu",
+      "bytes": 3819,
+      "sha256": "a94af8c56773f122f26cf11c5fc3896e5f630e4b3b63ada14b1af5b4618939e6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/03-Softmax与矩阵乘法实验.md",
+      "bytes": 12281,
+      "sha256": "17a108fe794728f48345935d6bb24b39896cdaf9023092f34055ea890e1d4aef",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/03_stable_softmax.cu",
+      "bytes": 3491,
+      "sha256": "a8aef6e6e757519122fb60052977e79efcc8732a7c79a76024c0ecbc69c739de",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/03_tiled_gemm.cu",
+      "bytes": 4774,
+      "sha256": "89dccc04606316b3a19991eafbda80f495e0c666f9d1cdb75126f8b86891cec2",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/04-Profiling与Offload观察.md",
+      "bytes": 8020,
+      "sha256": "ff02d80856415eff45d3c56db8665b3efdd119d24c7d6baf3f6b8d9164916f03",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/04_profile_offload.cu",
+      "bytes": 3343,
+      "sha256": "23030b0e5a49f37ebb8d2d69e5863668c5501cb012df544fa511587a1f7b1782",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/04_torch_offload_probe.py",
+      "bytes": 1606,
+      "sha256": "43a143cba722eaf57d03016c33445c634c9d8d587fd590b18ab06a670d6ccaea",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/04-CUDA/CMakeLists.txt",
+      "bytes": 1142,
+      "sha256": "372e28a38c00b1840657e8a743fa0f289bc5760ce322c1dc2ca99496040262e7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/00-数据结构与算法实践-MOC.md",
+      "bytes": 4202,
+      "sha256": "e54ad9edbf4279a4ab679a34b3c3b0253b9daf05aca8be9993dd53da74cf2015",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/01-线性结构与摊还/README.md",
+      "bytes": 7052,
+      "sha256": "e735d1325722555a41ee4d9ee65db079083cf5c27fd6aec1a0d4cb43cbb9c605",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/01-线性结构与摊还/dynamic_array.py",
+      "bytes": 3155,
+      "sha256": "c695daf1d5591079129b87dc5141a039e293a883474143a9c8cb74777a096d44",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/01-线性结构与摊还/test_dynamic_array.py",
+      "bytes": 1350,
+      "sha256": "63e16e852da177419ec2007bb12068d83a513e3c36aa2e372eda68f28d00b59e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/02-哈希堆与树/README.md",
+      "bytes": 7987,
+      "sha256": "3359cb7d7023dc6f5dd8e7a8b7652db8170439b2d9847023ad7972c33208d916",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/02-哈希堆与树/structures.py",
+      "bytes": 3796,
+      "sha256": "8e5fa44c53c3ea783ecc829f656bba6ffbf48e6d2048e9935c541e099be81751",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/02-哈希堆与树/test_structures.py",
+      "bytes": 1698,
+      "sha256": "de0086192e71f9f07129a84d5a75262dedecf1d208e961e104707609de04c057",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/README.md",
+      "bytes": 7172,
+      "sha256": "888f91501048fa4efcddd4ce07a43ef52afd58933530f1565e2cb9c57d017d0c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/graph_algorithms.py",
+      "bytes": 2698,
+      "sha256": "d9f7c5febcd48177b5e3dd8dab0be52b2a7575c737afb0ff46639d1a08d53fbc",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/test_graph_algorithms.py",
+      "bytes": 1479,
+      "sha256": "1722d417d076769a2b34efb09cda102010f2346660446c4958ee851f1abbc3e3",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/04-排序二分与动态规划/README.md",
+      "bytes": 7723,
+      "sha256": "b19e09bc021af794b7d6583e0d6762eb9d0964a7b78793cc5a639865cfc0a9d0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/04-排序二分与动态规划/algorithms.py",
+      "bytes": 3416,
+      "sha256": "e2d2dabf24c4a70b2cc54d3956783396827ecc720ac4a63ea7519ffa3abe38c8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/04-排序二分与动态规划/test_algorithms.py",
+      "bytes": 1619,
+      "sha256": "1af1c807800278b61e37ae22865743a28fca8c77bdc92d21eff5ceb3293aa258",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/05-栈队列与单调结构/README.md",
+      "bytes": 5909,
+      "sha256": "db53e1d5cdf7e036e271ca52f564449ecb3b06400de283da4c5b276225b9ec7b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/05-栈队列与单调结构/stack_queue.py",
+      "bytes": 2229,
+      "sha256": "8f466c8458da7947a991857819ba23f9bcedbcfaffffa75d4d37639dce569950",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/05-栈队列与单调结构/test_stack_queue.py",
+      "bytes": 1242,
+      "sha256": "1a10439b3d17b3bf5d6799e924f4bc085d54c0d11276830e16c5afaf8cee9741",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/06-贪心选择与失败反例/README.md",
+      "bytes": 6050,
+      "sha256": "8da1139ff9a9cc52b4a8d8a01ccc675070f4fd16e3fc75a3afdb2f8558083c3a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/06-贪心选择与失败反例/greedy_activity.py",
+      "bytes": 2096,
+      "sha256": "79d429fb261d02d55715e0b69615bffa971381649bc2e7a08c0a73d4089f7280",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/06-贪心选择与失败反例/test_greedy_activity.py",
+      "bytes": 1506,
+      "sha256": "d669fbdb3e8e24ac8101ae7dc525c66d54a2001d89541fdc75197accebdb18bc",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/07-KMP与重叠匹配/README.md",
+      "bytes": 4866,
+      "sha256": "3cc500945ad6529aeb49fde9dcd26b7f9d51585a9fcf97e69c6ba738646fcd04",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/07-KMP与重叠匹配/kmp.py",
+      "bytes": 1461,
+      "sha256": "62bb9f3989e9c8bf91c9139ac754cb7f7d6fb8914029f7472fdad4ce58d53b1c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/07-KMP与重叠匹配/test_kmp.py",
+      "bytes": 1141,
+      "sha256": "06ed6d2086f1eb321d7360564f8957bab1fb4c7301511720c5d51ed16fd4c0d6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/08-回溯与安全剪枝/README.md",
+      "bytes": 5379,
+      "sha256": "e189041bc0b6757b5b8d3b6bb3afde93e729952f0479fb593b9f88ffa44e80e7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/08-回溯与安全剪枝/backtracking.py",
+      "bytes": 1853,
+      "sha256": "fcac28f9b47299c1d8a2dfea9e5a189493c89dfda399c3afaab16260af741ab6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/08-回溯与安全剪枝/test_backtracking.py",
+      "bytes": 1088,
+      "sha256": "da989ad677fc5ea160704e32ccc62bc631d4e8ef773191c08dab3418d39a486f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/09-图分解与数据流不动点/README.md",
+      "bytes": 12096,
+      "sha256": "41e0dee8f1e846d6ee73fc34e313b170d2ae0f833a7dd46a550fdd88efff26b0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/09-图分解与数据流不动点/graph_dataflow.py",
+      "bytes": 5189,
+      "sha256": "df7a88a56600adb42170296dd09e1b412c016a163d276a86f8a639f969eedf7a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/09-图分解与数据流不动点/test_graph_dataflow.py",
+      "bytes": 4450,
+      "sha256": "829a3b687492ab716cb24dc76a776f16a002c949a20b2d6847c2f9e4ad77603a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/10-区间结构与外存代价/README.md",
+      "bytes": 10731,
+      "sha256": "5a22881ae39295f301fe8e976670d828c6a50d23c8979294d1506fa920d65b88",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/10-区间结构与外存代价/interval_external.py",
+      "bytes": 5267,
+      "sha256": "b8cb06435604af93078111e2da316968c5b016a69eac2b51fa515854dd0dc8f6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/10-区间结构与外存代价/test_interval_external.py",
+      "bytes": 2779,
+      "sha256": "3bdcd2974b515e7635ee560df7d340d87ae1d2e0168fac1ddb987cd61a53b796",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/README.md",
+      "bytes": 28892,
+      "sha256": "c24b24cd7db2b34954b1e61d3a5e3f41783c7ab0c3f2a339e24d12ffb3cba957",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/retrieval_lab.py",
+      "bytes": 15227,
+      "sha256": "dbaf7c63485904f29b618a8b14a5d785fcbfa83f8c28b674328002244929310f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/test_retrieval_lab.py",
+      "bytes": 6658,
+      "sha256": "8df5b8c9a88752487e2a24c362374657ee9117153228761682c9127a5f91dd66",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/00-计算机系统实践-MOC.md",
+      "bytes": 6631,
+      "sha256": "0038b009599da8f7a8ec392310b00c44bd2c9f9d549b69d3e0866cd8cf337246",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/01-数据表示与对齐/CMakeLists.txt",
+      "bytes": 553,
+      "sha256": "a25594ced90908ce879d7645ac370c3f55107ba767276b14c9379a3bb4d1af6b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/01-数据表示与对齐/README.md",
+      "bytes": 7288,
+      "sha256": "c664c1fff3d2831abd1ac2130027bb173a433dc0e98e80afc32fe986ac9ba05b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/01-数据表示与对齐/data_representation.cpp",
+      "bytes": 3088,
+      "sha256": "4c505d6d6b2af78190e75da1bdce051dcc3e62e2669ad88ff6d2c3fdb8253e3a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/02-虚拟内存mmap与页错误/README.md",
+      "bytes": 6792,
+      "sha256": "8ac4c6d64081ec86da563a168f676998cf5491b70942c6cefa6018288ac9f812",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/02-虚拟内存mmap与页错误/mmap_observer.py",
+      "bytes": 2417,
+      "sha256": "9326a440d86027c455193c442aee625beca2a9ff60ff3786a7cc5499b5a96d2a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/02-虚拟内存mmap与页错误/test_mmap_observer.py",
+      "bytes": 990,
+      "sha256": "42fc9afe0dff6ca4c98e77b75a3d8b8b974a1aae5e399b918f27128bce7a3358",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/03-缓存局部性benchmark/CMakeLists.txt",
+      "bytes": 508,
+      "sha256": "98b9f414e402429e4e382b9c90ae438107a63b678e51554aebfcb98bfbe81a22",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/03-缓存局部性benchmark/README.md",
+      "bytes": 9276,
+      "sha256": "9e4e46b161b417ca204a608427b864cb589ab90abbe46b2e2d99b9a223fd9d03",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/03-缓存局部性benchmark/cache_locality.cpp",
+      "bytes": 4584,
+      "sha256": "b4b5a1395ffead30e3152faa992be738829a05206a1d8f3de8ccf19776083029",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/04-文件描述符pipe-dup与进程/CMakeLists.txt",
+      "bytes": 611,
+      "sha256": "74ee594fcd8f144bbad02f7144f419ee8f885e48aca47fe0737879bfa65ecd1a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/04-文件描述符pipe-dup与进程/README.md",
+      "bytes": 9684,
+      "sha256": "27b119df1221c3d09cbba861198a5f47fc087e9711c697949b52a32da453ff04",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/04-文件描述符pipe-dup与进程/fd_pipe_demo.cpp",
+      "bytes": 4138,
+      "sha256": "aa05826069b3866d898af77651551b0470dff018b22776f36f7f0054588bd66c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/05-文件系统原子替换与fsync/README.md",
+      "bytes": 10562,
+      "sha256": "1bc1ac463af08dd3d07185493065d2588971ad37939cf768ab017e60a858de78",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/05-文件系统原子替换与fsync/atomic_replace.py",
+      "bytes": 3125,
+      "sha256": "e908eb62c6f1447aaaefe0a64548c5b78d84a4b2b59350bd7a26ad8fe36e8e68",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/05-文件系统原子替换与fsync/test_atomic_replace.py",
+      "bytes": 3056,
+      "sha256": "8374cd7f4e734459846e4c6892cea6d5f3944d2ad4ede266d4b66186a67c1b43",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/06-地址翻译分配器与拓扑观察/CMakeLists.txt",
+      "bytes": 1005,
+      "sha256": "f3187c19f538dcad3a254d1bb270d48631b57f8ee6341602c05013f155d6b649",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/06-地址翻译分配器与拓扑观察/README.md",
+      "bytes": 22690,
+      "sha256": "6ef08ff7244b547a7983827182162b154eb65f53fb26275921772ab5d071eaa8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/06-地址翻译分配器与拓扑观察/arena_accounting.cpp",
+      "bytes": 5247,
+      "sha256": "675e2f2d3344542ed02cf32448d520248530f1a1a2ae6f1895af259b7b0797a7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/06-地址翻译分配器与拓扑观察/system_observer.py",
+      "bytes": 6721,
+      "sha256": "cfb2f943e041dc491269144805943fce7b0f0285143f1189e813c074fde152cd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/06-地址翻译分配器与拓扑观察/test_system_observer.py",
+      "bytes": 2727,
+      "sha256": "3d92b2ad0bcccf55d19e5f24ca364c7c3aa470355304b1c93ecdefd8d87c6288",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/07-资源视图与时间预算/README.md",
+      "bytes": 23939,
+      "sha256": "b45fb71a3c5654a0940e4467d042c2050e6efdc7a290bc0a0570241c3b2594c7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/07-资源视图与时间预算/resource_time_probe.py",
+      "bytes": 11886,
+      "sha256": "ffb8abe95a07917b4a7e692db60fa4cbe8818a8b2413df77f5c53b6bf5455f54",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/06-计算机系统/07-资源视图与时间预算/test_resource_time_probe.py",
+      "bytes": 5837,
+      "sha256": "9179ad725223083c2786f9d70a2f032990a7462c34c086ac367aea10261c2fcd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/00-媒体编码与FFmpeg实践-MOC.md",
+      "bytes": 6605,
+      "sha256": "e30c0746b095f16b2b9a10c97fc70ff733213bc6e30567996a911db9588a5161",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/01-生成合成音视频并用ffprobe诊断.md",
+      "bytes": 5338,
+      "sha256": "3e14a4b0d27c00fd06a3385932b714484b9232ae7e2381e1c3bd33e95905c0c3",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/01_generate_probe.sh",
+      "bytes": 1796,
+      "sha256": "315b24c78317e006bd570a59327ea3d814cfc0c50c7c3d4a5cb99d4eebb6dafd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/02-转封装转码裁剪与客观对比.md",
+      "bytes": 6243,
+      "sha256": "9284e32cf9407f9ded3e9af81c40d5dd6c0f6ecbce466d780b6d21605e3ba83e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/02_transcode_compare.sh",
+      "bytes": 2863,
+      "sha256": "ee55c01c05d068a0079ab574e66972188d0ef8b0617c5c32a3e2c042292a6b35",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/03-Filtergraph时间戳与音画同步.md",
+      "bytes": 6531,
+      "sha256": "3aa3c1d3b22ae200c8e9c7763f9ea1f85e6a3542e5e7498b5e0e2e7350f63b86",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/03_filtergraph_sync.sh",
+      "bytes": 2782,
+      "sha256": "dde4e3bbe3f3d06128bad6db701e594c7895aabbbbbb2aaaaa2a73ec15a34add",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/04-批处理Manifest与不可信输入边界.md",
+      "bytes": 12088,
+      "sha256": "b20d1d9f5c772f71fb85f0f5017593ccac773ae8b7b08ce08d919f63822acf3c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/04_batch_manifest.sh",
+      "bytes": 5599,
+      "sha256": "ad6eea6011c233e225303e41abfb425e7b4e2d5a3cba3b58e3064543a663c76b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/07-媒体编码与FFmpeg/04_unsafe_manifest.tsv",
+      "bytes": 59,
+      "sha256": "e465ebd2c84baa146b880912e76184075408a1ff4dc788611f6b9d032c243090",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/00-编译原理实践-MOC.md",
+      "bytes": 10430,
+      "sha256": "5d91cf9cf428ed043706c0989c95b018e6ee9aa7790e74470e83e8fda974cedd",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/01-MiniLang词法解析与诊断/README.md",
+      "bytes": 13932,
+      "sha256": "274ec9b49393cb8cfaf641d38bd4abb6bff7d2a1cb026a041725329e8e78258b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/01-MiniLang词法解析与诊断/minilang_frontend.py",
+      "bytes": 9419,
+      "sha256": "289263a9c07c399a94ab3eda326b00219750091a2d7b536c9edb10e638f1f53a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/01-MiniLang词法解析与诊断/test_minilang_frontend.py",
+      "bytes": 1580,
+      "sha256": "b1619700f88bdbbfb8882b95bab53baec046bcce3c867cdd820091b064bf9c45",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/02-名称解析类型检查与错误定位/README.md",
+      "bytes": 12919,
+      "sha256": "652524fa2edb47a8e012af400fd10b740ce07414d5239dcc4c2eba513da663b8",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/02-名称解析类型检查与错误定位/minilang_semantics.py",
+      "bytes": 7696,
+      "sha256": "bb27e58bce402360ffc15764a22e05e045ff84e853c7ef74bd296c9eb5b63e54",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/02-名称解析类型检查与错误定位/test_minilang_semantics.py",
+      "bytes": 2379,
+      "sha256": "45c3b7d4f43d02d26bbec70e6c089e42ac2113e3d2016422c95a0a735e84444c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/03-三地址码CFG与SSA/README.md",
+      "bytes": 16487,
+      "sha256": "2caa8a3cb87cde26cacfbe214893bf2fad92d841b86e3d8a1885f76b0970b201",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/03-三地址码CFG与SSA/minilang_ir.py",
+      "bytes": 9759,
+      "sha256": "a2666799cd974b2f3de3f6719ead53e02e858b68350a80e3534ab6b1dc61612e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/03-三地址码CFG与SSA/test_minilang_ir.py",
+      "bytes": 3460,
+      "sha256": "ca15ac286dd18e031dfb821d15559728f7edec1be8649b000951e7bdc76cb735",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/04-数据流优化与差分验证/README.md",
+      "bytes": 18869,
+      "sha256": "3d95eea88489a76f4581c9cf8bacc89b3f7287f5d70e51ae18aae6ebf26f72ce",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/04-数据流优化与差分验证/dataflow_opt.py",
+      "bytes": 12575,
+      "sha256": "d735771b2e8b52ad9253e3cd9dd919fc62fe4dba4f6e9619079bc5fbeba9424e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/04-数据流优化与差分验证/test_dataflow_opt.py",
+      "bytes": 2414,
+      "sha256": "aad3ee5dae94e4dadc66bf734aa667c6299db9f2adc3046c39da06c8554c73d2",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/05-字节码VM内联缓存与JIT观察/README.md",
+      "bytes": 13925,
+      "sha256": "b0648754941df185877337decd39edf854859988bd1c19c1989a40bf2dc681c7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/05-字节码VM内联缓存与JIT观察/bytecode_vm.py",
+      "bytes": 7482,
+      "sha256": "b14aa41dc15282c0e298aabd08d53aea0132e04afb7c5f6fa81a45f45e7f7419",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/05-字节码VM内联缓存与JIT观察/test_bytecode_vm.py",
+      "bytes": 2896,
+      "sha256": "09135b71b6bc1b4c2caa6b558931e825dbc647418204784416321540874c45da",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/06-指令选择寄存器分配与重定位/README.md",
+      "bytes": 19073,
+      "sha256": "bda43121528c9969e8d26e056f0ed405b897200c3e2058090af46d699c455309",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/06-指令选择寄存器分配与重定位/test_toy_codegen.py",
+      "bytes": 2972,
+      "sha256": "0e789b1c591bbc8a9dbf99198900a4ae6d889dd91c2a3f07e98e80776ad07815",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/06-指令选择寄存器分配与重定位/toy_codegen.py",
+      "bytes": 12225,
+      "sha256": "e05095cb484b9c7010a87aab0c02d299d684700407bd49aa2bd21ea72f213d79",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/07-LLVM与MLIR工具链探针/README.md",
+      "bytes": 10165,
+      "sha256": "576e1f3fac123ee66fca0523ef9cb997a73a67fa7a454d071b3eb7adb8ad88a6",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/07-LLVM与MLIR工具链探针/probe_toolchain.sh",
+      "bytes": 4582,
+      "sha256": "338d631bcd4f1db1861e35175f25acc175d59e7b3a2ad44257214460060400a7",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/07-LLVM与MLIR工具链探针/sample.ll",
+      "bytes": 409,
+      "sha256": "fb48035e6b97db4306ec4544611d2de59205b0728d6c24d51c03e6ed2206b42d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/07-LLVM与MLIR工具链探针/sample.mlir",
+      "bytes": 192,
+      "sha256": "ce856e328cbaa7a62c8236ee3a55cf816d6f106fa9e373642857aec6115d43de",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/08-AI计算图Lowering融合与Shape特化/README.md",
+      "bytes": 18659,
+      "sha256": "32fbd118d81cde91af5257c805cdffb8ba8016f999bbf680ec4eb877ca5743e3",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/08-AI计算图Lowering融合与Shape特化/tensor_lowering.py",
+      "bytes": 10776,
+      "sha256": "fe7846f27ce901e0deca153c3c2d1203e8c46888b17e55b7dde76e6774c67e99",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/08-AI计算图Lowering融合与Shape特化/test_tensor_lowering.py",
+      "bytes": 3442,
+      "sha256": "656c57914d03819b194932820bdf3930b2d8203479268794190ff6967912206c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/README.md",
+      "bytes": 6698,
+      "sha256": "7c80b65e5230df0e2f748b7136910cc737e91cce08df25c57d7a6f99382fffd4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/minilang.py",
+      "bytes": 26490,
+      "sha256": "565e5c0a15fd13fb1140434462d1f8e9d350b59048a4595c21c760b5ea1f2751",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/test_minilang.py",
+      "bytes": 3533,
+      "sha256": "ad767edc12ba59c8cfe80caae215110017b4ae8a9cb6a22ee99d822afc14efc1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/源码与测试镜像.md",
+      "bytes": 31173,
+      "sha256": "ce305479e78531576c20baffac515d18229104eae219415e3797d034a0f43825",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/85-综合贯通/01-一次订单请求贯通十三学科.md",
+      "bytes": 7233,
+      "sha256": "4f65e00757b7d0c54bee72e32af76f1d1b93c4cffdfec03336e377cab77300b4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/00-计算机知识资源-MOC.md",
+      "bytes": 7854,
+      "sha256": "1d0064a5217706a527a40e23be9c8ec5a5d3962ad0bf389bf2dcbe5df7437836",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/01-Python语法与项目速查.md",
+      "bytes": 6954,
+      "sha256": "554f3e5b530918f95c4a7727dfc60c5ce2e10ec7e4c46cc47c75112213ae32bb",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/02-Linux目录与命令速查.md",
+      "bytes": 9611,
+      "sha256": "277205378f8574d04aa6bd751614a2abf831f91329a1cb99477f204e1d2b1060",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/03-Python环境与包管理选择矩阵.md",
+      "bytes": 12751,
+      "sha256": "318a8dc60065b0e1ca26393117c7ec3d0442f74a9a3fb6bf96cb08373a1beb19",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/04-计算机系统与Linux术语表.md",
+      "bytes": 22359,
+      "sha256": "1e83fb465aff2868d30c45d80d38996c9c6de1985f8e1686628831714f22c369",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/05-数据结构与算法速查.md",
+      "bytes": 6213,
+      "sha256": "1981855eedc81f977c428e3ce57ac628ec71cd55b7eb77ebcaf11c2bd3ff5121",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/06-计算机系统速查.md",
+      "bytes": 4755,
+      "sha256": "e30f950d424af4e2b4a0c5814c01ef1b407cb57d697d2026d59e26d32bf11733",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/07-媒体编码与FFmpeg速查.md",
+      "bytes": 5172,
+      "sha256": "aa6861ab3b2bfbcbf890d14608d3b34820bee8fe0bb74c3e29da5c6b95834caf",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/08-编码格式容器与Codec选择矩阵.md",
+      "bytes": 4986,
+      "sha256": "e8f408544f25e7cc08503fb138db884dc70e148df106268e02df241d66465e37",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/09-编译原理速查.md",
+      "bytes": 13541,
+      "sha256": "3dab10336ef41cff8d38dcc7766c2a227f76ca092ae2b60a4b3a711162877524",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/10-本轮权威资料与版本边界.md",
+      "bytes": 5584,
+      "sha256": "4e94a960f99b5b924e3bc30e0c31747800fd7cc50519b1db51eb43c2e263db06",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/90-资源/11-跨学科概念辨析.md",
+      "bytes": 5969,
+      "sha256": "1be59110fd1a20ce246738ad07746c75be2e78a5af7d6f65afa7887b40b9e7fc",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/README.md",
+      "bytes": 399,
+      "sha256": "91a856b8b0b60fd1d8c81780ce5f63b58ef89addebf9c5320a6546be0a18574d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/async.dot",
+      "bytes": 814,
+      "sha256": "719044d46e212626814fc136f4ac98b34b6efc0c77448a1b43196e21155ef650",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/async.svg",
+      "bytes": 8401,
+      "sha256": "0076d7f43152510ede33f77db182b801b26ac01e4f8221498057171e08b94c4e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/compiler.dot",
+      "bytes": 705,
+      "sha256": "82972289dedd683217cb84c476e2b11e38ebb01d174e3f9c5eb6b07cb34dcb9d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/compiler.svg",
+      "bytes": 6962,
+      "sha256": "dc783793b7be9276058ed1b570738e5fc01d6536dc63b057329472018d1ac181",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/cpu.dot",
+      "bytes": 659,
+      "sha256": "0f9c13bf83f9631a5ffc1a11fd1526b9a20c9d93c533063535472941fd62c03f",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/cpu.svg",
+      "bytes": 5170,
+      "sha256": "f16245fb9e4614b1cec6b6c6c131606b895544b58b894fd74f8a599f21f21610",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/curriculum.dot",
+      "bytes": 886,
+      "sha256": "2e48e687d63d60724eca701072a5ac8649bc7653424a9f8ab5d683bdaf2243c1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/curriculum.svg",
+      "bytes": 8461,
+      "sha256": "a3e5df17886c04f3e37a720a2e68afde9cff0622991edb0789210ed9a7d69daf",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/flow.dot",
+      "bytes": 876,
+      "sha256": "60d469b6f77d64ee45e89e4b14b958cb9de05387bbc4377466ba92ec8b65a867",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/flow.svg",
+      "bytes": 7504,
+      "sha256": "90a03f46f4c60f5f6decafa6d52615aeb5181a144325e05e124a2741cb92fcab",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/framing.dot",
+      "bytes": 925,
+      "sha256": "bfa3b03840eb900f56e2c14dab973097a5b268e45578acbde54eddf8db4f6a63",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/framing.svg",
+      "bytes": 8562,
+      "sha256": "4cdf7a71e3fa0e58fe868bbc41099ab96158de5baf27cac2f3058dbf1d5a4260",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/indexes.dot",
+      "bytes": 699,
+      "sha256": "c6ac489cc01281897204aa120668e30e8b60df3a5fe9cdc056042bf043a6cb3d",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/indexes.svg",
+      "bytes": 4932,
+      "sha256": "0dac921d74089f69f0b5ad7772eb1dfd72271b9848e5eeddcd8c8d45f2466ec4",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/memory.dot",
+      "bytes": 841,
+      "sha256": "e6d64691b129a3723681271acaa79fe6db3f346386ffb6b1b380acf1479ae389",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/memory.svg",
+      "bytes": 8096,
+      "sha256": "aa6cda3cf985a963eb67d6ba53493af650663199579f889b62567a7cd0fb027b",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/network.dot",
+      "bytes": 738,
+      "sha256": "af6c508d54fb7aadda2c7f5608dbd8a33a722857852b23cdf43b595e0c97eba1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/network.svg",
+      "bytes": 5537,
+      "sha256": "a7160746fce1bc5e53f258abe467ed49788d4062a4104a031cd59cd32824ac5c",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/ownership.dot",
+      "bytes": 672,
+      "sha256": "813dc2b82a3bf1b794fba77a609fe138792b6bb596bad07e1dbbaf540cb63876",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/ownership.svg",
+      "bytes": 4129,
+      "sha256": "adecf40a178501f96f38c12a26f91477702a1367f06aed99dd967d551f7065cb",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/segment.dot",
+      "bytes": 651,
+      "sha256": "04b90575eab4508541ef53e905ff90a9244625a8a73bebafb07d3eb59e4312f1",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/segment.svg",
+      "bytes": 6707,
+      "sha256": "8d2c4a443446c05becb96c8305ca6ee40fe6ee38eae8e89acc3d0b279f19aa81",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/synchronization.dot",
+      "bytes": 668,
+      "sha256": "1d4c217c244383d25f618048d79151a811bb7f2df44e38671981f075322d312a",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/synchronization.svg",
+      "bytes": 5623,
+      "sha256": "a87568a71771868f565bffaa66ae2a817791493c60a55f5e1b5f3726db51d64e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/transactions.dot",
+      "bytes": 752,
+      "sha256": "654ec503f3116a17ea8175b134d3d81e48cf6134e119fe622c2e49447f671b2e",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/transactions.svg",
+      "bytes": 5422,
+      "sha256": "92d5b2a76736cd43ae2ec01155ee442106e310a5fa1491d1723322afc0b96be5",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/wal.dot",
+      "bytes": 732,
+      "sha256": "13b589567be2af51a069600ba8de6b1802e10aa9f2c86ea8dacb49a6394250b0",
+      "origin": "input-preserved-path"
+    },
+    {
+      "path": "计算机知识/_assets/diagrams/wal.svg",
+      "bytes": 6118,
+      "sha256": "6b4f557a62c7b07346065bb288a000cbb329a4acea85af056a8c4727df472c85",
+      "origin": "input-preserved-path"
+    }
+  ]
+}

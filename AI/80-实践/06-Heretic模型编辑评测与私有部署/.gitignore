@@ -1,0 +1,43 @@
+# 原始、工作与修改权重：永不进入 Git
+/models/original/
+/models/work/
+/models/edited/
+/quarantine/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+
+# 模型、框架与构建缓存
+/.cache/
+/cache/
+/hf-cache/
+/torch-cache/
+
+# 原始 split、逐条输出与运行目录默认全部拒绝进入 Git。只有经过
+# 人工审阅、不含 prompt/response 的清单与聚合报告才能显式放行。
+/data/**
+!/data/
+!/data/manifests/
+!/data/manifests/**
+/evaluations/**
+!/evaluations/
+!/evaluations/reports/
+!/evaluations/reports/**
+/runs/**
+!/runs/
+!/runs/manifests/
+!/runs/manifests/**
+
+# 凭据与本地环境
+.env
+.env.*
+*.key
+*.pem
+
+# Python 本地运行产物
+__pycache__/
+*.py[cod]
+
+# 保留：manifest、许可证台账、配置、测试与脱敏聚合报告

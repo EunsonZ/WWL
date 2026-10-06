@@ -1,0 +1,85 @@
+{
+  "restaurants": 410,
+  "states": {
+    "PA": {
+      "restaurants": 79,
+      "fte_pre_n": 77,
+      "fte_pre_mean": 23.33116883116883,
+      "fte_post_n": 77,
+      "fte_post_mean": 21.165584415584416,
+      "fte_change_of_means": -2.1655844155844157,
+      "balanced_n": 75,
+      "balanced_change_mean": -2.283333333333333,
+      "wage_pre_n": 76,
+      "wage_pre_mean": 4.630131578947368,
+      "wage_post_n": 71,
+      "wage_post_mean": 4.617464788732394
+    },
+    "NJ": {
+      "restaurants": 331,
+      "fte_pre_n": 321,
+      "fte_pre_mean": 20.439408099688475,
+      "fte_post_n": 319,
+      "fte_post_mean": 21.02742946708464,
+      "fte_change_of_means": 0.5880213673961663,
+      "balanced_n": 309,
+      "balanced_change_mean": 0.4666666666666666,
+      "wage_pre_n": 314,
+      "wage_pre_mean": 4.612133757961783,
+      "wage_post_n": 318,
+      "wage_post_mean": 5.080849056603774
+    }
+  },
+  "status2": {
+    "0": 1,
+    "1": 399,
+    "2": 2,
+    "3": 6,
+    "4": 1,
+    "5": 1
+  },
+  "did": {
+    "all_available_change_of_means": 2.753605782980582,
+    "balanced_change_mean": 2.75,
+    "balanced_naive_se": 1.3423409769082761,
+    "balanced_t": 2.0486598020227995,
+    "balanced_95ci_normal": [
+      0.11901168525977868,
+      5.380988314740222
+    ]
+  },
+  "sample_variants": {
+    "balanced": {
+      "n": 384,
+      "nj_n": 309,
+      "pa_n": 75,
+      "estimate": 2.75
+    },
+    "answered_status1": {
+      "n": 378,
+      "nj_n": 304,
+      "pa_n": 74,
+      "estimate": 2.721919452347084
+    },
+    "table4_valid_employment_and_wages": {
+      "n": 357,
+      "nj_n": 290,
+      "pa_n": 67,
+      "estimate": 2.3258311888831704
+    },
+    "temporary_closures_as_zero": {
+      "n": 388,
+      "nj_n": 313,
+      "pa_n": 75,
+      "estimate": 2.5092119275825344
+    },
+    "table4_unadjusted_regression": {
+      "n": 357,
+      "nj_n": 290,
+      "pa_n": 67,
+      "coefficient": 2.3258311888831704,
+      "classical_homoskedastic_se": 1.191596277699933,
+      "hc1_heteroskedastic_robust_se": 1.452284500848705
+    }
+  }
+}

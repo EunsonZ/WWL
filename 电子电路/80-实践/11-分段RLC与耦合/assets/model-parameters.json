@@ -1,0 +1,42 @@
+{
+  "kind": "model_prediction_not_measurement",
+  "RLC": {
+    "L_H": 0.01,
+    "C_F": 1e-06,
+    "series_R_ohm": [
+      50,
+      200,
+      400
+    ],
+    "parallel_R_ohm": [
+      200,
+      50,
+      25
+    ],
+    "v0_V": 1,
+    "i0_A": 0
+  },
+  "piecewise": [
+    {
+      "source_V": 1.0,
+      "source_R_ohm": 1000.0,
+      "C_F": 1e-06
+    },
+    {
+      "source_V": 2.0,
+      "source_R_ohm": 2000.0,
+      "C_F": 1e-06,
+      "load_R_ohm": 4000.0
+    }
+  ],
+  "mutual": {
+    "L1_H": 0.01,
+    "L2_H": 0.04,
+    "valid_k": [
+      0,
+      0.8,
+      1
+    ],
+    "invalid_illustration_k": 1.25
+  }
+}

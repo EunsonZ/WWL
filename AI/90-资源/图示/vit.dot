@@ -1,0 +1,16 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="ViT：patch 投影后，使用注意力混合位置", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+a [label="图像 224×224×3"];
+b [label="16×16 patch\n14×14=196 块"];
+c [label="每块展平 768 维\n线性投影到 D"];
+d [label="位置表示\n可选 CLS token"];
+e [label="Transformer\n全局 token 混合"];
+f [label="分类 / 检索 / 视觉特征"];
+a -> b;
+b -> c;
+c -> d;
+d -> e;
+e -> f;
+}

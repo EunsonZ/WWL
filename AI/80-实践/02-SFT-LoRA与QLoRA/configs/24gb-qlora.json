@@ -1,0 +1,13 @@
+{
+  "schema_version": "peft-run-v1",
+  "run_enabled": false,
+  "hardware_profile": {"vram_gb": 24, "scope": "conservative QLoRA candidate; longer context still needs measured headroom"},
+  "base_model": {"repository": "REPLACE_WITH_APPROVED_BASE", "revision": "REPLACE_WITH_IMMUTABLE_REVISION", "license_review": {"status": "not_reviewed", "record": "REPLACE_WITH_MODEL_LICENSE_RECORD"}},
+  "data_contract": "configs/data-contract.json",
+  "method": "qlora",
+  "quantization": {"load_in_4bit": true, "quantization_type": "select_after_version_review", "compute_dtype": "bf16_or_fp16_after_gpu_review", "double_quant": "select_after_version_review"},
+  "lora": {"rank": 32, "alpha": 64, "dropout": 0.05, "target_modules": ["REPLACE_AFTER_ARCHITECTURE_AUDIT"], "bias": "none"},
+  "training": {"max_seq_length": 2048, "micro_batch_size": 1, "gradient_accumulation_steps": 16, "gradient_checkpointing": "candidate_after_smoke_test", "optimizer": "paged_or_standard_after_version_review", "learning_rate": "choose_after_small_overfit"},
+  "checkpoint": {"save_every_steps": 100, "resume_requires": ["base revision", "tokenizer/template", "data order", "optimizer/scheduler state", "rng state"], "output_root": "artifacts/RUN_ID"},
+  "evaluation": {"baseline_first": true, "frozen_test_required": true, "decode_settings": "fixed and recorded"}
+}

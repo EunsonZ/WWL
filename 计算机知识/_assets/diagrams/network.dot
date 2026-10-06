@@ -1,0 +1,10 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=LR;
+a [label="应用\n消息 / HTTP"]; b [label="传输\nTCP 字节流 / UDP 数据报"]; c [label="网络\nIP 目的地址与路由"];
+d [label="本跳链路\n帧与链路地址"]; e [label="下一跳\n重新封装本跳帧"]; f [label="接收应用\n解析与业务处理"];
+a->b [label="序列化"]; b->c [label="承载"]; c->d [label="封装"]; d->e [label="信号交付"]; e->f [label="后续逐层处理"];
+
+}

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">三角剖分时内部边方向相反</title>
+  <desc id="desc">一个圆盘状六边形分成六个三角形，中央共享边旁画有方向相反的箭头，右侧列出面积、边和顶点的三层求和。</desc>
+  <defs>
+    <marker id="blue-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2459a6"/>
+    </marker>
+    <marker id="orange-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#d97706"/>
+    </marker>
+  </defs>
+  <rect width="760" height="360" rx="16" fill="#fbfcfe"/>
+  <text x="235" y="31" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#1f2937">局部圆盘公式逐面相加</text>
+  <polygon points="89,94 233,64 361,129 347,273 211,318 75,247" fill="#e7f1ff" stroke="#365f8d" stroke-width="3"/>
+  <circle cx="218" cy="188" r="5" fill="#111827"/>
+  <g stroke="#6688ad" stroke-width="2">
+    <line x1="218" y1="188" x2="89" y2="94"/>
+    <line x1="218" y1="188" x2="233" y2="64"/>
+    <line x1="218" y1="188" x2="361" y2="129"/>
+    <line x1="218" y1="188" x2="347" y2="273"/>
+    <line x1="218" y1="188" x2="211" y2="318"/>
+    <line x1="218" y1="188" x2="75" y2="247"/>
+  </g>
+  <path d="M224,183 L330,139" stroke="#2459a6" stroke-width="5" marker-end="url(#blue-arrow)"/>
+  <path d="M326,148 L232,187" stroke="#d97706" stroke-width="5" marker-end="url(#orange-arrow)"/>
+  <text x="282" y="113" font-family="sans-serif" font-size="15" fill="#334155">同一内部边</text>
+  <text x="218" y="292" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#475569">共享边反向，因此 k_g 积分相消</text>
+  <line x1="420" y1="53" x2="420" y2="318" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="580" y="47" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#1f2937">三层求和</text>
+  <rect x="454" y="72" width="250" height="61" rx="10" fill="#e8f6ee" stroke="#62a47e"/>
+  <text x="579" y="97" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1f5132">面积：每点只属于一个面内部</text>
+  <text x="579" y="119" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1f5132">Σ∫ K dA = ∫_M K dA</text>
+  <rect x="454" y="150" width="250" height="61" rx="10" fill="#e7f1ff" stroke="#6688ad"/>
+  <text x="579" y="175" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#24496e">边：内部相消，只留真实边界</text>
+  <text x="579" y="197" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#24496e">方向反转 ⇒ k_g 反号</text>
+  <rect x="454" y="228" width="250" height="70" rx="10" fill="#fff2df" stroke="#d39a43"/>
+  <text x="579" y="253" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#7a4a09">角：内部顶点填满 2π</text>
+  <text x="579" y="276" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#7a4a09">剩余计数 = 2π(V−E+F)</text>
+</svg>

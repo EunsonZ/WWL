@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="290" viewBox="0 0 1000 290" role="img" aria-label="N=3：头部不变量与体中间状态">
+<rect width="100%" height="100%" fill="#f6f8fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#325b8e"/></marker></defs>
+<text x="30" y="40" font-family="Hiragino Sans GB" font-size="24" fill="#18314d">N=3：头部不变量与体中间状态</text>
+<text x="30" y="95" font-family="Hiragino Sans GB" font-size="18">第1体</text>
+<rect x="150.0" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="278.33333333333337" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">头 (s,x)=(0,3)</text>
+<path d="M409.6666666666667,91 H428.6666666666667" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="431.6666666666667" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="560.0" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">加 s 后 (1,3)</text>
+<path d="M691.3333333333334,91 H710.3333333333334" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="713.3333333333334" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="841.6666666666667" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">减 x 后 (1,2)</text>
+<text x="30" y="170" font-family="Hiragino Sans GB" font-size="18">循环头</text>
+<rect x="150.0" y="140" width="186.25" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="243.125" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">(0,3)  V=3</text>
+<path d="M339.25,166 H358.25" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="361.25" y="140" width="186.25" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="454.375" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">(1,2)  V=2</text>
+<path d="M550.5,166 H569.5" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="572.5" y="140" width="186.25" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="665.625" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">(2,1)  V=1</text>
+<path d="M761.75,166 H780.75" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="783.75" y="140" width="186.25" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="876.875" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">(3,0)  退出</text>
+<text x="30" y="268" font-family="Hiragino Sans GB" font-size="17" fill="#435a70">I: s+x=3 且 x≥0；只要求每个循环头成立，中间 (1,3) 不满足 I。</text></svg>

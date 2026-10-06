@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="槽式页：位置间接层减少记录移动的影响",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"h" [label="页头\n空闲区边界、页元数据"];
+"s" [label="槽目录\nslot 0 → offset a\nslot 1 → offset b"];
+"free" [label="空闲空间\n目录与记录区相向增长"];
+"r" [label="变长记录区\n记录 B | 记录 A"];
+"h" -> "s";
+"s" -> "r" [label="槽保存记录偏移"];
+"s" -> "free" [label="目录增长"];
+"r" -> "free" [label="记录增长"];
+
+}

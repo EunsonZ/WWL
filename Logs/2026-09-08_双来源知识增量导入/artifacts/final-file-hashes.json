@@ -1,0 +1,2288 @@
+{
+  "schema": "wwl-final-owned-hashes-v1",
+  "scope": "Every owned final path except this hash-list file itself; external recovery-final.json also hashes this file. Non-batch additions are excluded.",
+  "files": [
+    {
+      "path": "AI/20-LLM/10-原理/06-幻觉不确定性与模型边界.md",
+      "before": "a75934f2c9e9c3fe6a5a9c1a075cbd020f58faae613a783dff32926a4ef445cb",
+      "sha256": "80e6652afcb197aec90518f0ee2769bb5c30c2b99b2584c2a1cfd03d10480b75",
+      "size": 6808,
+      "action": "modify"
+    },
+    {
+      "path": "AI/20-LLM/10-原理/09-Scaling推导数据配比与计算预算.md",
+      "before": "1ecb8cb40ad33c79c09907bb8acf3b000eb503527bd24aaffd120da2717406f6",
+      "sha256": "1faa20f223808ad8ffedca53b4a03fc131a71ce577973aae1fb650e12aa21908",
+      "size": 5888,
+      "action": "modify"
+    },
+    {
+      "path": "AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA.md",
+      "before": "761e07b82d97abdc09d9950695fdc43c255918abea22dcd69df42dfe70bb7b7a",
+      "sha256": "9023fc8602e885b45dd11387939328b6b2817b6cfcc2638a2980fff364f2fbab",
+      "size": 15294,
+      "action": "modify"
+    },
+    {
+      "path": "AI/20-LLM/20-架构/13-MoE路由梯度负载均衡与通信成本.md",
+      "before": "deab9b8fb13f43d7e1ceecb8c3ca1d6725f6f5680b2cc12b5ac18b8ae8c15a84",
+      "sha256": "001353678d93182f330eb4a9c4c5065b13f26fb8b4c1cb0fe7814901454e3d48",
+      "size": 5773,
+      "action": "modify"
+    },
+    {
+      "path": "AI/20-LLM/30-训练/04-偏好优化RLHF-DPO-ORPO与KTO.md",
+      "before": "f17c907a5762c92c9134a2b6b54c364a43244e5bbbedcaa698b370a87caa080c",
+      "sha256": "19cf3f4e3dcbaca426d9d9c20db7f897ba56247ab5bb89ea515d91a42d9c5f5e",
+      "size": 18749,
+      "action": "modify"
+    },
+    {
+      "path": "AI/20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md",
+      "before": "22c7c3c97ffb481217bc8d7f87bf9c7a60e9702af9484cd5805d2857122848b0",
+      "sha256": "934f7d99dae6e2cb701434094765f77683be60f21de2a4e9e2b2bbfc6ddad07a",
+      "size": 10373,
+      "action": "modify"
+    },
+    {
+      "path": "AI/20-LLM/50-实现/02-从零实现Attention-RoPE与DecoderBlock.md",
+      "before": "3e6f5e2bd6878da9b03d5918b5584424d1d18f5d5c4970246282c60512559bd0",
+      "sha256": "29667634d72d2f5d7faa8c74a6a07fe962a97fb68884470be674106e0a2c9355",
+      "size": 20762,
+      "action": "modify"
+    },
+    {
+      "path": "AI/20-LLM/50-实现/test_tiny_numpy_contracts.py",
+      "before": null,
+      "sha256": "cd4437ae290817af25bfe0d3de02f927e419326487ba1913bf86b8d647f7437d",
+      "size": 4202,
+      "action": "add"
+    },
+    {
+      "path": "AI/20-LLM/70-工程应用与工具链/09-Agent状态机幂等执行与提示注入边界.md",
+      "before": "e5ba7b152f45f527eb26828149fb2caaba3634959e88471a7882097122486859",
+      "sha256": "9a9dc0a76f519f81888d472ceac1c074ff65d8b9e625b63ae19b0f9c9f83675b",
+      "size": 6337,
+      "action": "modify"
+    },
+    {
+      "path": "AI/20-LLM/70-工程应用与工具链/10-LLM评测污染裁判偏差与统计检验.md",
+      "before": "d85af531448978b9402e464ecbf9b8d33f779d305bf4a18af62849fc1a71aa1b",
+      "sha256": "9e720ff9663f2d2c982018638cf87cf3c61e89550966a596e1e2a84a05540109",
+      "size": 6432,
+      "action": "modify"
+    },
+    {
+      "path": "AI/80-实践/01-微型Transformer预训练/00-微型Transformer预训练.md",
+      "before": "f48fe1e2bb010fbbffe2e0edef68b0a4b56b75ac1bc372236177da20c8a3ef94",
+      "sha256": "12fbb845b3e845987755adcb47bb5ca37f075cf1ed1d606672c9b979558cbbe8",
+      "size": 12541,
+      "action": "modify"
+    },
+    {
+      "path": "AI/80-实践/01-微型Transformer预训练/test_checkpoint_contracts.py",
+      "before": null,
+      "sha256": "d3d028377fe4bcac9f3e5cafa1aa4c6faa567130950e3adbaf748b89142d9668",
+      "size": 3053,
+      "action": "add"
+    },
+    {
+      "path": "AI/80-实践/02-SFT-LoRA与QLoRA/00-SFT-LoRA与QLoRA.md",
+      "before": "5a958b57082bd6b70f66c4586d58ce2dddba2a2679a511efce841ff94def07a5",
+      "sha256": "45d13537925c0e4e198f2af9f1ab93ea9b28c6827e79ca46e31da2e0fc4b7d18",
+      "size": 12473,
+      "action": "modify"
+    },
+    {
+      "path": "AI/80-实践/02-SFT-LoRA与QLoRA/test_path_contracts.py",
+      "before": null,
+      "sha256": "eb5c52a3589f600cc775b437efc5d31cb642649c53a8a45eded07921c4a2d7c0",
+      "size": 2119,
+      "action": "add"
+    },
+    {
+      "path": "AI/80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md",
+      "before": "97224fb06867615307198dd4f773c78cc2e4140efdb1cdae991bc0797bca0001",
+      "sha256": "40ea5ecdcf744e4d686d64806b52e5772a475e6c833c9085d52d9f343065ce1a",
+      "size": 7980,
+      "action": "modify"
+    },
+    {
+      "path": "AI/90-资源/00-AI资源-MOC.md",
+      "before": "c5de6bb6b23772ca3056d6be282f2cc31d250cb59453b4bd4722bbc365d5ce57",
+      "sha256": "39d887c44c3c18afc02f7dc10f5d56b4b390f3e4b5162fa905c147220efc31c2",
+      "size": 3407,
+      "action": "modify"
+    },
+    {
+      "path": "AI/90-资源/03-GPU显存与资源预算表.md",
+      "before": "f8752c08642d77bcf63e19cbaddce619367f9f56faf20a3f6811fb03ad958a57",
+      "sha256": "3bc38f741b778146ee7c47bea476acea8372e9090bd49e7ecf2cb0ddcc99f68c",
+      "size": 7879,
+      "action": "modify"
+    },
+    {
+      "path": "CHANGE.md",
+      "before": "0e5763f5306c6d26f93c88300f3b9deeb2b331288cc1cd8871a68eeb234c9892",
+      "sha256": "2473f89564bbb1e8ace8c6456c6d995b1da8459779557ebb416281d1cc264298",
+      "size": 48071,
+      "action": "modify"
+    },
+    {
+      "path": "Clippings/AGoodStart101/Obsidian1.md",
+      "before": null,
+      "sha256": "3a2c5bfbeb7da29e983e6623b36aff17421a4b2be61279461c5ec91bc5fddacd",
+      "size": 100415,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/AGoodStart101/不再被需要的年轻人，和替他们干活的中登.md",
+      "before": null,
+      "sha256": "e611ce4d00d07e589b3576569e6d2481e4b43286a33db7ec50555c52ff96faf0",
+      "size": 18151,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/AGoodStart101/原稿索引.md",
+      "before": null,
+      "sha256": "44662be0059ff2d6def956c51242b636abeb0cc8280ff8a537b28653bd12fb10",
+      "size": 1876,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/AGoodStart101/语法参考/json-canvas/EXAMPLES.md",
+      "before": null,
+      "sha256": "9c2ed6c0baa031ff01893e089c1510292e1070f5c0fa923ea487b93e1aae5306",
+      "size": 1105,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/AGoodStart101/语法参考/obsidian-bases/EXAMPLES.md",
+      "before": null,
+      "sha256": "e9fd53b3bdd7b0612bc5d499f3272c4a68e7d017eecfa36d1ce5f121ffb802c6",
+      "size": 981,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/AGoodStart101/语法参考/obsidian-bases/FUNCTIONS_REFERENCE.md",
+      "before": null,
+      "sha256": "3879bc0c9e270a3b7bbb11c039ee433d929f3c9e4132404e990a07fb9173080f",
+      "size": 1918,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/AGoodStart101/语法参考/obsidian-markdown/CALLOUTS.md",
+      "before": null,
+      "sha256": "414c1d0073f6d5879c2d1f725aaaa84b97a59b396430ba288b4edf492af76ff8",
+      "size": 568,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/AGoodStart101/语法参考/obsidian-markdown/EMBEDS.md",
+      "before": null,
+      "sha256": "dfdf1c646efae9cbbb146b8635c3197d2f90b477d3a8a0bfc04b70960b85b855",
+      "size": 414,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/AGoodStart101/语法参考/obsidian-markdown/PROPERTIES.md",
+      "before": null,
+      "sha256": "2bec60f21c2a029194cca49e5c5dcf578b23470d649f1d7d0c2161023141d29b",
+      "size": 745,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/原稿索引.md",
+      "before": null,
+      "sha256": "592af575e2e644621109224c9890a5a4c96b27cefcb2154f267a0b0f42fbeb58",
+      "size": 1786,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/对话原稿/Obsidian_兼容版 (1) 1.md",
+      "before": null,
+      "sha256": "fd4184bad923aa7055af010824380e53ccb51afd59c35669e59424d9335e6b06",
+      "size": 145489,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/对话原稿/Obsidian_兼容版 (1).md",
+      "before": null,
+      "sha256": "bb77af05ad74636bc52f07aec4f405d2bcf8af483faf581fc042dd0b674f64ac",
+      "size": 116747,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 1.md",
+      "before": null,
+      "sha256": "bcf69aa8780b35ea56eb26265d161911f45063b3d7cd2ac895f194fca8e3fc55",
+      "size": 132860,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 2.md",
+      "before": null,
+      "sha256": "d010d5852e2a4e40c4630a52f89afb96aa423b5f4dfa2bd80fb759383f2f871f",
+      "size": 159539,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限.md",
+      "before": null,
+      "sha256": "5eef8d1a7e7dac0f43d170d7f5608a137b01d24f18973ffdc6e60db9b929b50b",
+      "size": 105161,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/教学收件箱/Untitled 1.md",
+      "before": null,
+      "sha256": "9739bb3239dd6037fa382c2ec924ae3764e5d7fbb82413c2a06937a9ef9206ea",
+      "size": 48265,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/教学收件箱/Untitled 2.md",
+      "before": null,
+      "sha256": "47172cfa715f89a9f8a90fae2e2b5cc3be54adfd7acd429c5ac8110908fd148b",
+      "size": 11842,
+      "action": "add"
+    },
+    {
+      "path": "Clippings/WorkWithLLM/教学收件箱/Untitled.md",
+      "before": null,
+      "sha256": "0a54d4efd858d2f1c1482eb40a16ffd1617c25379952828922404ad1c951d9ff",
+      "size": 149631,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-01_2322-Codex-建设AI-LLM数学与计算机先修知识域.md",
+      "before": null,
+      "sha256": "8ce9e9f002b27b73b4d3deb4d7cb770d58260a48be625743d4b4e066559afcab",
+      "size": 12709,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-04_1519-Codex-新增NewAgents协作与知识编写指南.md",
+      "before": null,
+      "sha256": "9bb8bfd46e68efe1dfca144989e08518db268c58b93d09227f28f12d57d0877d",
+      "size": 5751,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-05_改造证据/file-disposition.json",
+      "before": null,
+      "sha256": "29474e7062ebdc1d879950cc34ff5e6ceb1ef937cad20b237501de06e340b97f",
+      "size": 408078,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-05_改造证据/inventory-summary.json",
+      "before": null,
+      "sha256": "adea32d0e362e32fbd0decf6bc472121cc25e6eb88c847220656d55949a16b7c",
+      "size": 764,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-05_改造证据/review-scopes.json",
+      "before": null,
+      "sha256": "c6e745f0be2b2264e52e945d94b1a83d175048e74530e6eff17321672ba15322",
+      "size": 8805,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-05_改造证据/validation-layers.json",
+      "before": null,
+      "sha256": "9d5232433e89f2cea8d298b1412e4b6b170d4e62aab66dddd4813399004b6846",
+      "size": 2829,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-05_改造证据/validation-results.json",
+      "before": null,
+      "sha256": "a61f365c6e59514b93e7a3c2e9dd1da355c4b0a412237f6171aed959aae4f8fb",
+      "size": 18383,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-05_改造证据/内容审阅记录.md",
+      "before": null,
+      "sha256": "2110d70a82b7b5e365ed548ccd4efa2d2f71f14888d79f3e172628aeff7af2aa",
+      "size": 2251,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/ai-additions.json",
+      "before": null,
+      "sha256": "a85fb694194d742b0ab531c0752cf745e054de81c55dea9d7bcb66704c578d3e",
+      "size": 4911,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/apply-journal.json",
+      "before": null,
+      "sha256": "3fd6a3c1d41a6dc2e1ea7b427e5480d6791cec3ea8b26985945df3faf2d05bed",
+      "size": 22943,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/baseline.json",
+      "before": null,
+      "sha256": "f9ab3c479ccf2481603dac06ee3a236fd8c63d6322b3136ef5216c6a38cd9f01",
+      "size": 354594,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/coordinator-navigation.json",
+      "before": null,
+      "sha256": "6dd2917bf596f0c5f6d4d7530e0b539090bb1090ca697f56ed78d08b0f4ac3b6",
+      "size": 9920,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/evidence-needed.json",
+      "before": null,
+      "sha256": "cb66884860dbb2218f8ee08424c9f8397f5e70064038c3aa192dcf8f602b4a3b",
+      "size": 3383,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/field-type-exceptions.json",
+      "before": null,
+      "sha256": "d7d47d08f68073c5d093cf0b212ac57d31c4620c915accee70debe7574f01c61",
+      "size": 2502,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/imported-tests.json",
+      "before": null,
+      "sha256": "bcc063db1f0b8c38d1dd4489e439ffb4e1633f5c20ff847ee7b35dbdb3a088fc",
+      "size": 9648,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/known-diagnostics.json",
+      "before": null,
+      "sha256": "f5eacdfde1c46075074a717203f34a975b29dfbb37812f965e7befac9247cd07",
+      "size": 11546,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/obsidian-foundation.json",
+      "before": null,
+      "sha256": "549f22e2e732dd303c0db56e758a5d3a0adfc234cdc5f893ee172563daf6e7f1",
+      "size": 2895,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/obsidian-views.json",
+      "before": null,
+      "sha256": "88c12cf17637e2bc2f4c2e89381b04aa9b51902372e50f4e65591c3d80232275",
+      "size": 2991,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/obsidian-workflow.json",
+      "before": null,
+      "sha256": "00133b25bd4c4763d6ebe7caec0106ebf05496325974bf312d8457719c01de2a",
+      "size": 2798,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/parallel-work-record.json",
+      "before": null,
+      "sha256": "36e5fa827f26d6427292893f74396638102342d4b5b464186e522f87d5f169cf",
+      "size": 1233,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/pdf-catalog.json",
+      "before": null,
+      "sha256": "df8f35b60e0f14cc65d720dd6c59ab413d00ad840bd628a075912733519b0efb",
+      "size": 30473,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/pdf-name-normalization.json",
+      "before": null,
+      "sha256": "aae470284678f8750df36da1a4949614cee60748ffea3fcfccb431e122a8680b",
+      "size": 6018,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/post-apply-edits.json",
+      "before": null,
+      "sha256": "f9d57ae9916a6164de2a3cfd068562f0bdbb74f3352e813c34b7529769e54ab5",
+      "size": 42589,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/raw-originals.json",
+      "before": null,
+      "sha256": "590404b1d5d3e075b954c29b60374077a7065821458e399d850ed6f46d3ee7f4",
+      "size": 6600,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/resource-index.json",
+      "before": null,
+      "sha256": "000826d5a6a73a8aea133fcb1b29a1f9399185a2dc8c1b0e2af3fe9998609526",
+      "size": 5001,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/source-target-map.json",
+      "before": null,
+      "sha256": "2598ccd5b3d96c3dff78527df8a0d3eb8d40c12ce96f85548dc350694ad13c47",
+      "size": 2767153,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/table-format-fixes.json",
+      "before": null,
+      "sha256": "9afd9df6f64581d0b8b526640902920960ca63e3d0788f18e8e85a422c7e6ef0",
+      "size": 1796,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/teaching-fixtures.json",
+      "before": null,
+      "sha256": "d89a0a68b1f316b1f37e80b4f3fbc22ccf1c87333f0ec33772e3ca2815010ba2",
+      "size": 4256,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/technical-reference-coverage.json",
+      "before": null,
+      "sha256": "95f992eacb4cca5bdf0c0a469df37aa53964f8c7bb51a2d24500ac727e5b9439",
+      "size": 6500,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/test-navigation.json",
+      "before": null,
+      "sha256": "0e66ff11250186b9073b86ee8fd1fbfd94d9373a63e240a0edd0abc2381a01f1",
+      "size": 1864,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/artifacts/write-plan-initial.json",
+      "before": null,
+      "sha256": "c40ed08996d92ac53c37b6fa11e5cd344b43abd0c243f42cbd8809de76d23fcc",
+      "size": 76515,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/candidate-staging-incident.json",
+      "before": null,
+      "sha256": "ee6ecc8f3c7f43c1b23cf1deb4c9a2213685c87a5006f1fea9f9482fc2732d87",
+      "size": 3479,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/electrodynamics-cover.png",
+      "before": null,
+      "sha256": "b9c32e742776edfa9ba9305705eb6c7860c933794dd96d6a37b842250d1e64a7",
+      "size": 255226,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/final-footprint.json",
+      "before": null,
+      "sha256": "83b677abaf58a5d0fa498e6ebd787cc375fc167dc5994fcdb3a2370cacfbd426",
+      "size": 846,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/native-reachability-final.json",
+      "before": null,
+      "sha256": "8a1eb638663bca2b0a33341d1e4abe859a264758d92dd6fef14e485ee7047b73",
+      "size": 296,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/native-unresolved-before.json",
+      "before": null,
+      "sha256": "fd256cc46d4c3c708a4271ce8ecf2a8577224e5960e88c94e8acd5f0205f240a",
+      "size": 1218,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/native-unresolved-explained.json",
+      "before": null,
+      "sha256": "671ba65d4748aae435ce0d91dbe43fbf455d25e6c6ad5aaaae666f2dde8decf7",
+      "size": 1784,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/native-unresolved-final.json",
+      "before": null,
+      "sha256": "fab01e0d46f6fc986a2290c2061404bd59e863526e87f4396be295ed9f0d97da",
+      "size": 762,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/native-version.txt",
+      "before": null,
+      "sha256": "77aba909d8ae8e901b06a69819f183241c7ee306c04a0ea9b318a5ab56ed99d1",
+      "size": 35,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/plugin-inventory-final.json",
+      "before": null,
+      "sha256": "bf898f1fa5ac4679e969042b3b6478e754fbee3ca2d649c3e8882b3712fa37e6",
+      "size": 225,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/plugin-inventory.json",
+      "before": null,
+      "sha256": "bc72b0d39f6fd07b45ee90f1cc6eae232c5c36913d74405d8183e4b2df8b4eb0",
+      "size": 4542,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/postapply-preservation-review.json",
+      "before": null,
+      "sha256": "8ae1a695e06147a02d029a2e359c47e9d40fdadfcd2bfc682dad280e7b0a9f05",
+      "size": 6966,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/postapply-preservation-review.txt",
+      "before": null,
+      "sha256": "f5ff18cea714214f8c155e0adc78716ec5462195b891ba2e248b35d5778f39b5",
+      "size": 4049,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/review-before-write.txt",
+      "before": null,
+      "sha256": "da75d9d31e8091780ed7948491adc4fc3587b114b8d1ca78cad0cad847e839e2",
+      "size": 9214,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/source-inventories.json",
+      "before": null,
+      "sha256": "c010b979728e2052db7bbbcea08c3b39529f3e22c4969c1b3511f9e687a42e40",
+      "size": 583967,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/source-protection-before-write.json",
+      "before": null,
+      "sha256": "e76fa8a8dd677df3e20d7bf0a0fca482828d96d7fe9ce4319625dcf532fe237d",
+      "size": 157,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/source-protection-final.json",
+      "before": null,
+      "sha256": "dfd482b9dd058ff8621d581eaf4c37cfc701790c07d036b3b14249c499e93a3a",
+      "size": 1721,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/static-live-final.json",
+      "before": null,
+      "sha256": "a48a351acd7c39ddfeedda9c9ddf6ce82ce8287648662c9ccc0661b49a7c993a",
+      "size": 13196,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/static-stage.json",
+      "before": null,
+      "sha256": "bb3c6735e352f41f1ecace64990a810fb05c87541546d214fb9bf8bfee7cba51",
+      "size": 13051,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/tool-tests.json",
+      "before": null,
+      "sha256": "0935d96578318c4d843f16e39c8ecd951d4673e11d1fc9a10a14584b8c045df5",
+      "size": 6306,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/transaction-tests-portable.txt",
+      "before": null,
+      "sha256": "38f8c136b751426263e5ea4c08b0da3072f1c4a16c22502438eb3a641ad07916",
+      "size": 1176,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/transaction-tests.txt",
+      "before": null,
+      "sha256": "07a89a20bad3ee46aa2229f2fd5e15ece68a96f9075fc440255eb87c81ceba7a",
+      "size": 1176,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/type-conflicts-computed.json",
+      "before": null,
+      "sha256": "a0b8eaf7bcf46377cb7ce11bca64a9d38a0a9e81c9f1eb061e4e76211c633048",
+      "size": 1109210,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui-serialization-diffs.json",
+      "before": null,
+      "sha256": "ec990bec55adc37371e98bceb27007b54df0a999bb37dabd252c3c18e2afadc4",
+      "size": 732,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/01-首页.png",
+      "before": null,
+      "sha256": "a44b368f0db60883287973a2e84154485f4bd84bdb7224e9352e1448526a2e87",
+      "size": 478798,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/02-Obsidian-MOC.png",
+      "before": null,
+      "sha256": "a63d84919b50104a2878eb8195f156a01d0e255d3e6ca90c5232ebe96c382aa6",
+      "size": 551505,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/03-工作流.png",
+      "before": null,
+      "sha256": "ec284f46ca391044ff02e77f9360d6dd4d0721a8693bbef726d07ec9090a3dbc",
+      "size": 523580,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/04-Bases.png",
+      "before": null,
+      "sha256": "3550440402585ea5cc004cd06a603f0b3053dd0b7676f4ad60bbce915f7bf80c",
+      "size": 406103,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/05-Canvas.png",
+      "before": null,
+      "sha256": "7484f5836fe1392c52f1cc5184a4989aaee80b7e2acf72c4b710e2ad69f6e7ac",
+      "size": 477655,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/06-资料索引.png",
+      "before": null,
+      "sha256": "0e41f50e0e9d4704181c9b26ceeb5046a947196086d1249c814912e201cca62c",
+      "size": 556556,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/07-个人规划索引.png",
+      "before": null,
+      "sha256": "8d33e82e459bd6754f19f57678acd134fb0e1646dfd5c2e767780dc40589a78b",
+      "size": 565880,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/08-静态任务.png",
+      "before": null,
+      "sha256": "99138e3b39e1c8eb1e262cb4154543ac1f03dd0ce5aa439279a857606b1a349d",
+      "size": 518634,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/09-PDF页码.png",
+      "before": null,
+      "sha256": "ae40b29e14fa41e6e830a753199b3fde386c23e9cf0353d6866403b58c352769",
+      "size": 401779,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/10-静态任务入口.png",
+      "before": null,
+      "sha256": "3c3841b2509092f21e8a8509b34b372e28bc06fc81a40c956aa4c3cfdaa9bdd8",
+      "size": 368741,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/11-模板配置边界.png",
+      "before": null,
+      "sha256": "e32359031897fa6ee6bec2290369f9e814648a1d441bbbb8d79986d62e2c500a",
+      "size": 548187,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/evidence/ui/native-ui-evidence.json",
+      "before": null,
+      "sha256": "e2eb33afc314a46f0fa67f0064ebbbddc4c58d5bd3e3dbe404202c29afe67a07",
+      "size": 36344,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/check_formats.rb",
+      "before": null,
+      "sha256": "b9e266e21c7387af48e1812a731c3dc0ccd7e234ae519b4836d93457d0b551da",
+      "size": 1551,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/check_mirrors.py",
+      "before": null,
+      "sha256": "21cd2ee78737b0adda23f3187da6eddb20adef94d7f5ea096c307af97df1a09e",
+      "size": 2421,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/field_types.rb",
+      "before": null,
+      "sha256": "03bcac8b2b4fc3c2b0bbae6ea4eb0ed85c6481a6450b928a2af44c32ac4be3a8",
+      "size": 3161,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/links.py",
+      "before": null,
+      "sha256": "798498fca147a26c7f27d341f4b5d9ce621ea2b5f3b131c1d5a274c7c70544a1",
+      "size": 34858,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/test_import_validation.py",
+      "before": null,
+      "sha256": "7f73aa36b1455b0075367f6cbc631fd17aa7e387b91b7257b9669b478ed071ef",
+      "size": 13434,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/test_links.py",
+      "before": null,
+      "sha256": "a76b13ac5b24511a620ba5903d872771f10a51ad071316b68a30ad261abfc292",
+      "size": 14357,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/test_mirrors.py",
+      "before": null,
+      "sha256": "61d80f17c91ad8823b43523bbec8f94edd34b5d31c7e91f515be68b3492e28e4",
+      "size": 1855,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/test_transaction.py",
+      "before": null,
+      "sha256": "ddc1cfbab067a619adf6b2102673335c34a6d78b7ca2534ec44c6586acf6cd00",
+      "size": 5403,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/transaction.py",
+      "before": null,
+      "sha256": "ebbe5e09e1de33b2a96f3fb9b41efe976b4dc2a7ec1341d165d795ccf9419a12",
+      "size": 9424,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/tools/validate_import.py",
+      "before": null,
+      "sha256": "47d27d42054bc6e6c53a577c2805ff70cdeba7fedb19c7c3a8fbf4c12ce8a195",
+      "size": 43433,
+      "action": "add"
+    },
+    {
+      "path": "Logs/2026-09-08_双来源知识增量导入/验收记录.md",
+      "before": null,
+      "sha256": "a16a8567bd3f68b2cc64220296298351957d9df5b8e39ddfdf452065d8d35234",
+      "size": 15263,
+      "action": "add"
+    },
+    {
+      "path": "Logs/来源材料/WorkWithLLM/README.md",
+      "before": null,
+      "sha256": "c7505237b59e5c1b7b43dc51901c51ea0369a8872e9156e641f11857b8537790",
+      "size": 1120,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/00-开始/00-Playground-首页.md",
+      "before": null,
+      "sha256": "d7f65ba7c85285c229f13decf1d5860b8792c813e3e239cb18fc466f8c910f7e",
+      "size": 4928,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/00-开始/01-如何使用这个-Vault.md",
+      "before": null,
+      "sha256": "7f5cc82c8e37d1815abf0ddffdf36435c894985fee69f2c05f9150e671d7d64d",
+      "size": 5049,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/00-开始/02-30分钟快速上手.md",
+      "before": null,
+      "sha256": "25bca2a90dab06edf0683374928c7522657975979dbc10adb2ed66c3bfdc756c",
+      "size": 5116,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/00-开始/03-7天渐进学习路线.md",
+      "before": null,
+      "sha256": "6c607e785daf5df85220746958141c86b35e68efc59e122f467a7fbb214c5815",
+      "size": 5433,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/00-开始/04-安全实验与重置.md",
+      "before": null,
+      "sha256": "de0a05314684cd066abc9b95cc5b27710de60e1156a60fc78eea4ec687be117b",
+      "size": 4213,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/00-开始/05-Obsidian功能地图.md",
+      "before": null,
+      "sha256": "66887b6c9e830fb0c72f346d47a867611c6f00db8a2be022fb3fe7fabdb7c0cc",
+      "size": 4989,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/00-开始/06-Obsidian中文上手指南.md",
+      "before": null,
+      "sha256": "c68185d6146517d794a5c95817c2beaa6ae50566a3b8641d19451db6d1a6ede7",
+      "size": 7162,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/00-开始/Welcome.md",
+      "before": null,
+      "sha256": "75a9f5a9f4203a3ac211a90a3a068f7f3902613ff8b5c95744f716c79627ca47",
+      "size": 965,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/01-Markdown基础/00-Markdown基础-MOC.md",
+      "before": null,
+      "sha256": "49145ee16301b579ba28d6d3905beffda11844238e30f25a6812b45a6a72ee79",
+      "size": 4423,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/01-Markdown基础/01-基础排版.md",
+      "before": null,
+      "sha256": "a98b987e48a0bb34bd6a8c0cd494c93777736f46dfa9046fafa9fedf71144784",
+      "size": 3730,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/01-Markdown基础/02-列表任务与表格.md",
+      "before": null,
+      "sha256": "7b730088aa84273cb58bc6d85fba4023f56a88bdc46f0e3de234e1768838cc27",
+      "size": 2813,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/01-Markdown基础/03-引用代码与Callout.md",
+      "before": null,
+      "sha256": "f1b86df351e52ad91b86035868ae0e867f33ba801018e969a33c1910598dabef",
+      "size": 2693,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/01-Markdown基础/04-附件媒体与数学.md",
+      "before": null,
+      "sha256": "69c9fdb20a52269b775a3f90e6e3ce0fd84654c98042e693f3d105a38065c114",
+      "size": 3712,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/01-Markdown基础/05-脚注与进阶语法.md",
+      "before": null,
+      "sha256": "59ba406f0f05fac53afeac4c3ed68c01f59d8671c8b6fb4820e24a87e012c930",
+      "size": 3939,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/01-Markdown基础/06-综合练习.md",
+      "before": null,
+      "sha256": "7b3d1c8fb9e44e6c5f27d00793e0dac926af15ea9a2e189240d6269a33ee75d2",
+      "size": 3353,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/00-链接与知识网络-MOC.md",
+      "before": null,
+      "sha256": "da01651d1ef63848760c007a46a676899bb69fdc23e5ccb2c3d0f00e63d20c74",
+      "size": 4248,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/01-Wikilink、别名与未解析链接.md",
+      "before": null,
+      "sha256": "a45fc1b1799abeb1214987f289dcfeff4d1cc5104fa3cbd86edbe7a3f0dfae5a",
+      "size": 4166,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/02-标题链接、块链接与嵌入.md",
+      "before": null,
+      "sha256": "675b0693f74c204636044d5bac1b2410af4f23ff2041fde16ba33c796c2df739",
+      "size": 3762,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/03-反向链接、出链与未链接提及.md",
+      "before": null,
+      "sha256": "374dce16ee87329159ee0e01e487b5bea5c08890e9252fc8a1b745e6ce38085a",
+      "size": 3990,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/04-全局图谱与局部图谱.md",
+      "before": null,
+      "sha256": "e228129e91bf1e37d08508b13898c3327fab5605dce9189789c284bf511dcdf2",
+      "size": 4356,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/05-MOC、原子笔记与渐进式总结.md",
+      "before": null,
+      "sha256": "39c032a839c4b224ad46515c1b60e26e9014dab8295c22d6743be06a7194da19",
+      "size": 5920,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/原子笔记/双向链接.md",
+      "before": null,
+      "sha256": "b82038465cfe3a19c6ba486d067bd5b3804eb114a9a5d0149980241181b5a6e5",
+      "size": 1401,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/原子笔记/局部图谱.md",
+      "before": null,
+      "sha256": "dbf8aeee8c123730ec928dbcd2de13a8972125e58cf53df72e835c39f3d6f154",
+      "size": 1225,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/02-链接与知识网络/原子笔记/渐进式总结.md",
+      "before": null,
+      "sha256": "0abd3cd392519b1d5f0ed19360683d7e065789e6520004cb91541763f48f04c5",
+      "size": 1667,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/03-属性标签与检索/00-属性标签与检索-MOC.md",
+      "before": null,
+      "sha256": "6ccb764ee8f345ef17c6ffb6e92c72325914135bd745adf40eb36af7fa348bcc",
+      "size": 5056,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/03-属性标签与检索/01-属性类型.md",
+      "before": null,
+      "sha256": "d072801dd27ead72f7d5e91ebe77d26015f7ea1c4c599a1c1cd8df996f5cf866",
+      "size": 4051,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/03-属性标签与检索/02-嵌套标签.md",
+      "before": null,
+      "sha256": "0e12fdfd2df0f799e7a0e6e187b3d3f3344c4411a13540dc527a07584a85e373",
+      "size": 3781,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/03-属性标签与检索/03-核心搜索语法.md",
+      "before": null,
+      "sha256": "ce207a58b8cbdeaa3808f76e12fa683ade4d997143746eea3f07fb967d6590b1",
+      "size": 4295,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/03-属性标签与检索/04-快速切换器书签与大纲.md",
+      "before": null,
+      "sha256": "b4347f3693be1605506e13a9020942aae80f90350c3f3f8acf5c35a813314fca",
+      "size": 4250,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/03-属性标签与检索/05-Note-Composer-合并与拆分.md",
+      "before": null,
+      "sha256": "cc55cf8d34532c610518e10311f584ad14a15205d1cc4fafa17533bbbe643b34",
+      "size": 3866,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/03-属性标签与检索/06-安全重构与链接维护.md",
+      "before": null,
+      "sha256": "6cfac96ad121f594e9a690125d6761b3011380a3b08c5eb45f080db1fb76adf3",
+      "size": 4370,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/10-基础/03-属性标签与检索/07-检索挑战.md",
+      "before": null,
+      "sha256": "99a62c6e1b8b9b8dee3f4bba4078b1d561e4eb2fa6a0d58d4483f80e278eec22",
+      "size": 3932,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/00-官方插件实验室-MOC.md",
+      "before": null,
+      "sha256": "f1e5c7b3a09b9aa7ceeaa82e788f57503314f0d8004ce136f7d70a490b7ef54b",
+      "size": 5396,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/01-命令面板页面预览与文件浏览器.md",
+      "before": null,
+      "sha256": "803878f923fb8784990042661df0e1ee422d99ad12cfae69e5de5b3d6be3eb94",
+      "size": 3741,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/02-核心 Templates.md",
+      "before": null,
+      "sha256": "3cd59f622e103bf8e939ba45f4b2342ff593feb3bdcbe90d604d683b8e335ab7",
+      "size": 4612,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/03-Daily Notes.md",
+      "before": null,
+      "sha256": "4a3d4271feee00ddb7ac5396a2801b4361a94ecf357f2ddcc1cf48bedb647e1d",
+      "size": 3946,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/04-Canvas.md",
+      "before": null,
+      "sha256": "0ba15151d448133daf3b971d7abe05a94feb0e4c26132287377ea6066f588922",
+      "size": 3556,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/05-Bases.md",
+      "before": null,
+      "sha256": "552017b83758784e0ce240ea3d4741c9aee41b6c287f2c5020c29bb96576f4fa",
+      "size": 3605,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/06-Bookmarks与Workspaces.md",
+      "before": null,
+      "sha256": "a522b123738e4b785c3cc518daa78cc6f1a3dc250f58a5e397a73f8852660cd0",
+      "size": 3642,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/07-Note Composer-Outline与Word Count.md",
+      "before": null,
+      "sha256": "5773bfdbbbb32c1960595d209ce6c0d6a75a8514780bb33a02739b4b8de41f0b",
+      "size": 3702,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/08-File Recovery与Sync边界.md",
+      "before": null,
+      "sha256": "527108f33adb700cf6f1c90867db2b7d99aa6ddf970bb792fddb557bb8f64a2c",
+      "size": 4435,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/09-Web Viewer.md",
+      "before": null,
+      "sha256": "4cc783d29b5f26d82f9e39adcc6bcb5a35dd31603b5ecc0251b6dedd208577d9",
+      "size": 3323,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/10-更多核心插件速览.md",
+      "before": null,
+      "sha256": "2e46912e586a9c52df1c1e4c96925a2af49bdeb9b6b5a501dda0e88477fb198b",
+      "size": 5342,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/00-社区插件实验室-MOC.md",
+      "before": null,
+      "sha256": "d09b1c11913fd173bcdab22583b5b457214e9eb77a07f218e5dfbf4948df0c29",
+      "size": 7125,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/01-社区插件的安全与选型.md",
+      "before": null,
+      "sha256": "d222328f547949b050292db154144709ca92e561827ee45716bc5906de9a4c26",
+      "size": 3287,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/02-Templater与QuickAdd.md",
+      "before": null,
+      "sha256": "7bad54246f2f7af75dd4725610263f5e1bf552e217d3cb29a6fc9e03b9a3e46b",
+      "size": 3854,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/03-Dataview与Bases对比.md",
+      "before": null,
+      "sha256": "233be388381268bb3bd112b468fceef1faacf78283a15833063f415bd19439f0",
+      "size": 2847,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/04-Tasks-TaskNotes与Calendar.md",
+      "before": null,
+      "sha256": "049f912e6347f8881a5ed00baa417880aec8fda4bfba5a141ddcabba36635176",
+      "size": 4037,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/05-Omnisearch与中文分词.md",
+      "before": null,
+      "sha256": "69cfd1b1e00fca17a4a370e5201acb8130159ffe7120b843274a472670cd5127",
+      "size": 2890,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/06-Advanced-Tables-Editing-Toolbar与Linter.md",
+      "before": null,
+      "sha256": "8dc8f29347884fe88c1011a178d25077617cec6e4fdd849726e813785ab07387",
+      "size": 2857,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/07-LaTeX-Suite.md",
+      "before": null,
+      "sha256": "7176127a0f1d61fdd46d0c8be759187d1163232e5070f38c81e3f590d0bff9ba",
+      "size": 2033,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/08-Excalidraw.md",
+      "before": null,
+      "sha256": "cf8a37fedfe90fe9ce4836bd4565f43043fb3164698b1c975bc81496105c6035",
+      "size": 2492,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/09-PDF++.md",
+      "before": null,
+      "sha256": "7962495f17ca1dc70a54311845dadf2c5a2b8d24938c461741dc815c9157e865",
+      "size": 3811,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/10-Importer.md",
+      "before": null,
+      "sha256": "6826ae90aeb3242da26d1ab466325a2ebc09eed37caf78ef26fd80f59a9009b1",
+      "size": 2663,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/11-Obsidian-Git.md",
+      "before": null,
+      "sha256": "e223c91bc44397a7bc71f785e8e784f13a5488771305f713e30e658df4da869e",
+      "size": 3047,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/12-Local-REST-API.md",
+      "before": null,
+      "sha256": "d62e0327cdc64b0d5097e0a367dd3dfa4bf3ae559ddd78aef37e69816f34b0c1",
+      "size": 3662,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/02-社区插件实验室/13-插件实验报告.md",
+      "before": null,
+      "sha256": "21f54f687d92cce94fe35a1fa2d56bee683c526aa89991a713c6b64b50d0b4ac",
+      "size": 3403,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/00-完整工作流-MOC.md",
+      "before": null,
+      "sha256": "0253d4383e2e34df6e511d3bc08621953b86a45519ed13f3b2e92c3d24172cb3",
+      "size": 4748,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/01-从收件箱到常青笔记.md",
+      "before": null,
+      "sha256": "6c25f75027bd7c8b9545701bc8e9b589878ac53edda2874b94f9dbde4cff6d82",
+      "size": 5844,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/02-每日计划任务与复盘.md",
+      "before": null,
+      "sha256": "769e5bf409ef1cbf12ed3be21afa8019df2ca94b714a009e73a6e22ce54b46d0",
+      "size": 3756,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/03-会议记录与项目管理.md",
+      "before": null,
+      "sha256": "9df9605a8be9e1c52d29376463d3db419e8045b2c191f55b317d26fe72ffc484",
+      "size": 4181,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/04-阅读批注到知识卡片.md",
+      "before": null,
+      "sha256": "2217305c8c419b3403ba2e297d196be10479785d44ed8d49e0c5597f7b57938e",
+      "size": 5012,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/05-综合毕业挑战.md",
+      "before": null,
+      "sha256": "73a02bf87cf605ff975252a8caeb09cb1b5be663ec49bbfa2da89397a4060cc3",
+      "size": 5186,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/Markdown/00-Markdown实验室.md",
+      "before": null,
+      "sha256": "5b4c73af4226a23f80494403a9ebed981050f87f181a519583256ebe4723c7dc",
+      "size": 3047,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/Markdown/01-自由草稿纸.md",
+      "before": null,
+      "sha256": "21379712376cc02d150bb6611998d929db63b8b9ea30c375357f74900b589083",
+      "size": 2290,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/Markdown/02-表格练习场.md",
+      "before": null,
+      "sha256": "f36ba0fe33197cfb00446b0f5c72f8ec99869ef4a170a710ca934e06398dd5d0",
+      "size": 2852,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/Markdown/03-数学练习场.md",
+      "before": null,
+      "sha256": "c9d94e7f5f4fed3b98c46ea0529e72cde104a25f6d52afbe7b3da52796c7355c",
+      "size": 2517,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/README.md",
+      "before": null,
+      "sha256": "48144b0801c88d32548805df8c4c1e0ee7ebbad6b94cee3cc386346175d91bb3",
+      "size": 1462,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/我的插件实验报告.md",
+      "before": null,
+      "sha256": "9c5501e9485d6ee5025803f3d15a28c2af6db609c4913aecca409a2560730397",
+      "size": 1476,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/插件/01-Linter手动实验-故意混乱.md",
+      "before": null,
+      "sha256": "10fec3a83938a00371fca1827bc161ddef2363f4f9a9e701ab3befb2549b9195",
+      "size": 1355,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/插件/02-Advanced Tables表格实验.md",
+      "before": null,
+      "sha256": "14b43a0dbc1450a27c0b06ae1f4c4a1c1964e83080779f4b45e02d1f2596c030",
+      "size": 1591,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/插件/03-LaTeX Suite数学公式实验.md",
+      "before": null,
+      "sha256": "86b564ad6624f7a9a42e7722858e242f55b553d2d985ef690eac4b1987e4ba28",
+      "size": 1321,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/插件/04-Tasks查询实验.md",
+      "before": null,
+      "sha256": "dab7db367b27abe9ef068187ec4fcd597c4a74171b64d24437992a4588bd4170",
+      "size": 1623,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/插件/05-社区插件实验室.md",
+      "before": null,
+      "sha256": "1226c8182a238ce90cd3a84d866d915162759bdd8300e63a28f696ee8f0738d1",
+      "size": 2818,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/插件/06-Dataview DQL实验.md",
+      "before": null,
+      "sha256": "454e4b6070bb8375485698d515f2569da0498daded0f8d0b03936619ac21fc8b",
+      "size": 1807,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/插件/07-QuickAdd与Templater对照.md",
+      "before": null,
+      "sha256": "3ea4e4dfba17fae3ed14f39e5279a35140e5b87dedccb3f393f4c0a3c7db0e9c",
+      "size": 2269,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/收件箱/Untitled.base",
+      "before": null,
+      "sha256": "07bb42152a9f7290a4aa0940c11fffb8618248c567adbde6b1647f84312361ff",
+      "size": 39,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/收件箱/在这里创建第一篇笔记.md",
+      "before": null,
+      "sha256": "7b2d0acb8fce46b33dea4bbd7a95f6bc0296fa13503b53a92f9e067bd554f0ba",
+      "size": 767,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/数据/丙-项目记录.md",
+      "before": null,
+      "sha256": "47da37a74a0ef925882fbd40dbc61547100af4a699a1cf0c55cca3fdbbbb4438",
+      "size": 1714,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/数据/乙-阅读卡片.md",
+      "before": null,
+      "sha256": "87b56ffe33d6efbbdfbcc04643ed390ac9d1f5674331d1502baffeda12b4f8a5",
+      "size": 1724,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/数据/甲-晨间笔记.md",
+      "before": null,
+      "sha256": "f3925b5d4c74d2226533b5562b1fef1afe87f4bc82cee343084a815108d8a02a",
+      "size": 1787,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/链接迷宫/00-链接迷宫-说明.md",
+      "before": null,
+      "sha256": "e7391492630210e1a79b7b1eff235f6bce07e7cb6ea55bb587369825f015b876",
+      "size": 2800,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/链接迷宫/迷宫-A-入口.md",
+      "before": null,
+      "sha256": "2121bb8839382cd179a4899c984c1c8994d6ca3657414cc68ae8d3da8835cd66",
+      "size": 762,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/链接迷宫/迷宫-B-交叉口.md",
+      "before": null,
+      "sha256": "63ebda838142c69f177a266b53a4f84b441ccdde92712a010be041bf70ea7fcc",
+      "size": 670,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/链接迷宫/迷宫-C-终点.md",
+      "before": null,
+      "sha256": "e0e279112fc1c9a002338e9e54e723f11faa59f20fa10c633eb13919f9012e4a",
+      "size": 920,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/01-实验区/链接迷宫/迷宫-X-孤岛.md",
+      "before": null,
+      "sha256": "45d6538545401eb4e491a221ea52ec2d75f5adfcbfab008625bcf752d58a4ee9",
+      "size": 620,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/02-日记/2026-08-29.md",
+      "before": null,
+      "sha256": "99b2a274ddf88cc97adf7963c211108e3fb3b9a40922404383d253e7d91f6852",
+      "size": 1814,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/02-日记/2026-08-30.md",
+      "before": null,
+      "sha256": "e3041f7c0e4202ce5ae973a92204a10d895b7c2f34e48e42ad7fff147a82c175",
+      "size": 2220,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/00-周末读书会项目主页.md",
+      "before": null,
+      "sha256": "314346c80c3d30d15b3f044e3be2d8066205949d861b250722456d704067627a",
+      "size": 4190,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/01-读书会启动会议.md",
+      "before": null,
+      "sha256": "a3180384d0502c9598e795d4a1ec355a71b1606ac6123f17130a3cb20615bd3c",
+      "size": 2941,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/02-第一周复盘.md",
+      "before": null,
+      "sha256": "213e45aa1c05788105fa7faeafdad171e99481794ac0e6e567413c71f4368277",
+      "size": 3471,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/书目/卡片笔记写作法.md",
+      "before": null,
+      "sha256": "eef3ad52659d2d9db52db04265131429e7c4b49d9d4362435c03fc1f0b08386a",
+      "size": 2824,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/人物/周野.md",
+      "before": null,
+      "sha256": "b76cfb8d44557a2598ab1f40e3f9aea9e31f252e4ab1d5ea85bfc82d4d27097f",
+      "size": 1854,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/人物/林晨.md",
+      "before": null,
+      "sha256": "66726a34611000b49d41d4ac9b821d3bad08e45b0b38a1b22c0ca99ec31814b4",
+      "size": 1725,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/决定/下次分享主题.md",
+      "before": null,
+      "sha256": "d70b638e07a7a60c929f2f5aaaa953c52679d02bc8384b9c21e6517c7dd6f79f",
+      "size": 2265,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/概念/原子笔记.md",
+      "before": null,
+      "sha256": "44a1e9c107ad8b5c9e810688683e5d3306d3c35f6e3100af707ef1a08508643a",
+      "size": 1994,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/概念/双向链接.md",
+      "before": null,
+      "sha256": "95ebff287e7835cee0874953f6c88b74f2ad1696a75d00793cf644eb5b66f0ef",
+      "size": 2115,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/03-示例项目/周末读书会/概念/渐进式总结.md",
+      "before": null,
+      "sha256": "2fabd22b8aa9431aafe70f7dc422a70254746147ed5d9efa28468aa48b49fd2a",
+      "size": 1958,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/04-TaskNotes/Start Here.md",
+      "before": null,
+      "sha256": "b69eb28a4de92698bf23f7c2b49525b42933565eeaafb61636e5fd26ba1a7511",
+      "size": 6249,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/04-TaskNotes/Tasks/01-整理Markdown示例.md",
+      "before": null,
+      "sha256": "b759d3e0c6261c36adac619cce51133e6e8b6951f43bf33acc0737a029b62786",
+      "size": 849,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/04-TaskNotes/Tasks/02-验证双向链接.md",
+      "before": null,
+      "sha256": "dfc5f2e388834546bb0038cdcceca53630209e9c674aca02a8e8f8c924003ed8",
+      "size": 858,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/04-TaskNotes/Tasks/03-完成基础上手.md",
+      "before": null,
+      "sha256": "bf1c86c5a69433998b7c7f4e542baccb5d6b6d59a7baab82ed25075dfaefd7e7",
+      "size": 750,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/30-实践/04-TaskNotes/Tasks/04-准备插件复盘.md",
+      "before": null,
+      "sha256": "143ef725ae8388c30126bbc9c1a7a5c0249e58fc3e6e710e26977d574b0772b4",
+      "size": 970,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/40-视图/01-Canvas/Obsidian功能地图.canvas",
+      "before": null,
+      "sha256": "4cc8e22bef9339f77f60aaca87089bc234f59c37297d3e523ecf2db4da4d9600",
+      "size": 3848,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/40-视图/01-Canvas/周末读书会规划.canvas",
+      "before": null,
+      "sha256": "9c8ded00ce7b2695e20e6c061f17ea834c44d08a78cac2e6c7edfefe93c43454",
+      "size": 4827,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/40-视图/01-Canvas/链接网络演示.canvas",
+      "before": null,
+      "sha256": "bde243ec85dc751384a1c25eb3cc89554b27da1e06969a2316704cb603af1d42",
+      "size": 4135,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/40-视图/02-Bases/00-MOC-Bases.md",
+      "before": null,
+      "sha256": "b231f82d0aaed6c3f97f09d86d2606f1f51f7e6b97c8e724d0a55075e4df4d5c",
+      "size": 4032,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/40-视图/02-Bases/插件实验目录.base",
+      "before": null,
+      "sha256": "7b0f3cae22333b9a6a85f8dace17455469da8cddc7173186665641260c06b010",
+      "size": 1170,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/40-视图/02-Bases/示例笔记目录.base",
+      "before": null,
+      "sha256": "c5dfed8c5ae0cd29549a103f3e7ba9730825ac1e7a7acdc4f81bdf3cc0896c26",
+      "size": 1080,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/40-视图/02-Bases/示例项目资料.base",
+      "before": null,
+      "sha256": "217541166256747a64c80b1eaca550f5b13649678e1eb75f4f3dce6e42b332b8",
+      "size": 779,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/40-视图/02-Bases/课程进度.base",
+      "before": null,
+      "sha256": "f624a3593ea00db515b422899d22c005584c0f1f5f54a1ce1c304695347b84f2",
+      "size": 807,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/Templater/AI任务委托-动态.md",
+      "before": null,
+      "sha256": "fd55c7957ef46b51ab93069bab9b255f35a05d455826206897f4a1c859eed905",
+      "size": 601,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/Templater/变更日志-动态.md",
+      "before": null,
+      "sha256": "59a4946e1fd5b6aec0716c05d52cc4aefec9d772106b21a3ff65fe2b444a6bca",
+      "size": 490,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/Templater/常青笔记.md",
+      "before": null,
+      "sha256": "92b4521b3d359076365aa8767d68fc3a2f776d34f6b958529d7c2f6c2e9cc777",
+      "size": 575,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/Templater/插件实验.md",
+      "before": null,
+      "sha256": "6d39e56e28fb27121c214341277ec4da144a2672a74c1f2933adf81ebe8088b0",
+      "size": 929,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/Templater/研究任务-动态.md",
+      "before": null,
+      "sha256": "13fda8d83d1ad9ec2fe323be3835a5c3f57387e0b99884b4179046cb8d95cd24",
+      "size": 655,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/AI任务委托.md",
+      "before": null,
+      "sha256": "6190c2556d7f68de3dd1bbea38c3782925f5e6893d279d2e44e326242428b3df",
+      "size": 882,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/Agent交接.md",
+      "before": null,
+      "sha256": "fdbda58ba09b73589cdf3109818425e62680303aac39553869703f0bc2066966",
+      "size": 656,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/Callout片段.md",
+      "before": null,
+      "sha256": "efb0fff98a1fb7ae80873c88b34c046962766e7a32bb74cf6fab61e066a7c8fc",
+      "size": 401,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/Vault质量检查.md",
+      "before": null,
+      "sha256": "4174101af8a75c5925227bbc7072ca07e23e3032d207df66a7a2814b2f13a20f",
+      "size": 888,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/会议.md",
+      "before": null,
+      "sha256": "ec9e57b7866704ed1fb9423cb83a5d5c10d35b37de253c1cd1cf9bed27596fc6",
+      "size": 548,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/内容重构.md",
+      "before": null,
+      "sha256": "13b56e92aa27a78e3f19ca13310dde30a1a9a732777e003cd82d9e8f7c015374",
+      "size": 903,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/变更日志.md",
+      "before": null,
+      "sha256": "48c1621e22cbd374574f413b3729d6f4b84a5d04b252cdccf80e9df3d8b156ce",
+      "size": 674,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/周复盘.md",
+      "before": null,
+      "sha256": "9b77c70ef057fdb16b9434b313f32faed631885c4dde2ce8825c3b66b3664ad1",
+      "size": 640,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/基础笔记.md",
+      "before": null,
+      "sha256": "87e819176dd977143336d6dea31c4186d0323be34fe84bf80933d161d0ad5844",
+      "size": 460,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/常青知识卡.md",
+      "before": null,
+      "sha256": "ee9479ceba7866699dcc77d44f4bacf0cc8a5070296d121f22f84c2b8971f920",
+      "size": 883,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/快速捕获.md",
+      "before": null,
+      "sha256": "5e47e74b081a9a534024d4d68c9e126510037d714b609bbe19af305a3d587729",
+      "size": 793,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/插件评估.md",
+      "before": null,
+      "sha256": "644e56da116f677182ef3a4eb821fd2755692803e6e563c9644e2e879bffe6bb",
+      "size": 860,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/日记.md",
+      "before": null,
+      "sha256": "28b58da86866097e9f7152e2bb944f3f4354660111784476d926ed6dc7156b11",
+      "size": 381,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/研究任务.md",
+      "before": null,
+      "sha256": "88399ec87605203376ce8a455c00ef407cc9ca1829cc85b9da5e43c0ee9b86ac",
+      "size": 813,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/链接审计.md",
+      "before": null,
+      "sha256": "38c479e08acc11d12f900ac61b217fc71b7643593a3e62f9490191d5d14c8467",
+      "size": 773,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/阅读.md",
+      "before": null,
+      "sha256": "cfb2aa995e2886a8d0ffb1ef2a164f297ae753e2d50857adc2f2601d447d2f47",
+      "size": 835,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/01-模板/核心模板/项目.md",
+      "before": null,
+      "sha256": "149c18f3d613f1b95dd4443be79d1f092faa9d9c95c89293cbfe9acc0b3ac6a2",
+      "size": 987,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/00-参考索引.md",
+      "before": null,
+      "sha256": "3648b6624fabdf230057555cd5b8a88edb3cc7adaabfe76abcc6a5a9bc985225",
+      "size": 3941,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/01-Markdown速查表.md",
+      "before": null,
+      "sha256": "e5b151f9945f45c21b7c8bc632f8b139c74a75cd184ff499ce1b07912e08426b",
+      "size": 10419,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/02-搜索语法速查表.md",
+      "before": null,
+      "sha256": "6f200b65a42226c4a3aa3ca070b427e5c74d5041781aed2ec952f95a7cb2f83a",
+      "size": 7494,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/03-属性字典.md",
+      "before": null,
+      "sha256": "3811d336fe8db6eb08989a2947d36bbc92ea55863248f1c2298b0e1d4531e5fd",
+      "size": 11139,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/04-核心插件目录.md",
+      "before": null,
+      "sha256": "a0e7dd6684f776c9c5e2fb8a963b81c5b807848bc8cfe337b9dd211e72e07cf9",
+      "size": 9346,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/05-社区插件选型矩阵.md",
+      "before": null,
+      "sha256": "3ed5ce469688787e91a510cc6434b046018aa5c95eb76d9d914d10a71aa8cea4",
+      "size": 16106,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/06-快捷键建议.md",
+      "before": null,
+      "sha256": "0884c30475f564861f94b450a26a53779119d727557a185de1c7917c5aa896c2",
+      "size": 8122,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/07-Obsidian术语表.md",
+      "before": null,
+      "sha256": "ee3a3db88539013de8fa70fbe85bc11021c7f2a7a7d1b18b7bdfad87ffdc159a",
+      "size": 10569,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/08-常见问题与排错.md",
+      "before": null,
+      "sha256": "87fb055248cba2e2d9469cf901104f30d06ae4db4a5b2513e54ae03ddd8d2960",
+      "size": 14038,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/02-参考/09-练习答案与提示.md",
+      "before": null,
+      "sha256": "b8ec9d5c1ccf69897c0fd920660766ff5f50dc62f0afbb3a293915dbf4752be5",
+      "size": 16907,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/03-素材/导入样本/sample.html",
+      "before": null,
+      "sha256": "5fcd65d3a9a526ffb66f8c5aac12e3ca403d1211ee2ddc8ae83d06207980183b",
+      "size": 532,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/03-素材/导入样本/sample.md",
+      "before": null,
+      "sha256": "5cceb24030e894e68bb73d85a32698328e765dcb611d07eb765de92ebd09dbb6",
+      "size": 429,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/03-素材/附件/obsidian-playground.svg",
+      "before": null,
+      "sha256": "fcaf4b9103a69a30a48e8c1384324f2538e0672e6f01314d401d37a06efce861",
+      "size": 2152,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/00-AI协作工具箱-MOC.md",
+      "before": null,
+      "sha256": "36ffb2d63628d18a334f9169bcf81927e11872361643e59935a00ab3fca678a5",
+      "size": 2831,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/01-适合反复交给AI-Agent的任务.md",
+      "before": null,
+      "sha256": "f49ef807384f12ee1a267abbdb44a5c51f16bc88349d2117a86b7b2f66e478ec",
+      "size": 2260,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/02-任务委托写法.md",
+      "before": null,
+      "sha256": "466e237c3e6a0ae72fc4296fa4973e34b798eb6704e2a4647fe938d42e64b575",
+      "size": 1909,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/03-研究与事实核验SOP.md",
+      "before": null,
+      "sha256": "ff3b92ea60695572d1fe88d53f02b2453f3f6f060aae298872ff7d7dc45d9ff7",
+      "size": 1275,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/04-内容重构与迁移SOP.md",
+      "before": null,
+      "sha256": "19083c9134121ac09f3fa385a38340c90d05ebdb0b09a18575b9a33e146b4e60",
+      "size": 1536,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/05-链接与结构审计SOP.md",
+      "before": null,
+      "sha256": "f40151166f3080ac0d773a9eaa099ef599de906b4c0445b84ad98d92a1321fe7",
+      "size": 1408,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/06-插件评估SOP.md",
+      "before": null,
+      "sha256": "db0289bcdd37b250ba0444998163f196b7e86fdba58fa62aae24f5c9f9145b29",
+      "size": 1347,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/07-Vault质量检查SOP.md",
+      "before": null,
+      "sha256": "f8cee4c4fdbd0dabd2f39dcff2aeda7c30161a940e7ca2b62fd5d651b7ad97c3",
+      "size": 1073,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/08-变更日志与交接SOP.md",
+      "before": null,
+      "sha256": "5471b82ee22825c5b5927630035c1f86d2e1ce5d86266a9059b5df62b853e19a",
+      "size": 1180,
+      "action": "add"
+    },
+    {
+      "path": "Obsidian知识/90-资源/04-AI协作工具箱/09-模板调用速查.md",
+      "before": null,
+      "sha256": "f0621c4310856d36bc79ba8be218e5a68330c5ab07d9bae217f77705e19e1317",
+      "size": 3421,
+      "action": "add"
+    },
+    {
+      "path": "README.md",
+      "before": "5a90edad5117843a8274296294104cd15d19636c107c2462d00db45adf176c3d",
+      "sha256": "6946edfcaba76e3588390796f80f3c27fd7854cd339cae7b44300e50476662d4",
+      "size": 3183,
+      "action": "modify"
+    },
+    {
+      "path": "哲学与文化/10-主题/01-文化政治与组织结构/00-文化政治与组织结构-MOC.md",
+      "before": "75633f58c2e726c9b7e0cc5170d04afbf7495acdf66c173df2777f334d3e88d7",
+      "sha256": "8dbb01b2050282e5b9496c1ede0dac04689f3050ab046e4a671856d5b26f2799",
+      "size": 16303,
+      "action": "modify"
+    },
+    {
+      "path": "哲学与文化/90-资源/01-原始材料与参考来源索引.md",
+      "before": "eaf9ea60910ebe3d943df7a33d5313bd8453e7021d506fd886b25779f26686e3",
+      "sha256": "b1459aade8aaf2908accc219027933af701a8249f00620a097cce524598c46f8",
+      "size": 26714,
+      "action": "modify"
+    },
+    {
+      "path": "数学/20-线性代数与几何/01-向量矩阵与张量.md",
+      "before": "01a3f97c21f773857e3714e042a019a60a7ebf45a1a6691de17f5442f5164068",
+      "sha256": "241e23718f7622afda750d155d492802f9c3dc4d1249e4ca9769e9550bdf4bd1",
+      "size": 6653,
+      "action": "modify"
+    },
+    {
+      "path": "数学/20-线性代数与几何/03-点积范数距离与余弦相似度.md",
+      "before": "ceb3a9fa07816320016778c7f2f11d3ad6631782fe8ce7c4aa34c073cedc9897",
+      "sha256": "a6194ac9c72df8b1c18d79aa88d5d0d09074b4b72daa45cac83639ad5f82162d",
+      "size": 6208,
+      "action": "modify"
+    },
+    {
+      "path": "数学/20-线性代数与几何/04-特征值SVD与低秩近似.md",
+      "before": "79823f33dabd6ed534164974cca99c1f045a3a9aa3f12569174e7bb5d2316e6d",
+      "sha256": "6d5a6544ccb36de257f714fca46146b764785850581436f98e4eae5ac7b17863",
+      "size": 7978,
+      "action": "modify"
+    },
+    {
+      "path": "数学/20-线性代数与几何/05-正交投影子空间与方向消除.md",
+      "before": "b99c816ce7eeb17a3042ab45e0999590e5dc5bdc4d2ba01d045581f1a87401be",
+      "sha256": "108bf439940344b417f44a70315e33519b92e3901e34afdea47896966c288d01",
+      "size": 6889,
+      "action": "modify"
+    },
+    {
+      "path": "数学/30-概率与统计/05-统计估计置信度与模型评测.md",
+      "before": "dcb40cc0a00fd0b9e7333e1eaab807bfe66c4abfe02f6970d084201b68623deb",
+      "sha256": "0a2e57c16fa489b2ab022863bba500c68bf34c8a329e5b9b6ac32188b621cda6",
+      "size": 10483,
+      "action": "modify"
+    },
+    {
+      "path": "数学/40-微积分与优化/04-SGD-Momentum-Adam与AdamW.md",
+      "before": "6ff4040a51b99fc075ab7515ea6adbaa53384c381ecfd9dd901a4b916ceab961",
+      "sha256": "b6dedf27c652b819d116e149fb7c1f8eec30a6da8adddbe2bd3b1118b94adec5",
+      "size": 8557,
+      "action": "modify"
+    },
+    {
+      "path": "数学/40-微积分与优化/06-曲率Hessian与学习率稳定性.md",
+      "before": "49245644a20e427d15fd143ee650e159638fe828a2ce0a841494d12188326803",
+      "sha256": "0ad35249de5bfd64adeb8131afeb8d7372aa04dcb6b4860600a06a4d6307fece",
+      "size": 8771,
+      "action": "modify"
+    },
+    {
+      "path": "数学/50-信息论/02-指数对数Softmax与LogSumExp.md",
+      "before": "76397df9919e4dfe72a74a9c7140c1e1dc9555cb159f30673264e068a865265f",
+      "sha256": "bbf611c9ec626c23cae1f7f93b67528dd7d720549a06070953333f319ff3e317",
+      "size": 12740,
+      "action": "modify"
+    },
+    {
+      "path": "数学/50-信息论/80-Softmax数值稳定性实验.md",
+      "before": "8ab84472e3083edb0268a7229de9cc0a9d9f33c804a524a895639009fa8453bb",
+      "sha256": "b27da2064d8f7d3e4b17154788117f8c8333901ad613c75e67fa5bc2b413dd7f",
+      "size": 14249,
+      "action": "modify"
+    },
+    {
+      "path": "数学/50-信息论/test_softmax_stability_contracts.py",
+      "before": null,
+      "sha256": "a335ea0a1264b139416fbaeb244432d04f8db360e148f460e78419b97983baf2",
+      "size": 2376,
+      "action": "add"
+    },
+    {
+      "path": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱.md",
+      "before": "c93e53dfc9967831356a22599463e198b5439ec6975c36dae30ff9f968183b64",
+      "sha256": "65041134fb735d4581da7fc883ceb67f757d143826dbdac32598f40e1c3f8c52",
+      "size": 9446,
+      "action": "modify"
+    },
+    {
+      "path": "数学/90-资源/00-数学资源-MOC.md",
+      "before": "370d532599100d6fcd693167b1db68bd2b51177ee539229288e3423f7ca6d3b3",
+      "sha256": "c476a081e59204c530433486e270f0c948c0a31a20764575eb38b92a4667e023",
+      "size": 3581,
+      "action": "modify"
+    },
+    {
+      "path": "计算机知识/00-开始/00-计算机知识-首页.md",
+      "before": "ba6dd3d2d85dc3000e08b9069bfe5f066abab0efcd78b72de852d04fba5ce64e",
+      "sha256": "cadc6c7756e656d125d6848cf9b6212c0e30a021e8d803489e63dc47f3e01e90",
+      "size": 15769,
+      "action": "modify"
+    },
+    {
+      "path": "计算机知识/10-编程语言/02-C++/05-struct类模板与STL.md",
+      "before": "41e687017c21a34537a3dd796ff63025e1e6045840da4da038790a97c559b407",
+      "sha256": "e5c966bbe397e1a3feafb7d675ae46926541984d00f90c94dbb33082fa5606b9",
+      "size": 4356,
+      "action": "modify"
+    },
+    {
+      "path": "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+      "before": "d15b58d4014d5c6acf76132a1854810c139977c1ea5490951e4fe29a56f17882",
+      "sha256": "bc070cfe308a5aeccce0886327d374f4486511af13787809b1aafd9c450f6956",
+      "size": 11272,
+      "action": "modify"
+    },
+    {
+      "path": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "before": "85a2aa13655b3e76a339fbba82b6a5f6072a4fc787f9d279461dde0519d83ef1",
+      "sha256": "81dee4ac8d882277daa9b86e53954cc1a2285df514bf27c669ed02779c130bda",
+      "size": 14711,
+      "action": "modify"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/README.md",
+      "before": "888f91501048fa4efcddd4ce07a43ef52afd58933530f1565e2cb9c57d017d0c",
+      "sha256": "37e36b809bdd3ff2f7c2b30ba28597e29ee7addcf822809a3fcc87d86cfcbcc7",
+      "size": 7800,
+      "action": "modify"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/test_graph_contracts.py",
+      "before": null,
+      "sha256": "8a088d98a63305dae329f2e26671be744932a98f47b2ca888fff3ab6694a1739",
+      "size": 974,
+      "action": "add"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/README.md",
+      "before": "c24b24cd7db2b34954b1e61d3a5e3f41783c7ab0c3f2a339e24d12ffb3cba957",
+      "sha256": "8534ddf2f6d15dd18f10e3de1191c10553b854c87d8d5321ea747bbaf1efab9f",
+      "size": 29547,
+      "action": "modify"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/test_retrieval_contracts.py",
+      "before": null,
+      "sha256": "59a8d77679cb9d7d55d4e4bc1906f71bee3d2c38dc318705f07c9bd3454e827b",
+      "size": 1914,
+      "action": "add"
+    },
+    {
+      "path": "资料/README.md",
+      "before": null,
+      "sha256": "35b4cf155026212d3047a4151073f9b93a7679cc13fd1932c9955297cc1cc7f4",
+      "size": 8823,
+      "action": "add"
+    },
+    {
+      "path": "资料/个人规划/McGill - Computer Science Future Graduate Students - 网页快照.pdf",
+      "before": null,
+      "sha256": "abb2d9bf3091399a7b2c1d674f3d4c05c6c86332c5399ca616c17ae0a3b69f28",
+      "size": 422573,
+      "action": "add"
+    },
+    {
+      "path": "资料/个人规划/README.md",
+      "before": null,
+      "sha256": "f016b7bd4513c9fe1f31c3bee3a563d04bcbc000a26d8014f8c7fe22f4853acf",
+      "size": 1498,
+      "action": "add"
+    },
+    {
+      "path": "资料/个人规划/中国大陆光电本科背景_多阶段移民路线图_2026-08-30.md",
+      "before": null,
+      "sha256": "b9fa77b8d6365846073fcad905ca714b5aed3d7556fd4bed2a5bae32fa520e37",
+      "size": 72563,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Ablowitz与Fokas - Complex Variables Introduction and Applications.pdf",
+      "before": null,
+      "sha256": "fd5f82167c9231466277fabb42391e1d248fe8b51aa4a1c656fb27cf45708135",
+      "size": 7695355,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Axler - Linear Algebra Done Right - 第2版 - 884bcaf7.pdf",
+      "before": null,
+      "sha256": "884bcaf70e9ed4deb09251c422fa67911fc1f9993c665cf5385d1ac8d3d8363c",
+      "size": 1177700,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Axler - Linear Algebra Done Right - 第2版 - bbe1be53.pdf",
+      "before": null,
+      "sha256": "bbe1be535cb0c01cb7352ffd37d5f2a491b66fa6be298464aecf36e50800a310",
+      "size": 1273864,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Banner - The Calculus Lifesaver.pdf",
+      "before": null,
+      "sha256": "4c33732730b1e2ee13c42c807dc19a03b6bf27e780b0825cdc01b1340b5dd21e",
+      "size": 25257114,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Hass等 - Thomas Calculus - 第14版.pdf",
+      "before": null,
+      "sha256": "8d912af54a409509183e8c95eaa6fb971b4f83424004e1f2eb35203ca0b0017e",
+      "size": 42745911,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Kouba - Thomas Calculus Instructor Solutions Manual - 第14版.pdf",
+      "before": null,
+      "sha256": "75e39efc18559158c9f9c5ae8abf7f7b6b75f654e463a4363c10ffbf54487365",
+      "size": 48393398,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Lay等 - Linear Algebra and Its Applications - 第6版.pdf",
+      "before": null,
+      "sha256": "438850e59d216c0b482988c5f7390003be2cccb2019ea44571e0a7fabc05b177",
+      "size": 100002717,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Ross - A First Course in Probability - 第10版.pdf",
+      "before": null,
+      "sha256": "e9377336bf485e9ddbde51ce2078489a52561149d1adb353c4b3d643896cb67d",
+      "size": 5097131,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Stewart等 - Calculus Early Transcendentals - Metric - 0c745f6a.pdf",
+      "before": null,
+      "sha256": "0c745f6aed4045cb1f6c66eae695d0c8400e59096fb071e3dbf8622915fd32ae",
+      "size": 28017551,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Stewart等 - Calculus Early Transcendentals - 第9版Metric - 01880ca4.pdf",
+      "before": null,
+      "sha256": "01880ca482833da0bde2cacf5a8280db1ed4fd46de0818b188e6b614ba160cf0",
+      "size": 32993549,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Stewart等 - Calculus Early Transcendentals - 第9版Metric - ccc5f377.pdf",
+      "before": null,
+      "sha256": "ccc5f377b857fe2003207a7d430e5760772fad8a6ad7891cf7188dd34fd3fe95",
+      "size": 76044132,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/数学/Stewart等 - Calculus Student Solutions Manual - 第9版第1至17章.pdf",
+      "before": null,
+      "sha256": "dfe247f7672df223045e726fcd38e501c6ac8f1fcd682842eeed38ba582d1f82",
+      "size": 46188169,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/物理/Baumann - Mathematica for Theoretical Physics.pdf",
+      "before": null,
+      "sha256": "e5678cb7035409c1d7c2674f4ec40f834a7c8db2de02d3929acc7ddf6011e234",
+      "size": 2746651,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/物理/Griffiths - Introduction to Electrodynamics - 第4版.pdf",
+      "before": null,
+      "sha256": "6fc570d1ce606c53d0cefe53e430ee3a4df2914da3ca265744e3deee430538af",
+      "size": 4772354,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/物理/Griffiths - Introduction to Quantum Mechanics - 第2版.pdf",
+      "before": null,
+      "sha256": "0b79d3a7cc81f0330c2065f838c9681a11684f64dc95b2a1c2cfe0e7ff4d626d",
+      "size": 20865426,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/物理/Hassani - Mathematical Methods for Students of Physics and Related Fields.pdf",
+      "before": null,
+      "sha256": "a728d13eb50c895c713c084aab1610ba76ceb6413046051ba188c8e4aa976dad",
+      "size": 6994946,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/物理/Hassani - Mathematical Physics A Modern Introduction to Its Foundations.pdf",
+      "before": null,
+      "sha256": "59bc5c85f05ce050f7c0e417ee29f876ca0a37e91e794b6fdb08db017211781c",
+      "size": 10770498,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/物理/Purcell与Morin - Electricity and Magnetism - 第3版.pdf",
+      "before": null,
+      "sha256": "c04a003a299c6b77ee12017f2ee683cd627b419400bd8a0ec56b2c041523a3d9",
+      "size": 14374482,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/电子与信号/Alexander与Sadiku - Fundamentals of Electric Circuits.pdf",
+      "before": null,
+      "sha256": "1a6f451974f5bf1781524eca096d291b47a2f22df0b2968fe99b760d46faf906",
+      "size": 25147026,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/电子与信号/Haykin与Van Veen - Signals and Systems Solutions Manual - 第2版.pdf",
+      "before": null,
+      "sha256": "0e1be3dc41ad545eb6b3f029be4727943322102300457cd3c2bea3c1c3056b6b",
+      "size": 4605950,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/电子与信号/Haykin与Van Veen - Signals and Systems.pdf",
+      "before": null,
+      "sha256": "788b29cfbabe85e3ba4cba8f8f6f33a068fa205f3e0325cb12db299d60263b33",
+      "size": 146568984,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/电子与信号/Mano - Digital Logic and Computer Design.pdf",
+      "before": null,
+      "sha256": "7b00be4fb0b05f5ea848e49a7b402a110f81eea8ceadf5af61537eedf740d8f7",
+      "size": 35749435,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/电子与信号/Neamen - Semiconductor Physics and Devices Basic Principles.pdf",
+      "before": null,
+      "sha256": "8c1d05abd99d35225595b41c4cf564908f4ccec5ea0e514da1302dbb422a0b05",
+      "size": 14026838,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/电子与信号/Neamen - 电子电路分析与设计 - 第3版.pdf",
+      "before": null,
+      "sha256": "8ec7399d545146d19aa16d6c9ff4cab24975373126b5a4461153ea6cdcdae9cc",
+      "size": 158322767,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/电子与信号/Sedra与Smith - Microelectronic Circuits.pdf",
+      "before": null,
+      "sha256": "ab20fcdfc7b95d013861e6b379fc235821ba2d49f5362e00c67125be5f4f09e0",
+      "size": 55108810,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/钢琴/Faber - Adult Piano Adventures - Book 1.pdf",
+      "before": null,
+      "sha256": "7f783d1d3fa7320c68470ab4dd8d7d239ce12945cd18a5a5b70c6c5b385da297",
+      "size": 47906339,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/钢琴/Palmer等 - Alfred成人钢琴教程 - Level 1.pdf",
+      "before": null,
+      "sha256": "aa8a9c1536ce257f221dac03a806a01812c33beb129a6f84f5df90a68a622042",
+      "size": 9052414,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/钢琴/Palmer等 - Alfred成人钢琴教程 - Level 2.pdf",
+      "before": null,
+      "sha256": "7385fe14e15c40eced77ba7afb8ae7fd5653870895e6ae98c1fa0e5fdbdc39be",
+      "size": 4902717,
+      "action": "add"
+    },
+    {
+      "path": "资料/书籍/钢琴/Palmer等 - Alfred成人钢琴教程 - Level 3.pdf",
+      "before": null,
+      "sha256": "158b51381a00acff8f93a799236b1a48a7c0765c612de34d7f66967a65fe303d",
+      "size": 3900825,
+      "action": "add"
+    }
+  ]
+}

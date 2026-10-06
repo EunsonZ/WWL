@@ -1,0 +1,1250 @@
+{
+  "algorithm": "SHA-256",
+  "root": "数学",
+  "excluded": [
+    "90-资源/维护/文件SHA256清单.json"
+  ],
+  "note": "清单不包含自身，以避免递归哈希；归档本身另有旁置校验记录。",
+  "files": [
+    {
+      "path": "00-数学-首页.md",
+      "bytes": 8187,
+      "sha256": "5b8dd8a95364f5641b2a1fef9d6901319b1f34308ab81710ea33255225c5a2bf"
+    },
+    {
+      "path": "01-数学学习路线.md",
+      "bytes": 9075,
+      "sha256": "7a6c5185e122049ebd8d59e16eb01a55d6f6f35d4e955114c79f7c189f38bb57"
+    },
+    {
+      "path": "02-AI数学应用索引.md",
+      "bytes": 8733,
+      "sha256": "8fda39d593627bed3e35aa4f6cfc57c0ef6f39cc781f36114fa345349e9ec5a2"
+    },
+    {
+      "path": "03-数学符号表.md",
+      "bytes": 9009,
+      "sha256": "17e82835fb9c543cb0cd54c902287c759de82f0bedbccbc379ecb3458915e62f"
+    },
+    {
+      "path": "10-数学语言与基础/00-数学语言与基础-MOC.md",
+      "bytes": 6917,
+      "sha256": "b9c29c0aded8d59fb27ff0f89066a3d1aa2e1a17bd761777cad6df255e728d04"
+    },
+    {
+      "path": "10-数学语言与基础/01-函数符号索引维度与Shape.md",
+      "bytes": 10817,
+      "sha256": "099abdc0e191fe8da576f00641adf670841a3152a50fe89a300605991b6cf3af"
+    },
+    {
+      "path": "10-数学语言与基础/02-序列求和与维度检查.md",
+      "bytes": 10012,
+      "sha256": "8b06229a347b109dc4498f11fce9a2ff3eb719f73835b24d824882c992db3091"
+    },
+    {
+      "path": "10-数学语言与基础/03-集合映射命题与合法推理.md",
+      "bytes": 14327,
+      "sha256": "f44f7b066fd7e0a10ab576c8b94e1869848ee23691d2d687e8009de17e4a24d0"
+    },
+    {
+      "path": "15-微积分/00-微积分-MOC.md",
+      "bytes": 3905,
+      "sha256": "d23e202d3fbef10cf2b46647e4d07182bf5ba6edbbb984383cc954257d9f32cb"
+    },
+    {
+      "path": "15-微积分/01-函数极限与连续从误差控制到图像.md",
+      "bytes": 4659,
+      "sha256": "b489f5942f407cf5c196b2321ee1df80f1f9bf20a7bf79e79423659f118957c4"
+    },
+    {
+      "path": "15-微积分/02-导数与微分局部线性模型.md",
+      "bytes": 4459,
+      "sha256": "1c54769cd49e8b11cb93358749972351b372aa48f9d2de5d1bc6df9e073917a9"
+    },
+    {
+      "path": "15-微积分/03-中值定理与导数应用单调凸性和优化.md",
+      "bytes": 4506,
+      "sha256": "32c29047cce556328774d4a3ae87f30dfb0a52baeb424481477d7541d744013c"
+    },
+    {
+      "path": "15-微积分/04-Taylor展开与误差近似为什么可信.md",
+      "bytes": 4552,
+      "sha256": "839f83ec5d106282e0dfaa8c7a5e9fadfe2801560bb1ee6194929820c7dc4f9e"
+    },
+    {
+      "path": "15-微积分/05-原函数与积分技巧换元分部及有理函数.md",
+      "bytes": 4686,
+      "sha256": "7c58b7317e3f2b1b84b5ecf33bc1042e83c5158b2330eeba69c595bc460502a9"
+    },
+    {
+      "path": "15-微积分/06-定积分与微积分基本定理累积和变化互逆.md",
+      "bytes": 4371,
+      "sha256": "6bf7fbfb1a852502a720416ca4418c33a6b3a3107143c34faba7c8f434216a0d"
+    },
+    {
+      "path": "15-微积分/07-积分应用与数值积分几何物理和误差.md",
+      "bytes": 4460,
+      "sha256": "5048bb5721a164917b74acb0892cea126a2836485786a683a099d17ed668c9e3"
+    },
+    {
+      "path": "15-微积分/08-反常积分无穷区间和奇点.md",
+      "bytes": 4484,
+      "sha256": "a6aa3e5a7206481bfe98a350c1b54097961b979ec66700c9543cb6647a6ad5a2"
+    },
+    {
+      "path": "15-微积分/09-数项级数与幂级数无限求和的计算.md",
+      "bytes": 4532,
+      "sha256": "cc62cf522d07b930d8efc13a1030f273f6fafbf7021b37e9d5c03625d343bc95"
+    },
+    {
+      "path": "15-微积分/10-参数曲线极坐标与空间曲线.md",
+      "bytes": 4512,
+      "sha256": "b921b8379aba82c65e74e2e7ad6ea98b6fccbb423f3312fbf048fa8bf675c1a3"
+    },
+    {
+      "path": "15-微积分/11-多元极限偏导与全微分.md",
+      "bytes": 4462,
+      "sha256": "29da0257183b33bb5f87273ea9f0c3dc3a8f3cd2e7ff83bb11a8f66b971714a0"
+    },
+    {
+      "path": "15-微积分/12-多元链式法则隐函数与约束优化.md",
+      "bytes": 4660,
+      "sha256": "722857659d9267f6f7671b100d4b776f950a16ec7f3cc35ce530a4ca53fa4942"
+    },
+    {
+      "path": "15-微积分/13-重积分与变量代换从切片到Jacobian.md",
+      "bytes": 4399,
+      "sha256": "a54e2515ee3f1ea4e813502b366460aa930920a3eaf3a7df62480b8f22e41073"
+    },
+    {
+      "path": "15-微积分/14-曲线积分与保守场路径为何重要.md",
+      "bytes": 4262,
+      "sha256": "7305e8f2b551a38b26c3ef43b15d4f49db3aa1445ee7a256959f35255540dcee"
+    },
+    {
+      "path": "15-微积分/15-曲面积分与通量法向和面积元.md",
+      "bytes": 4470,
+      "sha256": "0972b57373773e9eed729e5e1aa47c55e0adb53e59c0cf1c328607e287e6cbf1"
+    },
+    {
+      "path": "15-微积分/16-Green-Gauss-Stokes内部变化与边界累积.md",
+      "bytes": 5099,
+      "sha256": "f24a48ac3a2c49bd5acb5b8c49d49455649e09a7023fd89b70232ea2f4113c89"
+    },
+    {
+      "path": "16-数学分析/00-数学分析-MOC.md",
+      "bytes": 4092,
+      "sha256": "0a51318a802b8cde9b387c21c8aef8993d60ec26fb74aff7909a1be94d001322"
+    },
+    {
+      "path": "16-数学分析/01-实数完备性上确界与基本不等式.md",
+      "bytes": 4904,
+      "sha256": "bc3058509b5ba74e0b6b2e49f9888b67150e1fffd76ddcd22f0957d0a979f488"
+    },
+    {
+      "path": "16-数学分析/02-数列极限子列与上下极限.md",
+      "bytes": 4696,
+      "sha256": "740865ce76b8300de89af9a0b285377757a303f921e48ddb9c7050f3adb77519"
+    },
+    {
+      "path": "16-数学分析/03-度量空间开闭集紧致与连通.md",
+      "bytes": 4577,
+      "sha256": "1b0a152472abeea02af195443e15973ca547cea00588c0d23dd921f54a31b40e"
+    },
+    {
+      "path": "16-数学分析/04-函数极限连续与一致连续.md",
+      "bytes": 4312,
+      "sha256": "b5ffca00b66f64b815f26831832640a6c9b48c11a54a67ee5f5b2e7c808017ca"
+    },
+    {
+      "path": "16-数学分析/05-微分中值定理与导数的边界.md",
+      "bytes": 4118,
+      "sha256": "f552ecd064ef4d818b9cc4777ed28e03864c15b14ba70b075b1033230b1d7652"
+    },
+    {
+      "path": "16-数学分析/06-Riemann积分Darboux判据与可积性.md",
+      "bytes": 4700,
+      "sha256": "b126249af48965122a37097434cdc0e62904309713ae2ab5806bbbf69d20c84e"
+    },
+    {
+      "path": "16-数学分析/07-数项级数绝对条件收敛与判别法.md",
+      "bytes": 4561,
+      "sha256": "c9dcccf817d4d9add425ede8a4d5e21b1157d7e96fa34837fc7a7d5c49862786"
+    },
+    {
+      "path": "16-数学分析/08-函数列函数项级数与一致收敛.md",
+      "bytes": 4243,
+      "sha256": "0b34792f2f044d5b36d108dffff6fb56d9a8991a528f0a208c21dc27c4ed9e9b"
+    },
+    {
+      "path": "16-数学分析/09-幂级数解析性与Taylor反例.md",
+      "bytes": 4393,
+      "sha256": "41e52c92b33ae00790453e4fe07b8d1e609249cb398c0c653a1d83d5e5e9d33d"
+    },
+    {
+      "path": "16-数学分析/10-反常积分与含参积分的极限交换.md",
+      "bytes": 4399,
+      "sha256": "905f2dba51a6b46d9842bae1f32759bc89a9e0164a731fa154f86b8c78e9bfbd"
+    },
+    {
+      "path": "16-数学分析/11-多元微分逆映射与隐函数定理.md",
+      "bytes": 4476,
+      "sha256": "33fa10c15d95331d00fb97c13d914fd0bdb7b006889ee03196db5578375cd891"
+    },
+    {
+      "path": "16-数学分析/12-多重积分换元与积分次序.md",
+      "bytes": 4053,
+      "sha256": "608f0296a7f146b12bdd657a0bf5b5d4e62f88d78a0fb58bbc29916249562516"
+    },
+    {
+      "path": "16-数学分析/13-Fourier级数正交展开与收敛.md",
+      "bytes": 5022,
+      "sha256": "f1e801632e46424c790ea36becbdfcdf72dcb9de03b54e4fbda94becff5f9c8d"
+    },
+    {
+      "path": "16-数学分析/14-测度可测函数与Lebesgue积分.md",
+      "bytes": 4479,
+      "sha256": "7016df2ed89689ad470367e88fdadf0f90ad94eb5cbb7edb24987528d6862a44"
+    },
+    {
+      "path": "16-数学分析/15-收敛定理与Fubini-Tonelli.md",
+      "bytes": 4580,
+      "sha256": "2bdafe11fdd90a7f10d28db03d1f802fed977e88d2e2b0b2b8fde14628967e64"
+    },
+    {
+      "path": "16-数学分析/16-度量完备压缩映射与微分方程.md",
+      "bytes": 3996,
+      "sha256": "440ca31c8e9e6884779d75e1064948e792caadcdcd67306ce0bc31465d578d7c"
+    },
+    {
+      "path": "16-数学分析/17-函数空间范数完备性与紧性.md",
+      "bytes": 4393,
+      "sha256": "796fc2093a000e0bba83c82d8f1245bd220594ffc7cc780250b43361294e39d2"
+    },
+    {
+      "path": "16-数学分析/18-Riemann-Stieltjes积分与有界变差.md",
+      "bytes": 4532,
+      "sha256": "c9f8d6600b9576afedb12fb6d5eb80b3e263e28e3beacf8721d66fca959e8f0e"
+    },
+    {
+      "path": "20-线性代数与几何/00-线性代数与几何-MOC.md",
+      "bytes": 7391,
+      "sha256": "26e1230b55d91284a0151b477462975259d2f6eaf89ff62bec6e0aa4666f00b9"
+    },
+    {
+      "path": "20-线性代数与几何/01-向量矩阵与张量.md",
+      "bytes": 6331,
+      "sha256": "da54a3708634f786452d822f2304cf07e02fb828c7256650393792c81fd1e579"
+    },
+    {
+      "path": "20-线性代数与几何/02-矩阵乘法线性映射与Einsum.md",
+      "bytes": 5871,
+      "sha256": "4350bb0cc17b5701f5a012275e2cee2aaefe1b7b261a23dd4b7591c3041531c7"
+    },
+    {
+      "path": "20-线性代数与几何/03-点积范数距离与余弦相似度.md",
+      "bytes": 5886,
+      "sha256": "71484c7487debd91df63d56b52f06157ec18c4cb53b0ed214163daa2def30467"
+    },
+    {
+      "path": "20-线性代数与几何/04-特征值SVD与低秩近似.md",
+      "bytes": 7656,
+      "sha256": "31cdbb5bc39416311b56ab49ca6daa81a0480f838ba082e70e4d078814f1b8a2"
+    },
+    {
+      "path": "20-线性代数与几何/05-正交投影子空间与方向消除.md",
+      "bytes": 6567,
+      "sha256": "4ea6e0c11705818d4c3c857da73f392c7a24743e4c5913f79ecfdfbfda61f670"
+    },
+    {
+      "path": "20-线性代数与几何/06-三角函数复数旋转与RoPE.md",
+      "bytes": 6368,
+      "sha256": "52a3e278d7584935b8e97e494274a3b7eb0f681826a61eefcf14d9ce7c200c06"
+    },
+    {
+      "path": "20-线性代数与几何/07-线性方程组消元LU与解的结构.md",
+      "bytes": 4033,
+      "sha256": "ce2e3aac887b6b80a6b802027b3ff847be916c9f9ad5ea5a15e4ba11dd7d0a29"
+    },
+    {
+      "path": "20-线性代数与几何/08-行列式体积可逆性与计算.md",
+      "bytes": 4112,
+      "sha256": "753510804bc59b284b03b3d51260348023718f116a1da160fe83e53ee607adc8"
+    },
+    {
+      "path": "20-线性代数与几何/09-向量空间基维数与坐标.md",
+      "bytes": 3817,
+      "sha256": "1898debabeeb582e06d1be0940ceb54f2ed4a7dad41c3abda2a1a6fc63690e16"
+    },
+    {
+      "path": "20-线性代数与几何/10-线性映射核像与四个基本子空间.md",
+      "bytes": 4037,
+      "sha256": "db878766f0119af48a1b3e75693564058136a80559b203fc2da9666528fa4992"
+    },
+    {
+      "path": "20-线性代数与几何/11-基变换相似与矩阵表示.md",
+      "bytes": 3667,
+      "sha256": "efd0f5d1bc3e4125b8ca1528194682a1dcb4f1c797b977ed8e1184878a6774c5"
+    },
+    {
+      "path": "20-线性代数与几何/12-特征结构对角化与动力系统.md",
+      "bytes": 3956,
+      "sha256": "75aa106542d93f42341fd6a67348d47e4fa7287ad252746ed6f37abb1c2ea5b8"
+    },
+    {
+      "path": "20-线性代数与几何/13-内积Gram-Schmidt与QR分解.md",
+      "bytes": 3916,
+      "sha256": "8296f3b68c3df622eccb8520902a8acbe0f5f75e3773d9fc12cd40e277b55cfc"
+    },
+    {
+      "path": "20-线性代数与几何/14-最小二乘伪逆与正则化.md",
+      "bytes": 3729,
+      "sha256": "048db49ae30a6dacb5b61b9dea9b2622a9b0d59c1e747947100315fa7cb32296"
+    },
+    {
+      "path": "20-线性代数与几何/15-谱定理二次型与正定矩阵.md",
+      "bytes": 3714,
+      "sha256": "b94f029db83ebd4500db0cd1067027697feeed2e1abb1c4c076e272f31cfbc86"
+    },
+    {
+      "path": "20-线性代数与几何/16-SVD的推导最优低秩与PCA.md",
+      "bytes": 4327,
+      "sha256": "d33763784d74b1d4e8e2a08be8033709c857d290c426ca808792faee92ef31f6"
+    },
+    {
+      "path": "20-线性代数与几何/17-矩阵范数条件数与数值稳定性.md",
+      "bytes": 4076,
+      "sha256": "1ff1e534e13759c89352dea707af4a849675d5fa0bda19844402b8942913038c"
+    },
+    {
+      "path": "20-线性代数与几何/18-分块矩阵Schur补与矩阵指数.md",
+      "bytes": 3344,
+      "sha256": "19816c198a37d073c32e9237356608429f13062509c724781babef5e8bdf960d"
+    },
+    {
+      "path": "20-线性代数与几何/80-低秩近似数值实验.md",
+      "bytes": 7683,
+      "sha256": "1345fbc0a9b4ae57a23279360c1888dde36784e89a953f1bdbc39dc2c90c2b01"
+    },
+    {
+      "path": "20-线性代数与几何/low_rank_approximation.py",
+      "bytes": 2517,
+      "sha256": "e8a5ffec6d035a83831db2f11b0f455aeafc7fa4a837957e8ae03fd96f3ecdef"
+    },
+    {
+      "path": "25-高等代数/00-高等代数-MOC.md",
+      "bytes": 3604,
+      "sha256": "0367e10bb32f530b040599922eb9566ae7d66ab8aaf126c45e42e17583576ebf"
+    },
+    {
+      "path": "25-高等代数/01-多项式整除Euclid算法与Bezout恒等式.md",
+      "bytes": 3692,
+      "sha256": "9bfb637b86a189d467699522dd9eae4f4365bba8f74006e4143157668e76349f"
+    },
+    {
+      "path": "25-高等代数/02-多项式的根重数不可约性与插值.md",
+      "bytes": 3977,
+      "sha256": "79e277c5aa3ec0222286b9560bb76e67df8a93012b53c3393edeaeee1e56d37b"
+    },
+    {
+      "path": "25-高等代数/03-抽象线性空间直和商空间与对偶.md",
+      "bytes": 3838,
+      "sha256": "f92622cb97936ce20427f5d2796302f7ac565239dccf21f04e04324e7784a0b1"
+    },
+    {
+      "path": "25-高等代数/04-多项式作用于算子与Cayley-Hamilton.md",
+      "bytes": 3843,
+      "sha256": "7ac6093afc01265569ed35560576829d2b3aaa1efc00cfd145cb39a79d4b1d46"
+    },
+    {
+      "path": "25-高等代数/05-不变子空间主分解与最小多项式.md",
+      "bytes": 3719,
+      "sha256": "f8af5086d359ddffcafe75dd3fef0c88170d99e1efb39d503a6464008a52ce9b"
+    },
+    {
+      "path": "25-高等代数/06-Jordan标准形广义特征向量与幂零链.md",
+      "bytes": 4281,
+      "sha256": "d0d0de4d0245a2943f85031c63aff9041c07be46652b2d844992567c406a19d5"
+    },
+    {
+      "path": "25-高等代数/07-多项式矩阵Smith标准形与有理标准形.md",
+      "bytes": 4307,
+      "sha256": "d247ecd8b85571b623318766ec6a837997c52dc2773ccc360e6321e1be4d45c2"
+    },
+    {
+      "path": "25-高等代数/08-双线性型合同与实二次型惯性.md",
+      "bytes": 3994,
+      "sha256": "e55de1c2b14e1f17048aea2978570813783800289342f25e30a7609fb0f27e8c"
+    },
+    {
+      "path": "25-高等代数/09-伴随正规算子与酉三角化.md",
+      "bytes": 3731,
+      "sha256": "3461af881d1c1f36bf8224edd6442a5d7d7cb999eec94babd69ef29f57c6c9b7"
+    },
+    {
+      "path": "25-高等代数/10-多重线性张量积外代数与行列式.md",
+      "bytes": 3950,
+      "sha256": "73ff93aa9dba4238e52b4a31e3ada5bd492ee004ccb0e9640574e1d8c8998f45"
+    },
+    {
+      "path": "25-高等代数/11-群同态陪集与商群.md",
+      "bytes": 3796,
+      "sha256": "79cfc492b3715bdc2d991556bc4b61f4ecb3b2893ca542ab188cb3134d825a20"
+    },
+    {
+      "path": "25-高等代数/12-环理想商环与同态基本定理.md",
+      "bytes": 3572,
+      "sha256": "c6bdbfb42e59bcbe40c4e8f499862048e149a1f15709abebd2da465adfe7dd51"
+    },
+    {
+      "path": "25-高等代数/13-域扩张有限域与代数数.md",
+      "bytes": 3993,
+      "sha256": "2d2a8978760789059cc86662a361e0d4ee7cb064b9d40414b7813089d56d1a28"
+    },
+    {
+      "path": "25-高等代数/14-Galois对应入门与代数结构综合.md",
+      "bytes": 4620,
+      "sha256": "dca1e0b0e0d8fd4e63d56af77f93da9436d3636f4ced3fcceb6a6f9021067b07"
+    },
+    {
+      "path": "30-概率与统计/00-概率与统计-MOC.md",
+      "bytes": 4765,
+      "sha256": "851f09d17387316ce5e92a6ff58e5f5be339de82ce3bc1d004fcf7df04e2581c"
+    },
+    {
+      "path": "30-概率与统计/01-概率分布条件概率与贝叶斯关系.md",
+      "bytes": 8020,
+      "sha256": "e7aa4ed1d6fceba5d2863742240d83dd0ac5579ad987e77167214c60993aafdc"
+    },
+    {
+      "path": "30-概率与统计/02-期望方差协方差与抽样.md",
+      "bytes": 7851,
+      "sha256": "b97fc4cbc96f343b6a3af51e2e51db7adb2c34d19aae9f2132d7331c641621b0"
+    },
+    {
+      "path": "30-概率与统计/03-似然负对数似然与困惑度.md",
+      "bytes": 7382,
+      "sha256": "a9764fd1c27830c3d0a07c42241e5de86f1c67c4948c6636b43e9dad04408d0e"
+    },
+    {
+      "path": "30-概率与统计/04-温度Top-k与Top-p采样.md",
+      "bytes": 7796,
+      "sha256": "7907b58814cccd141287633fa69cbe7f89dce5f1accb60bf6371c9a61a6ee6dc"
+    },
+    {
+      "path": "30-概率与统计/05-统计估计置信度与模型评测.md",
+      "bytes": 10161,
+      "sha256": "10ad3f11135bd318992cca61ffbcea432baa8f8482f9f4434e1517ac2289e7e0"
+    },
+    {
+      "path": "30-概率与统计/80-采样与评测实验.md",
+      "bytes": 13521,
+      "sha256": "4a13cd6d19025881753d5948ae7c3a21e4d1e6ca599812a20812c4db4dd991f5"
+    },
+    {
+      "path": "30-概率与统计/sampling_evaluation_lab.py",
+      "bytes": 8058,
+      "sha256": "0a248ed3d58fec16141e3afb0a795721e76ccee418cfa00debd7edacd7e78119"
+    },
+    {
+      "path": "40-微积分与优化/00-微积分与优化-MOC.md",
+      "bytes": 5698,
+      "sha256": "462feea6a798d02abe85cb0a21cd55efd4e7002853565e1b2eece82c86161e32"
+    },
+    {
+      "path": "40-微积分与优化/01-导数偏导数与链式法则.md",
+      "bytes": 6127,
+      "sha256": "e77ffdd7aead1138e8fd5e64d76c08c72031982ea1710d237b3166e579895061"
+    },
+    {
+      "path": "40-微积分与优化/02-梯度方向导数与Jacobian.md",
+      "bytes": 6953,
+      "sha256": "19d6cfe776a8faee9a68c5bbc4f124288dcb1cac7940b5269910504e0168c631"
+    },
+    {
+      "path": "40-微积分与优化/03-计算图反向传播与自动微分.md",
+      "bytes": 6319,
+      "sha256": "c02054210ebaac1fe1424ad66d48a88ce17d66d1aec2d4e836067d7a5de212de"
+    },
+    {
+      "path": "40-微积分与优化/04-SGD-Momentum-Adam与AdamW.md",
+      "bytes": 8235,
+      "sha256": "1fe12f7a61c38650e3d20df03b4b3653838225aab8b654235aeccb5f4b3103bd"
+    },
+    {
+      "path": "40-微积分与优化/05-初始化归一化与训练稳定性.md",
+      "bytes": 7967,
+      "sha256": "064082d30b6c253591b9502527ac65faaed13d7ced1783d4e53e370c6fb3da6d"
+    },
+    {
+      "path": "40-微积分与优化/06-曲率Hessian与学习率稳定性.md",
+      "bytes": 8449,
+      "sha256": "1b2acdc2ca03e9391e72a23ef9775f096d745f1017d723ed27d074e1ce42983c"
+    },
+    {
+      "path": "40-微积分与优化/07-极限连续积分与Taylor近似.md",
+      "bytes": 15684,
+      "sha256": "2fe4a266b41a2dafd03702daff7a61a9d88513489a67e68fa535a6ee89397b15"
+    },
+    {
+      "path": "40-微积分与优化/80-梯度与反向传播检查实验.md",
+      "bytes": 10992,
+      "sha256": "0b41d491d66b6d54dd8e7fe8ea17350ca8efabf29ed576ff08f682d81e484688"
+    },
+    {
+      "path": "40-微积分与优化/gradient_check.py",
+      "bytes": 6217,
+      "sha256": "3c592647b2522b028f1e5efcbfb20c448efaec8fd7ebe214b81cc25a8bd2e369"
+    },
+    {
+      "path": "45-复变函数/00-复变函数-MOC.md",
+      "bytes": 3622,
+      "sha256": "96edfb1a649931c39bf394a354057e0a4c87a1401da2de06536339ad9193553c"
+    },
+    {
+      "path": "45-复变函数/01-复平面几何拓扑与复数运算.md",
+      "bytes": 3684,
+      "sha256": "b3e57c8c52a0f88053aafa2ec6930001c4f50ff371c5b3f671d00078edccd622"
+    },
+    {
+      "path": "45-复变函数/02-复可微与Cauchy-Riemann方程.md",
+      "bytes": 3859,
+      "sha256": "9258451ccf8694e4421e03403286fc22adcdcf2f45d3a43b73676619d60e99a6"
+    },
+    {
+      "path": "45-复变函数/03-指数对数复幂与分支.md",
+      "bytes": 3963,
+      "sha256": "7f60451dc4e8d2a8e31d00d30607205e5a94cdbaa692964c503af67e31ac0bb3"
+    },
+    {
+      "path": "45-复变函数/04-复曲线积分原函数与Cauchy定理.md",
+      "bytes": 3985,
+      "sha256": "9614da3867bd67dbd64c09a959cb13d3b4ee53d5455e2f2b05d8027432660f02"
+    },
+    {
+      "path": "45-复变函数/05-Cauchy积分公式与全纯函数的刚性.md",
+      "bytes": 3838,
+      "sha256": "23b96c070e419fdfa5dd10d7f35d75d76113188f4e733ba5e623bbf26d18ed6d"
+    },
+    {
+      "path": "45-复变函数/06-Taylor级数零点恒等定理与解析延拓.md",
+      "bytes": 3913,
+      "sha256": "5991dfba82261d56c1f97ec966b20ed3ee551dc795db0f20777e77e52af889f8"
+    },
+    {
+      "path": "45-复变函数/07-Laurent级数与孤立奇点.md",
+      "bytes": 3825,
+      "sha256": "be6c0ed21efc9c4cf179fcd44a39059a85aa6d37a0b5124a34d038d940bedc36"
+    },
+    {
+      "path": "45-复变函数/08-留数定理与极点计算.md",
+      "bytes": 3838,
+      "sha256": "abbcc794cf5ea4bc3f722b74ea54729235e1af1976fa929a2a8ca6f5bc2571a0"
+    },
+    {
+      "path": "45-复变函数/09-留数计算实积分与围道选择.md",
+      "bytes": 4241,
+      "sha256": "6aea63ede63d61d7c6a9c0def5be485155ec2b23fd7f79afd5c8adf460288819"
+    },
+    {
+      "path": "45-复变函数/10-辐角原理Rouche定理与零点计数.md",
+      "bytes": 3844,
+      "sha256": "066762c3ce31238da4c6d911eb4c62f0d7c4ccd2022b1b8a93b59beafeaa6ad6"
+    },
+    {
+      "path": "45-复变函数/11-共形映射Mobius变换与边值问题.md",
+      "bytes": 3913,
+      "sha256": "7e138366c7a95958d6834a7f8ba6479aa21da4b0dac0fceaba4a52c9c6c6cfe6"
+    },
+    {
+      "path": "45-复变函数/12-调和函数共轭函数与Poisson公式.md",
+      "bytes": 3824,
+      "sha256": "42d0a3003b9987877d6962d952d4497345b114bc59cc94ab7bc68425ebfa86e7"
+    },
+    {
+      "path": "45-复变函数/13-Schwarz引理正规族与Riemann映射.md",
+      "bytes": 4241,
+      "sha256": "255a082c49408d30274aedc4acbde06feb5518e44f5c5f086c7185dd0f196db6"
+    },
+    {
+      "path": "45-复变函数/14-多值函数单值化Gamma函数与延拓.md",
+      "bytes": 4404,
+      "sha256": "d8799df26064a89ccc35bd41909e89b7907271c579884b5e14a6d5c3cf660045"
+    },
+    {
+      "path": "46-数理方程/00-数理方程-MOC.md",
+      "bytes": 4365,
+      "sha256": "334d0aa54ec2db0ab8858185b996bbef17b762f45df368f43ddd7f61d9c988ad"
+    },
+    {
+      "path": "46-数理方程/01-一阶常微分方程与初值问题.md",
+      "bytes": 3889,
+      "sha256": "dbc91bd2f3199ea9fd92c0667204da4e02694b8b5c56183130e1b0420d72115d"
+    },
+    {
+      "path": "46-数理方程/02-高阶线性常微分方程与方程组.md",
+      "bytes": 3676,
+      "sha256": "f297c8cf67755c6468f0a0b579813a5156242847eb8c9d372071a4f6800b5c50"
+    },
+    {
+      "path": "46-数理方程/03-级数解Frobenius方法与特殊函数.md",
+      "bytes": 3888,
+      "sha256": "05f088a073ae2903653decbeca62910ee97765e9cb0b665b653abd0c7085c3ee"
+    },
+    {
+      "path": "46-数理方程/04-建模分类初边值条件与适定性.md",
+      "bytes": 4157,
+      "sha256": "c259290865d70abbbb57dc2e3cf1bdb7ac3da9044e72c74631945ce59c2593fc"
+    },
+    {
+      "path": "46-数理方程/05-一阶偏微分方程与特征线.md",
+      "bytes": 3552,
+      "sha256": "68be4d16f3a7b9133a62c90cdb61487afde2f2ca1a9219799c9aae8aef2e1042"
+    },
+    {
+      "path": "46-数理方程/06-Fourier方法与Sturm-Liouville谱.md",
+      "bytes": 4164,
+      "sha256": "0c838b51642426da4c24e571de968f1963cb16ac966ee81b1942a743131c7fee"
+    },
+    {
+      "path": "46-数理方程/07-热方程分离变量与扩散机制.md",
+      "bytes": 3856,
+      "sha256": "f51517f7b52bdba65804f32dde82ec9a38a67c7c950c0f6146da0f698af2ea15"
+    },
+    {
+      "path": "46-数理方程/08-热核全空间问题与Duhamel原理.md",
+      "bytes": 4157,
+      "sha256": "fa2e4ac377798e08ad3f86d7612754bcf954bf8271c263c126516a03f9f612ad"
+    },
+    {
+      "path": "46-数理方程/09-一维波动方程特征锥与能量.md",
+      "bytes": 3598,
+      "sha256": "5a359e42be19af9b6cf380f768ece294100ba0f160be9731abb7306970a4dc2d"
+    },
+    {
+      "path": "46-数理方程/10-多维波动方程球面平均与传播.md",
+      "bytes": 3845,
+      "sha256": "96ff6e77e47dcead834192928bad01acc5e9de28c9adcf1567a1adf8d1409968"
+    },
+    {
+      "path": "46-数理方程/11-Laplace-Poisson方程与最大值原理.md",
+      "bytes": 4044,
+      "sha256": "4bdeeae23991d35a33053f238b58ffdbf819a92da1952c585acccca3119c6692"
+    },
+    {
+      "path": "46-数理方程/12-分离变量在矩形圆盘与球域.md",
+      "bytes": 4021,
+      "sha256": "887c70dd2c1ac49a6a3ad46a5f8314964c8e03dad137826eb245c25220563d27"
+    },
+    {
+      "path": "46-数理方程/13-Bessel-Legendre函数与正交展开.md",
+      "bytes": 3895,
+      "sha256": "68aa96f1ae4ef28b71301703165cfb2e1417470c4a0ce6385749451caecf0d05"
+    },
+    {
+      "path": "46-数理方程/14-Fourier-Laplace变换解数理方程.md",
+      "bytes": 4078,
+      "sha256": "780439bde841c712491e70db355e7c2ee504e2d632653da2ad55a19bbc586bf8"
+    },
+    {
+      "path": "46-数理方程/15-Green函数基本解与边界响应.md",
+      "bytes": 3982,
+      "sha256": "9b6ae26f60179a0e3c62aec3ea55dd81603450b9304d2425a42e6e23d1f3d8c6"
+    },
+    {
+      "path": "46-数理方程/16-分布导数弱解与Sobolev空间.md",
+      "bytes": 4536,
+      "sha256": "14dde096621d160822616612fa962da922e518e668d70faa120d963192081a22"
+    },
+    {
+      "path": "46-数理方程/17-变分原理Lax-Milgram与能量估计.md",
+      "bytes": 4100,
+      "sha256": "0fd3b14cd06dacfff17845a7e4b24e3ec6b43929d45aa546b8270a71fdda5605"
+    },
+    {
+      "path": "46-数理方程/18-守恒律Burgers方程激波与熵条件.md",
+      "bytes": 4299,
+      "sha256": "242c786125863e18e66e2539603a5d3f840a3233e5d44ed0fc03c176fd68d6e7"
+    },
+    {
+      "path": "46-数理方程/19-差分格式稳定性CFL与收敛.md",
+      "bytes": 3996,
+      "sha256": "503701c60c0b51b88705515a802dc861f67df1d6ed3d9f08acf94b211f0220be"
+    },
+    {
+      "path": "46-数理方程/20-有限元谱方法与数理方程综合.md",
+      "bytes": 4449,
+      "sha256": "4ba1a5648df636a6663d8b6592eeb10947584db80e204b2efce6d471693fa305"
+    },
+    {
+      "path": "50-信息论/00-信息论-MOC.md",
+      "bytes": 5184,
+      "sha256": "dbd333c512f0a9b2e00693a2d2a4b1151f7b40901628e85094661cebe5f33e11"
+    },
+    {
+      "path": "50-信息论/01-熵交叉熵KL散度与互信息.md",
+      "bytes": 14287,
+      "sha256": "3264428760e0f6bfe1399540aebbde39ad6a1c030435d8a2105326bc202cb4fa"
+    },
+    {
+      "path": "50-信息论/02-指数对数Softmax与LogSumExp.md",
+      "bytes": 12358,
+      "sha256": "ee53abeac0320f8b3119a969ff0ccc5d05d4501b6f5398b08075b8e6131238b9"
+    },
+    {
+      "path": "50-信息论/80-Softmax数值稳定性实验.md",
+      "bytes": 13607,
+      "sha256": "e84535c7fb1722b0292b9e3f5bfefdd9fa3ba2032ce28fb8bc7838d743eb9420"
+    },
+    {
+      "path": "50-信息论/softmax_stability.py",
+      "bytes": 8055,
+      "sha256": "f07d8c9b5af23d6d1a12ffc0e27c79f0b7087437070ee53a509796f726ec1d0d"
+    },
+    {
+      "path": "60-数值计算与量化/00-数值计算与量化-MOC.md",
+      "bytes": 5325,
+      "sha256": "110bfd614c079b02f7c68af60a2c9b8feebb307431c6cad485478cc4f2b88437"
+    },
+    {
+      "path": "60-数值计算与量化/01-二进制浮点精度与数值稳定性.md",
+      "bytes": 9923,
+      "sha256": "4ff6056b023171a12650c2bdc1e773d1968d4c8f0bdb6c6427c79ca6e92c3fa8"
+    },
+    {
+      "path": "60-数值计算与量化/02-量化Scale-Zero-Point-Group与误差.md",
+      "bytes": 13151,
+      "sha256": "de9ac14defe199bce3afbc47d162c1b69ed09e7bad7750d6de08f58d95cb2e29"
+    },
+    {
+      "path": "60-数值计算与量化/80-量化误差实验.md",
+      "bytes": 16222,
+      "sha256": "b180aed1500a1af93c453980f46a5abdc34905df5e072b4beb6b0ee2f2e6c5e8"
+    },
+    {
+      "path": "60-数值计算与量化/80-量化误差实验.py",
+      "bytes": 10626,
+      "sha256": "67e8d6e3cbb7e49d340cb279314cf422293fed6657dd7683df55e5996c60c0d9"
+    },
+    {
+      "path": "60-数值计算与量化/81-浮点舍入与稳定公式实验.md",
+      "bytes": 7414,
+      "sha256": "16611c6d0314ea7daee6a1e12f5a2c95541d21268066c9ea51ff8b9ed4b61c5c"
+    },
+    {
+      "path": "60-数值计算与量化/81-浮点舍入与稳定公式实验.py",
+      "bytes": 2340,
+      "sha256": "5c87562197568b6be526b4277dc0c4afb722553800d573c6f77b375a8521703f"
+    },
+    {
+      "path": "70-信号处理与多模态数学/00-信号处理与多模态数学-MOC.md",
+      "bytes": 5397,
+      "sha256": "f8b3964eb3fb9b3ee97ce5e3d1bbf273bc7abc57508333509989b9234bc22947"
+    },
+    {
+      "path": "70-信号处理与多模态数学/01-空间几何Patch卷积与频域.md",
+      "bytes": 7497,
+      "sha256": "46609decbd3d9fe89c237b4413532e0840cd61a23e0ad9e9e5336238b63e8135"
+    },
+    {
+      "path": "70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱.md",
+      "bytes": 9096,
+      "sha256": "3075245b01a2bdb76eee3cfad383f628004a2c9203b9f5cf70f6c440e0518eca"
+    },
+    {
+      "path": "70-信号处理与多模态数学/03-高斯噪声扩散Score与ODE-SDE直觉.md",
+      "bytes": 8062,
+      "sha256": "eb51c4ae5eaf07d268dadc95b54489b31ef2b37254019cee88d376d80d66ef50"
+    },
+    {
+      "path": "70-信号处理与多模态数学/80-多模态数学最小实验.md",
+      "bytes": 9787,
+      "sha256": "90cfe4e2c294f6f92d8b18599d750d261eeab171a95eab9de1046950c172cae8"
+    },
+    {
+      "path": "70-信号处理与多模态数学/80-多模态数学最小实验.py",
+      "bytes": 5204,
+      "sha256": "58d915a95c1cd1b89337c5eff1573b98fda1a078520c9a1b8fbe6348ab975386"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/00-跨学科专题与综合练习-MOC.md",
+      "bytes": 3121,
+      "sha256": "f7b238dea0f965eea0e748dcc6f229e10fcae55124c0a66d8f54c2cbdbe8bd77"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/01-投影从最小二乘到Fourier与有限元.md",
+      "bytes": 4494,
+      "sha256": "193e5af4ddc4f4b061b83e5c584d0bfc8d10e78d8dfa3de8e46d7257683b888a"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/02-谱从矩阵指数到热波与Green函数.md",
+      "bytes": 4588,
+      "sha256": "41983d1d118b5bb3a68a3574575d4fe8a1cd0c54ae6ff9b48f0c72b0fb6bae4d"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/03-证明方法从量词到构造与估计.md",
+      "bytes": 4766,
+      "sha256": "737b57feda825f8009d1709b115bb586167ec0e36f714e286deffaf458273996"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/04-六科综合实验与误差检验.md",
+      "bytes": 5852,
+      "sha256": "4d5a5ea2f8867cc1a73436447caccb96c8bef9b760ca8bf549c96c11e603f622"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/07-微分形式与一般Stokes定理.md",
+      "bytes": 4460,
+      "sha256": "bef718831ce88d77678d6f77c0b0a96ab7a1f120ff1c8f820af427077777c1a6"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/08-曲线曲面与解析几何补充.md",
+      "bytes": 4338,
+      "sha256": "9be1e80afa19eb6b6f56ff056f110e84f06f40b772d311ebfa4f6c89557058d4"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/09-多元优化与变分法补充.md",
+      "bytes": 4569,
+      "sha256": "5fb611b9c9d12fc3004225fc257ec72248674a22a0cd0e7d3c27fe0041f96440"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/10-收敛关系与反例实验室.md",
+      "bytes": 4693,
+      "sha256": "eda04825db8ccadf7f20fc2d71bc68b6768d7a84081795b9d1ba4adb01185475"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/11-高等代数计算工作坊.md",
+      "bytes": 4610,
+      "sha256": "751151adb7e44395531041618ff29c5b816fbe5ee3b717b76d20c667fc73567f"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/12-边值问题共振与混合边界工作坊.md",
+      "bytes": 4268,
+      "sha256": "6b9c30c84ef6963add3941da3665ad69b89ca63b66b8cc41c9e78c4559cdf453"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/21-微积分综合题与详解.md",
+      "bytes": 3859,
+      "sha256": "d7e38845e7a4678c78cbaf6f7d856a4c8afdc449c61b31557bf42da80ba59682"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/22-数学分析综合题与详解.md",
+      "bytes": 4375,
+      "sha256": "a7af302a47c83301a32c808cc04862949d0d5f1633903b76940740da76eda32e"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/23-线性代数综合题与详解.md",
+      "bytes": 3636,
+      "sha256": "176a2271b69320820e868749c185c0e8b1ceae3dc5898181dd6ede0be0e5ff81"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/24-高等代数综合题与详解.md",
+      "bytes": 3755,
+      "sha256": "2ab2cd74fc76da333784443c68f8c5af8b640d993a83ffefde29e426f071cef1"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/25-复变函数综合题与详解.md",
+      "bytes": 3761,
+      "sha256": "7c641488e9a287abeb444df87fd8b6c0ffe8d365e73941cfad4a8a2de062b8df"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/26-数理方程综合题与详解.md",
+      "bytes": 3745,
+      "sha256": "7960708e81fabce239efa57fab9895154de178dffd6d712a7d79512d385a7843"
+    },
+    {
+      "path": "80-跨学科专题与综合练习/六科综合实验.py",
+      "bytes": 15459,
+      "sha256": "6bb25b73c341dd0cb7ba00dfbd97532105fbc5fb2a361bec107e999c4c6189ff"
+    },
+    {
+      "path": "90-资源/00-数学资源-MOC.md",
+      "bytes": 3254,
+      "sha256": "370d532599100d6fcd693167b1db68bd2b51177ee539229288e3423f7ca6d3b3"
+    },
+    {
+      "path": "90-资源/01-公式到AI应用映射.md",
+      "bytes": 6622,
+      "sha256": "582702fdfc3a8a0f23fdce3d649cd4bcc63a9d171150285608184c16c1c4b0ef"
+    },
+    {
+      "path": "90-资源/02-数学记号速查.md",
+      "bytes": 4631,
+      "sha256": "01cbf01952dffbddc625dc7d1d1c4b0ff80b5ad0785ba095bf5e14cdcce1fe02"
+    },
+    {
+      "path": "90-资源/03-参考资料与核验记录.md",
+      "bytes": 4067,
+      "sha256": "52680ebfb20fc3b49b8dde433e974de01d59909af1d73712253cbc880bba329c"
+    },
+    {
+      "path": "90-资源/04-六科学术来源与阅读对照.md",
+      "bytes": 6672,
+      "sha256": "dfbe47369eef39b62eab2856f60c5e6f62682011ecae92b8ec90763d7e7b0ba4"
+    },
+    {
+      "path": "90-资源/05-六科覆盖矩阵与学习验收.md",
+      "bytes": 5332,
+      "sha256": "3b3f3e73b0e0e88066a4dfeb80036b90cead00391a782bfd79402b9856c9756a"
+    },
+    {
+      "path": "90-资源/06-统一符号约定与定理条件索引.md",
+      "bytes": 5654,
+      "sha256": "172c0079e5574fc2c0a12ba749d6bda6bb2ed96d031f759622475a70209e37c8"
+    },
+    {
+      "path": "90-资源/07-本地使用与维护指南.md",
+      "bytes": 4519,
+      "sha256": "c592873c269c7e2687d9fecd1d2d465dc6980bf8e9f4402b20bbce0d40f5fb7d"
+    },
+    {
+      "path": "90-资源/08-库外链接保留清单.md",
+      "bytes": 4831,
+      "sha256": "be60032a761aa56b15dc8ea44968c46ebf77b4c309ffd0ffdcbe490078146b20"
+    },
+    {
+      "path": "90-资源/09-修订说明与验收报告.md",
+      "bytes": 7371,
+      "sha256": "c0483ae3755cd493d325aa56a873fbbd2022837e09c329a7da12fa93dd603178"
+    },
+    {
+      "path": "90-资源/10-图示索引与生成说明.md",
+      "bytes": 8964,
+      "sha256": "0eaf0426e5a42b21ccf02d32a761bb5b0252d8e9b6711c299d4ba267805eeefb"
+    },
+    {
+      "path": "90-资源/维护/Python语法验收.json",
+      "bytes": 1138,
+      "sha256": "cb306a778a41c69cda62e4f0893490196f329ae7575dbef045d967f4e6efa716"
+    },
+    {
+      "path": "90-资源/维护/SVG渲染验收.json",
+      "bytes": 4408,
+      "sha256": "7d81133c7ec515ded20f36c7db7f0fe041405bbc6ec9f018c5f49d62ac0d18bd"
+    },
+    {
+      "path": "90-资源/维护/二次内容修订明细.json",
+      "bytes": 4063,
+      "sha256": "03b3b89365298de5091dd934bb736180c7c03cb8e18e859abcb45bb5c8d83208"
+    },
+    {
+      "path": "90-资源/维护/公式渲染验收.cjs",
+      "bytes": 2613,
+      "sha256": "9b933552ce0c21b4f8d901ff7a4e76ea6b69fa59bf4d5f2371a692983a5f0a66"
+    },
+    {
+      "path": "90-资源/维护/公式渲染验收.json",
+      "bytes": 305,
+      "sha256": "e5a5458487ff98b700ac18e4cb72a5debe23a64829c21e0849d6b1c1011f0a3f"
+    },
+    {
+      "path": "90-资源/维护/原始实验验收.json",
+      "bytes": 9045,
+      "sha256": "d9c589b2a010785b3fcdcb25d724cc14193175e941f381899f5aa8334d8ae513"
+    },
+    {
+      "path": "90-资源/维护/原始库外引用基线.json",
+      "bytes": 32398,
+      "sha256": "af9377fb58f24a041faa0acaf281ed5675f04da9dbaa4a676d7c1bb1eca2a199"
+    },
+    {
+      "path": "90-资源/维护/原始文件基线.json",
+      "bytes": 11579,
+      "sha256": "c962421f15d0db76b8ed80e4071f7e32e4a7ea34e0027999138cbd23ec8e68cc"
+    },
+    {
+      "path": "90-资源/维护/原文件修订明细.json",
+      "bytes": 65321,
+      "sha256": "14b6243be0f2e252eccf54fa071c6a1145ace1ff517d2b9d90ef9df4e075a738"
+    },
+    {
+      "path": "90-资源/维护/审计知识库.py",
+      "bytes": 11853,
+      "sha256": "7e0316b804001c4ff2bf512b42b6fb28076789f322de47a9ebb0d65287b7ee52"
+    },
+    {
+      "path": "90-资源/维护/生成教学图示.py",
+      "bytes": 24787,
+      "sha256": "c03eecf3d8de10a7bae68d2bc1d2174575feebacff2929c0dfd5bdaa396c6cf7"
+    },
+    {
+      "path": "90-资源/维护/终审内容修订明细.json",
+      "bytes": 1978,
+      "sha256": "697fdfe6e6af7073fdc09c714c0be4e30196f23377dbbe4e2cf12abf8edda14f"
+    },
+    {
+      "path": "90-资源/维护/终审格式修订明细.json",
+      "bytes": 11107,
+      "sha256": "9ea564ab6c8c2642c07268a122ede9031472d57d74fb9fb383fb1ec79db57878"
+    },
+    {
+      "path": "90-资源/维护/综合实验验收.json",
+      "bytes": 8607,
+      "sha256": "85e5c4c38ca747c21a5a9d036590daea9f4fb28557e425af48b21486bf7667d3"
+    },
+    {
+      "path": "90-资源/维护/运行原始实验.py",
+      "bytes": 4255,
+      "sha256": "6b819555dce050d9c343786b19ed5d20a260760d84773e4c31d8092585035792"
+    },
+    {
+      "path": "90-资源/维护/静态审计结果.json",
+      "bytes": 718,
+      "sha256": "2dd12e4bf05c5f196adad98457794a800a9e1ba0f28b48ef6e34438e3d6696f0"
+    },
+    {
+      "path": "assets/figures/annulus-harmonic.svg",
+      "bytes": 55989,
+      "sha256": "745eb3abca422db46dbbbe135da03d85fb19946389b16533bd377ea44419967e"
+    },
+    {
+      "path": "assets/figures/argument-principle.svg",
+      "bytes": 46718,
+      "sha256": "8e762017777aa10f927cf155929a58fec37a34b0212120d799538a197789ea6a"
+    },
+    {
+      "path": "assets/figures/bessel-modes.svg",
+      "bytes": 48049,
+      "sha256": "aba656434641c6da4e4e28ab68e8545ecf2f018ae9eb6b7154c92fc637b66097"
+    },
+    {
+      "path": "assets/figures/boundary-cancellation.svg",
+      "bytes": 19806,
+      "sha256": "0bcabc38221989b95fde7c3875c732e1aba86d8a9bd2147cd058a0bc526cc872"
+    },
+    {
+      "path": "assets/figures/burgers-fan.svg",
+      "bytes": 41838,
+      "sha256": "a29dc47b36fdfe7e73001057277cb0efcc7f30bdc08dbc0a3d61444527a48c47"
+    },
+    {
+      "path": "assets/figures/characteristics.svg",
+      "bytes": 42538,
+      "sha256": "b366b87f4d63913320d3a3fce2a1b34ca313b62dc36b5996730452a9dab5f5c8"
+    },
+    {
+      "path": "assets/figures/complex-square.svg",
+      "bytes": 63926,
+      "sha256": "4e26b83dd2ae5c72dd4b9a094e73da08205eb3b1e892bfb52295fa57df229a48"
+    },
+    {
+      "path": "assets/figures/conditioning.svg",
+      "bytes": 57637,
+      "sha256": "532f59c6f36d866c099a1c5d2d6b7a7b9a7042a3b4f63ff07bbdbcd8f1338fcb"
+    },
+    {
+      "path": "assets/figures/convergence-map.svg",
+      "bytes": 33722,
+      "sha256": "9e563b7a7810a25dac2a273154de259ff502d7fc99f5a5a98bb6e26e50c190e3"
+    },
+    {
+      "path": "assets/figures/course-dependencies.svg",
+      "bytes": 38211,
+      "sha256": "bdf5b0b76402a64c631386f15f5bc7807f358f95e6e4cad872772ba90d44579d"
+    },
+    {
+      "path": "assets/figures/determinant-area.svg",
+      "bytes": 34923,
+      "sha256": "40503f7b57420399671404df0f2422f1747e0262193c2077e155d3d2d7f4972e"
+    },
+    {
+      "path": "assets/figures/epsilon-delta.svg",
+      "bytes": 38027,
+      "sha256": "a348b6d99f803b1fc8f59226b2360d80456e78d050f5ddef434bce5ca31ed4c0"
+    },
+    {
+      "path": "assets/figures/fem-hats.svg",
+      "bytes": 41448,
+      "sha256": "b5b51e3d18cbba65147416075e2f18c055f7ee93ad5af0586783fa63895a9989"
+    },
+    {
+      "path": "assets/figures/fixed-point.svg",
+      "bytes": 34392,
+      "sha256": "3c2f648469cae53b3977c532c2887f62aa6e8deb0b6aa4732677663f9170bdf4"
+    },
+    {
+      "path": "assets/figures/flat-function.svg",
+      "bytes": 45785,
+      "sha256": "31416beb3291c319322162fcf563bc06919b88d3affdc9075f6c28b4be88ef90"
+    },
+    {
+      "path": "assets/figures/four-subspaces.svg",
+      "bytes": 37888,
+      "sha256": "f954c5eedde504dde3ced3563fa417b9a1c5bbd0b56d4ef69cc37701f74e5dda"
+    },
+    {
+      "path": "assets/figures/fourier-gibbs.svg",
+      "bytes": 72389,
+      "sha256": "aac4ecb242cacc963856432774144f1afd622e5a1fbb681506817dad0ab8fac2"
+    },
+    {
+      "path": "assets/figures/galois-lattice.svg",
+      "bytes": 28871,
+      "sha256": "0dca2613ff185195dd6b0ff3d9e9d8152d26de67c4ec46b79b2a60be0355767c"
+    },
+    {
+      "path": "assets/figures/green-function.svg",
+      "bytes": 37732,
+      "sha256": "b0aba9034bcc9f5e960170c3f2fd330dae57a83d59399f5a4cf3479e48c5d408"
+    },
+    {
+      "path": "assets/figures/heat-kernel.svg",
+      "bytes": 39584,
+      "sha256": "5b6b6e3789755fb732838068cb733e9cd571b96dd20c2f222f2f7cb2186a1267"
+    },
+    {
+      "path": "assets/figures/heat-modes.svg",
+      "bytes": 40208,
+      "sha256": "de3a95841a1d46e688aa3cc299d759966dd0a00fa71f84ab5bb5f3e45f5d8793"
+    },
+    {
+      "path": "assets/figures/heat-stability.svg",
+      "bytes": 38980,
+      "sha256": "c7aa5a95a3c4109077c02a6540d7868f73ab7d8c55bbbd75e70b5a5a6a26d7f7"
+    },
+    {
+      "path": "assets/figures/helix.svg",
+      "bytes": 45766,
+      "sha256": "135c58ff8d3df68a715a3e3f82ff4c7f513b9dfb9dfff5ae7f8009805bd1ec61"
+    },
+    {
+      "path": "assets/figures/improper-tail.svg",
+      "bytes": 42187,
+      "sha256": "31d45ba3d4011b17747e800bbe61ba36d8fbfe7e9a83fd0f7ef0a29eae4e1a52"
+    },
+    {
+      "path": "assets/figures/jacobian-grid.svg",
+      "bytes": 48005,
+      "sha256": "c1539cca4db62b898ff0b1c6a2022d442523370ce04831daff1bc555992f4f0f"
+    },
+    {
+      "path": "assets/figures/jordan-chains.svg",
+      "bytes": 23936,
+      "sha256": "b5cca27036c8b8c14a81d6f97216fe5f52be199a5687198812ad8726ba65467a"
+    },
+    {
+      "path": "assets/figures/lagrange.svg",
+      "bytes": 42114,
+      "sha256": "0f1b04fff9efb25e9e8d010df1c93c41df2f8d2e26c32c29a8beeaf004798ca1"
+    },
+    {
+      "path": "assets/figures/limsup-liminf.svg",
+      "bytes": 44586,
+      "sha256": "500111d69e2983d8401aa11990c9937b7568df19c54315c0e111be67ce32f41f"
+    },
+    {
+      "path": "assets/figures/linear-flow.svg",
+      "bytes": 92358,
+      "sha256": "93eea7f79622f158c1b38136c822807d0cf488385167d2db7ff4dd1f55a884b0"
+    },
+    {
+      "path": "assets/figures/log-branch.svg",
+      "bytes": 48332,
+      "sha256": "26d5f77817f83f809286478395139a246f5bfb22bbcd5d798f801a75e3da1690"
+    },
+    {
+      "path": "assets/figures/mean-value.svg",
+      "bytes": 38706,
+      "sha256": "1a7c00e55a9a7045f95a8808e6297cd70cb0685dcdab15b02016e573762e3f1e"
+    },
+    {
+      "path": "assets/figures/mobius-grid.svg",
+      "bytes": 67751,
+      "sha256": "befb2bd66b21297ff8a0e243a149aaa3797a87d5afcdce642b4aaf594de366c0"
+    },
+    {
+      "path": "assets/figures/moving-spike.svg",
+      "bytes": 39148,
+      "sha256": "f8c4152630baaf0ac76a2b55c07e346990d1fe477a875a29afe1de6145cebec7"
+    },
+    {
+      "path": "assets/figures/orthogonal-projection.svg",
+      "bytes": 35303,
+      "sha256": "f654522894e9b6eb5f79c2ff1fad03eecc6a116e861b79f88d3215c49c66fa37"
+    },
+    {
+      "path": "assets/figures/poisson-kernel.svg",
+      "bytes": 45083,
+      "sha256": "45eb0289a13fd84f26a261bf59be04fe35910af7ffa31efeea3159543f238588"
+    },
+    {
+      "path": "assets/figures/quadratic-levels.svg",
+      "bytes": 50335,
+      "sha256": "024e0f24a7e0311ca950ede78b2c3ef781313ee36b1a74359497c430bf72fdd0"
+    },
+    {
+      "path": "assets/figures/quadrature-error.svg",
+      "bytes": 56545,
+      "sha256": "ef7af3c3f5540fce98eea5fffd768737f3ff94b24fee7068c10235a24300d2ef"
+    },
+    {
+      "path": "assets/figures/residue-contour.svg",
+      "bytes": 34005,
+      "sha256": "9e6e98b0ed184f2ea3003a2ea72746dc55cbb28eed2dd5ac6eb8ba1c749ff685"
+    },
+    {
+      "path": "assets/figures/riemann-sums.svg",
+      "bytes": 38068,
+      "sha256": "909e0d8854adb712eb95d38c2a129f63687ba0a8efc37a763df9ed2dae8e93d4"
+    },
+    {
+      "path": "assets/figures/robin-spectrum.svg",
+      "bytes": 47631,
+      "sha256": "a7293109075654646e36f78e9c25a1d15c159a1703b50af118d4158ab4f1f50a"
+    },
+    {
+      "path": "assets/figures/series-partial-sums.svg",
+      "bytes": 41924,
+      "sha256": "e2051f0b86236ec3e76f9251f505eebb8fbfec899ae00283fa281b71f2b021a3"
+    },
+    {
+      "path": "assets/figures/sturm-modes.svg",
+      "bytes": 49580,
+      "sha256": "cb5c2bcd014883a1e6c9718f4700991b9ff0d13f843134709103cf0859e8ecf6"
+    },
+    {
+      "path": "assets/figures/surface-normal.svg",
+      "bytes": 108119,
+      "sha256": "c8a08b8756c54b98eb4c562e7d7cfd2003367ed9904d8b87b1782b3786feee30"
+    },
+    {
+      "path": "assets/figures/svd-ellipse.svg",
+      "bytes": 43589,
+      "sha256": "8ec8f9473f17927162ed67dc08c99f43bec6479201960c72a37b86f386e5b551"
+    },
+    {
+      "path": "assets/figures/tangent-error.svg",
+      "bytes": 41817,
+      "sha256": "0aac92956621d3d90d9dae4d1ef85d910af07cf80e7a8e2d20be60f12ff3c7f9"
+    },
+    {
+      "path": "assets/figures/tangent-plane.svg",
+      "bytes": 273393,
+      "sha256": "9ea0bb78649a504908e6aa1d51a54ed7c10b04fe1412efacfd44c29a3f167fe3"
+    },
+    {
+      "path": "assets/figures/taylor-sine.svg",
+      "bytes": 45244,
+      "sha256": "7c9f084b8635585e6a28e19b6217b602c42086a49094a51af86225b9c858cceb"
+    },
+    {
+      "path": "assets/figures/uniform-convergence.svg",
+      "bytes": 34962,
+      "sha256": "941637a628a181fab4d9d954b97dfbf1423170ff6502f5c26e6b530ac0c953f2"
+    },
+    {
+      "path": "assets/figures/vortex-field.svg",
+      "bytes": 132111,
+      "sha256": "39f569057afbcf02599d1c894ca0bfd61cb4fcb2986a8102f2fe7891c0d56738"
+    },
+    {
+      "path": "assets/figures/wave-cone.svg",
+      "bytes": 36378,
+      "sha256": "ca457051cd8effec673a0bd15e1123b84c330b68aceab61cefd1e261654c08a7"
+    },
+    {
+      "path": "assets/figures/图示参数清单.json",
+      "bytes": 10418,
+      "sha256": "b29e5c5c5ea05008cfeaebf1db7a377ce9edd24272af4b0a5663d2d98c255dce"
+    }
+  ]
+}

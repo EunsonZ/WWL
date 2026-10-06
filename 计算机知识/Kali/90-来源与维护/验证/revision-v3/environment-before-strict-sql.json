@@ -1,0 +1,33 @@
+{
+  "python": "3.13.5",
+  "sqlite_library": "3.46.1",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "os_release": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.3\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+  "versions": {
+    "openssl": "OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)",
+    "jq": "jq-1.7",
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+    "clang": "clang version 17.0.0 (https://github.com/swiftlang/llvm-project.git 10999b6d034fe318f3d56c83bddb6572593a8bb0)",
+    "bash": "GNU bash, version 5.2.37(1)-release (x86_64-pc-linux-gnu)"
+  },
+  "source_sha256": {
+    "reasoning_lab.py": "d4f38485e755e669f5f9e28d78f96abbf1a3fcfe1ed311ab5cac764642bad600",
+    "public-health.yaml": "ff0e911b5cbe1fa90fcbbe44d15a5ffdeb544ece766832e5e5dc181bb9cd88cc",
+    "transaction_lab.py": "77b483af64f347e8ed6018ce232b4dfb17cb10618f3ddb8bbdb95b27e8b8face",
+    "offline_lab.py": "78e395db539258de1f496fdcfea94f6c81349f0a42555b84c6d6263e1a4b5660",
+    "test_offline_lab.py": "2f984b68a18873fd1b34739159abc35491f85b2f39e9cb8f768649ab984cb06a",
+    "toy_markers.yar": "6185adfc6136b94fc7ee6d7c73e257159436a70f66f8ba6c59a1831d298b18f7",
+    "hello.c": "037c40b63558eceab94d40dc1cf5c1ce6b74c3b33e4d1f8ac6982d15d9f7d9dd",
+    "test_transaction_lab.py": "67b23bea0a7c21b3521fd944b2814bc5cf4ba66e726c3482e21edb7e9a5708cb",
+    "test_cli_workflows.py": "5b57097de04ecf2e097146cc82e0ad87b42d20f84fafc75f147e5201cfff1bc9",
+    "validate_status.jq": "5775a49ecd7b8c84af23e8c0d479402ae895baf87fab05a40b39f9d8438af8f9",
+    "length_record.c": "d5cc8164723c1e045b8f4a124ff3f0326a8d66652ef1008ead712c44a0356e5a",
+    "test_reasoning_lab.py": "3d804913a716cbeab2f90abf4ed93c15ca99d76d502f5a329492e04e8e940656",
+    "verify_c_examples.py": "b898fc37c974151e7ca2cf0d49e81a4a7108ee6f4ac9b774af9949eb7e90e002",
+    "generate_fixtures.py": "deb8926355f29dad29df1301926937336527e90b95af713f4e7bfcdc04542c51",
+    "generate_reasoning_fixtures.py": "6715e04d89e7ce10fcf28b3fd8402b5d316622fb608d8f566d05109283e4fa9c",
+    "tls_verify_lab.py": "7d9bc201f8899300395887db471608760b976a36d025516a2551f86334979004",
+    "test_tls_verify_lab.py": "75a3d314e8547931ff0fa4a94ae22f862bc7612691fa25f70183760efca691e9"
+  },
+  "scope": "Reviewed local tests only; no installs, network requests or listeners from teaching code"
+}

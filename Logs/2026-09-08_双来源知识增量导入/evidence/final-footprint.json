@@ -1,0 +1,22 @@
+{
+  "schema": "wwl-final-footprint-v1",
+  "status": "pass",
+  "baseline_files": 1846,
+  "initial_transaction_files": 298,
+  "owned_final_paths": 327,
+  "modified_existing": 35,
+  "added_by_batch": 292,
+  "deleted_baseline": [],
+  "unchanged_baseline_hashes_verified": 1811,
+  "errors": [],
+  "non_batch_new_files": [
+    {
+      "path": "Clippings/从选择性协调到公共可纠错性.md",
+      "size": 79417,
+      "handling": "Preserved; body not semantically inspected and no write/removal by this batch; omitted from recovery manifest"
+    }
+  ],
+  "visible_final_count_at_check": 2139,
+  "hash_scope": "All baseline files outside the owned set and all recorded owned files verified. Closing report/hash-manifest bytes are finalized afterward, with final hashes in the external recovery manifest.",
+  "candidate_live_residual_count": 0
+}

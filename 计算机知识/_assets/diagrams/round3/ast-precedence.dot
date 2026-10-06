@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="表达式 2 + 3 * 4 的 AST：树形决定求值关系",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"plus" [label="+"];
+"two" [label="2"];
+"mul" [label="*"];
+"three" [label="3"];
+"four" [label="4"];
+"plus" -> "two";
+"plus" -> "mul";
+"mul" -> "three";
+"mul" -> "four";
+
+}

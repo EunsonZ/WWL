@@ -1,0 +1,95 @@
+{
+  "static": {
+    "delta_V": 1.0,
+    "offset_V": 0.10000000000000009,
+    "endpoint_step_V": 1.0,
+    "gain_error_relative": 0.0,
+    "raw_transition_inl_LSB": [
+      0.10000000000000009,
+      0.0,
+      0.20000000000000018,
+      0.20000000000000018,
+      -0.7999999999999998,
+      0.2999999999999998,
+      0.09999999999999964
+    ],
+    "endpoint_transition_inl_LSB": [
+      0.0,
+      -0.10000000000000009,
+      0.10000000000000009,
+      0.10000000000000053,
+      -0.8999999999999995,
+      0.20000000000000018,
+      0.0
+    ],
+    "internal_dnl_LSB": [
+      -0.10000000000000009,
+      0.20000000000000018,
+      0.0,
+      -1.0,
+      1.0999999999999996,
+      -0.20000000000000018
+    ],
+    "missing_internal_codes": [
+      4
+    ]
+  },
+  "dynamic": {
+    "signal_V2": 0.32000000000000006,
+    "residual_V2": 0.00021249999999999888,
+    "harmonic_V2": 0.0001999999999999993,
+    "nonharmonic_residual_V2": 1.2499999999999572e-05,
+    "largest_spur_V2": 0.0001999999999999993,
+    "SNR_dB": 44.08239965311864,
+    "SINAD_dB": 31.77791043933578,
+    "SFDR_dBc": 32.041199826559264,
+    "THD_dB": -32.041199826559264,
+    "ENOB_from_SINAD": 4.986363860354781,
+    "ENOB_amplitude_normalized": 5.308324036461281,
+    "fullscale_peak_V": 1.0,
+    "harmonic_bins": [
+      10,
+      15,
+      20,
+      25
+    ],
+    "analysis_floor_relative_power": 1e-18,
+    "floor_semantics": "None means below declared analysis floor, not physical zero noise; coherent rectangular record required"
+  },
+  "sigma_delta": {
+    "mean": 0.25,
+    "x": 0.25,
+    "count": 128,
+    "state_min": -0.75,
+    "state_max": 1.0
+  },
+  "jitter_100MHz_1ps_dB": 64.0364026328377,
+  "phase_noise": {
+    "SSB_linear_areas": [
+      9.989999999999997e-09
+    ],
+    "phase_variance_rad2": 1.9979999999999994e-08,
+    "phase_rms_rad": 0.00014135062787267694,
+    "time_rms_s": 2.2496651135079577e-13,
+    "integration_Hz": [
+      1000.0,
+      1000000.0
+    ]
+  },
+  "pll": {
+    "omega_n_rad_s": 1000.0,
+    "zeta": 0.7,
+    "poles": [
+      [
+        -700.0,
+        714.142842854285
+      ],
+      [
+        -700.0,
+        -714.142842854285
+      ]
+    ],
+    "omega_c_rad_s": 1542.7711592634116,
+    "PM_rad": 1.1371935948630467
+  }
+}

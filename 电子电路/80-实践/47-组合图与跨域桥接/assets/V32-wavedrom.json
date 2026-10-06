@@ -1,0 +1,68 @@
+{
+  "head": {
+    "text": "V32 expected timing; tick=1 ns; no STA"
+  },
+  "signal": [
+    [
+      "Latch / positive-edge DFF",
+      {
+        "name": "latch enable",
+        "wave": "001111000000"
+      },
+      {
+        "name": "input D",
+        "wave": "0.1....0...."
+      },
+      {
+        "name": "latch Q expected",
+        "wave": "0.1........."
+      },
+      {
+        "name": "DFF clk",
+        "wave": "0....10....."
+      },
+      {
+        "name": "DFF Q expected",
+        "wave": "0....1......"
+      }
+    ],
+    [
+      "Setup / hold path windows",
+      {
+        "name": "launch clock",
+        "wave": "10..........",
+        "node": "a..........."
+      },
+      {
+        "name": "capture clock",
+        "wave": "010........1",
+        "node": ".b.........c"
+      },
+      {
+        "name": "max path D stable",
+        "wave": "xxxxxxxx1...",
+        "node": "........f..."
+      },
+      {
+        "name": "setup deadline",
+        "wave": "0........10.",
+        "node": ".........d.."
+      },
+      {
+        "name": "min path pollution",
+        "wave": "0..xxxxxxxxx",
+        "node": "...e........"
+      }
+    ]
+  ],
+  "edge": [
+    "a~>b +1 ns skew",
+    "f~>d 1 ns setup slack"
+  ],
+  "foot": {
+    "text": "setup: next capture 11 ns / deadline 9; hold: same capture 1 ns / deadline 3"
+  },
+  "config": {
+    "hscale": 2
+  }
+}

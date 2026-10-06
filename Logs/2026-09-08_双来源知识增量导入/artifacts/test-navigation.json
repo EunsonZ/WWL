@@ -1,0 +1,32 @@
+[
+  {
+    "path": "AI/20-LLM/50-实现/02-从零实现Attention-RoPE与DecoderBlock.md",
+    "test": "AI/20-LLM/50-实现/test_tiny_numpy_contracts.py",
+    "scope": "因果性、cache、掩码下界、token ID 与采样边界；4 个 NumPy 反例。"
+  },
+  {
+    "path": "AI/80-实践/01-微型Transformer预训练/00-微型Transformer预训练.md",
+    "test": "AI/80-实践/01-微型Transformer预训练/test_checkpoint_contracts.py",
+    "scope": "2 个反例：checkpoint 用 AST 与 Mock 验证失败关闭，PPL 用 AST 提取的真实 Python 函数验证溢出及严格 JSON。未运行真实 PyTorch checkpoint 加载。"
+  },
+  {
+    "path": "AI/80-实践/02-SFT-LoRA与QLoRA/00-SFT-LoRA与QLoRA.md",
+    "test": "AI/80-实践/02-SFT-LoRA与QLoRA/test_path_contracts.py",
+    "scope": "1 个临时文件系统反例，核验实际路径函数对越界与符号链接的拒绝；不训练，也不向实验目录写运行产物。"
+  },
+  {
+    "path": "数学/50-信息论/80-Softmax数值稳定性实验.md",
+    "test": "数学/50-信息论/test_softmax_stability_contracts.py",
+    "scope": "3 个补充反例，覆盖巨大等值 logits、梯度与平移、无效及极端输入。"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/README.md",
+    "test": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/test_graph_contracts.py",
+    "scope": "1 个图算法反例，区分溢出、不可达和直接调用的输入检查。"
+  },
+  {
+    "path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/README.md",
+    "test": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/test_retrieval_contracts.py",
+    "scope": "2 个检索反例，覆盖余弦的尺度与输入域、键类型的语义区分。"
+  }
+]

@@ -1,0 +1,264 @@
+{
+  "schema": "wwl-entity-calibration-v1",
+  "split_seed": 20260920,
+  "optimizer_and_diagnostic_seed": 20260920,
+  "dataset": {
+    "source_url": "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip",
+    "outer_bytes": 61005872,
+    "outer_sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+    "inner_sha256": "2045e435c955214b38145fb5fa00776c72814f01b203fec405152dac7d5bfeb0",
+    "rows": 10299,
+    "features": 561,
+    "subjects": 30,
+    "classes": 6
+  },
+  "protocol": {
+    "split_rule": "subject IDs generated once with split_seed=20260920, then hard-coded; CLI seed never changes this split",
+    "subject_splits": {
+      "train": [
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        27
+      ],
+      "dev": [
+        1,
+        28,
+        29,
+        30
+      ],
+      "cal": [
+        5,
+        20,
+        25,
+        26
+      ],
+      "test": [
+        6,
+        10,
+        23,
+        24
+      ]
+    },
+    "rows": {
+      "train": 6014,
+      "dev": 1456,
+      "cal": 1457,
+      "test": 1372
+    },
+    "feature_count": 561,
+    "class_names": [
+      "WALKING",
+      "WALKING_UPSTAIRS",
+      "WALKING_DOWNSTAIRS",
+      "SITTING",
+      "STANDING",
+      "LAYING"
+    ],
+    "hyperparameter_role": "l2 selected by dev NLL only",
+    "calibration_role": "temperature selected by cal NLL only",
+    "test_role": "one frozen observation; no selection or fitting"
+  },
+  "dev_candidates": [
+    {
+      "l2": 1e-05,
+      "rows": 1456,
+      "accuracy": 0.9443681319,
+      "nll": 0.1738631423,
+      "brier": 0.0890475973,
+      "ece": 0.0301953334,
+      "bins": 10
+    },
+    {
+      "l2": 0.0001,
+      "rows": 1456,
+      "accuracy": 0.9443681319,
+      "nll": 0.1696466107,
+      "brier": 0.0882882293,
+      "ece": 0.0295041082,
+      "bins": 10
+    },
+    {
+      "l2": 0.001,
+      "rows": 1456,
+      "accuracy": 0.9498626374,
+      "nll": 0.146062385,
+      "brier": 0.0821501065,
+      "ece": 0.0256944081,
+      "bins": 10
+    }
+  ],
+  "selected_l2": 0.001,
+  "calibration": {
+    "temperature": 1.2338653267,
+    "log_temperature_search_bounds": [
+      -3.0,
+      3.0
+    ],
+    "temperature_search_bounds": [
+      0.0497870684,
+      20.0855369232
+    ],
+    "cal_nll_before": 0.1872271514,
+    "cal_nll_after": 0.1818728614,
+    "argmax_changes_on_test": 0
+  },
+  "test": {
+    "before_temperature": {
+      "rows": 1372,
+      "accuracy": 0.9139941691,
+      "nll": 0.3528317854,
+      "brier": 0.1432513596,
+      "ece": 0.0434414352,
+      "bins": 10
+    },
+    "after_temperature": {
+      "rows": 1372,
+      "accuracy": 0.9139941691,
+      "nll": 0.3152868431,
+      "brier": 0.1408933731,
+      "ece": 0.0246863916,
+      "bins": 10
+    },
+    "ece_bin_sensitivity": {
+      "5": {
+        "before": 0.0434414352,
+        "after": 0.0246863916
+      },
+      "10": {
+        "before": 0.0434414352,
+        "after": 0.0246863916
+      },
+      "15": {
+        "before": 0.0449569542,
+        "after": 0.0292529623
+      },
+      "30": {
+        "before": 0.0491198345,
+        "after": 0.0356063833
+      }
+    },
+    "by_subject_after_temperature": {
+      "6": {
+        "rows": 325,
+        "accuracy": 0.8830769231,
+        "nll": 0.5793284176,
+        "brier": 0.2062914623,
+        "ece": 0.0575415338,
+        "bins": 10
+      },
+      "10": {
+        "rows": 294,
+        "accuracy": 0.8129251701,
+        "nll": 0.5750173416,
+        "brier": 0.2937308365,
+        "ece": 0.1020629105,
+        "bins": 10
+      },
+      "23": {
+        "rows": 372,
+        "accuracy": 0.9758064516,
+        "nll": 0.0726223618,
+        "brier": 0.0391365044,
+        "ece": 0.02010274,
+        "bins": 10
+      },
+      "24": {
+        "rows": 381,
+        "accuracy": 0.9580052493,
+        "nll": 0.1265648188,
+        "brier": 0.0665231946,
+        "ece": 0.0283368189,
+        "bins": 10
+      }
+    }
+  },
+  "row_vs_entity_diagnostic": {
+    "formal_test_touched": false,
+    "pool": "formal train+dev subjects only",
+    "selection": "l2=1e-3 fixed for both diagnostic protocols; no diagnostic score feeds the formal pipeline",
+    "entity_holdout": {
+      "train_subjects": [
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        27
+      ],
+      "holdout_subjects": [
+        1,
+        28,
+        29,
+        30
+      ],
+      "l2": 0.001,
+      "rows": 1456,
+      "accuracy": 0.9436813186813187,
+      "nll": 0.14405999878908576,
+      "brier": 0.08252357475916004,
+      "ece": 0.028446668418146623,
+      "bins": 10
+    },
+    "row_holdout": {
+      "train_rows": 5976,
+      "holdout_rows": 1494,
+      "subjects_in_both_sides": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        27,
+        28,
+        29,
+        30
+      ],
+      "rows": 1494,
+      "accuracy": 0.9772423025435074,
+      "nll": 0.0638014530852173,
+      "brier": 0.03510325537630376,
+      "ece": 0.008524203971475389,
+      "bins": 10
+    }
+  }
+}

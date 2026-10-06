@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="332" viewBox="0 0 425 332" role="img" aria-labelledby="title desc">
+  <title id="title">闭线性子空间上的正交投影</title>
+  <desc id="desc">点 x 投影到闭线性子空间 M 中的 p，残差 r 与 M 正交；下方提示非闭而稠密的子空间可使最近点不存在。</desc>
+  <rect width="425" height="332" rx="12" fill="#f7f8fb"/>
+  <style>text{font-family:"PingFang SC","Noto Sans CJK SC","Arial Unicode MS",Arial,sans-serif;fill:#172033} .a{font-size:17px;font-weight:600}.b{font-size:15px} .s{stroke:#172033;stroke-width:2.5;fill:none} .d{stroke:#53627a;stroke-width:2;stroke-dasharray:6 5;fill:none}</style>
+  <text x="24" y="30" class="a">函数空间中的最近近似</text>
+  <path d="M54 205 L355 205" class="s"/>
+  <text x="313" y="230" class="a">闭子空间 M</text>
+  <circle cx="255" cy="205" r="5" fill="#1864ab"/><text x="240" y="230" class="a">p</text>
+  <circle cx="255" cy="78" r="6" fill="#c92a2a"/><text x="267" y="80" class="a">x</text>
+  <path d="M255 78 L255 205" class="d"/>
+  <path d="M255 194 H266 V205" class="s"/>
+  <text x="269" y="148" class="a">residual r</text>
+  <text x="30" y="258" class="b">r 与 M 正交，所以 p 使平方误差最小。</text>
+  <path d="M22 274 H403" stroke="#b7c2d2"/>
+  <text x="24" y="297" class="b">警告：若 M 非闭（即使稠密），极限可能不属于 M。</text>
+  <text x="24" y="319" class="b">极限不被允许类收下，最近点可不存在。</text>
+</svg>

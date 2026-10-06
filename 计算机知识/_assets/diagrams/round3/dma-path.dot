@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="DMA：设备地址不必等于 CPU 物理地址",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"cpu" [label="CPU / 驱动\n管理缓冲区与同步"];
+"va" [label="CPU 虚拟地址"];
+"pa" [label="物理内存缓冲区"];
+"dma" [label="DMA 地址\n可能经 IOMMU 转换"];
+"dev" [label="设备\n读写缓冲区"];
+"irq" [label="完成通知\n中断或轮询"];
+"cpu" -> "va";
+"va" -> "pa" [label="CPU 地址翻译"];
+"cpu" -> "dma" [label="映射 API"];
+"dev" -> "dma";
+"dma" -> "pa" [label="设备侧映射"];
+"dev" -> "irq";
+"irq" -> "cpu";
+
+}

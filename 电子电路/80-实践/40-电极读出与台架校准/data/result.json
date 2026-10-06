@@ -1,0 +1,58 @@
+{
+  "adc": {
+    "conditional_input_quant_rms": 8.809665972742093e-08,
+    "headroom": 0.99,
+    "input_lsb": 3.0517578125e-07,
+    "output_peak": 0.01
+  },
+  "barrier_100Hz_10pF_1Vrms_A": 6.283185307179586e-09,
+  "calibration_RC_5_20_80Hz": [
+    0.9987523388778446,
+    0.9805806756909201,
+    0.7808688094430303
+  ],
+  "noise_1_100Hz_output_rms": 3.221682538296937e-05,
+  "noise_1_100Hz_output_rms_2048": 3.221682643298233e-05,
+  "offset_10mV_adc": {
+    "conditional_input_quant_rms": 8.809665972742093e-08,
+    "headroom": -0.010000000000000009,
+    "input_lsb": 3.0517578125e-07,
+    "output_peak": 1.01
+  },
+  "parameters": {
+    "Ac": 0.001,
+    "Ad": 100,
+    "Cin_F": 1e-10,
+    "Rin_ohm": 10000000.0,
+    "adc_bits": 16,
+    "adc_span_V": 2,
+    "each_in_A_per_sqrtHz": 1e-12,
+    "electrode1_Rs_Rct_Cdl_SI": [
+      5000,
+      100000,
+      1e-06
+    ],
+    "electrode2_Rs_Rct_Cdl_SI": [
+      6000,
+      100000,
+      1e-06
+    ],
+    "en_V_per_sqrtHz": 2e-08,
+    "noise_rect_band_Hz": [
+      1,
+      100
+    ],
+    "status": "teaching only; no device guarantee",
+    "temperature_K": 300
+  },
+  "randles_10Hz": {
+    "imag": -15522.309613464764,
+    "real": 7470.452303185764
+  },
+  "readout_50Hz": {
+    "Hc_abs": 0.011425333919342364,
+    "Hd_abs": 99.93404071288607,
+    "cmrr_db": 78.83689092454658
+  },
+  "synthetic_clipped_samples": 1000
+}

@@ -1,0 +1,20 @@
+{
+  "cpu_graph": {
+    "width": 2,
+    "reachable_pairs": 8,
+    "edges": 256,
+    "layer": "finite CPU graph, not HDL proof"
+  },
+  "random": {
+    "push": 364,
+    "pop": 340,
+    "replace": 211,
+    "stall": 338,
+    "reset": 31
+  },
+  "actual_hdl": "not_run at author freeze; see execution evidence",
+  "timing_ns": {
+    "setup_slack": 0.8,
+    "hold_slack": -0.1
+  }
+}

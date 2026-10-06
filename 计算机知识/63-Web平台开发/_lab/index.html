@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>课程查询与阅读列表 · Web实验</title><link rel="stylesheet" href="styles.css">
+<script type="module" src="app.js"></script></head>
+<body><a class="skip" href="#main">跳到查询</a>
+<header><p>原创合成课程 · 同源请求实验</p><h1>课程查询与阅读列表</h1>
+<p>输入“Web”“状态”或“网络”。列表只保存在此页面内存，刷新会清空。</p></header>
+<main id="main"><form id="search" action="/api/courses" method="get">
+<label for="query">课程关键词</label><input id="query" name="q" required maxlength="80" value="Web" aria-describedby="query-help query-error">
+<p id="query-help">去掉两端空白后须有1–80个UTF-16代码单元。支持中文与英文关键词。</p>
+<p id="query-error" class="error"></p>
+<label for="scenario">接口场景（教学故障注入）</label><select id="scenario" name="scenario">
+<option value="success">正常响应</option><option value="slow">慢响应（2秒）</option>
+<option value="http-error">HTTP 503</option><option value="drop">断开连接</option>
+<option value="bad-json">JSON语法错误</option><option value="bad-data">JSON字段错误</option></select>
+<div class="actions"><button type="submit">查询</button><button id="cancel" type="button" disabled>取消当前查询</button>
+<button id="retry" type="button" hidden>重试上次查询</button></div></form>
+<p id="status" role="status" aria-atomic="true">尚未查询。</p>
+<div class="columns"><section id="results-region" aria-labelledby="results-heading" aria-busy="false">
+<h2 id="results-heading" tabindex="-1">查询结果</h2><ul id="results" class="cards"></ul></section>
+<section aria-labelledby="reading-heading"><h2 id="reading-heading" tabindex="-1">阅读列表</h2>
+<p id="reading-count">0门，合计0分钟</p><ul id="reading" class="cards"></ul></section></div>
+<noscript>此交互实验需要JavaScript。表单仍可发送GET请求，但不会更新页面内存阅读列表。</noscript></main>
+<footer><p>这是短期loopback教学服务，未实现账户、持久化、TLS或服务端写入。</p></footer></body></html>

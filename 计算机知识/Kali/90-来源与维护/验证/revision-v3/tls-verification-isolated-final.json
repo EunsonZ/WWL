@@ -1,0 +1,532 @@
+{
+  "model": "tls-v3.1",
+  "openssl_version": "OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)",
+  "synthetic": true,
+  "network_io": false,
+  "system_trust_modified": false,
+  "setup_commands": [
+    {
+      "command": [
+        "openssl",
+        "req",
+        "-x509",
+        "-newkey",
+        "ec",
+        "-pkeyopt",
+        "ec_paramgen_curve:P-256",
+        "-noenc",
+        "-days",
+        "3",
+        "-subj",
+        "/CN=lab-root",
+        "-keyout",
+        "lab-root.key",
+        "-out",
+        "lab-root.pem",
+        "-addext",
+        "basicConstraints=critical,CA:TRUE,pathlen:1",
+        "-addext",
+        "keyUsage=critical,keyCertSign,cRLSign",
+        "-addext",
+        "subjectKeyIdentifier=hash"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "-----\n"
+    },
+    {
+      "command": [
+        "openssl",
+        "req",
+        "-x509",
+        "-newkey",
+        "ec",
+        "-pkeyopt",
+        "ec_paramgen_curve:P-256",
+        "-noenc",
+        "-days",
+        "3",
+        "-subj",
+        "/CN=unrelated-root",
+        "-keyout",
+        "unrelated-root.key",
+        "-out",
+        "unrelated-root.pem",
+        "-addext",
+        "basicConstraints=critical,CA:TRUE,pathlen:1",
+        "-addext",
+        "keyUsage=critical,keyCertSign,cRLSign",
+        "-addext",
+        "subjectKeyIdentifier=hash"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "-----\n"
+    },
+    {
+      "command": [
+        "openssl",
+        "req",
+        "-new",
+        "-newkey",
+        "ec",
+        "-pkeyopt",
+        "ec_paramgen_curve:P-256",
+        "-noenc",
+        "-subj",
+        "/CN=lab-intermediate",
+        "-keyout",
+        "intermediate.key",
+        "-out",
+        "intermediate.csr"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "-----\n"
+    },
+    {
+      "command": [
+        "openssl",
+        "x509",
+        "-req",
+        "-in",
+        "intermediate.csr",
+        "-CA",
+        "lab-root.pem",
+        "-CAkey",
+        "lab-root.key",
+        "-set_serial",
+        "2",
+        "-days",
+        "2",
+        "-extfile",
+        "intermediate.ext",
+        "-out",
+        "intermediate.pem"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Certificate request self-signature ok\nsubject=CN=lab-intermediate\n"
+    },
+    {
+      "command": [
+        "openssl",
+        "req",
+        "-new",
+        "-newkey",
+        "ec",
+        "-pkeyopt",
+        "ec_paramgen_curve:P-256",
+        "-noenc",
+        "-subj",
+        "/CN=synthetic-leaf",
+        "-keyout",
+        "leaf.key",
+        "-out",
+        "leaf.csr"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "-----\n"
+    },
+    {
+      "command": [
+        "openssl",
+        "x509",
+        "-req",
+        "-in",
+        "leaf.csr",
+        "-CA",
+        "intermediate.pem",
+        "-CAkey",
+        "intermediate.key",
+        "-set_serial",
+        "3",
+        "-days",
+        "1",
+        "-extfile",
+        "leaf.ext",
+        "-out",
+        "leaf.pem"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Certificate request self-signature ok\nsubject=CN=synthetic-leaf\n"
+    },
+    {
+      "command": [
+        "openssl",
+        "x509",
+        "-in",
+        "leaf.pem",
+        "-noout",
+        "-dates"
+      ],
+      "returncode": 0,
+      "stdout": "notBefore=Sep  5 15:31:23 2026 GMT\nnotAfter=Sep  6 15:31:23 2026 GMT\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "openssl",
+        "x509",
+        "-in",
+        "leaf.pem",
+        "-outform",
+        "DER",
+        "-out",
+        "leaf.der"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "openssl",
+        "x509",
+        "-inform",
+        "DER",
+        "-in",
+        "tampered.der",
+        "-out",
+        "tampered.pem"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "key_permissions": {
+    "unrelated-root.key": "0o600",
+    "intermediate.key": "0o600",
+    "lab-root.key": "0o600",
+    "leaf.key": "0o600"
+  },
+  "cases": [
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_hostname",
+        "web.lab.test",
+        "leaf.pem"
+      ],
+      "returncode": 0,
+      "stdout": "leaf.pem: OK\n",
+      "stderr": "",
+      "id": "valid_dns_identity",
+      "expected_accept": true,
+      "observed_accept": true,
+      "expected_error_code": null,
+      "observed_error_codes": [],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_ip",
+        "127.0.0.1",
+        "leaf.pem"
+      ],
+      "returncode": 0,
+      "stdout": "leaf.pem: OK\n",
+      "stderr": "",
+      "id": "valid_ip_identity",
+      "expected_accept": true,
+      "observed_accept": true,
+      "expected_error_code": null,
+      "observed_error_codes": [],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_hostname",
+        "other.lab.test",
+        "leaf.pem"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "CN=synthetic-leaf\nerror 62 at 0 depth lookup: hostname mismatch\nerror leaf.pem: verification failed\n",
+      "id": "wrong_dns_identity",
+      "expected_accept": false,
+      "observed_accept": false,
+      "expected_error_code": 62,
+      "observed_error_codes": [
+        62
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_ip",
+        "127.0.0.2",
+        "leaf.pem"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "CN=synthetic-leaf\nerror 64 at 0 depth lookup: IP address mismatch\nerror leaf.pem: verification failed\n",
+      "id": "wrong_ip_identity",
+      "expected_accept": false,
+      "observed_accept": false,
+      "expected_error_code": 64,
+      "observed_error_codes": [
+        64
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_hostname",
+        "web.lab.test",
+        "leaf.pem"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "CN=synthetic-leaf\nerror 20 at 0 depth lookup: unable to get local issuer certificate\nerror leaf.pem: verification failed\n",
+      "id": "missing_intermediate",
+      "expected_accept": false,
+      "observed_accept": false,
+      "expected_error_code": 20,
+      "observed_error_codes": [
+        20
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "unrelated-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_hostname",
+        "web.lab.test",
+        "leaf.pem"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "CN=lab-intermediate\nerror 20 at 1 depth lookup: unable to get local issuer certificate\nerror leaf.pem: verification failed\n",
+      "id": "unrelated_trust_anchor",
+      "expected_accept": false,
+      "observed_accept": false,
+      "expected_error_code": 20,
+      "observed_error_codes": [
+        20
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslclient",
+        "-verify_hostname",
+        "web.lab.test",
+        "leaf.pem"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "CN=synthetic-leaf\nerror 26 at 0 depth lookup: unsuitable certificate purpose\nerror leaf.pem: verification failed\n",
+      "id": "wrong_extended_key_usage",
+      "expected_accept": false,
+      "observed_accept": false,
+      "expected_error_code": 26,
+      "observed_error_codes": [
+        26
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_hostname",
+        "web.lab.test",
+        "-attime",
+        "1788622282",
+        "leaf.pem"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "CN=lab-root\nerror 9 at 2 depth lookup: certificate is not yet valid\nerror leaf.pem: verification failed\n",
+      "id": "before_validity",
+      "expected_accept": false,
+      "observed_accept": false,
+      "expected_error_code": 9,
+      "observed_error_codes": [
+        9
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_hostname",
+        "web.lab.test",
+        "-attime",
+        "1788708684",
+        "leaf.pem"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "CN=synthetic-leaf\nerror 10 at 0 depth lookup: certificate has expired\nerror leaf.pem: verification failed\n",
+      "id": "after_validity",
+      "expected_accept": false,
+      "observed_accept": false,
+      "expected_error_code": 10,
+      "observed_error_codes": [
+        10
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "leaf.pem"
+      ],
+      "returncode": 0,
+      "stdout": "leaf.pem: OK\n",
+      "stderr": "",
+      "id": "chain_without_identity_check",
+      "expected_accept": true,
+      "observed_accept": true,
+      "expected_error_code": null,
+      "observed_error_codes": [],
+      "passed": true
+    },
+    {
+      "command": [
+        "openssl",
+        "verify",
+        "-no-CAfile",
+        "-no-CApath",
+        "-no-CAstore",
+        "-CAfile",
+        "lab-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "-purpose",
+        "sslserver",
+        "-verify_hostname",
+        "web.lab.test",
+        "tampered.pem"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "CN=synthetic-leaf\nerror 7 at 0 depth lookup: certificate signature failure\nerror tampered.pem: verification failed\n4047230C647F0000:error:030000EA:digital envelope routines:EVP_DigestVerifyFinal:provider signature failure:../crypto/evp/m_sigver.c:701:ECDSA digest_verify_final:\n4047230C647F0000:error:06880006:asn1 encoding routines:ASN1_item_verify_ctx:EVP lib:../crypto/asn1/a_verify.c:219:\n",
+      "id": "changed_signature_byte",
+      "expected_accept": false,
+      "observed_accept": false,
+      "expected_error_code": 7,
+      "observed_error_codes": [
+        7
+      ],
+      "passed": true
+    }
+  ],
+  "case_count": 11,
+  "passed_count": 11,
+  "not_tested": [
+    "TLS handshake",
+    "revocation/OCSP/CRL",
+    "browser behavior",
+    "live server possession of private key",
+    "all OpenSSL versions"
+  ],
+  "temporary_files_removed": true,
+  "status": "passed"
+}

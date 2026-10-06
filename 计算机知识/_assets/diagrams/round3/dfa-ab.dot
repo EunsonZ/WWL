@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="DFA：识别以 ab 结尾的 a/b 字符串",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"q0" [label="q0\n起始 / 无有用后缀"];
+"q1" [label="q1\n后缀 a"];
+"q2" [label="q2\n后缀 ab：接受"];
+"q0" -> "q1" [label="a"];
+"q0" -> "q0" [label="b"];
+"q1" -> "q1" [label="a"];
+"q1" -> "q2" [label="b"];
+"q2" -> "q1" [label="a"];
+"q2" -> "q0" [label="b"];
+q2 [peripheries=2];
+}

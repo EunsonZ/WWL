@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="交换机：学源地址，按目的地址转发",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"a" [label="A\n端口 1"];
+"sw" [label="交换机\nMAC 表起初为空"];
+"b" [label="B\n端口 2"];
+"c" [label="其他主机\n端口 3"];
+"a" -> "sw" [label="源 A，目的 B\n学习 A→1"];
+"sw" -> "b" [label="B 未知：泛洪"];
+"sw" -> "c" [label="B 未知：泛洪"];
+"b" -> "sw" [label="回应：学习 B→2"];
+
+}

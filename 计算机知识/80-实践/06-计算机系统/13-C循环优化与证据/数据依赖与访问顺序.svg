@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="720" viewBox="0 0 425 720" role="img" aria-labelledby="title description">
+  <title id="title">同一模二求和合同中的数据依赖和地址访问顺序</title>
+  <desc id="description">蓝色实线表示数值必须先可用的数据依赖。橙色虚线表示 row-major 数组上的地址访问顺序，不是数据依赖或因果箭头。四累加器缩短单条加法依赖链；按列访问改变地址跨度。</desc>
+  <style>
+    text { font-family: 'Arial Unicode MS','Hiragino Sans GB','PingFang SC',Arial,sans-serif; fill: #1b2530; }
+    .title { font-size: 19px; font-weight: 700; } .body { font-size: 16px; } .small { font-size: 15px; }
+    .box { fill: #f4f7fb; stroke: #406a9b; stroke-width: 2; } .data { stroke: #1769aa; stroke-width: 3; fill: none; marker-end: url(#blue); } .visit { stroke: #d46a1d; stroke-width: 3; fill: none; stroke-dasharray: 7 5; marker-end: url(#orange); }
+  </style>
+  <defs><marker id="blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8Z" fill="#1769aa"/></marker><marker id="orange" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8Z" fill="#d46a1d"/></marker></defs>
+  <rect width="425" height="720" fill="#fbfaf7"/>
+  <text x="22" y="34" class="title">同一结果，两个不同关系</text><text x="22" y="62" class="body">合同：Σ A[r,c] mod 2³²</text>
+  <line x1="24" y1="93" x2="76" y2="93" class="data"/><text x="91" y="99" class="small">蓝实线：数据依赖</text>
+  <line x1="24" y1="124" x2="76" y2="124" class="visit"/><text x="91" y="130" class="small">橙虚线：地址访问顺序</text>
+  <text x="22" y="164" class="title">一条累加链</text>
+  <rect x="30" y="184" width="102" height="49" rx="6" class="box"/><text x="51" y="215" class="body">total₀</text><rect x="166" y="184" width="102" height="49" rx="6" class="box"/><text x="187" y="215" class="body">total₁</text><rect x="302" y="184" width="93" height="49" rx="6" class="box"/><text x="321" y="215" class="body">total₂</text><path d="M132 208H166M268 208H302" class="data"/><text x="133" y="178" class="small">+A[0]</text><text x="269" y="178" class="small">+A[1]</text>
+  <text x="22" y="274" class="title">四条累加链，末尾合并</text>
+  <rect x="30" y="294" width="118" height="43" rx="6" class="box"/><rect x="30" y="351" width="118" height="43" rx="6" class="box"/><rect x="178" y="294" width="118" height="43" rx="6" class="box"/><rect x="178" y="351" width="118" height="43" rx="6" class="box"/><text x="43" y="322" class="small">t0 + A[0]</text><text x="43" y="379" class="small">t1 + A[1]</text><text x="191" y="322" class="small">t2 + A[2]</text><text x="191" y="379" class="small">t3 + A[3]</text><rect x="315" y="323" width="83" height="44" rx="6" class="box"/><text x="329" y="352" class="small">合并</text><path d="M148 315V282H306V330H315M148 372V406H306V340H315M296 315H308V350H315M296 372H308V360H315" class="data"/>
+  <text x="22" y="433" class="title">row-major 的同一数组</text>
+  <g class="body"><rect x="42" y="457" width="76" height="48" class="box"/><rect x="132" y="457" width="76" height="48" class="box"/><rect x="222" y="457" width="76" height="48" class="box"/><rect x="42" y="520" width="76" height="48" class="box"/><rect x="132" y="520" width="76" height="48" class="box"/><rect x="222" y="520" width="76" height="48" class="box"/><text x="60" y="487">A00</text><text x="150" y="487">A01</text><text x="240" y="487">A02</text><text x="60" y="550">A10</text><text x="150" y="550">A11</text><text x="240" y="550">A12</text></g>
+  <path d="M118 481H132M208 481H222M298 501V544H118" class="visit"/><text x="23" y="602" class="body">按行：A00 → A01 → A02 → A10 …</text>
+  <path d="M80 505V520M118 544H132M170 520V505H222" class="visit"/><text x="23" y="633" class="body">按列：A00 → A10 → A01 → A11 …</text>
+  <text x="23" y="676" class="small">地址图不计数 cache/TLB miss；</text><text x="23" y="700" class="small">墙钟时间也不能独自证明因果。</text>
+</svg>

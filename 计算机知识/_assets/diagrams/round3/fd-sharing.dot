@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="fork / dup：fd 指向同一个打开文件描述",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"p" [label="父进程 fd 3"];
+"c" [label="子进程 fd 3"];
+"dup" [label="父进程 fd 5\n由 dup 得到"];
+"ofd" [label="打开文件描述\n共享偏移、状态标志"];
+"ino" [label="inode / 文件对象"];
+"p" -> "ofd";
+"c" -> "ofd";
+"dup" -> "ofd";
+"ofd" -> "ino";
+
+}

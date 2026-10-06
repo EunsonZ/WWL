@@ -1,0 +1,21 @@
+digraph G {
+    graph [rankdir=LR, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="三种记忆组织：缓存少，不等于信息没有代价"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    hist [label="过去 token 序列"];
+    kv [label="标准注意力
+逐 token 保存 K/V
+未来 query 可重新读取"];
+    mla [label="MLA 简化结构
+逐 token 保存共享潜变量
+线性吸收 + 独立位置分支"];
+    state [label="核线性注意力 / 状态空间
+更新固定维状态
+未来只能读取已保留的信息"];
+    judge [label="比较时同时控制
+状态大小、有限精度、训练预算
+精确检索、干扰、更新与组合任务", fillcolor="#e6f3e9"];
+    hist -> kv;hist -> mla;hist -> state;kv -> judge;mla -> judge;state -> judge;
+    
+    }

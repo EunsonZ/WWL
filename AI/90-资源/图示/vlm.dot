@@ -1,0 +1,16 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="生成式 VLM：让视觉证据进入语言上下文", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+i [label="图像 / 裁剪"];
+e [label="视觉编码器\n[B,N,D_v]"];
+p [label="投影 / 压缩连接器\n[B,N,D_l]"];
+t [label="问题文本 token"];
+l [label="语言模型\n融合视觉和文本"];
+o [label="答案 + 可核验来源\n检验是否真的依赖图像"];
+i -> e;
+e -> p;
+p -> l;
+t -> l;
+l -> o;
+}

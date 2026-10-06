@@ -1,0 +1,78 @@
+{
+  "scope": "Obsidian teaching fixtures are deliberately static and retain narrow, explicit exceptions.",
+  "entries": [
+    {
+      "file": "Obsidian知识/30-实践/04-TaskNotes/Tasks/01-整理Markdown示例.md",
+      "target": "fenced YAML block under 静态属性样本",
+      "reason": "preserves original TaskNotes tags, dates, status, and related properties as a non-active format example"
+    },
+    {
+      "file": "Obsidian知识/30-实践/04-TaskNotes/Tasks/02-验证双向链接.md",
+      "target": "fenced YAML block under 静态属性样本",
+      "reason": "preserves original TaskNotes tags, dates, status, and related properties as a non-active format example"
+    },
+    {
+      "file": "Obsidian知识/30-实践/04-TaskNotes/Tasks/03-完成基础上手.md",
+      "target": "fenced YAML block under 静态属性样本",
+      "reason": "preserves the historical completion state and dates as a non-active format example"
+    },
+    {
+      "file": "Obsidian知识/30-实践/04-TaskNotes/Tasks/04-准备插件复盘.md",
+      "target": "fenced YAML block and 历史状态示例 callout",
+      "reason": "preserves the historical blocking relationship, dates, and status without creating an active task"
+    },
+    {
+      "file": "Obsidian知识/30-实践/04-TaskNotes/Start Here.md",
+      "target": "five fenced Base embed examples",
+      "reason": "documents tasks-default, agenda-default, mini-calendar-default, calendar-default, and kanban-default syntax without reading TaskNotes data"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/插件/04-Tasks查询实验.md",
+      "target": "two fenced text query examples",
+      "reason": "preserves Tasks query syntax without activating the Tasks renderer"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/插件/06-Dataview DQL实验.md",
+      "target": "two fenced text DQL examples",
+      "reason": "preserves Dataview syntax without running DQL or DataviewJS"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/插件/07-QuickAdd与Templater对照.md",
+      "target": "Templater syntax and static comparison steps",
+      "reason": "documents version-sensitive template syntax without executing plugin commands"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/链接迷宫/迷宫-A-入口.md",
+      "target": "[[迷宫-D-隐藏房间]] at line 22",
+      "reason": "intentional unresolved-link target for the Outgoing links exercise; do not create the target note"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/链接迷宫/迷宫-X-孤岛.md",
+      "target": "whole note intentionally has no internal incoming or outgoing links",
+      "reason": "intentional graph-orphan example for the global-graph exercise"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/收件箱/在这里创建第一篇笔记.md",
+      "target": "[[我的第一条常青笔记]] at line 17",
+      "reason": "intentional unresolved-link target; a learner may create the named note in a personal copy"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/插件/01-Linter手动实验-故意混乱.md",
+      "target": "lines 17-43: heading, spacing, unordered-list and ordered-list inconsistencies",
+      "snippet_sha256": "b7d49c4394029f53a86957c6c2a50956a01f63ea703c09eabf05689cef2ab86e",
+      "reason": "intentional Linter input; limited to the named snippet, not the entire plugin-lab directory"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/插件/02-Advanced Tables表格实验.md",
+      "target": "lines 33-39: blank total cell and TBLFM formula comment",
+      "snippet_sha256": "e871e0bbaee07439ba72529d52c2acb0cf0e115a240914f5139b4fca370760df",
+      "reason": "intentional Advanced Tables formula input; the final cell is blank until evaluated in a personal copy"
+    },
+    {
+      "file": "Obsidian知识/30-实践/01-实验区/插件/03-LaTeX Suite数学公式实验.md",
+      "target": "lines 18-20: $a^2 + b^2 = \\square$ placeholder",
+      "snippet_sha256": "7a63cfe99a0f75062eb09c3b16678fe2109a3c69b07387a4c1cafd2347e8f5c8",
+      "reason": "intentional formula-completion prompt; not a malformed mathematical assertion"
+    }
+  ]
+}

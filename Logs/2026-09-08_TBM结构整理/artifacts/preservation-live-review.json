@@ -1,0 +1,58 @@
+{
+  "status": "pass",
+  "checked_at": "2026-09-08T22:25:00+08:00",
+  "scope": "Read-only final preservation audit of the formal vault against frozen mapping, private snapshot, and stage. Hidden configuration excluded; no experiments or vault writes.",
+  "mapping_and_targets": {
+    "source_entries": 2045,
+    "unique_target_paths": 1789,
+    "missing_targets": [],
+    "merge_entries": 256,
+    "merge_hash_failures": [],
+    "action_counts": {"merge": 256, "move": 1786, "retain": 3},
+    "role_counts": {"asset": 463, "code": 196, "content": 950, "data": 132, "governance": 3, "historical": 156, "navigation": 141, "original": 4}
+  },
+  "snapshot_preservation": {
+    "all_mapping_source_hashes_match_snapshot": true,
+    "snapshot_hash_mismatches": [],
+    "historical_nonmerge_count": 149,
+    "historical_nonmerge_byte_mismatches": [],
+    "original_count": 4,
+    "original_byte_mismatches": []
+  },
+  "formal_vs_stage": {
+    "comparison_basis": "mapped target paths; CHANGE.md excluded as permitted; no Log acceptance artifact was counted",
+    "same_content_count": 1788,
+    "different_content_count": 0,
+    "resolved_differences": [
+      {
+        "path": "计算机知识/Kali/00-导航与方法/Kali学习路径.canvas",
+        "formal_sha256": "07ea91e67a91ec85dba6345e0655acec801cca58c7ba6765a2de38b38e9e7e43",
+        "stage_sha256": "5c9b343aafd9b03e1047c0b01d37679add288e00a92db362a2f157b438786ea4",
+        "formal_size": 8637,
+        "stage_size": 12273,
+        "assessment": "Resolved as native Obsidian Canvas runtime normalization: 28 nodes and 35 edges are deep-equal; only metadata.frontmatter={} and metadata.version=1.0-1.0 were added. The live native state is preserved and acceptance stage is synchronized per canvas-runtime-normalization.json."
+      }
+    ],
+    "differences": [],
+    "change_md_excluded": true,
+    "log_artifacts_excluded": true
+  },
+  "tasknotes": {
+    "live_present": true,
+    "stage_present": true,
+    "byte_mismatches": []
+  },
+  "tbm_exists": false,
+  "changed_target_statistics": {
+    "count_compared_with_snapshot": 376,
+    "canonical_target_basis": "unique new targets; action!=merge counted as canonical, plus the Canvas runtime-normalized target",
+    "by_action": {"retain": 2, "move": 374, "canvas_runtime_normalization": 1},
+    "by_role": {"asset": 1, "code": 7, "content": 334, "governance": 2, "navigation": 49},
+    "interpretation": "These are unique formal target changes relative to the source snapshot, including relocation, approved merge canonical outcomes, and native Canvas serialization; the count is not equivalent to knowledge rewriting."
+  },
+  "overall_notes": [
+    "All 2045 frozen source hashes match the private snapshot and all 1789 formal targets exist.",
+    "The requested 149 historical and 4 original byte-preservation checks pass.",
+    "The formerly observed Canvas byte difference is explained by native Obsidian runtime normalization and recorded in canvas-runtime-normalization.json."
+  ]
+}

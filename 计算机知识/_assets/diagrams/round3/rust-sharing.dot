@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="共享所有权不自动提供可变访问安全",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"rc" [label="Rc<T>\n单线程引用计数"];
+"arc" [label="Arc<T>\n原子引用计数"];
+"cell" [label="RefCell<T>\n运行时借用检查"];
+"mutex" [label="Mutex<T>\n互斥访问 T"];
+"t" [label="T 的能力\n仍需满足适用 Send / Sync 条件"];
+"rc" -> "cell" [label="常见单线程组合"];
+"arc" -> "mutex" [label="常见跨线程组合"];
+"mutex" -> "t";
+"arc" -> "t" [label="不抹去 T 的限制"];
+
+}

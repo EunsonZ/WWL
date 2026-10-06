@@ -1,0 +1,43 @@
+/* Synthetic illustrative scalar tables; no technology characterization. */
+library(TEACH_fast) {
+ delay_model : table_lookup;
+ time_unit : "1ns";
+ voltage_unit : "1V";
+ current_unit : "1mA";
+ pulling_resistance_unit : "1kohm";
+ capacitive_load_unit(1,pf);
+ nom_process : 1;
+ nom_voltage : 1;
+ nom_temperature : 25;
+ lu_table_template(one) { variable_1 : input_net_transition; index_1("0.1"); }
+ lu_table_template(constraint_one) { variable_1 : constrained_pin_transition; index_1("0.1"); }
+ cell(TINV) {
+  area : 10;
+  pin(A) { direction : input; capacitance : 0.002; }
+  pin(Y) { direction : output; function : "!A"; max_capacitance : 0.2;
+   timing() { related_pin : "A"; timing_sense : negative_unate;
+    cell_rise(one) { values("0.1"); } cell_fall(one) { values("0.1"); }
+    rise_transition(one) { values("0.1"); } fall_transition(one) { values("0.1"); }
+   }
+  }
+ }
+ cell(TDFF) {
+  area : 20;
+  ff(IQ,IQN) { clocked_on : "CK"; next_state : "D"; }
+  pin(CK) { direction : input; clock : true; capacitance : 0.003; }
+  pin(D) { direction : input; capacitance : 0.002;
+   timing() { related_pin : "CK"; timing_type : setup_rising;
+    rise_constraint(constraint_one) { values("0.2"); } fall_constraint(constraint_one) { values("0.2"); }
+   }
+   timing() { related_pin : "CK"; timing_type : hold_rising;
+    rise_constraint(constraint_one) { values("0.1"); } fall_constraint(constraint_one) { values("0.1"); }
+   }
+  }
+  pin(Q) { direction : output; function : "IQ"; max_capacitance : 0.2;
+   timing() { related_pin : "CK"; timing_type : rising_edge; timing_sense : non_unate;
+    cell_rise(one) { values("0.15"); } cell_fall(one) { values("0.15"); }
+    rise_transition(one) { values("0.1"); } fall_transition(one) { values("0.1"); }
+   }
+  }
+ }
+}

@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="文件描述符不是打开文件状态本身"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  a [label="进程的 FD 3\n自己的 FD_CLOEXEC 标志"];
+  b [label="dup 得到 FD 4\n另一份描述符标志"];
+  c [label="另一次 open 得到 FD 5\n另一份描述符标志"];
+  ofd [label="共享的 open file description\n共享偏移量、O_NONBLOCK 等状态",fillcolor="#e6eff8"];
+  ofd2 [label="独立的 open file description\n自己的偏移量与文件状态"];
+  file [label="同一个文件对象 / inode"];
+  a->ofd;b->ofd;c->ofd2;ofd->file;ofd2->file;{rank=same;a;b;c};
+
+}

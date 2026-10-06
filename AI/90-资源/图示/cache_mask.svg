@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="640" viewBox="0 0 1560 640">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Noto Sans CJK SC, sans-serif" fill="black"><text x="35" y="58" font-size="36">缓存解码：可见性由绝对位置决定</text>
+<text x="80" y="155" font-size="25">列： key 位置 0、1、2、3、4、5、6；行：query 位置 5、6</text>
+<rect x="80" y="177" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="113" y="221" text-anchor="middle" font-size="25">✓</text>
+<rect x="147" y="177" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="180" y="221" text-anchor="middle" font-size="25">✓</text>
+<rect x="214" y="177" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="247" y="221" text-anchor="middle" font-size="25">✓</text>
+<rect x="281" y="177" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="314" y="221" text-anchor="middle" font-size="25">✓</text>
+<rect x="348" y="177" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="381" y="221" text-anchor="middle" font-size="25">✓</text>
+<rect x="415" y="177" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="448" y="221" text-anchor="middle" font-size="25">✓</text>
+<rect x="482" y="177" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="515" y="221" text-anchor="middle" font-size="25">×</text>
+<rect x="80" y="244" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="113" y="288" text-anchor="middle" font-size="25">✓</text>
+<rect x="147" y="244" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="180" y="288" text-anchor="middle" font-size="25">✓</text>
+<rect x="214" y="244" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="247" y="288" text-anchor="middle" font-size="25">✓</text>
+<rect x="281" y="244" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="314" y="288" text-anchor="middle" font-size="25">✓</text>
+<rect x="348" y="244" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="381" y="288" text-anchor="middle" font-size="25">✓</text>
+<rect x="415" y="244" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="448" y="288" text-anchor="middle" font-size="25">✓</text>
+<rect x="482" y="244" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="515" y="288" text-anchor="middle" font-size="25">✓</text>
+<text x="35" y="515" font-size="25">已有 5 个 token，一次提交 2 个新 query：允许 key_pos ≤ query_pos。</text>
+<text x="35" y="557" font-size="25">这是 2×7 的偏移因果掩码，不是从左上角起的普通下三角。</text>
+</g></svg>

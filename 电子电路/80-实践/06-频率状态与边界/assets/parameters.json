@@ -1,0 +1,45 @@
+{
+  "model": "analytic, not measured",
+  "rc": {
+    "R_ohm": 1000,
+    "C_F": 1e-06,
+    "v0_V": 0.4,
+    "source_peak_V": 1,
+    "omega_rad_s": 1000
+  },
+  "rlc": {
+    "R_ohm": 50,
+    "L_H": 0.01,
+    "C_F": 1e-06,
+    "natural_rad_s": 10000,
+    "damping": 0.25
+  },
+  "zero_pair": {
+    "zero_abs_rad_s": 1000,
+    "pole_rad_s": 10000,
+    "step_V": 1,
+    "LHP_direct_gain": 10,
+    "RHP_direct_gain": -10
+  },
+  "value_boundaries": {
+    "sine_omega_rad_s": 2000,
+    "growth_per_s": 1000
+  },
+  "comparison_damping": 1,
+  "hidden": "abstract normalized active model, poles -1000,+1000 per second",
+  "figures": [
+    "value-boundaries",
+    "rc-frequency",
+    "bode-exact-asymptotic",
+    "zero-phase",
+    "rlc-resonance",
+    "state-topology",
+    "hidden-modes"
+  ],
+  "canvas_width_px": 425,
+  "preview_widths_px": [
+    360,
+    425
+  ],
+  "minimum_font_source_px": 13
+}

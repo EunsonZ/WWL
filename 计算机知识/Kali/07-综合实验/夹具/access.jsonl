@@ -1,0 +1,6 @@
+{"time":"2024-01-01T00:00:00Z","actor":"alice","path":"/health","status":200}
+{"time":"2024-01-01T00:00:01Z","actor":"alice","path":"/reports/17","status":200}
+{"time":"2024-01-01T00:00:02Z","actor":"bob","path":"/reports/17","status":403}
+{"time":"2024-01-01T00:00:03Z","actor":"alice","path":"/missing","status":404}
+{"time":"2024-01-01T00:00:04Z","actor":"bob","path":"/reports/18","status":200}
+{"time":"2024-01-01T00:00:05Z","actor":"alice","path":"/toy-error","status":500}

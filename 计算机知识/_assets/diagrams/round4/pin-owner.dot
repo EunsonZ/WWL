@@ -1,0 +1,21 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="固定的是被指对象；句柄所有权另算"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  subgraph cluster_pin {label="地址稳定：Pin<Box<T>>，T: !Unpin";color="#aabcca";
+    h1 [label="Pin<Box<T>> 句柄\n移动前的位置 A"];
+    h2 [label="同一个拥有性句柄\n移动后的位置 B"];
+    object [label="堆内 T 的地址 H 不变\n受 Pin 合同约束",fillcolor="#e6eff8"];
+    h1 -> h2 [label="可以移动句柄"];h1->object [style=dashed];h2->object;
+  }
+  subgraph cluster_task {label="任务控制：Tokio 的不同所有者";color="#aabcca";
+    join [label="调用者持有 JoinHandle"];
+    runtime [label="运行时拥有被调度的任务"];
+    drop [label="drop(JoinHandle)\n失去等待句柄，不自动停止任务",fillcolor="#fff0df"];
+    abort [label="请求 abort 后等待结束\n仍不能回滚外部副作用"];
+    join ->runtime [style=dashed,label="观察/控制\n不等于拥有 Future 值"];join->drop;join->abort;
+    object -> join [style=invis,minlen=1];
+  }
+
+}

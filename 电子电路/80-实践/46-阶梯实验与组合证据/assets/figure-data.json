@@ -1,0 +1,42 @@
+{
+  "identity": "synthetic budget responsibility graph, not circuit/hardware",
+  "good": {
+    "flags": {
+      "output_window": true,
+      "adc_window": true,
+      "common_mode": true,
+      "magnitude": true,
+      "sine_sr": true,
+      "noise": true,
+      "dc_offset": true,
+      "rc_acquisition": true,
+      "driver_acquisition": true,
+      "antialias_tone": true
+    },
+    "teaching_budget_pass": true,
+    "gain_nominal": 200.0,
+    "dc_center": 1.6496535100647742,
+    "dc_uncertainty": 0.0033349028522474526,
+    "output_envelope": [
+      1.446318607212527,
+      1.8529884129170215
+    ],
+    "offset_input_bound": 1.8406963937365664e-05,
+    "normalized_signal_magnitude": 0.999968095783351,
+    "stage_variances_output": [
+      2.3979973737844053e-08,
+      9.380437133559117e-11
+    ],
+    "output_noise_rms": 0.0001599533429419202,
+    "input_noise_rms": 7.99766714709601e-07,
+    "quantization_rms": 1.4535948855024453e-05,
+    "noise_tail_bound_V2": 2.558124426049107e-25,
+    "snr_db": 58.930156414825646,
+    "alias_fold_hz": 1000.0,
+    "alias_peak_adc_V": 6.506377222894887e-07,
+    "half_lsb_V": 2.5177001953125e-05,
+    "rc_error_V": 0.0,
+    "driver_error_V": 9.04384546610703e-255,
+    "model_scope": "Explicit DC Ib bounds at both inputs; independent noises; finite-A single-pole stages; specified fourth-order filter; lumped postfilter/ADC noises; defined acquisition model, not hardware validation"
+  }
+}

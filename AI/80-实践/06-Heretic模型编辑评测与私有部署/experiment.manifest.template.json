@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "experiment_id": "REPLACE_WITH_UNIQUE_EXPERIMENT_ID",
+  "tool": {
+    "repository": "https://github.com/p-e-w/heretic",
+    "commit": "REPLACE_WITH_40_TO_64_HEX_COMMIT",
+    "license_spdx": "AGPL-3.0-or-later",
+    "license_reviewed": false
+  },
+  "licenses": {
+    "tool": "/ABSOLUTE/PATH/TO/heretic-tool-license-record.md",
+    "model": "/ABSOLUTE/PATH/TO/model-license-record.md",
+    "data": "/ABSOLUTE/PATH/TO/data-license-ledger.md"
+  },
+  "original_model": {
+    "manifest_path": "/ABSOLUTE/PATH/TO/original-model.manifest.json",
+    "manifest_sha256": "REPLACE_WITH_SHA256",
+    "immutable": true
+  },
+  "paths": {
+    "original_directory": "/ABSOLUTE/PATH/TO/heretic-lab/models/original/REPLACE_WITH_REVISION",
+    "working_copy_directory": "/ABSOLUTE/PATH/TO/heretic-lab/models/work/REPLACE_WITH_EXPERIMENT_ID",
+    "edited_output_directory": "/ABSOLUTE/PATH/TO/heretic-lab/models/edited/REPLACE_WITH_EXPERIMENT_ID",
+    "run_directory": "/ABSOLUTE/PATH/TO/heretic-lab/runs/REPLACE_WITH_EXPERIMENT_ID",
+    "evaluation_directory": "/ABSOLUTE/PATH/TO/heretic-lab/evaluations/REPLACE_WITH_EXPERIMENT_ID",
+    "destinations_must_not_exist": true,
+    "refuse_overwrite": true
+  },
+  "data": [
+    {
+      "split": "direction_train",
+      "dataset_id": "REPLACE_WITH_FIXED_DATASET_ID",
+      "manifest_sha256": "REPLACE_WITH_SHA256",
+      "license_record": "/ABSOLUTE/PATH/TO/direction-train-license-record.md",
+      "no_raw_text_in_git": true
+    },
+    {
+      "split": "search_objective",
+      "dataset_id": "REPLACE_WITH_FIXED_DATASET_ID",
+      "manifest_sha256": "REPLACE_WITH_SHA256",
+      "license_record": "/ABSOLUTE/PATH/TO/search-objective-license-record.md",
+      "no_raw_text_in_git": true
+    },
+    {
+      "split": "selection_validation",
+      "dataset_id": "REPLACE_WITH_FIXED_DATASET_ID",
+      "manifest_sha256": "REPLACE_WITH_SHA256",
+      "license_record": "/ABSOLUTE/PATH/TO/selection-validation-license-record.md",
+      "no_raw_text_in_git": true
+    },
+    {
+      "split": "final_test",
+      "dataset_id": "REPLACE_WITH_FIXED_DATASET_ID",
+      "manifest_sha256": "REPLACE_WITH_SHA256",
+      "license_record": "/ABSOLUTE/PATH/TO/final-test-license-record.md",
+      "no_raw_text_in_git": true
+    }
+  ],
+  "edit_plan": {
+    "direction_method": "paired_mean_difference_then_unit_normalize",
+    "layer_and_token_position": "REPLACE_WITH_PREDECLARED_LAYER_AND_POSITION",
+    "negative_controls": [
+      "random_direction_same_dimension",
+      "label_permutation_direction",
+      "sham_copy_without_edit"
+    ],
+    "projection": "x_prime=(I-alpha*u*u^T)x",
+    "tpe_search_space": "REPLACE_WITH_BOUNDED_PREDECLARED_SPACE",
+    "tpe_budget": 0,
+    "tpe_seed": 0,
+    "selection_rule": "REPLACE_WITH_PREDECLARED_PARETO_OR_GATE_RULE",
+    "final_test_used_during_search": false
+  },
+  "edited_artifact": {
+    "artifact_type": "independent_edited_model",
+    "base_manifest_sha256": "REPLACE_WITH_SHA256",
+    "selected_trial_id": "REPLACE_AFTER_SELECTION",
+    "changed_tensor_manifest": "/ABSOLUTE/PATH/TO/changed-tensors.json",
+    "output_manifest": "/ABSOLUTE/PATH/TO/edited-model.manifest.json",
+    "must_not_replace_original": true
+  },
+  "network": {
+    "editing_network": "none",
+    "service_enabled": false,
+    "bind_host": "127.0.0.1",
+    "allow_lan": false,
+    "allow_public": false,
+    "upload_enabled": false,
+    "telemetry_enabled": false
+  },
+  "execution_gate": {
+    "paths_reviewed": false,
+    "licenses_reviewed": false,
+    "data_reviewed": false,
+    "output_budget_reviewed": false
+  },
+  "notes": "模板默认不可执行、不可联网、不可启动服务；不要在此文件记录 token、密码、私有 URL 或原始危险 prompt。"
+}

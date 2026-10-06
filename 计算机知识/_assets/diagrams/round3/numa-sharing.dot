@@ -1,0 +1,16 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="NUMA 与伪共享：地址相邻不等于数据独立",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"c0" [label="节点 0 CPU\n修改计数器 A"];
+"c1" [label="节点 1 CPU\n修改计数器 B"];
+"line" [label="同一缓存行\n[A | B | ...]"];
+"m0" [label="节点 0 内存"];
+"m1" [label="节点 1 内存"];
+"c0" -> "line" [label="请求写权限"];
+"c1" -> "line" [label="请求写权限"];
+"c0" -> "m0" [label="本地"];
+"c1" -> "m1" [label="本地"];
+"c1" -> "m0" [label="远端访问"];
+
+}

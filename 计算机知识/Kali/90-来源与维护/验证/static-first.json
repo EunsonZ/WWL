@@ -1,0 +1,37 @@
+{
+  "checker_version": "1.0",
+  "scope": "计算机知识/Kali",
+  "status": "failed",
+  "counts": {
+    "markdown": 76,
+    "wikilinks_including_prerequisites": 1103,
+    "headings": 521,
+    "block_ids": 3,
+    "reachable_notes": 75,
+    "unique_frontmatter_source_urls": 110,
+    "canvas": 1,
+    "canvas_nodes": 12,
+    "canvas_edges": 13,
+    "python_sources": 4,
+    "files_at_check": 108
+  },
+  "issues": [
+    {
+      "level": "error",
+      "rule": "navigation",
+      "path": "计算机知识/Kali/00-导航与方法/03-实验室拓扑与证据目录.md",
+      "detail": "not reachable from the home note"
+    }
+  ],
+  "not_run": [
+    "Obsidian UI/rendering",
+    "Kali tool execution",
+    "external URL availability sweep"
+  ],
+  "limitations": [
+    "Limited Markdown dialect; not a full Obsidian parser",
+    "Specific secret patterns only, not a comprehensive secret detector",
+    "Reads this topic only, not the rest of an existing Vault",
+    "Trusted local filesystem assumed; not a race-resistant hostile-input sandbox"
+  ]
+}

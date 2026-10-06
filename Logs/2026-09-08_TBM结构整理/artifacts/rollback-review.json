@@ -1,0 +1,130 @@
+{
+  "schema": "wwl-rollback-review-v1",
+  "reviewed_at": "2026-09-08T22:45:44+08:00",
+  "scope": {
+    "tool": "/private/tmp/wwl-structure-q7y1fsjr/tools/rollback.py",
+    "tool_sha256": "d86a9c1a63892832fd3a34e293991b472389be6dc269530894e6f82eb0d6ef25",
+    "mode": "static review plus fully isolated temporary fixtures",
+    "formal_vault_modified_by_reviewer": false,
+    "other_tools_modified": false
+  },
+  "decision": {
+    "status": "approved",
+    "blocker_count": 0,
+    "reason": "Preview, normal recovery, retained-path recovery, backup validation, and refusal to overwrite post-acceptance edits all behaved fail-closed in isolated fixtures. The coordinator confirmed that the live rollback manifest is excluded from its own outputs list, which satisfies the receipt-retention precondition."
+  },
+  "required_manifest_condition": {
+    "condition": "The rollback manifest path must not appear in manifest.outputs.",
+    "reason": "outputs are removed during recovery, while the tool promises to retain the manifest as the recovery receipt. A manifest cannot reliably list and hash its own final bytes.",
+    "coordinator_confirmation": "The generator explicitly excludes rollback-manifest.json from outputs.",
+    "isolated_verification": "A manifest stored under root/Logs/batch/artifacts, excluded from outputs, remained present after successful --apply while the listed batch output was removed."
+  },
+  "tests": [
+    {
+      "name": "normal_preview",
+      "result": "passed",
+      "exit_code": 0,
+      "observed": {
+        "status": "preview_passed",
+        "restore_sources": 2,
+        "batch_outputs": 3
+      }
+    },
+    {
+      "name": "normal_restore_moved_and_retained_paths",
+      "result": "passed",
+      "exit_code": 0,
+      "observed": {
+        "status": "restored",
+        "moved_source_restored_from_snapshot": true,
+        "retained_path_restored_from_accepted_output_to_original": true,
+        "moved_destination_removed": true,
+        "new_batch_artifact_removed": true,
+        "source_modes_restored": [
+          "0640",
+          "0600"
+        ],
+        "manifest_retained": true
+      }
+    },
+    {
+      "name": "changed_moved_output_refusal",
+      "result": "passed",
+      "preview_exit_code": 1,
+      "apply_exit_code": 1,
+      "observed": {
+        "status": "conflict_no_changes",
+        "reason": "output_changed_since_acceptance",
+        "edited_output_unchanged": true,
+        "original_source_not_created": true
+      }
+    },
+    {
+      "name": "changed_retained_output_refusal",
+      "result": "passed",
+      "apply_exit_code": 1,
+      "observed": {
+        "status": "conflict_no_changes",
+        "reason": "output_changed_since_acceptance",
+        "edited_retained_file_unchanged": true
+      }
+    },
+    {
+      "name": "new_user_content_at_original_path_refusal",
+      "result": "passed",
+      "preview_exit_code": 1,
+      "apply_exit_code": 1,
+      "observed": {
+        "status": "conflict_no_changes",
+        "reason": "new_user_content_at_original_path",
+        "user_content_unchanged": true,
+        "accepted_output_unchanged": true
+      }
+    },
+    {
+      "name": "backup_mismatch_refusal",
+      "result": "passed",
+      "apply_exit_code": 1,
+      "observed": {
+        "status": "conflict_no_changes",
+        "reason": "backup_mismatch",
+        "source_not_created": true,
+        "accepted_output_unchanged": true
+      }
+    },
+    {
+      "name": "manifest_inside_root_but_excluded_from_outputs",
+      "result": "passed",
+      "exit_code": 0,
+      "observed": {
+        "status": "restored",
+        "manifest_retained": true,
+        "source_restored": true,
+        "listed_output_removed": true
+      }
+    }
+  ],
+  "static_review": {
+    "positive_findings": [
+      "Every source backup is checked for existence and exact SHA-256 before preview succeeds or recovery starts.",
+      "Every accepted output must still be a regular file with its accepted SHA-256 before any recovery mutation.",
+      "Unexpected content at an original source path causes a conflict unless it is the exact original bytes or an accepted overlapping output such as a retained file.",
+      "The apply path rechecks overlapping outputs before replacement and rechecks each non-source output immediately before deletion.",
+      "Sources are restored before migrated-only outputs are removed, so an ordinary mid-operation failure leaves an additive or partly cleaned state rather than deleting the only source copy.",
+      "Path containment and symlink checks fail closed for source, destination, and output paths."
+    ],
+    "recordable_limits": [
+      {
+        "severity": "operational",
+        "finding": "An interrupted rollback has no separate resume journal; a later preview can report already-restored overlapping outputs as changed.",
+        "assessment": "Not a blocker for this one-off recovery tool because all original bytes remain in the external snapshot and sources are restored before output deletion. Retain the manifest and inspect conflicts before retrying."
+      },
+      {
+        "severity": "structural",
+        "finding": "Rollback removes accepted output files but does not remove directories that become empty and restores mode but not original mtime.",
+        "assessment": "No knowledge bytes are lost or overwritten. Empty directories and timestamps are outside the requested recovery acceptance criteria."
+      }
+    ]
+  },
+  "conclusion": "No concrete defect blocks use of the reviewed rollback tool with the confirmed manifest-generation rule. The formal manifest should still be checked once generated: its own relative path must be absent from outputs, every source/output path must be unique, and preview must pass before any recovery invocation."
+}

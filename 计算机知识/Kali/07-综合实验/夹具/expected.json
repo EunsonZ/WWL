@@ -1,0 +1,50 @@
+{
+  "fixture_version": "1.0",
+  "provenance": "All data synthetic. Fixed timestamps are NOT collection times.",
+  "pcap": {
+    "frames": 10,
+    "connections": 1,
+    "requests": 1,
+    "method": "GET",
+    "uri": "/health",
+    "status": 200,
+    "client": "192.0.2.10",
+    "server": "192.0.2.20",
+    "server_port": 8000,
+    "request_bytes": 68,
+    "response_bytes": 123,
+    "body_bytes": 33,
+    "base_timestamp_utc": "2024-01-01T00:00:00Z"
+  },
+  "logs": {
+    "records": 6,
+    "statuses": {
+      "200": 3,
+      "403": 1,
+      "404": 1,
+      "500": 1
+    }
+  },
+  "sha256": {
+    "access.jsonl": "ee947ca4c5a4c56c58b72fb8785d07fe588f39ccc8705ba8d23bac84d6d54ef7",
+    "candidate-words.txt": "e1512688d00b6e7b360324cab053bcc292bb4f600e13d5fc8e1e1d75516c19b9",
+    "files/negative.txt": "172b273484a999bbe440f36f0d6448d2f43fdfff0fc48163123abfd134827c32",
+    "files/positive.txt": "5e9797c0b1f21e2dabf962edf24f12417ade0b4f31b8ddac3f7de7d445ae6df0",
+    "hashes-sha256.txt": "55c582ee64f20246fa077027e0d7bb8f031f9a8d71d1be129eee7998424784bc",
+    "http-lab.pcap": "a7948316b3faede347436efb5553eb03a7e5d5ca0126d6fbb4fe9b90675491c6",
+    "iac/pod.yaml": "19f87bb653e64bf5307052152b65568648e71d5df8d6443b7a5b919d9d5efb0a",
+    "nmap-after.xml": "34a4c8b706ecfa2358b68d77abfd5c5aef65bd1474d29c48eb507d374ec53f50",
+    "nmap-before.xml": "b32ca6177807c8a0409195be1b9ba027d984ad3c86f600fe2dfd514bb32398cf",
+    "paths.txt": "20b5a845fc74cf4da3aadc1cdb152f1d522d88eb22a2e7056559c167c6f7c1bd",
+    "web/api/status.json": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c",
+    "web/health": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c",
+    "web/index.html": "8eddeb401292fa70acab401b63459d178ee5946c86c5d0871289de4fb277dc72",
+    "web/robots.txt": "c2fd4f79a8c5c07559b28fae5f8099b449d8de490ce51fc8e2cfeb26794a37d2"
+  },
+  "notes": [
+    "Static web server is optional and must bind to 127.0.0.1.",
+    "The PCAP is synthetic, not a capture of the supplied static server.",
+    "Static HTTP headers can differ from the synthetic PCAP headers.",
+    "Authentication demo and SQL demo run in memory, not on the HTTP server."
+  ]
+}

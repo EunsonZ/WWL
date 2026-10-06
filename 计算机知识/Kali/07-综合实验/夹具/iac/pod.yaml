@@ -1,0 +1,9 @@
+# SYNTHETIC CONFIGURATION ONLY: never deploy. Image is deliberately nonexistent.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kali-lab-synthetic
+spec:
+  containers:
+    - name: demo
+      image: example.invalid/kali-lab/no-image:synthetic

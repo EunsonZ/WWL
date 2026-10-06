@@ -1,0 +1,11 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=TB;
+a [label="创建任务"]; b [label="获得执行机会"]; c [label="运行到等待点"]; d [label="等待 I/O 或其他条件"];
+e [label="条件满足，可再次运行"]; f [label="结果 / 错误"]; g [label="取消请求"]; h [label="在适当取消点被观察"]; i [label="清理本地资源"];
+j [label="已经发生的远端副作用\n不会因此自动撤销",fillcolor="#FFF7ED"];
+a->b->c; c->d->e->b; c->f; g->h->i; d->h [style=dashed]; i->j [style=dashed,label="边界"];
+
+}

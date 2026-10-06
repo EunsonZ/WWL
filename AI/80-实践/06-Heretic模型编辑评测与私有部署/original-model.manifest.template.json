@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "artifact_type": "immutable_original_model",
+  "artifact_state": "template_not_materialized",
+  "model": {
+    "publisher": "REPLACE_WITH_PUBLISHER",
+    "repository_id": "REPLACE_WITH_EXACT_REPOSITORY_ID",
+    "revision": "REPLACE_WITH_40_TO_64_HEX_COMMIT",
+    "tokenizer_revision": "REPLACE_WITH_IMMUTABLE_TOKENIZER_REVISION",
+    "chat_template_revision": "REPLACE_WITH_FIXED_TEMPLATE_REVISION"
+  },
+  "model_license": {
+    "identifier": "REPLACE_WITH_MODEL_LICENSE_IDENTIFIER",
+    "source_document": "/ABSOLUTE/PATH/TO/model-license-record.md",
+    "reviewed_for_intended_use": false
+  },
+  "source": {
+    "directory": "/ABSOLUTE/PATH/TO/heretic-lab/models/original/REPLACE_WITH_REVISION",
+    "read_only": true,
+    "download_complete": false
+  },
+  "files": [
+    {
+      "path": "REPLACE_WITH_SAFE_RELATIVE_FILENAME",
+      "size_bytes": 0,
+      "sha256": "REPLACE_WITH_SHA256"
+    }
+  ],
+  "tokenizer_files_included": [],
+  "config_files_included": [],
+  "model_card_snapshot": "/ABSOLUTE/PATH/TO/model-card-snapshot.md",
+  "acceptable_use_terms_snapshot": "/ABSOLUTE/PATH/TO/acceptable-use-terms.md",
+  "notes": "模板故意不能通过校验；只有逐项填充、完成下载并现场核对后才把 artifact_state 改为 ready。"
+}

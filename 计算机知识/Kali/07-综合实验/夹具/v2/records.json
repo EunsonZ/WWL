@@ -1,0 +1,42 @@
+{
+  "cases": [
+    {
+      "exit": 2,
+      "hex": "",
+      "name": "empty-file",
+      "stdout": ""
+    },
+    {
+      "exit": 0,
+      "hex": "4c00",
+      "name": "empty-payload",
+      "stdout": "0\n"
+    },
+    {
+      "exit": 0,
+      "hex": "4c024142",
+      "name": "AB",
+      "stdout": "131\n"
+    },
+    {
+      "exit": 2,
+      "hex": "4c034142",
+      "name": "short",
+      "stdout": ""
+    },
+    {
+      "exit": 2,
+      "hex": "4c0041",
+      "name": "trailing",
+      "stdout": ""
+    },
+    {
+      "exit": 0,
+      "hex": "4c20ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "name": "max-payload",
+      "stdout": "8160\n"
+    }
+  ],
+  "fixture_version": "reasoning-v2.0",
+  "synthetic": true
+}

@@ -1,0 +1,162 @@
+{
+  "vault": "WWL",
+  "commands": {
+    "open": "obsidian vault=WWL open path=<vault-relative-path>",
+    "eval": "obsidian vault=WWL eval code=<read active view state and resolved-link graph>",
+    "pdf": "app.workspace.openLinkText(<pdf>#page=2, README.md, false)",
+    "screenshot": "obsidian vault=WWL dev:screenshot path=<unique-evidence-path>"
+  },
+  "screenshots": [
+    {
+      "development_source": "ui/final/02-home-fixed.png",
+      "evidence_path": "evidence/ui/01-首页.png"
+    },
+    {
+      "development_source": "ui/closing/obsidian-moc.png",
+      "evidence_path": "evidence/ui/02-Obsidian-MOC.png"
+    },
+    {
+      "development_source": "ui/final/04-workflow.png",
+      "evidence_path": "evidence/ui/03-工作流.png"
+    },
+    {
+      "development_source": "ui/final/05-core-base.png",
+      "evidence_path": "evidence/ui/04-Bases.png"
+    },
+    {
+      "development_source": "ui/final/06-canvas.png",
+      "evidence_path": "evidence/ui/05-Canvas.png"
+    },
+    {
+      "development_source": "ui/final/07-resources.png",
+      "evidence_path": "evidence/ui/06-资料索引.png"
+    },
+    {
+      "development_source": "ui/final/08-personal-index.png",
+      "evidence_path": "evidence/ui/07-个人规划索引.png"
+    },
+    {
+      "development_source": "ui/final/09-static-task.png",
+      "evidence_path": "evidence/ui/08-静态任务.png"
+    },
+    {
+      "development_source": "ui/10-pdf-page2.png",
+      "evidence_path": "evidence/ui/09-PDF页码.png"
+    },
+    {
+      "development_source": "ui/closing/static-task-index.png",
+      "evidence_path": "evidence/ui/10-静态任务入口.png"
+    },
+    {
+      "development_source": "ui/closing/templates.png",
+      "evidence_path": "evidence/ui/11-模板配置边界.png"
+    }
+  ],
+  "pages_initial": [
+    {
+      "path": "README.md",
+      "opened": "Opened: README.md\n",
+      "state": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"README.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"WWL 知识库\\n\\n从一个知识域的首页进入，再按其中的课程地图（MOC）选择阅读顺序。课程正文、可运行实验与来源材料各有入口；无需按文件夹编号一次读完整个库。\\n\\n从这里开始\\n知识域\\t首页\\t继续阅读\\n数学\\t数学首页\\t学习路线 · AI 数学应用索引\\nAI\\tAI 首页\\t按问题寻找入口 · 实践地图\\n计算机知识\\t计算机首页\\t总学习地图 · Kali 知识地图\\n编程知识\\t编程知识首页\\t正则表达式；语言系统课程从计算机首页进入\\n哲学与文化\\t哲学与文化首页\\t文化政治与组织结构\\nObsidian 知识\\tObsidian 教学首页\\t练习地图 · 30 分钟上手\\n实践、材料与任务\\n计算机实验与图示：实验入口、图示索引。\\n数学资源与记号：数学资源地图。\\n哲学原始材料及两份稿件：来源索引；原始对话。\\n书籍与历史个人资料：资料总索引；数学、物理、电子与信号、钢琴书籍及个人规划分区阅读。\\n双来源原稿：WorkWithLLM 对话与草稿、AGoodStart101 教程与剪藏。\\n已有任务工作区：TaskNotes 入口。\\n维护与阅读说明\\n长期维护契约、维护参考手册与尚未完成的改造执行单。\\n双来源增量导入、保全与验证范围见 增量导入验收记录。\\n前一批目录变更、历史路径和缺失材料见结构整理记录。\\n“本库未收录”表示原引用的材料不在当前库中，保留其原目标以便追溯。历史交付报告中的日期、数量和验证结果只描述当时的快照。\\n\\n内容可阅读、证据已核验和个人已掌握是不同状态；目录整理不会替代内容核验或填写个人学习进度。\",\"tableRows\":6,\"errors\":[]}\n",
+      "state_after": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"README.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\nREADME\\nWWL 知识库\\n\\n从一个知识域的首页进入，再按其中的课程地图（MOC）选择阅读顺序。课程正文、可运行实验与来源材料各有入口；无需按文件夹编号一次读完整个库。\\n\\n从这里开始\\n知识域\\t首页\\t继续阅读\\n数学\\t数学首页\\t学习路线 · AI 数学应用索引\\nAI\\tAI 首页\\t按问题寻找入口 · 实践地图\\n计算机知识\\t计算机首页\\t总学习地图 · Kali 知识地图\\n编程知识\\t编程知识首页\\t正则表达式；语言系统课程从计算机首页进入\\n哲学与文化\\t哲学与文化首页\\t文化政治与组织结构\\nObsidian 知识\\tObsidian 教学首页\\t练习地图 · 30 分钟上手\\n实践、材料与任务\\n计算机实验与图示：实验入口、图示索引。\\n数学资源与记号：数学资源地图。\\n哲学原始材料及两份稿件：来源索引；原始对话。\\n书籍与历史个人资料：资料总索引；数学、物理、电子与信号、钢琴书籍及个人规划分区阅读。\\n双来源原稿：WorkWithLLM 对话与草稿、AGoodStart101 教程与剪藏。\\n已有任务工作区：TaskNotes 入口。\\n维护与阅读说明\\n长期维护契约、维护参考手册与尚未完成的改造执行单。\\n双来源增量导入、保全与验证范围见 增量导入验收记录。\\n前一批目录变更、历史路径和缺失材料见结构整理记录。\\n“本库未收录”表示原引用的材料不在当前库中，保留其原目标以便追溯。历史交付报告中的日期、数量和验证结果只描述当时的快照。\\n\\n内容可阅读、证据已核验和个人已掌握是不同状态；目录整理不会替代内容核验或填写个人学习进度。\"}\n",
+      "screenshot": "/private/tmp/wwl-dual-import-75zcpdpm/evidence/ui/final/02-home-fixed.png"
+    },
+    {
+      "path": "Obsidian知识/00-开始/00-Playground-首页.md",
+      "opened": "Opened: Obsidian知识/00-开始/00-Playground-首页.md\n",
+      "state": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/00-开始/00-Playground-首页.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\n00-Playground-首页\\nProperties\\nhub\\nready\\n入门\\nonboarding\\nnavigation\\nplayground/hub\\ntopic/onboarding\\nAdd property\\nObsidian Playground\\n\\n欢迎来到一个可以阅读、点击、修改，也可以放心试错的 Obsidian 练习场。这里不是一套只能从头读到尾的文档：每篇笔记、每条链接、每个属性和视图本身都是教材。\\n\\n如果你是从应用初次打开时的 欢迎页 进入，这里就是它指向的完整课程地图；之后可以把本页作为日常入口。\\n\\n第一次来，从这里出发\\n花 3 分钟读 01-如何使用这个-Vault。\\n跟随 02-30分钟快速上手 做出第一条完整知识链。\\n想稳步学习就收藏 03-7天渐进学习路线。\\n选择你的入口\\n我现在想做什么\\t去这里\\n先体验最有代表性的功能\\t02-30分钟快速上手\\n系统学习 Markdown\\tMarkdown 基础 MOC\\n理解双向链接、嵌入和图谱\\t链接与知识网络 MOC\\n学属性、标签、搜索和 Bases\\t属性、标签与检索 MOC\\n逐一体验官方插件\\t官方插件实验室 MOC\\n判断哪些社区插件值得保留\\t社区插件实验室 MOC\\n把功能组合成真实工作流\\t完整工作流 MOC\\n复用模板或把工作交给 AI Agent\\tAI 协作工具箱\\n查一个概念或语法\\tObsidian术语表 · Markdown速查表 · 搜索语法速查表\\n进入独立的编程课程\\t编程知识首页 · 正则表达式 MOC\\n学习地图\",\"tableRows\":10,\"errors\":[]}\n",
+      "state_after": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/00-开始/00-Playground-首页.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\n00-Playground-首页\\nProperties\\nhub\\nready\\n入门\\nonboarding\\nnavigation\\nplayground/hub\\ntopic/onboarding\\nAdd property\\nObsidian Playground\\n\\n欢迎来到一个可以阅读、点击、修改，也可以放心试错的 Obsidian 练习场。这里不是一套只能从头读到尾的文档：每篇笔记、每条链接、每个属性和视图本身都是教材。\\n\\n如果你是从应用初次打开时的 欢迎页 进入，这里就是它指向的完整课程地图；之后可以把本页作为日常入口。\\n\\n第一次来，从这里出发\\n花 3 分钟读 01-如何使用这个-Vault。\\n跟随 02-30分钟快速上手 做出第一条完整知识链。\\n想稳步学习就收藏 03-7天渐进学习路线。\\n选择你的入口\\n我现在想做什么\\t去这里\\n先体验最有代表性的功能\\t02-30分钟快速上手\\n系统学习 Markdown\\tMarkdown 基础 MOC\\n理解双向链接、嵌入和图谱\\t链接与知识网络 MOC\\n学属性、标签、搜索和 Bases\\t属性、标签与检索 MOC\\n逐一体验官方插件\\t官方插件实验室 MOC\\n判断哪些社区插件值得保留\\t社区插件实验室 MOC\\n把功能组合成真实工作流\\t完整工作流 MOC\\n复用模板或把工作交给 AI Agent\\tAI 协作工具箱\\n查一个概念或语法\\tObsidian术语表 · Markdown速查表 · 搜索语法速查表\\n进入独立的编程课程\\t编程知识首页 · 正则表达式 MOC\\n学习地图\\nDisplay Mermaid diagrams in this vault?\\nOnly allow if you trust this vault's contents.\\nAllow\\nflowchart LR\\n  A[开始] --> B[Markdown]\\n  B --> C[链接网络]\\n  C --> D[属性与检索]\\n  D --> E[官方插件]\\n  E --> F[完整工作流]\\n  F --> G[社区插件]\\n  G --> H[毕业挑战]\\n\\n也可以从视觉地图进入：打开 Obsidian 功能地图 Canvas。\"}\n",
+      "screenshot": "/private/tmp/wwl-dual-import-75zcpdpm/evidence/ui/final/03-obsidian-moc.png"
+    },
+    {
+      "path": "Obsidian知识/20-功能/03-完整工作流/01-从收件箱到常青笔记.md",
+      "opened": "Opened: Obsidian知识/20-功能/03-完整工作流/01-从收件箱到常青笔记.md\n",
+      "state": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/20-功能/03-完整工作流/01-从收件箱到常青笔记.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\n01-从收件箱到常青笔记\\nProperties\\nworkflow\\nready\\n进阶\\ninbox\\nevergreen-notes\\nlinks\\nplayground/workflow\\nworkflow/knowledge\\nAdd property\\n从收件箱到常青笔记\\n\\n目标不是把所有灵感永久保存，而是用低摩擦方式捕获，再把少数值得保留的内容整理为脱离原始上下文仍然可理解、能与其他笔记组合的知识卡片。\\n\\n最小流程\\nDisplay Mermaid diagrams in this vault?\\nOnly allow if you trust this vault's contents.\\nAllow\\nflowchart LR\\n  A[快速捕获] --> B{值得继续吗}\\n  B -- 否 --> C[删除或归档]\\n  B -- 原始材料 --> D[来源笔记：保留定位与作者主张]\\n  B -- 可检验的判断 --> E[知识卡：自己的解释]\\n  B -- 有交付目标 --> F[项目页：目标、决定与行动]\\n  D --> E\\n  E --> F\\n第一步：只捕获，不整理\\n\\n在 Obsidian知识/30-实践/01-实验区/收件箱 创建一篇笔记，标题可以是“为什么链接比层级更适合未定型想法”。先写三行：\\n\\n来源：我在学习 [[01-Wikilink别名与未解析链接]] 时想到。\\n\\n直觉：想法刚出现时，我通常不知道它最终属于哪个文件夹。\\n\\n待验证：链接是否能让我推迟分类，同时保留上下文？\\n\\n\\n捕获阶段只要求内容不丢失，不要求模板完美。若你已经完成 02-Templater与QuickAdd，可用 QuickAdd 加速；否则普通“新建笔记”已经足够。\",\"tableRows\":0,\"errors\":[]}\n",
+      "state_after": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/20-功能/03-完整工作流/01-从收件箱到常青笔记.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\n01-从收件箱到常青笔记\\nProperties\\nworkflow\\nready\\n进阶\\ninbox\\nevergreen-notes\\nlinks\\nplayground/workflow\\nworkflow/knowledge\\nAdd property\\n从收件箱到常青笔记\\n\\n目标不是把所有灵感永久保存，而是用低摩擦方式捕获，再把少数值得保留的内容整理为脱离原始上下文仍然可理解、能与其他笔记组合的知识卡片。\\n\\n最小流程\\nDisplay Mermaid diagrams in this vault?\\nOnly allow if you trust this vault's contents.\\nAllow\\nflowchart LR\\n  A[快速捕获] --> B{值得继续吗}\\n  B -- 否 --> C[删除或归档]\\n  B -- 原始材料 --> D[来源笔记：保留定位与作者主张]\\n  B -- 可检验的判断 --> E[知识卡：自己的解释]\\n  B -- 有交付目标 --> F[项目页：目标、决定与行动]\\n  D --> E\\n  E --> F\\n第一步：只捕获，不整理\\n\\n在 Obsidian知识/30-实践/01-实验区/收件箱 创建一篇笔记，标题可以是“为什么链接比层级更适合未定型想法”。先写三行：\\n\\n来源：我在学习 [[01-Wikilink别名与未解析链接]] 时想到。\\n\\n直觉：想法刚出现时，我通常不知道它最终属于哪个文件夹。\\n\\n待验证：链接是否能让我推迟分类，同时保留上下文？\\n\\n\\n捕获阶段只要求内容不丢失，不要求模板完美。若你已经完成 02-Templater与QuickAdd，可用 QuickAdd 加速；否则普通“新建笔记”已经足够。\\n\\n第二步：澄清它是什么\\n\\n第二天或练习时重新阅读，回答：\\n\\n这是行动、资料、项目内容，还是自己的观点？\\n它在一周后是否仍有价值？\\n能否用一句完整的话表达核心判断？\\n\\n再做一个容易漏掉的区分：来源链接说明这条信息从哪里来，不等于它已经证明了你的结论。\\n\\n处理结果\\t最小保留物\\t暂时不要做的事\\n来源笔记\\t作者或机构、链接/页码、它试图回答的问题\\t把作者的结论直接改成自己的知识卡\\n知识卡\\t自己的主张、理由、证据与反例/范围\\t只留下主题名或摘抄\\n项目页\\t交付物、下一步、采用或拒绝某个判断的理由\\t复制全部来源和知识页正文\\n临时记录\\t原始上下文和一个下次处理动作\\t为了清空收件箱强行升级\"}\n",
+      "screenshot": "/private/tmp/wwl-dual-import-75zcpdpm/evidence/ui/final/04-workflow.png"
+    },
+    {
+      "path": "Obsidian知识/40-视图/02-Bases/示例笔记目录.base",
+      "opened": "Opened: Obsidian知识/40-视图/02-Bases/示例笔记目录.base\n",
+      "state": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/40-视图/02-Bases/示例笔记目录.base\",\"viewName\":\"全部样例\"},\"viewType\":\"bases\",\"text\":\"全部样例\\n0 results\",\"tableRows\":0,\"errors\":[]}\n",
+      "state_after": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/40-视图/02-Bases/示例笔记目录.base\",\"viewName\":\"全部样例\"},\"viewType\":\"bases\",\"text\":\"全部样例\\n3 results\\n样例\\n类型\\n状态\\n创建日期\\n甲-晨间笔记\\ndaily\\nactive\\n丙-项目记录\\nproject\\nactive\\n乙-阅读卡片\\nsource\\nprocessed\"}\n",
+      "screenshot": "/private/tmp/wwl-dual-import-75zcpdpm/evidence/ui/final/05-core-base.png"
+    },
+    {
+      "path": "Obsidian知识/40-视图/01-Canvas/Obsidian功能地图.canvas",
+      "opened": "Opened: Obsidian知识/40-视图/01-Canvas/Obsidian功能地图.canvas\n",
+      "state": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/40-视图/01-Canvas/Obsidian功能地图.canvas\",\"viewState\":{\"x\":690,\"y\":320,\"zoom\":-2.6983121627623143}},\"viewType\":\"canvas\",\"text\":\"基础：写下并连接\\n组织：检索并扩展\\n00-Playground-首页\\n00-属性标签与检索-MOC\\n00-Markdown基础-MOC\\n00-官方插件实验室-MOC\\n00-链接与知识网络-MOC\\n00-社区插件实验室-MOC\\n从写作开始\\n为内容建立关系\\n给网络增加结构\\n先尝试原生能力\\n再按需扩展\\n选择学习入口\\n用于输出\\n组合成流程\\n查看完整样例\\n落地：形成工作流\\n05-Obsidian功能地图\\n00-完整工作流-MOC\\n00-周末读书会项目主页\",\"tableRows\":0,\"errors\":[]}\n",
+      "state_after": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/40-视图/01-Canvas/Obsidian功能地图.canvas\",\"viewState\":{\"x\":690,\"y\":320,\"zoom\":-2.6983121627623143}},\"viewType\":\"canvas\",\"text\":\"基础：写下并连接\\n组织：检索并扩展\\n00-Playground-首页\\n00-属性标签与检索-MOC\\n00-Markdown基础-MOC\\n00-官方插件实验室-MOC\\n00-链接与知识网络-MOC\\n00-社区插件实验室-MOC\\n从写作开始\\n为内容建立关系\\n给网络增加结构\\n先尝试原生能力\\n再按需扩展\\n选择学习入口\\n用于输出\\n组合成流程\\n查看完整样例\\n落地：形成工作流\\n05-Obsidian功能地图\\n00-完整工作流-MOC\\n00-周末读书会项目主页\"}\n",
+      "screenshot": "/private/tmp/wwl-dual-import-75zcpdpm/evidence/ui/final/06-canvas.png"
+    },
+    {
+      "path": "资料/README.md",
+      "opened": "Opened: 资料/README.md\n",
+      "state": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"资料/README.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Properties\\nresource-index\\nusable\\npartial\\nAdd property\\n资料入口\\n\\n本页是已入库本地资料的导航，不是课程大纲、阅读进度或内容摘要。书目、作者、页数、PDF 元数据、源文件 SHA-256 与变体判定以 pdf-catalog.json 为准；该 catalog 共列 30 个 PDF、23,261 页。PDF 题名或元数据不足以证明版本的出版事实，以下“版本依据”只记录已观察到的文件名或 PDF 元数据。\\n\\n每条 PDF 链接从第 1 页打开；页数是 PDF 页数，不等于实际已阅读页数或正文页码。资料可以支持既有课程，不能替代其定义、推导、反例与练习。\\n\\n数学（12）\\n资料\\t作者 / 版本依据\\tPDF 页数\\t与现有数学课程的关系\\nA First Course in Probability\\tSheldon Ross；PDF 标题 A First Course in Probability, Tenth Edition\\t848\\t概率与统计 的外部参考\\nStewart 微积分（01880ca4）\\tJames Stewart、Daniel Clegg、Saleem Watson；文件名称 9th Metric Edition\\t1,421\\t微积分 的外部参考；与下项为同题名同页数、不同 hash 的保留变体\\nStewart 微积分（ccc5f377）\\t同上；文件名称 9th Metric Edition\\t1,421\\t同上；不把相同页数当作字节相同或可删除的证据\\nStewart 等微积分另一文件\\tStewart、Clegg、Watson；文件名为唯一已记录版本依据\\t1,933\\t微积分 的独立保留文件\\nStewart 习题解答\\tJames Stewart 等；文件名称 9th edition、Chapter 1–17\\t1,722\\t对应 Stewart 微积分的题解，不等同教材正文\\nComplex Variables\\tMark J. Ablowitz、Athanassios S. Fokas；文件名依据\\t660\\t复变函数 的外部参考\\nLinear Algebra Done Right（884bcaf7）\\tSheldon Axler；PDF 标题 Second Edition\\t261\\t线性代数与几何 的外部参考；与下项同渲染首页、不同 hash，均保留\\nLinear Algebra Done Right（bbe1be53）\\tSheldon Axler；PDF 标题 Second Edition\\t261\\t同上；不可按“看起来一样”合并\\nLinear Algebra and Its Applications\\tDavid Lay、Steven Lay、Judi McDonald；PDF metadata 为 Global Edition\\t670\\t线性代数与几何 的外部参考\\nThe Calculus Lifesaver\\tAdrian Banner；PDF 标题依据\\t753\\t微积分 的补充参考\\nThomas' Calculus\\tPDF metadata 作者 George B. Thomas、标题 Thomas’ Calculus；文件名另列 Joel Hass 等与 14th Edition，catalog 不合并二者为未经核验的书目信息\\t1,212\\t微积分 的外部参考\\nThomas' Calculus Instructor's Solutions Manual\\t文件名列 Duane Kouba、14th Edition；PDF metadata 为 Laura / Microsoft Word - M01_14e-LT-ISM-01.doc，仅记录冲突而不裁定\\t1,256\\t对应 Thomas 教材的题解，和教材分列\\n物理（6）\",\"tableRows\":12,\"errors\":[]}\n",
+      "state_after": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"资料/README.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\nREADME\\nProperties\\nresource-index\\nusable\\npartial\\nAdd property\\n资料入口\\n\\n本页是已入库本地资料的导航，不是课程大纲、阅读进度或内容摘要。书目、作者、页数、PDF 元数据、源文件 SHA-256 与变体判定以 pdf-catalog.json 为准；该 catalog 共列 30 个 PDF、23,261 页。PDF 题名或元数据不足以证明版本的出版事实，以下“版本依据”只记录已观察到的文件名或 PDF 元数据。\\n\\n每条 PDF 链接从第 1 页打开；页数是 PDF 页数，不等于实际已阅读页数或正文页码。资料可以支持既有课程，不能替代其定义、推导、反例与练习。\\n\\n数学（12）\\n资料\\t作者 / 版本依据\\tPDF 页数\\t与现有数学课程的关系\\nA First Course in Probability\\tSheldon Ross；PDF 标题 A First Course in Probability, Tenth Edition\\t848\\t概率与统计 的外部参考\\nStewart 微积分（01880ca4）\\tJames Stewart、Daniel Clegg、Saleem Watson；文件名称 9th Metric Edition\\t1,421\\t微积分 的外部参考；与下项为同题名同页数、不同 hash 的保留变体\\nStewart 微积分（ccc5f377）\\t同上；文件名称 9th Metric Edition\\t1,421\\t同上；不把相同页数当作字节相同或可删除的证据\\nStewart 等微积分另一文件\\tStewart、Clegg、Watson；文件名为唯一已记录版本依据\\t1,933\\t微积分 的独立保留文件\\nStewart 习题解答\\tJames Stewart 等；文件名称 9th edition、Chapter 1–17\\t1,722\\t对应 Stewart 微积分的题解，不等同教材正文\\nComplex Variables\\tMark J. Ablowitz、Athanassios S. Fokas；文件名依据\\t660\\t复变函数 的外部参考\\nLinear Algebra Done Right（884bcaf7）\\tSheldon Axler；PDF 标题 Second Edition\\t261\\t线性代数与几何 的外部参考；与下项同渲染首页、不同 hash，均保留\\nLinear Algebra Done Right（bbe1be53）\\tSheldon Axler；PDF 标题 Second Edition\\t261\\t同上；不可按“看起来一样”合并\\nLinear Algebra and Its Applications\\tDavid Lay、Steven Lay、Judi McDonald；PDF metadata 为 Global Edition\\t670\\t线性代数与几何 的外部参考\\nThe Calculus Lifesaver\\tAdrian Banner；PDF 标题依据\\t753\\t微积分 的补充参考\\nThomas' Calculus\\tPDF metadata 作者 George B. Thomas、标题 Thomas’ Calculus；文件名另列 Joel Hass 等与 14th Edition，catalog 不合并二者为未经核验的书目信息\\t1,212\\t微积分 的外部参考\\nThomas' Calculus Instructor's Solutions Manual\\t文件名列 Duane Kouba、14th Edition；PDF metadata 为 Laura / Microsoft Word - M01_14e-LT-ISM-01.doc，仅记录冲突而不裁定\\t1,256\\t对应 Thomas 教材的题解，和教材分列\\n物理（6）\"}\n",
+      "screenshot": "/private/tmp/wwl-dual-import-75zcpdpm/evidence/ui/final/07-resources.png"
+    },
+    {
+      "path": "资料/个人规划/README.md",
+      "opened": "Opened: 资料/个人规划/README.md\n",
+      "state": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"资料/个人规划/README.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\nREADME\\nProperties\\npersonal-history-index\\nusable\\npartial\\nAdd property\\n个人规划资料说明\\n\\n这里保存的是 2026-08-30 的历史个人背景与观点原稿，不是当前移民、留学、职业或法律建议。两个来源路径的原始内容 SHA-256 与字节数相同，映射到同一份保留原文；不应据此记录、推断或更新用户的现状、偏好、资格或行动。\\n\\n文件\\t来源身份\\t字节 / SHA-256\\n中国大陆光电本科背景的多阶段移民路线图（唯一保留原文）\\tsource2 00-Inbox/obsidian_immigration_route_map_2026_zh.md 与 00-Inbox/中国大陆光电本科背景_多阶段移民路线图_2026-08-30.md 两个同 hash 来源共同映射\\t72,563；b9fa77b8d6365846073fcad905ca714b5aed3d7556fd4bed2a5bae32fa520e37\\n\\nMcGill Computer Science Future Graduate Students PDF 是同批收录的 5 页资料。它只作为历史原稿中提到的相关资料入口；本页未核验其当前内容、项目、期限、资格或任何政策。\\n\\n关联的文件映射、来源 hash 与 PDF 版本依据见 resource-index.json 和 pdf-catalog.json。\",\"tableRows\":1,\"errors\":[]}\n",
+      "state_after": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"资料/个人规划/README.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\nREADME\\nProperties\\npersonal-history-index\\nusable\\npartial\\nAdd property\\n个人规划资料说明\\n\\n这里保存的是 2026-08-30 的历史个人背景与观点原稿，不是当前移民、留学、职业或法律建议。两个来源路径的原始内容 SHA-256 与字节数相同，映射到同一份保留原文；不应据此记录、推断或更新用户的现状、偏好、资格或行动。\\n\\n文件\\t来源身份\\t字节 / SHA-256\\n中国大陆光电本科背景的多阶段移民路线图（唯一保留原文）\\tsource2 00-Inbox/obsidian_immigration_route_map_2026_zh.md 与 00-Inbox/中国大陆光电本科背景_多阶段移民路线图_2026-08-30.md 两个同 hash 来源共同映射\\t72,563；b9fa77b8d6365846073fcad905ca714b5aed3d7556fd4bed2a5bae32fa520e37\\n\\nMcGill Computer Science Future Graduate Students PDF 是同批收录的 5 页资料。它只作为历史原稿中提到的相关资料入口；本页未核验其当前内容、项目、期限、资格或任何政策。\\n\\n关联的文件映射、来源 hash 与 PDF 版本依据见 resource-index.json 和 pdf-catalog.json。\"}\n",
+      "screenshot": "/private/tmp/wwl-dual-import-75zcpdpm/evidence/ui/final/08-personal-index.png"
+    },
+    {
+      "path": "Obsidian知识/30-实践/04-TaskNotes/Tasks/03-完成基础上手.md",
+      "opened": "Opened: Obsidian知识/30-实践/04-TaskNotes/Tasks/03-完成基础上手.md\n",
+      "state": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/30-实践/04-TaskNotes/Tasks/03-完成基础上手.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\n03-完成基础上手\\nProperties\\nteaching-fixture\\nstatic\\nplayground/tasknotes-fixture\\nAdd property\\n完成基础上手\\n静态属性样本\\n\\n以下 YAML 保留原始完成状态与时间；它是可阅读的 TaskNotes 格式示例，不是当前任务记录。\\n\\ntags:\\n  - task\\n  - playground/tasknotes\\ntitle: 完成基础上手\\nstatus: done\\npriority: low\\ndue: 2026-08-30\\nscheduled: 2026-08-29\\nprojects:\\n  - \\\"[[00-周末读书会项目主页|周末读书会]]\\\"\\ncontexts:\\n  - 阅读\\ndateCreated: 2026-08-29T10:00:00\\ncompletedDate: 2026-08-30T10:30:00\\n\\n\\n已完成 Markdown、内部链接、命令面板与 Properties 的第一轮练习。\\n\\n留下的经验\\n\\n先理解文件中实际保存的文本，再决定是否用插件加速。\",\"tableRows\":0,\"errors\":[]}\n",
+      "state_after": "=> {\"vault\":\"WWL\",\"state\":{\"file\":\"Obsidian知识/30-实践/04-TaskNotes/Tasks/03-完成基础上手.md\",\"mode\":\"preview\",\"source\":false},\"viewType\":\"markdown\",\"text\":\"Add Sticker\\nAdd Cover\\n03-完成基础上手\\nProperties\\nteaching-fixture\\nstatic\\nplayground/tasknotes-fixture\\nAdd property\\n完成基础上手\\n静态属性样本\\n\\n以下 YAML 保留原始完成状态与时间；它是可阅读的 TaskNotes 格式示例，不是当前任务记录。\\n\\ntags:\\n  - task\\n  - playground/tasknotes\\ntitle: 完成基础上手\\nstatus: done\\npriority: low\\ndue: 2026-08-30\\nscheduled: 2026-08-29\\nprojects:\\n  - \\\"[[00-周末读书会项目主页|周末读书会]]\\\"\\ncontexts:\\n  - 阅读\\ndateCreated: 2026-08-29T10:00:00\\ncompletedDate: 2026-08-30T10:30:00\\n\\n\\n已完成 Markdown、内部链接、命令面板与 Properties 的第一轮练习。\\n\\n留下的经验\\n\\n先理解文件中实际保存的文本，再决定是否用插件加速。\"}\n",
+      "screenshot": "/private/tmp/wwl-dual-import-75zcpdpm/evidence/ui/final/09-static-task.png"
+    }
+  ],
+  "closing_pages": [
+    {
+      "path": "Obsidian知识/00-开始/00-Playground-首页.md",
+      "state": {
+        "vault": "WWL",
+        "state": {
+          "file": "Obsidian知识/00-开始/00-Playground-首页.md",
+          "mode": "preview",
+          "source": false
+        },
+        "viewType": "markdown",
+        "text": "Add Sticker\nAdd Cover\n00-Playground-首页\nProperties\nhub\nready\n入门\nonboarding\nnavigation\nplayground/hub\ntopic/onboarding\nAdd property\nObsidian Playground\n\n欢迎来到一个可以阅读、点击、修改，也可以放心试错的 Obsidian 练习场。这里不是一套只能从头读到尾的文档：每篇笔记、每条链接、每个属性和视图本身都是教材。\n\n如果你是从应用初次打开时的 欢迎页 进入，这里就是它指向的完整课程地图；之后可以把本页作为日常入口。\n\n第一次来，从这里出发\n花 3 分钟读 01-如何使用这个-Vault。\n跟随 02-30分钟快速上手 做出第一条完整知识链。\n想稳步学习就收藏 03-7天渐进学习路线。\n选择你的入口\n我现在想做什么\t去这里\n先体验最有代表性的功能\t02-30分钟快速上手\n系统学习 Markdown\tMarkdown 基础 MOC\n理解双向链接、嵌入和图谱\t链接与知识网络 MOC\n学属性、标签、搜索和 Bases\t属性、标签与检索 MOC\n逐一体验官方插件\t官方插件实验室 MOC\n判断哪些社区插件值得保留\t社区插件实验室 MOC\n找到沙盒与练习材料\t实验区入口与恢复说明\n把功能组合成真实工作流\t完整工作流 MOC\n复用模板或把工作交给 AI Agent\tAI 协作工具箱\n查一个概念或语法\tObsidian术语表 · Markdown速查表 · 搜索语法速查表\n进入独立的编程课程\t编程知识首页 · 正则表达式 MOC\n学习地图",
+        "errors": []
+      },
+      "screenshot": "obsidian-moc.png"
+    },
+    {
+      "path": "Obsidian知识/30-实践/04-TaskNotes/Start Here.md",
+      "state": {
+        "vault": "WWL",
+        "state": {
+          "file": "Obsidian知识/30-实践/04-TaskNotes/Start Here.md",
+          "mode": "preview",
+          "source": false
+        },
+        "viewType": "markdown",
+        "text": "Add Sticker\nAdd Cover\nStart Here\nStart Here with TaskNotes\nOptional plugin laboratory\n\nTaskNotes is a community-plugin workflow, not a prerequisite for this Vault. Its commands, view files, and settings can change with the plugin version. Before enabling it or creating task notes, first read Tasks、TaskNotes 与 Calendar, use only this sample directory, and keep one task in exactly one source-of-truth model. Do not enable integrations, webhooks, MCP/API access, or calendar connections for this exercise.\n\nThis is a static teaching fixture. It preserves a small TaskNotes tour for reading, but it neither creates tasks nor loads a TaskNotes view from this Vault.\n\nTaskNotes works best when three things feel connected:\n\nCapture a task quickly.\nStore the task as a normal Markdown note.\nReview tasks through Bases views.\n静态任务样例\n\n以下四页保留来源样例的 YAML、日期与状态作为代码文本，只用于比较任务结构；打开它们不会创建真实任务或加载任务视图。\n\n整理 Markdown 示例\n验证双向链接\n完成基础上手\n准备插件复盘",
+        "errors": []
+      },
+      "screenshot": "static-task-index.png"
+    },
+    {
+      "path": "Obsidian知识/20-功能/01-官方插件实验室/02-核心 Templates.md",
+      "state": {
+        "vault": "WWL",
+        "state": {
+          "file": "Obsidian知识/20-功能/01-官方插件实验室/02-核心 Templates.md",
+          "mode": "preview",
+          "source": false
+        },
+        "viewType": "markdown",
+        "text": "Add Sticker\nAdd Cover\n02-核心 Templates\nProperties\nlesson\nready\n入门\nTemplates\n模板变量\nProperties\nplayground/core-plugins\ncore/templates\nAdd property\n02 · 核心 Templates\n身份卡\n\nTemplates 是随 Obsidian 附带的第一方核心插件。它把普通 Markdown 文件当作可插入片段；它不是第三方 Templater 插件。\n\n目标\n指定一个模板文件夹并插入模板。\n使用官方支持的 title、date、time 变量。\n在模板中安全地使用 YAML Properties。\n区分“整页模板”和“光标处片段模板”。\n动手\n1. 先阅读随教材保留的核心模板\n\n本 Vault 已提供 基础笔记 和 Callout 片段 等核心模板。先打开模板和 自由草稿纸，手工复制需要的段落，观察 YAML 与正文结构。手工复制会保留变量原文；只有当前 Templates 的目录设置已包含该模板时，才使用 Templates: Insert template，观察标题、日期如何被展开为静态内容。本次导入没有调整模板目录。\n\n不要为了本课改写既有模板设置\n\nTemplate folder location 是整个 Vault 的设置。只有在你明确要为自己的 Vault 建立新模板目录、已经记录原目录并知道如何改回时，才调整它。本课先提供无需配置的阅读与手工复制练习；插件插入步骤以你已有的可用模板设置为前提。",
+        "errors": []
+      },
+      "screenshot": "templates.png"
+    }
+  ],
+  "pdf_page_verification": "=> {\"state\":{\"file\":\"资料/书籍/物理/Griffiths - Introduction to Electrodynamics - 第4版.pdf\",\"page\":2,\"left\":-18,\"top\":655,\"zoom\":0.4351374739409197},\"text\":\"%\\n(2 of 623)\\nINTRODUCTION TO\\n\\n\\nELECTRODYNAMICS\\nThis page intentionally left blank\\nINTRODUCTION TO\\n\\n\\nELECTRODYNAMICS\\n\\n\\nFourth Edition\\n\\n\\nDavid J. Grifﬁths\\n\\n\\nReed College\\nExecutive Editor: Jim Smith\\n\\n\\nSenior Project Editor: Martha Steele\\n\\n\\nDevelopment Manager: Laura Kenney\\n\\n\\nManaging Editor: Corinne Benson\\n\\n\\nProduction Project Manager: Dorothy Cox\\n\\n\\nProduction Management and Composition: Integra\\n\\n\\nCover Designer: Derek Bacchus\\n\\n\\nManufacturing Buyer: Dorothy Cox\\n\\n\\nMarketing Manager: Will Moore\\n\\n\\nCredits and acknowledgments for materials borrowed from other sources and reproduced,\\n\\n\\nwith permission, in this textbook appear on the appropriate page within the text.\\n\\n\\nCopyright c\\n©\\n \\n2013, 1999, 1989 Pearson Education, Inc. All rights reserved. Manufactured\\n\\n\\nin the United States of America. This publication is protected by Copyright, and permis-\\n\\n\\nsion should be obtained from the publisher prior to any prohibited reproduction, storage in\\n\\n\\na retrieval system, or transmission in any form or by any means, electronic, mechanical,\\n\\n\\nphotocopying, recording, or likewise. To obtain permission(s) to use material from this\\n\\n\\nwork, please submit a written request to Pearson Education, Inc., Permissions Department,\\n\\n\\n1900 E. Lake Ave., Glenview, IL 60025. For information regarding permissions, call (847)\\n\\n\\n486-2635.\\n\\n\\nMany of the designations used by manufacturers and sellers to distinguish their products\\n\\n\\nare claimed as trademarks. Where those designations appear in this book, and the publi\",\"inputs\":[{\"type\":\"number\",\"value\":\"44\",\"aria\":null},{\"type\":\"text\",\"value\":\"i\",\"aria\":null},{\"type\":\"search\",\"value\":\"\",\"aria\":null}]}\n",
+  "interpretation": "Core Bases rendered three sample records; teaching Canvas opened with file nodes; PDF final view state page=2. Community plugin-specific commands, macros, and templates were not invoked. Existing split layout preserved; narrow panes may require horizontal table scrolling."
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "version": "openai-standard-reference-2026-09-15",
+  "currency": "USD",
+  "status": "verified_reference",
+  "verified_at": "2026-09-15",
+  "source": "https://developers.openai.com/api/docs/pricing",
+  "scope_note": "Official model pages opened by the batch source reviewer on 2026-09-15. Offline reference only; this file does not certify invoices or past prices. Quotation-day validity is a conservative local restriction. No generic service multipliers, aliases, tool rates, or subscription conversions.",
+  "entries": [
+    {
+      "provider": "openai",
+      "billing_scope": "direct-api",
+      "model": "gpt-6-astra",
+      "service_tier": "standard",
+      "valid_from": "2026-09-15T00:00:00Z",
+      "valid_until": "2026-09-16T00:00:00Z",
+      "input_tiers": [
+        {
+          "max_input_tokens": 272000,
+          "rates_per_million": {
+            "noncached_input": "10",
+            "cache_read": "1",
+            "cache_write": "12.50",
+            "output": "50"
+          }
+        },
+        {
+          "max_input_tokens": null,
+          "rates_per_million": {
+            "noncached_input": "20",
+            "cache_read": "2",
+            "cache_write": "25.00",
+            "output": "75.0"
+          }
+        }
+      ],
+      "tool_rates_per_unit": {},
+      "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "notes": "Standard text reference observed 2026-09-15; exact model IDs only. Input thresholds apply per request. Cache write short rate = uncached input x 1.25; derived except Astra explicitly lists 12.5. Astra explicitly doubles both cache rates above 272000 input tokens. Validity interval is this repository quotation-day restriction, not a claimed provider effective date. Tool charges unverified."
+    },
+    {
+      "provider": "openai",
+      "billing_scope": "direct-api",
+      "model": "gpt-5.6-sol",
+      "service_tier": "standard",
+      "valid_from": "2026-09-15T00:00:00Z",
+      "valid_until": "2026-09-16T00:00:00Z",
+      "input_tiers": [
+        {
+          "max_input_tokens": 272000,
+          "rates_per_million": {
+            "noncached_input": "4",
+            "cache_read": "0.4",
+            "cache_write": "5.00",
+            "output": "20"
+          }
+        },
+        {
+          "max_input_tokens": null,
+          "rates_per_million": {
+            "noncached_input": "8",
+            "cache_read": null,
+            "cache_write": null,
+            "output": "30.0"
+          }
+        }
+      ],
+      "tool_rates_per_unit": {},
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "notes": "Standard text reference observed 2026-09-15; exact model IDs only. Input thresholds apply per request. Cache write short rate = uncached input x 1.25; derived except Astra explicitly lists 12.5. Long-context cached read/write interpretation not verified, so null rates deliberately preserve unknown. Page describes promotional pricing through at least 2026-11-21; no post-promotion guarantee. Validity interval is this repository quotation-day restriction, not a claimed provider effective date. Tool charges unverified."
+    },
+    {
+      "provider": "openai",
+      "billing_scope": "direct-api",
+      "model": "gpt-5.6-terra",
+      "service_tier": "standard",
+      "valid_from": "2026-09-15T00:00:00Z",
+      "valid_until": "2026-09-16T00:00:00Z",
+      "input_tiers": [
+        {
+          "max_input_tokens": 272000,
+          "rates_per_million": {
+            "noncached_input": "2",
+            "cache_read": "0.2",
+            "cache_write": "2.50",
+            "output": "12"
+          }
+        },
+        {
+          "max_input_tokens": null,
+          "rates_per_million": {
+            "noncached_input": "4",
+            "cache_read": null,
+            "cache_write": null,
+            "output": "18.0"
+          }
+        }
+      ],
+      "tool_rates_per_unit": {},
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+      "notes": "Standard text reference observed 2026-09-15; exact model IDs only. Input thresholds apply per request. Cache write short rate = uncached input x 1.25; derived except Astra explicitly lists 12.5. Long-context cached read/write interpretation not verified, so null rates deliberately preserve unknown. Validity interval is this repository quotation-day restriction, not a claimed provider effective date. Tool charges unverified."
+    },
+    {
+      "provider": "openai",
+      "billing_scope": "direct-api",
+      "model": "gpt-5.6-luna",
+      "service_tier": "standard",
+      "valid_from": "2026-09-15T00:00:00Z",
+      "valid_until": "2026-09-16T00:00:00Z",
+      "input_tiers": [
+        {
+          "max_input_tokens": 272000,
+          "rates_per_million": {
+            "noncached_input": "0.2",
+            "cache_read": "0.02",
+            "cache_write": "0.250",
+            "output": "1.2"
+          }
+        },
+        {
+          "max_input_tokens": null,
+          "rates_per_million": {
+            "noncached_input": "0.4",
+            "cache_read": null,
+            "cache_write": null,
+            "output": "1.80"
+          }
+        }
+      ],
+      "tool_rates_per_unit": {},
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "notes": "Standard text reference observed 2026-09-15; exact model IDs only. Input thresholds apply per request. Cache write short rate = uncached input x 1.25; derived except Astra explicitly lists 12.5. Long-context cached read/write interpretation not verified, so null rates deliberately preserve unknown. Validity interval is this repository quotation-day restriction, not a claimed provider effective date. Tool charges unverified."
+    }
+  ]
+}

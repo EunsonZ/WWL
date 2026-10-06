@@ -1,0 +1,358 @@
+{
+  "schema": "wwl-exact-import-baseline-v1",
+  "inventory_path": "baseline.json",
+  "known_diagnostics": [
+    {
+      "rule": "link.missing",
+      "path": "AI/80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 6,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 7,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "AI/20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "AI/20-LLM/30-训练/04-偏好优化RLHF-DPO-ORPO与KTO.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 7,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "AI/20-LLM/50-实现/02-从零实现Attention-RoPE与DecoderBlock.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 6,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/50-数据结构与算法/20-倒排索引精确近邻与近似向量检索.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/05-公式检查.md",
+      "target": "_meta/06-深度修订交付报告",
+      "line": 5,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/05-公式检查.md",
+      "target": "_meta/01-本轮修订与交付报告",
+      "line": 25,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/06-深度修订交付报告.md",
+      "target": "_meta/07-第四轮深度研究修订报告",
+      "line": 3,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/06-深度修订交付报告.md",
+      "target": "_meta/tools/README",
+      "line": 87,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/07-第四轮深度研究修订报告.md",
+      "target": "_meta/round4/01-研究证据与版本边界",
+      "line": 48,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/07-第四轮深度研究修订报告.md",
+      "target": "_labs/round4/README",
+      "line": 64,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/07-第四轮深度研究修订报告.md",
+      "target": "_meta/round4/02-缺口回查与后续验证",
+      "line": 89,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/02-静态检查结果.md",
+      "target": "_meta/06-深度修订交付报告",
+      "line": 5,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/02-静态检查结果.md",
+      "target": "_meta/03-跨库链接保留清单",
+      "line": 17,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/02-静态检查结果.md",
+      "target": "_meta/04-实验验证记录",
+      "line": 27,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/02-静态检查结果.md",
+      "target": "_meta/05-公式检查",
+      "line": 27,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/01-本轮修订与交付报告.md",
+      "target": "_meta/06-深度修订交付报告",
+      "line": 5,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/01-本轮修订与交付报告.md",
+      "target": "_meta/02-静态检查结果",
+      "line": 39,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/01-本轮修订与交付报告.md",
+      "target": "_meta/03-跨库链接保留清单",
+      "line": 39,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/01-本轮修订与交付报告.md",
+      "target": "_meta/04-实验验证记录",
+      "line": 39,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/01-本轮修订与交付报告.md",
+      "target": "_meta/05-公式检查",
+      "line": 39,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/04-实验验证记录.md",
+      "target": "_meta/06-深度修订交付报告",
+      "line": 5,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "计算机知识/90-资源/维护/导入-com/_meta/04-实验验证记录.md",
+      "target": "_labs/README",
+      "line": 35,
+      "reason": "missing",
+      "scope": "historical",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/20-线性代数与几何/04-特征值SVD与低秩近似.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/20-线性代数与几何/01-向量矩阵与张量.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/20-线性代数与几何/05-正交投影子空间与方向消除.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/20-线性代数与几何/03-点积范数距离与余弦相似度.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/40-微积分与优化/04-SGD-Momentum-Adam与AdamW.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/40-微积分与优化/06-曲率Hessian与学习率稳定性.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/50-信息论/02-指数对数Softmax与LogSumExp.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 7,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/30-概率与统计/05-统计估计置信度与模型评测.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "link.missing",
+      "path": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱.md",
+      "target": "Logs/2026-09-05_改造证据/内容审阅记录",
+      "line": 8,
+      "reason": "missing",
+      "scope": "active",
+      "resolved": null
+    },
+    {
+      "rule": "mirror.mismatched",
+      "path": "计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md",
+      "target": "./CMakeLists.txt",
+      "line": 33,
+      "reason": "mismatched"
+    },
+    {
+      "rule": "link.missing",
+      "path": "Clippings/AGoodStart101/不再被需要的年轻人，和替他们干活的中登.md",
+      "target": "chenqin​",
+      "line": 5,
+      "reason": "missing",
+      "scope": "original",
+      "resolved": null
+    },
+    {
+      "rule": "link.case_mismatch",
+      "path": "Logs/2026-09-04_1519-Codex-新增NewAgents协作与知识编写指南.md",
+      "target": "agents.md",
+      "line": 17,
+      "reason": "reference_case",
+      "scope": "historical",
+      "resolved": "AGENTS.md"
+    },
+    {
+      "rule": "link.case_mismatch",
+      "path": "Logs/2026-09-04_1519-Codex-新增NewAgents协作与知识编写指南.md",
+      "target": "agents.md",
+      "line": 51,
+      "reason": "reference_case",
+      "scope": "historical",
+      "resolved": "AGENTS.md"
+    },
+    {
+      "rule": "link.missing",
+      "path": "Logs/2026-09-04_1519-Codex-新增NewAgents协作与知识编写指南.md",
+      "target": "CONTRIBUTING.md",
+      "line": 50,
+      "reason": "missing",
+      "rationale": "Original historical governance document is excluded by approved plan; historical byte-preserved reference retained; outer source index explains it."
+    }
+  ],
+  "rationale": {
+    "inherited": "Existing WWL structural baseline from read-only current vault",
+    "preserved_originals": "One source author wikilink unavailable and two historical lowercase governance references kept verbatim; source hash preserved"
+  }
+}

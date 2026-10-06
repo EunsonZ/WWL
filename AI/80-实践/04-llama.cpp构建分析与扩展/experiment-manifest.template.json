@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "experiment_id": "replace-with-local-id",
+  "status": "planned",
+  "recorded_at": null,
+  "source": {
+    "upstream": "ggml-org/llama.cpp",
+    "base_commit": null,
+    "verified_head": null,
+    "commit_date": null,
+    "dirty": null,
+    "patch_file": null,
+    "patch_sha256": null
+  },
+  "environment": {
+    "kind": null,
+    "os_release": null,
+    "kernel": null,
+    "container_image_digest": null,
+    "c_compiler": null,
+    "cxx_compiler": null,
+    "cmake_version": null,
+    "generator": null,
+    "cpu": null,
+    "ram_bytes": null,
+    "gpu": null,
+    "gpu_vram_bytes": null,
+    "nvidia_driver": null,
+    "cuda_toolkit": null
+  },
+  "model": {
+    "local_only": true,
+    "source_revision": null,
+    "filename": null,
+    "sha256": null,
+    "gguf_metadata_record": null
+  },
+  "input": {
+    "local_only": true,
+    "kind": "synthetic-public-test",
+    "sha256": null,
+    "rendered_token_count": null,
+    "token_ids_record": null,
+    "chat_template_record": null
+  },
+  "builds": {
+    "cpu": {
+      "status": "not-run",
+      "build_dir": null,
+      "cmake_options": ["-DGGML_CUDA=OFF", "-DGGML_METAL=OFF"],
+      "configure_command_redacted": null,
+      "configure_log": null,
+      "configure_exit_code": null,
+      "build_command_redacted": null,
+      "build_log": null,
+      "build_exit_code": null,
+      "test_command_redacted": null,
+      "test_log": null,
+      "test_exit_code": null,
+      "backend_evidence": {
+        "intended_backend": "cpu",
+        "explicitly_disabled": ["GGML_CUDA", "GGML_METAL"],
+        "fixed_commit_option_inventory_record": null,
+        "enabled_accelerator_backends": null,
+        "cpu_libraries": []
+      },
+      "runtime_evidence": {
+        "observed_backend": null,
+        "device_inventory_record": null,
+        "runtime_version_record": null
+      },
+      "target_evidence": {
+        "configured_targets_record": null,
+        "built_targets_record": null,
+        "tested_targets_record": null
+      }
+    },
+    "cuda": {
+      "status": "not-run",
+      "skip_reason": null,
+      "build_dir": null,
+      "cmake_options": ["-DGGML_CUDA=ON"],
+      "cuda_architectures": null,
+      "configure_command_redacted": null,
+      "configure_log": null,
+      "configure_exit_code": null,
+      "build_command_redacted": null,
+      "build_log": null,
+      "build_exit_code": null,
+      "test_command_redacted": null,
+      "test_log": null,
+      "test_exit_code": null,
+      "backend_runtime_evidence": null
+    }
+  },
+  "runs": {
+    "gguf_load": {
+      "status": "not-run",
+      "backend": null,
+      "command_redacted": null,
+      "log": null,
+      "exit_code": null,
+      "metadata_checked": null,
+      "tensor_directory_checked": null,
+      "tokenizer_checked": null
+    },
+    "benchmark": {
+      "status": "not-run",
+      "command_redacted": null,
+      "log": null,
+      "exit_code": null,
+      "warmup_count": null,
+      "sample_count": null,
+      "metric_definitions": null,
+      "results_record": null
+    },
+    "server": {
+      "status": "not-run",
+      "host": "127.0.0.1",
+      "port": null,
+      "command_redacted": null,
+      "log": null,
+      "exit_code": null,
+      "health_route": null,
+      "non_stream_record": null,
+      "stream_record": null,
+      "cancel_record": null,
+      "port_released_record": null
+    },
+    "trace": {
+      "status": "not-run",
+      "implementation": "independent-example-plus-optional-patch",
+      "command_redacted": null,
+      "log": null,
+      "exit_code": null,
+      "schema": "llama-step-trace-v1",
+      "actual_symbols_record": null,
+      "probability_stage": null,
+      "timing_boundaries_record": null,
+      "trace_off_on_token_match": null,
+      "trace_overhead_record": null
+    }
+  },
+  "privacy": {
+    "model_uploaded": false,
+    "input_uploaded": false,
+    "credentials_recorded": false,
+    "absolute_private_paths_recorded": false
+  },
+  "notes": []
+}

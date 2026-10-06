@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="发布与获取：同步边建立跨线程顺序",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"w" [label="线程 1\n写 payload"];
+"rel" [label="flag.store(true, release)"];
+"acq" [label="线程 2\nload(acquire) 读到该发布值"];
+"r" [label="读取 payload"];
+"w" -> "rel" [label="sequenced-before"];
+"rel" -> "acq" [label="synchronizes-with"];
+"acq" -> "r" [label="sequenced-before"];
+
+}

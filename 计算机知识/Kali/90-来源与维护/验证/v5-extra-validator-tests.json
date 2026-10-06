@@ -1,0 +1,77 @@
+{
+  "count": 8,
+  "passed": 8,
+  "cases": [
+    {
+      "case": "valid_canvas",
+      "expected": "passed",
+      "observed": "passed",
+      "rules": [],
+      "passed": true
+    },
+    {
+      "case": "duplicate_node",
+      "expected": "failed",
+      "observed": "failed",
+      "rules": [
+        "canvas"
+      ],
+      "passed": true
+    },
+    {
+      "case": "duplicate_edge",
+      "expected": "failed",
+      "observed": "failed",
+      "rules": [
+        "canvas"
+      ],
+      "passed": true
+    },
+    {
+      "case": "missing_file",
+      "expected": "failed",
+      "observed": "failed",
+      "rules": [
+        "canvas"
+      ],
+      "passed": true
+    },
+    {
+      "case": "missing_edge_endpoint",
+      "expected": "failed",
+      "observed": "failed",
+      "rules": [
+        "canvas"
+      ],
+      "passed": true
+    },
+    {
+      "case": "non_numeric_geometry",
+      "expected": "failed",
+      "observed": "failed",
+      "rules": [
+        "canvas"
+      ],
+      "passed": true
+    },
+    {
+      "case": "parent_path",
+      "expected": "failed",
+      "observed": "failed",
+      "rules": [
+        "canvas"
+      ],
+      "passed": true
+    },
+    {
+      "case": "explicit_wrong_path",
+      "expected": "failed",
+      "observed": "failed",
+      "rules": [
+        "wikilink"
+      ],
+      "passed": true
+    }
+  ],
+  "scope": "Synthetic document-structure regressions only; not lab execution"
+}

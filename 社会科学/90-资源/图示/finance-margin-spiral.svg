@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">保证金与流动性螺旋</title>
+  <desc id="desc">价格下跌导致按市值权益减少，杠杆与保证金压力上升，机构追加现金或急售，市场深度下降和价格冲击增大，再次推动价格下跌。外部资金或资本补充可以打断环路。</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#7c4f72"/></marker><style>.t{font:18px -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;fill:#2c3e50}.h{font-weight:600;font-size:20px}.n{fill:#fbf6fa;stroke:#7c4f72;stroke-width:2}.stop{fill:#ecf8f2;stroke:#16856b;stroke-width:2}.e{stroke:#7c4f72;stroke-width:3;fill:none;marker-end:url(#a)}.dash{stroke:#16856b;stroke-dasharray:7 6}</style></defs>
+  <rect width="960" height="440" fill="#fff"/>
+  <text x="40" y="42" class="t h">个体去杠杆怎样成为市场反馈</text>
+  <rect x="70" y="90" width="210" height="70" rx="10" class="n"/><text x="175" y="132" class="t" text-anchor="middle">资产价格下跌</text>
+  <rect x="375" y="70" width="250" height="90" rx="10" class="n"/><text x="500" y="107" class="t" text-anchor="middle">权益减少、杠杆上升</text><text x="500" y="135" class="t" text-anchor="middle">保证金缺口出现</text>
+  <rect x="680" y="90" width="210" height="70" rx="10" class="n"/><text x="785" y="120" class="t" text-anchor="middle">追加现金或</text><text x="785" y="145" class="t" text-anchor="middle">出售头寸</text>
+  <rect x="610" y="270" width="280" height="78" rx="10" class="n"/><text x="750" y="304" class="t" text-anchor="middle">市场深度下降</text><text x="750" y="330" class="t" text-anchor="middle">成交冲击和点差增大</text>
+  <rect x="70" y="270" width="280" height="78" rx="10" class="stop"/><text x="210" y="304" class="t" text-anchor="middle">新增资本 / 长期资金</text><text x="210" y="330" class="t" text-anchor="middle">或可信流动性工具</text>
+  <path d="M280 125L375 116" class="e"/><path d="M625 116L680 125" class="e"/><path d="M785 160L758 270" class="e"/><path d="M610 309C430 395 240 235 145 161" class="e"/>
+  <path d="M350 309C430 270 450 190 470 160" class="e dash"/><text x="405" y="256" class="t" fill="#16856b" text-anchor="middle">可打断部分反馈</text>
+  <text x="480" y="410" class="t" text-anchor="middle">环路表示可能的放大机制；强度取决于持仓重合、市场深度、融资合同与制度响应。</text>
+</svg>
+

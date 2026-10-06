@@ -1,0 +1,16 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="地址翻译与数据缓存：不是同一次“命中”",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"va" [label="虚拟地址\nVPN + 页内偏移"];
+"tlb" [label="查询 TLB"];
+"walk" [label="TLB 未命中\n遍历页表 / 必要时缺页异常"];
+"pa" [label="物理页号 + 原偏移"];
+"cache" [label="查询数据缓存\n可能继续访问内存"];
+"va" -> "tlb";
+"tlb" -> "pa" [label="命中"];
+"tlb" -> "walk" [label="未命中"];
+"walk" -> "pa" [label="映射有效后"];
+"pa" -> "cache";
+
+}

@@ -1,0 +1,49 @@
+{
+  "PB_mesh_errors_V": [
+    0.00016737872737504635,
+    4.1602771417906196e-05,
+    1.0385660099499178e-05,
+    2.5954768243441514e-06
+  ],
+  "cells": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "epsilon_ratio": [
+    0.99,
+    1,
+    1.01
+  ],
+  "curvature_mV": [
+    1.2188218373618873,
+    1.2066336189882683,
+    1.194686751473533
+  ],
+  "synthetic_bar": {
+    "V_V": [
+      0.01,
+      0.02,
+      0.04
+    ],
+    "I_A": [
+      2.1629384559e-07,
+      4.3258769118e-07,
+      8.6517538236e-07
+    ],
+    "G_S": 2.1629384559e-05,
+    "equivalent_G_S": 2.1629384559e-05,
+    "fit": {
+      "G_S": 2.1629384559e-05,
+      "residual_A": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rms_residual_A": 0.0,
+      "identifiable": "G only; mu and density not separated"
+    }
+  },
+  "scope": "V41 F01 grid contribution only; no fabrication scale/PDK/TCAD run"
+}

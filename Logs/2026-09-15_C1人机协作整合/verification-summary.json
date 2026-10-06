@@ -1,0 +1,255 @@
+{
+  "schema": "wwl-c1-verification-summary-v1",
+  "date": "2026-09-15",
+  "state": "verified_actual_tree_with_explicit_not_run_layers",
+  "reviewed_files_sha256": {
+    "README.md": "aa76506de9a3a9f7dee26a85f78c28cb5cb5db10d920a4e1a5d60722eba7e290",
+    "NewAgents.md": "041e74b4a0592ef1482aa183e9e3bf8e85cd62876472a7f38af25a6f0bb68c97",
+    "00-工作台/README.md": "2f6d5db6088c48f36bbb2d47ea3b8987140f53ee8364518b8811fe2146de27ee",
+    "00-工作台/知识目录.base": "d36ad37772d07f2b525e19ea2827da6ed2a34bd10228345b62374162ac1f4324",
+    "00-工作台/维护指南.md": "f1dd92e0b72dba423d82afd76c1085504b930db4ee7225fe177b70edb4e6274d",
+    "00-工作台/并行协作与模型路由.md": "a7c0440bc1c613591e6514189e46f4122706fdc9d3acd4224eb6d8f63b4c0237",
+    "00-工作台/插件取舍.md": "dc3a1e402e489200914512a27121073a6e67b5e2bbe32134d4f70012acdcc75e",
+    "00-工作台/按问题找知识.md": "aa5a74ad5c4c3ba6d43355bff329f1568d181ec906071ff2ac70c8cb3627ae56",
+    "00-工作台/收件箱/README.md": "ad8420b2db32f11b6bc8dbe413c2a66b00883f3fd7af8dbc51bab859fcabacd1",
+    "00-工作台/模板/知识页.md": "878cb17ae9ca7a81aeebe3ee253d410a6d99130edb07cb5810d9ea6fd4bd1e5b",
+    "00-工作台/模板/学习记录.md": "32f0a241e32e91712ac4800a3a04090defd7b24862afef9a6e84f4b8bd939b01",
+    "AGENTS.md": "e9be3c47d2c28c811e9c67feba0f94e59ffb1e22db9a4f3d8e93f463c61fa4ed",
+    ".codex/config.toml": "d7005171e985b70ddc59ceb9e63ae767fd427d764e6236810e7b9c8a0ef21031",
+    ".codex/agents/wwl_expert.toml": "1ad762474860b6bd9c6d81e00199b7ae225f44a5c273ec2dc516679a0ba6b082",
+    ".codex/agents/wwl_reviewer.toml": "26792b88c80325027ec88ee921c3bca8820856bf2dcdb26daf3b54b5d9be8928",
+    ".codex/agents/wwl_scout.toml": "dff356df17d1ee76ac4c1e3602567790be08aac412b28782975dc88c6dca9084",
+    ".codex/agents/wwl_author.toml": "fece4cfefb13d24c9ad8166013b260e938902cafe73e17fa8295b8c4ef88335c",
+    ".obsidian/app.json": "ab79b64ea1ee2ad5a31001510b9cd9b08417ebb05197d201f65108b0e168b82f",
+    ".obsidian/templates.json": "a5f068c11d35fff551ccdbe57691011bbf26f4a78fbc976496583b7f30656cc3",
+    "scripts/coordination.py": "60f012b34476f9736428d7d77a31b18394eeccb2fd3c5894a6a79b8765f3c4a7",
+    "scripts/tests/test_coordination.py": "9e43556605d113f6bbc5bfdf30a3cc10893860ce051f697fe6e175d771c10416",
+    "scripts/COORDINATION.md": "fd25d7ea18abdbe3467794ca205dd81740d6852acc277c4de21c382691d8c183",
+    "scripts/examples/coordination-failure/plan.json": "d45b595179b3ea66675e1aa31908f035db22292d19dc0f1410ee919e1241e634",
+    "scripts/examples/coordination-failure/plan-invalid.json": "160d22508efb42727e4d1c5d9cbc42ca454d756307ebbbf332cfaf2cd31a662f",
+    "scripts/examples/coordination-failure/plan-missing-input.json": "98056294db8364953bfac00ea0d419f8e853bfc35bcc0c83fd00549536640b68",
+    "scripts/examples/coordination-failure/records-stale.json": "9d216a163d7991690615154c58f7bc8a1df8828160e985d53c02e489f721bd7c",
+    "scripts/examples/coordination-failure/records.json": "4065d1f6372bb8c48512470571742ce34df28bb5bb3dbb299452110d68f1220b",
+    "scripts/examples/coordination-success/plan.json": "d45b595179b3ea66675e1aa31908f035db22292d19dc0f1410ee919e1241e634",
+    "scripts/examples/coordination-success/records.json": "eb2e402a564a33961fb0d09e64806c67d932193d03b69e56a35d3de12c2a04d4",
+    "scripts/examples/coordination-success/current/rules.txt": "f9384b62a46319abe01d7b2697be8de2d626669512067daead28bc51da8c90e1",
+    "scripts/examples/coordination-success/work/evidence/review.txt": "6dfb4d31dfe7d6ff003e72d482efbd3487197894fd9b213224100310fff79348",
+    "scripts/examples/coordination-success/work/outputs/0.md": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14",
+    "scripts/examples/coordination-success/current/notes/0.md": "421591fa6c4445aafcb5cebb07c3bb5fd7abb745c1fb75b8f4ccbf9d49778a54",
+    "scripts/examples/coordination-success/candidate/notes/0.md": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14",
+    "scripts/examples/coordination-failure/current/rules.txt": "f9384b62a46319abe01d7b2697be8de2d626669512067daead28bc51da8c90e1",
+    "scripts/examples/coordination-failure/candidate-unclaimed/unclaimed.tmp": "18f6081fc9b70a6f62356d09ce3eba105ba10fd90ae1b3eaea9ff6483e6c9f2d",
+    "scripts/examples/coordination-failure/work/evidence/review.txt": "6dfb4d31dfe7d6ff003e72d482efbd3487197894fd9b213224100310fff79348",
+    "scripts/examples/coordination-failure/work/outputs/0.md": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14",
+    "scripts/examples/coordination-failure/current/notes/0.md": "421591fa6c4445aafcb5cebb07c3bb5fd7abb745c1fb75b8f4ccbf9d49778a54",
+    "scripts/examples/coordination-failure/candidate/notes/0.md": "f5f195ed91523c9e1b06693dde9fe3296480cb50872ee7a3a3655d9d01a63a14",
+    "scripts/MODEL_COST.md": "d4f74d40a1dd4375930049bc9466a1727563d45a21ecd700411d0302e16293f8",
+    "scripts/examples/usage-budget-denied.json": "2740d232f02165c8d1029c73b822b2a56653870134d8dd969e4df11d5fd5670f",
+    "scripts/examples/usage-budget-ok.json": "d876803c4367748eb9ddc4771ea61f029a0b38c8343841ce2b1a6221cff89a65",
+    "scripts/examples/usage-hypothetical.json": "e20e9373ce5931a4562403fb8e986f47ab6723d57966cec526689ea75604c557",
+    "scripts/examples/usage-invalid.json": "a9e3aeae9d2e6ffe42846efda587bfbe79c18cffdb2e768896e7c08a7ff28edf",
+    "scripts/examples/usage-retry-invalid.json": "70e151438dd593a45f098ce0d4e49fc5811cfff9eadd81775dd55bb8cdd7edac",
+    "scripts/examples/usage-retry-ok.json": "39abdb01d0153b6d69a64f858e2fb40edd9ff5a4b32f3cde6bd82625c163356d",
+    "scripts/examples/usage-unknown.json": "5322fa5982a258a629ad0b451e8fdb416c18acbe6854614799b274dda317fb73",
+    "scripts/model-prices.json": "ae5760d568938e986b50141f1f0d6bb4a31bd544ab1bddd719544384dbaf4a7a",
+    "scripts/model_cost.py": "f5f70b556683fefa37793ebf1b109c07797bac363a9b1e256c6ba38dac55abf5",
+    "scripts/tests/test_model_cost.py": "dcdf4067977843875bf8f4cdf7ff8d5220de6fbc2c24c397fdc7d8cf47bba959",
+    "scripts/check_vault.py": "1bc2ca36ec2173e077d8e302256e2f444e3a1ecaec9a84d00833837d826278ab",
+    "scripts/links.py": "b1f52e2f208077eb459232a3e0d5ca601cfdf3df904e2eccdb5f9f3a13a9af00",
+    "scripts/check_mirrors.py": "b1d04836b7fe7007d166776be84ed107db41a9a270548b45fd3436750cd8624f",
+    "scripts/tests/test_vault_checks.py": "4a780c44970019b6f7f2c564b77daea891d1cd540f0cfab29b165e4dfc14d439",
+    "scripts/config_checks.py": "7e0833e4829209ca99faf5ed3590f816271f7d7849fc0e31774202c73d1a8a52",
+    "scripts/tests/test_config_checks.py": "607bf35987bfdc7018381bdcd84202c6afe146ac42fe95549bd9ea52f12d2ee7",
+    "scripts/CHECKS.md": "c39d30b273d57b7f73b51af7099b956d659bf9a4823aee582414e803984c2b4d",
+    "AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA.md": "2efdc04c555b9b38d5eec9e2dcb639512ce1a2069f730c43077444e4ba6bfd19",
+    "AI/20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md": "f2e343dcb2c295f66781e256f1b8c3633a4301eca38ca8e8267ea79f0b9ac448",
+    "AI/80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md": "61c413659fa901b3f4181be642ff5714403c1d30051c13c12f39f16950ab290c",
+    "计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md": "3e35f5fe0b742186ebe62d78a4cb4a718d7fa752d6053b12254cdb07626cfe13"
+  },
+  "independent_receipts": [
+    {
+      "receipt": "reviews/m1-review.json",
+      "receipt_sha256": "09ae1f982356253d935d0259dcd0539eec0e4f58ca46cf12666b5b7ee82ab8dc",
+      "reviewer": "reading_review",
+      "decision": "accept",
+      "files": 19
+    },
+    {
+      "receipt": "reviews/m2-final-review.json",
+      "receipt_sha256": "2bc6b6ea9b52ae7aef972e4311cfd7ed75d7f5e323531754c858467f5211c8da",
+      "reviewer": "coordination_review",
+      "decision": "accept",
+      "files": 21
+    },
+    {
+      "receipt": "reviews/m3-review.json",
+      "receipt_sha256": "2c71caa53cbdbeac983982dae2266256d34bf1dbc8da78e8555f539603fb05d4",
+      "reviewer": "cost_review",
+      "decision": "accept",
+      "files": 11
+    },
+    {
+      "receipt": "reviews/checks-acceptance.json",
+      "receipt_sha256": "3defd5a4af69a89b381abd99fb960d61d3bd0328b384eab575ea88ed7d6d7d1e",
+      "reviewer": "checks_review",
+      "decision": "accept",
+      "files": 7
+    },
+    {
+      "receipt": "reviews/pilot-independent-probes.json",
+      "receipt_sha256": "b346a76419597c416e0bc4dc305dc6b75dd1d876b6c912d28a5845008b5b0099",
+      "reviewer": "pilot_review",
+      "decision": "accept",
+      "files": 3
+    },
+    {
+      "receipt": "reviews/pilot-cmake-mirror-review.json",
+      "receipt_sha256": "d5cf9ec64e934d80e967e70e727c226aed90ce31ce02c578b3996f5a82334daf",
+      "reviewer": "pilot_review",
+      "decision": "accept",
+      "files": 1
+    },
+    {
+      "receipt": "reviews/m1-integration-final.json",
+      "receipt_sha256": "e4c57c735d39fd5c878d59cfc29ab54abe2a418ab415c4834bd1804260b6e753",
+      "reviewer": "reading_review",
+      "decision": "accept",
+      "scope": "final entry and T28 review"
+    },
+    {
+      "receipt": "reviews/live-preservation.json",
+      "receipt_sha256": "f1fc823673425303ec6d3e7d0692bb0027de1dd9184f773f4cbe42c0a89eef42",
+      "reviewer": "reading_review",
+      "decision": "accept",
+      "scope": "actual tree preservation"
+    }
+  ],
+  "input_files_sha256": {
+    "AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA.md": "9023fc8602e885b45dd11387939328b6b2817b6cfcc2638a2980fff364f2fbab",
+    "AI/20-LLM/40-推理/01-生成循环Prefill-Decode与KV-Cache.md": "934f7d99dae6e2cb701434094765f77683be60f21de2a4e9e2b2bbfc6ddad07a",
+    "计算机知识/30-计算机系统/04-缓存局部性带宽与延迟.md": "bc070cfe308a5aeccce0886327d374f4486511af13787809b1aafd9c450f6956",
+    "数学/50-信息论/02-指数对数Softmax与LogSumExp.md": "bbf611c9ec626c23cae1f7f93b67528dd7d720549a06070953333f319ff3e317",
+    "数学/50-信息论/80-Softmax数值稳定性实验.md": "b27da2064d8f7d3e4b17154788117f8c8333901ad613c75e67fa5bc2b413dd7f",
+    "数学/50-信息论/softmax_stability.py": "f07d8c9b5af23d6d1a12ffc0e27c79f0b7087437070ee53a509796f726ec1d0d",
+    "数学/50-信息论/test_softmax_stability_contracts.py": "a335ea0a1264b139416fbaeb244432d04f8db360e148f460e78419b97983baf2",
+    "数学/30-概率与统计/05-统计估计置信度与模型评测.md": "0a2e57c16fa489b2ab022863bba500c68bf34c8a329e5b9b6ac32188b621cda6",
+    "AI/80-实践/05-RAG评测与私有服务/00-RAG评测与私有服务.md": "40ea5ecdcf744e4d686d64806b52e5772a475e6c833c9085d52d9f343065ce1a",
+    "AI/80-实践/05-RAG评测与私有服务/rag_service.py": "2c7aac05dead7563dad824266e35bd750e143659b538a85e678b2c7ff9b32721",
+    "AI/80-实践/05-RAG评测与私有服务/test_rag_service.py": "a30989bd0e45931e221419dc23b1a1703a4191db7b7af25dc59a40db8bec0624",
+    "AI/20-LLM/70-工程应用与工具链/02-Embedding-Chunking与最小RAG.md": "96aea85e00045d19f6dd62cbfd17d74d4aa94a0d2d85c5ba31dc2167b5775806",
+    "数学/20-线性代数与几何/01-向量矩阵与张量.md": "241e23718f7622afda750d155d492802f9c3dc4d1249e4ca9769e9550bdf4bd1",
+    "数学/20-线性代数与几何/02-矩阵乘法线性映射与Einsum.md": "4350bb0cc17b5701f5a012275e2cee2aaefe1b7b261a23dd4b7591c3041531c7",
+    "计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md": "45a900bbbf113133d8493bd5452e293994ba038347440efe4cd70fbb2dae6dde",
+    "计算机知识/30-计算机系统/03-ABI调用约定与静态动态链接.md": "c4701da3d86a84c33dcd7c3bc1ba93f8a9e525078ffb57de8da76404912270be",
+    "编程知识/10-基础/01-正则表达式/00-正则表达式-MOC.md": "d75954d72911f7cc84546adf488631cf43eca595899b878d18abfff4da8b36e2",
+    "计算机知识/70-编译原理/00-编译原理-MOC.md": "40706c53aa6678fb2b80eadebd323839b4d59b3d4b23f19239df88218f6b4cf0",
+    "哲学与文化/10-主题/01-文化政治与组织结构/00-文化政治与组织结构-MOC.md": "8dbb01b2050282e5b9496c1ede0dac04689f3050ab046e4a671856d5b26f2799",
+    "哲学与文化/90-资源/01-原始材料与参考来源索引.md": "b1459aade8aaf2908accc219027933af701a8249f00620a097cce524598c46f8",
+    "AI/20-LLM/70-工程应用与工具链/09-Agent状态机幂等执行与提示注入边界.md": "9a9dc0a76f519f81888d472ceac1c074ff65d8b9e625b63ae19b0f9c9f83675b",
+    "AI/20-LLM/40-推理/10-测试时计算验证器误差与预算公平性.md": "bed0e2ec2197db0371da3084b37ac941eb306901da7e320411a4a81266cdae9a",
+    "计算机知识/10-编程语言/02-C++/toolchain.cpp": "037bfb4bc744d2f3fce040cacb277d64699df1541fbcc4199a4d9f3368df1b92",
+    "计算机知识/10-编程语言/02-C++/CMakeLists.txt": "dddc01638a1caa91e00045980ba88375d40180f2d53502545f6f4021b0a87892"
+  },
+  "tests": {
+    "integrated": {
+      "total": 103,
+      "passed": 102,
+      "skipped": 1,
+      "skip_reason": "PyYAML unavailable"
+    },
+    "related_experiments": {
+      "RAG": 15,
+      "Softmax": 3,
+      "all_passed": true
+    },
+    "private_publisher": {
+      "tests": 5,
+      "all_passed": true,
+      "review_receipt_sha256": "7efa9c916576c51a146bf668316b414a0a3fea564a59b86e9fd4b3728f4f51f7"
+    },
+    "postdelete_t28": {
+      "total": 2,
+      "passed": 2,
+      "invocation_error_corrected_without_product_change": true
+    }
+  },
+  "static": {
+    "baseline_counts": {
+      "error": 26,
+      "review": 46
+    },
+    "candidate_counts": {
+      "error": 25,
+      "review": 45
+    },
+    "mirrors": 139,
+    "new_diagnostics": 0,
+    "status": "failed_retained_diagnostics",
+    "actual_postdelete_counts": {
+      "error": 25,
+      "review": 45
+    },
+    "actual_postdelete_scope": {
+      "visible_files": 2202,
+      "markdown_files": 1137,
+      "links_checked": 17100,
+      "configs_checked": 11,
+      "mirrors_checked": 139,
+      "mirror_markers": 139
+    },
+    "layers": {
+      "links": "checked",
+      "mirrors": "checked",
+      "json": "checked_allowlist",
+      "yaml_properties": "not_run_missing_PyYAML",
+      "base_syntax": "not_run_missing_PyYAML",
+      "toml_roles": "checked_declarations_only",
+      "obsidian_ui": "not_run",
+      "mathematical_numeric": "not_run",
+      "experiment_runtime": "not_run",
+      "source_semantics": "not_run"
+    },
+    "exit_code": 1
+  },
+  "not_run": [
+    "PyYAML/property/Base semantic layer",
+    "Obsidian GUI/sync/mobile/Zotero/human reading",
+    "Codex runtime loading/enforcement/routing",
+    "real 32 model concurrency",
+    "C++ build"
+  ],
+  "unknown": [
+    "actual model/effort/usage/total fee"
+  ],
+  "actual_root_change_deleted": true,
+  "root_change_removal": {
+    "path": "CHANGE.md",
+    "before": "d0f4f54ab704b71a05d37dbe7b2b52441407e1038cf8fc763650334fe9e5d396",
+    "after": "absent",
+    "archive": "Logs/2026-09-15_C1人机协作整合/originals/CHANGE.md.txt",
+    "timestamp": "2026-09-15T13:52:46.795294+08:00",
+    "other_paths_deleted": []
+  },
+  "publication": {
+    "written_files": 78,
+    "modified": 8,
+    "added": 70,
+    "deleted": 1,
+    "attachment_directory_added": true,
+    "single_publisher": "root",
+    "idempotence_candidate_rerun": {
+      "already_applied": 78,
+      "writes": 0
+    }
+  },
+  "raw_evidence_sha256": {
+    "live-unit-tests.txt": "84a6e2b782dde0442572208aef844500da8ecb7c3694f6359eeb745207eef752",
+    "live-rag-tests.txt": "7c4319658979e90ee5982f34aeafb86c18f347c83e582b61a648a5e0affb03b5",
+    "live-softmax-tests.txt": "ba28c25f68f6ddd58b9ded69bd58296c39d79d8de54675dd7adf9ad7e88ea7f6",
+    "live-t28-tests.txt": "fe96b3cbdada4fc1d75d3c6fc70637bd62d7ae8b56d5d02477600b264194563e",
+    "live-postdelete-static.json": "53fb64c52d5c75a61be3a0869eb18ced4fa62538da3c79458821c2ed80f721cc",
+    "publication-1.json": "94518eb4a821cfcf74c9ad355d1acf18bad0ce6174f378385d1960c0c56b7337",
+    "root-change-removal.json": "51a8b5f665d220be14a273065ebce3381ce03794e7af41007ad919fdf7ffa8ad",
+    "integration-idempotence.json": "7d082515201900021f62000dc5058188043830cc1f1ca6f843633f1e1949fc44"
+  }
+}

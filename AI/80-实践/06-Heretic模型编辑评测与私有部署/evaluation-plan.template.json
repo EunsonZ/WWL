@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "experiment_id": "REPLACE_WITH_UNIQUE_EXPERIMENT_ID",
+  "comparison": {
+    "baseline_artifact": "immutable_original_model",
+    "candidate_artifact": "independent_edited_model",
+    "paired": true,
+    "same_tokenizer_template_and_decoding": true,
+    "original_manifest_sha256": "REPLACE_WITH_SHA256",
+    "experiment_manifest_sha256": "REPLACE_WITH_SHA256",
+    "fixed_generation_config": "/ABSOLUTE/PATH/TO/generation-config.json"
+  },
+  "splits": [
+    {
+      "name": "direction_train",
+      "purpose": "estimate_direction_only",
+      "used_for_search": false
+    },
+    {
+      "name": "search_objective",
+      "purpose": "score_tpe_trials_only",
+      "used_for_search": true
+    },
+    {
+      "name": "selection_validation",
+      "purpose": "select_candidate_and_check_gates",
+      "used_for_search": false
+    },
+    {
+      "name": "final_test",
+      "purpose": "one_frozen_final_comparison",
+      "used_for_search": false
+    }
+  ],
+  "dimensions": {
+    "refusal": {
+      "metric": "paired_label_confusion_matrix_by_risk_language_and_topic",
+      "labels": [
+        "full_refusal",
+        "refusal_with_safe_alternative",
+        "limited_help",
+        "normal_answer",
+        "unsafe_compliance",
+        "uncertain"
+      ],
+      "gate": "REPLACE_WITH_PREDECLARED_HARMFUL_AND_BENIGN_THRESHOLDS",
+      "reports_baseline_and_edited": true,
+      "human_review": true
+    },
+    "kl": {
+      "metric": "mean_median_p95_and_topic_quantiles_per_token_kl",
+      "direction": "D_KL(original||edited)",
+      "mask_and_reduction": "REPLACE_WITH_EXACT_TOKEN_MASK_AND_REDUCTION",
+      "reference_split": "final_test",
+      "gate": "REPLACE_WITH_PREDECLARED_DISTRIBUTION_DRIFT_BUDGET",
+      "reports_baseline_and_edited": true
+    },
+    "language_quality": {
+      "metric": "blinded_paired_fluency_coherence_repetition_and_instruction_following_rubric",
+      "gate": "REPLACE_WITH_PREDECLARED_NONINFERIORITY_MARGIN",
+      "reports_baseline_and_edited": true
+    },
+    "general_capability": {
+      "metric": "paired_fixed_knowledge_reasoning_math_code_and_long_context_suite",
+      "gate": "REPLACE_WITH_PREDECLARED_PER_TASK_AND_AGGREGATE_MARGINS",
+      "reports_baseline_and_edited": true
+    }
+  },
+  "safety_stop_gate": {
+    "independent_of_composite_score": true,
+    "review_scope": "unsafe_content_privacy_bias_jailbreak_and_tool_boundaries",
+    "on_regression": "stop_before_service"
+  },
+  "statistics": {
+    "fixed_seeds": [],
+    "confidence_interval_method": "REPLACE_WITH_PREDECLARED_METHOD",
+    "report_absolute_and_relative_difference": true,
+    "report_all_trials_or_selection_bias": true
+  },
+  "report": {
+    "template": "evaluation-report.template.md",
+    "raw_outputs_private": true,
+    "publish_only_deidentified_aggregates_after_review": true,
+    "status": "planned_not_executed"
+  }
+}

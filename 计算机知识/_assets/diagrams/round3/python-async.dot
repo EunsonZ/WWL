@@ -1,0 +1,17 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="结构化并发：任务作用域拥有子任务",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"parent" [label="async with TaskGroup()"];
+"a" [label="任务 A：成功"];
+"b" [label="任务 B：非取消异常"];
+"c" [label="任务 C：等待 I/O"];
+"end" [label="取消其余任务并等待清理\n按规则汇总异常"];
+"parent" -> "a";
+"parent" -> "b";
+"parent" -> "c";
+"a" -> "end";
+"b" -> "end" [label="触发失败处理"];
+"c" -> "end" [label="响应取消"];
+
+}

@@ -1,0 +1,15 @@
+test_demo_does_not_relabel_unrelated_sql_error_as_contention (test_transaction_lab.IsolationTests.test_demo_does_not_relabel_unrelated_sql_error_as_contention) ... FAIL
+
+======================================================================
+FAIL: test_demo_does_not_relabel_unrelated_sql_error_as_contention (test_transaction_lab.IsolationTests.test_demo_does_not_relabel_unrelated_sql_error_as_contention)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/kali_v3_work/计算机知识/Kali/07-综合实验/代码/test_transaction_lab.py", line 136, in test_demo_does_not_relabel_unrelated_sql_error_as_contention
+    with self.assertRaisesRegex(RuntimeError, 'expected SQLITE_BUSY'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)

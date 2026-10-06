@@ -1,0 +1,141 @@
+{
+  "timestamp_utc": "2026-09-05T16:37:57.621811+00:00",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41"
+  },
+  "python": {
+    "run": 39,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "status": "PASS",
+    "log": "test_knapsack_against_exhaustive (test_core.AlgorithmTests.test_knapsack_against_exhaustive) ... ok\ntest_knapsack_counterexample (test_core.AlgorithmTests.test_knapsack_counterexample) ... ok\ntest_lower_bound_edges (test_core.AlgorithmTests.test_lower_bound_edges) ... ok\ntest_lower_bound_random (test_core.AlgorithmTests.test_lower_bound_random) ... ok\ntest_negative_edge_and_cycle (test_core.AlgorithmTests.test_negative_edge_and_cycle) ... ok\ntest_shortest_path_differential (test_core.AlgorithmTests.test_shortest_path_differential) ... ok\ntest_shortest_path_example (test_core.AlgorithmTests.test_shortest_path_example) ... ok\ntest_stable_merge_sort (test_core.AlgorithmTests.test_stable_merge_sort) ... ok\ntest_union_find (test_core.AlgorithmTests.test_union_find) ... ok\ntest_bounded_backlog_and_complete_results (test_core.AsyncTests.test_bounded_backlog_and_complete_results) ... ok\ntest_taskgroup_failure_cancels_sibling (test_core.AsyncTests.test_taskgroup_failure_cancels_sibling) ... ok\ntest_bytecode_errors (test_core.CompilerTests.test_bytecode_errors) ... ok\ntest_compilation_differential (test_core.CompilerTests.test_compilation_differential) ... ok\ntest_precedence_associativity_and_unary (test_core.CompilerTests.test_precedence_associativity_and_unary) ... ok\ntest_syntax_errors (test_core.CompilerTests.test_syntax_errors) ... ok\ntest_constraints (test_core.DatabaseTests.test_constraints) ... ok\ntest_left_join_counts (test_core.DatabaseTests.test_left_join_counts) ... ok\ntest_null_not_in (test_core.DatabaseTests.test_null_not_in) ... ok\ntest_on_versus_where (test_core.DatabaseTests.test_on_versus_where) ... ok\ntest_transaction_rollback (test_core.DatabaseTests.test_transaction_rollback) ... ok\ntest_window_function (test_core.DatabaseTests.test_window_function) ... ok\ntest_filename_boundaries (test_core.LinuxTests.test_filename_boundaries) ... ok\ntest_empty_stream (test_core.NetworkTests.test_empty_stream) ... ok\ntest_fragmentation_every_split (test_core.NetworkTests.test_fragmentation_every_split) ... ok\ntest_single_byte_feeds_and_empty_frame (test_core.NetworkTests.test_single_byte_feeds_and_empty_frame) ... ok\ntest_size_limit_terminal_error (test_core.NetworkTests.test_size_limit_terminal_error) ... ok\ntest_truncated_header_and_body (test_core.NetworkTests.test_truncated_header_and_body) ... ok\ntest_count_valid (test_core.PythonContractTests.test_count_valid) ... ok\ntest_data_descriptor_priority (test_core.PythonContractTests.test_data_descriptor_priority) ... ok\ntest_nested_bool_regression (test_core.PythonContractTests.test_nested_bool_regression) ... ok\ntest_non_data_descriptor_shadowing (test_core.PythonContractTests.test_non_data_descriptor_shadowing) ... ok\ntest_shallow_copy_aliases (test_core.PythonContractTests.test_shallow_copy_aliases) ... ok\ntest_banker_safe (test_core.SystemModelTests.test_banker_safe) ... ok\ntest_banker_unsafe (test_core.SystemModelTests.test_banker_unsafe) ... ok\ntest_byte_and_float_models (test_core.SystemModelTests.test_byte_and_float_models) ... ok\ntest_cache_conflict (test_core.SystemModelTests.test_cache_conflict) ... ok\ntest_lru (test_core.SystemModelTests.test_lru) ... ok\ntest_round_robin (test_core.SystemModelTests.test_round_robin) ... ok\ntest_round_robin_edges (test_core.SystemModelTests.test_round_robin_edges) ... ok\n\n----------------------------------------------------------------------\nRan 39 tests in 0.018s\n\nOK\n"
+  },
+  "programs": [
+    {
+      "name": "C11 vector",
+      "version": {
+        "command": [
+          "/usr/bin/cc",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "cc (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+        "stderr": ""
+      },
+      "compile": {
+        "command": [
+          "/usr/bin/cc",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O1",
+          "/mnt/data/kb_round2/revised/com/_labs/integration/vector.c",
+          "-o",
+          "/tmp/kb-build-qcnfl0pp/program_0"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "execute": {
+        "command": [
+          "/tmp/kb-build-qcnfl0pp/program_0"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "C++20 RAII",
+      "version": {
+        "command": [
+          "/usr/bin/c++",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "c++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+        "stderr": ""
+      },
+      "compile": {
+        "command": [
+          "/usr/bin/c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O1",
+          "/mnt/data/kb_round2/revised/com/_labs/integration/raii.cpp",
+          "-o",
+          "/tmp/kb-build-qcnfl0pp/program_1"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "execute": {
+        "command": [
+          "/tmp/kb-build-qcnfl0pp/program_1"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "Rust standard-library tests",
+      "status": "SKIP",
+      "reason": "optional compiler not installed"
+    },
+    {
+      "name": "TypeScript strict compilation and runtime validation",
+      "version": {
+        "command": [
+          "/opt/nvm/versions/node/v22.16.0/bin/tsc",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "Version 5.8.3\n",
+        "stderr": ""
+      },
+      "compile": {
+        "command": [
+          "/opt/nvm/versions/node/v22.16.0/bin/tsc",
+          "--strict",
+          "--noUncheckedIndexedAccess",
+          "--exactOptionalPropertyTypes",
+          "--target",
+          "ES2022",
+          "--module",
+          "commonjs",
+          "--lib",
+          "ES2022,DOM",
+          "--outDir",
+          "/tmp/kb-build-qcnfl0pp",
+          "/mnt/data/kb_round2/revised/com/_labs/integration/boundary.ts"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "execute": {
+        "command": [
+          "/opt/nvm/versions/node/v22.16.0/bin/node",
+          "/tmp/kb-build-qcnfl0pp/boundary.js"
+        ],
+        "returncode": 0,
+        "stdout": "TypeScript boundary and state tests passed\n",
+        "stderr": ""
+      },
+      "status": "PASS"
+    }
+  ],
+  "overall": "PASS"
+}

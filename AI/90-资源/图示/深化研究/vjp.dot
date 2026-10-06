@@ -1,0 +1,22 @@
+digraph G {
+    graph [rankdir=LR, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="反向传播：局部变化如何回到输入"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    x [label="输入 x：2 × 1
+例：(2, −1)"];
+    w [label="参数 W：2 × 2
+[[1,2],[3,4]]"];
+    y [label="y = W x：2 × 1
+例：(0, 2)"];
+    l [label="标量目标 L
+上游梯度 g = (1, −2)"];
+    dx [label="输入梯度 Wᵀg
+= (−5, −6)", fillcolor="#e6f3e9"];
+    dw [label="参数梯度 g xᵀ
+= [[2,−1],[−4,2]]", fillcolor="#e6f3e9"];
+    x -> y; w -> y; y -> l;
+    l -> dx [label="VJP：不必显式存完整 Jacobian"];
+    l -> dw [label="共享参数的路径贡献相加"];
+    
+    }

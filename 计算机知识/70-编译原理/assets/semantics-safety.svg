@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="365" viewBox="0 0 1000 365" role="img" aria-label="Bool STLC 类型安全的证明依赖">
+<rect width="100%" height="100%" fill="#f6f8fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#325b8e"/></marker></defs>
+<text x="30" y="40" font-family="Hiragino Sans GB" font-size="24" fill="#18314d">Bool STLC 类型安全的证明依赖</text>
+<text x="30" y="95" font-family="Hiragino Sans GB" font-size="18">保持</text>
+<rect x="150.0" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="278.33333333333337" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">环境不变 / 弱化 / α</text>
+<path d="M409.6666666666667,91 H428.6666666666667" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="431.6666666666667" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="560.0" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">替换引理</text>
+<path d="M691.3333333333334,91 H710.3333333333334" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="713.3333333333334" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="841.6666666666667" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">β 后仍同型</text>
+<text x="30" y="170" font-family="Hiragino Sans GB" font-size="18">进展</text>
+<rect x="150.0" y="140" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="278.33333333333337" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">值语法 + 类型规则</text>
+<path d="M409.6666666666667,166 H428.6666666666667" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="431.6666666666667" y="140" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="560.0" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">标准形态</text>
+<path d="M691.3333333333334,166 H710.3333333333334" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="713.3333333333334" y="140" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="841.6666666666667" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">闭项为值或可步</text>
+<text x="30" y="245" font-family="Hiragino Sans GB" font-size="18">有限链</text>
+<rect x="150.0" y="215" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="278.33333333333337" y="246" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">初项有类型</text>
+<path d="M409.6666666666667,241 H428.6666666666667" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="431.6666666666667" y="215" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="560.0" y="246" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">每步保持类型</text>
+<path d="M691.3333333333334,241 H710.3333333333334" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="713.3333333333334" y="215" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="841.6666666666667" y="246" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">每个可达项排除卡住</text>
+<text x="30" y="343" font-family="Hiragino Sans GB" font-size="17" fill="#435a70">最后一行排除有限卡住；不能据此排除无限执行。</text></svg>

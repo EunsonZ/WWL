@@ -1,0 +1,101 @@
+{
+  "task": "synthetic_horizontal_vertical_lines",
+  "device": "cpu",
+  "torch": "2.10.0+cpu",
+  "seed": 2026,
+  "epochs": 10,
+  "selected_epoch": 10,
+  "split_sizes": {
+    "train": 256,
+    "validation": 128,
+    "test": 128
+  },
+  "test": {
+    "loss": 0.0003333424392621964,
+    "accuracy": 1.0
+  },
+  "checkpoint_roundtrip_exact": true,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6956149563193321,
+      "validation": {
+        "loss": 0.6675595045089722,
+        "accuracy": 0.5
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6092201173305511,
+      "validation": {
+        "loss": 0.4943300485610962,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.37906267307698727,
+      "validation": {
+        "loss": 0.21219272911548615,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.12440609093755484,
+      "validation": {
+        "loss": 0.03816051408648491,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.02041697537060827,
+      "validation": {
+        "loss": 0.005767433904111385,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.0037767431640531868,
+      "validation": {
+        "loss": 0.0016271347412839532,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.0013120501171215437,
+      "validation": {
+        "loss": 0.000724461511708796,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0007151671961764805,
+      "validation": {
+        "loss": 0.0004712852241937071,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.0005198104336159304,
+      "validation": {
+        "loss": 0.0003736254875548184,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.0004311898483138066,
+      "validation": {
+        "loss": 0.0003298936353530735,
+        "accuracy": 1.0
+      }
+    }
+  ],
+  "limits": "仅代表此合成分布与固定种子；不证明真实图像泛化或 GPU 性能。"
+}

@@ -1,0 +1,31 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="13 学科先修与交叉主线：箭头表示推荐的知识支撑",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"lang" [label="语言基础\nC / Python"];
+"cpp" [label="C++ / Rust\n对象、所有权与抽象"];
+"ts" [label="TypeScript\nWeb 与类型边界"];
+"ds" [label="数据结构"];
+"alg" [label="算法设计"];
+"co" [label="组成原理"];
+"os" [label="操作系统"];
+"linux" [label="Linux 实践"];
+"net" [label="计算机网络"];
+"db" [label="数据库"];
+"comp" [label="编译原理"];
+"lang" -> "cpp";
+"lang" -> "ts";
+"lang" -> "ds";
+"ds" -> "alg";
+"lang" -> "co";
+"co" -> "os";
+"os" -> "linux";
+"os" -> "net";
+"ds" -> "db";
+"os" -> "db";
+"alg" -> "comp";
+"co" -> "comp";
+"cpp" -> "comp";
+"net" -> "ts";
+
+}

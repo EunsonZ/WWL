@@ -1,0 +1,991 @@
+{
+  "source_zip_sha256": "82b941a983d1a48ba8f2542a7e7a8e97e194e939d22c14e7778e30dbbb772d7d",
+  "removed": [],
+  "v1_code_and_fixtures_byte_preserved": true,
+  "v1_code_and_fixture_files": 20,
+  "changes": [
+    {
+      "path": "00-导航与方法/00-Kali知识地图.md",
+      "change": "modified",
+      "before_bytes": 14157,
+      "before_sha256": "015f0f5f54e0d7b8365b80c6dd78156548efc07f7aee8cb7e1a8f87844b1e100",
+      "after_bytes": 15767,
+      "after_sha256": "dc46b1362a9f4c7aa62f4f665921c5edca8b4d0bb05787b47c0bb7963dce5d4d"
+    },
+    {
+      "path": "00-导航与方法/01-学习路线与贯穿案例.md",
+      "change": "modified",
+      "before_bytes": 7420,
+      "before_sha256": "3f579abad39a29779474f4ddd6471fa22d1947d56020f1b1aa4f8858e62fde88",
+      "after_bytes": 9162,
+      "after_sha256": "5a26d0bd721eaa83603ac18ee38411265b37928dd40bafdd71332891e3b0bdf3"
+    },
+    {
+      "path": "00-导航与方法/03-实验室拓扑与证据目录.md",
+      "change": "modified",
+      "before_bytes": 4847,
+      "before_sha256": "73c52cd74cc404bd77728f6b8895db0c9a6b32f0407abb3ca2b392b7d0dcae64",
+      "after_bytes": 4906,
+      "after_sha256": "c97904d1acb458a16d447369533f8156738db170e6dee4aeb0008bb35e31a057"
+    },
+    {
+      "path": "00-导航与方法/04-从观察到结论的安全方法.md",
+      "change": "modified",
+      "before_bytes": 4233,
+      "before_sha256": "464553000a7cef0cf179cd49333ad4b84c910aa70c8fb570e38318469585f4d9",
+      "after_bytes": 4301,
+      "after_sha256": "9a10486e350030ca59a57aa2df522faae7250649e108c6556cbc0e463049b30b"
+    },
+    {
+      "path": "00-导航与方法/05-常用工具覆盖矩阵.md",
+      "change": "modified",
+      "before_bytes": 44142,
+      "before_sha256": "e9ccb4a52ce5e70925a4e3763eb4fb418ccaf91723fc70c19e3cabd68811825c",
+      "after_bytes": 46896,
+      "after_sha256": "32dd10e931722f95546e26eafccb1de9532cc1cda73e08c80de6ef947d679330"
+    },
+    {
+      "path": "00-导航与方法/06-命令阅读与故障定位.md",
+      "change": "modified",
+      "before_bytes": 4834,
+      "before_sha256": "adbf63a380e1107069b89498da2e4d4cfd4110a95767ee20f272a85a31c7f91e",
+      "after_bytes": 4893,
+      "after_sha256": "731080426a8e9374a260c61b9b7644d95b6dc94d56f83ea702e572e9a35653bd"
+    },
+    {
+      "path": "00-导航与方法/Kali学习路径.canvas",
+      "change": "modified",
+      "before_bytes": 4749,
+      "before_sha256": "15c45f9549169a67794b0646668d28d02e2cee3b5c20a6307b82644bfe03412b",
+      "after_bytes": 7891,
+      "after_sha256": "40c37bf79835b603564aaeb0d0bd663482847080279dbb53f9039a33858cc51e"
+    },
+    {
+      "path": "01-系统与网络基础/01-Kali定位与安装校验.md",
+      "change": "modified",
+      "before_bytes": 5471,
+      "before_sha256": "464f7db598e5a867c14a2f96bab7e9536bfd935ea4f9820b16fbf26087c2aefd",
+      "after_bytes": 7978,
+      "after_sha256": "143e89471a53fb22d4f15f0a9826666c19b7b9d4470766dad7860fcfa5ffbfc7"
+    },
+    {
+      "path": "01-系统与网络基础/02-虚拟机快照与网络隔离.md",
+      "change": "modified",
+      "before_bytes": 5101,
+      "before_sha256": "f7f50252ae6d1165ac3e45a29f4703a8cd8a1f2839da59559e0f4fc965bbf7dc",
+      "after_bytes": 7335,
+      "after_sha256": "078aa8b5da4195fc362b00d37bcbb4ff1eb44195b04d86b89c0c0f78b8e03058"
+    },
+    {
+      "path": "01-系统与网络基础/03-APT软件源与Python环境.md",
+      "change": "modified",
+      "before_bytes": 5990,
+      "before_sha256": "b9c0910f21d4f51afe19571d7be1efe9245431ca31229af9ee6efe0bd50215f7",
+      "after_bytes": 9039,
+      "after_sha256": "f3ffeeaf353874505c4a2a7eb7e4de387e60c0eb10951274d60c7b3e765e9cd6"
+    },
+    {
+      "path": "01-系统与网络基础/04-Shell文件权限与文本处理.md",
+      "change": "modified",
+      "before_bytes": 5693,
+      "before_sha256": "ee17a7356a59adbd4b977b41bfa709076035a53c90e6275fc4d835224f429d8a",
+      "after_bytes": 9547,
+      "after_sha256": "19d72ba3db5156ba05260a6e4130b4549971f70100f656b830bdd10a1259255b"
+    },
+    {
+      "path": "01-系统与网络基础/05-进程服务日志与本机加固.md",
+      "change": "modified",
+      "before_bytes": 5239,
+      "before_sha256": "efe8953a47bdbf5f6e69ae447e574c5d2784f1f5b65927ba941a6f61cefb3dd7",
+      "after_bytes": 7566,
+      "after_sha256": "48ba62584e6e2717d6a9e086e75ac94e757509e0e29df6d62ae55656f01e25e1"
+    },
+    {
+      "path": "01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+      "change": "modified",
+      "before_bytes": 6811,
+      "before_sha256": "43ee5bf6afb34b8a68971414c65b3e4816a69d948fa768d71d919668a4f7d44f",
+      "after_bytes": 10537,
+      "after_sha256": "925e99708696d3afeef0a6dc0952ca902acf23782a8fdfaedf66f28b25b6ccc9"
+    },
+    {
+      "path": "01-系统与网络基础/07-HTTP浏览器会话与信任边界.md",
+      "change": "modified",
+      "before_bytes": 5814,
+      "before_sha256": "02e2e6062d8a120090d419f9278b05125f7e2cc268f2d8913cb109b9fb48a365",
+      "after_bytes": 9798,
+      "after_sha256": "e10b2837b27c846aeeb57328624af0985e718d00da94b38a439edf76f4fae794"
+    },
+    {
+      "path": "01-系统与网络基础/08-BashPython与可复核自动化.md",
+      "change": "modified",
+      "before_bytes": 5222,
+      "before_sha256": "1e452944c3b570f849b5a8a228613f2948683881942c17d0ad45094acf0984ad",
+      "after_bytes": 7817,
+      "after_sha256": "972ab0da8fc592594ef715854fe5b9bd4b4c1dbc1452806434105348923e052b"
+    },
+    {
+      "path": "01-系统与网络基础/09-状态防火墙与网络命名空间.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 6625,
+      "after_sha256": "645f7770be6cfd0523fe875df3a4c751d45455ffe03c9b16f72cbe88836801ef"
+    },
+    {
+      "path": "02-信息收集与网络测量/01-资产范围与被动信息收集.md",
+      "change": "modified",
+      "before_bytes": 5251,
+      "before_sha256": "cdcfeb72d98f84992f3a6ef8bf3f8efb78fd91afb60f8131c0ac7063dd804057",
+      "after_bytes": 6981,
+      "after_sha256": "29cfdf60cb1068993f6109eef9292adf639891dcd072a16cb80c073bdc500bd0"
+    },
+    {
+      "path": "02-信息收集与网络测量/02-DNS域名与证书信息.md",
+      "change": "modified",
+      "before_bytes": 5375,
+      "before_sha256": "938c57d93e3b73176fac3436a1c0770c3ed486aa7666e4cddaf36f78637abc7a",
+      "after_bytes": 8752,
+      "after_sha256": "60188db244702e58429b487ece4baa09102d6e17c44d673e6a87f00bd9af9934"
+    },
+    {
+      "path": "02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+      "change": "modified",
+      "before_bytes": 6491,
+      "before_sha256": "283c1597994f4c1d7c44fcf2db080bd915b124d02e2a73d818f59a921841301a",
+      "after_bytes": 10486,
+      "after_sha256": "5c30f4c4327e3e20a4dbab20719a2fc708a9aea33958c999a271d0c631cf1d2c"
+    },
+    {
+      "path": "02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+      "change": "modified",
+      "before_bytes": 5478,
+      "before_sha256": "f3e8a1a4d0962eed0e3b2059bb4baaed07a58c51e557a8385edb1d54a1997461",
+      "after_bytes": 8317,
+      "after_sha256": "6a710e53c68270a05e45cba7a1b1cc59aaaac28c7cbcd9321d9770d52f96ce32"
+    },
+    {
+      "path": "02-信息收集与网络测量/05-WiresharkTcpdump与Tshark.md",
+      "change": "modified",
+      "before_bytes": 5713,
+      "before_sha256": "faaea9bf0627a37b4cc625f427e2a481ec162db80d3dd5e8dae106aacc47c471",
+      "after_bytes": 8766,
+      "after_sha256": "6c7b4df375018c0add9bb55e74f322989686de64cd8f6d8f6b6789f6a2c7246c"
+    },
+    {
+      "path": "02-信息收集与网络测量/06-ScapyNping与协议实验.md",
+      "change": "modified",
+      "before_bytes": 4710,
+      "before_sha256": "08f1e3a37cffaf1f455605c4d131bf60a99f57b2a95d585c9c5a54b93387f78b",
+      "after_bytes": 6857,
+      "after_sha256": "d5464bb381524f8bc97a95e23c09edf0e63269e1a9b3ba42f98ed94621a1644f"
+    },
+    {
+      "path": "02-信息收集与网络测量/07-漏洞扫描NucleiGreenbone与复核.md",
+      "change": "modified",
+      "before_bytes": 5776,
+      "before_sha256": "02adab467cd35844563d29159bc3668d0c97b09c9081f6b4422a21c64edea399",
+      "after_bytes": 9860,
+      "after_sha256": "7dc682663098c065c1471e6cf0e2afa20d6d119accb3cd6e30b86cf030ce7910"
+    },
+    {
+      "path": "02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+      "change": "modified",
+      "before_bytes": 5565,
+      "before_sha256": "1947566f678a93c7ffa71f24a55e1a25f96661fbd0799c657b880dd836331611",
+      "after_bytes": 7749,
+      "after_sha256": "b3d5c9310e9b21a7f371171c98d3b0766768a5d118afed71bc3acbe9a211dc77"
+    },
+    {
+      "path": "03-Web与API安全/01-Web测试模型与手工基线.md",
+      "change": "modified",
+      "before_bytes": 5950,
+      "before_sha256": "2af97b6de5b8a86523e6af91a93b21b2f1018166061c8dec045d46cf668e0490",
+      "after_bytes": 8218,
+      "after_sha256": "703551c5e68854ede30b823108e97f90bf86795651ea675531cde9ee93989f8b"
+    },
+    {
+      "path": "03-Web与API安全/02-curlHTTPie与接口重放.md",
+      "change": "modified",
+      "before_bytes": 5301,
+      "before_sha256": "3e7c89fe1b4a8ead859a0e5443c513ef971c140695ba3f3415edf18fea111db3",
+      "after_bytes": 8173,
+      "after_sha256": "4d4d6e3e07df1dc2d4248b42feffee4e0a1f3ad046b170a6f565be56200f46d6"
+    },
+    {
+      "path": "03-Web与API安全/03-BurpSuite工作流.md",
+      "change": "modified",
+      "before_bytes": 5427,
+      "before_sha256": "f00c3f992d8da9decab71f07a898c150b04a30f2a7331b80f23577a3ce525c8b",
+      "after_bytes": 8051,
+      "after_sha256": "44df2010294d062bdcf9411d0543f2da4c13fc47e58504d5e212030814209a78"
+    },
+    {
+      "path": "03-Web与API安全/04-ZAP代理与被动扫描.md",
+      "change": "modified",
+      "before_bytes": 4892,
+      "before_sha256": "d581e7847fc8c2ab8942ad0bae921a3eab6c4c8d4354f63b267a983cfb8c9f99",
+      "after_bytes": 7277,
+      "after_sha256": "50cc13b702ba018a338c869f244cbaf75c887ecc0bc17949de914c95cb1f49e8"
+    },
+    {
+      "path": "03-Web与API安全/05-ffufGobuster与内容发现.md",
+      "change": "modified",
+      "before_bytes": 4788,
+      "before_sha256": "39bcb26432bee260f61e043bd98a1e4f38a7f3119542e079e4db93ecbf80ac8d",
+      "after_bytes": 7313,
+      "after_sha256": "6f361cae1b050e942d858bbbb0878d16e8a825d5d558f96d56fd7e4da249807f"
+    },
+    {
+      "path": "03-Web与API安全/06-SQL注入原理与sqlmap限界验证.md",
+      "change": "modified",
+      "before_bytes": 5807,
+      "before_sha256": "42e368a1faaea590bdc9424d9a47179cd801a3426d7f01f810ba83731f8d7c13",
+      "after_bytes": 9047,
+      "after_sha256": "b0d019ce0585782ca23f0b4836cd8b9ce482f6f16bb066155ea1ad72a45abb1f"
+    },
+    {
+      "path": "03-Web与API安全/07-XSSCSRF与浏览器安全边界.md",
+      "change": "modified",
+      "before_bytes": 5543,
+      "before_sha256": "14e7d48f3315ec4473dd0b6797d36456c161fb259af1cd065116308a9db20dd4",
+      "after_bytes": 8172,
+      "after_sha256": "2fcc144427f71dd00d5450eafb393940d3de723b976df52c0d0c74666788f11c"
+    },
+    {
+      "path": "03-Web与API安全/08-认证会话越权与API测试.md",
+      "change": "modified",
+      "before_bytes": 5554,
+      "before_sha256": "4fa2a02b48cca846ed3ca0766189c92b7d5e811bd1c552e7756cdac1f92070bc",
+      "after_bytes": 8581,
+      "after_sha256": "b671bf3f2194708e7f93824b53320312f824a368f5552e5dfc6f160090362016"
+    },
+    {
+      "path": "03-Web与API安全/09-SSRF路径上传与解析边界.md",
+      "change": "modified",
+      "before_bytes": 5658,
+      "before_sha256": "35eca0b26e54a49f5cfa1b0fdb87be9663d93fb7e257fc08f270726d15228b4b",
+      "after_bytes": 8602,
+      "after_sha256": "fc917ab8e8db3c850a5a4bd388ad54e6d8faa97c29c5c7f7af40fa23a10bbd72"
+    },
+    {
+      "path": "03-Web与API安全/10-TLS证书与服务配置评估.md",
+      "change": "modified",
+      "before_bytes": 5077,
+      "before_sha256": "0608400ba7b602c11bc3fe721d7dcc00bb18f1bbbc316946e09befc05c8c618e",
+      "after_bytes": 7584,
+      "after_sha256": "200daaff1d2be9e926a6a485430d9583aff7988e1759be3df2652f351255fe29"
+    },
+    {
+      "path": "03-Web与API安全/11-Web服务器CMS与依赖评估.md",
+      "change": "modified",
+      "before_bytes": 4931,
+      "before_sha256": "16345a792aad910b1cb0f127e910d26f56edb524cfb7f18cee2c3ec86c90ed12",
+      "after_bytes": 7240,
+      "after_sha256": "56a847592848f548c6d01dca668a3a19ba2387a2f5f6f2bd06fb42b46c36bfa1"
+    },
+    {
+      "path": "03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 6385,
+      "after_sha256": "3f665dd677a16d5a24c20b682380c23a4e22cc2dd8bbbb3eef94b04ec0732dd1"
+    },
+    {
+      "path": "04-服务身份与主机评估/01-SSHFTPSMTP与SNMP服务.md",
+      "change": "modified",
+      "before_bytes": 6183,
+      "before_sha256": "8569021c2be3085759e9dcd866fa9cad4aa910b61c7be68cc9d8bc78b55e2908",
+      "after_bytes": 9262,
+      "after_sha256": "c2210729208c1c0a402fa0ad9b527181a98d1b8dfb7fdb0a1869274e237198aa"
+    },
+    {
+      "path": "04-服务身份与主机评估/02-SMBNFS与目录共享.md",
+      "change": "modified",
+      "before_bytes": 5344,
+      "before_sha256": "677ca122d7f32095b569d81dd3f2ae3b5cce067abbde5bf5395fa2301496f12d",
+      "after_bytes": 7955,
+      "after_sha256": "cadf36cd91c8dfed4c3273a4c621285bce18cb2227ff1e3842eb0e425d25b4aa"
+    },
+    {
+      "path": "04-服务身份与主机评估/03-LDAPKerberos与AD基础.md",
+      "change": "modified",
+      "before_bytes": 5236,
+      "before_sha256": "929061763be7fb996e7d3c43324d472b96ea1dbe720af4fe706f806449f945df",
+      "after_bytes": 8334,
+      "after_sha256": "8425aeff408c936016eedb136ccf53cd64ac59d5258b7e7a274ccb6dc1365545"
+    },
+    {
+      "path": "04-服务身份与主机评估/04-ImpacketNetExec与身份评估.md",
+      "change": "modified",
+      "before_bytes": 4988,
+      "before_sha256": "fa26f99c6c13936679f7956cd538b74544595d8c456923b2e98f06ba438f8c59",
+      "after_bytes": 6935,
+      "after_sha256": "4fc3e68e1a5629311f9fd9a19d5561bbebe452dfe3e6fd39b0bac6262ff1dd47"
+    },
+    {
+      "path": "04-服务身份与主机评估/05-BloodHound权限图与修复验证.md",
+      "change": "modified",
+      "before_bytes": 5023,
+      "before_sha256": "fe40490d7a603468eff80269fb95804712bd879ff235ac81c68024816c426569",
+      "after_bytes": 7295,
+      "after_sha256": "46544bd8825549dca7b37320b363b10dd901106a934aaa5e775f7a1bde346349"
+    },
+    {
+      "path": "04-服务身份与主机评估/06-SearchsploitMetasploit与漏洞验证.md",
+      "change": "modified",
+      "before_bytes": 5391,
+      "before_sha256": "3bf8b614861ddb3174a724f0077b8d9a647d81eaa26484c3c416cca60272f921",
+      "after_bytes": 7586,
+      "after_sha256": "a695aabf42422be08a67b48114d1f21f75c17808fa313f8df3e297a5f14c9bb5"
+    },
+    {
+      "path": "04-服务身份与主机评估/07-Linux权限边界与配置审计.md",
+      "change": "modified",
+      "before_bytes": 5186,
+      "before_sha256": "470e190d1da9fb6f0b2227dd60e9560d04a6815cf310c20df030e78b9726ebc9",
+      "after_bytes": 7534,
+      "after_sha256": "155b4f8a8c2b9264bc5cae422bd37c2a83ce45d9225dc82772728b5d2298e039"
+    },
+    {
+      "path": "04-服务身份与主机评估/08-Windows权限边界与本机审计.md",
+      "change": "modified",
+      "before_bytes": 5422,
+      "before_sha256": "6d857ad7a63544c03fb752cbc184453f8eea056a5bf9f7ff1e64fb43df49de88",
+      "after_bytes": 7845,
+      "after_sha256": "97f7af093874a12b504de45f34183a893860d2881dc81b47b61f68b5de78acd8"
+    },
+    {
+      "path": "04-服务身份与主机评估/09-数据库服务与最小权限审计.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 6677,
+      "after_sha256": "fa2a91b558b185c2f5bd6e6d1a8b4eefef370c856394257dfaa0325dd7d6ccf4"
+    },
+    {
+      "path": "05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "change": "modified",
+      "before_bytes": 5169,
+      "before_sha256": "68717cd4e68a25f27960fa67e3a084fe3871749087942165cb1e11e3b22fafcd",
+      "after_bytes": 8135,
+      "after_sha256": "2cb58bbb18bd1fc0d8e00d2f8384a476b4b998e4b0029b7e4d9786d1bd18bed9"
+    },
+    {
+      "path": "05-密码无线与专门领域/02-HashcatJohn与离线审计.md",
+      "change": "modified",
+      "before_bytes": 5422,
+      "before_sha256": "a625f2e04c701ae54a96670af2d8b5d444ee3138a451d83ae61c04309452e003",
+      "after_bytes": 8092,
+      "after_sha256": "42ced06365e690d3769b66973fcea55170befd942aa22bc6a4b25d131f4ab0b0"
+    },
+    {
+      "path": "05-密码无线与专门领域/03-HydraMedusa与认证控制验证.md",
+      "change": "modified",
+      "before_bytes": 5494,
+      "before_sha256": "116e32f9ec77afa3f10cf974078cee6204b95e1afef66f48b9c82e7851897694",
+      "after_bytes": 7769,
+      "after_sha256": "1d617180fd85b46867d8237f7777c4f93674652166f809d6aa3d5c10cb48bcf4"
+    },
+    {
+      "path": "05-密码无线与专门领域/04-WiFi协议与Aircrackng离线分析.md",
+      "change": "modified",
+      "before_bytes": 5206,
+      "before_sha256": "48ddaf45fe7b58218d8d650d71bee87f9b853d2ec16fa1215e6c5b47d25fe5fd",
+      "after_bytes": 8236,
+      "after_sha256": "558a35d53b3994ef4a0a5a30459ed5706a9cbd727ec98c1b8b1612b1d0704e51"
+    },
+    {
+      "path": "05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+      "change": "modified",
+      "before_bytes": 4848,
+      "before_sha256": "aeac6219ebb19d04746d968a36c7e3b76cee3b2ba265a05fd7ab612a3d08b258",
+      "after_bytes": 7296,
+      "after_sha256": "e5533da0b23e991d9ac8eac60a8bf1b82adbbff04b52e27b28b0ed2035bf4fd9"
+    },
+    {
+      "path": "05-密码无线与专门领域/06-容器Kubernetes与IaC审计.md",
+      "change": "modified",
+      "before_bytes": 5328,
+      "before_sha256": "22f364be3fdffa82321bd07e639d1e0abdc444ec8ff3e77cf5c6becfd4ac5ec2",
+      "after_bytes": 9460,
+      "after_sha256": "354e6912191d6969b00d5aabcaa4d72a28d111e0d56ea1377145f268c899a250"
+    },
+    {
+      "path": "05-密码无线与专门领域/07-AndroidADBJadx与移动应用分析.md",
+      "change": "modified",
+      "before_bytes": 4577,
+      "before_sha256": "0b7b07e6a4f4725cc6c19f58162dc508d52b87c0817f2f3d99302e003238d069",
+      "after_bytes": 7580,
+      "after_sha256": "b07b261aae491270a40db66727e938f955ca78af40bfb37b10de2b6c4cc258a5"
+    },
+    {
+      "path": "05-密码无线与专门领域/08-社会工程与高风险工具边界.md",
+      "change": "modified",
+      "before_bytes": 5262,
+      "before_sha256": "53ace991b787ba7f47ca4df4c05367e1e0c4e99e4d28a1fcbf6dba8471ff1703",
+      "after_bytes": 6760,
+      "after_sha256": "673fe3800c6bf800932863a68beb736fd2919f01165296e32e0736864725efbb"
+    },
+    {
+      "path": "06-取证逆向与检测/01-取证流程镜像与时间线.md",
+      "change": "modified",
+      "before_bytes": 5368,
+      "before_sha256": "d07fb1124f79724741224e53473152da517c0658964a4f8f4168ef8e7b2c8244",
+      "after_bytes": 8315,
+      "after_sha256": "77a4aa9d135a518997798ddc8661bfe29ed6b5a858c87094321b8db962f24a0f"
+    },
+    {
+      "path": "06-取证逆向与检测/02-SleuthKitAutopsy与文件恢复.md",
+      "change": "modified",
+      "before_bytes": 4783,
+      "before_sha256": "896dc96fec33f8547ecca2f30a948abe5fed25ea3a0caa9f0222f27c0083156a",
+      "after_bytes": 7984,
+      "after_sha256": "7b1a26664270b81f0269434df697cb5ec934898dcd0aec9462100fbae13bb04f"
+    },
+    {
+      "path": "06-取证逆向与检测/03-Volatility3与内存证据.md",
+      "change": "modified",
+      "before_bytes": 4801,
+      "before_sha256": "fff58a93547978a811cd7021c1a49a10534486df1a830a8d4c01ed3dcc438747",
+      "after_bytes": 7247,
+      "after_sha256": "65405382916a9cce76b51ca4040ef5304aa71cbe5980f39a653e5cb5a6549ed2"
+    },
+    {
+      "path": "06-取证逆向与检测/04-文件元数据Binwalk与ExifTool.md",
+      "change": "modified",
+      "before_bytes": 4720,
+      "before_sha256": "384e1d90b2bedfb8edbd58424b7d64d109542ac553f8539380fb9a48c34b65a7",
+      "after_bytes": 6837,
+      "after_sha256": "e4ff8113dcbf274ba1ffa1f4887b13dc7bbf37f776734d25ea1f73e8a9811f67"
+    },
+    {
+      "path": "06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+      "change": "modified",
+      "before_bytes": 4703,
+      "before_sha256": "77cf8893cdaf7407e5713cb3f47e13fd5c5680571c2933b7b9a58a60fbd35f58",
+      "after_bytes": 7355,
+      "after_sha256": "2bda3f4bb4de7bd2ecf700b2f3efc50001f15cce59a8d8ef9e66d1013a5cca8e"
+    },
+    {
+      "path": "06-取证逆向与检测/06-GDBGefStrace与动态观察.md",
+      "change": "modified",
+      "before_bytes": 4850,
+      "before_sha256": "d5c7e23caff2e8e14e401b428afabf70f73f747b782d388e58690acd2949c7d7",
+      "after_bytes": 7552,
+      "after_sha256": "5084316be193aec76a6e170980138472aaefb7642dd7baae1afb2254a532d955"
+    },
+    {
+      "path": "06-取证逆向与检测/07-YARA日志与检测规则.md",
+      "change": "modified",
+      "before_bytes": 4275,
+      "before_sha256": "320ab20d79b4df96057abf2a92be13f541c93cc3b74c92a96c7e7488953cbc28",
+      "after_bytes": 6776,
+      "after_sha256": "cc677bd8c7587d3181dab24129351b50c4ff7b2e13dfbb38a8dac92e55282c40"
+    },
+    {
+      "path": "06-取证逆向与检测/08-SuricataZeek与网络检测.md",
+      "change": "modified",
+      "before_bytes": 5204,
+      "before_sha256": "2009c625e8b14cba073c9cc3cee950b1dba589bcabe3625c3f3c165b66a9ded7",
+      "after_bytes": 8380,
+      "after_sha256": "8ceebf084124c5ba6208b33b9981ee7f3422291e2dc397144f56c6b405250b46"
+    },
+    {
+      "path": "06-取证逆向与检测/09-模糊测试Sanitizer与崩溃归因.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 6697,
+      "after_sha256": "880a82ac10d3c171534f005476ce896e6435ecd162490f3eaf6a69bbe582e119"
+    },
+    {
+      "path": "07-综合实验/01-离线实验准备与夹具说明.md",
+      "change": "modified",
+      "before_bytes": 4132,
+      "before_sha256": "d9e2a04466df60ce9c2449f8665dd1b7b949d2d3b8a1888c369e78d497b6545d",
+      "after_bytes": 5570,
+      "after_sha256": "b211776014872b944ccfdf4cf281f826b98972ea762ebc3a0ec32b5185f7d358"
+    },
+    {
+      "path": "07-综合实验/02-实验A从路由到HTTP与Nmap.md",
+      "change": "modified",
+      "before_bytes": 5456,
+      "before_sha256": "c75ea0714cba71d28149c08bde1f2621f01b11ea60f0086bbb21e6dd3b37d81c",
+      "after_bytes": 5781,
+      "after_sha256": "f2f12386abcd011037dffe092957e268856cb5145a1db9efdcf788f3ed19ddc6"
+    },
+    {
+      "path": "07-综合实验/03-实验B抓包重组与证据交叉验证.md",
+      "change": "modified",
+      "before_bytes": 4980,
+      "before_sha256": "28235cce1ee09b7def04f7829db42ee4da19306b6e0be2838d237fc55f086a62",
+      "after_bytes": 5039,
+      "after_sha256": "1536fd42b0494bac9dfdf8d42c5cb0c4390c936477c8528cc6fec3ff765519b7"
+    },
+    {
+      "path": "07-综合实验/04-实验CWeb请求与访问控制.md",
+      "change": "modified",
+      "before_bytes": 5417,
+      "before_sha256": "3a644e05988452f2c1511160ab4f90f06bd944033e9b748eb71b93d152cfcf1a",
+      "after_bytes": 5779,
+      "after_sha256": "27f6b357ebd43381b55d791ec54921df3277fc6ae18914a94c15161344962977"
+    },
+    {
+      "path": "07-综合实验/06-实验E文件分析与YARA.md",
+      "change": "modified",
+      "before_bytes": 4399,
+      "before_sha256": "3e48b6f23c03fb00893dc4ea9d115cb75c159367f1fc50ce7b6a0fb61b7d53d0",
+      "after_bytes": 4828,
+      "after_sha256": "01bf799022289a1f7078f41d08ca83b4e4a280d50f12104be20137733f36762a"
+    },
+    {
+      "path": "07-综合实验/07-实验F从发现到报告复测.md",
+      "change": "modified",
+      "before_bytes": 5084,
+      "before_sha256": "b27923e534cd06e5fdd8fccf1d1ab1e628207b58212b0af8b3c7a504db6cb3a2",
+      "after_bytes": 5458,
+      "after_sha256": "6e4e8aabffd0564f3bf481b9da9470306a2b9f31e5559e42a95b2c53607f35e0"
+    },
+    {
+      "path": "07-综合实验/08-自检题与答案定位.md",
+      "change": "modified",
+      "before_bytes": 6885,
+      "before_sha256": "cc3f0c0625e8b72920cb17d4a77cc4429976fa53c8f1998023b294bb6baf5a18",
+      "after_bytes": 9889,
+      "after_sha256": "8a361710e67918a9487345d416f97e0a1726a9b8e2e9058d069bc8a4085aa251"
+    },
+    {
+      "path": "07-综合实验/09-实验代码合同与复现.md",
+      "change": "modified",
+      "before_bytes": 4063,
+      "before_sha256": "08f26c6c2c833691f26c0edd518d267468f46c47a713df758019e9b7992ac860",
+      "after_bytes": 6568,
+      "after_sha256": "ff3bfb6e10eb425b111ff7a5fdd91a98d0acf89089ced59da0ae3c33d21b3636"
+    },
+    {
+      "path": "07-综合实验/10-实验G路由与扫描状态推理.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 5977,
+      "after_sha256": "5ea5133c715a6674477408f9345c91d05830b1fff8214e500cfa66a2a724cc17"
+    },
+    {
+      "path": "07-综合实验/11-实验H扫描XML差异与不确定性.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 5538,
+      "after_sha256": "c60565478ddf946640d14c3e62c3119be6cf6848dae3a7504af9c11399ddb8e1"
+    },
+    {
+      "path": "07-综合实验/12-实验I多租户字段与动作授权.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 5291,
+      "after_sha256": "9b576b9ababf742153f6145ea83aac367411800f7a3c663eb986cb82caccef9e"
+    },
+    {
+      "path": "07-综合实验/13-实验J时间线与检测基率.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 6020,
+      "after_sha256": "d25295cde015f58ef50f0d82b9130990efadaa8293a27931a074a7408f4baa2e"
+    },
+    {
+      "path": "07-综合实验/代码/generate_reasoning_fixtures.py",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 5920,
+      "after_sha256": "6715e04d89e7ce10fcf28b3fd8402b5d316622fb608d8f566d05109283e4fa9c"
+    },
+    {
+      "path": "07-综合实验/代码/length_record.c",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 1090,
+      "after_sha256": "d5cc8164723c1e045b8f4a124ff3f0326a8d66652ef1008ead712c44a0356e5a"
+    },
+    {
+      "path": "07-综合实验/代码/public-health.yaml",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 633,
+      "after_sha256": "ff0e911b5cbe1fa90fcbbe44d15a5ffdeb544ece766832e5e5dc181bb9cd88cc"
+    },
+    {
+      "path": "07-综合实验/代码/reasoning_lab.py",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 17722,
+      "after_sha256": "d4f38485e755e669f5f9e28d78f96abbf1a3fcfe1ed311ab5cac764642bad600"
+    },
+    {
+      "path": "07-综合实验/代码/test_reasoning_lab.py",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 16642,
+      "after_sha256": "3d804913a716cbeab2f90abf4ed93c15ca99d76d502f5a329492e04e8e940656"
+    },
+    {
+      "path": "07-综合实验/代码/verify_c_examples.py",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 5971,
+      "after_sha256": "b898fc37c974151e7ca2cf0d49e81a4a7108ee6f4ac9b774af9949eb7e90e002"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/authorization-cases.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 862,
+      "after_sha256": "7b566bfb4b9cecee7b22a45d9d954d9203149b51d98a3518f12f46bb3242e171"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/expected-v2.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 813,
+      "after_sha256": "5891b58d1019d2e62cc3eb576d49e30525d21f69d2955834e1e89787f5ec67b2"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/metrics.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 270,
+      "after_sha256": "dfb2c82775effa4aaddfa79980d33746d6e366af189d6505106ed115823ce08c"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/records.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 741,
+      "after_sha256": "4581a94feb8b67fccbe1aa2295ded9b0b8ad21d77182c18b7cd18281429fd4f0"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/route-cases.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 739,
+      "after_sha256": "cad440b0f44a45b39c12e2c1cf61a280af8135d62e21bbcd8054e1b884ae4938"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/scan-after.xml",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 746,
+      "after_sha256": "f6c65346806c3ddc852c72ce93e36b0c054193b8c7369e146a405f21677240e5"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/scan-aggregate.xml",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 550,
+      "after_sha256": "cf32f418716e54a28e9e9bfbabbae9c735bd4bec93f16da7ea3c3180e4f5d78a"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/scan-before.xml",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 744,
+      "after_sha256": "92d75a90d735e8fd4533106d69c4ea139702e1c5dcde8997d246293033a26cdb"
+    },
+    {
+      "path": "07-综合实验/夹具/v2/timeline.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 411,
+      "after_sha256": "b5a634d00639b398d4e5eb54dd80d745505910f3a6906bc0036a9c725f1dc4a8"
+    },
+    {
+      "path": "08-模板与速查/05-术语与概念桥梁.md",
+      "change": "modified",
+      "before_bytes": 6328,
+      "before_sha256": "38edbccaed557fb15a6db40efadce383c9204cee0b1f548ed8002337188b1c17",
+      "after_bytes": 7729,
+      "after_sha256": "8f1b1a3c12a5830600c69f4902895383bc5bc6ff178bc824f229a6bcf8c521f6"
+    },
+    {
+      "path": "90-来源与维护/01-来源索引与核验边界.md",
+      "change": "modified",
+      "before_bytes": 19322,
+      "before_sha256": "46380634c0bcfcc7d8bf409afc424edeecc7e6c048d8c76e18696d743da7329b",
+      "after_bytes": 35123,
+      "after_sha256": "b66a989bd64f915eb70a5a9188e5b0d447cbff5670892dc6f5d357af7313f52c"
+    },
+    {
+      "path": "90-来源与维护/02-导入维护与扩展规范.md",
+      "change": "modified",
+      "before_bytes": 4941,
+      "before_sha256": "fceddef6bb33bcb076559e1547f26a09efbd1d43402425314c8749ee42d45678",
+      "after_bytes": 5000,
+      "after_sha256": "2a34d1176cc5945779de1525db3fc09ba19adefc8fff9d89b213dc152a0774ba"
+    },
+    {
+      "path": "90-来源与维护/03-验收与构建记录.md",
+      "change": "modified",
+      "before_bytes": 5762,
+      "before_sha256": "0b81f50b818eb4962f92c53eebac399cbd91f458868f1d47a68e3026be40ea01",
+      "after_bytes": 6054,
+      "after_sha256": "6b9e351819eff18f7d6b75e8892b8ec380f550a0172554bd2dd1765f41f543a0"
+    },
+    {
+      "path": "90-来源与维护/04-v2深度审阅与变更记录.md",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 13726,
+      "after_sha256": "0dea27d5fa9b3f95ca08d635b45eb8718733fc9aaf4c418494da76ff2974408c"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/B1-static.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 1703,
+      "after_sha256": "de8f9b6ba6d243bcd3c17f6f591c1f45fee3619e4ddbe043881e0c9747be0116"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/B3-static.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 3008,
+      "after_sha256": "4a19a52f344e37e0bed3e5f6ee28f32b95a3374d9da967a77402f803aa7a4a28"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/B7-static.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 1676,
+      "after_sha256": "ba069c59d28d170a23a9790bbe75fe3f3f60bc6981f4e95c144efb9fdbcf5139"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/acceptance-final.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 3313,
+      "after_sha256": "0f0710f4f455c11964a210c83e1b3449865eb00a18fb0149e16237693585da22"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/baseline.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 18320,
+      "after_sha256": "72256fe3e18c6891a189bacde171bf9e78a24ea133680764d504efdf01bd7a86"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/batch-changes.jsonl",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 35867,
+      "after_sha256": "f5c06ec059c1455f25b8e02a2d010ae531763b80c85b2b55b1c8156e2ad6feb8"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/build-issues.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 1829,
+      "after_sha256": "82555838b9512fb808740de7eaebb6ab2adc06f6bebf4f51f6453eb624f93562"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/c-clang-asan-ubsan.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 18111,
+      "after_sha256": "576188a84b5d5e087ae6aacd815d214c5a8ed8a1d4183c35d7e2eb89bacdcf77"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/c-gcc-normal.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 17920,
+      "after_sha256": "d14914e7c0b1af94fc73e53289ea63a140e187e2925af4c7a2ed8b0355b139b5"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/c-gcc-ubsan.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 17989,
+      "after_sha256": "09515eb7693660baa4cb527c3f5fe825822fdea3aba6d4035ef95c53873122de"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/changed-files.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": null,
+      "after_sha256": null,
+      "final_hash_policy": "Not self-hashed here; final archive manifest or external receipt provides identity."
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/checker-regression-final.txt",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 1649,
+      "after_sha256": "524c603b3ed6c096518a14a423286c2ea082effadf3de125b35bae43bfe4526a"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/content-stats.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 309,
+      "after_sha256": "21c2167c55976e4467311ef65a527811178f80fc42ad95914593bf6e99c736aa"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/environment-final.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 1049,
+      "after_sha256": "35562446653a1c3de872a8a01772a44a55420144263e10cd570670eecefbaa74"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/index-fixture-final.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 6252,
+      "after_sha256": "9ffc267419c84175f8fb651f67dca013c3867d986a9ed23dbbc1137c6126d95e"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/offline-regression-final.txt",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 9301,
+      "after_sha256": "80ad1aa6a96477f00c80b55b11843e0b023c06235a3f28d436c0d3d027fb2af7"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/reasoning-after-fix.txt",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 5681,
+      "after_sha256": "f676f353a3280380a26e8158c8bb648d892b05535476fd07dd5513ccd1f77a90"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/reasoning-before-fix.txt",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 7255,
+      "after_sha256": "bf600e6183dcb1d600d2ede5885c6a4befca50fa24f406b08ed5dcb53edaef37"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/reasoning-fixtures-tests.txt",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 6710,
+      "after_sha256": "51ada15c5a78425e20728c7ddc41e20f05dbf04603f7abf9e80115c41bbceba1"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/snippet-syntax-final.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 29500,
+      "after_sha256": "c0a08729238a0e587a398dcdec307de3ce183b861a2175b6b1384f13b2670742"
+    },
+    {
+      "path": "90-来源与维护/验证/revision-v2/static-final.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 836,
+      "after_sha256": "47f507b13d7f0e1fd54d07b12a5b79afcef83708236eff929afed92d1e4ec546"
+    },
+    {
+      "path": "90-来源与维护/验证/sources-v1-snapshot.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 27076,
+      "after_sha256": "c6c1b63515f17e439a397f7fde589cda24c57674abf29a52e2d338bdaaafe5cd"
+    },
+    {
+      "path": "90-来源与维护/验证/sources.json",
+      "change": "modified",
+      "before_bytes": 27076,
+      "before_sha256": "c6c1b63515f17e439a397f7fde589cda24c57674abf29a52e2d338bdaaafe5cd",
+      "after_bytes": 59805,
+      "after_sha256": "086f1d064b3a201ab33f8edcebaa268bc24c438722eaf5f1fd36b63792bd7721"
+    },
+    {
+      "path": "90-来源与维护/验证/tool-coverage-v1-snapshot.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 29374,
+      "after_sha256": "9ad3ff627d70776451e09f4c91c0add3a47faeb308f2f3b850449ce5d936a5f8"
+    },
+    {
+      "path": "90-来源与维护/验证/tool-coverage.json",
+      "change": "modified",
+      "before_bytes": 29374,
+      "before_sha256": "9ad3ff627d70776451e09f4c91c0add3a47faeb308f2f3b850449ce5d936a5f8",
+      "after_bytes": 30913,
+      "after_sha256": "85a898a29ac1638170f6e3166544d9d714b5e342958eda8f5d70b33e792daf2f"
+    },
+    {
+      "path": "90-来源与维护/验证/tool-note-map.json",
+      "change": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "after_bytes": 4712,
+      "after_sha256": "9ea41311432f68c83cb67cdebb965b74bef2427ba836cfd8fadd4c03ded0c101"
+    },
+    {
+      "path": "MANIFEST.sha256",
+      "change": "modified",
+      "before_bytes": 15680,
+      "before_sha256": "a79a0fff47e31732b6b379be8dce0859a2994c706ddc834b683cdaf9cc3ab358",
+      "after_bytes": null,
+      "after_sha256": null,
+      "final_hash_policy": "Not self-hashed here; final archive manifest or external receipt provides identity."
+    },
+    {
+      "path": "README-导入与范围.md",
+      "change": "modified",
+      "before_bytes": 3329,
+      "before_sha256": "960d996b1e2266bffe4ed55788dba0de285d70a4098081c944eac32593443133",
+      "after_bytes": 4312,
+      "after_sha256": "cd35baeeaf39c424d009b0ca0c565a7fc47fdf3ae97dae8973e5975f7d9743c8"
+    }
+  ],
+  "scope_note": "Final content-path comparison. Only this report and the subsequently generated manifest omit after hashes to avoid self-reference; all final file identities are independently verified from the archive.",
+  "self_or_later_hash_exclusions": [
+    "90-来源与维护/验证/revision-v2/changed-files.json",
+    "MANIFEST.sha256"
+  ]
+}

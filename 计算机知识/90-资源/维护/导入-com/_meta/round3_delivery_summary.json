@@ -1,0 +1,28 @@
+{
+  "revision": "2026-09-06",
+  "input_archive": "com_complete_round2(1).zip",
+  "input_sha256": "4bc05225008a2c34ce685eb9e3b2df3f148a8e3633ab7f69b9b9c9250f48ce9b",
+  "input_files": 449,
+  "input_markdown": 296,
+  "delivered_files": 802,
+  "delivered_markdown": 434,
+  "original_paths_missing": 0,
+  "original_files_changed": 136,
+  "new_lessons": 104,
+  "new_diagrams": 56,
+  "total_svg": 70,
+  "authored_lesson_characters_including_code": 156581,
+  "external_wiki_occurrences_preserved": 145,
+  "external_wiki_targets_preserved": 44,
+  "external_markdown_links_preserved": 1,
+  "formula_total": 652,
+  "formula_syntax_passed": 652,
+  "mathjax_version": "3.2.1",
+  "lab_checks": {
+    "PASS": 16,
+    "FAIL": 0,
+    "SKIP": 1
+  },
+  "skip_reason": "rustc not installed; Rust not compiled",
+  "verification_limit": "Full-file reading and structural checks; focused semantic review; not all original statements independently verified or all original examples executed."
+}

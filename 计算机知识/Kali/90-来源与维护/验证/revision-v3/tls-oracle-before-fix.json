@@ -1,0 +1,12 @@
+{
+  "kind": "independent_synthetic_counterexample",
+  "initial_rule": "(returncode == 0) == expected_accept",
+  "simulated_result": {
+    "returncode": 2,
+    "stderr": "verify: Unknown option: -unrecognized\n"
+  },
+  "expected_accept": false,
+  "old_oracle_reports_passed": true,
+  "correct_interpretation": "option parsing failed; certificate rejection was not tested",
+  "correction": "require the intended X.509 verification error code, not any nonzero result"
+}

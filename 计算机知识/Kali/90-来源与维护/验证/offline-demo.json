@@ -1,0 +1,33 @@
+{
+  "provenance": "SYNTHETIC OFFLINE DEMO; not a security scan",
+  "authorization": {
+    "alice_17": true,
+    "bob_17": false,
+    "bob_18": true,
+    "unknown_17": false
+  },
+  "sql": {
+    "normal_safe": [
+      "alice"
+    ],
+    "injection_unsafe": [
+      "alice",
+      "bob"
+    ],
+    "injection_safe": []
+  },
+  "logs": {
+    "records": 6,
+    "statuses": {
+      "200": 3,
+      "403": 1,
+      "404": 1,
+      "500": 1
+    }
+  },
+  "toy_hashes": {
+    "targets": 2,
+    "candidates": 5,
+    "matches": 2
+  }
+}

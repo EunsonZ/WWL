@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="负载接近服务能力时，尾延迟可急剧增长"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  assume [label="仅限 M/M/1 稳态教学模型\n到达率 λ，服务率 μ=100 次/秒，λ<μ"];
+  a [label="λ=50，利用率 ρ=0.50\n平均系统时间 20 ms\np99 系统时间约 92.1 ms",fillcolor="#e6eff8"];
+  b [label="λ=90，利用率 ρ=0.90\n平均系统时间 100 ms\np99 系统时间约 460.5 ms",fillcolor="#fff0df"];
+  equation [label="E[T]=1/(μ−λ)\nP(T>t)=exp(−(μ−λ)t)\np99=ln(100)/(μ−λ)"];
+  limits [label="不是实际服务器的测量曲线\n重尾、批处理、多服务台、限流会改变模型"];
+  assume->a;assume->b;{rank=same;a;b};a->equation;b->equation;equation->limits;
+
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="640" viewBox="0 0 850 640" role="img" aria-labelledby="title desc">
+<title id="title">同一读数：只改交叉协方差或观测噪声</title>
+<desc id="desc">共享Gaussian模型和5米读数。原例后验为位置4米、速度2米每秒。左只令交叉协方差为零，速度均值不改且方差保留3。右只增噪声方差到16，后验位置1米、速度0.5米每秒，速度方差2.8。</desc>
+<style>text {font-family: "Arial Unicode MS", "PingFang SC", "Hiragino Sans GB", sans-serif; fill:#182536; font-size:26px} .small {font-size:24px} .title {font-size:30px;font-weight:bold} .head {font-size:28px;font-weight:bold} .line {stroke:#334155;stroke-width:3;fill:none} .dash {stroke:#334155;stroke-width:3;fill:none;stroke-dasharray:9 6} .box {fill:#f4f7fb;stroke:#64748b;stroke-width:2}</style><defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#334155"/></marker></defs>
+<rect width="850" height="640" fill="#fffdf8"/>
+<text x="30" y="45" class="title" text-anchor="start">位置读数怎样改变速度？</text>
+<text x="30" y="86" class="small" text-anchor="start">共同：Gaussian，独立噪声，y = 5 m</text>
+<rect x="25" y="110" width="800" height="100" rx="8" class="box"/>
+<text x="45" y="145" class="" text-anchor="start">原例：Ppv = 2，R = 1</text>
+<text x="45" y="183" class="" text-anchor="start">条件均值 (4 m, 2 m/s)，Var(v | y) = 2.2</text>
+<rect x="25" y="238" width="380" height="306" rx="8" class="box"/>
+<text x="41" y="277" class="head" text-anchor="start">A · 只撤去交叉关联</text>
+<text x="41" y="319" class="" text-anchor="start">Ppv = 0；R = 1</text>
+<text x="41" y="359" class="" text-anchor="start">K = (0.8, 0)</text>
+<path d="M54,377 L54,415" class="line" marker-end="url(#arrow)"/>
+<text x="80" y="403" class="small" text-anchor="start">条件更新</text>
+<text x="41" y="448" class="" text-anchor="start">(4 m, 0 m/s)</text>
+<text x="41" y="489" class="" text-anchor="start">Var(v | y) = 3</text>
+<text x="41" y="530" class="small" text-anchor="start">速度均值、方差不变</text>
+<rect x="445" y="238" width="380" height="306" rx="8" class="box"/>
+<text x="461" y="277" class="head" text-anchor="start">B · 只增加观测噪声</text>
+<text x="461" y="319" class="" text-anchor="start">Ppv = 2；R = 16</text>
+<text x="461" y="359" class="" text-anchor="start">K = (0.2, 0.1)</text>
+<path d="M474,377 L474,415" class="line" marker-end="url(#arrow)"/>
+<text x="500" y="403" class="small" text-anchor="start">条件更新</text>
+<text x="461" y="448" class="" text-anchor="start">(1 m, 0.5 m/s)</text>
+<text x="461" y="489" class="" text-anchor="start">Var(v | y) = 2.8</text>
+<text x="461" y="530" class="small" text-anchor="start">修正较小，不确定性较多</text>
+<text x="30" y="587" class="small" text-anchor="start">实线箭头 = 条件均值计算；不是运动轨迹</text>
+<text x="30" y="623" class="small" text-anchor="start">教学构造。完整矩阵、单位与非Gaussian反例见正文。</text>
+</svg>

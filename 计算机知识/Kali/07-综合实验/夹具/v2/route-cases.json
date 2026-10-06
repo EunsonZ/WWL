@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "destination": "192.168.56.37",
+      "expected_prefix": "192.168.56.32/27"
+    },
+    {
+      "destination": "192.168.56.64",
+      "expected_prefix": "192.168.56.0/24"
+    },
+    {
+      "destination": "198.51.100.7",
+      "expected_prefix": "0.0.0.0/0"
+    },
+    {
+      "destination": "2001:db8::1",
+      "expected_prefix": null
+    }
+  ],
+  "fixture_version": "reasoning-v2.0",
+  "routes": [
+    {
+      "interface": "uplink",
+      "metric": 1,
+      "prefix": "0.0.0.0/0"
+    },
+    {
+      "interface": "lab",
+      "metric": 10,
+      "prefix": "192.168.56.0/24"
+    },
+    {
+      "interface": "lab-specific",
+      "metric": 900,
+      "prefix": "192.168.56.32/27"
+    }
+  ],
+  "synthetic": true
+}

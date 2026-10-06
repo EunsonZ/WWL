@@ -1,0 +1,110 @@
+{
+  "thermal_2k_300K_V2_per_Hz": 3.3135576e-17,
+  "shot_1uA_A2_per_Hz": 3.204353268e-25,
+  "opamp_DC_output_terms_V2_per_Hz": {
+    "en": 6.398720191974404e-15,
+    "ip": 3.599280107985601e-17,
+    "im": 7.288542218670843e-16,
+    "ri_noise": 1.3417224700887578e-14,
+    "rf_noise": 1.490802744543064e-15,
+    "rp_noise": 3.312894987873475e-15
+  },
+  "opamp_DC_output_ASD_V_per_sqrtHz": 1.593251067729925e-07,
+  "opamp_DC_signal_input_ASD_V_per_sqrtHz": 1.7704559920407752e-08,
+  "rc_2k_10nF": {
+    "fc_Hz": 7957.747154594768,
+    "bandwidth_Hz": 12500.000000000002,
+    "variance_V2": 4.141947e-13
+  },
+  "rc_2k_10nF_0_to_fc": {
+    "fc_Hz": 7957.747154594768,
+    "bandwidth_Hz": 6250.000000000001,
+    "variance_V2": 2.0709735e-13
+  },
+  "samples": [
+    {
+      "rho": -0.8,
+      "n": 4096,
+      "seed": 20261006,
+      "amplitude_unit": "uV; variance and covariance fields in uV^2",
+      "theoretical_variance_V2": 3.3999999999999984e-12,
+      "sample_mean_square_V2": 3.3910581471092954e-12,
+      "theoretical_variance": 3.3999999999999986,
+      "sample_mean_square": 3.3910581471092955,
+      "theory_centered_95pct_chebyshev_prediction_interval": [
+        3.0640079986071083,
+        3.735992001392889
+      ],
+      "interval_scope": "known-zero-mean iid Gaussian generation; conservative prediction interval for sample mean square, not estimated hardware CI",
+      "sample_covariance": [
+        [
+          4.0066257607868145,
+          -4.780624464615633
+        ],
+        [
+          -4.780624464615633,
+          8.946055116696137
+        ]
+      ]
+    },
+    {
+      "rho": 0.0,
+      "n": 4096,
+      "seed": 20261006,
+      "amplitude_unit": "uV; variance and covariance fields in uV^2",
+      "theoretical_variance_V2": 1.3e-11,
+      "sample_mean_square_V2": 1.3100447799806573e-11,
+      "theoretical_variance": 13.0,
+      "sample_mean_square": 13.100447799806572,
+      "theory_centered_95pct_chebyshev_prediction_interval": [
+        11.715324700556597,
+        14.284675299443403
+      ],
+      "interval_scope": "known-zero-mean iid Gaussian generation; conservative prediction interval for sample mean square, not estimated hardware CI",
+      "sample_covariance": [
+        [
+          4.0066257607868145,
+          0.04554408054757391
+        ],
+        [
+          0.04554408054757391,
+          9.005826380976735
+        ]
+      ]
+    },
+    {
+      "rho": 0.8,
+      "n": 4096,
+      "seed": 20261006,
+      "amplitude_unit": "uV; variance and covariance fields in uV^2",
+      "theoretical_variance_V2": 2.26e-11,
+      "sample_mean_square_V2": 2.2749425124029044e-11,
+      "theoretical_variance": 22.6,
+      "sample_mean_square": 22.749425124029045,
+      "theory_centered_95pct_chebyshev_prediction_interval": [
+        20.366641402506083,
+        24.83335859749392
+      ],
+      "interval_scope": "known-zero-mean iid Gaussian generation; conservative prediction interval for sample mean square, not estimated hardware CI",
+      "sample_covariance": [
+        [
+          4.0066257607868145,
+          4.835277361272718
+        ],
+        [
+          4.835277361272718,
+          9.077222068673144
+        ]
+      ]
+    }
+  ],
+  "deembed_5u_3u": {
+    "status": "model_difference",
+    "rms_V": 4.000000000000001e-06
+  },
+  "fft_four_microvolt_record": {
+    "area_V2": 5.0000000000000005e-12,
+    "coherent_gain": 1.0,
+    "window_ENBW_Hz": 1.0
+  }
+}

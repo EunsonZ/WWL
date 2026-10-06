@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="写偏斜：各写不同行，仍破坏跨行不变量",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"init" [label="初始 A、B 都在岗\n要求至少一人在岗"];
+"t1" [label="T1 快照读 A、B 在岗\n写 A=离岗"];
+"t2" [label="T2 快照读 A、B 在岗\n写 B=离岗"];
+"bad" [label="两者提交\n最终无人值班"];
+"init" -> "t1";
+"init" -> "t2";
+"t1" -> "bad";
+"t2" -> "bad";
+
+}

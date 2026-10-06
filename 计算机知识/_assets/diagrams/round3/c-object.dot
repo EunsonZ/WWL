@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="数组对象与指针：范围由对象决定",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"a" [label="数组 a：4 个 int\n[0] [1] [2] [3]"];
+"p" [label="p = &a[1]\n可读写第 1 号元素"];
+"end" [label="a + 4\n尾后指针：可形成，不可解引用"];
+"bad" [label="a + 5\n已超出允许的指针运算范围"];
+"p" -> "a" [label="指向对象内部"];
+"a" -> "end" [label="合法边界"];
+"end" -> "bad" [label="不可继续越界"];
+
+}

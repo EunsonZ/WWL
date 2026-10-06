@@ -47,18 +47,20 @@ git config --local wwl.githubAutoPush true
 
 此开关只控制提交后推送，手动推送仍执行pre-push检查。同步采用Git版本与远端提交号验收，不代替知识正确性、客户端或学习效果验收。
 
-## 首次全量上传的当前状态
+## 当前实际状态：首次同步与普通提交触发已通过
 
-最新为27/30份PDF可下载，余三份404,894,468字节未传成功。完整main因缺失LFS被GH008拒绝，wwl.githubAutoPush=false；完整主线/附件和普通提交触发验收后才开启。
+2026-10-07，全部30PDF（981,125,626字节）已可下载；本次三份大附件均成功，没有应用exclude，.gitignore和原README不变。完整main已普通推送，4,590文件的远端树与本地逐mode/type/OID一致，私有属性和一份实际下载样本大小/SHA已核对。默认分支为main，旧部分分支仅保留历史现场。
 
-已实际发布codex/wwl-partial-backup-20261006：4,587文件及27PDF，README醒目标出三份缺失。API核对远端树及可下载性，取回一份样本核对哈希；没有整库clone或浏览器验收。该分支仅作部分恢复入口，不跟随main提交，不代表完整历史备份。本机原PDF、main与旧引用/bundle保全。此次结果记录将同步为分支普通后续提交，最新SHA另留实际回执。
+本库wwl.githubAutoPush=true。普通提交719b95d9d6082c8e1d8211235f89e6fe5121e4f1已实际触发post-commit，远端SHA一致。日后按修改范围显式暂存并git commit即可；保存文件不自动生成提交。普通提交成功触发自动推送及远端SHA核对已在本机实跑验证；故障处理按既有相关测试及此前失败记录的范围保留。GitHub克隆不会替其他电脑设置hooks、token或Git LFS。
 
-在库外目录、具备Git LFS和私有仓库访问权限时，可取得部分内容：
+新机器具备Git LFS和私有仓库访问权限后，在库外目录取得当前main：
 
 ```bash
-git clone --branch codex/wwl-partial-backup-20261006 --single-branch https://github.com/EunsonZ/WWL.git WWL-partial
-cd WWL-partial
+git clone --branch main https://github.com/EunsonZ/WWL.git WWL
+cd WWL
 git lfs pull
 ```
 
-上方按提交同步的说明是启用后的合同，不能把当前关闭状态读成已验。HTTP/1.1及现有代理只用于重试进程，系统网络/全局Git/凭据未改；临时防闲置睡眠进程已退出。本库原LFS参数仍为两路、120秒活动超时、一次重试。详见[[Logs/2026-10-06_GitHub私有仓库同步|实际结果与待办]]。
+上述整库clone/还原命令未在本轮实跑；也没有逐份下载全部30附件或浏览器/Obsidian验收。凭据保持库外，秘密检查继续执行；源码R3及测试证据按不变输入复用。全局Git、系统网络、电源、依赖和插件不变；首次上传的HTTP/1.1/现有代理仅作用于当次进程，真实提交触发使用日常默认配置成功。临时防闲置睡眠随进程退出。
+
+详见[[Logs/2026-10-06_GitHub私有仓库同步|实际结果、保全及未验层]]。

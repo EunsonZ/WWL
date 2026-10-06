@@ -13,7 +13,7 @@ sources:
 
 ## 日常操作
 
-按本次实际修改范围显式暂存文件，再运行 `git commit`。本机的 `.githooks/post-commit` 会把当前已提交分支推送到 `origin` 的同名分支，并核对远端提交号。它不暂存其他文件，不自动合并，不强制推送。推送失败时保留本地提交并显示重试命令：
+按本次实际修改范围显式暂存文件，再运行 `git commit`。启用后，本机的 `.githooks/post-commit` 会把当前已提交分支推送到 `origin` 的同名分支，并核对远端提交号。它不暂存其他文件，不自动合并，不强制推送。推送失败时保留本地提交并显示重试命令：
 
 ```bash
 python3 scripts/github_sync.py
@@ -31,7 +31,7 @@ PDF 使用 Git LFS。新机器克隆前需具备 Git LFS；克隆后执行 `git 
 
 ## 本机配置与迁移
 
-本次配置只作用于此库：`core.hooksPath=.githooks`、`core.askPass`、`wwl.githubRepository`、`wwl.githubTokenFile`、`wwl.githubAutoPush=true`、`credential.helper`空值和Git LFS过滤器。迁移到其他电脑后，需在该电脑设置token文件、Git LFS及hook路径；Git克隆不会自动启用本机hooks。
+目标配置只作用于此库：`core.hooksPath=.githooks`、`core.askPass`、`wwl.githubRepository`、`wwl.githubTokenFile`、`wwl.githubAutoPush=true`、`credential.helper`空值和Git LFS过滤器。迁移到其他电脑后，需在该电脑设置token文件、Git LFS及hook路径；Git克隆不会自动启用本机hooks。
 
 临时停止提交后自动推送：
 
@@ -46,3 +46,9 @@ git config --local wwl.githubAutoPush true
 ```
 
 此开关只控制提交后推送，手动推送仍执行pre-push检查。同步采用Git版本与远端提交号验收，不代替知识正确性、客户端或学习效果验收。
+
+## 首次全量上传的当前状态
+
+2026-10-06已创建私有仓库并冻结完整本地快照，上传尚未完成：20/30份PDF可下载，Git正文与main分支尚未推送成功。当前`wwl.githubAutoPush=false`；余下附件、远端Git树及普通提交的实际推送验收后才开启。没有文件编辑自动提交或后台监控。
+
+本库LFS参数实际设为`lfs.concurrenttransfers=2`、`lfs.activitytimeout=120`、`lfs.transfer.maxretries=1`，对应单文件原生较长超时测试通过；不能据此宣称所有大附件已通过。原生失败、HTTP/1.1局部成功与未完成的大附件分别记录。详见[[Logs/2026-10-06_GitHub私有仓库同步|实际进度与剩余验证]]。

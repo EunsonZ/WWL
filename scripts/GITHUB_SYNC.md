@@ -49,6 +49,16 @@ git config --local wwl.githubAutoPush true
 
 ## 首次全量上传的当前状态
 
-2026-10-06已创建私有仓库并冻结完整本地快照，上传尚未完成：20/30份PDF可下载，Git正文与main分支尚未推送成功。当前`wwl.githubAutoPush=false`；余下附件、远端Git树及普通提交的实际推送验收后才开启。没有文件编辑自动提交或后台监控。
+最新为27/30份PDF可下载，余三份404,894,468字节未传成功。完整main因缺失LFS被GH008拒绝，wwl.githubAutoPush=false；完整主线/附件和普通提交触发验收后才开启。
 
-本库LFS参数实际设为`lfs.concurrenttransfers=2`、`lfs.activitytimeout=120`、`lfs.transfer.maxretries=1`，对应单文件原生较长超时测试通过；不能据此宣称所有大附件已通过。原生失败、HTTP/1.1局部成功与未完成的大附件分别记录。详见[[Logs/2026-10-06_GitHub私有仓库同步|实际进度与剩余验证]]。
+已实际发布codex/wwl-partial-backup-20261006：4,587文件及27PDF，README醒目标出三份缺失。API核对远端树及可下载性，取回一份样本核对哈希；没有整库clone或浏览器验收。该分支仅作部分恢复入口，不跟随main提交，不代表完整历史备份。本机原PDF、main与旧引用/bundle保全。此次结果记录将同步为分支普通后续提交，最新SHA另留实际回执。
+
+在库外目录、具备Git LFS和私有仓库访问权限时，可取得部分内容：
+
+```bash
+git clone --branch codex/wwl-partial-backup-20261006 --single-branch https://github.com/EunsonZ/WWL.git WWL-partial
+cd WWL-partial
+git lfs pull
+```
+
+上方按提交同步的说明是启用后的合同，不能把当前关闭状态读成已验。HTTP/1.1及现有代理只用于重试进程，系统网络/全局Git/凭据未改；临时防闲置睡眠进程已退出。本库原LFS参数仍为两路、120秒活动超时、一次重试。详见[[Logs/2026-10-06_GitHub私有仓库同步|实际结果与待办]]。

@@ -1,0 +1,48 @@
+{
+  "ADC_bits": 4,
+  "ADC_each_J": 5e-11,
+  "ADC_fullscale_A": 2e-05,
+  "DAC_each_J": 5e-12,
+  "G_S": [
+    [
+      1e-05,
+      2e-05
+    ],
+    [
+      3e-05,
+      4e-05
+    ]
+  ],
+  "amortized_uses": 1000,
+  "baseline_S": 1e-06,
+  "calibration_J": 1e-07,
+  "communication_J": 0,
+  "digital_J": 5e-12,
+  "dwell_s": 1e-06,
+  "idle_J": 0,
+  "input_V": [
+    0.1,
+    0.2
+  ],
+  "input_scale_V": 0.1,
+  "lif_C_F": 1e-09,
+  "lif_R_ohm": 10000000.0,
+  "lif_current_A": 2e-09,
+  "lif_duration_s": 0.03,
+  "lif_hold_s": 0.001,
+  "lif_rest_reset_V": 0,
+  "lif_threshold_V": 0.01,
+  "units": "SI",
+  "weight_scale_S": 1e-05,
+  "weights": [
+    [
+      1,
+      -2
+    ],
+    [
+      -3,
+      4
+    ]
+  ],
+  "wire_ohm": 1000
+}

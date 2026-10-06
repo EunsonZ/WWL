@@ -1,7 +1,8 @@
 """Deterministic teaching models, SI units; no SPICE or physical validation.
-Run: python3 -B device_examples.py. Plots require existing matplotlib/numpy.
+Run: python3 -B device_examples.py --output /private/tmp/device-run. Plots require existing matplotlib/numpy.
 All public inputs are finite scalar reals; bool and nonfinite values rejected.
 """
+import argparse
 import math
 import json
 from pathlib import Path
@@ -142,7 +143,8 @@ def plots(destination, only=None):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     from matplotlib.patches import Rectangle
-    destination.mkdir(exist_ok=True)
+    destination = Path(destination)
+    destination.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({'font.size': 10, 'svg.fonttype': 'none'})
     def save(fig, name):
         if only is not None and name not in only:
@@ -185,8 +187,9 @@ def plots(destination, only=None):
     fig,ax=plt.subplots(figsize=(6,4),layout='constrained'); ax.loglog(f,amplitude,'--',color='black',label='SR + swing envelope'); ax.axvline(f1,color='black',label='1% single-pole amplitude limit'); ax.axhline(2,color='tab:blue',linestyle=':',label='2 V peak swing'); ax.fill_between(f,.005,amplitude,where=f<=f1,color='lightgray'); ax.set(xlabel='Frequency (Hz)',ylabel='Output peak (V)',ylim=(.005,4),title='Necessary conditions, not a stability proof'); ax.legend(fontsize=8); ax.grid(); save(fig,'opamp-limits')
 
 
-if __name__ == '__main__':
-    out=Path(__file__).parent/'assets'
+def generate(output):
+    """Generate teaching results and plots only at the supplied output path."""
+    out=Path(output)
     plots(out)
     result={'diode':diode_bias(5,4700), 'diode_transfer':diode_bias(3,2200),
             'mos':mos_bias(5,2000,1),
@@ -200,4 +203,15 @@ if __name__ == '__main__':
             'periodic_boundary':mos_periodic_boundary(),
             'periodic_transfer_boundary':mos_periodic_boundary(rd=3000,rl=6000)}
     (out/'results.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
-    print(json.dumps(result,indent=2))
+    return result
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args(argv)
+    print(json.dumps(generate(args.output), indent=2, allow_nan=False))
+
+
+if __name__ == '__main__':
+    main()

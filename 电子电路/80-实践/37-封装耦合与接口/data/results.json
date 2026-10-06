@@ -1,0 +1,67 @@
+{
+  "interface": {
+    "raw_bps_one_direction": 256000000000.0,
+    "useful_bps": 192752941176.47058,
+    "frames": 4,
+    "wire_bits": 2176.0,
+    "serialization_s_no_queue": 8.5e-09,
+    "latency_s_no_queue": 1.05e-08,
+    "dynamic_W_at_duty": 0.1024,
+    "total_link_W": 0.12240000000000001,
+    "message_dynamic_J": 1.088e-09,
+    "note": "all bytes before adapter overhead are protocol information, not necessarily application payload; no retries/queue/training in delay"
+  },
+  "thermal_with_link": {
+    "steady_rise_K": [
+      14.122399999999999,
+      10.122399999999999
+    ],
+    "rise_K": [
+      14.122399999831645,
+      10.122399999831645
+    ],
+    "temperature_K": [
+      314.12239999983166,
+      310.12239999983166
+    ],
+    "time_constants_s": [
+      4.0,
+      2.0
+    ],
+    "initial_rise_K": [
+      0.0,
+      0.0
+    ]
+  },
+  "cte": {
+    "free_mismatch_m": 3.6000000000000003e-06,
+    "kinematic_shear_estimate": 0.036000000000000004,
+    "lifetime_claim": false
+  },
+  "mono_cost": {
+    "die_yields": [
+      0.5488116360940264
+    ],
+    "known_good_die_input_cost": 72.88475201562036,
+    "cost_per_good_assembly": 78.67146668244482,
+    "assumptions": "independent Poisson defects; perfect sorting, no repair, one die of each area per system, homogeneous cost; no shared-correlated losses"
+  },
+  "chiplet_cost": {
+    "die_yields": [
+      0.7408182206817179,
+      0.7408182206817179
+    ],
+    "known_good_die_input_cost": 53.994352303040124,
+    "cost_per_good_assembly": 67.3624761084633,
+    "assumptions": "independent Poisson defects; perfect sorting, no repair, one die of each area per system, homogeneous cost; no shared-correlated losses"
+  },
+  "chiplet_expensive": {
+    "die_yields": [
+      0.7408182206817179,
+      0.7408182206817179
+    ],
+    "known_good_die_input_cost": 53.994352303040124,
+    "cost_per_good_assembly": 83.15194979267383,
+    "assumptions": "independent Poisson defects; perfect sorting, no repair, one die of each area per system, homogeneous cost; no shared-correlated losses"
+  }
+}

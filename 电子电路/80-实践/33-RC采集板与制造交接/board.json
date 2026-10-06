@@ -1,0 +1,542 @@
+{
+  "id": "RCDAQ-P1",
+  "revision": "1-author-candidate",
+  "board_mm": [
+    40,
+    30
+  ],
+  "max_external_voltage_V": 3.3,
+  "parts": [
+    {
+      "ref": "J1",
+      "value": "IN/GND",
+      "footprint": "PCBTeaching:Header2",
+      "x_mm": 5,
+      "y_mm": 10,
+      "nets": [
+        "IN",
+        "GND"
+      ]
+    },
+    {
+      "ref": "R1",
+      "value": "1k",
+      "footprint": "PCBTeaching:Passive0805",
+      "x_mm": 10,
+      "y_mm": 10,
+      "nets": [
+        "IN",
+        "OUT"
+      ]
+    },
+    {
+      "ref": "C1",
+      "value": "1u",
+      "footprint": "PCBTeaching:Passive0805",
+      "x_mm": 18,
+      "y_mm": 12,
+      "nets": [
+        "OUT",
+        "GND"
+      ]
+    },
+    {
+      "ref": "R2",
+      "value": "10k",
+      "footprint": "PCBTeaching:Passive0805",
+      "x_mm": 24,
+      "y_mm": 12,
+      "nets": [
+        "OUT",
+        "GND"
+      ]
+    },
+    {
+      "ref": "J2",
+      "value": "VDD/OUT/GND",
+      "footprint": "PCBTeaching:Header3",
+      "x_mm": 35,
+      "y_mm": 8,
+      "nets": [
+        "VDD",
+        "OUT",
+        "GND"
+      ]
+    },
+    {
+      "ref": "J3",
+      "value": "VDD/GND",
+      "footprint": "PCBTeaching:Header2",
+      "x_mm": 5,
+      "y_mm": 24,
+      "nets": [
+        "VDD",
+        "GND"
+      ]
+    },
+    {
+      "ref": "C2",
+      "value": "100n",
+      "footprint": "PCBTeaching:Passive0805",
+      "x_mm": 32,
+      "y_mm": 17,
+      "nets": [
+        "VDD",
+        "GND"
+      ]
+    },
+    {
+      "ref": "C3",
+      "value": "1u",
+      "footprint": "PCBTeaching:Passive0805",
+      "x_mm": 27,
+      "y_mm": 23,
+      "nets": [
+        "VDD",
+        "GND"
+      ]
+    },
+    {
+      "ref": "TP1",
+      "value": "IN",
+      "footprint": "PCBTeaching:TestPad",
+      "x_mm": 7,
+      "y_mm": 6,
+      "nets": [
+        "IN"
+      ]
+    },
+    {
+      "ref": "TP2",
+      "value": "OUT",
+      "footprint": "PCBTeaching:TestPad",
+      "x_mm": 22,
+      "y_mm": 6,
+      "nets": [
+        "OUT"
+      ]
+    },
+    {
+      "ref": "TP3",
+      "value": "VDD",
+      "footprint": "PCBTeaching:TestPad",
+      "x_mm": 33,
+      "y_mm": 23,
+      "nets": [
+        "VDD"
+      ]
+    },
+    {
+      "ref": "TP4",
+      "value": "GND",
+      "footprint": "PCBTeaching:TestPad",
+      "x_mm": 22,
+      "y_mm": 26,
+      "nets": [
+        "GND"
+      ]
+    }
+  ],
+  "pads": [
+    {
+      "ref": "J1",
+      "pin": "1",
+      "net": "IN",
+      "x_mm": 5,
+      "y_mm": 10.0
+    },
+    {
+      "ref": "J1",
+      "pin": "2",
+      "net": "GND",
+      "x_mm": 5,
+      "y_mm": 12.54
+    },
+    {
+      "ref": "R1",
+      "pin": "1",
+      "net": "IN",
+      "x_mm": 9.05,
+      "y_mm": 10
+    },
+    {
+      "ref": "R1",
+      "pin": "2",
+      "net": "OUT",
+      "x_mm": 10.95,
+      "y_mm": 10
+    },
+    {
+      "ref": "C1",
+      "pin": "1",
+      "net": "OUT",
+      "x_mm": 17.05,
+      "y_mm": 12
+    },
+    {
+      "ref": "C1",
+      "pin": "2",
+      "net": "GND",
+      "x_mm": 18.95,
+      "y_mm": 12
+    },
+    {
+      "ref": "R2",
+      "pin": "1",
+      "net": "OUT",
+      "x_mm": 23.05,
+      "y_mm": 12
+    },
+    {
+      "ref": "R2",
+      "pin": "2",
+      "net": "GND",
+      "x_mm": 24.95,
+      "y_mm": 12
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "net": "VDD",
+      "x_mm": 35,
+      "y_mm": 8.0
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "net": "OUT",
+      "x_mm": 35,
+      "y_mm": 10.54
+    },
+    {
+      "ref": "J2",
+      "pin": "3",
+      "net": "GND",
+      "x_mm": 35,
+      "y_mm": 13.08
+    },
+    {
+      "ref": "J3",
+      "pin": "1",
+      "net": "VDD",
+      "x_mm": 5,
+      "y_mm": 24.0
+    },
+    {
+      "ref": "J3",
+      "pin": "2",
+      "net": "GND",
+      "x_mm": 5,
+      "y_mm": 26.54
+    },
+    {
+      "ref": "C2",
+      "pin": "1",
+      "net": "VDD",
+      "x_mm": 31.05,
+      "y_mm": 17
+    },
+    {
+      "ref": "C2",
+      "pin": "2",
+      "net": "GND",
+      "x_mm": 32.95,
+      "y_mm": 17
+    },
+    {
+      "ref": "C3",
+      "pin": "1",
+      "net": "VDD",
+      "x_mm": 26.05,
+      "y_mm": 23
+    },
+    {
+      "ref": "C3",
+      "pin": "2",
+      "net": "GND",
+      "x_mm": 27.95,
+      "y_mm": 23
+    },
+    {
+      "ref": "TP1",
+      "pin": "1",
+      "net": "IN",
+      "x_mm": 7,
+      "y_mm": 6.0
+    },
+    {
+      "ref": "TP2",
+      "pin": "1",
+      "net": "OUT",
+      "x_mm": 22,
+      "y_mm": 6.0
+    },
+    {
+      "ref": "TP3",
+      "pin": "1",
+      "net": "VDD",
+      "x_mm": 33,
+      "y_mm": 23.0
+    },
+    {
+      "ref": "TP4",
+      "pin": "1",
+      "net": "GND",
+      "x_mm": 22,
+      "y_mm": 26.0
+    }
+  ],
+  "front_paths": {
+    "IN": [
+      [
+        [
+          5,
+          10
+        ],
+        [
+          9.05,
+          10
+        ]
+      ],
+      [
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          10
+        ]
+      ]
+    ],
+    "OUT": [
+      [
+        [
+          10.95,
+          10
+        ],
+        [
+          17.05,
+          10
+        ],
+        [
+          17.05,
+          12
+        ]
+      ],
+      [
+        [
+          17.05,
+          10
+        ],
+        [
+          23.05,
+          10
+        ],
+        [
+          23.05,
+          12
+        ]
+      ],
+      [
+        [
+          23.05,
+          10
+        ],
+        [
+          29,
+          10
+        ],
+        [
+          29,
+          10.54
+        ],
+        [
+          35,
+          10.54
+        ]
+      ],
+      [
+        [
+          22,
+          6
+        ],
+        [
+          22,
+          10
+        ]
+      ]
+    ],
+    "VDD": [
+      [
+        [
+          5,
+          24
+        ],
+        [
+          5,
+          20
+        ],
+        [
+          26.05,
+          20
+        ],
+        [
+          26.05,
+          23
+        ]
+      ],
+      [
+        [
+          26.05,
+          20
+        ],
+        [
+          31.05,
+          20
+        ],
+        [
+          31.05,
+          17
+        ]
+      ],
+      [
+        [
+          31.05,
+          17
+        ],
+        [
+          31.05,
+          19
+        ],
+        [
+          38,
+          19
+        ],
+        [
+          38,
+          8
+        ],
+        [
+          35,
+          8
+        ]
+      ],
+      [
+        [
+          26.05,
+          23
+        ],
+        [
+          26.05,
+          21
+        ],
+        [
+          33,
+          21
+        ],
+        [
+          33,
+          23
+        ]
+      ]
+    ],
+    "GND": [
+      [
+        [
+          18.95,
+          12
+        ],
+        [
+          18.95,
+          12.9
+        ]
+      ],
+      [
+        [
+          24.95,
+          12
+        ],
+        [
+          24.95,
+          12.9
+        ]
+      ],
+      [
+        [
+          32.95,
+          17
+        ],
+        [
+          32.95,
+          17.9
+        ]
+      ],
+      [
+        [
+          27.95,
+          23
+        ],
+        [
+          27.95,
+          23.9
+        ]
+      ],
+      [
+        [
+          22,
+          26.0
+        ],
+        [
+          22,
+          26.9
+        ]
+      ]
+    ]
+  },
+  "ground_vias": [
+    {
+      "x_mm": 18.95,
+      "y_mm": 12.9,
+      "net": "GND"
+    },
+    {
+      "x_mm": 24.95,
+      "y_mm": 12.9,
+      "net": "GND"
+    },
+    {
+      "x_mm": 32.95,
+      "y_mm": 17.9,
+      "net": "GND"
+    },
+    {
+      "x_mm": 27.95,
+      "y_mm": 23.9,
+      "net": "GND"
+    },
+    {
+      "x_mm": 22,
+      "y_mm": 26.9,
+      "net": "GND"
+    }
+  ],
+  "stackup": {
+    "layers": [
+      "F.Cu",
+      "B.Cu"
+    ],
+    "reference": "B.Cu GND continuous requested zone, must fill and real DRC before manufacture",
+    "thickness_mm": 1.6,
+    "copper_um": 35,
+    "dielectric": "FR4 illustrative; actual supplier stackup not selected"
+  },
+  "rules": {
+    "clearance_mm": 0.25,
+    "signal_width_mm": 0.25,
+    "power_width_mm": 0.5,
+    "via_diameter_mm": 0.6,
+    "via_drill_mm": 0.3
+  },
+  "scope": "all passive; J2 attaches external ADC; no on-board active ADC/clock; not yet KiCad-parsed/ERC/DRC/zone-filled/manufactured"
+}

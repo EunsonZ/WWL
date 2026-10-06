@@ -1,0 +1,36 @@
+---
+type: code-mirror
+domain: electronics
+stage: 3
+aliases: []
+sources: []
+prerequisites: []
+---
+# 固定输入登记
+
+真源为 `pipeline-inputs.json`，每项 SHA 约束正式主库源码版本。
+
+```json
+{
+  "hdl": {
+    "path": "电子电路/80-实践/26-HDL缓冲器与性质/hdl_model.py",
+    "sha256": "64d7074b9d7a5759533c10294e773191c5569a185fa597b680257530d0b1c338"
+  },
+  "embedded": {
+    "path": "电子电路/80-实践/30-采集DMA与闭环/models.py",
+    "sha256": "dbbc9434557f545b372e2479c4b89f3e563d00c8fb739fd1427fae1772596df1"
+  },
+  "rf": {
+    "path": "电子电路/80-实践/31-电磁射频与高速/models.py",
+    "sha256": "c6f622ed0ade0206263da705c5d6e6f05113aff289aebb552f87ddf0f6ef508b"
+  },
+  "pcb": {
+    "path": "电子电路/80-实践/33-RC采集板与制造交接/pcb_model.py",
+    "sha256": "0beb7626d9531c6370d5979846aed11a636433e0f12981e4b1434c99c11a7d32"
+  },
+  "budget": {
+    "path": "电子电路/80-实践/02-弱信号前端预算/frontend_budget.py",
+    "sha256": "40de7fed373756602cf76e5169d49ca25d18a6d734e932bdbe306995ab30590d"
+  }
+}
+```

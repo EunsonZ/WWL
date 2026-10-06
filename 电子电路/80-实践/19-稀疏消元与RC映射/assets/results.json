@@ -1,0 +1,384 @@
+{
+  "center": {
+    "rhs_A": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "volts_V": [
+      "2/3",
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "source_W": "2/3",
+    "dissipation_W": "2/3",
+    "center_first": [
+      {
+        "eliminated": 0,
+        "pivot_S": "3",
+        "remaining": [
+          1,
+          2,
+          3
+        ],
+        "fill_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "matrix_S": [
+          [
+            "5/3",
+            "-1/3",
+            "-1/3"
+          ],
+          [
+            "-1/3",
+            "5/3",
+            "-1/3"
+          ],
+          [
+            "-1/3",
+            "-1/3",
+            "5/3"
+          ]
+        ],
+        "rhs_A": [
+          "1/3",
+          "1/3",
+          "1/3"
+        ]
+      },
+      {
+        "eliminated": 1,
+        "pivot_S": "5/3",
+        "remaining": [
+          2,
+          3
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "8/5",
+            "-2/5"
+          ],
+          [
+            "-2/5",
+            "8/5"
+          ]
+        ],
+        "rhs_A": [
+          "2/5",
+          "2/5"
+        ]
+      },
+      {
+        "eliminated": 2,
+        "pivot_S": "8/5",
+        "remaining": [
+          3
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "3/2"
+          ]
+        ],
+        "rhs_A": [
+          "1/2"
+        ]
+      },
+      {
+        "eliminated": 3,
+        "pivot_S": "3/2",
+        "remaining": [],
+        "fill_pairs": [],
+        "matrix_S": [],
+        "rhs_A": []
+      }
+    ],
+    "leaf_first": [
+      {
+        "eliminated": 1,
+        "pivot_S": "2",
+        "remaining": [
+          0,
+          2,
+          3
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "5/2",
+            "-1",
+            "-1"
+          ],
+          [
+            "-1",
+            "2",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "2"
+          ]
+        ],
+        "rhs_A": [
+          "1",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "eliminated": 2,
+        "pivot_S": "2",
+        "remaining": [
+          0,
+          3
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "2",
+            "-1"
+          ],
+          [
+            "-1",
+            "2"
+          ]
+        ],
+        "rhs_A": [
+          "1",
+          "0"
+        ]
+      },
+      {
+        "eliminated": 3,
+        "pivot_S": "2",
+        "remaining": [
+          0
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "3/2"
+          ]
+        ],
+        "rhs_A": [
+          "1"
+        ]
+      },
+      {
+        "eliminated": 0,
+        "pivot_S": "3/2",
+        "remaining": [],
+        "fill_pairs": [],
+        "matrix_S": [],
+        "rhs_A": []
+      }
+    ]
+  },
+  "leaf1": {
+    "rhs_A": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "volts_V": [
+      "1/3",
+      "2/3",
+      "1/6",
+      "1/6"
+    ],
+    "source_W": "2/3",
+    "dissipation_W": "2/3",
+    "center_first": [
+      {
+        "eliminated": 0,
+        "pivot_S": "3",
+        "remaining": [
+          1,
+          2,
+          3
+        ],
+        "fill_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "matrix_S": [
+          [
+            "5/3",
+            "-1/3",
+            "-1/3"
+          ],
+          [
+            "-1/3",
+            "5/3",
+            "-1/3"
+          ],
+          [
+            "-1/3",
+            "-1/3",
+            "5/3"
+          ]
+        ],
+        "rhs_A": [
+          "1",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "eliminated": 1,
+        "pivot_S": "5/3",
+        "remaining": [
+          2,
+          3
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "8/5",
+            "-2/5"
+          ],
+          [
+            "-2/5",
+            "8/5"
+          ]
+        ],
+        "rhs_A": [
+          "1/5",
+          "1/5"
+        ]
+      },
+      {
+        "eliminated": 2,
+        "pivot_S": "8/5",
+        "remaining": [
+          3
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "3/2"
+          ]
+        ],
+        "rhs_A": [
+          "1/4"
+        ]
+      },
+      {
+        "eliminated": 3,
+        "pivot_S": "3/2",
+        "remaining": [],
+        "fill_pairs": [],
+        "matrix_S": [],
+        "rhs_A": []
+      }
+    ],
+    "leaf_first": [
+      {
+        "eliminated": 1,
+        "pivot_S": "2",
+        "remaining": [
+          0,
+          2,
+          3
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "5/2",
+            "-1",
+            "-1"
+          ],
+          [
+            "-1",
+            "2",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "2"
+          ]
+        ],
+        "rhs_A": [
+          "1/2",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "eliminated": 2,
+        "pivot_S": "2",
+        "remaining": [
+          0,
+          3
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "2",
+            "-1"
+          ],
+          [
+            "-1",
+            "2"
+          ]
+        ],
+        "rhs_A": [
+          "1/2",
+          "0"
+        ]
+      },
+      {
+        "eliminated": 3,
+        "pivot_S": "2",
+        "remaining": [
+          0
+        ],
+        "fill_pairs": [],
+        "matrix_S": [
+          [
+            "3/2"
+          ]
+        ],
+        "rhs_A": [
+          "1/2"
+        ]
+      },
+      {
+        "eliminated": 0,
+        "pivot_S": "3/2",
+        "remaining": [],
+        "fill_pairs": [],
+        "matrix_S": [],
+        "rhs_A": []
+      }
+    ]
+  }
+}

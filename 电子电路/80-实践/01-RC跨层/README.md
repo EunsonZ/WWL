@@ -35,7 +35,7 @@ QFormat 是参考有限字长仿真：16 位有符号、14 小数位，四舍六
 在本目录启动。下面命令将缓存和新图全部写入库外新目录；无需安装依赖，需 Python 与已有 numpy/matplotlib。`python3` 可替换为已有虚拟环境的解释器；本批实际使用主库 `.venv/bin/python` 只读运行。若依赖缺失，应记录未运行，不自动安装。
 
 ```bash
-python3 -B -m unittest -v test_rc_lab
+python3 -B -m unittest -v test_rc_lab test_rc_revision
 ```
 
 ```bash
@@ -43,7 +43,9 @@ task_rc_output="$(mktemp -d /private/tmp/wwl-rc-reproduce.XXXXXX)"
 MPLCONFIGDIR="$task_rc_output/mplconfig" XDG_CACHE_HOME="$task_rc_output/cache" python3 -B plot_rc.py --output "$task_rc_output/assets"
 ```
 
-这是人为执行的临时输出变量，不是启动常驻服务。若在别处运行测试，先进入包含 `rc_lab.py` 的目录，或用 `unittest discover -s` 指定它。`-B` 防止在源码旁生成字节码。重新生成后用 `diff -r` 比较库外 assets 与已交付 assets；同版本同环境应逐字一致。跨 matplotlib 版本的 SVG 形状或 PNG 元数据可能变化，应同时核对 CSV、JSON 数值和视觉，而不能无条件宣称跨版本逐字相同。
+这是人为执行的临时输出变量，不是启动常驻服务。若在别处运行测试，先进入包含 `rc_lab.py` 的目录，或用 `unittest discover -s` 指定它。`-B` 防止在源码旁生成字节码。重新生成后先核对 CSV/JSON 数值、SVG 结构及图注；不同绘图库环境可能改变图形序列化或 PNG 元数据，文件字节差异本身不等于模型变化。`plot_rc.generate(output)` 仅在显式调用时创建输出；导入不解析调用者参数、不加载绘图库或初始化其缓存。
+
+新增阅读镜像 [[电子电路/80-实践/01-RC跨层/code-sync/test_rc_revision|RC 标杆与生成入口测试源码]] 由真源同步。`test_rc_revision.py` 额外独立核对 0.4 V 初值、ω/f 单位、加载系数、逐拍延迟、Euler 的 2τ 边界及同τ的两组元件。其进程测试用陌生 argv 导入全部五个现有生成入口、检查无参数退出码 2、源码/资产哈希未变，并在新的嵌套库外目录实际复算三组绘图。绘图测试需要已有 matplotlib/CairoSVG；陌生参数导入测试不预先加载绘图库。
 
 ## 十项验证各自证明什么
 

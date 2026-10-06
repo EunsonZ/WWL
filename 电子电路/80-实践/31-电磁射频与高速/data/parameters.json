@@ -1,0 +1,23 @@
+{
+  "Lprime_H_per_m": 2.5e-07,
+  "Cprime_F_per_m": 1e-10,
+  "length_m": 0.1,
+  "Vs_V": 1,
+  "source_ohm": 25,
+  "reference_ohm": 50,
+  "PDN_branches_C_ESR_ESL": [
+    [
+      1e-07,
+      0.02,
+      1e-09
+    ],
+    [
+      1e-09,
+      0.02,
+      1e-09
+    ]
+  ],
+  "UI_s": 1e-09,
+  "eye_tau_s": 2.5e-10,
+  "antenna_pattern": "short dipole normalized POWER sin(theta)^2, theta from +z"
+}

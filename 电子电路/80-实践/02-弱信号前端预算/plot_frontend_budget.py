@@ -3,21 +3,22 @@ from pathlib import Path
 import argparse
 import csv
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import cairosvg
 from frontend_budget import Budget, fail_case, evaluate, noise_spectra, acquisition_error, settling_error, half_lsb
-plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'svg.hashsalt':'wwl-u4-v1','svg.fonttype':'none'})
-
-
-def save(fig, output, name):
-    svg=output/(name+'.svg');fig.savefig(svg,metadata={'Date':None},facecolor='white')
-    plt.close(fig)
-    cairosvg.svg2png(url=str(svg),write_to=str(output/(name+'-425.png')),output_width=425)
 
 
 def generate(output):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    import cairosvg
+    plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'svg.hashsalt':'wwl-u4-v1','svg.fonttype':'none'})
+
+    def save(fig, output, name):
+        svg=output/(name+'.svg');fig.savefig(svg,metadata={'Date':None},facecolor='white')
+        plt.close(fig)
+        cairosvg.svg2png(url=str(svg),write_to=str(output/(name+'-425.png')),output_width=425)
+
+
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     cfg=Budget();freq=np.geomspace(cfg.low_hz,cfg.high_hz,700)
     spectra=np.array([noise_spectra(cfg,float(f)) for f in freq]);psd=spectra.sum(axis=1)
@@ -60,6 +61,11 @@ def generate(output):
     save(fig,output,'settling-swing')
 
 
+def main(argv=None):
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',type=Path,required=True)
+    generate(parser.parse_args(argv).output)
+
+
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
-    generate(parser.parse_args().output)
+    main()

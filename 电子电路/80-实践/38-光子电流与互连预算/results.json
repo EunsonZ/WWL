@@ -1,0 +1,43 @@
+{
+  "evidence": "CPU teaching prediction; no device/SPICE/EM/hardware measurement",
+  "modulation": {
+    "noise_RMS_V": 3.0666766961419586e-05,
+    "optical_small_peak_W": 3.926990816987242e-07,
+    "output_small_peak_V": 0.018925753512000928,
+    "photo_DC_A": 2.399499321361391e-06,
+    "received_DC_W": 5e-06
+  },
+  "noise_RMS_V": 4.1370355339292935e-05,
+  "noise_refined_RMS_V": 4.137035533929282e-05,
+  "optical": {
+    "photo_A": 4.798998642722782e-06,
+    "photon_J": 2.336995126057563e-19,
+    "photon_s": 42789990824113.04,
+    "received_W": 1e-05,
+    "responsivity_A_W": 0.4798998642722781
+  },
+  "parameters": {
+    "A0": 100000.0,
+    "CF_F": 1e-12,
+    "CT_F": 1e-11,
+    "RF_Ohm": 100000.0,
+    "Rsh_Ohm": 1000000000.0,
+    "Vpi_V": 4,
+    "band_Hz": 100000.0,
+    "dark_A": 1e-09,
+    "en_V_sqrtHz": 5e-09,
+    "external_QE": 0.7,
+    "fT_Hz": 10000000.0,
+    "in_A_sqrtHz": 2e-15,
+    "loss_dB": 10,
+    "phase_bias_rad": 1.5707963267948966,
+    "source_W": 0.0001,
+    "temperature_K": 300,
+    "wavelength_m": 8.5e-07
+  },
+  "tia_100k": {
+    "He_abs": 1.2207708918062956,
+    "Zt_abs_Ohm": 100425.19108410571
+  },
+  "unmodulated_output_DC_V": -0.4799950643216349
+}

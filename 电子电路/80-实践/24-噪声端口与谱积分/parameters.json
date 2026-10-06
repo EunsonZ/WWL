@@ -1,0 +1,61 @@
+{
+  "PSD": "continuous real one-sided except explicit Hz two-sided examples; Sij=E[Ni Nj*]; H row",
+  "T_K": 300,
+  "thermal_R_ohm": 2000,
+  "thermal_C_F": 1e-08,
+  "opamp": {
+    "Ri_ohm": 10000,
+    "Rf_ohm": 90000,
+    "Rp_ohm": 2000,
+    "RL_ohm": 10000,
+    "A0": 100000,
+    "fp_Hz": 10,
+    "supplies_V": [
+      -5,
+      5
+    ],
+    "linear_output_window_V": [
+      -4,
+      4
+    ],
+    "input_common_mode_window_V": [
+      -3,
+      3
+    ],
+    "output_r_ohm": 0,
+    "input_conduction_A": 0,
+    "en_V_sqrtHz": 8e-09,
+    "ip_im_A_sqrtHz": 3e-13,
+    "correlations": "all six noise sources assumed zero cross spectra in DC budget"
+  },
+  "flicker": {
+    "W_V2_Hz": 6.4e-17,
+    "D_V2": 1.28e-15,
+    "band_Hz": [
+      0.1,
+      1000
+    ]
+  },
+  "fft": {
+    "samples": 256,
+    "fs_Hz": 4096,
+    "noncoherent_tone_Hz": 261.6,
+    "peak_V": 1e-06,
+    "windows": [
+      "rect",
+      "periodic_hann"
+    ],
+    "zero_padding_only_window_response": 4096,
+    "average_segments": 16
+  },
+  "random": {
+    "n": 4096,
+    "seed": 20261006,
+    "rho": [
+      -0.8,
+      0,
+      0.8
+    ],
+    "scope": "known iid Gaussian teaching generation; not observed hardware"
+  }
+}

@@ -35,7 +35,7 @@ prerequisites:
 
 ## 只在库外运行
 
-复制本目录到新的可写位置，保证输入源码版本一致。已有主库.venv包含本批所需numpy/matplotlib/CairoSVG；不自动安装。两个生成程序都要求显式输出路径，导入与测试不写生成资产。
+复制本目录到新的可写位置，保证输入源码版本一致。已有主库.venv包含本批所需numpy/matplotlib/CairoSVG；不自动安装。两个生成程序都要求显式输出路径，导入与测试不写生成资产。`plot_frontend_budget.generate(output)` 在调用时才加载绘图库并设置图参数；导入时不修改调用者的 rcParams，也不初始化 matplotlib 缓存。CLI 的 `main(argv=None)` 接受明确参数；缺少 `--output` 时退出码为 2。
 
 ```bash
 python -B -m unittest discover -s . -p test_frontend_budget.py -v

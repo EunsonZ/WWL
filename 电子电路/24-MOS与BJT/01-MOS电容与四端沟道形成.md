@@ -1,0 +1,67 @@
+---
+stage: 1
+aliases:
+  - MOSCAP积累耗尽反型
+sources:
+  - https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-spring-2009/30d115908b75764ef7ebe79517ac5e8a_MIT6_012S09_lec07.pdf
+  - https://ocw.mit.edu/courses/6-720j-integrated-microelectronic-devices-spring-2007/8ecb3aeb337eaca7935a3b55014f9c4f_lecture23.pdf
+  - https://ocw.mit.edu/courses/6-720j-integrated-microelectronic-devices-spring-2007/f1045f97ead60566639079883da94b59_lecture24.pdf
+prerequisites:
+  - "[[电子电路/10-电路基础/06-从电路图到节点参考方向]]"
+  - "[[电子电路/20-器件与模拟/01-PN结与二极管工作点]]"
+---
+# MOS电容与四端沟道形成
+
+为什么栅极几乎不输送直流电流，却能控制漏源之间的电流？先观察栅下电荷怎样重新分布，再把源漏接到这层电荷上。
+
+基础入口：栅是隔着绝缘层的导体，像电容一侧；读本页“从电荷到表面电势”，逐个解释正负号。深入入口：把栅电压分解成平带偏移、硅内电势和氧化层压降，再由Poisson方程及边界条件求表面电荷。两入口汇入同一组电荷账本，不能把栅电容理解成一块恒定电容。
+
+## 从电荷到表面电势
+
+这里研究平面、均匀p型硅、理想绝缘氧化层的教学结构，温度固定、受主全离化、载流子非简并。$G$为栅，$B$为体，$x=0$为氧化层/硅界面，$x>0$向硅内部。$ψ_s=φ(0)-φ(\infty)$是**硅内**表面相对深处的电势，单位V；不是直接量到的栅端电压。$Q_s'$是硅中总电荷面密度，单位C/m²，撇号表示每面积。$C_{ox}'=\epsilon_{ox}/t_{ox}$，单位F/m²。面积$A$的总电容须再乘$A$。
+
+不含可变界面陷阱电荷时，栅和硅的可变电荷互为相反数。电压账本为
+$$V_{GB}=V_{FB}+ψ_s-\frac{Q_s'}{C_{ox}'},\qquad Q_g'=-Q_s'.$$
+$V_{FB}$把材料功函数差和固定氧化层电荷引起的偏移收进来；平带$ψ_s=0$并不必然发生在$V_{GB}=0$。此关系的各项均为V，$Q'/C'$也为V。
+
+p体的多数载流子是空穴。令栅相对平带更负，栅积负电、硅表面吸引正空穴，这叫**积累**；表面仍是p型。栅向正方向移动，空穴被排开，留下固定负受主离子，这叫**耗尽**；载流子并非严格为零，近似是它们的净电荷比离子小。继续增加栅电压，表面电子浓度超过空穴，形成**反型**。这三个名称说的是栅下硅的状态，不能由“栅电压正/负”脱离$V_{FB}$与体类型单独判断。[MIT6.012 L7，印刷3–13页](https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-spring-2009/30d115908b75764ef7ebe79517ac5e8a_MIT6_012S09_lec07.pdf)。
+
+在耗尽层$0<x<W_d$近似$\rho=-qN_A$，由$dE/dx=\rho/\epsilon_s$、$E(W_d)=0$得$E(x)=qN_A(W_d-x)/\epsilon_s$。再由$E=-dφ/dx$积分：
+$$ψ_s=\frac{qN_AW_d^2}{2\epsilon_s},\quad W_d=\sqrt{\frac{2\epsilon_sψ_s}{qN_A}},\quad Q_d'=-qN_AW_d=-\sqrt{2q\epsilon_sN_Aψ_s}.$$
+这里$ψ_s>0$，$N_A$用m⁻³，$\epsilon_s$用F/m。硅内电场指向深处；电子受力与场反向。若用“深处到表面”空间轴，场的坐标分量也要反号，物理方向不变。
+
+平衡Boltzmann关系给$n_s=(n_i^2/N_A)e^{ψ_s/U_T}$，$p_s=N_Ae^{-ψ_s/U_T}$，$U_T=kT/q$。令$\phi_F=U_T\ln(N_A/n_i)>0$，$ψ_s=\phi_F$时$n_s=p_s=n_i$，是反型开始的电荷类型交叉；常用**强反型阈值**取$ψ_s=2\phi_F$，此时$n_s\simeq N_A$。阈值是约定的转折条件，表面电子不会突然从0跳到有限数。体源同电位时
+$$V_{TH0}=V_{FB}+2\phi_F+\frac{\sqrt{4q\epsilon_sN_A\phi_F}}{C_{ox}'}.$$
+
+![[电子电路/80-实践/13-MOS与BJT/assets/V20-structure.svg]]
+
+V20左图是自行绘制的结构截面，横向S到D、纵向进体内；三个栅下小图只画电荷类型，不把厚度当器件尺寸。右图在同一结构上标四个端口和$V_{GS},V_{DS},V_{SB}$，避免把MOSCAP的$V_{GB}$直接当成MOSFET的$V_{GS}$。
+
+## 从两端电容到四端器件
+
+在栅下两边加入n+源S和漏D，电子反型层把两者连成导电通路。$V_{GS}=V_G-V_S$主要控制源端注入与沟道电荷；$V_{DS}=V_D-V_S$建立横向电场；$V_{SB}=V_S-V_B$改变体结耗尽；$V_{GB}=V_{GS}+V_{SB}$。栅绝缘不代表体端可随意悬空。
+
+在p体NMOS常规区，S/B与D/B两PN结均不正向导通，故$V_S,V_D\ge V_B$。增加$V_{SB}\ge0$使耗尽电荷绝对值增加，同一$V_{GS}$难以保持原反型电荷。采用忽略沿沟道阈值变化的外部体偏近似：
+$$V_{TH}(V_{SB})=V_{TH0}+\gamma[\sqrt{2\phi_F+V_{SB}}-\sqrt{2\phi_F}],\quad \gamma=\frac{\sqrt{2q\epsilon_sN_A}}{C_{ox}'}.$$
+$\gamma$单位$\sqrt{\mathrm V}$，不是无量纲增益。n体PMOS所有电压与电荷极性相反；本页的p体阈值公式不能只换一个下标。[MIT6.720 L24，24-5至24-9](https://ocw.mit.edu/courses/6-720j-integrated-microelectronic-devices-spring-2007/f1045f97ead60566639079883da94b59_lecture24.pdf)。
+
+## 电容在测什么
+
+小信号电容测$dQ_g/dV_{GB}$，与$Q_g/V_{GB}$不同。耗尽状态由电压账本微分得
+$$C_{GB}'=\frac{C_{ox}'C_d'}{C_{ox}'+C_d'},\qquad C_d'=\epsilon_s/W_d.$$
+准静态积累和充分反型时，可变表面载流子跟上信号，$C_{GB}'$趋近$C_{ox}'$。两端MOSCAP反型的高频小信号中，少子产生来不及跟随，微小电荷主要改变耗尽宽度，电容留在较低的串联值。骤升偏置还可能暂时深耗尽，$W_d$超过平衡最大宽度，电容更低；这与已达稳态的高频测量不同。MOSFET有源漏提供少子，不能机械套用孤立MOSCAP的时间常数。[MIT6.720 L23，23-8至23-16；L24，24-3至24-4](https://ocw.mit.edu/courses/6-720j-integrated-microelectronic-devices-spring-2007/8ecb3aeb337eaca7935a3b55014f9c4f_lecture23.pdf)。
+
+## 一个可核算的静电点
+
+教学参数$N_A=10^{22}$ m⁻³、$\epsilon_s=11.7\epsilon_0$、$C_{ox}'=3.453$ mF/m²、$V_{FB}=-0.2$ V，给$ψ_s=0.3$ V。脚本`moscap(.3)`算$W_d\simeq197$ nm、$Q_d'\simeq-0.316$ mC/m²、$V_{GB}\simeq0.1914$ V、$C_{GB}'\simeq0.4564$ mF/m²。这个点由**指定表面势**计算；未给$n_i,T$，不能再把它宣称为该样品阈值。改变$ψ_s$微小量，独立差分$-\Delta Q_d'/\Delta V_{GB}$核电容。
+
+反例：说“$V_G=+0.4$ V，所以反型”遗漏体电压、平带、掺杂与温度。说“栅绝缘，所以完全没有输入电流”遗漏$i_g=dQ_g/dt$与漏电。本页只在指定静电近似里解释沟道形成，不宣称真实氧化层陷阱、量子限域或纳米工艺已求解。
+
+## 四个理由题
+
+1. 若$V_{FB}=-0.8$ V，$V_{GB}=-0.4$ V为什么仍可能耗尽？答：比平带高0.4 V，需按$ψ_s$和电荷账本判断，绝对负号不足。
+2. 把$N_A$由cm⁻³照抄成m⁻³会怎样影响$W_d$？答：数值少$10^6$，$W_d\propto N_A^{-1/2}$会错$10^3$；应先换单位。
+3. 同一反型偏置的低频与高频电容为何不同？答：少子是否响应决定$\Delta Q_i$是否参与，不是氧化层厚度随频率变化。
+4. 迁移：源从0升到0.2 V、栅与体固定，为什么电流下降超过只减$V_{GS}$的估计？答：$V_{GS}$降且$V_{SB}$升使阈值升；两项都降低过驱动。需检查体结及新工作区。
+
+每题2分：对象/方向1分，机制或条件1分；能说明缺哪些参数而保留未知也是正确的边界判断。下一步读[[电子电路/24-MOS与BJT/02-NMOS与PMOS工作区和曲线族|工作区与曲线族]]，把形成的电荷沿沟道积分为电流。数值和图的可重建入口见[[电子电路/80-实践/13-MOS与BJT/README|MOS与BJT复算]]。

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="580" viewBox="0 0 420 580">
+<rect width="420" height="100%" style="fill:white;stroke:none"/>
+<style>text{font-family:Arial,sans-serif;font-size:14px;fill:#111}path,line,rect,polygon,circle{stroke:#111;stroke-width:2;fill:none} .node{fill:#111}</style>
+<text x="16" y="25">Sallen-Key: actual node equations use x, y, vo</text>
+<polygon points="270,245 270,335 340,290"/>
+<text x="275" y="274">+</text>
+<text x="275" y="315">−</text>
+<text x="298" y="294">A</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="298,263 298,225"/>
+<text x="302" y="233">+5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="298,317 298,355"/>
+<text x="302" y="351">−5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="20,270 30,270"/>
+<text x="20" y="254">vi</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="30,270 66.80000000000001,270.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="108.2,270.0 145,270"/>
+<rect x="66.80000000000001" y="264" width="41.39999999999999" height="12"/>
+<text x="65.5" y="257">R1</text>
+<circle class="node" cx="145" cy="270" r="3"/>
+<text x="144" y="253">x</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145,270 185.0,270.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="230.0,270.0 270,270"/>
+<rect x="185.0" y="264" width="45.0" height="12"/>
+<text x="185.5" y="257">R2</text>
+<text x="243" y="251">y</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="340,290 385,290"/>
+<text x="361" y="315">vo</text>
+<circle class="node" cx="385" cy="290" r="3"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="225,270 225.0,337.5"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="225.0,347.5 225,415"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="213.0,337.5 237.0,337.5"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="213.0,347.5 237.0,347.5"/>
+<text x="240.0" y="345.5">C1</text>
+<circle class="node" cx="225" cy="270" r="3"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="225,415 225,423"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="213,423 237,423"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="217,428 233,428"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="221,433 229,433"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145,270 145,130"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145,130 260.0,130.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="270.0,130.0 385,130"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="260.0,118.0 260.0,142.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="270.0,118.0 270.0,142.0"/>
+<text x="250.0" y="111.0">C2</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="385,130 385,290"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="270,310 250,310 250,395"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="250,395 293.2,395.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="341.8,395.0 385,395"/>
+<rect x="293.2" y="389" width="48.60000000000002" height="12"/>
+<text x="295.5" y="382">Rf</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="385,395 385,290"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="250,395 250.0,415.8"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="250.0,439.2 250,460"/>
+<rect x="244" y="415.8" width="12" height="23.399999999999977"/>
+<text x="262" y="427.5">Rg</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="250,460 250,468"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="238,468 262,468"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="242,473 258,473"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="246,478 254,478"/>
+<text x="16" y="500">R1=R2=10k; C1=C2=10nF; K=3−√2.</text>
+<text x="16" y="525">Rf/Rg=2−√2; ideal Q=1/√2, f0=1591.55 Hz.</text>
+<text x="16" y="551">Amp rails ±5 V; unloaded small-signal output.</text>
+<text x="16" y="576">Crossings without dots are not joined. Reference: 0 V.</text>
+</svg>

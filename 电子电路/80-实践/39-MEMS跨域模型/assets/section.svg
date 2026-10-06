@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="520" viewBox="0 0 620 520"><rect width="620" height="520" fill="white"/><style>text{font:18px sans-serif;fill:#111}path,line,rect{stroke:#111;stroke-width:2} .wire{fill:none} .box{fill:#f3f3f3}.dash{stroke-dasharray:7 5}</style><text x="20" y="30">Geometry: z normal to plates (not to scale)</text>
+<rect class="box" x="130" y="80" width="360" height="18"/><text x="135" y="65">fixed top electrode: +Vc</text>
+<rect class="box" x="130" y="198" width="360" height="70"/><text x="145" y="230">proof mass node p; x=0</text><text x="145" y="255">200 x 200 x 10 um</text>
+<rect class="box" x="130" y="368" width="360" height="18"/><text x="135" y="416">fixed bottom electrode: -Vc</text>
+<path class="wire" d="M105 98 V198 M98 105 L105 98 L112 105 M98 191 L105 198 L112 191"/><text x="15" y="157">g - x</text>
+<path class="wire" d="M105 268 V368 M98 275 L105 268 L112 275 M98 361 L105 368 L112 361"/><text x="15" y="328">g + x</text>
+<path class="wire" d="M520 270 V145 L512 158 M520 145 L528 158"/><text x="530" y="185">+z, +x</text>
+<text x="20" y="455">g=2 um at x=0; motion x is relative to base.</text><text x="20" y="483">Suspension has effective k,b; geometry does not set k.</text></svg>

@@ -1,0 +1,81 @@
+{
+  "analytic_equal_prior_error": 0.019136312188729628,
+  "chain": {
+    "ideal_heterodyne_output_added_quanta": 0.5,
+    "measurement_equiv_sym_quanta": 120000.55586578303,
+    "measurement_source_referred_sym_quanta": 2.4000111173156604,
+    "output_energy_per_Hz_J": 4.770792607234033e-19,
+    "output_sym_quanta": 120000.05586578303,
+    "power_gain": 50000.0,
+    "source_referred_sym_quanta": 2.4000011173156603
+  },
+  "classification_status": "synthetic classical observation labels only; not device fidelity",
+  "estimated_IQ_matrix": [
+    [
+      1.0,
+      0.08000000000000002
+    ],
+    [
+      0.020000000000000004,
+      0.9
+    ]
+  ],
+  "estimated_IQ_offset_V": [
+    2e-06,
+    -3e-06
+  ],
+  "fitted_train_means_V": [
+    [
+      -1.9751385848405296e-06,
+      -4.500258586934565e-06
+    ],
+    [
+      -1.8657428984087264e-06,
+      4.615137457918102e-06
+    ]
+  ],
+  "heldout_error_fraction": 0.0425,
+  "heldout_errors": [
+    8,
+    9
+  ],
+  "heldout_total": 400,
+  "hf_over_kB_K": 0.28795458440197325,
+  "ideal_means_V": [
+    [
+      -1.979891499590091e-06,
+      -4.525524041256644e-06
+    ],
+    [
+      -1.979891499590091e-06,
+      4.525524041256644e-06
+    ]
+  ],
+  "parameters": {
+    "N": 1024,
+    "calibration_axis_peak_V": 0.0001,
+    "carrier_Hz": 6000000000.0,
+    "conditional_detuning_rad_s": [
+      -7853981.633974483,
+      7853981.633974483
+    ],
+    "external_fraction": 0.8,
+    "fs_Hz": 100000000.0,
+    "kappa_rad_s": 31415926.535897933,
+    "noise_model": "matched symmetrized amplifier chain plus ideal heterodyne output-added .5 quanta; iid classical Gaussian mean trials",
+    "power_gain": 50000.0,
+    "probe_power_W": 1e-17,
+    "pulse_samples": 600,
+    "reference_ohm": 50,
+    "seed": 7,
+    "test_per_class": 200,
+    "training_per_class": 80,
+    "window_samples": [
+      50,
+      550
+    ]
+  },
+  "sigma_each_sample_IQ_V": 4.884051907603989e-05,
+  "sigma_mean_IQ_V": 2.184214414208008e-06,
+  "thermal_n_20mK": 5.586578303793493e-07
+}

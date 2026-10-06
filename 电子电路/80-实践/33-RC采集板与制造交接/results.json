@@ -1,0 +1,80 @@
+{
+  "rc_samples": [
+    {
+      "t_s": 0,
+      "voltage_V": 0.4,
+      "gain": 0.9090909090909091,
+      "tau_s": 0.0009090909090909091,
+      "pole_Hz": 175.0704374010849,
+      "load_eff_ohm": 10000.0
+    },
+    {
+      "t_s": 0.00025,
+      "voltage_V": 0.5223996463581979,
+      "gain": 0.9090909090909091,
+      "tau_s": 0.0009090909090909091,
+      "pole_Hz": 175.0704374010849,
+      "load_eff_ohm": 10000.0
+    },
+    {
+      "t_s": 0.001,
+      "voltage_V": 0.7396292664809778,
+      "gain": 0.9090909090909091,
+      "tau_s": 0.0009090909090909091,
+      "pole_Hz": 175.0704374010849,
+      "load_eff_ohm": 10000.0
+    },
+    {
+      "t_s": 0.005,
+      "voltage_V": 0.9070103709040547,
+      "gain": 0.9090909090909091,
+      "tau_s": 0.0009090909090909091,
+      "pole_Hz": 175.0704374010849,
+      "load_eff_ohm": 10000.0
+    }
+  ],
+  "probe": {
+    "voltage_V": 0.9082652134423251,
+    "gain": 0.9082652134423251,
+    "tau_s": 0.0009082652134423251,
+    "pole_Hz": 175.22959234417678,
+    "load_eff_ohm": 9900.990099009901
+  },
+  "sharing": {
+    "shared_V": 1.999960000799984,
+    "external_jump_V": -3.999920001599968e-05,
+    "charge_transfer_C": -3.999920001599968e-11
+  },
+  "coupling": {
+    "charge_C": 3.2999999999999997e-12,
+    "step_V": 3.2999967000033e-06
+  },
+  "loop_short": {
+    "reactance_ohm": 1.2566370614359172,
+    "slope_drop_V": 0.002,
+    "resistive_step_V": 0.00025
+  },
+  "loop_detour": {
+    "reactance_ohm": 12.566370614359172,
+    "slope_drop_V": 0.02,
+    "resistive_step_V": 0.00025
+  },
+  "decap": {
+    "real_ohm": 0.05,
+    "imag_ohm": 1.2407215671267278,
+    "magnitude_ohm": 1.2417286366728453,
+    "resonance_Hz": 11253953.951963827,
+    "charge_drop_V": 0.00025,
+    "ESR_step_V": 0.00025
+  },
+  "energy_J": 1.1434499999999997e-05,
+  "geometry": {
+    "pad_count": 21,
+    "front_segments": 27,
+    "via_count": 5,
+    "violations": [],
+    "disconnected_pads": [],
+    "ground_scope": "assumed rectangular B.Cu plane anchors; actual zone fill not_run",
+    "claim": "finite CPU geometry only, not ERC/DRC/field/physical proof"
+  }
+}

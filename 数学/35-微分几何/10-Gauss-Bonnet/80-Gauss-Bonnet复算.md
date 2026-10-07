@@ -12,6 +12,8 @@ prerequisites:
 
 这个实验用 Python 标准库的复合 Simpson 公式重算四个例子的 $\int KdA$ 与 $\int k_gds$，再与解析角点项、$2\pi\chi$ 比较。它检查符号、参数和手算实现；有限采样不证明一般 Gauss–Bonnet，也不验证三角剖分前提。
 
+数值支持边界：本实现仍构造 `R²` 和 `1/R²`，二者须可表示、有限且为正；超支持半径抛 `ArithmeticError`（如 `1e-200`、`1e200`），不依赖零除或幂运算异常。球帽边界因子也须可表示，积分项、总和及残差在返回前必须全有限；分因子有限不保证后续乘法有限，例如大半径配极小余纬仍可能中间溢出，此时明确 `ArithmeticError`，不返回含无穷的成功记录。解析半径抵消仍成立，但本 CPU 浮点实现不承诺所有有限正半径与极端余纬均支持。
+
 ## 从发布后的库根运行
 
 不安装依赖。发布目录必须保持本页、源码和测试同级：
@@ -58,6 +60,14 @@ def positive(value: float, name: str) -> float:
     return value
 
 
+def supported_radius(value: float) -> float:
+    radius = positive(value, "radius")
+    squared = radius * radius
+    if not math.isfinite(squared) or squared <= 0.0 or not math.isfinite(1.0 / squared):
+        raise ArithmeticError("radius squared or reciprocal is outside numerical support")
+    return radius
+
+
 def even_steps(value: int) -> int:
     if isinstance(value, bool) or not isinstance(value, int) or value < 2 or value > 1_000_000 or value % 2:
         raise ValueError("steps must be an even integer from 2 to 1000000")
@@ -78,8 +88,12 @@ def simpson(function, lower: float, upper: float, steps: int = 4096) -> float:
 
 
 def terms(curvature: float, boundary: float, corners: float, chi: int) -> dict[str, float]:
+    if not all(math.isfinite(value) for value in (curvature, boundary, corners)):
+        raise ArithmeticError("Gauss-Bonnet terms are outside numerical support")
     total = curvature + boundary + corners
     target = 2.0 * math.pi * chi
+    if not all(math.isfinite(value) for value in (total, target, total - target)):
+        raise ArithmeticError("Gauss-Bonnet total or residual is outside numerical support")
     return {
         "curvature": curvature,
         "boundary": boundary,
@@ -92,14 +106,14 @@ def terms(curvature: float, boundary: float, corners: float, chi: int) -> dict[s
 
 
 def plane_disk(radius: float = 3.0, steps: int = 4096) -> dict[str, float]:
-    radius = positive(radius, "radius")
+    radius = supported_radius(radius)
     # Positive boundary is counterclockwise: kg=1/r and ds=r dt.
     boundary = simpson(lambda _t: (1.0 / radius) * radius, 0.0, 2.0 * math.pi, steps)
     return terms(0.0, boundary, 0.0, 1)
 
 
 def sphere_octant(radius: float = 2.0, steps: int = 4096) -> dict[str, float]:
-    radius = positive(radius, "radius")
+    radius = supported_radius(radius)
     # 0<=phi<=pi/2, 0<=theta<=pi/2. Integrating theta first gives pi/2.
     curvature = simpson(
         lambda phi: (1.0 / radius**2) * radius**2 * math.sin(phi) * (math.pi / 2.0),
@@ -111,7 +125,7 @@ def sphere_octant(radius: float = 2.0, steps: int = 4096) -> dict[str, float]:
 
 
 def sphere_cap(radius: float = 2.0, phi0: float = math.pi / 3.0, steps: int = 4096) -> dict[str, float]:
-    radius = positive(radius, "radius")
+    radius = supported_radius(radius)
     phi0 = float(phi0)
     if not math.isfinite(phi0) or not 0.0 < phi0 < math.pi:
         raise ValueError("phi0 must lie strictly between 0 and pi")
@@ -122,8 +136,11 @@ def sphere_cap(radius: float = 2.0, phi0: float = math.pi / 3.0, steps: int = 40
         steps,
     )
     # T points east, JT points into the north cap: kg=cot(phi0)/R.
+    denominator = radius * math.sin(phi0)
+    if denominator <= 0.0 or not math.isfinite(math.cos(phi0) / denominator):
+        raise ArithmeticError("cap boundary factor is outside numerical support")
     boundary = simpson(
-        lambda _theta: (math.cos(phi0) / (radius * math.sin(phi0))) * radius * math.sin(phi0),
+        lambda _theta: (math.cos(phi0) / denominator) * radius * math.sin(phi0),
         0.0,
         2.0 * math.pi,
         steps,
@@ -132,7 +149,7 @@ def sphere_cap(radius: float = 2.0, phi0: float = math.pi / 3.0, steps: int = 40
 
 
 def cylinder_band(radius: float = 2.0, height: float = 3.0) -> dict[str, float]:
-    positive(radius, "radius")
+    supported_radius(radius)
     positive(height, "height")
     # K=0. Both boundary circles have tangential acceleration zero, hence kg=0.
     return terms(0.0, 0.0, 0.0, 0)
@@ -212,6 +229,31 @@ class GaussBonnetLabTests(unittest.TestCase):
         wrong_total = disk["curvature"] - disk["boundary"] + disk["corners"]
         self.assertAlmostEqual(wrong_total, -2.0 * math.pi)
         self.assertNotAlmostEqual(wrong_total, disk["target"])
+
+    def test_radius_squared_and_cap_factor_support(self):
+        # R cancels analytically, but this implementation constructs R^2 and 1/R^2.
+        for radius in (1e-200,1e200):
+            for fn in (lab.plane_disk,lab.sphere_octant,lab.sphere_cap,lab.cylinder_band):
+                with self.subTest(radius=radius,fn=fn.__name__):
+                    with self.assertRaises(ArithmeticError):fn(radius)
+        with self.assertRaises(ArithmeticError):lab.sphere_cap(2.,math.ulp(0.),8)
+        # A supported radius still gives the radius-independent pi/2 octant area term.
+        self.assertAlmostEqual(lab.sphere_octant(.5,256)['curvature'],math.pi/2,places=10)
+
+    def test_cap_large_radius_tiny_angle_cannot_return_infinite_terms(self):
+        # Analytic boundary = 2*pi*cos(phi0), approximately 2*pi here.
+        # The unreduced product (cos/(R*sin(phi0)))*R can overflow despite
+        # finite square/reciprocal and the first division. Reject unsupported
+        # arithmetic rather than returning a successful dictionary of infinities.
+        for radius in (1e154,1e150):
+            with self.subTest(radius=radius):
+                with self.assertRaises(ArithmeticError):lab.sphere_cap(radius,1e-320,8)
+        # Nearby supported parameter regimes still match the independent formula.
+        for radius,phi0 in ((2.,1e-8),(1e150,1e-8),(1e154,1e-8)):
+            row=lab.sphere_cap(radius,phi0,8)
+            self.assertTrue(all(math.isfinite(value) for value in row.values()))
+            self.assertAlmostEqual(row['boundary'],2*math.pi*math.cos(phi0),places=12)
+            self.assertAlmostEqual(row['total'],2*math.pi,places=12)
 
     def test_reject_invalid_inputs(self):
         cases = [

@@ -119,7 +119,7 @@ def kl_divergence(p: Sequence[float], q: Sequence[float]) -> float:
             continue
         if q_value == 0.0:
             return math.inf
-        terms.append(p_value * math.log(p_value / q_value))
+        terms.append(p_value * (math.log(p_value) - math.log(q_value)))
     return math.fsum(terms)
 
 
@@ -247,7 +247,7 @@ def validate_original_manifest(manifest: Mapping[str, Any]) -> dict[str, Any]:
         if parsed.is_absolute() or ".." in parsed.parts or relative_path in seen_paths:
             raise ManifestError("original file paths must be unique safe relative paths")
         seen_paths.add(relative_path)
-        if not isinstance(record.get("size_bytes"), int) or record["size_bytes"] <= 0:
+        if type(record.get("size_bytes")) is not int or record["size_bytes"] <= 0:
             raise ManifestError("original file size_bytes must be a positive integer")
         _require_sha256(record.get("sha256"), f"original.files[{index}].sha256")
 
@@ -377,7 +377,7 @@ def validate_experiment_manifest(
     if edit_plan.get("projection") != "x_prime=(I-alpha*u*u^T)x":
         raise ManifestError("experiment projection must be explicit")
     _require_text(edit_plan, "tpe_search_space", "experiment.edit_plan")
-    if not isinstance(edit_plan.get("tpe_budget"), int) or edit_plan["tpe_budget"] <= 0:
+    if type(edit_plan.get("tpe_budget")) is not int or edit_plan["tpe_budget"] <= 0:
         raise ManifestError("experiment.edit_plan.tpe_budget must be a positive integer")
     if not isinstance(edit_plan.get("tpe_seed"), int):
         raise ManifestError("experiment.edit_plan.tpe_seed must be an integer")
@@ -521,7 +521,7 @@ def validate_edited_manifest(manifest: Mapping[str, Any]) -> dict[str, Any]:
         if parsed.is_absolute() or ".." in parsed.parts or relative_path in seen_paths:
             raise ManifestError("edited output file paths must be unique safe relative paths")
         seen_paths.add(relative_path)
-        if not isinstance(record.get("size_bytes"), int) or record["size_bytes"] <= 0:
+        if type(record.get("size_bytes")) is not int or record["size_bytes"] <= 0:
             raise ManifestError("edited output size_bytes must be a positive integer")
         _require_sha256(record.get("sha256"), f"edited.output.files[{index}].sha256")
 

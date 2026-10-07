@@ -77,8 +77,8 @@ def lex(source: str) -> tuple[list[Token], list[Diagnostic]]:
             text = source[start:index]
             tokens.append(Token(text if text in KEYWORDS else "IDENT", text, span(start, start_line, start_column)))
             continue
-        if char.isdigit():
-            while index < len(source) and source[index].isdigit():
+        if char.isdecimal():
+            while index < len(source) and source[index].isdecimal():
                 advance()
             tokens.append(Token("INT", source[start:index], span(start, start_line, start_column)))
             continue
@@ -127,6 +127,9 @@ class Parser:
                 statements.append(statement)
             if self.index == before:
                 self.recover()
+                # 顶层没有可配对的右花括号；块内恢复仍把它留给 block()。
+                if self.index == before and self.current.kind != "EOF":
+                    self.index += 1
         return Node("program", Span(start.start, self.current.span.end, start.line, start.column), children=tuple(statements))
 
     def statement(self) -> Node | None:
@@ -178,7 +181,7 @@ class Parser:
                 param = self.take("IDENT")
                 if param:
                     params.append(Node("param", param.span, param.text))
-                if not self.take(","):
+                if self.current.kind != ")" and not self.take(","):
                     break
             self.take(")")
             body = self.block()
@@ -203,9 +206,18 @@ class Parser:
 
     def expression(self, minimum: int = 0) -> Node:
         token = self.current
+        if token.kind == "EOF":
+            self.errors.append(Diagnostic("expected expression, found EOF", token.span))
+            return Node("error", token.span)
         self.index += 1
         if token.kind == "INT":
-            left = Node("int", token.span, int(token.text))
+            try:
+                value = int(token.text)
+            except ValueError:
+                self.errors.append(Diagnostic("invalid decimal integer literal", token.span))
+                left = Node("error", token.span)
+            else:
+                left = Node("int", token.span, value)
         elif token.kind in {"true", "false"}:
             left = Node("bool", token.span, token.kind == "true")
         elif token.kind == "IDENT":

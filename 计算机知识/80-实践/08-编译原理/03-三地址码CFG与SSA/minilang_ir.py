@@ -207,6 +207,10 @@ def verify_ssa(cfg: CFG) -> list[str]:
                     if not isinstance(predecessor, str) or not isinstance(variable, str):
                         errors.append(f"{label}: phi inputs must contain string predecessor and value")
                         continue
+                    if predecessor not in expected_predecessors:
+                        # The predecessor-set diagnostic above already rejects this edge.
+                        # It has no CFG dominance relation to check.
+                        continue
                     definition = definitions.get(variable)
                     if definition is None:
                         errors.append(f"undefined value {variable}")

@@ -22,7 +22,7 @@ cd "计算机知识/80-实践/08-编译原理/03-三地址码CFG与SSA"
 python3 -m unittest -v
 ~~~
 
-预期 Ran 10 tests ... OK。观察 join 的前驱恰为 neg、nonneg，但它的支配集不含任一分支；SSA 中 x.3 = phi(neg: x.1, nonneg: x.2)，验证器返回空列表。删除 phi 输入的定义会得到确定的 undefined value 诊断；把同一 block 中的 use 放在定义之前、写错 terminator、给 terminator 少传参数、跳到不存在的 block 或遗留不可达 block，都会得到确定诊断。
+预期 Ran 12 tests ... OK。观察 join 的前驱恰为 neg、nonneg，但它的支配集不含任一分支；SSA 中 x.3 = phi(neg: x.1, nonneg: x.2)，验证器返回空列表。删除 phi 输入的定义会得到确定的 undefined value 诊断；将 phi 前驱写为不存在或没有对应入边的标签，会返回 phi predecessors do not match CFG，并跳过该无效边的支配查询，不抛 KeyError；合法入边的其他诊断仍保留。把同一 block 中的 use 放在定义之前、写错 terminator、给 terminator 少传参数、跳到不存在的 block 或遗留不可达 block，都会得到确定诊断。
 
 安全边界：仅 Python 标准库，内存中构造固定 CFG；不联网、不安装、不写用户文件、不执行或优化任意用户程序。测试可能生成 __pycache__/，可确认路径后移除；Git diff 或编辑器撤销可恢复。范围诚实说明：lowering 与 SSA 构造器只接受四块菱形模板；没有 CFG 构造算法、循环、dominance frontier、通用 phi 插入、内存 SSA、异常边、寄存器分配或机器码生成。验证器的明确合同是：entry 必须存在；每个 block 必须从 entry 可达；jump、branch、return 的 opcode、参数个数和目标块必须合法；普通 use 必须晚于同块定义或由支配块定义；phi 输入则按 predecessor edge 检查。它仍是教学检查器，不是生产级 IR verifier。
 
@@ -241,6 +241,10 @@ def verify_ssa(cfg: CFG) -> list[str]:
                     if not isinstance(predecessor, str) or not isinstance(variable, str):
                         errors.append(f"{label}: phi inputs must contain string predecessor and value")
                         continue
+                    if predecessor not in expected_predecessors:
+                        # The predecessor-set diagnostic above already rejects this edge.
+                        # It has no CFG dominance relation to check.
+                        continue
                     definition = definitions.get(variable)
                     if definition is None:
                         errors.append(f"undefined value {variable}")
@@ -293,6 +297,20 @@ class IRTests(unittest.TestCase):
     def test_verifier_rejects_missing_phi_predecessor_and_definition(self) -> None:
         cfg = CFG("entry", {"entry": Block("entry", [], Terminator("jump", ("join",))), "join": Block("join", [Instruction("phi", "x.1", (("entry", "x.0"),))], Terminator("return", ("x.1",)))})
         self.assertEqual(verify_ssa(cfg), ["undefined value x.0"])
+
+    def test_verifier_rejects_nonexistent_phi_edge_without_crashing(self) -> None:
+        cfg = CFG("entry", {
+            "entry": Block("entry", [Instruction("param", "x.0")], Terminator("jump", ("join",))),
+            "join": Block("join", [Instruction("phi", "x.1", (("missing", "x.0"),))], Terminator("return", ("x.1",))),
+        })
+        self.assertEqual(verify_ssa(cfg), ["join: phi predecessors do not match CFG"])
+
+    def test_invalid_phi_edge_does_not_hide_valid_edge_diagnostic(self) -> None:
+        cfg = CFG("entry", {
+            "entry": Block("entry", [Instruction("param", "x.0")], Terminator("jump", ("join",))),
+            "join": Block("join", [Instruction("phi", "x.1", (("missing", "x.0"), ("entry", "unknown.0")))], Terminator("return", ("x.1",))),
+        })
+        self.assertEqual(verify_ssa(cfg), ["join: phi predecessors do not match CFG", "undefined value unknown.0"])
 
     def test_verifier_rejects_same_block_use_before_definition(self) -> None:
         cfg = CFG("entry", {

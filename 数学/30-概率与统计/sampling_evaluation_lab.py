@@ -97,7 +97,12 @@ def nll_and_perplexity(target_probabilities: list[float]) -> tuple[float, float]
     ):
         raise ValueError("每个目标 token 概率必须在 (0, 1] 内")
     nll = -sum(log(probability) for probability in target_probabilities)
-    perplexity = exp(nll / len(target_probabilities))
+    if not isfinite(nll):
+        raise ArithmeticError("NLL exceeds finite machine range")
+    try:
+        perplexity = exp(nll / len(target_probabilities))
+    except OverflowError as exc:
+        raise ArithmeticError("finite NLL but perplexity exceeds machine range; unsupported input scale") from exc
     return nll, perplexity
 
 

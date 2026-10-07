@@ -114,6 +114,19 @@ class ResampleTests(unittest.TestCase):
         self.assertTrue(np.all(np.isfinite(h)))
         self.assertAlmostEqual(float(h.sum()), 1, places=14)
 
+    def test_object_numpy_complex_scalars_rejected_before_conversion(self):
+        class Child(np.complex128):pass
+        for dtype in (complex,np.complex64,np.complex128,Child):
+            for imag in (0.,2.):
+                vec=np.array([dtype(1+imag*1j)],dtype=object)
+                with warnings.catch_warnings(record=True) as seen:
+                    warnings.simplefilter('always')
+                    with self.assertRaises(ValueError):offline(vec,[1])
+                    with self.assertRaises(ValueError):offline([1],vec)
+                    with self.assertRaises(ValueError):Stream([1]).process(vec)
+                self.assertEqual(seen,[])
+        np.testing.assert_array_equal(offline(np.array([1.,2.],dtype=object),[1],factor=1),[1,2])
+
     def test_invalid_objects(self):
         for x in [[np.inf],[[1]], [1j]]:
             with self.assertRaises(ValueError): offline(x,[1])

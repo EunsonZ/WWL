@@ -15,7 +15,9 @@ TAPS = 193
 
 def vector(x):
     raw = np.asarray(x)
-    if np.iscomplexobj(raw) or raw.ndim != 1:
+    if np.iscomplexobj(raw) or raw.ndim != 1 or (raw.dtype == object and any(
+            isinstance(v, (complex, np.complexfloating)) or np.iscomplexobj(v)
+            for v in raw.flat)):
         raise ValueError('finite real one-dimensional vector required')
     a = np.asarray(raw, dtype=np.float64)
     if not np.all(np.isfinite(a)):

@@ -62,6 +62,18 @@ def choose_calibration_range(
     return percentile(values, tail), percentile(values, 100.0 - tail)
 
 
+def supported_number(value: float, name: str) -> float:
+    if not math.isfinite(value):
+        raise ArithmeticError(name + " exceeds numerical support")
+    return value
+
+
+def supported_scale(value: float) -> float:
+    if not math.isfinite(value) or value <= 0.0:
+        raise ArithmeticError("quantization scale must be finite and positive; unsupported range")
+    return value
+
+
 def affine_quantize(
     values: Iterable[float],
     *,
@@ -92,34 +104,34 @@ def affine_quantize(
         qmin = -qmax
         zero_point = 0
         limit = max(abs(low), abs(high))
-        scale = limit / qmax if limit > 0.0 else 1.0
+        scale = supported_scale(limit / qmax if limit > 0.0 else 1.0)
     else:
         qmin = 0
         qmax = (1 << bits) - 1
         if high == low:
             if high > 0.0:
-                scale = high / qmax
+                scale = supported_scale(high / qmax)
                 zero_point = 0
             elif low < 0.0:
-                scale = -low / qmax
+                scale = supported_scale(-low / qmax)
                 zero_point = qmax
             else:
                 scale = 1.0
                 zero_point = 0
         else:
-            scale = (high - low) / (qmax - qmin)
-            proposed = round(qmin - low / scale)
+            scale = supported_scale((high - low) / (qmax - qmin))
+            proposed = round(supported_number(qmin - low / scale, "zero-point quotient"))
             zero_point = max(qmin, min(qmax, proposed))
 
     codes: list[int] = []
     reconstructed: list[float] = []
     clipped_count = 0
     for value in data:
-        unbounded = round(value / scale) + zero_point
+        unbounded = round(supported_number(value / scale, "code quotient")) + zero_point
         code = max(qmin, min(qmax, unbounded))
         clipped_count += int(code != unbounded)
         codes.append(code)
-        reconstructed.append(scale * (code - zero_point))
+        reconstructed.append(supported_number(scale * (code - zero_point), "reconstruction"))
 
     return Quantized(
         codes=tuple(codes),

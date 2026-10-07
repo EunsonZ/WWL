@@ -115,6 +115,23 @@ class DetectionTests(unittest.TestCase):
             with self.assertRaises(ValueError): colored_score([2,1],[1,2],c)
         with self.assertRaises(ValueError): colored_score([2,1],[0,0],np.eye(2))
 
+    def test_large_finite_score_intermediates_rejected_without_nan(self):
+        # (1e308*2)/(1e308*2)=1 mathematically; unreduced intermediate overflows.
+        with warnings.catch_warnings(record=True) as seen:
+            warnings.simplefilter('always')
+            with self.assertRaises(ValueError):known_score([1e308],[2],1e308)
+            with self.assertRaises(ValueError):white_scores([1e308],[2],1e308)
+        self.assertEqual(seen,[])
+        self.assertEqual(known_score([1e150],[2],1e150),1.)
+        np.testing.assert_array_equal(white_scores([1e150],[2],1e150),[1.])
+
+    def test_small_alpha_threshold_without_subtractive_cancellation(self):
+        alpha=1e-20;t=threshold(alpha)
+        self.assertTrue(math.isfinite(t));self.assertGreater(t,9.)
+        # Independent erfc survival probability, not 1-CDF cancellation.
+        tail=0.5*math.erfc(t/math.sqrt(2))
+        self.assertAlmostEqual(tail/alpha,1.,places=12)
+
     def test_calibration_and_reproducibility(self):
         self.assertEqual(calibrate_maxima([1,2,3,4],.25),4)
         self.assertEqual(simulation(11,20,40),simulation(11,20,40))

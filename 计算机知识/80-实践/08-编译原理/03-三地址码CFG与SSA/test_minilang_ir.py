@@ -30,6 +30,20 @@ class IRTests(unittest.TestCase):
         cfg = CFG("entry", {"entry": Block("entry", [], Terminator("jump", ("join",))), "join": Block("join", [Instruction("phi", "x.1", (("entry", "x.0"),))], Terminator("return", ("x.1",)))})
         self.assertEqual(verify_ssa(cfg), ["undefined value x.0"])
 
+    def test_verifier_rejects_nonexistent_phi_edge_without_crashing(self) -> None:
+        cfg = CFG("entry", {
+            "entry": Block("entry", [Instruction("param", "x.0")], Terminator("jump", ("join",))),
+            "join": Block("join", [Instruction("phi", "x.1", (("missing", "x.0"),))], Terminator("return", ("x.1",))),
+        })
+        self.assertEqual(verify_ssa(cfg), ["join: phi predecessors do not match CFG"])
+
+    def test_invalid_phi_edge_does_not_hide_valid_edge_diagnostic(self) -> None:
+        cfg = CFG("entry", {
+            "entry": Block("entry", [Instruction("param", "x.0")], Terminator("jump", ("join",))),
+            "join": Block("join", [Instruction("phi", "x.1", (("missing", "x.0"), ("entry", "unknown.0")))], Terminator("return", ("x.1",))),
+        })
+        self.assertEqual(verify_ssa(cfg), ["join: phi predecessors do not match CFG", "undefined value unknown.0"])
+
     def test_verifier_rejects_same_block_use_before_definition(self) -> None:
         cfg = CFG("entry", {
             "entry": Block("entry", [

@@ -22,7 +22,11 @@ cd "计算机知识/80-实践/08-编译原理/01-MiniLang词法解析与诊断"
 python3 -m unittest -v
 ~~~
 
-预期 Ran 4 tests ... OK。观察 let x==10; 中 == 的 span 为 offset [5, 7)、行 1 列 6；观察 print 1 + 2 * 3; 的 AST 根为 +，其右孩子为 *。把 let = 1; 放在 print 2; 前，诊断出现后仍能保留后一个语句。
+预期 Ran 12 tests ... OK。观察 let x==10; 中 == 的 span 为 offset [5, 7)、行 1 列 6；观察 print 1 + 2 * 3; 的 AST 根为 +，其右孩子为 *。把 let = 1; 放在 print 2; 前，诊断出现后仍能保留后一个语句。
+
+恢复的职责按位置区分：块内遇到 `}` 时把它留给 `block()` 配对；顶层的孤立 `}` 已有“expected statement”诊断，必须消费后继续，否则会反复在同一 token 上停住。`if true { while false { : } print 2; } print 3;` 在冒号处诊断一次，仍保留两个后续 print 和两个块的闭括号。表达式遇到 EOF 时返回原 EOF span 的 error 节点，不消费 EOF；例如 `print` 的缺表达式诊断在 offset [5, 5)、行 1 列 6，缺分号诊断也保留，解析返回 AST 与诊断而不越界。参数之间才要求逗号：`fn f(){ return 1; }`、`fn f(a){ return a; }` 和多参数版本都不应因最后一个参数产生假诊断；`fn f(a b){ return a; }` 仍诊断缺逗号。这是本切片的恢复边界，未声称能为所有错误程序保留全部后续声明。
+
+本切片的整数词素接受 Unicode 十进制数字（Python `isdecimal()`，Unicode Nd），保留 `12345`、阿拉伯-印度数字 `١٢`、全角数字 `１２` 以及混合十进制写法 `1٢３` 的数值与原 span。上标 `²` 虽满足 `isdigit()`，却不是十进制数字；在 `print ²;` 中应得到 offset [6, 7)、行 1 列 7 的未知字符诊断，不交给 `int()` 触发异常。此规则没有把已有 Unicode Nd 收窄成 ASCII。若 INT token 无法转换（例如手工构造错误 token，或十进制串超过当前 Python 已启用的转换长度限制），parser 在整个 token span 给出 `invalid decimal integer literal` 并返回 error 节点；不调整解释器限制。Python 整数值暂不做 i32 范围检查，目标 i32 的范围与类型合法性仍需后续语义阶段核验；词法和解析通过不等于这个阶段已通过。
 
 安全边界：只使用 Python 标准库、固定输入和内存数据；不会访问网络、安装依赖、执行 MiniLang、读取或写入用户文件。运行 unittest 可能产生同目录 __pycache__/；可在确认路径后删除；恢复源码使用编辑器撤销或 Git diff。本切片没有字符串、注释嵌套、调用表达式、类型注解、完整声明同步或解释器，因此“解析成功”不代表程序可执行。
 
@@ -111,8 +115,8 @@ def lex(source: str) -> tuple[list[Token], list[Diagnostic]]:
             text = source[start:index]
             tokens.append(Token(text if text in KEYWORDS else "IDENT", text, span(start, start_line, start_column)))
             continue
-        if char.isdigit():
-            while index < len(source) and source[index].isdigit():
+        if char.isdecimal():
+            while index < len(source) and source[index].isdecimal():
                 advance()
             tokens.append(Token("INT", source[start:index], span(start, start_line, start_column)))
             continue
@@ -161,6 +165,9 @@ class Parser:
                 statements.append(statement)
             if self.index == before:
                 self.recover()
+                # 顶层没有可配对的右花括号；块内恢复仍把它留给 block()。
+                if self.index == before and self.current.kind != "EOF":
+                    self.index += 1
         return Node("program", Span(start.start, self.current.span.end, start.line, start.column), children=tuple(statements))
 
     def statement(self) -> Node | None:
@@ -212,7 +219,7 @@ class Parser:
                 param = self.take("IDENT")
                 if param:
                     params.append(Node("param", param.span, param.text))
-                if not self.take(","):
+                if self.current.kind != ")" and not self.take(","):
                     break
             self.take(")")
             body = self.block()
@@ -237,9 +244,18 @@ class Parser:
 
     def expression(self, minimum: int = 0) -> Node:
         token = self.current
+        if token.kind == "EOF":
+            self.errors.append(Diagnostic("expected expression, found EOF", token.span))
+            return Node("error", token.span)
         self.index += 1
         if token.kind == "INT":
-            left = Node("int", token.span, int(token.text))
+            try:
+                value = int(token.text)
+            except ValueError:
+                self.errors.append(Diagnostic("invalid decimal integer literal", token.span))
+                left = Node("error", token.span)
+            else:
+                left = Node("int", token.span, value)
         elif token.kind in {"true", "false"}:
             left = Node("bool", token.span, token.kind == "true")
         elif token.kind == "IDENT":
@@ -280,9 +296,10 @@ def parse(source: str) -> tuple[Node, list[Diagnostic]]:
 
 from __future__ import annotations
 
+import sys
 import unittest
 
-from minilang_frontend import lex, parse
+from minilang_frontend import Parser, Span, Token, lex, parse
 
 
 class FrontendTests(unittest.TestCase):
@@ -312,6 +329,97 @@ class FrontendTests(unittest.TestCase):
         self.assertEqual(errors[0].message, "unexpected character '@'")
         self.assertEqual((errors[0].span.line, errors[0].span.column), (1, 7))
 
+
+    def test_function_parameter_lists_have_no_spurious_comma(self) -> None:
+        for source, names in [
+            ("fn f(){ return 1; }", []),
+            ("fn f(a){ return a; }", ["a"]),
+            ("fn f(a,b,c){ return a; }", ["a", "b", "c"]),
+        ]:
+            with self.subTest(source=source):
+                program, errors = parse(source)
+                self.assertEqual(errors, [])
+                self.assertEqual([node.value for node in program.children[0].children[:-1]], names)
+
+    def test_missing_parameter_separator_keeps_diagnostic(self) -> None:
+        _, errors = parse("fn f(a b){ return a; }")
+        self.assertEqual(errors[0].message, "expected ,, found IDENT")
+        self.assertEqual((errors[0].span.start, errors[0].span.line, errors[0].span.column), (7, 1, 8))
+
+    def test_unexpected_top_level_close_makes_progress(self) -> None:
+        for source, expected in [("}", []), ("} } print 2;", ["print"]), (": } print 2;", ["print"])]:
+            with self.subTest(source=source):
+                program, errors = parse(source)
+                self.assertEqual([node.kind for node in program.children], expected)
+                self.assertTrue(errors)
+                self.assertEqual(errors[0].span.start, 0)
+                self.assertEqual((errors[0].span.line, errors[0].span.column), (1, 1))
+
+    def test_missing_expression_at_eof_has_error_node_and_position(self) -> None:
+        for source in ["print", "print 1 +", "print -", "print ("]:
+            with self.subTest(source=source):
+                program, errors = parse(source)
+                eof_errors = [item for item in errors if item.message == "expected expression, found EOF"]
+                self.assertEqual(len(eof_errors), 1)
+                self.assertEqual((eof_errors[0].span.start, eof_errors[0].span.end), (len(source), len(source)))
+                self.assertEqual((eof_errors[0].span.line, eof_errors[0].span.column), (1, len(source) + 1))
+                expression = program.children[0].children[0]
+                while expression.children:
+                    expression = expression.children[-1]
+                self.assertEqual(expression.kind, "error")
+
+    def test_nested_block_recovery_preserves_closes_and_later_statements(self) -> None:
+        source = "if true { while false { : } print 2; } print 3;"
+        program, errors = parse(source)
+        self.assertEqual(len(errors), 1)
+        self.assertEqual(errors[0].message, "expected statement, found :")
+        self.assertEqual(errors[0].span.start, source.index(":"))
+        self.assertEqual([node.kind for node in program.children], ["if", "print"])
+        outer = program.children[0].children[1]
+        self.assertEqual([node.kind for node in outer.children], ["while", "print"])
+        inner = outer.children[0].children[1]
+        self.assertEqual(inner.children, ())
+        self.assertEqual(inner.span.end, source.index("}") + 1)
+        self.assertEqual(outer.children[1].children[0].value, 2)
+        self.assertEqual(program.children[1].children[0].value, 3)
+
+    def test_non_decimal_digit_is_positioned_lexical_error(self) -> None:
+        tokens, lex_errors = lex("print ²; print 2;")
+        self.assertEqual([token.text for token in tokens if token.kind == "INT"], ["2"])
+        self.assertEqual(lex_errors[0].message, "unexpected character '²'")
+        self.assertEqual(lex_errors[0].span, Span(6, 7, 1, 7))
+        program, errors = parse("print ²; print 2;")
+        self.assertEqual(errors[0], lex_errors[0])
+        self.assertEqual(program.children[-1].children[0].value, 2)
+
+    def test_ascii_and_unicode_decimal_integer_values(self) -> None:
+        for digits, value in [("0", 0), ("12345", 12345), ("١٢", 12), ("１２", 12), ("1٢３", 123)]:
+            with self.subTest(digits=digits):
+                program, errors = parse("print " + digits + ";")
+                self.assertEqual(errors, [])
+                node = program.children[0].children[0]
+                self.assertEqual((node.kind, node.value), ("int", value))
+                self.assertEqual(node.span, Span(6, 6 + len(digits), 1, 7))
+
+    def test_integer_conversion_failure_is_diagnostic(self) -> None:
+        # Parser 的公开 token 入口也不能让无法转换的 INT 抛出异常。
+        span = Span(0, 1, 1, 1)
+        parser = Parser([Token("INT", "²", span), Token("EOF", "", Span(1, 1, 1, 2))])
+        node = parser.expression()
+        self.assertEqual(node.kind, "error")
+        self.assertEqual(parser.errors[0].message, "invalid decimal integer literal")
+        self.assertEqual(parser.errors[0].span, span)
+        self.assertEqual(parser.current.kind, "EOF")
+        # 不修改解释器转换限制；开启限制的环境验证十进制长串也有位置诊断。
+        limit = sys.get_int_max_str_digits() if hasattr(sys, "get_int_max_str_digits") else 0
+        if limit:
+            digits = "1" * (limit + 1)
+            program, errors = parse("print " + digits + "; print 2;")
+            self.assertEqual(len(errors), 1)
+            self.assertEqual(errors[0].message, "invalid decimal integer literal")
+            self.assertEqual(errors[0].span, Span(6, 6 + len(digits), 1, 7))
+            self.assertEqual(program.children[0].children[0].kind, "error")
+            self.assertEqual(program.children[1].children[0].value, 2)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

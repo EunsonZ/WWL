@@ -46,6 +46,31 @@ class GaussBonnetLabTests(unittest.TestCase):
         self.assertAlmostEqual(wrong_total, -2.0 * math.pi)
         self.assertNotAlmostEqual(wrong_total, disk["target"])
 
+    def test_radius_squared_and_cap_factor_support(self):
+        # R cancels analytically, but this implementation constructs R^2 and 1/R^2.
+        for radius in (1e-200,1e200):
+            for fn in (lab.plane_disk,lab.sphere_octant,lab.sphere_cap,lab.cylinder_band):
+                with self.subTest(radius=radius,fn=fn.__name__):
+                    with self.assertRaises(ArithmeticError):fn(radius)
+        with self.assertRaises(ArithmeticError):lab.sphere_cap(2.,math.ulp(0.),8)
+        # A supported radius still gives the radius-independent pi/2 octant area term.
+        self.assertAlmostEqual(lab.sphere_octant(.5,256)['curvature'],math.pi/2,places=10)
+
+    def test_cap_large_radius_tiny_angle_cannot_return_infinite_terms(self):
+        # Analytic boundary = 2*pi*cos(phi0), approximately 2*pi here.
+        # The unreduced product (cos/(R*sin(phi0)))*R can overflow despite
+        # finite square/reciprocal and the first division. Reject unsupported
+        # arithmetic rather than returning a successful dictionary of infinities.
+        for radius in (1e154,1e150):
+            with self.subTest(radius=radius):
+                with self.assertRaises(ArithmeticError):lab.sphere_cap(radius,1e-320,8)
+        # Nearby supported parameter regimes still match the independent formula.
+        for radius,phi0 in ((2.,1e-8),(1e150,1e-8),(1e154,1e-8)):
+            row=lab.sphere_cap(radius,phi0,8)
+            self.assertTrue(all(math.isfinite(value) for value in row.values()))
+            self.assertAlmostEqual(row['boundary'],2*math.pi*math.cos(phi0),places=12)
+            self.assertAlmostEqual(row['total'],2*math.pi,places=12)
+
     def test_reject_invalid_inputs(self):
         cases = [
             lambda: lab.plane_disk(0.0),

@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import contextlib
 import io
+import json
 import math
 import tempfile
 import unittest
@@ -46,6 +47,11 @@ class KLDivergenceTests(unittest.TestCase):
         reverse = demo.kl_divergence((0.5, 0.5), (0.75, 0.25))
         self.assertNotAlmostEqual(forward, reverse)
 
+    def test_smallest_positive_q_has_finite_kl(self) -> None:
+        actual = demo.kl_divergence((0.5, 0.5), (5e-324, 1.0))
+        self.assertTrue(math.isfinite(actual))
+        self.assertAlmostEqual(actual, 371.5268887801307, places=12)
+
     def test_missing_q_support_returns_infinity(self) -> None:
         self.assertTrue(math.isinf(demo.kl_divergence((1.0, 0.0), (0.0, 1.0))))
 
@@ -77,6 +83,50 @@ class ManifestTests(unittest.TestCase):
             evaluation_sha256=demo.EVALUATION_PLAN_SHA256,
         )
         self.assertEqual(result["identity_and_hash_chain"], "closed")
+
+    def test_positive_integer_fields_reject_json_booleans_and_nonintegers(self) -> None:
+        for value in (json.loads("true"), json.loads("false"), 0, -1, 1.0, "1", None):
+            with self.subTest(field="original.size_bytes", value=value):
+                candidate = copy.deepcopy(self.original)
+                candidate["files"][0]["size_bytes"] = value
+                with self.assertRaisesRegex(demo.ManifestError, "size_bytes must be a positive integer"):
+                    demo.validate_original_manifest(candidate)
+            with self.subTest(field="edited.size_bytes", value=value):
+                candidate = copy.deepcopy(self.edited)
+                candidate["output"]["files"][0]["size_bytes"] = value
+                with self.assertRaisesRegex(demo.ManifestError, "size_bytes must be a positive integer"):
+                    demo.validate_edited_manifest(candidate)
+            with self.subTest(field="tpe_budget", value=value):
+                candidate = copy.deepcopy(self.experiment)
+                candidate["edit_plan"]["tpe_budget"] = value
+                with self.assertRaisesRegex(demo.ManifestError, "tpe_budget must be a positive integer"):
+                    demo.validate_experiment_manifest(candidate, self.original)
+
+    def test_positive_integer_fields_accept_normal_integers(self) -> None:
+        for value in (1, 12, 128):
+            with self.subTest(value=value):
+                original = copy.deepcopy(self.original)
+                original["files"][0]["size_bytes"] = value
+                demo.validate_original_manifest(original)
+                edited = copy.deepcopy(self.edited)
+                edited["output"]["files"][0]["size_bytes"] = value
+                demo.validate_edited_manifest(edited)
+                experiment = copy.deepcopy(self.experiment)
+                experiment["edit_plan"]["tpe_budget"] = value
+                demo.validate_experiment_manifest(experiment, self.original)
+
+    def test_selection_ledger_separates_search_from_selection(self) -> None:
+        report = (Path(__file__).parent / "evaluation-report.template.md").read_text(encoding="utf-8")
+        row = next(line for line in report.splitlines() if line.startswith("| `selection_validation` |"))
+        cells = [cell.strip() for cell in row.strip("|").split("|")]
+        self.assertEqual(len(cells), 6)
+        self.assertIn("否：不提 trial", cells[4])
+        self.assertIn("是：选择候选", cells[5])
+        split = next(item for item in self.evaluation["splits"] if item["name"] == "selection_validation")
+        self.assertIs(split["used_for_search"], False)
+        split["used_for_search"] = True
+        with self.assertRaisesRegex(demo.ManifestError, "selection_validation must not score search trials"):
+            demo.validate_evaluation_plan(self.evaluation)
 
     def test_cli_rejects_symlink_before_json_loader_is_called(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

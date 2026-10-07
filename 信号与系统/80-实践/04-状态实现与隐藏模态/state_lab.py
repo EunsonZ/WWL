@@ -114,7 +114,11 @@ def rank_report(K, rtol=1e-10, atol=0.):
     if min(K.shape)<1 or not math.isfinite(rtol) or not math.isfinite(atol) or rtol<0 or atol<0:
         raise ValueError('nonempty matrix and finite nonnegative tolerances required')
     sv=np.linalg.svd(K,compute_uv=False)
+    if not np.all(np.isfinite(sv)):
+        raise ValueError('singular values are outside numerical support; rescale matrix')
     threshold=max(atol,rtol*float(sv[0]))
+    if not math.isfinite(threshold):
+        raise ValueError('rank threshold is outside numerical support')
     return dict(rank=int(np.count_nonzero(sv>threshold)),singular_values=sv.tolist(),
                 threshold=threshold,rtol=rtol,atol=atol,
                 evidence='numerical rank at declared coordinates/tolerance, not structural identification')

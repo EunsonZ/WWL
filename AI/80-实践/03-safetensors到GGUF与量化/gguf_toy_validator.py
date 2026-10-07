@@ -198,6 +198,8 @@ def parse_toy_gguf(payload: bytes) -> ToyGguf:
 
     ranges: list[tuple[int, int]] = []
     for tensor in tensors:
+        if tensor.offset % alignment:
+            raise FormatError(f"tensor {tensor.name!r} offset is not aligned to {alignment} bytes")
         start = data_offset + tensor.offset
         end = start + tensor.byte_length
         if start < data_offset or end > len(payload):

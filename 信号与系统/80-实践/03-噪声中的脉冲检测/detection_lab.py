@@ -53,21 +53,38 @@ def threshold(alpha):
     a = real_array(alpha, 'alpha')
     if a.ndim != 0 or not 0 < a < 1:
         raise ValueError('alpha must lie strictly between zero and one')
-    return NORMAL.inv_cdf(1-float(a))
+    return -NORMAL.inv_cdf(float(a))
 
 
 def known_score(x, s, sigma=1.0):
     x, s = vector(x), template(s)
     if x.shape != s.shape:
         raise ValueError('x and template shapes differ')
-    return float(x @ s / (positive(sigma, 'sigma') * np.linalg.norm(s)))
+    sigma = positive(sigma, 'sigma')
+    with np.errstate(over='ignore', divide='ignore', invalid='ignore', under='ignore'):
+        numerator = float(x @ s)
+        denominator = sigma * float(np.linalg.norm(s))
+    if not np.isfinite(numerator) or not np.isfinite(denominator) or denominator <= 0:
+        raise ValueError('score intermediate is outside numerical support')
+    score = numerator / denominator
+    if not np.isfinite(score):
+        raise ValueError('score must be numerically finite')
+    return score
 
 
 def white_scores(x, s, sigma=1.0):
     x, s = vector(x), template(s)
     if x.size < s.size:
         raise ValueError('record shorter than template')
-    return np.correlate(x, s, mode='valid') / (positive(sigma,'sigma') * np.linalg.norm(s))
+    sigma = positive(sigma, 'sigma')
+    with np.errstate(over='ignore', divide='ignore', invalid='ignore', under='ignore'):
+        numerator = np.correlate(x, s, mode='valid')
+        denominator = sigma * float(np.linalg.norm(s))
+        scores = numerator / denominator
+    if (not np.all(np.isfinite(numerator)) or not np.isfinite(denominator)
+            or denominator <= 0 or not np.all(np.isfinite(scores))):
+        raise ValueError('scores or intermediates are outside numerical support')
+    return scores
 
 
 def colored_score(x, s, covariance):

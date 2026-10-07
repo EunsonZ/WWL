@@ -16,6 +16,14 @@ def positive(value: float, name: str) -> float:
     return value
 
 
+def supported_radius(value: float) -> float:
+    radius = positive(value, "radius")
+    squared = radius * radius
+    if not math.isfinite(squared) or squared <= 0.0 or not math.isfinite(1.0 / squared):
+        raise ArithmeticError("radius squared or reciprocal is outside numerical support")
+    return radius
+
+
 def even_steps(value: int) -> int:
     if isinstance(value, bool) or not isinstance(value, int) or value < 2 or value > 1_000_000 or value % 2:
         raise ValueError("steps must be an even integer from 2 to 1000000")
@@ -36,8 +44,12 @@ def simpson(function, lower: float, upper: float, steps: int = 4096) -> float:
 
 
 def terms(curvature: float, boundary: float, corners: float, chi: int) -> dict[str, float]:
+    if not all(math.isfinite(value) for value in (curvature, boundary, corners)):
+        raise ArithmeticError("Gauss-Bonnet terms are outside numerical support")
     total = curvature + boundary + corners
     target = 2.0 * math.pi * chi
+    if not all(math.isfinite(value) for value in (total, target, total - target)):
+        raise ArithmeticError("Gauss-Bonnet total or residual is outside numerical support")
     return {
         "curvature": curvature,
         "boundary": boundary,
@@ -50,14 +62,14 @@ def terms(curvature: float, boundary: float, corners: float, chi: int) -> dict[s
 
 
 def plane_disk(radius: float = 3.0, steps: int = 4096) -> dict[str, float]:
-    radius = positive(radius, "radius")
+    radius = supported_radius(radius)
     # Positive boundary is counterclockwise: kg=1/r and ds=r dt.
     boundary = simpson(lambda _t: (1.0 / radius) * radius, 0.0, 2.0 * math.pi, steps)
     return terms(0.0, boundary, 0.0, 1)
 
 
 def sphere_octant(radius: float = 2.0, steps: int = 4096) -> dict[str, float]:
-    radius = positive(radius, "radius")
+    radius = supported_radius(radius)
     # 0<=phi<=pi/2, 0<=theta<=pi/2. Integrating theta first gives pi/2.
     curvature = simpson(
         lambda phi: (1.0 / radius**2) * radius**2 * math.sin(phi) * (math.pi / 2.0),
@@ -69,7 +81,7 @@ def sphere_octant(radius: float = 2.0, steps: int = 4096) -> dict[str, float]:
 
 
 def sphere_cap(radius: float = 2.0, phi0: float = math.pi / 3.0, steps: int = 4096) -> dict[str, float]:
-    radius = positive(radius, "radius")
+    radius = supported_radius(radius)
     phi0 = float(phi0)
     if not math.isfinite(phi0) or not 0.0 < phi0 < math.pi:
         raise ValueError("phi0 must lie strictly between 0 and pi")
@@ -80,8 +92,11 @@ def sphere_cap(radius: float = 2.0, phi0: float = math.pi / 3.0, steps: int = 40
         steps,
     )
     # T points east, JT points into the north cap: kg=cot(phi0)/R.
+    denominator = radius * math.sin(phi0)
+    if denominator <= 0.0 or not math.isfinite(math.cos(phi0) / denominator):
+        raise ArithmeticError("cap boundary factor is outside numerical support")
     boundary = simpson(
-        lambda _theta: (math.cos(phi0) / (radius * math.sin(phi0))) * radius * math.sin(phi0),
+        lambda _theta: (math.cos(phi0) / denominator) * radius * math.sin(phi0),
         0.0,
         2.0 * math.pi,
         steps,
@@ -90,7 +105,7 @@ def sphere_cap(radius: float = 2.0, phi0: float = math.pi / 3.0, steps: int = 40
 
 
 def cylinder_band(radius: float = 2.0, height: float = 3.0) -> dict[str, float]:
-    positive(radius, "radius")
+    supported_radius(radius)
     positive(height, "height")
     # K=0. Both boundary circles have tangential acceleration zero, hence kg=0.
     return terms(0.0, 0.0, 0.0, 0)

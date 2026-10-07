@@ -156,6 +156,15 @@ class StateTests(unittest.TestCase):
         self.assertEqual(rank_report(structure(A,B,C)[0])['rank'],0)
         np.testing.assert_array_equal(np.array(markov(A,B,C,4)).ravel(),np.zeros(4))
 
+    def test_rank_nonfinite_singular_values_or_threshold_rejected(self):
+        # K=a*[[1,1],[1,-1]]: determinant=-2a^2 is nonzero, rank=2.
+        # Each singular value is a*sqrt(2), beyond binary64 for a=1.7e308.
+        with self.assertRaises(ValueError):rank_report([[1.7e308,1.7e308],[1.7e308,-1.7e308]])
+        scaled=rank_report([[1.,1.],[1.,-1.]])
+        self.assertEqual(scaled['rank'],2)
+        np.testing.assert_allclose(scaled['singular_values'],[math.sqrt(2)]*2)
+        with self.assertRaises(ValueError):rank_report([[2.]],rtol=1e308)
+
     def test_numerical_failure_and_invalid_shapes(self):
         with warnings.catch_warnings():
             warnings.simplefilter('error',RuntimeWarning)

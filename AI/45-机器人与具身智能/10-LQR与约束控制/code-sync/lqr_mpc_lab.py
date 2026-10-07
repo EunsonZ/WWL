@@ -161,14 +161,21 @@ def stacked_objective(problem: StackedQuadratic, u) -> float:
 
 
 def solve_box_qp_active_set(H, f, lower, upper, *, E=None, d=None) -> QPSolution | None:
-    """Exhaustively solve a strictly convex box QP with optional equalities."""
+    """Enumerate a small strictly convex box QP with optional full-row-rank E.
+
+    Empty E with shape (0,n) means no equalities. Nonempty E must have
+    full row rank under NumPy's numerical rank test. Rank-deficient E is
+    unsupported and raises ValueError regardless of consistency; this is
+    not an infeasibility result. This is a finite-precision teaching solver,
+    not an exact-arithmetic oracle for arbitrary ill-conditioned constraints.
+    """
     H = _array(H, ndim=2, name="H")
     f = _array(f, ndim=1, name="f")
     lower = _array(lower, ndim=1, name="lower")
     upper = _array(upper, ndim=1, name="upper")
     n = f.size
-    if n > 10 or H.shape != (n, n) or lower.shape != (n,) or upper.shape != (n,):
-        raise ValueError("box QP must have matching shapes and at most ten variables")
+    if not 1 <= n <= 10 or H.shape != (n, n) or lower.shape != (n,) or upper.shape != (n,):
+        raise ValueError("box QP must have matching shapes and one to ten variables")
     if not np.allclose(H, H.T, atol=1e-12) or np.min(np.linalg.eigvalsh(H)) <= 0:
         raise ValueError("H must be symmetric positive definite")
     if np.any(lower >= upper):
@@ -180,6 +187,10 @@ def solve_box_qp_active_set(H, f, lower, upper, *, E=None, d=None) -> QPSolution
         d = _array(d, ndim=1, name="d")
         if E.shape[1] != n or d.shape != (E.shape[0],):
             raise ValueError("equality shapes do not match the QP")
+        if E.shape[0] == 0:
+            E, d = None, None
+        elif np.linalg.matrix_rank(E) != E.shape[0]:
+            raise ValueError("rank-deficient E is unsupported; supply independent equality rows")
     best: tuple[float, np.ndarray] | None = None
     checked = 0
     for pattern in itertools.product((-1, 0, 1), repeat=n):

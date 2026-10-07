@@ -92,6 +92,52 @@ class LqrMpcLabTests(unittest.TestCase):
             })
             self.assertTrue(all(p.stat().st_size > 1000 for p in paths))
 
+    def test_rank_deficient_equalities_are_unsupported_not_infeasible(self):
+        # min u^2 over [-1,1]: zero-row equality leaves optimum u=0, J=0.
+        # Repeating u=0 is also consistent, while u=0 and u=1 contradict.
+        # All three lie outside this implementation's declared rank domain.
+        for E, d in (([[0.]], [0.]), ([[1.], [1.]], [0., 0.]),
+                     ([[1.], [1.]], [0., 1.])):
+            with self.subTest(E=E, d=d):
+                with self.assertRaisesRegex(ValueError, "rank-deficient E is unsupported"):
+                    lab.solve_box_qp_active_set([[1.]], [0.], [-1.], [1.], E=E, d=d)
+
+    def test_empty_equalities_are_box_only(self):
+        # u^2-0.5u=(u-0.25)^2-0.0625.
+        plain = lab.solve_box_qp_active_set([[1.]], [-0.25], [-1.], [1.])
+        empty = lab.solve_box_qp_active_set([[1.]], [-0.25], [-1.], [1.],
+                                            E=np.empty((0, 1)), d=np.empty(0))
+        for solution in (plain, empty):
+            self.assertIsNotNone(solution)
+            np.testing.assert_allclose(solution.u, [0.25], atol=1e-14)
+            self.assertAlmostEqual(solution.objective_without_constant, -0.0625)
+        self.assertEqual(plain.patterns_checked, empty.patterns_checked)
+
+    def test_full_row_rank_equalities_with_interior_and_active_bound(self):
+        # u1+u2=1 minimizes u1^2+u2^2 at (0.5,0.5), J=0.5.
+        # Restrict u1<=0.25: minimizing t^2+(1-t)^2 on [-1,0.25]
+        # selects t=0.25, giving (0.25,0.75), J=0.625.
+        for upper, expected, objective in (([2., 2.], [0.5, 0.5], 0.5),
+                                            ([0.25, 2.], [0.25, 0.75], 0.625)):
+            solution = lab.solve_box_qp_active_set(np.eye(2), [0., 0.], [-1., -1.], upper,
+                                                   E=[[1., 1.]], d=[1.])
+            self.assertIsNotNone(solution)
+            np.testing.assert_allclose(solution.u, expected, atol=1e-14)
+            self.assertAlmostEqual(solution.objective_without_constant, objective)
+        # Full-rank u=2 has no point in [-1,1]: supported but infeasible.
+        self.assertIsNone(lab.solve_box_qp_active_set([[1.]], [0.], [-1.], [1.], E=[[1.]], d=[2.]))
+
+    def test_equality_input_shapes_and_finite_values(self):
+        for E, d in (([[1., 0.]], [0.]), ([[1.]], []),
+                     (np.empty((0, 2)), []), ([], []),
+                     ([[np.nan]], [0.]), ([[1.]], [np.inf]),
+                     ([[1.]], None), (None, [0.])):
+            with self.subTest(E=E, d=d):
+                with self.assertRaises(ValueError):
+                    lab.solve_box_qp_active_set([[1.]], [0.], [-1.], [1.], E=E, d=d)
+        with self.assertRaises(ValueError):
+            lab.solve_box_qp_active_set(np.empty((0, 0)), [], [], [])
+
     def test_invalid_inputs(self):
         for dt in (0, -1, np.nan, np.inf, 1e-12):
             with self.assertRaises(ValueError): lab.double_integrator(dt)

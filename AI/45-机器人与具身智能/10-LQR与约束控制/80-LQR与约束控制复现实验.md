@@ -47,7 +47,9 @@ prerequisites:
 6. 终端等式解、精确模型移位可行见证，以及八步不可达初态；
 7. CLI 图输出和无效输入边界。
 
-活动集程序最多接受十个标量控制，枚举 lower/free/upper 后在每个活动集内解连续线性方程。它故意不是通用求解器；一般稀疏 MPC 应使用经验证的 QP 求解器并另测时限、缩放、容差与失败路径。
+新增四个测试方法核对等式支持域：零行冗余与重复行（含一致/不一致）、空等式、满行秩内点及活跃边界解析值，以及shape/有限值边界；连同原七个方法共十一项，原结果身份不改。
+
+活动集程序接受一到十个标量控制，枚举 lower/free/upper 后在每个活动集内解连续线性方程。非空等式矩阵 `E` 必须在 NumPy 的数值秩判断下满行秩，`d` 的shape须匹配；`E` 为 `(0,n)`、`d` 为 `(0,)` 时等同无等式。零行或重复行可以是数学上合法的冗余约束，但实现明确抛 `ValueError` 表示“不支持”，不把它们误称为无解；重复行右端不一致则数学上无解，也先被同一支持域检查拒绝，不能将该异常用作一般可行性认证。支持域内没有可行候选时返回 `None`；它仍是带容差的浮点枚举，不认证任意病态约束的精确解。它故意不是通用求解器；一般稀疏 MPC 应使用经验证的 QP 求解器并另测时限、缩放、容差与失败路径。
 
 ## 规范源码镜像
 
@@ -216,14 +218,21 @@ def stacked_objective(problem: StackedQuadratic, u) -> float:
 
 
 def solve_box_qp_active_set(H, f, lower, upper, *, E=None, d=None) -> QPSolution | None:
-    """Exhaustively solve a strictly convex box QP with optional equalities."""
+    """Enumerate a small strictly convex box QP with optional full-row-rank E.
+
+    Empty E with shape (0,n) means no equalities. Nonempty E must have
+    full row rank under NumPy's numerical rank test. Rank-deficient E is
+    unsupported and raises ValueError regardless of consistency; this is
+    not an infeasibility result. This is a finite-precision teaching solver,
+    not an exact-arithmetic oracle for arbitrary ill-conditioned constraints.
+    """
     H = _array(H, ndim=2, name="H")
     f = _array(f, ndim=1, name="f")
     lower = _array(lower, ndim=1, name="lower")
     upper = _array(upper, ndim=1, name="upper")
     n = f.size
-    if n > 10 or H.shape != (n, n) or lower.shape != (n,) or upper.shape != (n,):
-        raise ValueError("box QP must have matching shapes and at most ten variables")
+    if not 1 <= n <= 10 or H.shape != (n, n) or lower.shape != (n,) or upper.shape != (n,):
+        raise ValueError("box QP must have matching shapes and one to ten variables")
     if not np.allclose(H, H.T, atol=1e-12) or np.min(np.linalg.eigvalsh(H)) <= 0:
         raise ValueError("H must be symmetric positive definite")
     if np.any(lower >= upper):
@@ -235,6 +244,10 @@ def solve_box_qp_active_set(H, f, lower, upper, *, E=None, d=None) -> QPSolution
         d = _array(d, ndim=1, name="d")
         if E.shape[1] != n or d.shape != (E.shape[0],):
             raise ValueError("equality shapes do not match the QP")
+        if E.shape[0] == 0:
+            E, d = None, None
+        elif np.linalg.matrix_rank(E) != E.shape[0]:
+            raise ValueError("rank-deficient E is unsupported; supply independent equality rows")
     best: tuple[float, np.ndarray] | None = None
     checked = 0
     for pattern in itertools.product((-1, 0, 1), repeat=n):
@@ -536,6 +549,52 @@ class LqrMpcLabTests(unittest.TestCase):
                 "finite-horizon-trajectories.svg", "clip-versus-box-qp.svg", "terminal-shift-witness.svg"
             })
             self.assertTrue(all(p.stat().st_size > 1000 for p in paths))
+
+    def test_rank_deficient_equalities_are_unsupported_not_infeasible(self):
+        # min u^2 over [-1,1]: zero-row equality leaves optimum u=0, J=0.
+        # Repeating u=0 is also consistent, while u=0 and u=1 contradict.
+        # All three lie outside this implementation's declared rank domain.
+        for E, d in (([[0.]], [0.]), ([[1.], [1.]], [0., 0.]),
+                     ([[1.], [1.]], [0., 1.])):
+            with self.subTest(E=E, d=d):
+                with self.assertRaisesRegex(ValueError, "rank-deficient E is unsupported"):
+                    lab.solve_box_qp_active_set([[1.]], [0.], [-1.], [1.], E=E, d=d)
+
+    def test_empty_equalities_are_box_only(self):
+        # u^2-0.5u=(u-0.25)^2-0.0625.
+        plain = lab.solve_box_qp_active_set([[1.]], [-0.25], [-1.], [1.])
+        empty = lab.solve_box_qp_active_set([[1.]], [-0.25], [-1.], [1.],
+                                            E=np.empty((0, 1)), d=np.empty(0))
+        for solution in (plain, empty):
+            self.assertIsNotNone(solution)
+            np.testing.assert_allclose(solution.u, [0.25], atol=1e-14)
+            self.assertAlmostEqual(solution.objective_without_constant, -0.0625)
+        self.assertEqual(plain.patterns_checked, empty.patterns_checked)
+
+    def test_full_row_rank_equalities_with_interior_and_active_bound(self):
+        # u1+u2=1 minimizes u1^2+u2^2 at (0.5,0.5), J=0.5.
+        # Restrict u1<=0.25: minimizing t^2+(1-t)^2 on [-1,0.25]
+        # selects t=0.25, giving (0.25,0.75), J=0.625.
+        for upper, expected, objective in (([2., 2.], [0.5, 0.5], 0.5),
+                                            ([0.25, 2.], [0.25, 0.75], 0.625)):
+            solution = lab.solve_box_qp_active_set(np.eye(2), [0., 0.], [-1., -1.], upper,
+                                                   E=[[1., 1.]], d=[1.])
+            self.assertIsNotNone(solution)
+            np.testing.assert_allclose(solution.u, expected, atol=1e-14)
+            self.assertAlmostEqual(solution.objective_without_constant, objective)
+        # Full-rank u=2 has no point in [-1,1]: supported but infeasible.
+        self.assertIsNone(lab.solve_box_qp_active_set([[1.]], [0.], [-1.], [1.], E=[[1.]], d=[2.]))
+
+    def test_equality_input_shapes_and_finite_values(self):
+        for E, d in (([[1., 0.]], [0.]), ([[1.]], []),
+                     (np.empty((0, 2)), []), ([], []),
+                     ([[np.nan]], [0.]), ([[1.]], [np.inf]),
+                     ([[1.]], None), (None, [0.])):
+            with self.subTest(E=E, d=d):
+                with self.assertRaises(ValueError):
+                    lab.solve_box_qp_active_set([[1.]], [0.], [-1.], [1.], E=E, d=d)
+        with self.assertRaises(ValueError):
+            lab.solve_box_qp_active_set(np.empty((0, 0)), [], [], [])
 
     def test_invalid_inputs(self):
         for dt in (0, -1, np.nan, np.inf, 1e-12):

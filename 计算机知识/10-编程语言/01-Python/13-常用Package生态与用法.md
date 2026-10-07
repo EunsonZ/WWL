@@ -217,6 +217,8 @@ python -m pip install pytest
 ```
 
 ```python
+import pytest
+
 def add_tax(price: float, rate: float) -> float:
     return price * (1 + rate)
 

@@ -89,8 +89,8 @@ tags:
 | --- | --- | --- | --- |
 | 辨认系统（只读） | `cat /etc/os-release` | `cat /etc/os-release` | `cat /etc/os-release` |
 | 刷新元数据 | 不单独教 `pacman -Sy`；与全系统升级合并为 `sudo pacman -Syu` | `sudo apt update` | `sudo dnf makecache`；要强制过期后重新检查可用 `dnf --refresh ...` |
-| 搜索仓库（只读） | `pacman -Ss KEYWORD` | `apt search KEYWORD` | `dnf search KEYWORD` |
-| 查看候选包（只读） | `pacman -Si PACKAGE` | `apt show PACKAGE` 和 `apt policy PACKAGE` | `dnf info PACKAGE` |
+| 搜索仓库（不安装） | `pacman -Ss KEYWORD` | `apt search KEYWORD` | `dnf search KEYWORD` |
+| 查看候选包（不安装） | `pacman -Si PACKAGE` | `apt show PACKAGE` 和 `apt policy PACKAGE` | `dnf info PACKAGE` |
 | 安装 | `sudo pacman -S PACKAGE`；如果必须刷新数据库，用 `sudo pacman -Syu PACKAGE` 在完整升级中安装 | `sudo apt install PACKAGE` | `sudo dnf install PACKAGE` |
 | 移除 | `sudo pacman -R PACKAGE`；`-Rs` 会扩大到某些无需依赖，必须审阅摘要 | `sudo apt remove PACKAGE`；`purge` 还删除包管理的系统配置，不等于删用户家目录数据 | `sudo dnf remove PACKAGE`；它可能同时移除未使用依赖，先看清摘要 |
 | 更新已安装包 | `sudo pacman -Syu`（Arch 支持的完整系统升级路径） | `sudo apt update` 后 `sudo apt upgrade` | `sudo dnf upgrade` |
@@ -100,6 +100,8 @@ tags:
 | 查可用更新（不安装） | 已安装 `pacman-contrib` 时用 `checkupdates`；不要为此改用 `pacman -Sy` | 刷新后用 `apt list --upgradable` | DNF5 文档中是 `dnf5 check-upgrade`（若发行版将 DNF5 暴露为 `dnf`，命令名随之变为 `dnf`）；DNF 4 是 `dnf check-update`。有更新时退出码可为 100，不表示普通故障 |
 | 缓存维护 | ArchWiki 优先推荐 `paccache -r`（来自 `pacman-contrib`，默认保留近期版本）；`pacman -Sc/-Scc` 更激进 | `sudo apt clean` 清已下载包缓存；`autoclean` 只移除已无法下载的旧包 | `sudo dnf clean packages` 清包缓存；`sudo dnf clean all` 还会清元数据等，下次需重新下载 |
 | 查事务历史（只读） | 查 `/var/log/pacman.log`，它是日志而非通用自动回滚器 | 查 `/var/log/apt/history.log` 和 `/var/log/dpkg.log`，同样不是保证可回滚的快照 | `dnf history`、`dnf history info ID` |
+
+DNF 的普通 `search`、`info` 等仓库查询不安装软件，但可能同步用户元数据缓存；“不安装”不等于“没有网络或缓存更新”。若任务要求只用已有缓存，DNF 4/5 的 `-C`（`--cacheonly`）会使用现有缓存而不更新元数据，包括过期缓存。缓存缺失就记录无法完成，不去掉选项补拉。本页第 7 节采用这条边界；它不保证进程没有日志或插件的其他副作用。
 
 ### “系统整体升级”不等于“换发行版”
 
@@ -242,8 +244,8 @@ apt show tree
 **传统 Fedora/RHEL：**
 
 ```bash
-dnf search tree
-dnf info tree
+dnf -C search tree
+dnf -C info tree
 ```
 
 如果本地元数据中没有 `tree`，不要为了完成练习就刷新或添加仓库；记录“缓存中未找到”即可。
@@ -290,7 +292,7 @@ rpm -qf /usr/bin/bash
 - [ ] 能解释为什么 Arch 上不应执行 `pacman -Sy PACKAGE`；
 - [ ] 能解释 APT/dpkg、DNF/RPM 的高层与底层分工；
 - [ ] 能说明 RHEL 9 上 `yum` 的兼容角色，不把它夸大成所有 YUM 时代行为均未改变；
-- [ ] 本练习没有修改已安装包、仓库配置或缓存。
+- [ ] 本练习没有安装或修改软件包、改仓库配置，也没有主动刷新仓库元数据；DNF 用缓存模式，缓存缺失时如实记录未完成。
 
 ## 8. 恢复、回滚和清理边界
 

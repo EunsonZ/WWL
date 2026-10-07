@@ -162,6 +162,20 @@ def system(A, b):
     return A, b
 
 
+def linear_finite(value, name):
+    """Reject unrepresentable intermediate values; finite inputs alone are insufficient."""
+    if not np.all(np.isfinite(value)):
+        raise ArithmeticError('nonfinite '+name+'; scale exceeds teaching solver range')
+    return value
+
+
+def linear_norm(value, name):
+    linear_finite(value, name)
+    with np.errstate(over='ignore', invalid='ignore'):
+        norm = float(np.linalg.norm(value))
+    return linear_finite(norm, name+' norm')
+
+
 def stationary(A, b, method='jacobi', tol=1e-10, maxiter=200):
     controls(tol, maxiter)
     A, b = system(A, b)
@@ -170,9 +184,9 @@ def stationary(A, b, method='jacobi', tol=1e-10, maxiter=200):
         raise ValueError('nonzero diagonal and jacobi/gs required')
     x = np.zeros_like(b)
     hist = [x.copy()]
-    threshold = tol*max(1.0, np.linalg.norm(b))
+    threshold = linear_finite(tol*max(1.0, linear_norm(b, 'rhs')), 'residual threshold')
     for _ in range(maxiter):
-        if np.linalg.norm(b-A@x) <= threshold:
+        if linear_norm(b-A@x, 'true residual') <= threshold:
             return x, hist, True
         if method == 'jacobi':
             x = (b-(A-np.diag(d))@x)/d
@@ -180,10 +194,9 @@ def stationary(A, b, method='jacobi', tol=1e-10, maxiter=200):
             old = x.copy()
             for i in range(len(x)):
                 x[i] = (b[i]-A[i, :i]@x[:i]-A[i, i+1:]@old[i+1:])/d[i]
-        if not np.all(np.isfinite(x)):
-            raise ArithmeticError('iteration overflow')
+        linear_finite(x, 'stationary iterate')
         hist.append(x.copy())
-    return x, hist, bool(np.linalg.norm(b-A@x) <= threshold)
+    return x, hist, bool(linear_norm(b-A@x, 'true residual') <= threshold)
 
 
 def cg(A, b, tol=1e-10, maxiter=200):
@@ -199,24 +212,24 @@ def cg(A, b, tol=1e-10, maxiter=200):
     x = np.zeros_like(b)
     r, p = b.copy(), b.copy()
     hist = [x.copy()]
-    threshold = tol*max(1.0, np.linalg.norm(b))
+    threshold = linear_finite(tol*max(1.0, linear_norm(b, 'rhs')), 'residual threshold')
     for _ in range(maxiter):
-        if np.linalg.norm(b-A@x) <= threshold:
+        if linear_norm(b-A@x, 'true residual') <= threshold:
             return x, hist, True
-        rr = float(r@r)
-        Ap = A@p
-        curvature = float(p@Ap)
+        rr = linear_finite(float(r@r), 'CG residual inner product')
+        Ap = linear_finite(A@p, 'CG matrix-vector product')
+        curvature = linear_finite(float(p@Ap), 'CG curvature')
         if curvature <= 0 or rr == 0:
             raise ArithmeticError('CG breakdown before true residual tolerance')
-        alpha = rr/curvature
-        x = x+alpha*p
-        rnew = r-alpha*Ap
-        p = rnew+float(rnew@rnew)/rr*p
+        alpha = linear_finite(rr/curvature, 'CG step')
+        x = linear_finite(x+alpha*p, 'CG iterate')
+        rnew = linear_finite(r-alpha*Ap, 'CG recurrence residual')
+        rrnew = linear_finite(float(rnew@rnew), 'CG new residual inner product')
+        beta = linear_finite(rrnew/rr, 'CG direction coefficient')
+        p = linear_finite(rnew+beta*p, 'CG direction')
         r = rnew
-        if not np.all(np.isfinite(x)) or not np.all(np.isfinite(r)):
-            raise ArithmeticError('CG overflow')
         hist.append(x.copy())
-    return x, hist, bool(np.linalg.norm(b-A@x) <= threshold)
+    return x, hist, bool(linear_norm(b-A@x, 'true residual') <= threshold)
 
 
 def selfcheck():
@@ -288,6 +301,13 @@ def selfcheck():
         ('CG non-SPD', lambda: cg([[1.,2.],[2.,1.]],[1.,1.]), ValueError),
         ('zero Jacobi diagonal', lambda: stationary([[0.,1.],[1.,2.]],[1.,1.]), ValueError),
         ('system shape', lambda: cg([[1.,0.],[0.,1.]],[1.]), ValueError),
+        ('stationary finite rhs with overflowing norm', lambda: stationary([[1.]],[1e308]), ArithmeticError),
+        ('CG finite rhs with overflowing norm', lambda: cg([[1.]],[1e308]), ArithmeticError),
+        ('stationary finite norm with overflowing threshold', lambda: stationary([[1.]],[1e150],tol=1e308), ArithmeticError),
+        ('CG finite norm with overflowing threshold', lambda: cg([[1.]],[1e150],tol=1e308), ArithmeticError),
+        ('stationary final residual norm overflow', lambda: stationary([[1.,1e308],[1e308,1.]],[1.,1.],maxiter=1), ArithmeticError),
+        ('CG matrix-vector product overflow', lambda: cg([[1e308]],[1e100]), ArithmeticError),
+        ('CG finite product with curvature overflow', lambda: cg([[1e200]],[1e100]), ArithmeticError),
     ]
     for name, call, error in rejects:
         try:

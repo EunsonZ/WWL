@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-labelledby="title desc">
+<title id="title">同一日志从字节到业务记录</title>
+<desc id="desc">v1 的中文消息在码点68到70、字节68到74；LF位于字节74。正文严格解码、完整匹配、日期及单位验证后得到1250微秒；v2的1.250毫秒得到同一业务记录。</desc>
+<rect width="480" height="480" fill="white"/>
+<style>text{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;fill:#142434} .title{font-size:25px;font-weight:bold} .label{font-size:21px} .small{font-size:19px} .mono{font-family:monospace;font-size:20px}</style>
+<text x="240" y="34" class="title" text-anchor="middle">同一日志：字节 → 记录</text>
+<text x="240" y="66" class="label" text-anchor="middle">v1 … message=中文 + LF</text>
+<text x="240" y="93" class="small" text-anchor="middle">… 是图中省略，真实帧不含它</text>
+<text x="47" y="124" class="mono" text-anchor="middle">68</text>
+<rect x="19" y="134" width="56" height="44" rx="9" fill="#e0f2fe" stroke="#475569" stroke-width="1.5"/>
+<text x="47" y="162" class="mono" text-anchor="middle">E4</text>
+<text x="110" y="124" class="mono" text-anchor="middle">69</text>
+<rect x="82" y="134" width="56" height="44" rx="9" fill="#e0f2fe" stroke="#475569" stroke-width="1.5"/>
+<text x="110" y="162" class="mono" text-anchor="middle">B8</text>
+<text x="173" y="124" class="mono" text-anchor="middle">70</text>
+<rect x="145" y="134" width="56" height="44" rx="9" fill="#e0f2fe" stroke="#475569" stroke-width="1.5"/>
+<text x="173" y="162" class="mono" text-anchor="middle">AD</text>
+<text x="236" y="124" class="mono" text-anchor="middle">71</text>
+<rect x="208" y="134" width="56" height="44" rx="9" fill="#dcfce7" stroke="#475569" stroke-width="1.5"/>
+<text x="236" y="162" class="mono" text-anchor="middle">E6</text>
+<text x="299" y="124" class="mono" text-anchor="middle">72</text>
+<rect x="271" y="134" width="56" height="44" rx="9" fill="#dcfce7" stroke="#475569" stroke-width="1.5"/>
+<text x="299" y="162" class="mono" text-anchor="middle">96</text>
+<text x="362" y="124" class="mono" text-anchor="middle">73</text>
+<rect x="334" y="134" width="56" height="44" rx="9" fill="#dcfce7" stroke="#475569" stroke-width="1.5"/>
+<text x="362" y="162" class="mono" text-anchor="middle">87</text>
+<text x="425" y="124" class="mono" text-anchor="middle">74</text>
+<rect x="397" y="134" width="56" height="44" rx="9" fill="#fef3c7" stroke="#475569" stroke-width="1.5"/>
+<text x="425" y="162" class="mono" text-anchor="middle">0A</text>
+<text x="104" y="204" class="label" text-anchor="middle">中：码点 68</text>
+<text x="292" y="204" class="label" text-anchor="middle">文：码点 69</text>
+<text x="425" y="204" class="label" text-anchor="middle">LF</text>
+<rect x="20" y="222" width="440" height="74" rx="9" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="36" y="250" class="label" text-anchor="start">message：码点 [68,70)</text>
+<text x="36" y="279" class="label" text-anchor="start">原帧字节 [68,74)，LF 在 74</text>
+<text x="240" y="321" class="small" text-anchor="middle">正文 70 码点 / 74 字节；帧 75 字节</text>
+<text x="240" y="350" class="label" text-anchor="middle">↓ 严格 UTF-8 → 完整匹配</text>
+<text x="240" y="378" class="label" text-anchor="middle">↓ 真实日期 + 版本单位 + 范围</text>
+<rect x="20" y="395" width="440" height="72" rx="9" fill="#e0f2fe" stroke="#475569" stroke-width="1.5"/>
+<text x="240" y="424" class="label" text-anchor="middle">v1：1250 us = v2：1.250 ms</text>
+<text x="240" y="454" class="label" text-anchor="middle">同一业务记录：1250 微秒，中文</text>
+</svg>

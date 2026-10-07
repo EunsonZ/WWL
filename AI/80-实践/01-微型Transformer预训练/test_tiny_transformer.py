@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import copy
+import json
+import math
 import tempfile
 import unittest
 from pathlib import Path
@@ -83,6 +85,58 @@ class DataPipelineTests(unittest.TestCase):
                 report["source_tokens"][split] - 1,
             )
         self.assertIn("every target covered exactly once", report["packing_boundary"])
+
+    def test_preflight_rejects_non_finite_numeric_fields(self) -> None:
+        config = load_config(HERE / "config.json")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "config.json"
+            for key in ("dropout", "learning_rate", "weight_decay", "temperature"):
+                for value in (float("nan"), float("inf"), float("-inf")):
+                    with self.subTest(key=key, value=value):
+                        changed = dict(config, **{key: value})
+                        path.write_text(json.dumps(changed), encoding="utf-8")
+                        with self.assertRaisesRegex(ValueError, "finite"):
+                            run_preflight(path, HERE / "corpus.jsonl")
+
+    def test_preflight_rejects_boolean_numbers(self) -> None:
+        config = load_config(HERE / "config.json")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "config.json"
+            for key in config:
+                if type(config[key]) not in (int, float):
+                    continue
+                for value in (False, True):
+                    with self.subTest(key=key, value=value):
+                        path.write_text(json.dumps(dict(config, **{key: value})), encoding="utf-8")
+                        with self.assertRaises(ValueError):
+                            load_config(path)
+
+    def test_preflight_preserves_large_integer_hyperparameters(self) -> None:
+        config = load_config(HERE / "config.json")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "config.json"
+            for key in ("learning_rate", "weight_decay", "temperature"):
+                with self.subTest(key=key):
+                    path.write_text(json.dumps(dict(config, **{key: 10**400})), encoding="utf-8")
+                    self.assertEqual(load_config(path)[key], 10**400)
+                    self.assertEqual(run_preflight(path, HERE / "corpus.jsonl")["status"], "PASS")
+
+    def test_preflight_preserves_finite_numeric_boundaries(self) -> None:
+        config = load_config(HERE / "config.json")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "config.json"
+            for dropout in (0.0, math.nextafter(1.0, 0.0)):
+                changed = dict(config, dropout=dropout, learning_rate=0.0,
+                               weight_decay=0.0, temperature=1e-12)
+                path.write_text(json.dumps(changed), encoding="utf-8")
+                self.assertEqual(run_preflight(path, HERE / "corpus.jsonl")["status"], "PASS")
+            for key, value in (("dropout", 1.0), ("dropout", -1e-12),
+                               ("temperature", 0.0), ("learning_rate", -1e-12),
+                               ("weight_decay", -1e-12), ("seed", 0)):
+                with self.subTest(key=key, value=value):
+                    path.write_text(json.dumps(dict(config, **{key: value})), encoding="utf-8")
+                    with self.assertRaises(ValueError):
+                        load_config(path)
 
     def test_tokenizer_is_fitted_only_on_supplied_train_text(self) -> None:
         tokenizer = CharTokenizer.fit(

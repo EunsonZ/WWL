@@ -139,7 +139,8 @@ git -C "$LLAMA_SRC" show -s --format='%H%n%aI%n%s' HEAD
 ```bash
 cmake -S "$LLAMA_SRC" -B "$EXPERIMENT_ROOT/build-cpu" \
   -DCMAKE_BUILD_TYPE=Release \
-  -DGGML_CUDA=OFF
+  -DGGML_CUDA=OFF \
+  -DGGML_METAL=OFF
 cmake -LAH -N "$EXPERIMENT_ROOT/build-cpu"
 cmake --build "$EXPERIMENT_ROOT/build-cpu" --target help
 ctest --test-dir "$EXPERIMENT_ROOT/build-cpu" --show-only

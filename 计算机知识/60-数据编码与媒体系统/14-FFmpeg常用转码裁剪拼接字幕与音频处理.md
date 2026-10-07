@@ -44,7 +44,7 @@ tags:
 
 1. 输入中有哪些 streams？用 [[计算机知识/60-数据编码与媒体系统/13-ffprobe媒体诊断与可复现检查|ffprobe 媒体诊断]]取得 index、codec、time base、duration、语言和 disposition。
 2. 输出要保留哪些 streams？显式写 `-map`，不要从扩展名或自动选择猜。
-3. 是否改变像素、采样、时长、速度、字幕呈现？若是，对应 stream 必须 decode/filter/encode。
+3. 是否改变像素、采样、速度或烧录字幕？这些滤镜操作要求对应 stream decode/filter/encode。仅缩短时长也可在 packet 层 stream copy 裁剪，但起点受关键帧等约束；若需要逐帧精确边界或其他滤镜，再走重编码路径。
 4. 目标 container 能否承载保留的 codec、字幕类型、附件和时间戳？
 5. 输出已存在怎么办？默认 `-n`；写到独立新文件，probe/播放验收后再由人决定归档或替换。
 
@@ -67,7 +67,7 @@ ffmpeg -hide_banner -n \
   "remuxed.example.mkv"
 ```
 
-`-c copy` 绕过 decode/filter/encode，通常快且不引入重编码损失。这里没有用 `-map 0`，是为了避免无意复制封面、附件、data、额外音轨或隐私 metadata。转封装仍可能改变 container header、stream index、interleaving、timestamps 或 bitstream framing；“媒体 payload 不重编码”不等于“文件字节相同”。
+`-c copy` 绕过 decode/filter/encode，通常快且不引入重编码损失。这里没有用 `-map 0`，可避免复制未选择的附件、data 和额外音轨；但 `0:v:0` 的小写 `v` 仍可能选中封面，需要运动视频时应按[官方选流合同](https://ffmpeg.org/ffmpeg.html#Stream-specifiers) 用 `0:V:0` 或先 probe 后指定已确认的 index。显式选流不等于清理隐私 metadata：默认首输入的 global metadata 会复制，stream metadata 也随流复制。若交付要求不继承这些信息，可另设 `-map_metadata -1 -map_metadata:s -1 -map_chapters -1`，然后只写需要的 metadata 并 probe 核对；这些选项控制相应 metadata/章节映射，不保证抹掉画面、声音、字幕、附件或码流中的隐私。[官方 metadata 与章节映射](https://ffmpeg.org/ffmpeg.html#Advanced-options) 给出默认复制和负输入索引禁用规则。转封装仍可能改变 container header、stream index、interleaving、timestamps 或 bitstream framing；“媒体 payload 不重编码”不等于“文件字节相同”。
 
 如果把输出改为 MP4，源 codec/字幕/attachment 不一定能被 MP4 muxer接受。失败时先看目标 muxer 帮助和完整错误，不要直接改后缀或盲目重编码全部 streams。
 
@@ -357,4 +357,4 @@ ffmpeg -hide_banner -n \
 <!-- revision-2-navigation -->
 ## 本轮课程定位与机制补充
 
-课程顺序与原稿入口：[[计算机知识/00-开始/课程地图/09-计算机网络-课程地图|计算机网络 · 课程地图]]。进一步的机制推演与反例：[[计算机知识/35-计算机网络/04-UDP-TCP可靠传输与应用分帧|网络：UDP、TCP、可靠传输与应用分帧]]。跨学科辨析：[[计算机知识/90-资源/11-跨学科概念辨析|跨学科概念辨析]]。
+课程顺序与原稿入口：[[计算机知识/60-数据编码与媒体系统/00-数据编码与媒体系统-MOC|数据编码与媒体系统 MOC]]。网络传输相关路线：[[计算机知识/00-开始/课程地图/09-计算机网络-课程地图|计算机网络 · 课程地图]]。进一步的机制推演与反例：[[计算机知识/35-计算机网络/04-UDP-TCP可靠传输与应用分帧|网络：UDP、TCP、可靠传输与应用分帧]]。跨学科辨析：[[计算机知识/90-资源/11-跨学科概念辨析|跨学科概念辨析]]。

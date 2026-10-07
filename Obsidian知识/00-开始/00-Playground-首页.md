@@ -75,7 +75,7 @@ flowchart LR
 
 ## 你的进度
 
-课程页都带有 `stage`、`difficulty` 和 `status` 属性。完成一课后，可把 `status` 从 `ready` 改为 `done`，再到 [[Obsidian知识/40-视图/02-Bases/课程进度.base|课程进度 Base]] 查看结果。
+课程页的 `stage`、`difficulty` 和 `status` 描述教材；[[Obsidian知识/40-视图/02-Bases/课程进度.base|课程进度 Base]] 展示的是课程文件及作者标记的状态。个人进度请记在自己的学习笔记或日记中：链接所学课程，由自己写下实际做过的练习、遇到的问题和下一步。不要为登记个人完成情况修改共享课程页的 `status`。
 
 > [!info] 知识域边界
 > 本页负责 Obsidian 教学。编程课程保存在独立的 `编程知识/` 目录，并使用自己的属性、标签和实验区；上表只提供一条明确的跨域入口。

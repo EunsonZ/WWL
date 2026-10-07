@@ -86,7 +86,7 @@ flowchart LR
 - 目标页的 Backlinks 中是否出现了合理来源。
 - 属性是否能被 [[Obsidian知识/40-视图/02-Bases/示例笔记目录.base|示例笔记目录.base]] 或相关 Base 筛选。
 - 任务是否有明确动词、上下文和时间边界。
-- Canvas 是否指向真实笔记，而不是复制一份无法搜索的文本。
+- Canvas 是否指向需要引用和复用的真实笔记，而不是另存一份容易漂移的正文副本。Canvas 文本卡片也可被[核心 Search](https://obsidian.md/help/plugins/search) 搜索；独立笔记的价值还在于笔记级链接、反向链接和跨页复用。
 - 关闭社区插件后，核心内容是否仍然是可读 Markdown。
 
 ---

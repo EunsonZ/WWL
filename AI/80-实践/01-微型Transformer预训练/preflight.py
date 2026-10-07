@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 
 from data_pipeline import (
@@ -37,12 +38,12 @@ def load_config(path: Path) -> dict[str, object]:
         "top_k",
     }
     for key in required_positive_ints:
-        if not isinstance(config.get(key), int) or config[key] <= 0:
+        if type(config.get(key)) is not int or config[key] <= 0:
             raise ValueError(f"config {key} must be a positive integer")
     for key in ("dropout", "learning_rate", "weight_decay", "temperature"):
         value = config.get(key)
-        if not isinstance(value, (int, float)) or value < 0:
-            raise ValueError(f"config {key} must be a non-negative number")
+        if type(value) not in (int, float) or (type(value) is float and not math.isfinite(value)) or value < 0:
+            raise ValueError(f"config {key} must be a finite non-negative number")
     if config["d_model"] % config["n_heads"] != 0:
         raise ValueError("d_model must be divisible by n_heads")
     head_dim = config["d_model"] // config["n_heads"]

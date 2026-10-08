@@ -32,10 +32,12 @@ tags:
 | 输入条件 | 输出与状态合同 |
 | --- | --- |
 | 完整且严格 UTF-8 的行 | OK 加原文字节，再加 LF |
-| 解码失败 | ERR utf8 后不再接收后续输入 |
-| 未遇 LF 就已积累 64 bytes | ERR line-too-long；第 64 byte 已证明下一字节即使 LF 也会超限 |
+| 解码失败 | 排队 ERR utf8，进入 rejected，丢弃尚未处理的后续输入；写完已有响应和错误回复后关闭 |
+| 未遇 LF 就已积累 64 bytes，或完整行超过 64 bytes | ERR line-too-long 后进入同样的 rejected 状态；未遇 LF 的第 64 byte 已证明下一字节即使 LF 也会超限 |
 | 对端 EOF 时仍有未完成行 | 先回复已完成行，再回复 ERR eof-partial |
 | 预线程的工作队列满 | acceptor 回复 ERR busy 并关闭写端，不把 socket 偷塞进无界队列 |
+
+上述回复以连接可写且总 deadline 尚有预算为前提。正常回复可包含中文等合法 UTF-8，错误码本身是 ASCII。`rejected` 与收到 EOF 都意味着不再读取；owner 仍先写出已排队的响应，随后关闭。对输入 `b"\xff\nok\n"`，同块或分块处理都只能产生 `ERR utf8`，不能再执行 `ok`；也不能等待对端再发 EOF 才关闭。若 deadline 已耗尽或连接出错，则终止本连接并回收资源，未写完的响应不承诺送达。
 
 一次 read 或 recv 只得到字节前缀，不是一条业务消息；一次 write 或 send 的非负结果也只表示已交付前缀。三份实现都维护增量 pending 缓冲和待写 output 缓冲。POSIX 对 [read](https://pubs.opengroup.org/onlinepubs/9799919799/functions/read.html) 与 [write](https://pubs.opengroup.org/onlinepubs/9799919799/functions/write.html) 的短 I/O、EOF 与 EINTR 条件是接口合同；本 Python 小实验只验证自己的有限协议，不能替代 C 的 RIO 或特定内核调度。
 
@@ -54,7 +56,7 @@ tags:
 ## 快进入口：各模型必须保持的不变量
 
 1. 每个连接的 pending 只属于一个连接状态；完整行只消费一次。
-2. 每个响应先进入该连接的 output；只有 output 全部送出后才允许因 read EOF 而关闭。
+2. 每个响应先进入该连接的 output；预算内正常完成时，output 全部送出后才因 read EOF 或 rejected 关闭；deadline/连接故障是明确的终止条件。
 3. 上限必须可数：每行不超过 64 B，预线程队列容量固定。
 4. FD 数字不是连接身份。只有 fd 与 generation 同时匹配的 event 可以操作连接。
 5. peer 不再发送、本端业务响应完成和本端资源回收是不同状态。
@@ -87,6 +89,10 @@ sequenceDiagram
 
 line_servers.py 的三个 serve 入口都有同样的有限参数：max_connections 和总 timeout。测试使用临时 loopback port；服务在接受完有限连接、总 deadline 到期，或抛出显式错误后关闭 listener 和自己拥有的 socket。没有常驻服务、外网连接或“某模型更快”的断言。
 
+总预算必须绑定一个绝对时刻 $d=t_0+\text{timeout}$。每次阻塞 `recv`、`send` 或过载回复前都重新算 $r=d-\operatorname{monotonic}()$；$r\le0$ 就停止，否则把这次操作的 timeout 设为 $r$。[`socket.settimeout`](https://docs.python.org/3/library/socket.html#socket.socket.settimeout)约束后续阻塞操作，不会替应用累计多次操作的预算。例如总预算 1 s，第一次读取消耗 0.9 s，下一次读或写最多只剩 0.1 s，不能重新等待 1 s。
+
+预线程关闭不再依赖“在满队列里成功塞入结束标记”。acceptor 停止后设置 `done`；worker 继续取已接收的有限任务，用同一个 deadline 处理并关闭连接。队列空时，带 20 ms 超时的 [`Queue.get`](https://docs.python.org/3/library/queue.html#queue.Queue.get)使 worker 能看见 `done` 并退出，0 个客户端也不例外。已经过期的排队连接直接关闭；清理阶段回收仍在队列中的 socket，并把工作者异常传回调用方。所有 worker 共享一次 100 ms 的 join 清理宽限，不按 worker 数反复追加预算；这允许线程调度和回收开销，仍不是生产环境的硬实时保证。`workers`、`capacity` 必须为正，容量 0 不能被误当作有界队列。
+
 GenerationTable 是确定性所有权模型，不是伪装成已经复现的 fd reuse race。它证明旧 fd/generation 在关闭、再分配同一整数后失效。真实内核 readiness 队列和取消细节须按具体 API 复核。
 
 ## 运行与可检查结果
@@ -95,7 +101,7 @@ GenerationTable 是确定性所有权模型，不是伪装成已经复现的 fd 
 python3 -B -m unittest -v test_line_servers.py
 ~~~
 
-测试检查：分片和同包多行、半关闭后仍写响应及 EOF 残行、超限与坏 UTF-8、慢读者积累三帧后暂停读取并受 output 上限约束、三个模型同一输出、有界队列压力的 busy 拒绝、generation 模型拒绝过期 event，以及服务线程在 deadline 内结束。它没有测量公平性、吞吐、TLS、HTTP、DNS、跨机网络或 OS 调度；通过也不等于完整安全证明。
+测试检查：分片和同包多行、半关闭后仍写响应及 EOF 残行、超限与坏 UTF-8 的终止状态、中文成功回显、慢读者积累三帧后暂停读取并受 output 上限约束、三个模型同一输出、有界队列压力的 busy 拒绝，以及 generation 模型拒绝过期 event。假时钟验证每次读写都扣除已用预算；loopback 验证 0 客户端和满队列到期后没有遗留 worker，活动、排队、被拒绝的 socket 均关闭。测试会检查服务异常，不能仅以服务线程不再存活当成成功。它没有测量公平性、吞吐、TLS、HTTP、DNS、跨机网络或 OS 调度；通过也不等于完整安全证明。
 
 ## 迁移题：不要猜作者想要哪一种模型
 

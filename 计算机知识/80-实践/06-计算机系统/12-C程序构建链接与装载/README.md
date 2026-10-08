@@ -116,6 +116,10 @@ clang main.o sum.o duplicate_sum.o -o duplicate_demo  # 预期：链接失败，
 
 `build_trace.py` 的真源与伴随测试如下。它记录实际 `clang` 路径、`sys.platform`、每条命令的 argv、stdout、stderr、返回码和是否超时。若可用，也调用 `nm sum.o main.o`：那是某一次工具输出的观察，不把 `nm` 的文本当成 ABI 或跨平台符号规则。
 
+失败证据本身也要有稳定类型。[Python 的 `TimeoutExpired` 合同](https://docs.python.org/3/library/subprocess.html#subprocess.TimeoutExpired)说明：即使请求 `text=True`，已捕获的超时输出仍可能是 `bytes`，没有输出则可能是 `None`。记录器把常规输出与超时片段都按 UTF-8 解释，不能解码的字节或被截断的字符以 `�` 替换；`None` 变为空字符串。这是便于诊断的文本表示，不是原始字节的无损存档。超时仍保留 `timed_out=true`、`returncode=null`，不会因为 JSON 能保存就成为成功。
+
+无需编译器也能验证这个边界：测试构造有部分 stdout/stderr、无输出、截断 UTF-8 三种超时；另起一个受控 Python 子进程确认实际异常路径。每例都必须能 JSON 往返、保留已有可读输出，且平台工具诊断不再因 `str`/`bytes` 混用而抛错。正常退出和非零退出的返回码仍各自保留。
+
 以下是阶段记录器的结构摘录。可复制、逐字可执行的当前版本及测试在 [[计算机知识/80-实践/06-计算机系统/12-C程序构建链接与装载/源码与测试镜像|源码与测试镜像]]，该页才带 `code-sync` 校验。
 
 <!-- illustrative excerpt: ./build_trace.py -->
@@ -153,12 +157,20 @@ class CommandResult:
     timed_out: bool
 
 
+def output_text(value: str | bytes | None) -> str:
+    if value is None:
+        return ""
+    return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else value
+
+
 def run(stage: str, argv: list[str], directory: Path) -> CommandResult:
     try:
         completed = subprocess.run(
             argv,
             cwd=directory,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             capture_output=True,
             timeout=TIMEOUT_SECONDS,
             check=False,
@@ -167,7 +179,7 @@ def run(stage: str, argv: list[str], directory: Path) -> CommandResult:
                              completed.stdout, completed.stderr, False)
     except subprocess.TimeoutExpired as error:
         return CommandResult(stage, argv, None,
-                             error.stdout or "", error.stderr or "", True)
+                             output_text(error.stdout), output_text(error.stderr), True)
 
 
 def copy_sources(directory: Path) -> None:

@@ -59,12 +59,21 @@ def child_environment() -> dict[str, str]:
     return environment
 
 
+def output_text(value: str | bytes | None) -> str:
+    """Keep partial diagnostics readable, including an incomplete UTF-8 suffix."""
+    if value is None:
+        return ""
+    return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else value
+
+
 def run(stage: str, argv: list[str], directory: Path) -> CommandResult:
     try:
         completed = subprocess.run(
             argv,
             cwd=directory,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             capture_output=True,
             timeout=TIMEOUT_SECONDS,
             check=False,
@@ -73,8 +82,10 @@ def run(stage: str, argv: list[str], directory: Path) -> CommandResult:
         return CommandResult(stage, argv, completed.returncode,
                              completed.stdout, completed.stderr, False)
     except subprocess.TimeoutExpired as error:
+        # TimeoutExpired may carry bytes even when run(text=True) was requested.
+        # Preserve the timeout and partial output; replacement is diagnostic only.
         return CommandResult(stage, argv, None,
-                             error.stdout or "", error.stderr or "", True)
+                             output_text(error.stdout), output_text(error.stderr), True)
 
 
 def copy_sources(directory: Path) -> None:

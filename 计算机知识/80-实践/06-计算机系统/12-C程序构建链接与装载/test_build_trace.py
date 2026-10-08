@@ -3,13 +3,58 @@ import shutil
 import subprocess
 import sys
 import unittest
+from dataclasses import asdict
 from pathlib import Path
+from unittest.mock import patch
 
 from build_trace import (COMMAND_LINE_TOOLS, CommandResult, ROOT, child_environment,
-                         find_clang, find_nm, is_platform_tool_gate, trace)
+                         find_clang, find_nm, is_platform_tool_gate, run, trace)
 
 
 class BuildTraceTests(unittest.TestCase):
+    def test_timeout_output_is_serializable_diagnostic_text(self) -> None:
+        cases = (
+            (b"partial\n", b"error\n", "partial\n", "error\n"),
+            (None, None, "", ""),
+            (b"partial \xe4\xb8", b"error \xff", "partial \ufffd", "error \ufffd"),
+        )
+        for stdout, stderr, expected_stdout, expected_stderr in cases:
+            with self.subTest(stdout=stdout, stderr=stderr):
+                error = subprocess.TimeoutExpired(["fixture"], 0.1, stdout, stderr)
+                with patch("build_trace.subprocess.run", side_effect=error):
+                    result = run("timeout-fixture", ["fixture"], ROOT)
+                restored = json.loads(json.dumps(asdict(result)))
+                self.assertTrue(restored["timed_out"])
+                self.assertIsNone(restored["returncode"])
+                self.assertEqual(restored["stdout"], expected_stdout)
+                self.assertEqual(restored["stderr"], expected_stderr)
+                self.assertIsInstance(result.stdout, str)
+                self.assertIsInstance(result.stderr, str)
+                self.assertFalse(is_platform_tool_gate(result))
+
+    def test_real_child_timeout_retains_partial_utf8_output(self) -> None:
+        script = (
+            "import os, time; "
+            "os.write(1, b'partial \\xe4\\xb8'); "
+            "os.write(2, b'error\\n'); time.sleep(5)"
+        )
+        with patch("build_trace.TIMEOUT_SECONDS", 0.2):
+            result = run("timeout-child", [sys.executable, "-c", script], ROOT)
+        self.assertTrue(result.timed_out)
+        self.assertIsNone(result.returncode)
+        self.assertEqual(result.stdout, "partial \ufffd")
+        self.assertEqual(result.stderr, "error\n")
+        self.assertEqual(json.loads(json.dumps(asdict(result)))["stdout"], result.stdout)
+
+    def test_success_and_nonzero_exit_keep_text_and_returncode(self) -> None:
+        for code in (0, 3):
+            with self.subTest(returncode=code):
+                script = f"import sys; print('ok'); print('failure', file=sys.stderr); sys.exit({code})"
+                result = run("exit-fixture", [sys.executable, "-c", script], ROOT)
+                self.assertEqual((result.returncode, result.stdout, result.stderr),
+                                 (code, "ok\n", "failure\n"))
+                self.assertFalse(result.timed_out)
+
     def test_missing_compiler_is_an_explicit_skip(self) -> None:
         self.assertEqual(trace(clang="/definitely/not/a/compiler")["status"], "SKIP")
 

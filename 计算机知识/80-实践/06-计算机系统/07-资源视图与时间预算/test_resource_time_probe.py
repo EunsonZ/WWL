@@ -1,13 +1,17 @@
 import platform
+import contextlib
+import io
 import tempfile
 import time
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from resource_time_probe import (
     CGROUP_ROOT,
     PROC_CGROUP,
     PROC_STATUS,
+    ReadText,
     cgroup_directory,
     count_cpu_list,
     cpu_quota_equivalent,
@@ -17,8 +21,89 @@ from resource_time_probe import (
     read_text_if_present,
     remaining_ns,
     resource_report,
+    main,
     sample_clock_delta,
 )
+
+
+class ResourceViewTests(unittest.TestCase):
+    def _report(self, cgroup_text, *, directory_exists=True):
+        observed = []
+
+        def read_fixture(path, limit=4096):
+            observed.append(path)
+            if path == PROC_STATUS:
+                return ReadText("Cpus_allowed_list:\t0-1", False)
+            if path == PROC_CGROUP:
+                return cgroup_text
+            if path.name == "cpu.max":
+                return ReadText("150000 100000", False)
+            return None
+
+        with patch("resource_time_probe.platform.system", return_value="Linux"), \
+                patch("resource_time_probe.read_text_if_present", side_effect=read_fixture), \
+                patch("resource_time_probe.Path.is_dir", return_value=directory_exists):
+            return resource_report(), observed
+
+    def test_outside_namespace_path_skips_cgroup_without_reading_outside_root(self):
+        lines, observed = self._report(ReadText("0::/../sub2", False))
+        self.assertTrue(any("cgroup_v2=SKIP" in line and "namespace" in line for line in lines))
+        self.assertIn("proc.allowed_cpu_count=2", lines)
+        self.assertTrue(any(line.startswith("logical_cpus_visible=") for line in lines))
+        self.assertEqual(observed, [PROC_STATUS, PROC_CGROUP])
+
+    def test_double_slash_anchor_never_escapes_root_or_probes_a_directory(self):
+        with self.assertRaises(ValueError):
+            cgroup_directory(CGROUP_ROOT, "//outside")
+        with patch("resource_time_probe.platform.system", return_value="Linux"), \
+                patch("resource_time_probe.read_text_if_present",
+                      side_effect=[None, ReadText("0:://outside", False)]) as read, \
+                patch("resource_time_probe.Path.is_dir") as directory_probe:
+            lines = resource_report()
+        self.assertTrue(any("cgroup_v2=SKIP" in line for line in lines))
+        self.assertEqual([call.args[0] for call in read.call_args_list], [PROC_STATUS, PROC_CGROUP])
+        directory_probe.assert_not_called()
+
+    def test_visible_root_and_child_keep_their_normal_mapping(self):
+        for relative in ("/", "/child"):
+            with self.subTest(relative=relative):
+                lines, observed = self._report(ReadText(f"0::{relative}", False))
+                self.assertIn(f"cgroup_v2.path={relative}", lines)
+                self.assertIn("cgroup.cpu_quota_equivalent=1.500", lines)
+                for path in observed[2:]:
+                    self.assertEqual(path.parent, CGROUP_ROOT / relative.lstrip("/"))
+                missing, reads = self._report(ReadText(f"0::{relative}", False), directory_exists=False)
+                self.assertIn("cgroup_v2=SKIP reason=current cgroup directory unavailable", missing)
+                self.assertEqual(reads, [PROC_STATUS, PROC_CGROUP])
+
+    def test_missing_truncated_and_legacy_cgroup_text_keep_distinct_results(self):
+        cases = (
+            (None, "cgroup_v2=SKIP reason=/proc/self/cgroup unavailable"),
+            (ReadText("0::/chi", True), "cgroup_v2=TRUNCATED limit=4096; path not parsed"),
+            (ReadText("2:cpu:/legacy", False), "cgroup_v2=SKIP reason=unified hierarchy not visible"),
+        )
+        for value, expected in cases:
+            with self.subTest(value=value):
+                lines, observed = self._report(value)
+                self.assertIn(expected, lines)
+                self.assertEqual(observed, [PROC_STATUS, PROC_CGROUP])
+
+    def test_main_continues_to_independent_clock_report_after_namespace_skip(self):
+        def read_fixture(path, limit=4096):
+            if path == PROC_CGROUP:
+                return ReadText("0::/../sub2", False)
+            if path == PROC_STATUS:
+                return None
+            self.fail(f"unexpected read: {path}")
+
+        output = io.StringIO()
+        with patch("resource_time_probe.platform.system", return_value="Linux"), \
+                patch("resource_time_probe.read_text_if_present", side_effect=read_fixture), \
+                contextlib.redirect_stdout(output):
+            main()
+        self.assertIn("cgroup_v2=SKIP", output.getvalue())
+        self.assertIn("deadline.budget_ns=", output.getvalue())
+        self.assertIn("delta_ns=", output.getvalue())
 
 
 class ParserTests(unittest.TestCase):
@@ -55,6 +140,8 @@ class ParserTests(unittest.TestCase):
         )
         with self.assertRaises(ValueError):
             cgroup_directory(root, "/../escape")
+        with self.assertRaises(ValueError):
+            cgroup_directory(root, "relative/path")
 
     def test_bounded_read_reports_truncation_without_parsing_a_partial_value(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -131,7 +218,10 @@ class LinuxReadOnlyIntegrationTests(unittest.TestCase):
         relative = parse_cgroup_v2_path(text.text)
         if relative is None:
             self.skipTest("SKIP: unified cgroup v2 hierarchy not visible")
-        directory = cgroup_directory(CGROUP_ROOT, relative)
+        try:
+            directory = cgroup_directory(CGROUP_ROOT, relative)
+        except ValueError:
+            self.skipTest("SKIP: current cgroup is outside the visible namespace root")
         if not directory.is_dir():
             self.skipTest("SKIP: current cgroup directory not mounted in this view")
         self.assertTrue(directory.is_dir())

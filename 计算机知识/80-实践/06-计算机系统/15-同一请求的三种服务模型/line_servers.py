@@ -31,8 +31,8 @@ def decode_line(wire: bytes) -> bytes:
 
     A line is valid only when its complete UTF-8 wire representation is at
     most 64 bytes including LF.  Newlines delimit requests; ``CR`` remains an
-    ordinary payload byte.  The response is ASCII, so a bad input never makes
-    the server's reply undecodable.
+    ordinary payload byte.  Successful replies echo valid UTF-8; error codes
+    are ASCII.  A bad input never makes the server's reply undecodable.
     """
     assert wire.endswith(b"\n")
     if len(wire) > MAX_LINE_BYTES:
@@ -74,7 +74,7 @@ class LineState:
                 self.frame_remaining[0] -= used
 
     def receive(self, data: bytes) -> None:
-        """Consume bytes incrementally; all complete lines become responses."""
+        """Consume lines until backpressure or a terminal protocol error."""
         if self.read_eof or self.rejected:
             return
         if len(data) > READ_CHUNK_BYTES:
@@ -94,7 +94,12 @@ class LineState:
                 return
             wire = bytes(self.pending[: newline + 1])
             del self.pending[: newline + 1]
-            self._queue(decode_line(wire))
+            response = decode_line(wire)
+            self._queue(response)
+            if response.startswith(b"ERR "):
+                self.pending.clear()
+                self.rejected = True
+                return
 
     def eof(self) -> None:
         self.read_eof = True
@@ -103,34 +108,44 @@ class LineState:
             self.pending.clear()
 
 
+def _set_remaining_timeout(conn: socket.socket, deadline: float) -> bool:
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        return False
+    conn.settimeout(remaining)
+    return True
+
+
 def _drain(conn: socket.socket, state: LineState, deadline: float) -> None:
-    """Blocking connection owner used by the iterative and worker models."""
-    conn.settimeout(max(0.01, deadline - time.monotonic()))
+    """Own reads, writes and close; every blocking call shares one deadline."""
     try:
-        while not state.read_eof and time.monotonic() < deadline:
+        while True:
             if state.output:
+                if not _set_remaining_timeout(conn, deadline):
+                    break
                 sent = conn.send(state.output)
+                if sent == 0:
+                    break
                 state.written(sent)
                 if not state.output and not state.read_paused:
                     state.receive(b"")
                 continue
+            if state.read_eof or state.rejected:
+                break
             if state.pending and not state.read_paused:
                 state.receive(b"")
                 if state.output:
                     continue
-            try:
-                data = conn.recv(READ_CHUNK_BYTES)
-            except socket.timeout:
+            if not _set_remaining_timeout(conn, deadline):
                 break
+            data = conn.recv(READ_CHUNK_BYTES)
             if not data:
                 state.eof()
-                break
-            state.receive(data)
-        while state.output and time.monotonic() < deadline:
-            sent = conn.send(state.output)
-            state.written(sent)
-            if not state.output and not state.read_paused:
-                state.receive(b"")
+            else:
+                state.receive(data)
+    except OSError:
+        # Timeout, reset or failed write ends this connection, not its owner pool.
+        pass
     finally:
         try:
             conn.shutdown(socket.SHUT_WR)
@@ -154,10 +169,14 @@ def serve_iterative(
     """One connection owner at a time.  A slow connection delays the next one."""
     deadline = time.monotonic() + timeout
     listener = _listener()
-    publish(listener.getsockname()[1])
     accepted = 0
     try:
-        while accepted < max_connections and time.monotonic() < deadline:
+        publish(listener.getsockname()[1])
+        while accepted < max_connections:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                break
+            listener.settimeout(min(0.02, remaining))
             try:
                 conn, _ = listener.accept()
             except socket.timeout:
@@ -173,28 +192,41 @@ def serve_prethreaded(
     capacity: int = 2, timeout: float = 2.0
 ) -> None:
     """A finite admission queue.  Full means a visible `ERR busy`, never growth."""
+    if workers <= 0 or capacity <= 0:
+        raise ValueError("workers and capacity must be positive")
     deadline = time.monotonic() + timeout
     listener = _listener()
-    jobs: queue.Queue[socket.socket | None] = queue.Queue(maxsize=capacity)
+    jobs: queue.Queue[socket.socket] = queue.Queue(maxsize=capacity)
     done = threading.Event()
+    errors: queue.SimpleQueue[Exception] = queue.SimpleQueue()
 
     def worker() -> None:
         while True:
-            item = jobs.get()
             try:
-                if item is None:
+                item = jobs.get(timeout=0.02)
+            except queue.Empty:
+                if done.is_set():
                     return
+                continue
+            try:
                 _drain(item, LineState(), deadline)
+            except Exception as error:
+                errors.put(error)
             finally:
                 jobs.task_done()
 
-    threads = [threading.Thread(target=worker, daemon=True) for _ in range(workers)]
+    threads = [threading.Thread(target=worker, name=f"wwl-line-worker-{index}")
+               for index in range(workers)]
     for thread in threads:
         thread.start()
-    publish(listener.getsockname()[1])
     accepted = 0
     try:
-        while accepted < max_connections and time.monotonic() < deadline:
+        publish(listener.getsockname()[1])
+        while accepted < max_connections:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                break
+            listener.settimeout(min(0.02, remaining))
             try:
                 conn, _ = listener.accept()
             except socket.timeout:
@@ -204,26 +236,34 @@ def serve_prethreaded(
                 jobs.put_nowait(conn)
             except queue.Full:
                 try:
-                    conn.sendall(BUSY)
-                    conn.shutdown(socket.SHUT_WR)
+                    if _set_remaining_timeout(conn, deadline):
+                        conn.sendall(BUSY)
+                        conn.shutdown(socket.SHUT_WR)
                 except OSError:
                     pass
                 conn.close()
     finally:
         listener.close()
-        # Workers have a finite socket timeout, so each sentinel is eventually read.
-        for _ in threads:
-            while time.monotonic() < deadline:
-                try:
-                    jobs.put(None, timeout=0.02)
-                    break
-                except queue.Full:
-                    continue
+        # No producer remains. Drain admitted jobs, then leave a timed get on
+        # an empty queue; shutdown needs no free slot for a sentinel.
         done.set()
+        join_deadline = max(deadline, time.monotonic()) + 0.1
         for thread in threads:
-            thread.join(timeout=max(0.0, deadline - time.monotonic()) + 0.1)
+            thread.join(timeout=max(0.0, join_deadline - time.monotonic()))
+        # Recover any socket still owned by the admission queue on failure.
+        while True:
+            try:
+                pending = jobs.get_nowait()
+            except queue.Empty:
+                break
+            try:
+                pending.close()
+            finally:
+                jobs.task_done()
         if any(thread.is_alive() for thread in threads):
             raise RuntimeError("worker did not stop before the service deadline")
+        if not errors.empty():
+            raise RuntimeError("connection worker failed") from errors.get_nowait()
 
 
 @dataclass
@@ -282,12 +322,12 @@ def serve_selectors(
         event.sock.close()
 
     selector.register(listener, selectors.EVENT_READ, data=None)
-    publish(listener.getsockname()[1])
     try:
+        publish(listener.getsockname()[1])
         while time.monotonic() < deadline:
             if accepted >= max_connections and len(selector.get_map()) == 1:
                 return
-            for key, mask in selector.select(timeout=0.02):
+            for key, mask in selector.select(timeout=min(0.02, max(0.0, deadline - time.monotonic()))):
                 if key.data is None:
                     if accepted >= max_connections:
                         continue
@@ -318,13 +358,13 @@ def serve_selectors(
                     except BlockingIOError:
                         sent = 0
                     event.state.written(sent)
-                    if not event.state.output and not event.state.read_eof:
+                    if not event.state.output and not (event.state.read_eof or event.state.rejected):
                         event.state.receive(b"")
                         if event.state.output:
                             selector.modify(event.sock, selectors.EVENT_WRITE, event)
                         else:
                             selector.modify(event.sock, selectors.EVENT_READ, event)
-                if event.state.read_eof and not event.state.output:
+                if (event.state.read_eof or event.state.rejected) and not event.state.output:
                     close(event)
     finally:
         for key in list(selector.get_map().values()):

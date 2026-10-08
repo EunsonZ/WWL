@@ -125,6 +125,8 @@ def parse_cgroup_v2_path(text: str) -> str | None:
 def cgroup_directory(root: Path, cgroup_path: str) -> Path:
     """Map a kernel-reported v2 path below root without allowing traversal."""
     pure = PurePosixPath(cgroup_path)
+    if pure.anchor != "/":
+        raise ValueError("cgroup path must use a single absolute root")
     parts = tuple(part for part in pure.parts if part not in ("/", ""))
     if any(part in (".", "..") for part in parts):
         raise ValueError("cgroup path traversal is not allowed")
@@ -191,7 +193,13 @@ def resource_report() -> list[str]:
         lines.append("cgroup_v2=SKIP reason=unified hierarchy not visible")
         return lines
 
-    directory = cgroup_directory(CGROUP_ROOT, relative)
+    try:
+        directory = cgroup_directory(CGROUP_ROOT, relative)
+    except ValueError:
+        # A process may legally move outside its cgroup namespace root. Keep
+        # the path guard: this view cannot map /../ safely below CGROUP_ROOT.
+        lines.append("cgroup_v2=SKIP reason=path cannot be mapped below visible namespace root")
+        return lines
     if not directory.is_dir():
         lines.append("cgroup_v2=SKIP reason=current cgroup directory unavailable")
         return lines

@@ -6,6 +6,21 @@ import html
 import json
 from hdl_model import directed,enumerate_transitions,random_check
 
+def _vault_root():
+    """Locate the actual relocated vault from this truth source, not the cwd spelling."""
+    for ancestor in Path(__file__).resolve().parents:
+        if (ancestor / 'AGENTS.md').is_file() and (ancestor / 'scripts/check_vault.py').is_file():
+            return ancestor
+    raise ValueError('cannot locate vault root: AGENTS.md and scripts/check_vault.py required')
+
+
+def _destination(output):
+    out=Path(output).expanduser().resolve(); vault=_vault_root()
+    if out==vault or vault in out.parents:
+        raise ValueError('output must be outside the main vault')
+    return out
+
+
 class Drawing:
  def __init__(self,title,height):
   self.height=height;self.items=[]
@@ -133,9 +148,7 @@ def figures():
 
 
 def generate(output):
- out=Path(output).expanduser().resolve()
- vault=Path('/Users/ysz/Misc/Obsidian/Valults/WLM/WWL').resolve()
- if out==vault or vault in out.parents:raise ValueError('output outside main vault required')
+ out=_destination(output)
  # heavy render libraries imported only after explicit output has been resolved
  import cairosvg
  from PIL import Image

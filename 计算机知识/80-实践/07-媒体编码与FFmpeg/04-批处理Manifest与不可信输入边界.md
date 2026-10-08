@@ -126,12 +126,8 @@ fi
 
 validate_row() {
   local line_number="$1" input_name="$2" output_name="$3"
-  local start="$4" duration="$5" extra="$6" input_path size
+  local start="$4" duration="$5" input_path size
 
-  [[ -z "$extra" ]] || {
-    printf 'line %s: expected exactly four tab-separated fields\n' "$line_number" >&2
-    return 1
-  }
   case "$input_name" in
     *://*|*:*|/*|*/*|*\\*|*..*)
       printf 'line %s: protocol, absolute, traversal, or nested input rejected\n' "$line_number" >&2
@@ -150,7 +146,7 @@ validate_row() {
     printf 'line %s: invalid start time\n' "$line_number" >&2
     return 1
   }
-  [[ "$duration" =~ ^[0-9]+([.][0-9]+)?$ && "$duration" != 0 && "$duration" != 0.0 ]] || {
+  [[ "$duration" =~ ^[0-9]+([.][0-9]+)?$ && ! "$duration" =~ ^0+([.]0+)?$ ]] || {
     printf 'line %s: invalid duration\n' "$line_number" >&2
     return 1
   }
@@ -170,22 +166,37 @@ validate_row() {
     -show_entries format=format_name,duration -of json "$input_path" >/dev/null
 }
 
+# Read the raw row; tab is whitespace in IFS and read would collapse empty fields.
+parse_row() {
+  local rest="$1" tab=$'\t'
+  [[ "$rest" == *"$tab"* ]] || return 1
+  input_name="${rest%%"$tab"*}"; rest="${rest#*"$tab"}"
+  [[ "$rest" == *"$tab"* ]] || return 1
+  output_name="${rest%%"$tab"*}"; rest="${rest#*"$tab"}"
+  [[ "$rest" == *"$tab"* ]] || return 1
+  start="${rest%%"$tab"*}"; duration="${rest#*"$tab"}"
+  [[ "$duration" != *"$tab"* ]] || return 1
+  # Empty fields are preserved here and rejected by each field's syntax below.
+}
+
 line_number=0
 row_count=0
 seen_outputs="$workspace/seen-output-names.txt"
 : > "$seen_outputs"
-while IFS=$'\t' read -r input_name output_name start duration extra ||
-      [[ -n "${input_name}${output_name}${start}${duration}${extra}" ]]; do
+while IFS= read -r row || [[ -n "$row" ]]; do
   line_number=$((line_number + 1))
-  [[ -z "${input_name}${output_name}${start}${duration}${extra}" ]] && continue
-  [[ "$input_name" == \#* ]] && continue
+  [[ -z "$row" || "$row" == \#* ]] && continue
+  parse_row "$row" || {
+    printf 'line %s: expected exactly four tab-separated fields\n' "$line_number" >&2
+    exit 65
+  }
   row_count=$((row_count + 1))
   (( row_count <= 100 )) || {
     printf 'manifest exceeds the 100-row lab limit\n' >&2
     exit 65
   }
   validate_row "$line_number" "$input_name" "$output_name" \
-    "$start" "$duration" "${extra:-}"
+    "$start" "$duration"
   if grep -Fqx -- "$output_name" "$seen_outputs"; then
     printf 'line %s: duplicate output name rejected: %s\n' \
       "$line_number" "$output_name" >&2
@@ -202,10 +213,12 @@ mkdir -- "$output_dir"
 output_dir="$(cd -- "$output_dir" && pwd -P)"
 printf '%s\n' 'WorkWithLLM FFmpeg bounded-batch lab' > "$output_dir/.lab-marker"
 
-while IFS=$'\t' read -r input_name output_name start duration extra ||
-      [[ -n "${input_name}${output_name}${start}${duration}${extra}" ]]; do
-  [[ -z "${input_name}${output_name}${start}${duration}${extra}" ]] && continue
-  [[ "$input_name" == \#* ]] && continue
+while IFS= read -r row || [[ -n "$row" ]]; do
+  [[ -z "$row" || "$row" == \#* ]] && continue
+  parse_row "$row" || {
+    printf 'line %s: expected exactly four tab-separated fields\n' "$line_number" >&2
+    exit 65
+  }
   input_path="$input_dir/$input_name"
   output_path="$output_dir/$output_name"
   [[ ! -e "$output_path" ]] || {
@@ -257,3 +270,7 @@ printf 'temporary-workspace=%s\n' "$workspace"
 ## 本轮课程定位与机制补充
 
 课程顺序与原稿入口：[[计算机知识/00-开始/课程地图/09-计算机网络-课程地图|计算机网络 · 课程地图]]。进一步的机制推演与反例：[[计算机知识/35-计算机网络/04-UDP-TCP可靠传输与应用分帧|网络：UDP、TCP、可靠传输与应用分帧]]。跨学科辨析：[[计算机知识/90-资源/11-跨学科概念辨析|跨学科概念辨析]]。
+
+### 当前边界回归接口
+
+同源 `test_shell_contracts.py` 定义 stub FFmpeg/ffprobe 回归：三列、五列、尾部空列、中间空列均在探测前拒绝；`0`、`0.0`、`00`、`0.00`、`000.000` 拒绝，`0.1` 与 `1` 保持合法。原始 TSV 行恰含三个 Tab 后才逐字段校验，不依赖会折叠空字段的 Tab-IFS。比较脚本进入已独占创建的输出目录，滤镜只用固定相对 `psnr.log`/`ssim.log`，shell 引号与 filtergraph 转义分别处理。普通、空格、冒号、逗号和单引号目录名的真实 FFmpeg parser 对照与完整默认合成样本均 `not_run`；stub 只证明参数及拒绝路径，不证明解码或客观指标。

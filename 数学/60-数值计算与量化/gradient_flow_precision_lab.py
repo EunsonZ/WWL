@@ -187,7 +187,8 @@ def render(output, cases, refinement):
 
 def generate(output):
     output=Path(output).resolve()
-    if output == Path(__file__).parent.resolve():
+    source=Path(__file__).resolve().parent
+    if output == source or source in output.parents:
         raise ValueError('use a separate output directory')
     output.mkdir(parents=True,exist_ok=True)
     rows=[]

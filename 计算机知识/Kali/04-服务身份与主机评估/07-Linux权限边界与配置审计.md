@@ -95,10 +95,13 @@ findmnt
 限制文件搜索范围比扫描全盘更容易审阅：
 
 ```bash
-# 仅检查已批准的本机软件目录，-xdev 不跨挂载点
+# 仅检查已批准的本机软件目录；-xdev 不下降到其他设备上的目录
 find /usr/bin -xdev -type f -perm -4000 -print
 getcap -r /usr/bin
 ```
+
+`-xdev` 按设备/文件系统边界限制下降，不能保证排除所有挂载点。同设备 bind mount 可不被此条件排除，这是 [GNU find 合同](https://man7.org/linux/man-pages/man1/find.1.html) 与 [bind mount 合同](https://man7.org/linux/man-pages/man2/mount.2.html) 的推断，本轮没有实际挂载实验。若要排除所有挂载位置，先核获批范围内的实际挂载树，再明确 prune 路径；该选项不是权限隔离边界。
+
 
 SUID 位、capabilities 和服务账户分别是权限机制。发现某个 SUID 程序并不直接证明漏洞；必须核对其用途、来源、权限模型与安全实现。不要执行网上的利用片段来“试试看”。
 

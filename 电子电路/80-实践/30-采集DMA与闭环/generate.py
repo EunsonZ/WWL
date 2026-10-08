@@ -9,9 +9,17 @@ import math
 import html
 
 
+def _vault_root():
+    """Locate the actual relocated vault from this truth source, not the cwd spelling."""
+    for ancestor in Path(__file__).resolve().parents:
+        if (ancestor / 'AGENTS.md').is_file() and (ancestor / 'scripts/check_vault.py').is_file():
+            return ancestor
+    raise ValueError('cannot locate vault root: AGENTS.md and scripts/check_vault.py required')
+
+
 def _destination(output):
     out=Path(output).expanduser().resolve()
-    vault=Path('/Users/ysz/Misc/Obsidian/Valults/WLM/WWL').resolve()
+    vault=_vault_root()
     if out==vault or vault in out.parents:
         raise ValueError('output must be outside the main vault')
     return out

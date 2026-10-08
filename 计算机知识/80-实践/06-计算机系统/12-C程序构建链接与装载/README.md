@@ -116,6 +116,10 @@ clang main.o sum.o duplicate_sum.o -o duplicate_demo  # 预期：链接失败，
 
 `build_trace.py` 的真源与伴随测试如下。它记录实际 `clang` 路径、`sys.platform`、每条命令的 argv、stdout、stderr、返回码和是否超时。若可用，也调用 `nm sum.o main.o`：那是某一次工具输出的观察，不把 `nm` 的文本当成 ABI 或跨平台符号规则。
 
+失败证据本身也要有稳定类型。[Python 的 `TimeoutExpired` 合同](https://docs.python.org/3/library/subprocess.html#subprocess.TimeoutExpired)说明：即使请求 `text=True`，已捕获的超时输出仍可能是 `bytes`，没有输出则可能是 `None`。记录器把常规输出与超时片段都按 UTF-8 解释，不能解码的字节或被截断的字符以 `�` 替换；`None` 变为空字符串。这是便于诊断的文本表示，不是原始字节的无损存档。超时仍保留 `timed_out=true`、`returncode=null`，不会因为 JSON 能保存就成为成功。
+
+无需编译器也能验证这个边界：测试构造有部分 stdout/stderr、无输出、截断 UTF-8 三种超时；另起一个受控 Python 子进程确认实际异常路径。每例都必须能 JSON 往返、保留已有可读输出，且平台工具诊断不再因 `str`/`bytes` 混用而抛错。正常退出和非零退出的返回码仍各自保留。
+
 以下是阶段记录器的结构摘录。可复制、逐字可执行的当前版本及测试在 [[计算机知识/80-实践/06-计算机系统/12-C程序构建链接与装载/源码与测试镜像|源码与测试镜像]]，该页才带 `code-sync` 校验。
 
 <!-- illustrative excerpt: ./build_trace.py -->
@@ -153,12 +157,20 @@ class CommandResult:
     timed_out: bool
 
 
+def output_text(value: str | bytes | None) -> str:
+    if value is None:
+        return ""
+    return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else value
+
+
 def run(stage: str, argv: list[str], directory: Path) -> CommandResult:
     try:
         completed = subprocess.run(
             argv,
             cwd=directory,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             capture_output=True,
             timeout=TIMEOUT_SECONDS,
             check=False,
@@ -167,7 +179,7 @@ def run(stage: str, argv: list[str], directory: Path) -> CommandResult:
                              completed.stdout, completed.stderr, False)
     except subprocess.TimeoutExpired as error:
         return CommandResult(stage, argv, None,
-                             error.stdout or "", error.stderr or "", True)
+                             output_text(error.stdout), output_text(error.stderr), True)
 
 
 def copy_sources(directory: Path) -> None:
@@ -331,7 +343,7 @@ uint32_t sum_u32(const uint32_t values[], size_t count) {
 下面题目不提供命令顺序。每题的“答案”是可接受结论的合同，并非唯一实现。
 
 1. 有人把 `sum.c` 编成 AArch64/macOS 对象，把 `main.c` 编成 x86-64/Linux 对象，再试图链接。先列出必须检查的两个条件，说明为什么“二者都编译成功”不足够。**可接受答案**：指出目标对象格式/架构与 ABI/链接器输入必须相容，并要求检查实际 target、对象元数据和运行环境；也可进一步指出系统库与加载器差异。不能仅回答“缺头文件”。
-2. 把 `sum_u32` 改为 `static`，同时保持 `main.c` 的外部调用。预测最早在哪个阶段失去可解析引用，并说明 `static` 改的是可见性/链接属性的哪一面。**可接受答案**：在常见 C 工具链中，`sum.c` 内部定义不再供 `main.o` 的外部引用解析，因此链接失败；若同时改为由同一翻译单元调用，则可能成功。答案必须声明具体构建布局，不能说 `static` “使函数不存在”。
+2. 分两种布局判断 `static` 的最早失败阶段。**布局 A**：保持当前 `sum.c` 的 `#include "sum.h"`，只给定义添加 `static`；外部声明与内部链接定义在同一翻译单元冲突，常见编译器在 `-c` 时即诊断，不能先承诺链接失败。[C11 草案 N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf) §6.2.2¶7 将同一翻译单元内同一标识符出现内外链接列为未定义行为，标准不保证某种固定诊断。**布局 B**：另建没有外部 `sum_u32` 声明的翻译单元，仅包含 `<stdint.h>`、`<stddef.h>` 并定义合法的内部 `static sum_u32`；保持 `main.c` 外部引用。分别编译可以成功，但这个内部定义不能解析 `main.o` 的外部引用，链接失败。记录编译器版本、完整命令、最早非零返回码及诊断；本轮执行为 `not_run`。若调用者和内部定义都在同一翻译单元，则可能成功。
 3. 用静态库替换直接放入 `sum.o`，并把库放在命令行中引用它的对象之前或之后。给出要观察的证据和一个可能改变结果的条件。**可接受答案**：记录完整链接命令、工具/平台、符号表与返回码；库扫描顺序和循环依赖可能影响传统链接器解析。允许使用本机文档说明某工具行为不同，不能把这台 macOS 的一次结果外推为所有 GNU/ELF 链接器规律。
 4. 程序在本机成功链接并输出 100，但部署端启动时报共享库缺失。说明原来的哪个断言仍然成立、哪个必须撤回，并给出两个下一步证据。**可接受答案**：本机那组输入形成并运行过一个产物仍成立；“部署端能装载”必须撤回。可检查目标的动态依赖、架构/ABI、加载器搜索/签名政策和部署日志；不把问题归结为 C 加法。
 

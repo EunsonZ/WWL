@@ -102,38 +102,74 @@ def read_response(sock: socket.socket, *, total_timeout: float | None = None) ->
 
 
 class ScriptedServer:
-    """One temporary AF_INET loopback listener; it is closed by the context manager."""
+    """Own one temporary loopback listener, accepted peer and non-daemon worker."""
     def __init__(self, replies: list[bytes], delay: float = 0.0):
         self.replies, self.delay = replies, delay
         self.listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.listener.bind(("127.0.0.1", 0)); self.listener.listen(1)
+        self.listener.settimeout(0.1)  # accept periodically observes stop on every platform
         self.port = self.listener.getsockname()[1]
-        self.thread = threading.Thread(target=self._run, daemon=True)
+        self.thread = threading.Thread(target=self._run)
         self.error: Exception | None = None
+        self._stopping = threading.Event()
+        self._accepted = threading.Event()
+        self._connection_lock = threading.Lock()
+        self._connection: socket.socket | None = None
 
     def __enter__(self): self.thread.start(); return self
-    def __exit__(self, *_):
-        self.listener.close(); self.thread.join(timeout=1)
-        if self.error: raise self.error
+
+    def __exit__(self, exc_type, body_error, traceback):
+        self._stopping.set()
+        self.listener.close()
+        with self._connection_lock:
+            conn = self._connection
+            if conn is not None:
+                try: conn.shutdown(socket.SHUT_RDWR)
+                except OSError: pass
+                conn.close()
+        self.thread.join(timeout=1)
+        cleanup_error = (RuntimeError("loopback worker did not stop during context exit")
+                         if self.thread.is_alive() else None)
+        errors = [error for error in (cleanup_error, self.error) if error is not None]
+        if body_error is not None:
+            # Preserve the body exception; retain cleanup/worker diagnostics as notes.
+            for error in errors: body_error.add_note(f"loopback cleanup/worker: {error!r}")
+            return False
+        if cleanup_error is not None: raise cleanup_error
+        if self.error is not None: raise self.error
+        return False
 
     def _run(self):
         try:
-            conn, _ = self.listener.accept()
+            while not self._stopping.is_set():
+                try: conn, _ = self.listener.accept()
+                except socket.timeout: continue
+                with self._connection_lock:
+                    if self._stopping.is_set():
+                        conn.close(); return
+                    self._connection = conn
+                    self._accepted.set()
+                break
+            else: return
             with conn:
                 pending = bytearray()
                 for reply in self.replies:
                     while b"\r\n\r\n" not in pending:
                         part = conn.recv(1024)
-                        if not part: return
+                        if not part or self._stopping.is_set(): return
                         pending.extend(part)
                     end = pending.index(b"\r\n\r\n") + 4
                     del pending[:end]
-                    if self.delay: time.sleep(self.delay)
-                    # fragment writes too: a server send boundary is not a client recv boundary
-                    for i in range(0, len(reply), 2): conn.sendall(reply[i:i + 2])
-        except OSError as exc:
-            if self.listener.fileno() != -1: self.error = exc
+                    if self.delay and self._stopping.wait(self.delay): return
+                    for i in range(0, len(reply), 2):
+                        if self._stopping.is_set(): return
+                        conn.sendall(reply[i:i + 2])
+        except Exception as error:
+            if not (isinstance(error, OSError) and self._stopping.is_set()):
+                self.error = error
+        finally:
+            with self._connection_lock: self._connection = None
 
 
 def request(sock: socket.socket, target: str = "/") -> None:

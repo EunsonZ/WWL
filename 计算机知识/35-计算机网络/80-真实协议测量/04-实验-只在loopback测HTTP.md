@@ -45,3 +45,5 @@ python3 -B generate_diagrams.py
 - 完整 HTTP response 不是远端业务的持久化或幂等确认。
 
 复查规范：[RFC 9112](https://www.rfc-editor.org/rfc/rfc9112.html)、[RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html)、[RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html)、[Python socket](https://docs.python.org/3/library/socket.html)、[Python http.client](https://docs.python.org/3/library/http.client.html)。
+
+上下文退出先请求停止，关闭 listener 与已接收连接，打断人为延迟，再等待并检查非 daemon 工作线程。主体异常保留为主异常；同时发生的 worker/收尾错误写入异常 note，无主体异常时显式抛出。半请求头、无客户端、正常响应、延迟和异常情形已有同源回归定义，本轮均 `not_run`；旧运行记录只适用于当时版本。

@@ -30,7 +30,7 @@ tags:
 - 知道何时停止：证据不足时不重装驱动、不追加全局 `PATH`、不授予特权容器，也不把端口直接暴露到网络。
 
 > [!important] 本课不安装 runtime，也不运行容器
-> 下面的观察命令不创建容器、不修改 cgroup、不改变网络、挂载或驱动。Docker、Podman、Kubernetes 等是具体运行时；先理解边界，再根据所在平台的**官方文档**选择一个运行时学习。不要复制不明镜像、`curl | sh` 安装脚本、`--privileged`、host network/host PID 或把宿主敏感目录挂入容器的示例。
+> 下面的观察命令不创建容器、不修改 cgroup、不改变网络、挂载或驱动。Docker、Podman 是容器工具/引擎；Kubernetes 是编排平台，由节点 kubelet 通过 CRI 接口调用 containerd、CRI-O 等运行时。见 [Kubernetes 概览](https://kubernetes.io/docs/concepts/overview/) 与 [节点容器运行时](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)；先理解边界，再根据所在平台的**官方文档**选择一个运行时学习。不要复制不明镜像、`curl | sh` 安装脚本、`--privileged`、host network/host PID 或把宿主敏感目录挂入容器的示例。
 
 ## 1. 四种“隔离”解决的不是同一个问题
 

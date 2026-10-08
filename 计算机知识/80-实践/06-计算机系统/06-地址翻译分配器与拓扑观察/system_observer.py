@@ -65,15 +65,21 @@ def discover_linux_topology(system_root: Path = Path("/sys/devices/system")) -> 
 
     core_keys: set[tuple[int, int]] = set()
     package_ids: set[int] = set()
+    complete_package_ids = True
     complete_core_ids = True
     for cpu_path in cpu_paths:
         package_id = _read_int(cpu_path / "topology" / "physical_package_id")
         core_id = _read_int(cpu_path / "topology" / "core_id")
-        if package_id is None or core_id is None:
+        if package_id is None or package_id < 0:
+            complete_package_ids = False
+            complete_core_ids = False
+        elif core_id is None or core_id < 0:
             complete_core_ids = False
         else:
             package_ids.add(package_id)
             core_keys.add((package_id, core_id))
+        if package_id is not None and package_id >= 0:
+            package_ids.add(package_id)
 
     nodes: list[tuple[str, tuple[int, ...]]] = []
     node_root = system_root / "node"
@@ -93,7 +99,7 @@ def discover_linux_topology(system_root: Path = Path("/sys/devices/system")) -> 
     return LinuxTopology(
         logical_cpus_observed=len(cpu_paths),
         cores_observed=len(core_keys) if complete_core_ids else None,
-        packages_observed=len(package_ids) if complete_core_ids else None,
+        packages_observed=len(package_ids) if complete_package_ids else None,
         nodes=tuple(nodes),
     )
 

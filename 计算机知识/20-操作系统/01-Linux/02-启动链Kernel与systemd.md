@@ -211,7 +211,7 @@ unit 名称由实例名和类型后缀组成，例如：
 - `home.mount`：挂载点 `/home`；
 - `multi-user.target`：一组启动目标或同步点。
 
-unit 文件通常来自 `/usr/lib/systemd/system/`（软件包提供）和 `/etc/systemd/system/`（管理员配置与 override）；运行时生成内容还可能位于 `/run/systemd/system/`。不要为了改一行配置就复制并改写整个软件包 unit；通常应先用 `systemctl cat 名称` 看合并结果，再用受控的 override 机制。真正编辑前应阅读对应 man page 并保留可恢复方案。
+unit 文件通常来自 `/usr/lib/systemd/system/`（软件包提供）和 `/etc/systemd/system/`（管理员配置与 override）；运行时生成内容还可能位于 `/run/systemd/system/`。不要为了改一行配置就复制并改写整个软件包 unit；通常应先用 `systemctl cat 名称` 看磁盘上的主 fragment 与 drop-in 来源文本，再用受控的 override 机制。真正编辑前应阅读对应 man page 并保留可恢复方案。
 
 ### service unit：管理进程生命周期
 
@@ -478,3 +478,7 @@ systemctl list-units --failed
 ## 本轮课程定位与机制补充
 
 课程顺序与原稿入口：[[计算机知识/00-开始/课程地图/13-Linux-课程地图|Linux · 课程地图]]。进一步的机制推演与反例：[[计算机知识/20-操作系统/01-Linux/16-服务资源容器与分层故障定位|Linux 深化：服务、资源、容器与分层排障]]。跨学科辨析：[[计算机知识/90-资源/11-跨学科概念辨析|跨学科概念辨析]]。
+
+### 磁盘配置与 manager 属性的对照
+
+假定原 unit 的 `TimeoutStartSec=30`，磁盘 drop-in 改为 `5`，尚未 `daemon-reload`：`systemctl cat UNIT_NAME` 可显示新的磁盘片段，`systemctl show -p TimeoutStartUSec UNIT_NAME` 仍可能显示已加载的旧值。`show` 的规范化属性与 `status` 的运行状态也须分别读；重新加载 unit 定义不等于重启既有进程或重新载入应用配置。修改与 reload 需另获该系统的操作授权，本轮只给对照接口，实际 systemd 为 `not_run`。见 [systemctl cat/show 文档](https://man7.org/linux/man-pages/man1/systemctl.1.html)。

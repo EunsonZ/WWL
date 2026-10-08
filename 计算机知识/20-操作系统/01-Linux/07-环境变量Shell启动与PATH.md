@@ -123,8 +123,11 @@ echo "HOME is $HOME"
 ```bash
 name='Ada Lovelace'
 printf 'Hello, %s!\n' "$name"
-printf 'PATH 项数（粗略）：%s\n' "$(printf '%s' "$PATH" | tr ':' '\n' | wc -l)"
+printf 'PATH 项数（包含空项）：%s\n' "$(printf '%s\n' "${PATH-}" | tr ':' '\n' | wc -l)"
 ```
+
+这里把空项也计为一项：`/usr/bin`、`/usr/bin:/bin`、`:/usr/bin:` 预期为 1、2、3；空字符串按该拆分合同计为一个空项。PATH 空项通常意味着当前目录，和未设置 PATH 的平台默认搜索不同，实务中应明确拒绝/移除空项。此行末尾的换行使 `wc -l` 计到最后一项；它假定 PATH 中没有换行字符，若允许任意字符就应使用结构化分割。这里只读取 PATH，不改写当前环境；GNU/Linux 回归为 `not_run`。
+
 
 `printf` 的格式串应当由你写死，数据通过 `%s` 等转换说明传入。不要把不可信数据放在格式串位置，例如不要写 `printf "$user_input"`；其中的 `%` 会被当成格式指令。
 

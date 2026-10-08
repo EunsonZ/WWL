@@ -38,6 +38,38 @@ class SystemObserverTests(unittest.TestCase):
             self.assertEqual(observed.packages_observed, 1)
             self.assertEqual(observed.nodes, (("node0", (0, 1, 2, 3)),))
 
+    def test_unknown_package_and_core_identifiers_do_not_invent_counts(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="topology-unknown-") as directory:
+            root = Path(directory)
+            for cpu, package, core in ((0, -1, 0), (1, 0, -1)):
+                topology = root / "cpu" / f"cpu{cpu}" / "topology"
+                topology.mkdir(parents=True)
+                (topology / "physical_package_id").write_text(str(package), encoding="utf-8")
+                (topology / "core_id").write_text(str(core), encoding="utf-8")
+            observed = discover_linux_topology(root)
+            assert observed is not None
+            self.assertIsNone(observed.packages_observed)
+            self.assertIsNone(observed.cores_observed)
+
+    def test_package_and_core_completeness_are_independent(self) -> None:
+        # Regression definitions only: missing package, missing core, negative sentinel.
+        for package, core, packages, cores in (
+            (None, 0, None, None), (0, None, 1, None), (-1, 0, None, None),
+            (0, -1, 1, None), (0, 0, 1, 1),
+        ):
+            with self.subTest(package=package, core=core), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                topology = root / "cpu/cpu0/topology"
+                topology.mkdir(parents=True)
+                if package is not None:
+                    (topology / "physical_package_id").write_text(str(package))
+                if core is not None:
+                    (topology / "core_id").write_text(str(core))
+                result = discover_linux_topology(root)
+                assert result is not None
+                self.assertEqual(result.packages_observed, packages)
+                self.assertEqual(result.cores_observed, cores)
+
     def test_parses_linux_status_fixture(self) -> None:
         with tempfile.TemporaryDirectory(prefix="status-fixture-") as directory:
             status = Path(directory) / "status"

@@ -32,6 +32,8 @@ fi
 
 output_dir="$(cd -- "$output_dir" && pwd -P)"
 printf '%s\n' 'WorkWithLLM FFmpeg comparison lab' > "$output_dir/.lab-marker"
+# Fixed relative filter option values need no output-path filtergraph escaping.
+cd -- "$output_dir"
 
 source_media="$output_dir/source-lossless.nut"
 remuxed_media="$output_dir/remuxed.mkv"
@@ -67,7 +69,7 @@ ffmpeg -hide_banner -loglevel warning -nostdin -n \
 ffmpeg -hide_banner -loglevel info -nostdin \
   -i "$source_media" -i "$compressed_media" \
   -filter_complex \
-  "[0:v]split=2[refp][refs];[1:v]split=2[distp][dists];[refp][distp]psnr=stats_file=$output_dir/psnr.log[p];[refs][dists]ssim=stats_file=$output_dir/ssim.log[s]" \
+  "[0:v]split=2[refp][refs];[1:v]split=2[distp][dists];[refp][distp]psnr=stats_file=psnr.log[p];[refs][dists]ssim=stats_file=ssim.log[s]" \
   -map '[p]' -map '[s]' -f null /dev/null \
   2> "$output_dir/metrics-summary.log"
 

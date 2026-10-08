@@ -453,7 +453,7 @@ journalctl -b -u UNIT_NAME
 
 - `start` 只影响当前运行；`enable` 建立开机依赖；`enable --now` 同时做两件事。
 - 并非每个 unit 都应该 enable；有些由 socket、timer、path、设备或其他 target 激活。
-- 修改 vendor unit 时不要直接编辑 `/usr/lib/systemd/system/`；用 `systemctl edit UNIT_NAME` 创建 `/etc/systemd/system/` drop-in，并用 `systemctl cat UNIT_NAME` 检查最终合并结果。
+- 修改 vendor unit 时不要直接编辑 `/usr/lib/systemd/system/`；用 `systemctl edit UNIT_NAME` 创建 `/etc/systemd/system/` drop-in，并用 `systemctl cat UNIT_NAME` 检查磁盘 fragment 与 drop-in 来源文本；它不是 manager 已加载属性的最终视图。
 - 普通用户服务使用 `systemctl --user` 和 `journalctl --user -u UNIT_NAME`；不要因为它是“服务”就一律加 sudo。
 - `mask` 比 `disable` 更强，会阻止 unit 被手动或依赖启动。只有明确理解影响时才使用；恢复用 `unmask`。
 - `systemctl reset-failed` 只清掉失败标记，不修复根因，还可能让后续取证更困难；先保存状态和日志。
@@ -793,3 +793,7 @@ sudo less /var/log/pacman.log
 
 阅读时对照两页的版本、模型与接口前提；教学简化模型不覆盖具体实现的全部行为。
 <!-- END ROUND3 BRIDGE -->
+
+### 磁盘配置与 manager 属性的对照
+
+假定原 unit 的 `TimeoutStartSec=30`，磁盘 drop-in 改为 `5`，尚未 `daemon-reload`：`systemctl cat UNIT_NAME` 可显示新的磁盘片段，`systemctl show -p TimeoutStartUSec UNIT_NAME` 仍可能显示已加载的旧值。`show` 的规范化属性与 `status` 的运行状态也须分别读；重新加载 unit 定义不等于重启既有进程或重新载入应用配置。修改与 reload 需另获该系统的操作授权，本轮只给对照接口，实际 systemd 为 `not_run`。见 [systemctl cat/show 文档](https://man7.org/linux/man-pages/man1/systemctl.1.html)。

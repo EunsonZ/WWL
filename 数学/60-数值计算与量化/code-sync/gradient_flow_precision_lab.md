@@ -205,7 +205,8 @@ def render(output, cases, refinement):
 
 def generate(output):
     output=Path(output).resolve()
-    if output == Path(__file__).parent.resolve():
+    source=Path(__file__).resolve().parent
+    if output == source or source in output.parents:
         raise ValueError('use a separate output directory')
     output.mkdir(parents=True,exist_ok=True)
     rows=[]
@@ -265,3 +266,5 @@ def main():
 if __name__=='__main__':
     main()
 ```
+
+输出守卫先解析符号链接，再拒绝源码父目录及全部后代；正常源码外同级目录仍允许，即使它在库的其他位置。此合同只保护 source folder，不扩为禁止整个库。独立 `test_gradient_output_contract.py` 用哨兵在第一次 `case` 停止，定义路径回归；本轮未执行任何数值/图形工作。

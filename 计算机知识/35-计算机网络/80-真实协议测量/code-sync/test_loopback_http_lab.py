@@ -81,6 +81,61 @@ class LoopbackHttpTests(unittest.TestCase):
         self.assertLess(time.monotonic() - start, 0.12)
         thread.join(timeout=1); self.assertFalse(thread.is_alive())
 
+    def assert_released(self, server):
+        self.assertFalse(server.thread.is_alive())
+        self.assertEqual(server.listener.fileno(), -1)
+        self.assertIsNone(server._connection)
+
+    def test_exit_without_client(self):
+        server = ScriptedServer([CL])
+        with server: pass
+        self.assert_released(server)
+
+    def test_exit_with_held_incomplete_header(self):
+        server = ScriptedServer([CL])
+        with server:
+            client = self.client(server)
+            client.sendall(b"GET / HTTP/1.1\r\n")
+            self.assertTrue(server._accepted.wait(0.5))
+        self.assert_released(server)
+        self.assertEqual(client.recv(1), b"")
+
+    def test_exit_interrupts_delay(self):
+        server = ScriptedServer([CL], delay=10)
+        with server:
+            client = self.client(server); request(client)
+            self.assertTrue(server._accepted.wait(0.5))
+        self.assert_released(server)
+
+    def test_body_exception_is_preserved(self):
+        server = ScriptedServer([CL])
+        original = ValueError("body failure")
+        with self.assertRaises(ValueError) as caught:
+            with server: raise original
+        self.assertIs(caught.exception, original)
+        self.assert_released(server)
+
+    def test_worker_error_is_reported_without_body_error(self):
+        # invalid reply exercises an unexpected worker failure, rather than shutdown OSError
+        server = ScriptedServer([None])
+        with self.assertRaises(TypeError):
+            with server:
+                client = self.client(server); request(client)
+                server.thread.join(timeout=0.5)
+        self.assert_released(server)
+
+    def test_body_failure_keeps_worker_diagnostic(self):
+        server = ScriptedServer([None])
+        original = ValueError("body failure")
+        with self.assertRaises(ValueError) as caught:
+            with server:
+                client = self.client(server); request(client)
+                server.thread.join(timeout=0.5)
+                raise original
+        self.assertIs(caught.exception, original)
+        self.assertTrue(any("TypeError" in note for note in original.__notes__))
+        self.assert_released(server)
+
     def test_stdlib_http_client_cross_check(self):
         with ScriptedServer([CL]) as server:
             c = http.client.HTTPConnection("127.0.0.1", server.port, timeout=0.5)

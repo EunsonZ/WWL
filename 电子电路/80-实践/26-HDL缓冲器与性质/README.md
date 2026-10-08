@@ -84,3 +84,7 @@ yosys -l /private/tmp/wwl-u26-equiv/actual.log -p 'read_verilog -sv elastic_slot
 ## 当前证据与下一步判据
 
 本交付的作者CPU运行和静态/图检查在库外READY绑定；它不是独立签收或学习者掌握记录。当前tool probe实际缺失，normal/fault compile+simulation、formal四任务、综合/等价、STA/CDC和硬件全部未运行。工具缺失按本批授权保留内容候选，不伪装完成M17-06的真实运行层。完成这层时必须补同版本来源、精确命令、退出码与实际失败/正常波形，而非把expected CSV改后缀成VCD。
+
+### 迁移后的输出目录合同
+
+守卫从解析后的真源祖先查找同时含 `AGENTS.md` 与 `scripts/check_vault.py` 的实际库根；工作目录与开发者绝对路径均不决定根。根不可确认时明确拒绝。目标先 `expanduser/resolve`，因此库外符号链接若落入库内也按内部目标拒绝。这是实验输出合同，不是操作系统权限沙箱。光子要求目标不存在；DMA 允许重复使用已选定的库外目录；HDL 允许已有库外目录，但不同运行仍建议使用不同目录保留波形身份。三个合同不互换，正常模型与工具预算保持。独立 `test_output_contract.py` 定义迁移、内部新/已有/根、外部及符号链接回归，本轮为 `not_run`；真实 HDL/图生成/硬件也未执行。

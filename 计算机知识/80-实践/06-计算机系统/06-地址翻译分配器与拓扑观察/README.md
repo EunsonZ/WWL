@@ -323,15 +323,21 @@ def discover_linux_topology(system_root: Path = Path("/sys/devices/system")) -> 
 
     core_keys: set[tuple[int, int]] = set()
     package_ids: set[int] = set()
+    complete_package_ids = True
     complete_core_ids = True
     for cpu_path in cpu_paths:
         package_id = _read_int(cpu_path / "topology" / "physical_package_id")
         core_id = _read_int(cpu_path / "topology" / "core_id")
-        if package_id is None or core_id is None:
+        if package_id is None or package_id < 0:
+            complete_package_ids = False
+            complete_core_ids = False
+        elif core_id is None or core_id < 0:
             complete_core_ids = False
         else:
             package_ids.add(package_id)
             core_keys.add((package_id, core_id))
+        if package_id is not None and package_id >= 0:
+            package_ids.add(package_id)
 
     nodes: list[tuple[str, tuple[int, ...]]] = []
     node_root = system_root / "node"
@@ -351,7 +357,7 @@ def discover_linux_topology(system_root: Path = Path("/sys/devices/system")) -> 
     return LinuxTopology(
         logical_cpus_observed=len(cpu_paths),
         cores_observed=len(core_keys) if complete_core_ids else None,
-        packages_observed=len(package_ids) if complete_core_ids else None,
+        packages_observed=len(package_ids) if complete_package_ids else None,
         nodes=tuple(nodes),
     )
 
@@ -488,6 +494,38 @@ class SystemObserverTests(unittest.TestCase):
             self.assertEqual(observed.packages_observed, 1)
             self.assertEqual(observed.nodes, (("node0", (0, 1, 2, 3)),))
 
+    def test_unknown_package_and_core_identifiers_do_not_invent_counts(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="topology-unknown-") as directory:
+            root = Path(directory)
+            for cpu, package, core in ((0, -1, 0), (1, 0, -1)):
+                topology = root / "cpu" / f"cpu{cpu}" / "topology"
+                topology.mkdir(parents=True)
+                (topology / "physical_package_id").write_text(str(package), encoding="utf-8")
+                (topology / "core_id").write_text(str(core), encoding="utf-8")
+            observed = discover_linux_topology(root)
+            assert observed is not None
+            self.assertIsNone(observed.packages_observed)
+            self.assertIsNone(observed.cores_observed)
+
+    def test_package_and_core_completeness_are_independent(self) -> None:
+        # Regression definitions only: missing package, missing core, negative sentinel.
+        for package, core, packages, cores in (
+            (None, 0, None, None), (0, None, 1, None), (-1, 0, None, None),
+            (0, -1, 1, None), (0, 0, 1, 1),
+        ):
+            with self.subTest(package=package, core=core), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                topology = root / "cpu/cpu0/topology"
+                topology.mkdir(parents=True)
+                if package is not None:
+                    (topology / "physical_package_id").write_text(str(package))
+                if core is not None:
+                    (topology / "core_id").write_text(str(core))
+                result = discover_linux_topology(root)
+                assert result is not None
+                self.assertEqual(result.packages_observed, packages)
+                self.assertEqual(result.cores_observed, cores)
+
     def test_parses_linux_status_fixture(self) -> None:
         with tempfile.TemporaryDirectory(prefix="status-fixture-") as directory:
             status = Path(directory) / "status"
@@ -518,6 +556,8 @@ if __name__ == "__main__":
 
 1. **账本练习：**只在代码中把三个请求大小改小，画出 `live_requested`、padding、unused tail。不要增大 arena；运行 self-test 仍应通过。
 2. **映射练习：**把 `observe_mapping` 的测试参数改成 2 MiB 与 4 MiB，各重复 5 次。记录数值可变化，不写“RSS 必须增加请求值”。默认上限 8 MiB 不变。
+包与核的完整性分别记录：负 package sentinel 或缺失 package 使包/核都未知；包已知而 core 缺失时仍可报告包数，核数未知；核键须是 `(package, core)`。不把未知标识当一个真实节点。新增 fixture 定义本轮 `not_run`，不证明真实 Linux CPU 拓扑。
+
 3. **拓扑练习：**把当前输出画成 logical CPU → core → package → node 树。若某层 `SKIP`，保留未知，不用 CPU 型号网站猜本机配置。
 4. **证据分层：**为 TLB miss、page fault、resident、allocator live、NUMA page location 与 IOMMU group 各写一个最接近的证据，并注明默认实验实际取得了哪些。
 

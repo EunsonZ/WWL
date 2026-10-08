@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" role="img" aria-labelledby="title desc">
+<title id="title">ssh -L 127.0.0.1:9000:127.0.0.1:8000 labvm 的四个角色</title>
+<desc id="desc">客户端回环监听由本地 ssh 接受，SSH 客户端与 labvm sshd 之间加密。labvm 的目标连接者连接自身回环 8000；本命令没有目标 DNS 查询。labvm HostName 在客户端解析，若改目标名称则在服务器侧解析。目标协议段不会自动得到 SSH 的端到端加密。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8Z" fill="#244566"/></marker></defs>
+<rect width="1100" height="640" fill="#fff"/>
+<g font-family="Hiragino Sans GB, Microsoft YaHei, Arial Unicode MS, sans-serif" fill="#182b40">
+<text x="30" y="36" font-size="22" font-weight="bold">同一条 -L：位置、角色、解析点与加密段</text>
+<text x="30" y="68" font-size="16">ssh -N -o ExitOnForwardFailure=yes -L 127.0.0.1:9000:127.0.0.1:8000 labvm</text>
+<rect x="25" y="95" width="445" height="360" rx="12" fill="#edf5ff" stroke="#60798b"/>
+<rect x="630" y="95" width="445" height="360" rx="12" fill="#f0f8ee" stroke="#60798b"/>
+<text x="45" y="126" font-size="21" font-weight="bold">客户端网络空间</text>
+<text x="650" y="126" font-size="21" font-weight="bold">labvm 服务器网络空间</text>
+<rect x="55" y="155" width="370" height="86" rx="8" fill="#fff" stroke="#244566"/>
+<text x="70" y="182" font-size="18" font-weight="bold">① 客户端监听（本地 ssh）</text>
+<text x="70" y="210" font-size="17">本机应用 → 127.0.0.1:9000</text>
+<rect x="55" y="290" width="370" height="105" rx="8" fill="#fff" stroke="#244566"/>
+<text x="70" y="319" font-size="18" font-weight="bold">② SSH 客户端（同一 ssh 进程）</text>
+<text x="70" y="347" font-size="16">Host 别名 labvm → 实际 HostName</text>
+<text x="70" y="376" font-size="16">HostName 的 DNS：客户端侧</text>
+<path d="M240 241 L240 284" stroke="#244566" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="670" y="155" width="370" height="86" rx="8" fill="#fff" stroke="#244566"/>
+<text x="686" y="182" font-size="18" font-weight="bold">③ SSH 服务器 / 跳板机（sshd）</text>
+<text x="686" y="210" font-size="17">SSH 通道在这里终止</text>
+<rect x="670" y="290" width="370" height="105" rx="8" fill="#fff" stroke="#244566"/>
+<text x="686" y="319" font-size="18" font-weight="bold">④ 目标连接者（服务器侧）</text>
+<text x="686" y="347" font-size="16">连接 labvm 的 127.0.0.1:8000</text>
+<text x="686" y="376" font-size="16">目标改为名称时：服务器侧 DNS</text>
+<path d="M425 329 L668 194" stroke="#244566" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="476" y="217" width="144" height="62" rx="5" fill="#fff"/>
+<text x="485" y="239" font-size="17" font-weight="bold">认证 + 加密</text>
+<text x="489" y="266" font-size="15">仅 SSH 承载段</text>
+<path d="M855 241 L855 284" stroke="#244566" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="48" y="431" font-size="16">第一个 127.0.0.1 属于客户端</text>
+<text x="650" y="431" font-size="16">第二个 127.0.0.1 属于 labvm</text>
+<path d="M855 455 L855 478" stroke="#244566" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="640" y="482" width="430" height="62" rx="8" fill="#fff6e8" stroke="#8b6841"/>
+<text x="658" y="508" font-size="17">目标服务在 labvm:8000；此段用其自身协议</text>
+<text x="658" y="532" font-size="15">本命令为数字地址，没有目标名称 DNS 查询</text>
+<text x="30" y="494" font-size="17" font-weight="bold">localhost 不是全局地址：</text>
+<text x="30" y="522" font-size="16">第三台目标主机也有自己的回环；本命令目标恰在 labvm。</text>
+<text x="30" y="574" font-size="17">反例：labvm:8000 未监听时，9000 / SSH 可建立，目标连接仍失败。</text>
+<text x="30" y="605" font-size="16">ExitOnForwardFailure 不保证后端可达；这是语义示意，网络与真人读图 not_run。</text>
+</g></svg>

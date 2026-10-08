@@ -62,12 +62,8 @@ fi
 
 validate_row() {
   local line_number="$1" input_name="$2" output_name="$3"
-  local start="$4" duration="$5" extra="$6" input_path size
+  local start="$4" duration="$5" input_path size
 
-  [[ -z "$extra" ]] || {
-    printf 'line %s: expected exactly four tab-separated fields\n' "$line_number" >&2
-    return 1
-  }
   case "$input_name" in
     *://*|*:*|/*|*/*|*\\*|*..*)
       printf 'line %s: protocol, absolute, traversal, or nested input rejected\n' "$line_number" >&2
@@ -86,7 +82,7 @@ validate_row() {
     printf 'line %s: invalid start time\n' "$line_number" >&2
     return 1
   }
-  [[ "$duration" =~ ^[0-9]+([.][0-9]+)?$ && "$duration" != 0 && "$duration" != 0.0 ]] || {
+  [[ "$duration" =~ ^[0-9]+([.][0-9]+)?$ && ! "$duration" =~ ^0+([.]0+)?$ ]] || {
     printf 'line %s: invalid duration\n' "$line_number" >&2
     return 1
   }
@@ -106,22 +102,37 @@ validate_row() {
     -show_entries format=format_name,duration -of json "$input_path" >/dev/null
 }
 
+# Read the raw row; tab is whitespace in IFS and read would collapse empty fields.
+parse_row() {
+  local rest="$1" tab=$'\t'
+  [[ "$rest" == *"$tab"* ]] || return 1
+  input_name="${rest%%"$tab"*}"; rest="${rest#*"$tab"}"
+  [[ "$rest" == *"$tab"* ]] || return 1
+  output_name="${rest%%"$tab"*}"; rest="${rest#*"$tab"}"
+  [[ "$rest" == *"$tab"* ]] || return 1
+  start="${rest%%"$tab"*}"; duration="${rest#*"$tab"}"
+  [[ "$duration" != *"$tab"* ]] || return 1
+  # Empty fields are preserved here and rejected by each field's syntax below.
+}
+
 line_number=0
 row_count=0
 seen_outputs="$workspace/seen-output-names.txt"
 : > "$seen_outputs"
-while IFS=$'\t' read -r input_name output_name start duration extra ||
-      [[ -n "${input_name}${output_name}${start}${duration}${extra}" ]]; do
+while IFS= read -r row || [[ -n "$row" ]]; do
   line_number=$((line_number + 1))
-  [[ -z "${input_name}${output_name}${start}${duration}${extra}" ]] && continue
-  [[ "$input_name" == \#* ]] && continue
+  [[ -z "$row" || "$row" == \#* ]] && continue
+  parse_row "$row" || {
+    printf 'line %s: expected exactly four tab-separated fields\n' "$line_number" >&2
+    exit 65
+  }
   row_count=$((row_count + 1))
   (( row_count <= 100 )) || {
     printf 'manifest exceeds the 100-row lab limit\n' >&2
     exit 65
   }
   validate_row "$line_number" "$input_name" "$output_name" \
-    "$start" "$duration" "${extra:-}"
+    "$start" "$duration"
   if grep -Fqx -- "$output_name" "$seen_outputs"; then
     printf 'line %s: duplicate output name rejected: %s\n' \
       "$line_number" "$output_name" >&2
@@ -138,10 +149,12 @@ mkdir -- "$output_dir"
 output_dir="$(cd -- "$output_dir" && pwd -P)"
 printf '%s\n' 'WorkWithLLM FFmpeg bounded-batch lab' > "$output_dir/.lab-marker"
 
-while IFS=$'\t' read -r input_name output_name start duration extra ||
-      [[ -n "${input_name}${output_name}${start}${duration}${extra}" ]]; do
-  [[ -z "${input_name}${output_name}${start}${duration}${extra}" ]] && continue
-  [[ "$input_name" == \#* ]] && continue
+while IFS= read -r row || [[ -n "$row" ]]; do
+  [[ -z "$row" || "$row" == \#* ]] && continue
+  parse_row "$row" || {
+    printf 'line %s: expected exactly four tab-separated fields\n' "$line_number" >&2
+    exit 65
+  }
   input_path="$input_dir/$input_name"
   output_path="$output_dir/$output_name"
   [[ ! -e "$output_path" ]] || {

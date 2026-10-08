@@ -17,7 +17,7 @@ prerequisites:
 
 ## 一次运行应该留下什么
 
-规范真源是本目录 [signal_lab.py](signal_lab.py)，测试是 [test_signal_lab.py](test_signal_lab.py)。分别有 [[信号与系统/80-实践/01-采样与系统辨别/code-sync/signal_lab|生成源码镜像]] 与 [[信号与系统/80-实践/01-采样与系统辨别/code-sync/test_signal_lab|测试源码镜像]]；镜像不是另一份运行实现。修改时两者同步。
+规范真源是本目录 [signal_lab.py](signal_lab.py)，测试是 [test_signal_lab.py](test_signal_lab.py)。公开数值入口只接受有限实数；Python/NumPy 复数标量和 object 容器中的复数（包括零虚部）必须在 float 转换前以 `ValueError` 拒绝。分别有 [[信号与系统/80-实践/01-采样与系统辨别/code-sync/signal_lab|生成源码镜像]] 与 [[信号与系统/80-实践/01-采样与系统辨别/code-sync/test_signal_lab|测试源码镜像]]；镜像不是另一份运行实现。修改时两者同步。
 
 环境需要Python、NumPy、Matplotlib、Pillow及Arial Unicode MS字体。当前作者已用本机现有Python 3.14.7、NumPy 2.5.3、Matplotlib 3.11.2、arm64 CPU执行；没有安装依赖。其他环境先检查依赖，缺依赖或字体应报告未运行，不删检查来变绿。`-B`避免向源码目录写字节码；Matplotlib缓存放到库外。
 

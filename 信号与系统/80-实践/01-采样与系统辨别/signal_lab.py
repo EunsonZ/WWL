@@ -14,7 +14,7 @@ import numpy as np
 
 
 def finite_scalar(value, name):
-    if isinstance(value, (bool, np.bool_)) or not np.isscalar(value):
+    if isinstance(value, (bool, np.bool_)) or not np.isscalar(value) or np.iscomplexobj(value):
         raise ValueError(f'{name} must be a finite real scalar')
     try:
         result = float(value)
@@ -27,7 +27,9 @@ def finite_scalar(value, name):
 
 def real_vector(values, name, *, nonempty=True):
     raw = np.asarray(values)
-    if np.iscomplexobj(raw):
+    if np.iscomplexobj(raw) or (raw.dtype == object and any(
+            isinstance(item, (complex, np.complexfloating)) or np.iscomplexobj(item)
+            for item in raw.flat)):
         raise ValueError(f'{name} must be real')
     try:
         result = np.asarray(values, dtype=np.float64)

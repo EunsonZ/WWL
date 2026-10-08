@@ -133,6 +133,15 @@ class SignalLabTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             linear_convolution([], [1])
 
+    def test_complex_scalars_and_object_vectors_reject_before_float_conversion(self):
+        for value in (1 + 0j, 1 + 2j, np.complex64(1), np.complex128(1 + 2j)):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                sample_times(value, 4)
+        for value in (np.complex64(1), np.complex128(1 + 2j)):
+            vector = np.array([value], dtype=object)
+            with self.subTest(vector=vector), self.assertRaises(ValueError):
+                quantize(vector, .25)
+
 
 if __name__ == '__main__':
     unittest.main()

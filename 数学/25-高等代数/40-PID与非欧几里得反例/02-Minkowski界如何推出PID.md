@@ -25,11 +25,11 @@ $$
 
 MIT 18.785 Lecture 14, Theorems 14.13 与 14.15，印刷 pp.5–7 给出定理及证明。为看清量词如何传递，记任意类由非零分式理想 $A$ 表示。Theorem 14.13 应用于 $A^{-1}$，给出非零 $\alpha\in A^{-1}$，使
 $$
-N(\alpha)\le M_KN(A^{-1})=\frac{M_K}{N(A)}.
+|N_{K/\mathbb Q}(\alpha)|\le M_KN(A^{-1})=\frac{M_K}{N(A)}.
 $$
 令 $J=\alpha A$。因为 $\alpha\in A^{-1}$，所以 $J\subseteq\mathcal O_K$ 是整理想；它仍在类 $[A]$ 中，且
 $$
-N(J)=N(\alpha)N(A)\le M_K.
+N(J)=|N_{K/\mathbb Q}(\alpha)|N(A)\le M_K.
 $$
 这一步才允许后面只检查有限个小范数；它先覆盖了**任意** $[A]$。
 

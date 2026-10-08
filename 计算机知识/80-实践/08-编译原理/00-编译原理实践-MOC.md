@@ -106,7 +106,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest -v
 | 08 | 6 个 unittest | shape 传播、融合合法性、动态 guard、fallback 与 reference 对照 |
 | 09 | 6 个 unittest | 全阶段可检查、确定性、两条分支和优化前后结果一致 |
 
-Python 路线合计 **40 个 unittest**；07 的 5 项探针不计入 unittest 总数。这个数字证明测试发现和当前样本通过，不是编译器全称正确性证明。九个实践的 frontmatter 预计合计 **505 分钟**，可按 A—E 分段完成。
+Python 路线的测试数以各实验目录在所运行版本中实际发现的 `unittest` 为准；07 的探针另列，不混入 unittest 结果。记录命令、源码版本、退出码和实际数，再说明覆盖范围；静态目录清点或旧运行记录都不等于当前通过，更不等于编译器全称正确性。九个实践的 frontmatter 预计合计 **505 分钟**，可按 A—E 分段完成。
 
 ## 课程映射
 

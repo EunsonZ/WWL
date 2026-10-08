@@ -57,6 +57,7 @@ class StateTests(unittest.TestCase):
         with self.assertRaises(ValueError):transfer(A,[[1],[1]],[[1,0]],[[0]],1)
         # Reduced scalar transfer at 1 has value .5; full-state resolvent is singular.
         self.assertEqual(transfer([[-1]],[[1]],[[1]],[[0]],1)[0,0],.5)
+        self.assertEqual(transfer([[-1e308]],[[1e308]],[[1]],[[0]],1e308)[0,0],.5)
 
     def test_hidden_vs_initially_visible_uncontrolled(self):
         A=np.diag([-1.,1.])

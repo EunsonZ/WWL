@@ -124,7 +124,11 @@ def periodogram(x, fs, demean=False):
     fs = positive(fs,'fs')
     if demean:
         x = x - np.mean(x)
-    p = abs(np.fft.rfft(x))**2 / (fs*x.size)
+    scale=float(np.max(np.abs(x)))
+    if not np.isfinite(scale): raise ValueError('PSD outside supported range')
+    if scale==0: return np.fft.rfftfreq(x.size,1/fs),np.zeros(x.size//2+1)
+    p = abs(np.fft.rfft(x/scale))**2 * (scale*scale/(fs*x.size))
+    if not np.all(np.isfinite(p)): raise ValueError('PSD outside supported range')
     if x.size % 2 == 0:
         p[1:-1] *= 2
     else:
@@ -136,7 +140,12 @@ def sample_variance(x):
     x = vector(x)
     if x.size < 2:
         raise ValueError('unbiased iid variance needs at least two samples')
-    return float(np.sum((x-x.mean())**2)/(x.size-1))
+    scale=float(np.max(np.abs(x)))
+    if not np.isfinite(scale): raise ValueError('variance outside supported range')
+    if scale==0: return 0.
+    value=float(np.sum((x/scale-(x/scale).mean())**2)/(x.size-1))*scale*scale
+    if not np.isfinite(value): raise ValueError('variance outside supported range')
+    return value
 
 
 def evaluate(labels, decisions):

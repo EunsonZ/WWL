@@ -90,6 +90,9 @@ class ResampleTests(unittest.TestCase):
         self.assertEqual(a[-1],1)
         _,a=single_amplitude(np.cos(2*np.pi*2*np.arange(9)/9),9)
         self.assertAlmostEqual(a[2],1)
+        _,a=single_amplitude([1e308]*4,8)
+        self.assertTrue(np.all(np.isfinite(a)))
+        self.assertEqual(a[0],1e308)
 
     def test_dropped_samples_and_block_reset_change_record(self):
         x=np.arange(20,dtype=float);h=[.25,.5,.25]

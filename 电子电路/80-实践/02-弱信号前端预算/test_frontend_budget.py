@@ -25,6 +25,9 @@ class FrontendTests(unittest.TestCase):
         self.assertAlmostEqual(m.correlated_psd(4,9,-1),1)
         self.assertEqual(m.correlated_psd(4,4,1,1,-1),0)
         with self.assertRaises(ValueError):m.correlated_psd(4,9,1.01)
+        self.assertEqual(m.correlated_psd(1e200,1e200,0),2e200)
+        self.assertEqual(m.correlated_psd(1e200,1e200,-.5),1e200)
+        self.assertEqual(m.correlated_psd(1e-200,1e-200,1),4e-200)
     def test_reference_and_finite_a_dc(self):
         v=m.noninverting_dc(1.65,1.65,1000,1e5)
         self.assertAlmostEqual(v,1.65*100000/101000,places=12)

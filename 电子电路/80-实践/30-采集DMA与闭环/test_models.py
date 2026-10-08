@@ -11,6 +11,10 @@ class Contracts(unittest.TestCase):
         self.assertTrue(m.adc(3.3)['upper_endpoint'])
         for v in [0,.2,1,2,3.299]:
             r=m.adc(v); self.assertLessEqual(r['lo_V'],v); self.assertLess(v,r['hi_V'])
+        import math
+        delta=3.3/4096
+        self.assertEqual(m.adc(3*delta)['code'],3)
+        self.assertEqual(m.adc(math.nextafter(9*delta,-math.inf))['code'],8)
 
     def test_timing(self):
         r=m.schedule()[0]

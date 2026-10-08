@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="648" viewBox="0 0 1000 648" role="img" aria-labelledby="title desc">
+<title id="title">同期间支付与分析合并边界</title>
+<desc id="desc">家庭付模型商40，非AI企业付模型商60，模型商付云商60，云商买设备30。边界内现金净变化40、30、30合计100；各层销售收入100、60、30合计190。设备购买属于云商投资；现金增量不是利润或GDP。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#172554} .heading{font-size:24px;font-weight:700} .label{font-size:19px} .small{font-size:16px} .note{font-size:17px;fill:#475569} .box{fill:#eff6ff;stroke:#64748b;stroke-width:1.5} .arrow{fill:none;stroke:#334155;stroke-width:2;marker-end:url(#arrow)}</style></defs>
+<rect width="1000" height="648" fill="white"/>
+<text x="35" y="43" class="heading">Follow payments before adding sales</text>
+<text x="35" y="74" class="note">One period; deliveries and payment in the same period; teaching money units</text>
+<rect x="285" y="98" width="678" height="443" rx="12" fill="#f8fafc" stroke="#64748b" stroke-dasharray="7 5"/>
+<text x="306" y="128" class="small">Analysis boundary: model provider + cloud + equipment supplier</text>
+<rect x="25" y="160" width="215" height="72" rx="8" class="box"/>
+<text x="132" y="190" text-anchor="middle" class="label">Households</text>
+<text x="132" y="215" text-anchor="middle" class="small">Service payment 40</text>
+<rect x="25" y="333" width="215" height="72" rx="8" class="box"/>
+<text x="132" y="363" text-anchor="middle" class="label">Non-AI business</text>
+<text x="132" y="388" text-anchor="middle" class="small">Service payment 60</text>
+<rect x="360" y="195" width="225" height="110" rx="8" class="box"/>
+<text x="472" y="228" text-anchor="middle" class="label">Model provider M</text>
+<text x="472" y="258" text-anchor="middle" class="small">Service sales: 100</text>
+<text x="472" y="283" text-anchor="middle" class="small">Listed cash change: +40</text>
+<rect x="725" y="195" width="215" height="110" rx="8" class="box"/>
+<text x="832" y="228" text-anchor="middle" class="label">Cloud C</text>
+<text x="832" y="258" text-anchor="middle" class="small">Service sales: 60</text>
+<text x="832" y="283" text-anchor="middle" class="small">Listed cash change: +30</text>
+<rect x="725" y="405" width="215" height="110" rx="8" class="box"/>
+<text x="832" y="438" text-anchor="middle" class="label">Equipment E</text>
+<text x="832" y="468" text-anchor="middle" class="small">Equipment sales: 30</text>
+<text x="832" y="493" text-anchor="middle" class="small">Listed cash change: +30</text>
+<path d="M240,196 L360,229" class="arrow"/>
+<path d="M240,369 L360,280" class="arrow"/>
+<text x="304" y="188" class="label">40</text><text x="294" y="299" class="label">60</text>
+<path d="M585,250 H725" class="arrow"/>
+<text x="655" y="232" text-anchor="middle" class="label">60</text>
+<text x="655" y="283" text-anchor="middle" class="small">Cloud service</text>
+<path d="M832,305 V405" class="arrow"/>
+<text x="808" y="349" text-anchor="end" class="label">30</text>
+<text x="808" y="375" text-anchor="end" class="small">Capital equipment for C</text>
+<text x="310" y="459" class="note">Internal payments cancel</text>
+<text x="310" y="485" class="note">when this boundary is combined.</text>
+<text x="35" y="586" class="heading">Customer cash entering: 100 | Layered sales: 190</text>
+<text x="35" y="619" class="note">Cash changes shown are not profits. This is not a complete GDP account.</text>
+</svg>

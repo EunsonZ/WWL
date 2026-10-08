@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="310" viewBox="0 0 900 310" role="img" aria-labelledby="title desc">
+<title id="title">资金关系须区分付款、承诺和报表分类</title><desc id="desc">外部客户付款给服务商，服务商付款给云，云付款给设备商；条件资本承诺以虚线画出。资产、合同承诺和已确认负债不混同。</desc>
+<style>text{font:16px 'Hiragino Sans GB','Microsoft YaHei','Arial Unicode MS',sans-serif;fill:#18212f}.box{fill:#f4f7fb;stroke:#456a93;stroke-width:2}.paid{stroke:#157347;stroke-width:3;fill:none}.conditional{stroke:#9a6700;stroke-width:3;stroke-dasharray:9 6;fill:none}.label{font-size:14px}</style>
+<rect class="box" x="45" y="115" width="170" height="70" rx="8"/><text x="83" y="150">外部客户</text>
+<rect class="box" x="360" y="55" width="170" height="70" rx="8"/><text x="404" y="91">模型服务商</text>
+<rect class="box" x="360" y="205" width="170" height="70" rx="8"/><text x="420" y="241">云服务商</text>
+<rect class="box" x="690" y="205" width="160" height="70" rx="8"/><text x="732" y="241">设备商</text>
+<path class="paid" d="M215 135 L360 100"/><text class="label" x="245" y="102">已付服务费</text>
+<path class="paid" d="M445 125 L445 205"/><text class="label" x="458" y="169">已付云费</text>
+<path class="paid" d="M530 240 L690 240"/><text class="label" x="565" y="226">已付设备款</text>
+<path class="conditional" d="M215 165 C300 165 305 250 360 250"/><text class="label" x="225" y="205">条件采购/融资承诺</text>
+<text class="label" x="45" y="35">实线：已发生付款；虚线：条件承诺。合同承诺、资产、已确认负债和收入须分别从报告主体与时点核对。</text>
+</svg>

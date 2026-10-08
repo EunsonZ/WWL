@@ -1,6 +1,7 @@
 """Bounded CPU contracts. Import uses only the standard library and writes nothing."""
 import math
 import numbers
+import bisect
 from itertools import islice
 
 
@@ -34,8 +35,11 @@ def adc(v):
     """Ideal 12-bit floor quantizer; endpoint Vref has a distinct clipped flag."""
     v = real(v, 'voltage V', 0, 3.3)
     delta = 3.3 / 4096
-    code = min(4095, math.floor(v / delta))
-    return {'code': code, 'lo_V': code*delta, 'hi_V': (code+1)*delta,
+    # The public bins are defined by these computed floating thresholds.  Select
+    # with the same thresholds, rather than a separately rounded v/delta.
+    edges = tuple(k*delta for k in range(4097))
+    code = min(4095, bisect.bisect_right(edges, v)-1)
+    return {'code': code, 'lo_V': edges[code], 'hi_V': edges[code+1],
             'mid_V': (code+.5)*delta, 'upper_endpoint': v == 3.3}
 
 

@@ -30,8 +30,8 @@ prerequisites:
 生成同一数值例的 SVG 与 JSON；输出位置和全部关键参数显式给出，不依赖 authors 路径：
 
 ```bash
-.venv/bin/python -B 'AI/45-机器人与具身智能/10-LQR与约束控制/code-sync/lqr_mpc_lab.py' \\
-  --output-dir 'AI/45-机器人与具身智能/10-LQR与约束控制/assets' \\
+.venv/bin/python -B 'AI/45-机器人与具身智能/10-LQR与约束控制/code-sync/lqr_mpc_lab.py' \
+  --output-dir 'AI/45-机器人与具身智能/10-LQR与约束控制/assets' \
   --dt 0.2 --horizon 8 --umax 0.8
 ```
 
@@ -610,4 +610,3 @@ if __name__ == "__main__":
 ```
 
 返回[[AI/45-机器人与具身智能/10-LQR与约束控制/00-LQR与约束控制-MOC|课程地图]]。内容、来源、真实 Obsidian 显示和真人理解仍需与程序测试分层验收。
-

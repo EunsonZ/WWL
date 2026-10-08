@@ -55,7 +55,7 @@ MPLCONFIGDIR=/private/tmp/wwl-u3-qa/mpl python3 -B plot_resample.py --output /pr
 
 ## 测试承担的责任
 
-[test_resample_lab.py](test_resample_lab.py) 有11项独立期望/不变量测试：手算全卷积及非零相位；7点所有64种分块×3相位；随机长短核多相对照；空记录、重复flush、拒绝closed、无效块不变状态；10k/6k恒等；对称与DC/群延迟；精确半格负数舍入、输入/输出/累加器饱和；奇偶N的DC/Nyquist幅值；丢点/每块复位的故意失败；shape/复数/nonfinite/参数拒绝；极小正截止频率导致不可归一化时拒绝且不泄漏NaN/警告。测试不生成文件、不写候选。
+[test_resample_lab.py](test_resample_lab.py) 覆盖手算全卷积及非零相位；7点所有64种分块×3相位；随机长短核多相对照；空记录、重复flush、拒绝closed、无效块不变状态；10k/6k恒等；对称与DC/群延迟；精确半格负数舍入、输入/输出/累加器饱和；奇偶N的DC/Nyquist幅值；丢点/每块复位的故意失败；shape/复数/nonfinite/参数拒绝；极小正截止频率导致不可归一化时拒绝且不泄漏NaN/警告。当前数目以接受版本中实际发现/运行的结果为准；测试不生成文件、不写候选。
 
 规范真源 [resample_lab.py](resample_lab.py)、[test_resample_lab.py](test_resample_lab.py) 和 [plot_resample.py](plot_resample.py) 与 [[信号与系统/80-实践/02-流式音频重采样/04-实验源码与验证|正式code-sync镜像]]一起交接。浮点stream有O(L)持久环，但临时分配和Python开销存在；固定点只实现规格参考。没有序号协议、绝对时间偏移/缺口有效掩码、驱动或声音设备功能。
 
@@ -68,6 +68,6 @@ MPLCONFIGDIR=/private/tmp/wwl-u3-qa/mpl python3 -B plot_resample.py --output /pr
 
 ## 已验与未验
 
-本次已有CPU数值运行、11项相关测试、同环境确定性复算、三张实际425px渲染；正式库结构/链接/镜像检查记录由候选REPORT提供。来源核对到三课所列具体段落。本课仍是draft/partial：独立内容复核是后续签收责任，不替读者填写掌握度。
+历史批次已有CPU数值运行、11项相关测试、同环境确定性复算、三张实际425px渲染；这些记录保留其原批次身份，不能推出当前测试数或新版本通过。正式库结构/链接/镜像检查记录由候选REPORT提供。来源核对到三课所列具体段落。本课仍是draft/partial：独立内容复核是后续签收责任，不替读者填写掌握度。
 
 Obsidian真实客户端、真人无提示学习、盲听、目标机WCET、声卡/ADC/驱动、真实缺块恢复、RTL/综合/时序、连续生产运行均未验证。CPU规格模拟不能推出这些层成功。

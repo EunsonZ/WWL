@@ -3,6 +3,24 @@ import argparse,csv,hashlib,json,math,sys,types
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 
+def causal_butterworth_contract(*, cutoff_hz=80., sample_hz=1000., signal_hz=10., interferer_hz=990., interferer_input_vpk=.1):
+    """Declared continuous-time branch contract; deliberately does not simulate it.
+
+    A later accepted integrator must supply an initial-state convention and a
+    converged state trajectory before this record may feed ``acquisition``.
+    """
+    if min(cutoff_hz,sample_hz,signal_hz,interferer_hz,interferer_input_vpk)<=0: raise ValueError('positive finite branch parameters required')
+    wc=2*math.pi*cutoff_hz
+    return {'kind':'causal_butterworth4_pending_trajectory','injection_port':'filter_input_V',
+            'input_components':[{'frequency_hz':signal_hz,'port':'sensor_before_G200'},
+                                {'frequency_hz':interferer_hz,'amplitude_Vpk':interferer_input_vpk,'port':'filter_input_V'}],
+            'transfer_function':'wc^4/[(s^2+2sin(pi/8)wc*s+wc^2)(s^2+2sin(3pi/8)wc*s+wc^2)]',
+            'cutoff_hz':cutoff_hz,'sample_hz':sample_hz,'initial_state':'must_choose_steady_state_or_zero_state',
+            'required_rows':['time_s','filter_state','filter_output_V','capture_ns','code','queue_status'],
+            'acceptance_oracles':{'at_10Hz_fc80_magnitude':.999999970198,'at_10Hz_fc80_phase_rad':-.327352205869,
+                                  '990Hz_output_Vpk_fc80':4.264019373e-6,'990Hz_output_Vpk_fc100':10.410203500e-6,
+                                  'alias_hz_at_1kSps':10.}}
+
 def load(vault,key):
     registry=json.loads((HERE/'pipeline-inputs.json').read_text())
     if type(key) is not str or key not in registry:raise ValueError('known model required')
@@ -48,7 +66,7 @@ def run(vault):
     fast=acquisition(e,output,cpu_ns=5000000)
     from dataclasses import replace
     mismatch=b.evaluate(replace(cfg,fs=100000,interferer_hz=99000));redesign=b.evaluate(replace(cfg,cutoff=80))
-    return {'version':'groupB-R1','synthetic':True,'L09':l09,'L10':l10,'L12':l12,'L13':{'sensor_input_V':sensor,'ideal_G200_contract':True,'not_full_analog_transient':True,'budget':budget,'cutoff80_redesign':redesign,'pipeline':pipeline,'overrun':fast,'mismatched_100kHz_analog_budget':mismatch,'local_supply_assumptions':{'V_V':3.3,'I_A':.005,'edge_s':5e-9,'decap':pcb.decap(),'loop_short':pcb.loop(),'loop_detour':pcb.loop(inductance=20e-9),'RC_charge_J':pcb.energy()},'not_run':['sensor hardware','ADC DMA cache driver','DAC/PWM','PCB extraction','thermal measurement']}}
+    return {'version':'groupB-R1','synthetic':True,'L09':l09,'L10':l10,'L12':l12,'L13':{'sensor_input_V':sensor,'ideal_G200_contract':True,'not_full_analog_transient':True,'causal_dynamic_branch_contract':causal_butterworth_contract(),'budget':budget,'cutoff80_redesign':redesign,'pipeline':pipeline,'overrun':fast,'mismatched_100kHz_analog_budget':mismatch,'local_supply_assumptions':{'V_V':3.3,'I_A':.005,'edge_s':5e-9,'decap':pcb.decap(),'loop_short':pcb.loop(),'loop_detour':pcb.loop(inductance=20e-9),'RC_charge_J':pcb.energy()},'not_run':['causal filter trajectory','sensor hardware','ADC DMA cache driver','DAC/PWM','PCB extraction','thermal measurement']}}
 
 def generate(output,vault):
     out=Path(output).resolve();root=Path(vault).resolve()

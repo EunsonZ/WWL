@@ -28,7 +28,7 @@ FROM "Obsidian知识/30-实践/01-实验区/数据"
 SORT file.name ASC
 ```
 
-## 查询 `30-示例项目`
+## 查询 `Obsidian知识/30-实践/03-示例项目`
 
 下面的表格按最近修改时间列出项目内容，并读取已有的 `type`、`status` 和 `project` Properties。
 
@@ -38,7 +38,7 @@ TABLE
   status AS "状态",
   project AS "所属项目",
   file.mtime AS "最近修改"
-FROM "30-示例项目"
+FROM "Obsidian知识/30-实践/03-示例项目"
 SORT file.mtime DESC
 LIMIT 20
 ```

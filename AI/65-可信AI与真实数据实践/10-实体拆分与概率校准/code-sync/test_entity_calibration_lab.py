@@ -73,6 +73,11 @@ class EntityCalibrationLabTests(unittest.TestCase):
         logits = np.array([[1000.0, 0.0, -1000.0, -1000.0, -1000.0, -1000.0]])
         self.assertAlmostEqual(lab.multiclass_nll(logits, np.array([1])), 1000.0)
 
+    def test_nll_is_invariant_to_large_common_logit_offsets(self):
+        y = np.array([0])
+        for offset in (0.0, 1e16, 1e20):
+            self.assertAlmostEqual(lab.multiclass_nll(np.full((1, 6), offset), y), np.log(6.0))
+
     def test_ece_depends_on_bin_count(self):
         probabilities = np.array([
             [.51, .49, 0, 0, 0, 0], [.59, .41, 0, 0, 0, 0],

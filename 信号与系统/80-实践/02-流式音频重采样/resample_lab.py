@@ -199,7 +199,10 @@ def single_amplitude(x, fs):
     x = vector(x)
     if not len(x) or not math.isfinite(fs) or fs <= 0:
         raise ValueError('nonempty record and positive fs required')
-    a = np.abs(np.fft.rfft(x))/len(x)
+    scale=float(np.max(np.abs(x)))
+    if not np.isfinite(scale) or scale==0: return np.fft.rfftfreq(len(x),1/fs),np.zeros(len(x)//2+1)
+    a = np.abs(np.fft.rfft(x/scale))/len(x)*scale
+    if not np.all(np.isfinite(a)): raise ValueError('spectrum outside supported range')
     if len(x) % 2 == 0:
         a[1:-1] *= 2
     else:

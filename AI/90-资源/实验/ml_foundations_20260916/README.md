@@ -8,7 +8,7 @@ python3 -B -m unittest test_mechanisms.py -v
 
 | 函数 | 对应课程 | 检查什么 | 不证明什么 |
 | --- | --- | --- | --- |
-| `ridge_solution`、`logistic_gradient` | 07、14 | reduction、L2 收缩、二分类梯度 | 真实数据线性、概率已校准 |
+| `ridge_solution`、`logistic_gradient` | 07、14 | reduction、L2 收缩、二分类梯度；梯度以原 logit 稳定计算，不以硬截断改变尾部 | 真实数据线性、概率已校准 |
 | `finite_class_gap` | 12 | 有限假设类 Hoeffding + union bound 的数值代入 | 界紧、现代深网已解释 |
 | `kmeans_step`、`gmm_responsibilities` | 16、20 | 硬分配、软责任和归一化 | 簇具有真实语义 |
 | `value_iteration`、`td_targets` | 19 | Bellman backup、TD/SARSA/Q-learning target | 函数逼近或离线 RL 稳定 |

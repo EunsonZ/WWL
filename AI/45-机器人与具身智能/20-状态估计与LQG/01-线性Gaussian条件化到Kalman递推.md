@@ -34,7 +34,7 @@ $$
 \end{gathered}
 $$
 
-把联合密度指数中的二次型对 $b$ 固定并配方，等价于对分块精度矩阵做消元；[[数学/20-线性代数与几何/18-分块矩阵Schur补与矩阵指数|Schur补]]给出
+令 $K=\Sigma_{ab}\Sigma_{bb}^{-1}$，残差 $r=a-\mu_a-K(b-\mu_b)$ 满足 $\operatorname{Cov}(r,b)=0$。联合 Gaussian 下这推出 $r$ 与 $b$ 独立，因此直接得到（也覆盖退化的联合分布）
 
 $$
 \mathbb E[a\mid b]
@@ -45,6 +45,8 @@ $$
 \operatorname{Cov}(a\mid b)
 =\Sigma_{aa}-\Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba}.
 $$
+
+若整个联合协方差还正定，才也可把联合密度的二次型对 $b$ 固定并配方，等价于对分块精度矩阵做消元；不能只由 $\Sigma_{bb}\succ0$ 推出整体精度矩阵存在。例如 $a=b\sim\mathcal N(0,1)$ 的联合协方差为 $\begin{bmatrix}1&1\\1&1\end{bmatrix}$，行列式为零，但观察 $b=2$ 时 $a\mid b=2$ 是点质量 $\delta_2$，上述条件均值为 $2$、条件方差为 $0$。
 
 程序求解 $\Sigma_{bb}K^\mathsf T=\Sigma_{ab}^\mathsf T$，避免显式形成逆矩阵。Gaussian 条件化与线性最小均方估计的课程推导可对照 [Stanford EE363 Estimation](https://ee363.stanford.edu/archive/lectures/estim.pdf)；下面的机器人参数和手算是本组教学构造。
 

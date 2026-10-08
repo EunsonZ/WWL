@@ -151,7 +151,10 @@ def transfer(A,B,C,D,s):
     if not math.isfinite(s.real) or not math.isfinite(s.imag):raise ValueError('finite complex s required')
     try:
         with np.errstate(over='ignore',invalid='ignore'):
-            return finite_result(C@np.linalg.solve(s*np.eye(len(A))-A,B)+D)
+            scale=max(1.,abs(s),float(np.max(np.abs(A))))
+            if not np.isfinite(scale): raise ValueError('resolvent outside supported range')
+            resolvent=(s/scale)*np.eye(len(A))-A/scale
+            return finite_result(C@np.linalg.solve(resolvent,B/scale)+D)
     except np.linalg.LinAlgError as e:
         raise ValueError('sI-A singular: use algebraically reduced transfer separately') from e
 

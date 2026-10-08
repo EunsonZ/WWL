@@ -21,11 +21,15 @@ class DetectionTests(unittest.TestCase):
             self.assertAlmostEqual(q[0],0)
         _,p=periodogram([2,2,2,2],8)
         self.assertEqual(p[0],2)
+        _,p=periodogram([1e153]*16,16)
+        self.assertTrue(np.all(np.isfinite(p)))
+        self.assertAlmostEqual(p[0],1e306)
 
     def test_variance_bias_correction_independent_enumeration(self):
         # All iid Bernoulli(.5) pairs: unbiased mean is population variance .25.
         pairs=[[0,0],[0,1],[1,0],[1,1]]
         self.assertEqual(sum(sample_variance(x) for x in pairs)/4,.25)
+        self.assertEqual(sample_variance([1e308,1e308]),0)
         self.assertEqual(sum(np.var(x) for x in pairs)/4,.125)
 
     def test_multiple_independent_positions(self):

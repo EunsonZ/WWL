@@ -36,7 +36,7 @@ WorkWithLLM 历史快照中 Omnisearch 与 Simplified Chinese Word Splitting 曾
 
 ## 实验 A：搜索意图对照
 
-在 `Obsidian知识/30-实践/01-实验区/插件/搜索语料/` 中完成三次查找：
+用 [[Obsidian知识/30-实践/01-实验区/数据/甲-晨间笔记|现有数据样例]] 中实际出现的标题或短语完成三次查找：
 
 1. Quick Switcher：已知标题时直接打开。
 2. 核心 Search：用完整短语或属性找到精确集合。

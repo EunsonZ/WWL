@@ -44,8 +44,21 @@ def correlated_psd(s1,s2,rho,h1=1.,h2=1.):
     s1,s2=real(s1,nonnegative=True),real(s2,nonnegative=True)
     rho,h1,h2=real(rho),real(h1),real(h2)
     if abs(rho)>1: raise ValueError('correlation violates PSD positivity')
-    value=h1*h1*s1+h2*h2*s2+2*h1*h2*rho*math.sqrt(s1*s2)
-    return max(0.,value)  # suppress roundoff only at exactly cancelling limit
+    # Form x=h1*sqrt(S1), y=h2*sqrt(S2), then scale the quadratic form.
+    # This preserves representable tiny cross terms and avoids S1*S2 overflow.
+    x,y=h1*math.sqrt(s1),h2*math.sqrt(s2)
+    scale=max(abs(x),abs(y))
+    if not math.isfinite(scale): raise ValueError('PSD intermediate outside supported range')
+    if scale==0: return 0.
+    xn,yn=x/scale,y/scale
+    bracket=xn*xn+yn*yn+2*rho*xn*yn
+    value=scale*scale*bracket
+    if not math.isfinite(value): raise ValueError('PSD result outside supported range')
+    # Only a negative roundoff at the positive-semidefinite boundary is removable.
+    if value<0:
+        if value >= -32*math.ulp(scale*scale): return 0.
+        raise ValueError('PSD became negative')
+    return value
 
 
 def integrate_log(function, low, high, n=4096):

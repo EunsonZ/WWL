@@ -33,7 +33,7 @@ WorkWithLLM 历史快照中 Dataview 已安装并默认启用；WWL 的实际状
 
 ## 同一份数据，两种视图
 
-打开 `Obsidian知识/30-实践/01-实验区/插件/Dataview与Bases/` 中的样例。每篇笔记都使用普通 YAML：
+打开 [[Obsidian知识/30-实践/01-实验区/插件/06-Dataview DQL实验|Dataview DQL 实验]]，并以其中已有的 `数据` 目录作为两种视图的同一输入集合。每篇笔记都使用普通 YAML：
 
 ```yaml
 type: book
@@ -46,7 +46,7 @@ rating: 4
 ````markdown
 ```dataview
 TABLE status, rating
-FROM "Obsidian知识/30-实践/01-实验区/插件/Dataview与Bases"
+FROM "Obsidian知识/30-实践/01-实验区/数据"
 WHERE type = "book"
 SORT rating DESC
 ```

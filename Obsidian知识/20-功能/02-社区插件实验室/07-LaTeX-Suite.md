@@ -32,7 +32,7 @@ WorkWithLLM 历史快照中 LaTeX Suite 已安装、默认关闭；WWL 状态须
 
 ## 安全实验
 
-在 `Obsidian知识/30-实践/01-实验区/插件/LaTeX/` 的公式练习中：
+在现有 [[Obsidian知识/30-实践/01-实验区/插件/03-LaTeX Suite数学公式实验|LaTeX Suite 数学公式实验]] 中：
 
 1. 手写 `$E=mc^2$`。
 2. 使用内置 snippet 输入一个分数和一个带上下标的公式。

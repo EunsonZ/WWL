@@ -149,9 +149,9 @@ def multiclass_nll(logits: np.ndarray, y: np.ndarray, temperature: float = 1.0) 
     if logits.ndim != 2 or logits.shape != (y.size, CLASS_COUNT):
         raise ValueError("logits must have shape (n, 6) and match labels")
     scaled = logits / temperature
-    maximum = np.max(scaled, axis=1)
-    log_normalizer = maximum + np.log(np.sum(np.exp(scaled - maximum[:, None]), axis=1))
-    return float(np.mean(log_normalizer - scaled[np.arange(y.size), y]))
+    shifted = scaled - np.max(scaled, axis=1, keepdims=True)
+    log_normalizer = np.log(np.sum(np.exp(shifted), axis=1))
+    return float(np.mean(log_normalizer - shifted[np.arange(y.size), y]))
 
 
 def train_softmax(

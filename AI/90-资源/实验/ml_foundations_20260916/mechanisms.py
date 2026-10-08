@@ -33,8 +33,15 @@ def logistic_gradient(x: Iterable[float], y: float, w: Iterable[float], bias: fl
     ):
         raise ValueError("shape mismatch or non-binary label")
     z = float(np.dot(x_arr, w_arr) + bias)
-    p = 1.0 / (1.0 + math.exp(-max(-40.0, min(40.0, z))))
-    return (p - y) * x_arr, p - y
+    # Compute p-y directly.  Clamping z changes the objective; p-1 also
+    # rounds a representable positive-tail residual to zero.
+    if z >= 0.0:
+        tail = math.exp(-z)
+        residual = 1.0 / (1.0 + tail) if y == 0.0 else -tail / (1.0 + tail)
+    else:
+        head = math.exp(z)
+        residual = head / (1.0 + head) if y == 0.0 else -1.0 / (1.0 + head)
+    return residual * x_arr, residual
 
 
 def finite_class_gap(class_size: int, sample_size: int, delta: float) -> float:

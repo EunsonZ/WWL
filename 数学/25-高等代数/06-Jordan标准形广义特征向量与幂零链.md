@@ -40,9 +40,9 @@ $$N=\begin{pmatrix}0&1&1\\0&0&1\\0&0&0\end{pmatrix}.$$
 
 ## Jordan 形式的用途与数值警告
 
-在一个大小 $s$ 的块上，
+在一个大小 $s$ 的块上，若底域为 $\mathbb R$ 或 $\mathbb C$（更一般地，$\operatorname{char}F=0$ 或 $\operatorname{char}F\ge s$），
 $$f(\lambda I+N)=\sum_{j=0}^{s-1}\frac{f^{(j)}(\lambda)}{j!}N^j$$
-对多项式或在附近解析的函数成立。矩阵指数因此包含 $t^j e^{\lambda t}$，解释共振与多项式暂态。
+对多项式或在附近解析的函数成立；解析函数的说法也只在相应实/复分析环境中使用。Jordan 分类本身只需特征多项式分裂，不能由此省掉阶乘可逆条件。例如在 $\mathbb F_2$ 上，$N=J_3(0)$、$f(t)=t^2$ 时 $N^2=E_{13}\ne0$，但 $f'=f''=0$ 且 $2!=0$，上式的二阶项无定义。任意特征下可改用 $f(\lambda+t)$ 的 $t^j$ 系数（Hasse 系数）表示，而本页不展开这一替代技术。矩阵指数因此在实/复域包含 $t^j e^{\lambda t}$，解释共振与多项式暂态。
 
 Jordan 形是精确代数分类，但对微小矩阵扰动不连续，浮点计算不宜以“识别精确块结构”为默认目标。例如 $\begin{pmatrix}0&1\\\varepsilon&0\end{pmatrix}$ 在 $\varepsilon\ne0$ 时有两个不同复特征值，$\varepsilon=0$ 时却是一个 Jordan 块。数值工作通常使用 Schur 形。
 

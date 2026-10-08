@@ -28,6 +28,15 @@ class FoundationsTests(unittest.TestCase):
         np.testing.assert_allclose(grad_w, [-1.0, 0.5])
         self.assertAlmostEqual(grad_b, -0.5)
 
+    def test_logistic_gradient_keeps_representable_tail_residuals(self) -> None:
+        grad_w, grad_b = logistic_gradient([1e10], 0, [-1e-8])
+        expected = math.exp(-100.0)
+        self.assertAlmostEqual(grad_b, expected, delta=expected * 1e-12)
+        self.assertAlmostEqual(float(grad_w[0]), 1e10 * expected, delta=1e10 * expected * 1e-12)
+        opposite_w, opposite_b = logistic_gradient([1e10], 1, [1e-8])
+        self.assertAlmostEqual(opposite_b, -expected, delta=expected * 1e-12)
+        self.assertAlmostEqual(float(opposite_w[0]), -1e10 * expected, delta=1e10 * expected * 1e-12)
+
     def test_finite_class_bound(self) -> None:
         self.assertAlmostEqual(finite_class_gap(8, 200, 0.05), math.sqrt(math.log(320) / 400))
 

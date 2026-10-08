@@ -127,3 +127,12 @@ QEMU 退出码为 0，runner 报告六次真实 timer tick、两次独立退出�
 - RISC-V International，[*Sstc Extension for RISC-V*，v1.0，v20260120 规范集](https://docs.riscv.org/reference/isa/v20260120/priv/sstc.html)：核对 `stimecmp`、`menvcfg.STCE`、`mcounteren.TM` 与 supervisor timer pending 条件。
 - QEMU，[RISC-V `virt` Generic Virtual Platform，v9.2.4](https://gitlab.com/qemu-project/qemu/-/blob/v9.2.4/docs/system/riscv/virt.rst)、[`hw/riscv/virt.c`](https://gitlab.com/qemu-project/qemu/-/blob/v9.2.4/hw/riscv/virt.c)、[`include/hw/intc/riscv_aclint.h`](https://gitlab.com/qemu-project/qemu/-/blob/v9.2.4/include/hw/intc/riscv_aclint.h) 与 [`target/riscv/cpu.c`](https://gitlab.com/qemu-project/qemu/-/blob/v9.2.4/target/riscv/cpu.c)：核对 `virt` 的 10 MHz timebase、默认 Sstc 扩展与机器布局。相关 QEMU 源文件为 GPL v2 或更高版本。
 - 本实验从同库 09/10 实验复用少量独立 MIT 教学代码结构；本目录代码统一见 `LICENSE-CODE.txt`。可执行文件是真源，逐字镜像见 [[计算机知识/80-实践/06-计算机系统/11-定时器中断与抢占调度/源码与测试镜像|源码与测试镜像]]。
+
+
+## 当前候选的进度与传播回归接口
+
+C与runner均检查每种计数 `new >= 1000 && new > old`，old初始为0。新增fixtures分别突变work与stack：首次999拒绝、1000/1001接受、后续等值拒绝；既有缺tick、乱序、异常PC和canary检查保留。`python3 -m unittest -v test_build_run.py`是未来运行入口，本次notrun。
+
+Sstc写未来deadline只让比较条件变false，STIP最终下降可能滞后。候选handler保存armed_deadline，遇time仍小于它的伪timer trap时检查原因、基本特权状态与frame身份，返回原frame；此时任务可能尚未执行初始化桩，因此不提前要求热循环canary或工作进度。到期时仍完整检查PC、寄存器/栈canary与进度，然后设置新deadline并切换。六个真实tick的trace合同不变；没有新增伪tick日志或强制STIP轮询。见 [[计算机知识/80-实践/06-计算机系统/11-定时器中断与抢占调度/01-Sstc中断从time到sret|比较条件与pending传播]]。
+
+本次只静态审阅与同步镜像；Python测试、host编译、RISC-V交叉编译、QEMU与真实硬件运行全部notrun。正文中的历史ELF/trace不能为新代码提供运行签收。

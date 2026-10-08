@@ -288,9 +288,9 @@ ABI lowering 通常依次处理：
 ```text
 caller:
     reserve outgoing_stack_arguments_and_required_padding
-    place register arguments
-    place stack arguments
-    preserve caller-saved values that remain live
+    preserve live caller-saved values before argument moves overwrite them
+    place stack arguments without destroying still-needed sources
+    place register arguments using a parallel-copy schedule
     CALL callee
     read return location
     restore preserved caller values
@@ -305,6 +305,18 @@ callee entry:
     dismantle frame
     RETURN
 ```
+
+旧 R0=7 在调用后还活跃，而实参3要进入 R0，必须先保护7：
+
+| 步骤 | R0 | 独立保存槽 | 结果位置 |
+| --- | --- | --- | --- |
+| 保存旧值 | 7 | 7 | — |
+| 装入实参 | 3 | 7 | — |
+| CALL | 被调用者接收3，返回后可覆盖 | 7 | ABI返回寄存器 |
+| 读取返回 | 返回值 | 7 | 复制到不被恢复覆盖的位置 |
+| 恢复旧值 | 7 | 可释放 | 返回结果保留 |
+
+参数交换 `R0←old R1, R1←old R0` 是并行复制；顺次 R0=R1; R1=R0 会丢旧R0。可用不承载活值、也不被该搬运覆盖的临时寄存器：`tmp=R0; R0=R1; R1=tmp`；或预留满足 ABI 对齐的独立临时栈槽进行 store/load。临时槽不能覆盖保存槽或栈参数区，所有槽与 padding 一并纳入调用点对齐。
 
 若 ABI 要求“调用点的栈指针按 `A` 字节对齐”，则必须满足：
 

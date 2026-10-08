@@ -1,6 +1,10 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
+import shutil
+import subprocess
+import tempfile
 
 import build_run
 
@@ -29,6 +33,31 @@ GOOD_TRACE = "\n".join(
 
 
 class TraceContractTests(unittest.TestCase):
+
+    def test_layout_assertions_reject_macro_and_member_drift(self):
+        compiler = shutil.which('cc')
+        if compiler is None:
+            self.skipTest('host cc not installed; no automatic installation')
+        source = Path(__file__).resolve().parent
+        prefix = (source / 'kernel.c').read_text().split('extern char supervisor_trap_entry')[0]
+        header = (source / 'trapframe.h').read_text()
+        offsets = (source / 'trapframe_offsets.h').read_text()
+        with tempfile.TemporaryDirectory(prefix='riscv-layout-') as directory:
+            root = Path(directory)
+            (root / 'layout.c').write_text(prefix)
+            for variant, body, macro, accepted in [
+                ('baseline', header, offsets, True),
+                ('macro', header, offsets.replace('#define TF_A0      72', '#define TF_A0      80'), False),
+                ('member', header.replace('    u64 a0;\n    u64 a1;', '    u64 a1;\n    u64 a0;'), offsets, False),
+            ]:
+                with self.subTest(variant=variant):
+                    (root / 'trapframe.h').write_text(body)
+                    (root / 'trapframe_offsets.h').write_text(macro)
+                    result = subprocess.run([compiler, '-std=c11', '-fsyntax-only', str(root / 'layout.c')],
+                                            capture_output=True, text=True, timeout=10)
+                    self.assertEqual(result.returncode == 0, accepted, result.stderr)
+
+
     def test_accepts_full_ordered_trace_and_zero_exit(self) -> None:
         build_run.verify_output(0, GOOD_TRACE)
 

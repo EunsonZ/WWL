@@ -44,6 +44,21 @@ Graph(inputs + Ops)
 
 这里的 guard 是特化假设的可执行表达，不是注释。如果实际 feed 是 `(3, 4)` 而专用版本要求 `(2, 4)`，正确做法是 guard 失败后回退/重编译；这个小实验通过抛异常把该边界暴露给调用者，不暗中使用错误 kernel。
 
+### 一个 fused 节点实际分配了什么
+
+```text
+逻辑图：a,b → add → intermediate → ReLU → output
+LoweredGraph：a,b → fused_add_relu → output
+当前 Python 执行：_elementwise(a,b) → 完整 intermediate Tensor
+                 → 逐元素 ReLU → 另一个完整 output Tensor
+真正流式融合（条件模型）：逐个读 a[i],b[i] → 寄存器临时值 → 写 output[i]
+```
+
+`FusionDecision` 证明当前元数据与 guard 下允许这项图改写；reference 相等检查有限输入的函数结果。它们均没有证明执行器消除了完整中间张量。当前 `_execute_ops` 的 fused 分支仍调用 `_elementwise` 构造 `intermediate`，然后另建 ReLU `Tensor`。
+
+仅在连续 N 元素、每元素 w 字节、无别名、无额外消费者，并只数裸元素读写时：两算子路径先读 a/b、写 intermediate（3Nw），再读 intermediate、写 output（2Nw），合计 **5Nw**；真正逐元素融合读 a/b、写 output，合计 **3Nw**，差 **2Nw**。N=8、w=4 时为160 B、96 B、64 B。这个条件账不含 Python 对象、分配器、缓存、启动或设备传输；不是当前执行器的内存测量，更不是 GPU 提速证据。读者可检查当前分支是否构造完整 intermediate，再决定能否引用3Nw模型。
+
+
 ## 练习
 
 1. 增加 `mul -> relu` 数值样例，同时检查融合前后 shape 和值，不只检查 op 名。

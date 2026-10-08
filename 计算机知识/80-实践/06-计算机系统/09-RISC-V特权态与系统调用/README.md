@@ -43,7 +43,7 @@ $$
 
 ## 寄存器帧与两次换栈
 
-`trapframe.h` 是 C 结构真源，`trapframe_offsets.h` 是汇编偏移真源；C 的 `_Static_assert` 会让二者一旦错位就编译失败。帧覆盖 `ra/sp/gp/tp`、`t0–t6`、`s0–s11`、`a0–a7`，并附加 `sepc/scause/stval`。U 态返回后把 31 个整数寄存器逐项写入 `user_snapshot`，下一次系统调用由 S 态逐项核对；只有返回寄存器 `a0` 按 ABI 从 41 改为 42。
+`trapframe.h` 是 C 结构真源，`trapframe_offsets.h` 是汇编偏移真源；`kernel.c`包含两个header，逐个以 `CHECK_OFFSET(member,TF_*)` 比較所有汇编使用字段，并以 `TF_SIZE` 检查结构大小；编译时错位会触发 `_Static_assert`。帧覆盖 `ra/sp/gp/tp`、`t0–t6`、`s0–s11`、`a0–a7`，并附加 `sepc/scause/stval`。U 态返回后把 31 个整数寄存器逐项写入 `user_snapshot`，下一次系统调用由 S 态逐项核对；只有返回寄存器 `a0` 按 ABI 从 41 改为 42。
 
 ```mermaid
 flowchart TD
@@ -112,3 +112,8 @@ QEMU 退出码为 0，运行器报告 14 个有序检查通过，临时构建目
 - MIT PDOS，[xv6-riscv commit `9e3161a9abf5f51ea402562d1874caf6c4926597`](https://github.com/mit-pdos/xv6-riscv/tree/9e3161a9abf5f51ea402562d1874caf6c4926597) 的 `kernel/trampoline.S`、`kernel/trap.c`、`kernel/syscall.c`：对照保存/恢复、`sepc += 4`、从 trapframe 取 `a7` 并写回 `a0`。xv6 使用 MIT License。本实验代码独立缩小实现，见 `LICENSE-CODE.txt`。
 
 可执行源是同目录 `.S/.c/.h/.ld/.py`；逐字镜像见 [[计算机知识/80-实践/06-计算机系统/09-RISC-V特权态与系统调用/源码与测试镜像|源码与测试镜像]]，镜像不是第二真源。
+
+
+## 布局回归接口（本次未运行）
+
+`python3 -m unittest -v test_build_run.py` 包含 host C 前缀检查：仅编译结构/宏断言，不汇编RISC-V指令；原布局应接受，TF_A0偏移突变与a0/a1成员交换应拒绝。宿主须有64位 unsigned long 与 `cc`，无编译器则显式skip，不自动安装。这轮只同步源与镜像，host编译、交叉链接、QEMU及客户端均notrun；旧运行记录只属于其旧字节。

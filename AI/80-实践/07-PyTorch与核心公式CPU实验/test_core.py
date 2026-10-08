@@ -64,6 +64,54 @@ class CoreTests(unittest.TestCase):
             values.append((radius, jump))
         self.assertEqual(values, [(3, 2), (7, 4), (15, 4)])
 
+    def test_cnn_data_config_and_seed(self):
+        from train_cnn import make_data
+        a, b = make_data(8, 11), make_data(8, 11)
+        self.assertTrue(torch.equal(a.tensors[0], b.tensors[0]))
+        exact = make_data(2, 11, noise=0, position_min=4, position_max=4)
+        self.assertEqual(exact.tensors[0][0, 0, 4, 2:14].tolist(), [1.] * 12)
+        self.assertEqual(exact.tensors[0][1, 0, 2:14, 4].tolist(), [1.] * 12)
+        for kwargs in [dict(noise=float('nan')), dict(noise=float('inf')),
+                       dict(noise=-1), dict(position_min=-1), dict(position_max=16),
+                       dict(position_min=10, position_max=9)]:
+            with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                make_data(2, 11, **kwargs)
+
+    def test_cnn_shapes_and_parameter_ledger(self):
+        from train_cnn import build_model
+        model = build_model()
+        self.assertEqual([sum(p.numel() for p in model[i].parameters()) for i in [0, 2, 6]],
+                         [80, 1168, 34])
+        x = torch.zeros(1, 1, 16, 16)
+        shapes, byte_counts = [list(x.shape)], [x.numel() * x.element_size()]
+        for i, layer in enumerate(model):
+            x = layer(x)
+            if i in [0, 2, 4, 6]:
+                shapes.append(list(x.shape)); byte_counts.append(x.numel() * x.element_size())
+        self.assertEqual(shapes, [[1, 1, 16, 16], [1, 8, 16, 16], [1, 16, 16, 16],
+                                  [1, 16, 1, 1], [1, 2]])
+        self.assertEqual(byte_counts, [1024, 8192, 16384, 64, 8])
+
+    def test_cnn_visual_report_interface(self):
+        import tempfile
+        from pathlib import Path
+        import xml.etree.ElementTree as ET
+        from train_cnn import write_visuals
+        sample = {'index': 0, 'label': 0, 'prediction': 1, 'pixels': [[0.] * 16 for _ in range(16)]}
+        report = {'history': [{'epoch': 1, 'train_loss': .7, 'validation': {'loss': .8}},
+                              {'epoch': 2, 'train_loss': .4, 'validation': {'loss': .6}}],
+                  'samples': [sample], 'error_samples': [sample]}
+        with tempfile.TemporaryDirectory(prefix='cnn-visual-fixture-') as directory:
+            output = Path(directory)
+            write_visuals(report, output)
+            for name in ['history.svg', 'samples.svg']:
+                root = ET.fromstring((output / name).read_text())
+                self.assertEqual(root.tag, '{http://www.w3.org/2000/svg}svg')
+            history = (output / 'history.svg').read_text()
+            self.assertIn('blue=train, red=validation', history)
+            self.assertIn('epoch 2', history)
+            self.assertIn('y=0 p=1', (output / 'samples.svg').read_text())
+
     def test_residual_jacobian(self):
         x = torch.tensor(2., requires_grad=True)
         y = x+x*x

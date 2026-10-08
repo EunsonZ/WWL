@@ -297,9 +297,12 @@ static void initialize_tasks(u64 initial_status) {
     }
 }
 
+static u64 armed_deadline;
+
 static u64 arm_next_timer(void) {
     u64 now = read_time();
-    write_stimecmp(now + QUANTUM_TICKS);
+    armed_deadline = now + QUANTUM_TICKS;
+    write_stimecmp(armed_deadline);
     return now;
 }
 
@@ -325,15 +328,28 @@ static void validate_user_frame(struct scheduler_context *task,
 }
 
 static struct trapframe *handle_timer(struct trapframe *tf) {
-    u64 now = arm_next_timer();
+    u64 now = read_time();
     ++trap_depth;
     if (trap_depth != 1 || tf->scause != SCAUSE_STIMER || tf->stval != 0 ||
-        current_task > 1 || tasks[current_task].state != RUNNABLE) {
+        current_task > 1 || tasks[current_task].state == EXITED) {
         qemu_fail(0x20);
     }
-
     struct scheduler_context *from = &tasks[current_task];
+    if (tf != from->frame || (tf->sstatus & SSTATUS_SPP) != 0 ||
+        (tf->sstatus & SSTATUS_SIE) != 0 || (tf->sstatus & SSTATUS_SPIE) == 0) {
+        qemu_fail(0x21);
+    }
+    /* Sstc permits stale STIP after writing a future comparison value.
+       Keep that deadline and return the same context without counting a tick. */
+    if (now < armed_deadline) {
+        --trap_depth;
+        return tf;
+    }
+    if (from->state != RUNNABLE) {
+        qemu_fail(0x20);
+    }
     validate_user_frame(from, tf, 0x21);
+    now = arm_next_timer();
     if (tf->sepc < from->code_lo || tf->sepc >= from->code_hi) {
         qemu_fail(0x25);
     }

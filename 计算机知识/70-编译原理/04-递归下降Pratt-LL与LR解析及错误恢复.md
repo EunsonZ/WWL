@@ -378,3 +378,6 @@ error node 不应假装是合法节点。它至少保留：期望类别、实际
 这不是替换本页：先掌握原理，再用补充页核对容易被一句话略过的条件。
 <!-- END ROUND4 DEPTH LINKS -->
 
+## GOTO 的方向核对
+
+GOTO 只选择点后紧接符号 `X` 的 item，再把点右移并取 closure。对 `I={E→E + • T,T→•ID}`，`GOTO(I,T)={E→E + T •}`，`GOTO(I,ID)={T→ID •}`，`GOTO(I,+)=∅`。

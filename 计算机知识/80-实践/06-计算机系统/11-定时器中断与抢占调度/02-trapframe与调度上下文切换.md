@@ -81,8 +81,8 @@ $$
 
 $$
 \begin{aligned}
-w_{\mathrm{reg,new}}&>w_{\mathrm{reg,old}}\ge1000,\\
-w_{\mathrm{stack,new}}&>w_{\mathrm{stack,old}}\ge1000.
+w_{\mathrm{reg,new}}&\ge1000,\quad w_{\mathrm{reg,new}}>w_{\mathrm{reg,old}},\\
+w_{\mathrm{stack,new}}&\ge1000,\quad w_{\mathrm{stack,new}}>w_{\mathrm{stack,old}}.
 \end{aligned}
 $$
 
@@ -124,3 +124,6 @@ timer interrupt 发生在指令边界，硬件写入的 `sepc` 是正常返回�
 两任务共用 `satp`，没有地址空间切换和 `sfence.vma`/ASID 管理；S handler 共用一份内核栈，没有保存可阻塞内核线程的调用链；只有严格交替的固定数组，没有 run queue、优先级、动态创建、睡眠与唤醒；固定单 hart，没有锁、跨核迁移、IPI 或 per-CPU scheduler。
 
 这些边界使实验能把一条真实异步路径看清：timer 取得控制，trapframe 保存架构现场，scheduler context 决定目标，另一份 trapframe 恢复，`sret` 回到不同的 U 态执行流。它为理解完整 OS 调度提供可运行支点，但不替代完整调度器。
+
+
+初值old=0；因此首次new=1000可接受，999不可接受。后来new等于old不可接受，old=1000而new=1001可接受。寄存器与栈计数分别满足这两项，不能合成 `new > max(1000,old)`，后者会错误拒绝首次恰1000。传播暂态的伪timer trap不算一次抢占，不触发上述进度合同，见 [[计算机知识/80-实践/06-计算机系统/11-定时器中断与抢占调度/01-Sstc中断从time到sret|Sstc比较与最终传播]]。

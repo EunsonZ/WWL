@@ -82,6 +82,39 @@ class RunnerTests(unittest.TestCase):
     def test_complete_trace_passes(self) -> None:
         build_run.verify_output(0, sample_output(), SYMBOLS)
 
+    def test_first_and_later_progress_boundaries(self) -> None:
+        # Mutate each counter independently, keeping the other valid.
+        for field in ('work', 'stack'):
+            for value, accepted in [(999, False), (1000, True), (1001, True)]:
+                lines = sample_output().splitlines()
+                lines[7] = re.sub(rf'{field}=0x[0-9a-f]{{16}}',
+                                  f'{field}=0x{value:016x}', lines[7])
+                output = '\n'.join(lines) + '\n'
+                with self.subTest(field=field, first=value):
+                    if accepted:
+                        build_run.verify_output(0, output, SYMBOLS)
+                    else:
+                        with self.assertRaises(build_run.LabError):
+                            build_run.verify_output(0, output, SYMBOLS)
+            lines = sample_output().splitlines()
+            for line_index, value in [(7, 1000), (11, 1001)]:
+                lines[line_index] = re.sub(rf'{field}=0x[0-9a-f]{{16}}',
+                                           f'{field}=0x{value:016x}', lines[line_index])
+            with self.subTest(field=field, later='1000 to 1001'):
+                build_run.verify_output(0, '\n'.join(lines) + '\n', SYMBOLS)
+            # Task0's second preemption repeats its first value: no progress.
+            lines = sample_output().splitlines()
+            lines[11] = re.sub(rf'{field}=0x[0-9a-f]{{16}}',
+                               f'{field}=0x{4096:016x}', lines[11])
+            with self.subTest(field=field, later='equal'), self.assertRaises(build_run.LabError):
+                build_run.verify_output(0, '\n'.join(lines) + '\n', SYMBOLS)
+
+    def test_corrupt_pc_canary_are_rejected(self) -> None:
+        for old, new in [('sepc=0x0000000040000074', 'sepc=0x000000004000006c'),
+                         ('SPP=0 SPIE=1 depth=1', 'SPP=1 SPIE=1 depth=1')]:
+            with self.subTest(old=old), self.assertRaises(build_run.LabError):
+                build_run.verify_output(0, sample_output().replace(old, new, 1), SYMBOLS)
+
     def test_boot_only_is_rejected(self) -> None:
         with self.assertRaises(build_run.LabError):
             build_run.verify_output(0, sample_output().splitlines()[0] + "\n", SYMBOLS)

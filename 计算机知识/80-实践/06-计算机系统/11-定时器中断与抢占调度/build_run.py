@@ -335,9 +335,8 @@ def verify_output(returncode: int, output: str, symbols: dict[str, int]) -> None
             raise LabError(f"tick {tick} sepc is outside task {source} hot loop")
         if sp != stack_pointer[source]:
             raise LabError(f"tick {tick} stack pointer mismatch")
-        if work <= max(MIN_WORK, previous_work[source]) or stack <= max(
-            MIN_WORK, previous_stack[source]
-        ):
+        if (work < MIN_WORK or work <= previous_work[source] or
+                stack < MIN_WORK or stack <= previous_stack[source]):
             raise LabError(f"task {source} did not make forward progress")
         previous_work[source], previous_stack[source] = work, stack
         saved_pc[source] = exit_pc[source] if tick >= 5 else sepc

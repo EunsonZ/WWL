@@ -70,9 +70,11 @@ def lex(source: str) -> tuple[Token, ...]:
         span = Span(match.start(), line, column)
         kind = match.lastgroup
         if kind == "NUMBER":
-            value = int(text)
-            if value > 2**31 - 1:
+            normalized = text.lstrip("0") or "0"
+            limit = "2147483647"
+            if len(normalized) > len(limit) or (len(normalized) == len(limit) and normalized > limit):
                 raise CompileError("lex", span, f"integer literal exceeds i32: {text}")
+            value = int(normalized)
             tokens.append(Token("NUMBER", text, span, value))
         elif kind == "EQEQ":
             tokens.append(Token("EQEQ", text, span))

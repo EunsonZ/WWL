@@ -25,10 +25,10 @@ RISC-V 内核常见的定时路径有两类：
 Sstc 的比较规则可以写成：
 
 $$
-\mathrm{STIP}=1
-\quad\Longleftrightarrow\quad
-\mathrm{time}\ge \mathrm{stimecmp}.
+C(t)=[\mathrm{time}(t)\ge\mathrm{stimecmp}(t)].
 $$
+
+这里按无符号64位值比较。C(t)是比较条件；其变化保证最终反映到STIP，未保证同一瞬间反映。STIP pending 与实际取中断还分别受使能/委托规则约束。
 
 每次安排新时间片时，代码先读 `time`，再写：
 
@@ -47,7 +47,11 @@ $$
 
 这里的 0.2 s 是 guest 架构时钟域的换算，不是宿主墙钟耗时保证。TCG 调度、宿主负载和暂停都会改变一次运行在现实中花多久；runner 的 `--timeout 10` 则是宿主墙钟的失败上限，两者用途不同。
 
-比较条件成立后，最稳妥的清除方法是把 `stimecmp` 重写到未来。本实验在 handler 的最前部读取当前 `time` 并写入下一 deadline，然后才打印和选择任务。这样返回 U 态前 pending 条件已经解除；若 handler 先返回而 deadline 仍在过去，会立刻再次进入 trap，形成中断风暴。
+比较条件成立后，最稳妥的清除方法是把 `stimecmp` 重写到未来。本实验在 handler 的最前部读取当前 `time` 并写入下一 deadline，然后才打印和选择任务。这使比较条件 C变为false，但不保证 `sret` 前STIP已经下降；传播暂态可能在返回后产生一次伪定时中断。当前候选保存已安排的deadline，在timer入口先读time；若仍小于deadline，校验基本trapframe后直接返回原上下文，不累计tick、不要求新的工作进度、不再延后deadline。到期事件才安排下一时间片并调度。若一直把deadline留在过去，比较条件持续成立，可能形成中断风暴。
+
+纸面轨迹：time=200、deadline=200使C=true；写deadline=400后C=false，但STIP暂仍1；sret后可再陷入，handler读time=201<400，返回原上下文；STIP最终降0。此轨迹是规范允许性示例，没有测QEMU或硬件传播时间。[RISC-V v20260120 Supervisor ISA §11.1.1.12](https://docs.riscv.org/reference/isa/v20260120/priv/supervisor.html#_supervisor_timer_stimecmp_register)明确最终传播与伪中断边界（本次核对2026-10-08）。
+
+读者检查：写未来deadline后立刻读到STIP=1，是否说明写入无效？不能；先区分当前比较条件与传播后的pending。伪中断也不应当作新时间片到期或强迫任务进度增长。
 
 ## 四层使能要同时成立
 

@@ -172,6 +172,21 @@ scheduled_semantics:
 
 反例：把一个大 reduction、多个广播与后续复杂算子强行融成超大 kernel，可能因资源压力、同步和重复计算变慢。“更少 kernel”是指标，不是目标函数。
 
+### 一个 fused 节点实际分配了什么
+
+```text
+逻辑图：a,b → add → intermediate → ReLU → output
+LoweredGraph：a,b → fused_add_relu → output
+当前 Python 执行：_elementwise(a,b) → 完整 intermediate Tensor
+                 → 逐元素 ReLU → 另一个完整 output Tensor
+真正流式融合（条件模型）：逐个读 a[i],b[i] → 寄存器临时值 → 写 output[i]
+```
+
+`FusionDecision` 证明当前元数据与 guard 下允许这项图改写；reference 相等检查有限输入的函数结果。它们均没有证明执行器消除了完整中间张量。当前 `_execute_ops` 的 fused 分支仍调用 `_elementwise` 构造 `intermediate`，然后另建 ReLU `Tensor`。
+
+仅在连续 N 元素、每元素 w 字节、无别名、无额外消费者，并只数裸元素读写时：两算子路径先读 a/b、写 intermediate（3Nw），再读 intermediate、写 output（2Nw），合计 **5Nw**；真正逐元素融合读 a/b、写 output，合计 **3Nw**，差 **2Nw**。N=8、w=4 时为160 B、96 B、64 B。这个条件账不含 Python 对象、分配器、缓存、启动或设备传输；不是当前执行器的内存测量，更不是 GPU 提速证据。读者可检查当前分支是否构造完整 intermediate，再决定能否引用3Nw模型。
+
+
 ## 8. Layout：逻辑 shape 不告诉你字节怎样放
 
 相同逻辑 shape 可以有不同 stride、分块、向量 packing、地址空间和设备分布。Layout 选择会影响：

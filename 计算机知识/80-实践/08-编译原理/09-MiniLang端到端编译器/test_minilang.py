@@ -14,6 +14,12 @@ from minilang import (
 
 
 class FrontendAndSemanticsTests(unittest.TestCase):
+    def test_decimal_i32_contract_precedes_host_conversion_limit(self) -> None:
+        self.assertEqual(lex("return " + "0" * 4301 + "1;")[1].value, 1)
+        for digits in ("2147483648", "9" * 4301):
+            with self.subTest(digits=digits[:20]):
+                with self.assertRaisesRegex(CompileError, r"^lex:1:8: integer literal exceeds i32"):
+                    lex("return " + digits + ";")
     def test_tokens_ast_bindings_and_types_are_inspectable(self) -> None:
         tokens = lex(DEMO_SOURCE)
         self.assertEqual(tokens[:5][0].kind, "LET")

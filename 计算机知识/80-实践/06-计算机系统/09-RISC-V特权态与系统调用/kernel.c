@@ -1,4 +1,5 @@
 #include "trapframe.h"
+#include "trapframe_offsets.h"
 
 #define UART0_BASE       0x10000000UL
 #define UART_THR         0
@@ -26,18 +27,41 @@
     _Static_assert(OFFSETOF(struct trapframe, member) == (expected), \
                    "trapframe offset mismatch: " #member)
 
-CHECK_OFFSET(ra, 0);
-CHECK_OFFSET(sp, 8);
-CHECK_OFFSET(t0, 32);
-CHECK_OFFSET(s0, 56);
-CHECK_OFFSET(a0, 72);
-CHECK_OFFSET(a7, 128);
-CHECK_OFFSET(s11, 208);
-CHECK_OFFSET(t6, 240);
-CHECK_OFFSET(sepc, 248);
-CHECK_OFFSET(scause, 256);
-CHECK_OFFSET(stval, 264);
-_Static_assert(sizeof(struct trapframe) == 272, "trapframe size mismatch");
+CHECK_OFFSET(ra, TF_RA);
+CHECK_OFFSET(sp, TF_SP);
+CHECK_OFFSET(gp, TF_GP);
+CHECK_OFFSET(tp, TF_TP);
+CHECK_OFFSET(t0, TF_T0);
+CHECK_OFFSET(t1, TF_T1);
+CHECK_OFFSET(t2, TF_T2);
+CHECK_OFFSET(s0, TF_S0);
+CHECK_OFFSET(s1, TF_S1);
+CHECK_OFFSET(a0, TF_A0);
+CHECK_OFFSET(a1, TF_A1);
+CHECK_OFFSET(a2, TF_A2);
+CHECK_OFFSET(a3, TF_A3);
+CHECK_OFFSET(a4, TF_A4);
+CHECK_OFFSET(a5, TF_A5);
+CHECK_OFFSET(a6, TF_A6);
+CHECK_OFFSET(a7, TF_A7);
+CHECK_OFFSET(s2, TF_S2);
+CHECK_OFFSET(s3, TF_S3);
+CHECK_OFFSET(s4, TF_S4);
+CHECK_OFFSET(s5, TF_S5);
+CHECK_OFFSET(s6, TF_S6);
+CHECK_OFFSET(s7, TF_S7);
+CHECK_OFFSET(s8, TF_S8);
+CHECK_OFFSET(s9, TF_S9);
+CHECK_OFFSET(s10, TF_S10);
+CHECK_OFFSET(s11, TF_S11);
+CHECK_OFFSET(t3, TF_T3);
+CHECK_OFFSET(t4, TF_T4);
+CHECK_OFFSET(t5, TF_T5);
+CHECK_OFFSET(t6, TF_T6);
+CHECK_OFFSET(sepc, TF_SEPC);
+CHECK_OFFSET(scause, TF_SCAUSE);
+CHECK_OFFSET(stval, TF_STVAL);
+_Static_assert(sizeof(struct trapframe) == TF_SIZE, "trapframe size mismatch");
 
 extern char supervisor_trap_entry[];
 extern char trapframe_area[];

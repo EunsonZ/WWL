@@ -89,6 +89,11 @@ def validate_answer(raw: str, allowed_ids: set[str]) -> dict[str, Any]:
 
 def call_generator_stub(question: str, matches: list[tuple[Chunk, float]]) -> str:
     """可替换的模型边界。这里是确定性替身，避免下载或调用任何模型/API。"""
+    if not matches:
+        return json.dumps(
+            {"answer": "资料未说明", "citations": [], "confidence": 0.0},
+            ensure_ascii=False,
+        )
     top, score = matches[0]
     if score == 0.0:
         answer = "资料未说明"

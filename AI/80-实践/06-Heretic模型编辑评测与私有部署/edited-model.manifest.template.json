@@ -45,7 +45,6 @@
   },
   "evaluation": {
     "plan_sha256": "REPLACE_WITH_SHA256",
-    "final_report_sha256": "REPLACE_AFTER_FROZEN_FINAL_TEST",
     "service_gate": "blocked_until_all_quality_and_safety_gates_pass"
   },
   "notes": "模板不是模型产物；修改完成并计算真实哈希后另存为新文件，不得覆盖原模型 manifest。"

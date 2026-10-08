@@ -543,9 +543,6 @@ def validate_edited_manifest(manifest: Mapping[str, Any]) -> dict[str, Any]:
     evaluation_plan_sha256 = _require_sha256(
         evaluation.get("plan_sha256"), "edited.evaluation.plan_sha256"
     )
-    _require_sha256(
-        evaluation.get("final_report_sha256"), "edited.evaluation.final_report_sha256"
-    )
     if evaluation.get("service_gate") != "blocked_until_all_quality_and_safety_gates_pass":
         raise ManifestError("edited service gate must remain blocked pending all gates")
 
@@ -922,7 +919,6 @@ def _fixture_edited() -> dict[str, Any]:
         },
         "evaluation": {
             "plan_sha256": EVALUATION_PLAN_SHA256,
-            "final_report_sha256": "cdef0123456789ab" * 4,
             "service_gate": "blocked_until_all_quality_and_safety_gates_pass",
         },
         "notes": "synthetic fixture only",

@@ -18,7 +18,7 @@ tags:
 | --- | --- |
 | experiment ID | 待填 |
 | 原模型 manifest SHA-256 | 待填 |
-| 修改模型 manifest SHA-256 | 待填 |
+| 冻结的修改模型 manifest SHA-256 | 待填；报告只单向引用此摘要 |
 | Heretic commit | 待填 |
 | tokenizer / chat template | 待填 |
 | 固定生成配置 | 待填 |

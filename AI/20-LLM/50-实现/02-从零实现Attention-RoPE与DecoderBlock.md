@@ -366,7 +366,8 @@ def main() -> None:
         )
         pieces.append(piece)
     cached_logits = np.concatenate(pieces, axis=1)
-    np.testing.assert_allclose(full_logits, cached_logits, atol=1e-10)
+    # This is an absolute teaching contract, not NumPy's default mixed tolerance.
+    np.testing.assert_allclose(full_logits, cached_logits, rtol=0.0, atol=1e-10)
 
     weights = model.block.attention.last_attention_weights
     assert weights is not None

@@ -162,7 +162,8 @@ int main() {
 
   CUDA_CHECK(cudaFree(d_partial));
   CUDA_CHECK(cudaFree(d_input));
-  if (std::fabs(result - expected) > 1e-6) {
+  if (!std::isfinite(result) || !std::isfinite(expected) ||
+      std::fabs(result - expected) > 1e-6) {
     std::fprintf(stderr, "Mismatch: got %.9f expected %.9f\n", result,
                  expected);
     return 1;

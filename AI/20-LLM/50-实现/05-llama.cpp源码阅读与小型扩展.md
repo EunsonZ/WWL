@@ -206,18 +206,26 @@ sampler 通常有自己的随机状态和 token 历史。服务端并发时应�
 建议 JSON Lines，每行一个事件，时间用单调时钟相对 request 起点；不要把真实 prompt、模型绝对路径或访问凭据写入日志。
 
 ```json
-{"schema":"llama-trace-v1","event":"request_start","request_id":"local-0001","source_commit":"<FULL_COMMIT>","model_sha256":"<SHA256>","seed":42}
-{"event":"tokenize_end","elapsed_us":120,"token_count":7,"token_ids":[1,314,159,265,3,5,9]}
-{"event":"prefill_end","step":0,"input_tokens":7,"elapsed_us":18340}
-{"event":"sample","step":0,"elapsed_us":91,"chosen":{"id":42,"probability":0.37},"top":[{"id":42,"probability":0.37},{"id":17,"probability":0.21}]}
-{"event":"piece_ready","step":0,"elapsed_us":8,"bytes":6}
-{"event":"decode_end","step":0,"input_token":42,"position":7,"elapsed_us":4280}
-{"event":"sample","step":1,"elapsed_us":87,"chosen":{"id":99,"probability":0.44},"top":[{"id":99,"probability":0.44},{"id":7,"probability":0.19}]}
-{"event":"piece_ready","step":1,"elapsed_us":7,"bytes":6}
-{"event":"request_end","stop_reason":"length","generated_tokens":2,"total_elapsed_us":27420}
+{"schema":"llama-trace-v1","event":"request_start","timestamp_us":0,"duration_us":0,"request_id":"local-0001","source_commit":"<FULL_COMMIT>","model_sha256":"<SHA256>","seed":42}
+{"event":"tokenize_end","phase":"tokenize","phase_start_us":0,"timestamp_us":120,"duration_us":120,"token_count":7,"token_ids":[1,314,159,265,3,5,9]}
+{"event":"prefill_end","phase":"prefill","phase_start_us":120,"step":0,"timestamp_us":18460,"duration_us":18340,"input_tokens":7}
+{"event":"sample","phase":"sample","phase_start_us":18460,"step":0,"timestamp_us":18551,"duration_us":91,"chosen":{"id":42,"sampling_probability":0.37},"top":[{"id":42,"sampling_probability":0.37},{"id":17,"sampling_probability":0.21}]}
+{"event":"piece_ready","phase":"detokenize","phase_start_us":18551,"step":0,"timestamp_us":18559,"duration_us":8,"bytes":6,"utf8_complete":true}
+{"event":"decode_end","phase":"decode","phase_start_us":18559,"step":0,"input_token":42,"position":7,"timestamp_us":22839,"duration_us":4280}
+{"event":"sample","phase":"sample","phase_start_us":22839,"step":1,"timestamp_us":22926,"duration_us":87,"chosen":{"id":99,"sampling_probability":0.44},"top":[{"id":99,"sampling_probability":0.44},{"id":7,"sampling_probability":0.19}]}
+{"event":"piece_ready","phase":"detokenize","phase_start_us":22926,"step":1,"timestamp_us":22933,"duration_us":7,"bytes":6,"utf8_complete":true}
+{"event":"request_end","timestamp_us":27420,"duration_us":0,"request_duration_us":27420,"stop_reason":"length","generated_tokens":2}
 ```
 
-上面的数字和 token **只是 schema 示例，不是任何模型的真实输出或性能结果**。`sample` 先只记录 token 决策；detokenize/UTF-8 缓冲完成后才记录 `piece_ready`。当前 token 可见后，只有仍需继续生成时才把它送入 `decode` 以产生下一 token 的 logits；达到 EOS、stop、取消或长度上限后不得为了 trace 多做一次无消费者的 decode。真实 trace 要额外记录：build identity、后端 placement 摘要、context/batch 配置、sampler chain、是否预热和计时定义。
+这些数字和token是**schema教学示例，非模型输出或性能结果**。所有事件共享两个时间字段：`timestamp_us` 是单调时钟距request_start的时刻，按输出顺序非递减；`duration_us` 是明确命名phase的结束时刻减 `phase_start_us`。request_start/end是瞬时边界，duration_us=0；完整请求区间另记 `request_duration_us=end-start`。最后piece_ready至request_end的4487 µs没有命名phase，不能擅称decode、send或清理耗时。并发/重叠phase的duration也不能盲加当请求总耗时。
+
+本例 token决策首延迟 `TTFT_decision=18551-0=18551 µs`；首个非空、完整UTF-8本地piece就绪延迟 `TTFT_piece_ready=18559 µs`。若口语称“首token延迟”，必须同时声明选哪一个终点。`sample`只表明token被选定并accept，不能代表文字已经可见；一个token可能不产生完整UTF-8或只含EOS/特殊标记。没有非空piece时该指标应缺失/标明未产生，不能填0。此schema没有client接收或协议send完成事件，无法给用户实际看见文字的TTFT。
+
+`sample.chosen/top.sampling_probability`专指真实sampler完成惩罚、温度及过滤后的候选归一化分布；若实现只能重算诊断分布，必须改称diagnostic_probability并写明不等于真实抽样分布。示例top只列部分词表，概率无需合计为1。
+
+当前token可见后，仅仍需继续生成时才将它送入decode以产生下一token的logits；达到EOS、stop、取消或长度上限后，不为trace多做一次无消费者decode。本例生成两token但只进行一个生成期decode，末端4487 µs不暗示第二次decode。真实trace还须记录build identity、backend placement、context/batch、sampler chain、预热及计时定义。
+
+现有[[计算机知识/80-实践/03-C++/03-llama.cpp-token概率与耗时trace/README|独立C++实践]]只输出一次prompt prefill同步耗时与最后位置的完整词表softmax top项；它没有采样生成循环、上述JSONL事件、request起点或TTFT测量。`batch.value.n_tokens=count`的源码修复与逐字镜像保留，但其API/模型/编译验收在本候选为not_run。
 
 ### 概率到底记录哪一种
 
@@ -246,7 +254,7 @@ prob_i    = weight_i / sum(weight)
 |---|---|---|---|
 |`load_us`|开始打开/解析模型|模型和必要 backend buffer 可用|是；必须确认 backend 同步|
 |`tokenize_us`|模板文本准备好|token vector 完成|通常 CPU|
-|`prefill_us`|提交 prompt batch 前|logits 确实可读取|GPU 时必须包含所需同步|
+|`prefill_us`|提交 prompt batch 前|logits 确实可读取|GPU 时必须包含所需同步；standalone C++ 示例只输出这一局部摘要，不是完整 JSONL schema|
 |`sample_us`|取得 logits 后|chosen token 确定并 accept|通常 CPU，但依实现确认|
 |`decode_us`|提交 chosen token batch 前|下一步 logits 可读取|GPU 时必须包含所需同步|
 |`detokenize_us`|token 已选定|可发送的 UTF-8 bytes 就绪|可能跨多个 token 缓冲|
@@ -292,7 +300,7 @@ main(args):
             utf8_buffer.push(bytes)
             trace.piece_when_complete_utf8(step, utf8_buffer)
 
-        if should_stop(chosen, utf8_buffer, cfg): break
+        if should_stop(chosen, utf8_buffer, cfg) or step + 1 == cfg.max_new_tokens: break
 
         timed_and_synchronized("decode"):
             CURRENT_COMMIT_API.decode(ctx, make_one_token_batch(chosen, next_position))
@@ -327,16 +335,16 @@ main(args):
 + trace.emit(request_start{request_id, build_id, redacted_params});
 
 @@ after tokenization @@
-+ trace.emit(tokenize_end{token_count, elapsed_us});
++ trace.emit(tokenize_end{timestamp_us, duration_us, token_count});
 
 @@ around prefill/decode; close span only when logits are ready @@
-+ trace.emit(decode_end{phase, step, batch_rows, elapsed_us});
++ trace.emit(decode_end{phase, step, batch_rows, timestamp_us, duration_us});
 
 @@ inspect sampler candidates without mutating sampler state @@
-+ trace.emit(sample{step, chosen_id, sampling_probability, top_n, elapsed_us});
++ trace.emit(sample{step, chosen_id, sampling_probability, top_n, timestamp_us, duration_us});
 
 @@ after detokenization / protocol write @@
-+ trace.emit(piece_ready{step, byte_count, elapsed_us});
++ trace.emit(piece_ready{step, byte_count, timestamp_us, duration_us});
 ```
 
 所谓“精确”不是提前猜行号，而是实施时给每个插入点列出：固定 commit、真实文件、真实函数、前后不变量、测试、trace-off 行为和性能影响。
@@ -421,7 +429,7 @@ CPU Debug 构建可使用断言、ASan/UBSan 和调试器；多线程问题再�
 |格式/元数据|固定小 GGUF 或项目 fixture 的结构检查|加载前提已破坏|
 |tokenizer|ASCII、中文、emoji、special-token 边界|文本/token 边界错误|
 |确定性路径|greedy 或固定 sampler state 的短生成|调用链、状态或数值回归|
-|trace schema|事件必填字段、顺序、JSON 转义|观测工具不可机器读取|
+|trace schema|timestamp非递减、命名phase的end-start=duration、瞬时边界duration=0、完整UTF-8 piece、JSON转义|观测工具不可机器读取或计时含义混淆|
 |trace non-interference|trace off/on token 序列相同|trace 改变 sampler/RNG/时序语义|
 |CPU Debug|目标测试 + sanitizer（适用时）|内存/UB/断言问题|
 |CPU Release|相同功能 + 性能基线|优化构建特有回归|

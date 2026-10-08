@@ -63,7 +63,8 @@ int main() {
   CUDA_CHECK(cudaFree(d_out));
 
   for (int i = 0; i < n; ++i) {
-    if (std::fabs(actual[i] - expected[i]) > 1e-6F) {
+    if (!std::isfinite(actual[i]) || !std::isfinite(expected[i]) ||
+        std::fabs(actual[i] - expected[i]) > 1e-6F) {
       std::cerr << "FAIL at " << i << ": got " << actual[i]
                 << ", expected " << expected[i] << '\n';
       return EXIT_FAILURE;

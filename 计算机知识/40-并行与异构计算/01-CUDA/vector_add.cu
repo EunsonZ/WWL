@@ -53,7 +53,8 @@ int main() {
   CUDA_CHECK(cudaMemcpy(c.data(), d_c, bytes, cudaMemcpyDeviceToHost));
 
   for (int i = 0; i < n; ++i) {
-    if (std::fabs(c[i] - 3.5F) > 1e-6F) {
+    if (!std::isfinite(c[i]) || !std::isfinite(3.5F) ||
+        std::fabs(c[i] - 3.5F) > 1e-6F) {
       std::fprintf(stderr, "Mismatch at %d: %f\n", i, c[i]);
       cudaFree(d_c);
       cudaFree(d_b);

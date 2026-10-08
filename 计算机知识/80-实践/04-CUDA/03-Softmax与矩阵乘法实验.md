@@ -60,6 +60,9 @@ __global__ void stable_softmax(const float* in, float* out, int n) {
     __syncthreads();
   }
   const float maximum = cache[0];
+  // Every warp must finish reading the reduction result before any writes reuse
+  // the same shared buffer for exponentials.
+  __syncthreads();
   const float value = tid < n ? expf(in[tid] - maximum) : 0.0F;
   cache[tid] = value;
   __syncthreads();

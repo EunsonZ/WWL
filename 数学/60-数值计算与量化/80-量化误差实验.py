@@ -94,6 +94,11 @@ def affine_quantize(
         clip_percentile=clip_percentile,
     )
 
+    if (clip_percentile is not None and low == high and any(value != 0.0 for value in data)):
+        raise ValueError(
+            "percentile calibration collapsed to a zero-width range for nonzero input"
+        )
+
     # Affine zero-point quantization must include real zero in its range.
     if not symmetric:
         low = min(low, 0.0)

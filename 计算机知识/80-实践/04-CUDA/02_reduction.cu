@@ -86,7 +86,8 @@ int main() {
   CUDA_CHECK(cudaFree(d_next));
   CUDA_CHECK(cudaFree(d_probe));
 
-  if (std::fabs(actual - expected) > 1e-2F) {
+  if (!std::isfinite(actual) || !std::isfinite(expected) ||
+      std::fabs(actual - expected) > 1e-2F) {
     std::cerr << "FAIL: got " << actual << ", expected " << expected << '\n';
     return EXIT_FAILURE;
   }

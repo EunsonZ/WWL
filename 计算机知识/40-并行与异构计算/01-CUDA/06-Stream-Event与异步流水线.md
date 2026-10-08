@@ -190,7 +190,8 @@ int main() {
 
   for (int i = 0; i < total_elements; ++i) {
     const float expected = h_a[i] + h_b[i];
-    if (std::fabs(h_c[i] - expected) > 1e-6F) {
+    if (!std::isfinite(h_c[i]) || !std::isfinite(expected) ||
+        std::fabs(h_c[i] - expected) > 1e-6F) {
       std::fprintf(stderr, "Mismatch at %d: got %f expected %f\n", i, h_c[i],
                    expected);
       return 1;

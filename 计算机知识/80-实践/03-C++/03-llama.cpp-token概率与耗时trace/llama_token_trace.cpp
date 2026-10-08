@@ -94,6 +94,8 @@ int main(int argc, char * argv[]) {
         batch.value.seq_id[i][0] = 0;
         batch.value.logits[i] = i == count - 1;
     }
+    // n_tokens is the populated length, not the allocation capacity.
+    batch.value.n_tokens = count;
     const int64_t started_us = llama_time_us();
     const int decode_result = llama_decode(context.get(), batch.value);
     if (decode_result != 0) {

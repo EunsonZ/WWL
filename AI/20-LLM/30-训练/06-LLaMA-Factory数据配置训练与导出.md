@@ -163,7 +163,10 @@ if [ "${LLAMA_FACTORY_PREFLIGHT:-}" = "1" ] \
   && [ -f "$DATA_MANIFEST" ] \
   && [ -n "${LOCAL_RUN_DIR:-}" ] \
   && [ -d "$LOCAL_RUN_DIR" ]; then
-  jq -e 'has("schema_version") and has("datasets")' "$DATA_MANIFEST" >/dev/null
+  if ! jq -e 'has("schema_version") and has("datasets")' "$DATA_MANIFEST" >/dev/null; then
+    printf '%s\n' 'DATA_MANIFEST must be valid JSON with schema_version and datasets.' >&2
+    exit 2
+  fi
   llamafactory-cli --help
 else
   printf '%s\n' 'Set LLAMA_FACTORY_PREFLIGHT=1, DATA_MANIFEST=/absolute/local/manifest.json, and LOCAL_RUN_DIR=/absolute/local/run-dir.' >&2

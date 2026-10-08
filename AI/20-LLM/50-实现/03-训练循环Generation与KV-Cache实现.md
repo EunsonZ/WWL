@@ -83,8 +83,9 @@ $$
 `sample_from_logits` 只接收一维词表 logits，按明确顺序执行：
 
 ```text
-logits / temperature
-  → 只保留 top-k 的 token IDs
+logits - 全词表最大值
+  → 除以正 temperature
+  → 稳定排序后保留 top-k 的 token IDs（并列按 token ID 升序）
   → 减去候选最大 logit
   → exp 并归一化
   → 使用调用者传入的 RNG 抽样
@@ -93,7 +94,7 @@ logits / temperature
 把 RNG 从函数外传入，可以看出 seed 属于请求状态，而不是模型权重。主函数用两个同 seed RNG 断言单步抽样一致，并断言 `top_k=2` 不会选到被过滤的 token 0。
 
 > [!warning] 这仍不是通用 sampler chain
-> 本函数没有 top-p、min-p、重复惩罚、硬约束、EOS 或跨步历史；`argpartition` 遇到边界并列时的候选细节也不应当成跨平台协议。生产实验需固定处理器顺序、引擎版本和 RNG 状态，语义见 [[AI/20-LLM/40-推理/02-采样停止条件与生成控制|采样、停止条件与生成控制]]。
+> 本函数没有 top-p、min-p、重复惩罚、硬约束、EOS 或跨步历史；这里的稳定排序与并列 ID 合同也不应当成跨平台协议。生产实验需固定处理器顺序、引擎版本和 RNG 状态，语义见 [[AI/20-LLM/40-推理/02-采样停止条件与生成控制|采样、停止条件与生成控制]]。
 
 ## KV cache：prefill 一次，以后只送新 token
 

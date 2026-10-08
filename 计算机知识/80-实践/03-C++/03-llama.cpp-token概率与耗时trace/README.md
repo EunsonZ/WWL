@@ -52,6 +52,8 @@ cmake --build build --target llama_token_trace
 
 成功输出先有一行 `trace,prompt_tokens=...`，再有五行 `top_token,...`。`probability` 是**当前模型、当前上下文、当前最后 prompt 位置**下的完整词表 softmax 概率，不是生成质量评分，也不是采样后的频率。`piece` 可能含空白、控制字符或 tokenizer 特殊符号，保存日志时应把它视为模型输出数据。
 
+此可执行源码目前只给**一次prompt prefill摘要**：`prefill_us`为decode提交到`llama_synchronize`完成的局部区间，`top_token`为最后prompt位置的原始logits完整词表softmax，不是采样决定。它没有完整JSONL、request相对时刻、生成期decode或TTFT；不得据此填入[[AI/20-LLM/50-实现/05-llama.cpp源码阅读与小型扩展#Trace 输出契约|JSONL设计合同]]的已执行证据。源码的有效batch计数修复已保留，未来应在固定头文件/模型上核验；本次编译、API、模型与测试not_run。
+
 ## API 边界
 
 - `llama_tokenize` 产生 prompt token；`llama_batch_init` 创建需显式释放的 API batch，因此 `Batch` 在析构时调用 `llama_batch_free`。
@@ -313,6 +315,8 @@ int main(int argc, char * argv[]) {
         batch.value.seq_id[i][0] = 0;
         batch.value.logits[i] = i == count - 1;
     }
+    // n_tokens is the populated length, not the allocation capacity.
+    batch.value.n_tokens = count;
     const int64_t started_us = llama_time_us();
     const int decode_result = llama_decode(context.get(), batch.value);
     if (decode_result != 0) {

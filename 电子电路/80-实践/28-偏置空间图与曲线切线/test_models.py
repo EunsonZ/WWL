@@ -79,7 +79,7 @@ class Models(unittest.TestCase):
         mpl.get_backend()  # Resolve lazy backend before recording style.
         style=dict(mpl.rcParams)
         env={key:os.environ.get(key) for key in ('MPLCONFIGDIR','XDG_CACHE_HOME')}
-        with tempfile.TemporaryDirectory(prefix='wwl-devicefig-test-',dir='/private/tmp') as td:
+        with tempfile.TemporaryDirectory(prefix='wwl-devicefig-test-') as td:
             generate.generate(Path(td)/'ok')
             self.assertEqual(dict(mpl.rcParams),style)
             self.assertEqual({key:os.environ.get(key) for key in env},env)

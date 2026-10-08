@@ -37,6 +37,7 @@ static int checked_element_count(size_t rows, size_t columns, size_t *count) {
 }
 
 static uint32_t sum_baseline(const uint32_t *matrix, size_t rows, size_t columns) {
+    if (rows == 0U || columns == 0U) return 0U;
     uint32_t total = 0U;
     for (size_t row = 0; row < rows; ++row) {
         for (size_t column = 0; column < columns; ++column) {
@@ -48,6 +49,7 @@ static uint32_t sum_baseline(const uint32_t *matrix, size_t rows, size_t columns
 
 /* Same visit order as baseline; explicitly retain the row base. */
 static uint32_t sum_row_base(const uint32_t *matrix, size_t rows, size_t columns) {
+    if (rows == 0U || columns == 0U) return 0U;
     uint32_t total = 0U;
     for (size_t row = 0; row < rows; ++row) {
         const uint32_t *cursor = matrix + row * columns;
@@ -60,6 +62,7 @@ static uint32_t sum_row_base(const uint32_t *matrix, size_t rows, size_t columns
 
 /* Same row-major visit order, but four independent accumulator chains. */
 static uint32_t sum_four_accumulators(const uint32_t *matrix, size_t rows, size_t columns) {
+    if (rows == 0U || columns == 0U) return 0U;
     uint32_t total0 = 0U;
     uint32_t total1 = 0U;
     uint32_t total2 = 0U;
@@ -81,6 +84,7 @@ static uint32_t sum_four_accumulators(const uint32_t *matrix, size_t rows, size_
 
 /* Same mathematical result but a column-major visit order over row-major data. */
 static uint32_t sum_column_visit(const uint32_t *matrix, size_t rows, size_t columns) {
+    if (rows == 0U || columns == 0U) return 0U;
     uint32_t total = 0U;
     for (size_t column = 0; column < columns; ++column) {
         for (size_t row = 0; row < rows; ++row) {
@@ -107,7 +111,8 @@ static int self_test(void) {
     if (sum_baseline(tiny, 2U, 3U) != expected || !equal_for_case(tiny, 2U, 3U)) {
         return 0;
     }
-    if (!equal_for_case(tiny, 0U, 3U) || !equal_for_case(tiny, 2U, 0U)) {
+    if (!equal_for_case(NULL, 0U, 3U) || !equal_for_case(NULL, 2U, 0U) ||
+        !equal_for_case(NULL, 0U, 0U) || !equal_for_case(tiny, 2U, 0U)) {
         return 0;
     }
     size_t count = 0U;

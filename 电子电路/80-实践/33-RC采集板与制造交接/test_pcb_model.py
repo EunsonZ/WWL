@@ -38,5 +38,5 @@ class Models(unittest.TestCase):
     p=Path(d);env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1',MPLCONFIGDIR=str(p/'mpl'),XDG_CACHE_HOME=str(p/'xdg'));(p/'mpl').mkdir();(p/'xdg').mkdir()
     code=f"import sys,random;sys.path.insert(0,{str(L)!r});sys.argv=['stranger','--alien'];s=random.getstate();import {name};assert random.getstate()==s;assert 'matplotlib' not in sys.modules;assert 'cairosvg' not in sys.modules"
     z=subprocess.run([sys.executable,'-B','-c',code],cwd=p,env=env,capture_output=True,text=True,timeout=20);self.assertEqual(z.returncode,0,z.stderr)
-    z=subprocess.run([sys.executable,'-B',str(L/(name+'.py'))],cwd=p,env=env,capture_output=True,text=True,timeout=20);self.assertEqual(z.returncode,2);self.assertEqual(list(p.rglob('*')),[p/'mpl',p/'xdg'])
+    z=subprocess.run([sys.executable,'-B',str(L/(name+'.py'))],cwd=p,env=env,capture_output=True,text=True,timeout=20);self.assertEqual(z.returncode,2);self.assertEqual(set(p.rglob('*')),{p/'mpl',p/'xdg'})
 if __name__=='__main__':unittest.main()

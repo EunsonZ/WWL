@@ -50,6 +50,7 @@ class LoopOptimizationTests(unittest.TestCase):
             )
         self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
         self.assertIn("self-test passed", completed.stdout)
+        self.assertIn("NULL, 2U, 0U", SOURCE.read_text(encoding="utf-8"))
 
     def test_two_samples_report_every_implementation_without_speed_claim(self) -> None:
         with tempfile.TemporaryDirectory(prefix="wwl-loop-opt-") as directory:

@@ -30,7 +30,7 @@ $$\widehat{\partial_jf}=i\xi_j\widehat f,\qquad
 | $\mathcal S$ | 普通绝对收敛积分、逆积分 | 导数恒等式和卷积恒等式在此直接成立 |
 | $L^2$ | 由 $\mathcal S$ 稠密逼近定义的 $L^2$ 极限；未必有绝对收敛逐点积分 | Plancherel 与 $L^2$ 逆成立，但不自动拥有 $L^2$ 弱导数；也不自动允许任意 $L^2*L^2$ 使用 $L^2$ 卷积公式 |
 | $H^1$ | $L^2$ 变换 | 每个弱导数在 $L^2$，$i\xi_j\widehat f\in L^2$，一阶导数公式在 $L^2$ 意义成立 |
-| $H^2$ | $L^2$ 变换 | 所有二阶弱导数在 $L^2$，$|\xi|^2\widehat f\in L^2$，Laplacian 公式在 $L^2$ 意义成立 |
+| $H^2$ | $L^2$ 变换 | 所有二阶弱导数在 $L^2$，$\lvert\xi\rvert^2\widehat f\in L^2$，Laplacian 公式在 $L^2$ 意义成立 |
 | 温和分布 $\mathcal S'$ | 对 Schwartz 测试函数的连续线性作用，经对偶定义变换 | 任意阶分布导数公式成立；不附带有限能量或逐点积分。任意两分布的乘积、卷积不能自动定义 |
 
 当前归一化下 $\|f\|_2^2=(2\pi)^{-d}\|\widehat f\|_2^2$。$H^1,H^2$ 的频域条件可分别写成 $(1+|\xi|^2)^{1/2}\widehat f\in L^2$ 与 $(1+|\xi|^2)\widehat f\in L^2$；这是与通常弱导数范数等价的空间刻画，不能据此认定两种范数数值完全相等。[Melrose 18.155 Lecture 4，PDF 第 1 页 Sobolev 的频域定义与正整数阶说明](https://math.mit.edu/~rbm/18.155-F16/L4.pdf)。[Ivrii §5.2，Basic properties Theorem 2 与 Theorem 3；§5.1.A 的快速衰减推导](https://www.math.utoronto.ca/courses/apm346h1/20181/PDE-textbook/Chapter5/S5.2.html)。

@@ -64,11 +64,12 @@ class WorklistStats:
 
 
 def _normalize_graph(graph: Graph) -> dict[str, tuple[str, ...]]:
-    vertices = set(graph)
-    for neighbors in graph.values():
+    materialized = {vertex: tuple(neighbors) for vertex, neighbors in graph.items()}
+    vertices = set(materialized)
+    for neighbors in materialized.values():
         vertices.update(neighbors)
     return {
-        vertex: tuple(sorted(set(graph.get(vertex, ()))))
+        vertex: tuple(sorted(set(materialized.get(vertex, ()))))
         for vertex in sorted(vertices)
     }
 
@@ -247,6 +248,11 @@ def _is_acyclic(graph: dict[int, tuple[int, ...]]) -> bool:
 
 
 class GraphDataflowTests(unittest.TestCase):
+    def test_scc_materializes_one_shot_adjacency_once(self) -> None:
+        expected, _ = strongly_connected_components({"a": ["b"], "b": ["a"]})
+        for neighbors in (("b",), (vertex for vertex in ["b"])):
+            observed, _ = strongly_connected_components({"a": neighbors, "b": ["a"]})
+            self.assertEqual(observed, expected)
     def test_known_scc_partition_and_condensation_dag(self) -> None:
         graph = {
             "entry": ["a"],

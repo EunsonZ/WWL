@@ -44,6 +44,11 @@ def _is_acyclic(graph: dict[int, tuple[int, ...]]) -> bool:
 
 
 class GraphDataflowTests(unittest.TestCase):
+    def test_scc_materializes_one_shot_adjacency_once(self) -> None:
+        expected, _ = strongly_connected_components({"a": ["b"], "b": ["a"]})
+        for neighbors in (("b",), (vertex for vertex in ["b"])):
+            observed, _ = strongly_connected_components({"a": neighbors, "b": ["a"]})
+            self.assertEqual(observed, expected)
     def test_known_scc_partition_and_condensation_dag(self) -> None:
         graph = {
             "entry": ["a"],

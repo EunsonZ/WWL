@@ -30,6 +30,12 @@ class AlgorithmsTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             merge_sort([1, "2"])  # type: ignore[list-item]
 
+    def test_coin_denominations_are_validated_before_deduplication(self) -> None:
+        for coins in ([1, True], [True, 1], [1, 1.0], [1.0, 1]):
+            with self.assertRaises(ValueError):
+                min_coin_count(2, coins)
+        self.assertEqual(min_coin_count(3, (coin for coin in [1, 1, 2])), 2)
+
     def test_checked_binary_search_separates_validation_from_logarithmic_core(self) -> None:
         self.assertEqual(first_index_checked([1, 1, 4, 5], 1), 0)
         self.assertEqual(first_index([1, 1, 4, 5], 5), 3)

@@ -92,9 +92,10 @@ def min_coin_count(amount: int, coins: Iterable[int]) -> int | None:
     """完全背包 DP；返回 None 表示面额无法组成 amount。"""
     if type(amount) is not int or amount < 0:
         raise ValueError("amount must be a non-negative integer")
-    denominations = sorted(set(coins))
-    if any(type(coin) is not int or coin <= 0 for coin in denominations):
+    raw_denominations = list(coins)
+    if any(type(coin) is not int or coin <= 0 for coin in raw_denominations):
         raise ValueError("coins must be positive integers")
+    denominations = sorted(set(raw_denominations))
     best: list[int | None] = [0] + [None] * amount
     for subtotal in range(1, amount + 1):
         candidates = [best[subtotal - coin] for coin in denominations if coin <= subtotal]
@@ -154,6 +155,12 @@ class AlgorithmsTests(unittest.TestCase):
             min_coin_count(3, [0, 1])
         with self.assertRaises(TypeError):
             merge_sort([1, "2"])  # type: ignore[list-item]
+
+    def test_coin_denominations_are_validated_before_deduplication(self) -> None:
+        for coins in ([1, True], [True, 1], [1, 1.0], [1.0, 1]):
+            with self.assertRaises(ValueError):
+                min_coin_count(2, coins)
+        self.assertEqual(min_coin_count(3, (coin for coin in [1, 1, 2])), 2)
 
     def test_checked_binary_search_separates_validation_from_logarithmic_core(self) -> None:
         self.assertEqual(first_index_checked([1, 1, 4, 5], 1), 0)

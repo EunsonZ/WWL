@@ -25,11 +25,12 @@ class WorklistStats:
 
 
 def _normalize_graph(graph: Graph) -> dict[str, tuple[str, ...]]:
-    vertices = set(graph)
-    for neighbors in graph.values():
+    materialized = {vertex: tuple(neighbors) for vertex, neighbors in graph.items()}
+    vertices = set(materialized)
+    for neighbors in materialized.values():
         vertices.update(neighbors)
     return {
-        vertex: tuple(sorted(set(graph.get(vertex, ()))))
+        vertex: tuple(sorted(set(materialized.get(vertex, ()))))
         for vertex in sorted(vertices)
     }
 

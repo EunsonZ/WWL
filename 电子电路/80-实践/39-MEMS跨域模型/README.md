@@ -28,15 +28,15 @@ prerequisites:
 | API | 输入与返回 | 预算/失败条件 |
 |---|---|---|
 | mechanics | m kg/f₀Hz/ζ→m,k N/m,b kg/s,ω₀rad/s | m1e−12..1e−3，f₀1..1e6，ζ0..10 |
-| displacement | a m/s²,f Hz,K N/m→复数X m，基座输入负号 | |a|≤1e5，f0..1e7，K0..1e9；无阻尼精确共振及派生复数结果不可有限表示时抛ValueError；可表示的大幅值保留；它不检查几何间隙 |
-| state_rhs | x m,v m/s,a,F N→ẋ与ṽ | |x|≤1，|v|≤1e4，|F|≤1e3；不负责积分步长 |
-| capacitors | x,g m,A m²,共同Cp F→C±/ΔC/比值 | g1e−9..1e−2，A1e−14..1e−2，Cp0..1e−3；|x|≥g接触拒绝 |
-| beam_strain | 末端x,L,t→表面应变 | L1e−6..0.1，t1e−9..0.01；t/L≤.1、|x|/L≤.05的细长小挠度教学域，不含残余应力 |
+| displacement | a m/s²,f Hz,K N/m→复数X m，基座输入负号 | \|a\|≤1e5，f0..1e7，K0..1e9；无阻尼精确共振及派生复数结果不可有限表示时抛ValueError；可表示的大幅值保留；它不检查几何间隙 |
+| state_rhs | x m,v m/s,a,F N→ẋ与ṽ | \|x\|≤1，\|v\|≤1e4，\|F\|≤1e3；不负责积分步长 |
+| capacitors | x,g m,A m²,共同Cp F→C±/ΔC/比值 | g1e−9..1e−2，A1e−14..1e−2，Cp0..1e−3；\|x\|≥g接触拒绝 |
+| beam_strain | 末端x,L,t→表面应变 | L1e−6..0.1，t1e−9..0.01；t/L≤.1、\|x\|/L≤.05的细长小挠度教学域，不含残余应力 |
 | bridge | δ,Vexc→va/vb/vo/共模 | δ−.95...95保证正电阻，Vexc0..20V；高阻开路读取 |
 | thermal | T K,矩形输入等效B Hz→力PSD/加速度ASD与RMS/平衡位移方差 | T1..2000，B0..1e6；ζ=0时热阻尼源为0，不表示所有实体噪声为0 |
-| calibrate | y V,S V/(m/s²),B V,c V/(m/s²),横轴a→a_hat | |y,S,B,c|≤100，S=0拒绝；|横轴|≤1e5，已知局部线性参数 |
+| calibrate | y V,S V/(m/s²),B V,c V/(m/s²),横轴a→a_hat | \|y,S,B,c\|≤100，S=0拒绝；\|横轴\|≤1e5，已知局部线性参数 |
 | feedback_static | a,K,Fmax→x,F,F/m,saturated | K0..1e9 N/m，Fmax0..1e3N；准确重新平衡限幅力，无动态/间隙/电静力保证 |
-| vibration_bias | 峰值A m/s²,q s²/m→周期平均m/s² | A0..1e5，|q|≤100；给定二次模型而非实测VRC |
+| vibration_bias | 峰值A m/s²,q s²/m→周期平均m/s² | A0..1e5，\|q\|≤100；给定二次模型而非实测VRC |
 
 返回都为有限标量或包含有限数的字典；当前乘积尺度上界可由预算界定。非零极小scale使校准结果超出有限浮点表示时显式拒绝；此保护不改变合法有限结果。模型有明显的端口差异：plate位移与独立cantilever末端位移、桥电压与电容读出、被动平衡与主动反馈不能互相偷换。
 

@@ -202,7 +202,7 @@ class CountMinSketch:
             raise ValueError("epsilon must be between 0 and 1")
         if not 0.0 < delta < 1.0:
             raise ValueError("delta must be between 0 and 1")
-        return cls(math.ceil(math.e / epsilon), math.ceil(math.log(1 / delta)), seed)
+        return cls(math.ceil(math.e / epsilon), math.ceil(-math.log(delta)), seed)
 
     def _columns(self, value: object) -> tuple[int, ...]:
         return tuple(
@@ -359,8 +359,12 @@ class ToyRandomHyperplaneLSH:
     def _signature(self, vector: Vector) -> tuple[bool, ...]:
         if len(vector) != self.dimension:
             raise ValueError("query dimension does not match index")
+        scale = max(abs(value) for value in vector)
+        if not math.isfinite(scale) or scale == 0.0:
+            raise ValueError("vectors must be finite and non-zero")
+        normalized = tuple(value / scale for value in vector)
         return tuple(
-            sum(value * weight for value, weight in zip(vector, plane)) >= 0.0
+            math.fsum(value * weight for value, weight in zip(normalized, plane)) >= 0.0
             for plane in self.planes
         )
 
@@ -560,6 +564,12 @@ class ProbabilisticStructureTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             ReservoirSampler(-1)
 
+    def test_count_min_accepts_subnormal_delta_without_reciprocal_overflow(self) -> None:
+        sketch = CountMinSketch.from_error_budget(0.1, 1e-320)
+        self.assertEqual((sketch.width, sketch.depth), (28, 737))
+        sketch.add("red")
+        self.assertEqual(sketch.estimate("red"), 1)
+
 
 class RetrievalTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -606,6 +616,14 @@ class RetrievalTests(unittest.TestCase):
         self.assertTrue(all(item[0] != "private" for item in found_first))
         self.assertGreaterEqual(recall_at_k(truth, found_first), 0.0)
         self.assertLessEqual(recall_at_k(truth, found_first), 1.0)
+
+    def test_toy_lsh_uses_scale_invariant_finite_projection(self) -> None:
+        vectors = {"same": (1.7e308, 1.7e308)}
+        index = ToyRandomHyperplaneLSH(vectors, num_planes=1, seed=23)
+        self.assertEqual(index._signature(vectors["same"]), index._signature((1.0, 1.0)))
+        found = index.search((1.0, 1.0), k=1)
+        self.assertEqual([document_id for document_id, _ in found], ["same"])
+        self.assertAlmostEqual(found[0][1], 1.0)
 
     def test_report_labels_latency_and_memory_as_measurements(self) -> None:
         report = evaluate_toy_lsh(

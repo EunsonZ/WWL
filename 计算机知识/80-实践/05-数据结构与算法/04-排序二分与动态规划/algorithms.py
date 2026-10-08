@@ -58,9 +58,10 @@ def min_coin_count(amount: int, coins: Iterable[int]) -> int | None:
     """完全背包 DP；返回 None 表示面额无法组成 amount。"""
     if type(amount) is not int or amount < 0:
         raise ValueError("amount must be a non-negative integer")
-    denominations = sorted(set(coins))
-    if any(type(coin) is not int or coin <= 0 for coin in denominations):
+    raw_denominations = list(coins)
+    if any(type(coin) is not int or coin <= 0 for coin in raw_denominations):
         raise ValueError("coins must be positive integers")
+    denominations = sorted(set(raw_denominations))
     best: list[int | None] = [0] + [None] * amount
     for subtotal in range(1, amount + 1):
         candidates = [best[subtotal - coin] for coin in denominations if coin <= subtotal]

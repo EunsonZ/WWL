@@ -4,7 +4,7 @@ Standard library only. Import defines functions; default execution prints JSON.
 import argparse
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from decimal import Decimal, localcontext
+from decimal import Decimal, DecimalException, localcontext
 import json
 from pathlib import Path
 import platform
@@ -81,14 +81,18 @@ def parse_frame(raw: bytes) -> Parsed:
         raise LogError('unit', 'version/unit mismatch')
     if version == 'v1' and fields['fraction'] is not None:
         raise LogError('unit', 'v1 requires whole microseconds')
-    # Local context avoids a caller's low Decimal precision silently rounding.
-    with localcontext() as context:
-        context.prec = 32
-        amount = Decimal(fields['amount']+(fields['fraction'] or ''))
-        microseconds = amount*(1000 if version == 'v2' else 1)
-        if not Decimal(0) <= microseconds <= Decimal(60000000):
+    try:
+        whole = int(fields['amount'])
+        fraction = fields['fraction'] or ''
+        if version == 'v1':
+            microseconds_int = whole
+        else:
+            microseconds_int = whole * 1000 + int(fraction[1:].ljust(3, '0') or '0')
+        if not 0 <= microseconds_int <= 60000000:
             raise LogError('range', 'duration must be 0..60 seconds')
-        microseconds = microseconds.quantize(Decimal(1))
+        microseconds = Decimal(microseconds_int)
+    except (DecimalException, OverflowError, ValueError) as exc:
+        raise LogError('range', 'duration must be a representable integer microsecond count') from exc
     spans = {}
     for name in ('timestamp', 'level', 'code', 'amount', 'unit', 'message'):
         start, end = match.span(name)

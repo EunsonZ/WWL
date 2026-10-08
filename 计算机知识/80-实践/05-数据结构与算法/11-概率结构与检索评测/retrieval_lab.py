@@ -121,7 +121,7 @@ class CountMinSketch:
             raise ValueError("epsilon must be between 0 and 1")
         if not 0.0 < delta < 1.0:
             raise ValueError("delta must be between 0 and 1")
-        return cls(math.ceil(math.e / epsilon), math.ceil(math.log(1 / delta)), seed)
+        return cls(math.ceil(math.e / epsilon), math.ceil(-math.log(delta)), seed)
 
     def _columns(self, value: object) -> tuple[int, ...]:
         return tuple(
@@ -278,8 +278,12 @@ class ToyRandomHyperplaneLSH:
     def _signature(self, vector: Vector) -> tuple[bool, ...]:
         if len(vector) != self.dimension:
             raise ValueError("query dimension does not match index")
+        scale = max(abs(value) for value in vector)
+        if not math.isfinite(scale) or scale == 0.0:
+            raise ValueError("vectors must be finite and non-zero")
+        normalized = tuple(value / scale for value in vector)
         return tuple(
-            sum(value * weight for value, weight in zip(vector, plane)) >= 0.0
+            math.fsum(value * weight for value, weight in zip(normalized, plane)) >= 0.0
             for plane in self.planes
         )
 

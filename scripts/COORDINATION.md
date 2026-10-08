@@ -2,6 +2,12 @@
 
 Implementation scope: Python standard library, no scheduler, network, model calls, writes, patch application, identity authentication or lock. Only stdout/stderr are written. There is no source or verifiable wire format for schema 1 in this vault; schema 1 is explicitly `unsupported legacy`, without inventing compatibility.
 
+## When to use this checker
+
+This is an optional record checker for a delivery that has a concrete recovery or conflict-management need, such as a staged migration whose exact old/new bytes must be distinguished after interruption. Routine content edits follow [AGENTS.md](../AGENTS.md), the [maintenance guide](../00-工作台/维护指南.md), and the [collaboration guide](../00-工作台/并行协作与模型路由.md). Editing two independent articles does not by itself require this checker, a manifest, hash receipts, or a combination record.
+
+Once this checker is selected for a delivery, its complete contract below applies: every multi-path group still requires the specified combination review, exact hashes and input versions; a blocked or rejected result cannot be ignored. This entry clarification changes when the tool is used, not its schema, implementation, validation strength, or meaning of success.
+
 ## Contract proposed before implementation
 
 Plan accepts exactly C1 `schema/batch/rules/human_files/shared_files/tasks` and optional explanatory `notes`. Rules are `version/files`. Tasks accept exactly `id/kind/goal/writes/reads/risk/acceptance/review_by/forbidden/searches` and notes. Kinds are author, review, evidence; unknown roles cannot bypass review. All normal/high writes require every named independent review task. Read kinds are base or artifact, latter with producer task/path and accepted/candidate requirement. Author candidate reads require a speculative attempt and cannot release. Only artifact author dependencies form readiness edges; reviewer candidate reads create no false cycle.

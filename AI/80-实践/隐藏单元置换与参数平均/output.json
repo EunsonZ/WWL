@@ -1,0 +1,70 @@
+{
+  "rows": [
+    {
+      "x": -2,
+      "hidden_original": [
+        0,
+        2
+      ],
+      "hidden_permuted": [
+        2,
+        0
+      ],
+      "original": -2,
+      "permuted": -2,
+      "parameter_mean": 0,
+      "output_mean": -2,
+      "aligned_parameter_mean": -2,
+      "only_first_swapped": 2,
+      "only_first_parameter_mean": 0,
+      "only_first_output_mean": 0,
+      "scalar_relu": 0,
+      "scalar_post_activation_recode": 0,
+      "scalar_wrong_pre_activation_change": -2
+    },
+    {
+      "x": 0,
+      "hidden_original": [
+        0,
+        0
+      ],
+      "hidden_permuted": [
+        0,
+        0
+      ],
+      "original": 0,
+      "permuted": 0,
+      "parameter_mean": 0,
+      "output_mean": 0,
+      "aligned_parameter_mean": 0,
+      "only_first_swapped": 0,
+      "only_first_parameter_mean": 0,
+      "only_first_output_mean": 0,
+      "scalar_relu": 0,
+      "scalar_post_activation_recode": 0,
+      "scalar_wrong_pre_activation_change": 0
+    },
+    {
+      "x": 1,
+      "hidden_original": [
+        1,
+        0
+      ],
+      "hidden_permuted": [
+        0,
+        1
+      ],
+      "original": 1,
+      "permuted": 1,
+      "parameter_mean": 0,
+      "output_mean": 1,
+      "aligned_parameter_mean": 1,
+      "only_first_swapped": -1,
+      "only_first_parameter_mean": 0,
+      "only_first_output_mean": 0,
+      "scalar_relu": 1,
+      "scalar_post_activation_recode": 1,
+      "scalar_wrong_pre_activation_change": 0
+    }
+  ]
+}

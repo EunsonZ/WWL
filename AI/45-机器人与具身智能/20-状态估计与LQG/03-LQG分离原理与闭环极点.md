@@ -41,6 +41,9 @@ $$
 
 [Stanford EE363 Lecture 10](https://ee363.stanford.edu/archive/lectures/lqg.pdf)从部分观测动态规划推导此问题；[MIT Underactuated Output Feedback](https://underactuated.mit.edu/output_feedback.html)也强调 LQG 中的估计—控制分离在一般输出反馈问题中并不成立。
 
+
+用 [[AI/13-搜索推理与规划/20-部分可观测决策/01-有限模型belief与决策状态#相同均值为什么不保证相同动作|同均值、不同最优行动]] 检查本页条件边界，再进入 [[AI/13-搜索推理与规划/20-部分可观测决策/02-beliefBellman与独立策略树#三次机会：第二次测量只在某个分支值得买|主动观测的多步策略树]]。该有限例的非线性行动后果、离散终止选择及可选付费观测都与此处无约束线性Gaussian二次控制不同；本页误差分布不受控制改变的分离条件不能为它省去观测价值比较。返回本页时仍按上列条件解释均值控制，不将有限反例当成LQG推导错误。
+
 ## 条件期望把未知状态拆成“均值 + 误差”
 
 令历史 $\mathcal Y_k=(y_0,\ldots,y_k,u_0,\ldots,u_{k-1})$，

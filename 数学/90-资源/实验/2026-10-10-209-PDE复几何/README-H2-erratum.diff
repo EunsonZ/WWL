@@ -1,0 +1,24 @@
+--- README-before-H2-erratum.md
++++ README.md
+@@ -24,7 +24,7 @@
+ - 独立从通量跳跃求RH速度、从 `[q]-s[eta]` 求平方熵产生。2/-2的speed0、RH残差0、熵产生-16/3；反向-2/2仍满足RH但熵产生+16/3。另有3/1与1/3的-2/3和+2/3。这些有限反例不证明全部凸熵或唯一性。
+ - 用指数商形式而非候选tanh调用独立重算xi=-.1/0/.1的U与U'；中心U0、U'=-20、epsilon U'=-2、乘积项-2，且反对称/偶对称样值一致。
+ - 材料a=1,2的斜率1,.5、通量1匹配。角点alpha=2/3的Laplace系数零在浮点容差内；独立积分幂次2alpha-1与2alpha-3给H1径向因子、三截断H2径向积分严格增大。源码输出不含角积分与导数系数，未标作完整范数。
+-- 额外保留Hessian Frobenius系数 `2alpha²(alpha-1)²=8/81`，三个(radius,theta)点通过xx/xy/yy平方和核对；完整扇形环带H2半范数需另乘角度3pi/2和8/81。有限采样不认证H0¹迹/弱式或一般不可积证明。
++- 额外保留Hessian Frobenius系数 `2alpha²(alpha-1)²=8/81`，三个(radius,theta)点通过xx/xy/yy平方和核对；按 Hessian Frobenius 约定，完整扇形环带二阶半范数的平方需将径向积分另乘角度3pi/2和8/81；半范数本身是该值的平方根。有限采样不认证H0¹迹/弱式或一般不可积证明。
+ - Fourier n4/kappa1振幅与归一平方能量匹配；8节点最高频用独立标量放大因子1-4r重算r=.4/.6的-.6/-1.4，二步振幅.36/1.96、均方.1296/3.8416。
+ - c2反应显式采样2、2.5、4、10与T*=.5匹配。源码/主文实际采用周期模型，没有Neumann数值接口。oracle另用兼容零Neumann的初始函数2+cos(pi*x)在[0,1]做64点初始均值2、平方均值4.5、方差.5及端点导数有限复算，记录1/m0=.5的算术上界；没有运行Neumann演化或认证非均匀爆破时间。该补例与实际源码执行分开。
+ 
+@@ -43,6 +43,12 @@
+ 
+ CP1向量场分类与环面拓扑没有候选可运行接口：oracle补做4组(a,b,c)、3个非零z的 `-w²h(1/w)=-(aw²+bw+c)`有限系数一致及w0值-c；环面tau=i的5个格点平移核对代表点、平移导数1及dz不变。明确这是独立有限坐标算术，不能冒充执行不存在的源码接口，更不代替全局分类、Hausdorff/第二可数或一般Hartogs证明。
+ 
++## 补充证据标签勘误
++
++独立审阅发现 `expected-before-output.json` 及原执行 `executor_oracle.py` 的字段 `full_H2_seminorm_on_sector_annulus` 标签漏写平方。原数值实际为 `∫|D²w|_F² dx`，对应 Hessian Frobenius 约定下的二阶半范数平方，其中混合导数按 `w_xx²+2w_xy²+w_yy²` 计；它们不是半范数本身。半范数须再取平方根。字段的正确语义名应为 `squared_H2_seminorm_on_sector_annulus`，本勘误只澄清原标签，不改原执行脚本或原 JSON 字节，不冒称已运行新版字段。
++
++独立勘误文件为 `ERRATUM-H2-squared.md`，前后 README 与差异身份保存在 `ERRATUM-receipt.json`、`README-before-H2-erratum.md`、`README-H2-erratum.diff`。原两份候选 stdout、独立 oracle 原输出、expectation、driver 与 source inputs 全部保留；原 `artifact-manifest.json` 继续绑定勘误前包，当前说明增量另由ERRATUM回执绑定。没有重跑或修改候选，一般不可积与H0¹证明仍归数学独审。
++
+ ## 复建与证据边界
+ 
+ 原证据包冻结只读。每次重跑先在自己拥有的新空目录复制 `snapshot/`、`run_fixed.py`、`executor_oracle.py`，创建 `home/`、`tmp/`、`logs/` 子目录，然后只在新目录执行：

@@ -1,0 +1,733 @@
+{
+  "reviewed_at": "2026-10-09T17:41:38.497566+00:00",
+  "candidate_root": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate",
+  "baseline_head_claim": "97a824ac7f27773fb48c4aba621b58f15e519bc6",
+  "candidate_files": [
+    {
+      "path": "数学/45-复变函数/00-复变函数-MOC.md",
+      "bytes": 4255,
+      "sha256": "35a9a765c9c0c05e9d91f795b583cead56e7ec5d7ccaa128de3a5901ed929cdf",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "bytes": 3188,
+      "sha256": "3877fab765a39cf312266cc2d16b22825e0c30464d06a7e103b0c6c2dad8072f",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "bytes": 9369,
+      "sha256": "4d8c2045a15ff52218ad28784ded68c4ef427ab659009728fe9051f3c467e7b5",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md",
+      "bytes": 10560,
+      "sha256": "6e92031ddd4e5b4bd9777888ccfa69fc1784488e279f2c0cf9337901e0bb5675",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/45-复变函数/30-多复变量与复流形/complex_chart_checks.py",
+      "bytes": 1645,
+      "sha256": "b50ebbd2256ea3ed3a487d984b03ddb6ec7542cc1c649d2f958234d9491da2aa",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/46-数理方程/00-数理方程-MOC.md",
+      "bytes": 4950,
+      "sha256": "3bf9b62612507e10cd5878880e59b789ccbb0ad784d45a5e327d89335f92222b",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "bytes": 2761,
+      "sha256": "22ef80f3e8f158f36d68efd60d02997364799eb252acbdfa85c4e584e151b4f0",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md",
+      "bytes": 8559,
+      "sha256": "f0472cea830cf828bb5677f021def6cf39c3c1cb965fa58ed66ebf71b3c5ddc1",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md",
+      "bytes": 10070,
+      "sha256": "db185fd3601873359a3c3b42654d4205c76724637c0d2a3270233b42a73da5dc",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md",
+      "bytes": 10469,
+      "sha256": "2257deeda17162d665ff1c258e50ddd9effcabfac99ce1f0cbff701082e5cf14",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    },
+    {
+      "path": "数学/46-数理方程/30-正则性与非线性演化/pde_regularities.py",
+      "bytes": 2022,
+      "sha256": "50edb7835a4248552372f6663880e3c625c38542e0d1979e98965ea57307c56f",
+      "freeze_matches": true,
+      "read_scope": "whole file; existing MOC acceptance limited to added section"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 4874,
+      "sha256": "780555ee84f3c1f017e9117cac5563cfe7f6eb4372d4a076f981f9810c1564c9"
+    },
+    {
+      "path": "00-工作台/维护指南.md",
+      "bytes": 8663,
+      "sha256": "23f01ec3a5d57060c4bb26e0ad083389c90131cbcd53261ca30b57f34e9e7611"
+    },
+    {
+      "path": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/AGENTS.md",
+      "bytes": 4874,
+      "sha256": "780555ee84f3c1f017e9117cac5563cfe7f6eb4372d4a076f981f9810c1564c9"
+    },
+    {
+      "path": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/issue209.json",
+      "bytes": 45326,
+      "sha256": "59cbfa6287f35a02ab81f1dce008ecdf039cc1f6918e5d1305d99eedfdabdff0"
+    },
+    {
+      "path": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/FREEZE.sha256",
+      "bytes": 1617,
+      "sha256": "743ed6d3f874171b530821b7e829b4d74d65cefb2e386dd2f4534e83633e6647"
+    },
+    {
+      "path": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/HANDOFF.md",
+      "bytes": 7084,
+      "sha256": "2ba6f1447b88182fc55d5da943e3d51880651f47b4b1117aee16d0efb53446be"
+    },
+    {
+      "path": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/STATIC.json",
+      "bytes": 300,
+      "sha256": "11b769cd1cbbc385ab36a0585cd4dd4404aeb39abfe39f41567e9e8fc65264cc"
+    }
+  ],
+  "links": [
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/01-复平面几何拓扑与复数运算",
+      "resolved": "数学/45-复变函数/01-复平面几何拓扑与复数运算.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/02-复可微与Cauchy-Riemann方程",
+      "resolved": "数学/45-复变函数/02-复可微与Cauchy-Riemann方程.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/03-指数对数复幂与分支",
+      "resolved": "数学/45-复变函数/03-指数对数复幂与分支.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/04-复曲线积分原函数与Cauchy定理",
+      "resolved": "数学/45-复变函数/04-复曲线积分原函数与Cauchy定理.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/05-Cauchy积分公式与全纯函数的刚性",
+      "resolved": "数学/45-复变函数/05-Cauchy积分公式与全纯函数的刚性.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓",
+      "resolved": "数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/07-Laurent级数与孤立奇点",
+      "resolved": "数学/45-复变函数/07-Laurent级数与孤立奇点.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/08-留数定理与极点计算",
+      "resolved": "数学/45-复变函数/08-留数定理与极点计算.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/09-留数计算实积分与围道选择",
+      "resolved": "数学/45-复变函数/09-留数计算实积分与围道选择.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/10-辐角原理Rouche定理与零点计数",
+      "resolved": "数学/45-复变函数/10-辐角原理Rouche定理与零点计数.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/11-共形映射Mobius变换与边值问题",
+      "resolved": "数学/45-复变函数/11-共形映射Mobius变换与边值问题.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/12-调和函数共轭函数与Poisson公式",
+      "resolved": "数学/45-复变函数/12-调和函数共轭函数与Poisson公式.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/13-Schwarz引理正规族与Riemann映射",
+      "resolved": "数学/45-复变函数/13-Schwarz引理正规族与Riemann映射.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/14-多值函数单值化Gamma函数与延拓",
+      "resolved": "数学/45-复变函数/14-多值函数单值化Gamma函数与延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/80-跨学科专题与综合练习/25-复变函数综合题与详解",
+      "resolved": "数学/80-跨学科专题与综合练习/25-复变函数综合题与详解.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/80-跨学科专题与综合练习/07-微分形式与一般Stokes定理",
+      "resolved": "数学/80-跨学科专题与综合练习/07-微分形式与一般Stokes定理.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/80-跨学科专题与综合练习/02-谱从矩阵指数到热波与Green函数",
+      "resolved": "数学/80-跨学科专题与综合练习/02-谱从矩阵指数到热波与Green函数.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/80-跨学科专题与综合练习/12-边值问题共振与混合边界工作坊",
+      "resolved": "数学/80-跨学科专题与综合练习/12-边值问题共振与混合边界工作坊.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/90-资源/05-六科覆盖矩阵与学习验收",
+      "resolved": "数学/90-资源/05-六科覆盖矩阵与学习验收.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/00-复变函数-MOC.md",
+      "target": "数学/00-数学-首页",
+      "resolved": "数学/00-数学-首页.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "target": "数学/45-复变函数/00-复变函数-MOC",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/00-复变函数-MOC.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓#多圆盘 Cauchy 公式为何给出联合幂级数",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓#Hartogs 图形：怎样用一圈积分填入缺失区域",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线#射影直线的两张图怎样真正拼起来",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线#局部有坐标，不代表全局有非恒定全纯函数",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "target": "数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓#零点为什么不能随意聚集",
+      "resolved": "数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "target": "数学/20-线性代数与几何/11-基变换相似与矩阵表示",
+      "resolved": "数学/20-线性代数与几何/11-基变换相似与矩阵表示.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "target": "数学/45-复变函数/05-Cauchy积分公式与全纯函数的刚性",
+      "resolved": "数学/45-复变函数/05-Cauchy积分公式与全纯函数的刚性.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "target": "数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓",
+      "resolved": "数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "target": "数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓#零点为什么不能随意聚集",
+      "resolved": "数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓#对象：复微分必须是复线性的",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md",
+      "target": "数学/20-线性代数与几何/11-基变换相似与矩阵表示#基变换先问哪个坐标由哪个得到",
+      "resolved": "数学/20-线性代数与几何/11-基变换相似与矩阵表示.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md",
+      "target": "数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/01-一阶常微分方程与初值问题",
+      "resolved": "数学/46-数理方程/01-一阶常微分方程与初值问题.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/02-高阶线性常微分方程与方程组",
+      "resolved": "数学/46-数理方程/02-高阶线性常微分方程与方程组.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/03-级数解Frobenius方法与特殊函数",
+      "resolved": "数学/46-数理方程/03-级数解Frobenius方法与特殊函数.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/04-建模分类初边值条件与适定性",
+      "resolved": "数学/46-数理方程/04-建模分类初边值条件与适定性.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/05-一阶偏微分方程与特征线",
+      "resolved": "数学/46-数理方程/05-一阶偏微分方程与特征线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/06-Fourier方法与Sturm-Liouville谱",
+      "resolved": "数学/46-数理方程/06-Fourier方法与Sturm-Liouville谱.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/07-热方程分离变量与扩散机制",
+      "resolved": "数学/46-数理方程/07-热方程分离变量与扩散机制.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/08-热核全空间问题与Duhamel原理",
+      "resolved": "数学/46-数理方程/08-热核全空间问题与Duhamel原理.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/09-一维波动方程特征锥与能量",
+      "resolved": "数学/46-数理方程/09-一维波动方程特征锥与能量.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/10-多维波动方程球面平均与传播",
+      "resolved": "数学/46-数理方程/10-多维波动方程球面平均与传播.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/11-Laplace-Poisson方程与最大值原理",
+      "resolved": "数学/46-数理方程/11-Laplace-Poisson方程与最大值原理.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/12-分离变量在矩形圆盘与球域",
+      "resolved": "数学/46-数理方程/12-分离变量在矩形圆盘与球域.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/13-Bessel-Legendre函数与正交展开",
+      "resolved": "数学/46-数理方程/13-Bessel-Legendre函数与正交展开.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/14-Fourier-Laplace变换解数理方程",
+      "resolved": "数学/46-数理方程/14-Fourier-Laplace变换解数理方程.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/15-Green函数基本解与边界响应",
+      "resolved": "数学/46-数理方程/15-Green函数基本解与边界响应.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/16-分布导数弱解与Sobolev空间",
+      "resolved": "数学/46-数理方程/16-分布导数弱解与Sobolev空间.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/17-变分原理Lax-Milgram与能量估计",
+      "resolved": "数学/46-数理方程/17-变分原理Lax-Milgram与能量估计.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/18-守恒律Burgers方程激波与熵条件",
+      "resolved": "数学/46-数理方程/18-守恒律Burgers方程激波与熵条件.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/19-差分格式稳定性CFL与收敛",
+      "resolved": "数学/46-数理方程/19-差分格式稳定性CFL与收敛.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/20-有限元谱方法与数理方程综合",
+      "resolved": "数学/46-数理方程/20-有限元谱方法与数理方程综合.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/80-跨学科专题与综合练习/26-数理方程综合题与详解",
+      "resolved": "数学/80-跨学科专题与综合练习/26-数理方程综合题与详解.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/80-跨学科专题与综合练习/01-投影从最小二乘到Fourier与有限元",
+      "resolved": "数学/80-跨学科专题与综合练习/01-投影从最小二乘到Fourier与有限元.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/80-跨学科专题与综合练习/02-谱从矩阵指数到热波与Green函数",
+      "resolved": "数学/80-跨学科专题与综合练习/02-谱从矩阵指数到热波与Green函数.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/80-跨学科专题与综合练习/12-边值问题共振与混合边界工作坊",
+      "resolved": "数学/80-跨学科专题与综合练习/12-边值问题共振与混合边界工作坊.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/90-资源/05-六科覆盖矩阵与学习验收",
+      "resolved": "数学/90-资源/05-六科覆盖矩阵与学习验收.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/00-数理方程-MOC.md",
+      "target": "数学/00-数学-首页",
+      "resolved": "数学/00-数学-首页.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "target": "数学/46-数理方程/00-数理方程-MOC",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/00-数理方程-MOC.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "target": "数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "target": "数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "target": "数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "target": "数学/46-数理方程/16-分布导数弱解与Sobolev空间",
+      "resolved": "数学/46-数理方程/16-分布导数弱解与Sobolev空间.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "target": "数学/46-数理方程/17-变分原理Lax-Milgram与能量估计",
+      "resolved": "数学/46-数理方程/17-变分原理Lax-Milgram与能量估计.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "target": "数学/46-数理方程/20-有限元谱方法与数理方程综合",
+      "resolved": "数学/46-数理方程/20-有限元谱方法与数理方程综合.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md",
+      "target": "数学/46-数理方程/05-一阶偏微分方程与特征线",
+      "resolved": "数学/46-数理方程/05-一阶偏微分方程与特征线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md",
+      "target": "数学/46-数理方程/18-守恒律Burgers方程激波与熵条件",
+      "resolved": "数学/46-数理方程/18-守恒律Burgers方程激波与熵条件.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md",
+      "target": "数学/46-数理方程/18-守恒律Burgers方程激波与熵条件#两个完整 Riemann 问题",
+      "resolved": "数学/46-数理方程/18-守恒律Burgers方程激波与熵条件.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md",
+      "target": "数学/46-数理方程/18-守恒律Burgers方程激波与熵条件#跳跃速度从薄控制体推导",
+      "resolved": "数学/46-数理方程/18-守恒律Burgers方程激波与熵条件.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md",
+      "target": "数学/46-数理方程/19-差分格式稳定性CFL与收敛",
+      "resolved": "数学/46-数理方程/19-差分格式稳定性CFL与收敛.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md",
+      "target": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md",
+      "target": "数学/46-数理方程/16-分布导数弱解与Sobolev空间",
+      "resolved": "数学/46-数理方程/16-分布导数弱解与Sobolev空间.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md",
+      "target": "数学/46-数理方程/17-变分原理Lax-Milgram与能量估计",
+      "resolved": "数学/46-数理方程/17-变分原理Lax-Milgram与能量估计.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md",
+      "target": "数学/46-数理方程/17-变分原理Lax-Milgram与能量估计#Lax–Milgram 的条件与意义",
+      "resolved": "数学/46-数理方程/17-变分原理Lax-Milgram与能量估计.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md",
+      "target": "数学/46-数理方程/20-有限元谱方法与数理方程综合#误差率从逼近与正交相接",
+      "resolved": "数学/46-数理方程/20-有限元谱方法与数理方程综合.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md",
+      "target": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md",
+      "target": "数学/46-数理方程/08-热核全空间问题与Duhamel原理",
+      "resolved": "数学/46-数理方程/08-热核全空间问题与Duhamel原理.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md",
+      "target": "数学/46-数理方程/19-差分格式稳定性CFL与收敛",
+      "resolved": "数学/46-数理方程/19-差分格式稳定性CFL与收敛.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md",
+      "target": "数学/20-线性代数与几何/14-最小二乘伪逆与正则化",
+      "resolved": "数学/20-线性代数与几何/14-最小二乘伪逆与正则化.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md",
+      "target": "数学/46-数理方程/08-热核全空间问题与Duhamel原理#热核是一单位瞬时点热源的响应",
+      "resolved": "数学/46-数理方程/08-热核全空间问题与Duhamel原理.md",
+      "file_ok": true,
+      "anchor_ok": true
+    },
+    {
+      "from": "数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md",
+      "target": "数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线",
+      "resolved": ".wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md",
+      "file_ok": true,
+      "anchor_ok": true
+    }
+  ],
+  "execution": "NOTRUN by reviewer; awaiting designated executor evidence"
+}

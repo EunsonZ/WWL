@@ -1,0 +1,854 @@
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/baseline/数学/45-复变函数/00-复变函数-MOC.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/00-复变函数-MOC.md
+index 13a549b..b7771b3 100644
+--- a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/baseline/数学/45-复变函数/00-复变函数-MOC.md
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/00-复变函数-MOC.md
+@@ -48,6 +48,10 @@ Mobius、调和函数、Poisson 核连接几何和方程；正规族与单值化
+ - [[数学/45-复变函数/13-Schwarz引理正规族与Riemann映射|Schwarz引理正规族与Riemann映射]]。
+ - [[数学/45-复变函数/14-多值函数单值化Gamma函数与延拓|多值函数单值化Gamma函数与延拓]]。
+ 
++### 多复变量与复流形的代表性深化
++
++从一元 Cauchy 公式与恒等定理进入 [[数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口|多复变量与复流形]]：先证明多圆盘幂级数与 Hartogs 图形填洞，再以射影直线两张图计算切余切转换、全纯函数和形式的全局限制。返回本课程时应能说清：为何一元“零点聚集即恒零”不能照搬，而 Cauchy 积分仍可逐变量使用。入口中的迁移题检验改变验证集合、被删区域和坐标合同后的判断；这条代表路线不等同于复几何全部分支完成。
++
+ ### 学习验收
+ 
+ 1. 解释满足 Cauchy–Riemann 方程何时足以推出全纯，并给出不能乱用的情形。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md
+new file mode 100644
+index 0000000..2520afa
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口.md
+@@ -0,0 +1,28 @@
++---
++type: moc
++domain: mathematics
++stage: 3
++aliases:
++  - 多复变量与复几何代表主线
++prerequisites:
++  - "[[数学/45-复变函数/00-复变函数-MOC]]"
++sources:
++  - https://www.jirka.org/scv/
++  - https://ocw.mit.edu/courses/18-117-topics-in-several-complex-variables-spring-2005/pages/lecture-notes/
++---
++# 多复变量与复流形入口
++
++本分支从一元 Cauchy 公式、全纯刚性与解析延拓进入。目标是能说明复维数增加后，哪些一元判断仍成立、哪些必须改条件，再用全纯坐标转换构造一个真正的全局复对象。已有实曲线/曲面计算不能替代这层结构，已有一元复分析也不需要重新编一遍。
++
++| 入口问题 | 阅读主线 | 完成时应能独立给出的论证 |
++| --- | --- | --- |
++| 多变量零点为什么可以聚集，却仍有强刚性？ | [[数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓#多圆盘 Cauchy 公式为何给出联合幂级数\|多圆盘积分与联合幂级数]] | 写出积分域和 Cauchy 界；区分开集恒等与任意聚点恒等 |
++| 少了一块数据，为何有时仍强制补全？ | [[数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓#Hartogs 图形：怎样用一圈积分填入缺失区域\|Hartogs 图形的完整构造]] | 逐步使用环带、完整圆盘、恒等定理与拼接；说明 1/w 反例缺哪个前提 |
++| 怎样由局部全纯坐标拼成流形？ | [[数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线#射影直线的两张图怎样真正拼起来\|射影直线与全纯图册]] | 验证商坐标良定义、两图覆盖与转换、复/实维数和拓扑条件 |
++| 什么局部对象能延拓到全局？ | [[数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线#局部有坐标，不代表全局有非恒定全纯函数\|全局函数与微分形式]] | 在两图中分别判断向量、形式与射影值映射；证明 CP¹ 一形式消失并与复环面对照 |
++
++[固定输入计算](complex_chart_checks.py) 使用标准库核对一个三角全纯映射及其逆、射影图切余切配对，以及 Hartogs Cauchy 构造的数值积分。运行 `python3 -B complex_chart_checks.py`；程序只打印 JSON，不下载或写文件。采样能发现符号与实现错误，不能证明函数对全部输入全纯，也不能代替填洞定理。
++
++返回一元条件可读 [[数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓#零点为什么不能随意聚集|孤立零点与恒等定理]]；返回共同坐标习惯可读 [[数学/20-线性代数与几何/11-基变换相似与矩阵表示|基变换]]。一般光滑流形理论提供实底层语言，但全纯转换、Hartogs 现象和紧复流形上的函数限制是这里独立增加的条件。
++
++这是一条已具体建模和证明的代表性主线，不是复几何全覆盖。一般 Hartogs 紧洞定理、分别全纯定理只精确声明而未作完整证明；伪凸性/Levi 问题、$\bar\partial$ 理论、Kähler 几何、全纯向量丛及上同调仍是需要独立课程的后续能力。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md
+new file mode 100644
+index 0000000..e3af654
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓.md
+@@ -0,0 +1,102 @@
++---
++type: lesson
++domain: mathematics
++stage: 3
++aliases:
++  - 多复变量的刚性与填洞
++prerequisites:
++  - "[[数学/45-复变函数/05-Cauchy积分公式与全纯函数的刚性]]"
++  - "[[数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓]]"
++sources:
++  - https://www.jirka.org/scv/
++  - https://ocw.mit.edu/courses/18-117-topics-in-several-complex-variables-spring-2005/pages/lecture-notes/
++---
++# 多复变量全纯与 Hartogs 延拓
++
++从 $\mathbb C$ 换到 $\mathbb C^n$ 不是给一元公式多加下标：全纯函数仍高度刚性，但零点不再通常孤立，有些一元中无法填补的洞反而被强制填补。本页在二元情形完成一个 Hartogs 图形的延拓证明；所有积分都只用已有的一元 Cauchy 公式。
++
++## 对象：复微分必须是复线性的
++
++域 $\Omega\subset\mathbb C^n$ 指连通开集。写 $z_j=x_j+iy_j$，$\partial_{\bar z_j}=\tfrac12(\partial_{x_j}+i\partial_{y_j})$。对 $C^1$ 函数 $f:\Omega\to\mathbb C$，全纯条件是所有 $\partial_{\bar z_j}f=0$；向量值映射 $F:\Omega\to\mathbb C^m$ 要逐分量满足。等价地，实微分必须复线性：$DF(z)(iv)=iDF(z)v$，而不只是实可微。
++
++例如 $F(z_1,z_2)=(z_1,z_2+z_1^2)$ 全纯，复 Jacobian 为 $\begin{pmatrix}1&0\\2z_1&1\end{pmatrix}$，行列式 1，显式逆为 $(w_1,w_2-w_1^2)$。反例 $z\mapsto\bar z$ 是光滑实双射，却满足 $\partial_{\bar z}\bar z=1$，不是全纯坐标变换。
++
++一般全纯 $F:\mathbb C^n\supset\Omega\to\mathbb C^n$ 在一点的复 Jacobian 可逆时，实 Jacobian 也可逆，因为实行列式为复行列式模的平方。实逆函数定理给局部 $C^1$ 逆，其微分是复线性矩阵的逆，仍复线性，所以局部逆全纯。这个证明明确用了实逆函数定理；若行列式为零，只能说该充分条件失效，不能随意套逆函数结论。
++
++## 多圆盘 Cauchy 公式为何给出联合幂级数
++
++取闭多圆盘 $\overline P=\{|z_j-a_j|\le r_j,1\le j\le n\}\Subset\Omega$。固定其他变量，对第一个变量用一元 Cauchy，再逐个重复，得到
++
++$$
++f(z)=\frac1{(2\pi i)^n}\int_{|\zeta_1-a_1|=r_1}\!\cdots\!\int_{|\zeta_n-a_n|=r_n}
++\frac{f(\zeta_1,\ldots,\zeta_n)}{\prod_{j=1}^n(\zeta_j-z_j)}\,d\zeta_n\cdots d\zeta_1.
++$$
++
++各圆周正向，积分集合是乘积圆环，不是欧氏球面的边界；这点直接影响分母与测度。紧圆周上的连续性保证可换有限次积分次序。在更小多圆盘 $|z_j-a_j|\le\rho_j<r_j$，每个因子都展开为一致收敛的几何级数，乘积级数绝对一致收敛，可逐项积分，得到
++
++$$
++f(z)=\sum_{\alpha\in\mathbb N^n}c_\alpha(z-a)^\alpha,\qquad
++|c_\alpha|\le M\prod_jr_j^{-\alpha_j},
++$$
++
++其中 $(z-a)^\alpha=\prod_j(z_j-a_j)^{\alpha_j}$，$M=\max_{\zeta\in\partial\Delta_{r_1}\times\cdots\times\partial\Delta_{r_n}}|f(\zeta)|$。这个界一方面证明紧子集上的收敛与可逐项求导，另一方面显示全纯性提供的是**联合**幂级数。这里只用 $C^1$ 全纯函数；“分别全纯而未先假设连续，也能推出联合全纯”的更一般 Hartogs 定理是另一项外部结果，不在这段证明中偷用。
++
++## 恒等定理仍在，但聚点版必须改条件
++
++若两个全纯函数在连通域内的一个非空开集相同，则处处相同。可对差函数 $g$ 证明：令 $E$ 为所有各阶复导数都为零的点集。连续性使 $E$ 闭；幂级数公式使每个 $E$ 中的点附近 $g$ 恒零，所以 $E$ 开。已知开集给 $E\ne\varnothing$，连通性迫使 $E=\Omega$。
++
++但“一串零点在域内聚集就恒零”是 [[数学/45-复变函数/06-Taylor级数零点恒等定理与解析延拓#零点为什么不能随意聚集|一元结果]]，不能照搬。$f(z_1,z_2)=z_1$ 在整个复超平面 $z_1=0$ 上为零，包括趋向 $(0,0)$ 的 $(0,1/n)$，却不是零函数。两个模型只在一条复曲线上吻合，不足以推出它们在二维复域相同；声明验证集合是什么，比数出多少个点更关键。
++
++## Hartogs 图形：怎样用一圈积分填入缺失区域
++
++写 $\Delta=\{|z|<1\}$，固定 $0<r<1$、$0<\epsilon<1$，定义连通开集
++
++$$
++H=(\Delta\times\{r<|w|<1\})\ \cup\ (\{|z|<\epsilon\}\times\Delta).
++$$
++
++它在每个 $z$ 上提供一个 $w$ 环带，另在一小片 $z$ 区域提供完整 $w$ 圆盘。缺的是 $|z|\ge\epsilon,|w|\le r$ 的内部部分。设 $f$ 在 $H$ 全纯；证明它唯一延拓到整个 $\Delta^2$。
++
++任取 $r<\rho<1$，对所有 $z\in\Delta,|w|<\rho$ 定义
++
++$$
++F_\rho(z,w)=\frac1{2\pi i}\int_{|\zeta|=\rho}\frac{f(z,\zeta)}{\zeta-w}\,d\zeta.
++$$
++
++证明分四步，每一步说明用了哪块已知区域。
++
++1. 积分圆周落在环带中，对所有 $z$ 都有数据。紧子集上分母与 0 分离，可对参数求导，故 $F_\rho$ 联合全纯。
++2. 当 $|z|<\epsilon$ 时，原 $f(z,\cdot)$ 在完整圆盘全纯，一元 Cauchy 公式给 $F_\rho=f$ 于 $|w|<\rho$。
++3. 固定任意 $r<|w|<\rho$。此时 $F_\rho(\cdot,w)$ 与 $f(\cdot,w)$ 都在整个 $z$ 圆盘全纯，并在 $|z|<\epsilon$ 一致；用一元恒等定理，它们对所有 $z\in\Delta$ 一致。因此积分构造与原环带数据在真正的重叠处相合。
++4. 把 $F_\rho$（$|w|<\rho$）与原环带函数（$r<|w|<1$）拼接，覆盖 $\Delta^2$。两种半径的构造也由同一重叠一致性相合。若另有延拓，两延拓在开集 $H$ 相同，由上节恒等定理在连通 $\Delta^2$ 上唯一。
++
++此处填洞靠的是两个复变量之间的解析兼容性；不是缺失数据可以任意插值。去掉完整圆盘这块信息，仅在 $\Delta\times\{r<|w|<1\}$ 给 $f=1/w$，就不能延拓穿过 $w=0$：固定任意 $z$ 后，一元函数仍有极点。这不反驳上面的证明，因为第二步已无前提。
++
++### 数值积分到底检查了哪一件事
++
++对本页固定例 $f(z,w)=1/(2-z)+w^2$，选 $\rho=0.7$，缺口参数可取 $r=0.5,\epsilon=0.25$。目标 $(0.4,0.2)$ 确实不在原 Hartogs 图形内；但每个积分点 $(0.4,0.7e^{i\theta})$ 都在图形的环带中。参数化 $\zeta=\rho e^{i\theta}$ 后，$d\zeta=i\zeta d\theta$ 抵消 $1/(2\pi i)$ 中的 $i$，得到源码中的均值。它检验复数因子与积分实现，而不是通过读取目标点值“完成填洞”。
++
++对 $N$ 个等距圆周点，令 $q=w/\rho=2/7$。几何级数与单位根均值给出本例的精确离散答案
++
++$$
++F_N=\frac{1/(2-z)+w^2}{1-q^N},\qquad N>2,
++$$
++
++因为离散均值只保留指数是 $N$ 的倍数的项。因此理想算术误差恰为 $0.665\,q^N/(1-q^N)$；实际输出另有浮点舍入误差。这是独立于程序求和循环的可核答案，不能拿同一实现两次输出来互相认证。
++
++## 不把局部填洞误写成任意域都可延拓
++
++更一般的 Hartogs 延拓定理说：$n\ge2$，$\Omega\subset\mathbb C^n$ 为域，$K\Subset\Omega$ 为紧集，且 $\Omega\setminus K$ 连通时，每个在 $\Omega\setminus K$ 全纯的函数唯一延拓到 $\Omega$。这里精确声明此一般定理为外部输入；本页完整证明的是上述图形特例，不把它当作所有域的全局证明。[Lebl 的作者教材](https://www.jirka.org/scv/) 可继续到 Hartogs 现象与全纯域。
++
++因此 $n\ge2$ 的孤立点缺口可填补；但 $\Delta^2\setminus\{w=0\}$ 上的 $1/w$ 不在此紧洞定理覆盖范围：被删超平面截片不是 $\Delta^2$ 中相对紧的紧集，它延伸到边界。维数、连通性与被删集合条件都不能省略。多变量的全纯域/伪凸性正是进一步研究“哪些域拥有不能再共同延拓的全纯函数”的语言，本页没有证明 Levi 问题或一般 $\bar\partial$ 可解性。
++
++## 返回验证与迁移问题
++
++**无步骤迁移：**（1）全纯 $g(z_1,z_2)$ 在集合 $z_2=z_1$ 上为零，是否必恒零？（2）若它在一个由两个非退化开区间组成的实矩形 $I_1\times I_2\subset\mathbb R^2\subset\mathbb C^2$ 上为零，且该矩形位于域内一个多圆盘中，能否推出域内恒零？（3）在 Hartogs 图形上给 $f(z,w)=1/(2-z)+w^2$，求填入点 $(0.4,0.2)$ 的值；若只留下环带并改成 $1/w$，哪步证明停止？
++
++> [!question]- 可核答案
++> （1）不能，$g=z_2-z_1$ 是反例。（2）能。先固定实 $x_2\in I_2$，以一元恒等定理把第一个变量扩到小复圆盘；再固定其中任意复 $z_1$，把第二变量从 $I_2$ 扩到小复圆盘。得到一个复开集上恒零，再用连通域恒等定理。关键是乘积结构，不能仅说“实二维点够多”。（3）$1/1.6+0.2^2=0.665$；改成纯环带时，没有完整 $w$ 圆盘来保证第二步 Cauchy 重现，积分的非负幂部分不能重现原极点。
++
++进入 [[数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线|复流形的全纯图册与切空间]]，检验这里的局部映射怎样拼成全局对象；返回 [[数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口|分支入口]]。
++
++来源定位：[Lebl, Tasty Bits of Several Complex Variables, v4.4 (2026-05-31)](https://www.jirka.org/scv/scv.pdf)，§1.2 对照多圆盘幂级数，§2.1 对照 Hartogs 图形，§4.3 Theorem 4.3.1（印刷 p.135）对照一般紧洞定理的维数、相对紧与连通条件。本页用两次一元恒等/Cauchy 论证完成所选图形的证明，一般紧洞结果没有冒充已在本页证明。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md
+new file mode 100644
+index 0000000..6c4ef2a
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/02-复流形图册切空间与射影直线.md
+@@ -0,0 +1,98 @@
++---
++type: lesson
++domain: mathematics
++stage: 3
++aliases:
++  - 全纯图册与复射影直线
++prerequisites:
++  - "[[数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓]]"
++sources:
++  - https://ocw.mit.edu/courses/18-117-topics-in-several-complex-variables-spring-2005/pages/lecture-notes/
++  - https://www.jirka.org/scv/
++---
++# 复流形图册、切空间与射影直线
++
++一张局部坐标图可以用复数标点，但这还没有定义复流形。真正的要求在重叠区：两套坐标的转换必须全纯且具有全纯逆。这个限制不仅改变微分的形式，还会约束全局函数和微分形式。
++
++## 全纯兼容比实光滑兼容更强
++
++复维数 $n$ 的复流形是 Hausdorff、第二可数的拓扑空间 $M$，配有覆盖它的坐标图 $z_\alpha:U_\alpha\to V_\alpha\subset\mathbb C^n$，每张图是同胚；对非空重叠，转换 $z_\beta\circ z_\alpha^{-1}$ 是双全纯映射。相容图册可扩到所有相容图，定义同一复结构。全纯性与局部逆的定义、复线性微分条件在 [[数学/45-复变函数/30-多复变量与复流形/01-多复变量全纯与Hartogs延拓#对象：复微分必须是复线性的|多复变量局部映射]] 中给出。
++
++这样的图册自动给实维数 $2n$ 的光滑流形，但反向没有自动保证。例：在同一个复平面重叠区域，把坐标一张写成 $z$、另一张写成 $w=\bar z$。二者实光滑可逆，却不全纯，因此不能同时放入这一复图册。把实图册里的“实”字换成“复”不构成证明。
++
++复线性可逆矩阵作为实矩阵的行列式为 $|\det_{\mathbb C}J|^2>0$，所以复流形自然定向。但只要求实转换保定向仍不够：例如 $(x,y)\mapsto(2x,y)$ 行列式为 2，却不满足 Cauchy–Riemann 方程。几乎复结构 $J^2=-I$ 与可由全纯图册诱导的可积复结构的区别，涉及额外可积性理论，本页不把二者等同。
++
++## 射影直线的两张图怎样真正拼起来
++
++定义 $\mathbb{CP}^1$ 为 $\mathbb C^2\setminus\{0\}$ 中按 $(Z_0,Z_1)\sim(\lambda Z_0,\lambda Z_1)$（$\lambda\ne0$）取的等价类，记 $[Z_0:Z_1]$，采用商拓扑。
++
++在 $U_0=\{Z_0\ne0\}$ 用坐标 $z=Z_1/Z_0$，逆是 $z\mapsto[1:z]$；在 $U_1=\{Z_1\ne0\}$ 用 $w=Z_0/Z_1$，逆是 $w\mapsto[w:1]$。比值不随代表的共同缩放改变，因此坐标良定义。两图覆盖全空间，重叠上
++
++$$
++w=1/z,\qquad z=1/w,\qquad z\ne0.
++$$
++
++先核对这些确实是拓扑坐标。商映射 $q:\mathbb C^2\setminus\{0\}\to\mathbb{CP}^1$ 是开映射：开集 $O$ 的饱和集 $q^{-1}(q(O))=\bigcup_{\lambda\ne0}\lambda O$ 仍开。$U_i$ 的逆像是相应坐标非零的开集，所以 $U_i$ 开；不变的连续比值通过商映射下降为连续坐标，逆 $z\mapsto q(1,z)$ 也连续，故每张图是同胚。转换与逆均全纯，所以这是复维数 1 的图册。所谓“无穷远点”是 $[0:1]$，在 w 图只是普通点 $w=0$；它不是一个必须用无限数值储存的坐标。
++
++拓扑条件也有具体依据。映射
++
++$$
++[Z_0:Z_1]\longmapsto
++\frac{(2\operatorname{Re}(\overline Z_0Z_1),\ 2\operatorname{Im}(\overline Z_0Z_1),\ |Z_0|^2-|Z_1|^2)}{|Z_0|^2+|Z_1|^2}
++$$
++
++落在单位球面 $S^2$，不依赖共同缩放，并给一一对应；在有限 z 图是 $(2\Re z,2\Im z,1-|z|^2)/(1+|z|^2)$，缺的南极对应无穷远点。它从单位 $S^3\subset\mathbb C^2$ 的商诱导，故 $\mathbb{CP}^1$ 紧；连续双射到 Hausdorff 球面是同胚，因而 Hausdorff。两张 $\mathbb C$ 图的可数基又给第二可数性。这样图册、公理与具体几何才闭合。
++
++更高维 $\mathbb{CP}^n$ 同样取非零 $\mathbb C^{n+1}$ 向量的复直线。$Z_i\ne0$ 的图把其余坐标除以 $Z_i$；在重叠上，各新坐标是旧坐标之比，分母对应的坐标非零，因此转换全纯。这里“分母非零”是图的定义域条件，不是可以略过的小字。
++
++## 切向量和余切向量必须按转换共同变化
++
++局部全纯函数的方向导数写作 $v=\sum_jv^j\partial/\partial z_j$。这里 $T_p^{1,0}M$ 是复化实切空间的 $(1,0)$ 部分，基向量约定 $\partial/\partial z_j=\tfrac12(\partial/\partial x_j-i\partial/\partial y_j)$；不能将它与整个 $2n$ 维实切空间的一个实基混写。
++
++为什么只取 $(1,0)$ 部分？坐标里的复结构满足 $J\partial_{x_j}=\partial_{y_j}$、$J\partial_{y_j}=-\partial_{x_j}$，因此 $J\partial_{z_j}=i\partial_{z_j}$、$J\partial_{\bar z_j}=-i\partial_{\bar z_j}$。复化实切空间分解为这两个特征子空间，各复维数 $n$；作用在全纯函数上时 $\partial_{\bar z_j}f=0$，所以全纯微分只使用前一半。全纯转换的微分与 $J$ 交换，保证这个划分不依赖选图。
++
++若 $w=F(z)$，链式法则给
++
++$$
++\frac\partial{\partial z_j}=\sum_k\frac{\partial w_k}{\partial z_j}\frac\partial{\partial w_k},\qquad
++v_w=J_Fv_z.
++$$
++
++余切形式 $\omega=\sum_j a_jdz_j$ 的系数列则满足 $a_w=J_F^{-T}a_z$，保证 $\omega(v)=a_z^Tv_z=a_w^Tv_w$。这用双线性配对，不是在作 Hermitian 内积，故这里没有自动出现共轭转置。
++
++在 $\mathbb{CP}^1$ 的重叠区，$dw/dz=-1/z^2$，因此
++
++$$
++\partial_z=-z^{-2}\partial_w,\qquad dz=-w^{-2}dw.
++$$
++
++例：$z=1+i$、$v_z=2$，则 $w=(1-i)/2$、$v_w=i$。若形式在 z 图系数为 1，w 图系数为 $-w^{-2}=-2i$，配对都是 2。局部数值变了，几何对象与它对函数的作用仍相同；这与 [[数学/20-线性代数与几何/11-基变换相似与矩阵表示#基变换先问哪个坐标由哪个得到|先声明坐标方向的换基习惯]] 一致，但 Jacobian 在不同点会变化，并非全流形一张固定矩阵。
++
++## 局部有坐标，不代表全局有非恒定全纯函数
++
++若 $M$ 紧且连通，任何全纯函数 $f:M\to\mathbb C$ 都常数。因为 $|f|$ 在紧空间取到最大值；在最大值点的坐标多圆盘中，沿过该点的复直线应用一元最大模原理，得到邻域常数；再由连通性与全纯恒等定理推广到整个 $M$。多变量情形也可逐坐标使用最大模原理。
++
++所以 $\mathbb{CP}^1$ 没有一张到 $\mathbb C$ 开集的全局全纯坐标。有限图的 $z$ 在 w 图写成 $1/w$，在 $w=0$ 有极点；它是亚纯函数，而非全局全纯的复值函数。允许极点、允许射影值与允许复数值，是三个不同的映射合同。
++
++全局微分形式又能区分不同空间。在 $\mathbb{CP}^1$ 上，若全纯一形式写成 $h(z)dz$，则 $h$ 在有限图是整函数，且在 w 图系数为 $-h(1/w)/w^2$。该系数在 $w=0$ 全纯，故附近有界，推出 $|h(z)|\le C/|z|^2$ 对大 $|z|$ 成立。整函数 $h$ 因而全局有界，由 Liouville 常数，再由趋零得 $h=0$。这完整证明射影直线没有非零全纯一形式。
++
++反观复环面 $\mathbb C/\Lambda$，$\Lambda=\mathbb Z+\tau\mathbb Z,\Im\tau>0$。格点离散，因此每点的小圆盘投影为局部图；重叠转换是加格点，故全纯。基本平行四边形给紧性，且 $dz$ 在平移下不变，下降成一个处处非零的全纯一形式。全纯复值函数仍然常数，却已有不同的一形式结构。这里未分类不同 $\tau$ 的双全纯等价，也未建立一般 Hodge 或 Kähler 理论。
++
++格点商的拓扑也可核实：对不等价的 $z,z'$，离散闭集 $\Lambda$ 与 $z-z'$ 的距离严格正，取足够小的圆盘，其全部格点平移互不与另一组相交，商中得到不交邻域，因此 Hausdorff。商映射开，把复平面的可数开基投影即得可数基。连通性来自 $\mathbb C$ 的连续像。因此环面确实满足前面复流形定义，不能仅因转换写成平移就略过拓扑公理。
++
++### 一个完整的全局分类：射影直线的全纯向量场
++
++一形式全部消失不意味着向量场也消失。任一全纯向量场在有限图写成 $V=h(z)\partial_z$，$h$ 整函数。在无穷图，系数为 $-w^2h(1/w)$。若它在 $w=0$ 全纯，系数在一个小闭圆盘有界，推出 $|h(z)|\le C|z|^2$ 对大 $|z|$ 成立。Cauchy 导数估计令半径趋于无穷，给 $h^{(k)}(0)=0$（$k\ge3$），故 $h=a+bz+cz^2$。反过来，这种多项式给系数 $-(aw^2+bw+c)$，在 $w=0$ 全纯，确实定义全局向量场。于是这类向量场构成复三维空间，基可取 $\partial_z,z\partial_z,z^2\partial_z$。
++
++同一套“两图转换—无穷处正则性—Cauchy 增长界”既证明全纯一形式只能为零，又给向量场的全部可能。这是局部 Jacobian 怎样产生全局限制的代表性分类，不是只验证某个坐标点的数值。
++
++## 从坐标计算迁移到全局判断
++
++**无步骤迁移：**（1）有限图上的向量场 $\partial_z$ 能否全纯延拓到 $\mathbb{CP}^1$？形式 $dz$ 呢？（2）$f(z)=z^2$ 能否作为全局复值全纯函数？能否作为 $\mathbb{CP}^1\to\mathbb{CP}^1$ 的全纯映射？（3）若用 $w=\bar z$ 换图，仅仅把切系数按实 Jacobian 变换，能否修复图册的全纯兼容性？
++
++> [!question]- 可核答案
++> （1）$\partial_z=-w^2\partial_w$，系数在 $w=0$ 全纯并为零，所以向量场可延拓；$dz=-w^{-2}dw$ 有极点，不能延拓成全纯一形式。切向量与余切形式的变换方向相反，不能因共享字母 z 就判同一结论。（2）作为复值函数在无穷远有极点，不可以；作为射影值映射可写 $[Z_0:Z_1]\mapsto[Z_0^2:Z_1^2]$，两项不会同时为零，在源/目标的无穷图中变成 $w\mapsto w^2$，因此可以。（3）不能；实张量变换没有消除 $\partial_{\bar z}\bar z\ne0$，它定义的是不同层次的兼容条件。
++
++[MIT 18.117 作者课程](https://ocw.mit.edu/courses/18-117-topics-in-several-complex-variables-spring-2005/pages/lecture-notes/) 中的全纯逆函数、复流形与射影空间可用于继续核对一般框架。本页图册、配对、常函数及一形式论证构成代表性完整计算；一般复子流形、层上同调、线丛曲率与复流形分类仍是后续方向。返回 [[数学/45-复变函数/30-多复变量与复流形/00-多复变量与复流形入口|分支入口]]。
++
++来源定位：[MIT 18.117 讲义 PDF，lec07](https://ocw.mit.edu/courses/18-117-topics-in-several-complex-variables-spring-2005/989bea2ba42545febc2830a2b5f59cf2_18117_lec07.pdf) 的全纯逆函数与流形定义。课程由 Victor Guillemin 讲授，讲义由 Jonathan Campbell 整理；课程目录的课次标签与 PDF 文件编号有偏差，应以 PDF 内文主题为准。本页的射影两图、拓扑、形式与向量场计算已逐项展开。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/complex_chart_checks.py b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/complex_chart_checks.py
+new file mode 100644
+index 0000000..ff9c7cc
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/45-复变函数/30-多复变量与复流形/complex_chart_checks.py
+@@ -0,0 +1,52 @@
++"""Fixed complex-coordinate and Cauchy-integral computations; stdout JSON only."""
++import cmath
++import json
++import math
++
++
++def pair(z):
++    return [z.real, z.imag]
++
++
++def cauchy_fill(z, w, rho, count):
++    # d(zeta) = i*zeta*dtheta, so the 1/(2*pi*i) integral is this mean.
++    terms = []
++    for j in range(count):
++        zeta = rho * cmath.exp(2j * math.pi * j / count)
++        value = 1 / (2-z) + zeta*zeta
++        terms.append(value * zeta / (zeta-w))
++    return sum(terms) / count
++
++
++def main():
++    z1, z2 = 1+1j, 2-1j
++    f1, f2 = z1, z2 + z1*z1
++    inverse = (f1, f2-f1*f1)
++    z = 1+1j
++    w = 1/z
++    jacobian = -1/(z*z)
++    vector_z = 2+0j
++    vector_w = jacobian*vector_z
++    form_z = 1+0j
++    form_w = form_z/jacobian
++    fills = []
++    for n in (16, 32):
++        computed = cauchy_fill(.4, .2, .7, n)
++        fills.append({"samples": n, "computed": pair(computed),
++                      "absolute_error_against_formula": abs(computed-.665)})
++    result = {
++        "triangular_map": {"input": [pair(z1), pair(z2)],
++                           "output": [pair(f1), pair(f2)],
++                           "inverse": [pair(v) for v in inverse]},
++        "projective_chart": {"z": pair(z), "w": pair(w), "dw_dz": pair(jacobian),
++                             "vector_z": pair(vector_z), "vector_w": pair(vector_w),
++                             "form_z": pair(form_z), "form_w": pair(form_w),
++                             "pairing_z": pair(form_z*vector_z),
++                             "pairing_w": pair(form_w*vector_w)},
++        "hartogs_fill": fills,
++    }
++    print(json.dumps(result, indent=2))
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/baseline/数学/46-数理方程/00-数理方程-MOC.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/00-数理方程-MOC.md
+index 47a2757..680266d 100644
+--- a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/baseline/数学/46-数理方程/00-数理方程-MOC.md
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/00-数理方程-MOC.md
+@@ -54,6 +54,10 @@ Sturm–Liouville 谱组织分离变量；热方程的扩散与波方程的有
+ - [[数学/46-数理方程/19-差分格式稳定性CFL与收敛|差分格式稳定性CFL与收敛]]。
+ - [[数学/46-数理方程/20-有限元谱方法与数理方程综合|有限元谱方法与数理方程综合]]。
+ 
++### 从弱解走向正则性与非线性演化
++
++完成弱解、变分与 Burgers 后，进入 [[数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线|高级 PDE 代表主线]]：差分商说明系数条件怎样换来内点二阶导数，材料界面和凹角解释为何不能擅自推广；熵与黏性行波补全激波选择；热半群、不动点和平均值估计区分平滑、局部存在与有限时爆破。返回有限元与 CFL 章节时，分别检查连续解的正则性和离散方法的稳定性；小残差不能代替其中任一条件。
++
+ ### 学习验收
+ 
+ 1. 对一个初边值问题写出相容条件，证明唯一性，再验证所得表达式满足方程与数据。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md
+new file mode 100644
+index 0000000..073fbd3
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线.md
+@@ -0,0 +1,27 @@
++---
++type: moc
++domain: mathematics
++stage: 3
++aliases:
++  - 正则性与非线性演化
++prerequisites:
++  - "[[数学/46-数理方程/00-数理方程-MOC]]"
++sources:
++  - https://www.math.ucdavis.edu/~hunter/pdes/pdes.html
++  - https://web.stanford.edu/class/math220a/handouts/conservation.pdf
++---
++# 高级 PDE 代表主线：解存在以后，还能保证什么
++
++本分支承接已经存在的热/波、特征线、弱解、Lax–Milgram、Burgers、CFL 与有限元课程。读者终点是能在一个条件改变后判断“哪一步证明失效”，而不是把存在、光滑、稳定和数值可靠当作同一句保证。
++
++| 读者问题 | 连续阅读位置 | 必须独立完成的能力 |
++| --- | --- | --- |
++| 光滑特征失效后怎样选择解？ | [[数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成\|熵、黏性行波与梯度爆破]] | 由弦线不等式证明压缩激波满足全部凸熵，解行波 ODE，并排除扩张跳跃 |
++| 弱解为什么多出一阶导数？ | [[数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效\|截断、差分商与角点]] | 追踪二阶估计中系数与边界条件，构造通量连续但非 H² 的材料/角点例 |
++| 扩散为什么平滑，却未必防爆破？ | [[数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破\|热半群、局部不动点与反应]] | 证明 Fourier 平滑界、能量稳定，区分前向和反向，求非线性爆破时间与离散 CFL |
++
++需要回补定义时，返回 [[数学/46-数理方程/16-分布导数弱解与Sobolev空间|弱解与 Sobolev 空间]]；需要先核存在时，返回 [[数学/46-数理方程/17-变分原理Lax-Milgram与能量估计|强制性与 Galerkin]]；要解释离散结果为何仍不够，返回 [[数学/46-数理方程/20-有限元谱方法与数理方程综合|有限元误差与代数残差]]。本分支复用这些主解释，不将它们重新算作新课程。
++
++[固定输入小实验](pde_regularities.py) 只用 Python 标准库，运行 `python3 -B pde_regularities.py`，输出黏性行波、材料通量、角点径向积分、热模态与 8 点差分的 JSON。无训练、网络、文件写入或大型网格。手算期望在各章题解中，执行结果应另作记录；源码与公式一致也不意味着一般 PDE 定理被实验穷尽。
++
++每章标明了外部理论输入：一般 Kružkov 存在/收缩、Sobolev 平移与弱紧性、全局边界正则性和 Fourier 完备性。本组提供有完整证明或计算的代表主线；一般非线性椭圆、复杂系统守恒律、全局非线性演化与奇性分类尚未建成完整课程，不能据此关闭整个学科覆盖审计。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md
+new file mode 100644
+index 0000000..0d46872
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成.md
+@@ -0,0 +1,117 @@
++---
++type: lesson
++domain: mathematics
++stage: 3
++aliases:
++  - 标量守恒律的熵选择
++prerequisites:
++  - "[[数学/46-数理方程/05-一阶偏微分方程与特征线]]"
++  - "[[数学/46-数理方程/18-守恒律Burgers方程激波与熵条件]]"
++sources:
++  - https://web.stanford.edu/class/math220a/handouts/conservation.pdf
++  - https://www.clawpack.org/riemann_book/html/Burgers.html
++  - https://doi.org/10.1070/SM1970v010n02ABEH002156
++---
++# 熵选择、黏性极限与激波形成
++
++已有 [[数学/46-数理方程/18-守恒律Burgers方程激波与熵条件#两个完整 Riemann 问题|两个 Riemann 问题]] 算出了激波与稀疏波。本页继续回答三个更深的问题：光滑数据何时失去经典解；为何压缩跳跃满足全部凸熵；一层薄黏性过渡怎样选中同一个方向。对象限定为一维标量 Burgers 方程，不能直接搬到多分量守恒律系统。
++
++## 从光滑初值走到第一处梯度爆破
++
++取全直线方程 $u_t+(u^2/2)_x=0$，$u_0(\xi)=-\sin\xi$，也可视为周期 $2\pi$ 的问题。光滑阶段沿特征 $u=-\sin\xi$ 保持不变，位置映射为
++
++$$
++x(\xi,t)=\xi-t\sin\xi,\qquad
++\partial_\xi x=1-t\cos\xi,\qquad
++u_x=-\frac{\cos\xi}{1-t\cos\xi}.
++$$
++
++这里第三式的 $u_x$ 是沿对应位置求值。对 $0\le t<1$，位置映射导数至少 $1-t>0$，在每个周期可逆。到 $t=1,\xi=0$，$u_x\to-\infty$，而 $|u|\le1$；爆破的是斜率，不是函数值。对 $t>1$，直接继续特征会给相交的多值图，不能把它当作标量函数解。
++
++这揭示“光滑初值”与“全局光滑解”之间的缺口。若初值 $g\in C^1$ 且 $g'\ge0$，则 $1+tg'\ge1$，同一相交机制不会发生；这不意味着带其他项的非线性 PDE 也全局光滑。
++
++## 从守恒到熵：为何只算速度还不够
++
++记跳跃 $[r]=r_R-r_L$，轨迹 $x=st$。[[数学/46-数理方程/18-守恒律Burgers方程激波与熵条件#跳跃速度从薄控制体推导|控制体守恒]] 给 $s[u]=[f]$，所以 $s=(u_L+u_R)/2$。它对左右状态的两种顺序都成立，尚未选择可接受方向。
++
++对任意 $C^2$ 凸熵 $\eta$，$\eta''\ge0$，取熵通量 $q'=\eta'f'$。分片常值跳跃的分布熵产生系数是
++
++$$
++D_\eta=[q]-s[\eta].
++$$
++
++若 $u_L>u_R$，令连接通量端点的弦线 $\ell(v)=f(u_R)+s(v-u_R)$，则严格凸通量在区间内部有 $f(v)<\ell(v)$。计算
++
++$$
++\begin{aligned}
++D_\eta
++&=-\int_{u_R}^{u_L}\eta'(v)(f'(v)-s)\,dv\\
++&=\int_{u_R}^{u_L}\eta''(v)(f(v)-\ell(v))\,dv\le0.
++\end{aligned}
++$$
++
++第二行由分部积分得到，边界项为零是因为 $f-\ell$ 在两个端点都为零。这证明该压缩跳跃满足**每个光滑凸熵**的不等式，而不只检查平方熵。用光滑凸函数逼近 $|u-k|$，在有限状态区间控制被积项，即得到相应的 Kružkov 熵对 $\eta_k(u)=|u-k|$、$q_k(u)=\operatorname{sgn}(u-k)(f(u)-f(k))$。
++
++Burgers 的平方熵给更具体的数：$\eta=u^2/2,q=u^3/3$，代入并因式分解有
++
++$$
++D_\eta=-\frac{(u_L-u_R)^3}{12}.
++$$
++
++左 3、右 1 时 $s=2,D_\eta=-2/3$；交换左右仍有同样速度，却得到 $+2/3$，被熵条件排除。扩张数据正确的扇形解为 $u=1$（$x/t\le1$）、$u=x/t$（$1<x/t<3$）、$u=3$（$x/t\ge3$），不是速度 2 的跳跃。
++
++## 薄黏性层把方向选择变成一个可解 ODE
++
++加入真实方程中的黏性参数 $\varepsilon>0$：$u_t+uu_x=\varepsilon u_{xx}$。找行波 $u(x,t)=U(\xi)$，$\xi=x-st$，要求 $U(-\infty)=u_L,U(+\infty)=u_R$，且导数趋于 0。积分一次得
++
++$$
++\varepsilon U'=\tfrac12U^2-sU-C
++=\tfrac12(U-u_L)(U-u_R),\qquad s=\tfrac{u_L+u_R}{2}.
++$$
++
++端点同时成为平衡点迫使出现同一个 Rankine–Hugoniot 速度。设 $a=(u_L-u_R)/2>0$、$m=(u_L+u_R)/2$，分离变量可得
++
++$$
++U(\xi)=m-a\tanh\!\left(\frac{a\xi}{2\varepsilon}\right).
++$$
++
++直接求导得到 $\varepsilon U'=-(a^2/2)\operatorname{sech}^2(a\xi/(2\varepsilon))$；右边乘积也等于此式。因 $u_R<U<u_L$ 时乘积为负，正黏性只允许从高左态下降到低右态，不能产生把低左态接到高右态的上升异宿轨。过渡宽度量级为 $\varepsilon/a$；$\varepsilon\downarrow0$ 时在 $x\ne st$ 逐点趋于压缩激波，并在任何有限区间中由有界支配得到 $L^1$ 收敛。跳跃线上的取值不影响弱解。
++
++乘黏性方程以 $\eta'(u)$，链式法则还给
++
++$$
++\partial_t\eta(u)+\partial_xq(u)
++=\varepsilon\partial_{xx}\eta(u)-\varepsilon\eta''(u)|u_x|^2.
++$$
++
++最后一项非正，说明耗散方向来自哪里。对这个显式有界行波，前述极限已验证；对一般初值，必须另证明紧性与收敛，不能只把 $\varepsilon$ 形式上设为零。
++
++### 把“分布不等式”写成可检查的合同
++
++本页所有非线性弱解均在 $L^\infty$ 类中，因此 $f(u),\eta(u),q(u)$ 是局部可积函数，其分布导数有定义。对非负 $\varphi\in C_c^\infty(\mathbb R\times[0,\infty))$，包含初值的熵合同为
++
++$$
++\int_0^\infty\!\int_{\mathbb R}[\eta(u)\varphi_t+q(u)\varphi_x]dxdt
+++\int_{\mathbb R}\eta(u_0)\varphi(x,0)dx\ge0.
++$$
++
++符号来自把分布导数移到测试函数上。对 $t>0$ 的移动阶跃，$\partial_tH(x-st)=-s\delta(x-st)$、$\partial_xH(x-st)=\delta(x-st)$，恰给 $D_\eta\delta(x-st)$；所以前文 $D_\eta\le0$ 与该积分合同一致。初值另按 $u(t)\to u_0$ 的局部 $L^1$ 迹施加，不能只验正时间方程。
++
++对有界黏性行波，还可直接把耗散式乘非负测试积分。扩散项转移两次导数后成为 $\varepsilon\int\eta(u_\varepsilon)\varphi_{xx}$，绝对值至多 $\varepsilon C\|\varphi_{xx}\|_1\to0$，而耗散项非正。由于强局部 $L^1$ 收敛与状态范围有界，$\eta(u_\varepsilon),q(u_\varepsilon)$ 也强局部 $L^1$ 收敛，故极限满足熵不等式。这解释了为何强收敛足以通过非线性极限，以及一般黏性极限为何需要额外紧性论证。
++
++## 哪些一般结论仍要额外定理
++
++对 $f\in C^1(\mathbb R)$、有界初值，一维标量 Kružkov 理论在满足初始局部 $L^1$ 迹和全部 $|u-k|$ 熵不等式的有界解类中给唯一性；若两个初值之差在 $L^1(\mathbb R)$，对应解满足 $L^1$ 收缩。一般存在、唯一性与稳定性的一手依据为 [Kružkov 1970 原论文](https://doi.org/10.1070/SM1970v010n02ABEH002156)。完整存在性与双变量法收缩证明是这里明确调用的外部理论，不能由一个行波或一个熵反例替代。本页完整证明的是压缩 Riemann 跳跃的全部凸熵条件和显式黏性行波极限；多维系统、边界熵条件与非凸通量复合波未在本页证明。
++
++## 从理论返回数值通量与迁移题
++
++保守有限体积更新 $U_j^{n+1}=U_j^n-(\Delta t/\Delta x)(F_{j+1/2}-F_{j-1/2})$ 把内部通量成对抵消，因而可保持离散总质量。但总质量守恒只对应 Rankine–Hugoniot 层，不能单独保证熵选择；稳定或熵性质需检查具体数值通量与 CFL。回到 [[数学/46-数理方程/19-差分格式稳定性CFL与收敛|CFL 与差分稳定性]] 时应分别问“波速是否正确”和“是否选中了熵解”。
++
++**无步骤迁移：** 左态 2、右态 -2，取 $\varepsilon=0.1$。（1）求行波速度、中心值、中心斜率、平方熵产生。（2）若把黏性改成负值，行波方向反转是否意味着原守恒律的熵解应改判？（3）一个程序在左态 -2、右态 2 的数据中给出静止跳跃且总质量守恒，应检查什么？
++
++> [!question]- 可核答案
++> （1）$s=m=0,a=2$，$U(\xi)=-2\tanh(10\xi)$，中心值 0，$U'(0)=-20$，$D_\eta=-4^3/12=-16/3$。（2）负黏性改变为反扩散问题；耗散项符号反转，原先正黏性所选的熵条件不能因此改变。（3）此跳跃满足速度条件但熵产生 $+16/3$；应检查数值通量的熵/单调性质及步长，不以守恒量一项签收。正确稀疏波扇跨越速度 -2 到 2。
++
++返回 [[数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线|高级 PDE 代表主线]]。小实验只核行波公式和固定状态的通量/熵数值；它不替代上述全状态区间论证。
++
++来源定位：[Kružkov 1970 原文全文](https://www.mathnet.ru/php/getFT.phtml?jrnid=sm&paperid=3372&what=fullteng) §2 定义广义解，§3 处理唯一性与稳定性，§4 处理消失黏性存在；一般变系数/带源方程另有原文的光滑和增长条件，不能由本页自治标量合同自动覆盖。Burgers 的特征与熵方向可对照 [Stanford Math 220A 守恒律讲义](https://web.stanford.edu/class/math220a/handouts/conservation.pdf)。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md
+new file mode 100644
+index 0000000..f33ebe7
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/02-椭圆内点正则性与角点失效.md
+@@ -0,0 +1,155 @@
++---
++type: lesson
++domain: mathematics
++stage: 3
++aliases:
++  - 椭圆正则性与有限元误差条件
++prerequisites:
++  - "[[数学/46-数理方程/16-分布导数弱解与Sobolev空间]]"
++  - "[[数学/46-数理方程/17-变分原理Lax-Milgram与能量估计]]"
++sources:
++  - https://www.math.ucdavis.edu/~hunter/pdes/ch4.pdf
++  - https://arxiv.org/abs/1709.08618
++---
++# 椭圆内点正则性与角点失效
++
++[[数学/46-数理方程/17-变分原理Lax-Milgram与能量估计#Lax–Milgram 的条件与意义|Lax–Milgram]] 已解决一类弱解的存在唯一性。本页问下一步：解只有一次弱导数可平方积分时，方程能否强迫第二次导数也可平方积分？答案取决于系数、数据及边界，不能由离散矩阵可逆自动推出。
++
++## 先固定方程、空间和估计范围
++
++在 $\Omega\subset\mathbb R^d$ 考虑实散度型方程
++
++$$
++-\operatorname{div}(A(x)\nabla u)=f,
++\qquad \int_\Omega A\nabla u\cdot\nabla v=\int_\Omega fv.
++$$
++
++以下取 $A=A^T$，几乎处处满足 $\lambda|\xi|^2\le\xi^TA(x)\xi\le\Lambda|\xi|^2$，$0<\lambda\le\Lambda<\infty$。称统一椭圆性；本页不处理退化系数。$u\in H^1(\Omega)$ 是局部弱解，测试函数取紧支于 $\Omega$ 的 $H^1$ 函数，$f\in L^2(\Omega)$。局部估计只控制 $\Omega'\Subset\Omega$，不预先要求边界条件。若要求全局零 Dirichlet 解，另设有界 Lipschitz 域、$u\in H_0^1$，已有强制性理论适用。
++
++所有长度已无量纲化；若来自导热模型，$A$ 表导热张量、$-A\nabla u$ 表通量，统一椭圆性表示每个方向都有正导热能力，不是说材料处处相同。
++
++## 截断测试先把内点梯度控制住
++
++取球 $B_r\subset B_R\Subset\Omega$，光滑截断 $0\le\eta\le1$，在 $B_r$ 为 1、在 $B_R$ 外为 0，$|\nabla\eta|\le C/(R-r)$。允许以 $v=\eta^2u$ 测试，得到
++
++$$
++\int\eta^2 A\nabla u\cdot\nabla u
++=\int f\eta^2u-2\int\eta u A\nabla u\cdot\nabla\eta.
++$$
++
++左边至少 $\lambda\int\eta^2|\nabla u|^2$。交叉项用 $2ab\le\delta a^2+\delta^{-1}b^2$，选 $\delta$ 使一半梯度项吸收回左侧；源项用 Cauchy–Schwarz。由此
++
++$$
++\int_{B_r}|\nabla u|^2
++\le C\left[(R-r)^{-2}\|u\|_{L^2(B_R)}^2
+++\|f\|_{L^2(B_R)}\|u\|_{L^2(B_R)}\right].
++$$
++
++$C$ 依赖 $d,\lambda,\Lambda$ 和截断构造，不依赖待估的 $u$。这条 Caccioppoli 型估计说明只要远离边界，函数量级与源项已能控制梯度；此步只需系数有界与椭圆性，尚未用系数可微。
++
++## 差分商给出内点二阶弱导数
++
++现在再假定 $A\in W^{1,\infty}_{\rm loc}(\Omega)$。这项新条件用于控制系数的一阶变化，不是装饰。选择支撑更小的截断 $\eta$，固定坐标方向 $e_k$，对足够小的 $h\ne0$ 定义
++
++$$
++D_hu(x)=\frac{u(x+he_k)-u(x)}h.
++$$
++
++在支持均留在 $\Omega$ 的情况下，变量替换给离散分部积分 $\int gD_{-h}w=-\int(D_hg)w$。以 $v=-D_{-h}(\eta^2D_hu)$ 测试弱方程，得到
++
++$$
++\int D_h(A\nabla u)\cdot\nabla(\eta^2D_hu)
++=-\int fD_{-h}(\eta^2D_hu).
++$$
++
++乘积差分不是直接套普通乘积法则，而是精确等式
++
++$$
++D_h(A\nabla u)=A(x+he_k)\nabla D_hu+(D_hA)\nabla u.
++$$
++
++把它和 $\nabla(\eta^2D_hu)=\eta^2\nabla D_hu+2\eta D_hu\nabla\eta$ 代入。主项至少是 $\lambda\|\eta\nabla D_hu\|_2^2$。其余项逐项需要三个界：
++
++- $\|D_hA\|_\infty\le\|\partial_k A\|_\infty$；这正是新增系数条件的用途。
++- $\|D_hu\|_{L^2(K)}\le\|\partial_ku\|_{L^2(K_h)}$，其中 $K_h$ 包住平移线段；由 $D_hu=\int_0^1\partial_ku(x+she_k)ds$、Jensen 和平移积分得到。
++- 对源项不求 $f$ 的导数，而用 $\|D_{-h}w\|_2\le\|\partial_kw\|_2$，令 $w=\eta^2D_hu$。
++
++把吸收步骤展开，才能看清没有偷偷要求 $f\in H^1$。固定一个包含所有小平移的紧邻域 $K\Subset\Omega$，记 $X=\|\eta\nabla D_hu\|_2$、$Y=\|u\|_{H^1(K)}$、$F=\|f\|_{L^2(K)}$，$L=\|\nabla A\|_{L^\infty(K)}$、$b=\|\nabla\eta\|_\infty$。除主项外，三项的绝对值分别不超过 $2\Lambda bXY$、$LXY$、$2LbY^2$；而源项不超过 $F(X+2bY)$。所以
++
++$$
++\lambda X^2\le (2\Lambda b+L)XY+2LbY^2+FX+2bFY.
++$$
++
++对 $XY$、$FX$ 分别使用 Young 不等式，合计吸收至多 $\lambda X^2/2$；对 $FY$ 用 $2FY\le F^2+Y^2$。所得常数只依赖 $\lambda,\Lambda,L,b$，不依赖 $h$。因此得到与 $h$ 无关的界
++
++$$
++\|\eta\nabla D_hu\|_2^2
++\le C\bigl(\|f\|_{L^2(K_h)}^2+\|u\|_{H^1(K_h)}^2\bigr).
++$$
++
++为什么这真给导数，而不是只给一堆离散差分？$L^2$ 中有界序列有弱收敛子列。若 $D_h\partial_j u\rightharpoonup w$，对光滑紧支 $\psi$，离散分部积分与 $D_{-h}\psi\to\partial_k\psi$ 给
++
++$$
++\int w\psi=\lim_h\int D_h(\partial_ju)\psi
++=-\int(\partial_ju)\partial_k\psi.
++$$
++
++因此 $w$ 正是 $\partial_k\partial_ju$ 的弱导数。每个方向都做一次，有限覆盖得 $u\in H^2(\Omega')$，且
++
++$$
++\|u\|_{H^2(\Omega')}\le C_{\Omega',\Omega,A}
++(\|f\|_{L^2(\Omega)}+\|u\|_{H^1(\Omega)}).
++$$
++
++测试合法性可先用 $H^1$ 函数的平移和紧支截断，再以光滑逼近传递弱式；没有先假定 $u\in H^2$。本论证调用了 Sobolev 平移性质与 Hilbert 空间有界序列弱紧性，后者是泛函分析输入。它证明的是局部 $H^2$，不是每个点都有经典二阶导数。
++
++## 系数跳变时，通量连续也可以有折角
++
++在 $(-1,1)$ 取 $a(x)=1$（$x<0$）、$a(x)=2$（$x>0$），令
++
++$$
++u(x)=\begin{cases}x,&x\le0,\\x/2,&x>0.\end{cases}
++$$
++
++$u$ 连续，$u'\in L^2$，且 $a(x)u'(x)=1$ 几乎处处，所以对任意紧支测试 $v$ 有 $\int au'v'=\int v'=0$：它是 $-(au')'=0$ 的弱解。但 $u'$ 从 1 跳到 $1/2$，故 $u''=-\tfrac12\delta_0$，不是 $L^2$ 函数。这里统一椭圆性仍成立，失败的是系数的 Lipschitz 条件。若用于两层材料导热，连续的是通量；强迫温度梯度也连续会改变界面物理。
++
++## 光滑系数也不能消除凹角奇性
++
++取二维扇形 $\Omega=\{0<r<1,\ 0<\theta<3\pi/2\}$，这是有凹角的 Lipschitz 域。令 $\alpha=2/3$，$w=r^\alpha\sin(\alpha\theta)$。极坐标 Laplace 算子给
++
++$$
++\Delta w=\partial_{rr}w+r^{-1}\partial_rw+r^{-2}\partial_{\theta\theta}w
++=[\alpha(\alpha-1)+\alpha-\alpha^2]r^{\alpha-2}\sin(\alpha\theta)=0.
++$$
++
++取径向光滑截断 $\chi$，在 $r<1/4$ 为 1、在 $r>1/2$ 为 0，令 $u=\chi w$。两条径向边上的正弦为零，外圆附近又为零，故 $u\in H_0^1(\Omega)$：原点附近梯度平方积分形如 $\int_0^{1/4}r^{2\alpha-1}dr<\infty$。$f=-\Delta u$ 只在截断变化的环带非零，所以 $f\in L^2$，系数还是最光滑的 $A=I$。
++
++还可以直接核对零迹与弱方程没有遗漏顶点：用径向截断在 $r<\delta$ 令函数为零，在 $r>2\delta$ 恢复原函数。删去部分的 $H^1$ 范数平方及截断导数误差均为 $O(\delta^{2\alpha})\to0$；远离顶点时它是光滑零迹函数，再作标准边界逼近即属于 $H_0^1$。顶点在域的边界，不在内部；每个 $C_c^\infty(\Omega)$ 测试都避开它，因此分布方程内没有隐藏的顶点 Dirac 源。由 $H_0^1$ 稠密性，弱式延伸到全部零迹测试。
++
++二阶不可积也能避免仅凭“量级”判断。局部把 $w$ 写作 $\operatorname{Im}(x+iy)^\alpha$，则 $w_{xx}=\operatorname{Im}(\alpha(\alpha-1)z^{\alpha-2})$、$w_{xy}=\operatorname{Re}(\alpha(\alpha-1)z^{\alpha-2})$、$w_{yy}=-w_{xx}$，所以 Hessian 的 Frobenius 范数精确为
++
++$$
++|D^2w|_F^2=2\alpha^2(\alpha-1)^2r^{2\alpha-4}.
++$$
++
++在 $\alpha=2/3$ 时系数严格为正，面积元再乘 $r$，平方积分包含
++
++$$
++\int_0^{1/4}r^{2\alpha-3}dr
++=\int_0^{1/4}r^{-5/3}dr=\infty.
++$$
++
++故 $u\notin H^2(\Omega)$。这不反驳内点估计：每个 $\Omega'\Subset\Omega$ 都避开边界顶点。一个可使用的全局充分条件是有界 $C^2$ 域、$A\in C^1(\overline\Omega)$ 对称统一椭圆、$f\in L^2$、零 Dirichlet 数据，此时全局 $H^2$ 及估计由边界正则性定理给出。本页不证明边界展平与法向导数估计；凹角例精确显示为何不能删除域条件。更弱的边界假设、$W^{2,p}$、Schauder 和非线性椭圆正则性需要各自附加理论。
++
++## 返回有限元：误差率缺的可能是解，而不是求解器
++
++[[数学/46-数理方程/20-有限元谱方法与数理方程综合#误差率从逼近与正交相接|有限元误差推导]] 把 $H^2$ 插值界接到 Céa，给一阶能量误差。凹角例中这个 $H^2$ 范数无限，不能继续代入同一个界并声称仍有其保证；可选择局部加密、适合角点的空间，或用实际较弱的正则性重新估计。小代数残差只说明离散方程求得准，不能恢复不存在的连续正则性。
++
++**迁移题：**（1）在材料例中若误把 $u=x$ 作为两侧解，求分布 $-(au')'$。（2）扇形改为角度 $\omega$，取 $r^{\pi/\omega}\sin(\pi\theta/\omega)$，二阶导数的可积阈值是什么？为何 $\omega=\pi$ 要单独检查？（3）仅将线性求解器容差减小 100 倍，会使原凹角解属于 $H^2$ 吗？
++
++> [!question]- 可核答案
++> （1）通量从 1 跳到 2，故 $-(au')'=-\delta_0$，凭空加入了界面点源。（2）令 $\alpha=\pi/\omega$，一般非退化奇性要求 $2\alpha-3>-1$，即 $\alpha>1$、$\omega<\pi$。当 $\omega=\pi$，函数是 $r\sin\theta=y$，二阶导数恰为零，不能仅按量级上界误判发散。（3）不能；这是解空间与边界几何的性质，代数求解精度不改变它。
++
++本页一般定理定位可查 Hunter [椭圆方程讲义](https://www.math.ucdavis.edu/~hunter/pdes/ch4.pdf) 的内点与边界正则性段；材料与扇形算例提供独立可算的条件测试。返回 [[数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线|高级 PDE 代表主线]]。
++
++来源定位：Hunter 第 4 章 §4.11，Theorem 4.27（印刷 p.112）给内点估计；§4.12，Theorem 4.30（p.115）给 $C^2$ 边界零 Dirichlet 条件。本页把差分商中实际使用的系数条件写为局部 $W^{1,\infty}$，并在上文逐项证明；不能把讲义中 $C^1$ 的陈述直接当成更弱条件的无说明引用。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md
+new file mode 100644
+index 0000000..a0caaa8
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破.md
+@@ -0,0 +1,142 @@
++---
++type: lesson
++domain: mathematics
++stage: 3
++aliases:
++  - 热半群平滑与反应扩散边界
++prerequisites:
++  - "[[数学/46-数理方程/08-热核全空间问题与Duhamel原理]]"
++  - "[[数学/46-数理方程/19-差分格式稳定性CFL与收敛]]"
++sources:
++  - https://www.math.ucdavis.edu/~hunter/pdes/ch5.pdf
++  - https://www.math.ucdavis.edu/~hunter/pdes/ch6.pdf
++---
++# 抛物平滑、能量与非线性爆破
++
++扩散消除高频起伏，但“有扩散”不等于“所有非线性解都稳定且永不爆破”。本页先在可完整求解的周期热方程中证明平滑和稳定，再加入一个反应项，追踪局部存在证明与全局保证之间的缺口。
++
++## 同一个周期模型，从 Fourier 系数构造解
++
++取圆周 $\mathbb T=\mathbb R/(2\pi\mathbb Z)$，时间 $t\ge0$，扩散系数 $\kappa>0$，方程 $u_t=\kappa u_{xx}$。用归一化范数 $\|u\|_2^2=(2\pi)^{-1}\int_0^{2\pi}|u|^2dx$，初值 $u_0\in L^2(\mathbb T)$ 的 Fourier 系数为 $\widehat u_0(n)$。标准 Fourier 完备性与 Parseval 是本段输入。
++
++每个模态满足 $\dot{\widehat u}(n)=-\kappa n^2\widehat u(n)$，于是定义
++
++$$
++u(t,x)=\sum_{n\in\mathbb Z}e^{-\kappa n^2t}\widehat u_0(n)e^{inx}.
++$$
++
++乘子模不超过 1，故级数在 $L^2$ 收敛。由可求和的 $|\widehat u_0(n)|^2$ 支配，$\|u(t)-u_0\|_2\to0$。对每个 $t>0$，Gaussian 衰减压过任何 $n$ 的幂，Cauchy–Schwarz 保证求导级数一致收敛，因此 $u$ 空间光滑并满足方程。这里初值以 $L^2$ 恢复，不能从中推出每个初值点的逐点恢复。
++
++对任何整数 $m\ge1$，最大化 $y^{m/2}e^{-y}$ 得最大点 $y=m/2$，于是
++
++$$
++\|\partial_x^m u(t)\|_2
++\le \left(\frac{m}{2e}\right)^{m/2}(\kappa t)^{-m/2}\|u_0\|_2.
++$$
++
++这就是可量化的瞬时平滑：导数存在，但估计在 $t\downarrow0$ 变坏，不能把粗糙初值突然改判为光滑。此处 $x$ 的周期已规范为 $2\pi$；换空间长度时，$n$ 必须相应乘波数尺度，$\kappa$ 的单位是长度平方/时间。
++
++## 能量、唯一性与前向稳定来自同一个负号
++
++先对光滑周期解积分分部，周期边界项相消：
++
++$$
++\frac12\frac d{dt}\|u(t)\|_2^2
++=-\kappa\|u_x(t)\|_2^2.
++$$
++
++对任意 $L^2$ 初值，可先在正时间或有限模态上计算，再利用 Parseval 与单调收敛得到
++
++$$
++\|u(t)\|_2^2+2\kappa\int_0^t\|u_x(s)\|_2^2ds=\|u_0\|_2^2.
++$$
++
++两解之差仍满足热方程，因此 $\|u(t)-v(t)\|_2\le\|u_0-v_0\|_2$，在这一能量解类中同时给唯一性与初值连续依赖。常数模 $n=0$ 不衰减，平均值守恒；零平均数据才有 $\|u(t)\|_2\le e^{-\kappa t}\|u_0\|_2$，不能漏掉零模就声称全部温度趋于 0。
++
++例如 $u_0=1+\sin(4x)$，解为 $1+e^{-16\kappa t}\sin(4x)$，$\|u(t)\|_2^2=1+\tfrac12e^{-32\kappa t}$。起伏消失，平均值仍为 1。
++
++前向稳定也不意味着逆向稳定。给定终时 $T>0$，终态误差 $e^{-\kappa n^2T/2}\sin(nx)$ 的范数趋于 0，反推初态却要乘 $e^{\kappa n^2T}$，得到发散的 $e^{\kappa n^2T/2}\sin(nx)$。因此正时间平滑会丢失可稳定反演的高频信息；这与 [[数学/20-线性代数与几何/14-最小二乘伪逆与正则化|逆算子与正则化]] 的小奇异值问题可相互核对，但此处谱中有无穷多个趋零乘子。
++
++## 加入反应项后，局部存在仍可证明
++
++考虑相同周期边界的 $u_t=\kappa u_{xx}+u^2$，连续初值 $u_0\in C(\mathbb T)$，记 $M=\|u_0\|_\infty>0$。将 [[数学/46-数理方程/08-热核全空间问题与Duhamel原理#热核是一单位瞬时点热源的响应|全直线热核]] 周期化为 $K_t^{\mathrm{per}}(x)=\sum_{k\in\mathbb Z}K_t(x+2\pi k)$，并以普通 $dx$ 在一个周期卷积，定义 $H_t$。其核非负且 $\int_0^{2\pi}K_t^{\mathrm{per}}dx=1$，所以 $\|H_tf\|_\infty\le\|f\|_\infty$；连续周期函数一致连续，由近似恒等的近处/远处估计还有 $\|H_tf-f\|_\infty\to0$。这给出下面不动点映射所需的时间连续性；此处核质量使用普通积分，与前面的归一化 $L^2$ 范数约定不冲突。Duhamel 写成不动点问题
++
++$$
++(\Phi u)(t)=H_tu_0+\int_0^tH_{t-s}(u(s)^2)ds.
++$$
++
++在完备空间 $C([0,T],C(\mathbb T))$ 中取闭球 $\|u\|_{\infty,t}\le2M$。若 $T\le1/(8M)$，则
++
++$$
++\|\Phi u\|_{\infty,t}\le M+4M^2T\le\tfrac32M<2M,
++$$
++
++而 $|u^2-v^2|\le4M|u-v|$ 给
++
++$$
++\|\Phi u-\Phi v\|_{\infty,t}\le4MT\|u-v\|_{\infty,t}\le\tfrac12\|u-v\|_{\infty,t}.
++$$
++
++Banach 不动点定理因此给这个时间段内球中的唯一 mild 解；任意有界连续解在足够小区间同样用局部 Lipschitz 估计比较，可续接局部唯一性。$M=0$ 时零解单独成立。这个构造真正使用了初值幅度来选择时间，不能删去 $T$ 的限制就宣称全局存在。mild 解到经典解的额外正则性属于抛物正则化理论；下面的光滑常数解可直接验证，无需借此升级一般初值结论。
++
++### 从局部构造得到精确的续接判据
++
++同一构造可从任意已有时刻 $t_0$ 重新开始，因为 $H_tH_s=H_{t+s}$，把 Duhamel 的积分在 $t_0$ 分开就得到初值为 $u(t_0)$ 的同一问题。若 $\|u(t)\|_\infty\le B$ 在有限区间 $0\le t<T_*$ 一致成立，取 $B_0=\max(B,1)$，每次重启都有至少 $1/(8B_0)$ 的共同存在时间。选 $t_0$ 足够接近 $T_*$，新解便跨过 $T_*$；重叠时间上由局部唯一性与旧解一致。因此最大 mild 解若在有限 $T_*$ 停止，必有 $\limsup_{t\uparrow T_*}\|u(t)\|_\infty=\infty$。证明没有先假定 $u(T_*)$ 已存在，也没有把“局部不动点收敛”误当无限时间收敛。
++
++这里的系数约定也必须一致：写 $u_t=\kappa u_{xx}+u^2$ 时已将反应系数规范为 1。若 $u$ 是具有单位的浓度，应写 $+\beta u^2$，$[\beta]=1/([u]\,[t])$；局部时间界变为 $1/(8|\beta|M)$（$\beta\ne0$），正反应的常数解爆破时间变为 $1/(\beta c)$。
++
++## 完整失败例：扩散挡不住空间常数的爆破
++
++取初值恒为 $c>0$。空间导数全为 0，PDE 退化为 $a'=a^2,a(0)=c$，积分得
++
++$$
++u(t,x)=a(t)=\frac c{1-ct},\qquad 0\le t<1/c.
++$$
++
++在 $T_*=1/c$ 幅度趋于无穷。扩散没有“失灵”：常数场没有梯度可供扩散耗散，反应项仍持续放大。能量等式也已改变为
++
++$$
++\frac12\frac d{dt}\|u\|_2^2
++=-\kappa\|u_x\|_2^2+(2\pi)^{-1}\int u^3dx,
++$$
++
++最后一项可能为正，线性方程的收缩证明就不能照抄。
++
++若在共同时间段已知两个解 $|u|,|v|\le B$，差 $w$ 满足 $w_t=\kappa w_{xx}+(u+v)w$，同样积分给 $\frac12d\|w\|_2^2/dt\le2B\|w\|_2^2$，从而 $\|w(t)\|_2\le e^{2Bt}\|w(0)\|_2$。这是有界区间上的稳定性，不是全局收缩；在接近爆破时不能假定一个统一有限的 $B$。
++
++### 不只常数解：正平均值也给爆破上界
++
++这个结论能迁移到非均匀数据，且不需要假定一般 mild 解已是经典解。记 $m(t)=(2\pi)^{-1}\int u(t,x)dx$。热半群保平均，直接在 Duhamel 式中积分得到
++
++$$
++m(t)=m(0)+\int_0^t(2\pi)^{-1}\int u(s,x)^2\,dx\,ds,
++\qquad m'(t)=\overline{u^2}(t)\ge m(t)^2.
++$$
++
++连续性保证右端连续，最后一步是 Cauchy–Schwarz。若 $m(0)>0$，则 $m(t)>0$，所以 $(1/m)'=-m'/m^2\le-1$，从而 $m(t)\ge m(0)/(1-m(0)t)$，只要 $t<\min(T_*,1/m(0))$。若解能越过 $1/m(0)$，连续函数在该紧时间区间有界，与这个下界矛盾。因此 $T_*\le1/m(0)$；结合续接判据可知失效表现为无穷范数无界。这里不要求初值逐点非负；正平均已经足够。
++
++例如 $u_0=2+\cos x$ 的平均为 2，最大解不能存在到超过 $1/2$，但本估计没有断言爆破时间恰为 $1/2$，更没有给出爆破位置。常数数据达到这个上界；非均匀数据还含方差 $m'=m^2+\overline{(u-m)^2}$。这条无限维积分论证不能由八节点计算替代。
++
++## 离散稳定还要单独检查时间方法
++
++周期均匀网格、步长 $h$，显式 Euler 加中心二阶差分给 $U_j^{n+1}=U_j^n+r(U_{j+1}^n-2U_j^n+U_{j-1}^n)$，$r=\kappa\Delta t/h^2$。离散 Fourier 模态 $e^{ij\theta}$ 的放大因子为
++
++$$
++g(\theta)=1-4r\sin^2(\theta/2).
++$$
++
++所有网格频率都满足 $|g|\le1$ 的充分条件为 $0\le r\le1/2$；偶数节点时最高频 $\theta=\pi$ 使条件也必要。取 8 节点最高频 $(-1)^j$，$r=0.4$ 每步乘 -0.6，$r=0.6$ 每步乘 -1.4，后者能量增长。连续方程耗散，不保证任意离散步长耗散；加入反应项还须检查其离散更新，不能把扩散 CFL 当成全部稳定条件。
++
++**迁移题：**（1）把线性热方程初值改成 $3+2\cos(2x)$，求均值与随时间变化的能量。（2）反应改成 $-u^3$ 后，光滑周期解的能量方向怎样变？这项计算是否已完成任意粗糙初值的存在理论？（3）同一个最高频模式，显式 Euler 的 $r=0.6$ 迭代两步后幅度比和平方能量比分别多少？
++
++> [!question]- 可核答案
++> （1）$u=3+2e^{-4\kappa t}\cos(2x)$，均值 3，归一化平方能量 $9+2e^{-8\kappa t}$。（2）多出 $-\int u^4/(2\pi)$，与梯度项都非正；它提供先验耗散界，但弱解构造、紧性与非线性极限仍须证明。（3）幅度乘 $(-1.4)^2=1.96$，能量乘 $1.96^2=3.8416$；符号两次翻转不能掩盖不稳定。
++
++返回 [[数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线|高级 PDE 代表主线]]。这里已证明周期热方程的代表性平滑/能量链与一个非线性局部构造；一般变系数抛物理论、临界指数、弱解的全局存在及复杂非线性系统仍有独立前提。
++
++**撤去方法提示的迁移：** 初值改为 $u_0=1+2\cos x$，仍为周期方程 $u_t=\kappa u_{xx}+u^2$。能否给出有限的最大存在时间上界？若改成区间上的零 Dirichlet 边界，同一结论能否原样推出？
++
++> [!question]- 可核答案
++> 周期初值平均为 1，虽有负值，前文平均不等式仍给 $T_*\le1$。零 Dirichlet 边界的空间积分多出扩散边界通量 $\kappa[u_x]_{\rm left}^{\rm right}$，不再有 $m'=\overline{u^2}$，因此这份证明不能原样转移；这并没有证明新问题永不爆破。
++
++来源定位：[Hunter 第 5 章](https://www.math.ucdavis.edu/~hunter/pdes/ch5.pdf) §5.4 的半群与非线性演化、§5.5 的半线性热方程，提供一般框架；此页周期 Fourier 估计、闭球常数、续接与正平均爆破上界均在指定模型中自行推导。常数输入实验仅核 $c=2$ 的显式公式，不数值认证非均匀爆破定理。
+diff --git a/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/pde_regularities.py b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/pde_regularities.py
+new file mode 100644
+index 0000000..6c422da
+--- /dev/null
++++ b/.wwl-recovery/2026-10-10-crash/author209pdecomplex/candidate/数学/46-数理方程/30-正则性与非线性演化/pde_regularities.py
+@@ -0,0 +1,49 @@
++"""Small fixed-input PDE checks; JSON stdout only, no external dependencies."""
++import json
++import math
++
++
++def shock(left, right, epsilon, xi):
++    midpoint = (left + right) / 2
++    halfjump = (left - right) / 2
++    th = math.tanh(halfjump * xi / (2 * epsilon))
++    value = midpoint - halfjump * th
++    derivative = -halfjump ** 2 / (2 * epsilon) * (1 - th * th)
++    return {"xi": xi, "U": value, "U_prime": derivative,
++            "epsilon_U_prime": epsilon * derivative,
++            "product_rhs": (value - left) * (value - right) / 2}
++
++
++def explicit_heat(r, steps):
++    values = [(-1.0) ** j for j in range(8)]
++    for _ in range(steps):
++        values = [values[j] + r * (values[(j+1) % 8] - 2*values[j] + values[(j-1) % 8])
++                  for j in range(8)]
++    return {"r": r, "steps": steps, "values": values,
++            "mean_square": sum(x*x for x in values) / len(values)}
++
++
++def main():
++    alpha = 2/3
++    result = {
++        "burgers": {"left": 2, "right": -2, "epsilon": 0.1,
++                    "speed": 0, "entropy_production": -(2-(-2))**3/12,
++                    "samples": [shock(2, -2, .1, x) for x in (-.1, 0, .1)]},
++        "material": [{"a": a, "slope": 1/a, "flux": a*(1/a)} for a in (1, 2)],
++        "corner": {
++            "alpha": alpha, "laplace_coefficient": alpha*(alpha-1)+alpha-alpha**2,
++            "H1_radial_integral_0_to_quarter": .25**(2*alpha)/(2*alpha),
++            "H2_radial_truncations": [
++                {"cutoff": eps, "integral": (eps**(-2/3)-.25**(-2/3))*1.5}
++                for eps in (.1, .01, .001)]},
++        "heat_mode": [{"t": t, "amplitude": math.exp(-16*t),
++                       "mean_square": 1 + .5*math.exp(-32*t)} for t in (0, .1, .25)],
++        "explicit_heat": [explicit_heat(r, n) for r in (.4, .6) for n in (1, 2)],
++        "constant_reaction": {"c": 2, "blowup_time": .5,
++                              "samples": [{"t": t, "u": 2/(1-2*t)} for t in (0, .1, .25, .4)]},
++    }
++    print(json.dumps(result, indent=2))
++
++
++if __name__ == "__main__":
++    main()

@@ -1,0 +1,155 @@
+---
+type: lesson
+domain: mathematics
+stage: 3
+aliases:
+  - 椭圆正则性与有限元误差条件
+prerequisites:
+  - "[[数学/46-数理方程/16-分布导数弱解与Sobolev空间]]"
+  - "[[数学/46-数理方程/17-变分原理Lax-Milgram与能量估计]]"
+sources:
+  - https://www.math.ucdavis.edu/~hunter/pdes/ch4.pdf
+  - https://arxiv.org/abs/1709.08618
+---
+# 椭圆内点正则性与角点失效
+
+[[数学/46-数理方程/17-变分原理Lax-Milgram与能量估计#Lax–Milgram 的条件与意义|Lax–Milgram]] 已解决一类弱解的存在唯一性。本页问下一步：解只有一次弱导数可平方积分时，方程能否强迫第二次导数也可平方积分？答案取决于系数、数据及边界，不能由离散矩阵可逆自动推出。
+
+## 先固定方程、空间和估计范围
+
+在 $\Omega\subset\mathbb R^d$ 考虑实散度型方程
+
+$$
+-\operatorname{div}(A(x)\nabla u)=f,
+\qquad \int_\Omega A\nabla u\cdot\nabla v=\int_\Omega fv.
+$$
+
+以下取 $A=A^T$，几乎处处满足 $\lambda|\xi|^2\le\xi^TA(x)\xi\le\Lambda|\xi|^2$，$0<\lambda\le\Lambda<\infty$。称统一椭圆性；本页不处理退化系数。$u\in H^1(\Omega)$ 是局部弱解，测试函数取紧支于 $\Omega$ 的 $H^1$ 函数，$f\in L^2(\Omega)$。局部估计只控制 $\Omega'\Subset\Omega$，不预先要求边界条件。若要求全局零 Dirichlet 解，另设有界 Lipschitz 域、$u\in H_0^1$，已有强制性理论适用。
+
+所有长度已无量纲化；若来自导热模型，$A$ 表导热张量、$-A\nabla u$ 表通量，统一椭圆性表示每个方向都有正导热能力，不是说材料处处相同。
+
+## 截断测试先把内点梯度控制住
+
+取球 $B_r\subset B_R\Subset\Omega$，光滑截断 $0\le\eta\le1$，在 $B_r$ 为 1、在 $B_R$ 外为 0，$|\nabla\eta|\le C/(R-r)$。允许以 $v=\eta^2u$ 测试，得到
+
+$$
+\int\eta^2 A\nabla u\cdot\nabla u
+=\int f\eta^2u-2\int\eta u A\nabla u\cdot\nabla\eta.
+$$
+
+左边至少 $\lambda\int\eta^2|\nabla u|^2$。交叉项用 $2ab\le\delta a^2+\delta^{-1}b^2$，选 $\delta$ 使一半梯度项吸收回左侧；源项用 Cauchy–Schwarz。由此
+
+$$
+\int_{B_r}|\nabla u|^2
+\le C\left[(R-r)^{-2}\|u\|_{L^2(B_R)}^2
++\|f\|_{L^2(B_R)}\|u\|_{L^2(B_R)}\right].
+$$
+
+$C$ 依赖 $d,\lambda,\Lambda$ 和截断构造，不依赖待估的 $u$。这条 Caccioppoli 型估计说明只要远离边界，函数量级与源项已能控制梯度；此步只需系数有界与椭圆性，尚未用系数可微。
+
+## 差分商给出内点二阶弱导数
+
+现在再假定 $A\in W^{1,\infty}_{\rm loc}(\Omega)$。这项新条件用于控制系数的一阶变化，不是装饰。选择支撑更小的截断 $\eta$，固定坐标方向 $e_k$，对足够小的 $h\ne0$ 定义
+
+$$
+D_hu(x)=\frac{u(x+he_k)-u(x)}h.
+$$
+
+在支持均留在 $\Omega$ 的情况下，变量替换给离散分部积分 $\int gD_{-h}w=-\int(D_hg)w$。以 $v=-D_{-h}(\eta^2D_hu)$ 测试弱方程，得到
+
+$$
+\int D_h(A\nabla u)\cdot\nabla(\eta^2D_hu)
+=-\int fD_{-h}(\eta^2D_hu).
+$$
+
+乘积差分不是直接套普通乘积法则，而是精确等式
+
+$$
+D_h(A\nabla u)=A(x+he_k)\nabla D_hu+(D_hA)\nabla u.
+$$
+
+把它和 $\nabla(\eta^2D_hu)=\eta^2\nabla D_hu+2\eta D_hu\nabla\eta$ 代入。主项至少是 $\lambda\|\eta\nabla D_hu\|_2^2$。其余项逐项需要三个界：
+
+- $\|D_hA\|_\infty\le\|\partial_k A\|_\infty$；这正是新增系数条件的用途。
+- $\|D_hu\|_{L^2(K)}\le\|\partial_ku\|_{L^2(K_h)}$，其中 $K_h$ 包住平移线段；由 $D_hu=\int_0^1\partial_ku(x+she_k)ds$、Jensen 和平移积分得到。
+- 对源项不求 $f$ 的导数，而用 $\|D_{-h}w\|_2\le\|\partial_kw\|_2$，令 $w=\eta^2D_hu$。
+
+把吸收步骤展开，才能看清没有偷偷要求 $f\in H^1$。固定一个包含所有小平移的紧邻域 $K\Subset\Omega$，记 $X=\|\eta\nabla D_hu\|_2$、$Y=\|u\|_{H^1(K)}$、$F=\|f\|_{L^2(K)}$，$L=\|\nabla A\|_{L^\infty(K)}$、$b=\|\nabla\eta\|_\infty$。除主项外，三项的绝对值分别不超过 $2\Lambda bXY$、$LXY$、$2LbY^2$；而源项不超过 $F(X+2bY)$。所以
+
+$$
+\lambda X^2\le (2\Lambda b+L)XY+2LbY^2+FX+2bFY.
+$$
+
+对 $XY$、$FX$ 分别使用 Young 不等式，合计吸收至多 $\lambda X^2/2$；对 $FY$ 用 $2FY\le F^2+Y^2$。所得常数只依赖 $\lambda,\Lambda,L,b$，不依赖 $h$。因此得到与 $h$ 无关的界
+
+$$
+\|\eta\nabla D_hu\|_2^2
+\le C\bigl(\|f\|_{L^2(K_h)}^2+\|u\|_{H^1(K_h)}^2\bigr).
+$$
+
+为什么这真给导数，而不是只给一堆离散差分？$L^2$ 中有界序列有弱收敛子列。若 $D_h\partial_j u\rightharpoonup w$，对光滑紧支 $\psi$，离散分部积分与 $D_{-h}\psi\to\partial_k\psi$ 给
+
+$$
+\int w\psi=\lim_h\int D_h(\partial_ju)\psi
+=-\int(\partial_ju)\partial_k\psi.
+$$
+
+因此 $w$ 正是 $\partial_k\partial_ju$ 的弱导数。每个方向都做一次，有限覆盖得 $u\in H^2(\Omega')$，且
+
+$$
+\|u\|_{H^2(\Omega')}\le C_{\Omega',\Omega,A}
+(\|f\|_{L^2(\Omega)}+\|u\|_{H^1(\Omega)}).
+$$
+
+测试合法性可先用 $H^1$ 函数的平移和紧支截断，再以光滑逼近传递弱式；没有先假定 $u\in H^2$。本论证调用了 Sobolev 平移性质与 Hilbert 空间有界序列弱紧性，后者是泛函分析输入。它证明的是局部 $H^2$，不是每个点都有经典二阶导数。
+
+## 系数跳变时，通量连续也可以有折角
+
+在 $(-1,1)$ 取 $a(x)=1$（$x<0$）、$a(x)=2$（$x>0$），令
+
+$$
+u(x)=\begin{cases}x,&x\le0,\\x/2,&x>0.\end{cases}
+$$
+
+$u$ 连续，$u'\in L^2$，且 $a(x)u'(x)=1$ 几乎处处，所以对任意紧支测试 $v$ 有 $\int au'v'=\int v'=0$：它是 $-(au')'=0$ 的弱解。但 $u'$ 从 1 跳到 $1/2$，故 $u''=-\tfrac12\delta_0$，不是 $L^2$ 函数。这里统一椭圆性仍成立，失败的是系数的 Lipschitz 条件。若用于两层材料导热，连续的是通量；强迫温度梯度也连续会改变界面物理。
+
+## 光滑系数也不能消除凹角奇性
+
+取二维扇形 $\Omega=\{0<r<1,\ 0<\theta<3\pi/2\}$，这是有凹角的 Lipschitz 域。令 $\alpha=2/3$，$w=r^\alpha\sin(\alpha\theta)$。极坐标 Laplace 算子给
+
+$$
+\Delta w=\partial_{rr}w+r^{-1}\partial_rw+r^{-2}\partial_{\theta\theta}w
+=[\alpha(\alpha-1)+\alpha-\alpha^2]r^{\alpha-2}\sin(\alpha\theta)=0.
+$$
+
+取径向光滑截断 $\chi$，在 $r<1/4$ 为 1、在 $r>1/2$ 为 0，令 $u=\chi w$。两条径向边上的正弦为零，外圆附近又为零，故 $u\in H_0^1(\Omega)$：原点附近梯度平方积分形如 $\int_0^{1/4}r^{2\alpha-1}dr<\infty$。$f=-\Delta u$ 只在截断变化的环带非零，所以 $f\in L^2$，系数还是最光滑的 $A=I$。
+
+还可以直接核对零迹与弱方程没有遗漏顶点：用径向截断在 $r<\delta$ 令函数为零，在 $r>2\delta$ 恢复原函数。删去部分的 $H^1$ 范数平方及截断导数误差均为 $O(\delta^{2\alpha})\to0$；远离顶点时它是光滑零迹函数，再作标准边界逼近即属于 $H_0^1$。顶点在域的边界，不在内部；每个 $C_c^\infty(\Omega)$ 测试都避开它，因此分布方程内没有隐藏的顶点 Dirac 源。由 $H_0^1$ 稠密性，弱式延伸到全部零迹测试。
+
+二阶不可积也能避免仅凭“量级”判断。局部把 $w$ 写作 $\operatorname{Im}(x+iy)^\alpha$，则 $w_{xx}=\operatorname{Im}(\alpha(\alpha-1)z^{\alpha-2})$、$w_{xy}=\operatorname{Re}(\alpha(\alpha-1)z^{\alpha-2})$、$w_{yy}=-w_{xx}$，所以 Hessian 的 Frobenius 范数精确为
+
+$$
+|D^2w|_F^2=2\alpha^2(\alpha-1)^2r^{2\alpha-4}.
+$$
+
+在 $\alpha=2/3$ 时系数严格为正，面积元再乘 $r$，平方积分包含
+
+$$
+\int_0^{1/4}r^{2\alpha-3}dr
+=\int_0^{1/4}r^{-5/3}dr=\infty.
+$$
+
+故 $u\notin H^2(\Omega)$。这不反驳内点估计：每个 $\Omega'\Subset\Omega$ 都避开边界顶点。一个可使用的全局充分条件是有界 $C^2$ 域、$A\in C^1(\overline\Omega)$ 对称统一椭圆、$f\in L^2$、零 Dirichlet 数据，此时全局 $H^2$ 及估计由边界正则性定理给出。本页不证明边界展平与法向导数估计；凹角例精确显示为何不能删除域条件。更弱的边界假设、$W^{2,p}$、Schauder 和非线性椭圆正则性需要各自附加理论。
+
+## 返回有限元：误差率缺的可能是解，而不是求解器
+
+[[数学/46-数理方程/20-有限元谱方法与数理方程综合#误差率从逼近与正交相接|有限元误差推导]] 把 $H^2$ 插值界接到 Céa，给一阶能量误差。凹角例中这个 $H^2$ 范数无限，不能继续代入同一个界并声称仍有其保证；可选择局部加密、适合角点的空间，或用实际较弱的正则性重新估计。小代数残差只说明离散方程求得准，不能恢复不存在的连续正则性。
+
+**迁移题：**（1）在材料例中若误把 $u=x$ 作为两侧解，求分布 $-(au')'$。（2）扇形改为角度 $\omega$，取 $r^{\pi/\omega}\sin(\pi\theta/\omega)$，二阶导数的可积阈值是什么？为何 $\omega=\pi$ 要单独检查？（3）仅将线性求解器容差减小 100 倍，会使原凹角解属于 $H^2$ 吗？
+
+> [!question]- 可核答案
+> （1）通量从 1 跳到 2，故 $-(au')'=-\delta_0$，凭空加入了界面点源。（2）令 $\alpha=\pi/\omega$，一般非退化奇性要求 $2\alpha-3>-1$，即 $\alpha>1$、$\omega<\pi$。当 $\omega=\pi$，函数是 $r\sin\theta=y$，二阶导数恰为零，不能仅按量级上界误判发散。（3）不能；这是解空间与边界几何的性质，代数求解精度不改变它。
+
+本页一般定理定位可查 Hunter [椭圆方程讲义](https://www.math.ucdavis.edu/~hunter/pdes/ch4.pdf) 的内点与边界正则性段；材料与扇形算例提供独立可算的条件测试。返回 [[数学/46-数理方程/30-正则性与非线性演化/00-高级PDE代表主线|高级 PDE 代表主线]]。
+
+来源定位：Hunter 第 4 章 §4.11，Theorem 4.27（印刷 p.112）给内点估计；§4.12，Theorem 4.30（p.115）给 $C^2$ 边界零 Dirichlet 条件。本页把差分商中实际使用的系数条件写为局部 $W^{1,\infty}$，并在上文逐项证明；不能把讲义中 $C^1$ 的陈述直接当成更弱条件的无说明引用。

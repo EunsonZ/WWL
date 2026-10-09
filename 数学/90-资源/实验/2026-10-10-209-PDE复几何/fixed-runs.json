@@ -1,0 +1,43 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "environment": {
+    "HOME": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments209pdecomplex/run-20261010-01/home",
+    "TMPDIR": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments209pdecomplex/run-20261010-01/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "timeout_seconds": 60,
+  "dependency_preparation": "None; stdlib only, no compiler/install/service/network",
+  "runs": [
+    {
+      "name": "pde",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "数学/46-数理方程/30-正则性与非线性演化/pde_regularities.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments209pdecomplex/run-20261010-01/snapshot/candidate",
+      "started_unix": 1791567536.725517,
+      "elapsed_seconds": 0.019302845001220703,
+      "exit": 0
+    },
+    {
+      "name": "complex",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "数学/45-复变函数/30-多复变量与复流形/complex_chart_checks.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments209pdecomplex/run-20261010-01/snapshot/candidate",
+      "started_unix": 1791567536.745203,
+      "elapsed_seconds": 0.017138957977294922,
+      "exit": 0
+    }
+  ],
+  "children_ru_maxrss_bytes_macos": 15695872,
+  "resource_scope": "Cumulative child rusage observation, not hard memory cap or measured OS thread count"
+}

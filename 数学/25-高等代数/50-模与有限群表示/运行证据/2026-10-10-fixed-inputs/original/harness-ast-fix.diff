@@ -1,0 +1,14 @@
+--- first-executed
++++ tuple-assign-adapter
+@@ -61,6 +61,11 @@
+    val=node.value
+    if isinstance(val,ast.Call) and isinstance(val.func,ast.Name) and val.func.id=='matrix':val=val.args[0]
+    return ast.literal_eval(val)
++  if isinstance(node,ast.Assign) and len(node.targets)==1 and isinstance(node.targets[0],ast.Tuple) and isinstance(node.value,ast.Tuple):
++   for target,val in zip(node.targets[0].elts,node.value.elts):
++    if isinstance(target,ast.Name) and target.id==name:
++     if isinstance(val,ast.Call) and isinstance(val.func,ast.Name) and val.func.id=='matrix':val=val.args[0]
++     return ast.literal_eval(val)
+  raise ValueError(name)
+ R,S,t,block_r,block_s=[assigned(k) for k in ['R','S','t','block_r','block_s']]
+ assert R==[[-1,-1],[1,0]] and S==[[0,1],[1,0]]

@@ -1,0 +1,33 @@
+# #152 一般模与有限群表示完整课程候选 r1
+
+写入仅在 author152 候选区；共享 main/Git/GitHub/Logs/CHANGES 均未改。现有其他作者和人的正文完整保留。唯一整合写者 recovery_writer 根据 baseline 与独立局部delta合并。
+
+## 交付与阅读终点
+
+candidate/数学/25-高等代数/50-模与有限群表示/00–06，共7页，另含 code/integer_smith.py 与 code/examples.py。课程序列为：模/同态/商/直和/正合与分裂 → 一般PID Smith和有限生成分类/唯一性 → 整数核像商与同调坐标 → S3、Maschke与Schur一般证明 → 一般特征标正交/完整性/分解 → 循环移位Fourier与模型作用合同 → 完整左右变换的精确实现与复算接口。
+
+保留已有F[t]完整循环分解及Galois证明主解释，新增一般PID范围和失效例，不声称模论此前全空白。S3矩阵、基分块、加权内积与循环移位同一个三维矩阵贯穿；非Abel二维不可约块说明单个矩阵对角化不等于整个表示同时对角化。
+
+五个既有页只有局部阅读出口：高代MOC、07 Smith、15群作用、数学分析13 Fourier、线代11换基。每页当前baseline在 baseline/原路径；同名.delta.patch独立保存。BASELINE.json记录作者静态阶段五目标仍与baseline相同；落库前仍由writer看最新字节，不整文件覆盖人的后改。
+
+## 唯一整数合同
+
+02正式标题“输入与返回：始终保存两侧变换”固定 B:Z^n→Z^m，列向量，UBV=D，U/V幺模，正整除链。原输入x=Vy、新输出z=Ub；ker列基V最后n-r列，im列基U^-1 di ei，coker类b→Ub。
+
+“同调消费合同：先求整数核，再把边界放进去”固定 A=∂k∈Z^{m×n},B=∂k+1∈Z^{n×p},AB=0。K=V_A最后n-r列；V_A^-1B前r行必须精确0，后行为C，B=KC；再Smith C，原链代表KU_C^-1ei。与author154已直接同步；数学下标从1起，代码切片从0起。
+
+代码覆盖0×n/m×0 shape、非饱和核反例的必要基合同、非零整数torsion和自由部分；完全精确。输入至多8×8、绝对值≤10^6，每次Smith默认20,000初等操作、4096bit中间整数，超过停止且不返回完整结果。只处理Z，不冒充F[t]/任意PID算法。
+
+## 作者验证与执行交接
+
+作者实际运行的仅静态脚本 static_check.py：调用现有links/check_vault属性/check_mirrors函数审本次12正文及其直接目标；97正式链接解析、PyYAML属性检查、1完整真源镜像、2源码AST，issues=[]，五个当前baseline相同。只枚举/读取相关直接目标，没有运行全库检查器或课程程序。
+
+课程运行：notrun_by_author。B槽独立执行者experiment174可复制冻结候选并在“数学/25-高等代数/50-模与有限群表示/code”执行 `python3 -B examples.py`，只向自己证据区写stdout/stderr/退出码。正文06固定答案先于运行给出：非平凡U/V的(2,6)，diag(6,10)的(2,30)，矩形和负号；0尺寸；同调Z/2与Z/2⊕Z；36组S3乘法、共同分块、Gram=I3、置换重数(1,0,1)、张量积重数(1,1,1)、三个Q(ω)精确Fourier向量。examples输出同调完整A/B、K/C、两次U/D/V与代表连shape，支持执行者独立det/minor-gcd/Fraction坐标oracle。作者没有import源码或预跑实验。
+
+freeze-r1.json给所有14个交付文件逐SHA；candidate/AGENTS.md是同版指令，不是内容落库目标。HANDOFF/SOURCE/STATIC及局部patch为过程交接，不能进读者首页。
+
+## 尚需独立证据
+
+Astra独立理论审阅review209pdecomplex已提前读RAW及新增实现，指出并已修正：直和定义、F[t]·[t]记法、ncols不得吞False/0.0/空字符串、homology JSON须完整输出坐标。此提前审阅不是冻结r1最终签收，r1需按清单核。
+
+B槽实际数值/异常路径/代表阶与范围验证未完成；Obsidian显示和真人阅读/迁移理解notrun。未写成功、关闭issue或真人已掌握。当前issue全文快照和来源定位见SOURCE.md；发布前的最新正文评论和source/main字节身份由整合者核。

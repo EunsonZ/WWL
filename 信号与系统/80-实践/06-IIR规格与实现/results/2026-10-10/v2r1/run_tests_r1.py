@@ -1,0 +1,8 @@
+from pathlib import Path
+import subprocess,sys,os,json,time,hashlib
+BASE=Path(__file__).resolve().parent;cwd=BASE/'snapshot-r1/candidate-v2r1/信号与系统/80-实践/06-IIR规格与实现';(BASE/'logs-r1').mkdir(exist_ok=True)
+env={k:v for k,v in os.environ.items() if not k.startswith('GIT_')};env.update(HOME=str(BASE/'home'),TMPDIR=str(BASE/'tmp'),PYTHONDONTWRITEBYTECODE='1',OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',MKL_NUM_THREADS='4')
+cmd=[sys.executable,'-B','-m','unittest','-v','test_iir_lab.py'];start=time.time();p=subprocess.run(cmd,cwd=cwd,env=env,capture_output=True,text=True,timeout=60);(BASE/'logs-r1/iir-tests.stdout').write_text(p.stdout);(BASE/'logs-r1/iir-tests.stderr').write_text(p.stderr)
+source=cwd/'iir_lab.py';old=BASE/'snapshot/candidate-v2/信号与系统/80-实践/06-IIR规格与实现/iir_lab.py';assert source.read_bytes()==old.read_bytes()
+r={'argv':cmd,'cwd':str(cwd),'started_unix':start,'elapsed_seconds':time.time()-start,'timeout_seconds':60,'exit':p.returncode,'iir_source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'test_source_sha256':hashlib.sha256((cwd/'test_iir_lab.py').read_bytes()).hexdigest(),'full_CLI_binding':{'status':'REUSED_EXACT_SOURCE','source_bytes_same_as_executed_V2':True,'original_receipt':'cli-run.json','original_raw':'raw/iir-cli/results.json','original_raw_sha256':hashlib.sha256((BASE/'raw/iir-cli/results.json').read_bytes()).hexdigest(),'not_rerun':True,'authorization':'root and author explicitly permit exact unchanged source reuse; only test/mirror changed'},'thread_environment':{k:env[k] for k in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']}}
+(BASE/'r1-test-run.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n');print(json.dumps(r,ensure_ascii=False));sys.exit(p.returncode)

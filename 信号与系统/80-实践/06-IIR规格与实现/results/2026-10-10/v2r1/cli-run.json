@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "iir_lab.py",
+    "--output",
+    "/private/tmp/wwl-recovery-178v2-3a27628cac5648f6b7af7714cab64c68"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments178v2/run-20261010-01/snapshot/candidate-v2/信号与系统/80-实践/06-IIR规格与实现",
+  "timeout_seconds": 300,
+  "started_unix": 1791568217.838911,
+  "transient_output": "/private/tmp/wwl-recovery-178v2-3a27628cac5648f6b7af7714cab64c68",
+  "exit": 0,
+  "elapsed_seconds": 5.922353029251099,
+  "durable_files": [
+    {
+      "path": "raw/iir-cli/results.json",
+      "sha256": "62cf461be69d68ae685b1d85b54b8310381b968d6da18a5b360debdafc1f7626",
+      "bytes": 6888992
+    }
+  ],
+  "children_ru_maxrss_bytes_macos": 56688640,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  }
+}

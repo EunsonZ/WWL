@@ -1,0 +1,50 @@
+# #178 V2R1 窄修复与独立实际执行补签
+
+**本独审负责的 V2 新连续频带层最终 accept。** 新算法一般包含性、同系数群延迟、Schur 稳定及闭域全称证明仍以冻结 [source-review-v2.md](source-review-v2.md) 为依据；此文只补审 V2R1 的测试/镜像差异、实际执行字节和证据入口。原 V2 测试失败结论不撤销：它对应 test `4160fe8a…` 的真实 ERROR；最终 R1 对应新 test `10c75a22…` 的真实 12 项成功。审阅者未设计/修改本候选、未执行候选或 oracle、未写课程正文，所有写入仍仅 `review178interval/`。按 fresh GET [issue178-input.json](issue178-input.json) 核到 issue updated_at `2026-10-09T12:46:55Z`、comments=0，原验收的“整个目标频带”没有降为若干点。
+
+## 当前字节与输入
+
+独立读取作者与 B 的两冻结候选，实际27路径逐一一致；R1 相对 V2 只以下两路径变更，其余25完全相同。实际 old/new production `iir_lab.py` 均 `87344dd861372a9021c7c36ea45ddbf3983b9f1c0654db8b3a6e835c45355e74`；因此 V2 同源 CLI 与 oracle 可明确复用到 R1，**没有 R1 CLI 重跑**。实际核查与 hash 在程序生成的 [execution-inputs-v2r1.json](execution-inputs-v2r1.json)。
+
+| R1 变更路径（候选内相对路径） | 当前 SHA256 | 判定 |
+|---|---|---|
+| 信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py | `10c75a22f669b8a7107df171a036a5a837bdc4af8a64ce37a4380587c94bab58` | accept |
+| 信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md | `f5ea3dafd412e6f1abded22e88a935bc2ce4900653fa671c8c3bb09662a67969` | accept；两个 code-sync 实际逐字相同 |
+
+来源是 `author177178/candidate-v2r1/`；实际 R1 测试副本在 `experiments178v2/run-20261010-01/snapshot-r1/candidate-v2r1/`。原 CLI 实际副本为同目录 `snapshot/candidate-v2/`，两版全部27 hash 已各自核对。主规格/精度/阈值与源审报告相同：48kHz，6kHz/8kHz 带边，平方幅通带 [.9801,1.0201]、阻带≤.000001，通带延迟 [0,96] samples，Decimal80、depth24、每带131072 evaluations。
+
+## 修复本身
+
+| 重要项目 | 判定与依据 |
+|---|---|
+| 正例夹具不再无条件解引用 None | accept；新两 cell [.71,.72] 与 [.90,.901] 的二阶 Q Horner 下界独立算为 .2737 与 .1209，第一节 Q=1.25−c 也全为正；新增 assertIsNotNone，然后保留全部原精确 Fraction 的 P/Q 和 degree/2−E/Q 双向包含断言。没有放宽容差或生产分母门槛。 |
+| 宽区间保守拒绝合同保留 | accept；新增 test_strict_cell_wide_positive_denominator_is_unproved 明确旧 [.9,1] 的 Q 真最小值1/16，却有 Horner lower=−3/80，要求 None。与 source-review 独立展开一致；没有用该 None 推出传函实际失稳。 |
+| oracle 独立于区间实现 | accept；测试和 B oracle 的 P 来自一般分子系数自相关展开，延迟来自相位商导数 degree/2−E/Q，未复制候选用于结果的 J/Q 路径。抽点包含只是发现错误的补充；全称结论仍由向外算术/闭 cell 覆盖证明承担。 |
+
+## B 的真实执行与独立核算
+
+原始证据根 `experiments178v2/run-20261010-01/`，没有改写。直接读取 argv/cwd/exit、源码与输出实际 SHA、stdout/stderr；候选代码和 executor_oracle.py 仅静态读取。原标准 CLI raw `raw/iir-cli/results.json` 为 **6,888,992 bytes**，实际 SHA256 `62cf461be69d68ae685b1d85b54b8310381b968d6da18a5b360debdafc1f7626`，与 cli-run、r1-test-run、oracle输出记录全部吻合。
+
+| 执行项目 | 判定 | 实际证据 |
+|---|---|---|
+| 原 V2 suite | reject（历史版本保留） | jobs.json 与 logs/iir-tests.stderr：11 tests，10 OK，1 TypeError，exit1；故不能说原 V2 全通过。 |
+| R1 suite | accept | r1-test-run.json 与 logs-r1/iir-tests.stderr：新字节实际12 tests OK，exit0，墙钟约 .212s；stderr 有正常 unittest 状态。 |
+| 原同源完整 CLI | accept，明确复用到 R1 | cli-run.json：Python3.14.7/macOS27.0.1 arm64，实际 exit0、5.922s，新外部输出目录，完整 raw 立即归档。CLI stderr 空。两个 machine_certificate status=certified。 |
+| 两系数模型身份 | accept | B 的 oracle 对 binary64 取实际设计 JSON 精确 float dyadic；binary32 期待由独立 struct round 构造，再逐节比较记录的 Decimal 与整数有理比，并精确检查二项式与 Schur 条件。不是用理想 poles 的延迟代替固定 SOS。 |
+| 每个获接收 cell 的覆盖和门槛 | accept | 两模型各 **3734 pass +11 stop**，合计 **7490 accepted cells**；pass evaluations7467/depth16，stop21/depth10；unresolved均空。我独立解析完整 raw，按 Fraction 精确核每个 c 的首尾、lo<hi、所有邻接、每 cell 幅平方/延迟/正 Q_lower 门槛，不依赖作者缩略表。 |
+| 分母真实最小值、系数、有限抽点 | accept（作为 source proof 的补充运行证据） | executor_oracle.py 的二次多项式端点/内部顶点最小值算法正确，独立核全部7490 cells 的14节 `0<Q_lower≤真实 Q min`；所有聚合 min/max 与原 cell 匹配。分布选65 pass和全部11 stop cell，各取两端+1/3点，共456个有理点，P/Q 与相位商延迟确在实际区间内；actual oracle exit0/PASS，1.904s，stderr空。有限点不独自认证全部频率。 |
+| 限制/迁移/精度边界真实观测 | accept | oracle 自造精度24角点四则/跨零平方，与 exact Fraction 包围对比；全局context3下float入口仍精确且1/7包围。max_depth1/max_cells1真实 not_certified/false，未决仍覆盖闭域；96k/5k迁移真实 unsupported/false；失稳/非二项式/空级联/含零除数均有具体拒绝。宽 cell None 与真实 Q min1/4、1/16同时保留。 |
+
+两个主模型的通带幅平方总体包络分别约 [0.980107456,1.020089322]（binary64）与 [0.980107296,1.020089636]（binary32 系数），delay约 [19.2591371,41.6032341] samples；阻带幅平方上界均约 9.695854e−7。严格比较使用完整 Decimal→Fraction 字符串，未按以上缩略数字签收。Nyquist精确幅平方=0，端点/分区/阈值共同支持原 issue 的全目标闭带验收。
+
+## 新证据 README 与复建接口
+
+当前 `experiments178v2/run-20261010-01/README.md` 实际 SHA256 **`dd342a72d819fcb6941980c6634b32d08dd0f65d42d0e290a41de892e6ef0830`**，9102 bytes，窄 accept。它区分原失败、R1新 suite、同字节 CLI 复用、理论证明与有限抽点；cell总数已用7490，原 raw不改。复建驱动按自身目录找 snapshot/snapshot-r1；`run_tests_r1.py` 实际逐字比较 old/new生产源，`run_cli.py` 用唯一新 /private/tmp目录并遵守生产 guard，结果归新目录；README要求先复制到自己拥有的新目录，避免写冻结包。此处核的是接口源码/相对路径成立，不声称审阅者实际重建运行。
+
+README 对有限轨迹的 complete 与 finite_range_exceeded 分开说明，保留 binary32 直接型只到样点425的失败前缀，而两个 SOS 的12000拍是指定输入下的真实观察。其余原理想结构/量化行为沿既有同字节签收；本次全带线性传函证书不延伸成逐次舍入轨迹的全称稳定保证。
+
+## 最终验收边界
+
+所负责的新 source/theory、R1 fixture/mirror、同源实际 CLI、独立 oracle 和新证据 README 均 accept，本 lane 无剩余 needed。原 R1/R2 仅 float bound 的全带资格阻塞已经由 outward Decimal+固定同一 SOS+有限闭覆盖的一般证明和实际成功证书解决。结合根已掌握的 V1 理想结构/跨页解释同字节签收，这一层可用于 #178 内容验收；正式整合/远端交付/关单由 root 判断，不以 GitHub 状态证明数学。
+
+资源实测只有 CLI child ru_maxrss **56,688,640 bytes**、oracle自身 **53,166,080 bytes**；是各命令观察，未测进程树总峰值、硬 RSS cap 或 OS 线程数。固定 job 请求 OMP/OPENBLAS/MKL=4；oracle回执这些环境为 null，没有混用其配置。执行使用标准库单进程形态，不能从此推“实测线程≤4”。本审阅模型/effort与费用遥测未被工具实际暴露，路由请求不充当实测；未验 Obsidian显示、真实DSP/声音/硬件、部署或真人学习。这些证据层照实保留，不扩大本次接受范围。

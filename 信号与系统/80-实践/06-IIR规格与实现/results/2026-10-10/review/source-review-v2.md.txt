@@ -1,0 +1,47 @@
+# #178 V2 独立源码审阅（执行结果前冻结）
+
+审阅根为 `author177178/candidate-v2/`；写权限仅本 `review178interval/`。读过根和候选上级 AGENTS；未参与 V2 方案、正文或生产代码修改，未执行候选、测试或实验，未派生、改变 Git/GH 或其他候选。按最新 #178 原始 input（updated_at 2026-10-09T12:46:55Z，GET comments 无新增）审查：对象必须是给定规格的整个闭通带/阻带，固定系数同一传递函数的群延迟，不能降为密集网格或若干高精度点。既有 V1 理想结构层的独立签收只复用实际相同的 22 路径，不把 V2 新哈希当旧签收。
+
+**结论：新的连续频带认证在数学和源码层 accept；新增测试的宽 cell fixture reject，需修复并实跑；V2 新执行层此刻 blocked，等待独立 B 的冻结快照和实际结果。没有发现 `certified=True` 把采样或未决区间误当全带的路径。** 此结论不认证逐次 binary32 运算、定点非线性轨迹、OS 线程/硬内存边界或真人学习结果。
+
+## 字节和输入边界
+
+实际 27 路径逐一对 `evidence-v2/targets-v2.json` 一致，V1→V2 只以下 5 文件变更；代码页两个 code-sync 块与源码逐字节一致。程序生成的 [source-inputs-v2.json](source-inputs-v2.json) 保存完整当前路径、长度、V1 与 V2 SHA256（没有人工维护全库清单）。以下均是候选内相对路径：
+
+| 文件 | 当前 SHA256 |
+|---|---|
+| 信号与系统/20-数字信号处理/04-IIR设计二阶节与幅相取舍.md | `28e8004b87dc41758d50850126d959178189d9cdc3aed81d15f388f70ac4ba6e` |
+| 信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md | `f80416583e434eceae658af99c9ec01bd72ac02c6fdc66b79fb18e3b9217e33e` |
+| 信号与系统/80-实践/06-IIR规格与实现/README.md | `654390ba5f05a7e839145361c9f255a51389d5c9e164215ffdece4158928488c` |
+| 信号与系统/80-实践/06-IIR规格与实现/iir_lab.py | `87344dd861372a9021c7c36ea45ddbf3983b9f1c0654db8b3a6e835c45355e74` |
+| 信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py | `4160fe8aafbeaca4e517ba41d05088ac388eb2af15fb91e7090c425a79f91703` |
+
+严格认证输入仅主规格 `fs=48000 Hz, fp=6000 Hz, fsb=8000 Hz, pass_error=.01, stop=.001`，明确固定 binary64 或先量化 binary32 后的实系数 SOS；pass 的群延迟阈值 96 samples = 2 ms。默认 decimal_precision=80, max_depth=24（允许至 28）, max_cells=131072/带。其他规格返回 unsupported/false；未决返回 not_certified/false；无效参数或算术异常抛出，均不能产出正认证。不会把异常误记成函数总是返回 false。
+
+## 逐重要验收
+
+| 项目 | 判定 | 当前位置与依据 |
+|---|---|---|
+| 精确固定 binary 系数入口与对象绑定 | accept | iir_lab.py:234–274；仅有限 float，`Decimal.from_float` 精确保留其二进制实数值，再以 Fraction 验形和 Schur 条件。a0=1，b0≠0，一阶/二阶二项式分子形状按精确 dyadic 比较；记录同一值的 Decimal 与有理比。不是用 `str(float)` 推测实数。 |
+| 每一步向外区间运算与低精度/抵消边界 | accept | iir_lab.py:176–231；独立 FLOOR/CEILING Context 完成每次加减乘除、Horner 及系数形成。减法交叉端点，乘/除四端点极值，跨零平方下界 0，非跨零平方取端点极值；除数含零拒绝。严格链不以隐式全局 context 或单边 unary minus 构造下界。Overflow/Underflow/Subnormal/Clamped 陷阱中止；有限域外错误无正认证对象。 |
+| 同一 SOS 的幅值多项式 | accept | iir_lab.py:258–292，主文连续频带节；令 q=e^(-jθ), c=cosθ，Q=(1-a2)^2+a1²+2a1(1+a2)c+4a2c²，P=b0²(2+2c)^d。系数形成也向外；每个获接收 cell 所有节 Q_lower>0，P/Q 连乘包络覆盖所有 c。Nyquist 用显式 factor=0，避免相消后的负幅平方。 |
+| 同一固定系数的群延迟和单位 | accept | iir_lab.py:260–269,293–295；主文固定 SOS 延迟节。独立推导 τ=d/2−Re[(a1q+2a2q²)/D]，实部共同分母 Q 的分子 E=a1²+2a2²+a1(1+3a2)c+2a2(2c²−1)。二阶 Q−E=1−a2²+a1(1−a2)c，一阶 Q/2−E=(1−a1²)/2；因此代码 J/Q 正确，与幅值同 Q、同输入系数。θ 为 rad/sample，所以导数为 samples。通带分子不为零；Nyquist 零点仅认证幅值，不声称那里相位/延迟有定义。 |
+| 精确 Schur 稳定资格 | accept | iir_lab.py:248–255；主文 Möbius 证明。二阶经 z=(1+w)/(1−w) 得 (1−a1+a2)w²+2(1−a2)w+(1+a1+a2)。精确条件使三系数为正，两根实部负（实根乘积正且和负；共轭根实部为负），映回单位圆内；z=−1 被首系数>0 排除。一阶 |a1|<1 正确。 |
+| 闭频带端点/精确细分/无漏覆盖 | accept | iir_lab.py:322–383；通带 c_lo>0 且 Fraction(c_lo)²≤1/2，因此 [c_lo,1] 包含实际 [√(1/2),1]；阻带 [-1,1/2] 对应 [π/3,π]。midpoint 的 200 位 Context、Inexact trap 与 depth≤28 保证精确端点；生成两个闭子域共用中点，accepted+unresolved 的起止和每对邻接端点精确比较。只有无 unresolved 且覆盖完整才认证，最终还需两带均成功。 |
+| `certified=True` 的全称结论 | accept（源码层） | 由上三项组成：cos 在 [0,π] 单调；闭 cell 并覆盖全部目标 c；每 cell 的真实固定传函值落在向外包络里；接收比较是精确十进制平方幅阈值 [.9801,1.0201]、阻带≤.000001、通带延迟 [0,96]。全称证明不依赖 grid 或 80 位若干点。 |
+| 资源/未决/异常/unsupported | accept（逻辑边界） | iir_lab.py:309–320,339–376；计数达到上限时当前和栈内 cell 全部列 unresolved，depth 上限不放行；None 只能进一步细分或未决。max_depth/max_cells/precision 无效拒绝，迁移规格 unsupported=False，算术失败退出。未把 resource cap 改写为已认证。实际峰值/用时等待 B，不作硬内存或线程保证。 |
+| 新正文、README 与 code-sync 对新认证的解释 | accept（源码/语义层） | 主文明确区分旧 estimates、固定实系数全带证书与运算舍入轨迹；README 复建参数与实现一致；代码镜像实际同字节。旧 R1/R2 的 float bound 不再称严格机器证书。 |
+| 新增严格 cell 的测试 fixture | reject；needed 修复+实跑 | test_iir_lab.py:149–173 假设每个宽 cell 都返回字典。合法 None 未处理，详见下节；不应通过放宽生产 Q 判定来让 fixture 通过。 |
+| 当前 V2 运行/独立 Fraction oracle/返回字段绑定 | blocked（此版报告时未读取） | 需 B 的 ownsnapshot、命令/输入/环境/exit、两个固定系数版本真实结果、逐 cell 分母/邻接/阈值的独立检查；作者静态报告不能代替这一层。 |
+
+Python 实现语义的 primary source 已核对：官方 [Python 3.14 decimal](https://docs.python.org/3.14/library/decimal.html#decimal.Decimal.from_float) 支持 float 精确转换；[Context 与 rounding 文档](https://docs.python.org/3.14/library/decimal.html#decimal.Context) 支持独立上下文运算及向负/正无穷舍入。数学恒等式、稳定与覆盖证明是上述独立展开，不以文档或作者自评代替。
+
+## 确定的测试缺陷与最小修正义务
+
+测试第二个二阶节 `[.0625,.125,.0625,1.,-1.,.25]`，有 Q(c)=1.5625−2.5c+c²。在测试 c∈[.9,1] 的 Horner 中，`c−2.5∈[−1.6,−1.5]`，其与 c 相乘的包络是 [−1.6,−1.35]，加 1.5625 得 **[−.0375,.2125]**；故 `strict_cell` 按 Q_lower≤0 返回 None，随后 L173 解引用报 TypeError。真实 Q=(1.25−c)² 在此带始终正，但依赖区间的包络允许保守跨零；这正是细分机制要解决的情况，不能据此判证书算法不成立。
+
+作者应使测试分别兑现两个承诺：明确核合法宽 cell 的 None/保守拒绝；在可证明 Q_lower>0 的足够窄 cell 上核独立 Fraction 幅平方与群延迟包含。只需修测试及对应镜像，冻结新字节并由 B 重跑；本审阅者不提供候选补丁，也不参与生产算法改写。B 已消息报告此失败，但以上定位与计算在读实际日志前独立完成。
+
+## 未覆盖项与实际可观察配置
+
+本轮只审 V2 的 5 改动路径与 22 同字节复用边界，不重审 #177，不认证整 issue 完成或关单。源审依据是源码、对应重要新正文和原规格；未执行候选。实际工具未暴露代理 model/effort 或费用遥测，按根派发路由工作，但不把请求配置当实测配置。独立 B 结果应作为单独增量报告，不能改写本冻结记录。

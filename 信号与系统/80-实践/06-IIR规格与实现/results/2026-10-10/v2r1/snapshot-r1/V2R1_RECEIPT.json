@@ -1,0 +1,22 @@
+{
+  "version": "V2R1",
+  "v2_candidate_unchanged": true,
+  "source_algorithm_unchanged": true,
+  "changed_paths": [
+    "信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md",
+    "信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py"
+  ],
+  "targets": "evidence-v2r1/targets-v2r1.json",
+  "target_snapshot_sha256": "549b2db87bb159f171777c9e7e39c0cad25b7f4dc7479f3ac43158419d21aac7",
+  "source_sha256": "87344dd861372a9021c7c36ea45ddbf3983b9f1c0654db8b3a6e835c45355e74",
+  "test_sha256": "10c75a22f669b8a7107df171a036a5a837bdc4af8a64ce37a4380587c94bab58",
+  "diff": "V2R1_DIFF.patch",
+  "handoff": "HANDOFF_V2R1.md",
+  "static": "evidence-v2r1/static-v2r1.json",
+  "experiments": "NOTRUN_BY_AUTHOR",
+  "source_imports": false,
+  "expected_tests": 12,
+  "independent_test_review": "PENDING",
+  "independent_run": "PENDING",
+  "preserved_v2_failed_run": "../experiments178v2/run-20261010-01/logs/iir-tests.stderr"
+}

@@ -1,0 +1,561 @@
+---
+type: reference
+domain: signals-and-systems
+stage: 2
+content_status: draft
+evidence_status: partial
+aliases: []
+sources: []
+prerequisites:
+  - "[[信号与系统/80-实践/06-IIR规格与实现/README]]"
+---
+
+# IIR源码与验证
+
+同目录Python文件是真源，本页是逐字code-sync阅读镜像。对象、固定输入、独立参照和执行协议见 [[信号与系统/80-实践/06-IIR规格与实现/README|实验说明]]。源码存在不等于已经执行。
+
+## iir_lab.py
+
+<!-- code-sync: ./iir_lab.py -->
+```python
+"""Butterworth coefficients and finite-precision teaching probes; stdlib only.
+
+No import-time I/O. Outputs are CPU models, not audio/DSP-chip measurements.
+The ideal filter and the exact binary64-section model are distinct references.
+"""
+import argparse
+import cmath
+from decimal import Decimal, localcontext
+import json
+import math
+from pathlib import Path
+import struct
+
+
+def real(value):
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError('finite real scalar required')
+    try:
+        result = float(value)
+    except (OverflowError, ValueError) as exc:
+        raise ValueError('finite real range required') from exc
+    if not math.isfinite(result):
+        raise ValueError('finite real scalar required')
+    return result
+
+
+def design(fs=48000, fp=6000, fsb=8000, pass_error=.01, stop=.001):
+    fs, fp, fsb, pass_error, stop = map(real, (fs, fp, fsb, pass_error, stop))
+    if not (0 < fp < fsb < fs/2 and 0 < stop < 1-pass_error < 1):
+        raise ValueError('ordered bands and positive tolerances required')
+    wp, ws = 2*fs*math.tan(math.pi*fp/fs), 2*fs*math.tan(math.pi*fsb/fs)
+    ep2, es2 = (1-pass_error)**-2-1, stop**-2-1
+    estimate = math.log(es2/ep2)/(2*math.log(ws/wp))
+    n = math.ceil(estimate)
+    lower, upper = wp/ep2**(1/(2*n)), ws/es2**(1/(2*n))
+    wc = math.sqrt(lower*upper)
+    analog = [wc*cmath.exp(1j*(math.pi/2+(2*k+1)*math.pi/(2*n)))
+              for k in range(n)]
+    poles = [(2*fs+p)/(2*fs-p) for p in analog]
+    sections = []
+    for k in range(n//2):
+        pole = poles[k]
+        a1, a2 = -2*pole.real, abs(pole)**2
+        b0 = (1+a1+a2)/4
+        sections.append([b0, 2*b0, b0, 1., a1, a2])
+    if n % 2:
+        pole = (2*fs-wc)/(2*fs+wc)
+        b0 = (1-pole)/2
+        sections.append([b0, b0, 0., 1., -pole, 0.])
+    # Radius order is a declared comparison, not an optimality claim.
+    sections.sort(key=section_radius)
+    return {'fs': fs, 'fp': fp, 'fsb': fsb, 'pass_error': pass_error,
+            'stop': stop, 'estimate': estimate, 'order': n,
+            'wp': wp, 'ws': ws, 'wc_bounds': [lower, upper], 'wc': wc,
+            'cutoff_hz': fs/math.pi*math.atan(wc/(2*fs)),
+            'poles': poles, 'sections': sections}
+
+
+def section_radius(section):
+    _, _, _, _, a1, a2 = section
+    if a2 == 0:
+        return abs(a1)
+    root = cmath.sqrt(a1*a1-4*a2)
+    return max(abs((-a1+root)/2), abs((-a1-root)/2))
+
+
+def response(sections, theta):
+    q = cmath.exp(-1j*real(theta))
+    result = 1+0j
+    for b0, b1, b2, _, a1, a2 in sections:
+        result *= (b0+b1*q+b2*q*q)/(1+a1*q+a2*q*q)
+    return result
+
+
+def ideal_amplitude(spec, theta):
+    if theta == math.pi:
+        return 0.
+    ratio = 2*spec['fs']*math.tan(theta/2)/spec['wc']
+    power = 2*spec['order']*math.log(abs(ratio)) if ratio else -math.inf
+    return math.exp(-.5*power) if power > 700 else 1/math.sqrt(1+math.exp(power))
+
+
+def amplitude_cell(sections, theta, halfwidth):
+    """Continuous enclosure from triangle/quotient/product bounds, float arithmetic.
+
+    Bounds apply to the fixed coefficient rational function, not a rounded
+    recursive trajectory. No assumption that its magnitude is monotone.
+    """
+    q = cmath.exp(-1j*theta)
+    factors, derivatives = [], []
+    center = 1+0j
+    for b0, b1, b2, a0, a1, a2 in sections:
+        if a0 != 1.:
+            raise ValueError('normalized section denominator required')
+        numerator = b0+b1*q+b2*q*q
+        denominator = 1+a1*q+a2*q*q
+        nprime, dprime = abs(b1)+2*abs(b2), abs(a1)+2*abs(a2)
+        upper_n = abs(numerator)+nprime*halfwidth
+        lower_d = abs(denominator)-dprime*halfwidth
+        if lower_d <= 0:
+            raise ValueError('cell too wide to enclose denominator away from zero')
+        factors.append(upper_n/lower_d)
+        derivatives.append(nprime/lower_d+upper_n*dprime/lower_d**2)
+        center *= numerator/denominator
+    # Prefix/suffix products avoid division by a factor vanishing at Nyquist.
+    prefix = [1.]
+    for factor in factors:
+        prefix.append(prefix[-1]*factor)
+    suffix = [1.]*(len(factors)+1)
+    for i in range(len(factors)-1, -1, -1):
+        suffix[i] = factors[i]*suffix[i+1]
+    derivative = sum(value*prefix[i]*suffix[i+1]
+                     for i, value in enumerate(derivatives))
+    center_abs, margin = abs(center), derivative*halfwidth
+    return {'center_amplitude': center_abs, 'derivative_bound': derivative,
+            'margin': margin, 'lower': max(0., center_abs-margin),
+            'upper': center_abs+margin}
+
+
+def amplitude_certificate(spec, sections=None, intervals=65536):
+    """Cover both closed bands with local enclosures; not outward interval rounding."""
+    if isinstance(intervals, bool) or not isinstance(intervals, int) or intervals < 1:
+        raise ValueError('positive band interval count required')
+    sections = spec['sections'] if sections is None else sections
+    bands = {'pass': (0., 2*math.pi*spec['fp']/spec['fs']),
+             'stop': (2*math.pi*spec['fsb']/spec['fs'], math.pi)}
+    result = {'intervals_per_band': intervals,
+              'floating_bound_not_interval_arithmetic': True}
+    for name, (start, stop) in bands.items():
+        width = (stop-start)/intervals
+        lower, upper, largest_margin = math.inf, 0., 0.
+        for k in range(intervals):
+            cell = amplitude_cell(sections, start+(k+.5)*width, width/2)
+            lower, upper = min(lower, cell['lower']), max(upper, cell['upper'])
+            largest_margin = max(largest_margin, cell['margin'])
+        result[name] = {'theta_rad_per_sample': [start, stop],
+                        'lower': lower, 'upper': upper,
+                        'max_cell_margin': largest_margin}
+    result['within_amplitude_contract'] = (
+        result['pass']['lower'] >= 1-spec['pass_error'] and
+        result['pass']['upper'] <= 1+spec['pass_error'] and
+        result['stop']['upper'] <= spec['stop'])
+    return result
+
+
+def delay(poles, theta):
+    q = cmath.exp(-1j*theta)
+    return .5*sum((1-abs(p)**2)/abs(1-p*q)**2 for p in poles)
+
+
+def delay_certificate(spec, intervals=32768):
+    if isinstance(intervals, bool) or not isinstance(intervals, int) or intervals < 1:
+        raise ValueError('positive grid interval count required')
+    edge = 2*math.pi*spec['fp']/spec['fs']
+    distances = []
+    for p in spec['poles']:
+        angle = cmath.phase(p)
+        candidates = [abs(1-p), abs(1-p*cmath.exp(-1j*edge))]
+        if 0 <= angle <= edge:
+            candidates.append(1-abs(p))
+        distances.append(min(candidates))
+    bound = sum((1-abs(p)**2)*abs(p)/d**4
+                for p, d in zip(spec['poles'], distances))
+    values = [delay(spec['poles'], edge*k/intervals) for k in range(intervals+1)]
+    maximum = max(values)
+    margin = bound*edge/(2*intervals)
+    return {'dc_samples': values[0], 'min_grid_samples': min(values),
+            'max_grid_samples': maximum, 'derivative_bound': bound,
+            'grid_margin_samples': margin, 'upper_samples': maximum+margin,
+            'budget_samples': .002*spec['fs'], 'intervals': intervals,
+            'floating_bound_not_interval_arithmetic': True}
+
+
+def decimal(value):
+    return Decimal.from_float(float(value))
+
+
+def polynomial_product(a, b):
+    out = [Decimal(0)]*(len(a)+len(b)-1)
+    for i, x in enumerate(a):
+        for j, y in enumerate(b):
+            out[i+j] += x*y
+    return out
+
+
+def expand(sections):
+    """80-place product of exact binary64 input coefficients, not rounded roots."""
+    with localcontext() as ctx:
+        ctx.prec = 80
+        b, a = [Decimal(1)], [Decimal(1)]
+        for b0, b1, b2, _, a1, a2 in sections:
+            numerator, denominator = [decimal(b0), decimal(b1)], [Decimal(1), decimal(a1)]
+            if b2 or a2:
+                numerator.append(decimal(b2)); denominator.append(decimal(a2))
+            b, a = polynomial_product(b, numerator), polynomial_product(a, denominator)
+        return b, a
+
+
+def decimal_sos(sections, inputs):
+    with localcontext() as ctx:
+        ctx.prec = 80
+        states = [[Decimal(0), Decimal(0)] for _ in sections]
+        coefficients = [[decimal(v) for v in row] for row in sections]
+        output = []
+        for original in inputs:
+            u = decimal(original)
+            for i, (b0, b1, b2, _, a1, a2) in enumerate(coefficients):
+                s1, s2 = states[i]
+                y = b0*u+s1
+                states[i] = [b1*u-a1*y+s2, b2*u-a2*y]
+                u = y
+            output.append(u)
+        return output
+
+
+def decimal_direct(b, a, inputs):
+    with localcontext() as ctx:
+        ctx.prec = 80
+        state = [Decimal(0)]*(len(a)-1)
+        output = []
+        for original in inputs:
+            u = decimal(original)
+            y = b[0]*u+state[0]
+            state = [(state[i+1] if i+1 < len(state) else Decimal(0)) +
+                     b[i+1]*u-a[i+1]*y for i in range(len(state))]
+            output.append(y)
+        return output
+
+
+def binary32(value):
+    return struct.unpack('!f', struct.pack('!f', real(value)))[0]
+
+
+def float_structure(b, a, inputs, cast=binary32):
+    """Transposed DFII, each coefficient/product/addition/storage rounded; no FMA."""
+    b, a = [cast(v) for v in b], [cast(v) for v in a]
+    state = [0.]*(len(a)-1)
+    output, peak = [], 0.
+    for n, u in enumerate(inputs):
+        try:
+            u = cast(u)
+            y = cast(cast(b[0]*u)+state[0])
+            new = [cast(cast((state[i+1] if i+1 < len(state) else 0.) +
+                             cast(b[i+1]*u))-cast(a[i+1]*y))
+                   for i in range(len(state))]
+        except (OverflowError, ValueError):
+            return {'status': 'finite_range_exceeded', 'first_sample': n,
+                    'output': output, 'peak_state': peak}
+        state = new
+        peak = max(peak, *(abs(v) for v in state))
+        output.append(y)
+    return {'status': 'complete', 'output': output, 'peak_state': peak}
+
+
+def float_sos(sections, inputs, cast=binary32):
+    values = list(inputs)
+    metrics = []
+    for row in sections:
+        b, a = row[:3], row[3:]
+        if row[2] == row[5] == 0:
+            b, a = b[:2], a[:2]
+        result = float_structure(b, a, values, cast)
+        metrics.append({'status': result['status'], 'peak_state': result['peak_state'],
+                        'peak_output': max(map(abs, result['output']), default=0.)})
+        if result['status'] != 'complete':
+            return {'status': result['status'], 'failed_section': len(metrics)-1,
+                    'section_metrics': metrics, 'output': result['output']}
+        values = result['output']
+    return {'status': 'complete', 'section_metrics': metrics, 'output': values}
+
+
+def round_even_ratio(n, denominator=16):
+    sign = -1 if n < 0 else 1
+    q, r = divmod(abs(n), denominator)
+    return sign*(q+(2*r > denominator or (2*r == denominator and q % 2)))
+
+
+def fixed_order(high_first=True):
+    """W8/F4, output and state saturation, exact guarded 24-bit accumulators."""
+    stages = [[64, 0, 0, -8, 0], [1, 0, 0, -8, 0]]
+    if not high_first:
+        stages.reverse()
+    states, output, events = [[0, 0], [0, 0]], [], []
+    counts, peaks = [0, 0], [0, 0]
+    def store(n, index):
+        if not -(1 << 23) <= n < (1 << 23):
+            raise OverflowError('24-bit accumulator exceeded')
+        raw = round_even_ratio(n)
+        counts[index] += int(raw < -128 or raw > 127)
+        return min(127, max(-128, raw))
+    for n in range(20):
+        u, intermediate = 32, []
+        for i, (b0, b1, b2, a1, a2) in enumerate(stages):
+            s1, s2 = states[i]
+            y = store(b0*u+16*s1, i)
+            states[i] = [store(b1*u-a1*y+16*s2, i), store(b2*u-a2*y, i)]
+            peaks[i] = max(peaks[i], abs(y), *map(abs, states[i]))
+            intermediate.append(y)
+            u = y
+        output.append(u)
+        events.append({'n': n, 'intermediate_codes': intermediate,
+                       'states': [s[:] for s in states]})
+    return {'output_codes': output, 'saturations': counts,
+            'peak_codes': peaks, 'events': events,
+            'W': 8, 'F': 4, 'accumulator_bits': 24, 'input_code': 32}
+
+
+def discrepancy(result, reference):
+    count = len(result['output'])
+    return {'status': result['status'], 'samples': count,
+            'max_abs_error_v': max((abs(v-float(t)) for v, t in
+                                    zip(result['output'], reference)), default=0.),
+            'first_sample': result.get('first_sample'),
+            'max_scaled_error_v': max((abs(v-float(t))/(1+abs(float(t)))
+                for v, t in zip(result['output'], reference)), default=0.)}
+
+
+def report():
+    spec = design()
+    x = [.6*math.cos(2*math.pi*1000*n/48000)+.3*math.cos(2*math.pi*10000*n/48000)
+         for n in range(12000)]
+    b, a = expand(spec['sections'])
+    reference = decimal_sos(spec['sections'], x)
+    direct = float_structure([float(v) for v in b], [float(v) for v in a], x)
+    ascending = float_sos(spec['sections'], x)
+    descending = float_sos(spec['sections'][::-1], x)
+    wp, ws = 2*math.pi*6000/48000, 2*math.pi*8000/48000
+    return {'design': spec, 'direct_coefficients': {'b': b, 'a': a},
+            'amplitude_edges': {'ideal_pass': ideal_amplitude(spec, wp),
+                                'ideal_stop': ideal_amplitude(spec, ws),
+                                'sos_pass': abs(response(spec['sections'], wp)),
+                                'sos_stop': abs(response(spec['sections'], ws))},
+            'delay': delay_certificate(spec),
+            'precision': {'input_length': len(x), 'input_bound_v': .9,
+                          'binary32_each_operation_no_fma': True,
+                          'reference': '80-place Decimal exact binary64 SOS coefficients',
+                          'direct': discrepancy(direct, reference),
+                          'ascending': discrepancy(ascending, reference),
+                          'descending': discrepancy(descending, reference),
+                          'direct_peak': direct['peak_state'],
+                          'ascending_peaks': ascending['section_metrics'],
+                          'descending_peaks': descending['section_metrics']},
+            'fixed_high_first': fixed_order(True), 'fixed_low_first': fixed_order(False),
+            'migration_96k': design(fs=96000), 'migration_5k': design(fp=5000),
+            'coefficient_band_bounds': {
+                'binary64_sos': amplitude_certificate(spec),
+                'binary32_sos': amplitude_certificate(spec,
+                    [[binary32(v) for v in row] for row in spec['sections']])},
+            'binary32_section_radii': [section_radius([binary32(v) for v in row])
+                                       for row in spec['sections']],
+            'allpass_r99_dc_samples': 199,
+            'finite_range_or_saturation_is_not_white_noise': True}
+
+
+def json_ready(value):
+    if isinstance(value, complex):
+        return {'re': value.real, 'im': value.imag}
+    if isinstance(value, Decimal):
+        return str(value)
+    if isinstance(value, dict):
+        return {k: json_ready(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_ready(v) for v in value]
+    return value
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', required=True, type=Path)
+    destination = parser.parse_args().output.resolve()
+    if destination.exists() or any((p/'AGENTS.md').exists()
+                                    for p in [destination, *destination.parents]):
+        raise ValueError('new external output directory required')
+    data = json_ready(report())
+    destination.mkdir(parents=True)
+    (destination/'results.json').write_text(json.dumps(data, ensure_ascii=False,
+        sort_keys=True, indent=2, allow_nan=False)+'\n', encoding='utf-8')
+
+
+if __name__ == '__main__':
+    main()
+```
+
+## test_iir_lab.py
+
+<!-- code-sync: ./test_iir_lab.py -->
+```python
+"""Independent pole/transfer, Decimal difference-equation and fixed-code checks."""
+import cmath
+from decimal import Decimal, localcontext
+import math
+import unittest
+import iir_lab as lab
+
+
+def independent_order(fs, fp, fsb):
+    # Find integer feasibility by repeated multiplication, no ceil/log formula.
+    ratio = math.tan(math.pi*fsb/fs)/math.tan(math.pi*fp/fs)
+    target = (1000**2-1)/((100/99)**2-1)
+    product, n = 1., 0
+    while product < target:
+        product *= ratio**2
+        n += 1
+    return n
+
+
+def explicit_decimal_difference(b, a, inputs):
+    # Independent direct I form with input/output history, no DFII/SOS state.
+    with localcontext() as ctx:
+        ctx.prec = 80
+        x = [Decimal.from_float(float(v)) for v in inputs]
+        y = []
+        for n in range(len(x)):
+            forward = sum((b[k]*x[n-k] for k in range(min(n+1, len(b)))), Decimal(0))
+            feedback = sum((a[k]*y[n-k] for k in range(1, min(n+1, len(a)))), Decimal(0))
+            y.append(forward-feedback)
+        return y
+
+
+class IIRTests(unittest.TestCase):
+    def close(self, actual, expected, tolerance=1e-11):
+        self.assertEqual(len(actual), len(expected))
+        for a, b in zip(actual, expected):
+            self.assertLess(abs(a-b), tolerance*(1+abs(b)))
+
+    def test_orders_frequency_units_and_complete_bands(self):
+        for fs, fp, expected in [(48000, 6000, 27), (96000, 6000, 30), (48000, 5000, 17)]:
+            design = lab.design(fs=fs, fp=fp)
+            self.assertEqual(design['order'], independent_order(fs, fp, 8000))
+            self.assertEqual(design['order'], expected)
+            for f in [0, fp, 8000, fs/2]:
+                angle = 2*math.pi*f/fs
+                actual = abs(lab.response(design['sections'], angle))
+                self.assertAlmostEqual(actual, lab.ideal_amplitude(design, angle), places=11)
+            self.assertGreaterEqual(lab.ideal_amplitude(design, 2*math.pi*fp/fs), .99)
+            self.assertLessEqual(lab.ideal_amplitude(design, 2*math.pi*8000/fs), .001)
+            # Dense points are a coefficient/model check; monotonic ideal formula
+            # in the manuscript certifies the intervening ideal bands.
+            for k in range(501):
+                angle = math.pi*k/500
+                self.assertAlmostEqual(abs(lab.response(design['sections'], angle)),
+                                       lab.ideal_amplitude(design, angle), places=10)
+        self.assertAlmostEqual(2/.00025*math.tan(math.pi/4), 8000)
+
+    def test_local_band_enclosure_and_rounded_coefficients(self):
+        design = lab.design()
+        for theta in [0., .4, .785, 1.047, 2.5, math.pi]:
+            cell = lab.amplitude_cell(design['sections'], theta, 1e-5)
+            for delta in [-1e-5, -2e-6, 0., 3e-6, 1e-5]:
+                value = abs(lab.response(design['sections'], theta+delta))
+                self.assertGreaterEqual(value+1e-12, cell['lower'])
+                self.assertLessEqual(value-1e-12, cell['upper'])
+        for row in design['sections']:
+            rounded = [lab.binary32(v) for v in row]
+            self.assertLess(lab.section_radius(rounded), 1.)
+        for intervals in [0, True, 2.5]:
+            with self.assertRaises(ValueError):
+                lab.amplitude_certificate(design, intervals=intervals)
+
+    def test_poles_and_sos_signs(self):
+        design = lab.design()
+        self.assertTrue(all(abs(p) < 1 for p in design['poles']))
+        self.assertEqual(len(design['sections']), 14)
+        for row in design['sections']:
+            b0, b1, b2, _, a1, a2 = row
+            self.assertAlmostEqual(b0+b1+b2, 1+a1+a2, places=13)
+            self.assertLess(lab.section_radius(row), 1)
+        a1, a2 = -1.9802, .9801
+        root = (-a1+math.sqrt(a1*a1-4*a2))/2
+        self.assertGreater(root, 1)
+
+    def test_exact_section_and_expanded_zero_state_equivalence(self):
+        design = lab.design()
+        b, a = lab.expand(design['sections'])
+        x = [1., 0., 0., 0., 0.] + [.6*math.cos(2*math.pi*n/17) for n in range(75)]
+        reference = explicit_decimal_difference(b, a, x)
+        direct = lab.decimal_direct(b, a, x)
+        sections = lab.decimal_sos(design['sections'], x)
+        self.assertEqual(len(a), 28)
+        for values in [direct, sections]:
+            for actual, target in zip(values, reference):
+                self.assertLess(abs(actual-target), Decimal('1e-55'))
+        for theta in [.13, .53, .91]:
+            q = cmath.exp(-1j*theta)
+            product = lab.response(design['sections'], theta)
+            poles = design['poles']
+            numerator = 1+0j
+            denominator = 1+0j
+            for p in poles:
+                numerator *= (1-p)*(1+q)/2
+                denominator *= (1-p*q)
+            self.assertLess(abs(product-numerator/denominator), 2e-12)
+
+    def test_phase_derivative_delay_and_whole_passband_bound(self):
+        design = lab.design()
+        for theta in [0., .1, .4, .78]:
+            step = 1e-6
+            ratio = lab.response(design['sections'], theta+step)/lab.response(design['sections'], theta-step)
+            self.assertAlmostEqual(-cmath.phase(ratio)/(2*step),
+                                   lab.delay(design['poles'], theta), places=6)
+        certificate = lab.delay_certificate(design)
+        self.assertLessEqual(certificate['upper_samples'], certificate['budget_samples'])
+        r = .99
+        self.assertAlmostEqual((1-r*r)/(1-r)**2, 199)
+        self.assertGreater(199/48000, .002)
+
+    def test_binary32_sos_against_independent_decimal(self):
+        design = lab.design()
+        x = [.6*math.cos(2*math.pi*1000*n/48000)+.3*math.cos(2*math.pi*10000*n/48000)
+             for n in range(512)]
+        target = [float(v) for v in lab.decimal_sos(design['sections'], x)]
+        for sections in [design['sections'], design['sections'][::-1]]:
+            result = lab.float_sos(sections, x)
+            self.assertEqual(result['status'], 'complete')
+            self.close(result['output'], target, 2e-5)
+        self.assertEqual(lab.binary32(1+2**-24), 1.)
+
+    def test_fixed_order_and_existing_limit_cycle(self):
+        high, low = lab.fixed_order(True), lab.fixed_order(False)
+        self.assertEqual(high['output_codes'][:5], [8, 12, 14, 15, 16])
+        self.assertEqual(low['output_codes'][:7], [8, 16, 24, 28, 30, 31, 32])
+        self.assertEqual(high['output_codes'][-1], 16)
+        self.assertEqual(low['output_codes'][-1], 32)
+        self.assertEqual(high['events'][0]['intermediate_codes'][0], 127)
+        self.assertGreater(sum(high['saturations']), 0)
+        self.assertEqual(sum(low['saturations']), 0)
+        self.assertEqual(lab.round_even_ratio(12), 1)  # preserved .75*q0=1
+        for numerator, expected in [(40, 2), (56, 4), (-40, -2), (-56, -4)]:
+            self.assertEqual(lab.round_even_ratio(numerator), expected)
+
+    def test_boundaries(self):
+        for args in [{'fs': True}, {'fp': 0}, {'fsb': 24000}, {'stop': 1},
+                     {'pass_error': 0}, {'fp': float('nan')}, {'fs': 1j}]:
+            with self.assertRaises(ValueError):
+                lab.design(**args)
+
+
+if __name__ == '__main__':
+    unittest.main()
+```
+

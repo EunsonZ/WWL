@@ -1,0 +1,65 @@
+# #177/#178 V1 当前绑定独立运行
+
+2026-10-10；独立执行者 A。**V1 的有限 Fourier/卷积、IIR 系数与轨迹核对通过；严格机器整频带认证与实际客户端视觉未通过验收。** 当前数据不认证仍在准备的 V2。没有修改业务源码、作者候选、主库、Git/GitHub、系统或依赖，未派生。
+
+## 输入与执行层
+
+`source-bindings.json` 保留作者冻结27目标的路径、完整SHA及字节数；`source-layout/` 保留全部27文件和同版AGENTS/HANDOFF/EXECUTOR。重要真源：Fourier `dcc718f9dd94f3bae9f22d41ceba43a62a3db157ce059b83dce7c0ccf6c7bf1f`，IIR `35e632eede562b18d301488fad4ed1a5387077ec8ea3afe702783fff4dbc0b86`。完整4Python/5SVG字节均保存，没有执行作者的生成或历史recipe。
+
+源CLI合同拒绝有AGENTS祖先的输出目录，因此由root额外明确授权新 `/private/tmp/wwl-recovery-177178-a1ca2a3cbbf9/`。每个CLI结束后立即逐字节复制结果到本目录的 `fourier-cli-output/` 或 `iir-cli-output/`，记录新临时位置、持久目标、SHA及copy_identical；不等待所有任务结束才保全。未绕过或修改guard。所有命令、cwd、60s timeout、elapsed、退出码及stdout/stderr见 `execution-receipt.json` 与 `execution-receipt-with-independent.json`；独立代码在本目录，全部保留可检查源码。
+
+| 实际任务 | 结果 | 耗时约 |
+| --- | --- | ---: |
+| Fourier现存8测试 | exit0，全部通过 | .090s |
+| Fourier规范CLI | exit0，新results.json逐byte保全 | .044s |
+| IIR现存8测试 | exit0，全部通过 | .262s |
+| IIR规范CLI | exit0，新results.json逐byte保全 | 2.828s |
+| 独立Fourier oracle | exit0 | 5.343s |
+| 独立IIR oracle | exit0 | 7.021s |
+
+解释器为既存 `.venv-issues-111plus/bin/python`，Python3.14.7、macOS27.0.1 arm64；独立辅助已安装NumPy2.5.3/SciPy1.18.1/mpmath1.3.0，未安装或升级。任务顺序执行、五类数值线程环境变量均4，最大完成子进程集合RSS为258,146,304bytes，低于4GiB目标；未观察OS线程数，未硬限制RSS。每项已在60s预跑内完成，没有升级更长实验。
+
+## Fourier有限结果
+
+`fourier-independent.json` 独立显式实/虚DFT矩阵、外积双循环卷积、矩阵有限/周期移位，以及有限CTFS/高斯CTFT积分交叉核对，共162项比较，最大缩放误差6.365e−15，容差2e−11(1+|目标|)。不使用仓库FFT或cases()作为预期答案。
+
+- 四点(1,2,1,0)的DFT为(4,−2j,0,2j)，DTFS除4；偶/奇两支为(2,0)/(2,2)，θ=π/4的DTFT为(1+√2)(1−j)。CTFS有限三项1+2cos(2πt)的系数及N2折合另核，CTFT高斯有限积分核尺度；这不证明一般恢复/收敛量词。
+- 对称full=(1,3,4,3,1,0)，N4循环=(2,3,4,3)。非对称full=(1,4,8,8)，N3折回=(9,4,8)，valid互相关=(5,10)，翻核full=(2,5,10,4)。不足补零的整数折回差异与浮点误差分开。
+- C0S0=(2,5,2)、S0C0=(0,5,10)；周期两矩阵严格相同，主例两边(6,5,10)。有限与周期边界分别核对。
+- 六点输入的全部32分块，对M1/2/4/9四核共128种布局核full，包括块长小于核及空push不推进。主OLA offsets为0/2/2/4，末尾两点EOF；无效块原子拒绝、重复EOF、EOF后push拒绝均核。有限枚举不代替任意分块的一般证明。
+- 4点窗补零到16点只加密同一DTFT取样，原4格点仍相同；记录长度与矩形窗第一零点没有因此改变。
+
+## IIR数值与实现结果
+
+`iir-independent.json` 保存独立80位最小整数阶数核算，N−1/N幂与目标的上下比较，SciPy独立Butterworth/bilinear根与4097频点复响应对照，全部机器系数及独立频带界观测。阶数48k/6k为27、96k/6k为30、48k/5k为17；π/2、T=.00025s的预扭曲为8000rad/s。独立SciPy根匹配误差<1e−14，复频响匹配误差<1e−12，binary32各节最大根模<1。
+
+独立NumPy数组重算每带65536闭区间的商/积导数公式，频响中心值由外部SciPy计算，原库prefix/suffix不作自己的oracle。结果与V1 CLI一致：
+
+| 固定系数模型 | 通带数值范围 | 阻带数值上界 | 通带/阻带最小分母cell下界 |
+| --- | --- | --- | --- |
+| binary64 SOS | [.990404277692873,1.000500922623823] | .0009471826502935265 | .09512762340483448 / .330012692072706 |
+| binary32 SOS | [.9904041848713362,1.0005009917211816] | .0009471826356198535 | .09512763205451125 / .3300126902826067 |
+
+最小分子cell上界：通带约.32586482，阻带约6.1003e−6；商界分母均保持正。最坏通带margin约.000623905，阻带约9.7903e−7；相对合同通带下界最小余量约.000404185、阻带约.0000528174。选定端点/极值cell用80位mpmath重算，所选通带float差至2.887e−15、阻带至1.447e−18。**选点误差不是所有cell的已证计算误差上界**，V1含三角函数与普通浮点，没有向外包围；这里接受为可复算数值观测，不把余量或网格当作严格机器全带证书。理论独审已要求R1修订。
+
+V1 CLI delay取原型design.poles，数值上界41.64975690356769samples，预算96；不把它冒充同一固定SOS系数的证书。补充 `fixed-coefficient-delay-observations.json` 用实际机器分母根和传函log导数独立核固定binary64/32模型，数值上界分别41.6497569035677和41.649756191834115samples，网格两种公式误差约6.40e−14；它同样未向外包围，不能消除V1 R2的证书对象缺口。后续V2仍须签收新的严格认证层。
+
+`iir-trajectories-and-inputs.json` 保存完整n0..11999、.6cos(2π1000n/48000)+.3cos(2π10000n/48000)V实际输入、独立80位Decimal直接I型逐节参照、两种binary32非FMA逐操作输出、直接型失败前缀及W8F4全部20拍存储累加/round/saturation。独立numpy.float32逐拍级联与候选sectionwise代码逐bit相同；绝非只读report()的自报。
+
+| binary32实现 | 完成样点 | 对独立Decimal最大绝对误差V | 内部状态/节输出最大值V |
+| --- | ---: | ---: | --- |
+| SOS升半径次序 | 12000 | 1.84887e−6 | .566747 / .739089 |
+| SOS降半径次序 | 12000 | 2.47010e−7 | 2.109817 / 2.202207 |
+| 展开高阶直接型 | 425有限前缀；n425失败 | 前缀误差约1.609e34 | 约1.399e38state |
+
+该次输入降半径输出误差更小但内部峰值更高，不推出一般最优次序或所有输入状态界。直接型未完成12000，失败raw与前缀保留，作为实现反例而非实验运行故障。
+
+W8F4/24位累加器独立使用精确Fraction取整逐存储核全部20拍。高→低第一拍原code128饱和127，末输出16code=1V；低→高末32code=2V且无饱和。2V是故障示例输入，未混进≤.9V主设计合同。旧a=.75/q0=1仍舍入为1；a1−1.98→−1.9802有根>1；r=.99全通DC199samples=4.145833ms，幅度保留而延迟超2ms。
+
+## 辅助失败与图层
+
+独立固定系数delay辅助首次用通用数值求根核重复z=−1零点，受重复根数值敏感性影响而触发辅助断言；原 `supplementary_delay.py/.stdout/.stderr` 完整保留，没有算成课程源码失败。新 `supplementary_delay_retry.py` 直接验证分子系数恒等式后使用精确重复零点，同输入重试成功，源码未修改。记录见 `supplementary-jobs.json` 和 `supplementary-delay-retry-job.json`。
+
+5份SVG均以既存CairoSVG真实生成原生viewport及360px PNG，见 `svg-render.json`、`svg-render/`。查看了native contact sheet，算例数字、箭头与块排列可见，但中文呈缺字方框，不能签收中文排版与完整视觉内容。macOS QuickLook尝试被sandbox拒绝（exit255，Operation not permitted），raw见 `quicklook-probe.json`；没有安装字体、启用插件或扩大系统权限。真实Obsidian窄列、中文字体渲染、硬件、deadline与真人结果仍未验证。
+
+本包可独立支持#177有限执行层签收；#178有限系数/轨迹观测可复用，R1/R2严格认证由冻结后的新版本另核。没有读取或执行活跃V2。

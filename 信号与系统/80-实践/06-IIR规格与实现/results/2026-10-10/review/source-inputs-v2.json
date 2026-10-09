@@ -1,0 +1,51 @@
+{
+  "candidate_root": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/author177178/candidate-v2",
+  "actual27_target_match": true,
+  "only5_changed": true,
+  "files": [
+    {
+      "path": "信号与系统/20-数字信号处理/04-IIR设计二阶节与幅相取舍.md",
+      "bytes": 21773,
+      "sha256": "28e8004b87dc41758d50850126d959178189d9cdc3aed81d15f388f70ac4ba6e",
+      "v1_sha256": "d2b1b29469f2855c6a163cc4a5b8c2e30a661c4ab07bb673cac335a7ef1d4698"
+    },
+    {
+      "path": "信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md",
+      "bytes": 39177,
+      "sha256": "f80416583e434eceae658af99c9ec01bd72ac02c6fdc66b79fb18e3b9217e33e",
+      "v1_sha256": "3455f9d0bac3220f415667698bab57a40aaaa211f52899d423f9b0aa179503a6"
+    },
+    {
+      "path": "信号与系统/80-实践/06-IIR规格与实现/README.md",
+      "bytes": 6623,
+      "sha256": "654390ba5f05a7e839145361c9f255a51389d5c9e164215ffdece4158928488c",
+      "v1_sha256": "1205fd0dba0406ad053ef7150a0765a374025cdc8585629ea52f9ca20e08b03f"
+    },
+    {
+      "path": "信号与系统/80-实践/06-IIR规格与实现/iir_lab.py",
+      "bytes": 26997,
+      "sha256": "87344dd861372a9021c7c36ea45ddbf3983b9f1c0654db8b3a6e835c45355e74",
+      "v1_sha256": "35e632eede562b18d301488fad4ed1a5387077ec8ea3afe702783fff4dbc0b86"
+    },
+    {
+      "path": "信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py",
+      "bytes": 11570,
+      "sha256": "4160fe8aafbeaca4e517ba41d05088ac388eb2af15fb91e7090c425a79f91703",
+      "v1_sha256": "20b415542991cef6280a6db9889eeb7959f13fcba95e492b51a3440ae1abcfed"
+    }
+  ],
+  "mirrors": [
+    {
+      "path": "iir_lab.py",
+      "mirror_matches": true
+    },
+    {
+      "path": "test_iir_lab.py",
+      "mirror_matches": true
+    }
+  ],
+  "applicable_agents": [
+    ".wwl-recovery/2026-10-10-crash/author177178/AGENTS.md",
+    "AGENTS.md"
+  ]
+}

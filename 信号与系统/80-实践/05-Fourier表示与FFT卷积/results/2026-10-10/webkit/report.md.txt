@@ -1,0 +1,11 @@
+# 五张冻结 SVG 的完整 WebKit 画布补证
+
+五张 V1 SVG 均在本机 WKWebView 的完整原生画布中实际渲染，独立通过内置 view_image 查看 PNG：中文 glyph、边界、箭头、坐标与数字可辨，未出现先前 QuickLook 正方形缩略图的右侧裁切。每张 PNG 为完整 SVG width/height 的 Retina 2 倍像素，尺寸及逐图观察见 visual-observations.json。源字节和字体均未修改，五项 SHA 与 current-bound-01 冻结源一致；sources/ 留存逐字节副本。
+
+使用现存 Xcode Swift 6.4 与系统 AppKit/WebKit。编译准备单列：2.794 秒、exit 0，缓存和临时编译文件仅在本目录。StaticSVG.swift 使用 nonPersistent 数据存储，禁用内容 JavaScript，只允许目标本地文件导航，以源 width/height 设置 WKWebView 和完整 snapshot rect；读取原始本地 SVG，无模板重写、外部浏览器 profile 或现有屏幕读取。静态检查未发现远程资源引用；未进行网络抓包。
+
+一次标准沙箱运行因 LaunchServices/WebKit sandbox extension 权限拒绝，60 秒超时、returncode -9，未产生 PNG；完整 stderr 与失败 receipt 保留。这是环境层限制。随后一次窄范围 require_escalated 自动审批成功，以同一二进制、同一输入运行 2.035 秒、exit 0，五张 PNG 及原始 stdout/stderr 均已落在本目录。成功进程观测峰值 RSS 93,306,880 bytes（约 89 MiB），并未证明 OS 线程上限或设置硬 RSS 限。编译和渲染命令、环境、时间、源码/二进制绑定在对应 receipts 与 environment.json 中。
+
+此结果仅验收实际系统 WebKit 静态完整画布。未验收 Obsidian、真人理解或 360 px 窄屏版；不提升 V1 ordinary-float 全频带证书与 design-pole 群延迟为固定 SOS 的一般证明。数值代码、布局与 SVG 无改动，未重跑数值。先前 Cairo 中文 tofu、QuickLook 部分裁切与标准沙箱失败证据均保留。
+
+交付入口：本报告、visual-observations.json、source-bindings.json、environment.json、compile-receipt.json、render-standard-receipt.json、render-escalated-receipt.json、全部原始 stdout/stderr、StaticSVG.swift 与运行/准备脚本、manifest.json、sources/、png-escalated/ 和 artifact-sha256.json。compiler-tmp/ 与 module-cache/ 为本机编译缓存，保留在 owned 目录但不纳入必要证据复制清单。

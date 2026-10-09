@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="650" viewBox="0 0 1060 650" role="img" aria-labelledby="title desc">
+<title id="title">四种时间对象对应四种Fourier频域对象</title><desc id="desc">连续与离散为列，非周期与周期为行。时间周期给频率离散，时间离散给频率周期。列出分析与逆尺度和幅值单位。</desc>
+<rect width="1060" height="650" fill="#fff"/>
+<style>text{font-family:system-ui,"PingFang SC",sans-serif;fill:#152b40;font-size:21px}.head{font-size:26px;font-weight:650}.small{font-size:19px}.box{fill:#f2f8fc;stroke:#447797;stroke-width:2}.rule{fill:#fff3df;stroke:#bc852b;stroke-width:2}</style>
+<text x="36" y="40" class="head">先选定义域与延拓，再选Fourier表示</text>
+<text x="215" y="86">连续时间 t（s）</text><text x="670" y="86">离散索引 n（sample）</text>
+<rect x="150" y="105" width="415" height="195" rx="12" class="box"/><rect x="600" y="105" width="425" height="195" rx="12" class="box"/>
+<text x="22" y="194">非周期</text>
+<text x="173" y="141" class="head">CTFT：连续谱 Xc(ω)</text><text x="173" y="181">ω ∈ ℝ，rad/s；一般不周期</text><text x="173" y="221">分析：全线积分，单位 V·s</text><text x="173" y="262">合成：全频积分 / 2π</text>
+<text x="623" y="141" class="head">DTFT：连续谱 Xz(θ)</text><text x="623" y="181">θ：rad/sample；2π周期</text><text x="623" y="221">分析：全整数求和，单位 V</text><text x="623" y="262">合成：一段2π积分 / 2π</text>
+<rect x="150" y="330" width="415" height="195" rx="12" class="box"/><rect x="600" y="330" width="425" height="195" rx="12" class="box"/>
+<text x="22" y="420">周期</text>
+<text x="173" y="366" class="head">CTFS：谐波系数 ck</text><text x="173" y="406">ωk = k·2π/T₀，k ∈ ℤ</text><text x="173" y="446">分析：一周期积分 / T₀，V</text><text x="173" y="487">合成：无限谐波求和</text>
+<text x="623" y="366" class="head">DTFS：N₀个独立系数 ak</text><text x="623" y="406">θk = 2πk/N₀，k按N₀重复</text><text x="623" y="446">分析：N₀点求和 / N₀，V</text><text x="623" y="487">合成：N₀个谐波求和</text>
+<rect x="150" y="552" width="875" height="68" rx="10" class="rule"/><text x="171" y="580" class="small">时间周期 → 频率离散；时间离散 → 频率周期。</text><text x="171" y="606" class="small">恢复意义还需正文条件；周期线谱的冲激不能当普通密度平方。</text>
+</svg>

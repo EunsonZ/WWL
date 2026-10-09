@@ -1,0 +1,919 @@
+--- a/信号与系统/20-数字信号处理/04-IIR设计二阶节与幅相取舍.md
++++ b/信号与系统/20-数字信号处理/04-IIR设计二阶节与幅相取舍.md
+@@ -7,6 +7,7 @@
+ aliases:
+   - 数字IIR设计与SOS结构
+ sources:
++  - https://docs.python.org/3/library/decimal.html
+   - https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/51e3beff8c8ce2289ba292fcdb0040f4_lec08.pdf
+   - https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/2c6fe95a4d44834ccf0c0d9017118703_lec07.pdf
+   - https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/aa0fbb84ec39521a7a44e481c7ce0d7c_lec03.pdf
+@@ -84,20 +85,26 @@
+ 
+ ### 生成系数的连续频带如何查
+ 
+-理想单调公式已经覆盖完整频带，生成float64系数还须核其自己的有理函数。实验额外按小区间给幅度上界和下界，保留全部机器系数；它不假设舍入后的系数仍严格单调。对一节 $H_i=N_i/D_i$，在区间中心θ₀和半宽δ处取
+-
+-$$U_i=|N_i(\theta_0)|+(|b_1|+2|b_2|)\delta,\quad
+-V_i=|D_i(\theta_0)|-(|a_1|+2|a_2|)\delta>0,$$
+-$$M_i=U_i/V_i,\qquad
+-L_i=\frac{|b_1|+2|b_2|}{V_i}
+- +\frac{U_i(|a_1|+2|a_2|)}{V_i^2}.$$
+-
+-指数模为1给 $|N_i'|\le|b_1|+2|b_2|$、$|D_i'|\le|a_1|+2|a_2|$，三角不等式给U、V；商法则给 $|H_i|\le M_i$、$|H_i'|\le L_i$。有限乘积求导得整机局部界
+-
+-$$K=\sum_iL_i\prod_{j\ne i}M_j,\qquad
+-\big||H(\theta)|-|H(\theta_0)|\big|\le K\delta.$$
+-
+-每个通带小区间取中心幅度±Kδ，阻带取中心幅度+Kδ；这些区间覆盖两条闭频带并包含带边，才可汇总最坏值。若V≤0，应加密或报告未能给界，不能越过这项条件。`amplitude_certificate`对原float64节以及转成binary32的固定系数分别计算这份连续界；binary32递推另有逐操作舍入，线性系数频响不等于实际非线性轨迹。公式在实数精确运算成立，本次浮点求界没有对舍入做向外区间包围，仍须明确这层限制。
++理想单调公式已覆盖整个理想频带；实际生成的binary64／binary32系数须验证它们各自的固定有理函数，不能把另一次极点计算或密集抽点直接当证书。读者先问：如果把整个频带分成有限个闭区间，且每一段的**所有**频率都被包在达标范围内，是否还可能漏掉一个坏点？不会。关键是每段给整个区间的外包围，覆盖无缝；“测中心点”没有这个性质。
++
++本主例用 $c=\cos\theta$，无需计算三角函数就能认证所选带。通带 $0\le\theta\le\pi/4$ 对应 $\sqrt2/2\le c\le1$；阻带 $\pi/3\le\theta\le\pi$ 对应 $-1\le c\le1/2$。用正文源码中的有限小数 $c_{lo}=0.707106781186547524400844362104849039284835937688474036588339868$ 略扩大通带为 $[c_{lo},1]$。该小数是精确有理数，以整数分数验证 $c_{lo}>0$、$c_{lo}^2\le1/2$，就证明覆盖真实带边；没有调用浮点sqrt后把它当准确端点。
++
++对实系数节，令 $q=e^{-j\theta}$，有
++
++$$P(c)=|b_0+b_1q+b_2q^2|^2
++=b_0^2+b_1^2+b_2^2+2b_1(b_0+b_2)c+2b_0b_2(2c^2-1),$$
++$$Q(c)=|1+a_1q+a_2q^2|^2
++=(1-a_2)^2+a_1^2+2a_1(1+a_2)c+4a_2c^2.$$
++
++本构造每个分子精确满足二阶 $b_1=2b_0,b_2=b_0$ 或一阶 $b_1=b_0,b_2=a_2=0$，所以 $P(c)=b_0^2(2+2c)^d$，d为2或1。从binary64系数分别转binary32后须以精确分数再次核这两个恒等式，不能凭显示小数相等判断；这组正常量程下的乘2缩放保持恒等式。因式形式在c=−1保留真正的零，避免普通浮点多项式抵消后冒出负“幅度平方”。整个幅度平方是 $\prod_iP_i/Q_i$。
++
++源码的 `Outward` 以私有Decimal上下文分别用 `ROUND_FLOOR`、`ROUND_CEILING`。每项输入系数由 `Decimal.from_float` **精确转换**其二进制数值，保存同一dyadic分数；没有使用 `Decimal(str(value))` 把短显示改成另一模型。对闭区间 $[l,u]$，加法取下端之和向负无穷舍入、上端之和向正无穷舍入；乘法取四个端点乘积的最小向下值与最大向上值；平方在跨零时下界取0。除法只在分母区间不含零时取四端比值的外包围。Horner有限递推用这些操作，逐步包含精确多项式的所有值；各节**Q下界必须严格大于0**后，才允许除法和乘积。
++
++对每个通带cell，把整机平方幅度包围 $[L,U]$ 与精确有理限额 $0.9801\le L\le U\le1.0201$ 比较；阻带需 $U\le0.000001$。这分别是0.99／1.01和0.001的平方，不把1%换成1dB，也无需开平方。若包围太宽，用精确中点二分，父闭区间等于两个子闭区间的并。最终验收所有接收cell的首尾和相邻端点精确相等；没有未决cell才返回 `certified=True`。逐cell保存c端点、Q下界、幅度平方和下节的延迟界，因此可复查“有限cells ⇒ 全频带”的量词。
++
++默认80位Decimal、最大深度24、每带最多131072次cell求值。中点另用200位、`Inexact`触发异常的上下文；深度上限28以内可保证有限小数的中点精确。算术范围异常、Q包围跨零、细分耗尽或资源耗尽都不能冒签；保留未决区间，返回 `not_certified` 或退出失败。认证接口只支持这里的48kHz／6kHz／8kHz主规格，迁移设计须另建立正确c域后认证，不偷用原带边。
++
++正确舍入与精确转换的合同见 [Python Decimal官方文档](https://docs.python.org/3/library/decimal.html) 中构造、`from_float`、`Context`运算及舍入方向。旧复数抽点／局部导数浮点实现保留为 `amplitude_estimate`，只供观察，不能产生严格认证；它与向外包围各有用途。固定系数的线性传函达标也不保证每一步舍入后的实际非线性轨迹达标，后者继续用下文的精度／饱和实验核查。
+ 
+ ## 直接型与节级联的代数责任
+ 
+@@ -139,18 +146,37 @@
+ 
+ 从分子分母幅度平方相同可证全通；相位微分给群延迟。r=.99时τA(0)=199样点=4.145833ms。把它乘到任一已达幅度规格的H上，幅度原封不动，DC延迟却已超过2ms预算；幅度合格不是相位合格。最小相位在相同幅度的相应因果稳定类中减少额外全通延迟，不承诺严格线性相位或对任意设计最优。原典定义见本页来源Lecture3第1–2、6页。
+ 
+-本Butterworth在非零频响区的群延迟可以直接从极点得到
++理想Butterworth在非零频响区的群延迟可以直接从理想数字极点得到
+ 
+ $$\tau_H(\theta)=\frac12\sum_{k=0}^{26}
+ \frac{1-|r_k|^2}{|1-r_ke^{-j\theta}|^2}.$$
+ 
+-它不恒定，须对0..π/4核最大值及变化量；θ=π处传函为0，群延迟不定义。每个 $(1+e^{-j\theta})$ 的相位在 $-\pi<\theta<\pi$ 为 $-\theta/2$；每个分母因子 $1-r_ke^{-j\theta}$ 的相位导数为 $\operatorname{Re}[r_ke^{-j\theta}/(1-r_ke^{-j\theta})]$。利用 $1+2\operatorname{Re}[v/(1-v)]=(1-|v|^2)/|1-v|^2$，N个零因子的N/2与极点贡献合并为上式。这说明零点位置和相位前提已参与，不能把它当任意IIR的群延迟公式。实验用传函相位差分交叉核值；网格之间用导数界加余量。对每个极点令 $d_k=\min_{0\le\theta\le\theta_p}|1-r_ke^{-j\theta}|$，可以把极角投影到该弧后算最小距离；有 $|\tau'_H|\le\sum_k(1-|r_k|^2)|r_k|/d_k^4$。网格最大加此K乘最大最近点距离给整个通带延迟上界，浮点计算层不冒充区间算术认证。
++它不恒定，须对0..π/4核最大值及变化量；θ=π处传函为0，群延迟不定义。每个 $(1+e^{-j\theta})$ 的相位在 $-\pi<\theta<\pi$ 为 $-\theta/2$；每个分母因子 $1-r_ke^{-j\theta}$ 的相位导数为 $\operatorname{Re}[r_ke^{-j\theta}/(1-r_ke^{-j\theta})]$。利用 $1+2\operatorname{Re}[v/(1-v)]=(1-|v|^2)/|1-v|^2$，N个零因子的N/2与极点贡献合并为上式。这说明零点位置和相位前提已参与，不能把它当任意IIR的群延迟公式。旧 `ideal_pole_delay_estimate` 用相位差分交叉观察这一极点模型，再估计网格余量；它没有向外舍入，也不认证另一份固定SOS系数。对每个极点令 $d_k=\min_{0\le\theta\le\theta_p}|1-r_ke^{-j\theta}|$，可以把极角投影到该弧后算最小距离；有 $|\tau'_H|\le\sum_k(1-|r_k|^2)|r_k|/d_k^4$。网格最大加此K乘最大最近点距离给整个通带延迟上界，浮点计算层不冒充区间算术认证。固定SOS的严格通带延迟须改用下面同系数的表达式。
++
++### 固定SOS的延迟也用同一份系数
++
++群延迟按 $\tau=-d\arg H/d\theta$，单位为输入sample。这里每节分子是 $b_0(1+q)^d$；在通带不为零，其相位斜率贡献d/2。分母 $D=1+a_1q+a_2q^2$ 给
++
++$$\tau_i=\frac d2-\operatorname{Re}\frac{a_1q+2a_2q^2}{D}.$$
++
++把右侧乘 $\overline D/\overline D$，实部的分子为 $a_1^2+2a_2^2+a_1(1+3a_2)c+2a_2(2c^2-1)$。用上一节**同一Q**化简，二阶节与一阶节分别得到
++
++$$\tau_i(c)=\frac{(1-a_2^2)+a_1(1-a_2)c}{Q(c)}\quad(d=2),\qquad
++\tau_i(c)=\frac{1-a_1^2}{2Q(c)}\quad(d=1,a_2=0).$$
++
++级联延迟相加。`strict_machine_certificate`在每个通带cell用同一向外多项式／除法包围这些式，要求整机延迟下界≥0、上界≤96sample；幅度和延迟均合格才接收该cell。因此binary64与binary32的认证分别绑定其完整固定系数，没有借用 `design()['poles']` 或有限相位差分替代。通带分子无零点，Q逐节正；Nyquist零点处延迟不定义，本认证也没有给阻带延迟目标。
++
++固定系数的稳定性另以精确分数核查。一阶须 $|a_1|<1$；二阶须 $-1<a_2<1$、$1+a_1+a_2>0$、$1-a_1+a_2>0$。一个可检查证明是以 $w=(z-1)/(z+1)$ 把单位圆内映到左半平面；$z^2+a_1z+a_2$ 变为
++
++$$(1-a_1+a_2)w^2+2(1-a_2)w+(1+a_1+a_2).$$
++
++三个系数严格正时，两实根的和为负、积为正，故都负；共轭根的实部由根和给为负。$z=-1$被最后一个严格条件排除，因而映回的两个根都在圆内。该精确检验与每cell的Q正包围分别保存；稳定极点不替代实际整数递推的归零/饱和责任。
+ 
+ | 同一48kHz全速率输出 | 193tap FIR | 本Butterworth IIR |
+ | --- | --- | --- |
+ | 理想幅度 | 现有连续区间上界已报；保留原证据 | N27；两带边与单调式认证理想原型，另核生成系数 |
+ | 阶数／理想状态 | 192阶，192输入历史 | 27阶；13二阶+1一阶，共27有效状态 |
+-| 群延迟 | 非零区间96sample=2ms | 频率相关；必须核通带最大≤96，不能只看DC |
++| 群延迟 | 非零区间96sample=2ms | 频率相关；固定binary64/32 SOS分别核闭带最大≤96，不能只看DC |
+ | 每输入样点乘法预算 | 直接193；对称配对可97，另96对加 | 未省结构零项的直接型55；SOS各二阶5、一阶3，共68 |
+ | 输出速率 | 此表均48kHz | 此表均48kHz |
+ | EOF／初态 | 全卷积尾192点，输入历史可清空 | 响应一般无限；须声明截尾容差／状态持有，不能有限拍自动flush全尾 |
+--- a/信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md
++++ b/信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md
+@@ -25,7 +25,9 @@
+ """
+ import argparse
+ import cmath
+-from decimal import Decimal, localcontext
++from decimal import (Decimal, localcontext, Context, ROUND_FLOOR, ROUND_CEILING,
++                     ROUND_HALF_EVEN, Overflow, Underflow, Subnormal, Clamped, Inexact)
++from fractions import Fraction
+ import json
+ import math
+ from pathlib import Path
+@@ -137,7 +139,7 @@
+             'upper': center_abs+margin}
+ 
+ 
+-def amplitude_certificate(spec, sections=None, intervals=65536):
++def amplitude_estimate(spec, sections=None, intervals=65536):
+     """Cover both closed bands with local enclosures; not outward interval rounding."""
+     if isinstance(intervals, bool) or not isinstance(intervals, int) or intervals < 1:
+         raise ValueError('positive band interval count required')
+@@ -156,7 +158,7 @@
+         result[name] = {'theta_rad_per_sample': [start, stop],
+                         'lower': lower, 'upper': upper,
+                         'max_cell_margin': largest_margin}
+-    result['within_amplitude_contract'] = (
++    result['estimate_within_amplitude_contract'] = (
+         result['pass']['lower'] >= 1-spec['pass_error'] and
+         result['pass']['upper'] <= 1+spec['pass_error'] and
+         result['stop']['upper'] <= spec['stop'])
+@@ -168,7 +170,7 @@
+     return .5*sum((1-abs(p)**2)/abs(1-p*q)**2 for p in poles)
+ 
+ 
+-def delay_certificate(spec, intervals=32768):
++def ideal_pole_delay_estimate(spec, intervals=32768):
+     if isinstance(intervals, bool) or not isinstance(intervals, int) or intervals < 1:
+         raise ValueError('positive grid interval count required')
+     edge = 2*math.pi*spec['fp']/spec['fs']
+@@ -189,6 +191,217 @@
+             'grid_margin_samples': margin, 'upper_samples': maximum+margin,
+             'budget_samples': .002*spec['fs'], 'intervals': intervals,
+             'floating_bound_not_interval_arithmetic': True}
++
++
++class Outward:
++    """Decimal endpoints; every arithmetic result rounds away from its interval.
++
++    Float coefficients enter through Decimal.from_float (exact conversion),
++    never str(float). Contexts are private and independent of getcontext().
++    Exceptional range behavior raises; it cannot produce a certificate.
++    """
++    def __init__(self, precision=80):
++        if isinstance(precision, bool) or not isinstance(precision, int) or precision < 24:
++            raise ValueError('at least 24 decimal digits required')
++        self.down = Context(prec=precision, rounding=ROUND_FLOOR)
++        self.up = Context(prec=precision, rounding=ROUND_CEILING)
++        for ctx in [self.down, self.up]:
++            for signal in [Overflow, Underflow, Subnormal, Clamped]:
++                ctx.traps[signal] = True
++
++    def point(self, value):
++        if isinstance(value, bool):
++            raise ValueError('finite exact scalar required')
++        if isinstance(value, float):
++            value = Decimal.from_float(value)
++        elif isinstance(value, (str, int)):
++            value = Decimal(value)
++        if not isinstance(value, Decimal) or not value.is_finite():
++            raise ValueError('finite exact scalar required')
++        return value, value
++
++    def add(self, x, y):
++        return self.down.add(x[0], y[0]), self.up.add(x[1], y[1])
++
++    def sub(self, x, y):
++        return self.down.subtract(x[0], y[1]), self.up.subtract(x[1], y[0])
++
++    def mul(self, x, y):
++        pairs = [(a, b) for a in x for b in y]
++        return (min(self.down.multiply(a, b) for a, b in pairs),
++                max(self.up.multiply(a, b) for a, b in pairs))
++
++    def square(self, x):
++        if x[0] <= 0 <= x[1]:
++            return Decimal(0), max(self.up.multiply(v, v) for v in x)
++        return (min(self.down.multiply(v, v) for v in x),
++                max(self.up.multiply(v, v) for v in x))
++
++    def div(self, x, y):
++        if y[0] <= 0 <= y[1]:
++            raise ValueError('interval divisor contains zero')
++        pairs = [(a, b) for a in x for b in y]
++        return (min(self.down.divide(a, b) for a, b in pairs),
++                max(self.up.divide(a, b) for a, b in pairs))
++
++    def polynomial(self, coefficients, x):
++        result = self.point(0)
++        for coefficient in coefficients[::-1]:
++            result = self.add(self.mul(result, x), coefficient)
++        return result
++
++
++def strict_sections(sections, arithmetic):
++    """Bind fixed binary coefficients, exact binomial numerators and Jury tests."""
++    prepared, records = [], []
++    iv = arithmetic
++    for row in sections:
++        if len(row) != 6:
++            raise ValueError('six coefficients per SOS required')
++        if any(not isinstance(v, float) for v in row):
++            raise ValueError('fixed binary floating coefficients required')
++        values = [iv.point(v)[0] for v in row]
++        b0, b1, b2, a0, a1, a2 = values
++        exact = [Fraction(v) for v in values]
++        eb0, eb1, eb2, ea0, ea1, ea2 = exact
++        if ea0 != 1 or eb0 == 0:
++            raise ValueError('normalized nonzero binomial numerator required')
++        degree = 1 if eb2 == ea2 == 0 else 2
++        if degree == 1:
++            valid = eb1 == eb0 and abs(ea1) < 1
++        else:
++            valid = (eb2 == eb0 and eb1 == 2*eb0 and -1 < ea2 < 1
++                     and 1+ea1+ea2 > 0 and 1-ea1+ea2 > 0)
++        if not valid:
++            raise ValueError('exact binomial shape or Schur stability conditions failed')
++        A1, A2 = iv.point(a1), iv.point(a2)
++        one, two, four = iv.point(1), iv.point(2), iv.point(4)
++        # Q(c)=|1+a1 q+a2 q^2|^2. All polynomial coefficients enclosed.
++        Q = [iv.add(iv.square(iv.sub(one, A2)), iv.square(A1)),
++             iv.mul(two, iv.mul(A1, iv.add(one, A2))), iv.mul(four, A2)]
++        # Group delay uses this same denominator, not separately computed poles.
++        if degree == 1:
++            J = [iv.div(iv.sub(one, iv.square(A1)), two)]
++        else:
++            J = [iv.sub(one, iv.square(A2)), iv.mul(A1, iv.sub(one, A2))]
++        prepared.append({'b0_squared': iv.square(iv.point(b0)),
++                         'degree': degree, 'Q': Q, 'J': J})
++        records.append({'decimal_exact': [str(v) for v in values],
++                        'dyadic_ratios': [[f.numerator, f.denominator] for f in exact],
++                        'numerator_degree': degree, 'exact_schur_conditions': True})
++    if not prepared:
++        raise ValueError('nonempty cascade required')
++    return prepared, records
++
++
++def strict_cell(prepared, left, right, arithmetic, with_delay):
++    """Enclose every c in the entire closed cell by outward polynomial algebra."""
++    iv, c = arithmetic, (left, right)
++    amplitude_squared, group_delay = iv.point(1), iv.point(0)
++    smallest_denominator = None
++    factor = iv.add(iv.point(2), iv.mul(iv.point(2), c))
++    for section in prepared:
++        Q = iv.polynomial(section['Q'], c)
++        if Q[0] <= 0:
++            return None
++        smallest_denominator = (Q[0] if smallest_denominator is None
++                                else min(smallest_denominator, Q[0]))
++        binomial = factor if section['degree'] == 1 else iv.square(factor)
++        P = iv.mul(section['b0_squared'], binomial)
++        amplitude_squared = iv.mul(amplitude_squared, iv.div(P, Q))
++        if with_delay:
++            J = iv.polynomial(section['J'], c)
++            group_delay = iv.add(group_delay, iv.div(J, Q))
++    return {'amplitude_squared': amplitude_squared,
++            'group_delay_samples': group_delay if with_delay else None,
++            'minimum_Q_lower': smallest_denominator}
++
++
++def strict_machine_certificate(spec, sections=None, precision=80,
++                               max_depth=24, max_cells=131072):
++    """Rigorous closed-band certificate for the declared primary 48k design.
++
++    Unsupported specifications, arithmetic failures, unresolved cells or a
++    resource cap can never return certified=True. Finite adaptive bisection
++    certifies every point in the union of accepted closed cells, not samples.
++    """
++    for value in [max_depth, max_cells]:
++        if isinstance(value, bool) or not isinstance(value, int) or value < 1:
++            raise ValueError('positive integer refinement limits required')
++    if max_depth > 28:
++        raise ValueError('max_depth must be at most 28 for exact midpoint context')
++    primary = (spec['fs'], spec['fp'], spec['fsb'], spec['pass_error'], spec['stop'])
++    if primary != (48000., 6000., 8000., .01, .001):
++        return {'status': 'unsupported_specification', 'certified': False}
++    iv = Outward(precision)
++    selected = spec['sections'] if sections is None else sections
++    prepared, coefficients = strict_sections(selected, iv)
++    # This decimal is a rational. Fraction multiplication proves c_lo <= sqrt(1/2).
++    c_lo = Decimal('0.707106781186547524400844362104849039284835937688474036588339868')
++    ratio = Fraction(c_lo)
++    if not (ratio > 0 and ratio*ratio <= Fraction(1, 2)):
++        raise ValueError('passband rational endpoint failed its exact square proof')
++    exact_midpoint = Context(prec=200, rounding=ROUND_HALF_EVEN)
++    exact_midpoint.traps[Inexact] = True
++    # max_depth<=28, initial decimal has <80 digits; every midpoint has <110.
++    bands = {'pass': (c_lo, Decimal(1)), 'stop': (Decimal(-1), Decimal('0.5'))}
++    results = {}
++    for band, (left, right) in bands.items():
++        stack, accepted, unresolved = [(left, right, 0)], [], []
++        evaluations = 0
++        with_delay = band == 'pass'
++        while stack:
++            lo, hi, depth = stack.pop()
++            if evaluations >= max_cells:
++                unresolved.append({'c': [lo, hi], 'reason': 'max_cells'})
++                unresolved.extend({'c': [a, b], 'reason': 'max_cells'} for a, b, _ in stack)
++                stack.clear()
++                break
++            evaluations += 1
++            cell = strict_cell(prepared, lo, hi, iv, with_delay)
++            if cell is None:
++                fits = False
++            elif with_delay:
++                amp, lag = cell['amplitude_squared'], cell['group_delay_samples']
++                fits = (amp[0] >= Decimal('0.9801') and amp[1] <= Decimal('1.0201')
++                        and lag[0] >= 0 and lag[1] <= Decimal(96))
++            else:
++                fits = cell['amplitude_squared'][1] <= Decimal('0.000001')
++            if fits:
++                accepted.append({'c': [lo, hi], 'depth': depth, **cell})
++            elif depth >= max_depth:
++                unresolved.append({'c': [lo, hi], 'reason': 'max_depth', 'enclosure': cell})
++            else:
++                mid = exact_midpoint.divide(exact_midpoint.add(lo, hi), Decimal(2))
++                if not lo < mid < hi:
++                    raise ValueError('exact midpoint cannot split cell')
++                stack.extend([(mid, hi, depth+1), (lo, mid, depth+1)])
++        accepted.sort(key=lambda item: item['c'][0])
++        # Exact endpoint adjacency is an independent coverage invariant of the loop.
++        partition = sorted([item['c'] for item in accepted+unresolved], key=lambda x: x[0])
++        covered = (bool(partition) and partition[0][0] == left and partition[-1][1] == right
++                   and all(a[1] == b[0] for a, b in zip(partition, partition[1:])))
++        complete = covered and not unresolved
++        results[band] = {'c_domain': [left, right], 'partition_covers_closed_domain': covered,
++                         'certified': complete, 'cell_evaluations': evaluations,
++                         'accepted_cells': accepted, 'unresolved_cells': unresolved,
++                         'amplitude_squared_lower': min((v['amplitude_squared'][0]
++                             for v in accepted), default=None),
++                         'amplitude_squared_upper': max((v['amplitude_squared'][1]
++                             for v in accepted), default=None),
++                         'delay_samples_lower': min((v['group_delay_samples'][0]
++                             for v in accepted), default=None) if with_delay else None,
++                         'delay_samples_upper': max((v['group_delay_samples'][1]
++                             for v in accepted), default=None) if with_delay else None}
++    certified = all(item['certified'] for item in results.values())
++    return {'status': 'certified' if certified else 'not_certified', 'certified': certified,
++            'coefficient_model': 'fixed exact dyadic real SOS; no operation-rounding model',
++            'coefficients': coefficients, 'decimal_precision': precision,
++            'rounding': ['ROUND_FLOOR', 'ROUND_CEILING'],
++            'pass_endpoint_proof': {'c_lo': c_lo, 'rational': [ratio.numerator, ratio.denominator],
++                                    'positive_and_square_le_half_exact': True},
++            'limits': {'max_depth': max_depth, 'max_cells_per_band': max_cells},
++            'bands': results}
+ 
+ 
+ def decimal(value):
+@@ -350,7 +563,7 @@
+                                 'ideal_stop': ideal_amplitude(spec, ws),
+                                 'sos_pass': abs(response(spec['sections'], wp)),
+                                 'sos_stop': abs(response(spec['sections'], ws))},
+-            'delay': delay_certificate(spec),
++            'ideal_pole_delay_estimate': ideal_pole_delay_estimate(spec),
+             'precision': {'input_length': len(x), 'input_bound_v': .9,
+                           'binary32_each_operation_no_fma': True,
+                           'reference': '80-place Decimal exact binary64 SOS coefficients',
+@@ -362,9 +575,9 @@
+                           'descending_peaks': descending['section_metrics']},
+             'fixed_high_first': fixed_order(True), 'fixed_low_first': fixed_order(False),
+             'migration_96k': design(fs=96000), 'migration_5k': design(fp=5000),
+-            'coefficient_band_bounds': {
+-                'binary64_sos': amplitude_certificate(spec),
+-                'binary32_sos': amplitude_certificate(spec,
++            'machine_certificates': {
++                'binary64_sos': strict_machine_certificate(spec),
++                'binary32_sos': strict_machine_certificate(spec,
+                     [[binary32(v) for v in row] for row in spec['sections']])},
+             'binary32_section_radii': [section_radius([binary32(v) for v in row])
+                                        for row in spec['sections']],
+@@ -408,6 +621,7 @@
+ """Independent pole/transfer, Decimal difference-equation and fixed-code checks."""
+ import cmath
+ from decimal import Decimal, localcontext
++from fractions import Fraction
+ import math
+ import unittest
+ import iir_lab as lab
+@@ -475,7 +689,7 @@
+             self.assertLess(lab.section_radius(rounded), 1.)
+         for intervals in [0, True, 2.5]:
+             with self.assertRaises(ValueError):
+-                lab.amplitude_certificate(design, intervals=intervals)
++                lab.amplitude_estimate(design, intervals=intervals)
+ 
+     def test_poles_and_sos_signs(self):
+         design = lab.design()
+@@ -511,18 +725,94 @@
+                 denominator *= (1-p*q)
+             self.assertLess(abs(product-numerator/denominator), 2e-12)
+ 
+-    def test_phase_derivative_delay_and_whole_passband_bound(self):
++    def test_phase_derivative_and_ideal_pole_delay_estimate(self):
+         design = lab.design()
+         for theta in [0., .1, .4, .78]:
+             step = 1e-6
+             ratio = lab.response(design['sections'], theta+step)/lab.response(design['sections'], theta-step)
+             self.assertAlmostEqual(-cmath.phase(ratio)/(2*step),
+                                    lab.delay(design['poles'], theta), places=6)
+-        certificate = lab.delay_certificate(design)
++        certificate = lab.ideal_pole_delay_estimate(design)
+         self.assertLessEqual(certificate['upper_samples'], certificate['budget_samples'])
+         r = .99
+         self.assertAlmostEqual((1-r*r)/(1-r)**2, 199)
+         self.assertGreater(199/48000, .002)
++
++    def test_outward_operations_against_exact_fraction(self):
++        iv = lab.Outward(24)  # force nonterminating ratios and arithmetic rounding
++        def enclosed(result, exact):
++            self.assertLessEqual(Fraction(result[0]), exact)
++            self.assertGreaterEqual(Fraction(result[1]), exact)
++        enclosed(iv.div(iv.point(1), iv.point(7)), Fraction(1, 7))
++        x = (Decimal('-1.234567890123456789012345678901'), Decimal('2.75'))
++        y = (Decimal('-3.1'), Decimal('-0.99999999999999999999999999999'))
++        for a in x:
++            for b in y:
++                enclosed(iv.add(x, y), Fraction(a)+Fraction(b))
++                enclosed(iv.sub(x, y), Fraction(a)-Fraction(b))
++                enclosed(iv.mul(x, y), Fraction(a)*Fraction(b))
++                enclosed(iv.div(x, y), Fraction(a)/Fraction(b))
++        enclosed(iv.square(x), Fraction(0))
++        for a in x:
++            enclosed(iv.square(x), Fraction(a)**2)
++        # point converts binary coefficients exactly, independently of context precision.
++        with localcontext() as ctx:
++            ctx.prec = 3
++            self.assertEqual(Fraction(iv.point(.1)[0]), Fraction.from_float(.1))
++            enclosed(iv.div(iv.point(1), iv.point(7)), Fraction(1, 7))
++        for bad in [True, float('nan'), float('inf')]:
++            with self.assertRaises(ValueError):
++                iv.point(bad)
++        with self.assertRaises(ValueError):
++            iv.div(iv.point(1), (Decimal(-1), Decimal(1)))
++
++    def test_strict_cell_exact_rational_transfer_and_delay(self):
++        iv = lab.Outward(40)
++        rows = [[.25, .25, 0., 1., -.5, 0.],
++                [.0625, .125, .0625, 1., -1., .25]]
++        prepared, records = lab.strict_sections(rows, iv)
++        self.assertTrue(all(r['exact_schur_conditions'] for r in records))
++        for left, right in [('0.71', '0.72'), ('0.9', '1')]:
++            cell = lab.strict_cell(prepared, Decimal(left), Decimal(right), iv, True)
++            for point in [Fraction(Decimal(left)), Fraction(Decimal(right)),
++                          (Fraction(Decimal(left))+Fraction(Decimal(right)))/2]:
++                amp, delay = Fraction(1), Fraction(0)
++                for row in rows:
++                    b0, b1, b2, _, a1, a2 = map(Fraction.from_float, row)
++                    # Independent direct polynomial expansion, not lab interval Horner.
++                    P = (b0*b0+b1*b1+b2*b2+2*b1*(b0+b2)*point
++                         +2*b0*b2*(2*point*point-1))
++                    Q = (1+a1*a1+a2*a2+2*a1*(1+a2)*point
++                         +2*a2*(2*point*point-1))
++                    degree = 1 if b2 == 0 else 2
++                    E = a1*a1+2*a2*a2+a1*(1+3*a2)*point+2*a2*(2*point*point-1)
++                    amp *= P/Q
++                    delay += Fraction(degree, 2)-E/Q
++                for name, expected in [('amplitude_squared', amp),
++                                       ('group_delay_samples', delay)]:
++                    self.assertLessEqual(Fraction(cell[name][0]), expected)
++                    self.assertGreaterEqual(Fraction(cell[name][1]), expected)
++        # Genuine Nyquist zero, no sqrt or cancellation that turns it negative.
++        cell = lab.strict_cell(prepared, Decimal(-1), Decimal(-1), iv, False)
++        self.assertEqual(cell['amplitude_squared'], (Decimal(0), Decimal(0)))
++        for rows in [[[.1, .2, .1, 1., -2., 1.]],
++                     [[.1, .3, .1, 1., -.5, .1]]]:
++            with self.assertRaises(ValueError):
++                lab.strict_sections(rows, iv)
++
++    def test_strict_certificate_limits_and_domain(self):
++        design = lab.design()
++        exhausted = lab.strict_machine_certificate(design, max_depth=1, max_cells=1)
++        self.assertFalse(exhausted['certified'])
++        self.assertTrue(all(v['partition_covers_closed_domain']
++                            for v in exhausted['bands'].values()))
++        self.assertTrue(any(v['unresolved_cells'] for v in exhausted['bands'].values()))
++        unsupported = lab.strict_machine_certificate(lab.design(fs=96000))
++        self.assertFalse(unsupported['certified'])
++        self.assertEqual(unsupported['status'], 'unsupported_specification')
++        for kwargs in [{'max_depth': 29}, {'max_depth': True}, {'max_cells': 0}]:
++            with self.assertRaises(ValueError):
++                lab.strict_machine_certificate(design, **kwargs)
+ 
+     def test_binary32_sos_against_independent_decimal(self):
+         design = lab.design()
+--- a/信号与系统/80-实践/06-IIR规格与实现/README.md
++++ b/信号与系统/80-实践/06-IIR规格与实现/README.md
+@@ -20,9 +20,9 @@
+ | 要核的结论 | 参照与验收方法 |
+ | --- | --- |
+ | 27阶是本原型的最小可行整数 | 不用ceil／log公式，逐次乘带边比的平方直到误差比；96kHz改为30阶，5kHz通带改为17阶 |
+-| 数字频带幅度达标 | 理想tan映射幅度单调，端点证明全带；独立乘极点／零点与SOS频响交叉核系数；`amplitude_certificate`对binary64和binary32固定系数分别以65536小区间覆盖每条闭频带，用正文的商／积导数界给余量，不把网格中心当连续保证 |
++| 数字频带幅度达标 | 理想tan映射幅度单调，端点证明全带；独立乘极点／零点与SOS频响观察系数；`strict_machine_certificate`对两份固定系数分别以精确dyadic输入及Decimal向外包围认证完整闭频带，所有cell达标且无缝覆盖才返回true |
+ | 同H的直接／级联等价 | 80位Decimal扩展精确binary64节系数，独立直接I差分和转置直接II／SOS核80拍，容差1e−55；精确代数证明在正文 |
+-| 通带群延迟预算 | 极点解析式与传函相位中央差分核值；32768区间网格最大加导数界余量须≤96sample，浮点界不是区间算术认证 |
++| 通带群延迟预算 | 原型极点／相位差分只作观察；严格机器证书用同一SOS的J(c)/Q(c)向外包围，通带每cell延迟上界≤96sample，不借用另外生成的极点 |
+ | 相同幅度可超过延迟预算 | r=.99全通DC额外199sample，>2ms；不改原幅度 |
+ | 指定精度与内部峰值 | 主12k拍两音记录；binary32每乘积、相加、状态存储舍入，无FMA；直接型及升／降半径SOS对同一Decimal参照核误差和峰值 |
+ | 二阶节次序与饱和 | 独立20拍W8/F4手算，2V输入，高→低末总输出16code，低→高32code；后者无饱和，前者确有存储饱和 |
+@@ -39,9 +39,9 @@
+ PYTHONDONTWRITEBYTECODE=1 python3 iir_lab.py --output /private/tmp/wwl-iir178-output
+ ```
+ 
+-输出目录必须库外、全新，既存路径或含AGENTS.md祖先拒绝。`results.json`包括三个设计的Ω带边／阶数／极点／全部节系数、直接展开系数Decimal字符串、幅度端点、生成binary64／binary32固定系数的连续幅度界、binary32节极点半径、群延迟证书、两次SOS与直接型误差／内部峰值，以及逐拍饱和事件。系数均以源码公式与完整JSON为准；直接展开系数不是短小舍入表。
++输出目录必须库外、全新，既存路径或含AGENTS.md祖先拒绝。`results.json`包括三个设计的Ω带边／阶数／极点／全部节系数、直接展开系数Decimal字符串、幅度端点、`machine_certificates`两组严格包围及完整系数分数、接收／未决cell、每节Q下界、同SOS群延迟范围；另保留binary32节极点半径估计和原型极点延迟观察、两次SOS与直接型误差／内部峰值，以及逐拍饱和事件。系数均以源码公式与完整JSON为准；直接展开系数不是短小舍入表。
+ 
+-**当前状态：NOTRUN**。历史运行日志未恢复，不能沿用旧PASS；本候选作者只作AST／链接／镜像／SVG XML自查，没有导入或执行实验。源码、固定输入和独立测试已准备；执行者另记录实际命令、Python版本、退出结果与外部JSON路径。执行者核 `coefficient_band_bounds` 两组 `within_amplitude_contract`、`delay.upper_samples≤96`、全部节半径<1；长记录须报告完整样点数、误差和失败位置，不把允许直接型失败当作全部实现通过。通过后才补课中实际延迟和精度数据。既有FIR的193tap、96sample延迟及全带余量复用原证据，本组未重跑FIR；本次数字同拍输出为48kHz，未拿不同抽取速率的成本相互比较。
++**当前状态：NOTRUN**。历史运行日志未恢复，不能沿用旧PASS；本候选作者只作AST／链接／镜像／SVG XML自查，没有导入或执行实验。源码、固定输入和独立测试已准备；执行者另记录实际命令、Python版本、退出结果与外部JSON路径。执行者核 `machine_certificates` 两组 `certified=True` 且两带无未决cell、闭带覆盖为true；通带平方幅度≥.9801且≤1.0201、阻带平方幅度≤.000001、同SOS通带延迟0..96sample、精确Schur条件全为true。半径抽点只辅助观察；长记录须报告完整样点数、误差和失败位置，不把允许直接型失败当作全部实现通过。通过后才补课中实际延迟和精度数据。既有FIR的193tap、96sample延迟及全带余量复用原证据，本组未重跑FIR；本次数字同拍输出为48kHz，未拿不同抽取速率的成本相互比较。
+ 
+ ## 真源、镜像与显示
+ 
+@@ -53,3 +53,10 @@
+ ## 图中的数字怎样复算
+ 
+ 两张SVG本身是可编辑向量图源。`design-chain.svg`的π/4、π/3、Ωp/Ωs、27阶及13+1节，依次核 `results.json` 的 `design`；`internal-scale.svg`的8、1/8、16V、.25V来自两节DC与输入2V，1V／2V终值核 `fixed_high_first.output_codes[-1]` 与 `fixed_low_first.output_codes[-1]` 除16。上界7.9375V是127/16。图只显示这份固定合同；改系数、输入或位宽时先重算对应公式／轨迹再改SVG标注，不保留过期“通过”图。
++
++
++## 第二版：严格机器证书的执行范围
++
++第一版的float复数求界只保留为 `amplitude_estimate` 和 `ideal_pole_delay_estimate`，没有认证权限。第二版用80位私有Decimal向下／向上舍入、精确二进制系数输入、c域有理端点和自适应二分，严格包围固定binary64／binary32 SOS的完整幅度与同系数通带延迟。输出包含全部接收cell、未决cell、精确系数分数与覆盖不变量；算术异常退出或任何未决项都不得代填PASS。此认证只支持主48kHz、6/8kHz的规格，96k/5k迁移仍提供设计预测与抽点，不挪用主证书。
++
++每带默认最多131072次cell求值、深度24（硬上限28），达到上限报告未认证；正常调用不需安装依赖。执行者记录cell数与耗时，长记录误差／饱和仍单独验。作者只静态自查，没有运行新测试或CLI。
+--- a/信号与系统/80-实践/06-IIR规格与实现/iir_lab.py
++++ b/信号与系统/80-实践/06-IIR规格与实现/iir_lab.py
+@@ -5,7 +5,9 @@
+ """
+ import argparse
+ import cmath
+-from decimal import Decimal, localcontext
++from decimal import (Decimal, localcontext, Context, ROUND_FLOOR, ROUND_CEILING,
++                     ROUND_HALF_EVEN, Overflow, Underflow, Subnormal, Clamped, Inexact)
++from fractions import Fraction
+ import json
+ import math
+ from pathlib import Path
+@@ -117,7 +119,7 @@
+             'upper': center_abs+margin}
+ 
+ 
+-def amplitude_certificate(spec, sections=None, intervals=65536):
++def amplitude_estimate(spec, sections=None, intervals=65536):
+     """Cover both closed bands with local enclosures; not outward interval rounding."""
+     if isinstance(intervals, bool) or not isinstance(intervals, int) or intervals < 1:
+         raise ValueError('positive band interval count required')
+@@ -136,7 +138,7 @@
+         result[name] = {'theta_rad_per_sample': [start, stop],
+                         'lower': lower, 'upper': upper,
+                         'max_cell_margin': largest_margin}
+-    result['within_amplitude_contract'] = (
++    result['estimate_within_amplitude_contract'] = (
+         result['pass']['lower'] >= 1-spec['pass_error'] and
+         result['pass']['upper'] <= 1+spec['pass_error'] and
+         result['stop']['upper'] <= spec['stop'])
+@@ -148,7 +150,7 @@
+     return .5*sum((1-abs(p)**2)/abs(1-p*q)**2 for p in poles)
+ 
+ 
+-def delay_certificate(spec, intervals=32768):
++def ideal_pole_delay_estimate(spec, intervals=32768):
+     if isinstance(intervals, bool) or not isinstance(intervals, int) or intervals < 1:
+         raise ValueError('positive grid interval count required')
+     edge = 2*math.pi*spec['fp']/spec['fs']
+@@ -169,6 +171,217 @@
+             'grid_margin_samples': margin, 'upper_samples': maximum+margin,
+             'budget_samples': .002*spec['fs'], 'intervals': intervals,
+             'floating_bound_not_interval_arithmetic': True}
++
++
++class Outward:
++    """Decimal endpoints; every arithmetic result rounds away from its interval.
++
++    Float coefficients enter through Decimal.from_float (exact conversion),
++    never str(float). Contexts are private and independent of getcontext().
++    Exceptional range behavior raises; it cannot produce a certificate.
++    """
++    def __init__(self, precision=80):
++        if isinstance(precision, bool) or not isinstance(precision, int) or precision < 24:
++            raise ValueError('at least 24 decimal digits required')
++        self.down = Context(prec=precision, rounding=ROUND_FLOOR)
++        self.up = Context(prec=precision, rounding=ROUND_CEILING)
++        for ctx in [self.down, self.up]:
++            for signal in [Overflow, Underflow, Subnormal, Clamped]:
++                ctx.traps[signal] = True
++
++    def point(self, value):
++        if isinstance(value, bool):
++            raise ValueError('finite exact scalar required')
++        if isinstance(value, float):
++            value = Decimal.from_float(value)
++        elif isinstance(value, (str, int)):
++            value = Decimal(value)
++        if not isinstance(value, Decimal) or not value.is_finite():
++            raise ValueError('finite exact scalar required')
++        return value, value
++
++    def add(self, x, y):
++        return self.down.add(x[0], y[0]), self.up.add(x[1], y[1])
++
++    def sub(self, x, y):
++        return self.down.subtract(x[0], y[1]), self.up.subtract(x[1], y[0])
++
++    def mul(self, x, y):
++        pairs = [(a, b) for a in x for b in y]
++        return (min(self.down.multiply(a, b) for a, b in pairs),
++                max(self.up.multiply(a, b) for a, b in pairs))
++
++    def square(self, x):
++        if x[0] <= 0 <= x[1]:
++            return Decimal(0), max(self.up.multiply(v, v) for v in x)
++        return (min(self.down.multiply(v, v) for v in x),
++                max(self.up.multiply(v, v) for v in x))
++
++    def div(self, x, y):
++        if y[0] <= 0 <= y[1]:
++            raise ValueError('interval divisor contains zero')
++        pairs = [(a, b) for a in x for b in y]
++        return (min(self.down.divide(a, b) for a, b in pairs),
++                max(self.up.divide(a, b) for a, b in pairs))
++
++    def polynomial(self, coefficients, x):
++        result = self.point(0)
++        for coefficient in coefficients[::-1]:
++            result = self.add(self.mul(result, x), coefficient)
++        return result
++
++
++def strict_sections(sections, arithmetic):
++    """Bind fixed binary coefficients, exact binomial numerators and Jury tests."""
++    prepared, records = [], []
++    iv = arithmetic
++    for row in sections:
++        if len(row) != 6:
++            raise ValueError('six coefficients per SOS required')
++        if any(not isinstance(v, float) for v in row):
++            raise ValueError('fixed binary floating coefficients required')
++        values = [iv.point(v)[0] for v in row]
++        b0, b1, b2, a0, a1, a2 = values
++        exact = [Fraction(v) for v in values]
++        eb0, eb1, eb2, ea0, ea1, ea2 = exact
++        if ea0 != 1 or eb0 == 0:
++            raise ValueError('normalized nonzero binomial numerator required')
++        degree = 1 if eb2 == ea2 == 0 else 2
++        if degree == 1:
++            valid = eb1 == eb0 and abs(ea1) < 1
++        else:
++            valid = (eb2 == eb0 and eb1 == 2*eb0 and -1 < ea2 < 1
++                     and 1+ea1+ea2 > 0 and 1-ea1+ea2 > 0)
++        if not valid:
++            raise ValueError('exact binomial shape or Schur stability conditions failed')
++        A1, A2 = iv.point(a1), iv.point(a2)
++        one, two, four = iv.point(1), iv.point(2), iv.point(4)
++        # Q(c)=|1+a1 q+a2 q^2|^2. All polynomial coefficients enclosed.
++        Q = [iv.add(iv.square(iv.sub(one, A2)), iv.square(A1)),
++             iv.mul(two, iv.mul(A1, iv.add(one, A2))), iv.mul(four, A2)]
++        # Group delay uses this same denominator, not separately computed poles.
++        if degree == 1:
++            J = [iv.div(iv.sub(one, iv.square(A1)), two)]
++        else:
++            J = [iv.sub(one, iv.square(A2)), iv.mul(A1, iv.sub(one, A2))]
++        prepared.append({'b0_squared': iv.square(iv.point(b0)),
++                         'degree': degree, 'Q': Q, 'J': J})
++        records.append({'decimal_exact': [str(v) for v in values],
++                        'dyadic_ratios': [[f.numerator, f.denominator] for f in exact],
++                        'numerator_degree': degree, 'exact_schur_conditions': True})
++    if not prepared:
++        raise ValueError('nonempty cascade required')
++    return prepared, records
++
++
++def strict_cell(prepared, left, right, arithmetic, with_delay):
++    """Enclose every c in the entire closed cell by outward polynomial algebra."""
++    iv, c = arithmetic, (left, right)
++    amplitude_squared, group_delay = iv.point(1), iv.point(0)
++    smallest_denominator = None
++    factor = iv.add(iv.point(2), iv.mul(iv.point(2), c))
++    for section in prepared:
++        Q = iv.polynomial(section['Q'], c)
++        if Q[0] <= 0:
++            return None
++        smallest_denominator = (Q[0] if smallest_denominator is None
++                                else min(smallest_denominator, Q[0]))
++        binomial = factor if section['degree'] == 1 else iv.square(factor)
++        P = iv.mul(section['b0_squared'], binomial)
++        amplitude_squared = iv.mul(amplitude_squared, iv.div(P, Q))
++        if with_delay:
++            J = iv.polynomial(section['J'], c)
++            group_delay = iv.add(group_delay, iv.div(J, Q))
++    return {'amplitude_squared': amplitude_squared,
++            'group_delay_samples': group_delay if with_delay else None,
++            'minimum_Q_lower': smallest_denominator}
++
++
++def strict_machine_certificate(spec, sections=None, precision=80,
++                               max_depth=24, max_cells=131072):
++    """Rigorous closed-band certificate for the declared primary 48k design.
++
++    Unsupported specifications, arithmetic failures, unresolved cells or a
++    resource cap can never return certified=True. Finite adaptive bisection
++    certifies every point in the union of accepted closed cells, not samples.
++    """
++    for value in [max_depth, max_cells]:
++        if isinstance(value, bool) or not isinstance(value, int) or value < 1:
++            raise ValueError('positive integer refinement limits required')
++    if max_depth > 28:
++        raise ValueError('max_depth must be at most 28 for exact midpoint context')
++    primary = (spec['fs'], spec['fp'], spec['fsb'], spec['pass_error'], spec['stop'])
++    if primary != (48000., 6000., 8000., .01, .001):
++        return {'status': 'unsupported_specification', 'certified': False}
++    iv = Outward(precision)
++    selected = spec['sections'] if sections is None else sections
++    prepared, coefficients = strict_sections(selected, iv)
++    # This decimal is a rational. Fraction multiplication proves c_lo <= sqrt(1/2).
++    c_lo = Decimal('0.707106781186547524400844362104849039284835937688474036588339868')
++    ratio = Fraction(c_lo)
++    if not (ratio > 0 and ratio*ratio <= Fraction(1, 2)):
++        raise ValueError('passband rational endpoint failed its exact square proof')
++    exact_midpoint = Context(prec=200, rounding=ROUND_HALF_EVEN)
++    exact_midpoint.traps[Inexact] = True
++    # max_depth<=28, initial decimal has <80 digits; every midpoint has <110.
++    bands = {'pass': (c_lo, Decimal(1)), 'stop': (Decimal(-1), Decimal('0.5'))}
++    results = {}
++    for band, (left, right) in bands.items():
++        stack, accepted, unresolved = [(left, right, 0)], [], []
++        evaluations = 0
++        with_delay = band == 'pass'
++        while stack:
++            lo, hi, depth = stack.pop()
++            if evaluations >= max_cells:
++                unresolved.append({'c': [lo, hi], 'reason': 'max_cells'})
++                unresolved.extend({'c': [a, b], 'reason': 'max_cells'} for a, b, _ in stack)
++                stack.clear()
++                break
++            evaluations += 1
++            cell = strict_cell(prepared, lo, hi, iv, with_delay)
++            if cell is None:
++                fits = False
++            elif with_delay:
++                amp, lag = cell['amplitude_squared'], cell['group_delay_samples']
++                fits = (amp[0] >= Decimal('0.9801') and amp[1] <= Decimal('1.0201')
++                        and lag[0] >= 0 and lag[1] <= Decimal(96))
++            else:
++                fits = cell['amplitude_squared'][1] <= Decimal('0.000001')
++            if fits:
++                accepted.append({'c': [lo, hi], 'depth': depth, **cell})
++            elif depth >= max_depth:
++                unresolved.append({'c': [lo, hi], 'reason': 'max_depth', 'enclosure': cell})
++            else:
++                mid = exact_midpoint.divide(exact_midpoint.add(lo, hi), Decimal(2))
++                if not lo < mid < hi:
++                    raise ValueError('exact midpoint cannot split cell')
++                stack.extend([(mid, hi, depth+1), (lo, mid, depth+1)])
++        accepted.sort(key=lambda item: item['c'][0])
++        # Exact endpoint adjacency is an independent coverage invariant of the loop.
++        partition = sorted([item['c'] for item in accepted+unresolved], key=lambda x: x[0])
++        covered = (bool(partition) and partition[0][0] == left and partition[-1][1] == right
++                   and all(a[1] == b[0] for a, b in zip(partition, partition[1:])))
++        complete = covered and not unresolved
++        results[band] = {'c_domain': [left, right], 'partition_covers_closed_domain': covered,
++                         'certified': complete, 'cell_evaluations': evaluations,
++                         'accepted_cells': accepted, 'unresolved_cells': unresolved,
++                         'amplitude_squared_lower': min((v['amplitude_squared'][0]
++                             for v in accepted), default=None),
++                         'amplitude_squared_upper': max((v['amplitude_squared'][1]
++                             for v in accepted), default=None),
++                         'delay_samples_lower': min((v['group_delay_samples'][0]
++                             for v in accepted), default=None) if with_delay else None,
++                         'delay_samples_upper': max((v['group_delay_samples'][1]
++                             for v in accepted), default=None) if with_delay else None}
++    certified = all(item['certified'] for item in results.values())
++    return {'status': 'certified' if certified else 'not_certified', 'certified': certified,
++            'coefficient_model': 'fixed exact dyadic real SOS; no operation-rounding model',
++            'coefficients': coefficients, 'decimal_precision': precision,
++            'rounding': ['ROUND_FLOOR', 'ROUND_CEILING'],
++            'pass_endpoint_proof': {'c_lo': c_lo, 'rational': [ratio.numerator, ratio.denominator],
++                                    'positive_and_square_le_half_exact': True},
++            'limits': {'max_depth': max_depth, 'max_cells_per_band': max_cells},
++            'bands': results}
+ 
+ 
+ def decimal(value):
+@@ -330,7 +543,7 @@
+                                 'ideal_stop': ideal_amplitude(spec, ws),
+                                 'sos_pass': abs(response(spec['sections'], wp)),
+                                 'sos_stop': abs(response(spec['sections'], ws))},
+-            'delay': delay_certificate(spec),
++            'ideal_pole_delay_estimate': ideal_pole_delay_estimate(spec),
+             'precision': {'input_length': len(x), 'input_bound_v': .9,
+                           'binary32_each_operation_no_fma': True,
+                           'reference': '80-place Decimal exact binary64 SOS coefficients',
+@@ -342,9 +555,9 @@
+                           'descending_peaks': descending['section_metrics']},
+             'fixed_high_first': fixed_order(True), 'fixed_low_first': fixed_order(False),
+             'migration_96k': design(fs=96000), 'migration_5k': design(fp=5000),
+-            'coefficient_band_bounds': {
+-                'binary64_sos': amplitude_certificate(spec),
+-                'binary32_sos': amplitude_certificate(spec,
++            'machine_certificates': {
++                'binary64_sos': strict_machine_certificate(spec),
++                'binary32_sos': strict_machine_certificate(spec,
+                     [[binary32(v) for v in row] for row in spec['sections']])},
+             'binary32_section_radii': [section_radius([binary32(v) for v in row])
+                                        for row in spec['sections']],
+--- a/信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py
++++ b/信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py
+@@ -1,6 +1,7 @@
+ """Independent pole/transfer, Decimal difference-equation and fixed-code checks."""
+ import cmath
+ from decimal import Decimal, localcontext
++from fractions import Fraction
+ import math
+ import unittest
+ import iir_lab as lab
+@@ -68,7 +69,7 @@
+             self.assertLess(lab.section_radius(rounded), 1.)
+         for intervals in [0, True, 2.5]:
+             with self.assertRaises(ValueError):
+-                lab.amplitude_certificate(design, intervals=intervals)
++                lab.amplitude_estimate(design, intervals=intervals)
+ 
+     def test_poles_and_sos_signs(self):
+         design = lab.design()
+@@ -104,18 +105,94 @@
+                 denominator *= (1-p*q)
+             self.assertLess(abs(product-numerator/denominator), 2e-12)
+ 
+-    def test_phase_derivative_delay_and_whole_passband_bound(self):
++    def test_phase_derivative_and_ideal_pole_delay_estimate(self):
+         design = lab.design()
+         for theta in [0., .1, .4, .78]:
+             step = 1e-6
+             ratio = lab.response(design['sections'], theta+step)/lab.response(design['sections'], theta-step)
+             self.assertAlmostEqual(-cmath.phase(ratio)/(2*step),
+                                    lab.delay(design['poles'], theta), places=6)
+-        certificate = lab.delay_certificate(design)
++        certificate = lab.ideal_pole_delay_estimate(design)
+         self.assertLessEqual(certificate['upper_samples'], certificate['budget_samples'])
+         r = .99
+         self.assertAlmostEqual((1-r*r)/(1-r)**2, 199)
+         self.assertGreater(199/48000, .002)
++
++    def test_outward_operations_against_exact_fraction(self):
++        iv = lab.Outward(24)  # force nonterminating ratios and arithmetic rounding
++        def enclosed(result, exact):
++            self.assertLessEqual(Fraction(result[0]), exact)
++            self.assertGreaterEqual(Fraction(result[1]), exact)
++        enclosed(iv.div(iv.point(1), iv.point(7)), Fraction(1, 7))
++        x = (Decimal('-1.234567890123456789012345678901'), Decimal('2.75'))
++        y = (Decimal('-3.1'), Decimal('-0.99999999999999999999999999999'))
++        for a in x:
++            for b in y:
++                enclosed(iv.add(x, y), Fraction(a)+Fraction(b))
++                enclosed(iv.sub(x, y), Fraction(a)-Fraction(b))
++                enclosed(iv.mul(x, y), Fraction(a)*Fraction(b))
++                enclosed(iv.div(x, y), Fraction(a)/Fraction(b))
++        enclosed(iv.square(x), Fraction(0))
++        for a in x:
++            enclosed(iv.square(x), Fraction(a)**2)
++        # point converts binary coefficients exactly, independently of context precision.
++        with localcontext() as ctx:
++            ctx.prec = 3
++            self.assertEqual(Fraction(iv.point(.1)[0]), Fraction.from_float(.1))
++            enclosed(iv.div(iv.point(1), iv.point(7)), Fraction(1, 7))
++        for bad in [True, float('nan'), float('inf')]:
++            with self.assertRaises(ValueError):
++                iv.point(bad)
++        with self.assertRaises(ValueError):
++            iv.div(iv.point(1), (Decimal(-1), Decimal(1)))
++
++    def test_strict_cell_exact_rational_transfer_and_delay(self):
++        iv = lab.Outward(40)
++        rows = [[.25, .25, 0., 1., -.5, 0.],
++                [.0625, .125, .0625, 1., -1., .25]]
++        prepared, records = lab.strict_sections(rows, iv)
++        self.assertTrue(all(r['exact_schur_conditions'] for r in records))
++        for left, right in [('0.71', '0.72'), ('0.9', '1')]:
++            cell = lab.strict_cell(prepared, Decimal(left), Decimal(right), iv, True)
++            for point in [Fraction(Decimal(left)), Fraction(Decimal(right)),
++                          (Fraction(Decimal(left))+Fraction(Decimal(right)))/2]:
++                amp, delay = Fraction(1), Fraction(0)
++                for row in rows:
++                    b0, b1, b2, _, a1, a2 = map(Fraction.from_float, row)
++                    # Independent direct polynomial expansion, not lab interval Horner.
++                    P = (b0*b0+b1*b1+b2*b2+2*b1*(b0+b2)*point
++                         +2*b0*b2*(2*point*point-1))
++                    Q = (1+a1*a1+a2*a2+2*a1*(1+a2)*point
++                         +2*a2*(2*point*point-1))
++                    degree = 1 if b2 == 0 else 2
++                    E = a1*a1+2*a2*a2+a1*(1+3*a2)*point+2*a2*(2*point*point-1)
++                    amp *= P/Q
++                    delay += Fraction(degree, 2)-E/Q
++                for name, expected in [('amplitude_squared', amp),
++                                       ('group_delay_samples', delay)]:
++                    self.assertLessEqual(Fraction(cell[name][0]), expected)
++                    self.assertGreaterEqual(Fraction(cell[name][1]), expected)
++        # Genuine Nyquist zero, no sqrt or cancellation that turns it negative.
++        cell = lab.strict_cell(prepared, Decimal(-1), Decimal(-1), iv, False)
++        self.assertEqual(cell['amplitude_squared'], (Decimal(0), Decimal(0)))
++        for rows in [[[.1, .2, .1, 1., -2., 1.]],
++                     [[.1, .3, .1, 1., -.5, .1]]]:
++            with self.assertRaises(ValueError):
++                lab.strict_sections(rows, iv)
++
++    def test_strict_certificate_limits_and_domain(self):
++        design = lab.design()
++        exhausted = lab.strict_machine_certificate(design, max_depth=1, max_cells=1)
++        self.assertFalse(exhausted['certified'])
++        self.assertTrue(all(v['partition_covers_closed_domain']
++                            for v in exhausted['bands'].values()))
++        self.assertTrue(any(v['unresolved_cells'] for v in exhausted['bands'].values()))
++        unsupported = lab.strict_machine_certificate(lab.design(fs=96000))
++        self.assertFalse(unsupported['certified'])
++        self.assertEqual(unsupported['status'], 'unsupported_specification')
++        for kwargs in [{'max_depth': 29}, {'max_depth': True}, {'max_cells': 0}]:
++            with self.assertRaises(ValueError):
++                lab.strict_machine_certificate(design, **kwargs)
+ 
+     def test_binary32_sos_against_independent_decimal(self):
+         design = lab.design()

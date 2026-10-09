@@ -1,0 +1,104 @@
+{
+  "layer": "actual offline macOS WKWebView static SVG rendering, model visual inspection via built-in view_image",
+  "result": "five full native SVG viewports rendered with visible Chinese glyphs and uncut boundaries",
+  "images": [
+    {
+      "source_name": "four-point-butterfly.svg",
+      "source_sha256": "f3e0dd0e2afd1efac93f94851014aa0497d724d347fee9b85e89427a49b790ad",
+      "source_bytes_unchanged": true,
+      "snapshot": "sources/four-point-butterfly.svg",
+      "png": "png-escalated/four-point-butterfly.png",
+      "png_sha256": "984f995d3a0c72575c91339e60e7a3fbcd93c9524751f6bdaae5b412f87d545f",
+      "pixel_dimensions": [
+        2100,
+        1110
+      ],
+      "svg_viewport": [
+        1050.0,
+        555.0
+      ],
+      "full_viewport_visual_pass": true,
+      "observation": "完整显示左右输入/输出、E=(2,0)、O=(2,2)、W=-j、四个 R 输出与顺序 (4,-2j,0,2j)；中文与分叉箭头可辨，无右侧裁切。"
+    },
+    {
+      "source_name": "four-representations.svg",
+      "source_sha256": "3b90ae94b334ce81a52bf7e9c78d3c2d88f4ca7542996043893f4b500266c74f",
+      "source_bytes_unchanged": true,
+      "snapshot": "sources/four-representations.svg",
+      "png": "png-escalated/four-representations.png",
+      "png_sha256": "6255cf5c4608cfa835bc3e0fb34b3b35ffd81c8685fd4c0ec89b8ec17dcefa58",
+      "pixel_dimensions": [
+        2120,
+        1300
+      ],
+      "svg_viewport": [
+        1060.0,
+        650.0
+      ],
+      "full_viewport_visual_pass": true,
+      "observation": "四个 CTFT/DTFT/CTFS/DTFS 面板均完整；中文、V·s/V 单位、周期与离散条件可辨，面板边界未裁切。"
+    },
+    {
+      "source_name": "overlap-add-timeline.svg",
+      "source_sha256": "cddfe0aa17b69fb288fa2f47455ae6a4c81e12c4fc1f1c4398c230d913a21f8f",
+      "source_bytes_unchanged": true,
+      "snapshot": "sources/overlap-add-timeline.svg",
+      "png": "png-escalated/overlap-add-timeline.png",
+      "png_sha256": "4d3113dad417839a81581e183b74853edc028de0046455874da63a4767601024",
+      "pixel_dimensions": [
+        2160,
+        1080
+      ],
+      "svg_viewport": [
+        1080.0,
+        540.0
+      ],
+      "full_viewport_visual_pass": true,
+      "observation": "完整显示 0..5 索引、两个块、错位相加及 (1,3,4,3,1,0)；push/flush 与中文解释可辨。"
+    },
+    {
+      "source_name": "design-chain.svg",
+      "source_sha256": "3a0a49339611acb7fba925ffadf4a685cf9c98cf4ed65e3fc9a19e9ee0d44453",
+      "source_bytes_unchanged": true,
+      "snapshot": "sources/design-chain.svg",
+      "png": "png-escalated/design-chain.png",
+      "png_sha256": "c2d83f83dcf8017dbf22adbcba0e49e80411930c8ef6b1cbdd59953418ee460e",
+      "pixel_dimensions": [
+        2200,
+        1220
+      ],
+      "svg_viewport": [
+        1100.0,
+        610.0
+      ],
+      "full_viewport_visual_pass": true,
+      "observation": "完整显示规格、预扭曲、阶数及实现四格和箭头；48 kHz、6000/8000 Hz、π/4、π/3、N=27、13 个二阶节加 1 个一阶节可辨。"
+    },
+    {
+      "source_name": "internal-scale.svg",
+      "source_sha256": "adaf72a8d2e4cc4a4d292ca49662333f70b1c235df9851706bac5b1211d18bf1",
+      "source_bytes_unchanged": true,
+      "snapshot": "sources/internal-scale.svg",
+      "png": "png-escalated/internal-scale.png",
+      "png_sha256": "a1844a149ff02218c3e3a1acd0d1912c620f217f0bb73ab584c23272bba95646",
+      "pixel_dimensions": [
+        2200,
+        1020
+      ],
+      "svg_viewport": [
+        1100.0,
+        510.0
+      ],
+      "full_viewport_visual_pass": true,
+      "observation": "完整显示两种次序、2 V 输入、16 V 中间量、7.9375 V 饱和限、1 V/2 V 输出及 W8F4 有限轨迹说明；中文与箭头可辨。"
+    }
+  ],
+  "limits": [
+    "Not Obsidian rendering or a human learner result.",
+    "Not a narrow 360 px responsive-layout check.",
+    "No numerical source or source SVG/font changes; V1 numerical evidence unchanged.",
+    "Ordinary floating-point band certification and fixed-SOS delay questions remain outside this graph layer.",
+    "No OS thread count or hard RSS cap established; peak child RSS observed by macOS resource API.",
+    "No packet capture; static SVG resources and file-only navigation policy were inspected."
+  ]
+}

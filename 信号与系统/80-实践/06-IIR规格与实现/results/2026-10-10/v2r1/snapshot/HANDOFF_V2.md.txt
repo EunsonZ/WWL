@@ -1,0 +1,25 @@
+# #178 必要修订 V2：R1/R2 的同系数闭带包围
+
+V2候选：`candidate-v2/`。完整27文件基于冻结V1复制，其中仅5个IIR目标变更：主课、实践README、iir_lab.py、test_iir_lab.py、对应code-sync镜像。#177及其12页已有桥接/MOC不改；原 `candidate/`、27个V1目标与 `evidence/` 不变。实际目标路径仍相对于正式库 `/Users/ysz/Misc/Obsidian/Valults/WLM/WWL`，原基线在 `baseline/`；新差异是 `V2_DIFF.patch`（V1→V2），身份见 `evidence-v2/targets-v2.json`、`V2_RECEIPT.json`。V1结果可以保留为观察，不自动覆盖V2。
+
+## 变更与证明对象
+
+R1修复：`strict_machine_certificate`直接消费固定binary64或先转binary32后的SOS系数；每个输入用Decimal.from_float精确转换并保存dyadic整数分数。私有80位Context的FLOOR/CEILING算术给向外端点，异常范围直接失败。幅度平方按c=cosθ的二次有理式，分子精确核binomial恒等式并保持Nyquist真零，分母Q逐cell下界>0。pass覆盖[clo,1]（clo精确分数平方≤1/2），stop覆盖[-1,1/2]；所有接收cell的首尾与邻接端点精确检查，全部达标、无未决cell才返回true。数值限额用精确平方.9801/1.0201/.000001，未使用float三角/abs/sqrt生成证书。
+
+R2修复：同一份SOS的通带延迟由相位商导数推出二阶J=(1−a2²)+a1(1−a2)c、一阶J=(1−a1²)/2；用同一个Q外包围J/Q并按节相加，0≤delay≤96与幅度一起认证。实际固定系数的Schur/Jury条件由精确分数核，再以Möbius变换和二次Hurwitz给课堂证明。没有用 `design()['poles']`签机器延迟。
+
+旧 `amplitude_certificate`、`delay_certificate`改名为 `amplitude_estimate`、`ideal_pole_delay_estimate`，普通float只观察；不能产生strict true。CLI主报告改为 `machine_certificates.binary64_sos/binary32_sos`，内含每个接收/未决cell、Q下界、幅度平方/延迟范围、精确系数、端点证明和资源上限。认证仅主48k/6k/8k/.01/.001；迁移96k/5k继续设计预测/抽点，返回unsupported时false，不挪用主带边。
+
+课堂先说明“每cell所有点被包围且有限闭区间无缝覆盖⇒所有频率达标”，再给区间运算与Horner包含性、精确二分、失败分支；保留旧“生成系数的连续频带如何查”标题锚点。README不再把V1浮点估计叫机器证书。
+
+## 自查与独立签收范围
+
+`evidence-v2/static-v2.json`：237受影响链接0问题、4镜像匹配、4AST/5SVG XML。只静态，不导入或执行课程源/实验/测试；所有新增算法的数值执行NOTRUN。原27V1的SHA与原targets全吻合。
+
+原review177178提供了c域区间思路，已参与这项新增方案设计，不能成为其唯一新层独立签收者。主进程另派未参与者核V2必要5文件；既有V1 Fourier/理论/结构accept保持其原字节身份，不以其覆盖新增包围代码。
+
+独立源审重点：精确输入/私有Context方向与异常、跨零square及符号乘除、Q系数所有计算均向外、binomial身份与Nyquist零、clo平方证明、exact中点与深度限制、已接收+未决cells的覆盖与false出口、同Q/J延迟与精确Schur证明。默认深度24、硬上限28、每带131072次求值，资源耗尽保留未决、不能true。
+
+新增真实回归用Fraction独立核四则/平方包含性（含低精度/外部context变更）、精确有理传函和延迟、Nyquist零、失稳/不对称系数拒绝、资源耗尽false与闭域覆盖、迁移unsupported。作者没有执行，实际结果由executor留stdout/JSON及身份。执行接口见 `EXECUTOR_V2.md`。
+
+未验：新算法实际运行、独立新层源审/数值审、向外证书最终是否达标；图实际显示、Obsidian、现实设备和真人仍各自未验，不作为理论/候选统一停工条件。不得在这些状态未完成时称#178关闭。

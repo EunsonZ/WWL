@@ -1,0 +1,47 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "environment": {
+    "HOME": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments178v2/run-20261010-01/home",
+    "TMPDIR": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments178v2/run-20261010-01/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "dependency_preparation": "None; stdlib Decimal/Fraction only",
+  "runs": [
+    {
+      "name": "bounded-preflight",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments178v2/run-20261010-01/preflight.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments178v2/run-20261010-01/snapshot/candidate-v2/信号与系统/80-实践/06-IIR规格与实现",
+      "started_unix": 1791568168.557684,
+      "timeout_seconds": 60,
+      "exit": 0,
+      "elapsed_seconds": 0.029627084732055664
+    },
+    {
+      "name": "iir-tests",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_iir_lab.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments178v2/run-20261010-01/snapshot/candidate-v2/信号与系统/80-实践/06-IIR规格与实现",
+      "started_unix": 1791568168.587732,
+      "timeout_seconds": 60,
+      "exit": 1,
+      "elapsed_seconds": 0.2118699550628662
+    }
+  ],
+  "cumulative_children_ru_maxrss_bytes_macos": 27361280,
+  "resource_scope": "Cumulative child observation; not hard cap or OS thread count"
+}

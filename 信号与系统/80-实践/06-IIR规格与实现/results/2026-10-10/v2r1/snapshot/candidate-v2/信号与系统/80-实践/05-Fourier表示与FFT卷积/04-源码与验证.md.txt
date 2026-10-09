@@ -1,0 +1,465 @@
+---
+type: reference
+domain: signals-and-systems
+stage: 2
+content_status: draft
+evidence_status: partial
+aliases: []
+sources: []
+prerequisites:
+  - "[[信号与系统/80-实践/05-Fourier表示与FFT卷积/README]]"
+---
+
+# Fourier源码与验证
+
+同目录Python文件是真源，本页是逐字code-sync阅读镜像。对象、固定输入、独立参照和执行协议见 [[信号与系统/80-实践/05-Fourier表示与FFT卷积/README|实验说明]]。源码存在不等于已经执行。
+
+## fourier_lab.py
+
+<!-- code-sync: ./fourier_lab.py -->
+```python
+"""Finite Fourier/FFT examples. Standard library only; import has no I/O.
+
+Forward transforms are unnormalized; inverse divides by N. Real/complex
+finite inputs retain complex outputs. This is a teaching CPU model, not an
+audio driver, a CNN API wrapper, or a general Fourier convergence solver.
+"""
+import argparse
+import cmath
+import json
+import math
+from numbers import Complex
+from pathlib import Path
+
+
+def scalar(value):
+    if isinstance(value, bool) or not isinstance(value, Complex):
+        raise ValueError('finite numeric scalar required')
+    try:
+        result = complex(value)
+    except (OverflowError, TypeError, ValueError) as exc:
+        raise ValueError('finite complex range required') from exc
+    if not (math.isfinite(result.real) and math.isfinite(result.imag)):
+        raise ValueError('finite numeric scalar required')
+    return result
+
+
+def vector(values, allow_empty=False):
+    if isinstance(values, (str, bytes)):
+        raise ValueError('numeric iterable required')
+    try:
+        result = [scalar(value) for value in values]
+    except TypeError as exc:
+        raise ValueError('numeric iterable required') from exc
+    if not result and not allow_empty:
+        raise ValueError('nonempty vector required')
+    return result
+
+
+def positive_int(value):
+    if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+        raise ValueError('positive integer required')
+    return value
+
+
+def sum_complex(values):
+    values = list(values)
+    try:
+        return scalar(complex(math.fsum(v.real for v in values),
+                              math.fsum(v.imag for v in values)))
+    except OverflowError as exc:
+        raise ValueError('derived result outside finite range') from exc
+
+
+def dtft(values, theta):
+    x = vector(values)
+    theta = scalar(theta)
+    if theta.imag:
+        raise ValueError('real angle required')
+    return sum_complex(value * cmath.exp(-1j * theta.real * n)
+                       for n, value in enumerate(x))
+
+
+def dft(values):
+    x = vector(values)
+    n = len(x)
+    return [dtft(x, 2 * math.pi * k / n) for k in range(n)]
+
+
+def idft(values):
+    spectrum = vector(values)
+    n = len(spectrum)
+    return [scalar(sum_complex(value * cmath.exp(2j * math.pi * k * m / n)
+                               for k, value in enumerate(spectrum)) / n)
+            for m in range(n)]
+
+
+def _fft(x):
+    n = len(x)
+    if n == 1:
+        return x[:]
+    even, odd = _fft(x[::2]), _fft(x[1::2])
+    rotated = [scalar(cmath.exp(-2j * math.pi * k / n) * odd[k])
+               for k in range(n // 2)]
+    return ([scalar(even[k] + rotated[k]) for k in range(n // 2)] +
+            [scalar(even[k] - rotated[k]) for k in range(n // 2)])
+
+
+def fft(values):
+    x = vector(values)
+    if len(x) & (len(x) - 1):
+        raise ValueError('radix-2 FFT requires power-of-two length')
+    return _fft(x)
+
+
+def ifft(values):
+    spectrum = vector(values)
+    return [scalar(value.conjugate() / len(spectrum))
+            for value in fft([s.conjugate() for s in spectrum])]
+
+
+def next_power_two(value):
+    n = positive_int(value)
+    return 1 << (n - 1).bit_length()
+
+
+def linear_convolution(values, kernel):
+    x, h = vector(values, True), vector(kernel)
+    if not x:
+        return []
+    return [sum_complex(x[k] * h[n-k] for k in range(len(x))
+                        if 0 <= n-k < len(h))
+            for n in range(len(x) + len(h) - 1)]
+
+
+def circular_convolution(values, kernel, n):
+    x, h, n = vector(values), vector(kernel), positive_int(n)
+    if n < max(len(x), len(h)):
+        raise ValueError('N must not truncate either input')
+    xp, hp = x + [0j] * (n-len(x)), h + [0j] * (n-len(h))
+    return [sum_complex(xp[k] * hp[(m-k) % n] for k in range(n))
+            for m in range(n)]
+
+
+def frequency_convolution(values, kernel, n, radix_two=True):
+    """N-point circular output; caller owns padding/full cropping convention."""
+    x, h, n = vector(values), vector(kernel), positive_int(n)
+    if n < max(len(x), len(h)):
+        raise ValueError('N must not truncate either input')
+    forward, inverse = (fft, ifft) if radix_two else (dft, idft)
+    a = forward(x + [0j] * (n-len(x)))
+    b = forward(h + [0j] * (n-len(h)))
+    return inverse([scalar(u*v) for u, v in zip(a, b)])
+
+
+def fft_linear_convolution(values, kernel):
+    x, h = vector(values, True), vector(kernel)
+    if not x:
+        return []
+    length = len(x) + len(h) - 1
+    return frequency_convolution(x, h, next_power_two(length))[:length]
+
+
+def valid_correlation(values, kernel):
+    """Real CNN-style valid correlation; no conjugate and no bias, stride 1."""
+    x, h = vector(values), vector(kernel)
+    if any(v.imag for v in x + h):
+        raise ValueError('this correlation example requires real values')
+    if len(x) < len(h):
+        raise ValueError('input must be at least as long as kernel')
+    return [sum_complex(h[r] * x[n+r] for r in range(len(h)))
+            for n in range(len(x)-len(h)+1)]
+
+
+def shift(values, periodic=False):
+    x = vector(values)
+    return [x[-1] if periodic else 0j] + x[:-1]
+
+
+def right_correlation(values, periodic=False):
+    """C0 or Cp, the fixed real h=(1,2) rule, preserving input length."""
+    x = vector(values)
+    if any(v.imag for v in x):
+        raise ValueError('real fixed correlation example required')
+    return [scalar(x[n] + 2*(x[(n+1) % len(x)]
+                            if periodic or n+1 < len(x) else 0j))
+            for n in range(len(x))]
+
+
+class OverlapAdd:
+    """Variable contiguous blocks; push emits P points, flush M-1 tail points.
+
+    Empty push has no clock advance. Invalid or overflowing computation does
+    not commit state. No-input flush emits nothing. Repeated flush is empty;
+    push after closed raises even for an empty block. No implicit missing-data
+    recovery. consumed is input count, also the next output's global index.
+    """
+    def __init__(self, kernel):
+        self._h = tuple(vector(kernel))
+        self._tail = [0j] * (len(self._h)-1)
+        self.consumed = 0
+        self.closed = False
+
+    @property
+    def snapshot(self):
+        return self.consumed, self.closed, tuple(self._tail)
+
+    def push(self, values):
+        if self.closed:
+            raise ValueError('stream is closed')
+        block = vector(values, True)
+        if not block:
+            return []
+        local = fft_linear_convolution(block, self._h)
+        for n, value in enumerate(self._tail):
+            local[n] = scalar(local[n] + value)
+        emitted, tail = local[:len(block)], local[len(block):]
+        self._tail = tail
+        self.consumed += len(block)
+        return emitted
+
+    def flush(self):
+        if self.closed:
+            return []
+        result = self._tail[:] if self.consumed else []
+        self.closed = True
+        self._tail = [0j] * len(self._tail)
+        return result
+
+
+def stream_blocks(blocks, kernel):
+    stream = OverlapAdd(kernel)
+    output, events = [], []
+    for block in blocks:
+        offset = stream.consumed
+        emitted = stream.push(block)
+        events.append({'offset': offset, 'emitted': emitted,
+                       'state': stream.snapshot})
+        output.extend(emitted)
+    tail = stream.flush()
+    events.append({'offset': stream.consumed, 'tail': tail})
+    output.extend(tail)
+    return output, events
+
+
+def cases():
+    four = [1, 2, 1, 0]
+    x, h = [1, 2, 4], [1, 2]
+    stream, events = stream_blocks([[1, 2], [], [1, 0]], [1, 1, 1])
+    leakage = [math.cos(2 * math.pi * 1.25 * n / 4) for n in range(4)]
+    return {
+        'normalization': 'forward unnormalized; inverse 1/N',
+        'four': {'input': four, 'dft': dft(four), 'fft': fft(four),
+                 'dtfs': [v/4 for v in dft(four)],
+                 'dtft_pi_over_four': dtft(four, math.pi/4)},
+        'symmetric_kernel': {'linear': linear_convolution(four, [1, 1, 1]),
+                             'circular_n4': circular_convolution(four, [1, 1, 1], 4),
+                             'fft_full': fft_linear_convolution(four, [1, 1, 1])},
+        'asymmetric': {'input': x, 'kernel': h,
+                       'linear': linear_convolution(x, h),
+                       'circular_n3': circular_convolution(x, h, 3),
+                       'dft_n3': frequency_convolution(x, h, 3, False),
+                       'fft_n4': frequency_convolution(x, h, 4),
+                       'valid_correlation': valid_correlation(x, h),
+                       'flipped_full': linear_convolution(x, h[::-1])},
+        'boundary': {'C0_S0': right_correlation(shift(x)),
+                     'S0_C0': shift(right_correlation(x)),
+                     'Cp_Sp': right_correlation(shift(x, True), True),
+                     'Sp_Cp': shift(right_correlation(x, True), True)},
+        'ola': {'output': stream, 'events': events},
+        'window': {'fs_hz': 8, 'record_length': 4,
+                   'input': leakage, 'dft_n4': dft(leakage),
+                   'dft_n16': dft(leakage + [0]*12),
+                   'grid_hz_n4': 2, 'grid_hz_n16': .5,
+                   'rectangle_first_zero_halfwidth_hz': 2},
+    }
+
+
+def json_ready(value):
+    if isinstance(value, complex):
+        return {'re': value.real, 'im': value.imag}
+    if isinstance(value, dict):
+        return {key: json_ready(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_ready(item) for item in value]
+    return value
+
+
+def generate(output):
+    destination = Path(output).resolve()
+    if destination.exists() or any((p/'AGENTS.md').exists()
+                                    for p in [destination, *destination.parents]):
+        raise ValueError('new external output directory required')
+    data = json_ready(cases())
+    destination.mkdir(parents=True)
+    (destination/'results.json').write_text(
+        json.dumps(data, ensure_ascii=False, sort_keys=True, indent=2,
+                   allow_nan=False) + '\n', encoding='utf-8')
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', required=True, type=Path)
+    generate(parser.parse_args().output)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+## test_fourier_lab.py
+
+<!-- code-sync: ./test_fourier_lab.py -->
+```python
+"""Independent explicit-sum and fixed-integer oracles; does not write files."""
+import itertools
+import math
+import unittest
+import fourier_lab as lab
+
+
+def explicit_transform(x, inverse=False):
+    """Independent real cosine/sine sum, no lab.dft or FFT dependency."""
+    n = len(x)
+    sign = 1 if inverse else -1
+    return [sum(complex(value) * complex(math.cos(sign*2*math.pi*k*m/n),
+                                         math.sin(sign*2*math.pi*k*m/n))
+                for m, value in enumerate(x)) / (n if inverse else 1)
+            for k in range(n)]
+
+
+def convolution_oracle(x, h):
+    if not x:
+        return []
+    result = [0] * (len(x)+len(h)-1)
+    for n, a in enumerate(x):
+        for m, b in enumerate(h):
+            result[n+m] += a*b
+    return result
+
+
+def partitions(x):
+    for cuts in itertools.product((False, True), repeat=max(0, len(x)-1)):
+        blocks, start = [], 0
+        for stop, cut in enumerate(cuts, 1):
+            if cut:
+                blocks.append(x[start:stop]); start = stop
+        blocks.append(x[start:])
+        yield blocks
+
+
+class FourierTests(unittest.TestCase):
+    def close(self, got, expected, tol=2e-11):
+        self.assertEqual(len(got), len(expected))
+        for actual, target in zip(got, expected):
+            self.assertLessEqual(abs(actual-target), tol*(1+abs(target)))
+
+    def test_four_dft_butterfly_scale_and_energy(self):
+        x = [1, 2, 1, 0]
+        target = [4, -2j, 0, 2j]
+        self.close(lab.dft(x), target)
+        self.close(lab.fft(x), target)
+        self.close(lab.fft(x[::2]), [2, 0])
+        self.close(lab.fft(x[1::2]), [2, 2])
+        self.close([value/4 for value in lab.fft(x)], [1, -.5j, 0, .5j])
+        self.assertAlmostEqual(sum(abs(v)**2 for v in target)/4, 6)
+        self.assertAlmostEqual(sum(abs(v/4)**2 for v in target), 1.5)
+        self.assertLess(abs(lab.dtft(x, math.pi/4) -
+                            (1+math.sqrt(2))*(1-1j)), 1e-13)
+
+    def test_general_complex_fft_against_independent_sum(self):
+        for n in [1, 2, 4, 8, 16]:
+            x = [complex((k*3 % 7)-2, (k*5 % 11)-4) for k in range(n)]
+            self.close(lab.fft(x), explicit_transform(x))
+            self.close(lab.ifft(lab.fft(x)), x)
+            self.close(lab.idft(explicit_transform(x)), x)
+        self.close(lab.dft([1, 2, 4]), explicit_transform([1, 2, 4]))
+        with self.assertRaises(ValueError):
+            lab.fft([1, 2, 4])
+
+    def test_padding_foldback_and_asymmetric_correlation(self):
+        x, h = [1, 2, 4], [1, 2]
+        expected = [1, 4, 8, 8]
+        self.assertEqual(convolution_oracle(x, h), expected)
+        self.close(lab.linear_convolution(x, h), expected)
+        self.close(lab.circular_convolution(x, h, 3), [9, 4, 8])
+        self.close(lab.frequency_convolution(x, h, 3, False), [9, 4, 8])
+        self.close(lab.frequency_convolution(x, h, 4), expected)
+        self.close(lab.valid_correlation(x, h), [5, 10])
+        self.close(lab.linear_convolution(x, h[::-1]), [2, 5, 10, 4])
+        self.close(lab.fft_linear_convolution(x, h[::-1])[1:3], [5, 10])
+        self.close(lab.linear_convolution([1, 2, 1, 0], [1, 1, 1]),
+                   [1, 3, 4, 3, 1, 0])
+        self.close(lab.circular_convolution([1, 2, 1, 0], [1, 1, 1], 4),
+                   [2, 3, 4, 3])
+
+    def test_finite_and_periodic_shift_operators(self):
+        x = [1, 2, 4]
+        self.close(lab.right_correlation(lab.shift(x)), [2, 5, 2])
+        self.close(lab.shift(lab.right_correlation(x)), [0, 5, 10])
+        self.close(lab.right_correlation(lab.shift(x, True), True), [6, 5, 10])
+        self.close(lab.shift(lab.right_correlation(x, True), True), [6, 5, 10])
+        # Exhaustive small integer inputs test the actual periodic matrices,
+        # while the manuscript supplies the general commutation proof.
+        for x in itertools.product([-1, 0, 2], repeat=3):
+            self.close(lab.right_correlation(lab.shift(x, True), True),
+                       lab.shift(lab.right_correlation(x, True), True))
+
+    def test_all_block_cuts_against_outer_product_oracle(self):
+        x = [1, -2, 3, 0, 4, -1]
+        for h in [[2], [1, 2], [1, -1, 2, .5], [1]*9]:
+            target = convolution_oracle(x, h)
+            for blocks in partitions(x):
+                expanded = [[], *blocks, []]
+                output, events = lab.stream_blocks(expanded, h)
+                self.close(output, target)
+                offsets = [event['offset'] for event in events]
+                self.assertEqual(offsets, sorted(offsets))
+                self.assertEqual(events[-1]['offset'], len(x))
+        output, _ = lab.stream_blocks([[1, 2], [], [1, 0]], [1, 1, 1])
+        self.close(output, [1, 3, 4, 3, 1, 0])
+        output, _ = lab.stream_blocks([[2], [], [-1, 3]], [2, -1])
+        self.close(output, [4, -4, 7, -3])
+
+    def test_stream_invalid_input_is_atomic_and_eof_is_explicit(self):
+        stream = lab.OverlapAdd([1, 2, 3])
+        self.close(stream.push([1]), [1])
+        before = stream.snapshot
+        self.assertEqual(stream.push([]), [])
+        self.assertEqual(stream.snapshot, before)
+        for bad in [[2, float('nan')], [True], [[1]], '12', None]:
+            with self.assertRaises(ValueError):
+                stream.push(bad)
+            self.assertEqual(stream.snapshot, before)
+        self.close(stream.flush(), [2, 3])
+        self.assertEqual(stream.flush(), [])
+        with self.assertRaises(ValueError):
+            stream.push([])
+        self.assertEqual(lab.OverlapAdd([1, 2]).flush(), [])
+
+    def test_padding_only_samples_same_dtft(self):
+        record = [math.cos(2*math.pi*1.25*n/4) for n in range(4)]
+        padded = lab.dft(record + [0]*12)
+        for k, value in enumerate(padded):
+            expected = sum(v*complex(math.cos(-2*math.pi*k*n/16),
+                                     math.sin(-2*math.pi*k*n/16))
+                           for n, v in enumerate(record))
+            self.assertLess(abs(value-expected), 1e-12)
+        self.close(padded[::4], lab.dft(record))
+
+    def test_declared_input_boundaries(self):
+        for values in [[], [True], [float('inf')], [complex(0, float('nan'))]]:
+            with self.assertRaises(ValueError):
+                lab.dft(values)
+        for n in [0, True, 2.0, 2]:
+            with self.assertRaises(ValueError):
+                lab.circular_convolution([1, 2, 4], [1, 2], n)
+        self.assertEqual(lab.fft_linear_convolution([], [1, 2]), [])
+        with self.assertRaises(ValueError):
+            lab.valid_correlation([1j, 2], [1])
+
+
+if __name__ == '__main__':
+    unittest.main()
+```
+

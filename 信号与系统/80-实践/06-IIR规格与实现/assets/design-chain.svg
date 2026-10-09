@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="610" viewBox="0 0 1100 610" role="img" aria-labelledby="title desc">
+<title id="title">双带数字规格到Butterworth极点与二阶节</title><desc id="desc">48kHz输入，数字通带边界π/4，阻带π/3。分别tan预扭曲成96000乘根号2减1和96000除根号3 rad每秒，再由可行截止区间求阶数27。左半平面极点映到单位圆内，以13二阶节加1一阶节实现。</desc>
+<rect width="1100" height="610" fill="white"/>
+<style>text{font-family:system-ui,"PingFang SC",sans-serif;font-size:22px;fill:#153049}.head{font-size:27px;font-weight:650}.small{font-size:19px}.box{fill:#edf6fc;stroke:#387495;stroke-width:2}.arrow{stroke:#387495;stroke-width:2;marker-end:url(#a)}</style>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#387495"/></marker></defs>
+<text x="30" y="42" class="head">两个带边各自反映射：一个“截止Hz”不够</text>
+<rect x="25" y="80" width="475" height="150" rx="12" class="box"/>
+<text x="48" y="115">数字域：fs=48000 sample/s</text><text x="48" y="158">通带 fp=6000 Hz → θp=π/4</text><text x="48" y="200">阻带 fsb=8000 Hz → θs=π/3</text>
+<path d="M510,155H577" class="arrow"/>
+<rect x="590" y="80" width="485" height="150" rx="12" class="box"/>
+<text x="612" y="115">原型域：Ω = 2fs tan(θ/2)</text><text x="612" y="158">Ωp = 96000(√2−1) rad/s</text><text x="612" y="200">Ωs = 96000/√3 rad/s</text>
+<path d="M833,240V277" class="arrow"/>
+<rect x="590" y="290" width="485" height="145" rx="12" class="box"/>
+<text x="612" y="326">误差给 Ωp / ep¹⁄ᴺ ≤ Ωc ≤ Ωs / es¹⁄ᴺ</text><text x="612" y="370">N=27：区间可行，取几何中点留余量</text><text x="612" y="410" class="small">理想幅度单调 → 核带边覆盖整个频带</text>
+<path d="M577,365H510" class="arrow"/>
+<rect x="25" y="290" width="475" height="145" rx="12" class="box"/>
+<text x="48" y="326">Re(p)&lt;0 → r=(2fs+p)/(2fs−p)</text><text x="48" y="369">|r|&lt;1；零点为27个z=−1</text><text x="48" y="411">共轭配对：13二阶节＋1一阶节</text>
+<text x="30" y="492">还有三份责任：群延迟预算、初态／边缘、有限字长与中间尺度。</text>
+<text x="30" y="536" class="small">图是理想设计链；系数与轨迹须独立复算，不代表运放、ADC或音频设备验收。</text>
+<text x="30" y="578" class="small">双线性设计不折回频率 ≠ 物理采样没有混叠。</text>
+</svg>

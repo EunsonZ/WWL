@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="540" viewBox="0 0 1080 540" role="img" aria-labelledby="title desc">
+<title id="title">重叠相加把局部卷积放回全局时间</title><desc id="desc">输入1,2,1,0分为两块，核1,1,1。第一块局部卷积1,3,3,2从全局0放置；第二块1,1,1,0从全局2放置；相加为1,3,4,3,1,0。前四点push发布，末两点EOF发布。</desc>
+<rect width="1080" height="540" fill="#fff"/>
+<style>text{font-family:system-ui,"PingFang SC",sans-serif;font-size:23px;fill:#152b40}.head{font-size:27px;font-weight:650}.tiny{font-size:19px}.a{fill:#e6f1fa;stroke:#3979a6;stroke-width:2}.b{fill:#ffefdf;stroke:#b87537;stroke-width:2}.out{fill:#e8f6ed;stroke:#397952;stroke-width:2}.grid{stroke:#bfd0dd;stroke-width:1}</style>
+<text x="30" y="40" class="head">同一全局索引相加：h=(1,1,1)，M−1=2</text>
+<text x="35" y="100">全局索引 n</text>
+<text x="35" y="162">块0：起点0</text><text x="35" y="220">块1：起点2</text><text x="35" y="292">相加输出</text>
+<g text-anchor="middle"><text x="345" y="100">0</text><text x="465" y="100">1</text><text x="585" y="100">2</text><text x="705" y="100">3</text><text x="825" y="100">4</text><text x="945" y="100">5</text></g>
+<path d="M285,113H1005 M285,181H1005 M285,239H1005 M285,315H1005 M285,113V315 M405,113V315 M525,113V315 M645,113V315 M765,113V315 M885,113V315 M1005,113V315" class="grid"/>
+<rect x="285" y="125" width="480" height="48" rx="8" class="a"/><rect x="525" y="191" width="480" height="40" rx="8" class="b"/><rect x="285" y="258" width="720" height="48" rx="8" class="out"/>
+<g text-anchor="middle"><text x="345" y="158">1</text><text x="465" y="158">3</text><text x="585" y="158">3</text><text x="705" y="158">2</text><text x="585" y="220">1</text><text x="705" y="220">1</text><text x="825" y="220">1</text><text x="945" y="220">0</text><text x="345" y="291">1</text><text x="465" y="291">3</text><text x="585" y="291">4</text><text x="705" y="291">3</text><text x="825" y="291">1</text><text x="945" y="291">0</text></g>
+<text x="35" y="359">push(1,2)：发布索引0..1的(1,3)，保留tail=(3,2)</text>
+<text x="35" y="399">push(1,0)：局部full加旧tail → (4,3,1,0)，发布索引2..3</text>
+<text x="35" y="439">flush()：发布索引4..5的(1,0)；这些点不能丢，也不是新输入</text>
+<text x="35" y="494" class="tiny">空块不前进时间；块长可变，起点必须随已消费样点数移动。</text>
+</svg>

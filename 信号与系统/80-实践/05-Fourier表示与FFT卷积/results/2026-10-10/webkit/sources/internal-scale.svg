@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="510" viewBox="0 0 1100 510" role="img" aria-labelledby="title desc">
+<title id="title">相同理想传函两种节次序的中间范围</title><desc id="desc">DC8高增益节与DC八分之一低增益节相乘为单位增益。2伏输入高增益先行的理想中间目标16伏，W8F4饱和上界7.9375伏，最终整数输出1伏；反向次序中间0.25伏，最终输出2伏。定点实验20拍，舍入中点取偶。</desc>
+<rect width="1100" height="510" fill="white"/>
+<style>text{font-family:system-ui,"PingFang SC",sans-serif;font-size:22px;fill:#153049}.head{font-size:27px;font-weight:650}.small{font-size:19px}.high{fill:#fff0e4;stroke:#aa703b;stroke-width:2}.low{fill:#edf6fc;stroke:#387495;stroke-width:2}.arrow{stroke:#387495;stroke-width:2;marker-end:url(#a)}</style>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#387495"/></marker></defs>
+<text x="30" y="40" class="head">节乘积相同，中间范围依顺序改变</text>
+<text x="30" y="125">2 V</text><rect x="160" y="80" width="250" height="100" rx="12" class="high"/><text x="182" y="121">Gh：4/(1−.5z⁻¹)</text><text x="182" y="158">DC = 8</text>
+<path d="M91,123H146 M424,123H690" class="arrow"/><text x="443" y="94">理想中间16 V</text><text x="443" y="166" class="small">存储饱和：7.9375 V</text>
+<rect x="707" y="80" width="265" height="100" rx="12" class="low"/><text x="727" y="121">Gl：.0625/(1−.5z⁻¹)</text><text x="727" y="158">DC = 1/8</text><text x="992" y="125">1 V</text>
+<text x="30" y="286">2 V</text><rect x="160" y="240" width="265" height="100" rx="12" class="low"/><text x="180" y="281">Gl：.0625/(1−.5z⁻¹)</text><text x="180" y="318">DC = 1/8</text>
+<path d="M91,282H146 M439,282H690" class="arrow"/><text x="455" y="252">中间 .25 V</text><text x="455" y="326" class="small">在W8/F4范围内</text>
+<rect x="707" y="240" width="250" height="100" rx="12" class="high"/><text x="727" y="281">Gh：4/(1−.5z⁻¹)</text><text x="727" y="318">DC = 8</text><text x="992" y="286">2 V</text>
+<text x="30" y="393">零态精确H = .25/(1−.5z⁻¹)²；两种顺序理想最终都为2 V。</text>
+<text x="30" y="435" class="small">图右端是20拍W8/F4、round-to-even、输出／状态饱和的手算代码轨迹。</text>
+<text x="30" y="476" class="small">这份2 V故障输入与主设计≤.9 V分开；没有饱和也仍需核舍入、极限环与启动。</text>
+</svg>

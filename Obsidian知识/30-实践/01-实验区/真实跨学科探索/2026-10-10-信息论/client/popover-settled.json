@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "code=JSON.stringify([...document.querySelectorAll(\".hover-popover\")].map(x=>({text:x.innerText.slice(0,8000),rect:{width:x.getBoundingClientRect().width,height:x.getBoundingClientRect().height},headings:[...x.querySelectorAll(\"h1,h2,h3\")].map(h=>h.innerText)})))"
+  ],
+  "exit": 0,
+  "stdout": "=> []\n",
+  "stderr": "",
+  "time": "2026-10-09T19:27:44.592047+00:00"
+}

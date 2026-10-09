@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "code=(async()=>{let l=app.workspace.getMostRecentLeaf();let a=[...l.view.containerEl.querySelectorAll(\"a.internal-link\")].find(a=>a.dataset.href?.includes(\"#2. 熵给出\"));if(!a)return \"missing anchor\";a.scrollIntoView({block:\"center\"});app.workspace.trigger(\"hover-link\",{event:new MouseEvent(\"mouseover\",{bubbles:true,ctrlKey:true,metaKey:true}),source:\"preview\",hoverParent:l.view,targetEl:a,linktext:a.dataset.href,sourcePath:l.view.file.path});await new Promise(r=>setTimeout(r,700));return JSON.stringify({href:a.dataset.href,popovers:[...document.querySelectorAll(\".hover-popover\")].map(x=>x.innerText.slice(0,6000))});})()"
+  ],
+  "exit": 0,
+  "stdout": "=> {\"href\":\"计算机知识/60-数据编码与媒体系统/04-压缩原理熵编码字典编码与有损压缩#2. 熵给出平均码长的方向，不是每个文件的承诺\",\"popovers\":[\"\"]}\n",
+  "stderr": "",
+  "time": "2026-10-09T19:26:57.383831+00:00"
+}

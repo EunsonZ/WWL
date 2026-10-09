@@ -1,0 +1,88 @@
+{
+  "main_commit": "33359466d6bfbd2b9c94b958c99360692b4cfd48",
+  "course_execution": "NOT_RUN_BY_AUTHOR",
+  "checks": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "780555ee84f3c1f017e9117cac5563cfe7f6eb4372d4a076f981f9810c1564c9"
+    },
+    {
+      "path": "数学/25-高等代数/01-多项式整除Euclid算法与Bezout恒等式.md",
+      "sha256": "02f3699bc69ba709e906b2b408684d28cc2ca95338e3df7a313025563564d16d",
+      "properties": "PASS",
+      "wiki_links_exact": "PASS",
+      "original_bytes_preserved": true,
+      "baseline_sha256": "4f45295bb5aba926e95933e11f5073eca18d501116bb95cbc7594e79429d6868",
+      "baseline_workspace_equal": true,
+      "baseline_main_equal": true
+    },
+    {
+      "path": "数学/25-高等代数/12-环理想商环与同态基本定理.md",
+      "sha256": "8b1539d0d45458a98baf6bea17b4df8ce4c1bfdc1974b5a359f299909cc86a09",
+      "properties": "PASS",
+      "wiki_links_exact": "PASS",
+      "original_bytes_preserved": true,
+      "baseline_sha256": "3856b520fc1fe9db3dfd2c5502bef1330b5d18864768694537802cf6d389f59e",
+      "baseline_workspace_equal": true,
+      "baseline_main_equal": true
+    },
+    {
+      "path": "数学/50-信息论/10-信源信道与率失真/03-离散信道容量与编码定理.md",
+      "sha256": "14723f2eb948037688deb66edce1adade88c3668b8370078ffd6cddb2a8499b2",
+      "properties": "PASS",
+      "wiki_links_exact": "PASS",
+      "original_bytes_preserved": true,
+      "baseline_sha256": "0d2a71666747a9557a5974f594f34ed659119c4b0262f20e7b6ad384790abcab",
+      "baseline_workspace_equal": true,
+      "baseline_main_equal": true
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测.md",
+      "sha256": "594826d3245f162d5770d8d69d98bdeef059be1e1ceb2c7d693e9598f991d352",
+      "properties": "PASS",
+      "wiki_links_exact": "PASS",
+      "original_bytes_preserved": true,
+      "baseline_sha256": "d73c4d50f847b0bd721b79fdff69bcb8f58be54cf76cc1872d785ab41c8105b7",
+      "baseline_workspace_equal": true,
+      "baseline_main_equal": true
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/03-二进制文件格式魔数字节序对齐与校验.md",
+      "sha256": "7acbbcb67e01fbc7949ff1bb8fad837b668c6470fcaf3b304fefc2d92fec547d",
+      "properties": "PASS",
+      "wiki_links_exact": "PASS",
+      "original_bytes_preserved": true,
+      "baseline_sha256": "81f2849020acff271de17e69b27f2f8a56a197829113b68956b73173162e138d",
+      "baseline_workspace_equal": true,
+      "baseline_main_equal": true
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/CRC.md",
+      "sha256": "4614bb4138a1095e3733e9b56b585c4cd26378535914f2a23861773186e95bdb",
+      "properties": "PASS",
+      "wiki_links_exact": "PASS"
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/crc.py",
+      "sha256": "864d3cb64cf5b928decdb2170a5a7b4f8a65fb256e55def764cd5def90bbcf6c",
+      "ast_parse": "PASS",
+      "executed": false
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/crc_expected.json",
+      "sha256": "a9782203b5151b90670aaf352acca24ec77f0ba334db6ba1899d7ab56b0390a4",
+      "json_parse": "PASS"
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/crc_inputs.json",
+      "sha256": "483e6e0e2a29717ffc30c9a1ac445621fc1bcd4b1e8d495621b21e5aaa3249ea",
+      "json_parse": "PASS"
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/verify_crc.py",
+      "sha256": "0de3a39d32bb005c880dc97b6c3707ffffe29e91430997bd7ce4f57418613345",
+      "ast_parse": "PASS",
+      "executed": false
+    }
+  ]
+}

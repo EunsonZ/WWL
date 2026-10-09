@@ -1,0 +1,163 @@
+{
+  "syndrome_matrix_columns_lsb_first": [
+    1,
+    2,
+    4,
+    3,
+    6,
+    7,
+    5
+  ],
+  "rows_checked": 127,
+  "short_bursts_checked": 23,
+  "bursts_by_span": {
+    "1": {
+      "count": 7,
+      "missed": 0
+    },
+    "2": {
+      "count": 6,
+      "missed": 0
+    },
+    "3": {
+      "count": 10,
+      "missed": 0
+    },
+    "4": {
+      "count": 16,
+      "missed": 4
+    },
+    "5": {
+      "count": 24,
+      "missed": 3
+    },
+    "6": {
+      "count": 32,
+      "missed": 4
+    },
+    "7": {
+      "count": 32,
+      "missed": 4
+    }
+  },
+  "nonzero_kernel": [
+    "0001011",
+    "0010110",
+    "0011101",
+    "0100111",
+    "0101100",
+    "0110001",
+    "0111010",
+    "1000101",
+    "1001110",
+    "1010011",
+    "1011000",
+    "1100010",
+    "1101001",
+    "1110100",
+    "1111111"
+  ],
+  "kernel_total_including_zero": 16,
+  "linearity_pairs_checked": 16384,
+  "single_flip_external_decoder": [
+    {
+      "flipped_position_from_lsb": 0,
+      "syndrome": 1,
+      "corrected": "1101001"
+    },
+    {
+      "flipped_position_from_lsb": 1,
+      "syndrome": 2,
+      "corrected": "1101001"
+    },
+    {
+      "flipped_position_from_lsb": 2,
+      "syndrome": 4,
+      "corrected": "1101001"
+    },
+    {
+      "flipped_position_from_lsb": 3,
+      "syndrome": 3,
+      "corrected": "1101001"
+    },
+    {
+      "flipped_position_from_lsb": 4,
+      "syndrome": 6,
+      "corrected": "1101001"
+    },
+    {
+      "flipped_position_from_lsb": 5,
+      "syndrome": 7,
+      "corrected": "1101001"
+    },
+    {
+      "flipped_position_from_lsb": 6,
+      "syndrome": 5,
+      "corrected": "1101001"
+    }
+  ],
+  "single_flip_boundary": "CRC itself only provides syndrome; this external decoder additionally assumes at most one erroneous bit. Multi-bit error0001010 collides with0000001.",
+  "zero_divisor_example": {
+    "generator": "1001",
+    "nonzero_factors": [
+      "11",
+      "111"
+    ],
+    "product": "1001",
+    "product_remainder": 0
+  },
+  "real_crc32": [
+    {
+      "name": "standard-check",
+      "payload_hex": "313233343536373839",
+      "checksum_hex": "CBF43926",
+      "little_endian_hex": "2639f4cb"
+    },
+    {
+      "name": "tiny-hi",
+      "payload_hex": "6869",
+      "checksum_hex": "D8932AAC",
+      "little_endian_hex": "ac2a93d8"
+    },
+    {
+      "name": "empty",
+      "payload_hex": "",
+      "checksum_hex": "00000000",
+      "little_endian_hex": "00000000"
+    }
+  ],
+  "crc32_model": {
+    "width": 32,
+    "poly_normal": "04C11DB7",
+    "poly_reflected": "EDB88320",
+    "init": "FFFFFFFF",
+    "xorout": "FFFFFFFF",
+    "refin": true,
+    "refout": true,
+    "toy_order": "MSB highest polynomial degree; no init/final xor"
+  },
+  "affine_counterexample": {
+    "a_hex": "0100",
+    "b_hex": "0001",
+    "checksum_xor_difference": "41D912FF",
+    "zero_bytes_crc": "41D912FF"
+  },
+  "TINY_actual_published_example": {
+    "source_snapshot": "published-TINY-source.md",
+    "frame_hex": "54494e59010000001800000002000000ac2a93d8000000006869",
+    "coverage": [
+      24,
+      26
+    ],
+    "payload_crc": "D8932AAC",
+    "stored_little_endian": "ac2a93d8",
+    "forged_frame_hex": "54494e59010000001800000002000000998ff03100000000686f",
+    "forged_payload": "ho",
+    "forged_checksum": "31F08F99",
+    "forgery_crc_check_passes": true,
+    "padding_changes_not_covered": true,
+    "scope": "Own synthetic frames from actual published layout; no published parser or real transport executed."
+  },
+  "scope": "Finite fixed seven-bit errors and Boolean CRC32 vectors; no infinite theorem, authenticity, general parser safety or hardware result."
+}
+

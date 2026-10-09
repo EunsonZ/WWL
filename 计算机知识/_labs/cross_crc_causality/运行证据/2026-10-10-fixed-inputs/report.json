@@ -1,0 +1,477 @@
+{
+  "result": "business, author verifier, corrected independent oracle and declared interface checks passed; original own-oracle fixture typo failure retained",
+  "source_bindings": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "780555ee84f3c1f017e9117cac5563cfe7f6eb4372d4a076f981f9810c1564c9",
+      "bytes": 4874,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "数学/25-高等代数/01-多项式整除Euclid算法与Bezout恒等式.md",
+      "sha256": "02f3699bc69ba709e906b2b408684d28cc2ca95338e3df7a313025563564d16d",
+      "bytes": 4749,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "数学/25-高等代数/12-环理想商环与同态基本定理.md",
+      "sha256": "8b1539d0d45458a98baf6bea17b4df8ce4c1bfdc1974b5a359f299909cc86a09",
+      "bytes": 6227,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "数学/50-信息论/10-信源信道与率失真/03-离散信道容量与编码定理.md",
+      "sha256": "14723f2eb948037688deb66edce1adade88c3668b8370078ffd6cddb2a8499b2",
+      "bytes": 10893,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测.md",
+      "sha256": "594826d3245f162d5770d8d69d98bdeef059be1e1ceb2c7d693e9598f991d352",
+      "bytes": 14296,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "计算机知识/60-数据编码与媒体系统/03-二进制文件格式魔数字节序对齐与校验.md",
+      "sha256": "7acbbcb67e01fbc7949ff1bb8fad837b668c6470fcaf3b304fefc2d92fec547d",
+      "bytes": 11727,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/CRC.md",
+      "sha256": "4614bb4138a1095e3733e9b56b585c4cd26378535914f2a23861773186e95bdb",
+      "bytes": 9499,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/crc.py",
+      "sha256": "864d3cb64cf5b928decdb2170a5a7b4f8a65fb256e55def764cd5def90bbcf6c",
+      "bytes": 4498,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/crc_expected.json",
+      "sha256": "a9782203b5151b90670aaf352acca24ec77f0ba334db6ba1899d7ab56b0390a4",
+      "bytes": 1024,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/crc_inputs.json",
+      "sha256": "483e6e0e2a29717ffc30c9a1ac445621fc1bcd4b1e8d495621b21e5aaa3249ea",
+      "bytes": 287,
+      "snapshot_and_author_final_identical": true
+    },
+    {
+      "path": "计算机知识/_labs/cross_crc_causality/verify_crc.py",
+      "sha256": "0de3a39d32bb005c880dc97b6c3707ffffe29e91430997bd7ce4f57418613345",
+      "bytes": 4178,
+      "snapshot_and_author_final_identical": true
+    }
+  ],
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "python_executable": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "zlib_compile_version": "1.2.12",
+    "zlib_runtime_version": "1.2.12",
+    "zlib_extension_sha256": "d01fbb9cfa43d994fd4254580fa59448565f05a1ebf09bc6c3166b5020f1e375",
+    "binascii_extension_sha256": "771e52a031a5512829223dbe23be538b239f04e1c88fc0393a680bf026ec032e",
+    "business_imports": {
+      "crc.py": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ],
+      "verify_crc.py": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "zlib"
+      ]
+    },
+    "dependency_layer": "Python standard library only, no imported repository dependencies",
+    "published_TINY_source": "计算机知识/60-数据编码与媒体系统/03-二进制文件格式魔数字节序对齐与校验.md",
+    "published_TINY_snapshot_sha256": "81f2849020acff271de17e69b27f2f8a56a197829113b68956b73173162e138d",
+    "current_TINY_still_identical": true
+  },
+  "execution_receipts": {
+    "independent-retry-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219/oracle-retry.py",
+        "verify"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219",
+      "stdin_file": null,
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 300,
+      "elapsed_seconds": 0.1504006670002127,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 20267008,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    },
+    "author-verify-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219/snapshot/计算机知识/_labs/cross_crc_causality/verify_crc.py",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219/crc.stdout"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219",
+      "stdin_file": null,
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 300,
+      "elapsed_seconds": 0.04798304199903214,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 20512768,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    },
+    "interface-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219/interface-oracle.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219",
+      "stdin_file": null,
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.04606295899975521,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 17776640,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    },
+    "crc-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219/snapshot/计算机知识/_labs/cross_crc_causality/crc.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219",
+      "stdin_file": null,
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.04011591699963901,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 20512768,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    },
+    "independent-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219/oracle.py",
+        "verify"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219",
+      "stdin_file": null,
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_seconds": 300,
+      "elapsed_seconds": 0.1349547080008051,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 22708224,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    }
+  },
+  "independent_results": {
+    "syndrome_matrix_columns_lsb_first": [
+      1,
+      2,
+      4,
+      3,
+      6,
+      7,
+      5
+    ],
+    "rows_checked": 127,
+    "short_bursts_checked": 23,
+    "bursts_by_span": {
+      "1": {
+        "count": 7,
+        "missed": 0
+      },
+      "2": {
+        "count": 6,
+        "missed": 0
+      },
+      "3": {
+        "count": 10,
+        "missed": 0
+      },
+      "4": {
+        "count": 16,
+        "missed": 4
+      },
+      "5": {
+        "count": 24,
+        "missed": 3
+      },
+      "6": {
+        "count": 32,
+        "missed": 4
+      },
+      "7": {
+        "count": 32,
+        "missed": 4
+      }
+    },
+    "nonzero_kernel": [
+      "0001011",
+      "0010110",
+      "0011101",
+      "0100111",
+      "0101100",
+      "0110001",
+      "0111010",
+      "1000101",
+      "1001110",
+      "1010011",
+      "1011000",
+      "1100010",
+      "1101001",
+      "1110100",
+      "1111111"
+    ],
+    "kernel_total_including_zero": 16,
+    "linearity_pairs_checked": 16384,
+    "single_flip_external_decoder": [
+      {
+        "flipped_position_from_lsb": 0,
+        "syndrome": 1,
+        "corrected": "1101001"
+      },
+      {
+        "flipped_position_from_lsb": 1,
+        "syndrome": 2,
+        "corrected": "1101001"
+      },
+      {
+        "flipped_position_from_lsb": 2,
+        "syndrome": 4,
+        "corrected": "1101001"
+      },
+      {
+        "flipped_position_from_lsb": 3,
+        "syndrome": 3,
+        "corrected": "1101001"
+      },
+      {
+        "flipped_position_from_lsb": 4,
+        "syndrome": 6,
+        "corrected": "1101001"
+      },
+      {
+        "flipped_position_from_lsb": 5,
+        "syndrome": 7,
+        "corrected": "1101001"
+      },
+      {
+        "flipped_position_from_lsb": 6,
+        "syndrome": 5,
+        "corrected": "1101001"
+      }
+    ],
+    "single_flip_boundary": "CRC itself only provides syndrome; this external decoder additionally assumes at most one erroneous bit. Multi-bit error0001010 collides with0000001.",
+    "zero_divisor_example": {
+      "generator": "1001",
+      "nonzero_factors": [
+        "11",
+        "111"
+      ],
+      "product": "1001",
+      "product_remainder": 0
+    },
+    "real_crc32": [
+      {
+        "name": "standard-check",
+        "payload_hex": "313233343536373839",
+        "checksum_hex": "CBF43926",
+        "little_endian_hex": "2639f4cb"
+      },
+      {
+        "name": "tiny-hi",
+        "payload_hex": "6869",
+        "checksum_hex": "D8932AAC",
+        "little_endian_hex": "ac2a93d8"
+      },
+      {
+        "name": "empty",
+        "payload_hex": "",
+        "checksum_hex": "00000000",
+        "little_endian_hex": "00000000"
+      }
+    ],
+    "crc32_model": {
+      "width": 32,
+      "poly_normal": "04C11DB7",
+      "poly_reflected": "EDB88320",
+      "init": "FFFFFFFF",
+      "xorout": "FFFFFFFF",
+      "refin": true,
+      "refout": true,
+      "toy_order": "MSB highest polynomial degree; no init/final xor"
+    },
+    "affine_counterexample": {
+      "a_hex": "0100",
+      "b_hex": "0001",
+      "checksum_xor_difference": "41D912FF",
+      "zero_bytes_crc": "41D912FF"
+    },
+    "TINY_actual_published_example": {
+      "source_snapshot": "published-TINY-source.md",
+      "frame_hex": "54494e59010000001800000002000000ac2a93d8000000006869",
+      "coverage": [
+        24,
+        26
+      ],
+      "payload_crc": "D8932AAC",
+      "stored_little_endian": "ac2a93d8",
+      "forged_frame_hex": "54494e59010000001800000002000000998ff03100000000686f",
+      "forged_payload": "ho",
+      "forged_checksum": "31F08F99",
+      "forgery_crc_check_passes": true,
+      "padding_changes_not_covered": true,
+      "scope": "Own synthetic frames from actual published layout; no published parser or real transport executed."
+    },
+    "scope": "Finite fixed seven-bit errors and Boolean CRC32 vectors; no infinite theorem, authenticity, general parser safety or hardware result."
+  },
+  "interface_results": {
+    "rows": [
+      {
+        "case": "zero generator",
+        "expected_exception": "ValueError",
+        "actual": "generator must have positive degree"
+      },
+      {
+        "case": "negative dividend",
+        "expected_exception": "ValueError",
+        "actual": "dividend must be a nonnegative coefficient integer"
+      },
+      {
+        "case": "boolean dividend",
+        "expected_exception": "ValueError",
+        "actual": "dividend must be a nonnegative coefficient integer"
+      },
+      {
+        "case": "negative burst",
+        "expected_exception": "ValueError",
+        "actual": "error must be a nonnegative coefficient integer"
+      },
+      {
+        "case": "CRC32 text instead of bytes",
+        "expected_exception": "ValueError",
+        "actual": "CRC-32 input must be bytes"
+      },
+      {
+        "case": "constant-term zero",
+        "expected_exception": "ValueError",
+        "actual": "generators need positive degree and constant term one"
+      },
+      {
+        "case": "unsupported enumeration length",
+        "expected_exception": "ValueError",
+        "actual": "bounded enumeration requires codeword width 2..16"
+      },
+      {
+        "case": "mismatched codeword length",
+        "expected_exception": "ValueError",
+        "actual": "codeword width must equal message width plus generator degree"
+      },
+      {
+        "case": "generator leading zero",
+        "expected_exception": "ValueError",
+        "actual": "generator representation must start with one"
+      },
+      {
+        "case": "unequal alternate degree",
+        "expected_exception": "ValueError",
+        "actual": "comparison generators must have equal degree"
+      },
+      {
+        "case": "invalid bits",
+        "expected_exception": "ValueError",
+        "actual": "message must be a nonempty binary string"
+      },
+      {
+        "case": "empty message",
+        "expected_exception": "ValueError",
+        "actual": "message must be a nonempty binary string"
+      },
+      {
+        "case": "zero message and error",
+        "codeword": "0000000",
+        "check_bits": "000",
+        "zero_error_span": 0
+      }
+    ],
+    "scope": "Declared fixed API rejection cases; not exhaustive input safety or a TINY parser run."
+  },
+  "own_oracle_retry": {
+    "original_source": "oracle.py",
+    "original_raw": "independent.stderr",
+    "returncode": 1,
+    "error": "Own literal TINY frame had odd hexadecimal digit count; ValueError bytes.fromhex. No course-source failure.",
+    "corrected_source": "oracle-retry.py",
+    "correction": "Only replaced own frame string with space-separated exact published 26-byte frame.",
+    "retry_raw": "independent-retry.stdout/.stderr",
+    "retry_returncode": 0,
+    "course_source_or_output_changed": false
+  },
+  "limits": [
+    "Fixed 7-bit enumeration does not prove an arbitrary-length burst theorem.",
+    "External single-bit decoder adds an at-most-one-error model; CRC syndrome alone does not supply arbitrary correction.",
+    "CRC32 init/final XOR produces an affine fixed-length map, so zero-initial toy syndrome comparisons are not interchangeable.",
+    "TINY frame verification is an own local frame construction from published layout, not a deployed parser/network/device execution.",
+    "Unkeyed CRC agreement is not authentication; modified payload plus recomputed CRC passes.",
+    "Thread environment4 does not establish an OS hard thread cap/count; measured RSS not a hard memory cap.",
+    "No plot source/plot requirement or GUI client/human result in this interface."
+  ]
+}

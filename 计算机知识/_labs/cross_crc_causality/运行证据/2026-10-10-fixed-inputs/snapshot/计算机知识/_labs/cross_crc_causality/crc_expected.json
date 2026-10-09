@@ -1,0 +1,22 @@
+{
+  "input": {
+    "message": "1101", "generator": "1011", "alternate_generator": "1001", "codeword_width": 7,
+    "crc32_vectors": [
+      {"name": "standard-check", "payload_hex": "313233343536373839"},
+      {"name": "tiny-hi", "payload_hex": "6869"},
+      {"name": "empty", "payload_hex": ""}
+    ]
+  },
+  "check_bits": "001", "codeword": "1101001", "error_count": 127,
+  "short_burst_count": 23, "nonzero_undetected_count": 15,
+  "selected_errors": [
+    {"error": "0000001", "received": "1101000", "remainder": 1},
+    {"error": "0001011", "received": "1100010", "remainder": 0},
+    {"error": "0010110", "received": "1111111", "remainder": 0}
+  ],
+  "crc32_vectors": [
+    {"name": "standard-check", "payload_hex": "313233343536373839", "checksum_hex": "CBF43926", "little_endian_hex": "2639f4cb"},
+    {"name": "tiny-hi", "payload_hex": "6869", "checksum_hex": "D8932AAC", "little_endian_hex": "ac2a93d8"},
+    {"name": "empty", "payload_hex": "", "checksum_hex": "00000000", "little_endian_hex": "00000000"}
+  ]
+}

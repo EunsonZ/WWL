@@ -1,0 +1,27 @@
+# #219 独立执行与审阅接口（作者未运行）
+
+## 固定运行
+
+root另派执行A；把candidate实验整个目录复制到获准的独立目录，保存来源/输入/expected字节与环境。Python3.10+标准库，无安装、网络或真实协议操作。执行：
+
+```
+python3 -B crc.py > crc_output.json
+python3 -B verify_crc.py crc_output.json > verify_output.json
+```
+
+每条保完整stdout/stderr、退出码、Python与zlib版本及工作位置。报告区分作者oracle实际执行、非作者独立oracle与语义审阅。作者没有预写运行成功。
+
+## 独立非同源核查
+
+1. 不导入crc.py，从GF2系数数组/逐位消首项重新求1101000余001、1101001余000；接收C xor E两例分别1101000余001与1100010余000。
+2. 独立枚举1..127，字符串首末1给跨度；应有23个span≤3错误（7+6+10），1011与1001都检出；1011的非零kernel数15，span4漏检为0001011。不要称枚举证明所有长度。
+3. 核每个接收syndrome等于错误syndrome；独立核七个单翻转syndrome均非零且互不相同，说明额外最多单错假设下可以另建译码器；0001010与0000001同余001说明不能唯一定位。乘法因子(x+1)(x²+x+1)=x³+1给可约商零因子。
+4. 用Python标准库zlib.crc32（独立于作者反射bitwise）核ASCII123456789→CBF43926、hi→D8932AAC、空→0；u32小端字节2639f4cb/ac2a93d8/00000000。
+5. 可独立检查拒绝边界：remainder(1,0)与负被除式须异常；run生成串常数项0、码字宽度不等于消息+degree、width>16须异常；零消息合法而burst_span(0)=0。这些是源码API行为，需执行者实跑后才能声称验证。
+6. 便携验证：复制实验文件后在实验目录以外调用完整脚本路径；默认输入/expected应相对__file__，不依赖旧/private/tmp。不得运行旧patch或跨因果#220材料。
+
+## 理论独审
+
+逐字核最新219 issue：固定GF2对象/长度/位序、商类代表和模乘、无限多项式环的核与7位向量的线性核分层、G0=1和次数证明短burst、可约商域边界与Z[x]首一例外、syndrome不唯一定位、不冒认证。逐项读最新TINY既有格式/覆盖/params，不覆盖现有byte/数值；PNG位序/存储差异须与真实primary源匹配。source_snapshot与raw无ready认证；独立签收只覆盖本冻结candidate。
+
+独立结果返回后，作者将在整体candidate的CRC.md“实际执行记录”处加必要短入口、输入/输出/原日志与环境，仍不声称真实部署、硬件或真人学习效果。最终改README后重新按实际交付字节核mirror/links并请review补签新增运行声明。

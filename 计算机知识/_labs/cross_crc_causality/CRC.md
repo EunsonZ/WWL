@@ -1,0 +1,175 @@
+---
+type: lab
+aliases: []
+sources:
+  - "https://www.rfc-editor.org/rfc/rfc3385.html#section-3"
+  - "https://www.w3.org/TR/png-3/#5CRC-algorithm"
+  - "https://zlib.net/crc_v3.txt"
+prerequisites:
+  - "[[计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测#CRC取余怎样变成商映射]]"
+---
+# CRC：位串取余与短突发的固定实验
+
+读者入口：[[计算机知识/35-计算机网络/10-系统课程/02-链路层交换与差错检测#CRC取余怎样变成商映射|CRC商映射、一般证明与反例]]。这是固定有限模型，不访问网络、不写输入、不测试真实链路；Python3.10+标准库即可。目录名称沿用原材料位置，本文和三个CRC文件不包含同包#220因果材料。
+
+## 固定输入、运行和验收
+
+[crc_inputs.json](crc_inputs.json) 固定消息1101、生成式1011、比较生成式1001、7位码字和三个CRC32载荷。位串最左为最高次位置；消息4位、检查3位，无反射/非零初值/末XOR。输出适用于教学协议，不能直接充当真实文件CRC字段。
+
+[crc.py](crc.py) 的 `remainder(value,generator)` 用整数位操作表达系数向量；非负被除式与正次数除式才有效，零除式被拒绝。`run(config)` 要求生成串首位1、常数项1、等次数比较式、消息长度加次数等于码字长度；枚举宽度只支持2至16以限制实验规模。零消息允许，前导0保留消息长度；`burst_span(0)=0`，但错误枚举排除零。固定oracle只验当前发布输入，更改参数不能继续把旧expected当真值。
+
+从本目录运行（作者未运行）：
+
+```sh
+python3 -B crc.py > crc_output.json
+python3 -B verify_crc.py crc_output.json
+```
+
+两脚本默认输入/expected定位在各自源码旁，支持被复制到独立目录，不依赖历史临时路径；`crc.py /明确路径/crc_inputs.json` 与 `verify_crc.py /明确路径/crc_output.json --expected /明确路径/crc_expected.json` 可从别处调用。程序只向标准输出报告，输出文件由命令重定向产生；运行者使用自己的新证据目录，保留输入、源码和命令。
+
+[crc_expected.json](crc_expected.json) 是声明模型的预期，**不是实际输出**：
+
+- 消息余式001，码字1101001，码字余式000。
+- 127个非零7位错误；跨度1/2/3分别7/6/10个，共23个，两种生成式均应检出。
+- 1011的15个非零倍数漏检；这是枚举数量，没有指定随机误码分布，不能叫现实漏检率。
+- 错误0000001→接收1101000→syndrome001；0001011→1100010→000；0010110→1111111→000。
+
+[verify_crc.py](verify_crc.py) 不导入计算实现；以系数数组逐列模2加法计算余式，用字符串首末1计算跨度，用逐字符模2相加核接收串；逐项核127个错误、接收余式等于错误余式、23个短突发和两例漏检。预期固定输入也参与比对。独立公式路线仍是本作者提供的oracle，非作者独立审阅与实际运行应另记。
+
+穷举只检查本例实现。正文以互素、Euclid引理和次数给所有长度的短突发证明；127个样本不能替代一般证明。可约1001能检短突发，不意味着其商是域。
+
+## 真实CRC32向量与存储字节
+
+与[[计算机知识/60-数据编码与媒体系统/03-二进制文件格式魔数字节序对齐与校验#从TINY参数返回多项式检错模型|TINY CRC32合同]]核对：width32、poly04C11DB7、initFFFFFFFF、refin/refout=true、xoroutFFFFFFFF。本源码采用反射右移常量EDB88320，初值全1，处理每字节8位，末异或全1；不另重复反射最终寄存器。该常量是poly的反射表示，不是又选择了一个独立生成多项式。
+
+| 载荷字节 | CRC32预期数值 | 小端存储预期字节 |
+| --- | --- | --- |
+| ASCII 123456789（31 32 33 34 35 36 37 38 39） | CBF43926 | 26 39 F4 CB |
+| ASCII hi（68 69） | D8932AAC | AC 2A 93 D8 |
+| 空载荷 | 00000000 | 00 00 00 00 |
+
+标准check向量来自 [Williams原参数模型v3 §15–17](https://zlib.net/crc_v3.txt)，`hi` 数值沿用已发布TINY例，空输入由声明初末处理抵消得到。oracle另用Python标准库 `zlib.crc32` 核三载荷数值和小端序列。[PNG §5.5](https://www.w3.org/TR/png-3/#5CRC-algorithm) 可对照相同位处理但不同字段字节序；本例只跟TINY覆盖载荷，不把PNG的块类型/数据范围冒名为TINY覆盖。
+
+实验只对三个载荷核实现与配置，没构造真实TINY解析器、不认证现实协议、来源真实性或真人理解。完整格式仍由TINY页维护；网络检测机制与商映射仍由链路页维护。
+
+## 实际执行记录
+
+2026-10-10由独立执行者A运行，作者没有自行运行课程。[固定输入实际证据与复建入口](运行证据/2026-10-10-fixed-inputs/README.md)保存源码/输入快照、命令与环境、原始stdout/stderr、逐任务退出记录及独立预期。业务程序、作者oracle、修正后的独立oracle和接口检查各自exit0；初次独立oracle自己的TINY十六进制fixture笔误exit1也完整保留，修正只动该fixture，课程源码未变。
+
+实际观察为127个非零错误、23个短突发全检出、15个非零核元素漏检；独立路线另核16384组线性关系、三个CRC32向量与TINY本地合成帧。单错译码另加至多一位错误模型；这些有限观察不替代一般证明，也不证明真实解析器/链路部署、认证或真人理解。
+
+## 源码镜像
+
+下方是计算真源的逐字镜像；改源码时同步，不从笔记反写源码。
+
+<!-- code-sync: ./crc.py -->
+```python
+"""Finite GF(2) CRC and CRC-32/ISO-HDLC contrast; standard library only.
+
+No writes or network. Bit integers are coefficient vectors, not arithmetic values.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+
+def bits_value(bits: str, name: str) -> int:
+    if not isinstance(bits, str) or not bits or any(c not in '01' for c in bits):
+        raise ValueError(f'{name} must be a nonempty binary string')
+    return int(bits, 2)
+
+
+def remainder(value: int, generator: int) -> int:
+    """Polynomial remainder: top set bit is the leading monomial."""
+    if type(value) is not int or value < 0:
+        raise ValueError('dividend must be a nonnegative coefficient integer')
+    if type(generator) is not int or generator < 2:
+        raise ValueError('generator must have positive degree')
+    while value.bit_length() >= generator.bit_length():
+        value ^= generator << (value.bit_length() - generator.bit_length())
+    return value
+
+
+def burst_span(error: int) -> int:
+    if type(error) is not int or error < 0:
+        raise ValueError('error must be a nonnegative coefficient integer')
+    if error == 0:
+        return 0
+    return error.bit_length() - ((error & -error).bit_length() - 1)
+
+
+def crc32_iso_hdlc(data: bytes) -> int:
+    """Right-shifting reflected register already represents reflected output."""
+    if not isinstance(data, bytes):
+        raise ValueError('CRC-32 input must be bytes')
+    register = 0xFFFFFFFF
+    for byte in data:
+        register ^= byte
+        for _ in range(8):
+            register = ((register >> 1) ^ 0xEDB88320
+                        if register & 1 else register >> 1)
+    return register ^ 0xFFFFFFFF
+
+
+def run(config: dict) -> dict:
+    if not isinstance(config, dict):
+        raise ValueError('input must be an object')
+    m = bits_value(config['message'], 'message')
+    generators = [bits_value(config[key], key)
+                  for key in ('generator', 'alternate_generator')]
+    if any(g < 2 or not g & 1 for g in generators):
+        raise ValueError('generators need positive degree and constant term one')
+    if any(not config[key].startswith('1')
+           for key in ('generator', 'alternate_generator')):
+        raise ValueError('generator representation must start with one')
+    g, alt = generators
+    degree = g.bit_length() - 1
+    width = config['codeword_width']
+    if type(width) is not int or not 2 <= width <= 16:
+        raise ValueError('bounded enumeration requires codeword width 2..16')
+    if width != len(config['message']) + degree:
+        raise ValueError('codeword width must equal message width plus generator degree')
+    if alt.bit_length() != g.bit_length():
+        raise ValueError('comparison generators must have equal degree')
+    shifted = m << degree
+    residue = remainder(shifted, g)
+    codeword = shifted ^ residue
+    rows = []
+    for error in range(1, 1 << width):
+        received = codeword ^ error
+        rows.append({'error': format(error, f'0{width}b'),
+                     'span': burst_span(error),
+                     'received': format(received, f'0{width}b'),
+                     'remainder': remainder(error, g),
+                     'received_remainder': remainder(received, g),
+                     'alternate_remainder': remainder(error, alt)})
+    real = []
+    for vector in config['crc32_vectors']:
+        payload = bytes.fromhex(vector['payload_hex'])
+        value = crc32_iso_hdlc(payload)
+        real.append({'name': vector['name'], 'payload_hex': payload.hex(),
+                     'checksum_hex': f'{value:08X}',
+                     'little_endian_hex': value.to_bytes(4, 'little').hex()})
+    return {'schema': 'wwl-crc219-v1', 'input': config,
+            'message_width': len(config['message']), 'generator_degree': degree,
+            'message_remainder': residue,
+            'check_bits': format(residue, f'0{degree}b'),
+            'codeword': format(codeword, f'0{width}b'),
+            'codeword_remainder': remainder(codeword, g),
+            'errors': rows, 'crc32_vectors': real}
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('input', nargs='?', type=Path,
+                        default=Path(__file__).with_name('crc_inputs.json'))
+    args = parser.parse_args()
+    print(json.dumps(run(json.loads(args.input.read_text(encoding='utf-8'))),
+                     ensure_ascii=False, indent=2))
+
+
+if __name__ == '__main__':
+    main()
+```

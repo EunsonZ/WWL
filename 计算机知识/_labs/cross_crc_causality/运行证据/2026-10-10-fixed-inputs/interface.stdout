@@ -1,0 +1,68 @@
+[
+  {
+    "case": "zero generator",
+    "expected_exception": "ValueError",
+    "actual": "generator must have positive degree"
+  },
+  {
+    "case": "negative dividend",
+    "expected_exception": "ValueError",
+    "actual": "dividend must be a nonnegative coefficient integer"
+  },
+  {
+    "case": "boolean dividend",
+    "expected_exception": "ValueError",
+    "actual": "dividend must be a nonnegative coefficient integer"
+  },
+  {
+    "case": "negative burst",
+    "expected_exception": "ValueError",
+    "actual": "error must be a nonnegative coefficient integer"
+  },
+  {
+    "case": "CRC32 text instead of bytes",
+    "expected_exception": "ValueError",
+    "actual": "CRC-32 input must be bytes"
+  },
+  {
+    "case": "constant-term zero",
+    "expected_exception": "ValueError",
+    "actual": "generators need positive degree and constant term one"
+  },
+  {
+    "case": "unsupported enumeration length",
+    "expected_exception": "ValueError",
+    "actual": "bounded enumeration requires codeword width 2..16"
+  },
+  {
+    "case": "mismatched codeword length",
+    "expected_exception": "ValueError",
+    "actual": "codeword width must equal message width plus generator degree"
+  },
+  {
+    "case": "generator leading zero",
+    "expected_exception": "ValueError",
+    "actual": "generator representation must start with one"
+  },
+  {
+    "case": "unequal alternate degree",
+    "expected_exception": "ValueError",
+    "actual": "comparison generators must have equal degree"
+  },
+  {
+    "case": "invalid bits",
+    "expected_exception": "ValueError",
+    "actual": "message must be a nonempty binary string"
+  },
+  {
+    "case": "empty message",
+    "expected_exception": "ValueError",
+    "actual": "message must be a nonempty binary string"
+  },
+  {
+    "case": "zero message and error",
+    "codeword": "0000000",
+    "check_bits": "000",
+    "zero_error_span": 0
+  }
+]

@@ -1,0 +1,164 @@
+{
+  "schema": "wwl206-common-facts-v1",
+  "status": "synthetic teaching facts, no actual dispute or verdict",
+  "read_at": "2026-10-09T18:59:56.466119+00:00",
+  "provenance": {
+    "requirements": "actual fetched issue206-api.json and issue206-comments-api.json; 0 comments",
+    "additional": "issue209-api.json and comments; 1 comment",
+    "reuse": "salvage/social_methods/files/law206/社会科学/63-法学/03-公法私法刑事与救济的分工.md F1 F2 F3; new precision adds to synthetic facts, not recovered historical fact",
+    "sole_editor": "author206method"
+  },
+  "jurisdiction_maps": {
+    "CN": {
+      "scope": "中国大陆",
+      "base_place": "浙江省杭州市；F3为教学构造的该市辖内政府设立县级公共图书馆",
+      "private_form": "依法设立的有限责任公司，教学设定",
+      "currency": "CNY"
+    },
+    "DE": {
+      "scope": "德国",
+      "base_place": "Nordrhein-Westfalen；F3为教学构造的该州某市市立图书馆",
+      "private_form": "GmbH，教学设定",
+      "currency": "EUR"
+    },
+    "EW": {
+      "scope": "英格兰与威尔士",
+      "base_place": "基准英格兰境内；F3为教学构造的英格兰地方图书馆机关；威尔士领土适用差异另查",
+      "private_form": "private company limited by shares，教学设定",
+      "currency": "GBP"
+    }
+  },
+  "localisation_boundary": "Local company forms are assumed, real registration is not observed. City/county names and bylaws absent by design: no actual local authority, bylaw or defendant may be fabricated. Regional author may add separately named local-rule illustration, clearly not a new fact in F3. Domestic sale and domestic injury; no conflict-of-laws dispute. Local amounts are arbitrary nominal teaching allocations, NOT FX conversions, PPP equivalents, welfare/control results or observed local fees.",
+  "money": {
+    "common_unit": "教学货币单位 TU",
+    "currency_mapping": "Procedural localisation only: one TU numerically written as one CNY/EUR/GBP respectively. No exchange rate or equal buying power asserted. Legal procedural amount thresholds may vary even with same numeral. Fees require sourced dated local schedules; no cross-domain efficiency inference.",
+    "F1_unit_price_TU": 1000,
+    "F1_total_price_TU": 10000,
+    "F1_paid_TU": 10000,
+    "F2_medical_expense_TU": 5000,
+    "F2_damaged_phone_claim_TU": 300,
+    "F3_monetary_loss_claim_TU": 0
+  },
+  "F1": {
+    "title": "公司采购退款",
+    "actors": [
+      "B private reading room operating company, buyer",
+      "S domestic business supplier, seller",
+      "X third-party marketplace technical intermediary, not seller, no payment guarantee or seller representation alleged"
+    ],
+    "dates": {
+      "contract": "2026-05-15",
+      "delivery": "2026-05-20",
+      "testing": "2026-06-01",
+      "cure_notice_sent_and_received": "2026-06-02",
+      "requested_cure_deadline": "2026-06-10",
+      "research_and_request": "2026-06-15"
+    },
+    "facts": [
+      "B and S contract in their legal names on online marketplace X; specification attachment part of agreed contract",
+      "10 independently usable racks, 80 kg per rack agreed under distributed load and installation prescribed by seller",
+      "B paid full 10000 TU on contract date; payment receipt stipulated",
+      "Delivery receipt only confirms quantity and outward condition; contractual technical acceptance not complete",
+      "A separately identified rack from same batch tested at 40 kg in prescribed installation and distributed-load conditions becomes unstable; technical test record exists, all-batch representativeness remains disputed",
+      "B sends written repair-or-replace request; S receipt on June 2 stipulated; no deadline termination clause in notice; no later termination/rejection notice yet",
+      "S gives no answer or cure by June 15; racks available for inspection; unused racks stored safely",
+      "No given exclusion, choice-of-law, forum, arbitration, guarantee or further contractual cure clause; existence and validity remain unknown, not stipulated absent"
+    ],
+    "unknowns": [
+      "how quickly defect could reasonably be discovered",
+      "historical defect at delivery and all-batch representativeness",
+      "reasonable time for cure",
+      "legal acceptance and termination/rejection entitlement"
+    ],
+    "desired_relief": "June 15 asks whether and how to obtain full refund plus return arrangements; no claimed ancillary loss"
+  },
+  "F2": {
+    "title": "阅读室场所损害",
+    "actors": [
+      "B same private company controls reading room",
+      "Lin adult invited reader aged 30",
+      "M employee manager, receives safety notice for B",
+      "I installation contractor identity unknown",
+      "manufacturer identity unknown"
+    ],
+    "dates": {
+      "warning": "2026-05-28",
+      "injury": "2026-06-01",
+      "research_and_request": "2026-06-15"
+    },
+    "facts": [
+      "Domestic private reading room in ordinary opening hours; Lin lawfully invited, free entry, no visitor contract or fee stipulated",
+      "Lin takes book in ordinary manner, does not climb; rack holding 35 kg collapses",
+      "Employee original message reports loose wall/fixed connection and M receipt stipulated; no warning/barrier/repair observed before accident",
+      "Rack is another rack in same delivery batch; not the tested rack; F1 test does not prove F2 cause",
+      "Lin sustains bodily injury requiring treatment; medical paid expense 5000 TU with original treatment/payment records stipulated, causal reasonableness still legal/evidential issue",
+      "Phone in hand damaged; original purchase and repair evidence absent; Lin requests 300 TU for phone as separate unproved property-loss claim",
+      "Injury severity, lasting harm, loss of earnings and expert findings not given; no death or legally defined serious injury stipulated"
+    ],
+    "unknowns": [
+      "actual failure mechanism and installation/control details",
+      "whether warning reached particular natural person beyond M",
+      "reasonable preventive measures and causal link",
+      "phone damage and amount",
+      "criminal offence elements, mental state and medical thresholds"
+    ],
+    "desired_relief": "medical and alleged phone loss against appropriate parties; no automatic joint liability, double recovery or criminal conviction"
+  },
+  "F3": {
+    "title": "公共图书馆准入",
+    "actors": [
+      "L separately operated government-created public library/public authority mapped locally",
+      "Lin 30-year-old local resident, ordinary eligible library user, not shareholder/member/employee",
+      "decision-maker individual authority and legal classification unknown"
+    ],
+    "dates": {
+      "written_decision_and_receipt": "2026-06-01",
+      "research_and_request": "2026-06-15",
+      "specified_end": "2026-06-30 end of day"
+    },
+    "facts": [
+      "L serves local public, free ordinary borrowing and reading; separate from B",
+      "Written decision bars borrowing and reading June 1 through June 30 inclusive",
+      "Only recorded reason: one ordinary-volume criticism of opening-hours policy; no threat, damage, repeated disturbance or rule-breaking stipulated",
+      "No prior hearing, opportunity to answer or independent review record provided; do not infer legally mandatory hearing absent rule",
+      "Lin uses manual wheelchair; disability and need for step-free access stipulated; exclusion reason is criticism, not disability; differential treatment on disability not stipulated",
+      "Lin asks immediate lawful service restoration and review, not money; 30-day period may end before final merits result"
+    ],
+    "unknowns": [
+      "actual registration/public-law classification and statutory delegation",
+      "local valid service rules and any exclusion power",
+      "competent review/court route, qualification, deadlines and interim relief criteria",
+      "whether accessible alternative exists and specific reasonable adjustment obligation"
+    ],
+    "desired_relief": "review of exclusion and timely protection/restoration; no actual case issued or judgment observed"
+  },
+  "variants": {
+    "F1-A": "Only one rack defective, nine reliably pass, independently usable; full-refund scope must change analysis.",
+    "F1-B": "Buyer natural person for household use; replace B2B identity only, new source-selection consumer branch, cannot simply reuse seller silence conclusion.",
+    "F1-C": "B has not paid; no paid-price restitution, other remedies remain separate.",
+    "F2-A": "Warning visible and understandable, Lin climbs contrary to warning; warning adequacy/contribution must be reasoned, no assumed zero liability.",
+    "F2-B": "Independent evidence reveals installation failure, compliant manufacture; rethink target and cause without inventing criminal guilt.",
+    "F2-C": "Death medically established: criminal offence research necessary, not automatic conviction.",
+    "F3-A": "Repeated damaging conduct, original records, warning ineffective; authority, proportionality/time and process remain.",
+    "F3-B": "Private membership association replaces government public library; legal source, right/access relation and forum reselected.",
+    "F3-C": "Exclusion explicitly based on wheelchair use: distinguish disability discrimination/adjustment/public service and relevant local legal route."
+  },
+  "evidence": {
+    "E1": "original B-S contract, annex, signatures and X page identifying S; addresses/extra terms unknown",
+    "E2": "full price payment receipt May 15, delivery quantity receipt May 20",
+    "E3": "June 1 test original record, sample ID, prescribed conditions; all-batch representativeness open",
+    "E4": "June 2 cure request with stipulated delivery proof; deadline stated, no termination notice",
+    "E5": "May 28 original loose-connection employee message, received by M; forwards same origin",
+    "E6": "accident post-scene photograph and Lin account; no complete accident video or expert causation report",
+    "E7": "treatment/payment originals 5000 TU; phone300 claim without originals",
+    "E8": "public exclusion original, received June1, only reason, range June1-June30",
+    "E9": "three retellings copying E8, not three independent events; separate critic speech record unknown",
+    "E10": "Lin wheelchair and local resident status stipulated; library classification/bylaws absent"
+  },
+  "output_contract": {
+    "same_facts": "Regional author cites F1/F2/F3 and E IDs; does not silently rewrite dates, money, identity, legal entity, place or unknowns. Additional subexample separately labelled.",
+    "each_case": "source/date/version/effective-window -> claimant or public power -> elements -> mapping to evidence and unknowns -> strongest defence -> jurisdiction/standing/deadline/entry -> burden/standard -> remedies/interim/enforcement boundaries -> one no-hint transfer task with complete conditional answer",
+    "criminal": "Each domain F2 independently researches named applicable/potential offence, substantive conditions/defence and criminal burden/procedure; absence of serious injury/death may mean no selected offence established, not no crimes anywhere.",
+    "source": "Fresh primary browse; actual retrieval time, exact read ranges, source type/version/effective and event-date applicability, unsuccessful access preserved. Old salvage receipt is historical not fresh."
+  }
+}

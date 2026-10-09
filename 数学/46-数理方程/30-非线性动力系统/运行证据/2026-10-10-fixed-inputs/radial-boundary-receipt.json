@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "-B",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/radial-boundary-oracle.py"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+  "returncode": 0,
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "elapsed_seconds": 0.04849658300008741,
+  "child_peak_rss_macos_bytes": 20103168,
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4"
+  },
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "stdout_sha256": "b00bfd64d039ffe849a9a0258a27fb35e659dfbf0504d9238eab8d72af434b6e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+}

@@ -1,0 +1,90 @@
+{
+  "finite_domain_cases": [
+    {
+      "input": [
+        1e-06,
+        100,
+        10,
+        1e-10
+      ],
+      "radius_oracle_decimal": "9.999990000015000974998043754421290144179940886585709476771744042349819",
+      "actual": 9.999990000015002,
+      "relative_error": 0.0
+    },
+    {
+      "input": [
+        1e-06,
+        -100,
+        10,
+        1e-10
+      ],
+      "radius_oracle_decimal": "10.00001000001500102500204375457881014461381056442329474308619371236404",
+      "actual": 10.000010000015001,
+      "relative_error": 0.0
+    },
+    {
+      "input": [
+        100,
+        0,
+        1e-06,
+        1
+      ],
+      "radius_oracle_decimal": "26881171418161354484126255515800135873.61111877374192241519160861528029",
+      "actual": 2.6881171418161354e+37,
+      "relative_error": 0.0
+    },
+    {
+      "input": [
+        1,
+        1,
+        1,
+        100
+      ],
+      "radius_oracle_decimal": "1",
+      "actual": 1.0,
+      "relative_error": 0.0
+    }
+  ],
+  "near_cancellation": [
+    {
+      "t_binary64": 2.3075602584206294,
+      "mathematical_radius_at_decimal_roundtrip_t": "39196576.43782394731321162635025567676680912329329219435049463864298760",
+      "api_status": "refused",
+      "api_value": null,
+      "reason": "positive denominator numerically unresolved near cancellation; no radius certified"
+    },
+    {
+      "t_binary64": 2.30756025842063,
+      "mathematical_radius_at_decimal_roundtrip_t": null,
+      "api_status": "refused",
+      "api_value": null,
+      "reason": "nonpositive resolved denominator: beyond blow-up or numerically unresolved"
+    },
+    {
+      "t_binary64": 2.3075602584206303,
+      "mathematical_radius_at_decimal_roundtrip_t": null,
+      "api_status": "refused",
+      "api_value": null,
+      "reason": "nonpositive resolved denominator: beyond blow-up or numerically unresolved"
+    },
+    {
+      "t_binary64": 2.3075602584196298,
+      "mathematical_radius_at_decimal_roundtrip_t": "707133.1428589532652062928106756090969512674322284272145595327973837886",
+      "api_status": "finite",
+      "api_value": 707144.0445746764,
+      "reason": null
+    }
+  ],
+  "small_time": {
+    "input": [
+      1e-06,
+      100,
+      10,
+      1e-10
+    ],
+    "high_precision": 9.999990000015002,
+    "new_error": 0.0,
+    "old_subtraction_error": 1.10222675786531e-06
+  },
+  "scope": "Boundary rejection is a numerical interface result, not a physical blow-up diagnosis; Decimal roundtrip inputs specify comparison values."
+}

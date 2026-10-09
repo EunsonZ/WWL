@@ -1,0 +1,566 @@
+{
+  "result": "finite default runtime, independent arithmetic/analytic checks and actual offline plot rendering passed",
+  "version_bindings": [
+    {
+      "name": "dynamics_lab.py",
+      "sha256": "d533cf313ad121b4daf13dff4b29445d67dfc1e181a27596294c7499e898f489",
+      "bytes": 16993,
+      "author_source_unchanged": true
+    },
+    {
+      "name": "fixed-inputs.json",
+      "sha256": "296f0bdfb2bb35e1da085e908102e0dba201755f44208f76c111663e22d6cbdf",
+      "bytes": 1339,
+      "author_source_unchanged": true
+    },
+    {
+      "name": "expected.json",
+      "sha256": "44da1fad90677ce797561d3c439efcab75a64e5397805df5824cb3de06515f9e",
+      "bytes": 2624,
+      "author_source_unchanged": true
+    },
+    {
+      "name": "README.md",
+      "sha256": "89c3681ef0c7b607084f4ca64d282f8476bff1905b8fdf94e625ff9644173ded",
+      "bytes": 2606,
+      "author_source_unchanged": true
+    }
+  ],
+  "receipts": {
+    "render-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/render.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.4313121670002147,
+      "child_peak_rss_macos_bytes": 53198848,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "stdout_sha256": "596ab5eee47b50ed3d203a4473520870b3dd8bc9806dfcb7099139f673eee4c7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+    },
+    "preflight-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/snapshot/dynamics_lab.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.07480641599977389,
+      "child_peak_rss_macos_bytes": 22642688,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "stdout_sha256": "253f22ee04705bb8038aef9cff3cb25fe350ac2f7bb5a5fb8752d1d0052bed29",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+    },
+    "cli-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/snapshot/dynamics_lab.py",
+        "--output-dir",
+        "/private/tmp/wwl-recovery-149142-43837ed22b6b"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+      "returncode": 0,
+      "timeout_seconds": 300,
+      "timed_out": false,
+      "elapsed_seconds": 0.08122700000058103,
+      "child_peak_rss_macos_bytes": 23707648,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "stdout_sha256": "253f22ee04705bb8038aef9cff3cb25fe350ac2f7bb5a5fb8752d1d0052bed29",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+    },
+    "trajectory-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/trajectory-oracle.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.0450583749998259,
+      "child_peak_rss_macos_bytes": 19791872,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "stdout_sha256": "876ab5229db98fed273c06cbba1c7a0c5b38ce80c6e3f32ffc99bd066b1132d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+    },
+    "radial-boundary-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/radial-boundary-oracle.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.04849658300008741,
+      "child_peak_rss_macos_bytes": 20103168,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "stdout_sha256": "b00bfd64d039ffe849a9a0258a27fb35e659dfbf0504d9238eab8d72af434b6e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+    },
+    "interface-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/interface-oracle.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.14751062499999534,
+      "child_peak_rss_macos_bytes": 23609344,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "stdout_sha256": "8c6ea61d4c09c6fbc421c55274992d4c49d98bebd94e82c1ff7c89ec487c872e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+    },
+    "independent-receipt.json": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/independent_oracle.py",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/snapshot/dynamics_lab.py",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/preflight.stdout",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/independent-results.json"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.09022591699977056,
+      "child_peak_rss_macos_bytes": 20840448,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "stdout_sha256": "43f5ec02b204849ff9aab53e361a1529c637f46a5b05f802a3a5955a1b87dcbc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+    }
+  },
+  "independent_results": {
+    "feedback": {
+      "a_2_5_cumulative": [
+        "3",
+        "2"
+      ],
+      "a_1_2_cumulative": null,
+      "isolated_3_5": "3/5",
+      "joint_3_5": "6/5",
+      "method": "exact rational matrix powers, adjugate inverse and finite-series identity"
+    },
+    "nonnormal": {
+      "k4": [
+        "2048/125",
+        "256/625"
+      ],
+      "first_component_peak_steps": [
+        4,
+        5
+      ],
+      "coupling_reduction_ratio": 100,
+      "warning": "Euclidean norm peak differs from first-component peak; fixed-coordinate mathematics only"
+    },
+    "euler": {
+      "factors": [
+        "1/2",
+        "-1/2",
+        "-1",
+        "-2"
+      ],
+      "continuous_model": "exp(-t) decreases for all t>=0; discrete numerical instability is not physical instability"
+    },
+    "random_products": {
+      "polynomial_convolution": [
+        {
+          "n": 4,
+          "mean_exact": "14641/10000",
+          "modal_up_count": 1,
+          "modal_ratio": "1/4",
+          "below_one_probability": "297/625"
+        },
+        {
+          "n": 10,
+          "mean_exact": "25937424601/10000000000",
+          "modal_up_count": 4,
+          "modal_ratio": "1/4",
+          "below_one_probability": "6182649/9765625"
+        },
+        {
+          "n": 20,
+          "mean_exact": "672749994932560009201/100000000000000000000",
+          "modal_up_count": 8,
+          "modal_ratio": "1/16",
+          "below_one_probability": "72034569102897/95367431640625"
+        }
+      ],
+      "scope": "finite exact distribution; does not experimentally prove SLLN or general random-process claims"
+    },
+    "pendulum": {
+      "independent_integrator": "implicit midpoint h=1/3200,64000 steps,6 fixed-point iterations",
+      "reference_endpoint": [
+        0.01031400931181541,
+        -0.000616654047592321
+      ],
+      "RK4_endpoint_errors": [
+        8.063574132413658e-09,
+        9.677076456158814e-10,
+        1.3690727317813457e-09
+      ],
+      "V_derivative_defects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scope": "finite numerical refinement/chain-rule checks, not global LaSalle proof"
+    },
+    "radial": {
+      "cases": [
+        {
+          "input": [
+            1,
+            1,
+            0.25,
+            1
+          ],
+          "oracle_decimal": "0.5744822168935662182805174445389258772903044451446637639609141474562228",
+          "actual": 0.5744822168935663,
+          "absolute_error": 0.0
+        },
+        {
+          "input": [
+            1,
+            0,
+            0.25,
+            1
+          ],
+          "oracle_decimal": "0.6795704571147613088400718678381656244393117734249898937417419069310191",
+          "actual": 0.6795704571147613,
+          "absolute_error": 0.0
+        },
+        {
+          "input": [
+            1,
+            -1,
+            0.1,
+            1
+          ],
+          "oracle_decimal": "0.2809513800549609437790261127749626875356184012928857935551203404870169",
+          "actual": 0.280951380054961,
+          "absolute_error": 5.551115123125783e-17
+        },
+        {
+          "input": [
+            1,
+            -1,
+            0.1,
+            2.3074602584206296
+          ],
+          "oracle_decimal": "70.70714261416872268303941420537841426469153207505920432072892187436901",
+          "actual": 70.70714261420802,
+          "absolute_error": 3.930722414224874e-11
+        },
+        {
+          "input": [
+            1e-06,
+            1,
+            0.001,
+            1e-06
+          ],
+          "oracle_decimal": "0.001",
+          "actual": 0.001,
+          "absolute_error": 0.0
+        }
+      ],
+      "rejections": [
+        {
+          "input": [
+            "1",
+            "-1",
+            "0.1",
+            "2.30766025842063"
+          ],
+          "reason": "nonpositive resolved denominator: beyond blow-up or numerically unresolved"
+        },
+        {
+          "input": [
+            "0",
+            "1",
+            "1",
+            "1"
+          ],
+          "reason": "finite mu>0, r0>=0, t>=0 required"
+        },
+        {
+          "input": [
+            "1",
+            "1",
+            "1e-09",
+            "1"
+          ],
+          "reason": "outside teaching numerical domain; no stability conclusion"
+        },
+        {
+          "input": [
+            "1",
+            "1",
+            "1",
+            "101"
+          ],
+          "reason": "outside teaching numerical domain; no stability conclusion"
+        },
+        {
+          "input": [
+            "nan",
+            "1",
+            "1",
+            "1"
+          ],
+          "reason": "finite mu>0, r0>=0, t>=0 required"
+        }
+      ],
+      "return_derivative": 0.1353352832366127,
+      "scope": "70-digit linearized reciprocal-square oracle; unsupported/unresolved requests do not establish physical blow-up"
+    }
+  },
+  "boundary_results": {
+    "finite_domain_cases": [
+      {
+        "input": [
+          1e-06,
+          100,
+          10,
+          1e-10
+        ],
+        "radius_oracle_decimal": "9.999990000015000974998043754421290144179940886585709476771744042349819",
+        "actual": 9.999990000015002,
+        "relative_error": 0.0
+      },
+      {
+        "input": [
+          1e-06,
+          -100,
+          10,
+          1e-10
+        ],
+        "radius_oracle_decimal": "10.00001000001500102500204375457881014461381056442329474308619371236404",
+        "actual": 10.000010000015001,
+        "relative_error": 0.0
+      },
+      {
+        "input": [
+          100,
+          0,
+          1e-06,
+          1
+        ],
+        "radius_oracle_decimal": "26881171418161354484126255515800135873.61111877374192241519160861528029",
+        "actual": 2.6881171418161354e+37,
+        "relative_error": 0.0
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          100
+        ],
+        "radius_oracle_decimal": "1",
+        "actual": 1.0,
+        "relative_error": 0.0
+      }
+    ],
+    "near_cancellation": [
+      {
+        "t_binary64": 2.3075602584206294,
+        "mathematical_radius_at_decimal_roundtrip_t": "39196576.43782394731321162635025567676680912329329219435049463864298760",
+        "api_status": "refused",
+        "api_value": null,
+        "reason": "positive denominator numerically unresolved near cancellation; no radius certified"
+      },
+      {
+        "t_binary64": 2.30756025842063,
+        "mathematical_radius_at_decimal_roundtrip_t": null,
+        "api_status": "refused",
+        "api_value": null,
+        "reason": "nonpositive resolved denominator: beyond blow-up or numerically unresolved"
+      },
+      {
+        "t_binary64": 2.3075602584206303,
+        "mathematical_radius_at_decimal_roundtrip_t": null,
+        "api_status": "refused",
+        "api_value": null,
+        "reason": "nonpositive resolved denominator: beyond blow-up or numerically unresolved"
+      },
+      {
+        "t_binary64": 2.3075602584196298,
+        "mathematical_radius_at_decimal_roundtrip_t": "707133.1428589532652062928106756090969512674322284272145595327973837886",
+        "api_status": "finite",
+        "api_value": 707144.0445746764,
+        "reason": null
+      }
+    ],
+    "small_time": {
+      "input": [
+        1e-06,
+        100,
+        10,
+        1e-10
+      ],
+      "high_precision": 9.999990000015002,
+      "new_error": 0.0,
+      "old_subtraction_error": 1.10222675786531e-06
+    },
+    "scope": "Boundary rejection is a numerical interface result, not a physical blow-up diagnosis; Decimal roundtrip inputs specify comparison values."
+  },
+  "trajectory_results": {
+    "pendulum_recomputed_from_full_traces": [
+      {
+        "step": 0.05,
+        "length": 401,
+        "endpoint": [
+          0.01031401714050236,
+          -0.0006166521155238903
+        ],
+        "max_energy_increase": -1.123013682047258e-09,
+        "max_abs_angle": 1.5707963267948966,
+        "initial_energy": 0.9999999999999999,
+        "final_energy": 5.337913318470555e-05
+      },
+      {
+        "step": 0.025,
+        "length": 801,
+        "endpoint": [
+          0.01031400897350486,
+          -0.0006166549542367162
+        ],
+        "max_energy_increase": -7.438127891390423e-11,
+        "max_abs_angle": 1.5707963267948966,
+        "initial_energy": 0.9999999999999999,
+        "final_energy": 5.337905070212923e-05
+      },
+      {
+        "step": 0.0125,
+        "length": 1601,
+        "endpoint": [
+          0.010314008459691545,
+          -0.0006166551191542952
+        ],
+        "max_energy_increase": -2.1384671811119915e-11,
+        "max_abs_angle": 1.5707963267948966,
+        "initial_energy": 0.9999999999999999,
+        "final_energy": 5.337904550439809e-05
+      }
+    ],
+    "endpoint_adjacent_differences": [
+      8.64627889183776e-09,
+      5.396312910887701e-10
+    ],
+    "Poincare_radius_derivative_actual_finite_difference": 0.1353352832578203,
+    "independent_variational_derivative": 0.1353352832366127,
+    "scope": "Independent energy/angle computation over frozen RK4 trajectory outputs; does not prove invariant basin or general return-map theorem."
+  },
+  "visual_observations": {
+    "renderer": "actual CairoSVG 2.9.1 full native raster, built-in view_image inspected",
+    "result": "pass at 1000x570 native canvas",
+    "observations": [
+      "Full phase rectangle, theta -pi..pi and velocity -3..3 ticks, right legend and bottom axis visible.",
+      "Blue v=0 and green v=-2sin(theta) nullclines; purple V=1 oval, four coloured spirals and square initial markers distinguishable.",
+      "Filled stable-bottom marker and open seam saddle markers visible; normalized arrow directions displayed.",
+      "Legend declares RK4 h=.01 tau0..20, approximate trajectories and energy/LaSalle proof boundary."
+    ],
+    "limits": [
+      "Not Obsidian/human understanding.",
+      "No narrow viewport responsiveness check.",
+      "Numerical trajectories are approximations, not basin proof."
+    ],
+    "renderer_version": "2.9.1"
+  },
+  "copy_provenance": "immediate-copy-provenance.json",
+  "units": {
+    "pendulum": "theta rad, v=dtheta/dtau, gamma dimensionless normalized time damping",
+    "hopf": "normal-form teaching units; period=1 for omega=2pi",
+    "euler": "a in s^-1, step in seconds",
+    "feedback": "loss/sale local dimensionless response per propagation round; not calendar date",
+    "nonnormal": "fixed dimensionless coordinates and Euclidean norm",
+    "random_product": "dimensionless iid growth ratio"
+  },
+  "limits": [
+    "Finite checks do not prove LaSalle, general Hopf or SLLN statements.",
+    "The guard rejects numerically unresolved positive denominators, which can occur before mathematical blow-up.",
+    "Near t*-1e-12 the finite returned radius differs from Decimal roundtrip reference by about 1.54e-5 relative; no certified relative-error guarantee is established.",
+    "Thread-library environment variables are requests, not OS thread enforcement. No hard memory cap or OS thread count observed.",
+    "Rendering is actual CairoSVG, not Obsidian or a human learner outcome."
+  ]
+}

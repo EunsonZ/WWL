@@ -1,0 +1,908 @@
+{
+  "profile": "wwl-dynamics-fixed-v1",
+  "inputs": {
+    "profile": "wwl-dynamics-fixed-v1",
+    "pendulum": {
+      "gamma": 0.5,
+      "initial": [
+        1.5707963267948966,
+        0.0
+      ],
+      "duration_tau": 20.0,
+      "steps": [
+        0.05,
+        0.025,
+        0.0125
+      ]
+    },
+    "hopf": {
+      "mu": 1.0,
+      "alpha": 1.0,
+      "omega_over_pi": 2.0,
+      "r0": 0.25,
+      "duration": 1.0,
+      "steps": [
+        0.01,
+        0.005,
+        0.0025
+      ],
+      "finite_difference_delta": 1e-05
+    },
+    "euler": {
+      "a_per_second": "1",
+      "updates": 6,
+      "step_seconds": [
+        "1/2",
+        "3/2",
+        "2",
+        "3"
+      ]
+    },
+    "feedback": {
+      "rounds": 6,
+      "a": [
+        "2/5",
+        "3/5",
+        "1/2",
+        "3/10"
+      ]
+    },
+    "nonnormal": {
+      "diagonal": "4/5",
+      "coupling": [
+        "8",
+        "2/25"
+      ],
+      "rounds": 12
+    },
+    "random_product": {
+      "n": [
+        4,
+        10,
+        20
+      ],
+      "up_probability": "2/5",
+      "up_multiplier": "2",
+      "down_multiplier": "1/2"
+    },
+    "phase_svg": {
+      "gamma": 0.5,
+      "step": 0.01,
+      "steps": 2000,
+      "initials": [
+        [
+          1.5707963267948966,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          -1.5707963267948966,
+          0.0
+        ],
+        [
+          0.0,
+          -2.5
+        ]
+      ],
+      "note": "SVG uses this fixed phase profile; course equations supply nullclines and V=1"
+    }
+  },
+  "pendulum": {
+    "gamma": 0.5,
+    "initial": [
+      1.5707963267948966,
+      0.0
+    ],
+    "duration_tau": 20.0,
+    "runs": [
+      {
+        "step": 0.05,
+        "steps": 400,
+        "endpoint": [
+          0.01031401714050236,
+          -0.0006166521155238903
+        ],
+        "initial_energy": 0.9999999999999999,
+        "final_energy": 5.337913318470555e-05,
+        "max_energy_increase": -1.123013682047258e-09
+      },
+      {
+        "step": 0.025,
+        "steps": 800,
+        "endpoint": [
+          0.01031400897350486,
+          -0.0006166549542367162
+        ],
+        "initial_energy": 0.9999999999999999,
+        "final_energy": 5.337905070212923e-05,
+        "max_energy_increase": -7.438127891390423e-11
+      },
+      {
+        "step": 0.0125,
+        "steps": 1600,
+        "endpoint": [
+          0.010314008459691545,
+          -0.0006166551191542952
+        ],
+        "initial_energy": 0.9999999999999999,
+        "final_energy": 5.337904550439809e-05,
+        "max_energy_increase": -2.1384671811119915e-11
+      }
+    ],
+    "adjacent_endpoint_differences": [
+      8.64627889183776e-09,
+      5.396312910887701e-10
+    ],
+    "derivative_checks": [
+      {
+        "state": [
+          1.5707963267948966,
+          0.0
+        ],
+        "field": [
+          0.0,
+          -1.0
+        ],
+        "energy_derivative": 0.0,
+        "analytic_derivative": -0.0
+      },
+      {
+        "state": [
+          0.0,
+          1.0
+        ],
+        "field": [
+          1.0,
+          -0.5
+        ],
+        "energy_derivative": -0.5,
+        "analytic_derivative": -0.5
+      },
+      {
+        "state": [
+          1.5707963267948966,
+          -2.0
+        ],
+        "field": [
+          -2.0,
+          0.0
+        ],
+        "energy_derivative": -2.0,
+        "analytic_derivative": -2.0
+      },
+      {
+        "state": [
+          0.4,
+          -0.7
+        ],
+        "field": [
+          -0.7,
+          -0.039418342308650545
+        ],
+        "energy_derivative": -0.24499999999999997,
+        "analytic_derivative": -0.24499999999999997
+      }
+    ],
+    "evidence": "RK4 refinement and energy checks; no exact pendulum orbit oracle"
+  },
+  "hopf": {
+    "mu": 1.0,
+    "alpha": 1.0,
+    "omega": 6.283185307179586,
+    "r0": 0.25,
+    "duration": 1.0,
+    "exact_endpoint": [
+      0.5744822168935663,
+      -1.407075616171563e-16
+    ],
+    "runs": [
+      {
+        "step": 0.01,
+        "endpoint": [
+          0.5744819844156644,
+          -3.6785889028639884e-07
+        ],
+        "error_to_exact": 4.351621972241837e-07
+      },
+      {
+        "step": 0.005,
+        "endpoint": [
+          0.5744822028357938,
+          -2.3584561314321517e-08
+        ],
+        "error_to_exact": 2.7456374368432605e-08
+      },
+      {
+        "step": 0.0025,
+        "endpoint": [
+          0.5744822160299855,
+          -1.4922892400959231e-09
+        ],
+        "error_to_exact": 1.7241515274003513e-09
+      }
+    ],
+    "period": 1.0,
+    "stable_radius": 1.0,
+    "radial_multiplier": 0.1353352832366127,
+    "finite_difference_multiplier": 0.1353352832578203,
+    "negative_alpha": {
+      "mu": 1.0,
+      "alpha": -1.0,
+      "r0": 0.1,
+      "blow_time": 2.30756025842063,
+      "radius_before_blow": 70.70714261420802,
+      "post_blow_rejection": "nonpositive resolved denominator: beyond blow-up or numerically unresolved"
+    },
+    "zero_seed": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "euler": [
+    {
+      "a_per_second": "1",
+      "step_seconds": "1/2",
+      "factor": "1/2",
+      "modulus": "1/2",
+      "states": [
+        "1",
+        "1/2",
+        "1/4",
+        "1/8",
+        "1/16",
+        "1/32",
+        "1/64"
+      ],
+      "exact_final": 0.049787068367863944
+    },
+    {
+      "a_per_second": "1",
+      "step_seconds": "3/2",
+      "factor": "-1/2",
+      "modulus": "1/2",
+      "states": [
+        "1",
+        "-1/2",
+        "1/4",
+        "-1/8",
+        "1/16",
+        "-1/32",
+        "1/64"
+      ],
+      "exact_final": 0.00012340980408667956
+    },
+    {
+      "a_per_second": "1",
+      "step_seconds": "2",
+      "factor": "-1",
+      "modulus": "1",
+      "states": [
+        "1",
+        "-1",
+        "1",
+        "-1",
+        "1",
+        "-1",
+        "1"
+      ],
+      "exact_final": 6.14421235332821e-06
+    },
+    {
+      "a_per_second": "1",
+      "step_seconds": "3",
+      "factor": "-2",
+      "modulus": "2",
+      "states": [
+        "1",
+        "-2",
+        "4",
+        "-8",
+        "16",
+        "-32",
+        "64"
+      ],
+      "exact_final": 1.522997974471263e-08
+    }
+  ],
+  "feedback": [
+    {
+      "a": "2/5",
+      "isolated_multiplier": "2/5",
+      "common_multiplier": "4/5",
+      "first_seven_increments": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2/5",
+          "2/5"
+        ],
+        [
+          "8/25",
+          "8/25"
+        ],
+        [
+          "32/125",
+          "32/125"
+        ],
+        [
+          "128/625",
+          "128/625"
+        ],
+        [
+          "512/3125",
+          "512/3125"
+        ],
+        [
+          "2048/15625",
+          "2048/15625"
+        ]
+      ],
+      "infinite_cumulative": [
+        "3",
+        "2"
+      ]
+    },
+    {
+      "a": "3/5",
+      "isolated_multiplier": "3/5",
+      "common_multiplier": "6/5",
+      "first_seven_increments": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "3/5",
+          "3/5"
+        ],
+        [
+          "18/25",
+          "18/25"
+        ],
+        [
+          "108/125",
+          "108/125"
+        ],
+        [
+          "648/625",
+          "648/625"
+        ],
+        [
+          "3888/3125",
+          "3888/3125"
+        ],
+        [
+          "23328/15625",
+          "23328/15625"
+        ]
+      ],
+      "infinite_cumulative": null
+    },
+    {
+      "a": "1/2",
+      "isolated_multiplier": "1/2",
+      "common_multiplier": "1",
+      "first_seven_increments": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "infinite_cumulative": null
+    },
+    {
+      "a": "3/10",
+      "isolated_multiplier": "3/10",
+      "common_multiplier": "3/5",
+      "first_seven_increments": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "3/10",
+          "3/10"
+        ],
+        [
+          "9/50",
+          "9/50"
+        ],
+        [
+          "27/250",
+          "27/250"
+        ],
+        [
+          "81/1250",
+          "81/1250"
+        ],
+        [
+          "243/6250",
+          "243/6250"
+        ],
+        [
+          "729/31250",
+          "729/31250"
+        ]
+      ],
+      "infinite_cumulative": [
+        "7/4",
+        "3/4"
+      ]
+    }
+  ],
+  "nonnormal": [
+    {
+      "diagonal": "4/5",
+      "coupling": "8",
+      "initial": [
+        0,
+        1
+      ],
+      "spectral_radius": "4/5",
+      "rows": [
+        {
+          "k": 0,
+          "state": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "k": 1,
+          "state": [
+            "8",
+            "4/5"
+          ]
+        },
+        {
+          "k": 2,
+          "state": [
+            "64/5",
+            "16/25"
+          ]
+        },
+        {
+          "k": 3,
+          "state": [
+            "384/25",
+            "64/125"
+          ]
+        },
+        {
+          "k": 4,
+          "state": [
+            "2048/125",
+            "256/625"
+          ]
+        },
+        {
+          "k": 5,
+          "state": [
+            "2048/125",
+            "1024/3125"
+          ]
+        },
+        {
+          "k": 6,
+          "state": [
+            "49152/3125",
+            "4096/15625"
+          ]
+        },
+        {
+          "k": 7,
+          "state": [
+            "229376/15625",
+            "16384/78125"
+          ]
+        },
+        {
+          "k": 8,
+          "state": [
+            "1048576/78125",
+            "65536/390625"
+          ]
+        },
+        {
+          "k": 9,
+          "state": [
+            "4718592/390625",
+            "262144/1953125"
+          ]
+        },
+        {
+          "k": 10,
+          "state": [
+            "4194304/390625",
+            "1048576/9765625"
+          ]
+        },
+        {
+          "k": 11,
+          "state": [
+            "92274688/9765625",
+            "4194304/48828125"
+          ]
+        },
+        {
+          "k": 12,
+          "state": [
+            "402653184/48828125",
+            "16777216/244140625"
+          ]
+        }
+      ],
+      "first_component_peak": "2048/125",
+      "first_component_peak_steps": [
+        4,
+        5
+      ]
+    },
+    {
+      "diagonal": "4/5",
+      "coupling": "2/25",
+      "initial": [
+        0,
+        1
+      ],
+      "spectral_radius": "4/5",
+      "rows": [
+        {
+          "k": 0,
+          "state": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "k": 1,
+          "state": [
+            "2/25",
+            "4/5"
+          ]
+        },
+        {
+          "k": 2,
+          "state": [
+            "16/125",
+            "16/25"
+          ]
+        },
+        {
+          "k": 3,
+          "state": [
+            "96/625",
+            "64/125"
+          ]
+        },
+        {
+          "k": 4,
+          "state": [
+            "512/3125",
+            "256/625"
+          ]
+        },
+        {
+          "k": 5,
+          "state": [
+            "512/3125",
+            "1024/3125"
+          ]
+        },
+        {
+          "k": 6,
+          "state": [
+            "12288/78125",
+            "4096/15625"
+          ]
+        },
+        {
+          "k": 7,
+          "state": [
+            "57344/390625",
+            "16384/78125"
+          ]
+        },
+        {
+          "k": 8,
+          "state": [
+            "262144/1953125",
+            "65536/390625"
+          ]
+        },
+        {
+          "k": 9,
+          "state": [
+            "1179648/9765625",
+            "262144/1953125"
+          ]
+        },
+        {
+          "k": 10,
+          "state": [
+            "1048576/9765625",
+            "1048576/9765625"
+          ]
+        },
+        {
+          "k": 11,
+          "state": [
+            "23068672/244140625",
+            "4194304/48828125"
+          ]
+        },
+        {
+          "k": 12,
+          "state": [
+            "100663296/1220703125",
+            "16777216/244140625"
+          ]
+        }
+      ],
+      "first_component_peak": "512/3125",
+      "first_component_peak_steps": [
+        4,
+        5
+      ]
+    }
+  ],
+  "random_products": [
+    {
+      "n": 4,
+      "up_probability": "2/5",
+      "up_multiplier": "2",
+      "down_multiplier": "1/2",
+      "count_distribution": [
+        {
+          "up_count": 0,
+          "probability": "81/625",
+          "growth_ratio": "1/16"
+        },
+        {
+          "up_count": 1,
+          "probability": "216/625",
+          "growth_ratio": "1/4"
+        },
+        {
+          "up_count": 2,
+          "probability": "216/625",
+          "growth_ratio": "1"
+        },
+        {
+          "up_count": 3,
+          "probability": "96/625",
+          "growth_ratio": "4"
+        },
+        {
+          "up_count": 4,
+          "probability": "16/625",
+          "growth_ratio": "16"
+        }
+      ],
+      "mean_ratio": "14641/10000",
+      "probability_ratio_below_one": "297/625",
+      "expected_log_ratio": -0.5545177444479563,
+      "log_expected_ratio": 0.38124071921729974,
+      "almost_sure_log_growth": -0.13862943611198908,
+      "evidence": "finite binomial enumeration; a.s. limit proved in lesson, not by enumeration"
+    },
+    {
+      "n": 10,
+      "up_probability": "2/5",
+      "up_multiplier": "2",
+      "down_multiplier": "1/2",
+      "count_distribution": [
+        {
+          "up_count": 0,
+          "probability": "59049/9765625",
+          "growth_ratio": "1/1024"
+        },
+        {
+          "up_count": 1,
+          "probability": "78732/1953125",
+          "growth_ratio": "1/256"
+        },
+        {
+          "up_count": 2,
+          "probability": "236196/1953125",
+          "growth_ratio": "1/64"
+        },
+        {
+          "up_count": 3,
+          "probability": "419904/1953125",
+          "growth_ratio": "1/16"
+        },
+        {
+          "up_count": 4,
+          "probability": "489888/1953125",
+          "growth_ratio": "1/4"
+        },
+        {
+          "up_count": 5,
+          "probability": "1959552/9765625",
+          "growth_ratio": "1"
+        },
+        {
+          "up_count": 6,
+          "probability": "217728/1953125",
+          "growth_ratio": "4"
+        },
+        {
+          "up_count": 7,
+          "probability": "82944/1953125",
+          "growth_ratio": "16"
+        },
+        {
+          "up_count": 8,
+          "probability": "20736/1953125",
+          "growth_ratio": "64"
+        },
+        {
+          "up_count": 9,
+          "probability": "3072/1953125",
+          "growth_ratio": "256"
+        },
+        {
+          "up_count": 10,
+          "probability": "1024/9765625",
+          "growth_ratio": "1024"
+        }
+      ],
+      "mean_ratio": "25937424601/10000000000",
+      "probability_ratio_below_one": "6182649/9765625",
+      "expected_log_ratio": -1.3862943611198908,
+      "log_expected_ratio": 0.9531017980432493,
+      "almost_sure_log_growth": -0.13862943611198908,
+      "evidence": "finite binomial enumeration; a.s. limit proved in lesson, not by enumeration"
+    },
+    {
+      "n": 20,
+      "up_probability": "2/5",
+      "up_multiplier": "2",
+      "down_multiplier": "1/2",
+      "count_distribution": [
+        {
+          "up_count": 0,
+          "probability": "3486784401/95367431640625",
+          "growth_ratio": "1/1048576"
+        },
+        {
+          "up_count": 1,
+          "probability": "9298091736/19073486328125",
+          "growth_ratio": "1/262144"
+        },
+        {
+          "up_count": 2,
+          "probability": "58887914328/19073486328125",
+          "growth_ratio": "1/65536"
+        },
+        {
+          "up_count": 3,
+          "probability": "235551657312/19073486328125",
+          "growth_ratio": "1/16384"
+        },
+        {
+          "up_count": 4,
+          "probability": "667396362384/19073486328125",
+          "growth_ratio": "1/4096"
+        },
+        {
+          "up_count": 5,
+          "probability": "7118894532096/95367431640625",
+          "growth_ratio": "1/1024"
+        },
+        {
+          "up_count": 6,
+          "probability": "2372964844032/19073486328125",
+          "growth_ratio": "1/256"
+        },
+        {
+          "up_count": 7,
+          "probability": "3163953125376/19073486328125",
+          "growth_ratio": "1/64"
+        },
+        {
+          "up_count": 8,
+          "probability": "3427615885824/19073486328125",
+          "growth_ratio": "1/16"
+        },
+        {
+          "up_count": 9,
+          "probability": "3046769676288/19073486328125",
+          "growth_ratio": "1/4"
+        },
+        {
+          "up_count": 10,
+          "probability": "11171488813056/95367431640625",
+          "growth_ratio": "1"
+        },
+        {
+          "up_count": 11,
+          "probability": "1354119856128/19073486328125",
+          "growth_ratio": "4"
+        },
+        {
+          "up_count": 12,
+          "probability": "677059928064/19073486328125",
+          "growth_ratio": "16"
+        },
+        {
+          "up_count": 13,
+          "probability": "277768175616/19073486328125",
+          "growth_ratio": "64"
+        },
+        {
+          "up_count": 14,
+          "probability": "92589391872/19073486328125",
+          "growth_ratio": "256"
+        },
+        {
+          "up_count": 15,
+          "probability": "123452522496/95367431640625",
+          "growth_ratio": "1024"
+        },
+        {
+          "up_count": 16,
+          "probability": "5143855104/19073486328125",
+          "growth_ratio": "4096"
+        },
+        {
+          "up_count": 17,
+          "probability": "806879232/19073486328125",
+          "growth_ratio": "16384"
+        },
+        {
+          "up_count": 18,
+          "probability": "89653248/19073486328125",
+          "growth_ratio": "65536"
+        },
+        {
+          "up_count": 19,
+          "probability": "6291456/19073486328125",
+          "growth_ratio": "262144"
+        },
+        {
+          "up_count": 20,
+          "probability": "1048576/95367431640625",
+          "growth_ratio": "1048576"
+        }
+      ],
+      "mean_ratio": "672749994932560009201/100000000000000000000",
+      "probability_ratio_below_one": "72034569102897/95367431640625",
+      "expected_log_ratio": -2.7725887222397816,
+      "log_expected_ratio": 1.9062035960864987,
+      "almost_sure_log_growth": -0.13862943611198908,
+      "evidence": "finite binomial enumeration; a.s. limit proved in lesson, not by enumeration"
+    }
+  ]
+}

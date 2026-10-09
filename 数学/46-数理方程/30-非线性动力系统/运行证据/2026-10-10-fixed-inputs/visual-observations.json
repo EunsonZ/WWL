@@ -1,0 +1,16 @@
+{
+  "renderer": "actual CairoSVG 2.9.1 full native raster, built-in view_image inspected",
+  "result": "pass at 1000x570 native canvas",
+  "observations": [
+    "Full phase rectangle, theta -pi..pi and velocity -3..3 ticks, right legend and bottom axis visible.",
+    "Blue v=0 and green v=-2sin(theta) nullclines; purple V=1 oval, four coloured spirals and square initial markers distinguishable.",
+    "Filled stable-bottom marker and open seam saddle markers visible; normalized arrow directions displayed.",
+    "Legend declares RK4 h=.01 tau0..20, approximate trajectories and energy/LaSalle proof boundary."
+  ],
+  "limits": [
+    "Not Obsidian/human understanding.",
+    "No narrow viewport responsiveness check.",
+    "Numerical trajectories are approximations, not basin proof."
+  ],
+  "renderer_version": "2.9.1"
+}

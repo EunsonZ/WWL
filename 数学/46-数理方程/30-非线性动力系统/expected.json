@@ -1,0 +1,148 @@
+{
+  "profile": "wwl-dynamics-fixed-v1",
+  "provenance": "Authored from lesson algebra; independent executor must recompute. Not copied from an executed report.",
+  "pendulum": {
+    "initial_energy": 1,
+    "identity": "V_prime=-gamma*v*v",
+    "angular_bound": "abs(theta)<pi for this V0<2 initial condition",
+    "adjacent_endpoint_differences": "second smaller than first (finite numerical check)"
+  },
+  "hopf": {
+    "stable_radius": 1,
+    "period": 1,
+    "radial_multiplier": "exp(-2)",
+    "negative_alpha_blow_time": "log(101)/2",
+    "zero_seed": [
+      0,
+      0,
+      0
+    ]
+  },
+  "euler": {
+    "factors": [
+      "1/2",
+      "-1/2",
+      "-1",
+      "-2"
+    ],
+    "sixth_states": [
+      "1/64",
+      "1/64",
+      "1",
+      "64"
+    ]
+  },
+  "feedback": {
+    "a_2_5": {
+      "rho": "4/5",
+      "first_three": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2/5",
+          "2/5"
+        ],
+        [
+          "8/25",
+          "8/25"
+        ]
+      ],
+      "cumulative": [
+        "3",
+        "2"
+      ],
+      "aggregate": "5"
+    },
+    "a_3_5": {
+      "rho": "6/5",
+      "isolated": "3/5",
+      "cumulative": null
+    },
+    "a_1_2": {
+      "rho": "1",
+      "increments_from_k1": [
+        "1/2",
+        "1/2"
+      ],
+      "cumulative": null
+    },
+    "a_3_10": {
+      "rho": "3/5",
+      "cumulative": [
+        "7/4",
+        "3/4"
+      ]
+    }
+  },
+  "nonnormal": {
+    "k1": [
+      "8",
+      "4/5"
+    ],
+    "k4": [
+      "2048/125",
+      "256/625"
+    ],
+    "k5_first": "2048/125",
+    "first_component_peak_steps": [
+      4,
+      5
+    ],
+    "coupling_ratio": "100",
+    "norm_ratio": "not 100"
+  },
+  "random_product": {
+    "mass_sum": "1",
+    "mean_ratio": "(11/10)^n",
+    "almost_sure_log_growth": "-log(2)/5",
+    "finite_enumeration_does_not_prove_as_limit": true
+  },
+  "failure_requests": [
+    {
+      "radial": [
+        1,
+        -1,
+        0.1,
+        "log(101)/2+1e-4"
+      ],
+      "expect": "ValueError nonpositive/unresolved denominator"
+    },
+    {
+      "radial": [
+        1,
+        1,
+        0.1,
+        101
+      ],
+      "expect": "ValueError outside teaching domain"
+    },
+    {
+      "radial": [
+        1,
+        1,
+        -0.1,
+        1
+      ],
+      "expect": "ValueError invalid radius"
+    },
+    {
+      "radial": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "expect": 0
+    },
+    {
+      "rk4": "field changes shape",
+      "expect": "ValueError"
+    },
+    {
+      "output_dir": "existing or inside workspace",
+      "expect": "refused before experiment/write"
+    }
+  ]
+}

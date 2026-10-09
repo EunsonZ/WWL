@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "-B",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/independent_oracle.py",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/snapshot/dynamics_lab.py",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/preflight.stdout",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/independent-results.json"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142",
+  "returncode": 0,
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "elapsed_seconds": 0.09022591699977056,
+  "child_peak_rss_macos_bytes": 20840448,
+  "environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4"
+  },
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "stdout_sha256": "43f5ec02b204849ff9aab53e361a1529c637f46a5b05f802a3a5955a1b87dcbc",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "limits": "Library thread requests only; no OS thread observation/hard memory cap. Child RSS is maximum over previously terminated children of this supervisor."
+}

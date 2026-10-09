@@ -1,0 +1,39 @@
+{
+  "frozen_inputs": [
+    {
+      "name": "dynamics_lab.py",
+      "sha256": "d533cf313ad121b4daf13dff4b29445d67dfc1e181a27596294c7499e898f489",
+      "bytes": 16993,
+      "author_source_unchanged": true
+    },
+    {
+      "name": "fixed-inputs.json",
+      "sha256": "296f0bdfb2bb35e1da085e908102e0dba201755f44208f76c111663e22d6cbdf",
+      "bytes": 1339,
+      "author_source_unchanged": true
+    },
+    {
+      "name": "expected.json",
+      "sha256": "44da1fad90677ce797561d3c439efcab75a64e5397805df5824cb3de06515f9e",
+      "bytes": 2624,
+      "author_source_unchanged": true
+    },
+    {
+      "name": "README.md",
+      "sha256": "89c3681ef0c7b607084f4ca64d282f8476bff1905b8fdf94e625ff9644173ded",
+      "bytes": 2606,
+      "author_source_unchanged": true
+    }
+  ],
+  "business_imports": [
+    "fractions",
+    "math",
+    "pathlib",
+    "argparse",
+    "json"
+  ],
+  "business_dependency_layer": "Python standard library only; no imported repository modules",
+  "python_executable": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+  "python_version": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "wwl-information-portable-acceptance-v1",
+  "status": "pass",
+  "candidate_root": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1",
+  "formal_deployment_directory": "数学/50-信息论/80-运行证据/2026-10-10-information-container",
+  "actual_overlay_root": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay",
+  "source_bindings": [
+    {
+      "candidate_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/数学/50-信息论/80-运行证据/information_container_practice.py",
+      "formal_path": "数学/50-信息论/80-运行证据/information_container_practice.py",
+      "sha256": "7a4d8824b776e11810038dca5010ffb31c2dd564178158a54f9e85f60d78b31d",
+      "bytes": 6076,
+      "candidate_unchanged_after": true,
+      "overlay_unchanged_after": true
+    },
+    {
+      "candidate_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/数学/50-信息论/80-运行证据/information_container_practice.md",
+      "formal_path": "数学/50-信息论/80-运行证据/information_container_practice.md",
+      "sha256": "665ae5b74e64fa87b2de95c1868bf7db7700114116b1602ae1ebf36893bb8f62",
+      "bytes": 2534,
+      "candidate_unchanged_after": true,
+      "overlay_unchanged_after": true
+    },
+    {
+      "candidate_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/数学/50-信息论/80-运行证据/2026-10-10-information-container/run.py",
+      "formal_path": "数学/50-信息论/80-运行证据/2026-10-10-information-container/run.py",
+      "sha256": "aea3ce0fe7002e377b4ecddcf3111f5c5173d16d667fb1135e975db86f674fb2",
+      "bytes": 2827,
+      "candidate_unchanged_after": true,
+      "overlay_unchanged_after": true
+    },
+    {
+      "candidate_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/数学/50-信息论/80-运行证据/2026-10-10-information-container/oracle.py",
+      "formal_path": "数学/50-信息论/80-运行证据/2026-10-10-information-container/oracle.py",
+      "sha256": "3eb934305f52d46677ab7f8c15c4c791baad50055b70efcd8da417d5731c562d",
+      "bytes": 7801,
+      "candidate_unchanged_after": true,
+      "overlay_unchanged_after": true
+    },
+    {
+      "candidate_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/AGENTS.md",
+      "formal_path": "AGENTS.md",
+      "sha256": "780555ee84f3c1f017e9117cac5563cfe7f6eb4372d4a076f981f9810c1564c9",
+      "bytes": 4874,
+      "candidate_unchanged_after": true,
+      "overlay_unchanged_after": true
+    }
+  ],
+  "static_imports": {
+    "数学/50-信息论/80-运行证据/information_container_practice.py": [
+      "import json"
+    ],
+    "数学/50-信息论/80-运行证据/2026-10-10-information-container/run.py": [
+      "import hashlib, json, os, pathlib, platform, resource, subprocess, sys, time"
+    ],
+    "数学/50-信息论/80-运行证据/2026-10-10-information-container/oracle.py": [
+      "import hashlib, importlib.util, itertools, json, pathlib, resource, sys"
+    ]
+  },
+  "oracle_adaptation": "Exactly one SOURCE path replacement; assertions, fixed inputs, independent packing, trie, 680/25/4 cases unchanged",
+  "collector_adaptation": "CAND=ROOT; source bindings collect only formal business py/md; fixed SHA gate replaces private assembly metadata",
+  "hidden_runtime_dependencies": [],
+  "runtime_environment_link": {
+    "path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay/.venv-issues-111plus",
+    "target": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus",
+    "scope": "Existing interpreter and standard library only"
+  },
+  "command": [
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay/.venv-issues-111plus/bin/python",
+    "-B",
+    "数学/50-信息论/80-运行证据/2026-10-10-information-container/run.py"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay",
+  "returncode": 0,
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "elapsed_seconds": 0.1487521670001115,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4"
+  },
+  "cumulative_children_max_rss_bytes_macos": 21774336,
+  "resource_gaps": "No OS thread count or hard RSS limit; cumulative peak measures completed child set",
+  "finite_results": {
+    "short_cases": 680,
+    "rejected_cases": 25,
+    "accepted_boundary_cases": 4,
+    "all_fixed_inputs_results_equal_first_experiment": true,
+    "raw_default_stdout_identical_first_experiment": true
+  },
+  "scope": "Formal-layout current execution and finite algorithm/accounting behavior; no actual channel, BER, error correction, throughput or general algorithm correctness claim"
+}

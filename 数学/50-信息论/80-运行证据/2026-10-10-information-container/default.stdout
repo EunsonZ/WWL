@@ -1,0 +1,56 @@
+{
+  "format": "IC v1, explicit four-symbol code, sum8",
+  "message": "AAAABBCD",
+  "rows": {
+    "P": {
+      "decoded": "AAAABBCD",
+      "hex": "49 43 01 04 08 0e 41 01 00 42 02 02 43 03 06 44 03 07 0a dc af",
+      "effective_bits": 14,
+      "padding_bits": 2,
+      "model_bytes": 12,
+      "header_bytes": 6,
+      "checksum_bytes": 1,
+      "payload_bytes": 2,
+      "file_bytes": 21,
+      "file_bits": 168,
+      "repeated_channel_bits": 336,
+      "data_symbols": 168,
+      "sync_symbols": 8,
+      "pilot_symbols": 4,
+      "total_symbols": 180,
+      "symbol_rate_per_second": 1000,
+      "transmit_seconds": 0.18,
+      "without_repeat_total_symbols": 96
+    },
+    "Q": {
+      "decoded": "AAAABBCD",
+      "hex": "49 43 01 04 08 10 41 02 00 42 02 01 43 02 02 44 02 03 00 5b 1c",
+      "effective_bits": 16,
+      "padding_bits": 0,
+      "model_bytes": 12,
+      "header_bytes": 6,
+      "checksum_bytes": 1,
+      "payload_bytes": 2,
+      "file_bytes": 21,
+      "file_bits": 168,
+      "repeated_channel_bits": 336,
+      "data_symbols": 168,
+      "sync_symbols": 8,
+      "pilot_symbols": 4,
+      "total_symbols": 180,
+      "symbol_rate_per_second": 1000,
+      "transmit_seconds": 0.18,
+      "without_repeat_total_symbols": 96
+    }
+  },
+  "rejected_inputs": {
+    "unresealed_payload_flip": "checksum",
+    "resealed_nonzero_padding": "nonzero padding",
+    "resealed_prefix_conflict": "prefix conflict",
+    "resealed_wrong_count": "too many symbols",
+    "resealed_truncated_codeword": "truncated codeword",
+    "trailing_byte": "declared or trailing length"
+  },
+  "accepted_sum8_collision": "AAABBBCC",
+  "scope": "finite format and symbol accounting; no channel measurement"
+}

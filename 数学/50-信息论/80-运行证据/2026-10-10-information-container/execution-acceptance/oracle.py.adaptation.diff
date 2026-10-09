@@ -1,0 +1,11 @@
+--- first-experiment/oracle.py
++++ formal/oracle.py
+@@ -1,7 +1,7 @@
+ """Independent bit packing and finite external expectations, no EXPECTED_P/Q access."""
+ import hashlib,importlib.util,itertools,json,pathlib,resource,sys
+ OUT=pathlib.Path(__file__).resolve().parent;ROOT=OUT.parents[3]
+-SOURCE=ROOT/'.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/数学/50-信息论/80-运行证据/information_container_practice.py'
++SOURCE=ROOT/'数学/50-信息论/80-运行证据/information_container_practice.py'
+ spec=importlib.util.spec_from_file_location('ic_candidate',SOURCE);lib=importlib.util.module_from_spec(spec);spec.loader.exec_module(lib)
+ P={'A':'0','B':'10','C':'110','D':'111'};Q={'A':'00','B':'01','C':'10','D':'11'};MESSAGE='AAAABBCD'
+ def reseal(body):

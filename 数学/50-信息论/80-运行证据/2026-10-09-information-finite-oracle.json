@@ -1,0 +1,149 @@
+{
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  },
+  "inputs": {
+    "p": {
+      "A": "1/2",
+      "B": "1/4",
+      "C": "1/8",
+      "D": "1/8"
+    },
+    "q": "uniform four symbols",
+    "message": "AAAABBCD",
+    "prefix_code": {
+      "A": "0",
+      "B": "10",
+      "C": "110",
+      "D": "111"
+    },
+    "fixed_code": {
+      "A": "00",
+      "B": "01",
+      "C": "10",
+      "D": "11"
+    },
+    "flip_p": "1/10",
+    "flip_q": "1/5",
+    "seed": null
+  },
+  "symbol_information": {
+    "entropy_bits": 1.75,
+    "cross_entropy_bits": 2.0,
+    "kl_bits": 0.25,
+    "perplexity": 3.363585661014858,
+    "huffman_lengths": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": 3
+    }
+  },
+  "message": {
+    "payload_bits": 14,
+    "fixed_bits": 16,
+    "negative_log_p_bits": 14.0,
+    "negative_log_q_bits": 16.0,
+    "payload": "00001010110111",
+    "prefix_decoded": "AAAABBCD",
+    "fixed_payload": "0000000001011011",
+    "fixed_decoded": "AAAABBCD",
+    "malformed_prefix_checks": [
+      "truncated 11 rejected",
+      "nonbinary 2 rejected"
+    ],
+    "header_or_codebook_bits": "not included"
+  },
+  "phase_source_B": [
+    {
+      "n": 1,
+      "enumerated_paths": 256,
+      "joint_entropy_bits": 8.0,
+      "each_marginal_bits": 8,
+      "entropy_per_symbol_bits": 8.0,
+      "conditional_after_first_bits": null
+    },
+    {
+      "n": 2,
+      "enumerated_paths": 256,
+      "joint_entropy_bits": 8.0,
+      "each_marginal_bits": 8,
+      "entropy_per_symbol_bits": 4.0,
+      "conditional_after_first_bits": 0.0
+    },
+    {
+      "n": 16,
+      "enumerated_paths": 256,
+      "joint_entropy_bits": 8.0,
+      "each_marginal_bits": 8,
+      "entropy_per_symbol_bits": 0.5,
+      "conditional_after_first_bits": 0.0
+    },
+    {
+      "n": 256,
+      "enumerated_paths": 256,
+      "joint_entropy_bits": 8.0,
+      "each_marginal_bits": 8,
+      "entropy_per_symbol_bits": 0.03125,
+      "conditional_after_first_bits": 0.0
+    }
+  ],
+  "source_A": "iid uniform256: analytically H(X1..Xn)=8*n; no exponentially large enumeration",
+  "window256": {
+    "frequency_entropy_bits": 8,
+    "q0_nll_bits": 2048.0,
+    "q1_nll_bits": 8,
+    "damaged_q1_nll": "infinity: deterministic transition has zero support"
+  },
+  "markov_chain": {
+    "joint_XY": {
+      "(0, 0)": "9/20",
+      "(0, 1)": "1/20",
+      "(1, 1)": "9/20",
+      "(1, 0)": "1/20"
+    },
+    "joint_XZ": {
+      "(0, 0)": "37/100",
+      "(0, 1)": "13/100",
+      "(1, 1)": "37/100",
+      "(1, 0)": "13/100"
+    },
+    "cascade_flip_probability": "13/50",
+    "I_XY_bits": 0.5310044064107189,
+    "I_XZ_bits": 0.17325362750738207
+  },
+  "BSC_capacity": {
+    "noise": "1/10",
+    "grid_input_step": ".001",
+    "argmax": ".5",
+    "capacity_bits": 0.5310044064107188
+  },
+  "fair_bit_Hamming_RD": [
+    {
+      "distortion": "0",
+      "rate_bits": 1.0
+    },
+    {
+      "distortion": "1/10",
+      "rate_bits": 0.5310044064107189
+    },
+    {
+      "distortion": "1/4",
+      "rate_bits": 0.18872187554086717
+    },
+    {
+      "distortion": "1/2",
+      "rate_bits": 0.0
+    }
+  ],
+  "elapsed_seconds": 0.06797587499022484,
+  "status": "pass",
+  "scope": "finite numerical examples; no general capacity or RD theorem proof",
+  "execution_date_local": "2026-10-09 Asia/Shanghai",
+  "actual_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 python3 -B 数学/50-信息论/80-运行证据/information_finite_oracle.py",
+  "working_directory": "repository root",
+  "returncode": 0,
+  "stderr": "",
+  "source_sha256": "c56c8e2d04100f9a04d44eff142593ac4ee08c5a7648f0bc01fa8b7a59f5995d"
+}

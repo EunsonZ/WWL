@@ -1,0 +1,3760 @@
+{
+  "format": "IC v1: magic IC,version1,four ordered table items,count/bit_count u8; MSB first payload; zero pad; sum8",
+  "fixed": {
+    "P": {
+      "message": "AAAABBCD",
+      "code": {
+        "A": "0",
+        "B": "10",
+        "C": "110",
+        "D": "111"
+      },
+      "effective_bitstring": "00001010110111",
+      "container_hex": "49 43 01 04 08 0e 41 01 00 42 02 02 43 03 06 44 03 07 0a dc af",
+      "field_sums": {
+        "header": 167,
+        "table": 290,
+        "payload": 230,
+        "total_without_checksum": 687
+      },
+      "checksum": 175,
+      "without_repeat_seconds": 0.096
+    },
+    "Q": {
+      "message": "AAAABBCD",
+      "code": {
+        "A": "00",
+        "B": "01",
+        "C": "10",
+        "D": "11"
+      },
+      "effective_bitstring": "0000000001011011",
+      "container_hex": "49 43 01 04 08 10 41 02 00 42 02 01 43 02 02 44 02 03 00 5b 1c",
+      "field_sums": {
+        "header": 169,
+        "table": 280,
+        "payload": 91,
+        "total_without_checksum": 540
+      },
+      "checksum": 28,
+      "without_repeat_seconds": 0.096
+    }
+  },
+  "collision": {
+    "original_payload_hex": "005b",
+    "mutated_payload_hex": "015a",
+    "unchanged_checksum": 28,
+    "container_hex": "494301040810410200420201430202440203015a1c",
+    "decoded": "AAABBBCC"
+  },
+  "short_message_enumeration": {
+    "alphabet": "ABCD",
+    "lengths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "code_labels": [
+      "P",
+      "Q"
+    ],
+    "cases": [
+      {
+        "message": "A",
+        "code_label": "P",
+        "expected_hex": "49430104010141010042020243030644030700b5"
+      },
+      {
+        "message": "A",
+        "code_label": "Q",
+        "expected_hex": "49430104010241020042020143020244020300ac"
+      },
+      {
+        "message": "B",
+        "code_label": "P",
+        "expected_hex": "4943010401024101004202024303064403078036"
+      },
+      {
+        "message": "B",
+        "code_label": "Q",
+        "expected_hex": "49430104010241020042020143020244020340ec"
+      },
+      {
+        "message": "C",
+        "code_label": "P",
+        "expected_hex": "494301040103410100420202430306440307c077"
+      },
+      {
+        "message": "C",
+        "code_label": "Q",
+        "expected_hex": "494301040102410200420201430202440203802c"
+      },
+      {
+        "message": "D",
+        "code_label": "P",
+        "expected_hex": "494301040103410100420202430306440307e097"
+      },
+      {
+        "message": "D",
+        "code_label": "Q",
+        "expected_hex": "494301040102410200420201430202440203c06c"
+      },
+      {
+        "message": "AA",
+        "code_label": "P",
+        "expected_hex": "49430104020241010042020243030644030700b7"
+      },
+      {
+        "message": "AA",
+        "code_label": "Q",
+        "expected_hex": "49430104020441020042020143020244020300af"
+      },
+      {
+        "message": "AB",
+        "code_label": "P",
+        "expected_hex": "49430104020341010042020243030644030740f8"
+      },
+      {
+        "message": "AB",
+        "code_label": "Q",
+        "expected_hex": "49430104020441020042020143020244020310bf"
+      },
+      {
+        "message": "AC",
+        "code_label": "P",
+        "expected_hex": "4943010402044101004202024303064403076019"
+      },
+      {
+        "message": "AC",
+        "code_label": "Q",
+        "expected_hex": "49430104020441020042020143020244020320cf"
+      },
+      {
+        "message": "AD",
+        "code_label": "P",
+        "expected_hex": "4943010402044101004202024303064403077029"
+      },
+      {
+        "message": "AD",
+        "code_label": "Q",
+        "expected_hex": "49430104020441020042020143020244020330df"
+      },
+      {
+        "message": "BA",
+        "code_label": "P",
+        "expected_hex": "4943010402034101004202024303064403078038"
+      },
+      {
+        "message": "BA",
+        "code_label": "Q",
+        "expected_hex": "49430104020441020042020143020244020340ef"
+      },
+      {
+        "message": "BB",
+        "code_label": "P",
+        "expected_hex": "494301040204410100420202430306440307a059"
+      },
+      {
+        "message": "BB",
+        "code_label": "Q",
+        "expected_hex": "49430104020441020042020143020244020350ff"
+      },
+      {
+        "message": "BC",
+        "code_label": "P",
+        "expected_hex": "494301040205410100420202430306440307b06a"
+      },
+      {
+        "message": "BC",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203600f"
+      },
+      {
+        "message": "BD",
+        "code_label": "P",
+        "expected_hex": "494301040205410100420202430306440307b872"
+      },
+      {
+        "message": "BD",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203701f"
+      },
+      {
+        "message": "CA",
+        "code_label": "P",
+        "expected_hex": "494301040204410100420202430306440307c079"
+      },
+      {
+        "message": "CA",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203802f"
+      },
+      {
+        "message": "CB",
+        "code_label": "P",
+        "expected_hex": "494301040205410100420202430306440307d08a"
+      },
+      {
+        "message": "CB",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203903f"
+      },
+      {
+        "message": "CC",
+        "code_label": "P",
+        "expected_hex": "494301040206410100420202430306440307d893"
+      },
+      {
+        "message": "CC",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203a04f"
+      },
+      {
+        "message": "CD",
+        "code_label": "P",
+        "expected_hex": "494301040206410100420202430306440307dc97"
+      },
+      {
+        "message": "CD",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203b05f"
+      },
+      {
+        "message": "DA",
+        "code_label": "P",
+        "expected_hex": "494301040204410100420202430306440307e099"
+      },
+      {
+        "message": "DA",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203c06f"
+      },
+      {
+        "message": "DB",
+        "code_label": "P",
+        "expected_hex": "494301040205410100420202430306440307f0aa"
+      },
+      {
+        "message": "DB",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203d07f"
+      },
+      {
+        "message": "DC",
+        "code_label": "P",
+        "expected_hex": "494301040206410100420202430306440307f8b3"
+      },
+      {
+        "message": "DC",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203e08f"
+      },
+      {
+        "message": "DD",
+        "code_label": "P",
+        "expected_hex": "494301040206410100420202430306440307fcb7"
+      },
+      {
+        "message": "DD",
+        "code_label": "Q",
+        "expected_hex": "494301040204410200420201430202440203f09f"
+      },
+      {
+        "message": "AAA",
+        "code_label": "P",
+        "expected_hex": "49430104030341010042020243030644030700b9"
+      },
+      {
+        "message": "AAA",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020300b2"
+      },
+      {
+        "message": "AAB",
+        "code_label": "P",
+        "expected_hex": "49430104030441010042020243030644030720da"
+      },
+      {
+        "message": "AAB",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020304b6"
+      },
+      {
+        "message": "AAC",
+        "code_label": "P",
+        "expected_hex": "49430104030541010042020243030644030730eb"
+      },
+      {
+        "message": "AAC",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020308ba"
+      },
+      {
+        "message": "AAD",
+        "code_label": "P",
+        "expected_hex": "49430104030541010042020243030644030738f3"
+      },
+      {
+        "message": "AAD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402030cbe"
+      },
+      {
+        "message": "ABA",
+        "code_label": "P",
+        "expected_hex": "49430104030441010042020243030644030740fa"
+      },
+      {
+        "message": "ABA",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020310c2"
+      },
+      {
+        "message": "ABB",
+        "code_label": "P",
+        "expected_hex": "494301040305410100420202430306440307500b"
+      },
+      {
+        "message": "ABB",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020314c6"
+      },
+      {
+        "message": "ABC",
+        "code_label": "P",
+        "expected_hex": "4943010403064101004202024303064403075814"
+      },
+      {
+        "message": "ABC",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020318ca"
+      },
+      {
+        "message": "ABD",
+        "code_label": "P",
+        "expected_hex": "4943010403064101004202024303064403075c18"
+      },
+      {
+        "message": "ABD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402031cce"
+      },
+      {
+        "message": "ACA",
+        "code_label": "P",
+        "expected_hex": "494301040305410100420202430306440307601b"
+      },
+      {
+        "message": "ACA",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020320d2"
+      },
+      {
+        "message": "ACB",
+        "code_label": "P",
+        "expected_hex": "4943010403064101004202024303064403076824"
+      },
+      {
+        "message": "ACB",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020324d6"
+      },
+      {
+        "message": "ACC",
+        "code_label": "P",
+        "expected_hex": "4943010403074101004202024303064403076c29"
+      },
+      {
+        "message": "ACC",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020328da"
+      },
+      {
+        "message": "ACD",
+        "code_label": "P",
+        "expected_hex": "4943010403074101004202024303064403076e2b"
+      },
+      {
+        "message": "ACD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402032cde"
+      },
+      {
+        "message": "ADA",
+        "code_label": "P",
+        "expected_hex": "494301040305410100420202430306440307702b"
+      },
+      {
+        "message": "ADA",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020330e2"
+      },
+      {
+        "message": "ADB",
+        "code_label": "P",
+        "expected_hex": "4943010403064101004202024303064403077834"
+      },
+      {
+        "message": "ADB",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020334e6"
+      },
+      {
+        "message": "ADC",
+        "code_label": "P",
+        "expected_hex": "4943010403074101004202024303064403077c39"
+      },
+      {
+        "message": "ADC",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020338ea"
+      },
+      {
+        "message": "ADD",
+        "code_label": "P",
+        "expected_hex": "4943010403074101004202024303064403077e3b"
+      },
+      {
+        "message": "ADD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402033cee"
+      },
+      {
+        "message": "BAA",
+        "code_label": "P",
+        "expected_hex": "494301040304410100420202430306440307803a"
+      },
+      {
+        "message": "BAA",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020340f2"
+      },
+      {
+        "message": "BAB",
+        "code_label": "P",
+        "expected_hex": "494301040305410100420202430306440307904b"
+      },
+      {
+        "message": "BAB",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020344f6"
+      },
+      {
+        "message": "BAC",
+        "code_label": "P",
+        "expected_hex": "4943010403064101004202024303064403079854"
+      },
+      {
+        "message": "BAC",
+        "code_label": "Q",
+        "expected_hex": "49430104030641020042020143020244020348fa"
+      },
+      {
+        "message": "BAD",
+        "code_label": "P",
+        "expected_hex": "4943010403064101004202024303064403079c58"
+      },
+      {
+        "message": "BAD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402034cfe"
+      },
+      {
+        "message": "BBA",
+        "code_label": "P",
+        "expected_hex": "494301040305410100420202430306440307a05b"
+      },
+      {
+        "message": "BBA",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402035002"
+      },
+      {
+        "message": "BBB",
+        "code_label": "P",
+        "expected_hex": "494301040306410100420202430306440307a864"
+      },
+      {
+        "message": "BBB",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402035406"
+      },
+      {
+        "message": "BBC",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307ac69"
+      },
+      {
+        "message": "BBC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203580a"
+      },
+      {
+        "message": "BBD",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307ae6b"
+      },
+      {
+        "message": "BBD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402035c0e"
+      },
+      {
+        "message": "BCA",
+        "code_label": "P",
+        "expected_hex": "494301040306410100420202430306440307b06c"
+      },
+      {
+        "message": "BCA",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402036012"
+      },
+      {
+        "message": "BCB",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307b471"
+      },
+      {
+        "message": "BCB",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402036416"
+      },
+      {
+        "message": "BCC",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307b674"
+      },
+      {
+        "message": "BCC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203681a"
+      },
+      {
+        "message": "BCD",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307b775"
+      },
+      {
+        "message": "BCD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402036c1e"
+      },
+      {
+        "message": "BDA",
+        "code_label": "P",
+        "expected_hex": "494301040306410100420202430306440307b874"
+      },
+      {
+        "message": "BDA",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402037022"
+      },
+      {
+        "message": "BDB",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307bc79"
+      },
+      {
+        "message": "BDB",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402037426"
+      },
+      {
+        "message": "BDC",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307be7c"
+      },
+      {
+        "message": "BDC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203782a"
+      },
+      {
+        "message": "BDD",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307bf7d"
+      },
+      {
+        "message": "BDD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402037c2e"
+      },
+      {
+        "message": "CAA",
+        "code_label": "P",
+        "expected_hex": "494301040305410100420202430306440307c07b"
+      },
+      {
+        "message": "CAA",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402038032"
+      },
+      {
+        "message": "CAB",
+        "code_label": "P",
+        "expected_hex": "494301040306410100420202430306440307c884"
+      },
+      {
+        "message": "CAB",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402038436"
+      },
+      {
+        "message": "CAC",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307cc89"
+      },
+      {
+        "message": "CAC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203883a"
+      },
+      {
+        "message": "CAD",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307ce8b"
+      },
+      {
+        "message": "CAD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402038c3e"
+      },
+      {
+        "message": "CBA",
+        "code_label": "P",
+        "expected_hex": "494301040306410100420202430306440307d08c"
+      },
+      {
+        "message": "CBA",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402039042"
+      },
+      {
+        "message": "CBB",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307d491"
+      },
+      {
+        "message": "CBB",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402039446"
+      },
+      {
+        "message": "CBC",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307d694"
+      },
+      {
+        "message": "CBC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203984a"
+      },
+      {
+        "message": "CBD",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307d795"
+      },
+      {
+        "message": "CBD",
+        "code_label": "Q",
+        "expected_hex": "4943010403064102004202014302024402039c4e"
+      },
+      {
+        "message": "CCA",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307d895"
+      },
+      {
+        "message": "CCA",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203a052"
+      },
+      {
+        "message": "CCB",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307da98"
+      },
+      {
+        "message": "CCB",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203a456"
+      },
+      {
+        "message": "CCC",
+        "code_label": "P",
+        "expected_hex": "494301040309410100420202430306440307db009a"
+      },
+      {
+        "message": "CCC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203a85a"
+      },
+      {
+        "message": "CCD",
+        "code_label": "P",
+        "expected_hex": "494301040309410100420202430306440307db801a"
+      },
+      {
+        "message": "CCD",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203ac5e"
+      },
+      {
+        "message": "CDA",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307dc99"
+      },
+      {
+        "message": "CDA",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203b062"
+      },
+      {
+        "message": "CDB",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307de9c"
+      },
+      {
+        "message": "CDB",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203b466"
+      },
+      {
+        "message": "CDC",
+        "code_label": "P",
+        "expected_hex": "494301040309410100420202430306440307df009e"
+      },
+      {
+        "message": "CDC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203b86a"
+      },
+      {
+        "message": "CDD",
+        "code_label": "P",
+        "expected_hex": "494301040309410100420202430306440307df801e"
+      },
+      {
+        "message": "CDD",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203bc6e"
+      },
+      {
+        "message": "DAA",
+        "code_label": "P",
+        "expected_hex": "494301040305410100420202430306440307e09b"
+      },
+      {
+        "message": "DAA",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203c072"
+      },
+      {
+        "message": "DAB",
+        "code_label": "P",
+        "expected_hex": "494301040306410100420202430306440307e8a4"
+      },
+      {
+        "message": "DAB",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203c476"
+      },
+      {
+        "message": "DAC",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307eca9"
+      },
+      {
+        "message": "DAC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203c87a"
+      },
+      {
+        "message": "DAD",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307eeab"
+      },
+      {
+        "message": "DAD",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203cc7e"
+      },
+      {
+        "message": "DBA",
+        "code_label": "P",
+        "expected_hex": "494301040306410100420202430306440307f0ac"
+      },
+      {
+        "message": "DBA",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203d082"
+      },
+      {
+        "message": "DBB",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307f4b1"
+      },
+      {
+        "message": "DBB",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203d486"
+      },
+      {
+        "message": "DBC",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307f6b4"
+      },
+      {
+        "message": "DBC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203d88a"
+      },
+      {
+        "message": "DBD",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307f7b5"
+      },
+      {
+        "message": "DBD",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203dc8e"
+      },
+      {
+        "message": "DCA",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307f8b5"
+      },
+      {
+        "message": "DCA",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203e092"
+      },
+      {
+        "message": "DCB",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307fab8"
+      },
+      {
+        "message": "DCB",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203e496"
+      },
+      {
+        "message": "DCC",
+        "code_label": "P",
+        "expected_hex": "494301040309410100420202430306440307fb00ba"
+      },
+      {
+        "message": "DCC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203e89a"
+      },
+      {
+        "message": "DCD",
+        "code_label": "P",
+        "expected_hex": "494301040309410100420202430306440307fb803a"
+      },
+      {
+        "message": "DCD",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203ec9e"
+      },
+      {
+        "message": "DDA",
+        "code_label": "P",
+        "expected_hex": "494301040307410100420202430306440307fcb9"
+      },
+      {
+        "message": "DDA",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203f0a2"
+      },
+      {
+        "message": "DDB",
+        "code_label": "P",
+        "expected_hex": "494301040308410100420202430306440307febc"
+      },
+      {
+        "message": "DDB",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203f4a6"
+      },
+      {
+        "message": "DDC",
+        "code_label": "P",
+        "expected_hex": "494301040309410100420202430306440307ff00be"
+      },
+      {
+        "message": "DDC",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203f8aa"
+      },
+      {
+        "message": "DDD",
+        "code_label": "P",
+        "expected_hex": "494301040309410100420202430306440307ff803e"
+      },
+      {
+        "message": "DDD",
+        "code_label": "Q",
+        "expected_hex": "494301040306410200420201430202440203fcae"
+      },
+      {
+        "message": "AAAA",
+        "code_label": "P",
+        "expected_hex": "49430104040441010042020243030644030700bb"
+      },
+      {
+        "message": "AAAA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020300b5"
+      },
+      {
+        "message": "AAAB",
+        "code_label": "P",
+        "expected_hex": "49430104040541010042020243030644030710cc"
+      },
+      {
+        "message": "AAAB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020301b6"
+      },
+      {
+        "message": "AAAC",
+        "code_label": "P",
+        "expected_hex": "49430104040641010042020243030644030718d5"
+      },
+      {
+        "message": "AAAC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020302b7"
+      },
+      {
+        "message": "AAAD",
+        "code_label": "P",
+        "expected_hex": "4943010404064101004202024303064403071cd9"
+      },
+      {
+        "message": "AAAD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020303b8"
+      },
+      {
+        "message": "AABA",
+        "code_label": "P",
+        "expected_hex": "49430104040541010042020243030644030720dc"
+      },
+      {
+        "message": "AABA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020304b9"
+      },
+      {
+        "message": "AABB",
+        "code_label": "P",
+        "expected_hex": "49430104040641010042020243030644030728e5"
+      },
+      {
+        "message": "AABB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020305ba"
+      },
+      {
+        "message": "AABC",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403072cea"
+      },
+      {
+        "message": "AABC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020306bb"
+      },
+      {
+        "message": "AABD",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403072eec"
+      },
+      {
+        "message": "AABD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020307bc"
+      },
+      {
+        "message": "AACA",
+        "code_label": "P",
+        "expected_hex": "49430104040641010042020243030644030730ed"
+      },
+      {
+        "message": "AACA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020308bd"
+      },
+      {
+        "message": "AACB",
+        "code_label": "P",
+        "expected_hex": "49430104040741010042020243030644030734f2"
+      },
+      {
+        "message": "AACB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020309be"
+      },
+      {
+        "message": "AACC",
+        "code_label": "P",
+        "expected_hex": "49430104040841010042020243030644030736f5"
+      },
+      {
+        "message": "AACC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402030abf"
+      },
+      {
+        "message": "AACD",
+        "code_label": "P",
+        "expected_hex": "49430104040841010042020243030644030737f6"
+      },
+      {
+        "message": "AACD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402030bc0"
+      },
+      {
+        "message": "AADA",
+        "code_label": "P",
+        "expected_hex": "49430104040641010042020243030644030738f5"
+      },
+      {
+        "message": "AADA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402030cc1"
+      },
+      {
+        "message": "AADB",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403073cfa"
+      },
+      {
+        "message": "AADB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402030dc2"
+      },
+      {
+        "message": "AADC",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403073efd"
+      },
+      {
+        "message": "AADC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402030ec3"
+      },
+      {
+        "message": "AADD",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403073ffe"
+      },
+      {
+        "message": "AADD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402030fc4"
+      },
+      {
+        "message": "ABAA",
+        "code_label": "P",
+        "expected_hex": "49430104040541010042020243030644030740fc"
+      },
+      {
+        "message": "ABAA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020310c5"
+      },
+      {
+        "message": "ABAB",
+        "code_label": "P",
+        "expected_hex": "4943010404064101004202024303064403074805"
+      },
+      {
+        "message": "ABAB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020311c6"
+      },
+      {
+        "message": "ABAC",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403074c0a"
+      },
+      {
+        "message": "ABAC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020312c7"
+      },
+      {
+        "message": "ABAD",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403074e0c"
+      },
+      {
+        "message": "ABAD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020313c8"
+      },
+      {
+        "message": "ABBA",
+        "code_label": "P",
+        "expected_hex": "494301040406410100420202430306440307500d"
+      },
+      {
+        "message": "ABBA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020314c9"
+      },
+      {
+        "message": "ABBB",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403075412"
+      },
+      {
+        "message": "ABBB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020315ca"
+      },
+      {
+        "message": "ABBC",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403075615"
+      },
+      {
+        "message": "ABBC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020316cb"
+      },
+      {
+        "message": "ABBD",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403075716"
+      },
+      {
+        "message": "ABBD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020317cc"
+      },
+      {
+        "message": "ABCA",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403075816"
+      },
+      {
+        "message": "ABCA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020318cd"
+      },
+      {
+        "message": "ABCB",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403075a19"
+      },
+      {
+        "message": "ABCB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020319ce"
+      },
+      {
+        "message": "ABCC",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403075b001b"
+      },
+      {
+        "message": "ABCC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402031acf"
+      },
+      {
+        "message": "ABCD",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403075b809b"
+      },
+      {
+        "message": "ABCD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402031bd0"
+      },
+      {
+        "message": "ABDA",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403075c1a"
+      },
+      {
+        "message": "ABDA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402031cd1"
+      },
+      {
+        "message": "ABDB",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403075e1d"
+      },
+      {
+        "message": "ABDB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402031dd2"
+      },
+      {
+        "message": "ABDC",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403075f001f"
+      },
+      {
+        "message": "ABDC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402031ed3"
+      },
+      {
+        "message": "ABDD",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403075f809f"
+      },
+      {
+        "message": "ABDD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402031fd4"
+      },
+      {
+        "message": "ACAA",
+        "code_label": "P",
+        "expected_hex": "494301040406410100420202430306440307601d"
+      },
+      {
+        "message": "ACAA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020320d5"
+      },
+      {
+        "message": "ACAB",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403076422"
+      },
+      {
+        "message": "ACAB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020321d6"
+      },
+      {
+        "message": "ACAC",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403076625"
+      },
+      {
+        "message": "ACAC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020322d7"
+      },
+      {
+        "message": "ACAD",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403076726"
+      },
+      {
+        "message": "ACAD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020323d8"
+      },
+      {
+        "message": "ACBA",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403076826"
+      },
+      {
+        "message": "ACBA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020324d9"
+      },
+      {
+        "message": "ACBB",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403076a29"
+      },
+      {
+        "message": "ACBB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020325da"
+      },
+      {
+        "message": "ACBC",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403076b002b"
+      },
+      {
+        "message": "ACBC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020326db"
+      },
+      {
+        "message": "ACBD",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403076b80ab"
+      },
+      {
+        "message": "ACBD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020327dc"
+      },
+      {
+        "message": "ACCA",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403076c2b"
+      },
+      {
+        "message": "ACCA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020328dd"
+      },
+      {
+        "message": "ACCB",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403076d002d"
+      },
+      {
+        "message": "ACCB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020329de"
+      },
+      {
+        "message": "ACCC",
+        "code_label": "P",
+        "expected_hex": "49430104040a4101004202024303064403076d80ae"
+      },
+      {
+        "message": "ACCC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402032adf"
+      },
+      {
+        "message": "ACCD",
+        "code_label": "P",
+        "expected_hex": "49430104040a4101004202024303064403076dc0ee"
+      },
+      {
+        "message": "ACCD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402032be0"
+      },
+      {
+        "message": "ACDA",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403076e2d"
+      },
+      {
+        "message": "ACDA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402032ce1"
+      },
+      {
+        "message": "ACDB",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403076f002f"
+      },
+      {
+        "message": "ACDB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402032de2"
+      },
+      {
+        "message": "ACDC",
+        "code_label": "P",
+        "expected_hex": "49430104040a4101004202024303064403076f80b0"
+      },
+      {
+        "message": "ACDC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402032ee3"
+      },
+      {
+        "message": "ACDD",
+        "code_label": "P",
+        "expected_hex": "49430104040a4101004202024303064403076fc0f0"
+      },
+      {
+        "message": "ACDD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402032fe4"
+      },
+      {
+        "message": "ADAA",
+        "code_label": "P",
+        "expected_hex": "494301040406410100420202430306440307702d"
+      },
+      {
+        "message": "ADAA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020330e5"
+      },
+      {
+        "message": "ADAB",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403077432"
+      },
+      {
+        "message": "ADAB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020331e6"
+      },
+      {
+        "message": "ADAC",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403077635"
+      },
+      {
+        "message": "ADAC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020332e7"
+      },
+      {
+        "message": "ADAD",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403077736"
+      },
+      {
+        "message": "ADAD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020333e8"
+      },
+      {
+        "message": "ADBA",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403077836"
+      },
+      {
+        "message": "ADBA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020334e9"
+      },
+      {
+        "message": "ADBB",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403077a39"
+      },
+      {
+        "message": "ADBB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020335ea"
+      },
+      {
+        "message": "ADBC",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403077b003b"
+      },
+      {
+        "message": "ADBC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020336eb"
+      },
+      {
+        "message": "ADBD",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403077b80bb"
+      },
+      {
+        "message": "ADBD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020337ec"
+      },
+      {
+        "message": "ADCA",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403077c3b"
+      },
+      {
+        "message": "ADCA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020338ed"
+      },
+      {
+        "message": "ADCB",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403077d003d"
+      },
+      {
+        "message": "ADCB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020339ee"
+      },
+      {
+        "message": "ADCC",
+        "code_label": "P",
+        "expected_hex": "49430104040a4101004202024303064403077d80be"
+      },
+      {
+        "message": "ADCC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402033aef"
+      },
+      {
+        "message": "ADCD",
+        "code_label": "P",
+        "expected_hex": "49430104040a4101004202024303064403077dc0fe"
+      },
+      {
+        "message": "ADCD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402033bf0"
+      },
+      {
+        "message": "ADDA",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403077e3d"
+      },
+      {
+        "message": "ADDA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402033cf1"
+      },
+      {
+        "message": "ADDB",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403077f003f"
+      },
+      {
+        "message": "ADDB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402033df2"
+      },
+      {
+        "message": "ADDC",
+        "code_label": "P",
+        "expected_hex": "49430104040a4101004202024303064403077f80c0"
+      },
+      {
+        "message": "ADDC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402033ef3"
+      },
+      {
+        "message": "ADDD",
+        "code_label": "P",
+        "expected_hex": "49430104040a4101004202024303064403077fc000"
+      },
+      {
+        "message": "ADDD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402033ff4"
+      },
+      {
+        "message": "BAAA",
+        "code_label": "P",
+        "expected_hex": "494301040405410100420202430306440307803c"
+      },
+      {
+        "message": "BAAA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020340f5"
+      },
+      {
+        "message": "BAAB",
+        "code_label": "P",
+        "expected_hex": "4943010404064101004202024303064403078845"
+      },
+      {
+        "message": "BAAB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020341f6"
+      },
+      {
+        "message": "BAAC",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403078c4a"
+      },
+      {
+        "message": "BAAC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020342f7"
+      },
+      {
+        "message": "BAAD",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403078e4c"
+      },
+      {
+        "message": "BAAD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020343f8"
+      },
+      {
+        "message": "BABA",
+        "code_label": "P",
+        "expected_hex": "494301040406410100420202430306440307904d"
+      },
+      {
+        "message": "BABA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020344f9"
+      },
+      {
+        "message": "BABB",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403079452"
+      },
+      {
+        "message": "BABB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020345fa"
+      },
+      {
+        "message": "BABC",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403079655"
+      },
+      {
+        "message": "BABC",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020346fb"
+      },
+      {
+        "message": "BABD",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403079756"
+      },
+      {
+        "message": "BABD",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020347fc"
+      },
+      {
+        "message": "BACA",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403079856"
+      },
+      {
+        "message": "BACA",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020348fd"
+      },
+      {
+        "message": "BACB",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403079a59"
+      },
+      {
+        "message": "BACB",
+        "code_label": "Q",
+        "expected_hex": "49430104040841020042020143020244020349fe"
+      },
+      {
+        "message": "BACC",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403079b005b"
+      },
+      {
+        "message": "BACC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402034aff"
+      },
+      {
+        "message": "BACD",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403079b80db"
+      },
+      {
+        "message": "BACD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402034b00"
+      },
+      {
+        "message": "BADA",
+        "code_label": "P",
+        "expected_hex": "4943010404074101004202024303064403079c5a"
+      },
+      {
+        "message": "BADA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402034c01"
+      },
+      {
+        "message": "BADB",
+        "code_label": "P",
+        "expected_hex": "4943010404084101004202024303064403079e5d"
+      },
+      {
+        "message": "BADB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402034d02"
+      },
+      {
+        "message": "BADC",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403079f005f"
+      },
+      {
+        "message": "BADC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402034e03"
+      },
+      {
+        "message": "BADD",
+        "code_label": "P",
+        "expected_hex": "4943010404094101004202024303064403079f80df"
+      },
+      {
+        "message": "BADD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402034f04"
+      },
+      {
+        "message": "BBAA",
+        "code_label": "P",
+        "expected_hex": "494301040406410100420202430306440307a05d"
+      },
+      {
+        "message": "BBAA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035005"
+      },
+      {
+        "message": "BBAB",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307a462"
+      },
+      {
+        "message": "BBAB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035106"
+      },
+      {
+        "message": "BBAC",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307a665"
+      },
+      {
+        "message": "BBAC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035207"
+      },
+      {
+        "message": "BBAD",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307a766"
+      },
+      {
+        "message": "BBAD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035308"
+      },
+      {
+        "message": "BBBA",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307a866"
+      },
+      {
+        "message": "BBBA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035409"
+      },
+      {
+        "message": "BBBB",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307aa69"
+      },
+      {
+        "message": "BBBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203550a"
+      },
+      {
+        "message": "BBBC",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307ab006b"
+      },
+      {
+        "message": "BBBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203560b"
+      },
+      {
+        "message": "BBBD",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307ab80eb"
+      },
+      {
+        "message": "BBBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203570c"
+      },
+      {
+        "message": "BBCA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307ac6b"
+      },
+      {
+        "message": "BBCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203580d"
+      },
+      {
+        "message": "BBCB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307ad006d"
+      },
+      {
+        "message": "BBCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203590e"
+      },
+      {
+        "message": "BBCC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307ad80ee"
+      },
+      {
+        "message": "BBCC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035a0f"
+      },
+      {
+        "message": "BBCD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307adc02e"
+      },
+      {
+        "message": "BBCD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035b10"
+      },
+      {
+        "message": "BBDA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307ae6d"
+      },
+      {
+        "message": "BBDA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035c11"
+      },
+      {
+        "message": "BBDB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307af006f"
+      },
+      {
+        "message": "BBDB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035d12"
+      },
+      {
+        "message": "BBDC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307af80f0"
+      },
+      {
+        "message": "BBDC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035e13"
+      },
+      {
+        "message": "BBDD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307afc030"
+      },
+      {
+        "message": "BBDD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402035f14"
+      },
+      {
+        "message": "BCAA",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307b06e"
+      },
+      {
+        "message": "BCAA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036015"
+      },
+      {
+        "message": "BCAB",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307b271"
+      },
+      {
+        "message": "BCAB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036116"
+      },
+      {
+        "message": "BCAC",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307b30073"
+      },
+      {
+        "message": "BCAC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036217"
+      },
+      {
+        "message": "BCAD",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307b380f3"
+      },
+      {
+        "message": "BCAD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036318"
+      },
+      {
+        "message": "BCBA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307b473"
+      },
+      {
+        "message": "BCBA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036419"
+      },
+      {
+        "message": "BCBB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307b50075"
+      },
+      {
+        "message": "BCBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203651a"
+      },
+      {
+        "message": "BCBC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307b580f6"
+      },
+      {
+        "message": "BCBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203661b"
+      },
+      {
+        "message": "BCBD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307b5c036"
+      },
+      {
+        "message": "BCBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203671c"
+      },
+      {
+        "message": "BCCA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307b60076"
+      },
+      {
+        "message": "BCCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203681d"
+      },
+      {
+        "message": "BCCB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307b680f7"
+      },
+      {
+        "message": "BCCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203691e"
+      },
+      {
+        "message": "BCCC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307b6c038"
+      },
+      {
+        "message": "BCCC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036a1f"
+      },
+      {
+        "message": "BCCD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307b6e058"
+      },
+      {
+        "message": "BCCD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036b20"
+      },
+      {
+        "message": "BCDA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307b70077"
+      },
+      {
+        "message": "BCDA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036c21"
+      },
+      {
+        "message": "BCDB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307b780f8"
+      },
+      {
+        "message": "BCDB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036d22"
+      },
+      {
+        "message": "BCDC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307b7c039"
+      },
+      {
+        "message": "BCDC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036e23"
+      },
+      {
+        "message": "BCDD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307b7e059"
+      },
+      {
+        "message": "BCDD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402036f24"
+      },
+      {
+        "message": "BDAA",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307b876"
+      },
+      {
+        "message": "BDAA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037025"
+      },
+      {
+        "message": "BDAB",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307ba79"
+      },
+      {
+        "message": "BDAB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037126"
+      },
+      {
+        "message": "BDAC",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307bb007b"
+      },
+      {
+        "message": "BDAC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037227"
+      },
+      {
+        "message": "BDAD",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307bb80fb"
+      },
+      {
+        "message": "BDAD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037328"
+      },
+      {
+        "message": "BDBA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307bc7b"
+      },
+      {
+        "message": "BDBA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037429"
+      },
+      {
+        "message": "BDBB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307bd007d"
+      },
+      {
+        "message": "BDBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203752a"
+      },
+      {
+        "message": "BDBC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307bd80fe"
+      },
+      {
+        "message": "BDBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203762b"
+      },
+      {
+        "message": "BDBD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307bdc03e"
+      },
+      {
+        "message": "BDBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203772c"
+      },
+      {
+        "message": "BDCA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307be007e"
+      },
+      {
+        "message": "BDCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203782d"
+      },
+      {
+        "message": "BDCB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307be80ff"
+      },
+      {
+        "message": "BDCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203792e"
+      },
+      {
+        "message": "BDCC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307bec040"
+      },
+      {
+        "message": "BDCC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037a2f"
+      },
+      {
+        "message": "BDCD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307bee060"
+      },
+      {
+        "message": "BDCD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037b30"
+      },
+      {
+        "message": "BDDA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307bf007f"
+      },
+      {
+        "message": "BDDA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037c31"
+      },
+      {
+        "message": "BDDB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307bf8000"
+      },
+      {
+        "message": "BDDB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037d32"
+      },
+      {
+        "message": "BDDC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307bfc041"
+      },
+      {
+        "message": "BDDC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037e33"
+      },
+      {
+        "message": "BDDD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307bfe061"
+      },
+      {
+        "message": "BDDD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402037f34"
+      },
+      {
+        "message": "CAAA",
+        "code_label": "P",
+        "expected_hex": "494301040406410100420202430306440307c07d"
+      },
+      {
+        "message": "CAAA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038035"
+      },
+      {
+        "message": "CAAB",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307c482"
+      },
+      {
+        "message": "CAAB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038136"
+      },
+      {
+        "message": "CAAC",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307c685"
+      },
+      {
+        "message": "CAAC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038237"
+      },
+      {
+        "message": "CAAD",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307c786"
+      },
+      {
+        "message": "CAAD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038338"
+      },
+      {
+        "message": "CABA",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307c886"
+      },
+      {
+        "message": "CABA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038439"
+      },
+      {
+        "message": "CABB",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307ca89"
+      },
+      {
+        "message": "CABB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203853a"
+      },
+      {
+        "message": "CABC",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307cb008b"
+      },
+      {
+        "message": "CABC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203863b"
+      },
+      {
+        "message": "CABD",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307cb800b"
+      },
+      {
+        "message": "CABD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203873c"
+      },
+      {
+        "message": "CACA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307cc8b"
+      },
+      {
+        "message": "CACA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203883d"
+      },
+      {
+        "message": "CACB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307cd008d"
+      },
+      {
+        "message": "CACB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203893e"
+      },
+      {
+        "message": "CACC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307cd800e"
+      },
+      {
+        "message": "CACC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038a3f"
+      },
+      {
+        "message": "CACD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307cdc04e"
+      },
+      {
+        "message": "CACD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038b40"
+      },
+      {
+        "message": "CADA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307ce8d"
+      },
+      {
+        "message": "CADA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038c41"
+      },
+      {
+        "message": "CADB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307cf008f"
+      },
+      {
+        "message": "CADB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038d42"
+      },
+      {
+        "message": "CADC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307cf8010"
+      },
+      {
+        "message": "CADC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038e43"
+      },
+      {
+        "message": "CADD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307cfc050"
+      },
+      {
+        "message": "CADD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402038f44"
+      },
+      {
+        "message": "CBAA",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307d08e"
+      },
+      {
+        "message": "CBAA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039045"
+      },
+      {
+        "message": "CBAB",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307d291"
+      },
+      {
+        "message": "CBAB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039146"
+      },
+      {
+        "message": "CBAC",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307d30093"
+      },
+      {
+        "message": "CBAC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039247"
+      },
+      {
+        "message": "CBAD",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307d38013"
+      },
+      {
+        "message": "CBAD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039348"
+      },
+      {
+        "message": "CBBA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307d493"
+      },
+      {
+        "message": "CBBA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039449"
+      },
+      {
+        "message": "CBBB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307d50095"
+      },
+      {
+        "message": "CBBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203954a"
+      },
+      {
+        "message": "CBBC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307d58016"
+      },
+      {
+        "message": "CBBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203964b"
+      },
+      {
+        "message": "CBBD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307d5c056"
+      },
+      {
+        "message": "CBBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203974c"
+      },
+      {
+        "message": "CBCA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307d60096"
+      },
+      {
+        "message": "CBCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203984d"
+      },
+      {
+        "message": "CBCB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307d68017"
+      },
+      {
+        "message": "CBCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203994e"
+      },
+      {
+        "message": "CBCC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307d6c058"
+      },
+      {
+        "message": "CBCC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039a4f"
+      },
+      {
+        "message": "CBCD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307d6e078"
+      },
+      {
+        "message": "CBCD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039b50"
+      },
+      {
+        "message": "CBDA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307d70097"
+      },
+      {
+        "message": "CBDA",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039c51"
+      },
+      {
+        "message": "CBDB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307d78018"
+      },
+      {
+        "message": "CBDB",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039d52"
+      },
+      {
+        "message": "CBDC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307d7c059"
+      },
+      {
+        "message": "CBDC",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039e53"
+      },
+      {
+        "message": "CBDD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307d7e079"
+      },
+      {
+        "message": "CBDD",
+        "code_label": "Q",
+        "expected_hex": "4943010404084102004202014302024402039f54"
+      },
+      {
+        "message": "CCAA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307d897"
+      },
+      {
+        "message": "CCAA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a055"
+      },
+      {
+        "message": "CCAB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307d90099"
+      },
+      {
+        "message": "CCAB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a156"
+      },
+      {
+        "message": "CCAC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307d9801a"
+      },
+      {
+        "message": "CCAC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a257"
+      },
+      {
+        "message": "CCAD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307d9c05a"
+      },
+      {
+        "message": "CCAD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a358"
+      },
+      {
+        "message": "CCBA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307da009a"
+      },
+      {
+        "message": "CCBA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a459"
+      },
+      {
+        "message": "CCBB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307da801b"
+      },
+      {
+        "message": "CCBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a55a"
+      },
+      {
+        "message": "CCBC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307dac05c"
+      },
+      {
+        "message": "CCBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a65b"
+      },
+      {
+        "message": "CCBD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307dae07c"
+      },
+      {
+        "message": "CCBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a75c"
+      },
+      {
+        "message": "CCCA",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307db009c"
+      },
+      {
+        "message": "CCCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a85d"
+      },
+      {
+        "message": "CCCB",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307db40dd"
+      },
+      {
+        "message": "CCCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203a95e"
+      },
+      {
+        "message": "CCCC",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307db60fe"
+      },
+      {
+        "message": "CCCC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203aa5f"
+      },
+      {
+        "message": "CCCD",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307db700e"
+      },
+      {
+        "message": "CCCD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ab60"
+      },
+      {
+        "message": "CCDA",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307db801c"
+      },
+      {
+        "message": "CCDA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ac61"
+      },
+      {
+        "message": "CCDB",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307dbc05d"
+      },
+      {
+        "message": "CCDB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ad62"
+      },
+      {
+        "message": "CCDC",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307dbe07e"
+      },
+      {
+        "message": "CCDC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ae63"
+      },
+      {
+        "message": "CCDD",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307dbf08e"
+      },
+      {
+        "message": "CCDD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203af64"
+      },
+      {
+        "message": "CDAA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307dc9b"
+      },
+      {
+        "message": "CDAA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b065"
+      },
+      {
+        "message": "CDAB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307dd009d"
+      },
+      {
+        "message": "CDAB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b166"
+      },
+      {
+        "message": "CDAC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307dd801e"
+      },
+      {
+        "message": "CDAC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b267"
+      },
+      {
+        "message": "CDAD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307ddc05e"
+      },
+      {
+        "message": "CDAD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b368"
+      },
+      {
+        "message": "CDBA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307de009e"
+      },
+      {
+        "message": "CDBA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b469"
+      },
+      {
+        "message": "CDBB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307de801f"
+      },
+      {
+        "message": "CDBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b56a"
+      },
+      {
+        "message": "CDBC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307dec060"
+      },
+      {
+        "message": "CDBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b66b"
+      },
+      {
+        "message": "CDBD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307dee080"
+      },
+      {
+        "message": "CDBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b76c"
+      },
+      {
+        "message": "CDCA",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307df00a0"
+      },
+      {
+        "message": "CDCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b86d"
+      },
+      {
+        "message": "CDCB",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307df40e1"
+      },
+      {
+        "message": "CDCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203b96e"
+      },
+      {
+        "message": "CDCC",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307df6002"
+      },
+      {
+        "message": "CDCC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ba6f"
+      },
+      {
+        "message": "CDCD",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307df7012"
+      },
+      {
+        "message": "CDCD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203bb70"
+      },
+      {
+        "message": "CDDA",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307df8020"
+      },
+      {
+        "message": "CDDA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203bc71"
+      },
+      {
+        "message": "CDDB",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307dfc061"
+      },
+      {
+        "message": "CDDB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203bd72"
+      },
+      {
+        "message": "CDDC",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307dfe082"
+      },
+      {
+        "message": "CDDC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203be73"
+      },
+      {
+        "message": "CDDD",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307dff092"
+      },
+      {
+        "message": "CDDD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203bf74"
+      },
+      {
+        "message": "DAAA",
+        "code_label": "P",
+        "expected_hex": "494301040406410100420202430306440307e09d"
+      },
+      {
+        "message": "DAAA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c075"
+      },
+      {
+        "message": "DAAB",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307e4a2"
+      },
+      {
+        "message": "DAAB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c176"
+      },
+      {
+        "message": "DAAC",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307e6a5"
+      },
+      {
+        "message": "DAAC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c277"
+      },
+      {
+        "message": "DAAD",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307e7a6"
+      },
+      {
+        "message": "DAAD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c378"
+      },
+      {
+        "message": "DABA",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307e8a6"
+      },
+      {
+        "message": "DABA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c479"
+      },
+      {
+        "message": "DABB",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307eaa9"
+      },
+      {
+        "message": "DABB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c57a"
+      },
+      {
+        "message": "DABC",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307eb00ab"
+      },
+      {
+        "message": "DABC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c67b"
+      },
+      {
+        "message": "DABD",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307eb802b"
+      },
+      {
+        "message": "DABD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c77c"
+      },
+      {
+        "message": "DACA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307ecab"
+      },
+      {
+        "message": "DACA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c87d"
+      },
+      {
+        "message": "DACB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307ed00ad"
+      },
+      {
+        "message": "DACB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203c97e"
+      },
+      {
+        "message": "DACC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307ed802e"
+      },
+      {
+        "message": "DACC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ca7f"
+      },
+      {
+        "message": "DACD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307edc06e"
+      },
+      {
+        "message": "DACD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203cb80"
+      },
+      {
+        "message": "DADA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307eead"
+      },
+      {
+        "message": "DADA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203cc81"
+      },
+      {
+        "message": "DADB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307ef00af"
+      },
+      {
+        "message": "DADB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203cd82"
+      },
+      {
+        "message": "DADC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307ef8030"
+      },
+      {
+        "message": "DADC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ce83"
+      },
+      {
+        "message": "DADD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307efc070"
+      },
+      {
+        "message": "DADD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203cf84"
+      },
+      {
+        "message": "DBAA",
+        "code_label": "P",
+        "expected_hex": "494301040407410100420202430306440307f0ae"
+      },
+      {
+        "message": "DBAA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d085"
+      },
+      {
+        "message": "DBAB",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307f2b1"
+      },
+      {
+        "message": "DBAB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d186"
+      },
+      {
+        "message": "DBAC",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307f300b3"
+      },
+      {
+        "message": "DBAC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d287"
+      },
+      {
+        "message": "DBAD",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307f38033"
+      },
+      {
+        "message": "DBAD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d388"
+      },
+      {
+        "message": "DBBA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307f4b3"
+      },
+      {
+        "message": "DBBA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d489"
+      },
+      {
+        "message": "DBBB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307f500b5"
+      },
+      {
+        "message": "DBBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d58a"
+      },
+      {
+        "message": "DBBC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307f58036"
+      },
+      {
+        "message": "DBBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d68b"
+      },
+      {
+        "message": "DBBD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307f5c076"
+      },
+      {
+        "message": "DBBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d78c"
+      },
+      {
+        "message": "DBCA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307f600b6"
+      },
+      {
+        "message": "DBCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d88d"
+      },
+      {
+        "message": "DBCB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307f68037"
+      },
+      {
+        "message": "DBCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203d98e"
+      },
+      {
+        "message": "DBCC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307f6c078"
+      },
+      {
+        "message": "DBCC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203da8f"
+      },
+      {
+        "message": "DBCD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307f6e098"
+      },
+      {
+        "message": "DBCD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203db90"
+      },
+      {
+        "message": "DBDA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307f700b7"
+      },
+      {
+        "message": "DBDA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203dc91"
+      },
+      {
+        "message": "DBDB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307f78038"
+      },
+      {
+        "message": "DBDB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203dd92"
+      },
+      {
+        "message": "DBDC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307f7c079"
+      },
+      {
+        "message": "DBDC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203de93"
+      },
+      {
+        "message": "DBDD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307f7e099"
+      },
+      {
+        "message": "DBDD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203df94"
+      },
+      {
+        "message": "DCAA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307f8b7"
+      },
+      {
+        "message": "DCAA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e095"
+      },
+      {
+        "message": "DCAB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307f900b9"
+      },
+      {
+        "message": "DCAB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e196"
+      },
+      {
+        "message": "DCAC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307f9803a"
+      },
+      {
+        "message": "DCAC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e297"
+      },
+      {
+        "message": "DCAD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307f9c07a"
+      },
+      {
+        "message": "DCAD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e398"
+      },
+      {
+        "message": "DCBA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307fa00ba"
+      },
+      {
+        "message": "DCBA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e499"
+      },
+      {
+        "message": "DCBB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307fa803b"
+      },
+      {
+        "message": "DCBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e59a"
+      },
+      {
+        "message": "DCBC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307fac07c"
+      },
+      {
+        "message": "DCBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e69b"
+      },
+      {
+        "message": "DCBD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307fae09c"
+      },
+      {
+        "message": "DCBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e79c"
+      },
+      {
+        "message": "DCCA",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307fb00bc"
+      },
+      {
+        "message": "DCCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e89d"
+      },
+      {
+        "message": "DCCB",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307fb40fd"
+      },
+      {
+        "message": "DCCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203e99e"
+      },
+      {
+        "message": "DCCC",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307fb601e"
+      },
+      {
+        "message": "DCCC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ea9f"
+      },
+      {
+        "message": "DCCD",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307fb702e"
+      },
+      {
+        "message": "DCCD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203eba0"
+      },
+      {
+        "message": "DCDA",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307fb803c"
+      },
+      {
+        "message": "DCDA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203eca1"
+      },
+      {
+        "message": "DCDB",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307fbc07d"
+      },
+      {
+        "message": "DCDB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203eda2"
+      },
+      {
+        "message": "DCDC",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307fbe09e"
+      },
+      {
+        "message": "DCDC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203eea3"
+      },
+      {
+        "message": "DCDD",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307fbf0ae"
+      },
+      {
+        "message": "DCDD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203efa4"
+      },
+      {
+        "message": "DDAA",
+        "code_label": "P",
+        "expected_hex": "494301040408410100420202430306440307fcbb"
+      },
+      {
+        "message": "DDAA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f0a5"
+      },
+      {
+        "message": "DDAB",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307fd00bd"
+      },
+      {
+        "message": "DDAB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f1a6"
+      },
+      {
+        "message": "DDAC",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307fd803e"
+      },
+      {
+        "message": "DDAC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f2a7"
+      },
+      {
+        "message": "DDAD",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307fdc07e"
+      },
+      {
+        "message": "DDAD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f3a8"
+      },
+      {
+        "message": "DDBA",
+        "code_label": "P",
+        "expected_hex": "494301040409410100420202430306440307fe00be"
+      },
+      {
+        "message": "DDBA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f4a9"
+      },
+      {
+        "message": "DDBB",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307fe803f"
+      },
+      {
+        "message": "DDBB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f5aa"
+      },
+      {
+        "message": "DDBC",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307fec080"
+      },
+      {
+        "message": "DDBC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f6ab"
+      },
+      {
+        "message": "DDBD",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307fee0a0"
+      },
+      {
+        "message": "DDBD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f7ac"
+      },
+      {
+        "message": "DDCA",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307ff00c0"
+      },
+      {
+        "message": "DDCA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f8ad"
+      },
+      {
+        "message": "DDCB",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307ff4001"
+      },
+      {
+        "message": "DDCB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203f9ae"
+      },
+      {
+        "message": "DDCC",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307ff6022"
+      },
+      {
+        "message": "DDCC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203faaf"
+      },
+      {
+        "message": "DDCD",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307ff7032"
+      },
+      {
+        "message": "DDCD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203fbb0"
+      },
+      {
+        "message": "DDDA",
+        "code_label": "P",
+        "expected_hex": "49430104040a410100420202430306440307ff8040"
+      },
+      {
+        "message": "DDDA",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203fcb1"
+      },
+      {
+        "message": "DDDB",
+        "code_label": "P",
+        "expected_hex": "49430104040b410100420202430306440307ffc081"
+      },
+      {
+        "message": "DDDB",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203fdb2"
+      },
+      {
+        "message": "DDDC",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307ffe0a2"
+      },
+      {
+        "message": "DDDC",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203feb3"
+      },
+      {
+        "message": "DDDD",
+        "code_label": "P",
+        "expected_hex": "49430104040c410100420202430306440307fff0b2"
+      },
+      {
+        "message": "DDDD",
+        "code_label": "Q",
+        "expected_hex": "494301040408410200420201430202440203ffb4"
+      }
+    ]
+  },
+  "reject_cases": [
+    {
+      "name": "unresealed_payload_flip",
+      "reason": "checksum",
+      "input_hex": "49430104080e4101004202024303064403078adcaf",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "resealed_nonzero_padding",
+      "reason": "nonzero padding",
+      "input_hex": "49430104080e4101004202024303064403070addb0",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "resealed_prefix_conflict",
+      "reason": "prefix conflict",
+      "input_hex": "49430104080e4101004202004303064403070adcad",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "resealed_wrong_count_too_many",
+      "reason": "too many symbols",
+      "input_hex": "49430104070e4101004202024303064403070adcae",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "resealed_wrong_count_too_few",
+      "reason": "symbol count",
+      "input_hex": "49430104090e4101004202024303064403070adcb0",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "resealed_truncated_codeword",
+      "reason": "truncated codeword",
+      "input_hex": "494301040102410100420202430306440307c076",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "trailing_byte",
+      "reason": "declared or trailing length",
+      "input_hex": "49430104080e4101004202024303064403070adcaf00",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "short_container",
+      "reason": "container length",
+      "input_hex": "49430104080e4101004202024303064403070a",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "long_container",
+      "reason": "container length",
+      "input_hex": "49430104080e4101004202024303064403070adcaf00000000000000000000000000000000000000000000000000000000000000",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "zero_message_count",
+      "reason": "zero length",
+      "input_hex": "49430104000e4101004202024303064403070adca7",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "zero_effective_bits",
+      "reason": "zero length",
+      "input_hex": "4943010408004101004202024303064403070adca1",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "declared_payload_size",
+      "reason": "declared or trailing length",
+      "input_hex": "4943010408084101004202024303064403070adca9",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "table_wrong_order",
+      "reason": "table order or length",
+      "input_hex": "49430104080e4201004202024303064403070adcb0",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "table_zero_code_length",
+      "reason": "table order or length",
+      "input_hex": "49430104080e4100004202024303064403070adcae",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "table_nine_code_length",
+      "reason": "table order or length",
+      "input_hex": "49430104080e4109004202024303064403070adcb7",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "code_value_exceeds_declared_width",
+      "reason": "code value",
+      "input_hex": "49430104080e4101024202024303064403070adcb1",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "wrong_version",
+      "reason": "magic or version",
+      "input_hex": "49430204080e4101004202024303064403070adcb0",
+      "input_message": null,
+      "input_code": null
+    },
+    {
+      "name": "empty_message",
+      "reason": "message length",
+      "input_hex": null,
+      "input_message": "",
+      "input_code": {
+        "A": "0",
+        "B": "10",
+        "C": "110",
+        "D": "111"
+      }
+    },
+    {
+      "name": "message_count_256",
+      "reason": "message length",
+      "input_hex": null,
+      "input_message": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "input_code": {
+        "A": "0",
+        "B": "10",
+        "C": "110",
+        "D": "111"
+      }
+    },
+    {
+      "name": "payload_bits_256",
+      "reason": "payload length",
+      "input_hex": null,
+      "input_message": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "input_code": {
+        "A": "00",
+        "B": "01",
+        "C": "10",
+        "D": "11"
+      }
+    },
+    {
+      "name": "outside_alphabet",
+      "reason": "message alphabet",
+      "input_hex": null,
+      "input_message": "E",
+      "input_code": {
+        "A": "0",
+        "B": "10",
+        "C": "110",
+        "D": "111"
+      }
+    },
+    {
+      "name": "duplicate_codeword",
+      "reason": "prefix conflict",
+      "input_hex": null,
+      "input_message": "A",
+      "input_code": {
+        "A": "0",
+        "B": "0",
+        "C": "110",
+        "D": "111"
+      }
+    },
+    {
+      "name": "prefix_conflict_encode",
+      "reason": "prefix conflict",
+      "input_hex": null,
+      "input_message": "A",
+      "input_code": {
+        "A": "0",
+        "B": "01",
+        "C": "110",
+        "D": "111"
+      }
+    },
+    {
+      "name": "empty_codeword",
+      "reason": "codeword",
+      "input_hex": null,
+      "input_message": "A",
+      "input_code": {
+        "A": "",
+        "B": "10",
+        "C": "110",
+        "D": "111"
+      }
+    },
+    {
+      "name": "nine_bit_codeword",
+      "reason": "codeword",
+      "input_hex": null,
+      "input_message": "A",
+      "input_code": {
+        "A": "000000000",
+        "B": "10",
+        "C": "110",
+        "D": "111"
+      }
+    }
+  ],
+  "accepted_boundaries": [
+    {
+      "name": "one_symbol",
+      "message": "A",
+      "code": {
+        "A": "0",
+        "B": "10",
+        "C": "110",
+        "D": "111"
+      },
+      "hex": "49430104010141010042020243030644030700b5",
+      "file_bytes": 20,
+      "count": 1,
+      "effective_bits": 1
+    },
+    {
+      "name": "max_count_and_payload",
+      "message": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "code": {
+        "A": "0",
+        "B": "10",
+        "C": "110",
+        "D": "111"
+      },
+      "hex": "49430104ffff4101004202024303064403070000000000000000000000000000000000000000000000000000000000000000b1",
+      "file_bytes": 51,
+      "count": 255,
+      "effective_bits": 255
+    },
+    {
+      "name": "fixed_254_bits",
+      "message": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "code": {
+        "A": "00",
+        "B": "01",
+        "C": "10",
+        "D": "11"
+      },
+      "hex": "494301047ffe410200420201430202440203000000000000000000000000000000000000000000000000000000000000000026",
+      "file_bytes": 51,
+      "count": 127,
+      "effective_bits": 254
+    },
+    {
+      "name": "eight_bit_codeword",
+      "message": "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+      "code": {
+        "A": "00000000",
+        "B": "00000001",
+        "C": "00000010",
+        "D": "00000011"
+      },
+      "hex": "494301041ff84108004208014308024408030303030303030303030303030303030303030303030303030303030303030335",
+      "file_bytes": 50,
+      "count": 31,
+      "effective_bits": 248
+    }
+  ],
+  "symbol_budget": {
+    "file_bits": 168,
+    "repetition_rate": "1/2",
+    "bits_per_symbol": 2,
+    "sync": 8,
+    "pilot": 4,
+    "rate_symbols_per_second": 1000,
+    "with_repetition": {
+      "channel_bits": 336,
+      "data_symbols": 168,
+      "total_symbols": 180,
+      "seconds": 0.18
+    },
+    "without_repetition": {
+      "channel_bits": 168,
+      "data_symbols": 84,
+      "total_symbols": 96,
+      "seconds": 0.096
+    }
+  }
+}

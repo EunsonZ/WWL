@@ -1,0 +1,67 @@
+{
+  "schema": "wwl-information-container-current-bound-v1",
+  "date_local": "2026-10-10 Asia/Shanghai",
+  "source_bindings": [
+    {
+      "source_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay/数学/50-信息论/80-运行证据/information_container_practice.py",
+      "snapshot": "sources/数学/50-信息论/80-运行证据/information_container_practice.py",
+      "bytes": 6076,
+      "sha256": "7a4d8824b776e11810038dca5010ffb31c2dd564178158a54f9e85f60d78b31d",
+      "unchanged_after_run": true
+    },
+    {
+      "source_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay/数学/50-信息论/80-运行证据/information_container_practice.md",
+      "snapshot": "sources/数学/50-信息论/80-运行证据/information_container_practice.md",
+      "bytes": 2534,
+      "sha256": "665ae5b74e64fa87b2de95c1868bf7db7700114116b1602ae1ebf36893bb8f62",
+      "unchanged_after_run": true
+    }
+  ],
+  "jobs": [
+    {
+      "name": "default",
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay/数学/50-信息论/80-运行证据/information_container_practice.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.024251083000308427,
+      "cumulative_children_max_rss_bytes_macos": 15941632
+    },
+    {
+      "name": "oracle",
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay/数学/50-信息论/80-运行证据/2026-10-10-information-container/oracle.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-portable-acceptance/formal-overlay",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.048122666999915964,
+      "cumulative_children_max_rss_bytes_macos": 21774336
+    }
+  ],
+  "thread_environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4"
+  },
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "third_party_dependencies": []
+  },
+  "resource_method": "Sequential child execution; cumulative RUSAGE_CHILDREN peak RSS in bytes on macOS; 60 s timeout; five numerical runtime thread environment limits set to 4",
+  "resource_gaps": "No hard memory limit or OS thread count observation; stdlib-only format task; RSS is peak over completed child set",
+  "status": "pass",
+  "scope": "Finite IC v1 encode/decode and symbolic accounting; no physical channel, decoder error correction, BER, throughput or general coding-theorem result"
+}

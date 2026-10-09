@@ -1,0 +1,88 @@
+{
+  "schema": "wwl-information-container-current-bound-v1",
+  "date_local": "2026-10-10 Asia/Shanghai",
+  "source_bindings": [
+    {
+      "source_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/数学/50-信息论/80-运行证据/information_container_practice.py",
+      "snapshot": "sources/数学/50-信息论/80-运行证据/information_container_practice.py",
+      "bytes": 6076,
+      "sha256": "7a4d8824b776e11810038dca5010ffb31c2dd564178158a54f9e85f60d78b31d",
+      "unchanged_after_run": true
+    },
+    {
+      "source_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/数学/50-信息论/80-运行证据/information_container_practice.md",
+      "snapshot": "sources/数学/50-信息论/80-运行证据/information_container_practice.md",
+      "bytes": 2534,
+      "sha256": "665ae5b74e64fa87b2de95c1868bf7db7700114116b1602ae1ebf36893bb8f62",
+      "unchanged_after_run": true
+    },
+    {
+      "source_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/AGENTS.md",
+      "snapshot": "sources/AGENTS.md",
+      "bytes": 4874,
+      "sha256": "780555ee84f3c1f017e9117cac5563cfe7f6eb4372d4a076f981f9810c1564c9",
+      "unchanged_after_run": true
+    },
+    {
+      "source_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/assembly.json",
+      "snapshot": "sources/assembly.json",
+      "bytes": 6301,
+      "sha256": "9db1825b1c5dede7ad8e719ac0f4d31e181776941829460c791438c21dac4eda",
+      "unchanged_after_run": true
+    },
+    {
+      "source_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/incremental.diff",
+      "snapshot": "sources/incremental.diff",
+      "bytes": 18477,
+      "sha256": "34e8d47de3bcbe1b701dde7b66454b317cd9687e138948409f9f3c8211955244",
+      "unchanged_after_run": true
+    }
+  ],
+  "jobs": [
+    {
+      "name": "default",
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1/数学/50-信息论/80-运行证据/information_container_practice.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.0239922089999709,
+      "cumulative_children_max_rss_bytes_macos": 16171008
+    },
+    {
+      "name": "oracle",
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-information-container/oracle.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/assembled-candidates/information-r1",
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "elapsed_seconds": 0.04801750000024185,
+      "cumulative_children_max_rss_bytes_macos": 21954560
+    }
+  ],
+  "thread_environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4"
+  },
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "third_party_dependencies": []
+  },
+  "resource_method": "Sequential child execution; cumulative RUSAGE_CHILDREN peak RSS in bytes on macOS; 60 s timeout; five numerical runtime thread environment limits set to 4",
+  "resource_gaps": "No hard memory limit or OS thread count observation; stdlib-only format task; RSS is peak over completed child set",
+  "status": "pass",
+  "scope": "Finite IC v1 encode/decode and symbolic accounting; no physical channel, decoder error correction, BER, throughput or general coding-theorem result"
+}

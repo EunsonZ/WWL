@@ -1,0 +1,42 @@
+# #179/#180 精确修订 V2（冻结，2026-10-10）
+
+本次只修独立REVIEW_V1的F01/F02。完整V2候选在candidate-v2/，仍为21目标；V1的candidate/、TARGETS.json、DIFF.patch、STATIC.json、HANDOFF.md以及全部基线/来源原字节保留。21文件中仅8个发生必要差异，9旧页和2SVG未改。未写正式主库、Git/GH状态、Logs/CHANGES或其他作者目录，未派后代；作者未运行/import课程源或测试。
+
+原完整课程目标、对象/机制/数学/例/实现/迁移及边界详见HANDOFF.md；除下列两个差异，原独立REVIEW_V1已核的主要理论继续复用同版。旧审签不覆盖新增log/outer推导或修后运行。
+
+## 两个必要修订
+
+F01：identification_lab.py的AR诊断输入改为ua[2304:6400]，与e[k]物理同拍；lag0为u[k]，lag1为预测器的u[k−1]。不改拟合数据、拟合参数、真误差−1/8、一步/自由运行或输入seed。测试新增精确三行lag/均值/N分母夹具，并从完整原始AR物理数据、冻结拟合系数独立计算两观察模型全部lag0…8；第二条oracle不调用业务预测/diagnostics helper。源、test、镜像、README合同同步。
+
+F02：Wiener主文补纯绝对连续有限功率f∈L¹、log f∈L¹（及等价有限负部）、一般μs确定部分、非零一步线性创新及Kolmogorov–Szegő方差。给圆内Poisson outer构造、Jensen/Parseval的平方可和与L²边界；预测残差多项式常数项下界，fη截低谱、比值H²逼近和有限多项式上界，接全过程Wold与同历史闭空间。明确H²/均方不存在BIBO承诺；单位V₀/D₀归一及恢复明确。
+
+DC单点零的白差分例log可积、创新方差1，却逆非BIBO：三角加权恢复误差1/N，直接截逆误差1。新增Fraction测试以独立三对角协方差二次损失核N=1/2/7/32；整带零/奇异谱原子另给失效对象。Wiener实验业务源与所有固定随机输入不变；test/阅读镜像/README只接这份必要反例。
+
+具体主文新锚点为“非有理谱的log条件、外因子与创新方差”和“单点零、整带零与奇异谱各改变什么”。原有理充分类、AR显式因子、双边/因果比较及其旧锚点保留。SOURCE_READS_V2.md给本作者实际官方原文和p4页面读取；不把原文环域解析强条件冒称只需一般L¹。
+
+## 精确版本与差异
+
+- TARGETS_V2.json SHA256 `97858c52b24366c85666f5fb0c0ba96a93742392247128a5c33fe753d4cf0845`：21精确目标、原正式基线、V1候选、V2候选SHA。
+- DIFF_V2.patch SHA256 `635457da22e7110ad461fd1df62a7da72461497ae01551e71d530b5819857129`：原正式基线到完整V2。
+- V2_INCREMENT.patch SHA256 `49a139bed285e86281f0fafa0ee949d296de4990db4d55c52bd241241c5fca5b`：V1到V2的8文件差异，供增量独审。
+
+8个差异目标是Wiener主文、实践07的README/test/镜像，以及实践08的README/source/test/镜像；精确库根相对路径与SHA逐项在TARGETS_V2。四个Python真源冻结身份：
+
+| 源 | V2 SHA256 |
+| --- | --- |
+| 07/wiener_lab.py（业务源未改） | ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca |
+| 07/test_wiener_lab.py | e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58 |
+| 08/identification_lab.py | 3365f8a19bf7f46c1881e7d1da77e3abc7850cc838339a2456a4f66d3a4a098d |
+| 08/test_identification_lab.py | da4e3f63592e79e7c6fceee163d9c3b2e952feb2802502b222d03592d20106c6 |
+
+07/08指对应实践目录。作者没有执行过V1，复用Wiener业务源SHA不冒称已有实际运行。所有实验固定seed、长度与分段保持，唯一业务行为修订为AR输入相关的正确物理lag。
+
+## 验证、实际执行与后续停止
+
+STATIC_V2.json：21目标，211活跃链接/标题、4 code-sync、4AST、2SVG XML/title/desc、PyYAML属性全部PASS，无诊断；9旧正式目标仍匹配原基线；V1全部21源SHA仍匹配原冻结表。仅执行静态维护模块，没有运行业务源或测试。
+
+EXECUTOR_V2.md承接原完整执行接口并绑定V2：Wiener应实际跑8test、预跑1/128/256与标准16/4096/8192；动态辨识应实际跑9test（含原始物理全部lag回归），再标准CLI。执行者复制V2到自身新快照，保stdout/stderr、CSV/JSON、命令/环境/SHA/elapsed/RSS，按实际全部CSV独立核目标/矩/输出/lag。资源工作预算仍root最多2任务/每任务4线程/8GiB合计、60秒预跑/常规5分钟，未声称OS硬cap。所有实际结果等待root安排独立运行，作者未填PASS或数字观察。
+
+未参与修订者只补核F01/F02差异及重要新log/outer/逼近推导；A/B数值另实际核；最后读者核绑定完整V2而非V1。客户端、真人、硬件、整个一般控制/学科范围仍各自未验，普通教材不作统一真人/client门槛。整合者按sole writer先看最新主库差异；若出现漂移保全相关目标并局部合并。
+
+用户要求进行中任务收尾、提交总结后暂停；本作者交V2后停止，没有启动181或其他新课程。精确修订、独审/实跑属于当前包收尾，Git/GH/正式整合只由root授权写者处理。本候选不close179/180或209/224。

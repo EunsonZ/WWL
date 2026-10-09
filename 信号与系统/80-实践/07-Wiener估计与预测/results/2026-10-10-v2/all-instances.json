@@ -1,0 +1,379 @@
+[
+  {
+    "command": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_wiener_lab.py"
+    ],
+    "command_sources_before": {
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot/test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58"
+    },
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot",
+    "requested_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WWL_CHILD_TIMEOUT_SECONDS": "60"
+    },
+    "start_unix": 1791576720.479889,
+    "end_unix": 1791576720.556036,
+    "start_utc": "2026-10-09T20:12:00.479889+00:00",
+    "elapsed_seconds": 0.07614707946777344,
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "child_rusage": {
+      "maxrss_bytes_macos": 26476544,
+      "user_seconds": 0.044197,
+      "system_seconds": 0.009844
+    },
+    "source_final": {
+      "wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca",
+      "test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58",
+      "README.md": "e0a755a9d9440d6d4cedf9cb3eceae102a4bfa118e52d55636cf4f04e3b1b78a",
+      "04-\u6e90\u7801\u4e0e\u9a8c\u8bc1.md": "b30a57b2df219058c47cc023d778f7a0716e2a9f03f618a98d338c43590a5e20",
+      "assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "source_stable": true,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "0b0831b240dc567e15383baf85069f8739dada44fbf303abe6392ae1cdd8c4ec",
+    "label": "suite"
+  },
+  {
+    "command": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "wiener_lab.py",
+      "--output",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/preflight",
+      "--repeats",
+      "1",
+      "--train",
+      "128",
+      "--test",
+      "256"
+    ],
+    "command_sources_before": {
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot/wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca"
+    },
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot",
+    "requested_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WWL_CHILD_TIMEOUT_SECONDS": "60"
+    },
+    "start_unix": 1791576720.592829,
+    "end_unix": 1791576720.654233,
+    "start_utc": "2026-10-09T20:12:00.592829+00:00",
+    "elapsed_seconds": 0.06140398979187012,
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "child_rusage": {
+      "maxrss_bytes_macos": 22757376,
+      "user_seconds": 0.03785,
+      "system_seconds": 0.008007
+    },
+    "source_final": {
+      "wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca",
+      "test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58",
+      "README.md": "e0a755a9d9440d6d4cedf9cb3eceae102a4bfa118e52d55636cf4f04e3b1b78a",
+      "04-\u6e90\u7801\u4e0e\u9a8c\u8bc1.md": "b30a57b2df219058c47cc023d778f7a0716e2a9f03f618a98d338c43590a5e20",
+      "assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "source_stable": true,
+    "stdout_sha256": "f6dfafe2a180855090348f54b9d8edeae31f580452152e5e98c293a4bb3ddae7",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "label": "preflight"
+  },
+  {
+    "command": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "wiener_lab.py",
+      "--output",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/standard",
+      "--repeats",
+      "16",
+      "--train",
+      "4096",
+      "--test",
+      "8192"
+    ],
+    "command_sources_before": {
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot/wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca"
+    },
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot",
+    "requested_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WWL_CHILD_TIMEOUT_SECONDS": "300"
+    },
+    "start_unix": 1791576720.6910322,
+    "end_unix": 1791576721.5881732,
+    "start_utc": "2026-10-09T20:12:00.691032+00:00",
+    "elapsed_seconds": 0.8971409797668457,
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 300,
+    "child_rusage": {
+      "maxrss_bytes_macos": 34996224,
+      "user_seconds": 0.874817,
+      "system_seconds": 0.012647
+    },
+    "source_final": {
+      "wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca",
+      "test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58",
+      "README.md": "e0a755a9d9440d6d4cedf9cb3eceae102a4bfa118e52d55636cf4f04e3b1b78a",
+      "04-\u6e90\u7801\u4e0e\u9a8c\u8bc1.md": "b30a57b2df219058c47cc023d778f7a0716e2a9f03f618a98d338c43590a5e20",
+      "assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "source_stable": true,
+    "stdout_sha256": "1843787e1763dd6412e12f859ec1814b2aaa49c8d2e86b377b21b876db2e9b51",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "label": "standard"
+  },
+  {
+    "command": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "independent_oracle.py"
+    ],
+    "command_sources_before": {
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/independent_oracle.py": "672af36b65128cb1a0dc62446125308af1ffd19ef4a5249477298998644c1392"
+    },
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01",
+    "requested_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WWL_CHILD_TIMEOUT_SECONDS": "300"
+    },
+    "start_unix": 1791576827.863013,
+    "end_unix": 1791576828.9232168,
+    "start_utc": "2026-10-09T20:13:47.863013+00:00",
+    "elapsed_seconds": 1.0602037906646729,
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 300,
+    "child_rusage": {
+      "maxrss_bytes_macos": 39337984,
+      "user_seconds": 1.042644,
+      "system_seconds": 0.012914
+    },
+    "source_final": {
+      "wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca",
+      "test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58",
+      "README.md": "e0a755a9d9440d6d4cedf9cb3eceae102a4bfa118e52d55636cf4f04e3b1b78a",
+      "04-\u6e90\u7801\u4e0e\u9a8c\u8bc1.md": "b30a57b2df219058c47cc023d778f7a0716e2a9f03f618a98d338c43590a5e20",
+      "assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "source_stable": true,
+    "stdout_sha256": "effbacc6a24294bc1e48db77258db96a3a0ac411e32c81017cc401766e8d97fb",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "label": "oracle"
+  },
+  {
+    "command": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "csv_oracle.py"
+    ],
+    "command_sources_before": {
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/csv_oracle.py": "d6fa873365339368697cfd9c47a42f9c1f8c2f64f7713bba771fb144a678dd51"
+    },
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01",
+    "requested_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WWL_CHILD_TIMEOUT_SECONDS": "60"
+    },
+    "start_unix": 1791576894.706888,
+    "end_unix": 1791576894.853931,
+    "start_utc": "2026-10-09T20:14:54.706888+00:00",
+    "elapsed_seconds": 0.14704298973083496,
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "child_rusage": {
+      "maxrss_bytes_macos": 34930688,
+      "user_seconds": 0.136077,
+      "system_seconds": 0.0076489999999999995
+    },
+    "source_final": {
+      "wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca",
+      "test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58",
+      "README.md": "e0a755a9d9440d6d4cedf9cb3eceae102a4bfa118e52d55636cf4f04e3b1b78a",
+      "04-\u6e90\u7801\u4e0e\u9a8c\u8bc1.md": "b30a57b2df219058c47cc023d778f7a0716e2a9f03f618a98d338c43590a5e20",
+      "assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "source_stable": true,
+    "stdout_sha256": "574864eaa35c23b917a07ba250ba6ed75899acadab1b60a8832d69d7a70bd059",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "label": "csv-oracle"
+  },
+  {
+    "command": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-m",
+      "cairosvg",
+      "snapshot/assets/information-windows.svg",
+      "-o",
+      "information-windows-cairo.png"
+    ],
+    "command_sources_before": {
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot/assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01",
+    "requested_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WWL_CHILD_TIMEOUT_SECONDS": "60"
+    },
+    "start_unix": 1791576894.891038,
+    "end_unix": 1791576895.0409338,
+    "start_utc": "2026-10-09T20:14:54.891038+00:00",
+    "elapsed_seconds": 0.14989590644836426,
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "child_rusage": {
+      "maxrss_bytes_macos": 50495488,
+      "user_seconds": 0.12463099999999999,
+      "system_seconds": 0.01937
+    },
+    "source_final": {
+      "wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca",
+      "test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58",
+      "README.md": "e0a755a9d9440d6d4cedf9cb3eceae102a4bfa118e52d55636cf4f04e3b1b78a",
+      "04-\u6e90\u7801\u4e0e\u9a8c\u8bc1.md": "b30a57b2df219058c47cc023d778f7a0716e2a9f03f618a98d338c43590a5e20",
+      "assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "source_stable": true,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "label": "svg-cairo"
+  },
+  {
+    "command": [
+      "/usr/bin/qlmanage",
+      "-t",
+      "-s",
+      "1040",
+      "-o",
+      "quicklook",
+      "snapshot/assets/information-windows.svg"
+    ],
+    "command_sources_before": {
+      "/usr/bin/qlmanage": "ff9a364b9a35bca781a9260d1d9268eb887f4a7127968b9bf4d035c7704fc9fa",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot/assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01",
+    "requested_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WWL_CHILD_TIMEOUT_SECONDS": "60"
+    },
+    "start_unix": 1791576913.6769788,
+    "end_unix": 1791576913.69372,
+    "start_utc": "2026-10-09T20:15:13.676979+00:00",
+    "elapsed_seconds": 0.016741275787353516,
+    "exit_code": 255,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "child_rusage": {
+      "maxrss_bytes_macos": 13058048,
+      "user_seconds": 0.006274,
+      "system_seconds": 0.0032719999999999997
+    },
+    "source_final": {
+      "wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca",
+      "test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58",
+      "README.md": "e0a755a9d9440d6d4cedf9cb3eceae102a4bfa118e52d55636cf4f04e3b1b78a",
+      "04-\u6e90\u7801\u4e0e\u9a8c\u8bc1.md": "b30a57b2df219058c47cc023d778f7a0716e2a9f03f618a98d338c43590a5e20",
+      "assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "source_stable": true,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "6625945f5b149a743e0e040c893dc886f5c2a99567d8be6bf24d64d7460d6c1a",
+    "label": "svg-quicklook"
+  },
+  {
+    "command": [
+      "/usr/bin/qlmanage",
+      "-t",
+      "-s",
+      "1040",
+      "-o",
+      "quicklook",
+      "snapshot/assets/information-windows.svg"
+    ],
+    "command_sources_before": {
+      "/usr/bin/qlmanage": "ff9a364b9a35bca781a9260d1d9268eb887f4a7127968b9bf4d035c7704fc9fa",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01/snapshot/assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments179/run-20261010-01",
+    "requested_environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WWL_CHILD_TIMEOUT_SECONDS": "60"
+    },
+    "start_unix": 1791576928.3620229,
+    "end_unix": 1791576928.498782,
+    "start_utc": "2026-10-09T20:15:28.362023+00:00",
+    "elapsed_seconds": 0.13675904273986816,
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "child_rusage": {
+      "maxrss_bytes_macos": 86097920,
+      "user_seconds": 0.067359,
+      "system_seconds": 0.023325
+    },
+    "source_final": {
+      "wiener_lab.py": "ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca",
+      "test_wiener_lab.py": "e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58",
+      "README.md": "e0a755a9d9440d6d4cedf9cb3eceae102a4bfa118e52d55636cf4f04e3b1b78a",
+      "04-\u6e90\u7801\u4e0e\u9a8c\u8bc1.md": "b30a57b2df219058c47cc023d778f7a0716e2a9f03f618a98d338c43590a5e20",
+      "assets/information-windows.svg": "92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c"
+    },
+    "source_stable": true,
+    "stdout_sha256": "b6d03e72754673a84adcf2b29dcb6f40de4e8f6388d1b7cf71d64d459d9557ad",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "label": "svg-quicklook-r2"
+  }
+]

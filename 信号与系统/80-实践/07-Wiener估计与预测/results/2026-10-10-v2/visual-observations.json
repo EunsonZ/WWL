@@ -1,0 +1,27 @@
+{
+  "images": {
+    "information-windows-cairo.png": {
+      "sha256": "d4f359cfdd9087f22844bdf459887aad4f650f4a22dfab4f064a16fbcb2ea0a6",
+      "width": 1040,
+      "height": 590
+    },
+    "quicklook/information-windows.svg.png": {
+      "sha256": "74e18410bf87dc8637cfd7bd6ac5bb8fb6e17233929b31054f9c3c5e398150d4",
+      "width": 1040,
+      "height": 1040
+    }
+  },
+  "actually_viewed_both": true,
+  "cairo_observed": "Shapes, time labels, numeric MSE visible, Chinese glyphs rendered as square tofu; cannot accept Chinese text rendering.",
+  "quicklook_first": "exit255 sandbox initialization Operation not permitted; no PNG",
+  "quicklook_retry": "same SVG source, approved execution outside sandbox, exit0, PNG actually viewed: Chinese labels and legends readable; five methods/times and MSE complete; native thumbnail has vertical white letterbox.",
+  "quicklook_content_observed": [
+    "current at n, MSE1/2 V²",
+    "current+past at n, MSE7/15 V²",
+    "causal past window at n, MSE2sqrt3-3 V²",
+    "past+current+future output n+1, MSE7/16 V²",
+    "bilateral ideal orange future, finite radiusL delayL, MSEsqrt3/4 V²",
+    "blue known/orange not-yet-known legend, footer warning"
+  ],
+  "Obsidian_or_narrow_column_verified": false
+}

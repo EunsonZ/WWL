@@ -1,0 +1,38 @@
+# #179/#180 V2 独立执行接口（作者NOTRUN）
+
+根进程派A/B独立执行，作者不运行、不import课程源码/测试。执行者先复制冻结候选的各实践目录到自己获授权的新快照，核对HANDOFF_V2源SHA；日志与结果仅写执行者自己的新目录，返回精确版本与原始结果。不要把此候选区存在当正式主库已整合或实验已成功。
+
+工作预算root统一最多2任务、每任务4线程、总8GiB，预跑60秒、常规5分钟；本源码标准库单线程、无OS硬资源cap。执行者记录实际elapsed/RSS，超时停并保全输出。可设置OMP/OPENBLAS/MKL线程环境=4但这不证明OS线程数/内存硬限制。无安装、网络数据、硬件采集或控制输出。
+
+## A：Wiener与PSD
+
+冻结源原位置：`candidate-v2/信号与系统/80-实践/07-Wiener估计与预测/`。在独立快照cwd：
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v test_wiener_lab.py
+PYTHONDONTWRITEBYTECODE=1 python3 wiener_lab.py --output /private/tmp/wwl-179-v2-preflight-NEW --repeats 1 --train 128 --test 256
+PYTHONDONTWRITEBYTECODE=1 python3 wiener_lab.py --output /private/tmp/wwl-179-v2-standard-NEW --repeats 16 --train 4096 --test 8192
+```
+
+NEW由执行者换成唯一新不存在目录；前一命令失败不得报后一命令已验证。suite应覆盖8条实际测试；预期exit0但作者没有测试结果。
+
+解析oracle：R[[2,.5],[.5,2]]、p[1,.5]、w[7/15,2/15]、MSE7/15；三点平滑[1/8,7/16,1/8]和7/16；三点非线性反例线性2/9、MMSE0；复延迟π/4相位−i；因果g=2√3−3、r=2−√3且Riccati P²+6P−3=0；双边√3/4。噪声ρv=.5：旧权MSE119/225、旧误差矩lag0/1=−1/15、−7/30，新(.5,0)误差矩0且MSE.5。
+
+新增DC零点反例以三对角协方差二次型独立核N=1/2/7/32：三角权恢复误差1/N，直接截逆误差1；它不替代一般log/outer定理的source审。独立执行者不要只复述suite：从首次CSV自行重算训练R/p/权重、同窗口MSE和误差矩，核JSON中的实际值（共同窗[128,8160)，correlated窗[1,8192)）；另用全重复seed重建或抽核，确认训练/测试源分离和radius32未来时点/无循环。PSD的128×8 segment_periodograms、single=每组首个、averages=组平均，独立重算均值/样本方差，核N64、内部bin5、非重叠段。理论均值1、方差1、平均方差1/8是期望，不能强迫有限观测精确相等，也不能临场挑容差保PASS。将观察、解析预期与统计散布分别报告；异常返回确定版本/日志给作者。
+
+结果至少含：suite/preflight/standard stdout/stderr/exit与命令cwd、Python/OS、源和结果SHA、RSS/时间；首次完整4CSV和JSON，保留实际全部重复和PSD值。把数值观察回主课的正交/窗口/噪声前提，不签一般定理、真实噪声、设备或真人。
+
+## B：动态辨识与LMS/RLS
+
+冻结源原位置：`candidate-v2/信号与系统/80-实践/08-动态辨识与自适应/`。在独立快照cwd：
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v test_identification_lab.py
+PYTHONDONTWRITEBYTECODE=1 python3 identification_lab.py --output /private/tmp/wwl-180-v2-standard-NEW
+```
+
+suite作为60秒预跑，覆盖9条测试；标准CLI在预跑成功后运行。解析oracle：零初史冲激两行恢复(.5,−.25)、稳态常值rank1；R₀I/θ₀0/三行数据，λ1解(9/32,−3/32)，λ.5解(31/79,−13/79)，非零中心另逐前缀独立Fraction目标核。动态噪声矩0与−1/8；闭环四格OLS−.25、参考IV.5，κ0恢复OLS.5；iid四轴LMS μ1.5均值因子−.5、均方因子2.5（非时间共享模型）。一步与自由运行在不同历史上逐项核，坐标惩罚需DᵀR₀D。
+
+独立执行者从全部CSV另实现目标累积/2或3维解、残差lag0…8、一步/自由运行和漂移后冻结验证，核JSON。FIR/AR输入—残差的物理lag ℓ都用u[k−ℓ]与e[k]：AR的窗口输入从k=2304开始同拍，lag0为u[k]、lag1为预测器所用u[k−1]；窗内配对、全测试窗均值、N=4096分母，全部9个lag逐项独核。本次真实结果应绑定V2，V1错误调用的lag标签不能复用。不能拿源函数自己的batch当唯一独立oracle。FIR只按验证选1/2/3阶、参数仅训练，最后测试不回挑；是否实际选2应报告事实，不强制。AR同一x/u改变测量噪声，真参数有效误差矩用未拟合参数另算；含输入模型总体aOLS=13/32、b=.25，不拿无输入2/5错套。λ1/.98和LMS的最后独立seed180300验证谁赢由实际结果决定，不预填。确认共6400拍、burn[0,256)、train[256,2304)、test[2304,6400)，自由初态取训练末y。
+
+记录suite/CLI原stdout/stderr/exit、环境、源/结果SHA、时间/RSS，完整fir/ar/drift/later_validation CSV与JSON。保留失败和较差参数轨迹；结果只是此有限合成模型的运行，不是全步长稳定、现实一致性或闭环控制证书。

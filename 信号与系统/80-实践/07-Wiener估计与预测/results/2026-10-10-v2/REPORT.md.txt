@@ -1,0 +1,83 @@
+# #179 Wiener独立有限执行与图证据
+
+本次仅写experiments179/run-20261010-01，只读author179180/candidate-v2；不包含#180/RLS。未改作者候选、主库、Git/GitHub、CHANGES/Logs、#158/#153冻结产物，未安装组件、未派后代。数值、oracle与图渲染/查看已全部结束，A槽现在可以释放；停止于当前收尾任务。
+
+## 同版身份与输入
+
+TARGETS_V2 SHA=`97858c52b24366c85666f5fb0c0ba96a93742392247128a5c33fe753d4cf0845`，原字节副本保留。
+业务源SHA=`ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca`。
+8test源SHA=`e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58`。
+SVG SHA=`92308e260837be7f80e52eff27d1e2fd1e6a203a038d8b6a8bc614052fd2d09c`。
+五文件精确snapshot、复制前后及每个实例结束后原hash见identity.json/各execution.json，均未漂移。
+
+fixed-inputs.json与expected-before-run.json在课程首次执行前写入，固定CLI规格、seed、PSD布局、解析预期和确定性比较容差abs=rel=1e-10。它们没有被课程输出覆盖。标准repeats16/train4096/test8192；预跑1/128/256。训练179000+r与独立测试179100+r，相关噪声179200+r，PSD179300。共同窗[128,8160)共8032拍，相关噪声窗[1,8192)。半径32的未来索引都在记录内，没有循环/补零未来。
+
+## 全部真实实例与失败层
+
+现有锁定venv，macOS27.0.1 arm64、Python3.14.7，metadata与数值线程环境见environment.json。wait4记录的是被执行子进程的真实exit/RSS；捕获器外层exit0不覆盖子进程失败。
+
+|实例|child exit|墙钟秒|child peak RSS bytes|timeout|
+|---|---:|---:|---:|---|
+|suite|0|0.076147|26476544|False|
+|preflight|0|0.061404|22757376|False|
+|standard|0|0.897141|34996224|False|
+|oracle|0|1.060204|39337984|False|
+|csv-oracle|0|0.147043|34930688|False|
+|svg-cairo|0|0.149896|50495488|False|
+|svg-quicklook|255|0.016741|13058048|False|
+|svg-quicklook-r2|0|0.136759|86097920|False|
+
+suite实际Ran8tests/OK。预跑、标准CLI、两独立oracle均exit0、无超时；这五个数值实例最大子进程RSS39,337,984bytes，远低于4GiB工作目标，但没有观测A/B聚合峰值、没有实施OS硬4GiB或硬线程限制。数值库环境各请求4线程，child timeout覆盖60/300秒；不根据标准库单线程形式宣称测得系统线程总上限。
+
+standard完整4CSV与results.json保留，预跑的4CSV/JSON也保留；后15重复全部MSE、R/p/w、误差矩和1024个PSD原观测保留在原JSON，不只有均值。suite日志在stderr，运行前源/输入、完整argv/cwd、环境、raw stdout/stderr、实际exit/time/RSS均绑定。没有课程源错误或失败重试造通过。
+
+## 独立解析、CSV与全seed核对
+
+independent_oracle.py和csv_oracle.py都不import业务源。前者自有Fraction总体正规方程/二次损失，基于原seed先生成白创新再重建全部17个预跑/标准重复，训练统计用fsum及2×2行列式解；估计、同窗口损失与所有lag(-1/0/1或0/1)误差矩独立核对。因果输出用64抽头冲激卷积核对原递推，r^64=2.485e-37，有限样本输出差在预声明容差内，不把64抽头当数学无限历史严格等同。
+
+首次四CSV另外直接读取：训练浮点按其精确二进制有理数转Fraction、累积R/p、以行列式精确求w；estimates.csv结合test.csv直接算MSE/误差矩，correlated_test.csv直接核改变噪声的损失与lag配对。
+
+主oracle 1529项、首次CSV oracle 93项全部match，failed_checks=[]。主oracle标量最大差1.776e-15；表格或序列的逐项最大差另在原checks。比较容差用于确定性重算，未为总体统计均值设置临时PASS容差。
+
+总体解析结果：两样本R=[[2,1/2],[1/2,2]]、p=(1,1/2)、w=(7/15,2/15)、MSE7/15；一拍平滑(1/8,7/16,1/8)、MSE7/16；三点非线性反例线性2/9而条件均值0；π/4二拍延迟相位-i；因果g=2√3-3、r=2-√3满足Riccati与谱因子乘回；双边无限√3/4。
+
+噪声ρv=.5后旧权MSE119/225、误差矩(-1/15,-7/30)，新权(.5,0)矩(0,0)、MSE.5。DC反例另从独立白u的线性系数展开误差，不使用课程滤波或测试的三对角二次型自证：N=1/2/7/32三角加权均方误差精确1/N，直接截逆始终1。单点DC零与log可积的一般解释归正文理论独审，本计算没有认证一般outer/log定理或BIBO逆。
+
+## 实际16次观察（MSE单位V²）
+
+|方法|总体解析参照|实际均值|16次样本标准差|
+|---|---:|---:|---:|
+|current|0.500000000|0.500602515|0.009812639|
+|two_tap_theory|0.466666667|0.467126382|0.008691283|
+|two_tap_fit|训练所得，无单一常数|0.467356084|0.008693904|
+|three_tap_smoothing|0.437500000|0.438068712|0.008412893|
+|causal_infinite|0.464101615|0.464296643|0.008592990|
+|bilateral_truncated|0.433012702（无限参照）|0.433689289|0.008311122|
+|wrong_noise_old_weights|0.528888889|0.530351928|0.007774123|
+|correlated_noise_current|0.500000000|0.501929057|0.006267023|
+
+两训练权重没有固定单一总体MSE常数。双边列使用无限参照；独立按实际radius32核权重二次型得到0.433012701892219，在当前双精度与√3/4相同显示，不称截断数学尾误差严格0。该方法有未来信息，与无延迟算法的收益不能混称。完整16次值和标准误均在原JSON与oracle摘要，不以这一组观察宣布现实噪声最优。
+
+## PSD、物理单位与有限lag
+
+128组×8段×64拍白Gaussian，bin5为内部bin。独立使用实sin/cos DFT重建全部1024 periodogram，并核single=组首段、average=组8段均值、样本方差和全部64bin的Parseval。有限lag相关C_l=2(l=0)、(1/2)^|l|(l≠0)的V²单位与角频率谱积分(1/2π)∫Sθdθ=C0逐项核对。
+
+本次single均值0.946843046、样本方差1.089273744；8段平均均值0.972541281、样本方差0.123696950。总体参照分别均值1、单段方差1、平均方差1/8，有限观测未强迫逐项相等。预跑与标准同用PSD固定seed，PSD相同是同版复现而不是额外独立128组。
+
+以归一角频率θ(rad/sample)的双边谱解释，积分含1/2π；没有给物理采样率fs，不能擅自填V²/Hz。转换物理Hz须θ=2πf/fs和Sf=Sθ/fs；没有把单边倍增、DC或Nyquist套进bin5。谱单位解释来自这套明示归一，而非原JSON已自动输出完整物理Hz字段。
+
+## 实际图像查看与保留失败
+
+Cairo原SVG渲染exit0，1040×590PNG已实际查看：几何/数字可见，但中文变方框，不能据退出码称显示通过。原PNG留存。
+
+系统Quick Look首次在sandbox exit255，原stderr为sandbox_extension_issue_file与sandbox initialization Operation not permitted；日志完整保留。同一原SVG在正常批准的单一升级执行后exit0，未安装字体或改系统/源码，生成1040×1040PNG（垂直白色留边）并实际查看。
+
+quicklook/information-windows.svg.png中中文标题、五行当前/过去/因果/一拍未来/双边窗口、n/n+1、各解析MSE、蓝已知/橙未到图例与底部延迟提醒都完整可读，没有裁掉内容。visual-observations.json保存具体所见与图身份。这是静态原图渲染证据，不是Obsidian或窄栏显示验收，图中MSE不是随机运行曲线。
+
+## 复建与正式交付边界
+
+REPLAY.md与replay.py给新不存在目录的标准库POSIX复建接口：先核源码/独立工具hash，再执行五个子进程，失败立即停止并检查两oracle；只做AST与控制流静态核对，executed=false，不冒充这份驱动已实际重跑。PNG不自动重渲染，新的视觉验收需另记录。
+
+作者需消费实际观察，逐字携带必要原snapshot/输入/预期、CSV/JSON、全部原日志/环境/命令/资源、两个oracle与图证据到正式候选，并让未参与修订者核对读者增量。hidden恢复区不代替正式主库/远端delivery。原manifest保留，当前artifact-hashes.json绑定最终文件。
+
+一般定理、真实平稳/遍历噪声、仪器/控制硬件、Obsidian、同步和真人理解未由本实验认证；#180和在线RLS不在本任务范围。当前#179执行到此结束，不开始新课。

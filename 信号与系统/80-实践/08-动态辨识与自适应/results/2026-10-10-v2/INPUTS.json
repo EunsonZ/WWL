@@ -1,0 +1,60 @@
+{
+  "generation": "Parameters and RNG schedules are frozen in source; no external config exists. Standard CLI has only --output.",
+  "fixed_seeds": [
+    180000,
+    180100,
+    180200,
+    180300
+  ],
+  "sample_lengths": {
+    "fir": 4096,
+    "ar": 6400,
+    "drift": 2048,
+    "later_validation": 1024
+  },
+  "CLI_standard_argv": [
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "-B",
+    "identification_lab.py",
+    "--output",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/output"
+  ],
+  "source_sha256": "3365f8a19bf7f46c1881e7d1da77e3abc7850cc838339a2456a4f66d3a4a098d",
+  "test_sha256": "da4e3f63592e79e7c6fceee163d9c3b2e952feb2802502b222d03592d20106c6",
+  "FIR_splits": {
+    "train": [
+      3,
+      1024
+    ],
+    "validation": [
+      1024,
+      2048
+    ],
+    "test": [
+      2048,
+      4096
+    ]
+  },
+  "AR_splits": {
+    "burn": [
+      0,
+      256
+    ],
+    "train": [
+      256,
+      2304
+    ],
+    "test": [
+      2304,
+      6400
+    ]
+  },
+  "drift_range": [
+    1,
+    2048
+  ],
+  "later_validation_range": [
+    1,
+    1024
+  ]
+}

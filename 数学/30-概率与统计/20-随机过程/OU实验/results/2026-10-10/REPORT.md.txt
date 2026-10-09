@@ -1,0 +1,26 @@
+# #146 independent execution and mathematical audit
+
+Status: PASS for frozen source `1322dd283998961d7fead5ff73823a2379a95dd545bd4a2f6e87f1c03f2cb549` and input `ece6a3a9f7751a53b3367b996721546334d6217b17d1b4a76dae88bf21582038`. Original and copied snapshot hashes match before and after execution and final audit. Original candidate was read-only.
+
+The locked `.venv-issues-111plus` supplied Python 3.14.7 / NumPy 2.5.3; no installation or environment edits. Source CLI help and version probes passed, six unittest tests passed, and the fixed CLI exited 0 with diagnostics_pass=true. All original stdout/stderr remain adjacent. `process-observations.json` records per-child wait4 wall time, CPU time, exit and Darwin peak RSS. Five numeric thread environment controls each equal 1; these are not a RAM hard cap. The OU child ran 0.282068333 seconds with 79,806,464-byte peak RSS; no timeout. No sysctl observer was used. A+B simultaneous aggregate memory was not directly measured here.
+
+Inputs: N=65536, chunk=4096, finest=64, levels=8/16/32/64, joint-pair seed 20261010, independent Gaussian-terminal seed 20261011. This is one fixed experiment with two distinct generator seeds, not two independent replicas of the full experiment.
+
+The independent oracle imports neither ou_lab nor its tests. It integrates the piecewise EM kernel H(s)=a^(m-1-i) against the exact OU terminal kernel K(s)=exp(-k(T-s)) using 70-digit Decimal, interval by interval. The resulting EM mean, variance, second moment, covariance, coupled MSE/RMSE, two weak biases and independent-noise MSE agree within 1e-12. It also independently reconstructs all terminal statistics and standard errors by linear kernel sums on the same joint random inputs. All 94 comparisons passed. This runtime numerical audit is separate from the six source self-tests.
+
+Exact OU mean=0.36787944117144233, variance=0.10808308959542341, second moment=0.2434183728320361.
+
+| steps | analytic RMSE | observed RMSE | MSE z | independent-noise MSE |
+|---:|---:|---:|---:|---:|
+| 8 | 0.0311628942999 | 0.0311732839318 | 0.152204 | 0.225720253286 |
+| 16 | 0.0151986070253 | 0.0151856550404 | -0.385711 | 0.220450639877 |
+| 32 | 0.00750754263584 | 0.00748705335964 | -1.23987 | 0.218050475633 |
+| 64 | 0.00373129715681 | 0.00372269805262 | -1.04876 | 0.216903431203 |
+
+Analytic successive RMSE step-halving orders are 1.03589012745, 1.01752643653, 1.00866350344, approaching 1 for this additive-noise OU endpoint. This does not prove the general Ito/EM theorem. The independent-noise control remains near 0.217 as h shrinks because it destroys common-Brownian coupling; independent fine noise is not a strong-error truth path. Weak moment sampling uncertainty and paired terminal strong error are different quantities. All declared 6 estimated-SE diagnostics passed; estimated bands are not finite-sample guarantees.
+
+All 992 saved trace rows were checked by independent fine-prefix and EM weighted sums; maximum difference 2.3314683517128287e-15. For every saved path, exact 8-step and 64-step values coincide at all public 8-grid times within 1.9984014443252818e-15. The CLI's full-path coarse/fine exact agreement is 3.774758283725532e-15. No fine Euler reference is used.
+
+Deliverables: `output/report.json`, `output/traces.csv`, `output/strong-error.svg`; frozen snapshot and SOURCE_FREEZE; original help/version/test/fixed logs; before/after hashes; environment and process observations; independent oracle source/result and logs; final file hashes. Oracle computation self peak RSS=57,540,608 bytes and wall=0.058515625 seconds (recorded inside its process).
+
+No observed instrument or model failure occurred in this run. SVG XML is preserved but visual rendering, native Obsidian, hardware, real finance, human learning and generic Ito proof are not verified here. This run lives in the authorized recovery directory; integration owner/author must copy these exact results into the formal lab candidate and expose its teaching interpretation before remote delivery. No main-vault/Git/GitHub state or external logs were changed by this runner.

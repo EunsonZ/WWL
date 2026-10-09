@@ -1,0 +1,24 @@
+{
+  "purpose": "Minimal historical receipt; no rerun and no edit to frozen run01",
+  "source": "This agent functions.exec tool result chunk db7408 (original oracle creation + execution + log display shell cell)",
+  "execution_tail_exact": ".venv-issues-111plus/bin/python -B .wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/independent_oracle.py > .wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/oracle.stdout 2> .wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/oracle.stderr\ncat .wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/oracle.stdout; cat .wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/oracle.stderr",
+  "argv": [
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "-B",
+    ".wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/independent_oracle.py"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL",
+  "shell_cell_exit_code_observed": 0,
+  "individual_oracle_exit_code": null,
+  "exit_limitation": "Original shell subsequently displayed stdout and stderr with cat. Its observed cell exit 0 belongs to the command chain; no individual oracle wait status was captured. PASS output and completed JSON do not substitute for an observed individual exit.",
+  "oracle_self_wall_seconds": 0.05851562499992724,
+  "oracle_self_peak_rss_bytes_Darwin": 57540608,
+  "numeric_source_sha256": "1322dd283998961d7fead5ff73823a2379a95dd545bd4a2f6e87f1c03f2cb549",
+  "input_sha256": "ece6a3a9f7751a53b3367b996721546334d6217b17d1b4a76dae88bf21582038",
+  "files": {
+    "independent_oracle.py": "432234d83b83ecc43fc598df588852625329d0b6d93e2ee64fe869cac86c2451",
+    "independent-oracle.json": "20065d2da196a91f3ea75c6305655eaf2058ff24da113a13edd1913329b0d8e8",
+    "oracle.stdout": "e4fb305d41d99fcd2193ea5ce203f4d3101e2df9b1644f8577d87621311b90ba",
+    "oracle.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

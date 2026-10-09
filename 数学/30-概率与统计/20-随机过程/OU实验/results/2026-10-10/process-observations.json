@@ -1,0 +1,71 @@
+[
+  {
+    "name": "help",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/snapshot/ou_lab.py",
+      "--help"
+    ],
+    "exit_code": 0,
+    "timeout": false,
+    "wall_seconds": 0.07724741699894366,
+    "child_max_rss_bytes": 35094528,
+    "child_user_seconds": 0.048555999999999995,
+    "child_system_seconds": 0.011585
+  },
+  {
+    "name": "versions",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-c",
+      "import sys,numpy,platform; print(sys.executable); print(sys.version); print(numpy.__version__); print(platform.platform())"
+    ],
+    "exit_code": 0,
+    "timeout": false,
+    "wall_seconds": 0.061629083000298124,
+    "child_max_rss_bytes": 29097984,
+    "child_user_seconds": 0.038963,
+    "child_system_seconds": 0.014043
+  },
+  {
+    "name": "tests",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/snapshot",
+      "-p",
+      "test_ou_lab.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timeout": false,
+    "wall_seconds": 0.10362945899942133,
+    "child_max_rss_bytes": 40861696,
+    "child_user_seconds": 0.075678,
+    "child_system_seconds": 0.015524
+  },
+  {
+    "name": "fixed",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/snapshot/ou_lab.py",
+      "--config",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/snapshot/fixed-input.json",
+      "--output",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-01/output"
+    ],
+    "exit_code": 0,
+    "timeout": false,
+    "wall_seconds": 0.282068332999188,
+    "child_max_rss_bytes": 79806464,
+    "child_user_seconds": 0.192345,
+    "child_system_seconds": 0.026098
+  }
+]

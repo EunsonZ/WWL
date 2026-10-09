@@ -1,0 +1,349 @@
+{
+  "schema": "wwl-ou-report-v1",
+  "config": {
+    "schema": "wwl-ou-fixed-v1",
+    "kappa": 1.0,
+    "mu": 0.0,
+    "sigma": 0.5,
+    "x0": 1.0,
+    "T": 1.0,
+    "steps": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "fine_steps": 64,
+    "paths": 65536,
+    "chunk": 4096,
+    "seed": 20261010,
+    "independent_seed": 20261011,
+    "trace_paths": 8,
+    "diagnostic_se_multiplier": 6.0
+  },
+  "exact_theory": {
+    "mean": 0.36787944117144233,
+    "variance": 0.10808308959542341,
+    "second_moment": 0.2434183728320361
+  },
+  "exact_terminal_checks": {
+    "coupled": {
+      "mean": {
+        "truth": 0.36787944117144233,
+        "estimate": 0.3684766256260467,
+        "se": 0.0012806479201545378,
+        "difference": 0.0005971844546043825,
+        "z": 0.4663143126272515,
+        "within_predeclared_se_band": true
+      },
+      "second_moment": {
+        "truth": 0.2434183728320361,
+        "estimate": 0.24325629644954405,
+        "se": 0.0011131612384969018,
+        "difference": -0.00016207638249204903,
+        "z": -0.1456000953742337,
+        "within_predeclared_se_band": true
+      }
+    },
+    "independent_terminal": {
+      "mean": {
+        "truth": 0.36787944117144233,
+        "estimate": 0.3659555462161489,
+        "se": 0.0012827020554555609,
+        "difference": -0.001923894955293437,
+        "z": -1.4998767228217715,
+        "within_predeclared_se_band": true
+      },
+      "second_moment": {
+        "truth": 0.2434183728320361,
+        "estimate": 0.2417498070471472,
+        "se": 0.0011099431172929071,
+        "difference": -0.0016685657848888868,
+        "z": -1.5032894559123273,
+        "within_predeclared_se_band": true
+      }
+    }
+  },
+  "rows": [
+    {
+      "theory": {
+        "steps": 8,
+        "h": 0.125,
+        "mean": 0.34360891580581665,
+        "variance": 0.1175910550638335,
+        "second_moment": 0.2356581420850823,
+        "cross_covariance": 0.11264603853981763,
+        "strong_mse": 0.0009711259811451545,
+        "strong_rmse": 0.031162894299874563,
+        "weak_mean_bias": -0.024270525365625684,
+        "weak_second_bias": -0.007760230746953811,
+        "independent_noise_mse": 0.2262632030607804
+      },
+      "strong_mse": {
+        "truth": 0.0009711259811451545,
+        "estimate": 0.0009717736310938008,
+        "se": 4.255148176537366e-06,
+        "difference": 6.476499486463309e-07,
+        "z": 0.1522038532564939,
+        "within_predeclared_se_band": true
+      },
+      "strong_rmse": {
+        "estimate": 0.031173283931818938,
+        "delta_method_se": 6.824991851747268e-05
+      },
+      "weak_mean_bias": {
+        "truth": -0.024270525365625684,
+        "estimate": -0.02425850973514359,
+        "se": 7.647717116880783e-05,
+        "difference": 1.2015630482094253e-05,
+        "z": 0.15711395045682572,
+        "within_predeclared_se_band": true
+      },
+      "weak_second_bias": {
+        "truth": -0.007760230746953811,
+        "estimate": -0.007764882042690424,
+        "se": 7.723304034090389e-05,
+        "difference": -4.6512957366127636e-06,
+        "z": -0.06022416981232527,
+        "within_predeclared_se_band": true
+      },
+      "euler_mean": {
+        "truth": 0.34360891580581665,
+        "estimate": 0.3442181158909031,
+        "se": 0.001336183551022424,
+        "difference": 0.0006092000850864698,
+        "z": 0.45592544873069324,
+        "within_predeclared_se_band": true
+      },
+      "euler_second_moment": {
+        "truth": 0.2356581420850823,
+        "estimate": 0.23549141440685362,
+        "se": 0.0011225208698714025,
+        "difference": -0.00016672767822867307,
+        "z": -0.14852969125444734,
+        "within_predeclared_se_band": true
+      },
+      "independent_noise_mse": {
+        "truth": 0.2262632030607804,
+        "estimate": 0.22572025328559484,
+        "se": 0.0012545060634523832,
+        "difference": -0.0005429497751855694,
+        "z": -0.43279964202913396,
+        "within_predeclared_se_band": true
+      }
+    },
+    {
+      "theory": {
+        "steps": 16,
+        "h": 0.0625,
+        "mean": 0.3560741304517928,
+        "variance": 0.11267241466103221,
+        "second_moment": 0.2394612010380326,
+        "cross_covariance": 0.11033193598106622,
+        "strong_mse": 0.00023099765551065632,
+        "strong_rmse": 0.015198607025338089,
+        "weak_mean_bias": -0.01180531071964952,
+        "weak_second_bias": -0.003957171794003511,
+        "independent_noise_mse": 0.2208948696176431
+      },
+      "strong_mse": {
+        "truth": 0.00023099765551065632,
+        "estimate": 0.0002306041190060929,
+        "se": 1.0202879028974796e-06,
+        "difference": -3.935365045634124e-07,
+        "z": -0.3857112325313492,
+        "within_predeclared_se_band": true
+      },
+      "strong_rmse": {
+        "estimate": 0.015185655040402205,
+        "delta_method_se": 3.3593806134241556e-05
+      },
+      "weak_mean_bias": {
+        "truth": -0.01180531071964952,
+        "estimate": -0.011762817633036661,
+        "se": 3.751660761681828e-05,
+        "difference": 4.2493086612858597e-05,
+        "z": 1.1326473610532264,
+        "within_predeclared_se_band": true
+      },
+      "weak_second_bias": {
+        "truth": -0.003957171794003511,
+        "estimate": -0.003928969894566389,
+        "se": 3.742972376916409e-05,
+        "difference": 2.820189943712227e-05,
+        "z": 0.7534626654219655,
+        "within_predeclared_se_band": true
+      },
+      "euler_mean": {
+        "truth": 0.3560741304517928,
+        "estimate": 0.3567138079930101,
+        "se": 0.0013077731569645836,
+        "difference": 0.0006396775412172984,
+        "z": 0.48913493736331654,
+        "within_predeclared_se_band": true
+      },
+      "euler_second_moment": {
+        "truth": 0.2394612010380326,
+        "estimate": 0.23932732655497765,
+        "se": 0.0011179234338949263,
+        "difference": -0.00013387448305493543,
+        "z": -0.11975281937556942,
+        "within_predeclared_se_band": true
+      },
+      "independent_noise_mse": {
+        "truth": 0.2208948696176431,
+        "estimate": 0.22045063987704125,
+        "se": 0.0012249946665524546,
+        "difference": -0.00044422974060184806,
+        "z": -0.3626381018066465,
+        "within_predeclared_se_band": true
+      }
+    },
+    {
+      "theory": {
+        "steps": 32,
+        "h": 0.03125,
+        "mean": 0.3620552892563166,
+        "variance": 0.11033853555828889,
+        "second_moment": 0.24142256803676398,
+        "cross_covariance": 0.10919959135140687,
+        "strong_mse": 5.636319642901566e-05,
+        "strong_rmse": 0.007507542635844013,
+        "weak_mean_bias": -0.005824151915125753,
+        "weak_second_bias": -0.001995804795272116,
+        "independent_noise_mse": 0.21845554589924276
+      },
+      "strong_mse": {
+        "truth": 5.636319642901566e-05,
+        "estimate": 5.605596801008705e-05,
+        "se": 2.477902363651938e-07,
+        "difference": -3.0722841892861044e-07,
+        "z": -1.2398729806117805,
+        "within_predeclared_se_band": true
+      },
+      "strong_rmse": {
+        "estimate": 0.007487053359639361,
+        "delta_method_se": 1.6547914410558536e-05
+      },
+      "weak_mean_bias": {
+        "truth": -0.005824151915125753,
+        "estimate": -0.00580103990445219,
+        "se": 1.8489501406816907e-05,
+        "difference": 2.311201067356234e-05,
+        "z": 1.2500072427610815,
+        "within_predeclared_se_band": true
+      },
+      "weak_second_bias": {
+        "truth": -0.001995804795272116,
+        "estimate": -0.0019977146738657647,
+        "se": 1.848236428786381e-05,
+        "difference": -1.9098785936488144e-06,
+        "z": -0.10333518828556527,
+        "within_predeclared_se_band": true
+      },
+      "euler_mean": {
+        "truth": 0.3620552892563166,
+        "estimate": 0.36267558572159453,
+        "se": 0.0012939459793239673,
+        "difference": 0.0006202964652779475,
+        "z": 0.47938358725147584,
+        "within_predeclared_se_band": true
+      },
+      "euler_second_moment": {
+        "truth": 0.24142256803676398,
+        "estimate": 0.24125858177567827,
+        "se": 0.0011154155170903677,
+        "difference": -0.00016398626108571346,
+        "z": -0.1470180919783885,
+        "within_predeclared_se_band": true
+      },
+      "independent_noise_mse": {
+        "truth": 0.21845554589924276,
+        "estimate": 0.21805047563309832,
+        "se": 0.00121173955731129,
+        "difference": -0.0004050702661444472,
+        "z": -0.33428822530416624,
+        "within_predeclared_se_band": true
+      }
+    },
+    {
+      "theory": {
+        "steps": 64,
+        "h": 0.015625,
+        "mean": 0.36498652424390743,
+        "variance": 0.10920123932224902,
+        "second_moment": 0.24241640220189747,
+        "cross_covariance": 0.10863938765377482,
+        "strong_mse": 1.3922578472436165e-05,
+        "strong_rmse": 0.003731297156812382,
+        "weak_mean_bias": -0.0028929169275349054,
+        "weak_second_bias": -0.0010019706301386266,
+        "independent_noise_mse": 0.21729269788602207
+      },
+      "strong_mse": {
+        "truth": 1.3922578472436165e-05,
+        "estimate": 1.3858480790977464e-05,
+        "se": 6.111787649996684e-08,
+        "difference": -6.409768145870085e-08,
+        "z": -1.0487550472853164,
+        "within_predeclared_se_band": true
+      },
+      "strong_rmse": {
+        "estimate": 0.0037226980526195597,
+        "delta_method_se": 8.208814633375903e-06
+      },
+      "weak_mean_bias": {
+        "truth": -0.0028929169275349054,
+        "estimate": -0.002885406123471467,
+        "se": 9.188407361491347e-06,
+        "difference": 7.510804063438296e-06,
+        "z": 0.8174217541677686,
+        "within_predeclared_se_band": true
+      },
+      "weak_second_bias": {
+        "truth": -0.0010019706301386266,
+        "estimate": -0.0010088731825127848,
+        "se": 9.188169453721445e-06,
+        "difference": -6.902552374158169e-06,
+        "z": -0.7512434777051764,
+        "within_predeclared_se_band": true
+      },
+      "euler_mean": {
+        "truth": 0.36498652424390743,
+        "estimate": 0.3655912195025752,
+        "se": 0.0012872391251595166,
+        "difference": 0.0006046952586677978,
+        "z": 0.46976140396048255,
+        "within_predeclared_se_band": true
+      },
+      "euler_second_moment": {
+        "truth": 0.24241640220189747,
+        "estimate": 0.24224742326703125,
+        "se": 0.0011142901398025872,
+        "difference": -0.00016897893486622628,
+        "z": -0.15164715977488893,
+        "within_predeclared_se_band": true
+      },
+      "independent_noise_mse": {
+        "truth": 0.21729269788602207,
+        "estimate": 0.21690343120271732,
+        "se": 0.001205311704564089,
+        "difference": -0.00038926668330474534,
+        "z": -0.3229593488810655,
+        "within_predeclared_se_band": true
+      }
+    }
+  ],
+  "coarse_exact_vs_fine_exact_max_abs": 3.774758283725532e-15,
+  "diagnostics_pass": true,
+  "diagnostic_meaning": "Observed 6-SE bands are diagnostics using estimated SE; no finite-sample guarantee or proof of convergence.",
+  "coupling": "Fine pairs (dW,J) are jointly Gaussian. Every grid aggregates the same pairs. Exact OU uses weighted J, never fine Euler.",
+  "execution": {
+    "utc": "2026-10-09T19:42:40.353710+00:00",
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "numpy": "2.5.3",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "source_sha256": "1322dd283998961d7fead5ff73823a2379a95dd545bd4a2f6e87f1c03f2cb549",
+    "config_sha256": "ece6a3a9f7751a53b3367b996721546334d6217b17d1b4a76dae88bf21582038"
+  }
+}

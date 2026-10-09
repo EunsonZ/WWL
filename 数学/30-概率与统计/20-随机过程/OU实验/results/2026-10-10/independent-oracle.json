@@ -1,0 +1,808 @@
+{
+  "status": "PASS",
+  "source_imported": false,
+  "author_test_used_as_oracle": false,
+  "decimal_precision": 70,
+  "method": "Interval-by-interval integrals of EM terminal kernel minus exact OU terminal kernel; independent linear terminal sums and prefix kernels",
+  "checks": [
+    {
+      "check": "exact mean",
+      "actual": 0.36787944117144233,
+      "independent": 0.36787944117144233,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "exact variance",
+      "actual": 0.10808308959542341,
+      "independent": 0.10808308959542341,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 mean",
+      "actual": 0.34360891580581665,
+      "independent": 0.34360891580581665,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 variance",
+      "actual": 0.1175910550638335,
+      "independent": 0.1175910550638335,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 second_moment",
+      "actual": 0.2356581420850823,
+      "independent": 0.2356581420850823,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 cross_covariance",
+      "actual": 0.11264603853981763,
+      "independent": 0.1126460385398176,
+      "absolute_difference": 2.7755575615628914e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 strong_mse",
+      "actual": 0.0009711259811451545,
+      "independent": 0.0009711259811451968,
+      "absolute_difference": 4.228388472693467e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 strong_rmse",
+      "actual": 0.031162894299874563,
+      "independent": 0.03116289429987524,
+      "absolute_difference": 6.765421556309548e-16,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 weak_mean_bias",
+      "actual": -0.024270525365625684,
+      "independent": -0.02427052536562567,
+      "absolute_difference": 1.3877787807814457e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 weak_second_bias",
+      "actual": -0.007760230746953811,
+      "independent": -0.0077602307469538155,
+      "absolute_difference": 4.336808689942018e-18,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=8 independent_noise_mse",
+      "actual": 0.2262632030607804,
+      "independent": 0.22626320306078038,
+      "absolute_difference": 2.7755575615628914e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 mean",
+      "actual": 0.3560741304517928,
+      "independent": 0.3560741304517928,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 variance",
+      "actual": 0.11267241466103221,
+      "independent": 0.11267241466103221,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 second_moment",
+      "actual": 0.2394612010380326,
+      "independent": 0.23946120103803256,
+      "absolute_difference": 2.7755575615628914e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 cross_covariance",
+      "actual": 0.11033193598106622,
+      "independent": 0.11033193598106618,
+      "absolute_difference": 4.163336342344337e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 strong_mse",
+      "actual": 0.00023099765551065632,
+      "independent": 0.00023099765551073693,
+      "absolute_difference": 8.061043152429725e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 strong_rmse",
+      "actual": 0.015198607025338089,
+      "independent": 0.015198607025340741,
+      "absolute_difference": 2.652392194768538e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 weak_mean_bias",
+      "actual": -0.01180531071964952,
+      "independent": -0.011805310719649522,
+      "absolute_difference": 1.734723475976807e-18,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 weak_second_bias",
+      "actual": -0.003957171794003511,
+      "independent": -0.003957171794003536,
+      "absolute_difference": 2.5153490401663703e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=16 independent_noise_mse",
+      "actual": 0.2208948696176431,
+      "independent": 0.2208948696176431,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 mean",
+      "actual": 0.3620552892563166,
+      "independent": 0.3620552892563166,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 variance",
+      "actual": 0.11033853555828889,
+      "independent": 0.11033853555828889,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 second_moment",
+      "actual": 0.24142256803676398,
+      "independent": 0.24142256803676393,
+      "absolute_difference": 5.551115123125783e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 cross_covariance",
+      "actual": 0.10919959135140687,
+      "independent": 0.10919959135140685,
+      "absolute_difference": 2.7755575615628914e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 strong_mse",
+      "actual": 5.636319642901566e-05,
+      "independent": 5.636319642907911e-05,
+      "absolute_difference": 6.344615588113611e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 strong_rmse",
+      "actual": 0.007507542635844013,
+      "independent": 0.007507542635848238,
+      "absolute_difference": 4.224919025741514e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 weak_mean_bias",
+      "actual": -0.005824151915125753,
+      "independent": -0.005824151915125763,
+      "absolute_difference": 1.0408340855860843e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 weak_second_bias",
+      "actual": -0.001995804795272116,
+      "independent": -0.001995804795272171,
+      "absolute_difference": 5.5077470362263625e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=32 independent_noise_mse",
+      "actual": 0.21845554589924276,
+      "independent": 0.21845554589924276,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 mean",
+      "actual": 0.36498652424390743,
+      "independent": 0.36498652424390743,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 variance",
+      "actual": 0.10920123932224902,
+      "independent": 0.10920123932224902,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 second_moment",
+      "actual": 0.24241640220189747,
+      "independent": 0.24241640220189745,
+      "absolute_difference": 2.7755575615628914e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 cross_covariance",
+      "actual": 0.10863938765377482,
+      "independent": 0.10863938765377482,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 strong_mse",
+      "actual": 1.3922578472436165e-05,
+      "independent": 1.3922578472412268e-05,
+      "absolute_difference": 2.389649350793832e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 strong_rmse",
+      "actual": 0.003731297156812382,
+      "independent": 0.0037312971568091795,
+      "absolute_difference": 3.202299536653186e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 weak_mean_bias",
+      "actual": -0.0028929169275349054,
+      "independent": -0.0028929169275349054,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 weak_second_bias",
+      "actual": -0.0010019706301386266,
+      "independent": -0.0010019706301386707,
+      "absolute_difference": 4.401860820291148e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "kernel integral steps=64 independent_noise_mse",
+      "actual": 0.21729269788602207,
+      "independent": 0.21729269788602204,
+      "absolute_difference": 2.7755575615628914e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "coupled mean estimate",
+      "actual": 0.3684766256260467,
+      "independent": 0.3684766256260456,
+      "absolute_difference": 1.1102230246251565e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "coupled mean SE",
+      "actual": 0.0012806479201545378,
+      "independent": 0.0012806479201545365,
+      "absolute_difference": 1.3010426069826053e-18,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "coupled second estimate",
+      "actual": 0.24325629644954405,
+      "independent": 0.243256296449543,
+      "absolute_difference": 1.0547118733938987e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "coupled second SE",
+      "actual": 0.0011131612384969018,
+      "independent": 0.001113161238496898,
+      "absolute_difference": 3.903127820947816e-18,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "independent_terminal mean estimate",
+      "actual": 0.3659555462161489,
+      "independent": 0.3659555462161489,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "independent_terminal mean SE",
+      "actual": 0.0012827020554555609,
+      "independent": 0.0012827020554555609,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "independent_terminal second estimate",
+      "actual": 0.2417498070471472,
+      "independent": 0.2417498070471472,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "independent_terminal second SE",
+      "actual": 0.0011099431172929071,
+      "independent": 0.0011099431172929071,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 strong_mse estimate",
+      "actual": 0.0009717736310938008,
+      "independent": 0.0009717736310937534,
+      "absolute_difference": 4.7379634937616544e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 strong_mse SE",
+      "actual": 4.255148176537366e-06,
+      "independent": 4.255148176537265e-06,
+      "absolute_difference": 1.0079692072326174e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 weak_mean_bias estimate",
+      "actual": -0.02425850973514359,
+      "independent": -0.02425850973514247,
+      "absolute_difference": 1.1206313654810174e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 weak_mean_bias SE",
+      "actual": 7.647717116880783e-05,
+      "independent": 7.647717116880852e-05,
+      "absolute_difference": 6.911788849595091e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 weak_second_bias estimate",
+      "actual": -0.007764882042690424,
+      "independent": -0.007764882042689379,
+      "absolute_difference": 1.0451708942760263e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 weak_second_bias SE",
+      "actual": 7.723304034090389e-05,
+      "independent": 7.723304034090326e-05,
+      "absolute_difference": 6.2341624917916505e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 euler_mean estimate",
+      "actual": 0.3442181158909031,
+      "independent": 0.3442181158909031,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 euler_mean SE",
+      "actual": 0.001336183551022424,
+      "independent": 0.001336183551022424,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 euler_second_moment estimate",
+      "actual": 0.23549141440685362,
+      "independent": 0.23549141440685362,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 euler_second_moment SE",
+      "actual": 0.0011225208698714025,
+      "independent": 0.0011225208698714025,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 independent_noise_mse estimate",
+      "actual": 0.22572025328559484,
+      "independent": 0.22572025328559484,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=8 independent_noise_mse SE",
+      "actual": 0.0012545060634523832,
+      "independent": 0.0012545060634523832,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 strong_mse estimate",
+      "actual": 0.0002306041190060929,
+      "independent": 0.00023060411900606935,
+      "absolute_difference": 2.3554292197247584e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 strong_mse SE",
+      "actual": 1.0202879028974796e-06,
+      "independent": 1.0202879028974275e-06,
+      "absolute_difference": 5.209252625613947e-20,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 weak_mean_bias estimate",
+      "actual": -0.011762817633036661,
+      "independent": -0.011762817633035522,
+      "absolute_difference": 1.1397133237167623e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 weak_mean_bias SE",
+      "actual": 3.751660761681828e-05,
+      "independent": 3.751660761681894e-05,
+      "absolute_difference": 6.572975670693371e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 weak_second_bias estimate",
+      "actual": -0.003928969894566389,
+      "independent": -0.0039289698945653324,
+      "absolute_difference": 1.0564465968698755e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 weak_second_bias SE",
+      "actual": 3.742972376916409e-05,
+      "independent": 3.7429723769163516e-05,
+      "absolute_difference": 5.759824041329242e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 euler_mean estimate",
+      "actual": 0.3567138079930101,
+      "independent": 0.3567138079930101,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 euler_mean SE",
+      "actual": 0.0013077731569645836,
+      "independent": 0.0013077731569645836,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 euler_second_moment estimate",
+      "actual": 0.23932732655497765,
+      "independent": 0.23932732655497765,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 euler_second_moment SE",
+      "actual": 0.0011179234338949263,
+      "independent": 0.0011179234338949265,
+      "absolute_difference": 2.168404344971009e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 independent_noise_mse estimate",
+      "actual": 0.22045063987704125,
+      "independent": 0.22045063987704125,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=16 independent_noise_mse SE",
+      "actual": 0.0012249946665524546,
+      "independent": 0.0012249946665524546,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 strong_mse estimate",
+      "actual": 5.605596801008705e-05,
+      "independent": 5.60559680100753e-05,
+      "absolute_difference": 1.1750041044311654e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 strong_mse SE",
+      "actual": 2.477902363651938e-07,
+      "independent": 2.4779023636516806e-07,
+      "absolute_difference": 2.5728625772849373e-20,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 weak_mean_bias estimate",
+      "actual": -0.00580103990445219,
+      "independent": -0.005801039904451044,
+      "absolute_difference": 1.1466522176206695e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 weak_mean_bias SE",
+      "actual": 1.8489501406816907e-05,
+      "independent": 1.8489501406817554e-05,
+      "absolute_difference": 6.471331717022855e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 weak_second_bias estimate",
+      "actual": -0.0019977146738657647,
+      "independent": -0.0019977146738646987,
+      "absolute_difference": 1.065987575987748e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 weak_second_bias SE",
+      "actual": 1.848236428786381e-05,
+      "independent": 1.848236428786321e-05,
+      "absolute_difference": 5.996993266560446e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 euler_mean estimate",
+      "actual": 0.36267558572159453,
+      "independent": 0.36267558572159453,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 euler_mean SE",
+      "actual": 0.0012939459793239673,
+      "independent": 0.0012939459793239673,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 euler_second_moment estimate",
+      "actual": 0.24125858177567827,
+      "independent": 0.2412585817756783,
+      "absolute_difference": 2.7755575615628914e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 euler_second_moment SE",
+      "actual": 0.0011154155170903677,
+      "independent": 0.001115415517090368,
+      "absolute_difference": 2.168404344971009e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 independent_noise_mse estimate",
+      "actual": 0.21805047563309832,
+      "independent": 0.21805047563309832,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=32 independent_noise_mse SE",
+      "actual": 0.00121173955731129,
+      "independent": 0.00121173955731129,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 strong_mse estimate",
+      "actual": 1.3858480790977464e-05,
+      "independent": 1.3858480790971677e-05,
+      "absolute_difference": 5.78692909564138e-18,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 strong_mse SE",
+      "actual": 6.111787649996684e-08,
+      "independent": 6.111787649995399e-08,
+      "absolute_difference": 1.2851077996623838e-20,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 weak_mean_bias estimate",
+      "actual": -0.002885406123471467,
+      "independent": -0.0028854061234703326,
+      "absolute_difference": 1.1345091532888318e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 weak_mean_bias SE",
+      "actual": 9.188407361491347e-06,
+      "independent": 9.188407361491979e-06,
+      "absolute_difference": 6.318865786517081e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 weak_second_bias estimate",
+      "actual": -0.0010088731825127848,
+      "independent": -0.0010088731825117284,
+      "absolute_difference": 1.0564465968698755e-15,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 weak_second_bias SE",
+      "actual": 9.188169453721445e-06,
+      "independent": 9.18816945372086e-06,
+      "absolute_difference": 5.844527336054672e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 euler_mean estimate",
+      "actual": 0.3655912195025752,
+      "independent": 0.3655912195025753,
+      "absolute_difference": 5.551115123125783e-17,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 euler_mean SE",
+      "actual": 0.0012872391251595166,
+      "independent": 0.0012872391251595166,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 euler_second_moment estimate",
+      "actual": 0.24224742326703125,
+      "independent": 0.24224742326703125,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 euler_second_moment SE",
+      "actual": 0.0011142901398025872,
+      "independent": 0.0011142901398025875,
+      "absolute_difference": 2.168404344971009e-19,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 independent_noise_mse estimate",
+      "actual": 0.21690343120271732,
+      "independent": 0.21690343120271732,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    },
+    {
+      "check": "m=64 independent_noise_mse SE",
+      "actual": 0.001205311704564089,
+      "independent": 0.001205311704564089,
+      "absolute_difference": 0.0,
+      "tolerance": 1e-12,
+      "pass": true
+    }
+  ],
+  "analytic_kernel_rows": [
+    {
+      "steps": 8,
+      "h": 0.125,
+      "kernel_error_variance": "0.0003820675796217176060938625906936215698322222612589008700521501296409100",
+      "strong_mse": "0.0009711259811451967270165454820723433062640346771411630704359518467569574",
+      "strong_rmse": "0.03116289429987524003854369067741504239027385828347357572317272370927690",
+      "independent_noise_mse": "0.2262632030607803865663521541677492702484661504271852770168639426353568"
+    },
+    {
+      "steps": 16,
+      "h": 0.0625,
+      "kernel_error_variance": "0.00009163229432326502897696368043309411679547830749019386301083564571015700",
+      "strong_mse": "0.0002309976555107369284328931183025823740181376676978409393993791790109429",
+      "strong_rmse": "0.01519860702534074102286939726497456074953023344012355820744599151251512",
+      "independent_noise_mse": "0.2208948696176430974403167837419529475335844349256237167000997779919170"
+    },
+    {
+      "steps": 32,
+      "h": 0.03125,
+      "kernel_error_variance": "0.00002244245089861601301017302255162101381441873637081797328701063000825700",
+      "strong_mse": "0.00005636319642907910608199551549544183531917208326770060800609078705138311",
+      "strong_rmse": "0.007507542635848237797338596674823146116905829193860629113223498045511254",
+      "independent_noise_mse": "0.2184555458992427588351370822580526150021938161480466217090360309640436"
+    },
+    {
+      "steps": 64,
+      "h": 0.015625,
+      "kernel_error_variance": "0.00000555361012279427215052455040083273814082038627443749621022056715803100",
+      "strong_mse": "0.00001392257847241226793448419193229343875624132319368329373071893743359678",
+      "strong_rmse": "0.003731297156809179669343577227947596058461730731458205456279561365230195",
+      "independent_noise_mse": "0.2172926978860220499335072114568231984958409969772699856770459615001637"
+    }
+  ],
+  "analytic_local_rmse_orders": [
+    1.0358901274488368,
+    1.0175264365259542,
+    1.0086635034356766
+  ],
+  "trace_rows_checked": 992,
+  "trace_independent_max_abs": 2.3314683517128287e-15,
+  "eight_vs_sixtyfour_public_time_max_abs": 1.9984014443252818e-15,
+  "resource": {
+    "wall_seconds": 0.05851562499992724,
+    "self_max_rss_bytes_Darwin": 57540608
+  },
+  "interpretation": "This additive-noise OU endpoint RMS error approaches order 1; this numerical audit does not prove general Ito/EM convergence. Weak moment sampling noise is distinct from paired strong error. Independent-noise MSE stays nonzero as h shrinks. Estimated 6-SE bands are diagnostic, not a guarantee. No native Obsidian, hardware, human learning, real financial use, or SVG rendering assessed."
+}

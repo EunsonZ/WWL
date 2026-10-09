@@ -8,6 +8,9 @@ aliases:
 sources:
   - https://www.math.uchicago.edu/~lawler/finbook.pdf
   - https://math.mit.edu/~nsun/s21-18676.html
+  - https://fabricebaudoin.blog/2012/09/14/lecture-19-stochastic-integrals-with-respect-to-square-integrable-martingales/
+  - https://fabricebaudoin.blog/2012/09/17/lecture-20-local-martingales-semimartingales-and-integrators/
+  - https://fabricebaudoin.blog/2012/09/19/lecture-21-itos-formula/
 prerequisites:
   - "[[数学/30-概率与统计/20-随机过程/01-一般条件期望与过滤]]"
   - "[[数学/30-概率与统计/20-随机过程/02-鞅与停止规则的条件]]"
@@ -77,9 +80,19 @@ $A_i$ 在增量前已知，中心化增量平方是鞅差；交叉期望为0，�
 $$E D_\Pi^2\le2\|f_{xx}\|_\infty^2\sum_i(\Delta t_i)^2\to0.$$
 剩下的Riemann和沿每条连续路径趋于 $\int f_{xx}(t,W_t)dt$，时间项同理。有限和两端相等，各项极限唯一，得到(3)。这把“$(dW)^2=dt$”落实为收敛证明；它不是对普通微分符号施加神秘代数。
 
-一般 $C^{1,2}$ 函数可通过停在紧区域、局部化来推广；一般Itô过程 $dX_t=b_tdt+\sigma_t dW_t$ 的公式为
+一般 $C^{1,2}$ 函数可通过停在紧区域、局部化来推广。一般Itô过程的范围则需要补上积分存在和半鞅定理，不能由上面的Brownian证明直接替换符号。以下过滤满足**通常条件**：右连续且包含概率零事件及其子集；$W$ 仍须是相对该过滤的Brownian运动。取有限的、$\mathcal F_0$-可测初值 $X_0$（不要求初值有矩），$b$ 渐进可测、$\sigma$ 可预测，且对每个有限 $T$，几乎必然
+$$\int_0^T(|b_s|+\sigma_s^2)ds<\infty.$$
+渐进可测说的是每个 $[0,t]\times\Omega$ 上相对于 $\mathcal B([0,t])\otimes\mathcal F_t$ 的联合可测性；可预测 $\sigma$ 也渐进可测。这些时间方向条件不能只由各固定时刻的适应性代替。
+
+令 $A_t=\int_0^t b_sds$、$M_t=\int_0^t\sigma_s dW_s$。前者连续、适应且在每个紧时间段有有限总变差。后者由 [Baudoin Lecture20，$L^2_{loc}$ 定义与局部积分构造](https://fabricebaudoin.blog/2012/09/17/lecture-20-local-martingales-semimartingales-and-integrators/)存在，取连续局部鞅版本：例如停在 $\int_0^t\sigma_s^2ds$ 首次达到 $n$ 的时刻再与 $n$ 取小，停止后平方积分的期望至多 $n$，可用 $L^2$ 构造；这些停时趋于无穷，停止积分相容。由 [Lecture19 的积分二次变差与积分代换命题](https://fabricebaudoin.blog/2012/09/14/lecture-19-stochastic-integrals-with-respect-to-square-integrable-martingales/)，在这些截断上先得 $\langle M\rangle_t=\int_0^t\sigma_s^2ds$，再由相容性推广；故 $X=X_0+A+M$ 是连续半鞅。
+
+现在才调用 [Baudoin Lecture21，Itô公式II](https://fabricebaudoin.blog/2012/09/19/lecture-21-itos-formula/)，将其有限变差的第一个坐标取为时钟 $t$：对 $f\in C^{1,2}$，几乎必然同时对所有 $t$，
+$$f(t,X_t)-f(0,X_0)=\int_0^t\left(f_t+b_sf_x+\tfrac12\sigma_s^2f_{xx}\right)(s,X_s)ds+\int_0^t\sigma_sf_x(s,X_s)dW_s.$$
+其微分缩写就是
 $$df(t,X_t)=\left(f_t+b_tf_x+\tfrac12\sigma_t^2 f_{xx}\right)dt+\sigma_tf_xdW_t.$$
-此处取 $b$ 渐进可测、$\sigma$ 可预测，并要求几乎必然在每个有限时间区间上 $\int_0^T(|b_t|+\sigma_t^2)dt<\infty$。这些条件包含时间方向的可测性，不能仅由每个固定时刻的适应性代替。这个一般半鞅版本、局部化及相应积分存在是明确外部定理输入，见 [Lawler §3.3–3.4](https://www.math.uchicago.edu/~lawler/finbook.pdf)；本页完整证明的是上面有界导数的Brownian版本和无需有界导数的平方特例。
+在固定 $[0,T]$ 的每条连续路径上，$X$ 落在某个紧区间，连续的各导数在该区间有界，所以上述有限变差积分和局部平方可积的随机积分都存在。也可用停时 $\rho_n=n\wedge\inf\{t:|X_t|\ge n\ \text{或}\ \int_0^t(|b_s|+\sigma_s^2)ds\ge n\}$ 逐段局部化，$\rho_n\uparrow\infty$ a.s.，推广时无需把局部鞅误称为全局可积鞅。
+
+上述半鞅定理、一般积分的稠密性与连续版本仍是明确外部输入；本页自行证明的是有界导数的Brownian版本与平方特例。[Lawler §3.3–3.4](https://www.math.uchicago.edu/~lawler/finbook.pdf)提供适应且分段连续系数的易读入门（其(3.19)后的约定，印刷页108）；它不单独承担这里更广可测系数的声明。
 
 ## OU过程：把均值回归与持续噪声放在同一式里
 
@@ -119,7 +132,7 @@ $$E|X_T^h-X_T|^2=(m_h-m_T)^2+V_h+V_T-2C_h.\tag{5}$$
 
 本例加性噪声的强误差为 $O(h)$：$a^j=e^{-\kappa jh}(1+O(h))$ 在 $jh\le T$ 上一致成立，所以Euler每段噪声核与连续指数核的差为 $O(h)$，等距给噪声误差平方 $O(h^2)$；确定均值误差也为 $O(h)$。上述两种弱矩误差同为 $O(h)$。这不能外推成任意乘性噪声Euler都有强阶1。
 
-可复算输入固定 $\kappa=1,\mu=0,\sigma=1/2,x_0=1,T=1$，取 $h=1/8,1/16,1/32,1/64$；理论均值 $e^{-1}$、方差 $(1-e^{-2})/8$。实验需记录样本数、随机种子、共同最细网格、步长、解析(5)、Monte Carlo强误差及弱矩的标准误。本文给出实验接口与解析对照；实际执行结果由实验页另行记录，有限样本拟合不替代上述证明。
+可复算输入固定 $\kappa=1,\mu=0,\sigma=1/2,x_0=1,T=1$，取 $h=1/8,1/16,1/32,1/64$；理论均值 $e^{-1}$、方差 $(1-e^{-2})/8$。实验需记录样本数、随机种子、共同最细网格、步长、解析(5)、Monte Carlo强误差及弱矩的标准误。共同噪声的多步源码、固定输入、解析对照、独立精确终点采样与强/弱误差标准误见 [[数学/30-概率与统计/20-随机过程/80-OU共同噪声与强弱误差实验|OU实验]]；该页记录四个步长的本次独立运行与原始回执。有限样本拟合不替代上述证明。
 
 ## 从扩散与金融应用返回时检查哪一步
 

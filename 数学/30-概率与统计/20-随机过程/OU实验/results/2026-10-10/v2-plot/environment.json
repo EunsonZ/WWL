@@ -1,0 +1,12 @@
+{
+  "python": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "deadline_seconds_per_child": 300,
+  "monitor": "wait4 Darwin ru_maxrss bytes; memory is observed, not hard-capped"
+}

@@ -50,3 +50,30 @@ git config --local --get user.email
 ```
 
 这些是只读检查。不要使用 `git add .`、覆盖式恢复或强制重置来省略文件选择和保全。
+
+## Issue #111 后续课程实验环境
+
+2026-10-09，按用户授权，在库根另建 `.venv-issues-111plus`，保留原 `.venv`。解释器为本机已有 Python 3.14.7，平台为 macOS 27.0.1 / arm64，没有升级系统 Python。新环境完整保留原 `requirements-knowledge.txt` 的固定版本，另装 SciPy 1.18.1、SymPy 1.14.0、NetworkX 3.7、cryptography 50.0.2、pytest 9.1.1 及其依赖。SymPy 要求 `mpmath>=1.1.0,<1.4`，本批固定 mpmath 1.3.0。完整实际版本组合见库根 `requirements-issues-111plus.txt`。
+
+首次直接使用 pip 访问官方 PyPI 时发生 TLS EOF，未完成安装；随后从官方 PyPI JSON 接口取得符合本机 wheel tags 的包文件，对照官方 SHA-256 后离线安装。没有关闭 TLS 校验或使用第三方镜像。`pip check` 通过；NumPy/SciPy 小型线性解、SymPy 求导、NetworkX 路径、AES-GCM 往返、PyYAML 解析、Matplotlib/Pillow PNG 输出、CairoSVG 输出及 pytest 导入的环境烟雾检查通过。这些检查确认安装和基础能力，不能替代各课程的指定实验、推导核验、图形界面或学习结果验收。
+
+运行本批课程实验时使用：
+
+```bash
+.venv-issues-111plus/bin/python -B <实验页指定的入口>
+.venv-issues-111plus/bin/python -m pip --no-cache-dir check
+```
+
+不需要激活环境或修改全局 PATH。生成图像时沿用 `Agg` 后端，把 `MPLCONFIGDIR` 和 `XDG_CACHE_HOME` 指向本批可写临时目录或环境内缓存；后者可避免沙箱内 Fontconfig 尝试写系统或用户默认缓存。中文字体仍按具体图形使用本机可用字体并检查输出，本批烟雾图没有认证中文排版。
+
+在新副本中复建时，先确认解释器及平台兼容，使用新的环境名，不覆盖已有环境：
+
+```bash
+python3 -m venv .venv-issues-111plus
+.venv-issues-111plus/bin/python -m pip install --no-cache-dir -r requirements-issues-111plus.txt
+.venv-issues-111plus/bin/python -m pip --no-cache-dir check
+```
+
+固定版本记录本机已验证组合，不保证其它平台有对应 wheel。虚拟环境不能作为跨机器可移植文件复制。未安装 PyTorch/GPU/大模型工具链，也未由安装成功推断所有旧实验均能运行。
+
+Xcode 27.0（27A266a）、Swift 6.4、iOS 与 iOS Simulator SDK 27.0 已在本机可见。沙箱内 `simctl list` 报 CoreSimulator connection refused，而同一查询在沙箱外退出 0，确认服务可查询且 iOS 27.0（24A434）、26.2、18.6 runtime 可用；没有删除设备、重置 runtime 或改持久系统服务。这一结果确认工具与 runtime 层，不认证课程 App 编译、指定设备启动、UI 或传感器实验。实际实验须记录自己的 simulator UDID，并独立核验其运行结果。

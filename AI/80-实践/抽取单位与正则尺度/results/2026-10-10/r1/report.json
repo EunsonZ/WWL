@@ -1,0 +1,612 @@
+{
+  "result": "five processes exit 0: aliasing, scaling, two author verifiers and independent oracle",
+  "source_input_bindings": [
+    {
+      "candidate_path": "AI/80-实践/抽取单位与正则尺度/scaling.py",
+      "snapshot_path": "snapshot/scaling.py",
+      "sha256": "505ff0c5dbd7c2d989d8be7689032724e660573cc9f245f25f2ecfcd3c32a974",
+      "bytes": 1795,
+      "final_author_bytes_unchanged": true
+    },
+    {
+      "candidate_path": "AI/80-实践/抽取单位与正则尺度/verify_scaling.py",
+      "snapshot_path": "snapshot/verify_scaling.py",
+      "sha256": "d963d16aad83f058928614f0c9627e668545b055f0a59a2fcfd45b695e0bbe53",
+      "bytes": 1696,
+      "final_author_bytes_unchanged": true
+    },
+    {
+      "candidate_path": "AI/80-实践/抽取单位与正则尺度/scaling_inputs.json",
+      "snapshot_path": "snapshot/scaling_inputs.json",
+      "sha256": "26269f96ba3d9641482d79e208d5aaa9ad1afd21b12ccf97027a7d9eda002035",
+      "bytes": 62,
+      "final_author_bytes_unchanged": true
+    },
+    {
+      "candidate_path": "AI/80-实践/抽取单位与正则尺度/verify_aliasing.py",
+      "snapshot_path": "snapshot/verify_aliasing.py",
+      "sha256": "66841aa0c42db03f29d7edfc41ff66bff7896ced03823cb8c69ffbd281899d4b",
+      "bytes": 924,
+      "final_author_bytes_unchanged": true
+    },
+    {
+      "candidate_path": "AI/80-实践/抽取单位与正则尺度/README.md",
+      "snapshot_path": "snapshot/README.md",
+      "sha256": "3f7764f8b852c2781addfc15c72c35a166ef39d64a5d523796a5ad0a79afebc8",
+      "bytes": 4984,
+      "final_author_bytes_unchanged": true
+    },
+    {
+      "candidate_path": "AI/80-实践/抽取单位与正则尺度/aliasing_inputs.json",
+      "snapshot_path": "snapshot/aliasing_inputs.json",
+      "sha256": "fb44e5ddecb2b50e20555b649b937ff0df692114bfbf2cd3ec20fb5526562ace",
+      "bytes": 27,
+      "final_author_bytes_unchanged": true
+    },
+    {
+      "candidate_path": "AI/80-实践/抽取单位与正则尺度/SCALING.md",
+      "snapshot_path": "snapshot/SCALING.md",
+      "sha256": "f6a5a441cc6896efa1591f185f4ff1cb0e132a3284efae277dd385fd20195b61",
+      "bytes": 6175,
+      "final_author_bytes_unchanged": true
+    },
+    {
+      "candidate_path": "AI/80-实践/抽取单位与正则尺度/aliasing.py",
+      "snapshot_path": "snapshot/aliasing.py",
+      "sha256": "cb4f49bcac08e1b3abd8666c67195894b81c46d75f57a8a790e8c0383e6abe77",
+      "bytes": 1639,
+      "final_author_bytes_unchanged": true
+    }
+  ],
+  "commands_environment_resources": {
+    "aliasing-receipt": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215/snapshot/aliasing.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215",
+      "stdin_file": null,
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.048061499999676016,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 16629760,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    },
+    "independent-receipt": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215/oracle.py",
+        "verify"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215",
+      "stdin_file": null,
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 300,
+      "elapsed_seconds": 0.024008417000004556,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 17580032,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    },
+    "scaling-receipt": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215/snapshot/scaling.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215",
+      "stdin_file": null,
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.024002624999411637,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 16646144,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    },
+    "verify-aliasing-receipt": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215/snapshot/verify_aliasing.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215",
+      "stdin_file": "aliasing.stdout",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 300,
+      "elapsed_seconds": 0.02429833299902384,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 16646144,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    },
+    "verify-scaling-receipt": {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215/snapshot/verify_scaling.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments214215",
+      "stdin_file": "scaling.stdout",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 300,
+      "elapsed_seconds": 0.02342070899976534,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4",
+        "NUMEXPR_NUM_THREADS": "4",
+        "VECLIB_MAXIMUM_THREADS": "4"
+      },
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "peak_child_rss_macos_bytes": 16646144,
+      "resource_limits": "library thread requests only; no hard OS thread cap or count established; no hard memory cap; child peak RSS is cumulative maximum of completed children in this sequential supervisor"
+    }
+  },
+  "imports": {
+    "scaling.py": [
+      "json",
+      "fractions",
+      "pathlib"
+    ],
+    "verify_scaling.py": [
+      "json",
+      "sys",
+      "fractions"
+    ],
+    "verify_aliasing.py": [
+      "json",
+      "math",
+      "sys"
+    ],
+    "aliasing.py": [
+      "cmath",
+      "json",
+      "math",
+      "pathlib"
+    ]
+  },
+  "dependency_layer": "Python3.14.7 standard library only; no imported repository dependencies or third-party numerical libraries",
+  "expectations": "expectations-before-run.json prepared before business execution; independent oracle imports no business or author verifier modules",
+  "independent_observations": {
+    "aliasing_errors": {
+      "low_first_eight": 0.0,
+      "high_first_eight": 0.0,
+      "low_downsampled": 0.0,
+      "high_downsampled": 3.980721077865486e-15,
+      "gains": 6.123233995736766e-17,
+      "square_downsampled": 5.551115123125783e-17,
+      "filter_square_downsampled": 4.218847493575595e-15,
+      "square_filter_downsampled": 3.4416913763379853e-15
+    },
+    "original_arrays_max_difference": 1.4142135623730971,
+    "p1_first_two": [
+      [
+        0.7071067811865476,
+        -0.7071067811865475
+      ],
+      [
+        -0.7071067811865475,
+        0.7071067811865477
+      ]
+    ],
+    "two_tap_gain_phase_boundary": [
+      {
+        "omega": 0.7853981633974483,
+        "gain": 0.9238795325112867,
+        "phase": -0.39269908169872414,
+        "periodic_vs_phase_error": 1.5543122344752192e-15,
+        "periodic_first": 0.8535533905932733,
+        "zero_extended_first": 0.5
+      },
+      {
+        "omega": 2.356194490192345,
+        "gain": 0.38268343236508984,
+        "phase": -1.1780972450961724,
+        "periodic_vs_phase_error": 1.4155343563970746e-15,
+        "periodic_first": 0.14644660940672583,
+        "zero_extended_first": 0.5
+      }
+    ],
+    "units": {
+      "input_time_fs_Hz": 8,
+      "input_tones_Hz": [
+        1,
+        3
+      ],
+      "output_fs_Hz": 4,
+      "folded_tone_Hz": 1,
+      "input_cycles_per_pixel": [
+        "1/8",
+        "3/8"
+      ],
+      "output_cycles_per_pixel": "1/4"
+    },
+    "nonlinear_spectral_reason": "cos²(pi*n/3)=(1+cos(2*pi*n/3))/2; harmonic outside pi/2 regenerates after input filtering; filtering squared signal retains DC only in this periodic example.",
+    "shift_equivariance": {
+      "all_integer_output_shift_min_max_error": 0.7071067811865472,
+      "even_shift_two_matches_output_shift_one": true,
+      "energy_task_statistic_original": 6.0,
+      "energy_task_statistic_shifted": 5.999999999999994,
+      "scope": "Scalar statistic invariance is not trained-model robustness."
+    },
+    "scaling_general_corresponding_objectives": [
+      {
+        "v": [
+          "0",
+          "0"
+        ],
+        "w": [
+          "0",
+          "0"
+        ],
+        "prediction": [
+          "0",
+          "0"
+        ],
+        "objective": "14"
+      },
+      {
+        "v": [
+          "2/3",
+          "-1/5"
+        ],
+        "w": [
+          "17/15",
+          "-1/25"
+        ],
+        "prediction": [
+          "79/75",
+          "86/25"
+        ],
+        "objective": "513391/5625"
+      },
+      {
+        "v": [
+          "-2",
+          "3"
+        ],
+        "w": [
+          "-1",
+          "3/5"
+        ],
+        "prediction": [
+          "1/5",
+          "-18/5"
+        ],
+        "objective": "271/25"
+      }
+    ],
+    "mapped_penalty": [
+      [
+        "8",
+        "22/5"
+      ],
+      [
+        "22/5",
+        "63/25"
+      ]
+    ],
+    "two_coordinate_trajectories": [
+      {
+        "D_diagonal": [
+          1,
+          "1/10"
+        ],
+        "hessian_v": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "mapped_steps": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "99/100",
+            "99/100"
+          ],
+          [
+            "9801/10000",
+            "9801/10000"
+          ],
+          [
+            "970299/1000000",
+            "970299/1000000"
+          ],
+          [
+            "96059601/100000000",
+            "96059601/100000000"
+          ],
+          [
+            "9509900499/10000000000",
+            "9509900499/10000000000"
+          ],
+          [
+            "941480149401/1000000000000",
+            "941480149401/1000000000000"
+          ],
+          [
+            "93206534790699/100000000000000",
+            "93206534790699/100000000000000"
+          ],
+          [
+            "9227446944279201/10000000000000000",
+            "9227446944279201/10000000000000000"
+          ],
+          [
+            "913517247483640899/1000000000000000000",
+            "913517247483640899/1000000000000000000"
+          ],
+          [
+            "90438207500880449001/100000000000000000000",
+            "90438207500880449001/100000000000000000000"
+          ]
+        ],
+        "ordinary_steps": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "99/100",
+            "0"
+          ],
+          [
+            "9801/10000",
+            "0"
+          ],
+          [
+            "970299/1000000",
+            "0"
+          ],
+          [
+            "96059601/100000000",
+            "0"
+          ],
+          [
+            "9509900499/10000000000",
+            "0"
+          ],
+          [
+            "941480149401/1000000000000",
+            "0"
+          ],
+          [
+            "93206534790699/100000000000000",
+            "0"
+          ],
+          [
+            "9227446944279201/10000000000000000",
+            "0"
+          ],
+          [
+            "913517247483640899/1000000000000000000",
+            "0"
+          ],
+          [
+            "90438207500880449001/100000000000000000000",
+            "0"
+          ]
+        ]
+      },
+      {
+        "D_diagonal": [
+          1,
+          "1/5"
+        ],
+        "hessian_v": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "4"
+          ]
+        ],
+        "mapped_steps": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "99/100",
+            "24/25"
+          ],
+          [
+            "9801/10000",
+            "576/625"
+          ],
+          [
+            "970299/1000000",
+            "13824/15625"
+          ],
+          [
+            "96059601/100000000",
+            "331776/390625"
+          ],
+          [
+            "9509900499/10000000000",
+            "7962624/9765625"
+          ],
+          [
+            "941480149401/1000000000000",
+            "191102976/244140625"
+          ],
+          [
+            "93206534790699/100000000000000",
+            "4586471424/6103515625"
+          ],
+          [
+            "9227446944279201/10000000000000000",
+            "110075314176/152587890625"
+          ],
+          [
+            "913517247483640899/1000000000000000000",
+            "2641807540224/3814697265625"
+          ],
+          [
+            "90438207500880449001/100000000000000000000",
+            "63403380965376/95367431640625"
+          ]
+        ],
+        "ordinary_steps": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "99/100",
+            "0"
+          ],
+          [
+            "9801/10000",
+            "0"
+          ],
+          [
+            "970299/1000000",
+            "0"
+          ],
+          [
+            "96059601/100000000",
+            "0"
+          ],
+          [
+            "9509900499/10000000000",
+            "0"
+          ],
+          [
+            "941480149401/1000000000000",
+            "0"
+          ],
+          [
+            "93206534790699/100000000000000",
+            "0"
+          ],
+          [
+            "9227446944279201/10000000000000000",
+            "0"
+          ],
+          [
+            "913517247483640899/1000000000000000000",
+            "0"
+          ],
+          [
+            "90438207500880449001/100000000000000000000",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "physical_error_example": {
+      "A_bare_kappa2": 100,
+      "AD_bare_kappa2": 1,
+      "delta_w": [
+        "0",
+        "1/100"
+      ],
+      "delta_v": [
+        "0",
+        "1"
+      ],
+      "physical_error_unchanged": true
+    },
+    "changed_step_counterexamples": {
+      "eta_1_50_ordinary_second_factor": "-1",
+      "eta_3_100_ordinary_second_factor": "-2",
+      "eta_3_100_D_1_10_second_factor": "97/100"
+    },
+    "scope": "Finite trigonometric and exact-rational instances; no all-band removal, perfect reconstruction, general conditioning theorem or CNN training claims."
+  },
+  "output_bytes_bindings": [
+    {
+      "file": "aliasing.stdout",
+      "sha256": "6f94dd6c987d2e911e40b8fb87968ce172d5765476cf94c30143a03eaf21edbf",
+      "bytes": 1917
+    },
+    {
+      "file": "expectation-preparation.stdout",
+      "sha256": "1f8d19e25b3abfe3d84bce636eac962b04fae09900bd4a3b9b2c719eab828b21",
+      "bytes": 2764
+    },
+    {
+      "file": "verify-scaling.stdout",
+      "sha256": "c11e7a25bd2032c42ffd5f52a7e3f0a440c8a72e55978cda011ad808efa70d53",
+      "bytes": 91
+    },
+    {
+      "file": "scaling.stdout",
+      "sha256": "13b9525d93732a8f21e2a147e2351762faf7295ce0c5f112174db57587081bc6",
+      "bytes": 790
+    },
+    {
+      "file": "verify-aliasing.stdout",
+      "sha256": "8b1a896c1fa03e452e43e8c52cd11be3585b6bcba280c2c983b5175fc0e91e5b",
+      "bytes": 67
+    },
+    {
+      "file": "supervisor.stdout",
+      "sha256": "9ebeba55c12531d057f29158146f6ae91adec24efba4369550df1fca2dbfd141",
+      "bytes": 4852
+    },
+    {
+      "file": "independent.stdout",
+      "sha256": "02e389b066fe7065b033bfccb6f0c45f257b89939045d20712b5ef73a7e0c123",
+      "bytes": 7274
+    }
+  ],
+  "limits": [
+    "Finite 24 point periodic-grid checks, not arbitrary finite boundary filtering or all-band cancellation.",
+    "Two-tap high tone gain0.382683 is residual attenuation, not removal or perfect reconstruction.",
+    "Shift and scalar energy checks do not establish actual trained CNN task robustness.",
+    "Finite exact objectives/trajectory examples are not a general condition-number, solver-accuracy or physical-error theorem.",
+    "No plot-generating source or plot artifact in this frozen numerical interface; no GUI/Obsidian/human evidence claimed.",
+    "Thread environment4 is a library request, not hard OS thread enforcement; peak RSS observed, no hard cap."
+  ],
+  "runtime_output_scope": "stdout and own new evidence files only; no guard output-dir required, no transient tmp or source edits"
+}

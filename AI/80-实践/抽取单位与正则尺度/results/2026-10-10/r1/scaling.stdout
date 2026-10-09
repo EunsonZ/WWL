@@ -1,0 +1,48 @@
+{
+  "scalar": [
+    {
+      "scale": "100",
+      "untransformed_coefficient": "100/10001",
+      "untransformed_prediction": "10000/10001",
+      "transformed_penalty": "10000",
+      "preserved_coefficient": "1/200",
+      "preserved_prediction": "1/2"
+    },
+    {
+      "scale": "10",
+      "untransformed_coefficient": "10/101",
+      "untransformed_prediction": "100/101",
+      "transformed_penalty": "100",
+      "preserved_coefficient": "1/20",
+      "preserved_prediction": "1/2"
+    }
+  ],
+  "hessian_v": [
+    [
+      "1",
+      "0"
+    ],
+    [
+      "0",
+      "1"
+    ]
+  ],
+  "dd_transpose": [
+    [
+      "1",
+      "0"
+    ],
+    [
+      "0",
+      "1/100"
+    ]
+  ],
+  "ordinary_w_step": [
+    "99/100",
+    "0"
+  ],
+  "mapped_v_step": [
+    "99/100",
+    "99/100"
+  ]
+}

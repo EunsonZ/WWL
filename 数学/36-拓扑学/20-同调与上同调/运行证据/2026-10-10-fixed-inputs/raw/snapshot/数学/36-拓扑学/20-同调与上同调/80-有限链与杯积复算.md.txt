@@ -1,0 +1,279 @@
+---
+type: lab
+aliases:
+  - 有限同调与杯积复算
+sources:
+  - https://pi.math.cornell.edu/~hatcher/AT/ATch2.pdf
+  - https://pi.math.cornell.edu/~hatcher/AT/ATch3.pdf
+prerequisites:
+  - "[[数学/36-拓扑学/20-同调与上同调/05-上同调与杯积区分相同Betti]]"
+---
+# 有限链与杯积复算
+
+本实验固定三角形边框/填面、圆周、环面、RP²和楔和，检查矩阵 shape、精确整数项、相邻边界合成为零，再以 `Fraction` 精确消元计算**有理 Betti 数**。整数挠独立用次数附着的1×1整数证书核对；环面杯积使用05保留的有序两三角形数据。它不提供一般 Smith 算法，也不从最小胞腔边界矩阵猜杯积。一般核内商请消费 [[数学/25-高等代数/50-模与有限群表示/02-整数Smith核像商与同调接口#同调消费合同：先求整数核，再把边界放进去|整数 Smith 主解释]]。
+
+## 输入、运行接口与证据位置
+
+Python 3.10+，全部为标准库，无安装步骤。下面命令是执行接口；本课程作者只做静态检查，**尚未执行这些课程实验或测试**。独立执行结果须另保留命令、实际输出和所用源码版本；源码存在与预期值不能当运行证据。
+
+从已整合的库根运行，输出目录应换成不存在的绝对路径：
+
+```bash
+python3 -B 数学/36-拓扑学/20-同调与上同调/homology_lab.py --output-dir /private/tmp/wwl-topology154-first-run
+python3 -B -m unittest discover -s 数学/36-拓扑学/20-同调与上同调 -p 'test_homology_lab.py' -v
+```
+
+候选期把源码路径换成当前候选对应路径即可；测试发现的目录也必须是同一候选。命令拒绝复用已经存在的输出目录，结果为新目录中的 `report.json`。省略 `--output-dir` 只向标准输出打印 JSON。输出位置由执行者确定，不让课程脚本自动改正文或覆盖既有证据。
+
+## 固定输入与预期观察
+
+矩阵输入固定在 `fixed_report()`，与01、03、05的行列基一致；所有链只保留维数0、1、2，链群维数显式记录。预期值均来自正文手算，等待独立运行核对：
+
+| 模型 | 有理 Betti `(β₀,β₁,β₂)` | χ | 另需检查 |
+| --- | --- | --- | --- |
+| 三角形仅边框 | `(1,1,0)` | `0` | `d1` 核由 `(1,1,-1)` 生成，`C2=0` |
+| 填三角形 | `(1,0,0)` | `1` | 相同 `d1`，`d2` 添该核生成元 |
+| 圆周 | `(1,1,0)` | `0` | 一条回边 |
+| 环面最小胞腔 | `(1,2,1)` | `0` | 两边、一面、零边界 |
+| RP² | `(1,0,0)` | `1` | 整数1×1证书给 `H1=Z/2`，不可用有理 Betti 代替 |
+| `S1∨S1∨S2` | `(1,2,1)` | `0` | 与最小环面相同边界矩阵；楔和的零积由05限制证明承担 |
+| 环面有序两三角形 | `(1,2,1)` | `0` | 面循环 `(1,-1)`，关系 `a+b-c` |
+
+`torus_cup` 预期对 `z=t1-t2` 输出 `xy=1,yx=-1,xx=yy=0`，反向定向 `xy=-1`。RP²模2边界为0、Betti为 `(1,1,1)`。圆周5片从标号1提升绕数7，终点3，不闭合；环面子群 `2Z×3Z` 从 `(1,2)` 提升 `(5,-4)`，终点 `(0,1)`，不闭合。
+
+可改变 `one_relation_integer(m)` 的附着次数；`m=0` 预期自由 `H1=H2=Z`，`m=±1` 无 `H1` 挠，`m=±2` 挠因子2，`m=3` 挠因子3。可改变环面的余循环整数值，但必须保持 `x(c)=x(a)+x(b)`；不满足时必须拒绝。`(2x-y) cup (x+3y)` 对 `z` 预期7。换链方向需同步边界/余链坐标，不能只改图的箭头。
+
+## 可检验层与限制
+
+测试包括：添面确实改变同一三角形的同调；非零相邻复合与错误shape被拒；浮点/布尔项不冒充整数；大整数近依赖矩阵仍得到精确有理秩；非余循环输入拒绝、杯积换序/换方向改变符号；有理自由秩0不使整数挠消失。这些检查只核指定输入及代码行为，不证明一般覆盖分类、切除、胞腔同调比较或同伦不变。图的标签与普通 Markdown 互相可读；本批尚无 Obsidian 显示或真人理解证据。
+
+## 源码与镜像
+
+同目录两份 Python 是真源。下列 `code-sync` 块只作同步镜像，不在读者打开笔记时执行。
+
+<!-- code-sync: ./homology_lab.py -->
+```python
+"""Exact finite certificates for the specified topology models.
+
+No general Smith algorithm or general cup-product inference is provided.
+Rational ranks compute Betti numbers only; torsion is checked separately by
+the one-relation integer certificates supplied in the lessons.
+"""
+from __future__ import annotations
+
+import argparse
+from fractions import Fraction
+import json
+from pathlib import Path
+
+
+def matrix(value, rows, cols):
+    if len(value) != rows or any(len(row) != cols for row in value):
+        raise ValueError("matrix shape does not match declared chain dimensions")
+    if any(type(x) is not int for row in value for x in row):
+        raise TypeError("chain matrices require exact integer entries")
+    return value
+
+
+def product(a, b, output_cols):
+    inner = len(b)
+    matrix(a, len(a), inner)
+    matrix(b, inner, output_cols)
+    return [[sum(row[k] * b[k][j] for k in range(inner))
+             for j in range(output_cols)] for row in a]
+
+
+def rank_q(a, cols):
+    matrix(a, len(a), cols)
+    work = [[Fraction(x) for x in row] for row in a]
+    rank = 0
+    for col in range(cols):
+        pivot = next((i for i in range(rank, len(work)) if work[i][col]), None)
+        if pivot is None:
+            continue
+        work[rank], work[pivot] = work[pivot], work[rank]
+        leading = work[rank][col]
+        work[rank] = [x / leading for x in work[rank]]
+        for i in range(len(work)):
+            if i != rank:
+                scale = work[i][col]
+                work[i] = [x - scale * y for x, y in zip(work[i], work[rank])]
+        rank += 1
+        if rank == len(work):
+            break
+    return rank
+
+
+def finite_chain(name, dimensions, d1, d2):
+    if len(dimensions) != 3 or any(type(n) is not int or n < 0 for n in dimensions):
+        raise ValueError("dimensions must be three nonnegative integers")
+    n0, n1, n2 = dimensions
+    matrix(d1, n0, n1)
+    matrix(d2, n1, n2)
+    square = product(d1, d2, n2)
+    if any(x for row in square for x in row):
+        raise ValueError("adjacent boundaries do not compose to zero")
+    r1, r2 = rank_q(d1, n1), rank_q(d2, n2)
+    betti = [n0 - r1, n1 - r1 - r2, n2 - r2]
+    chi = n0 - n1 + n2
+    if chi != betti[0] - betti[1] + betti[2]:
+        raise AssertionError("Euler certificate failed")
+    return {"name": name, "dimensions": dimensions, "d1": d1, "d2": d2,
+            "d1_d2": square, "betti_Q": betti, "chi": chi}
+
+
+def cup_on_fundamental(x, y, orientation=1):
+    """AW on t1=[00,10,11], t2=[00,01,11], z=t1-t2.
+
+    Edge coordinate order is a,b,c. Inputs must be integer cocycles.
+    The return value is an integer pairing with orientation*z.
+    """
+    if len(x) != 3 or len(y) != 3:
+        raise ValueError("a,b,c coordinates are required")
+    if any(type(v) is not int for v in (*x, *y, orientation)):
+        raise TypeError("integer cochains and orientation required")
+    if orientation not in (-1, 1):
+        raise ValueError("orientation must be +1 or -1")
+    if x[0] + x[1] != x[2] or y[0] + y[1] != y[2]:
+        raise ValueError("input cochains must be cocycles")
+    return orientation * (x[0] * y[1] - x[1] * y[0])
+
+
+def one_relation_integer(m):
+    """Certified complex Z --m--> Z --0--> Z, not a Smith routine."""
+    if type(m) is not int:
+        raise TypeError("integer attaching degree required")
+    # U=[sign(m)] and V=[1] certify U*[m]*V=[abs(m)].
+    u = -1 if m < 0 else 1
+    diagonal = u * m
+    if diagonal != abs(m):
+        raise AssertionError("one-by-one integer certificate failed")
+    return {"degree": m, "U": [[u]], "V": [[1]], "D": [[diagonal]],
+            "H1_free_rank": int(m == 0),
+            "H1_torsion_factors": [abs(m)] if abs(m) > 1 else [],
+            "H2_free_rank": int(m == 0)}
+
+
+def fixed_report():
+    d1_triangle = [[-1, 0, -1], [1, -1, 0], [0, 1, 1]]
+    z = [[1], [1], [-1]]
+    models = [
+        finite_chain("triangle_boundary", [3, 3, 0], d1_triangle, [[], [], []]),
+        finite_chain("triangle_filled", [3, 3, 1], d1_triangle, z),
+        finite_chain("S1", [1, 1, 0], [[0]], [[]]),
+        finite_chain("T2_minimal", [1, 2, 1], [[0, 0]], [[0], [0]]),
+        finite_chain("RP2", [1, 1, 1], [[0]], [[2]]),
+        finite_chain("wedge_S1_S1_S2", [1, 2, 1], [[0, 0]], [[0], [0]]),
+        finite_chain("T2_two_triangles", [1, 3, 2], [[0, 0, 0]],
+                     [[1, 1], [1, 1], [-1, -1]]),
+    ]
+    # The torus quotient c=a+b: Q is onto with a,b as a section.
+    # Solving Q(v)=0 gives v=(-t,-t,t), the boundary relation up to sign.
+    q = [[1, 0, 1], [0, 1, 1]]
+    relation = [[1], [1], [-1]]
+    if product(q, relation, 1) != [[0], [0]]:
+        raise AssertionError("torus integer relation certificate failed")
+    torus_d2 = models[-1]["d2"]
+    if product(torus_d2, [[1], [-1]], 1) != [[0], [0], [0]]:
+        raise AssertionError("torus fundamental chain is not a cycle")
+    x, y = (1, 0, 1), (0, 1, 1)
+    cup = {"xy_on_z": cup_on_fundamental(x, y),
+           "yx_on_z": cup_on_fundamental(y, x),
+           "xx_on_z": cup_on_fundamental(x, x),
+           "yy_on_z": cup_on_fundamental(y, y),
+           "reverse_orientation_xy": cup_on_fundamental(x, y, -1)}
+    circle = {"sheets": 5, "start": 1, "winding": 7,
+              "endpoint": (1 + 7) % 5, "closed": 7 % 5 == 0}
+    torus_cover = {"index": 6, "start": [1, 2], "winding": [5, -4],
+                   "endpoint": [(1 + 5) % 2, (2 - 4) % 3],
+                   "closed": 5 % 2 == 0 and (-4) % 3 == 0}
+    return {"schema": "wwl-topology154-finite-v1", "models": models,
+            "one_relation_integer": [one_relation_integer(m) for m in (0, 1, 2, -2, 3)],
+            "RP2_F2_d2": [[2 % 2]], "RP2_F2_betti": [1, 1 - int(2 % 2 != 0), 1 - int(2 % 2 != 0)],
+            "torus_cup": cup, "circle_cover": circle, "torus_cover": torus_cover,
+            "scope": "Fixed finite certificates only; no classification or general homology proof."}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path,
+                        help="create this NEW directory and write report.json; never overwrite")
+    args = parser.parse_args()
+    report = fixed_report()
+    encoded = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
+    if args.output_dir is not None:
+        args.output_dir.mkdir(parents=True, exist_ok=False)
+        (args.output_dir / "report.json").write_text(encoded, encoding="utf-8")
+    else:
+        print(encoded, end="")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+<!-- code-sync: ./test_homology_lab.py -->
+```python
+"""Behavioral tests for exact finite certificates; not topology theorem proofs."""
+import unittest
+
+from homology_lab import cup_on_fundamental, finite_chain, fixed_report, one_relation_integer, rank_q
+
+
+class FiniteCertificates(unittest.TestCase):
+    def test_triangle_changes_only_two_chain(self):
+        models = {r["name"]: r for r in fixed_report()["models"]}
+        edge, filled = models["triangle_boundary"], models["triangle_filled"]
+        self.assertEqual(edge["d1"], filled["d1"])
+        self.assertEqual(edge["betti_Q"], [1, 1, 0])
+        self.assertEqual(filled["betti_Q"], [1, 0, 0])
+        self.assertEqual((edge["chi"], filled["chi"]), (0, 1))
+
+    def test_chain_law_rejects_bad_face(self):
+        with self.assertRaises(ValueError):
+            finite_chain("bad", [2, 1, 1], [[-1], [1]], [[1]])
+
+    def test_declared_shapes_and_integer_contract(self):
+        with self.assertRaises(ValueError):
+            finite_chain("bad", [1, 2, 0], [[0]], [[], []])
+        with self.assertRaises(TypeError):
+            finite_chain("bad", [1, 1, 0], [[True]], [[]])
+        with self.assertRaises(TypeError):
+            finite_chain("bad", [1, 1, 0], [[0.0]], [[]])
+
+    def test_exact_rank_with_large_near_dependent_integers(self):
+        n = 10**30
+        self.assertEqual(rank_q([[n, n + 1], [n + 1, n + 2]], 2), 2)
+        self.assertEqual(rank_q([[], []], 0), 0)
+
+    def test_cup_determinant_and_orientation(self):
+        x, y = (1, 0, 1), (0, 1, 1)
+        self.assertEqual(cup_on_fundamental(x, y), 1)
+        self.assertEqual(cup_on_fundamental(y, x), -1)
+        self.assertEqual(cup_on_fundamental(x, x), 0)
+        self.assertEqual(cup_on_fundamental((2, -1, 1), (1, 3, 4)), 7)
+        self.assertEqual(cup_on_fundamental(x, y, -1), -1)
+        with self.assertRaises(ValueError):
+            cup_on_fundamental((1, 0, 0), y)
+
+    def test_integer_torsion_survives_rank_zero(self):
+        result = one_relation_integer(2)
+        self.assertEqual(result["H1_free_rank"], 0)
+        self.assertEqual(result["H1_torsion_factors"], [2])
+        self.assertEqual(result["H2_free_rank"], 0)
+        self.assertEqual(one_relation_integer(-2)["H1_torsion_factors"], [2])
+        self.assertEqual(one_relation_integer(0)["H2_free_rank"], 1)
+        self.assertEqual(one_relation_integer(1)["H1_torsion_factors"], [])
+
+    def test_same_additive_groups_need_extra_cup_data(self):
+        report = fixed_report()
+        models = {r["name"]: r for r in report["models"]}
+        self.assertEqual(models["T2_minimal"]["d2"], models["wedge_S1_S1_S2"]["d2"])
+        self.assertEqual(report["torus_cup"]["xy_on_z"], 1)
+        # W's zero product is proven by restrictions in lesson05, not inferred here.
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+

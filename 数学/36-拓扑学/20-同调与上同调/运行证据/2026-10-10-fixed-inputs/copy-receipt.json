@@ -1,0 +1,420 @@
+{
+  "schema": "wwl-topology154-portable-copy-v1",
+  "source_package": "experiments154/run-20261010-01",
+  "source_manifest_sha256": "01bd65a264f1bcf61969982e1252ad419834ff672df00556ccae37b3d6c634dc",
+  "source_readme_sha256": "114a3d3d66607c6ddc4337d442957ddc54a9bfecce1c3bb806d7f04255b7f01c",
+  "copied_artifacts": 61,
+  "files": [
+    {
+      "original_path": "HANDOFF.md",
+      "portable_path": "raw/HANDOFF.md.txt",
+      "bytes": 3976,
+      "sha256": "ad62b7734698f433488463524e9ea8f26e4a1b3cb369e336a39b364607dfed6e"
+    },
+    {
+      "original_path": "README.md",
+      "portable_path": "raw/README.md.txt",
+      "bytes": 6949,
+      "sha256": "114a3d3d66607c6ddc4337d442957ddc54a9bfecce1c3bb806d7f04255b7f01c"
+    },
+    {
+      "original_path": "dependency152/integer_smith.py",
+      "portable_path": "raw/dependency152/integer_smith.py",
+      "bytes": 8096,
+      "sha256": "71d9ef1efafcf162d46599462e4740ab3ff8ec48ce64058d93df8ec4fe8ee397"
+    },
+    {
+      "original_path": "execute_oracle.py",
+      "portable_path": "raw/execute_oracle.py",
+      "bytes": 6688,
+      "sha256": "736fb0ce26580c8d739afe871defc0aaf15e73119c13a9757a39f2c11618fcd2"
+    },
+    {
+      "original_path": "expected-before-output.json",
+      "portable_path": "raw/expected-before-output.json",
+      "bytes": 6032,
+      "sha256": "1dd58e39123564c636d03fb5fe0406b5afc5584eb78a78755046752de7cb2c85"
+    },
+    {
+      "original_path": "fixed-output/report.json",
+      "portable_path": "raw/fixed-output/report.json",
+      "bytes": 5191,
+      "sha256": "72afb96a259d9a3203e15e33c5ae0ee7761eaa1701852f7d1da6ddeeda3907a0"
+    },
+    {
+      "original_path": "fontconfig.xml",
+      "portable_path": "raw/fontconfig.xml",
+      "bytes": 559,
+      "sha256": "7310a18d6fb589353005ec49be953352a6d0e5a8578a5a572825b9d89967d6d8"
+    },
+    {
+      "original_path": "freeze-r1.json",
+      "portable_path": "raw/freeze-r1.json",
+      "bytes": 3980,
+      "sha256": "997d65f521d84e44ce5e63ac1996f760a1c41fb06ed5d2eda355be38a4a25e84"
+    },
+    {
+      "original_path": "logs/fixed-cli.json",
+      "portable_path": "raw/logs/fixed-cli.json",
+      "bytes": 1223,
+      "sha256": "cfbbcddf5f65a3fa943648a1a251d89782aac00866e329ce67b248b437c97828"
+    },
+    {
+      "original_path": "logs/fixed-cli.stderr",
+      "portable_path": "raw/logs/fixed-cli.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "logs/fixed-cli.stdout",
+      "portable_path": "raw/logs/fixed-cli.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "logs/independent-oracle.json",
+      "portable_path": "raw/logs/independent-oracle.json",
+      "bytes": 1004,
+      "sha256": "f8e4d71431b8ec1aff7b6bb51d2fb00c4c53fb82920f3fbef91c303bd44848aa"
+    },
+    {
+      "original_path": "logs/independent-oracle.stderr",
+      "portable_path": "raw/logs/independent-oracle.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "logs/independent-oracle.stdout",
+      "portable_path": "raw/logs/independent-oracle.stdout",
+      "bytes": 325095,
+      "sha256": "4435aad7528437b63802c3cc87386d3213545e13ff62a13be2183c540dcc9eda"
+    },
+    {
+      "original_path": "logs/native-svg-render-approved.json",
+      "portable_path": "raw/logs/native-svg-render-approved.json",
+      "bytes": 1589,
+      "sha256": "1771ee385f03f744b9e5b0cba92d56ee6a125eb7870ca820cbf2a74090c79298"
+    },
+    {
+      "original_path": "logs/native-svg-render-approved.stderr",
+      "portable_path": "raw/logs/native-svg-render-approved.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "logs/native-svg-render-approved.stdout",
+      "portable_path": "raw/logs/native-svg-render-approved.stdout",
+      "bytes": 862,
+      "sha256": "91835056eed671c7946a83d31dd77e8ca994eb64f86588d1aa03a2b3cf7878dc"
+    },
+    {
+      "original_path": "logs/native-svg-render.json",
+      "portable_path": "raw/logs/native-svg-render.json",
+      "bytes": 1591,
+      "sha256": "347663b857a64bb697be1f63c2b1d905f4dbd20fd2e23801d4caeba8426f7526"
+    },
+    {
+      "original_path": "logs/native-svg-render.stderr",
+      "portable_path": "raw/logs/native-svg-render.stderr",
+      "bytes": 236,
+      "sha256": "0b1a92aa9d59379327f160338d3b9d75709294b338089c2133a0f8537b7b69fd"
+    },
+    {
+      "original_path": "logs/native-svg-render.stdout",
+      "portable_path": "raw/logs/native-svg-render.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "logs/prepare-expectations.stdout",
+      "portable_path": "raw/logs/prepare-expectations.stdout",
+      "bytes": 6032,
+      "sha256": "1dd58e39123564c636d03fb5fe0406b5afc5584eb78a78755046752de7cb2c85"
+    },
+    {
+      "original_path": "logs/reused-output.stderr",
+      "portable_path": "raw/logs/reused-output.stderr",
+      "bytes": 925,
+      "sha256": "5609c32279d3fde80a4134d82ac66a12c9241abf6cf64e00a212054aec972bf2"
+    },
+    {
+      "original_path": "logs/reused-output.stdout",
+      "portable_path": "raw/logs/reused-output.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "logs/svg-render-fontconfig.json",
+      "portable_path": "raw/logs/svg-render-fontconfig.json",
+      "bytes": 1211,
+      "sha256": "ce3ce5382e02fdaad1d6ebe403b531e02ead72e23da87d976005f91c533eae72"
+    },
+    {
+      "original_path": "logs/svg-render-fontconfig.stderr",
+      "portable_path": "raw/logs/svg-render-fontconfig.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "logs/svg-render-fontconfig.stdout",
+      "portable_path": "raw/logs/svg-render-fontconfig.stdout",
+      "bytes": 919,
+      "sha256": "806a5dd3dc62c1a63379d858bc15811dcba58f90b2b4082aeb8959e32c970f90"
+    },
+    {
+      "original_path": "logs/svg-render.json",
+      "portable_path": "raw/logs/svg-render.json",
+      "bytes": 1048,
+      "sha256": "fc47e68ecb0cdeb8f8ff8bc368309ac4f55c606649b14ba6e842cf64fc987746"
+    },
+    {
+      "original_path": "logs/svg-render.stderr",
+      "portable_path": "raw/logs/svg-render.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "logs/svg-render.stdout",
+      "portable_path": "raw/logs/svg-render.stdout",
+      "bytes": 897,
+      "sha256": "6fe58b5e17d6addbcaaf85ac8a973b7cba6d3130151a71b94ddeedd85c22b2cb"
+    },
+    {
+      "original_path": "logs/unit-tests.json",
+      "portable_path": "raw/logs/unit-tests.json",
+      "bytes": 1122,
+      "sha256": "cb647599a669548441870d4fffcbcf7fe5e6cb53392c3f4cfa7fb2cdd2e3cf93"
+    },
+    {
+      "original_path": "logs/unit-tests.stderr",
+      "portable_path": "raw/logs/unit-tests.stderr",
+      "bytes": 990,
+      "sha256": "c04b298a87854786d582d7b16f82cfcf056b3c4d72c17f57b3c4285eaed20587"
+    },
+    {
+      "original_path": "logs/unit-tests.stdout",
+      "portable_path": "raw/logs/unit-tests.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "oracle_core.py",
+      "portable_path": "raw/oracle_core.py",
+      "bytes": 6042,
+      "sha256": "b7e1dbf37634b636f2210f446d5104f00b1ffb10441a961454c5fe917b50c011"
+    },
+    {
+      "original_path": "post-run-source-check.json",
+      "portable_path": "raw/post-run-source-check.json",
+      "bytes": 4063,
+      "sha256": "6906a89bc2f3727c7774c8bacc1ad7dd3088591f17167c5d6c64635baea31b42"
+    },
+    {
+      "original_path": "prepare_expectations.py",
+      "portable_path": "raw/prepare_expectations.py",
+      "bytes": 1665,
+      "sha256": "c00d7351fe402797d1347949456166badecf6e2d2419c3f5835b8bc5831bb93a"
+    },
+    {
+      "original_path": "render_svg.py",
+      "portable_path": "raw/render_svg.py",
+      "bytes": 692,
+      "sha256": "bbda8cb8abe25612f1edefcc4fb2e4e672dc776feac62aa3c86d7ae36b8358c2"
+    },
+    {
+      "original_path": "render_svg_fontconfig.py",
+      "portable_path": "raw/render_svg_fontconfig.py",
+      "bytes": 703,
+      "sha256": "d83edb97526611d00ecc785676db0bf25c24ea04d6ec5f4d9f2d9898a84bf18f"
+    },
+    {
+      "original_path": "rendered/torus-ordered-cup-fontconfig.png",
+      "portable_path": "raw/rendered/torus-ordered-cup-fontconfig.png",
+      "bytes": 47366,
+      "sha256": "6b924ce1fde0c15cb784b024bb0cffb9d80b6cb08002169d1b4737daf6ef6769"
+    },
+    {
+      "original_path": "rendered/torus-ordered-cup.png",
+      "portable_path": "raw/rendered/torus-ordered-cup.png",
+      "bytes": 47366,
+      "sha256": "6b924ce1fde0c15cb784b024bb0cffb9d80b6cb08002169d1b4737daf6ef6769"
+    },
+    {
+      "original_path": "rendered/torus-ordered-cup.svg.png",
+      "portable_path": "raw/rendered/torus-ordered-cup.svg.png",
+      "bytes": 142949,
+      "sha256": "51817402f4d91598f26ffc90739ccae4d269a6a74344e5c4f79bfb781c3d8aca"
+    },
+    {
+      "original_path": "rendered/triangle-boundary-fill-fontconfig.png",
+      "portable_path": "raw/rendered/triangle-boundary-fill-fontconfig.png",
+      "bytes": 32543,
+      "sha256": "c32c85f11b557cd3f72802ca45a235283335b14b08c5002f64c955d67fba56d5"
+    },
+    {
+      "original_path": "rendered/triangle-boundary-fill.png",
+      "portable_path": "raw/rendered/triangle-boundary-fill.png",
+      "bytes": 32543,
+      "sha256": "c32c85f11b557cd3f72802ca45a235283335b14b08c5002f64c955d67fba56d5"
+    },
+    {
+      "original_path": "rendered/triangle-boundary-fill.svg.png",
+      "portable_path": "raw/rendered/triangle-boundary-fill.svg.png",
+      "bytes": 111579,
+      "sha256": "31ffe8e5bb2345486bb53b07cfc528914a4fe837d3983cfed90c005505d71d7f"
+    },
+    {
+      "original_path": "run_job.py",
+      "portable_path": "raw/run_job.py",
+      "bytes": 1982,
+      "sha256": "8c7fe2afaa9ac5739d52927f02a8b9036ff8bb239caff9b4d4f8e441c2cc785c"
+    },
+    {
+      "original_path": "snapshot/AGENTS.md",
+      "portable_path": "raw/snapshot/AGENTS.md.txt",
+      "bytes": 4874,
+      "sha256": "780555ee84f3c1f017e9117cac5563cfe7f6eb4372d4a076f981f9810c1564c9"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/00-拓扑学-MOC.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/00-拓扑学-MOC.md.txt",
+      "bytes": 5899,
+      "sha256": "df6b6159385b7a28a10395674d6d79840509c2fac086dfb86aedd4f0d7dc51eb"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/10-覆盖空间与van-Kampen/00-覆盖空间与van-Kampen-MOC.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/10-覆盖空间与van-Kampen/00-覆盖空间与van-Kampen-MOC.md.txt",
+      "bytes": 4662,
+      "sha256": "538b5cc0d96c85d8a3037c61a6534e8b9924f75dbfbf063aadf341c78c3aa62f"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/10-覆盖空间与van-Kampen/05-普适覆盖存在与子群分类.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/10-覆盖空间与van-Kampen/05-普适覆盖存在与子群分类.md.txt",
+      "bytes": 8880,
+      "sha256": "a187ec4e8642ae243199736784a543af4bf17df5ad0c31389e7b5c9a45afd971"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/00-同调与上同调-MOC.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/00-同调与上同调-MOC.md.txt",
+      "bytes": 4038,
+      "sha256": "e3ab13659a0b318c08ae36de7f390e2e00be096b6b5f0e362f235e68af57b06d"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/01-循环边界与奇异链复形.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/01-循环边界与奇异链复形.md.txt",
+      "bytes": 7705,
+      "sha256": "f70551c5447bb6f54a9b645f8526bba83e77e9b509e7318f5825b0c7e1ab1a45"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/02-从奇异链到有限胞腔计算.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/02-从奇异链到有限胞腔计算.md.txt",
+      "bytes": 8722,
+      "sha256": "b7c458c3c8b52746c2510fc7d6a4ea9136d2485144dff1bd60079c18bc74ca7e"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/03-圆周环面RP2的整数同调与挠.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/03-圆周环面RP2的整数同调与挠.md.txt",
+      "bytes": 6137,
+      "sha256": "b7fa9c7a6741bce396ece83a274170c3ddb9737fca272a1be98440b040d8815d"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/04-Euler特征Betti与消边机制.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/04-Euler特征Betti与消边机制.md.txt",
+      "bytes": 6009,
+      "sha256": "e317a8eb9d8bb1a689cde7ed6ee2b47246679921614e52b96fe361d9bb478366"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/05-上同调与杯积区分相同Betti.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/05-上同调与杯积区分相同Betti.md.txt",
+      "bytes": 9723,
+      "sha256": "646301f06d9516d0fad67b75c1c41be618b8af3dd4ed75785093140716fe312f"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/80-有限链与杯积复算.md",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/80-有限链与杯积复算.md.txt",
+      "bytes": 13485,
+      "sha256": "ed0dbbc57d4cbbb9f800d4b10582adc78ee529a587b4c65e4269ea7904c29f76"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/assets/torus-ordered-cup.svg",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/assets/torus-ordered-cup.svg",
+      "bytes": 2047,
+      "sha256": "2b77bc24d5985b7103a8a2c18c0d722baf6f44cd47e5c5f71c167c98aad17e41"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/assets/triangle-boundary-fill.svg",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/assets/triangle-boundary-fill.svg",
+      "bytes": 2170,
+      "sha256": "f0def2845ef5e9c7522c74b69fa884d447cabde777c6d730f04e95ed2e29b133"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/homology_lab.py",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/homology_lab.py",
+      "bytes": 6502,
+      "sha256": "5ec65f5d876f713ef7fb4823096f748040176c3e04c35a897304b26805c52879"
+    },
+    {
+      "original_path": "snapshot/数学/36-拓扑学/20-同调与上同调/test_homology_lab.py",
+      "portable_path": "raw/snapshot/数学/36-拓扑学/20-同调与上同调/test_homology_lab.py",
+      "bytes": 2777,
+      "sha256": "4c59d3ea9364f5d8e03f84c21fbe4b425f8df587f51aff31a2d3a403dd3d97b2"
+    },
+    {
+      "original_path": "source-snapshot.json",
+      "portable_path": "raw/source-snapshot.json",
+      "bytes": 5172,
+      "sha256": "6b22a2178731f962e2ca22fda284ef34c2e775e3d4244b25d8c63c7dd6209783"
+    },
+    {
+      "original_path": "verify_protocol.py",
+      "portable_path": "raw/verify_protocol.py",
+      "bytes": 3410,
+      "sha256": "c335fd2d097ca5bc067bdf11296e5612a59e6f338b120367af4b49d9f04d87c2"
+    }
+  ],
+  "child_receipts_read": {
+    "unit-tests": {
+      "status": "completed",
+      "exit_code": 0,
+      "wall_seconds": 0.0897219181060791
+    },
+    "fixed-cli": {
+      "status": "completed",
+      "exit_code": 0,
+      "wall_seconds": 0.04845285415649414
+    },
+    "independent-oracle": {
+      "status": "completed",
+      "exit_code": 0,
+      "wall_seconds": 0.1450972557067871
+    },
+    "svg-render": {
+      "status": "completed",
+      "exit_code": 0,
+      "wall_seconds": 0.19441795349121094
+    },
+    "svg-render-fontconfig": {
+      "status": "completed",
+      "exit_code": 0,
+      "wall_seconds": 0.20081090927124023
+    },
+    "native-svg-render": {
+      "status": "completed",
+      "exit_code": 255,
+      "wall_seconds": 0.02156209945678711
+    },
+    "native-svg-render-approved": {
+      "status": "completed",
+      "exit_code": 0,
+      "wall_seconds": 0.19218897819519043
+    }
+  },
+  "observed_unit_tests": 7,
+  "observed_models": 7,
+  "observed_integer_H_and_Hco_groups": 42,
+  "observed_AW_cases": 625,
+  "observed_rejections": 7,
+  "fresh_replay_helper_runtime": "not_run",
+  "obsidian_ui": "not_run",
+  "human_understanding": "not_run"
+}

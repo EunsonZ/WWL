@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments154/run-20261010-01/snapshot/数学/36-拓扑学/20-同调与上同调/homology_lab.py", line 157, in <module>
+    main()
+    ~~~~^^
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments154/run-20261010-01/snapshot/数学/36-拓扑学/20-同调与上同调/homology_lab.py", line 150, in main
+    args.output_dir.mkdir(parents=True, exist_ok=False)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments154/run-20261010-01/fixed-output'

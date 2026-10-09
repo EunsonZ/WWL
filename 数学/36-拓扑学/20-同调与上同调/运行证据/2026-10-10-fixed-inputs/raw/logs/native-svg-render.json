@@ -1,0 +1,37 @@
+{
+  "command": [
+    "/usr/bin/qlmanage",
+    "-t",
+    "-s",
+    "1800",
+    "-o",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments154/run-20261010-01/rendered",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments154/run-20261010-01/snapshot/\u6570\u5b66/36-\u62d3\u6251\u5b66/20-\u540c\u8c03\u4e0e\u4e0a\u540c\u8c03/assets/triangle-boundary-fill.svg",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments154/run-20261010-01/snapshot/\u6570\u5b66/36-\u62d3\u6251\u5b66/20-\u540c\u8c03\u4e0e\u4e0a\u540c\u8c03/assets/torus-ordered-cup.svg"
+  ],
+  "cwd_relative": ".",
+  "timeout_seconds": 60,
+  "exit_code": 255,
+  "status": "completed",
+  "wall_seconds": 0.02156209945678711,
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "requested_thread_env": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4"
+  },
+  "child_ru_maxrss": 13123584,
+  "rss_unit": "bytes on Darwin; KB on Linux",
+  "limits": "Environment requests are not OS thread/memory hard limits. No aggregate RSS/thread-count observation. Stdlib single child; no installs/services.",
+  "stdout": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "bytes": 236,
+    "sha256": "0b1a92aa9d59379327f160338d3b9d75709294b338089c2133a0f8537b7b69fd"
+  }
+}

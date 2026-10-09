@@ -1,0 +1,75 @@
+[
+  {
+    "name": "schema99",
+    "creation_sql": [
+      "CREATE TABLE metadata (singleton INTEGER PRIMARY KEY, schema_version INTEGER)",
+      "INSERT INTO metadata VALUES(1,99)"
+    ],
+    "rejection": {
+      "type": "InvalidInput",
+      "message": "unsupported authority schema; do not initialize"
+    },
+    "sha256_before": "6be18c9801bc9fef8e15fe5acc8ca232cb691343f8b39523c336b4eb5fc7bae4",
+    "sha256_after": "6be18c9801bc9fef8e15fe5acc8ca232cb691343f8b39523c336b4eb5fc7bae4",
+    "size_before": 8192,
+    "size_after": 8192,
+    "tables_before": [
+      [
+        "metadata",
+        "CREATE TABLE metadata (singleton INTEGER PRIMARY KEY, schema_version INTEGER)"
+      ]
+    ],
+    "tables_after": [
+      [
+        "metadata",
+        "CREATE TABLE metadata (singleton INTEGER PRIMARY KEY, schema_version INTEGER)"
+      ]
+    ],
+    "rows_after": [
+      [
+        1,
+        99
+      ]
+    ],
+    "directory_files": [
+      "controlled-schema99.sqlite"
+    ],
+    "retained_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/state/controlled-schema99.sqlite"
+  },
+  {
+    "name": "foreign",
+    "creation_sql": [
+      "CREATE TABLE original (value TEXT)",
+      "INSERT INTO original VALUES('preserve')"
+    ],
+    "rejection": {
+      "type": "InvalidInput",
+      "message": "existing database is not an authority schema"
+    },
+    "sha256_before": "3c7297bd539a61e2ce93076a45ed81092e93ca2970f41a855d1eb4953073cf16",
+    "sha256_after": "3c7297bd539a61e2ce93076a45ed81092e93ca2970f41a855d1eb4953073cf16",
+    "size_before": 8192,
+    "size_after": 8192,
+    "tables_before": [
+      [
+        "original",
+        "CREATE TABLE original (value TEXT)"
+      ]
+    ],
+    "tables_after": [
+      [
+        "original",
+        "CREATE TABLE original (value TEXT)"
+      ]
+    ],
+    "rows_after": [
+      [
+        "preserve"
+      ]
+    ],
+    "directory_files": [
+      "controlled-foreign.sqlite"
+    ],
+    "retained_path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/state/controlled-foreign.sqlite"
+  }
+]

@@ -1,0 +1,252 @@
+{
+  "elapsed_seconds": 0.48433780670166016,
+  "observations": [
+    {
+      "name": "same-intent",
+      "first": {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "a",
+        "intent_id": "same",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "accepted",
+        "reason": "created",
+        "booking": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "policy_version": 2
+        },
+        "event_id": "booking:1:created"
+      },
+      "second": {
+        "actor": "a",
+        "booking": {
+          "end": 600,
+          "id": 1,
+          "owner": "a",
+          "policy_version": 2,
+          "start": 540
+        },
+        "event_id": "booking:1:created",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "intent_id": "same",
+        "policy_version": 2,
+        "protocol": "wwl-reservation-v2/1",
+        "reason": "created",
+        "status": "accepted",
+        "writer_epoch": 2
+      }
+    },
+    {
+      "name": "conflicting-intents",
+      "first": {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "a",
+        "intent_id": "first",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "accepted",
+        "reason": "created",
+        "booking": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "policy_version": 2
+        },
+        "event_id": "booking:1:created"
+      },
+      "second": {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "b",
+        "intent_id": "second",
+        "fingerprint": "6ab94e2f3a56ceeeb2273336ec70e8438d5f75bb8bab60c8f66ed5256b414bf3",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "rejected",
+        "reason": "conflict_with_buffer"
+      }
+    },
+    {
+      "name": "accept-before-fence",
+      "first": {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "a",
+        "intent_id": "first",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "accepted",
+        "reason": "created",
+        "booking": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "policy_version": 2
+        },
+        "event_id": "booking:1:created"
+      },
+      "second": null
+    },
+    {
+      "name": "fence-before-old-writer",
+      "first": null,
+      "second": {
+        "error": "WriterFenced",
+        "message": "new decisions require current epoch and v2 policy"
+      }
+    },
+    {
+      "name": "mixed-policy",
+      "first": {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "a",
+        "intent_id": "current",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "accepted",
+        "reason": "created",
+        "booking": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "policy_version": 2
+        },
+        "event_id": "booking:1:created"
+      },
+      "second": {
+        "error": "WriterFenced",
+        "message": "new decisions require current epoch and v2 policy"
+      }
+    },
+    {
+      "name": "cross-process-lostreply",
+      "process_ids": [
+        21357,
+        21358,
+        21359
+      ],
+      "saved_result": {
+        "actor": "a",
+        "booking": {
+          "end": 600,
+          "id": 1,
+          "owner": "a",
+          "policy_version": 2,
+          "start": 540
+        },
+        "event_id": "booking:1:created",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "intent_id": "same",
+        "policy_version": 2,
+        "protocol": "wwl-reservation-v2/1",
+        "reason": "created",
+        "status": "accepted",
+        "writer_epoch": 2
+      },
+      "bookings": [
+        {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "policy_version": 2
+        }
+      ],
+      "events": [
+        {
+          "actor": "a",
+          "booking": {
+            "end": 600,
+            "id": 1,
+            "owner": "a",
+            "policy_version": 2,
+            "start": 540
+          },
+          "event_id": "booking:1:created",
+          "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+          "intent_id": "same",
+          "kind": "booking_created",
+          "protocol": "wwl-reservation-v2/1"
+        }
+      ]
+    }
+  ],
+  "schema_guards": [
+    {
+      "name": "schema99",
+      "creation_sql": [
+        "CREATE TABLE metadata (singleton INTEGER PRIMARY KEY, schema_version INTEGER)",
+        "INSERT INTO metadata VALUES(1,99)"
+      ],
+      "rejection": {
+        "type": "InvalidInput",
+        "message": "unsupported authority schema; do not initialize"
+      },
+      "sha256_before": "6be18c9801bc9fef8e15fe5acc8ca232cb691343f8b39523c336b4eb5fc7bae4",
+      "sha256_after": "6be18c9801bc9fef8e15fe5acc8ca232cb691343f8b39523c336b4eb5fc7bae4",
+      "size_before": 8192,
+      "size_after": 8192,
+      "tables_before": [
+        [
+          "metadata",
+          "CREATE TABLE metadata (singleton INTEGER PRIMARY KEY, schema_version INTEGER)"
+        ]
+      ],
+      "tables_after": [
+        [
+          "metadata",
+          "CREATE TABLE metadata (singleton INTEGER PRIMARY KEY, schema_version INTEGER)"
+        ]
+      ],
+      "rows_after": [
+        [
+          1,
+          99
+        ]
+      ],
+      "directory_files": []
+    },
+    {
+      "name": "foreign",
+      "creation_sql": [
+        "CREATE TABLE original (value TEXT)",
+        "INSERT INTO original VALUES('preserve')"
+      ],
+      "rejection": {
+        "type": "InvalidInput",
+        "message": "existing database is not an authority schema"
+      },
+      "sha256_before": "3c7297bd539a61e2ce93076a45ed81092e93ca2970f41a855d1eb4953073cf16",
+      "sha256_after": "3c7297bd539a61e2ce93076a45ed81092e93ca2970f41a855d1eb4953073cf16",
+      "size_before": 8192,
+      "size_after": 8192,
+      "tables_before": [
+        [
+          "original",
+          "CREATE TABLE original (value TEXT)"
+        ]
+      ],
+      "tables_after": [
+        [
+          "original",
+          "CREATE TABLE original (value TEXT)"
+        ]
+      ],
+      "rows_after": [
+        [
+          "preserve"
+        ]
+      ],
+      "directory_files": []
+    }
+  ],
+  "limits": "Two child processes per controlled scenario; finite prescribed schedules, not all interleavings. No genuine network/process kill/power failure."
+}

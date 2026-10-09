@@ -1,0 +1,1443 @@
+{
+  "started_unix": 1791566437.267096,
+  "elapsed_seconds": 0.005285978317260742,
+  "v1_full_trace": [
+    {
+      "original": {
+        "method": "reserve",
+        "args": [
+          "a",
+          540,
+          600
+        ],
+        "kwargs": {},
+        "before": [],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          }
+        ],
+        "next_before": 1,
+        "next_after": 2,
+        "return": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "status": "active"
+        }
+      },
+      "refactored": {
+        "method": "reserve",
+        "args": [
+          "a",
+          540,
+          600
+        ],
+        "kwargs": {},
+        "before": [],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          }
+        ],
+        "next_before": 1,
+        "next_after": 2,
+        "return": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "status": "active"
+        }
+      }
+    },
+    {
+      "original": {
+        "method": "reserve",
+        "args": [
+          "b",
+          600,
+          630
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 2,
+        "next_after": 3,
+        "return": {
+          "id": 2,
+          "owner": "b",
+          "start": 600,
+          "end": 630,
+          "status": "active"
+        }
+      },
+      "refactored": {
+        "method": "reserve",
+        "args": [
+          "b",
+          600,
+          630
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 2,
+        "next_after": 3,
+        "return": {
+          "id": 2,
+          "owner": "b",
+          "start": 600,
+          "end": 630,
+          "status": "active"
+        }
+      }
+    },
+    {
+      "original": {
+        "method": "reserve",
+        "args": [
+          "b",
+          true,
+          600
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Invalid",
+        "message": "minutes must be integers, excluding bool"
+      },
+      "refactored": {
+        "method": "reserve",
+        "args": [
+          "b",
+          true,
+          600
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Invalid",
+        "message": "minutes must be integers, excluding bool"
+      }
+    },
+    {
+      "original": {
+        "method": "reserve",
+        "args": [
+          "",
+          540,
+          600
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Invalid",
+        "message": "actor must be a nonempty string"
+      },
+      "refactored": {
+        "method": "reserve",
+        "args": [
+          "",
+          540,
+          600
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Invalid",
+        "message": "actor must be a nonempty string"
+      }
+    },
+    {
+      "original": {
+        "method": "reserve",
+        "args": [
+          "c",
+          570,
+          630
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Conflict",
+        "message": "requested interval overlaps an active booking"
+      },
+      "refactored": {
+        "method": "reserve",
+        "args": [
+          "c",
+          570,
+          630
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Conflict",
+        "message": "requested interval overlaps an active booking"
+      }
+    },
+    {
+      "original": {
+        "method": "cancel",
+        "args": [
+          "other",
+          1
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Forbidden",
+        "message": "only the creating actor may cancel"
+      },
+      "refactored": {
+        "method": "cancel",
+        "args": [
+          "other",
+          1
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Forbidden",
+        "message": "only the creating actor may cancel"
+      }
+    },
+    {
+      "original": {
+        "method": "cancel",
+        "args": [
+          "a",
+          true
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Invalid",
+        "message": "booking id must be a positive integer, excluding bool"
+      },
+      "refactored": {
+        "method": "cancel",
+        "args": [
+          "a",
+          true
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "Invalid",
+        "message": "booking id must be a positive integer, excluding bool"
+      }
+    },
+    {
+      "original": {
+        "method": "cancel",
+        "args": [
+          "a",
+          999
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "KeyError",
+        "message": "'unknown booking id'"
+      },
+      "refactored": {
+        "method": "cancel",
+        "args": [
+          "a",
+          999
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "exception": "KeyError",
+        "message": "'unknown booking id'"
+      }
+    },
+    {
+      "original": {
+        "method": "cancel",
+        "args": [
+          "a",
+          1
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "return": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "status": "cancelled"
+        }
+      },
+      "refactored": {
+        "method": "cancel",
+        "args": [
+          "a",
+          1
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "return": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "status": "cancelled"
+        }
+      }
+    },
+    {
+      "original": {
+        "method": "cancel",
+        "args": [
+          "a",
+          1
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "return": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "status": "cancelled"
+        }
+      },
+      "refactored": {
+        "method": "cancel",
+        "args": [
+          "a",
+          1
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 3,
+        "return": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "status": "cancelled"
+        }
+      }
+    },
+    {
+      "original": {
+        "method": "reserve",
+        "args": [
+          "c",
+          540,
+          600
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          },
+          {
+            "id": 3,
+            "owner": "c",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 4,
+        "return": {
+          "id": 3,
+          "owner": "c",
+          "start": 540,
+          "end": 600,
+          "status": "active"
+        }
+      },
+      "refactored": {
+        "method": "reserve",
+        "args": [
+          "c",
+          540,
+          600
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          },
+          {
+            "id": 3,
+            "owner": "c",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          }
+        ],
+        "next_before": 3,
+        "next_after": 4,
+        "return": {
+          "id": 3,
+          "owner": "c",
+          "start": 540,
+          "end": 600,
+          "status": "active"
+        }
+      }
+    },
+    {
+      "original": {
+        "method": "reserve",
+        "args": [
+          "d",
+          630,
+          660
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          },
+          {
+            "id": 3,
+            "owner": "c",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          },
+          {
+            "id": 3,
+            "owner": "c",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 4,
+            "owner": "d",
+            "start": 630,
+            "end": 660,
+            "status": "active"
+          }
+        ],
+        "next_before": 4,
+        "next_after": 5,
+        "return": {
+          "id": 4,
+          "owner": "d",
+          "start": 630,
+          "end": 660,
+          "status": "active"
+        }
+      },
+      "refactored": {
+        "method": "reserve",
+        "args": [
+          "d",
+          630,
+          660
+        ],
+        "kwargs": {},
+        "before": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          },
+          {
+            "id": 3,
+            "owner": "c",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          }
+        ],
+        "after": [
+          {
+            "id": 1,
+            "owner": "a",
+            "start": 540,
+            "end": 600,
+            "status": "cancelled"
+          },
+          {
+            "id": 2,
+            "owner": "b",
+            "start": 600,
+            "end": 630,
+            "status": "active"
+          },
+          {
+            "id": 3,
+            "owner": "c",
+            "start": 540,
+            "end": 600,
+            "status": "active"
+          },
+          {
+            "id": 4,
+            "owner": "d",
+            "start": 630,
+            "end": 660,
+            "status": "active"
+          }
+        ],
+        "next_before": 4,
+        "next_after": 5,
+        "return": {
+          "id": 4,
+          "owner": "d",
+          "start": 630,
+          "end": 660,
+          "status": "active"
+        }
+      }
+    }
+  ],
+  "wrong_buffer_counterexample": {
+    "original": {
+      "method": "reserve",
+      "args": [
+        "b",
+        570,
+        600
+      ],
+      "kwargs": {},
+      "before": [
+        {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 570,
+          "status": "active"
+        }
+      ],
+      "after": [
+        {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 570,
+          "status": "active"
+        },
+        {
+          "id": 2,
+          "owner": "b",
+          "start": 570,
+          "end": 600,
+          "status": "active"
+        }
+      ],
+      "next_before": 2,
+      "next_after": 3,
+      "return": {
+        "id": 2,
+        "owner": "b",
+        "start": 570,
+        "end": 600,
+        "status": "active"
+      }
+    },
+    "wrong_buffer": {
+      "method": "reserve",
+      "args": [
+        "b",
+        570,
+        600
+      ],
+      "kwargs": {},
+      "before": [
+        {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 570,
+          "status": "active"
+        }
+      ],
+      "after": [
+        {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 570,
+          "status": "active"
+        }
+      ],
+      "next_before": 2,
+      "next_after": 2,
+      "exception": "Conflict",
+      "message": "requested interval overlaps an active booking"
+    }
+  },
+  "v2_trace": [
+    {
+      "legacy": [
+        {
+          "id": 1,
+          "owner": "A",
+          "start": 540,
+          "end": 600,
+          "policy_version": 1
+        },
+        {
+          "id": 2,
+          "owner": "B",
+          "start": 600,
+          "end": 630,
+          "policy_version": 1
+        },
+        {
+          "id": 3,
+          "owner": "C",
+          "start": 650,
+          "end": 680,
+          "policy_version": 1
+        }
+      ]
+    },
+    {
+      "rejected_D630_660": {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "D",
+        "intent_id": "bad",
+        "fingerprint": "4842782595ff22964cc850f0d94f309d347729abbe8103e78ed5ca1d1d5f331e",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "rejected",
+        "reason": "conflict_with_buffer"
+      }
+    },
+    {
+      "accepted_D690_720": {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "D",
+        "intent_id": "good",
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "accepted",
+        "reason": "created",
+        "booking": {
+          "id": 4,
+          "owner": "D",
+          "start": 690,
+          "end": 720,
+          "policy_version": 2
+        },
+        "event_id": "booking:4:created"
+      }
+    },
+    {
+      "first_delivery": true,
+      "event": {
+        "actor": "D",
+        "booking": {
+          "end": 720,
+          "id": 4,
+          "owner": "D",
+          "policy_version": 2,
+          "start": 690
+        },
+        "event_id": "booking:4:created",
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "intent_id": "good",
+        "kind": "booking_created",
+        "protocol": "wwl-reservation-v2/1"
+      },
+      "pending_after_lost_ack": [
+        {
+          "actor": "D",
+          "booking": {
+            "end": 720,
+            "id": 4,
+            "owner": "D",
+            "policy_version": 2,
+            "start": 690
+          },
+          "event_id": "booking:4:created",
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+          "intent_id": "good",
+          "kind": "booking_created",
+          "protocol": "wwl-reservation-v2/1"
+        }
+      ]
+    },
+    {
+      "duplicate_after_reopen": false,
+      "changed_event_input": {
+        "actor": "D",
+        "booking": {
+          "end": 721,
+          "id": 4,
+          "owner": "D",
+          "policy_version": 2,
+          "start": 690
+        },
+        "event_id": "booking:4:created",
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "intent_id": "good",
+        "kind": "booking_created",
+        "protocol": "wwl-reservation-v2/1"
+      },
+      "changed_event_error": {
+        "type": "IntentConflict",
+        "message": "same event id has different payload"
+      },
+      "effects": [
+        {
+          "actor": "D",
+          "booking": {
+            "end": 720,
+            "id": 4,
+            "owner": "D",
+            "policy_version": 2,
+            "start": 690
+          },
+          "event_id": "booking:4:created",
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+          "intent_id": "good",
+          "kind": "booking_created",
+          "protocol": "wwl-reservation-v2/1"
+        }
+      ]
+    },
+    {
+      "old_epoch_replay": {
+        "actor": "D",
+        "booking": {
+          "end": 720,
+          "id": 4,
+          "owner": "D",
+          "policy_version": 2,
+          "start": 690
+        },
+        "event_id": "booking:4:created",
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "intent_id": "good",
+        "policy_version": 2,
+        "protocol": "wwl-reservation-v2/1",
+        "reason": "created",
+        "status": "accepted",
+        "writer_epoch": 2
+      },
+      "current_epoch": 3,
+      "preserved_bookings": [
+        {
+          "id": 1,
+          "owner": "A",
+          "start": 540,
+          "end": 600,
+          "policy_version": 1
+        },
+        {
+          "id": 2,
+          "owner": "B",
+          "start": 600,
+          "end": 630,
+          "policy_version": 1
+        },
+        {
+          "id": 3,
+          "owner": "C",
+          "start": 650,
+          "end": 680,
+          "policy_version": 1
+        },
+        {
+          "id": 4,
+          "owner": "D",
+          "start": 690,
+          "end": 720,
+          "policy_version": 2
+        }
+      ],
+      "pending": [
+        {
+          "actor": "D",
+          "booking": {
+            "end": 720,
+            "id": 4,
+            "owner": "D",
+            "policy_version": 2,
+            "start": 690
+          },
+          "event_id": "booking:4:created",
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+          "intent_id": "good",
+          "kind": "booking_created",
+          "protocol": "wwl-reservation-v2/1"
+        }
+      ]
+    }
+  ],
+  "resource_self": {
+    "ru_maxrss": 31031296,
+    "platform_unit": "bytes on macOS; this script only, not total prior process-tree peak"
+  },
+  "resource_children": {
+    "ru_maxrss": 0,
+    "scope": "No children in this trace command; not a measurement of prior concurrent run"
+  }
+}

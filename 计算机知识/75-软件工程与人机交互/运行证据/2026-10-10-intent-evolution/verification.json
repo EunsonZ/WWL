@@ -1,0 +1,172 @@
+{
+  "default_demo_observed": [
+    {
+      "legacy": [
+        {
+          "end": 600,
+          "id": 1,
+          "owner": "A",
+          "policy_version": 1,
+          "start": 540
+        },
+        {
+          "end": 630,
+          "id": 2,
+          "owner": "B",
+          "policy_version": 1,
+          "start": 600
+        },
+        {
+          "end": 680,
+          "id": 3,
+          "owner": "C",
+          "policy_version": 1,
+          "start": 650
+        }
+      ]
+    },
+    {
+      "client": "unknown",
+      "reason": "reply_lost"
+    },
+    {
+      "query_after_restart": {
+        "actor": "D",
+        "booking": {
+          "end": 720,
+          "id": 4,
+          "owner": "D",
+          "policy_version": 2,
+          "start": 690
+        },
+        "event_id": "booking:4:created",
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "intent_id": "intent-D",
+        "policy_version": 2,
+        "protocol": "wwl-reservation-v2/1",
+        "reason": "created",
+        "status": "accepted",
+        "writer_epoch": 2
+      }
+    },
+    {
+      "duplicate_effect": false,
+      "first_effect": true
+    },
+    {
+      "bookings": [
+        {
+          "end": 600,
+          "id": 1,
+          "owner": "A",
+          "policy_version": 1,
+          "start": 540
+        },
+        {
+          "end": 630,
+          "id": 2,
+          "owner": "B",
+          "policy_version": 1,
+          "start": 600
+        },
+        {
+          "end": 680,
+          "id": 3,
+          "owner": "C",
+          "policy_version": 1,
+          "start": 650
+        },
+        {
+          "end": 720,
+          "id": 4,
+          "owner": "D",
+          "policy_version": 2,
+          "start": 690
+        }
+      ],
+      "old_writer": "fenced",
+      "saved_outcome": {
+        "actor": "D",
+        "booking": {
+          "end": 720,
+          "id": 4,
+          "owner": "D",
+          "policy_version": 2,
+          "start": 690
+        },
+        "event_id": "booking:4:created",
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "intent_id": "intent-D",
+        "policy_version": 2,
+        "protocol": "wwl-reservation-v2/1",
+        "reason": "created",
+        "status": "accepted",
+        "writer_epoch": 2
+      }
+    }
+  ],
+  "git_lab": {
+    "root": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/git-scratch/wwl-git-evolution-9thnm62q",
+    "merge_parents": [
+      "8da595ce53b65dc892b659848907a671328b1ea4",
+      "c1a869fb07df3a9d8e727a97a32a59b49dd3cc44"
+    ],
+    "config_text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = true\n\tprecomposeunicode = true\n",
+    "1021_before": true,
+    "1021_after": false,
+    "retained_result_matches_stdout": true
+  },
+  "observed_transaction_orders": [
+    {
+      "name": "same-intent",
+      "second_begin_attempt_ns": 3744184516833,
+      "first_commit_ns": 3744187712708,
+      "second_lock_acquired_ns": 3744189108958,
+      "child_exitcodes": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "conflicting-intents",
+      "second_begin_attempt_ns": 3744253132083,
+      "first_commit_ns": 3744256343083,
+      "second_lock_acquired_ns": 3744257704125,
+      "child_exitcodes": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "accept-before-fence",
+      "second_begin_attempt_ns": 3744316824666,
+      "first_commit_ns": 3744318577291,
+      "second_lock_acquired_ns": 3744321247791,
+      "child_exitcodes": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "fence-before-old-writer",
+      "second_begin_attempt_ns": 3744381834750,
+      "first_commit_ns": 3744386385791,
+      "second_lock_acquired_ns": 3744393969083,
+      "child_exitcodes": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mixed-policy",
+      "second_begin_attempt_ns": 3744449535666,
+      "first_commit_ns": 3744452928458,
+      "second_lock_acquired_ns": 3744454108791,
+      "child_exitcodes": [
+        0,
+        0
+      ]
+    }
+  ],
+  "process_inventory_error": "PermissionError: [Errno 1] Operation not permitted: 'ps'; no process-inventory proof claimed"
+}

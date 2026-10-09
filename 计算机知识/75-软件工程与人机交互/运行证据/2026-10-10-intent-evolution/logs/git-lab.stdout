@@ -1,0 +1,379 @@
+{
+  "root": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/git-scratch/wwl-git-evolution-9thnm62q",
+  "synthetic": true,
+  "commits": {
+    "base": "a9dac3e710041a46be722b3cc9e24105b57d5996",
+    "policy": "c1a869fb07df3a9d8e727a97a32a59b49dd3cc44",
+    "refactor": "8da595ce53b65dc892b659848907a671328b1ea4",
+    "merged": "50763221303b14c05003e0d7f6766f7d0daca839",
+    "repaired": "c80285b282d3c33a4658d65e44199870ce08f8b4",
+    "text_left": "3d36ed35b32db88b5d3c4079ab1e30c07aadc8d1",
+    "text_right": "aaf00998c93374228f6a6a475dee0240fa639b49",
+    "resolved": "05e0e467b61225fc52bf295165068e4def030914"
+  },
+  "policy_branch_checks": {
+    "1020": true,
+    "1021": false,
+    "1030": false
+  },
+  "refactor_branch_checks": {
+    "1010": true,
+    "1011": true,
+    "1012": true,
+    "1013": true,
+    "1014": true,
+    "1015": true,
+    "1016": true,
+    "1017": true,
+    "1018": true,
+    "1019": true,
+    "1020": true,
+    "1021": false,
+    "1022": false,
+    "1023": false,
+    "1024": false,
+    "1025": false,
+    "1026": false,
+    "1027": false,
+    "1028": false,
+    "1029": false,
+    "1030": false,
+    "1031": false,
+    "1032": false,
+    "1033": false,
+    "1034": false,
+    "1035": false,
+    "1036": false,
+    "1037": false,
+    "1038": false,
+    "1039": false,
+    "1040": false
+  },
+  "merge_parents": [
+    "8da595ce53b65dc892b659848907a671328b1ea4",
+    "c1a869fb07df3a9d8e727a97a32a59b49dd3cc44"
+  ],
+  "merged_accepts_1021_incorrectly": true,
+  "repaired_accepts_1021": false,
+  "text_conflict": "OPEN_END = 1020\nCLEANUP_LIMIT = 1030\n<<<<<<< HEAD\nBUFFER = 20\n=======\nBUFFER = 15\n>>>>>>> text-left\n",
+  "graph": "*   05e0e46 Resolve using approved ten-minute policy, not branch majority\n|\\  \n| * 3d36ed3 Synthetic conflicting request: buffer fifteen\n* | aaf0099 Synthetic conflicting request: buffer twenty\n|/  \n* c80285b Restore both guards required by new cleanup policy\n*   5076322 Text merge succeeds; inspect semantics\n|\\  \n| * c1a869f Allow ten-minute cleanup to 17:10; booking still ends 17:00\n* | 8da595c Remove equivalent guard under v1 configuration\n|/  \n* a9dac3e Base: booking and cleanup share 17:00 limit",
+  "commands": [
+    {
+      "args": [
+        "init",
+        "-b",
+        "main"
+      ],
+      "exit": 0,
+      "stdout": "Initialized empty Git repository in /Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/git-scratch/wwl-git-evolution-9thnm62q/.git/\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "add",
+        "--",
+        "config.py",
+        "service.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "commit",
+        "-m",
+        "Base: booking and cleanup share 17:00 limit"
+      ],
+      "exit": 0,
+      "stdout": "[main (root-commit) a9dac3e] Base: booking and cleanup share 17:00 limit\n 2 files changed, 7 insertions(+)\n create mode 100644 config.py\n create mode 100644 service.py\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "a9dac3e710041a46be722b3cc9e24105b57d5996\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "checkout",
+        "-b",
+        "cleanup-policy"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Switched to a new branch 'cleanup-policy'\n"
+    },
+    {
+      "args": [
+        "add",
+        "--",
+        "config.py",
+        "service.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "commit",
+        "-m",
+        "Allow ten-minute cleanup to 17:10; booking still ends 17:00"
+      ],
+      "exit": 0,
+      "stdout": "[cleanup-policy c1a869f] Allow ten-minute cleanup to 17:10; booking still ends 17:00\n 1 file changed, 2 insertions(+), 2 deletions(-)\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "c1a869fb07df3a9d8e727a97a32a59b49dd3cc44\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "checkout",
+        "-b",
+        "simplify",
+        "a9dac3e710041a46be722b3cc9e24105b57d5996"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Switched to a new branch 'simplify'\n"
+    },
+    {
+      "args": [
+        "add",
+        "--",
+        "config.py",
+        "service.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "commit",
+        "-m",
+        "Remove equivalent guard under v1 configuration"
+      ],
+      "exit": 0,
+      "stdout": "[simplify 8da595c] Remove equivalent guard under v1 configuration\n 1 file changed, 2 insertions(+), 2 deletions(-)\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "8da595ce53b65dc892b659848907a671328b1ea4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "merge",
+        "--no-ff",
+        "cleanup-policy",
+        "-m",
+        "Text merge succeeds; inspect semantics"
+      ],
+      "exit": 0,
+      "stdout": "Merge made by the 'ort' strategy.\n config.py | 4 ++--\n 1 file changed, 2 insertions(+), 2 deletions(-)\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "50763221303b14c05003e0d7f6766f7d0daca839\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "show",
+        "-s",
+        "--format=%P",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "8da595ce53b65dc892b659848907a671328b1ea4 c1a869fb07df3a9d8e727a97a32a59b49dd3cc44\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "add",
+        "--",
+        "config.py",
+        "service.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "commit",
+        "-m",
+        "Restore both guards required by new cleanup policy"
+      ],
+      "exit": 0,
+      "stdout": "[simplify c80285b] Restore both guards required by new cleanup policy\n 1 file changed, 2 insertions(+), 2 deletions(-)\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "c80285b282d3c33a4658d65e44199870ce08f8b4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "checkout",
+        "-b",
+        "text-left"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Switched to a new branch 'text-left'\n"
+    },
+    {
+      "args": [
+        "add",
+        "--",
+        "config.py",
+        "service.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "commit",
+        "-m",
+        "Synthetic conflicting request: buffer fifteen"
+      ],
+      "exit": 0,
+      "stdout": "[text-left 3d36ed3] Synthetic conflicting request: buffer fifteen\n 1 file changed, 1 insertion(+), 1 deletion(-)\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "3d36ed35b32db88b5d3c4079ab1e30c07aadc8d1\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "checkout",
+        "-b",
+        "text-right",
+        "c80285b282d3c33a4658d65e44199870ce08f8b4"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Switched to a new branch 'text-right'\n"
+    },
+    {
+      "args": [
+        "add",
+        "--",
+        "config.py",
+        "service.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "commit",
+        "-m",
+        "Synthetic conflicting request: buffer twenty"
+      ],
+      "exit": 0,
+      "stdout": "[text-right aaf0099] Synthetic conflicting request: buffer twenty\n 1 file changed, 1 insertion(+), 1 deletion(-)\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "aaf00998c93374228f6a6a475dee0240fa639b49\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "merge",
+        "--no-ff",
+        "text-left",
+        "-m",
+        "Expose same-line conflict"
+      ],
+      "exit": 1,
+      "stdout": "Auto-merging config.py\nCONFLICT (content): Merge conflict in config.py\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "add",
+        "--",
+        "config.py",
+        "service.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "commit",
+        "-m",
+        "Resolve using approved ten-minute policy, not branch majority"
+      ],
+      "exit": 0,
+      "stdout": "[text-right 05e0e46] Resolve using approved ten-minute policy, not branch majority\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "05e0e467b61225fc52bf295165068e4def030914\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "log",
+        "--graph",
+        "--oneline",
+        "--all"
+      ],
+      "exit": 0,
+      "stdout": "*   05e0e46 Resolve using approved ten-minute policy, not branch majority\n|\\  \n| * 3d36ed3 Synthetic conflicting request: buffer fifteen\n* | aaf0099 Synthetic conflicting request: buffer twenty\n|/  \n* c80285b Restore both guards required by new cleanup policy\n*   5076322 Text merge succeeds; inspect semantics\n|\\  \n| * c1a869f Allow ten-minute cleanup to 17:10; booking still ends 17:00\n* | 8da595c Remove equivalent guard under v1 configuration\n|/  \n* a9dac3e Base: booking and cleanup share 17:00 limit\n",
+      "stderr": ""
+    }
+  ]
+}

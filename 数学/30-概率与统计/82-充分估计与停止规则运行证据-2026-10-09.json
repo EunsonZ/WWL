@@ -1,0 +1,677 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "jobs": [
+    {
+      "name": "coin-oracle-final",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "coin_path_oracle.py"
+      ],
+      "cwd": "/private/tmp/wwl-issues-111plus-20261009/experiment-a",
+      "timeout_seconds": 60,
+      "elapsed_seconds": 4.374345541000366,
+      "returncode": 0,
+      "stdout_file": "coin-oracle-final.stdout.txt",
+      "stderr_file": "coin-oracle-final.stderr.txt",
+      "children_max_rss_bytes_on_macos": 18268160
+    },
+    {
+      "name": "inference-source-final",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "数学/30-概率与统计/inference_selection_lab.py"
+      ],
+      "cwd": "/private/tmp/wwl-issues-111plus-20261009/experiment-a",
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.08733758299786132,
+      "returncode": 0,
+      "stdout_file": "inference-source-final.stdout.txt",
+      "stderr_file": "inference-source-final.stderr.txt",
+      "children_max_rss_bytes_on_macos": 18268160
+    },
+    {
+      "name": "inference-tests-final",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "数学/30-概率与统计",
+        "-p",
+        "test_inference_selection_lab.py",
+        "-v"
+      ],
+      "cwd": "/private/tmp/wwl-issues-111plus-20261009/experiment-a",
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.1525054589874344,
+      "returncode": 0,
+      "stdout_file": "inference-tests-final.stdout.txt",
+      "stderr_file": "inference-tests-final.stderr.txt",
+      "children_max_rss_bytes_on_macos": 26148864
+    }
+  ],
+  "source_sha256": {
+    "数学/30-概率与统计/inference_selection_lab.py": "f6bbf840ee547988d4e5112b97c51ec24475017d34383da5569ef1439b764581",
+    "数学/30-概率与统计/test_inference_selection_lab.py": "6dfc9832595c17716a9625f0a068338bde083409ae3289fb3a9b7c4760cca887",
+    "数学/30-概率与统计/82-充分估计与停止规则精确复算.md": "5c0fdd43263d8047fb8267848fff82921a36929d3680b7ba9c9c385a30211bb6"
+  },
+  "independent_full_path_vs_dp": "pass: totals and each first crossing n=1..20",
+  "failures_observed": [],
+  "scope": "finite specified numerical examples, not general theorem or learner proof",
+  "execution_date_local": "2026-10-09 Asia/Shanghai",
+  "actual_source_output": {
+    "stopping_inputs": {
+      "n": 20,
+      "p0": {
+        "fraction": "1/2",
+        "decimal": 0.5
+      },
+      "alpha": {
+        "fraction": "1/20",
+        "decimal": 0.05
+      },
+      "p1": {
+        "fraction": "3/4",
+        "decimal": 0.75
+      },
+      "lr_threshold": 20
+    },
+    "stopping": {
+      "fixed": {
+        "fraction": "5425/262144",
+        "decimal": 0.020694732666015625
+      },
+      "peek": {
+        "fraction": "6467/65536",
+        "decimal": 0.0986785888671875
+      },
+      "lr": {
+        "fraction": "5541/262144",
+        "decimal": 0.021137237548828125
+      },
+      "peek_first_crossing": {
+        "1": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "2": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "3": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "4": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "5": {
+          "fraction": "1/32",
+          "decimal": 0.03125
+        },
+        "6": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "7": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "8": {
+          "fraction": "5/256",
+          "decimal": 0.01953125
+        },
+        "9": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "10": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "11": {
+          "fraction": "25/2048",
+          "decimal": 0.01220703125
+        },
+        "12": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "13": {
+          "fraction": "65/4096",
+          "decimal": 0.015869140625
+        },
+        "14": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "15": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "16": {
+          "fraction": "285/32768",
+          "decimal": 0.008697509765625
+        },
+        "17": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "18": {
+          "fraction": "729/65536",
+          "decimal": 0.0111236572265625
+        },
+        "19": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "20": {
+          "fraction": "0",
+          "decimal": 0.0
+        }
+      },
+      "lr_first_crossing": {
+        "1": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "2": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "3": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "4": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "5": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "6": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "7": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "8": {
+          "fraction": "1/256",
+          "decimal": 0.00390625
+        },
+        "9": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "10": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "11": {
+          "fraction": "1/256",
+          "decimal": 0.00390625
+        },
+        "12": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "13": {
+          "fraction": "13/2048",
+          "decimal": 0.00634765625
+        },
+        "14": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "15": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "16": {
+          "fraction": "67/16384",
+          "decimal": 0.00408935546875
+        },
+        "17": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "18": {
+          "fraction": "0",
+          "decimal": 0.0
+        },
+        "19": {
+          "fraction": "757/262144",
+          "decimal": 0.002887725830078125
+        },
+        "20": {
+          "fraction": "0",
+          "decimal": 0.0
+        }
+      }
+    },
+    "multiple_testing": {
+      "independent_100_at_001": {
+        "fraction": "63396765872677049506938397342748261381028792336107630859404262730068295524927525181280345648997304959933843089934715672528176430319820058414289464550829242572610964993901729162885021780083239150509999/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "decimal": 0.6339676587267705
+      },
+      "identical_events_at_001": {
+        "fraction": "1/100",
+        "decimal": 0.01
+      },
+      "one_sided_normal_001": 2.3263478740408408,
+      "bonferroni_100_normal": 3.7190164854557084
+    },
+    "conditioning": [
+      {
+        "n": 4,
+        "p": {
+          "fraction": "1/2",
+          "decimal": 0.5
+        },
+        "rows": [
+          {
+            "s": 0,
+            "mass": {
+              "fraction": "1/16",
+              "decimal": 0.0625
+            },
+            "x1_given_s": {
+              "fraction": "0",
+              "decimal": 0.0
+            },
+            "x1x2_given_s": {
+              "fraction": "0",
+              "decimal": 0.0
+            }
+          },
+          {
+            "s": 1,
+            "mass": {
+              "fraction": "1/4",
+              "decimal": 0.25
+            },
+            "x1_given_s": {
+              "fraction": "1/4",
+              "decimal": 0.25
+            },
+            "x1x2_given_s": {
+              "fraction": "0",
+              "decimal": 0.0
+            }
+          },
+          {
+            "s": 2,
+            "mass": {
+              "fraction": "3/8",
+              "decimal": 0.375
+            },
+            "x1_given_s": {
+              "fraction": "1/2",
+              "decimal": 0.5
+            },
+            "x1x2_given_s": {
+              "fraction": "1/6",
+              "decimal": 0.16666666666666666
+            }
+          },
+          {
+            "s": 3,
+            "mass": {
+              "fraction": "1/4",
+              "decimal": 0.25
+            },
+            "x1_given_s": {
+              "fraction": "3/4",
+              "decimal": 0.75
+            },
+            "x1x2_given_s": {
+              "fraction": "1/2",
+              "decimal": 0.5
+            }
+          },
+          {
+            "s": 4,
+            "mass": {
+              "fraction": "1/16",
+              "decimal": 0.0625
+            },
+            "x1_given_s": {
+              "fraction": "1",
+              "decimal": 1.0
+            },
+            "x1x2_given_s": {
+              "fraction": "1",
+              "decimal": 1.0
+            }
+          }
+        ],
+        "variance_before": {
+          "fraction": "1/4",
+          "decimal": 0.25
+        },
+        "variance_after": {
+          "fraction": "1/16",
+          "decimal": 0.0625
+        }
+      },
+      {
+        "n": 4,
+        "p": {
+          "fraction": "1/4",
+          "decimal": 0.25
+        },
+        "rows": [
+          {
+            "s": 0,
+            "mass": {
+              "fraction": "81/256",
+              "decimal": 0.31640625
+            },
+            "x1_given_s": {
+              "fraction": "0",
+              "decimal": 0.0
+            },
+            "x1x2_given_s": {
+              "fraction": "0",
+              "decimal": 0.0
+            }
+          },
+          {
+            "s": 1,
+            "mass": {
+              "fraction": "27/64",
+              "decimal": 0.421875
+            },
+            "x1_given_s": {
+              "fraction": "1/4",
+              "decimal": 0.25
+            },
+            "x1x2_given_s": {
+              "fraction": "0",
+              "decimal": 0.0
+            }
+          },
+          {
+            "s": 2,
+            "mass": {
+              "fraction": "27/128",
+              "decimal": 0.2109375
+            },
+            "x1_given_s": {
+              "fraction": "1/2",
+              "decimal": 0.5
+            },
+            "x1x2_given_s": {
+              "fraction": "1/6",
+              "decimal": 0.16666666666666666
+            }
+          },
+          {
+            "s": 3,
+            "mass": {
+              "fraction": "3/64",
+              "decimal": 0.046875
+            },
+            "x1_given_s": {
+              "fraction": "3/4",
+              "decimal": 0.75
+            },
+            "x1x2_given_s": {
+              "fraction": "1/2",
+              "decimal": 0.5
+            }
+          },
+          {
+            "s": 4,
+            "mass": {
+              "fraction": "1/256",
+              "decimal": 0.00390625
+            },
+            "x1_given_s": {
+              "fraction": "1",
+              "decimal": 1.0
+            },
+            "x1x2_given_s": {
+              "fraction": "1",
+              "decimal": 1.0
+            }
+          }
+        ],
+        "variance_before": {
+          "fraction": "3/16",
+          "decimal": 0.1875
+        },
+        "variance_after": {
+          "fraction": "3/64",
+          "decimal": 0.046875
+        }
+      }
+    ],
+    "uniform_maximum": {
+      "n": 4,
+      "theta": {
+        "fraction": "1",
+        "decimal": 1.0
+      },
+      "mean_max": {
+        "fraction": "4/5",
+        "decimal": 0.8
+      },
+      "second_moment_max": {
+        "fraction": "2/3",
+        "decimal": 0.6666666666666666
+      },
+      "variance_max": {
+        "fraction": "2/75",
+        "decimal": 0.02666666666666667
+      },
+      "mean_corrected": {
+        "fraction": "1",
+        "decimal": 1.0
+      },
+      "variance_corrected": {
+        "fraction": "1/24",
+        "decimal": 0.041666666666666664
+      }
+    },
+    "randomized_np": [
+      {
+        "inputs": {
+          "n": 4,
+          "p0": {
+            "fraction": "1/2",
+            "decimal": 0.5
+          },
+          "p1": {
+            "fraction": "3/4",
+            "decimal": 0.75
+          },
+          "alpha": {
+            "fraction": "1/10",
+            "decimal": 0.1
+          }
+        },
+        "cutoff": 3,
+        "rho": {
+          "fraction": "3/20",
+          "decimal": 0.15
+        },
+        "size": {
+          "fraction": "1/10",
+          "decimal": 0.1
+        },
+        "power": {
+          "fraction": "243/640",
+          "decimal": 0.3796875
+        }
+      },
+      {
+        "inputs": {
+          "n": 20,
+          "p0": {
+            "fraction": "1/2",
+            "decimal": 0.5
+          },
+          "p1": {
+            "fraction": "4/5",
+            "decimal": 0.8
+          },
+          "alpha": {
+            "fraction": "1/20",
+            "decimal": 0.05
+          }
+        },
+        "cutoff": 14,
+        "rho": {
+          "fraction": "38411/48450",
+          "decimal": 0.792796697626419
+        },
+        "size": {
+          "fraction": "1/20",
+          "decimal": 0.05
+        },
+        "power": {
+          "fraction": "424719652225024/476837158203125",
+          "decimal": 0.8907016681030135
+        }
+      }
+    ],
+    "markov": {
+      "0011": {
+        "fraction": "9/128",
+        "decimal": 0.0703125
+      },
+      "0101": {
+        "fraction": "1/128",
+        "decimal": 0.0078125
+      },
+      "ratio": {
+        "fraction": "9",
+        "decimal": 9.0
+      }
+    }
+  },
+  "independent_full_path_output": {
+    "schema": "wwl-independent-coin-oracle-v1",
+    "environment": {
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+    },
+    "inputs": {
+      "max_steps": 20,
+      "p0": "1/2",
+      "p1": "3/4",
+      "alpha": "1/20",
+      "lr_threshold": 20,
+      "tail": "one-sided upper",
+      "comparison": "inclusive >= / <=",
+      "seed": null,
+      "enumerated_paths": 1048576
+    },
+    "cutoffs": {
+      "1": 2,
+      "2": 3,
+      "3": 4,
+      "4": 5,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 7,
+      "9": 8,
+      "10": 9,
+      "11": 9,
+      "12": 10,
+      "13": 10,
+      "14": 11,
+      "15": 12,
+      "16": 12,
+      "17": 13,
+      "18": 13,
+      "19": 14,
+      "20": 15
+    },
+    "counts": {
+      "fixed": 21700,
+      "peek": 103472,
+      "lr": 22164
+    },
+    "fractions": {
+      "fixed": "5425/262144",
+      "peek": "6467/65536",
+      "lr": "5541/262144"
+    },
+    "probabilities": {
+      "fixed": 0.020694732666015625,
+      "peek": 0.0986785888671875,
+      "lr": 0.021137237548828125
+    },
+    "first_crossing_full_length_path_counts": {
+      "peek": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        32768,
+        0,
+        0,
+        20480,
+        0,
+        0,
+        12800,
+        0,
+        16640,
+        0,
+        0,
+        9120,
+        0,
+        11664,
+        0,
+        0
+      ],
+      "lr": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4096,
+        0,
+        0,
+        4096,
+        0,
+        6656,
+        0,
+        0,
+        4288,
+        0,
+        0,
+        3028,
+        0
+      ]
+    },
+    "elapsed_seconds": 4.320044167005108,
+    "status": "pass"
+  },
+  "actual_test_output": "test_boundary_and_absorption (test_inference_selection_lab.ExactExperiments.test_boundary_and_absorption) ... ok\ntest_conditioning_and_markov (test_inference_selection_lab.ExactExperiments.test_conditioning_and_markov) ... ok\ntest_exhaustive_oracle (test_inference_selection_lab.ExactExperiments.test_exhaustive_oracle) ... ok\ntest_invalid_inputs (test_inference_selection_lab.ExactExperiments.test_invalid_inputs) ... ok\ntest_randomized_boundary (test_inference_selection_lab.ExactExperiments.test_randomized_boundary) ... ok\ntest_uniform_polynomial_integral (test_inference_selection_lab.ExactExperiments.test_uniform_polynomial_integral) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.040s\n\nOK\n"
+}

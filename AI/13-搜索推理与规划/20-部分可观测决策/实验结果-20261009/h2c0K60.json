@@ -1,0 +1,156 @@
+{
+  "model": {
+    "static_hidden_states": [
+      0,
+      1
+    ],
+    "prior": {
+      "exact": "1/10",
+      "decimal": 0.1
+    },
+    "prevention": {
+      "exact": "60",
+      "decimal": 60.0
+    },
+    "damage": {
+      "exact": "100",
+      "decimal": 100.0
+    },
+    "sense_cost": {
+      "exact": "0",
+      "decimal": 0.0
+    },
+    "sensitivity": {
+      "exact": "4/5",
+      "decimal": 0.8
+    },
+    "false_positive": {
+      "exact": "1/10",
+      "decimal": 0.1
+    },
+    "horizon": 2,
+    "signals_conditionally_independent": true,
+    "last_step_sensing": false
+  },
+  "bellman_reward": {
+    "exact": "-10",
+    "decimal": -10.0
+  },
+  "root_actions": [
+    "skip",
+    "sense"
+  ],
+  "oracle_risk": {
+    "exact": "10",
+    "decimal": 10.0
+  },
+  "policy_count": 6,
+  "optimal_trees": [
+    "skip",
+    [
+      "sense",
+      "skip",
+      "skip"
+    ]
+  ],
+  "one_signal_information": {
+    "R0": {
+      "exact": "10",
+      "decimal": 10.0
+    },
+    "RS": {
+      "exact": "10",
+      "decimal": 10.0
+    },
+    "RY": {
+      "exact": "6",
+      "decimal": 6.0
+    },
+    "EVSI": {
+      "exact": "0",
+      "decimal": 0.0
+    },
+    "EVPI": {
+      "exact": "4",
+      "decimal": 4.0
+    },
+    "net_gain_if_bought": {
+      "exact": "0",
+      "decimal": 0.0
+    },
+    "optimal_risk_buy_or_not": {
+      "exact": "10",
+      "decimal": 10.0
+    },
+    "branches": [
+      {
+        "signal": "+",
+        "probability": {
+          "exact": "17/100",
+          "decimal": 0.17
+        },
+        "posterior": {
+          "exact": "8/17",
+          "decimal": 0.47058823529411764
+        },
+        "risk": {
+          "exact": "800/17",
+          "decimal": 47.05882352941177
+        },
+        "actions": [
+          "skip"
+        ]
+      },
+      {
+        "signal": "-",
+        "probability": {
+          "exact": "83/100",
+          "decimal": 0.83
+        },
+        "posterior": {
+          "exact": "2/83",
+          "decimal": 0.024096385542168676
+        },
+        "risk": {
+          "exact": "200/83",
+          "decimal": 2.4096385542168677
+        },
+        "actions": [
+          "skip"
+        ]
+      }
+    ]
+  },
+  "same_mean": {
+    "delta0": {
+      "mean": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "safe_reward": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "risky_reward": {
+        "exact": "-1/2",
+        "decimal": -0.5
+      },
+      "best_action": "safe"
+    },
+    "symmetric": {
+      "mean": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "safe_reward": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "risky_reward": {
+        "exact": "1/2",
+        "decimal": 0.5
+      },
+      "best_action": "risky"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "case": "h3c1",
+    "command": [
+      "python3",
+      "-B",
+      "pomdp_lab.py",
+      "--horizon",
+      "3",
+      "--cost",
+      "1",
+      "--output",
+      "h3c1.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "case": "h2c3",
+    "command": [
+      "python3",
+      "-B",
+      "pomdp_lab.py",
+      "--horizon",
+      "2",
+      "--cost",
+      "3",
+      "--output",
+      "h2c3.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "case": "h2c6",
+    "command": [
+      "python3",
+      "-B",
+      "pomdp_lab.py",
+      "--horizon",
+      "2",
+      "--cost",
+      "6",
+      "--output",
+      "h2c6.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "case": "h2c0K60",
+    "command": [
+      "python3",
+      "-B",
+      "pomdp_lab.py",
+      "--horizon",
+      "2",
+      "--cost",
+      "0",
+      "--prevention",
+      "60",
+      "--output",
+      "h2c0K60.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "case": "perfect",
+    "command": [
+      "python3",
+      "-B",
+      "pomdp_lab.py",
+      "--horizon",
+      "2",
+      "--cost",
+      "0",
+      "--sensitivity",
+      "1",
+      "--false-positive",
+      "0",
+      "--output",
+      "perfect.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "case": "uninformative",
+    "command": [
+      "python3",
+      "-B",
+      "pomdp_lab.py",
+      "--horizon",
+      "3",
+      "--cost",
+      "1",
+      "--sensitivity",
+      "1/3",
+      "--false-positive",
+      "1/3",
+      "--output",
+      "uninformative.json"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

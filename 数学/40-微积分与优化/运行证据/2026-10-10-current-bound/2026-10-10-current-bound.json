@@ -1,0 +1,85 @@
+{
+  "schema": "wwl147-current-bound-v1",
+  "date_local": "2026-10-10 Asia/Shanghai",
+  "source_bindings": [
+    {
+      "path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/数学/40-微积分与优化/convex_duality_certificate.py",
+      "relative_path": "数学/40-微积分与优化/convex_duality_certificate.py",
+      "sha256": "548247d8f94cf392300088526d91adb855c3bdfe013696956f3ffeb4a5b5e097",
+      "bytes": 8742,
+      "snapshot": "sources/数学/40-微积分与优化/convex_duality_certificate.py",
+      "unchanged_after_runs": true
+    },
+    {
+      "path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/10-LQR与约束控制/code-sync/lqr_mpc_lab.py",
+      "relative_path": "AI/45-机器人与具身智能/10-LQR与约束控制/code-sync/lqr_mpc_lab.py",
+      "sha256": "74df452671104f43afbee10466a99d5618d75236855d9bf7410eaf4049bf98a5",
+      "bytes": 18400,
+      "snapshot": "sources/AI/45-机器人与具身智能/10-LQR与约束控制/code-sync/lqr_mpc_lab.py",
+      "unchanged_after_runs": true
+    }
+  ],
+  "jobs": [
+    {
+      "name": "default",
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/数学/40-微积分与优化/convex_duality_certificate.py"
+      ],
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.033919208000043,
+      "sampled_peak_rss_bytes": null,
+      "rss_samples": 0,
+      "rss_sampling_error": "[Errno 1] Operation not permitted: 'ps'",
+      "cumulative_children_max_rss_bytes_macos": 21200896,
+      "termination_reason": null
+    },
+    {
+      "name": "qp",
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/数学/40-微积分与优化/convex_duality_certificate.py",
+        "--qp-vault-root",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL"
+      ],
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.2379094590000932,
+      "sampled_peak_rss_bytes": null,
+      "rss_samples": 0,
+      "rss_sampling_error": "[Errno 1] Operation not permitted: 'ps'",
+      "cumulative_children_max_rss_bytes_macos": 34586624,
+      "termination_reason": null
+    },
+    {
+      "name": "oracle",
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-current-bound/oracle.py"
+      ],
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.117349041000125,
+      "sampled_peak_rss_bytes": null,
+      "rss_samples": 0,
+      "rss_sampling_error": "[Errno 1] Operation not permitted: 'ps'",
+      "cumulative_children_max_rss_bytes_macos": 34783232,
+      "termination_reason": null
+    }
+  ],
+  "thread_environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4"
+  },
+  "resource_method": "Attempt ps RSS sampling every nominal 20 ms; preserve denial; cumulative RUSAGE_CHILDREN max RSS and oracle RUSAGE_SELF; 60 s timeout kills process group",
+  "resource_gaps": "ps denied by sandbox so no instantaneous RSS or OS thread count; attempted RLIMIT_DATA raised child preexec exception and was removed; no hard memory limit enforced, observed cumulative peak compared with 4 GiB target; numerical runtime thread limits requested through environment",
+  "status": "pass",
+  "scope": "Current default rational finite examples and current fixed floating QP; no general theory proof or interval roundoff certification"
+}

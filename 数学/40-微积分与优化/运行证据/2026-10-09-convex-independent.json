@@ -1,0 +1,1071 @@
+{
+  "execution_date_local": "2026-10-09 Asia/Shanghai",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "numpy": "2.5.3",
+  "thread_limit": 1,
+  "jobs": [
+    {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv/bin/python",
+        "-B",
+        "/private/tmp/wwl-issues-111plus-20261009/convex147/candidate/数学/40-微积分与优化/convex_duality_certificate.py"
+      ],
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.03741570800775662
+    },
+    {
+      "argv": [
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv/bin/python",
+        "-B",
+        "/private/tmp/wwl-issues-111plus-20261009/convex147/candidate/数学/40-微积分与优化/convex_duality_certificate.py",
+        "--qp-vault-root",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL"
+      ],
+      "returncode": 0,
+      "timeout_seconds": 60,
+      "elapsed_seconds": 0.18440895799722057
+    }
+  ],
+  "source_sha256": "548247d8f94cf392300088526d91adb855c3bdfe013696956f3ffeb4a5b5e097",
+  "actual_default_output": {
+    "parametric": [
+      {
+        "b": "0",
+        "x": "0",
+        "multiplier": "4",
+        "primal": "4",
+        "dual": "4",
+        "derivative": "-4",
+        "stationarity": "0",
+        "complementary": "0",
+        "trial_lower": "7/4"
+      },
+      {
+        "b": "1",
+        "x": "1",
+        "multiplier": "2",
+        "primal": "1",
+        "dual": "1",
+        "derivative": "-2",
+        "stationarity": "0",
+        "complementary": "0",
+        "trial_lower": "3/4"
+      },
+      {
+        "b": "2",
+        "x": "2",
+        "multiplier": "0",
+        "primal": "0",
+        "dual": "0",
+        "derivative": "0",
+        "stationarity": "0",
+        "complementary": "0",
+        "trial_lower": "-1/4"
+      },
+      {
+        "b": "3",
+        "x": "2",
+        "multiplier": "0",
+        "primal": "0",
+        "dual": "0",
+        "derivative": "0",
+        "stationarity": "0",
+        "complementary": "0",
+        "trial_lower": "-5/4"
+      }
+    ],
+    "degenerate": [
+      {
+        "multiplier": "1",
+        "lagrangian_minimizer": "-1/2",
+        "lower": "-1/4",
+        "primal_feasible_x": "0",
+        "upper": "0",
+        "gap": "1/4"
+      },
+      {
+        "multiplier": "10",
+        "lagrangian_minimizer": "-1/20",
+        "lower": "-1/40",
+        "primal_feasible_x": "0",
+        "upper": "0",
+        "gap": "1/40"
+      },
+      {
+        "multiplier": "100",
+        "lagrangian_minimizer": "-1/200",
+        "lower": "-1/400",
+        "primal_feasible_x": "0",
+        "upper": "0",
+        "gap": "1/400"
+      }
+    ],
+    "proximal_valid": [
+      {
+        "k": 0,
+        "x": "0",
+        "objective": "9/2",
+        "lower": "5/2",
+        "gap": "2",
+        "gradient_mapping": "-2",
+        "next_objective": "3",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 1,
+        "x": "1",
+        "objective": "3",
+        "lower": "5/2",
+        "gap": "1/2",
+        "gradient_mapping": "-1",
+        "next_objective": "21/8",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 2,
+        "x": "3/2",
+        "objective": "21/8",
+        "lower": "5/2",
+        "gap": "1/8",
+        "gradient_mapping": "-1/2",
+        "next_objective": "81/32",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 3,
+        "x": "7/4",
+        "objective": "81/32",
+        "lower": "5/2",
+        "gap": "1/32",
+        "gradient_mapping": "-1/4",
+        "next_objective": "321/128",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 4,
+        "x": "15/8",
+        "objective": "321/128",
+        "lower": "5/2",
+        "gap": "1/128",
+        "gradient_mapping": "-1/8",
+        "next_objective": "1281/512",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 5,
+        "x": "31/16",
+        "objective": "1281/512",
+        "lower": "5/2",
+        "gap": "1/512",
+        "gradient_mapping": "-1/16",
+        "next_objective": "5121/2048",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 6,
+        "x": "63/32",
+        "objective": "5121/2048",
+        "lower": "5/2",
+        "gap": "1/2048",
+        "gradient_mapping": "-1/32",
+        "next_objective": "20481/8192",
+        "conservative_descent_holds": true
+      }
+    ],
+    "proximal_bad_step": [
+      {
+        "k": 0,
+        "x": "0",
+        "objective": "9/2",
+        "lower": "5/2",
+        "gap": "2",
+        "gradient_mapping": "-2",
+        "next_objective": "21/2",
+        "conservative_descent_holds": false
+      },
+      {
+        "k": 1,
+        "x": "6",
+        "objective": "21/2",
+        "lower": "5/2",
+        "gap": "8",
+        "gradient_mapping": "2",
+        "next_objective": "9/2",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 2,
+        "x": "0",
+        "objective": "9/2",
+        "lower": "5/2",
+        "gap": "2",
+        "gradient_mapping": "-2",
+        "next_objective": "21/2",
+        "conservative_descent_holds": false
+      },
+      {
+        "k": 3,
+        "x": "6",
+        "objective": "21/2",
+        "lower": "5/2",
+        "gap": "8",
+        "gradient_mapping": "2",
+        "next_objective": "9/2",
+        "conservative_descent_holds": true
+      }
+    ],
+    "lp_valid": {
+      "weights": [
+        "2",
+        "3",
+        "2"
+      ],
+      "edge_budgets": [
+        "2",
+        "1"
+      ],
+      "vertex_loads": [
+        "2",
+        "3",
+        "1"
+      ],
+      "dual_feasible": true,
+      "alleged_lower": "3",
+      "certified_lower": "3",
+      "upper": "5",
+      "exact_integer_optimum": "3",
+      "all_covers": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          "3"
+        ],
+        [
+          [
+            0,
+            1,
+            1
+          ],
+          "5"
+        ],
+        [
+          [
+            1,
+            0,
+            1
+          ],
+          "4"
+        ],
+        [
+          [
+            1,
+            1,
+            0
+          ],
+          "5"
+        ],
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          "7"
+        ]
+      ]
+    },
+    "lp_invalid": {
+      "weights": [
+        "2",
+        "3",
+        "2"
+      ],
+      "edge_budgets": [
+        "2",
+        "2"
+      ],
+      "vertex_loads": [
+        "2",
+        "4",
+        "2"
+      ],
+      "dual_feasible": false,
+      "alleged_lower": "4",
+      "certified_lower": null,
+      "upper": "5",
+      "exact_integer_optimum": "3",
+      "all_covers": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          "3"
+        ],
+        [
+          [
+            0,
+            1,
+            1
+          ],
+          "5"
+        ],
+        [
+          [
+            1,
+            0,
+            1
+          ],
+          "4"
+        ],
+        [
+          [
+            1,
+            1,
+            0
+          ],
+          "5"
+        ],
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          "7"
+        ]
+      ]
+    },
+    "svm": {
+      "points": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "labels": [
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "alpha": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "0",
+        "0"
+      ],
+      "w": [
+        "1",
+        "0"
+      ],
+      "bias": "0",
+      "margins": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2"
+      ],
+      "bias_equality": "0",
+      "stationary_difference": [
+        "0",
+        "0"
+      ],
+      "complementary": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "upper": "1/2",
+      "lower": "1/2",
+      "soft_C_one_tenth_feasible": false
+    }
+  },
+  "actual_qp_output": {
+    "parametric": [
+      {
+        "b": "0",
+        "x": "0",
+        "multiplier": "4",
+        "primal": "4",
+        "dual": "4",
+        "derivative": "-4",
+        "stationarity": "0",
+        "complementary": "0",
+        "trial_lower": "7/4"
+      },
+      {
+        "b": "1",
+        "x": "1",
+        "multiplier": "2",
+        "primal": "1",
+        "dual": "1",
+        "derivative": "-2",
+        "stationarity": "0",
+        "complementary": "0",
+        "trial_lower": "3/4"
+      },
+      {
+        "b": "2",
+        "x": "2",
+        "multiplier": "0",
+        "primal": "0",
+        "dual": "0",
+        "derivative": "0",
+        "stationarity": "0",
+        "complementary": "0",
+        "trial_lower": "-1/4"
+      },
+      {
+        "b": "3",
+        "x": "2",
+        "multiplier": "0",
+        "primal": "0",
+        "dual": "0",
+        "derivative": "0",
+        "stationarity": "0",
+        "complementary": "0",
+        "trial_lower": "-5/4"
+      }
+    ],
+    "degenerate": [
+      {
+        "multiplier": "1",
+        "lagrangian_minimizer": "-1/2",
+        "lower": "-1/4",
+        "primal_feasible_x": "0",
+        "upper": "0",
+        "gap": "1/4"
+      },
+      {
+        "multiplier": "10",
+        "lagrangian_minimizer": "-1/20",
+        "lower": "-1/40",
+        "primal_feasible_x": "0",
+        "upper": "0",
+        "gap": "1/40"
+      },
+      {
+        "multiplier": "100",
+        "lagrangian_minimizer": "-1/200",
+        "lower": "-1/400",
+        "primal_feasible_x": "0",
+        "upper": "0",
+        "gap": "1/400"
+      }
+    ],
+    "proximal_valid": [
+      {
+        "k": 0,
+        "x": "0",
+        "objective": "9/2",
+        "lower": "5/2",
+        "gap": "2",
+        "gradient_mapping": "-2",
+        "next_objective": "3",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 1,
+        "x": "1",
+        "objective": "3",
+        "lower": "5/2",
+        "gap": "1/2",
+        "gradient_mapping": "-1",
+        "next_objective": "21/8",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 2,
+        "x": "3/2",
+        "objective": "21/8",
+        "lower": "5/2",
+        "gap": "1/8",
+        "gradient_mapping": "-1/2",
+        "next_objective": "81/32",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 3,
+        "x": "7/4",
+        "objective": "81/32",
+        "lower": "5/2",
+        "gap": "1/32",
+        "gradient_mapping": "-1/4",
+        "next_objective": "321/128",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 4,
+        "x": "15/8",
+        "objective": "321/128",
+        "lower": "5/2",
+        "gap": "1/128",
+        "gradient_mapping": "-1/8",
+        "next_objective": "1281/512",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 5,
+        "x": "31/16",
+        "objective": "1281/512",
+        "lower": "5/2",
+        "gap": "1/512",
+        "gradient_mapping": "-1/16",
+        "next_objective": "5121/2048",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 6,
+        "x": "63/32",
+        "objective": "5121/2048",
+        "lower": "5/2",
+        "gap": "1/2048",
+        "gradient_mapping": "-1/32",
+        "next_objective": "20481/8192",
+        "conservative_descent_holds": true
+      }
+    ],
+    "proximal_bad_step": [
+      {
+        "k": 0,
+        "x": "0",
+        "objective": "9/2",
+        "lower": "5/2",
+        "gap": "2",
+        "gradient_mapping": "-2",
+        "next_objective": "21/2",
+        "conservative_descent_holds": false
+      },
+      {
+        "k": 1,
+        "x": "6",
+        "objective": "21/2",
+        "lower": "5/2",
+        "gap": "8",
+        "gradient_mapping": "2",
+        "next_objective": "9/2",
+        "conservative_descent_holds": true
+      },
+      {
+        "k": 2,
+        "x": "0",
+        "objective": "9/2",
+        "lower": "5/2",
+        "gap": "2",
+        "gradient_mapping": "-2",
+        "next_objective": "21/2",
+        "conservative_descent_holds": false
+      },
+      {
+        "k": 3,
+        "x": "6",
+        "objective": "21/2",
+        "lower": "5/2",
+        "gap": "8",
+        "gradient_mapping": "2",
+        "next_objective": "9/2",
+        "conservative_descent_holds": true
+      }
+    ],
+    "lp_valid": {
+      "weights": [
+        "2",
+        "3",
+        "2"
+      ],
+      "edge_budgets": [
+        "2",
+        "1"
+      ],
+      "vertex_loads": [
+        "2",
+        "3",
+        "1"
+      ],
+      "dual_feasible": true,
+      "alleged_lower": "3",
+      "certified_lower": "3",
+      "upper": "5",
+      "exact_integer_optimum": "3",
+      "all_covers": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          "3"
+        ],
+        [
+          [
+            0,
+            1,
+            1
+          ],
+          "5"
+        ],
+        [
+          [
+            1,
+            0,
+            1
+          ],
+          "4"
+        ],
+        [
+          [
+            1,
+            1,
+            0
+          ],
+          "5"
+        ],
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          "7"
+        ]
+      ]
+    },
+    "lp_invalid": {
+      "weights": [
+        "2",
+        "3",
+        "2"
+      ],
+      "edge_budgets": [
+        "2",
+        "2"
+      ],
+      "vertex_loads": [
+        "2",
+        "4",
+        "2"
+      ],
+      "dual_feasible": false,
+      "alleged_lower": "4",
+      "certified_lower": null,
+      "upper": "5",
+      "exact_integer_optimum": "3",
+      "all_covers": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          "3"
+        ],
+        [
+          [
+            0,
+            1,
+            1
+          ],
+          "5"
+        ],
+        [
+          [
+            1,
+            0,
+            1
+          ],
+          "4"
+        ],
+        [
+          [
+            1,
+            1,
+            0
+          ],
+          "5"
+        ],
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          "7"
+        ]
+      ]
+    },
+    "svm": {
+      "points": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "labels": [
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "alpha": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "0",
+        "0"
+      ],
+      "w": [
+        "1",
+        "0"
+      ],
+      "bias": "0",
+      "margins": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2"
+      ],
+      "bias_equality": "0",
+      "stationary_difference": [
+        "0",
+        "0"
+      ],
+      "complementary": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "upper": "1/2",
+      "lower": "1/2",
+      "soft_C_one_tenth_feasible": false
+    },
+    "qp": {
+      "arithmetic": "floating; not an interval-certified bound",
+      "source": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/10-LQR与约束控制/code-sync/lqr_mpc_lab.py",
+      "certificates": {
+        "box_qp": {
+          "controls": [
+            -0.8,
+            -0.8,
+            -0.6587235871880288,
+            -0.0673154955760223,
+            0.26832503514452866,
+            0.4467973738339559,
+            0.5467983784017154,
+            0.6270774547378302
+          ],
+          "lower_multipliers": [
+            0.2214795966967129,
+            0.08207597770775799,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "upper_multipliers": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "primal": 1.1608503889191777,
+          "dual": 1.1608503889191781,
+          "gap": -4.440892098500626e-16,
+          "primal_violation": 0.0,
+          "dual_violation": 0.0,
+          "stationarity": 2.220446049250313e-16,
+          "complementary": 0.0
+        },
+        "clipped": {
+          "controls": [
+            -0.8,
+            -0.6593004561757749,
+            -0.05790609515943965,
+            0.26634932067508227,
+            0.41272913044663495,
+            0.45916645137591716,
+            0.4631912093126905,
+            0.46458629912723015
+          ],
+          "lower_multipliers": [
+            1.813019994261571,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "upper_multipliers": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "primal": 1.8471655856219158,
+          "dual": -5.701149510477832,
+          "gap": 7.548315096099747,
+          "primal_violation": 0.0,
+          "dual_violation": 0.0,
+          "stationarity": 1.4900971877364912,
+          "complementary": 0.0
+        }
+      }
+    }
+  },
+  "independent_checks": [
+    "parametric b=0,1,2,3 primal/dual/multiplier/derivative exact",
+    "degenerate finite multipliers1,10,100 have negative exact bound",
+    "proximal closed-form gap and t=3 two-cycle exact",
+    "LP exact primal covers and infeasible lower budget rejected",
+    "SVM exact margin/equality/duality and C=.1 counterexample",
+    "existing A* unchanged API: reopen/no-reopen4/5, empty OPEN and start=goal",
+    "QP exact mechanics rebuild, independent coordinate descent and clipped counterexample"
+  ],
+  "astar_actual_api_output": {
+    "source": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/13-搜索推理与规划/symbolic_ai_lab.py",
+    "source_sha256": "701c7c14f1d414619add9e6b6491ae90767c3327ea4ce62da0cb74281bef91a5",
+    "api_inputs": {
+      "graph": {
+        "S": [
+          [
+            "A",
+            3
+          ],
+          [
+            "B",
+            1
+          ]
+        ],
+        "A": [
+          [
+            "G",
+            2
+          ]
+        ],
+        "B": [
+          [
+            "A",
+            1
+          ]
+        ],
+        "G": []
+      },
+      "heuristic": {
+        "S": 0,
+        "A": 0,
+        "B": 3,
+        "G": 0
+      },
+      "start": "S",
+      "goal": "G"
+    },
+    "all_simple_paths": [
+      [
+        4,
+        [
+          "S",
+          "B",
+          "A",
+          "G"
+        ]
+      ],
+      [
+        5,
+        [
+          "S",
+          "A",
+          "G"
+        ]
+      ]
+    ],
+    "reopen": {
+      "path": [
+        "S",
+        "B",
+        "A",
+        "G"
+      ],
+      "cost": 4,
+      "expanded": [
+        "S",
+        "A",
+        "B",
+        "A"
+      ],
+      "pops": [
+        "S",
+        "A",
+        "B",
+        "A",
+        "G"
+      ],
+      "reopened": [
+        "A"
+      ]
+    },
+    "no_reopen": {
+      "path": [
+        "S",
+        "A",
+        "G"
+      ],
+      "cost": 5,
+      "expanded": [
+        "S",
+        "A",
+        "B"
+      ],
+      "pops": [
+        "S",
+        "A",
+        "B",
+        "G"
+      ],
+      "reopened": []
+    },
+    "first_discovery_snapshot": {
+      "incumbent": 5,
+      "valid_frontier_f": {
+        "B": 4,
+        "G": 5
+      },
+      "lower": 4,
+      "upper": 5
+    },
+    "unreachable": {
+      "path": null,
+      "cost": null,
+      "expanded": [
+        "S",
+        "A"
+      ],
+      "pops": [
+        "S",
+        "A"
+      ],
+      "reopened": []
+    },
+    "start_equals_goal": {
+      "path": [
+        "S"
+      ],
+      "cost": 0,
+      "expanded": [],
+      "pops": [
+        "S"
+      ],
+      "reopened": []
+    }
+  },
+  "qp_independent": {
+    "rational_constant": "4",
+    "iterations": 149,
+    "coordinate_solution": [
+      -0.8,
+      -0.8,
+      -0.6587235871879897,
+      -0.06731549557605178,
+      0.26832503514450573,
+      0.4467973738339513,
+      0.5467983784017223,
+      0.6270774547378365
+    ],
+    "checks": {
+      "box_qp": {
+        "mechanics_objective": 1.1608503889191786,
+        "independent_dual": 1.160850388919179,
+        "stationarity": 4.440892098500626e-16,
+        "complementary": 0.0
+      },
+      "clipped": {
+        "mechanics_objective": 1.8471655856219156,
+        "independent_dual": -5.701149510477823,
+        "stationarity": 1.4900971877364908,
+        "complementary": 0.0
+      }
+    }
+  },
+  "children_max_rss_bytes_on_macos": 34734080,
+  "status": "pass",
+  "scope": "specified rational and floating finite certificates; no interval arithmetic or general solver proof",
+  "reproduction_commands_from_vault_root": [
+    "python3 -B 数学/40-微积分与优化/convex_duality_certificate.py",
+    ".venv/bin/python -B 数学/40-微积分与优化/convex_duality_certificate.py --qp-vault-root ."
+  ],
+  "output_requirement": "NEW output file or directory must not already exist"
+}

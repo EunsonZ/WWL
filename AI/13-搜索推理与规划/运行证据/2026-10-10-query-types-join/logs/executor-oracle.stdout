@@ -1,0 +1,1578 @@
+{
+  "status": "PASS",
+  "started_unix": 1791567122.93372,
+  "elapsed_seconds": 0.011385917663574219,
+  "pid": 25688,
+  "models": [
+    {
+      "model": "M0",
+      "facts": [
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ]
+      ],
+      "parent": [
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ]
+      ],
+      "anc": [
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ada",
+          "Cora"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ]
+      ],
+      "query": [
+        "Cora",
+        "Ada"
+      ],
+      "query_truth": false,
+      "rule_assignments": [
+        {
+          "assignment": [
+            "Ada",
+            "Ada",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ada",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ada",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ben",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ben",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ben",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Cora",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Cora",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Cora",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ada",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ada",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ada",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ben",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ben",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ben",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Cora",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Cora",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Cora",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ada",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ada",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ada",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ben",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ben",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ben",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Cora",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Cora",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Cora",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        }
+      ]
+    },
+    {
+      "model": "M1",
+      "facts": [
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ]
+      ],
+      "parent": [
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ],
+        [
+          "Cora",
+          "Ada"
+        ]
+      ],
+      "anc": [
+        [
+          "Ada",
+          "Ada"
+        ],
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ada",
+          "Cora"
+        ],
+        [
+          "Ben",
+          "Ada"
+        ],
+        [
+          "Ben",
+          "Ben"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ],
+        [
+          "Cora",
+          "Ada"
+        ],
+        [
+          "Cora",
+          "Ben"
+        ],
+        [
+          "Cora",
+          "Cora"
+        ]
+      ],
+      "query": [
+        "Cora",
+        "Ada"
+      ],
+      "query_truth": true,
+      "rule_assignments": [
+        {
+          "assignment": [
+            "Ada",
+            "Ada",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ada",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ada",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ben",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ben",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Ben",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Cora",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Cora",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ada",
+            "Cora",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ada",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ada",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ada",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ben",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ben",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Ben",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Cora",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Cora",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Ben",
+            "Cora",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ada",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ada",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ada",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ben",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ben",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Ben",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Cora",
+            "Ada"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Cora",
+            "Ben"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        },
+        {
+          "assignment": [
+            "Cora",
+            "Cora",
+            "Cora"
+          ],
+          "R1_satisfied": true,
+          "R2_satisfied": true
+        }
+      ]
+    }
+  ],
+  "closed_world_contract": {
+    "requires": [
+      "finite named domain",
+      "distinct constants",
+      "completed Parent facts",
+      "least Anc interpretation/closed world"
+    ],
+    "path_reachability": [
+      [
+        "Ada",
+        "Ben"
+      ],
+      [
+        "Ada",
+        "Cora"
+      ],
+      [
+        "Ben",
+        "Cora"
+      ]
+    ],
+    "query_absent_in_least_relation": true,
+    "does_not_negate_query_in_all_first_order_models": true
+  },
+  "SQL_expected_rows": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      null,
+      1,
+      1
+    ],
+    [
+      null,
+      null,
+      1,
+      0
+    ]
+  ],
+  "trees": [
+    {
+      "name": "atom",
+      "left": "Fun(name='P', args=(Var(name='x'), Fun(name='f', args=(Var(name='y'),))))",
+      "right": "Fun(name='P', args=(Fun(name='Ada', args=()), Fun(name='f', args=(Fun(name='Ada', args=()),))))",
+      "unifiable": true,
+      "substitution": {
+        "y": "Fun(name='Ada', args=())",
+        "x": "Fun(name='Ada', args=())"
+      },
+      "independently_normalized": [
+        [
+          "P",
+          [
+            [
+              "Ada",
+              []
+            ],
+            [
+              "f",
+              [
+                [
+                  "Ada",
+                  []
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "P",
+          [
+            [
+              "Ada",
+              []
+            ],
+            [
+              "f",
+              [
+                [
+                  "Ada",
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "arrow",
+      "left": "Fun(name='Arrow', args=(Var(name='alpha'), Var(name='beta')))",
+      "right": "Fun(name='Arrow', args=(Var(name='beta'), Var(name='gamma')))",
+      "unifiable": true,
+      "substitution": {
+        "beta": "Var(name='gamma')",
+        "alpha": "Var(name='gamma')"
+      },
+      "independently_normalized": [
+        [
+          "Arrow",
+          [
+            [
+              "var",
+              "gamma"
+            ],
+            [
+              "var",
+              "gamma"
+            ]
+          ]
+        ],
+        [
+          "Arrow",
+          [
+            [
+              "var",
+              "gamma"
+            ],
+            [
+              "var",
+              "gamma"
+            ]
+          ]
+        ]
+      ],
+      "free_representative": [
+        "var",
+        "gamma"
+      ]
+    },
+    {
+      "name": "changed_constructor",
+      "left": "Fun(name='Arrow', args=(Var(name='alpha'), Fun(name='Bool', args=())))",
+      "right": "Fun(name='Arrow', args=(Fun(name='Bool', args=()), Var(name='gamma')))",
+      "unifiable": true,
+      "substitution": {
+        "gamma": "Fun(name='Bool', args=())",
+        "alpha": "Fun(name='Bool', args=())"
+      },
+      "independently_normalized": [
+        [
+          "Arrow",
+          [
+            [
+              "Bool",
+              []
+            ],
+            [
+              "Bool",
+              []
+            ]
+          ]
+        ],
+        [
+          "Arrow",
+          [
+            [
+              "Bool",
+              []
+            ],
+            [
+              "Bool",
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "direct_occurs",
+      "left": "Var(name='x')",
+      "right": "Fun(name='f', args=(Var(name='x'),))",
+      "unifiable": false
+    },
+    {
+      "name": "indirect_occurs",
+      "left": "Fun(name='Pair', args=(Var(name='x'), Var(name='y')))",
+      "right": "Fun(name='Pair', args=(Fun(name='f', args=(Var(name='y'),)), Fun(name='f', args=(Var(name='x'),))))",
+      "unifiable": false
+    },
+    {
+      "name": "type_occurs",
+      "left": "Var(name='alpha')",
+      "right": "Fun(name='Arrow', args=(Var(name='alpha'), Var(name='beta')))",
+      "unifiable": false
+    },
+    {
+      "name": "constructor_conflict",
+      "left": "Fun(name='Bool', args=())",
+      "right": "Fun(name='Int', args=())",
+      "unifiable": false
+    },
+    {
+      "name": "arity_conflict",
+      "left": "Fun(name='Arrow', args=(Var(name='alpha'),))",
+      "right": "Fun(name='Arrow', args=(Var(name='alpha'), Var(name='beta')))",
+      "unifiable": false
+    }
+  ],
+  "type_encoding_commutation": [
+    {
+      "type_input": [
+        "Bool",
+        []
+      ],
+      "expected_type": [
+        "Bool",
+        []
+      ],
+      "applied_encoded": [
+        "Bool",
+        []
+      ]
+    },
+    {
+      "type_input": [
+        "var",
+        "alpha"
+      ],
+      "expected_type": [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ],
+      "applied_encoded": [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ]
+    },
+    {
+      "type_input": [
+        "var",
+        "beta"
+      ],
+      "expected_type": [
+        "Bool",
+        []
+      ],
+      "applied_encoded": [
+        "Bool",
+        []
+      ]
+    },
+    {
+      "type_input": [
+        "Arrow",
+        [
+          [
+            "var",
+            "alpha"
+          ],
+          [
+            "var",
+            "beta"
+          ]
+        ]
+      ],
+      "expected_type": [
+        "Arrow",
+        [
+          [
+            "Arrow",
+            [
+              [
+                "Bool",
+                []
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ],
+      "applied_encoded": [
+        "Arrow",
+        [
+          [
+            "Arrow",
+            [
+              [
+                "Bool",
+                []
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ]
+    },
+    {
+      "type_input": [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Arrow",
+            [
+              [
+                "var",
+                "alpha"
+              ],
+              [
+                "var",
+                "beta"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "expected_type": [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Arrow",
+            [
+              [
+                "Arrow",
+                [
+                  [
+                    "Bool",
+                    []
+                  ],
+                  [
+                    "Bool",
+                    []
+                  ]
+                ]
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ]
+        ]
+      ],
+      "applied_encoded": [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Arrow",
+            [
+              [
+                "Arrow",
+                [
+                  [
+                    "Bool",
+                    []
+                  ],
+                  [
+                    "Bool",
+                    []
+                  ]
+                ]
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  ],
+  "composition": {
+    "sigma2_after_sigma1": [
+      "Bool",
+      []
+    ],
+    "sigma1_after_sigma2": [
+      "var",
+      "beta"
+    ]
+  },
+  "finite_type_assignments": 64,
+  "finite_equation_solutions": [
+    [
+      [
+        "Bool",
+        []
+      ],
+      [
+        "Bool",
+        []
+      ],
+      [
+        "Bool",
+        []
+      ]
+    ],
+    [
+      [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ],
+      [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ],
+      [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ]
+    ],
+    [
+      [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Arrow",
+            [
+              [
+                "Bool",
+                []
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ]
+        ]
+      ],
+      [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Arrow",
+            [
+              [
+                "Bool",
+                []
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ]
+        ]
+      ],
+      [
+        "Arrow",
+        [
+          [
+            "Bool",
+            []
+          ],
+          [
+            "Arrow",
+            [
+              [
+                "Bool",
+                []
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ]
+        ]
+      ]
+    ],
+    [
+      [
+        "Arrow",
+        [
+          [
+            "Arrow",
+            [
+              [
+                "Bool",
+                []
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ],
+      [
+        "Arrow",
+        [
+          [
+            "Arrow",
+            [
+              [
+                "Bool",
+                []
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ],
+      [
+        "Arrow",
+        [
+          [
+            "Arrow",
+            [
+              [
+                "Bool",
+                []
+              ],
+              [
+                "Bool",
+                []
+              ]
+            ]
+          ],
+          [
+            "Bool",
+            []
+          ]
+        ]
+      ]
+    ]
+  ],
+  "empty_KB_countermodel": {
+    "domain": [
+      "Ada"
+    ],
+    "P": [],
+    "P_Ada": false
+  },
+  "counter_oracle": {
+    "states": 16,
+    "LUB_pairs": 256,
+    "ACI_triples": 4096,
+    "witnesses": [
+      {
+        "left": [
+          2,
+          0
+        ],
+        "right": [
+          0,
+          3
+        ],
+        "all_upper_bounds": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "least": [
+          [
+            2,
+            3
+          ]
+        ],
+        "event_ids": [
+          [
+            "A",
+            0
+          ],
+          [
+            "A",
+            1
+          ],
+          [
+            "B",
+            0
+          ],
+          [
+            "B",
+            1
+          ],
+          [
+            "B",
+            2
+          ]
+        ]
+      }
+    ],
+    "message_schedules": [
+      [
+        {
+          "message": [
+            0,
+            3
+          ],
+          "actual_state": [
+            0,
+            3
+          ],
+          "expected_unique_events": [
+            [
+              "B",
+              0
+            ],
+            [
+              "B",
+              1
+            ],
+            [
+              "B",
+              2
+            ]
+          ],
+          "expected_count": 3
+        },
+        {
+          "message": [
+            2,
+            0
+          ],
+          "actual_state": [
+            2,
+            3
+          ],
+          "expected_unique_events": [
+            [
+              "A",
+              0
+            ],
+            [
+              "A",
+              1
+            ],
+            [
+              "B",
+              0
+            ],
+            [
+              "B",
+              1
+            ],
+            [
+              "B",
+              2
+            ]
+          ],
+          "expected_count": 5
+        },
+        {
+          "message": [
+            2,
+            0
+          ],
+          "actual_state": [
+            2,
+            3
+          ],
+          "expected_unique_events": [
+            [
+              "A",
+              0
+            ],
+            [
+              "A",
+              1
+            ],
+            [
+              "B",
+              0
+            ],
+            [
+              "B",
+              1
+            ],
+            [
+              "B",
+              2
+            ]
+          ],
+          "expected_count": 5
+        }
+      ],
+      [
+        {
+          "message": [
+            2,
+            0
+          ],
+          "actual_state": [
+            2,
+            0
+          ],
+          "expected_unique_events": [
+            [
+              "A",
+              0
+            ],
+            [
+              "A",
+              1
+            ]
+          ],
+          "expected_count": 2
+        },
+        {
+          "message": [
+            0,
+            3
+          ],
+          "actual_state": [
+            2,
+            3
+          ],
+          "expected_unique_events": [
+            [
+              "A",
+              0
+            ],
+            [
+              "A",
+              1
+            ],
+            [
+              "B",
+              0
+            ],
+            [
+              "B",
+              1
+            ],
+            [
+              "B",
+              2
+            ]
+          ],
+          "expected_count": 5
+        },
+        {
+          "message": [
+            2,
+            0
+          ],
+          "actual_state": [
+            2,
+            3
+          ],
+          "expected_unique_events": [
+            [
+              "A",
+              0
+            ],
+            [
+              "A",
+              1
+            ],
+            [
+              "B",
+              0
+            ],
+            [
+              "B",
+              1
+            ],
+            [
+              "B",
+              2
+            ]
+          ],
+          "expected_count": 5
+        }
+      ],
+      [
+        {
+          "message": [
+            2,
+            0
+          ],
+          "actual_state": [
+            2,
+            0
+          ],
+          "expected_unique_events": [
+            [
+              "A",
+              0
+            ],
+            [
+              "A",
+              1
+            ]
+          ],
+          "expected_count": 2
+        },
+        {
+          "message": [
+            2,
+            0
+          ],
+          "actual_state": [
+            2,
+            0
+          ],
+          "expected_unique_events": [
+            [
+              "A",
+              0
+            ],
+            [
+              "A",
+              1
+            ]
+          ],
+          "expected_count": 2
+        },
+        {
+          "message": [
+            0,
+            3
+          ],
+          "actual_state": [
+            2,
+            3
+          ],
+          "expected_unique_events": [
+            [
+              "A",
+              0
+            ],
+            [
+              "A",
+              1
+            ],
+            [
+              "B",
+              0
+            ],
+            [
+              "B",
+              1
+            ],
+            [
+              "B",
+              2
+            ]
+          ],
+          "expected_count": 5
+        }
+      ]
+    ]
+  },
+  "capacity_counterexample": {
+    "records": [
+      [
+        "A:1",
+        "甲",
+        "room",
+        540,
+        600
+      ],
+      [
+        "B:1",
+        "乙",
+        "room",
+        540,
+        600
+      ]
+    ],
+    "overlaps": [
+      [
+        "A:1",
+        "B:1"
+      ]
+    ],
+    "capacity": 1,
+    "active_count": 2,
+    "same_state": true,
+    "capacity_holds": false
+  },
+  "resource_self_ru_maxrss_bytes_on_macos": 26230784,
+  "scope": "Finite model/SQLite/finite-tree/finite-state checks only; no PostgreSQL,RAG backend,authority reservation,real network or general convergence theorem execution"
+}

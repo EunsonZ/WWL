@@ -1,0 +1,257 @@
+{
+  "fixed": {
+    "p": [
+      2,
+      0
+    ],
+    "q": [
+      0,
+      3
+    ],
+    "message_sequences": [
+      [
+        {
+          "message": [
+            0,
+            3
+          ],
+          "state": [
+            0,
+            3
+          ],
+          "query": 3
+        },
+        {
+          "message": [
+            2,
+            0
+          ],
+          "state": [
+            2,
+            3
+          ],
+          "query": 5
+        },
+        {
+          "message": [
+            2,
+            0
+          ],
+          "state": [
+            2,
+            3
+          ],
+          "query": 5
+        }
+      ],
+      [
+        {
+          "message": [
+            2,
+            0
+          ],
+          "state": [
+            2,
+            0
+          ],
+          "query": 2
+        },
+        {
+          "message": [
+            0,
+            3
+          ],
+          "state": [
+            2,
+            3
+          ],
+          "query": 5
+        },
+        {
+          "message": [
+            2,
+            0
+          ],
+          "state": [
+            2,
+            3
+          ],
+          "query": 5
+        }
+      ],
+      [
+        {
+          "message": [
+            2,
+            0
+          ],
+          "state": [
+            2,
+            0
+          ],
+          "query": 2
+        },
+        {
+          "message": [
+            2,
+            0
+          ],
+          "state": [
+            2,
+            0
+          ],
+          "query": 2
+        },
+        {
+          "message": [
+            0,
+            3
+          ],
+          "state": [
+            2,
+            3
+          ],
+          "query": 5
+        }
+      ]
+    ],
+    "grouped_left": [
+      2,
+      3
+    ],
+    "grouped_right": [
+      2,
+      3
+    ],
+    "three_merges": {
+      "scalar_max": 3,
+      "scalar_sum": 7,
+      "vector_state": [
+        2,
+        3
+      ],
+      "vector_query": 5
+    }
+  },
+  "condition_failures": {
+    "shared_identity": {
+      "actual_increments": 2,
+      "merged": [
+        1,
+        0
+      ],
+      "query": 1
+    },
+    "lost_state_reused_identity": {
+      "actual_increments": 3,
+      "merged": [
+        2,
+        0
+      ],
+      "query": 2
+    },
+    "last_update_not_delivered": {
+      "A": [
+        2,
+        0
+      ],
+      "B": [
+        0,
+        3
+      ],
+      "same": false,
+      "after_delivery": [
+        2,
+        3
+      ]
+    },
+    "wraparound": {
+      "before": [
+        3,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ],
+      "inflationary": false,
+      "merged_with_old": [
+        3,
+        0
+      ],
+      "actual_increments": 4
+    },
+    "repeated_command": {
+      "two_calls": [
+        2,
+        0
+      ],
+      "same_state_twice": [
+        1,
+        0
+      ]
+    }
+  },
+  "booking": {
+    "reads": {
+      "A": [],
+      "B": []
+    },
+    "local_A": [
+      [
+        "A:1",
+        "甲",
+        "room",
+        540,
+        600
+      ]
+    ],
+    "local_B": [
+      [
+        "B:1",
+        "乙",
+        "room",
+        540,
+        600
+      ]
+    ],
+    "merged_A": [
+      [
+        "A:1",
+        "甲",
+        "room",
+        540,
+        600
+      ],
+      [
+        "B:1",
+        "乙",
+        "room",
+        540,
+        600
+      ]
+    ],
+    "merged_B": [
+      [
+        "A:1",
+        "甲",
+        "room",
+        540,
+        600
+      ],
+      [
+        "B:1",
+        "乙",
+        "room",
+        540,
+        600
+      ]
+    ],
+    "same": true,
+    "capacity": 1,
+    "active_same_slot": 2,
+    "capacity_holds": false,
+    "scope": "constructed no-coordination rule; not reservation_v2 execution"
+  },
+  "boundary": "finite math; no real network or storage"
+}

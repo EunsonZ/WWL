@@ -1,0 +1,22 @@
+{
+  "models": {
+    "M0": {"facts_true": true, "r1_failures": [], "r2_failures": [], "query_true": false},
+    "M1": {"facts_true": true, "r1_failures": [], "r2_failures": [], "query_true": true}
+  },
+  "sql_rows": [[1, 0, 0, 0], [2, null, 1, 1], [null, null, 1, 0]],
+  "trees": {
+    "atom": {"unifiable": true, "normalized_variables": ["Ada", "Ada"]},
+    "arrow": {"unifiable": true, "all_variables_equal": true, "representative_is_free_variable": true},
+    "changed_constructor": {"unifiable": true, "normalized_variables": ["Bool", "Bool"]},
+    "indirect_occurs": {"unifiable": false},
+    "type_occurs": {"unifiable": false},
+    "constructor_conflict": {"unifiable": false},
+    "unifiable_not_entailment": {"unifiable": true, "normalized_variables": ["Ada"]}
+  },
+  "semantic_oracles": {
+    "arrow": "Each solution assigns alpha=beta=gamma. The shared type is arbitrary finite type; a free representative must remain. Variable orientation may differ.",
+    "indirect_occurs": "After x=f(y), y=f(x) becomes y=f(f(y)); finite height would satisfy h=h+2.",
+    "type_occurs": "Arrow(t,u) has height 1+max(h(t),h(u))>h(t).",
+    "empty_KB": "Interpret P as empty on domain {Ada}; P(Ada) is false although P(x) and P(Ada) unify."
+  }
+}

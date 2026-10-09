@@ -1,0 +1,204 @@
+{
+  "models": {
+    "M0": {
+      "facts_true": true,
+      "r1_failures": [],
+      "r2_failures": [],
+      "query_true": false,
+      "parent": [
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ]
+      ],
+      "anc": [
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ada",
+          "Cora"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ]
+      ]
+    },
+    "M1": {
+      "facts_true": true,
+      "r1_failures": [],
+      "r2_failures": [],
+      "query_true": true,
+      "parent": [
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ],
+        [
+          "Cora",
+          "Ada"
+        ]
+      ],
+      "anc": [
+        [
+          "Ada",
+          "Ada"
+        ],
+        [
+          "Ada",
+          "Ben"
+        ],
+        [
+          "Ada",
+          "Cora"
+        ],
+        [
+          "Ben",
+          "Ada"
+        ],
+        [
+          "Ben",
+          "Ben"
+        ],
+        [
+          "Ben",
+          "Cora"
+        ],
+        [
+          "Cora",
+          "Ada"
+        ],
+        [
+          "Cora",
+          "Ben"
+        ],
+        [
+          "Cora",
+          "Cora"
+        ]
+      ]
+    }
+  },
+  "sql": {
+    "engine": "SQLite",
+    "version": "3.53.4",
+    "rows": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        null,
+        1,
+        1
+      ],
+      [
+        null,
+        null,
+        1,
+        0
+      ]
+    ],
+    "encoding": "SQL FALSE=0, TRUE=1, UNKNOWN=None; not PostgreSQL execution"
+  },
+  "trees": {
+    "atom": {
+      "input": [
+        "P(x,f(y))",
+        "P(Ada,f(Ada))"
+      ],
+      "unifiable": true,
+      "normalized_variables": [
+        "Ada",
+        "Ada"
+      ],
+      "equal_after_apply": true,
+      "applied": [
+        "P(Ada,f(Ada))",
+        "P(Ada,f(Ada))"
+      ]
+    },
+    "arrow": {
+      "input": [
+        "Arrow(alpha,beta)",
+        "Arrow(beta,gamma)"
+      ],
+      "unifiable": true,
+      "normalized_variables": [
+        "gamma",
+        "gamma",
+        "gamma"
+      ],
+      "equal_after_apply": true,
+      "applied": [
+        "Arrow(gamma,gamma)",
+        "Arrow(gamma,gamma)"
+      ]
+    },
+    "changed_constructor": {
+      "input": [
+        "Arrow(alpha,Bool)",
+        "Arrow(Bool,gamma)"
+      ],
+      "unifiable": true,
+      "normalized_variables": [
+        "Bool",
+        "Bool"
+      ],
+      "equal_after_apply": true,
+      "applied": [
+        "Arrow(Bool,Bool)",
+        "Arrow(Bool,Bool)"
+      ]
+    },
+    "indirect_occurs": {
+      "input": [
+        "Pair(x,y)",
+        "Pair(f(y),f(x))"
+      ],
+      "unifiable": false
+    },
+    "type_occurs": {
+      "input": [
+        "alpha",
+        "Arrow(alpha,beta)"
+      ],
+      "unifiable": false
+    },
+    "constructor_conflict": {
+      "input": [
+        "Bool",
+        "Int"
+      ],
+      "unifiable": false
+    },
+    "unifiable_not_entailment": {
+      "input": [
+        "P(x)",
+        "P(Ada)"
+      ],
+      "unifiable": true,
+      "normalized_variables": [
+        "Ada"
+      ],
+      "equal_after_apply": true,
+      "applied": [
+        "P(Ada)",
+        "P(Ada)"
+      ]
+    }
+  }
+}

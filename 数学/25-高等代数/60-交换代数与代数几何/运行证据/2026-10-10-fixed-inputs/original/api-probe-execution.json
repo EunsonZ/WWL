@@ -1,0 +1,28 @@
+{
+  "command": [
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "-B",
+    "api_probe.py"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments153/run-20261010-01",
+  "start_unix": 1791575324.017907,
+  "end_unix": 1791575324.049593,
+  "elapsed_seconds": 0.03168606758117676,
+  "exit_code": 0,
+  "timeout": false,
+  "timeout_seconds": 60,
+  "child_rusage": {
+    "maxrss_bytes_macos": 20463616,
+    "user_seconds": 0.021469,
+    "system_seconds": 0.006056
+  },
+  "source_final": {
+    "code/affine_exact.py": "0a161e6013480582ddfe8913f56923ebf7999cbcd2218d4ccd6c702e0f25a14e",
+    "code/examples.py": "aaad83edad161f0d4a4cba4ad9e2afd882e277e61d06455c3a759b40ad31eca3",
+    "code/fixed-inputs.json": "2f9adc05819d9f9946385600cfdd9fc336db3684d54c88efae1d1601fadfc269",
+    "code/independent-expected.json": "b2ccccac46cfa3a78f74de19eccae131ddc92f2e3f30873a393a861a32b6efca"
+  },
+  "source_stable": true,
+  "stdout_sha256": "05cabd6bbeebb31ba4af4d7c24251827be0b7582814695c49977b91b38d72599",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

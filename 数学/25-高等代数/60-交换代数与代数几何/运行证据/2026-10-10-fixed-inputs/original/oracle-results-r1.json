@@ -1,0 +1,1674 @@
+{
+  "business_api_imported": false,
+  "checks_total": 277,
+  "all_match": true,
+  "failed_checks": [],
+  "api_cases": 90,
+  "rejection_cases": 63,
+  "step_scope": "in-memory guard2/3 branch tested; published2000 checked; natural2001-step witness not run",
+  "general_NS_Hilbert_or_scheme_proof_certified": false,
+  "checks": [
+    {
+      "check": "eight_input_names",
+      "match": true,
+      "actual": "{'node', 'hyperbola', 'f', 'double_axis', 'cusp', 'g', 'axis', 'parabola'}",
+      "expected": "{'node', 'hyperbola', 'f', 'double_axis', 'cusp', 'g', 'axis', 'parabola'}"
+    },
+    {
+      "check": "output_eight_names",
+      "match": true,
+      "actual": "{'node', 'hyperbola', 'f', 'double_axis', 'cusp', 'g', 'axis', 'parabola'}",
+      "expected": "{'node', 'hyperbola', 'f', 'double_axis', 'cusp', 'g', 'axis', 'parabola'}"
+    },
+    {
+      "check": "input/f",
+      "match": true,
+      "actual": "{(2, 0): Fraction(1, 1), (0, 1): Fraction(-1, 1)}",
+      "expected": "{(2, 0): Fraction(1, 1), (0, 1): Fraction(-1, 1)}"
+    },
+    {
+      "check": "reported_input/f",
+      "match": true,
+      "actual": "{(2, 0): Fraction(1, 1), (0, 1): Fraction(-1, 1)}",
+      "expected": "{(2, 0): Fraction(1, 1), (0, 1): Fraction(-1, 1)}"
+    },
+    {
+      "check": "input/g",
+      "match": true,
+      "actual": "{(0, 2): Fraction(1, 1), (1, 0): Fraction(-1, 1)}",
+      "expected": "{(0, 2): Fraction(1, 1), (1, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "reported_input/g",
+      "match": true,
+      "actual": "{(1, 0): Fraction(-1, 1), (0, 2): Fraction(1, 1)}",
+      "expected": "{(0, 2): Fraction(1, 1), (1, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "input/parabola",
+      "match": true,
+      "actual": "{(0, 1): Fraction(1, 1), (2, 0): Fraction(-1, 1)}",
+      "expected": "{(0, 1): Fraction(1, 1), (2, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "reported_input/parabola",
+      "match": true,
+      "actual": "{(2, 0): Fraction(-1, 1), (0, 1): Fraction(1, 1)}",
+      "expected": "{(0, 1): Fraction(1, 1), (2, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "input/cusp",
+      "match": true,
+      "actual": "{(0, 2): Fraction(1, 1), (3, 0): Fraction(-1, 1)}",
+      "expected": "{(0, 2): Fraction(1, 1), (3, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "reported_input/cusp",
+      "match": true,
+      "actual": "{(3, 0): Fraction(-1, 1), (0, 2): Fraction(1, 1)}",
+      "expected": "{(0, 2): Fraction(1, 1), (3, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "input/node",
+      "match": true,
+      "actual": "{(0, 2): Fraction(1, 1), (2, 0): Fraction(-1, 1), (3, 0): Fraction(-1, 1)}",
+      "expected": "{(0, 2): Fraction(1, 1), (2, 0): Fraction(-1, 1), (3, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "reported_input/node",
+      "match": true,
+      "actual": "{(3, 0): Fraction(-1, 1), (2, 0): Fraction(-1, 1), (0, 2): Fraction(1, 1)}",
+      "expected": "{(0, 2): Fraction(1, 1), (2, 0): Fraction(-1, 1), (3, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "input/axis",
+      "match": true,
+      "actual": "{(0, 1): Fraction(1, 1)}",
+      "expected": "{(0, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "reported_input/axis",
+      "match": true,
+      "actual": "{(0, 1): Fraction(1, 1)}",
+      "expected": "{(0, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "input/double_axis",
+      "match": true,
+      "actual": "{(0, 2): Fraction(1, 1)}",
+      "expected": "{(0, 2): Fraction(1, 1)}"
+    },
+    {
+      "check": "reported_input/double_axis",
+      "match": true,
+      "actual": "{(0, 2): Fraction(1, 1)}",
+      "expected": "{(0, 2): Fraction(1, 1)}"
+    },
+    {
+      "check": "input/hyperbola",
+      "match": true,
+      "actual": "{(1, 1): Fraction(1, 1), (0, 0): Fraction(-1, 1)}",
+      "expected": "{(1, 1): Fraction(1, 1), (0, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "reported_input/hyperbola",
+      "match": true,
+      "actual": "{(1, 1): Fraction(1, 1), (0, 0): Fraction(-1, 1)}",
+      "expected": "{(1, 1): Fraction(1, 1), (0, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "basis/g1",
+      "match": true,
+      "actual": "{(1, 0): Fraction(1, 1), (0, 2): Fraction(-1, 1)}",
+      "expected": "{(1, 0): Fraction(1, 1), (0, 2): Fraction(-1, 1)}"
+    },
+    {
+      "check": "basis/g2",
+      "match": true,
+      "actual": "{(0, 4): Fraction(1, 1), (0, 1): Fraction(-1, 1)}",
+      "expected": "{(0, 4): Fraction(1, 1), (0, 1): Fraction(-1, 1)}"
+    },
+    {
+      "check": "identity_names",
+      "match": true,
+      "actual": "{'f_minus_x_plus_y2_times_g1_minus_g2', 'g2_minus_f_minus_x_plus_y2_times_g', 'node_parameter', 'g1_plus_g', 'cusp_parameter', 'parabola_parameter'}",
+      "expected": "{'f_minus_x_plus_y2_times_g1_minus_g2', 'g2_minus_f_minus_x_plus_y2_times_g', 'node_parameter', 'g1_plus_g', 'cusp_parameter', 'parabola_parameter'}"
+    },
+    {
+      "check": "manual/identity_names",
+      "match": true,
+      "actual": "{'g2_minus_f_minus_x_plus_y2_times_g', 'node_parameter', 'parabola_parameter', 'f_minus_x_plus_y2_times_g1_minus_g2', 'g1_plus_g', 'cusp_parameter'}",
+      "expected": "{'f_minus_x_plus_y2_times_g1_minus_g2', 'g2_minus_f_minus_x_plus_y2_times_g', 'node_parameter', 'g1_plus_g', 'cusp_parameter', 'parabola_parameter'}"
+    },
+    {
+      "check": "independent_identity/g1_plus_g",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "reported_identity/g1_plus_g",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "independent_identity/g2_minus_f_minus_x_plus_y2_times_g",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "reported_identity/g2_minus_f_minus_x_plus_y2_times_g",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "independent_identity/f_minus_x_plus_y2_times_g1_minus_g2",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "reported_identity/f_minus_x_plus_y2_times_g1_minus_g2",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "independent_identity/parabola_parameter",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "reported_identity/parabola_parameter",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "independent_identity/cusp_parameter",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "reported_identity/cusp_parameter",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "independent_identity/node_parameter",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "reported_identity/node_parameter",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "s_direct_expansion",
+      "match": true,
+      "actual": "{(0, 6): Fraction(-1, 1), (1, 1): Fraction(1, 1)}",
+      "expected": "{(1, 1): Fraction(1, 1), (0, 6): Fraction(-1, 1)}"
+    },
+    {
+      "check": "s_reported",
+      "match": true,
+      "actual": "{(1, 1): Fraction(1, 1), (0, 6): Fraction(-1, 1)}",
+      "expected": "{(0, 6): Fraction(-1, 1), (1, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "manual/S",
+      "match": true,
+      "actual": "{(1, 1): Fraction(1, 1), (0, 6): Fraction(-1, 1)}",
+      "expected": "{(0, 6): Fraction(-1, 1), (1, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "S/quotient0",
+      "match": true,
+      "actual": "{(0, 1): Fraction(1, 1)}",
+      "expected": "{(0, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "manual/Squot0",
+      "match": true,
+      "actual": "{(0, 1): Fraction(1, 1)}",
+      "expected": "{(0, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "S/quotient1",
+      "match": true,
+      "actual": "{(0, 2): Fraction(-1, 1)}",
+      "expected": "{(0, 2): Fraction(-1, 1)}"
+    },
+    {
+      "check": "manual/Squot1",
+      "match": true,
+      "actual": "{(0, 2): Fraction(-1, 1)}",
+      "expected": "{(0, 2): Fraction(-1, 1)}"
+    },
+    {
+      "check": "S/certificate_reassembly",
+      "match": true,
+      "actual": "{(1, 1): Fraction(1, 1), (0, 6): Fraction(-1, 1)}",
+      "expected": "{(0, 6): Fraction(-1, 1), (1, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "S/remainder",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "manual/Sremainder",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "Jacobian/axis@origin/oncurve",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/axis@origin/row",
+      "match": true,
+      "actual": "[Fraction(0, 1), Fraction(1, 1)]",
+      "expected": "[Fraction(0, 1), Fraction(1, 1)]"
+    },
+    {
+      "check": "Jacobian/axis@origin/rank",
+      "match": true,
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "check": "Jacobian/axis@origin/dimension",
+      "match": true,
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "check": "manual/Jacobian/axis@origin",
+      "match": true,
+      "actual": "{'row': [0, 1], 'rank': 1, 'tangent_dimension': 1}",
+      "expected": "{'row': [0, 1], 'rank': 1, 'tangent_dimension': 1}"
+    },
+    {
+      "check": "Jacobian/double_axis@origin/oncurve",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/double_axis@origin/row",
+      "match": true,
+      "actual": "[Fraction(0, 1), Fraction(0, 1)]",
+      "expected": "[Fraction(0, 1), Fraction(0, 1)]"
+    },
+    {
+      "check": "Jacobian/double_axis@origin/rank",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/double_axis@origin/dimension",
+      "match": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "check": "manual/Jacobian/double_axis@origin",
+      "match": true,
+      "actual": "{'row': [0, 0], 'rank': 0, 'tangent_dimension': 2}",
+      "expected": "{'row': [0, 0], 'rank': 0, 'tangent_dimension': 2}"
+    },
+    {
+      "check": "Jacobian/cusp@origin/oncurve",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/cusp@origin/row",
+      "match": true,
+      "actual": "[Fraction(0, 1), Fraction(0, 1)]",
+      "expected": "[Fraction(0, 1), Fraction(0, 1)]"
+    },
+    {
+      "check": "Jacobian/cusp@origin/rank",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/cusp@origin/dimension",
+      "match": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "check": "manual/Jacobian/cusp@origin",
+      "match": true,
+      "actual": "{'row': [0, 0], 'rank': 0, 'tangent_dimension': 2}",
+      "expected": "{'row': [0, 0], 'rank': 0, 'tangent_dimension': 2}"
+    },
+    {
+      "check": "Jacobian/cusp@cusp_regular/oncurve",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/cusp@cusp_regular/row",
+      "match": true,
+      "actual": "[Fraction(-3, 1), Fraction(2, 1)]",
+      "expected": "[Fraction(-3, 1), Fraction(2, 1)]"
+    },
+    {
+      "check": "Jacobian/cusp@cusp_regular/rank",
+      "match": true,
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "check": "Jacobian/cusp@cusp_regular/dimension",
+      "match": true,
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "check": "manual/Jacobian/cusp@cusp_regular",
+      "match": true,
+      "actual": "{'row': [-3, 2], 'rank': 1, 'tangent_dimension': 1}",
+      "expected": "{'row': [-3, 2], 'rank': 1, 'tangent_dimension': 1}"
+    },
+    {
+      "check": "Jacobian/node@origin/oncurve",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/node@origin/row",
+      "match": true,
+      "actual": "[Fraction(0, 1), Fraction(0, 1)]",
+      "expected": "[Fraction(0, 1), Fraction(0, 1)]"
+    },
+    {
+      "check": "Jacobian/node@origin/rank",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/node@origin/dimension",
+      "match": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "check": "manual/Jacobian/node@origin",
+      "match": true,
+      "actual": "{'row': [0, 0], 'rank': 0, 'tangent_dimension': 2}",
+      "expected": "{'row': [0, 0], 'rank': 0, 'tangent_dimension': 2}"
+    },
+    {
+      "check": "Jacobian/parabola@parabola_regular/oncurve",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "Jacobian/parabola@parabola_regular/row",
+      "match": true,
+      "actual": "[Fraction(-4, 1), Fraction(1, 1)]",
+      "expected": "[Fraction(-4, 1), Fraction(1, 1)]"
+    },
+    {
+      "check": "Jacobian/parabola@parabola_regular/rank",
+      "match": true,
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "check": "Jacobian/parabola@parabola_regular/dimension",
+      "match": true,
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "check": "manual/Jacobian/parabola@parabola_regular",
+      "match": true,
+      "actual": "{'row': [-4, 1], 'rank': 1, 'tangent_dimension': 1}",
+      "expected": "{'row': [-4, 1], 'rank': 1, 'tangent_dimension': 1}"
+    },
+    {
+      "check": "homogeneous/parabola",
+      "match": true,
+      "actual": "{(2, 0, 0): Fraction(-1, 1), (0, 1, 1): Fraction(1, 1)}",
+      "expected": "{(0, 1, 1): Fraction(1, 1), (2, 0, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "manual/homogeneous/parabola",
+      "match": true,
+      "actual": "{(0, 1, 1): Fraction(1, 1), (2, 0, 0): Fraction(-1, 1)}",
+      "expected": "{(0, 1, 1): Fraction(1, 1), (2, 0, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "infinity/parabola/[0, 1, 0]",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "nonzero_projective/parabola/[0, 1, 0]",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "check": "infinity_equation/parabola",
+      "match": true,
+      "actual": "{(2, 0): Fraction(-1, 1)}",
+      "expected": "{(2, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "homogeneous/hyperbola",
+      "match": true,
+      "actual": "{(1, 1, 0): Fraction(1, 1), (0, 0, 2): Fraction(-1, 1)}",
+      "expected": "{(1, 1, 0): Fraction(1, 1), (0, 0, 2): Fraction(-1, 1)}"
+    },
+    {
+      "check": "manual/homogeneous/hyperbola",
+      "match": true,
+      "actual": "{(1, 1, 0): Fraction(1, 1), (0, 0, 2): Fraction(-1, 1)}",
+      "expected": "{(1, 1, 0): Fraction(1, 1), (0, 0, 2): Fraction(-1, 1)}"
+    },
+    {
+      "check": "infinity/hyperbola/[1, 0, 0]",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "nonzero_projective/hyperbola/[1, 0, 0]",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "check": "infinity/hyperbola/[0, 1, 0]",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "nonzero_projective/hyperbola/[0, 1, 0]",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "check": "infinity_equation/hyperbola",
+      "match": true,
+      "actual": "{(1, 1): Fraction(1, 1)}",
+      "expected": "{(1, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "homogeneous/cusp",
+      "match": true,
+      "actual": "{(3, 0, 0): Fraction(-1, 1), (0, 2, 1): Fraction(1, 1)}",
+      "expected": "{(0, 2, 1): Fraction(1, 1), (3, 0, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "manual/homogeneous/cusp",
+      "match": true,
+      "actual": "{(0, 2, 1): Fraction(1, 1), (3, 0, 0): Fraction(-1, 1)}",
+      "expected": "{(0, 2, 1): Fraction(1, 1), (3, 0, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "infinity/cusp/[0, 1, 0]",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "nonzero_projective/cusp/[0, 1, 0]",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "check": "infinity_equation/cusp",
+      "match": true,
+      "actual": "{(3, 0): Fraction(-1, 1)}",
+      "expected": "{(3, 0): Fraction(-1, 1)}"
+    },
+    {
+      "check": "standard_monomials",
+      "match": true,
+      "actual": "[[0, 0], [0, 1], [0, 2], [0, 3]]",
+      "expected": "[[0, 0], [0, 1], [0, 2], [0, 3]]"
+    },
+    {
+      "check": "zero_count_char0",
+      "match": true,
+      "actual": "4",
+      "expected": "4"
+    },
+    {
+      "check": "distinct_root_derivative_y0",
+      "match": true,
+      "actual": "-1",
+      "expected": "-1"
+    },
+    {
+      "check": "distinct_root_derivative_cube_roots",
+      "match": true,
+      "actual": "3",
+      "expected": "3"
+    },
+    {
+      "check": "char3_polynomial_coeffs_divisible3",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "check": "char3_manual_string",
+      "match": true,
+      "actual": "y^4-y = y*(y-1)^3",
+      "expected": "y^4-y = y*(y-1)^3"
+    },
+    {
+      "check": "y_not_multiple_of_y2",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "check": "axis_same_field_zero_equivalence",
+      "match": true,
+      "actual": "[False, False, True, False, False]",
+      "expected": "[False, False, True, False, False]"
+    },
+    {
+      "check": "naive_fake_point_survives",
+      "match": true,
+      "actual": "[Fraction(0, 1), Fraction(0, 1)]",
+      "expected": "[Fraction(0, 1), Fraction(0, 1)]"
+    },
+    {
+      "check": "full_ideal_added_y_excludes_fake",
+      "match": true,
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "check": "affine_ideal_y_identity",
+      "match": true,
+      "actual": "{(0, 1): Fraction(1, 1)}",
+      "expected": "{(0, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "reject/n0",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/n0/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/n4",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/n4/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/n_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/n_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/n_float",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/n_float/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/terms_list",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/terms_list/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/exp_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/exp_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/exp_float",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/exp_float/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/exp_negative",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/exp_negative/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/exp_shape",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/exp_shape/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/exp_nontuple",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/exp_nontuple/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/coeff_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/coeff_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/coeff_float",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/coeff_float/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/degree65",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/degree65/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/num4097bits",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/num4097bits/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/den4097bits",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/den4097bits/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/terms257",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/terms257/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/leading_zero",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/leading_zero/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/divide_zero_divisor",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/divide_zero_divisor/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/divide_empty",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/divide_empty/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/divide9",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/divide9/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/divide_bad_container",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/divide_bad_container/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/divide_bad_f",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/divide_bad_f/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/divide_shape",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/divide_shape/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/add_shape",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/add_shape/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/multiply_shape",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/multiply_shape/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/power_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/power_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/power_float",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/power_float/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/power_negative",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/power_negative/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/power13",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/power13/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/derivative_index_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/derivative_index_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/variable_index2",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/variable_index2/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/eval_short",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/eval_short/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/eval_float",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/eval_float/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/eval_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/eval_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/substitute_short",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/substitute_short/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/substitute_badtype",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/substitute_badtype/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/substitute_shape",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/substitute_shape/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/substitute_exp13",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/substitute_exp13/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/homogeneous4vars",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/homogeneous4vars/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/rank_ragged",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/rank_ragged/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/rank_float",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/rank_float/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/rank_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/rank_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/rank_cols4",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/rank_cols4/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/rank_colsbool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/rank_colsbool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/rank_rows9",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/rank_rows9/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/rank_tuple",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/rank_tuple/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "accept/empty",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/zero_coeff",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/degree64",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/num4096bits",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/den4096bits",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/terms256",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/zero_dividend",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/divide8",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/rank_empty",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/rank_empty_rows",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/power0",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/power12",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "reject/decode_bool_n",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_bool_n/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_exp13",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_exp13/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_exp_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_exp_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_num_bool",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_num_bool/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_num_float",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_num_float/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_den0",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_den0/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_num1000001",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_num1000001/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_den1000001",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_den1000001/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_duplicate",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_duplicate/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_fields",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_fields/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/decode_129terms",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/decode_129terms/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "accept/decode_max",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/decode_128terms",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "reject/fixed_changed_polynomial",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/fixed_changed_polynomial/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/fixed_changed_points",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/fixed_changed_points/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/fixed_bool_point",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/fixed_bool_point/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/fixed_float_point",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/fixed_float_point/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "reject/fixed_unknown_field",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/fixed_unknown_field/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "accept/MAX_STEPS_published",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "reject/step_limit_2",
+      "match": true,
+      "actual": "exception",
+      "expected": "exception"
+    },
+    {
+      "check": "reject/step_limit_2/type",
+      "match": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "check": "accept/step_limit_3",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/p",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/q",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/sum",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/product",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/dx",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/dy",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/eval",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/substitution",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/division_order1",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/division_order2",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "accept/rank_matrix",
+      "match": true,
+      "actual": "value",
+      "expected": "value"
+    },
+    {
+      "check": "general_ops/sum",
+      "match": true,
+      "actual": "{(2, 0): Fraction(3, 2), (1, 1): Fraction(-2, 1), (1, 0): Fraction(-1, 1), (0, 2): Fraction(3, 1), (0, 0): Fraction(7, 3)}",
+      "expected": "{(2, 0): Fraction(3, 2), (1, 1): Fraction(-2, 1), (0, 0): Fraction(7, 3), (1, 0): Fraction(-1, 1), (0, 2): Fraction(3, 1)}"
+    },
+    {
+      "check": "general_ops/product",
+      "match": true,
+      "actual": "{(3, 0): Fraction(-3, 2), (2, 2): Fraction(9, 2), (2, 1): Fraction(2, 1), (2, 0): Fraction(3, 1), (1, 3): Fraction(-6, 1), (1, 1): Fraction(-4, 1), (1, 0): Fraction(-1, 3), (0, 2): Fraction(1, 1), (0, 0): Fraction(2, 3)}",
+      "expected": "{(3, 0): Fraction(-3, 2), (2, 2): Fraction(9, 2), (2, 0): Fraction(3, 1), (2, 1): Fraction(2, 1), (1, 3): Fraction(-6, 1), (1, 1): Fraction(-4, 1), (1, 0): Fraction(-1, 3), (0, 2): Fraction(1, 1), (0, 0): Fraction(2, 3)}"
+    },
+    {
+      "check": "general_ops/dx",
+      "match": true,
+      "actual": "{(1, 0): Fraction(3, 1), (0, 1): Fraction(-2, 1)}",
+      "expected": "{(1, 0): Fraction(3, 1), (0, 1): Fraction(-2, 1)}"
+    },
+    {
+      "check": "general_ops/dy",
+      "match": true,
+      "actual": "{(1, 0): Fraction(-2, 1)}",
+      "expected": "{(1, 0): Fraction(-2, 1)}"
+    },
+    {
+      "check": "general_ops/substitution",
+      "match": true,
+      "actual": "{(3,): Fraction(-2, 1), (2,): Fraction(-1, 2), (1,): Fraction(3, 1), (0,): Fraction(11, 6)}",
+      "expected": "{(2,): Fraction(-1, 2), (1,): Fraction(3, 1), (0,): Fraction(11, 6), (3,): Fraction(-2, 1)}"
+    },
+    {
+      "check": "general_ops/eval",
+      "match": true,
+      "actual": "9/5",
+      "expected": "9/5"
+    },
+    {
+      "check": "arbitrary_division/division_order1/identity",
+      "match": true,
+      "actual": "{(0, 1): Fraction(1, 1), (3, 0): Fraction(-3, 2), (2, 1): Fraction(2, 1), (1, 0): Fraction(-1, 3), (2, 2): Fraction(9, 2), (1, 3): Fraction(-6, 1), (0, 2): Fraction(1, 1), (2, 0): Fraction(3, 1), (1, 1): Fraction(-4, 1), (0, 0): Fraction(2, 3)}",
+      "expected": "{(3, 0): Fraction(-3, 2), (2, 2): Fraction(9, 2), (2, 0): Fraction(3, 1), (2, 1): Fraction(2, 1), (1, 3): Fraction(-6, 1), (1, 1): Fraction(-4, 1), (1, 0): Fraction(-1, 3), (0, 2): Fraction(1, 1), (0, 0): Fraction(2, 3), (0, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "arbitrary_division/division_order1/irreducible",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "check": "arbitrary_division/division_order2/identity",
+      "match": true,
+      "actual": "{(0, 1): Fraction(1, 1), (3, 0): Fraction(-3, 2), (2, 2): Fraction(9, 2), (2, 0): Fraction(3, 1), (2, 1): Fraction(2, 1), (1, 3): Fraction(-6, 1), (1, 1): Fraction(-4, 1), (1, 0): Fraction(-1, 3), (0, 2): Fraction(1, 1), (0, 0): Fraction(2, 3)}",
+      "expected": "{(3, 0): Fraction(-3, 2), (2, 2): Fraction(9, 2), (2, 0): Fraction(3, 1), (2, 1): Fraction(2, 1), (1, 3): Fraction(-6, 1), (1, 1): Fraction(-4, 1), (1, 0): Fraction(-1, 3), (0, 2): Fraction(1, 1), (0, 0): Fraction(2, 3), (0, 1): Fraction(1, 1)}"
+    },
+    {
+      "check": "arbitrary_division/division_order2/irreducible",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "check": "zero_dividend/remainder",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "empty_poly",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "zero_coeff_poly",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "rank_empty",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "rank_empty_rows",
+      "match": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "check": "rank_matrix",
+      "match": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "check": "rank_witness_minor",
+      "match": true,
+      "actual": "-2",
+      "expected": "-2"
+    },
+    {
+      "check": "MAX_STEPS_constant",
+      "match": true,
+      "actual": "2000",
+      "expected": "2000"
+    },
+    {
+      "check": "step_limit2_message",
+      "match": true,
+      "actual": "division step bound exceeded",
+      "expected": "division step bound exceeded"
+    },
+    {
+      "check": "step_exact3_quotient",
+      "match": true,
+      "actual": "{(2, 0): Fraction(1, 1), (1, 0): Fraction(1, 1), (0, 0): Fraction(1, 1)}",
+      "expected": "{(2, 0): Fraction(1, 1), (1, 0): Fraction(1, 1), (0, 0): Fraction(1, 1)}"
+    },
+    {
+      "check": "step_exact3_remainder",
+      "match": true,
+      "actual": "{}",
+      "expected": "{}"
+    },
+    {
+      "check": "two_cli_outputs_bytes",
+      "match": true,
+      "actual": "True",
+      "expected": "True"
+    }
+  ]
+}

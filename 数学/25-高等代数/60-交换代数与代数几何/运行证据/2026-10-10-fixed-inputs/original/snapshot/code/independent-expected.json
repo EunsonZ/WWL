@@ -1,0 +1,139 @@
+{
+  "schema": "wwl-affine-independent-expectation-v1",
+  "authored_before_execution": true,
+  "domain": "Q",
+  "order": "lex x>y",
+  "identity_names_all_zero": [
+    "g1_plus_g",
+    "g2_minus_f_minus_x_plus_y2_times_g",
+    "f_minus_x_plus_y2_times_g1_minus_g2",
+    "parabola_parameter",
+    "cusp_parameter",
+    "node_parameter"
+  ],
+  "s_polynomial": {
+    "(1,1)": 1,
+    "(0,6)": -1
+  },
+  "s_quotients": [
+    {
+      "(0,1)": 1
+    },
+    {
+      "(0,2)": -1
+    }
+  ],
+  "s_remainder": {},
+  "jacobians": {
+    "axis@origin": {
+      "row": [
+        0,
+        1
+      ],
+      "rank": 1,
+      "tangent_dimension": 1
+    },
+    "double_axis@origin": {
+      "row": [
+        0,
+        0
+      ],
+      "rank": 0,
+      "tangent_dimension": 2
+    },
+    "cusp@origin": {
+      "row": [
+        0,
+        0
+      ],
+      "rank": 0,
+      "tangent_dimension": 2
+    },
+    "cusp@cusp_regular": {
+      "row": [
+        -3,
+        2
+      ],
+      "rank": 1,
+      "tangent_dimension": 1
+    },
+    "node@origin": {
+      "row": [
+        0,
+        0
+      ],
+      "rank": 0,
+      "tangent_dimension": 2
+    },
+    "parabola@parabola_regular": {
+      "row": [
+        -4,
+        1
+      ],
+      "rank": 1,
+      "tangent_dimension": 1
+    }
+  },
+  "homogeneous": {
+    "parabola": {
+      "(0,1,1)": 1,
+      "(2,0,0)": -1
+    },
+    "hyperbola": {
+      "(1,1,0)": 1,
+      "(0,0,2)": -1
+    },
+    "cusp": {
+      "(0,2,1)": 1,
+      "(3,0,0)": -1
+    }
+  },
+  "infinity_points": {
+    "parabola": [
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "hyperbola": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "cusp": [
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "standard_monomials": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ]
+  ],
+  "zero_count_over_algebraically_closed_characteristic_0": 4,
+  "characteristic_3_counterexample": "y^4-y = y*(y-1)^3"
+}

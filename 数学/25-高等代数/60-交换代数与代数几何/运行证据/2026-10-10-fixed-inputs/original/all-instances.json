@@ -1,0 +1,62 @@
+[
+  {
+    "label": "fixed-cli",
+    "executed_source": "snapshot/code/affine_exact.py",
+    "executed_source_sha256": "0a161e6013480582ddfe8913f56923ebf7999cbcd2218d4ccd6c702e0f25a14e",
+    "source_hash_recorded": "post-execution; original oracle r1 reconstructed by reversing only explicitly recorded additive edit; other listed files unchanged since execution",
+    "exit_code": 0,
+    "seconds": 0.039453983306884766,
+    "maxrss_bytes": 21168128,
+    "timeout": false
+  },
+  {
+    "label": "examples-cli",
+    "executed_source": "snapshot/code/examples.py",
+    "executed_source_sha256": "aaad83edad161f0d4a4cba4ad9e2afd882e277e61d06455c3a759b40ad31eca3",
+    "source_hash_recorded": "post-execution; original oracle r1 reconstructed by reversing only explicitly recorded additive edit; other listed files unchanged since execution",
+    "exit_code": 0,
+    "seconds": 0.03168892860412598,
+    "maxrss_bytes": 18792448,
+    "timeout": false
+  },
+  {
+    "label": "api-probe",
+    "executed_source": "api_probe.py",
+    "executed_source_sha256": "a969faf38352d3111fabf555ce0accabcab3ed32f249ab207530bb50c2f88db2",
+    "source_hash_recorded": "post-execution; original oracle r1 reconstructed by reversing only explicitly recorded additive edit; other listed files unchanged since execution",
+    "exit_code": 0,
+    "seconds": 0.03168606758117676,
+    "maxrss_bytes": 20463616,
+    "timeout": false
+  },
+  {
+    "label": "oracle",
+    "executed_source": "independent_oracle-r1.py",
+    "executed_source_sha256": "f921ccf1f8b4d61e7de36320ea0cc5c334e2e352723b5a5a4a2bd6f3b451e5bd",
+    "source_hash_recorded": "post-execution; original oracle r1 reconstructed by reversing only explicitly recorded additive edit; other listed files unchanged since execution",
+    "exit_code": 0,
+    "seconds": 0.031648874282836914,
+    "maxrss_bytes": 19054592,
+    "timeout": false
+  },
+  {
+    "label": "fixed-reject",
+    "executed_source": "snapshot/code/affine_exact.py",
+    "executed_source_sha256": "0a161e6013480582ddfe8913f56923ebf7999cbcd2218d4ccd6c702e0f25a14e",
+    "source_hash_recorded": "post-execution; original oracle r1 reconstructed by reversing only explicitly recorded additive edit; other listed files unchanged since execution",
+    "exit_code": 1,
+    "seconds": 0.03945016860961914,
+    "maxrss_bytes": 21364736,
+    "timeout": false
+  },
+  {
+    "label": "oracle-r2",
+    "executed_source": "independent_oracle.py",
+    "executed_source_sha256": "add34345d566ada87add1713d809696c01e9e4df48f489b144180acf52056f8d",
+    "source_hash_recorded": "post-execution; original oracle r1 reconstructed by reversing only explicitly recorded additive edit; other listed files unchanged since execution",
+    "exit_code": 0,
+    "seconds": 0.030366897583007812,
+    "maxrss_bytes": 19415040,
+    "timeout": false
+  }
+]

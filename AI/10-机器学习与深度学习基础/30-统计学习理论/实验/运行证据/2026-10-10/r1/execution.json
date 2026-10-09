@@ -1,0 +1,32 @@
+{
+  "command": [
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "-B",
+    "learning_theory.py",
+    "--input",
+    "inputs.json"
+  ],
+  "measurement_command": [
+    "/usr/bin/time",
+    "-l",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "-B",
+    "learning_theory.py",
+    "--input",
+    "inputs.json"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments158/run-20261010-01/snapshot",
+  "start_unix": 1791574780.887481,
+  "end_unix": 1791574780.9362948,
+  "elapsed_seconds": 0.048813819885253906,
+  "exit_code": 1,
+  "timeout": false,
+  "timeout_seconds": 60,
+  "source_final": {
+    "learning_theory.py": "3d9b9e02590f6833a8804db213aff5c0ad271183a5c3455ee8aec4363802def8",
+    "inputs.json": "263d889a428142306075532f104118cb75f6760f129f9b55d1f86e8310aa3f1e"
+  },
+  "source_stable": true,
+  "stdout_sha256": "c16cf63b78250aadab941ef5e58b66d9d35be9460e0d824f85856c28c3ebca99",
+  "stderr_sha256": "516ed342b7f32080bf15c4ab197fa1ce037fcd33fe93cad2c577a3df72da2373"
+}

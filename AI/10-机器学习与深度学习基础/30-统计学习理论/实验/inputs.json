@@ -1,0 +1,22 @@
+{
+  "distribution": [
+    {"x": "-1", "y": "-1", "mass": "3/8"},
+    {"x": "-1", "y": "1", "mass": "1/8"},
+    {"x": "1", "y": "-1", "mass": "1/8"},
+    {"x": "1", "y": "1", "mass": "3/8"}
+  ],
+  "loss": "(1-y*w*x)/2 on w in [-1,1]",
+  "regularizer": "lambda*w*w/2",
+  "sample_sizes": [4, 16, 64],
+  "lambdas": ["1/8", "1/2", "2"],
+  "growth_sizes": [1, 2, 3, 4, 5, 6, 7, 8],
+  "finite_class": {"M": 8, "n": 200, "delta": "1/20"},
+  "erm_transfer": {"uniform_epsilon": "3/100", "optimization_eta": "1/100"},
+  "repeated_rows": {"independent_users": 4, "copies_per_user": 16},
+  "shifted_distribution": [
+    {"x": "-1", "y": "-1", "mass": "1/8"},
+    {"x": "-1", "y": "1", "mass": "3/8"},
+    {"x": "1", "y": "-1", "mass": "3/8"},
+    {"x": "1", "y": "1", "mass": "1/8"}
+  ]
+}

@@ -1,0 +1,21 @@
+name: ChinaResearch handoff transfer
+on:
+  push:
+    branches:
+      - handoff/chinaresearch-2026-10-09
+    paths:
+      - .github/workflows/chinaresearch-handoff-transfer.yml
+permissions:
+  contents: read
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Check required transfer tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 --version
+          openssl version
+          echo 'Only runner readiness checked; no package imported.'

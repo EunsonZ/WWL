@@ -10,15 +10,9 @@
 
 ## 日常检查
 
-从库根运行，无须修改系统 Python 或全局 PATH：
+从库根按 [CHECKS.md](CHECKS.md) 的改动类型选择检查，无须修改系统 Python 或全局 PATH。普通文字小修先看差异和实际目标；结构批次需要时运行 `.venv/bin/python -B scripts/check_vault.py --root . --require-yaml`。检查器自身测试用于维护检查器开发，不是每次正文修改的默认步骤；只有环境/依赖变更需要核对安装一致性时，再运行 `.venv/bin/python -m pip check`。
 
-```bash
-.venv/bin/python -B scripts/check_vault.py --require-yaml
-.venv/bin/python -B -m unittest discover -s scripts/tests -v
-.venv/bin/python -m pip check
-```
-
-维护入口的诊断等级、检查范围与证据限制见 [CHECKS.md](CHECKS.md)。本批安装依赖后，103 项维护测试全部通过；全库检查还会报告历史链接问题、教学示例及旧属性类型冲突，不能把“检查能够完整运行”理解为“全库没有问题”。按本批 [实际记录](../CHANGES.md) 判断具体版本。
+2026-09-16 安装后，103 项维护测试通过，是当时的环境记录。全库扫描还会报告历史链接、教学示例及旧属性问题，能运行不表示全库没有问题；后来的检查以对应 issue/提交和实际记录为准。
 
 运行课程实验时使用实验页指定的入口。这套轻量环境没有安装 PyTorch、GPU 工具链或大模型；某些已有实验有自己的依赖，不能从 NumPy 已安装推断所有实验都能运行。
 

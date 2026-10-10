@@ -1,59 +1,62 @@
 # 本地静态检查入口
 
-这些脚本只读取指定库的文件，报告可定位的问题。导入模块不会启动服务、运行笔记或源码、安装依赖、修复文件、添加基线、提交或推送。
+## 按改动选择检查
 
-## 来源、范围与原始基线
-
-本批候选目标为提升已有维护算法，补上明确缺失的根检查入口；候选仅涉及 `scripts/links.py`、`scripts/check_mirrors.py`、`scripts/check_vault.py`、`scripts/tests/test_vault_checks.py` 与本说明。2026-09-15 开始时根 `scripts/` 不存在，现场没有 Git，原维护源码保持原字节。
-
-复用依据是 `AI/90-资源/维护/check_vault.py` 的静态检查分层，以及 `Logs/2026-09-08_TBM结构整理/tools/links.py` 的围栏状态、平衡括号目标扫描、精确路径优先思路；镜像检查沿用同目录 `check_mirrors.py` 的正向比较合同。`计算机知识/Kali/90-来源与维护/工具/check_vault.py` 和第二批日志中的解析器也已只读检索。没有执行历史脚本中的默认写入或迁移操作，也没有改动原实现和原测试。
-
-现场复用源码 SHA-256：
-
-| 文件 | SHA-256 |
+| 实际变化 | 需要核对的内容与入口 |
 | --- | --- |
-| `AI/90-资源/维护/check_vault.py` | `ae1ce59f3dc8f0f4a3eaef3348d1a5ed79bd4bbad7ba8020eb4cfd2f1b0f4f06` |
-| `Logs/2026-09-08_TBM结构整理/tools/links.py` | `47e5312c464e89e66fb6744b1c1ee10778103fcb578b418180604a6316162632` |
-| `Logs/2026-09-08_TBM结构整理/tools/check_mirrors.py` | `675595fe36d003f389f87358b4dbfca3264e58756f1499ef1ef3d03e8af654e5` |
+| 普通措辞、标点、说明或导航小修 | 看变更和完整相关段，打开实际链接目标及标题，核对阅读承诺；`git diff --check` 辅助发现冲突标记和空白。Markdown 有意换行按语义处理。 |
+| 重要定义、推导、因果、数量或代码行为 | 核前提、推导或相关实验/运行，由未参与修改者独立复核；规范源码变化同步相关测试和 `code-sync` 镜像。静态扫描不能替代语义或运行证据。 |
+| 移动、删除、标题/块、共享属性或配置 | 搜实际入链并核相对路径、附件/嵌入、Canvas/Base、脚本及镜像；需要时在一批结构改动收尾，对完整工作根运行一次下列静态扫描。 |
+| 检查器实现或解析合同改变 | 阅读实现与相应回归测试，运行受影响的检查器测试；范围确实影响多个模块时才扩大。正文修改不默认运行检查器自身全套测试。 |
 
-候选验证包括独立成功/失败夹具、只读全库扫描、逐项分析误报和新增回归。原库与其他作者的候选均不是本检查器作者的写入范围；本工具没有批量迁移或回滚功能。
+```bash
+git status --short
+git diff
+git diff --cached
+git diff --check
+.venv/bin/python -B scripts/check_vault.py --root . --require-yaml
+```
+
+前四项用来识别变化和保留人的编辑。最后一项扫描指定完整工作根，不是增量检查；只在需要结构检查时运行。现行 CLI 没有 `--changed` 或文件清单参数，复制小目录会失去入链/别名/配置上下文，不能充当完整根的增量证明。盘点不读取 Obsidian 排除设置；`rg`、Git 与客户端视图也不能互相代替。
+
+源码镜像单独需要核对时，使用：
+
+```bash
+.venv/bin/python -B scripts/check_mirrors.py --root .
+```
+
+只有维护检查器开发需要全套回归时，使用：
+
+```bash
+.venv/bin/python -B -m unittest discover -s scripts/tests -v
+```
+
+必要检查完成即可交付。分清旧诊断、本批新增和未运行层，不为全绿改写旧事实或放宽例外。外部 URL 在静态层只识别，不测试网页可达性；真实 Obsidian 显示、同步和人的理解单独记录。
 
 ## 使用
 
-2026-09-16 用户授权安装的依赖位于库根 `.venv`；下列 `python3` 在本机可替换为 `.venv/bin/python`，复建步骤及固定版本见 [本地维护与绘图环境](ENVIRONMENT.md)。历史未安装状态仍按原时间保留。
+这些脚本只读取指定库的文件，报告可定位的问题；不启动服务、运行课程源码、安装依赖、修复文件、添加基线、提交或推送。本机已有 `.venv`，环境和换机复建见 [本地维护与绘图环境](ENVIRONMENT.md)；其他副本先确认解释器和依赖，不把历史安装状态当当前能力。
 
-Python 3.10+ 可运行基础标准库层；集成入口调用 `config_checks.py` 检查 C1 项目 TOML 与四个角色的声明，Python 3.11+ 才有标准库 `tomllib`。缺少该标准库时此层明确未运行。从已集成的库根运行：
+Python 3.10+ 可运行基础标准库层；集成入口调用 `config_checks.py` 检查项目 TOML 与角色声明，标准库 `tomllib` 需要 Python 3.11+，缺少时该层明确未运行。真实参数可查询：
 
 ```bash
-python3 -B scripts/check_vault.py --help
-python3 -B scripts/check_vault.py --require-yaml
-python3 -B scripts/check_mirrors.py --help
-python3 -B scripts/check_mirrors.py --root .
-python3 -B -m unittest discover -s scripts/tests -v
+.venv/bin/python -B scripts/check_vault.py --help
+.venv/bin/python -B scripts/check_mirrors.py --help
 ```
 
-候选可用 `--root /绝对路径/集成树` 指向独立目录。省略 `--root` 时使用脚本所在 `scripts/` 的父目录，不使用历史工程路径。`--json /库外已存在目录/新证据.json` 将完整报告写入新文件；输出文件权限为 `0600`。报告保留路径和解析目标，按私密本机证据保存。必须使用新的文件名，不能覆盖既有证据或把报告写回被检查的库。
+集成入口仅有 `--root`、`--json`、`--require-yaml`；镜像入口仅有 `--root`、`--json`。省略 `--root` 时使用脚本所在 `scripts/` 的父目录。独立集成树可用 `--root /绝对路径/完整工作根`，但它的结果只支持实际被盘点的树。
 
-命令退出码：
+`--json /库外已存在目录/新证据.json` 保存完整报告，权限为 `0600`。报告含路径和解析目标，按私密本机证据保存；必须用新文件名，不覆盖既有证据，也不写回被检查的库。常规小修不要求生成报告。
 
 | 退出码 | 含义 |
 | --- | --- |
-| `0` | 没有 `critical/error`；仍可能是 `partial`，必须看 `layers` 与 `review`。 |
+| `0` | 没有 `critical/error`；仍可能是 `partial`，须看 `layers` 与 `review`。 |
 | `1` | 存在阻断静态诊断，包括启用 `--require-yaml` 时缺少 PyYAML。 |
-| `2` | 命令参数、库根或证据输出位置不合法。 |
+| `2` | 参数、库根或证据输出位置不合法。 |
 
-只有镜像检查的成功/失败例：
+## 来源、范围与原始基线
 
-```bash
-task_tmp="$(mktemp -d)"
-printf 'pass\n' > "$task_tmp/example.py"
-printf '<!-- code-sync: ./example.py -->\n```python\npass\n```\n' > "$task_tmp/note.md"
-python3 -B scripts/check_mirrors.py --root "$task_tmp"
-printf 'print(1)\n' > "$task_tmp/example.py"
-python3 -B scripts/check_mirrors.py --root "$task_tmp"
-```
-
-第一次应退出 `0`，第二次应退出 `1`。`check_vault.py --root "$task_tmp"` 同样会诊断第二次的镜像差异。仅含 `# 首页` 的笔记目录是标准库层的最小成功例；加入实际正文中的 `[[不存在的目标]]` 后应退出 `1`。这些示例只写新临时目录，不运行其中源码。
+检查器的旧开发来源、复用源码哈希和成功/失败夹具，按需查看 [清理前固定版本](https://github.com/EunsonZ/WWL/blob/b19b34ce1d11562a9963c0206503988976a65448/scripts/CHECKS.md)。下列合同描述当前解析与报告边界；旧测试结果不认证后来改变的正文或环境。
 
 ## 链接解析合同
 

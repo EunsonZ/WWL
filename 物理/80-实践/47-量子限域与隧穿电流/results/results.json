@@ -1,0 +1,736 @@
+{
+  "model": "hard-wall-z,elastic-x-barrier,continuous-y,no-mode-mixing",
+  "energy_reference": "lead conduction floor 0 eV for both reservoirs",
+  "degeneracy": {
+    "spin": 2,
+    "valley": 1
+  },
+  "input_sha256": "3748dade7b0338d0cb20a192ac912fa5cd7fd3a85962b8f1adaf8db154e661b0",
+  "source_sha256": "289e3f093d701dd9d816843806fafa29acb18693aa59a2ce40ddae5757b11179",
+  "cases": {
+    "default": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 3.0,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.06,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 800,
+        "transverse_steps": 128
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 4.5144480039137416e+16,
+          "right_sheet_m-2": 3.1348329841442736e+16,
+          "left_charge_C_m-2": -0.007232943107278537
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 4547463905867247.0,
+          "right_sheet_m-2": 2217289925034589.2,
+          "left_charge_C_m-2": -0.0007285840413938878
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 17239634472880.99,
+          "right_sheet_m-2": 7954926975317.661,
+          "left_charge_C_m-2": -2.7620939531150827e-06
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 6054471880.772989,
+          "right_sheet_m-2": 2793129598.0664887,
+          "left_charge_C_m-2": -9.700333378584517e-10
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 218985.58752505507,
+          "right_sheet_m-2": 101025.33993601293,
+          "left_charge_C_m-2": -3.508535915154051e-14
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 0.8160542033893151,
+          "right_sheet_m-2": 0.37647296443178063,
+          "left_charge_C_m-2": -1.3074629767478443e-19
+        }
+      ],
+      "left_sheet_m-2": 4.970918963416841e+16,
+      "right_sheet_m-2": 3.3573577486683268e+16,
+      "left_charge_C_m-2": -0.007964290212693962,
+      "omitted_sheet_bound_m-2": 3.1331902360405043e-07,
+      "omitted_current_bound_A_m": 4.41264787421814e-21,
+      "cutoff_current_bound_A_m": 8.918239714041933e-11,
+      "forward_electron_A_m": 8.769497089415742,
+      "return_electron_A_m": 4.691030492370325,
+      "net_electron_A_m": 4.078466597045416,
+      "conventional_x_A_m": -4.078466597045416,
+      "width_1um_current_A": -4.078466597045416e-06,
+      "WKB_zero_ex_leading_exponent": 0.0021381791608275683
+    },
+    "equilibrium": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 3.0,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.08,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 800,
+        "transverse_steps": 128
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 4.5144480039137416e+16,
+          "right_sheet_m-2": 4.5144480039137416e+16,
+          "left_charge_C_m-2": -0.007232943107278537
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 4547463905867247.0,
+          "right_sheet_m-2": 4547463905867247.0,
+          "left_charge_C_m-2": -0.0007285840413938878
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 17239634472880.99,
+          "right_sheet_m-2": 17239634472880.99,
+          "left_charge_C_m-2": -2.7620939531150827e-06
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 6054471880.772989,
+          "right_sheet_m-2": 6054471880.772989,
+          "left_charge_C_m-2": -9.700333378584517e-10
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 218985.58752505507,
+          "right_sheet_m-2": 218985.58752505507,
+          "left_charge_C_m-2": -3.508535915154051e-14
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 0.8160542033893151,
+          "right_sheet_m-2": 0.8160542033893151,
+          "left_charge_C_m-2": -1.3074629767478443e-19
+        }
+      ],
+      "left_sheet_m-2": 4.970918963416841e+16,
+      "right_sheet_m-2": 4.970918963416841e+16,
+      "left_charge_C_m-2": -0.007964290212693962,
+      "omitted_sheet_bound_m-2": 3.1331902360405043e-07,
+      "omitted_current_bound_A_m": 6.0392080667010295e-21,
+      "cutoff_current_bound_A_m": 1.2205620470307415e-10,
+      "forward_electron_A_m": 8.769497089415742,
+      "return_electron_A_m": 8.769497089415742,
+      "net_electron_A_m": 0.0,
+      "conventional_x_A_m": -0.0,
+      "width_1um_current_A": -0.0,
+      "WKB_zero_ex_leading_exponent": 0.0021381791608275683
+    },
+    "reverse": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 3.0,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.06,
+        "mu_right_eV": 0.08,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 800,
+        "transverse_steps": 128
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 3.1348329841442736e+16,
+          "right_sheet_m-2": 4.5144480039137416e+16,
+          "left_charge_C_m-2": -0.005022556158688447
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 2217289925034589.2,
+          "right_sheet_m-2": 4547463905867247.0,
+          "left_charge_C_m-2": -0.000355249010869403
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 7954926975317.661,
+          "right_sheet_m-2": 17239634472880.99,
+          "left_charge_C_m-2": -1.274519812503025e-06
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 2793129598.0664887,
+          "right_sheet_m-2": 6054471880.772989,
+          "left_charge_C_m-2": -4.4750869777559396e-10
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 101025.33993601293,
+          "right_sheet_m-2": 218985.58752505507,
+          "left_charge_C_m-2": -1.6186043908738696e-14
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 0.37647296443178063,
+          "right_sheet_m-2": 0.8160542033893151,
+          "left_charge_C_m-2": -6.03176186945312e-20
+        }
+      ],
+      "left_sheet_m-2": 3.3573577486683268e+16,
+      "right_sheet_m-2": 4.970918963416841e+16,
+      "left_charge_C_m-2": -0.005379080136895238,
+      "omitted_sheet_bound_m-2": 3.1331902360405043e-07,
+      "omitted_current_bound_A_m": 4.41264787421814e-21,
+      "cutoff_current_bound_A_m": 8.918239714041933e-11,
+      "forward_electron_A_m": 4.691030492370325,
+      "return_electron_A_m": 8.769497089415742,
+      "net_electron_A_m": -4.078466597045416,
+      "conventional_x_A_m": 4.078466597045416,
+      "width_1um_current_A": 4.078466597045416e-06,
+      "WKB_zero_ex_leading_exponent": 0.0021381791608275683
+    },
+    "wide_barrier": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 4.5,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.06,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 800,
+        "transverse_steps": 128
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 4.5144480039137416e+16,
+          "right_sheet_m-2": 3.1348329841442736e+16,
+          "left_charge_C_m-2": -0.007232943107278537
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 4547463905867247.0,
+          "right_sheet_m-2": 2217289925034589.2,
+          "left_charge_C_m-2": -0.0007285840413938878
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 17239634472880.99,
+          "right_sheet_m-2": 7954926975317.661,
+          "left_charge_C_m-2": -2.7620939531150827e-06
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 6054471880.772989,
+          "right_sheet_m-2": 2793129598.0664887,
+          "left_charge_C_m-2": -9.700333378584517e-10
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 218985.58752505507,
+          "right_sheet_m-2": 101025.33993601293,
+          "left_charge_C_m-2": -3.508535915154051e-14
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 0.8160542033893151,
+          "right_sheet_m-2": 0.37647296443178063,
+          "left_charge_C_m-2": -1.3074629767478443e-19
+        }
+      ],
+      "left_sheet_m-2": 4.970918963416841e+16,
+      "right_sheet_m-2": 3.3573577486683268e+16,
+      "left_charge_C_m-2": -0.007964290212693962,
+      "omitted_sheet_bound_m-2": 3.1331902360405043e-07,
+      "omitted_current_bound_A_m": 4.41264787421814e-21,
+      "cutoff_current_bound_A_m": 8.918239714041933e-11,
+      "forward_electron_A_m": 1.2387741798852345,
+      "return_electron_A_m": 0.6173378345704393,
+      "net_electron_A_m": 0.6214363453147952,
+      "conventional_x_A_m": -0.6214363453147952,
+      "width_1um_current_A": -6.214363453147952e-07,
+      "WKB_zero_ex_leading_exponent": 9.887036529700828e-05
+    },
+    "hot": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 3.0,
+        "temperature_K": 450.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.06,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 800,
+        "transverse_steps": 128
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 5.0063717451468616e+16,
+          "right_sheet_m-2": 3.771075958859113e+16,
+          "left_charge_C_m-2": -0.008021091831192104
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 1.043738334297371e+16,
+          "right_sheet_m-2": 6626221055392487.0,
+          "left_charge_C_m-2": -0.0016722531712213284
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 277653811201764.4,
+          "right_sheet_m-2": 166058964014200.34,
+          "left_charge_C_m-2": -4.4485044864851436e-05
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 1387628746555.7205,
+          "right_sheet_m-2": 828489281922.7202,
+          "left_charge_C_m-2": -2.2232263543982831e-07
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 1517663126.0765471,
+          "right_sheet_m-2": 906119016.5197346,
+          "left_charge_C_m-2": -2.43156439888324e-10
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 364791.21819425124,
+          "right_sheet_m-2": 217798.17343310395,
+          "left_charge_C_m-2": -5.84459966079225e-14
+        }
+      ],
+      "left_sheet_m-2": 6.078014375241856e+16,
+      "right_sheet_m-2": 4.450386900361655e+16,
+      "left_charge_C_m-2": -0.00973805261312861,
+      "omitted_sheet_bound_m-2": 19.270570749573647,
+      "omitted_current_bound_A_m": 3.6326339459638717e-13,
+      "cutoff_current_bound_A_m": 3.0728502957394857e-06,
+      "forward_electron_A_m": 23.681943356105027,
+      "return_electron_A_m": 15.034801456337473,
+      "net_electron_A_m": 8.647141899767554,
+      "conventional_x_A_m": -8.647141899767554,
+      "width_1um_current_A": -8.647141899767554e-06,
+      "WKB_zero_ex_leading_exponent": 0.0021381791608275683
+    },
+    "wide_well": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 12.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 3.0,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.06,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 800,
+        "transverse_steps": 128
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.013056602834863566,
+          "left_sheet_m-2": 5.749191448869607e+16,
+          "right_sheet_m-2": 4.247530192056882e+16,
+          "left_charge_C_m-2": -0.00921122020377149
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.052226411339454264,
+          "left_sheet_m-2": 2.9549584314698056e+16,
+          "right_sheet_m-2": 1.8461330425674292e+16,
+          "left_charge_C_m-2": -0.004734365353342212
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.11750942551377208,
+          "left_sheet_m-2": 4547463905867250.0,
+          "right_sheet_m-2": 2217289925034590.0,
+          "left_charge_C_m-2": -0.0007285840413938883
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.20890564535781705,
+          "left_sheet_m-2": 147035664420414.97,
+          "right_sheet_m-2": 67956841137825.25,
+          "left_charge_C_m-2": -2.35577105899054e-05
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.3264150708715891,
+          "left_sheet_m-2": 1566082346214.189,
+          "right_sheet_m-2": 722500019170.1808,
+          "left_charge_C_m-2": -2.5091405420242717e-07
+        },
+        {
+          "n": 6,
+          "edge_eV": 0.4700377020550883,
+          "left_sheet_m-2": 6054471880.772999,
+          "right_sheet_m-2": 2793129598.066493,
+          "left_charge_C_m-2": -9.700333378584532e-10
+        }
+      ],
+      "left_sheet_m-2": 9.173757051049989e+16,
+      "right_sheet_m-2": 6.322260440556429e+16,
+      "left_charge_C_m-2": -0.014697979193185036,
+      "omitted_sheet_bound_m-2": 8528300.54342722,
+      "omitted_current_bound_A_m": 1.201088489002974e-07,
+      "cutoff_current_bound_A_m": 2.0088964600109134e-10,
+      "forward_electron_A_m": 17.90075216701531,
+      "return_electron_A_m": 9.780109705177036,
+      "net_electron_A_m": 8.12064246183827,
+      "conventional_x_A_m": -8.12064246183827,
+      "width_1um_current_A": -8.12064246183827e-06,
+      "WKB_zero_ex_leading_exponent": 0.0021381791608275683
+    },
+    "transparent": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0,
+        "barrier_nm": 3.0,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.06,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 800,
+        "transverse_steps": 128
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 4.5144480039137416e+16,
+          "right_sheet_m-2": 3.1348329841442736e+16,
+          "left_charge_C_m-2": -0.007232943107278537
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 4547463905867247.0,
+          "right_sheet_m-2": 2217289925034589.2,
+          "left_charge_C_m-2": -0.0007285840413938878
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 17239634472880.99,
+          "right_sheet_m-2": 7954926975317.661,
+          "left_charge_C_m-2": -2.7620939531150827e-06
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 6054471880.772989,
+          "right_sheet_m-2": 2793129598.0664887,
+          "left_charge_C_m-2": -9.700333378584517e-10
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 218985.58752505507,
+          "right_sheet_m-2": 101025.33993601293,
+          "left_charge_C_m-2": -3.508535915154051e-14
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 0.8160542033893151,
+          "right_sheet_m-2": 0.37647296443178063,
+          "left_charge_C_m-2": -1.3074629767478443e-19
+        }
+      ],
+      "left_sheet_m-2": 4.970918963416841e+16,
+      "right_sheet_m-2": 3.3573577486683268e+16,
+      "left_charge_C_m-2": -0.007964290212693962,
+      "omitted_sheet_bound_m-2": 3.1331902360405043e-07,
+      "omitted_current_bound_A_m": 4.41264787421814e-21,
+      "cutoff_current_bound_A_m": 8.918239714041933e-11,
+      "forward_electron_A_m": 620.4496122159698,
+      "return_electron_A_m": 390.7764827891947,
+      "net_electron_A_m": 229.67312942677506,
+      "conventional_x_A_m": -229.67312942677506,
+      "width_1um_current_A": -0.00022967312942677505,
+      "WKB_zero_ex_leading_exponent": 1.0
+    },
+    "coarse": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 3.0,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.06,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 400,
+        "transverse_steps": 64
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 4.5144480039137416e+16,
+          "right_sheet_m-2": 3.1348329841442736e+16,
+          "left_charge_C_m-2": -0.007232943107278537
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 4547463905867247.0,
+          "right_sheet_m-2": 2217289925034589.2,
+          "left_charge_C_m-2": -0.0007285840413938878
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 17239634472880.99,
+          "right_sheet_m-2": 7954926975317.661,
+          "left_charge_C_m-2": -2.7620939531150827e-06
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 6054471880.772989,
+          "right_sheet_m-2": 2793129598.0664887,
+          "left_charge_C_m-2": -9.700333378584517e-10
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 218985.58752505507,
+          "right_sheet_m-2": 101025.33993601293,
+          "left_charge_C_m-2": -3.508535915154051e-14
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 0.8160542033893151,
+          "right_sheet_m-2": 0.37647296443178063,
+          "left_charge_C_m-2": -1.3074629767478443e-19
+        }
+      ],
+      "left_sheet_m-2": 4.970918963416841e+16,
+      "right_sheet_m-2": 3.3573577486683268e+16,
+      "left_charge_C_m-2": -0.007964290212693962,
+      "omitted_sheet_bound_m-2": 3.1331902360405043e-07,
+      "omitted_current_bound_A_m": 4.41264787421814e-21,
+      "cutoff_current_bound_A_m": 8.918239714041933e-11,
+      "forward_electron_A_m": 8.76949714681799,
+      "return_electron_A_m": 4.691030553609647,
+      "net_electron_A_m": 4.078466593208345,
+      "conventional_x_A_m": -4.078466593208345,
+      "width_1um_current_A": -4.078466593208345e-06,
+      "WKB_zero_ex_leading_exponent": 0.0021381791608275683
+    },
+    "fine": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 3.0,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.06,
+        "cutoff_eV": 0.8,
+        "subbands": 6,
+        "energy_steps": 1600,
+        "transverse_steps": 256
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 4.5144480039137416e+16,
+          "right_sheet_m-2": 3.1348329841442736e+16,
+          "left_charge_C_m-2": -0.007232943107278537
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 4547463905867247.0,
+          "right_sheet_m-2": 2217289925034589.2,
+          "left_charge_C_m-2": -0.0007285840413938878
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 17239634472880.99,
+          "right_sheet_m-2": 7954926975317.661,
+          "left_charge_C_m-2": -2.7620939531150827e-06
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 6054471880.772989,
+          "right_sheet_m-2": 2793129598.0664887,
+          "left_charge_C_m-2": -9.700333378584517e-10
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 218985.58752505507,
+          "right_sheet_m-2": 101025.33993601293,
+          "left_charge_C_m-2": -3.508535915154051e-14
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 0.8160542033893151,
+          "right_sheet_m-2": 0.37647296443178063,
+          "left_charge_C_m-2": -1.3074629767478443e-19
+        }
+      ],
+      "left_sheet_m-2": 4.970918963416841e+16,
+      "right_sheet_m-2": 3.3573577486683268e+16,
+      "left_charge_C_m-2": -0.007964290212693962,
+      "omitted_sheet_bound_m-2": 3.1331902360405043e-07,
+      "omitted_current_bound_A_m": 4.41264787421814e-21,
+      "cutoff_current_bound_A_m": 8.918239714041933e-11,
+      "forward_electron_A_m": 8.7694970858278,
+      "return_electron_A_m": 4.691030488546442,
+      "net_electron_A_m": 4.078466597281355,
+      "conventional_x_A_m": -4.078466597281355,
+      "width_1um_current_A": -4.0784665972813545e-06,
+      "WKB_zero_ex_leading_exponent": 0.0021381791608275683
+    },
+    "tail": {
+      "card": {
+        "mass_ratio": 0.2,
+        "well_nm": 8.0,
+        "barrier_eV": 0.2,
+        "barrier_nm": 3.0,
+        "temperature_K": 300.0,
+        "mu_left_eV": 0.08,
+        "mu_right_eV": 0.06,
+        "cutoff_eV": 1.2000000000000002,
+        "subbands": 8,
+        "energy_steps": 800,
+        "transverse_steps": 128
+      },
+      "subband_rows": [
+        {
+          "n": 1,
+          "edge_eV": 0.029377356378443024,
+          "left_sheet_m-2": 4.5144480039137416e+16,
+          "right_sheet_m-2": 3.1348329841442736e+16,
+          "left_charge_C_m-2": -0.007232943107278537
+        },
+        {
+          "n": 2,
+          "edge_eV": 0.1175094255137721,
+          "left_sheet_m-2": 4547463905867247.0,
+          "right_sheet_m-2": 2217289925034589.2,
+          "left_charge_C_m-2": -0.0007285840413938878
+        },
+        {
+          "n": 3,
+          "edge_eV": 0.26439620740598724,
+          "left_sheet_m-2": 17239634472880.99,
+          "right_sheet_m-2": 7954926975317.661,
+          "left_charge_C_m-2": -2.7620939531150827e-06
+        },
+        {
+          "n": 4,
+          "edge_eV": 0.4700377020550884,
+          "left_sheet_m-2": 6054471880.772989,
+          "right_sheet_m-2": 2793129598.0664887,
+          "left_charge_C_m-2": -9.700333378584517e-10
+        },
+        {
+          "n": 5,
+          "edge_eV": 0.7344339094610757,
+          "left_sheet_m-2": 218985.58752505507,
+          "right_sheet_m-2": 101025.33993601293,
+          "left_charge_C_m-2": -3.508535915154051e-14
+        },
+        {
+          "n": 6,
+          "edge_eV": 1.057584829623949,
+          "left_sheet_m-2": 0.8160542033893151,
+          "right_sheet_m-2": 0.37647296443178063,
+          "left_charge_C_m-2": -1.3074629767478443e-19
+        },
+        {
+          "n": 7,
+          "edge_eV": 1.4394904625437082,
+          "left_sheet_m-2": 3.1331901120984263e-07,
+          "right_sheet_m-2": 1.445444879434431e-07,
+          "left_charge_C_m-2": -5.019923987483939e-26
+        },
+        {
+          "n": 8,
+          "edge_eV": 1.8801508082203535,
+          "left_sheet_m-2": 1.2394207318985387e-14,
+          "right_sheet_m-2": 5.717860347732912e-15,
+          "left_charge_C_m-2": -1.985770936343017e-33
+        }
+      ],
+      "left_sheet_m-2": 4.970918963416841e+16,
+      "right_sheet_m-2": 3.3573577486683268e+16,
+      "left_charge_C_m-2": -0.007964290212693962,
+      "omitted_sheet_bound_m-2": 5.051438075879038e-23,
+      "omitted_current_bound_A_m": 7.114224100047321e-37,
+      "cutoff_current_bound_A_m": 1.6717593900210927e-17,
+      "forward_electron_A_m": 8.769497105017727,
+      "return_electron_A_m": 4.6910305089732,
+      "net_electron_A_m": 4.078466596044525,
+      "conventional_x_A_m": -4.078466596044525,
+      "width_1um_current_A": -4.0784665960445255e-06,
+      "WKB_zero_ex_leading_exponent": 0.0021381791608275683
+    }
+  }
+}

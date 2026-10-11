@@ -1,0 +1,11 @@
+{
+  "radii_m": {"a": 0.001, "b_inner": 0.002, "b_outer": 0.0025, "c": 0.005},
+  "epsilon_r": [2.0, 4.0],
+  "length_m": 0.1,
+  "voltages_V": [1.0, 0.25, 0.0],
+  "voltage_rates_V_per_s": [1000000.0, 0.0, 0.0],
+  "mesh_cells_per_material": [16, 32, 64, 128],
+  "simpson_intervals_per_material": 1024,
+  "curve_intervals_per_gap": 100,
+  "layered_transfer": {"interface_m": 0.0015, "inner_epsilon_r": [3.0, 6.0]}
+}

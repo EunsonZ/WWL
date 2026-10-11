@@ -1,0 +1,86 @@
+[
+  {
+    "case": "inner_epsilon_double",
+    "input_changes": {
+      "epsilon_r": [
+        4.0,
+        4.0
+      ]
+    },
+    "C_reduced_F_per_m": [
+      [
+        3.2104294362267645e-10,
+        -3.2104294362267645e-10
+      ],
+      [
+        -3.2104294362267645e-10,
+        6.420858872453529e-10
+      ]
+    ],
+    "floating_neutral": {
+      "V2_relative_V": 0.5,
+      "effective_C_F_per_m": 1.6052147181133822e-10,
+      "charges_C_per_m": [
+        1.6052147181133822e-10,
+        0.0,
+        -1.6052147181133822e-10
+      ],
+      "energy_J_per_m": 8.026073590566911e-11
+    },
+    "energy_J_per_m": 1.0032591988208639e-10,
+    "conductor_charges_C_per_m": [
+      2.4078220771700735e-10,
+      -1.6052147181133825e-10,
+      -8.026073590566911e-11
+    ],
+    "effective_C_ratio_to_default": 1.5
+  },
+  {
+    "case": "gauge_shift",
+    "input_changes": {
+      "voltages_V": [
+        8.0,
+        7.25,
+        7.0
+      ]
+    },
+    "C_reduced_F_per_m": [
+      [
+        1.6052147181133822e-10,
+        -1.6052147181133822e-10
+      ],
+      [
+        -1.6052147181133822e-10,
+        4.815644154340147e-10
+      ]
+    ],
+    "floating_neutral": {
+      "V2_relative_V": 0.3333333333333333,
+      "effective_C_F_per_m": 1.0701431454089215e-10,
+      "charges_C_per_m": [
+        1.0701431454089216e-10,
+        0.0,
+        -1.0701431454089215e-10
+      ],
+      "energy_J_per_m": 5.350715727044607e-11
+    },
+    "energy_J_per_m": 5.5179255935147535e-11,
+    "conductor_charges_C_per_m": [
+      1.2039110385850367e-10,
+      -4.013036795283456e-11,
+      -8.026073590566911e-11
+    ],
+    "max_charge_difference_C_per_m": 0.0,
+    "energy_difference_J_per_m": 1.9387045606711586e-26
+  },
+  {
+    "case": "nonpositive_epsilon",
+    "expected_rejection": "epsilon_r must contain two positive values",
+    "rejected": true
+  },
+  {
+    "case": "reversed_radii",
+    "expected_rejection": "require 0 < a < b_inner < b_outer < c",
+    "rejected": true
+  }
+]

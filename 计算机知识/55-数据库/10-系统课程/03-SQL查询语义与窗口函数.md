@@ -98,6 +98,25 @@ ORDER BY account_id, id;
 
 ROW_NUMBER 给每行编号；RANK 对并列共享名次并跳号；DENSE_RANK 不跳号。取“部门前两名”应明确是两个人还是两档成绩，分别对应不同策略。窗口结果需要在子查询或适用方言的后续过滤结构中筛选，不能假定能直接放进同层 WHERE。
 
+### 从测量记录返回：四条身份、两组和一个汇总值
+
+带着本节的行语义去[[计算机知识/10-编程语言/01-Python/10-系统课程/11-记录流统计与数据语义#阶段三：缺失与重复改变的是行集|Python测量记录]]：SQLite表 `samples(sample_id,tick_ms,code)` 已提交 a=(0,2)、b=(1000,4)、c=(2000,6)、d=(3000,8)，sample_id 为主键，时间单位 ms，码范围0..4095。默认1 mV/码、零偏置使下列码统计与 mV 统计的数值一致。以下为实际 SQLite 查询，不能用本节 PostgreSQL 的其他语法直接推断其支持情况。
+
+```sql
+SELECT sample_id, tick_ms, code FROM samples ORDER BY sample_id;
+SELECT code % 4 AS bucket, COUNT(*) AS n, SUM(code) AS total
+FROM samples GROUP BY code % 4 ORDER BY bucket;
+SELECT COUNT(*) AS n, SUM(code) AS total, AVG(code) AS mean
+FROM samples;
+SELECT sample_id, code, COUNT(*) OVER () AS n, AVG(code) OVER () AS mean
+FROM samples ORDER BY sample_id;
+```
+
+第一句保留四条身份行。第二句得到两行 `(bucket,n,total)=(0,2,12),(2,2,8)`；按码的余数分组只用于展示聚合如何压缩行，不声称这两个组是物理通道。第三句得到一行 `(4,20,5.0)`。第四句仍有四行，各带 n=4、mean=5.0；重复出现的窗口统计不是四个互相独立的总体均值，也不能再把 n 列相加当样本数。
+
+这里拒绝缺失码后才写入 NOT NULL 列，故 `COUNT(code)=COUNT(*)`。普通SQL表允许NULL时，两种计数可能不同；`AVG` 跳过NULL也不会自动完成身份去重。相同ID同内容的重放仍四行，冲突则由[[计算机知识/10-编程语言/01-Python/10-系统课程/12-可恢复导入器与安装交付#两行一批：失败之后，哪些数据已经存在|Python当前批事务]]拒绝，而非依赖一个容器“最后覆盖”的默认动作。Python列表位置、字典键、数组索引与SQL主键须分别声明合同。
+
+撤去步骤提示：在同一库加 `WHERE code>=6`，预测身份、分母与均值。答案是 c/d、N=2、均值7 mV；描述性方差1 mV²、RMS²50 mV²。去[[计算机知识/10-编程语言/01-Python/10-系统课程/13-科学数组与独立统计对照#输出一致支持哪一份输入|选定行集的数值对照]]返回核对：这个查询回答高码子集的问题，不能与全四行均值5的计算混成同一算法对照。项目 `examples/row_semantics.py` 用独立SQLite与Fraction复算上述行集、分组、窗口和单位；数据库行语义成立不证明选择后的样本代表原总体。[SQLite聚合函数](https://www.sqlite.org/lang_aggfunc.html)与[窗口函数](https://www.sqlite.org/windowfunctions.html)分别规定这两类查询。
 ## 子查询、递归和修改语句
 
 相关子查询按外层变量表达依赖，不代表引擎必然逐行重新运行。CTE 可以改善可读性，其物化与内联策略依方言和版本而变；递归 CTE 必须考虑终止条件与环。UPDATE/DELETE 需要约束目标集合并在事务中验证影响行数，MERGE/UPSERT 的冲突语义也有引擎差异。

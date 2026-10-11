@@ -81,3 +81,15 @@ c,2000,6
 第13讲 [[计算机知识/10-编程语言/01-Python/10-系统课程/13-科学数组与独立统计对照|科学数组与独立统计对照]] 用 `examples/scientific_compare.py` 读取已提交库；已有NumPy时执行，未装时保持标准库主线。第14讲 [[计算机知识/10-编程语言/01-Python/10-系统课程/14-性能观察与有界取消恢复|性能观察与有界取消恢复]] 使用 `benchmark_import.py` 与 `bounded_pipeline.py`，分别观察三类同步负载、Python/进程内存和TaskGroup取消后的提交行集。
 
 本次后续实际环境、运行命令与输出见 [NEXT_VERIFICATION.md](NEXT_VERIFICATION.md)，可检查原始有限观察见 [next-observations.json](reference/next-observations.json)。核心包版本/API未改变；这些例子随课程源码交付，在已安装核心包的解释器中从异目录按绝对路径运行。它们没有成为新的CLI子命令，也没有让核心包默认依赖NumPy。
+
+## 带着同一行集返回理论与其他语言
+
+第15讲[[计算机知识/10-编程语言/01-Python/10-系统课程/15-同码迁移中的身份单位与恢复边界|同码迁移中的身份、单位与恢复边界]]解释从已提交行导出裸码时会丢掉什么，以及另一语言的拥有对象或强保证为什么不能替代本工具的重放事务。理论消费返回[[数学/30-概率与统计/02-期望方差协方差与抽样#返回测量记录：先核对抽样单位，再选择分母|抽样单位与N−1]]、[[电子电路/38-随机噪声与测量/01-RMS方差相关与谱密度#同一记录的中心与平方|RMS恒等式]]和[[计算机知识/55-数据库/10-系统课程/03-SQL查询语义与窗口函数#从测量记录返回：四条身份、两组和一个汇总值|SQL行集与窗口]]；带着明确字段、分母和单位回来核对。
+
+```bash
+python3 -I -B /absolute/project/examples/row_semantics.py
+```
+
+`row_semantics.py` 只需标准库，创建并关闭自己的内存SQLite库，以固定行集和独立Fraction复算；不导入measurement_import，不把其summarize用作oracle。输出参考为 [returns-summary.json](reference/returns-summary.json)。四身份/两组/一汇总/四窗口行分别检查；筛选c/d得mean7、N方差1、RMS²50，提交前缀a/b得3、1、10；数学标定迁移2q+3得13、20、189和N−1值80/3。独立身份模型把四行重放500次，读2000条、只新增4条、重复1996条。模型推演不替代core的实际事务测试。
+
+本返回增量在源码目录以外以 `-I -B` 实际运行：CPython3.12.11/SQLite3.49.1和CPython3.14.7/SQLite3.53.4输出逐字一致，Python3.11语法解析通过但未运行3.11解释器。没有安装依赖，也未重跑科学/性能/各语言构建；那些结果保持VERIFICATION/NEXT_VERIFICATION与各工程自己的原身份。核心API、包源码和既有测试未修改；本增量验证有限查询与算术，仍不认证仪器、iid条件、跨平台ABI或真人学习。

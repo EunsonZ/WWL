@@ -100,7 +100,7 @@ describe 使用精确整数原码总量及微伏和，不从 float 归约结果�
 
 tests.cpp 用原归约代码验证 `[2^54,1,−2^54,1]` 的受控结果 `serial=1 parallel=0 exact_real=2`。逐步舍入解释见正文；这组数超出本应用范围，承担反例责任而非合法测量误差测试。FE_TONEAREST 与 digits 会打印到测试输出，可用 `ctest -V` 查看。
 
-读者应完成正文的新标定输入、替换后旧 view、错位采样通道和 Release 测试迁移题。本实践现在通过下一节继续窗口算法、文本/chrono/filesystem组合、应用参数及结果PMR资源计数；普通allocator的指定输入路径现由下方独立故障实验接续，OS及其他未选路径仍缺逐点证据。下节交付有界工作队列/取消/关闭及本机性能观察；高级 modules/协程/ABI 分支未交付。返回 [[计算机知识/10-编程语言/02-C++/10-系统课程/00-C++系统课程索引|唯一系统索引]]。
+读者应完成正文的新标定输入、替换后旧 view、错位采样通道和 Release 测试迁移题。本实践现在通过下一节继续窗口算法、文本/chrono/filesystem组合、应用参数及结果PMR资源计数；普通allocator的指定输入路径现由下方独立故障实验接续，OS及其他未选路径仍缺逐点证据。下节交付有界工作队列/取消/关闭及本机性能观察；高级modules/单线程协程/同步动态C接口现分别由advanced子目录及第18/16/17讲交付；模块安装包、跨工具链ABI/BMI和外部异步事件仍未验。返回 [[计算机知识/10-编程语言/02-C++/10-系统课程/00-C++系统课程索引|唯一系统索引]]。
 
 
 ## 窗口报告：完整应用参数与逐点资源故障
@@ -185,7 +185,43 @@ UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 \
 
 基准固定24任务×2048原码，w32/h16=>各127窗口，队列2。1/2/3worker各1次暖机+7次样本。计时包括任务复制、线程启动、解析、扫描、格式化、拥有结果复制、完整文本一致性校验与join；不包括固定输入生成和输出。原始样本、环境和观察摘要见同目录[evidence/README.md](evidence/README.md)、[benchmark.csv](evidence/benchmark.csv)、[benchmark-runtime.json](evidence/benchmark-runtime.json)。这些是本机观察，不能承诺其他机器/负载、尾延迟或内存硬上限；不包含汇编/向量化/NUMA实验。完整应用峰值还取决于保留结果、窗口存储、线程栈与分配器元数据，队列槽位不能替代总内存证明。
 
-原有界任务段Debug/Release完整CTest各8/8；本段增加普通分配故障后各9/9。默认安装独立consumer仍为3项。自定义public-api目录另行验证结果见证据页。结果PMR故障的10个分配点沿用第13讲真实测试，其计数域没有扩展到本段所有普通分配。高级模块/ABI/协程的接续接口和预期证据列于第14讲；尚未跑这些实验，#244保持未全完成。
+原有界任务段Debug/Release完整CTest各8/8；本段增加普通分配故障后各9/9。默认安装独立consumer仍为3项。自定义public-api目录另行验证结果见证据页。结果PMR故障的10个分配点沿用第13讲真实测试，其计数域没有扩展到本段所有普通分配。这一段8/8→9/9与consumer3项是有界任务及普通分配原批次的运行身份；后续高级模块/ABI/协程各有独立入口与同版运行证据，见第14讲接续及本目录advanced各README。没有将旧测试数量改写为高级分支或新增物理消费者的成绩。
+
+## 物理有限观测：先映射读出，再消费安装API
+
+[[计算机知识/10-编程语言/02-C++/10-系统课程/15-同码记录的类型资源与统计语义#三种物理观测怎样实际进入公开API|第15讲]]逐组固定模型、方程、单位、shape、时序/扫源、容差和约束。[导出真源](examples/physics_readouts.py)只读加载已发布的thermal_control_lab、qm_first_segment和semiconductor_lab函数，**不执行它们的main或写物理图资产**。热y(K)用理想1 V/K模拟读出，Born概率用1 V/概率单位模拟读出，二极管VD原本V；都转mV后nearest ties-even到1 mV/码。输入0..4095 mV先检查，不以clip隐藏超量程。原量纲/坐标/参数和新增误差保存在库外JSON侧车，不借code或数组位置猜测。
+
+从库根执行，用新的库外结果目录（--vault为当前库根）：
+
+```sh
+python3 -B '计算机知识/80-实践/03-C++/05-测量分析组件/examples/physics_readouts.py' --vault "$PWD" --output /private/tmp/wwl-physics-reader
+python3 -B '计算机知识/80-实践/03-C++/05-测量分析组件/tests/test_physics_readouts.py'
+```
+
+输出physics-readouts.txt三行固定协议：channel、interval_s、count、六码；thermal间隔1 s，quantum间隔2e−7 s，diode静态扫源的0是**无时间轴标志**。JSON保留原K/概率/V与s/源电压坐标；三个channel不能拼作同一总体。导入不产生文件；显式运行的--output须在vault/源树外。有限参考载荷[data/physics-readouts.txt](data/physics-readouts.txt)来自这些固定模型函数，可逐字比较重建结果。
+
+先按上文完成库安装；独立[physics_readouts.cpp](consumer/physics_readouts.cpp)只包含安装的wwl/measurement.hpp并链接WWL::measurement。在组件目录使用新的consumer构建目录：
+
+```sh
+cmake -S consumer -B consumer-physics -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$PWD/install-release"
+cmake --build consumer-physics --target physics_consumer -j 2
+ctest --test-dir consumer-physics -R '^finite_physics_' --output-on-failure
+consumer-physics/physics_consumer /private/tmp/wwl-physics-reader/physics-readouts.txt
+```
+
+两种时域投影用Batch/Seconds/describe；静态扫源只调用describe_codes(span,Calibration)，没有捏造Seconds。每行姓名/数量/间隔/码域/完整长度都检查；新增[输入拒绝测试](consumer/physics_readouts_cases.cmake)核s/ms错置、静态扫描伪造时间、坏码、bool词、截断与多余通道。C++消费者对参考和/条数及RMS²恒等式检查，Python侧Fraction独立给相同码的统计；错误返回2，前面已经写出的报告前缀不回滚。另实际调用Calibration{375000,0}确认超出1..1000整数µV/码，避免暗放宽ADC接口。
+
+固定输出的Fraction复算（mV及mV²）为：
+
+| 读出 | 码和 | 均值 | N方差 | RMS² |
+| --- | ---: | ---: | ---: | ---: |
+| thermal | 7043 | 7043/6 | 14239721/36 | 3546865/2 |
+| quantum | 3500 | 1750/3 | 1251650/9 | 479350 |
+| diode | 3342 | 557 | 1321/3 | 932068/3 |
+
+2026-10-11作者针对本增量实跑：Python3.14.7，三个真实模型函数共18点；只调用相应函数，未运行原模型main或全套实验。初次外部time观测器受kern.clockrate权限拒绝，随后定点重跑以子进程resource观察取得exit0、约0.042 s、RSS23445504 bytes；输出载荷与本有限参考逐字一致。新独立消费者以AppleClang21 Release和既有同版安装库构建，新增两项CTest2/2（正例及六种拒绝）；直接调用生成载荷得到上表的double结果与RMS²恒等式，Calibration375000拒绝。旧安装公共头逐字与当前真源一致，但旧完整库/旧consumer/advanced测试没有冒称此次重跑；这些作者新结果仍须独立runner/语义复核签收。没有全进程硬内存限额、跨平台、真实仪器、Obsidian或真人理解证明。
+
+新增模拟读出误差≤0.5 mV，各组原观测为≤0.0005 K/概率单位/V；它与模型解析/二分/浮点误差分开。统计输出的mV/mV²是**模拟读出**的有限统计；量子扫时均值不是量子态期望值、二极管扫源方差不是仪器噪声，热离线报告没有闭环反馈动作。既有完整课程/advanced/allocator实跑保留原身份，不因这两个新增CTest而称全部重跑。
 
 ## 单线程协程帧的高级消费者
 

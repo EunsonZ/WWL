@@ -12,3 +12,14 @@ add_executable(queue_consumer queue.cpp)
 target_link_libraries(queue_consumer PRIVATE WWL::measurement)
 add_test(NAME independent_queue_consumer COMMAND queue_consumer)
 set_tests_properties(independent_queue_consumer PROPERTIES TIMEOUT 20)
+
+# Finite physical projections consume only the installed public API.
+add_executable(physics_consumer physics_readouts.cpp)
+target_link_libraries(physics_consumer PRIVATE WWL::measurement)
+add_test(NAME finite_physics_consumer COMMAND physics_consumer
+  "${CMAKE_CURRENT_SOURCE_DIR}/../data/physics-readouts.txt")
+add_test(NAME finite_physics_input_rejections COMMAND ${CMAKE_COMMAND}
+  -DCONSUMER=$<TARGET_FILE:physics_consumer>
+  -DDATA=${CMAKE_CURRENT_SOURCE_DIR}/../data/physics-readouts.txt
+  -DOUTPUT=${CMAKE_CURRENT_BINARY_DIR}/physics-negative
+  -P ${CMAKE_CURRENT_SOURCE_DIR}/physics_readouts_cases.cmake)

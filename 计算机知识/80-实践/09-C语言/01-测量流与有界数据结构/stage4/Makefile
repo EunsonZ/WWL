@@ -34,3 +34,9 @@ $(BUILD)/abi_consumer_rust: abi_consumer.rs $(BUILD)/libcabi.a
 rust-test: $(BUILD)/abi_consumer_rust
 	$(BUILD)/abi_consumer_rust
 .PHONY: all test rust-test
+
+# Separate full header/link/runtime check; 77 remains unsupported, not PASS.
+THREAD_BUILD = build-thread-capability
+thread-capability:
+	python3 check_threads.py --cc "$(CC)" --build "$(THREAD_BUILD)"
+.PHONY: thread-capability

@@ -128,3 +128,39 @@ build-abi-failure-sanitize/abi_consumer
 实际Apple clang/clang++21.0.0（clang-2100.3.34.2）、arm64-apple-darwin27.0.0，stage4 Makefile显式/usr/bin/clang与/usr/bin/clang++。Rust为已安装的rustc1.89.0（29483883e 2025-08-04），edition2021，无Cargo依赖下载。两种普通消费均返回0，输出12_error_cases/all_fields_unchanged/null_output/layout_rejection；C++本目标仍报告result_bytes40、result_align8、mean_offset16、rms2_offset32。C++的ASan/UBSan消费返回0、无报错；Rust未消毒器，不继承C++的消毒器成绩。第一次从父工程目录误调用rust-test没有对应目标，未生成ABI结果；上述命令在stage4目录修正执行后才构成实跑证据。
 
 本增量只重建必要ABI库/消费者，没有改probe、thread_queue或复跑不支持的队列入口；原C11线程77及完整主体未编译/未运行结论保持。本故障矩阵尚待独立复核，底层FILE读取/关闭注入另见 [[计算机知识/80-实践/09-C语言/01-测量流与有界数据结构/README#可控读取与关闭故障：2026-10-11 后续实验|FILE故障与清理]]。
+
+
+## 直接检查头文件、链接与队列主体
+
+此前probe.c依据条件宏避免包含不可用头文件，成功构建的是不支持入口。2026-10-11后续补充 `thread_smoke.c` 与 `check_threads.py`，直接无条件包含threads.h与stdatomic.h，分别保存可见编译诊断、链接结果和运行结果。probe.c、thread_queue.c及measure.c保持原字节，没有#undef特性宏、兼容包装或系统安装。
+
+thread_smoke在支持目标建立一个mutex、一个condition与一个worker；main先持锁再创建worker，value仍为0，因此main必须至少一次cnd_wait释放锁，worker才可发布42。main以while复查，解锁后join，核worker返回7与atomic done=1，再销毁同步对象；最多两线程。锁/等待/信号/join硬错误使用进程fail-stop；创建失败在没有worker时解锁并逆序销毁。该源文件在本机缺头文件处停止，后续逻辑仅是可审阅实验接口，未宣称本机线程执行。
+
+脚本先打印工具链身份、C17预定义条件宏，再单独编译thread_smoke.c；成功才链接并运行。若宏声明不支持且只有一条error诊断，其fatal missing filename精确为对应threads.h或stdatomic.h，返回77并显示missing_C11_header。只识别列明的Clang/GCC英文缺头诊断形式；包含栈路径不参加缺失文件名判断，混合其它error或无法识别的诊断保守返回1。其它语法/编译错误、链接失败、运行失败或超时返回1，不用77掩盖源码错误。如果直接API可运行但实现仍声明不支持，单独标记该矛盾并保留77，不强行启用条件队列。宏宣告可用且smoke运行成功才直接编译thread_queue.c与原measure.c，并执行完整20轮队列判据；只有queue输出正常、排空、取消、创建失败、join、顺序FIR的PASS且返回0才报告queue_body=COMPILED_AND_RUN。工作者最多main+producer+consumer=3，编译30s、运行15s超时仅用于实验进程边界。
+
+在stage4目录执行（BUILD名称按需要选择新的目录）：
+
+```sh
+python3 check_threads.py --cc /usr/bin/clang --build build-direct-apple-final
+python3 check_threads.py --cc /opt/homebrew/opt/llvm/bin/clang --build build-direct-homebrew-final
+make BUILD=build-thread-stubs build-thread-stubs/probe build-thread-stubs/thread_queue
+build-thread-stubs/probe
+build-thread-stubs/thread_queue
+```
+
+前两条为本次实际执行命令，Python3.14.7；Apple clang21.0.0（clang-2100.3.34.2）与Homebrew clang23.1.0目标都为arm64-apple-darwin27.0.0。两套宏均advertised_no_threads=1、advertised_no_atomics=0，直接编译均退出1，具体诊断为 `fatal error: 'threads.h' file not found`；脚本均返回77、打印direct_thread_capability=UNSUPPORTED missing_C11_header与queue_body=NOT_COMPILED_OR_RUN。没有产生smoke对象/可执行文件，没有进入链接、运行或完整队列构建；不能把未进入的层记成链接失败或线程协议测试通过。
+
+后三条实际以Apple clang重新构建既有受保护probe/queue：make返回0，probe原子初始化/增计数通过、lock-free=1但create/join不支持，probe与queue分别返回77。宏与真实头文件诊断一致，支持边界比单看宏更具体；这次没有重跑fixed/ABI、故障或整门课程测试，原结果仍按各自已有记录保存。
+
+Makefile另提供 `make CC=/usr/bin/clang THREAD_BUILD=另一个新目录 thread-capability` 同一脚本入口；底层脚本77会使make非零，不能把它当线程PASS。其他已有支持工具链可传 `--cc`；目标链接约定需要时传 `--ldflag=-pthread`，这只是可复现接口，本机未使用或验证该参数。脚本不安装依赖、不抹宏；其他平台需以其自身头文件、运行库、目标和编译命令重新检查。不支持目标可继续完成 [[计算机知识/10-编程语言/03-C语言/10-系统课程/13-线程固定缓冲与C接口边界#宏、头文件与链接为什么要分别检查|分层支持与队列推演]]，保留真实线程、TSan、调度公平性/期限和设备层未验，而不阻塞hosted主线。
+
+
+分类反例也已实际运行：存在的threads.h若内部include另一个缺失头，不能判作threads.h缺失。在stage4目录可独立复现这个失败（夹具只放在新构建目录）：
+
+```sh
+mkdir -p build-classifier-fixture
+printf '#include <wwl_deliberate_missing_dependency.h>\n' > build-classifier-fixture/threads.h
+python3 check_threads.py --cc '/usr/bin/clang -I build-classifier-fixture' --build build-dependency-local-fix
+```
+
+实际诊断点名wwl_deliberate_missing_dependency.h，脚本返回1/COMPILE_FAILED，尽管include-stack路径包含threads.h且实现声明no_threads=1。另实跑编译期强制include只含#error的夹具，再同时触发真实threads.h缺失；两条error合在一起时同样返回1/COMPILE_FAILED，不能吞掉独立编译错误。最后以新build-direct-apple-classifier-fix/build-direct-homebrew-classifier-fix目录重跑两套真实缺threads.h的检查，两者仍为77/missing_C11_header。这些分类回归不进入任何线程运行；夹具、对象目录属于可再生实验材料，不纳入交付源码组。

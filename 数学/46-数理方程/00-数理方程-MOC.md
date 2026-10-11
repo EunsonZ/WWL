@@ -4,6 +4,8 @@ revision: 2
 reviewed: 2026-09-05
 tags:
   - mathematics/map
+cssclasses:
+  - wwl-continuous-reading
 ---
 
 # 数理方程课程地图

@@ -1,0 +1,6 @@
+/* Only the opted-in route pages' native heading embeds in abstract callouts.
+   Keep full-size display math; long lines scroll inside their reading column. */
+.wwl-continuous-reading .callout[data-callout="abstract"] .markdown-embed .math-block {
+  max-width: 100%;
+  overflow-x: auto;
+}

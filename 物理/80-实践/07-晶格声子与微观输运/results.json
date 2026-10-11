@@ -1,0 +1,127 @@
+{
+  "identity": "teaching-models; hexagonal geometry, cubic one-orbital electrons, monatomic chain, 3D continuum LA deformation potential are distinct cards",
+  "hexagonal": {
+    "primitive_nm": [
+      [
+        0.5,
+        0,
+        0
+      ],
+      [
+        0.25,
+        0.4330127018922193,
+        0
+      ],
+      [
+        0,
+        0,
+        0.8
+      ]
+    ],
+    "reciprocal_per_nm": [
+      [
+        12.56637061435917,
+        -7.255197456936871,
+        0.0
+      ],
+      [
+        0.0,
+        14.510394913873743,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        7.853981633974483
+      ]
+    ],
+    "dual_products": [
+      [
+        6.283185307179585,
+        0.0,
+        0.0
+      ],
+      [
+        -4.440892098500626e-16,
+        6.283185307179586,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        6.283185307179586
+      ]
+    ],
+    "cell_volume_nm3": 0.17320508075688773,
+    "periodic_cell_count": 960,
+    "spatial_states_per_band": 960,
+    "states_with_two_spins": 1920,
+    "k_cell_volume_per_nm3": 1.4917901823282596
+  },
+  "cubic": {
+    "bandwidth_eV": 3.0,
+    "mass_ratio": 0.6095971378377537,
+    "maximum_vx_m_per_s": 379816.86220237764,
+    "ring16_bloch_orthogonality_max_error": 1.8395329413517767e-15
+  },
+  "chain": {
+    "sound_m_per_s": 10000.0,
+    "edge_omega_rad_per_s": 40000000000000.0,
+    "zero_mode_omega": 0.0,
+    "modes": 32
+  },
+  "acoustic": [
+    {
+      "T_K": 150.0,
+      "rate_at_kBT_per_s": 136946697803.5068,
+      "tau_at_kBT_s": 7.302111084378355e-12,
+      "mobility_m2_per_Vs": 4.830628486988835,
+      "Hall_factor": 1.1780972450961724,
+      "RH_m3_per_C": -0.007353104645864986,
+      "phonon_energy_at_2k_over_kBT": 0.13264388169758312,
+      "2k_over_cutoff": 0.08291550130997175
+    },
+    {
+      "T_K": 300.0,
+      "rate_at_kBT_per_s": 387343754711.85815,
+      "tau_at_kBT_s": 2.5816861323706945e-12,
+      "mobility_m2_per_Vs": 1.7078850802713585,
+      "Hall_factor": 1.1780972450961724,
+      "RH_m3_per_C": -0.007353104645864986,
+      "phonon_energy_at_2k_over_kBT": 0.0937933882312672,
+      "2k_over_cutoff": 0.11726022648352617
+    },
+    {
+      "T_K": 600.0,
+      "rate_at_kBT_per_s": 1095573582428.0544,
+      "tau_at_kBT_s": 9.127638855472944e-13,
+      "mobility_m2_per_Vs": 0.6038285608736044,
+      "Hall_factor": 1.1780972450961724,
+      "RH_m3_per_C": -0.007353104645864986,
+      "phonon_energy_at_2k_over_kBT": 0.06632194084879156,
+      "2k_over_cutoff": 0.1658310026199435
+    }
+  ],
+  "quadrature": {
+    "first_tau_ratio": 0.7522526971224757,
+    "second_tau_ratio_squared": 0.6666054170378238,
+    "Hall_factor": 1.1779892615671868,
+    "analytic_Hall_factor": 1.1780972450961724,
+    "u_max": 40.0,
+    "intervals": 4000
+  },
+  "impurity_angular": [
+    {
+      "qs_over_k": 0.2,
+      "tau_tr_over_tau_s": 13.65645704453615
+    },
+    {
+      "qs_over_k": 1.0,
+      "tau_tr_over_tau_s": 1.9766803301670934
+    },
+    {
+      "qs_over_k": 4.0,
+      "tau_tr_over_tau_s": 1.0802145124828104
+    }
+  ]
+}

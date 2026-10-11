@@ -1,0 +1,142 @@
+{
+  "python": "3.14.7",
+  "inputs": {
+    "rectangle": {
+      "a_m": 0.02,
+      "b_m": 0.01,
+      "current_A": 1.0,
+      "mu_r": 1.0,
+      "control_length_m": 0.1
+    },
+    "core": {
+      "turns": 20,
+      "area_m2": 2.5e-05,
+      "core_length_m": 0.1,
+      "gap_m": 0.0005,
+      "initial_mu_r": 1000.0,
+      "B_s_T": 0.3,
+      "sample_current_A": 0.5,
+      "plot_max_current_A": 10.0
+    },
+    "capacitor": {
+      "radius_m": 0.01,
+      "gap_m": 0.001,
+      "epsilon_r": 4.0,
+      "mu_r": 1.0,
+      "voltage_peak_V": 1.0,
+      "frequency_Hz": 1000000.0,
+      "compare_frequency_Hz": 1000000000.0
+    },
+    "skin": {
+      "sigma_S_per_m": 58000000.0,
+      "epsilon_r": 1.0,
+      "mu_r": 1.0,
+      "frequency_Hz": 1000000.0,
+      "H0_peak_A_per_m": 10.0,
+      "depth_m": 0.0002,
+      "width_m": 0.02,
+      "length_m": 0.1
+    },
+    "simpson_subintervals": 4000,
+    "rectangle_residual_grids": [
+      64,
+      128
+    ]
+  },
+  "constants": {
+    "mu0_H_per_m_approx": 1.2566370614359173e-06,
+    "c0_m_per_s": 299792458.0,
+    "epsilon0_F_per_m_derived": 8.854187817620389e-12
+  },
+  "rectangle": {
+    "J0_A_per_m2": 12337.005501361697,
+    "A0_Wb_per_m": 1.2566370614359172e-07,
+    "I_volume_A": 1.0,
+    "I_return_quadrature_A": -1.000000000000002,
+    "L_prime_H_per_m": 7.751569170074954e-08,
+    "W_prime_J_per_m": 3.875784585037477e-08,
+    "W_control_J": 3.8757845850374776e-09,
+    "field_energy_quadrature_J_per_m": 3.875784585037476e-08,
+    "source_energy_quadrature_J_per_m": 3.8757845850374766e-08,
+    "relative_energy_difference": 1.7073820165266573e-16,
+    "return_current_residual_A": -1.9984014443252818e-15,
+    "PDE_grid_residuals": [
+      {
+        "grid_intervals_each_axis": 64,
+        "max_normalized_PDE_residual": 0.00020078148840586122
+      },
+      {
+        "grid_intervals_each_axis": 128,
+        "max_normalized_PDE_residual": 5.0198396088799817e-05
+      }
+    ]
+  },
+  "core": {
+    "linear": {
+      "B_T": 0.020943951023931952,
+      "L_H": 2.0943951023931954e-05,
+      "W_J": 2.6179938779914943e-06,
+      "gap_energy_fraction": 0.8333333333333333,
+      "gap_force_opening_N": -0.004363323129985824
+    },
+    "nonlinear_sample": {
+      "I_A": 0.5,
+      "B_T": 0.020938268004413167,
+      "lambda_Wb": 1.0469134002206584e-05,
+      "L_sec_H": 2.093826800441317e-05,
+      "L_inc_H": 2.092687790329995e-05,
+      "W_J": 2.6169280614657113e-06,
+      "half_lambda_I_J": 2.617283500551646e-06,
+      "ampere_residual_A": -1.7763568394002505e-15
+    },
+    "nonlinear_energy_quadrature_J": 2.6169280614657113e-06,
+    "relative_energy_quadrature_error": 0.0,
+    "L_incremental_finite_difference_H": 2.0926877903238735e-05,
+    "relative_incremental_difference": 2.9252698585444292e-12
+  },
+  "capacitor": {
+    "frequency_Hz": 1000000.0,
+    "C_F": 1.1126500560536183e-11,
+    "I_peak_A": 6.990986484228638e-05,
+    "kR": 0.00041916900439033635,
+    "leading_center_field_relative_correction": 4.392566356039645e-08,
+    "leading_WB_over_WE": 2.1962831780198225e-08
+  },
+  "capacitor_compare": {
+    "frequency_Hz": 1000000000.0,
+    "C_F": 1.1126500560536183e-11,
+    "I_peak_A": 0.06990986484228638,
+    "kR": 0.4191690043903364,
+    "leading_center_field_relative_correction": 0.04392566356039646,
+    "leading_WB_over_WE": 0.02196283178019823
+  },
+  "skin": {
+    "full": {
+      "gamma_real_per_m": 15131.914026488965,
+      "gamma_imag_per_m": 15131.914026503478,
+      "Zs_real_ohm": 0.00026089506942247377,
+      "Zs_imag_ohm": 0.00026089506942222353,
+      "P_in_W": 2.6089506942247377e-05,
+      "P_out_W": 6.134556442389897e-08,
+      "P_joule_quadrature_W": 2.6028161377824236e-05,
+      "relative_power_balance_residual": 2.908991428699178e-14
+    },
+    "MQS": {
+      "gamma_real_per_m": 15131.91402649622,
+      "gamma_imag_per_m": 15131.91402649622,
+      "Zs_real_ohm": 0.00026089506942234865,
+      "Zs_imag_ohm": 0.00026089506942234865,
+      "P_in_W": 2.6089506942234864e-05,
+      "P_out_W": 6.134556442369155e-08,
+      "P_joule_quadrature_W": 2.602816137781193e-05,
+      "relative_power_balance_residual": 2.908991428700573e-14
+    },
+    "delta_MQS_m": 6.608549310080563e-05,
+    "d_over_delta": 3.0263828052992445,
+    "charge_relaxation_s": 1.526584106486274e-19,
+    "omega_epsilon_over_sigma": 9.591810828048433e-13,
+    "magnetic_diffusion_scale_s": 2.9153979825313283e-06,
+    "vacuum_k_length": 0.0020958450219516816,
+    "relative_gamma_difference": 4.795730579576613e-13
+  }
+}

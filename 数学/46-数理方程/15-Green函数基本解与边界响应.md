@@ -74,3 +74,7 @@ $$G(x,y)=\sum_n\frac{\phi_n(x)\overline{\phi_n(y)}}{\lambda_n}.$$
 本页为独立编写的讲解、推导与算例；以下一手教材用于对照标准定义与课程范围，不是逐段译写。更具体的主题定位见 [[数学/90-资源/04-六科学术来源与阅读对照|学术来源对照]]。
 
 - [Victor Ivrii：Partial Differential Equations，作者课程教材](https://www.math.utoronto.ca/courses/apm346h1/20181/PDE-textbook/contents.html)
+
+## 电磁学往返：镜像源的物理职责
+
+去 [[物理/20-电磁学/02-静电边值与电介质#不靠球面对称的完整例：点电荷靠近接地平面|接地平面的点电荷例]]，带走上半空间 Dirichlet Green 函数与域外镜像，令 $\phi=(q/\epsilon_0)G$ 恢复 SI 势。返回时核边界相消和真实源的通量归一化；物理页继续求感应面电荷和排除自场后的力。镜像不是域内独立真实电荷，边界诱导能量需扣自能并有 $\tfrac12q\phi_{\rm induced}$，不能直接将两个独立点源的相互能套在这道边值问题。

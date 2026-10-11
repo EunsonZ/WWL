@@ -1,0 +1,47 @@
+{
+  "interface": {
+    "n_incident": 1.5,
+    "n_transmitted": 1.0,
+    "wavelength0_m": 8.5e-07,
+    "sample_angle_deg": 30.0,
+    "TIR_angle_deg": 50.0,
+    "plot_max_angle_deg": 85.0
+  },
+  "layer": {
+    "frequency_Hz": 10000000000.0,
+    "n_incident": 1.0,
+    "n_layer_real": 1.5,
+    "n_exit": 1.0,
+    "sigma_layer_S_per_m": 0.03,
+    "thickness_m": 0.01,
+    "angle_deg": 30.0,
+    "incident_tangential_E_peak_V_per_m": 1.0
+  },
+  "slab": {
+    "n_core": 1.5,
+    "n_clad": 1.45,
+    "wavelength0_m": 8.5e-07,
+    "V_normalized": 1.0,
+    "transfer_V_normalized": 2.0,
+    "periodic_width_m": 0.001,
+    "control_length_m": 0.002,
+    "power_W": 0.0001,
+    "tail_decay_lengths": 8.0,
+    "plot_V_max": 4.5,
+    "root_diagram_comparison_V": 0.5
+  },
+  "rectangle": {
+    "width_a_m": 0.02,
+    "height_b_m": 0.01,
+    "length_m": 0.06,
+    "epsilon_r": 1.0,
+    "mu_r": 1.0,
+    "frequency_Hz": 10000000000.0,
+    "below_cutoff_frequency_Hz": 5000000000.0,
+    "forward_power_W": 1.0,
+    "reference_R_ohm": 50.0,
+    "cavity_total_energy_J": 1e-09
+  },
+  "simpson_subintervals": 4000,
+  "mode_bisection_steps": 80
+}

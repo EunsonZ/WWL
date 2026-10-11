@@ -1,0 +1,8 @@
+{
+  "rectangle": {"a_m": 0.02, "b_m": 0.01, "current_A": 1.0, "mu_r": 1.0, "control_length_m": 0.1},
+  "core": {"turns": 20, "area_m2": 0.000025, "core_length_m": 0.1, "gap_m": 0.0005, "initial_mu_r": 1000.0, "B_s_T": 0.3, "sample_current_A": 0.5, "plot_max_current_A": 10.0},
+  "capacitor": {"radius_m": 0.01, "gap_m": 0.001, "epsilon_r": 4.0, "mu_r": 1.0, "voltage_peak_V": 1.0, "frequency_Hz": 1000000.0, "compare_frequency_Hz": 1000000000.0},
+  "skin": {"sigma_S_per_m": 58000000.0, "epsilon_r": 1.0, "mu_r": 1.0, "frequency_Hz": 1000000.0, "H0_peak_A_per_m": 10.0, "depth_m": 0.0002, "width_m": 0.02, "length_m": 0.1},
+  "simpson_subintervals": 4000,
+  "rectangle_residual_grids": [64, 128]
+}

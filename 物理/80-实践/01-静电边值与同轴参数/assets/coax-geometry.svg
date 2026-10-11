@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 440" role="img" aria-labelledby="title desc">
+<title id="title">固定参考同轴中央截面的场、电荷与法向</title>
+<desc id="desc">固定几何参考，不随输入文件变化：内半径1毫米、外导体内半径4毫米、内电位1伏、外电位0伏、相对介电常数4。内导体正电荷，外导体负电荷。电场径向向外。内导体朝介质法向向外，外导体朝介质法向向内。图为静态横截面，不包含实际开放端部。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="context-stroke"/></marker></defs>
+<rect width="650" height="440" fill="white"/>
+<style>text{font-family:Arial,"PingFang SC",sans-serif;font-size:15px;fill:#172b3a}</style>
+<circle cx="210" cy="200" r="158" fill="#dce3e8" stroke="#334b5f" stroke-width="2"/>
+<circle cx="210" cy="200" r="144" fill="#edf6ff" stroke="#334b5f" stroke-width="2"/>
+<circle cx="210" cy="200" r="36" fill="#dce3e8" stroke="#334b5f" stroke-width="2"/>
+<text x="190" y="225">+</text><text x="349" y="206">−</text>
+<g stroke="#1565c0" stroke-width="3" marker-end="url(#arrow)">
+<path d="M255 200H325"/><path d="M165 200H95"/><path d="M210 155V85"/><path d="M210 245V315"/>
+</g>
+<path d="M237 228L268 259" stroke="#be5500" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M312 302L281 271" stroke="#be5500" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M210 200H246" stroke="#172b3a"/><text x="220" y="190">a</text>
+<path d="M210 200L108 98" stroke="#172b3a"/><text x="134" y="134">b</text>
+<text x="394" y="70">a = 1 mm, b = 4 mm</text>
+<text x="394" y="110">Inner electrode: phi = 1 V</text><text x="394" y="140">Outer electrode: phi = 0 V</text>
+<text x="394" y="188" fill="#1565c0">Blue: E radial outward</text>
+<text x="394" y="225" fill="#be5500">Orange: n_c into dielectric</text>
+<text x="394" y="257">Inner: n_c = +e_r</text><text x="394" y="289">Outer: n_c = -e_r</text>
+<text x="70" y="408">Fixed reference: a=1 mm, b=4 mm, V=1 V, epsilon_r=4.</text>
+<text x="70" y="431">Arrows show direction; geometry is to scale.</text>
+</svg>

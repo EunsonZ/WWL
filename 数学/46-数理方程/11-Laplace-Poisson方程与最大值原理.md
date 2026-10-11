@@ -66,3 +66,7 @@ $$-\int_{\partial B_\varepsilon}\partial_n\Phi\,dS=1,$$
 本页为独立编写的讲解、推导与算例；以下一手教材用于对照标准定义与课程范围，不是逐段译写。更具体的主题定位见 [[数学/90-资源/04-六科学术来源与阅读对照|学术来源对照]]。
 
 - [Victor Ivrii：Partial Differential Equations，作者课程教材](https://www.math.utoronto.ca/courses/apm346h1/20181/PDE-textbook/contents.html)
+
+## 电磁学往返：材料系数与电位参考
+
+去 [[物理/20-电磁学/02-静电边值与电介质#先把物理条件写成一个问题|静电边值合同]]，带走本页的 $-\Delta$ 符号、Dirichlet 唯一性、Neumann 相容性和常数自由度。均匀材料把 $u,f$ 换成 $\phi,\rho_f/\epsilon$，$u$ 为 V，右侧为 V/m²；分段材料则使用 $-\nabla\cdot(\epsilon\nabla\phi)=\rho_f$，不能把常数系数最大值证明原样当成材料界面证明。回来将给定外向 $D_n$ 转成 $\partial_n\phi=-D_n/\epsilon$，检查电荷与边界通量相容，再固定参考电位。

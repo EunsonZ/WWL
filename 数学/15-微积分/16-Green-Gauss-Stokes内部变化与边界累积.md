@@ -87,3 +87,7 @@ $$
 
 - [MIT 18.01SC：单变量微积分（课程原始讲义与练习入口）](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/)
 - [MIT 18.02SC：多变量微积分](https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/)
+
+## 电磁学往返：用同一取向数源与环流
+
+去 [[物理/20-电磁学/01-场源与守恒#同一组 Maxwell 方程的两种读法|场源与守恒]]，带走闭合面的外法向、开曲面的右手绕向与光滑性条件；电位移 $\mathbf D$ 本身为 C/m²，其通量 $\int\mathbf D\cdot\mathbf n\,dA$ 为 C；磁通 $\int\mathbf B\cdot\mathbf n\,dA$ 为 Wb，电场环流 $\oint\mathbf E\cdot d\mathbf l$ 为 V，磁场强度环流 $\oint\mathbf H\cdot d\mathbf l$ 为 A。返回本页检查薄盒/小回路为何给界面跳跃条件，奇点或材料跳跃不能当作普通点态导数；充电例还须保留位移项，不能由数学积分定理自行删掉物理项。

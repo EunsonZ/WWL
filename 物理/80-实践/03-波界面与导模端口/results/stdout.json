@@ -1,0 +1,389 @@
+{
+  "python": "3.14.7",
+  "inputs": {
+    "interface": {
+      "n_incident": 1.5,
+      "n_transmitted": 1.0,
+      "wavelength0_m": 8.5e-07,
+      "sample_angle_deg": 30.0,
+      "TIR_angle_deg": 50.0,
+      "plot_max_angle_deg": 85.0
+    },
+    "layer": {
+      "frequency_Hz": 10000000000.0,
+      "n_incident": 1.0,
+      "n_layer_real": 1.5,
+      "n_exit": 1.0,
+      "sigma_layer_S_per_m": 0.03,
+      "thickness_m": 0.01,
+      "angle_deg": 30.0,
+      "incident_tangential_E_peak_V_per_m": 1.0
+    },
+    "slab": {
+      "n_core": 1.5,
+      "n_clad": 1.45,
+      "wavelength0_m": 8.5e-07,
+      "V_normalized": 1.0,
+      "transfer_V_normalized": 2.0,
+      "periodic_width_m": 0.001,
+      "control_length_m": 0.002,
+      "power_W": 0.0001,
+      "tail_decay_lengths": 8.0,
+      "plot_V_max": 4.5,
+      "root_diagram_comparison_V": 0.5
+    },
+    "rectangle": {
+      "width_a_m": 0.02,
+      "height_b_m": 0.01,
+      "length_m": 0.06,
+      "epsilon_r": 1.0,
+      "mu_r": 1.0,
+      "frequency_Hz": 10000000000.0,
+      "below_cutoff_frequency_Hz": 5000000000.0,
+      "forward_power_W": 1.0,
+      "reference_R_ohm": 50.0,
+      "cavity_total_energy_J": 1e-09
+    },
+    "simpson_subintervals": 4000,
+    "mode_bisection_steps": 80
+  },
+  "constants": {
+    "mu0_H_per_m_approx": 1.2566370614359173e-06,
+    "c0_m_per_s": 299792458.0,
+    "epsilon0_F_per_m_derived": 8.854187817620389e-12
+  },
+  "interface_sample": {
+    "angle_deg": 30.0,
+    "q2_per_m": {
+      "real": 4889336.989450638,
+      "imag": 0.0
+    },
+    "TE": {
+      "r_tangential_E": {
+        "real": 0.3252272915132478,
+        "imag": -0.0
+      },
+      "t_tangential_E": {
+        "real": 1.3252272915132477,
+        "imag": -0.0
+      },
+      "R": 0.10577279114504307,
+      "T": 0.8942272088549567,
+      "power_balance_residual": 3.3306690738754696e-16,
+      "E_continuity_residual": 0.0,
+      "H_continuity_residual_normalized": 0.0
+    },
+    "TM": {
+      "r_tangential_E": {
+        "real": 0.06787888807065615,
+        "imag": 0.0
+      },
+      "t_tangential_E": {
+        "real": 1.0678788880706562,
+        "imag": 0.0
+      },
+      "R": 0.004607543445708665,
+      "T": 0.9953924565542914,
+      "power_balance_residual": 1.1102230246251565e-16,
+      "E_continuity_residual": 0.0,
+      "H_continuity_residual_normalized": 0.0
+    }
+  },
+  "interface_TIR_comparison": {
+    "angle_deg": 50.0,
+    "q2_per_m": {
+      "real": -0.0,
+      "imag": -4183850.461443225
+    },
+    "TE": {
+      "r_tangential_E": {
+        "real": 0.48743328019952525,
+        "imag": 0.8731602357837485
+      },
+      "t_tangential_E": {
+        "real": 1.4874332801995251,
+        "imag": 0.8731602357837485
+      },
+      "R": 1.0,
+      "T": -0.0,
+      "power_balance_residual": 0.0,
+      "E_continuity_residual": 0.0,
+      "H_continuity_residual_normalized": 1.694501960486686e-16
+    },
+    "TM": {
+      "r_tangential_E": {
+        "real": 0.2712772493625147,
+        "imag": -0.96250124881909
+      },
+      "t_tangential_E": {
+        "real": 1.2712772493625146,
+        "imag": -0.96250124881909
+      },
+      "R": 0.9999999999999998,
+      "T": -0.0,
+      "power_balance_residual": 2.220446049250313e-16,
+      "E_continuity_residual": 0.0,
+      "H_continuity_residual_normalized": 1.400254782995132e-16
+    }
+  },
+  "layer": {
+    "q_layer_per_m": {
+      "real": 296.42417388683384,
+      "imag": -3.995465392046177
+    },
+    "polarizations": {
+      "TE": {
+        "r": {
+          "real": -0.03324942116471463,
+          "imag": 0.08160214656248455
+        },
+        "t_at_exit": {
+          "real": -0.9353264016199291,
+          "imag": -0.18700586896078025
+        },
+        "R": 0.007764434331393781,
+        "T": 0.9098066725930614,
+        "A_Joule_quadrature": 0.0824288930755448,
+        "power_balance_residual": 1.1102230246251565e-16,
+        "incident_flux_W_per_m2": 0.0011493970259872914,
+        "free_surface_charge_checks": [],
+        "boundary_E_residual_normalized": 1.1443916996305594e-16,
+        "boundary_H_residual_normalized": 1.9012397735967402e-16
+      },
+      "TM": {
+        "r": {
+          "real": -0.020515794546420607,
+          "imag": 0.052694853248048
+        },
+        "t_at_exit": {
+          "real": -0.9414946638685491,
+          "imag": -0.17702653336674654
+        },
+        "R": 0.003197645384704256,
+        "T": 0.9177505956088,
+        "A_Joule_quadrature": 0.07905175900649573,
+        "power_balance_residual": 1.3877787807814457e-17,
+        "incident_flux_W_per_m2": 0.0015325293679830556,
+        "free_surface_charge_checks": [
+          {
+            "z_m": 0.0,
+            "rho_free_surface_C_per_m2": {
+              "real": -3.4574619845277567e-15,
+              "imag": -1.2511394115365246e-13
+            },
+            "surface_continuity_residual_normalized": 2.898461727816018e-17
+          },
+          {
+            "z_m": 0.01,
+            "rho_free_surface_C_per_m2": {
+              "real": 2.4439377268020882e-14,
+              "imag": -1.1476386912221999e-13
+            },
+            "surface_continuity_residual_normalized": 3.327685967340534e-18
+          }
+        ],
+        "boundary_E_residual_normalized": 2.7755575615628914e-17,
+        "boundary_H_residual_normalized": 2.8298372485022207e-16
+      }
+    }
+  },
+  "slab_TE_modes": [
+    {
+      "mode_index": 0,
+      "parity": "even",
+      "V": 1.0,
+      "half_thickness_d_m": 3.522435482119305e-07,
+      "u": 0.7390851332151605,
+      "w": 0.673612029183215,
+      "root_residual": 6.661338147750939e-16,
+      "n_eff": 1.4728980249713144,
+      "beta_per_m": 10887636.74055717,
+      "kappa_per_m": 1912347.3874897782,
+      "decay_length_m": 5.229175444492013e-07,
+      "E_coefficient_peak_V_per_m": 7645.395216313688,
+      "power_W": 0.0001,
+      "power_quadrature_plus_exact_tail_W": 0.0001000000000000465,
+      "power_relative_error": 4.649872067247207e-13,
+      "cladding_power_fraction": 0.3263879708167853,
+      "tail_power_fraction_outside_control": 3.673012732213138e-08,
+      "control_x_max_m": 4.535583903805541e-06,
+      "periodic_width_m": 0.001,
+      "boundary_derivative_residual_normalized": 5.548284518749155e-16,
+      "WE_J_per_m2": 2.4932503261901305e-10,
+      "WM_J_per_m2": 2.493250326190131e-10,
+      "electric_magnetic_energy_relative_difference": 1.036774922708298e-16,
+      "total_energy_control_length_J": 9.973001304760523e-16,
+      "phase_velocity_m_per_s": 203539181.20423758,
+      "group_velocity_m_per_s": 200541435.71056375,
+      "group_velocity_finite_difference_m_per_s": 200541435.7101293,
+      "energy_velocity_m_per_s": 200541435.7105637,
+      "group_energy_velocity_relative_difference": 2.9721860005737896e-16,
+      "group_finite_difference_relative_error": 2.1664263758182355e-12
+    }
+  ],
+  "slab_transfer_TE_modes": [
+    {
+      "mode_index": 0,
+      "parity": "even",
+      "V": 2.0,
+      "half_thickness_d_m": 7.04487096423861e-07,
+      "u": 1.0298665293222586,
+      "w": 1.714460536665025,
+      "root_residual": 1.5543122344752192e-15,
+      "n_eff": 1.4869059992512812,
+      "beta_per_m": 10991183.444297448,
+      "kappa_per_m": 2433629.438165755,
+      "decay_length_m": 4.109089018719742e-07,
+      "E_coefficient_peak_V_per_m": 6740.218624010619,
+      "power_W": 0.0001,
+      "power_quadrature_plus_exact_tail_W": 0.00010000000000001409,
+      "power_relative_error": 1.408107571515549e-13,
+      "cladding_power_fraction": 0.09768285943856042,
+      "tail_power_fraction_outside_control": 1.0992757653995247e-08,
+      "control_x_max_m": 3.991758311399654e-06,
+      "periodic_width_m": 0.001,
+      "boundary_derivative_residual_normalized": 4.778080831915861e-16,
+      "WE_J_per_m2": 2.5076001748400816e-10,
+      "WM_J_per_m2": 2.5076001748400816e-10,
+      "electric_magnetic_energy_relative_difference": 0.0,
+      "total_energy_control_length_J": 1.0030400699360327e-15,
+      "phase_velocity_m_per_s": 201621661.4573873,
+      "group_velocity_m_per_s": 199393828.81558728,
+      "group_velocity_finite_difference_m_per_s": 199393828.81509063,
+      "energy_velocity_m_per_s": 199393828.8155873,
+      "group_energy_velocity_relative_difference": 1.494646176600505e-16,
+      "group_finite_difference_relative_error": 2.4908278533047414e-12
+    },
+    {
+      "mode_index": 1,
+      "parity": "odd",
+      "V": 2.0,
+      "half_thickness_d_m": 7.04487096423861e-07,
+      "u": 1.895494267033981,
+      "w": 0.6380450482852378,
+      "root_residual": 1.1102230246251565e-16,
+      "n_eff": 1.4551672987011746,
+      "beta_per_m": 10756571.518455798,
+      "kappa_per_m": 905687.3454802815,
+      "decay_length_m": 1.1041337885423418e-06,
+      "E_coefficient_peak_V_per_m": 5350.569964581729,
+      "power_W": 0.0001,
+      "power_quadrature_plus_exact_tail_W": 0.00010000000000007843,
+      "power_relative_error": 7.842847465217018e-13,
+      "cladding_power_fraction": 0.5483516036570331,
+      "tail_power_fraction_outside_control": 6.170884352513013e-08,
+      "control_x_max_m": 9.537557404762596e-06,
+      "periodic_width_m": 0.001,
+      "boundary_derivative_residual_normalized": 4.32673912443104e-17,
+      "WE_J_per_m2": 2.486105652179339e-10,
+      "WM_J_per_m2": 2.4861056521793383e-10,
+      "electric_magnetic_energy_relative_difference": 1.0397544496800588e-16,
+      "total_energy_control_length_J": 9.944422608717355e-16,
+      "phase_velocity_m_per_s": 206019237.97186965,
+      "group_velocity_m_per_s": 201117760.04438767,
+      "group_velocity_finite_difference_m_per_s": 201117760.04577124,
+      "energy_velocity_m_per_s": 201117760.04438764,
+      "group_energy_velocity_relative_difference": 1.4818344427224029e-16,
+      "group_finite_difference_relative_error": 6.879416400338755e-12
+    }
+  ],
+  "slab_root_intersections": [
+    {
+      "V": 0.5,
+      "half_thickness_d_m": 1.7612177410596525e-07,
+      "roots": [
+        {
+          "mode_index": 0,
+          "parity": "even",
+          "u": 0.4501836112948735,
+          "w": 0.2175654295183549,
+          "root_residual": 2.498001805406602e-16
+        }
+      ]
+    },
+    {
+      "V": 1.0,
+      "half_thickness_d_m": 3.522435482119305e-07,
+      "roots": [
+        {
+          "mode_index": 0,
+          "parity": "even",
+          "u": 0.7390851332151605,
+          "w": 0.673612029183215,
+          "root_residual": 6.661338147750939e-16
+        }
+      ]
+    },
+    {
+      "V": 2.0,
+      "half_thickness_d_m": 7.04487096423861e-07,
+      "roots": [
+        {
+          "mode_index": 0,
+          "parity": "even",
+          "u": 1.0298665293222586,
+          "w": 1.714460536665025,
+          "root_residual": 1.5543122344752192e-15
+        },
+        {
+          "mode_index": 1,
+          "parity": "odd",
+          "u": 1.895494267033981,
+          "w": 0.6380450482852378,
+          "root_residual": 1.1102230246251565e-16
+        }
+      ]
+    }
+  ],
+  "rectangle": {
+    "TE10_cutoff_Hz": 7494811450.0,
+    "next_TE_cutoff_Hz": 14989622900.0,
+    "beta_per_m": 138.75032453177562,
+    "Z_TE_ohm": 569.0569407686879,
+    "E0_peak_V_per_m": 3373.594346594409,
+    "power_quadrature_W": 1.0000000000000002,
+    "power_relative_error": 2.220446049250313e-16,
+    "WE_prime_J_per_m": 2.519268516243222e-09,
+    "WM_prime_J_per_m": 2.5192685162432225e-09,
+    "matched_control_segment_energy_J": 3.023122219491866e-10,
+    "energy_velocity_m_per_s": 198470308.6535646,
+    "phase_velocity_m_per_s": 452841125.1204429,
+    "group_velocity_m_per_s": 198470308.6535646,
+    "phase_group_product_over_speed_squared": 1.0000000000000002,
+    "matched_S21": {
+      "real": -0.45381134469786255,
+      "imag": -0.8910977855563988
+    },
+    "matched_S11": {
+      "real": 0.0,
+      "imag": 0.0
+    },
+    "modal_V_forward_peak_V": 10.0,
+    "modal_I_forward_peak_A": 0.2,
+    "below_cutoff_alpha_per_m": 117.01536272056026,
+    "single_decaying_field_amplitude_ratio": 0.000893001976973953,
+    "single_decaying_field_average_axial_power_W": 0.0,
+    "cavity_TE101_frequency_Hz": 7900224938.503059,
+    "cavity_E0_peak_V_per_m": 8677.20794863627,
+    "cavity_instantaneous_energy_checks": [
+      {
+        "omega_t_rad": 0,
+        "WE_instant_J": 9.999999999999999e-10,
+        "WM_instant_J": 0.0,
+        "total_relative_error": 2.067951531382569e-16
+      },
+      {
+        "omega_t_rad": 0.7853981633974483,
+        "WE_instant_J": 5e-10,
+        "WM_instant_J": 4.999999999999998e-10,
+        "total_relative_error": 2.067951531382569e-16
+      },
+      {
+        "omega_t_rad": 1.5707963267948966,
+        "WE_instant_J": 3.7493994566546434e-42,
+        "WM_instant_J": 9.999999999999999e-10,
+        "total_relative_error": 2.067951531382569e-16
+      }
+    ]
+  }
+}

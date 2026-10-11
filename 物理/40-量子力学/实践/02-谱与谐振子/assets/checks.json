@@ -1,0 +1,102 @@
+{
+  "result": "PASS",
+  "model": "exact free Gaussian Fourier density and ideal harmonic oscillator",
+  "single_thread": true,
+  "h_J_s": 6.62607015e-34,
+  "hbar_J_s": 1.0545718176461565e-34,
+  "frequency_Hz": 6000000000.0,
+  "thermal_same_mean_temperature_K": 0.41543065091796927,
+  "thermal_20mK_occupation": 5.586578303793493e-07,
+  "continuous_gaussian": {
+    "kappa_mean": 1,
+    "kappa_sd": 0.5,
+    "negative_momentum_probability": 0.022750131948179198,
+    "energy_window_probability": 0.4999683287581669,
+    "norm_window_kappa": [
+      -5,
+      7
+    ],
+    "norm_quadrature_segments": 4000,
+    "probability_quadrature_segments": 8000
+  },
+  "hermite_checks": {
+    "xi_window": [
+      -10,
+      10
+    ],
+    "quadrature_segments": 4000,
+    "n_checked": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "max_orthogonality_error": 2.220446049250313e-16,
+    "difference_delta_xi": 0.0001,
+    "max_dimensionless_energy_residual": 1.5930534447150535e-08,
+    "max_dimensionless_lowering_residual": 1.0732599919904828e-08
+  },
+  "occupation_stats": [
+    {
+      "state": "Fock",
+      "norm": 1.0,
+      "mean_a_real": 0.0,
+      "mean_a_imag": 0.0,
+      "mean_n": 1.0,
+      "variance_n": 0.0,
+      "mean_energy_J": 5.963463134999999e-24
+    },
+    {
+      "state": "coherent",
+      "norm": 1.0,
+      "mean_a_real": 1.0,
+      "mean_a_imag": 0.0,
+      "mean_n": 1.0,
+      "variance_n": 1.0,
+      "mean_energy_J": 5.963463134999999e-24
+    },
+    {
+      "state": "thermal q=1/2",
+      "norm": 1.0,
+      "mean_a_real": 0,
+      "mean_a_imag": 0,
+      "mean_n": 1.0,
+      "variance_n": 1.9999999999999996,
+      "mean_energy_J": 5.963463134999999e-24
+    }
+  ],
+  "n_cutoff_exclusive": 64,
+  "finite_commutator": {
+    "matrix_shape": [
+      6,
+      6
+    ],
+    "diagonal": [
+      1.0,
+      1.0000000000000004,
+      0.9999999999999991,
+      1.0000000000000004,
+      1.0000000000000009,
+      -5.000000000000001
+    ],
+    "trace": 0.0,
+    "coherent_expectation_error": 1.1875408799629392e-86,
+    "thermal_expectation_error": 3.469446951953614e-18
+  },
+  "figure_tail_n_ge_13": {
+    "thermal": 0.0001220703125,
+    "coherent": 6.35977732713414e-11
+  },
+  "numeric_tail_n_ge_64": {
+    "thermal_probability": 5.421010862427522e-20,
+    "thermal_missing_mean_n": 3.5236570605778894e-18
+  },
+  "not_tested": [
+    "self-adjointness theorem proof",
+    "general continuous spectral theorem",
+    "hardware",
+    "readout fidelity",
+    "Obsidian display",
+    "learner understanding"
+  ]
+}

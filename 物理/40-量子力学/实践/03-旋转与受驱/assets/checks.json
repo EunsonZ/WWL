@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "method": "single-thread Python standard library; no renormalization",
+  "spin_one": {
+    "basis_m": [
+      1,
+      0,
+      -1
+    ],
+    "beta_rad": 1.0471975511965976,
+    "probabilities": [
+      0.37499999999999994,
+      0.2500000000000002,
+      0.37499999999999994
+    ],
+    "Jz_mean_over_hbar": 0.0,
+    "Jz_variance_over_hbar2": 0.7499999999999999,
+    "commutator_error": 2.220446049250313e-16,
+    "casimir_error": 4.440892098500626e-16,
+    "unitarity_error": 5.551115123125783e-17,
+    "vector_error": 1.1102230246251565e-16,
+    "broken_symmetry_commutator_error": 0.0
+  },
+  "rotor": {
+    "I_kg_m2": 1e-46,
+    "E1_J": 5.560608592867592e-23,
+    "mode_window_for_matrix_elements": [
+      -2,
+      2
+    ],
+    "quadrature_points": 1024,
+    "norm_error": 0.0,
+    "cos_matrix_element_error": 4.112367843052941e-17,
+    "scope": "selected matrix elements, not a full rotor spectrum solver"
+  },
+  "circular_exact_oracle": {
+    "kind": "circular",
+    "Omega_over_omega0": 0.2,
+    "omega_over_omega0": 0.9,
+    "omega0_rad_per_s": 6283185.307179586,
+    "Omega_rad_per_s": 1256637.0614359172,
+    "end_time_s": 5e-06,
+    "samples": 401,
+    "substeps_per_sample": [
+      50,
+      100,
+      200
+    ],
+    "max_coarse_medium_probability_difference": 1.0037784822780615e-07,
+    "max_medium_fine_probability_difference": 2.5093957300992287e-08,
+    "largest_norm_error": 2.395861287141088e-12,
+    "max_sample_probability_difference_from_formula": 8.36503534495936e-09,
+    "P_plus_at_pi_over_Omega": 0.7728129682477434,
+    "formula_P_plus_at_pi_over_Omega": 0.7728129695252914,
+    "max_vector_error_including_lab_phase": 1.2904307455929853e-08
+  },
+  "rotating_frame_matrix_identity_error": 1.5515838457795457e-17,
+  "linear_drive_comparisons": [
+    {
+      "kind": "linear",
+      "Omega_over_omega0": 0.05,
+      "omega_over_omega0": 1.0,
+      "omega0_rad_per_s": 6283185.307179586,
+      "Omega_rad_per_s": 314159.2653589793,
+      "end_time_s": 2e-05,
+      "samples": 401,
+      "substeps_per_sample": [
+        50,
+        100,
+        200
+      ],
+      "max_coarse_medium_probability_difference": 3.0235759507224458e-06,
+      "max_medium_fine_probability_difference": 7.558935736229344e-07,
+      "largest_norm_error": 7.571721027943568e-14,
+      "max_sample_probability_difference_from_formula": 0.012163945957873956,
+      "P_plus_at_pi_over_Omega": 0.9998435150087085,
+      "formula_P_plus_at_pi_over_Omega": 1.0
+    },
+    {
+      "kind": "linear",
+      "Omega_over_omega0": 0.2,
+      "omega_over_omega0": 1.0,
+      "omega0_rad_per_s": 6283185.307179586,
+      "Omega_rad_per_s": 1256637.0614359172,
+      "end_time_s": 5e-06,
+      "samples": 401,
+      "substeps_per_sample": [
+        50,
+        100,
+        200
+      ],
+      "max_coarse_medium_probability_difference": 1.9870826301060518e-07,
+      "max_medium_fine_probability_difference": 4.9677075064646914e-08,
+      "largest_norm_error": 4.629630012686903e-14,
+      "max_sample_probability_difference_from_formula": 0.0539949612668848,
+      "P_plus_at_pi_over_Omega": 0.9974390792791552,
+      "formula_P_plus_at_pi_over_Omega": 1.0
+    },
+    {
+      "kind": "linear",
+      "Omega_over_omega0": 0.8,
+      "omega_over_omega0": 1.0,
+      "omega0_rad_per_s": 6283185.307179586,
+      "Omega_rad_per_s": 5026548.245743669,
+      "end_time_s": 1.25e-06,
+      "samples": 401,
+      "substeps_per_sample": [
+        50,
+        100,
+        200
+      ],
+      "max_coarse_medium_probability_difference": 1.1779464959005281e-08,
+      "max_medium_fine_probability_difference": 2.9449149785421014e-09,
+      "largest_norm_error": 1.1957101975212936e-13,
+      "max_sample_probability_difference_from_formula": 0.21742138116647747,
+      "P_plus_at_pi_over_Omega": 0.9774850179980379,
+      "formula_P_plus_at_pi_over_Omega": 1.0
+    }
+  ],
+  "short_time_perturbation": {
+    "P_first_order_at_pi": 2.4674011002723395,
+    "P_exact_at_pi": 1.0
+  },
+  "not_verified": [
+    "hardware or measured fidelity",
+    "general Lie group integration theorem",
+    "full rotor/central-potential spectrum",
+    "uniform RWA error bound",
+    "Obsidian rendering or human mastery"
+  ]
+}

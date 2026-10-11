@@ -1,0 +1,17 @@
+{
+  "n_core": 1.5,
+  "n_clad": 1.45,
+  "wavelength0_m": 8.5e-07,
+  "V_normalized": 1.0,
+  "periodic_width_m": 0.001,
+  "control_length_m": 0.002,
+  "power_W": 0.0001,
+  "tail_decay_lengths": 8.0,
+  "comparison_V_normalized": [
+    0.5,
+    2.0
+  ],
+  "simpson_subintervals": 2000,
+  "mode_bisection_steps": 80,
+  "plot_V_max": 4.5
+}

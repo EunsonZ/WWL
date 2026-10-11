@@ -1,0 +1,12 @@
+{
+  "units": {"e": "E/E_star", "v": "V/E_star", "width": "a/ell"},
+  "scattering_cases": [
+    {"name": "tunnelling_exact", "e": 1, "v": 2, "width": 1},
+    {"name": "threshold", "e": 1, "v": 1, "width": 1},
+    {"name": "barrier_resonance", "e": 10.869604401089358, "v": 1, "width": 1},
+    {"name": "well_resonance", "e": 8.869604401089358, "v": -1, "width": 1},
+    {"name": "free", "e": 2, "v": 0, "width": 1},
+    {"name": "threshold_below", "e": 0.99999999, "v": 1, "width": 1},
+    {"name": "threshold_above", "e": 1.00000001, "v": 1, "width": 1}
+  ]
+}

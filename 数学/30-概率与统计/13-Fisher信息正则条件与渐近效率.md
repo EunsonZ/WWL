@@ -33,6 +33,8 @@ $$\partial_\theta^2 f_\theta=f_\theta\{s_\theta^2+\partial_\theta^2\log f_\theta
 
 对 iid 样本，$\ell_n=\sum_i\log f_\theta(X_i)$，$S_\theta=\ell_n'=\sum_i s_\theta(X_i)$。独立与零均值使交叉项消失，因此 $I_n=E S_\theta^2=nI_1$。相关样本不能只凭观察数乘 $n$；局部可识别性与 $0<I_1<\infty$ 也需要另外检查。
 
+扩散模型的 score 对状态求导，本页对参数求导。[[数学/70-信号处理与多模态数学/03-高斯噪声扩散Score与ODE-SDE直觉#参数 score、状态 score 与单位改变|Gaussian 热流的两种 score]]用位置族 $p_t(x-\mu)$ 核出相反符号与相同平方信息 $1/v_t$，再用方差参数的信息 $1/(2v_t^2)$ 说明这种相等不能推广到任意参数。返回本页时先写明求导变量、参数单位和正则条件，再使用信息下界。
+
 ## Cramér–Rao 下界：关键是一个协方差
 
 令 $U(X)$ 不含未知参数，$m(\theta)=E_\theta U$ 可微且 $U$ 方差有限；除上节条件外，再要求可在 $E_\theta U$ 中交换微分积分。则

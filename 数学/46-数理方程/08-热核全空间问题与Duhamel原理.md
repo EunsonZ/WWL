@@ -36,6 +36,8 @@ $$K_t(x)=(4\pi\kappa t)^{-d/2}\exp\left(-\frac{|x|^2}{4\kappa t}\right),\qquad t
 $$u(x,t)=\frac1{\sqrt{1+4\kappa t}}\exp\left(-\frac{x^2}{1+4\kappa t}\right).$$
 令 $s=1+4\kappa t$ 直接计算导数，也可验证 $u_t=\kappa u_{xx}$；积分始终为 $\sqrt\pi$。峰值下降不表示热量消失，而是同样质量摊到更宽区域。
 
+若初值改为归一化的 $N(0,v_0)$ 密度，卷积后方差变为 $v_0+2\kappa t$。去 [[数学/70-信号处理与多模态数学/03-高斯噪声扩散Score与ODE-SDE直觉#深入：用同一条热流算清密度、轨迹与信息量|同一热流的概率主例]]，可逐项验证其 PDE，再算 Brownian 加噪与确定性概率流的跨时协方差为何分别为 $v_s$ 与 $\sqrt{v_sv_t}$；返回时保留本页 $g=e^{-x^2}$ 总质量 $\sqrt\pi$ 的原对象，不把一般热场自动当概率。
+
 ## Duhamel 将持续热源拆成瞬时注入
 
 对 $u_t-\kappa\Delta u=f$，零时刻初值为 $g$，形式为

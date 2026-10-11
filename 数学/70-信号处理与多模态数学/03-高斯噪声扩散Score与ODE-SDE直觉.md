@@ -162,6 +162,195 @@ $$
 - ODE 给定初值后路径由向量场唯一决定（满足常见唯一性条件时）；
 - 数值步长、近似 score 和求解器误差会让实际结果偏离理想结论。
 
+### 深入：用同一条热流算清密度、轨迹与信息量
+
+以下深入段需要一元微积分、Gaussian 的二阶与四阶矩及独立增量；随机路径的依据可回到 [[数学/30-概率与统计/20-随机过程/04-Brownian二次变差与Ito公式#Brownian模型和本课的证明边界|Brownian 模型]]。它不改变本页入门最低先修。
+
+“密度峰变矮”“不确定性增大”“score 指向峰顶”能否同时成立？先把三个对象分开：随机变量 $X_t$ 是时刻 $t$ 的读数，随机过程 $(X_t)_{t\ge0}$ 还包含不同时刻怎样关联，密度 $p_t(x)$ 则只描述该时刻总体怎样分布。本段也可将 $p_t$ 记为 $\rho_t$；它们是同一个密度，不是温度。
+
+固定全实线 $x\in\mathbb R$、前向时间 $t\ge0$、$\kappa>0$、$v_0>0$，令 $X_0\sim N(0,v_0)$ 独立于标准 Brownian 过程 $W$。取
+
+$$
+dX_t=\sqrt{2\kappa}\,dW_t,\qquad X_t=X_0+\sqrt{2\kappa}W_t,
+\qquad v_t=v_0+2\kappa t.
+$$
+
+若状态单位为 $U$、时间单位为 $T_u$，则 $[v_t]=U^2$、$[\kappa]=U^2/T_u$、$[p_t]=U^{-1}$。标准 Brownian 增量方差为 $\Delta t$，所以这里 SDE 的噪声系数是 $\sqrt{2\kappa}$，PDE 的扩散系数是 $\kappa$；把它写成 $\sqrt\kappa$ 会使方差增长率少一半。以下用自然对数，在固定坐标单位下报告微分熵，熵差单位为 nat。
+
+独立 Gaussian 相加给出同一边缘密度
+
+$$
+p_t(x)=\frac1{\sqrt{2\pi v_t}}\exp\!\left(-\frac{x^2}{2v_t}\right),\qquad \int_{\mathbb R}p_t(x)dx=1.
+$$
+
+它与 [[数学/46-数理方程/08-热核全空间问题与Duhamel原理#热核是一单位瞬时点热源的响应|热核]] 使用同一方差约定。Gaussian 积分保证归一化；直接求导给
+
+$$
+\partial_t p_t=\kappa p_t\left(\frac{x^2}{v_t^2}-\frac1{v_t}\right),\qquad
+\partial_{xx}p_t=p_t\left(\frac{x^2}{v_t^2}-\frac1{v_t}\right).
+$$
+
+故 $\partial_t p=\kappa\partial_{xx}p$。这就是本 SDE 的 Fokker–Planck 方程，在当前模型里已经由显式密度核实。作为一般框架，一维且噪声系数仅依赖时间时，$dX=f\,dt+g\,dW$ 的密度方程为 $\partial_t p=-\partial_x(fp)+\tfrac12g^2\partial_{xx}p$；本例 $f=0,g^2=2\kappa$。该框架的密度与正则条件不能用符号代换省掉。[Song 等附录 D.1](https://arxiv.org/html/2011.13456v2#A4.SS1)从密度方程说明这一连接；下文的 Gaussian 解与数值均自行计算。
+
+[[数学/46-数理方程/30-正则性与非线性演化/03-抛物平滑能量与非线性爆破#能量、唯一性与前向稳定来自同一个负号|周期温度场的能量证明]]处理的是圆周上的一般场 $u$，可有负值、不同单位，也没有概率质量为 1 的要求。这里是全实线上的正概率密度 $p$；共同 PDE 结构允许比较耗散机制，不允许把原温度场偷偷归一化后换成新对象。
+
+### 从质量通量得到向外的确定流
+
+热方程的通量为 $j=-\kappa\partial_xp$，因此
+
+$$
+\partial_t p=-\partial_xj=-\partial_x(v_{\rm flow}p),\qquad
+v_{\rm flow}=\frac jp=-\kappa\partial_x\log p=\frac{\kappa x}{v_t}.
+$$
+
+$p_t>0$ 使除法合法。$v_{\rm flow}$ 是速度，$v_t$ 是方差，不要因同用字母 $v$ 而混淆。本例通量在无穷远趋零；这还排除了向通量另加空间常数的选择。状态 score $s_x=-x/v_t$ 在 $x>0$ 指向峰顶，但前向概率流速度是它的 **$-\kappa$ 倍**，所以向外。峰高降低、宽度增大，正是把同一质量向外搬运的结果。
+
+用 $Z_t$ 命名对应 ODE 过程，避免和 SDE 路径混写：
+
+$$
+\frac{dZ_t}{dt}=\frac{\kappa}{v_t}Z_t,\qquad Z_0=X_0,
+\qquad Z_t=X_0\exp\!\left(\int_0^t\frac{\kappa}{v_0+2\kappa r}dr\right)
+=X_0\sqrt{\frac{v_t}{v_0}}.
+$$
+
+$v_0>0$ 时系数在任意有限时间段连续且有界，对状态全局 Lipschitz，因此本线性 ODE 有唯一解。若 $a_t=\sqrt{v_t/v_0}$，变量替换给 $p^Z_t(z)=p_0(z/a_t)/a_t=p_t(z)$，所以每个固定时刻两者都是 $N(0,v_t)$。这是密度相同的直接证明，不依赖“两个形式 PDE 一样就必有唯一过程”的跳步；一般 SDE 或粗糙 score 的存在唯一性仍需别的定理。
+
+### 同边缘为什么不保证同路径关系
+
+对 $0\le s<t$，独立增量给
+
+$$
+X_t=X_s+\sqrt{2\kappa}(W_t-W_s),\qquad
+\operatorname{Cov}(X_s,X_t)=v_s.
+$$
+
+而 ODE 每时刻只乘同一个初值，所以
+
+$$
+\operatorname{Cov}(Z_s,Z_t)=\frac{\sqrt{v_sv_t}}{v_0}\operatorname{Var}(X_0)
+=\sqrt{v_sv_t}.
+$$
+
+两个二时刻向量都是联合 Gaussian，但协方差矩阵分别为
+
+$$
+\Sigma_{\rm SDE}=\begin{pmatrix}v_s&v_s\\v_s&v_t\end{pmatrix},\qquad
+\Sigma_{\rm ODE}=\begin{pmatrix}v_s&\sqrt{v_sv_t}\\\sqrt{v_sv_t}&v_t\end{pmatrix}.
+$$
+
+前者行列式 $v_s(v_t-v_s)>0$，后者行列式为 0：ODE 的二时刻读数落在直线 $Z_t=\sqrt{v_t/v_s}Z_s$ 上，而 SDE 给定 $X_s$ 后仍有方差 $2\kappa(t-s)$。这已经是不同的联合分布，不能靠相似直方图消除。
+
+固定 $v_0=1,\kappa=1/2,s=0,t=1$，两者方差同为 $(1,2)$，跨时协方差却分别为 $1$ 与 $\sqrt2\approx1.414214$，相关系数分别为 $1/\sqrt2$ 与 $1$。ODE 的随机性完全来自初值；这不妨碍它运输随机初值的分布，却不会给每条路径补出 Brownian 独立增量。
+
+![同一热流的密度与两种轨迹](assets/heat-flow/heat-flow.svg)
+
+*左：上述 Gaussian 密度在 $t=0,0.5,1$ 的宽度/高度变化，面积均为 1，图外尾部未画。右：同四个随机初值的 SDE 网格读数（实线）与精确 ODE 流（虚线）；线段连接只是显示有限网格，不代表 Brownian 路径可微。横轴向右为前向时间，箭头标明 $x>0$ 的 ODE 向外移动。图中 $U=T_u=1$ 是选定坐标单位；左纵轴单位为 $U^{-1}$，右纵轴单位为 $U$。固定种子、输入和图源见本节末；四条样本路径不承担分布证明。*
+
+若只反向积分这条 ODE，固定终时 $T$，令 $Y_\tau=Z_{T-\tau}$、$0\le\tau\le T$，则
+
+$$
+\frac{dY_\tau}{d\tau}=-\frac{\kappa}{v_{T-\tau}}Y_\tau,\qquad
+Y_\tau=Y_0\sqrt{\frac{v_{T-\tau}}{v_T}}.
+$$
+
+$Y_0\sim p_T$ 时恢复对应的边缘密度；给定单个终点只恢复一条 ODE 轨迹。这里没有随机项。第 5 节反向 SDE 换成递增的 $\tau$ 后，本模型漂移为 $2\kappa\partial_x\log p_{T-\tau}=-2\kappa x/v_{T-\tau}$，并且仍有 $\sqrt{2\kappa}\,dB_\tau$；它不能用上面的 ODE 漂移替代。一般时间反演的条件仍由第 5 节所指理论承担。
+
+### 同一热流的熵增加与凸耗散
+
+定义状态 Fisher 量 $J_x$，下标强调它对状态而非任意统计参数求导：
+
+$$
+h(p_t)=-\int p_t\log p_t\,dx
+=\frac12\log(2\pi e v_t),\qquad
+J_x(p_t)=\int p_t(\partial_x\log p_t)^2dx
+=\frac{E[X_t^2]}{v_t^2}=\frac1{v_t}.
+$$
+
+第一式把 $-\log p_t=\tfrac12\log(2\pi v_t)+x^2/(2v_t)$ 取期望即可得到。在有限时间段 $[0,T]$，$v_t$ 被正的 $v_0$ 和有限的 $v_T$ 夹住，所用导数与对数乘积受“多项式乘 Gaussian 尾”统一可积支配，可以交换时间求导与积分。截到 $[-R,R]$ 后分部积分再令 $R\to\infty$：
+
+$$
+\begin{aligned}
+\frac d{dt}h(p_t)
+&=-\kappa\int_{\mathbb R}(1+\log p_t)\,\partial_{xx}p_t\,dx\\
+&=-\kappa\lim_{R\to\infty}[(1+\log p_t)\partial_xp_t]_{-R}^{R}
++\kappa\int_{\mathbb R}\frac{(\partial_xp_t)^2}{p_t}dx\\
+&=\kappa J_x(p_t)=\frac{\kappa}{v_t}\ge0.
+\end{aligned}
+$$
+
+Gaussian 尾使边界项为 0，也保证 $p\log p$、$(\partial_t p)(1+\log p)$ 及 Fisher 被积函数绝对可积。推广时至少需核正密度、相关空间/时间可微性、积分交换的支配条件、上述边界项消失与积分有限；这一页没有证明所有粗糙密度的推广。若改成有边界或有质量注入的系统，边界通量不能原样删掉。
+
+这是当前扩散约定下的 de Bruijn 恒等式。若用加噪方差 $a=2\kappa t$ 作为时间，取 $G\sim N(0,1)$ 且独立于 $X_0$，$X_0+\sqrt a\,G$ 只描述每个固定时刻的分布，满足 $dh/da=J_x/2$；若以 $t$ 为时间才是 $dh/dt=\kappa J_x$。常数差来自变量选择，不是两条定理矛盾。
+
+同一计算为什么又常叫“熵耗散”？回到 [[数学/46-数理方程/30-正则性与非线性演化/01-熵选择黏性极限与激波形成#薄黏性层把方向选择变成一个可解 ODE|黏性层的凸函数链式耗散]]，保留其链式结构，在本热方程中取光滑凸函数 $\eta$：
+
+$$
+\partial_t\eta(p)=\kappa\partial_{xx}\eta(p)-\kappa\eta''(p)(\partial_xp)^2.
+$$
+
+在边界项消失、积分和交换合法时，$d\int\eta(p)dx/dt=-\kappa\int\eta''(p)(p_x)^2dx\le0$。正密度允许取 $\eta(p)=p\log p$，$\eta''=1/p$，所以 $\int p\log p$ 下降，$h=-\int p\log p$ 上升。取 $\eta(p)=p^2/2$ 则得到平方能量下降；本例 $\tfrac12\int p_t^2dx=1/(4\sqrt{\pi v_t})$。三者方向由定义决定：密度更平坦、平方幅度更小、概率不确定性更大可以同时成立。守恒律的凸熵函数不自动是 Shannon 熵；本段也没有断言 Gaussian 热密度满足 Burgers 方程。
+
+相对熵还需要指定参照分布。对固定 $q=N(0,w)$、$w>0$，两密度都正且 Gaussian 积分有限，直接积分得到
+
+$$
+D(p_t\Vert q)=\frac12\left(\frac{v_t}{w}-1-\log\frac{v_t}{w}\right),\qquad
+\frac d{dt}D(p_t\Vert q)=\kappa\left(\frac1w-\frac1{v_t}\right).
+$$
+
+若 $v_0=w$，此后 $v_t>w$，相对熵反而增加；“$h$ 增加”不等于“相对任意固定目标的 KL 下降”。固定 Gaussian 并非自由热流的平衡密度，全实线上的常数也无法归一化为概率。这里没有调用 KL 收缩定理；若让两份初始密度同时接受同一热半群，则是另一组参照随时间变化的问题。
+
+### 参数 score、状态 score 与单位改变
+
+统计课的 [[数学/30-概率与统计/13-Fisher信息正则条件与渐近效率#Score 是数据对参数微小改变的读数|参数 score]] 固定观测 $x$ 而改变参数。对本例的位置族 $f_\mu(x)=p_t(x-\mu)$，固定 $t$，有
+
+$$
+\partial_\mu\log f_\mu(x)=\frac{x-\mu}{v_t},\qquad
+\partial_x\log f_\mu(x)=-\frac{x-\mu}{v_t},\qquad I_\mu=J_x=\frac1{v_t}.
+$$
+
+它们符号相反，平方期望恰好相同，原因是位置参数通过 $x-\mu$ 进入。若固定均值 0、把方差 $v$ 当参数，则
+
+$$
+\partial_v\log f_v(x)=\frac{x^2-v}{2v^2},\qquad
+I_v=\frac{E[(X^2-v)^2]}{4v^4}
+=\frac{3v^2-2v^2+v^2}{4v^4}=\frac1{2v^2}.
+$$
+
+因此不能仅凭同名 score 就把任意参数 Fisher 换成 $J_x$。位置与方差的单位不同，相应信息单位也不同。
+
+沿用 [[数学/50-信息论/01-熵交叉熵KL散度与互信息#与连续分布的边界：微分熵不是离散熵的直接复制|微分熵换单位规则]]，令 $x'=cx$、$c\ne0$，时间不变，$p'_t(x')=p_t(x'/c)/|c|$。于是
+
+$$
+s'_{x'}=s_x/c,\quad J'_{x'}=J_x/c^2,\quad
+v'_t=c^2v_t,\quad\kappa'=c^2\kappa,\quad h(p'_t)=h(p_t)+\log|c|.
+$$
+
+所以 $\kappa'J'_{x'}=\kappa J_x$，熵增量 $h_t-h_s$ 不变；两密度同时变换时 KL 也不变。换米为厘米只改变坐标读数，不凭空增加观测信息。
+
+### 改条件后独立求解
+
+不沿前面步骤提示求解：保持相同边缘初值的要求，取 $v_0=4,\kappa=3/2$，比较 $s=1,t=3$。给出密度、确定流、两种跨时协方差、$h_3-h_1$。再把 $v_0$ 改成 0：零时刻的 score 能直接代入吗？给定确定点初值是否仍唯一确定一个产生非退化 Gaussian 密度的流？
+
+> [!question]- 可核答案与零时刻边界
+> 正方差题中 $v_r=4+3r$，$p_r(x)=\exp[-x^2/(2(4+3r))]/\sqrt{2\pi(4+3r)}$；$\dot Z_r=3Z_r/[2(4+3r)]$，$Z_r=X_0\sqrt{(4+3r)/4}$。$v_1=7,v_3=13$；协方差分别为 $7$ 与 $\sqrt{91}\approx9.539392$，熵增量为 $\tfrac12\log(13/7)\approx0.309520$ nat。
+>
+> $v_0=0$ 时初始分布是 $\delta_0$，没有零时刻 Lebesgue 密度与普通 score；但每个 $r>0$ 的 SDE 仍有 $N(0,2\kappa r)$ 密度。正时间上概率流方程变为 $\dot Z_r=Z_r/(2r)$，在 0 奇异；所有 $Z_r=C\sqrt r$ 都可连续延到 $Z_0=0$，所以零时刻点初值不选出唯一解。若另外随机选 $C\sim N(0,2\kappa)$，确可匹配正时间边缘，但这添加了点初值以外的随机选择，不能称为由该初值唯一确定的流。若从 $\varepsilon>0$ 开始，则 $Z_r=Z_\varepsilon\sqrt{r/\varepsilon}$，须同时给正确的随机初值 $Z_\varepsilon\sim N(0,2\kappa\varepsilon)$。零时刻的微分熵无此密度定义，不能把负无穷端点代进前述有限熵差。
+
+### 复算与观察：同一个输入返回不同证据
+
+固定输入 [input.json](assets/heat-flow/input.json) 默认 $v_0=1,\kappa=1/2,T=1$，Monte Carlo 样本数 40000，密度求积截到 $\pm10\sqrt{v_T}$，使用 4000 个等长小区间；四条绘图轨迹使用 200 个时间步。读者可先预测协方差和熵增量，再运行 [heat_flow.py](assets/heat-flow/heat_flow.py)：
+
+```bash
+python3 -B 数学/70-信号处理与多模态数学/assets/heat-flow/heat_flow.py \
+  --input 数学/70-信号处理与多模态数学/assets/heat-flow/input.json \
+  --output-dir /tmp/wwl-heat-flow-replay
+```
+
+脚本需 Python 3 与 matplotlib；输出目录可自选以保留原始产物。它由相同输入生成 `density.csv`、`paths.csv`、`metrics.json`、`heat-flow.svg` 和供显示核对的 `heat-flow.png`。SDE 网格增量按精确 Gaussian 转移抽样；ODE 使用精确解，不把高分辨率 Euler 当真值。以已知零均值的 $E[X_sX_t]$ 估计协方差，报告乘积均值的标准误；这仍是有限样本观察，解析协方差的证明在前文。
+
+本页随附 [metrics.json](assets/heat-flow/metrics.json) 是该固定输入的实际输出：分别对密度做数值积分、中心差分核 PDE、用积分近似 $h,J_x$，并报告 Monte Carlo 跨时乘积的抽样误差。默认输入预期质量约为 1、$h_1-h_0=\tfrac12\log2\approx0.346574$、$J_x(p_1)=1/2$，两种协方差围绕 1 与 $\sqrt2$ 波动。求积和差分有截断/离散误差，采样有随机误差；这些数值检查不代替独立推导核查、真实模型训练、生成质量评估或人的理解验证。
+
+
 ## 7. 数值求解只看“小步近似”
 
 ODE 的 Euler 小步为：

@@ -1,0 +1,115 @@
+---
+stage: 0
+aliases: []
+prerequisites:
+  - "[[物理/50-半导体物理/02-带边有效质量与一二三维态密度]]"
+  - "[[物理/50-半导体物理/03-温度占据电中性与杂质电离]]"
+  - "[[电子电路/60-TCAD与器件场模型/02-从场求解到端口紧凑模型]]"
+sources:
+  - "https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/4be419e54b9109dce3f42e7db44d71d7_MIT3_024S13_2012lec17.pdf"
+  - "https://www.nist.gov/pml/nanoscale-device-characterization-division/popular-links/hall-effect/hall-effect"
+  - "https://www.nist.gov/pml/nanoscale-device-characterization-division/popular-links/hall-effect/resistivity-and-hall"
+---
+
+# 弛豫时间、Hall 符号与可辨识测量
+
+## 已知载流子数，为什么还不能给出电导
+
+上课联合求得 $n(T),p(T)$，但电导还需要散射后的平均漂移响应。先沿 [[物理/50-半导体物理/02-带边有效质量与一二三维态密度#曲率为何进入加速度|带边质量]] 带回单带波包在缓慢外力下的加速度，再补一个可检验的散射近似；本课最终选择能拆开 $n\mu$ 的 Hall 观测，而不是再多采同一种直流线性 I–V 点。
+
+用各向同性抛物单电子带、常动量弛豫时间 $\tau_m$，平均速度 $\mathbf v$ 的方程为
+
+$$m^*\dot{\mathbf v}=-q(\mathbf E+\mathbf v\times\mathbf B)-\frac{m^*\mathbf v}{\tau_m},\qquad q>0.$$
+
+$q$ 用 C，$m^*$ 用 kg，$\tau_m$ 用 s，$\mathbf E$ 用 V/m，$\mathbf B$ 用 T；电子电荷是 $-q$。这是弛豫时间近似，不是每个电子受到粘性力的精确轨迹。$B=0$、稳态时 $\mathbf v=-q\tau_m\mathbf E/m^*$，所以
+
+$$\mu_n=\frac{q\tau_m}{m^*},\qquad \sigma_n=q n\mu_n,$$
+
+$\mu_n$ 单位 $\mathrm{m^2/(V\,s)}$，$\sigma$ 单位 S/m。$m^*=0.20m_0$、$\mu_n=0.135\,\mathrm{m^2/(V\,s)}$ 对应 $\tau_m\approx1.5351\times10^{-13}\,\mathrm s$；这是由教学输入反推，不是测得的材料散射时间。
+
+低场线性响应需分布的漂移扰动足够小，强电场能量加热、速度饱和或带间转移会破坏它；磁场还需 $\mu B=\omega_c\tau_m\ll1$ 的经典弱场区间，排除 Landau 量子化等效应。样品尺度必须支持体材料的扩散描述，不能把这个公式直接移到弹道纳米沟道。不同材料、温度、能量和方向通常有不同散射，$\mu$ 不因此成为普适常数。
+
+## 碰撞次数不等于动量损失
+
+一个最小微观桥：在单一能量壳上，设弹性、旋转对称的散射率密度 $W(\theta)$，单位 $\mathrm{s^{-1}sr^{-1}}$。一次偏转使原方向的动量投影从 $p_x$ 变为平均 $p_x\cos\theta$；短时间内的方向扰动满足
+
+$$\frac{d\langle p_x\rangle}{dt}=-\langle p_x\rangle\int W(\theta)(1-\cos\theta)\,d\Omega,
+\qquad \tau_m^{-1}=\int W(\theta)(1-\cos\theta)\,d\Omega.$$
+
+总碰撞率是 $\tau_{\mathrm{coll}}^{-1}=\int W\,d\Omega$。大量小角碰撞只慢慢损失前进动量：若同样总碰撞率集中在 $\theta=0.01$ rad，$1-\cos\theta\approx5\times10^{-5}$；各向同性散射平均 $\cos\theta=0$，其动量衰减明显更快。可见迁移率需要角度权重，不能只数“每秒碰了几次”。
+
+本式限于这个弹性、各向同性能量壳模型；声子非弹性散射、离化杂质屏蔽与多谷转移需要具体 $W$ 和分布权重。这里尚未推导这些真实微观速率，也不能把动量弛豫时间叫电子空穴**复合寿命**。回到 [[电子电路/22-半导体与真实元件/01-能带载流子掺杂与输运#电场和浓度梯度，两种不同的推动|漂移扩散与 Einstein 关系]] 时，问它用的局部热化、非简并、低场条件是否仍成立；已知 $\tau_m$ 也不允许无条件复用同一扩散公式。
+
+## 横向开路决定 Hall 的负号
+
+指定 $+x$ 向右、$+y$ 向上、$+z$ 出纸面，$J_x>0,B_z>0$，横向开路 $J_y=0$。单电子模型中 $v_x=-J_x/(qn)<0$、$v_y=0$；$(\mathbf v\times\mathbf B)_y=-v_xB_z>0$。横向稳态要求
+
+$$-q(E_y-v_xB_z)=0,\qquad E_y=v_xB_z=-\frac{J_xB_z}{qn}.$$
+
+因此本课定义
+
+$$R_H\equiv\frac{E_y}{J_xB_z}=-\frac1{qn},\qquad [R_H]=\mathrm{m^3/C}.$$
+
+电子先向 $-y$ 偏转，负电积在下侧，形成向下的 $E_y$；电力向上，最终抵消磁力。不要把传统电流方向当电子速度，也不要漏掉负电荷。若样品宽度 $w$，定义电压 $U_y=\phi(-y)-\phi(+y)=E_yw$，此接线约定下电子 Hall 电压为负；互换电压引线会改电压符号，$R_H$ 的空间约定仍须保持。
+
+![[物理/80-实践/04-温度电离与Hall/assets/hall-axes.svg]]
+
+图是轴向/表面电荷示意，没有按实体尺寸画；下方数例在同一个 $L,A$ 的条形体端口约化下比较，$R_H$ 是体密度的系数。如果只有片密度 $n_s=nd$ 和未知厚度 $d$，Hall 只能给片密度，不能凭空得到体密度。
+
+## 相同电导怎样用 Hall 拆开
+
+接 [[电子电路/60-TCAD与器件场模型/02-从场求解到端口紧凑模型#同一条形体的精确低场约化|原条形体]] 的真实模型合同：$L=1\,\mu\mathrm m$、$A=1\,\mu\mathrm m^2$，均匀单电子、低场、欧姆接触，忽略接触电阻、自热与空穴。保留它已证明的 $G=q\mu n A/L$；新观测增加横向 Hall 场。
+
+| 教学参数组 | $n$（$\mathrm{m^{-3}}$） | $\mu$（$\mathrm{m^2/(V\,s)}$） | $G$（$\mu\mathrm S$） | $R_H$（$\mathrm{m^3/C}$） |
+| --- | --- | --- | --- | --- |
+| A | $10^{21}$ | 0.135 | 21.6293846 | $-6.24150907\times10^{-3}$ |
+| B | $2\times10^{21}$ | 0.0675 | 21.6293846 | $-3.12075454\times10^{-3}$ |
+
+取 $J_x=100\,\mathrm{A/m^2}$、$B_z=0.1\,\mathrm T$，两组 $E_y=-0.0624151,-0.0312075\,\mathrm{V/m}$；$\mu B=0.0135,0.00675$，符合所设弱场近似。若 $w=1\,\mu\mathrm m$，对应 $U_y=-62.4151,-31.2075$ nV，说明几何和电流选择还会影响实际信号大小；这些是合成模型输出，未声称仪表已经测到。
+
+在本模型内
+
+$$n=-\frac1{qR_H},\qquad \mu=\frac{GL}{q nA}.$$
+
+用观测 $(\ln\sigma,\ln|R_H|)$ 对参数 $(\ln n,\ln\mu)$ 的局部灵敏度矩阵为 $\begin{pmatrix}1&1\\-1&0\end{pmatrix}$，行列式为 1；增加 Hall 后两个参数方向独立。这是带条件的可辨识结论。一般逆问题仍由既有主解释承担；回到 [[电子电路/60-TCAD与器件场模型/02-从场求解到端口紧凑模型#提取一个组合参数，与提取两个物理参数不同|组合参数与物理参数]] 时问新增哪条观测消除了它的不可见方向。
+
+## Hall 因子与双载流子会改变反推量
+
+常数 $\tau_m$、各向同性抛物单带给 Hall 因子 $r_H=1$。能量依赖的散射、各向异性和多谷会改变电导与 Hall 的分布权重；若单电子表达变成 $R_H=-r_H/(qn)$，那么常规反推的 Hall 密度 $n_H=1/(q|R_H|)=n/r_H$，Hall 迁移率 $\mu_H=|R_H|\sigma=r_H\mu$。未知 $r_H$ 时，两个观测不足以唯一给出真实 $n,\mu,r_H$。本课未推导各散射机制的 $r_H(T)$，不能暗中默认它等于 1。
+
+更明确的失效例：两类载流子、各自常 $\tau$、$r_H=1$，仍在弱磁场。由电子与空穴的一阶横向漂移得
+
+$$J_y=q(n\mu_n+p\mu_p)E_y+q(n\mu_n^2-p\mu_p^2)E_xB_z.$$
+
+令总 $J_y=0$、$J_x=q(n\mu_n+p\mu_p)E_x$，便有
+
+$$\sigma=q(n\mu_n+p\mu_p),\qquad
+R_H=\frac{p\mu_p^2-n\mu_n^2}{q(n\mu_n+p\mu_p)^2}.$$
+
+$n=p=10^{21}\,\mathrm{m^{-3}}$、$\mu_n=\mu_p=0.10\,\mathrm{m^2/(V\,s)}$ 时，$\sigma=32.04353268\,\mathrm{S/m}$ 而 $R_H=0$。不是没有载流子；两种横向贡献相消，单电子 $1/(q|R_H|)$ 反推完全失效。符号可以由迁移率平方权重主导，不能只根据 $R_H$ 的正负判断哪个**数量**更多。
+
+上一课高温例已出现 $p$ 接近 $n$。在实践指定的 $\mu_n/\mu_p=3$ 下，1200 K 的 Hall 密度约为真实电子密度的 1.94 倍；它是该双载流子模型的派生观测，不是统计求解矛盾。量子 Hall、异常 Hall、跳跃输运和不均匀样品不在这些 Drude 公式范围内。
+
+## 电导随温度变化也需要声明迁移率模型
+
+![[物理/80-实践/04-温度电离与Hall/assets/temperature-conductivity.svg]]
+
+图沿用上一课同一 FD/中性/杂质模型的 $n,p$。为隔离“载流子会改变”这件事，**另行指定**示例 $\mu_n(T)=0.135(300/T)^{3/2}$、$\mu_p(T)=0.045(300/T)^{3/2}$，单位 $\mathrm{m^2/(V\,s)}$，不宣称从上述角度积分导出。横轴 K，纵轴 $\log_{10}(\sigma/(1\,\mathrm{S/m}))$。虚线把 $n=N_D-N_A$ 且忽略空穴，实线使用联合载流子，两条采用相同示例迁移率。冻结和本征区的差异显示仅改迁移率/热电压无法补足统计模型；真实低温杂质散射与高温声子散射规律仍待微观推导和匹配参数。
+
+## 由完整例走向可复查测量
+
+去 [[电子电路/60-TCAD与器件场模型/03-网格收敛材料敏感度与校准复现#把校准设计成可复查实验|独立实验设计]]，带回以下具体接口：同一样品的厚度/几何、温度、接触编号、电流与磁场方向、$B=0$ 电阻，以及正/负 $B$ 的横向电压。对固定电流定义 $U_H^{\mathrm{odd}}=[U_y(+B)-U_y(-B)]/2$，可剔除与 $B$ 无关的电压偏置；还应换向电流、保留原始读数与重复数据，检查接触、温度漂移及几何误差。只是取奇部不能保证已消除所有热磁与接触误差，也不认证单带或 $r_H=1$。
+
+**半引导题。** 保持 $n\mu$，把 $n$ 再翻倍、$\mu$ 再减半。先预测 $G,R_H,\mu_H$，再用完整例反推。若 $r_H$ 未知但固定为 1.2，又会怎样？
+
+> [!question]- 解释性答案
+> $G$ 不变，$|R_H|$ 减半，$r_H=1$ 时 $\mu_H$ 减半。若实际 $r_H=1.2$ 而仍按 1 反推，得到 $n_H=n/1.2$、$\mu_H=1.2\mu$；相同 $G$ 与较低残差不能消除这个模型误差。
+
+**撤提示题。** 样品升温后 $R_H$ 趋近零、$\sigma$ 仍有限；研究者报告“载流子趋于无穷，迁移率趋于零”，另一人直接把低温 $R_H$ 的 Arrhenius 斜率叫施主束缚能。各自缺什么模型检查？
+
+> [!question]- 解释性答案
+> 前者先检查双载流子/多带、Hall 因子与电压偏置，有限电导且 Hall 相消是明确反例。后者需联合占据、电离、补偿与迁移率；无补偿和有补偿冻结的前因子/激活斜率不同，双载流子区 Hall 也不直接给 $n$。先声明和检验观测映射，再解释斜率。
+
+复算：[[物理/80-实践/04-温度电离与Hall/README#联合求解和检查接口|温度与 Hall 实践]]；回 [[物理/50-半导体物理/03-温度占据电中性与杂质电离#同一教学模型跨三个温区|同一模型温区]] 检查统计输入；完整责任见 [[物理/50-半导体物理/00-半导体物理-MOC#本科主干与主解释归属|课程主干]]。
+
+本页独立推导弛豫时间、角度权重、符号、双载流子式和可辨识例。框架对照 [MIT 3.024 L17](https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/4be419e54b9109dce3f42e7db44d71d7_MIT3_024S13_2012lec17.pdf) 第 2–3 页的迁移率与质量；测量量和方向按 [NIST The Hall Effect](https://www.nist.gov/pml/nanoscale-device-characterization-division/popular-links/hall-effect/hall-effect) 的 Lorentz/片密度框架核对，换向接口参考 [NIST 测量流程](https://www.nist.gov/pml/nanoscale-device-characterization-division/popular-links/hall-effect/resistivity-and-hall)。NIST 页面是其保留的历史说明，本课未执行其中的硬件流程或将其特定容差当作本例验收值。

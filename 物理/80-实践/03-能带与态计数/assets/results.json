@@ -1,0 +1,51 @@
+{
+  "model": "1D two-wave weak periodic potential and separate 3D isotropic band",
+  "units": {
+    "band_energy": "eV",
+    "density": "m^-3",
+    "kappa": "nm^-1"
+  },
+  "alpha_eV_nm2": 0.03809982110968584,
+  "E0_eV": 1.5041206484194904,
+  "edge_eigenvalues_eV": [
+    1.4541206484194904,
+    1.5541206484194905
+  ],
+  "gap_eV": 0.10000000000000009,
+  "kappa_0p02_eigenvalues_eV": [
+    1.453227237175354,
+    1.5550445395205146
+  ],
+  "finite_box": [
+    {
+      "dim": 1,
+      "finite_states": 66,
+      "continuum_states": 65.23019102820695,
+      "relative_count_error": 0.011801421391824106
+    },
+    {
+      "dim": 2,
+      "finite_states": 1690,
+      "continuum_states": 1670.9258831814782,
+      "relative_count_error": 0.011415297955768268
+    },
+    {
+      "dim": 3,
+      "finite_states": 36074,
+      "continuum_states": 36331.604851301076,
+      "relative_count_error": 0.007090379088823829
+    }
+  ],
+  "Nc_m3": 2.24448653225452e+24,
+  "n_MB_analytic_m3": 4.690195460930941e+22,
+  "n_MB_numerical_m3": 4.690195460930943e+22,
+  "n_FD_numerical_m3": 4.65593300761712e+22,
+  "MB_relative_error_using_FD": 0.007358880219661112,
+  "FD_panel_refinement_relative_change": 0.0,
+  "FD_cutoff_refinement_relative_change": 1.8017028995641073e-16,
+  "integration": {
+    "method": "midpoint after epsilon_eV=t^2 substitution",
+    "panels": 20000,
+    "cutoff_eV": 1.0
+  }
+}

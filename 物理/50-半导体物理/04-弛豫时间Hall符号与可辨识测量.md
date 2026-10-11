@@ -115,3 +115,15 @@ $n=p=10^{21}\,\mathrm{m^{-3}}$、$\mu_n=\mu_p=0.10\,\mathrm{m^2/(V\,s)}$ 时，$
 本页独立推导弛豫时间、角度权重、符号、双载流子式和可辨识例。框架对照 [MIT 3.024 L17](https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/4be419e54b9109dce3f42e7db44d71d7_MIT3_024S13_2012lec17.pdf) 第 2–3 页的迁移率与质量；测量量和方向按 [NIST The Hall Effect](https://www.nist.gov/pml/nanoscale-device-characterization-division/popular-links/hall-effect/hall-effect) 的 Lorentz/片密度框架核对，换向接口参考 [NIST 测量流程](https://www.nist.gov/pml/nanoscale-device-characterization-division/popular-links/hall-effect/resistivity-and-hall)。NIST 页面是其保留的历史说明，本课未执行其中的硬件流程或将其特定容差当作本例验收值。
 
 继续 [[物理/50-半导体物理/05-准Fermi陷阱占据与产生复合#局部热化允许两个准 Fermi 能级|准 Fermi、陷阱占据与产生复合]]：带上本课可辨识的 $n,p,\mu_n,\mu_p$ 和 Hall 公式的适用条件，转向照光/注入后如何用两个准 Fermi 能级及粒子收支描述非平衡，并区分动量散射时间与复合寿命。05 增加局部热化、陷阱状态和连续性条件；本课的平衡双载流子 Hall 式不自动覆盖这些状态。
+
+## 把力、观测与校准分开带回
+
+从 [[物理/20-电磁学/01-场源与守恒#场不是力，通量不是场强|Lorentz 力的场合同]] 带回电荷 $q_e=-q$、$\mathbf E$[V/m]、$\mathbf B$[T] 与叉乘方向，回到本页 $m^*\dot{\mathbf v}=q_e(\mathbf E+\mathbf v\times\mathbf B)-m^*\mathbf v/\tau_m$。电磁力给横向驱动；有效质量与动量弛豫是本课新增的晶体/散射近似，不能由 Maxwell 方程独自推出。重新检查 $J_x>0,B_z>0,J_y=0$ 下的 $E_y<0$，并把实际接线的 $U_y$ 符号一起带走。
+
+带同一条形体 $L=1$ µm、$A=1$ µm²、$G=21.6293846$ µS 去 [[电子电路/60-TCAD与器件场模型/02-从场求解到端口紧凑模型#同一条形体的精确低场约化|低场端口约化]]；返回用两组 $n\mu$ 相同但 $R_H$ 不同解释何种信息被端口积分丢掉。再沿已有 [[电子电路/60-TCAD与器件场模型/03-网格收敛材料敏感度与校准复现#把校准设计成可复查实验|校准设计]] 保存几何、接触、温度、换向原读数和留出条件；低残差不是微观参数证据。
+
+在 [[电子电路/52-测量不确定度与辨识/04-实验设计可观测与可辨识#同τ是一整条等价族|观测映射与等价族]] 和该页“有信息的实验改动与边界”中，带回“新增一条独立响应方向”的判据。本页已知 $r_H=1$ 的两参数矩阵满秩；若 $r_H$ 也未知，令无量纲参数为 $(\ln(n/n_*),\ln(\mu/\mu_*),\ln(r_H/r_*))$，对参考归一后的 $(\ln\sigma,\ln|R_H|)$ 求导则为
+
+$$J=\begin{pmatrix}1&1&0\\-1&0&1\end{pmatrix}.$$
+
+它有核 $(1,-1,1)^T$；$n\mapsto ne^t,\mu\mapsto\mu e^{-t},r_H\mapsto r_He^t$ 在该单电子弱场模型内同时保持 $\sigma$ 与 $R_H$。回本页先决定 $r_H$ 是独立已知、机理模型所给还是待估，再选择额外观测；同一温度多采 DC 点或只重复同一 Hall 系数不会补第三个方向。换温度也须给 $n(T),\mu(T),r_H(T)$ 的相容模型，不能把“多一个温度”直接称唯一识别。

@@ -1,0 +1,930 @@
+{
+  "model": "lossless nondispersive positive-definite uniaxial symmetric slab",
+  "input": {
+    "n_ordinary": 1.5,
+    "n_extraordinary": 1.53,
+    "n_clad": 1.45,
+    "wavelength0_m": 8.5e-07,
+    "reference_V": 1.0,
+    "axis_angle_deg": 45.0,
+    "periodic_width_m": 0.001,
+    "control_length_m": 0.002,
+    "power_W": 0.0001
+  },
+  "constants": {
+    "c0_m_per_s": 299792458.0,
+    "mu0_H_per_m": 1.2566370614359173e-06,
+    "epsilon0_F_per_m": 8.854187817620389e-12,
+    "Z0_ohm": 376.73031346177066
+  },
+  "half_thickness_m": 3.522435482119305e-07,
+  "epsilon_r_core": [
+    [
+      2.2954499999999998,
+      0.04544999999999999,
+      0.0
+    ],
+    [
+      0.04544999999999999,
+      2.29545,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      2.25
+    ]
+  ],
+  "modes": [
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 45.0,
+      "n_eff": 1.4940151691796386,
+      "beta_per_m": 11043734.305521093,
+      "kappa_per_m": 2660922.0482855407,
+      "root_bracket": [
+        1.493999999,
+        1.49407999898
+      ],
+      "det_residual": 3.1780413699589215e-16,
+      "matching_relative_residual": 1.6166904374719919e-15,
+      "singular_values": [
+        1.6414560221189967,
+        1.1182206847015823,
+        0.23495665079925865,
+        7.423580780722233e-16
+      ],
+      "transfer_condition": 85.08644309757915,
+      "previous_field_overlap": 0.996283798428942,
+      "power_W": 0.00010000000000000003,
+      "electric_energy_J": 5.100592339505625e-16,
+      "magnetic_energy_J": 5.1005923395056255e-16,
+      "total_energy_J": 1.0201184679011251e-15,
+      "energy_velocity_m_per_s": 196055660.48764548,
+      "electric_magnetic_relative_difference": 9.666290362874208e-17,
+      "cladding_power_fraction": 0.23598206899275215,
+      "Ey_field_square_fraction": 0.5371589610952263,
+      "quadrature_relative_change": 4.579669976578769e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 45.0,
+      "n_eff": 1.4723676408146462,
+      "beta_per_m": 10883716.150039125,
+      "kappa_per_m": 1889898.402224604,
+      "root_bracket": [
+        1.47232000442,
+        1.4724000043999999
+      ],
+      "det_residual": 1.7212506167554545e-15,
+      "matching_relative_residual": 2.9965724657754176e-15,
+      "singular_values": [
+        1.6772205800358715,
+        1.0045355971860415,
+        0.42171004243462956,
+        2.435134646431856e-15
+      ],
+      "transfer_condition": 43.159813752885995,
+      "previous_field_overlap": 0.9962857005278364,
+      "power_W": 0.00010000000000000006,
+      "electric_energy_J": 4.985591609112569e-16,
+      "magnetic_energy_J": 4.985591609112571e-16,
+      "total_energy_J": 9.97118321822514e-16,
+      "energy_velocity_m_per_s": 200578001.24908334,
+      "electric_magnetic_relative_difference": 1.9778517954096629e-16,
+      "cladding_power_fraction": 0.334936123580417,
+      "Ey_field_square_fraction": 0.4618861790245396,
+      "quadrature_relative_change": 3.3306690738754676e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    }
+  ],
+  "principal_axis_modes": [
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 0.0,
+      "n_eff": 1.4952364873579747,
+      "beta_per_m": 11052762.268384049,
+      "kappa_per_m": 2698146.1223445153,
+      "root_bracket": [
+        1.4951999987,
+        1.49527999868
+      ],
+      "det_residual": 4.842227760942061e-16,
+      "matching_relative_residual": 2.2860891271096955e-15,
+      "singular_values": [
+        1.414213562373095,
+        1.4062461696194808,
+        0.14990567177574937,
+        1.7170161558712964e-15
+      ],
+      "transfer_condition": 121.78377964881133,
+      "previous_field_overlap": 1.0,
+      "power_W": 0.00010000000000000002,
+      "electric_energy_J": 5.101895741783854e-16,
+      "magnetic_energy_J": 5.10189574178385e-16,
+      "total_energy_J": 1.0203791483567704e-15,
+      "energy_velocity_m_per_s": 196005573.3421074,
+      "electric_magnetic_relative_difference": 3.8655283503754556e-16,
+      "cladding_power_fraction": 0.2261788684724427,
+      "Ey_field_square_fraction": 1.0,
+      "quadrature_relative_change": 4.661295293851786e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 0.0,
+      "n_eff": 1.471890569427231,
+      "beta_per_m": 10880189.646589851,
+      "kappa_per_m": 1869482.6776061973,
+      "root_bracket": [
+        1.47184000454,
+        1.47192000452
+      ],
+      "det_residual": 1.4095981588141606e-15,
+      "matching_relative_residual": 1.4284012682309602e-15,
+      "singular_values": [
+        1.414213562373095,
+        1.0513655025030233,
+        0.9458491318104411,
+        9.911208645441331e-16
+      ],
+      "transfer_condition": 60.34864879536147,
+      "previous_field_overlap": 1.0,
+      "power_W": 0.0001,
+      "electric_energy_J": 4.984561910633984e-16,
+      "magnetic_energy_J": 4.984561910633985e-16,
+      "total_energy_J": 9.969123821267968e-16,
+      "energy_velocity_m_per_s": 200619436.15678963,
+      "electric_magnetic_relative_difference": 9.891301875723379e-17,
+      "cladding_power_fraction": 0.34239850069462957,
+      "Ey_field_square_fraction": 0.0,
+      "quadrature_relative_change": 3.526405796917096e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    }
+  ],
+  "isotropic_modes": [
+    {
+      "branch": "isotropic-TE0",
+      "theta_deg": 0.0,
+      "n_eff": 1.4728980249713144,
+      "beta_per_m": 10887636.74055717,
+      "kappa_per_m": 1912347.3874897817,
+      "root_bracket": [
+        1.47285000086,
+        1.47290000084
+      ],
+      "det_residual": 5.1461575845993536e-17,
+      "matching_relative_residual": 3.4407959186992226e-15,
+      "singular_values": [
+        1.4142135623730951,
+        1.4141713948794274,
+        0.010920893039239526,
+        2.2963685288380684e-15
+      ],
+      "transfer_condition": 62.311767167532395,
+      "previous_field_overlap": 1.0,
+      "power_W": 0.00010000000000000003,
+      "electric_energy_J": 4.986500652380262e-16,
+      "magnetic_energy_J": 4.986500652380261e-16,
+      "total_energy_J": 9.973001304760521e-16,
+      "energy_velocity_m_per_s": 200541435.71056375,
+      "electric_magnetic_relative_difference": 9.887456156809789e-17,
+      "cladding_power_fraction": 0.3263879708167847,
+      "Ey_field_square_fraction": 1.0,
+      "quadrature_relative_change": 3.1103247681248938e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "isotropic-TM0",
+      "theta_deg": 0.0,
+      "n_eff": 1.4718905694272313,
+      "beta_per_m": 10880189.646589853,
+      "kappa_per_m": 1869482.6776062034,
+      "root_bracket": [
+        1.47185000126,
+        1.4719000012399999
+      ],
+      "det_residual": 3.8549290150047073e-17,
+      "matching_relative_residual": 1.199766660828271e-15,
+      "singular_values": [
+        1.414213562373095,
+        1.4140076553645353,
+        0.024131940876977627,
+        7.948593072086612e-16
+      ],
+      "transfer_condition": 60.34864879536179,
+      "previous_field_overlap": 1.0,
+      "power_W": 0.0001,
+      "electric_energy_J": 4.984561910633985e-16,
+      "magnetic_energy_J": 4.984561910633984e-16,
+      "total_energy_J": 9.969123821267968e-16,
+      "energy_velocity_m_per_s": 200619436.15678963,
+      "electric_magnetic_relative_difference": 9.891301875723379e-17,
+      "cladding_power_fraction": 0.34239850069462957,
+      "Ey_field_square_fraction": 0.0,
+      "quadrature_relative_change": 2.9040988915787846e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    }
+  ],
+  "mirror_axis_modes": [
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": -45.0,
+      "n_eff": 1.4940151691796386,
+      "beta_per_m": 11043734.305521093,
+      "kappa_per_m": 2660922.0482855407,
+      "root_bracket": [
+        1.493999999,
+        1.49407999898
+      ],
+      "det_residual": 3.1780413699589215e-16,
+      "matching_relative_residual": 1.6166904374719919e-15,
+      "singular_values": [
+        1.6414560221189967,
+        1.1182206847015823,
+        0.23495665079925865,
+        7.423580780722233e-16
+      ],
+      "transfer_condition": 85.08644309757915,
+      "previous_field_overlap": 0.996283798428942,
+      "power_W": 0.00010000000000000003,
+      "electric_energy_J": 5.100592339505625e-16,
+      "magnetic_energy_J": 5.1005923395056255e-16,
+      "total_energy_J": 1.0201184679011251e-15,
+      "energy_velocity_m_per_s": 196055660.48764548,
+      "electric_magnetic_relative_difference": 9.666290362874208e-17,
+      "cladding_power_fraction": 0.23598206899275215,
+      "Ey_field_square_fraction": 0.5371589610952263,
+      "quadrature_relative_change": 4.579669976578769e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": -45.0,
+      "n_eff": 1.4723676408146462,
+      "beta_per_m": 10883716.150039125,
+      "kappa_per_m": 1889898.402224604,
+      "root_bracket": [
+        1.47232000442,
+        1.4724000043999999
+      ],
+      "det_residual": 1.7212506167554545e-15,
+      "matching_relative_residual": 2.9965724657754176e-15,
+      "singular_values": [
+        1.6772205800358715,
+        1.0045355971860415,
+        0.42171004243462956,
+        2.435134646431856e-15
+      ],
+      "transfer_condition": 43.159813752885995,
+      "previous_field_overlap": 0.9962857005278364,
+      "power_W": 0.00010000000000000006,
+      "electric_energy_J": 4.985591609112569e-16,
+      "magnetic_energy_J": 4.985591609112571e-16,
+      "total_energy_J": 9.97118321822514e-16,
+      "energy_velocity_m_per_s": 200578001.24908334,
+      "electric_magnetic_relative_difference": 1.9778517954096629e-16,
+      "cladding_power_fraction": 0.334936123580417,
+      "Ey_field_square_fraction": 0.4618861790245396,
+      "quadrature_relative_change": 3.3306690738754676e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    }
+  ],
+  "angle_scan": [
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 0.0,
+      "n_eff": 1.4952364873579747,
+      "beta_per_m": 11052762.268384049,
+      "kappa_per_m": 2698146.1223445153,
+      "root_bracket": [
+        1.4951999987,
+        1.49527999868
+      ],
+      "det_residual": 4.842227760942061e-16,
+      "matching_relative_residual": 2.2860891271096955e-15,
+      "singular_values": [
+        1.414213562373095,
+        1.4062461696194808,
+        0.14990567177574937,
+        1.7170161558712964e-15
+      ],
+      "transfer_condition": 121.78377964881133,
+      "previous_field_overlap": 1.0,
+      "power_W": 0.00010000000000000002,
+      "electric_energy_J": 5.101895741783854e-16,
+      "magnetic_energy_J": 5.10189574178385e-16,
+      "total_energy_J": 1.0203791483567704e-15,
+      "energy_velocity_m_per_s": 196005573.3421074,
+      "electric_magnetic_relative_difference": 3.8655283503754556e-16,
+      "cladding_power_fraction": 0.2261788684724427,
+      "Ey_field_square_fraction": 1.0,
+      "quadrature_relative_change": 4.661295293851786e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 0.0,
+      "n_eff": 1.471890569427231,
+      "beta_per_m": 10880189.646589851,
+      "kappa_per_m": 1869482.6776061973,
+      "root_bracket": [
+        1.47184000454,
+        1.47192000452
+      ],
+      "det_residual": 1.4095981588141606e-15,
+      "matching_relative_residual": 1.4284012682309602e-15,
+      "singular_values": [
+        1.414213562373095,
+        1.0513655025030233,
+        0.9458491318104411,
+        9.911208645441331e-16
+      ],
+      "transfer_condition": 60.34864879536147,
+      "previous_field_overlap": 1.0,
+      "power_W": 0.0001,
+      "electric_energy_J": 4.984561910633984e-16,
+      "magnetic_energy_J": 4.984561910633985e-16,
+      "total_energy_J": 9.969123821267968e-16,
+      "energy_velocity_m_per_s": 200619436.15678963,
+      "electric_magnetic_relative_difference": 9.891301875723379e-17,
+      "cladding_power_fraction": 0.34239850069462957,
+      "Ey_field_square_fraction": 0.0,
+      "quadrature_relative_change": 3.526405796917096e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 5.0,
+      "n_eff": 1.4952182357821961,
+      "beta_per_m": 11052627.353051385,
+      "kappa_per_m": 2697593.398110308,
+      "root_bracket": [
+        1.4951999987,
+        1.49527999868
+      ],
+      "det_residual": 2.185206174935262e-15,
+      "matching_relative_residual": 1.0546494288640565e-14,
+      "singular_values": [
+        1.4835445475786706,
+        1.332539493600057,
+        0.15308191710878868,
+        7.228977793419594e-15
+      ],
+      "transfer_condition": 121.2077704299098,
+      "previous_field_overlap": 0.9967058015241208,
+      "power_W": 9.999999999999998e-05,
+      "electric_energy_J": 5.101875625844457e-16,
+      "magnetic_energy_J": 5.101875625844459e-16,
+      "total_energy_J": 1.0203751251688917e-15,
+      "energy_velocity_m_per_s": 196006346.16303107,
+      "electric_magnetic_relative_difference": 1.9327717957903966e-16,
+      "cladding_power_fraction": 0.22632103588644484,
+      "Ey_field_square_fraction": 0.9934150070076841,
+      "quadrature_relative_change": 4.661313672648236e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 5.0,
+      "n_eff": 1.4718974754128409,
+      "beta_per_m": 10880240.695516104,
+      "kappa_per_m": 1869779.7540013625,
+      "root_bracket": [
+        1.47184000454,
+        1.47192000452
+      ],
+      "det_residual": 4.4345473503180916e-16,
+      "matching_relative_residual": 5.228749179856025e-16,
+      "singular_values": [
+        1.4515559989133493,
+        1.0288449473513763,
+        0.9134896038424359,
+        3.0019457054306587e-16
+      ],
+      "transfer_condition": 60.0866129861466,
+      "previous_field_overlap": 0.9967129760092761,
+      "power_W": 0.0001,
+      "electric_energy_J": 4.984578122714796e-16,
+      "magnetic_energy_J": 4.984578122714798e-16,
+      "total_energy_J": 9.969156245429595e-16,
+      "energy_velocity_m_per_s": 200618783.65251917,
+      "electric_magnetic_relative_difference": 1.9782539409558073e-16,
+      "cladding_power_fraction": 0.3422917564712096,
+      "Ey_field_square_fraction": 0.006560393164995141,
+      "quadrature_relative_change": 2.9040894461483467e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 10.0,
+      "n_eff": 1.4951639846157223,
+      "beta_per_m": 11052226.329366578,
+      "kappa_per_m": 2695949.845908205,
+      "root_bracket": [
+        1.49511999872,
+        1.4951999987
+      ],
+      "det_residual": 5.2313958587653e-16,
+      "matching_relative_residual": 2.6743043536140224e-15,
+      "singular_values": [
+        1.541949421423839,
+        1.2634903457826896,
+        0.16119593011186445,
+        1.6225980349227249e-15
+      ],
+      "transfer_condition": 119.50160341893492,
+      "previous_field_overlap": 0.9966936821818397,
+      "power_W": 0.00010000000000000006,
+      "electric_energy_J": 5.101815925242056e-16,
+      "magnetic_energy_J": 5.101815925242053e-16,
+      "total_energy_J": 1.020363185048411e-15,
+      "energy_velocity_m_per_s": 196008639.79673198,
+      "electric_magnetic_relative_difference": 2.899191619147296e-16,
+      "cladding_power_fraction": 0.22674434637678886,
+      "Ey_field_square_fraction": 0.9737863021455153,
+      "quadrature_relative_change": 4.5796699765787676e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 10.0,
+      "n_eff": 1.4719180415976663,
+      "beta_per_m": 10880392.720398832,
+      "kappa_per_m": 1870664.183175739,
+      "root_bracket": [
+        1.47184000454,
+        1.47192000452
+      ],
+      "det_residual": 1.7663970824227717e-15,
+      "matching_relative_residual": 1.9824488428957e-15,
+      "singular_values": [
+        1.5182590763363848,
+        1.0114486954533124,
+        0.8196712228619351,
+        1.4431421464385725e-15
+      ],
+      "transfer_condition": 59.30916170680955,
+      "previous_field_overlap": 0.9967007335777098,
+      "power_W": 9.999999999999998e-05,
+      "electric_energy_J": 4.984626184047741e-16,
+      "magnetic_energy_J": 4.984626184047739e-16,
+      "total_energy_J": 9.96925236809548e-16,
+      "energy_velocity_m_per_s": 200616849.30362317,
+      "electric_magnetic_relative_difference": 1.9782348668030444e-16,
+      "cladding_power_fraction": 0.3419736646765503,
+      "Ey_field_square_fraction": 0.026117612204986866,
+      "quadrature_relative_change": 2.9040614451700155e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 15.0,
+      "n_eff": 1.4950752336517448,
+      "beta_per_m": 11051570.283774976,
+      "kappa_per_m": 2693259.080245855,
+      "root_bracket": [
+        1.49503999874,
+        1.49511999872
+      ],
+      "det_residual": 7.174976926575938e-16,
+      "matching_relative_residual": 3.967997664951171e-15,
+      "singular_values": [
+        1.5832777547299752,
+        1.209866365369087,
+        0.1716243844149269,
+        2.2160951961580193e-15
+      ],
+      "transfer_condition": 116.72932061055428,
+      "previous_field_overlap": 0.9966694719103525,
+      "power_W": 0.0001,
+      "electric_energy_J": 5.101718566131295e-16,
+      "magnetic_energy_J": 5.101718566131296e-16,
+      "total_energy_J": 1.020343713226259e-15,
+      "energy_velocity_m_per_s": 196012380.34545562,
+      "electric_magnetic_relative_difference": 9.664156487115088e-17,
+      "cladding_power_fraction": 0.22743922829128377,
+      "Ey_field_square_fraction": 0.9414946982527665,
+      "quadrature_relative_change": 4.440892098500626e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 15.0,
+      "n_eff": 1.471951812014165,
+      "beta_per_m": 10880642.350733846,
+      "kappa_per_m": 1872115.5681986136,
+      "root_bracket": [
+        1.47192000452,
+        1.4720000045
+      ],
+      "det_residual": 5.325590189356506e-16,
+      "matching_relative_residual": 6.582213427144451e-16,
+      "singular_values": [
+        1.5743741355334246,
+        1.006182583183134,
+        0.713402194181022,
+        4.2616217560021227e-16
+      ],
+      "transfer_condition": 58.041739240563174,
+      "previous_field_overlap": 0.9966762716794276,
+      "power_W": 0.0001,
+      "electric_energy_J": 4.984704388813922e-16,
+      "magnetic_energy_J": 4.984704388813921e-16,
+      "total_energy_J": 9.969408777627844e-16,
+      "energy_velocity_m_per_s": 200613701.8363778,
+      "electric_magnetic_relative_difference": 9.891019151898947e-17,
+      "cladding_power_fraction": 0.34145067313665933,
+      "Ey_field_square_fraction": 0.05829763539407355,
+      "quadrature_relative_change": 3.0531133177191805e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 20.0,
+      "n_eff": 1.4949544464014486,
+      "beta_per_m": 11050677.426508676,
+      "kappa_per_m": 2689592.965646858,
+      "root_bracket": [
+        1.49487999878,
+        1.49495999876
+      ],
+      "det_residual": 7.767198618017274e-17,
+      "matching_relative_residual": 6.570372074159895e-16,
+      "singular_values": [
+        1.6104803022464622,
+        1.1717536520580185,
+        0.18261044593571293,
+        2.444354811758278e-16
+      ],
+      "transfer_condition": 112.99270658457522,
+      "previous_field_overlap": 0.9966332449901579,
+      "power_W": 9.999999999999999e-05,
+      "electric_energy_J": 5.101586705746752e-16,
+      "magnetic_energy_J": 5.101586705746751e-16,
+      "total_energy_J": 1.0203173411493503e-15,
+      "energy_velocity_m_per_s": 196017446.66488495,
+      "electric_magnetic_relative_difference": 9.664406275948284e-17,
+      "cladding_power_fraction": 0.2283897440090001,
+      "Ey_field_square_fraction": 0.8971813224093511,
+      "quadrature_relative_change": 4.458900369091848e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 20.0,
+      "n_eff": 1.4719980248443936,
+      "beta_per_m": 10880983.955176078,
+      "kappa_per_m": 1874099.935677889,
+      "root_bracket": [
+        1.47192000452,
+        1.4720000045
+      ],
+      "det_residual": 3.6562245035804125e-16,
+      "matching_relative_residual": 5.33248485806787e-16,
+      "singular_values": [
+        1.6139190280053992,
+        1.0042904182580137,
+        0.6218248361373564,
+        4.125489329035276e-16
+      ],
+      "transfer_condition": 56.325059895957175,
+      "previous_field_overlap": 0.9966396543472598,
+      "power_W": 0.00010000000000000003,
+      "electric_energy_J": 4.984809957606608e-16,
+      "magnetic_energy_J": 4.98480995760661e-16,
+      "total_energy_J": 9.969619915213218e-16,
+      "energy_velocity_m_per_s": 200609453.21978477,
+      "electric_magnetic_relative_difference": 1.9781619357856447e-16,
+      "cladding_power_fraction": 0.34073360862070073,
+      "Ey_field_square_fraction": 0.10247015057954599,
+      "quadrature_relative_change": 3.1113796949675515e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 25.0,
+      "n_eff": 1.4948049963780905,
+      "beta_per_m": 11049572.694519356,
+      "kappa_per_m": 2685050.3659291766,
+      "root_bracket": [
+        1.4947999988,
+        1.49487999878
+      ],
+      "det_residual": 4.759157076697794e-15,
+      "matching_relative_residual": 2.7041901488975214e-14,
+      "singular_values": [
+        1.6275364151752307,
+        1.1461608320101717,
+        0.19349564450991844,
+        1.3258815714752889e-14
+      ],
+      "transfer_condition": 108.42446521280755,
+      "previous_field_overlap": 0.9965851572055753,
+      "power_W": 0.0001,
+      "electric_energy_J": 5.10142464836599e-16,
+      "magnetic_energy_J": 5.101424648365992e-16,
+      "total_energy_J": 1.0202849296731982e-15,
+      "energy_velocity_m_per_s": 196023673.56740326,
+      "electric_magnetic_relative_difference": 1.9329426571891234e-16,
+      "cladding_power_fraction": 0.22957362408344667,
+      "Ey_field_square_fraction": 0.8417565449232446,
+      "quadrature_relative_change": 4.256358287379959e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 25.0,
+      "n_eff": 1.4720556106730014,
+      "beta_per_m": 10881409.628625736,
+      "kappa_per_m": 1876569.807403268,
+      "root_bracket": [
+        1.4720000045,
+        1.47208000448
+      ],
+      "det_residual": 1.2555199923659265e-16,
+      "matching_relative_residual": 3.163049919949625e-16,
+      "singular_values": [
+        1.6403240460234556,
+        1.0035317569223472,
+        0.5497827178855187,
+        1.4253632096501987e-16
+      ],
+      "transfer_condition": 54.21275167925226,
+      "previous_field_overlap": 0.996591023625776,
+      "power_W": 9.999999999999999e-05,
+      "electric_energy_J": 4.98493913472021e-16,
+      "magnetic_energy_J": 4.984939134720209e-16,
+      "total_energy_J": 9.96987826944042e-16,
+      "energy_velocity_m_per_s": 200604254.73101127,
+      "electric_magnetic_relative_difference": 9.89055337364325e-17,
+      "cladding_power_fraction": 0.3398377842631283,
+      "Ey_field_square_fraction": 0.15773885919249936,
+      "quadrature_relative_change": 3.33066907387547e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 30.0,
+      "n_eff": 1.4946310927653814,
+      "beta_per_m": 11048287.202020252,
+      "kappa_per_m": 2679755.3683933765,
+      "root_bracket": [
+        1.49455999886,
+        1.49463999884
+      ],
+      "det_residual": 5.960726942727719e-16,
+      "matching_relative_residual": 3.5176972354407717e-15,
+      "singular_values": [
+        1.6375507755948646,
+        1.129930965240746,
+        0.20416530346455317,
+        1.6246749172285269e-15
+      ],
+      "transfer_condition": 103.17977961159637,
+      "previous_field_overlap": 0.9965255007956859,
+      "power_W": 0.00010000000000000002,
+      "electric_energy_J": 5.101237719849833e-16,
+      "magnetic_energy_J": 5.101237719849834e-16,
+      "total_energy_J": 1.0202475439699666e-15,
+      "energy_velocity_m_per_s": 196030856.61129263,
+      "electric_magnetic_relative_difference": 9.665067437352168e-17,
+      "cladding_power_fraction": 0.23096233972555122,
+      "Ey_field_square_fraction": 0.7764108664498182,
+      "quadrature_relative_change": 4.661896566466933e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 30.0,
+      "n_eff": 1.4721231922012472,
+      "beta_per_m": 10881909.190114338,
+      "kappa_per_m": 1879464.3806157983,
+      "root_bracket": [
+        1.47208000448,
+        1.47216000446
+      ],
+      "det_residual": 8.770818270625868e-16,
+      "matching_relative_residual": 1.3893941054873748e-15,
+      "singular_values": [
+        1.6575521623200078,
+        1.0032958598183868,
+        0.49590144873709513,
+        1.0835907375277375e-15
+      ],
+      "transfer_condition": 51.768398284150535,
+      "previous_field_overlap": 0.9965306565028172,
+      "power_W": 0.00010000000000000002,
+      "electric_energy_J": 4.98508732723822e-16,
+      "magnetic_energy_J": 4.98508732723822e-16,
+      "total_energy_J": 9.97017465447644e-16,
+      "energy_velocity_m_per_s": 200598291.33505037,
+      "electric_magnetic_relative_difference": 0.0,
+      "cladding_power_fraction": 0.33878312170126845,
+      "Ey_field_square_fraction": 0.22292950127591746,
+      "quadrature_relative_change": 3.0531133177191797e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 35.0,
+      "n_eff": 1.494437686067043,
+      "beta_per_m": 11046857.543049298,
+      "kappa_per_m": 2673854.9535331614,
+      "root_bracket": [
+        1.4943999989,
+        1.49447999888
+      ],
+      "det_residual": 4.1556182989315195e-16,
+      "matching_relative_residual": 2.419388960845514e-15,
+      "singular_values": [
+        1.6425318584664896,
+        1.1207216395741826,
+        0.21464412526965626,
+        1.076028221409292e-15
+      ],
+      "transfer_condition": 97.42716500980045,
+      "previous_field_overlap": 0.9964547795486561,
+      "power_W": 0.0001,
+      "electric_energy_J": 5.101032095737586e-16,
+      "magnetic_energy_J": 5.101032095737587e-16,
+      "total_energy_J": 1.0202064191475174e-15,
+      "energy_velocity_m_per_s": 196038758.67309248,
+      "electric_magnetic_relative_difference": 9.6654570390787e-17,
+      "cladding_power_fraction": 0.23252124227189974,
+      "Ey_field_square_fraction": 0.7026258028157731,
+      "quadrature_relative_change": 4.4593851632919546e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 35.0,
+      "n_eff": 1.4721990876488882,
+      "beta_per_m": 10882470.207951395,
+      "kappa_per_m": 1882709.8988050001,
+      "root_bracket": [
+        1.47216000446,
+        1.47224000444
+      ],
+      "det_residual": 1.003077528376833e-15,
+      "matching_relative_residual": 1.6844687162282515e-15,
+      "singular_values": [
+        1.6684206017969614,
+        1.0033939022319698,
+        0.45779184403303264,
+        1.374391762044407e-15
+      ],
+      "transfer_condition": 49.062267643845956,
+      "previous_field_overlap": 0.9964590426648354,
+      "power_W": 9.999999999999998e-05,
+      "electric_energy_J": 4.985249286845627e-16,
+      "magnetic_energy_J": 4.985249286845629e-16,
+      "total_energy_J": 9.970498573691255e-16,
+      "energy_velocity_m_per_s": 200591774.34489757,
+      "electric_magnetic_relative_difference": 1.977987608620061e-16,
+      "cladding_power_fraction": 0.3375942554486543,
+      "Ey_field_square_fraction": 0.2965775693025786,
+      "quadrature_relative_change": 3.3185125355142216e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 40.0,
+      "n_eff": 1.4942303541907915,
+      "beta_per_m": 11045324.94940392,
+      "kappa_per_m": 2667516.0681865304,
+      "root_bracket": [
+        1.49415999896,
+        1.49423999894
+      ],
+      "det_residual": 1.792067646370733e-16,
+      "matching_relative_residual": 1.0492756289975958e-15,
+      "singular_values": [
+        1.6436433372243549,
+        1.1170687046420513,
+        0.22493129863875247,
+        4.665290533434953e-16
+      ],
+      "transfer_condition": 91.33954893626542,
+      "previous_field_overlap": 0.9963738033721536,
+      "power_W": 9.999999999999999e-05,
+      "electric_energy_J": 5.10081458035214e-16,
+      "magnetic_energy_J": 5.100814580352141e-16,
+      "total_energy_J": 1.0201629160704281e-15,
+      "energy_velocity_m_per_s": 196047118.40573585,
+      "electric_magnetic_relative_difference": 9.66586920571998e-17,
+      "cladding_power_fraction": 0.2342098114003297,
+      "Ey_field_square_fraction": 0.6221817977323724,
+      "quadrature_relative_change": 4.718447854656915e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 40.0,
+      "n_eff": 1.4722813207459158,
+      "beta_per_m": 10883078.073583169,
+      "kappa_per_m": 1886220.319001836,
+      "root_bracket": [
+        1.47224000444,
+        1.47232000442
+      ],
+      "det_residual": 1.068356735894285e-15,
+      "matching_relative_residual": 1.8703377959642183e-15,
+      "singular_values": [
+        1.6746629809593627,
+        1.003789844786134,
+        0.43348569492952027,
+        1.4546367155532486e-15
+      ],
+      "transfer_condition": 46.16803612371146,
+      "previous_field_overlap": 0.9963769823839683,
+      "power_W": 0.0001,
+      "electric_energy_J": 4.985419332707017e-16,
+      "magnetic_energy_J": 4.985419332707018e-16,
+      "total_energy_J": 9.970838665414036e-16,
+      "energy_velocity_m_per_s": 200584932.43275747,
+      "electric_magnetic_relative_difference": 9.889600710787534e-17,
+      "cladding_power_fraction": 0.33630057250856077,
+      "Ey_field_square_fraction": 0.37691872010112915,
+      "quadrature_relative_change": 3.110999386474425e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TE0-continuation",
+      "theta_deg": 45.0,
+      "n_eff": 1.4940151691796386,
+      "beta_per_m": 11043734.305521093,
+      "kappa_per_m": 2660922.0482855407,
+      "root_bracket": [
+        1.493999999,
+        1.49407999898
+      ],
+      "det_residual": 3.1780413699589215e-16,
+      "matching_relative_residual": 1.6166904374719919e-15,
+      "singular_values": [
+        1.6414560221189967,
+        1.1182206847015823,
+        0.23495665079925865,
+        7.423580780722233e-16
+      ],
+      "transfer_condition": 85.08644309757915,
+      "previous_field_overlap": 0.996283798428942,
+      "power_W": 0.00010000000000000003,
+      "electric_energy_J": 5.100592339505625e-16,
+      "magnetic_energy_J": 5.1005923395056255e-16,
+      "total_energy_J": 1.0201184679011251e-15,
+      "energy_velocity_m_per_s": 196055660.48764548,
+      "electric_magnetic_relative_difference": 9.666290362874208e-17,
+      "cladding_power_fraction": 0.23598206899275215,
+      "Ey_field_square_fraction": 0.5371589610952263,
+      "quadrature_relative_change": 4.579669976578769e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    },
+    {
+      "branch": "TM0-continuation",
+      "theta_deg": 45.0,
+      "n_eff": 1.4723676408146462,
+      "beta_per_m": 10883716.150039125,
+      "kappa_per_m": 1889898.402224604,
+      "root_bracket": [
+        1.47232000442,
+        1.4724000043999999
+      ],
+      "det_residual": 1.7212506167554545e-15,
+      "matching_relative_residual": 2.9965724657754176e-15,
+      "singular_values": [
+        1.6772205800358715,
+        1.0045355971860415,
+        0.42171004243462956,
+        2.435134646431856e-15
+      ],
+      "transfer_condition": 43.159813752885995,
+      "previous_field_overlap": 0.9962857005278364,
+      "power_W": 0.00010000000000000006,
+      "electric_energy_J": 4.985591609112569e-16,
+      "magnetic_energy_J": 4.985591609112571e-16,
+      "total_energy_J": 9.97118321822514e-16,
+      "energy_velocity_m_per_s": 200578001.24908334,
+      "electric_magnetic_relative_difference": 1.9778517954096629e-16,
+      "cladding_power_fraction": 0.334936123580417,
+      "Ey_field_square_fraction": 0.4618861790245396,
+      "quadrature_relative_change": 3.3306690738754676e-15,
+      "transverse_power_density_max_W_per_m2": 0.0
+    }
+  ],
+  "numerical_contract": {
+    "root_grid_points": 1001,
+    "core_Gauss_nodes": 96,
+    "comparison_Gauss_nodes": 128,
+    "root_min_gap": 2e-05,
+    "max_angle_step_deg": 5,
+    "min_field_overlap": 0.85,
+    "tails": "analytic to infinity; field plot only extends six amplitude decay lengths"
+  },
+  "provenance": {
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}

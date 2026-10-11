@@ -1,0 +1,18 @@
+Author run, 2026-10-12 Asia/Shanghai.
+Command: python3 -B /private/tmp/numerical_guard.py --threads 1 --timeout 60 --lock-timeout 60 -- python3 -B passivity_lab.py --input input.json --output-dir /private/tmp/wwl-passivity-author-default-20261012
+Working directory: /private/tmp/wwl-stage-control-passivity-20261012/控制论/80-实践/08-无源端口与互联
+Exit: 0
+Actual stdout:
+{
+  "status": "PASS",
+  "outputs": 6,
+  "mechanical_rows": 1204,
+  "electrical_rows": 301,
+  "python": "3.14.7",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "elapsed_s": 0.08928279200335965,
+  "observed_peak_rss_native": 26968064
+}
+macOS ru_maxrss native unit is bytes; this is an observation, not a memory cap.
+The six output files were copied byte-for-byte into results/.
+Author reproduction does not provide independent review acceptance.

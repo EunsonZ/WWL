@@ -1,0 +1,115 @@
+{
+  "parameters": {
+    "mass_kg": 2,
+    "damping_N_s_per_m": 2,
+    "stiffness_N_per_m": 8,
+    "q0_m": 0.1,
+    "v0_m_per_s": 0,
+    "hidden_mass_kg": 2,
+    "hidden_stiffness_N_per_m": 8,
+    "hidden_q0_m": 0.05,
+    "inductance_H": 2,
+    "capacitance_F": 0.125,
+    "resistance_ohm": 2,
+    "vc0_V": 0.8,
+    "i0_A": 0,
+    "duration_s": 6,
+    "sample_s": 0.02,
+    "substep_s": 0.005
+  },
+  "cases": {
+    "nominal": {
+      "rows": 301,
+      "final": {
+        "q_m": 0.0018627553686139879,
+        "v_m_per_s": 0.008349684829930565,
+        "hidden_q_m": 0.0,
+        "hidden_v_m_per_s": 0.0,
+        "total_storage_J": 8.359666701237355e-05,
+        "hidden_storage_J": 0.0,
+        "loss_integral_J": 0.03991640334328312,
+        "connection_supply_integral_J": 0.0
+      },
+      "max_balance_error_J": 1.0295486685407695e-11,
+      "max_q_closed_form_error_m": 1.2680266558984243e-11,
+      "max_v_closed_form_error_m_per_s": 2.449405261950588e-11,
+      "max_internal_supply_sum_W": 0.0
+    },
+    "lossless": {
+      "rows": 301,
+      "final": {
+        "q_m": 0.08438539581889064,
+        "v_m_per_s": 0.10731458376795747,
+        "hidden_q_m": 0.0,
+        "hidden_v_m_per_s": 0.0,
+        "total_storage_J": 0.03999999999933334,
+        "hidden_storage_J": 0.0,
+        "loss_integral_J": 0.0,
+        "connection_supply_integral_J": 0.0
+      },
+      "max_balance_error_J": 6.666681096056948e-13,
+      "max_q_closed_form_error_m": 9.206608218848e-11,
+      "max_v_closed_form_error_m_per_s": 1.6787046752675394e-10,
+      "max_internal_supply_sum_W": 0.0
+    },
+    "reversed": {
+      "rows": 301,
+      "final": {
+        "q_m": 728.3187193253486,
+        "v_m_per_s": 1137.3081447508055,
+        "hidden_q_m": 0.0,
+        "hidden_v_m_per_s": 0.0,
+        "total_storage_J": 3415262.443795383,
+        "hidden_storage_J": 0.0,
+        "loss_integral_J": 828322.7716261434,
+        "connection_supply_integral_J": 4243585.175684573
+      },
+      "max_balance_error_J": 0.000263046436011799,
+      "max_q_closed_form_error_m": 2.0995707927795593e-07,
+      "max_v_closed_form_error_m_per_s": 3.2785919756861404e-07,
+      "max_internal_supply_sum_W": 13253164.983411118
+    },
+    "hidden": {
+      "rows": 301,
+      "final": {
+        "q_m": 0.0018627553686139879,
+        "v_m_per_s": 0.008349684829930565,
+        "hidden_q_m": 0.04219269790944532,
+        "hidden_v_m_per_s": 0.05365729188397873,
+        "total_storage_J": 0.010083596666845709,
+        "hidden_storage_J": 0.009999999999833335,
+        "loss_integral_J": 0.03991640334328312,
+        "connection_supply_integral_J": 0.0
+      },
+      "max_balance_error_J": 1.0130875305325304e-11,
+      "max_q_closed_form_error_m": 1.2680266558984243e-11,
+      "max_v_closed_form_error_m_per_s": 2.449405261950588e-11,
+      "max_internal_supply_sum_W": 0.0
+    }
+  },
+  "circuit": {
+    "rows": 301,
+    "final": {
+      "t_s": 6.0,
+      "vc_V": 0.014902042948911903,
+      "i_A": 0.008349684829930565,
+      "inductor_storage_J": 6.971723675917261e-05,
+      "capacitor_storage_J": 1.3879430253200935e-05,
+      "total_storage_J": 8.359666701237355e-05,
+      "loss_integral_J": 0.03991640334328312,
+      "inductor_supply_W": -0.00012442736194550344,
+      "capacitor_supply_W": 0.00012442736194550344,
+      "loss_W": 0.00013943447351834521,
+      "balance_residual_J": 1.0295486685407695e-11,
+      "analytic_vc_V": 0.014902042946636388,
+      "analytic_i_A": 0.008349684820109846
+    },
+    "max_vc_closed_form_error_V": 1.0144213247187395e-10,
+    "max_i_closed_form_error_A": 2.449405261950588e-11,
+    "max_balance_error_J": 1.0295486685407695e-11
+  },
+  "si_model_match": {
+    "max_vc_over_8_minus_q_m": 0.0,
+    "max_i_numeric_minus_v_m_per_s": 0
+  }
+}

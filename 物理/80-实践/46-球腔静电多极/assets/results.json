@@ -1,0 +1,74 @@
+{
+  "model": "grounded spherical cavity; constant positive dielectric; point-source self-energy excluded",
+  "input": {
+    "a_m": 0.05,
+    "b_over_a": 0.35,
+    "q_C": 1e-09,
+    "epsilon_r": 2.0,
+    "orders": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "sample_r_over_a": 0.7,
+    "angle_samples": 181,
+    "surface_panels": 8192,
+    "outer_radius_m": 0.065
+  },
+  "epsilon0_F_per_m": 8.854187817620389e-12,
+  "potential_scale_V": 89.87551787368179,
+  "probe_equator": {
+    "phi_V": 27.54493379254941,
+    "Er_V_per_m": 2483.6536923929852,
+    "Etheta_V_per_m": 735.9877310539484
+  },
+  "source_moments_C_m_power": [
+    1e-09,
+    1.7499999999999998e-11,
+    3.0624999999999993e-13
+  ],
+  "image": {
+    "q_C": -2.8571428571428576e-09,
+    "z_m": 0.14285714285714288,
+    "physical_surface_Q_C": -1e-09
+  },
+  "sigma_near_C_per_m2": -1.0170848434274965e-07,
+  "sigma_far_C_per_m2": -1.135261596814617e-08,
+  "max_abs_sigma_C_per_m2": 1.0170848434274968e-07,
+  "reaction_force_z_N": 8.170435306411761e-07,
+  "reaction_energy_J": -5.1211121295545164e-08,
+  "floating_neutral": {
+    "outer_charge_C": 1e-09,
+    "shell_potential_V": 138.27002749797197,
+    "inside_field_unchanged": true,
+    "outside_phi_rule": "q/(4*pi*epsilon0*r)"
+  },
+  "inner_probe": {
+    "r_over_a": 0.175,
+    "image": [
+      139.97004461462794,
+      5211.451956547091,
+      9873.935673102957
+    ],
+    "inner_L64": [
+      139.9700446146279,
+      5211.45195654709,
+      9873.935673102955
+    ]
+  },
+  "invalid_outer_evaluations": [
+    {
+      "r_over_a": 0.35,
+      "outer_rejected": true
+    },
+    {
+      "r_over_a": 0.175,
+      "outer_rejected": true
+    }
+  ],
+  "bounds_cover_all_angles": true
+}

@@ -1,0 +1,2091 @@
+{
+  "schema": "wwl-crc219-v1",
+  "input": {
+    "message": "01101",
+    "generator": "1011",
+    "alternate_generator": "1001",
+    "codeword_width": 8,
+    "crc32_vectors": [
+      {
+        "name": "standard-check",
+        "payload_hex": "313233343536373839"
+      },
+      {
+        "name": "tiny-hi",
+        "payload_hex": "6869"
+      },
+      {
+        "name": "empty",
+        "payload_hex": ""
+      }
+    ]
+  },
+  "message_width": 5,
+  "generator_degree": 3,
+  "message_remainder": 1,
+  "check_bits": "001",
+  "codeword": "01101001",
+  "codeword_remainder": 0,
+  "errors": [
+    {
+      "error": "00000001",
+      "span": 1,
+      "received": "01101000",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "00000010",
+      "span": 1,
+      "received": "01101011",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "00000011",
+      "span": 2,
+      "received": "01101010",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "00000100",
+      "span": 1,
+      "received": "01101101",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "00000101",
+      "span": 3,
+      "received": "01101100",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "00000110",
+      "span": 2,
+      "received": "01101111",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "00000111",
+      "span": 3,
+      "received": "01101110",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "00001000",
+      "span": 1,
+      "received": "01100001",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "00001001",
+      "span": 4,
+      "received": "01100000",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "00001010",
+      "span": 3,
+      "received": "01100011",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "00001011",
+      "span": 4,
+      "received": "01100010",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "00001100",
+      "span": 2,
+      "received": "01100101",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "00001101",
+      "span": 4,
+      "received": "01100100",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "00001110",
+      "span": 3,
+      "received": "01100111",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "00001111",
+      "span": 4,
+      "received": "01100110",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "00010000",
+      "span": 1,
+      "received": "01111001",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "00010001",
+      "span": 5,
+      "received": "01111000",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "00010010",
+      "span": 4,
+      "received": "01111011",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "00010011",
+      "span": 5,
+      "received": "01111010",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "00010100",
+      "span": 3,
+      "received": "01111101",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "00010101",
+      "span": 5,
+      "received": "01111100",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "00010110",
+      "span": 4,
+      "received": "01111111",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "00010111",
+      "span": 5,
+      "received": "01111110",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "00011000",
+      "span": 2,
+      "received": "01110001",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "00011001",
+      "span": 5,
+      "received": "01110000",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "00011010",
+      "span": 4,
+      "received": "01110011",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "00011011",
+      "span": 5,
+      "received": "01110010",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "00011100",
+      "span": 3,
+      "received": "01110101",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "00011101",
+      "span": 5,
+      "received": "01110100",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "00011110",
+      "span": 4,
+      "received": "01110111",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "00011111",
+      "span": 5,
+      "received": "01110110",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "00100000",
+      "span": 1,
+      "received": "01001001",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "00100001",
+      "span": 6,
+      "received": "01001000",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "00100010",
+      "span": 5,
+      "received": "01001011",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "00100011",
+      "span": 6,
+      "received": "01001010",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "00100100",
+      "span": 4,
+      "received": "01001101",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "00100101",
+      "span": 6,
+      "received": "01001100",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "00100110",
+      "span": 5,
+      "received": "01001111",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "00100111",
+      "span": 6,
+      "received": "01001110",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "00101000",
+      "span": 3,
+      "received": "01000001",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "00101001",
+      "span": 6,
+      "received": "01000000",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "00101010",
+      "span": 5,
+      "received": "01000011",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "00101011",
+      "span": 6,
+      "received": "01000010",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "00101100",
+      "span": 4,
+      "received": "01000101",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "00101101",
+      "span": 6,
+      "received": "01000100",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "00101110",
+      "span": 5,
+      "received": "01000111",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "00101111",
+      "span": 6,
+      "received": "01000110",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "00110000",
+      "span": 2,
+      "received": "01011001",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "00110001",
+      "span": 6,
+      "received": "01011000",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "00110010",
+      "span": 5,
+      "received": "01011011",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "00110011",
+      "span": 6,
+      "received": "01011010",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "00110100",
+      "span": 4,
+      "received": "01011101",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "00110101",
+      "span": 6,
+      "received": "01011100",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "00110110",
+      "span": 5,
+      "received": "01011111",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "00110111",
+      "span": 6,
+      "received": "01011110",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "00111000",
+      "span": 3,
+      "received": "01010001",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "00111001",
+      "span": 6,
+      "received": "01010000",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "00111010",
+      "span": 5,
+      "received": "01010011",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "00111011",
+      "span": 6,
+      "received": "01010010",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "00111100",
+      "span": 4,
+      "received": "01010101",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "00111101",
+      "span": 6,
+      "received": "01010100",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "00111110",
+      "span": 5,
+      "received": "01010111",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "00111111",
+      "span": 6,
+      "received": "01010110",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01000000",
+      "span": 1,
+      "received": "00101001",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "01000001",
+      "span": 7,
+      "received": "00101000",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01000010",
+      "span": 6,
+      "received": "00101011",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "01000011",
+      "span": 7,
+      "received": "00101010",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "01000100",
+      "span": 5,
+      "received": "00101101",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "01000101",
+      "span": 7,
+      "received": "00101100",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "01000110",
+      "span": 6,
+      "received": "00101111",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "01000111",
+      "span": 7,
+      "received": "00101110",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "01001000",
+      "span": 4,
+      "received": "00100001",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01001001",
+      "span": 7,
+      "received": "00100000",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "01001010",
+      "span": 6,
+      "received": "00100011",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "01001011",
+      "span": 7,
+      "received": "00100010",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "01001100",
+      "span": 5,
+      "received": "00100101",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "01001101",
+      "span": 7,
+      "received": "00100100",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "01001110",
+      "span": 6,
+      "received": "00100111",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "01001111",
+      "span": 7,
+      "received": "00100110",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "01010000",
+      "span": 3,
+      "received": "00111001",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "01010001",
+      "span": 7,
+      "received": "00111000",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "01010010",
+      "span": 6,
+      "received": "00111011",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "01010011",
+      "span": 7,
+      "received": "00111010",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01010100",
+      "span": 5,
+      "received": "00111101",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "01010101",
+      "span": 7,
+      "received": "00111100",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "01010110",
+      "span": 6,
+      "received": "00111111",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "01010111",
+      "span": 7,
+      "received": "00111110",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "01011000",
+      "span": 4,
+      "received": "00110001",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "01011001",
+      "span": 7,
+      "received": "00110000",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "01011010",
+      "span": 6,
+      "received": "00110011",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01011011",
+      "span": 7,
+      "received": "00110010",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "01011100",
+      "span": 5,
+      "received": "00110101",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "01011101",
+      "span": 7,
+      "received": "00110100",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "01011110",
+      "span": 6,
+      "received": "00110111",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "01011111",
+      "span": 7,
+      "received": "00110110",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "01100000",
+      "span": 2,
+      "received": "00001001",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "01100001",
+      "span": 7,
+      "received": "00001000",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "01100010",
+      "span": 6,
+      "received": "00001011",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "01100011",
+      "span": 7,
+      "received": "00001010",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "01100100",
+      "span": 5,
+      "received": "00001101",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "01100101",
+      "span": 7,
+      "received": "00001100",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01100110",
+      "span": 6,
+      "received": "00001111",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "01100111",
+      "span": 7,
+      "received": "00001110",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "01101000",
+      "span": 4,
+      "received": "00000001",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "01101001",
+      "span": 7,
+      "received": "00000000",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "01101010",
+      "span": 6,
+      "received": "00000011",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "01101011",
+      "span": 7,
+      "received": "00000010",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "01101100",
+      "span": 5,
+      "received": "00000101",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01101101",
+      "span": 7,
+      "received": "00000100",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "01101110",
+      "span": 6,
+      "received": "00000111",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "01101111",
+      "span": 7,
+      "received": "00000110",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "01110000",
+      "span": 3,
+      "received": "00011001",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "01110001",
+      "span": 7,
+      "received": "00011000",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "01110010",
+      "span": 6,
+      "received": "00011011",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "01110011",
+      "span": 7,
+      "received": "00011010",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "01110100",
+      "span": 5,
+      "received": "00011101",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "01110101",
+      "span": 7,
+      "received": "00011100",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "01110110",
+      "span": 6,
+      "received": "00011111",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "01110111",
+      "span": 7,
+      "received": "00011110",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01111000",
+      "span": 4,
+      "received": "00010001",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "01111001",
+      "span": 7,
+      "received": "00010000",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "01111010",
+      "span": 6,
+      "received": "00010011",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "01111011",
+      "span": 7,
+      "received": "00010010",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "01111100",
+      "span": 5,
+      "received": "00010101",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "01111101",
+      "span": 7,
+      "received": "00010100",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "01111110",
+      "span": 6,
+      "received": "00010111",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "01111111",
+      "span": 7,
+      "received": "00010110",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10000000",
+      "span": 1,
+      "received": "11101001",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "10000001",
+      "span": 8,
+      "received": "11101000",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "10000010",
+      "span": 7,
+      "received": "11101011",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "10000011",
+      "span": 8,
+      "received": "11101010",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10000100",
+      "span": 6,
+      "received": "11101101",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "10000101",
+      "span": 8,
+      "received": "11101100",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "10000110",
+      "span": 7,
+      "received": "11101111",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "10000111",
+      "span": 8,
+      "received": "11101110",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "10001000",
+      "span": 5,
+      "received": "11100001",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "10001001",
+      "span": 8,
+      "received": "11100000",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "10001010",
+      "span": 7,
+      "received": "11100011",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10001011",
+      "span": 8,
+      "received": "11100010",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "10001100",
+      "span": 6,
+      "received": "11100101",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "10001101",
+      "span": 8,
+      "received": "11100100",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "10001110",
+      "span": 7,
+      "received": "11100111",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "10001111",
+      "span": 8,
+      "received": "11100110",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "10010000",
+      "span": 4,
+      "received": "11111001",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "10010001",
+      "span": 8,
+      "received": "11111000",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10010010",
+      "span": 7,
+      "received": "11111011",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "10010011",
+      "span": 8,
+      "received": "11111010",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "10010100",
+      "span": 6,
+      "received": "11111101",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "10010101",
+      "span": 8,
+      "received": "11111100",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "10010110",
+      "span": 7,
+      "received": "11111111",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "10010111",
+      "span": 8,
+      "received": "11111110",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "10011000",
+      "span": 5,
+      "received": "11110001",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10011001",
+      "span": 8,
+      "received": "11110000",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "10011010",
+      "span": 7,
+      "received": "11110011",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "10011011",
+      "span": 8,
+      "received": "11110010",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "10011100",
+      "span": 6,
+      "received": "11110101",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "10011101",
+      "span": 8,
+      "received": "11110100",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "10011110",
+      "span": 7,
+      "received": "11110111",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "10011111",
+      "span": 8,
+      "received": "11110110",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "10100000",
+      "span": 3,
+      "received": "11001001",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "10100001",
+      "span": 8,
+      "received": "11001000",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "10100010",
+      "span": 7,
+      "received": "11001011",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "10100011",
+      "span": 8,
+      "received": "11001010",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "10100100",
+      "span": 6,
+      "received": "11001101",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "10100101",
+      "span": 8,
+      "received": "11001100",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "10100110",
+      "span": 7,
+      "received": "11001111",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "10100111",
+      "span": 8,
+      "received": "11001110",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10101000",
+      "span": 5,
+      "received": "11000001",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "10101001",
+      "span": 8,
+      "received": "11000000",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "10101010",
+      "span": 7,
+      "received": "11000011",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "10101011",
+      "span": 8,
+      "received": "11000010",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "10101100",
+      "span": 6,
+      "received": "11000101",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "10101101",
+      "span": 8,
+      "received": "11000100",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "10101110",
+      "span": 7,
+      "received": "11000111",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10101111",
+      "span": 8,
+      "received": "11000110",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "10110000",
+      "span": 4,
+      "received": "11011001",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "10110001",
+      "span": 8,
+      "received": "11011000",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "10110010",
+      "span": 7,
+      "received": "11011011",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "10110011",
+      "span": 8,
+      "received": "11011010",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "10110100",
+      "span": 6,
+      "received": "11011101",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "10110101",
+      "span": 8,
+      "received": "11011100",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10110110",
+      "span": 7,
+      "received": "11011111",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "10110111",
+      "span": 8,
+      "received": "11011110",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "10111000",
+      "span": 5,
+      "received": "11010001",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "10111001",
+      "span": 8,
+      "received": "11010000",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "10111010",
+      "span": 7,
+      "received": "11010011",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "10111011",
+      "span": 8,
+      "received": "11010010",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "10111100",
+      "span": 6,
+      "received": "11010101",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "10111101",
+      "span": 8,
+      "received": "11010100",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "10111110",
+      "span": 7,
+      "received": "11010111",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "10111111",
+      "span": 8,
+      "received": "11010110",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11000000",
+      "span": 2,
+      "received": "10101001",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "11000001",
+      "span": 8,
+      "received": "10101000",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11000010",
+      "span": 7,
+      "received": "10101011",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "11000011",
+      "span": 8,
+      "received": "10101010",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "11000100",
+      "span": 6,
+      "received": "10101101",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "11000101",
+      "span": 8,
+      "received": "10101100",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "11000110",
+      "span": 7,
+      "received": "10101111",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "11000111",
+      "span": 8,
+      "received": "10101110",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "11001000",
+      "span": 5,
+      "received": "10100001",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11001001",
+      "span": 8,
+      "received": "10100000",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "11001010",
+      "span": 7,
+      "received": "10100011",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "11001011",
+      "span": 8,
+      "received": "10100010",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "11001100",
+      "span": 6,
+      "received": "10100101",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "11001101",
+      "span": 8,
+      "received": "10100100",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "11001110",
+      "span": 7,
+      "received": "10100111",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "11001111",
+      "span": 8,
+      "received": "10100110",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "11010000",
+      "span": 4,
+      "received": "10111001",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "11010001",
+      "span": 8,
+      "received": "10111000",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "11010010",
+      "span": 7,
+      "received": "10111011",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "11010011",
+      "span": 8,
+      "received": "10111010",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11010100",
+      "span": 6,
+      "received": "10111101",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "11010101",
+      "span": 8,
+      "received": "10111100",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "11010110",
+      "span": 7,
+      "received": "10111111",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "11010111",
+      "span": 8,
+      "received": "10111110",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "11011000",
+      "span": 5,
+      "received": "10110001",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "11011001",
+      "span": 8,
+      "received": "10110000",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "11011010",
+      "span": 7,
+      "received": "10110011",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11011011",
+      "span": 8,
+      "received": "10110010",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "11011100",
+      "span": 6,
+      "received": "10110101",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "11011101",
+      "span": 8,
+      "received": "10110100",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "11011110",
+      "span": 7,
+      "received": "10110111",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "11011111",
+      "span": 8,
+      "received": "10110110",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "11100000",
+      "span": 3,
+      "received": "10001001",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "11100001",
+      "span": 8,
+      "received": "10001000",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "11100010",
+      "span": 7,
+      "received": "10001011",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "11100011",
+      "span": 8,
+      "received": "10001010",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "11100100",
+      "span": 6,
+      "received": "10001101",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "11100101",
+      "span": 8,
+      "received": "10001100",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11100110",
+      "span": 7,
+      "received": "10001111",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "11100111",
+      "span": 8,
+      "received": "10001110",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "11101000",
+      "span": 5,
+      "received": "10000001",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "11101001",
+      "span": 8,
+      "received": "10000000",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "11101010",
+      "span": 7,
+      "received": "10000011",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "11101011",
+      "span": 8,
+      "received": "10000010",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "11101100",
+      "span": 6,
+      "received": "10000101",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11101101",
+      "span": 8,
+      "received": "10000100",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "11101110",
+      "span": 7,
+      "received": "10000111",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "11101111",
+      "span": 8,
+      "received": "10000110",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "11110000",
+      "span": 4,
+      "received": "10011001",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "11110001",
+      "span": 8,
+      "received": "10011000",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "11110010",
+      "span": 7,
+      "received": "10011011",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "11110011",
+      "span": 8,
+      "received": "10011010",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "11110100",
+      "span": 6,
+      "received": "10011101",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "11110101",
+      "span": 8,
+      "received": "10011100",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "11110110",
+      "span": 7,
+      "received": "10011111",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 3
+    },
+    {
+      "error": "11110111",
+      "span": 8,
+      "received": "10011110",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11111000",
+      "span": 5,
+      "received": "10010001",
+      "remainder": 6,
+      "received_remainder": 6,
+      "alternate_remainder": 4
+    },
+    {
+      "error": "11111001",
+      "span": 8,
+      "received": "10010000",
+      "remainder": 7,
+      "received_remainder": 7,
+      "alternate_remainder": 5
+    },
+    {
+      "error": "11111010",
+      "span": 7,
+      "received": "10010011",
+      "remainder": 4,
+      "received_remainder": 4,
+      "alternate_remainder": 6
+    },
+    {
+      "error": "11111011",
+      "span": 8,
+      "received": "10010010",
+      "remainder": 5,
+      "received_remainder": 5,
+      "alternate_remainder": 7
+    },
+    {
+      "error": "11111100",
+      "span": 6,
+      "received": "10010101",
+      "remainder": 2,
+      "received_remainder": 2,
+      "alternate_remainder": 0
+    },
+    {
+      "error": "11111101",
+      "span": 8,
+      "received": "10010100",
+      "remainder": 3,
+      "received_remainder": 3,
+      "alternate_remainder": 1
+    },
+    {
+      "error": "11111110",
+      "span": 7,
+      "received": "10010111",
+      "remainder": 0,
+      "received_remainder": 0,
+      "alternate_remainder": 2
+    },
+    {
+      "error": "11111111",
+      "span": 8,
+      "received": "10010110",
+      "remainder": 1,
+      "received_remainder": 1,
+      "alternate_remainder": 3
+    }
+  ],
+  "crc32_vectors": [
+    {
+      "name": "standard-check",
+      "payload_hex": "313233343536373839",
+      "checksum_hex": "CBF43926",
+      "little_endian_hex": "2639f4cb"
+    },
+    {
+      "name": "tiny-hi",
+      "payload_hex": "6869",
+      "checksum_hex": "D8932AAC",
+      "little_endian_hex": "ac2a93d8"
+    },
+    {
+      "name": "empty",
+      "payload_hex": "",
+      "checksum_hex": "00000000",
+      "little_endian_hex": "00000000"
+    }
+  ]
+}

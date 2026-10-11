@@ -105,3 +105,26 @@ make BUILD=build-stage4-sanitize CFLAGS='-std=c17 -O1 -g -Wall -Wextra -Wpedanti
 
 > [!question]- 参考答案与接受标准
 > 多消费者弹出顺序可能仍有锁保证，但消费完成顺序和各自FIR历史不再是一条流；需要单一顺序状态拥有者或明确序号与重新排序/状态合并，不能只加线程。队列结束要唤醒所有等待者并join全部已创建者；容量、线程栈和错误停止也重新核对。动态ABI结果必须由分配侧提供显式释放函数/不透明句柄或约定兼容分配器，不能默认C malloc与Rust/C++自由交叉释放。测试布局/长度/失败/取消/重入和生命周期；本机线程不支持时只能交条件接口，不把非标准替代跑通称作C11线程证明。
+
+
+## 跨语言错误保持的后续实验
+
+2026-10-11后续增量保留cabi.c/cabi.h和旧生产库字节，在abi_consumer.cpp与abi_consumer.rs增加同一错误矩阵。每次失败后分别检查abi_version、n、sum_mv、mean_mv、descriptive_variance_mv2、rms2_mv2六个字段等于先前成功对象；不比较可能存在的结构体padding字节，也不把结构体按字节协议传输。
+
+C++与Rust各覆盖12项：坏码4096、结果尺寸小1、NULL输入配n=0（EMPTY）、1000001超count（LIMIT）、NULL输入配n=1、scale0、scale NaN、offset无穷、interval NaN、scale1000001、offset1000000001、interval0。除了EMPTY/LIMIT，其余返回INVALID；每一项单独检查结果保持，不能等最后再检查。正常数组均为真实存活存储；超限count、错误尺寸和NULL路径由当前实现先拒绝，实验不通过虚构合法长度或悬空指针获得答案。
+
+此外检查NULL out返回INVALID；layout给实际10槽但声明9返回INVALID且10槽原字段全部保持，NULL layout同样INVALID。C++额外保留原迁移标定结果，Rust保留原四点与布局对照。异常/panic只在消费例验证失败时、C函数返回之后产生，没有导出回调、跨边界unwind或分配转移；不据这些测试认证任意unsafe调用。
+
+在stage4目录使用新的构建目录：
+
+```sh
+make BUILD=build-abi-failure build-abi-failure/abi_consumer
+build-abi-failure/abi_consumer
+make BUILD=build-abi-failure RUSTC=/Users/ysz/.cargo/bin/rustc rust-test
+make BUILD=build-abi-failure-sanitize CFLAGS='-std=c17 -O1 -g -Wall -Wextra -Wpedantic -Wconversion -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -fno-sanitize-recover=all' CXXFLAGS='-std=c++17 -O1 -g -Wall -Wextra -Wpedantic -Wconversion -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -fno-sanitize-recover=all' build-abi-failure-sanitize/abi_consumer
+build-abi-failure-sanitize/abi_consumer
+```
+
+实际Apple clang/clang++21.0.0（clang-2100.3.34.2）、arm64-apple-darwin27.0.0，stage4 Makefile显式/usr/bin/clang与/usr/bin/clang++。Rust为已安装的rustc1.89.0（29483883e 2025-08-04），edition2021，无Cargo依赖下载。两种普通消费均返回0，输出12_error_cases/all_fields_unchanged/null_output/layout_rejection；C++本目标仍报告result_bytes40、result_align8、mean_offset16、rms2_offset32。C++的ASan/UBSan消费返回0、无报错；Rust未消毒器，不继承C++的消毒器成绩。第一次从父工程目录误调用rust-test没有对应目标，未生成ABI结果；上述命令在stage4目录修正执行后才构成实跑证据。
+
+本增量只重建必要ABI库/消费者，没有改probe、thread_queue或复跑不支持的队列入口；原C11线程77及完整主体未编译/未运行结论保持。本故障矩阵尚待独立复核，底层FILE读取/关闭注入另见 [[计算机知识/80-实践/09-C语言/01-测量流与有界数据结构/README#可控读取与关闭故障：2026-10-11 后续实验|FILE故障与清理]]。

@@ -1,6 +1,6 @@
 use std::mem::{align_of, offset_of, size_of};
 #[repr(C)]
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 struct Stats {
     abi_version: u32,
     n: u32,
@@ -34,12 +34,41 @@ fn main() {
     assert_eq!((result.abi_version, result.n), (1, 4));
     assert_eq!((result.sum_mv, result.mean_mv, result.descriptive_variance_mv2, result.rms2_mv2),
         (20.0, 5.0, 5.0, 30.0));
+    let before = result;
     let bad = [4096_u16];
-    // Same validity contract, now checking failure leaves existing output intact.
-    assert_eq!(unsafe { wwl_c_measure_v1(bad.as_ptr(), 1, 1.0, 0.0, 1.0,
-        &mut result, size_of::<Stats>() as u32) }, 1);
-    assert_eq!((result.abi_version, result.n, result.sum_mv, result.mean_mv,
-        result.descriptive_variance_mv2, result.rms2_mv2), (1,4,20.0,5.0,5.0,30.0));
-    println!("C_ABI_RUST=PASS repr_C,layout,borrowed_input,errors,units");
+    // Each tuple carries a real pointer plus its admissible extent, or a count
+    // rejected before reading. No fake valid range is ever dereferenced.
+    let cases = [
+        (bad.as_ptr(), 1, 1.0, 0.0, 1.0, size_of::<Stats>() as u32, 1),
+        (codes.as_ptr(), 4, 1.0, 0.0, 1.0, size_of::<Stats>() as u32 - 1, 1),
+        (std::ptr::null(), 0, 1.0, 0.0, 1.0, size_of::<Stats>() as u32, 3),
+        (codes.as_ptr(), 1_000_001, 1.0, 0.0, 1.0, size_of::<Stats>() as u32, 2),
+        (std::ptr::null(), 1, 1.0, 0.0, 1.0, size_of::<Stats>() as u32, 1),
+        (codes.as_ptr(), 4, 0.0, 0.0, 1.0, size_of::<Stats>() as u32, 1),
+        (codes.as_ptr(), 4, f64::NAN, 0.0, 1.0, size_of::<Stats>() as u32, 1),
+        (codes.as_ptr(), 4, 1.0, f64::INFINITY, 1.0, size_of::<Stats>() as u32, 1),
+        (codes.as_ptr(), 4, 1.0, 0.0, f64::NAN, size_of::<Stats>() as u32, 1),
+        (codes.as_ptr(), 4, 1_000_001.0, 0.0, 1.0, size_of::<Stats>() as u32, 1),
+        (codes.as_ptr(), 4, 1.0, 1_000_000_001.0, 1.0, size_of::<Stats>() as u32, 1),
+        (codes.as_ptr(), 4, 1.0, 0.0, 0.0, size_of::<Stats>() as u32, 1),
+    ];
+    for (pointer, n, scale, offset, interval, bytes, expected_status) in cases {
+        // SAFETY: admissible nonnull ranges are real arrays; invalid pointer/count
+        // pairs and wrong sizes are documented early rejects. result remains a
+        // valid separate object, and C retains/frees no caller storage.
+        let got = unsafe { wwl_c_measure_v1(pointer, n, scale, offset, interval,
+            &mut result, bytes) };
+        assert_eq!(got, expected_status);
+        assert_eq!(result, before); // all six fields, checked after every call
+    }
+    // Null out is an explicit INVALID path; no output storage is accessed.
+    assert_eq!(unsafe { wwl_c_measure_v1(codes.as_ptr(), 4, 1.0, 0.0, 1.0,
+        std::ptr::null_mut(), size_of::<Stats>() as u32) }, 1);
+    let saved_layout = layout;
+    // Ten real slots exist even when the wrong logical length is supplied.
+    assert_eq!(unsafe { wwl_c_layout_v1(layout.as_mut_ptr(), 9) }, 1);
+    assert_eq!(layout, saved_layout);
+    assert_eq!(unsafe { wwl_c_layout_v1(std::ptr::null_mut(), 10) }, 1);
+    println!("C_ABI_RUST=PASS repr_C,layout,12_error_cases,all_fields_unchanged,null_output,layout_rejection");
     // Any assert panic is in this Rust caller AFTER C has returned, not across C.
 }

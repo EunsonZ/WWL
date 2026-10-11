@@ -3,6 +3,7 @@
 #include <cstddef>
 #include <cstdio>
 #include <type_traits>
+#include <limits>
 static_assert(std::is_standard_layout<wwl_abi_stats_v1>::value,"result must be standard layout");
 static_assert(sizeof(wwl_abi_stats_v1) <= UINT32_MAX,"size field bound");
 static bool unchanged(wwl_abi_stats_v1 a, wwl_abi_stats_v1 b) {
@@ -29,9 +30,22 @@ int main() {
     if (wwl_c_measure_v1(nullptr,0,1,0,1,&result,sizeof result) != WWL_ABI_EMPTY || !unchanged(result,before)) return 1;
     if (wwl_c_measure_v1(codes,1000001,1,0,1,&result,sizeof result) != WWL_ABI_LIMIT || !unchanged(result,before)) return 1;
     if (wwl_c_measure_v1(codes,4,0,0,1,&result,sizeof result) != WWL_ABI_INVALID || !unchanged(result,before)) return 1;
+    const double nan=std::numeric_limits<double>::quiet_NaN();
+    const double inf=std::numeric_limits<double>::infinity();
+    const double invalid_calibration[][3]={{nan,0,1},{1,inf,1},{1,0,nan},
+        {1000001,0,1},{1,1000000001,1},{1,0,0}};
+    for (const auto &c : invalid_calibration)
+        if (wwl_c_measure_v1(codes,4,c[0],c[1],c[2],&result,sizeof result) != WWL_ABI_INVALID ||
+            !unchanged(result,before)) return 1;
+    if (wwl_c_measure_v1(nullptr,1,1,0,1,&result,sizeof result) != WWL_ABI_INVALID ||
+        !unchanged(result,before)) return 1;
+    if (wwl_c_measure_v1(codes,4,1,0,1,nullptr,sizeof result) != WWL_ABI_INVALID) return 1;
+    if (wwl_c_layout_v1(layout,WWL_ABI_LAYOUT_WORDS-1) != WWL_ABI_INVALID) return 1;
+    for (uint32_t i=0;i<WWL_ABI_LAYOUT_WORDS;++i) if (layout[i] != expected[i]) return 1;
+    if (wwl_c_layout_v1(nullptr,WWL_ABI_LAYOUT_WORDS) != WWL_ABI_INVALID) return 1;
     if (wwl_c_measure_v1(codes,4,0.25,-1,0.5,&result,sizeof result) != WWL_ABI_OK ||
         result.sum_mv!=1 || result.mean_mv!=0.25 || result.descriptive_variance_mv2!=0.3125 || result.rms2_mv2!=0.375) return 1;
-    std::printf("C_ABI=PASS C++consumer,layout,borrowed_input,errors,unchanged_output,units\n");
+    std::printf("C_ABI=PASS C++consumer,layout,borrowed_input,12_error_cases,all_fields_unchanged,null_output,layout_rejection,units\n");
     std::printf("result_bytes=%u result_align=%u mean_offset=%u rms2_offset=%u\n",layout[5],layout[6],layout[8],layout[9]);
     return 0;
 }

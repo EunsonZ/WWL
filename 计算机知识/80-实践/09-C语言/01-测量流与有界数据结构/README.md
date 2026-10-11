@@ -141,3 +141,37 @@ build-20261011/first_input < fixtures/first-input.txt
 字节解析→[[计算机知识/10-编程语言/03-C语言/10-系统课程/10-对象表示别名与二进制解析#先构造值，再考虑优化|对象模型]]→解释为什么奇地址可以逐字节解析而虚构size仍不合法；环形状态→[[信号与系统/20-数字信号处理/01-FIR滤波设计与频率规格#手算核与迁移验收|FIR零延拓与尾部]]→保留跨批次状态；统计字段→[[电子电路/38-随机噪声与测量/01-RMS方差相关与谱密度#同一记录的中心与平方|有限记录的RMS²恒等式]]→用30=25+5确认单位和分母。三个往返题的答案要能回到本工具实际数据与对象，不能只说“有链接”。
 
 不给操作提示的题与可折叠答案已放在第11/12讲；读者可改变键数、窗口核、scale/offset/dt后提交自己的预测与结果。源码和固定测试支撑模型走读，不代替真实读者的解释与反馈。
+
+
+## 可控读取与关闭故障：2026-10-11 后续实验
+
+上面的阶段0–3记录保留当时未注入读取/关闭故障的事实。本节是随后在同一生产源码上的新增宿主实验，入口为 `tests/test_io_faults.c`，单独目标 `io-fault-test`；没有改变解析器、CLI、词频、ABI实现或线程支持分支。这里认证受控 FILE 故障路径，仍不认证真实设备或文件系统全部故障。
+
+`funopen` 是 macOS/BSD 的 stdio 扩展，不是 ISO C17；本实验当前只启用 `__APPLE__` 分支，其他宿主的测试程序输出 `UNSUPPORTED_HOST_FUNOPEN` 并返回77（make目标随之失败，不能报测试通过）。标准C17没有让读者为任意FILE注入底层read/close失败的统一入口，因此这一夹具单独注明平台，不给生产库加全局故障开关，也不把可控失败描述成真实磁盘损坏。
+
+输入回调提供固定字节，在指定字节位置返回−1并设errno=EIO；真实stdio因此置ferror。分别在读取count/header前、已分配样本后的半记录、完整记录末尾确认EOF时失败：text与binary都返回MS_IO，初始化的out仍为空，临时数组释放。词频在两个键准备后确认EOF失败，词表不交付，键全部释放。它们与缺字节但没有ferror的MS_TRUNCATED是不同路径；原截断测试仍在test_measure中。
+
+CLI实验直接包含当前 `src/main.c` 并把main改名，在这个测试翻译单元里仅重定向fopen工厂、stdout/stderr对象和默认allocator；生产文件本身不改。其余解析、fread/fgetc/ferror、fwrite、fflush、fclose、状态选择与destroy都执行真实代码。输入/输出FILE由funopen建立，stderr为tmpfile；回调context是测试持有的自动对象，活到关闭结束，不由stdio释放。自定义allocator跟踪每次分配与匹配释放，所有运行结束live=0且allocs=frees。测试保留assert，不能以NDEBUG构建后把跳过的调用当验证。
+
+| 故障注入 | 观察与输出合同 |
+| --- | --- |
+| text读取到第4字节后失败 | 退出1，error=io，stdout空，临时样本释放 |
+| 合法完整输入的关闭回调失败 | 退出1，error=io，stdout空；解析成功的拥有数组仍销毁 |
+| 坏码4096后输入关闭也失败 | 退出1，error=invalid；后续关闭错误不覆盖先前主错误 |
+| 无缓冲输出第2次底层write失败 | 退出1，error=io，已经接收的4字节 `n=4\n` 保留；没有输出回滚承诺 |
+| 有缓冲报告在fflush时首次write失败 | 退出1，error=io，此夹具接收0字节；仍关闭输出 |
+| write与fflush成功，仅输出close回调失败 | 退出1，error=io；完整124字节参考报告已接收，不能据完整文本判进程成功 |
+
+六个CLI故障用例均检查输入/输出的关闭回调各执行一次、stderr精确诊断、输出为空/精确前缀/完整字节、拥有数组释放。这里只接收整段或返回−1；没有覆盖底层正数短写、stderr自身失败、close后重试、操作系统持久化或多线程共享FILE。回调返回非零的关闭错误模拟了接口失败，不能由该注入说明特定文件系统何时失败；errno和ferror用于区分观测，退出状态和主错误合同由当前程序负责。
+
+在工程目录以一个新输出目录运行：
+
+```sh
+make CC=/usr/bin/clang BUILD=build-failure test
+make CC=/usr/bin/clang BUILD=build-failure io-fault-test
+make CC=/usr/bin/clang BUILD=build-failure-sanitize CFLAGS='-std=c17 -O1 -g -Wall -Wextra -Wpedantic -Wconversion -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -fno-sanitize-recover=all' io-fault-test
+```
+
+本节实际运行于Apple clang21.0.0（clang-2100.3.34.2）、arm64-apple-darwin27.0.0，编译命令显式CC=/usr/bin/clang，Python3.14.7。普通make test返回0，原C合同测试PASS、7组CLI成功；新增io-fault-test普通与ASan/UBSan两次均返回0，输出read_faults=PASS及六项cli_fault=... PASS，最后stdio_faults=PASS。六项output_bytes按表顺序为0、0、0、4、0、124，每项allocations_released=1且input_closed=1/output_closed=1。ASan/UBSan无报错，不代替全部路径或独立LeakSanitizer认证。构建目录仅为本机可再生结果，不属于源码交付。
+
+同轮新增C++/Rust的完整字段错误保持矩阵与真实命令见 [[计算机知识/80-实践/09-C语言/01-测量流与有界数据结构/stage4/README#跨语言错误保持的后续实验|ABI故障消费]]。本段仍待未参与修改者独立核对；它收窄此前读取/关闭故障的未验范围，但没有改变C11线程主体未编译/未运行、真实freestanding启动、硬件/时序、其他ABI目标、客户端与真人学习等边界。

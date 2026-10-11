@@ -181,3 +181,7 @@ UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 \
 基准固定24任务×2048原码，w32/h16=>各127窗口，队列2。1/2/3worker各1次暖机+7次样本。计时包括任务复制、线程启动、解析、扫描、格式化、拥有结果复制、完整文本一致性校验与join；不包括固定输入生成和输出。原始样本、环境和观察摘要见同目录[evidence/README.md](evidence/README.md)、[benchmark.csv](evidence/benchmark.csv)、[benchmark-runtime.json](evidence/benchmark-runtime.json)。这些是本机观察，不能承诺其他机器/负载、尾延迟或内存硬上限；不包含汇编/向量化/NUMA实验。完整应用峰值还取决于保留结果、窗口存储、线程栈与分配器元数据，队列槽位不能替代总内存证明。
 
 原有界任务段Debug/Release完整CTest各8/8；本段增加普通分配故障后各9/9。默认安装独立consumer仍为3项。自定义public-api目录另行验证结果见证据页。结果PMR故障的10个分配点沿用第13讲真实测试，其计数域没有扩展到本段所有普通分配。高级模块/ABI/协程的接续接口和预期证据列于第14讲；尚未跑这些实验，#244保持未全完成。
+
+## 单线程协程帧的高级消费者
+
+[[计算机知识/10-编程语言/02-C++/10-系统课程/16-协程帧拥有暂停与取消|第16讲]]和[advanced/coroutine/README.md](advanced/coroutine/README.md)继续兑现前述协程分支的单线程范围。该独立CMake工程只find_package已安装组件：输入/设置进入拥有帧，ReportSession跨实际co_await挂起，最终只交付拥有string；正常、取消、失败、移动和帧释放在Debug/Release各两项CTest验证。它有独立构建入口，不增加上文旧工程的8项测试，也不把旧consumer的3项改称本批重跑。没有外部事件调度、并发恢复、异步I/O、模块或跨编译器ABI认证；帧计数不扩展PMR或普通allocator故障覆盖。

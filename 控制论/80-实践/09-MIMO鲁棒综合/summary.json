@@ -1,0 +1,86 @@
+{
+  "accepted_exact_certificate": true,
+  "K_numeric": [
+    [
+      -16.14719847678895,
+      5.7556977220898755
+    ],
+    [
+      3.0984338082599905,
+      -5.719028301291593
+    ]
+  ],
+  "eta": "32741/100000",
+  "gamma_numeric": 0.5721975183448457,
+  "frequency_diagnostic": {
+    "parameter_grid_per_axis": 7,
+    "frequency_count": 402,
+    "peak_observed": {
+      "sigma": 0.5594790385460354,
+      "theta": [
+        -1.0,
+        -1.0
+      ],
+      "omega": 0.0
+    },
+    "proof": false
+  },
+  "trajectory_diagnostics": [
+    {
+      "name": "zero_x0",
+      "gain_multiplier": 1.0,
+      "x0": [
+        0.0,
+        0.0
+      ],
+      "t_end": 12.0,
+      "Ew": 0.4749999999843674,
+      "Ez": 0.10552869143093098,
+      "Ex": 0.008151763502997225,
+      "Eu": 0.3895077117117344,
+      "V0": 0.0,
+      "V_end": 1.837902769622678e-12,
+      "eta_Ew_plus_V0": 0.15551974999488172,
+      "dissipation_slack": 0.04999105856211283,
+      "certificate_applies_to_gain": true
+    },
+    {
+      "name": "nonzero_x0",
+      "gain_multiplier": 1.0,
+      "x0": [
+        1.0,
+        -0.5
+      ],
+      "t_end": 12.0,
+      "Ew": 0.47499999998433967,
+      "Ez": 2.978446895934447,
+      "Ex": 0.04102582595665799,
+      "Eu": 11.749684279911184,
+      "V0": 6.2499327151260164,
+      "V_end": 1.8379204997375125e-12,
+      "eta_Ew_plus_V0": 6.405452465120889,
+      "dissipation_slack": 3.4270055691846038,
+      "certificate_applies_to_gain": true
+    },
+    {
+      "name": "high_gain",
+      "gain_multiplier": 3.0,
+      "x0": [
+        0.0,
+        0.0
+      ],
+      "t_end": 12.0,
+      "Ew": 0.47499999998444586,
+      "Ez": 0.11621645198344742,
+      "Ex": 0.0013469145669665402,
+      "Eu": 0.45947814966592293,
+      "V0": 0.0,
+      "V_end": 1.0396034979403075e-13,
+      "eta_Ew_plus_V0": 0.15551974999490742,
+      "dissipation_slack": 0.03930329801135604,
+      "certificate_applies_to_gain": false
+    }
+  ],
+  "outside_box_certificate_failure_count": 4,
+  "runtime_scope": "Numerical synthesis, exact rational certificate verification, finite-grid frequency SVD and ODE simulation. No physical plant or human learning outcome tested."
+}

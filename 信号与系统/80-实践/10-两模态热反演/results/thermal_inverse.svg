@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1210" viewBox="0 0 1200 1210">
+<title>Two-mode heat inverse: smoothing, bias and posterior variance</title>
+<desc>All axes are dimensionless. Neumann modes phi0 and phi1; T=ln(q). Panel one shows true heat profiles; panel two weak-coordinate estimators versus observation; panel three independent-repeat posterior variances. Values come from inputs.json.</desc>
+<rect width="1200" height="1210" fill="white"/>
+<g font-family="Arial,sans-serif" font-size="17" fill="#17202a">
+<text x="55" y="65" font-size="22" text-anchor="start">1  Forward diffusion keeps the mean and attenuates the cosine</text>
+<path d="M100 90 V315 H820" fill="none" stroke="#333"/>
+<path d="M100.000 315 v6" stroke="#333"/>
+<text x="88" y="338" font-size="17" text-anchor="start">0</text>
+<path d="M329.183 315 v6" stroke="#333"/>
+<text x="317" y="356" font-size="17" text-anchor="start">1</text>
+<path d="M558.366 315 v6" stroke="#333"/>
+<text x="546" y="338" font-size="17" text-anchor="start">2</text>
+<path d="M820.000 315 v6" stroke="#333"/>
+<text x="808" y="356" font-size="17" text-anchor="start">3.142</text>
+<path d="M94 295.816 H820" stroke="#ddd"/>
+<text x="88" y="301" font-size="17" text-anchor="end">-0.23</text>
+<path d="M94 202.992 H820" stroke="#ddd"/>
+<text x="88" y="208" font-size="17" text-anchor="end">0.56</text>
+<path d="M94 108.994 H820" stroke="#ddd"/>
+<text x="88" y="114" font-size="17" text-anchor="end">1.36</text>
+<text x="350" y="375" font-size="17" text-anchor="start">space xi (dimensionless)</text>
+<text x="100" y="86" font-size="17" text-anchor="start">u (temperature / theta0)</text>
+<polyline points="100.000,108.750 105.625,108.778 111.250,108.863 116.875,109.004 122.500,109.201 128.125,109.455 133.750,109.765 139.375,110.130 145.000,110.551 150.625,111.028 156.250,111.560 161.875,112.146 167.500,112.787 173.125,113.482 178.750,114.230 184.375,115.032 190.000,115.886 195.625,116.793 201.250,117.751 206.875,118.760 212.500,119.820 218.125,120.929 223.750,122.088 229.375,123.295 235.000,124.550 240.625,125.851 246.250,127.199 251.875,128.593 257.500,130.030 263.125,131.512 268.750,133.036 274.375,134.602 280.000,136.209 285.625,137.856 291.250,139.541 296.875,141.265 302.500,143.026 308.125,144.822 313.750,146.653 319.375,148.518 325.000,150.415 330.625,152.344 336.250,154.303 341.875,156.291 347.500,158.307 353.125,160.349 358.750,162.417 364.375,164.509 370.000,166.623 375.625,168.760 381.250,170.917 386.875,173.092 392.500,175.286 398.125,177.496 403.750,179.721 409.375,181.959 415.000,184.210 420.625,186.472 426.250,188.744 431.875,191.024 437.500,193.311 443.125,195.603 448.750,197.900 454.375,200.199 460.000,202.500 465.625,204.801 471.250,207.100 476.875,209.397 482.500,211.689 488.125,213.976 493.750,216.256 499.375,218.528 505.000,220.790 510.625,223.041 516.250,225.279 521.875,227.504 527.500,229.714 533.125,231.908 538.750,234.083 544.375,236.240 550.000,238.377 555.625,240.491 561.250,242.583 566.875,244.651 572.500,246.693 578.125,248.709 583.750,250.697 589.375,252.656 595.000,254.585 600.625,256.482 606.250,258.347 611.875,260.178 617.500,261.974 623.125,263.735 628.750,265.459 634.375,267.144 640.000,268.791 645.625,270.398 651.250,271.964 656.875,273.488 662.500,274.970 668.125,276.407 673.750,277.801 679.375,279.149 685.000,280.450 690.625,281.705 696.250,282.912 701.875,284.071 707.500,285.180 713.125,286.240 718.750,287.249 724.375,288.207 730.000,289.114 735.625,289.968 741.250,290.770 746.875,291.518 752.500,292.213 758.125,292.854 763.750,293.440 769.375,293.972 775.000,294.449 780.625,294.870 786.250,295.235 791.875,295.545 797.500,295.799 803.125,295.996 808.750,296.137 814.375,296.222 820.000,296.250" fill="none" stroke="#2166ac" stroke-width="3" stroke-dasharray=""/>
+<polyline points="100.000,201.562 105.625,201.563 111.250,201.564 116.875,201.565 122.500,201.567 128.125,201.570 133.750,201.573 139.375,201.576 145.000,201.581 150.625,201.585 156.250,201.591 161.875,201.596 167.500,201.603 173.125,201.610 178.750,201.617 184.375,201.625 190.000,201.634 195.625,201.643 201.250,201.653 206.875,201.663 212.500,201.673 218.125,201.684 223.750,201.696 229.375,201.708 235.000,201.720 240.625,201.734 246.250,201.747 251.875,201.761 257.500,201.775 263.125,201.790 268.750,201.805 274.375,201.821 280.000,201.837 285.625,201.854 291.250,201.870 296.875,201.888 302.500,201.905 308.125,201.923 313.750,201.942 319.375,201.960 325.000,201.979 330.625,201.998 336.250,202.018 341.875,202.038 347.500,202.058 353.125,202.078 358.750,202.099 364.375,202.120 370.000,202.141 375.625,202.163 381.250,202.184 386.875,202.206 392.500,202.228 398.125,202.250 403.750,202.272 409.375,202.295 415.000,202.317 420.625,202.340 426.250,202.362 431.875,202.385 437.500,202.408 443.125,202.431 448.750,202.454 454.375,202.477 460.000,202.500 465.625,202.523 471.250,202.546 476.875,202.569 482.500,202.592 488.125,202.615 493.750,202.638 499.375,202.660 505.000,202.683 510.625,202.705 516.250,202.728 521.875,202.750 527.500,202.772 533.125,202.794 538.750,202.816 544.375,202.837 550.000,202.859 555.625,202.880 561.250,202.901 566.875,202.922 572.500,202.942 578.125,202.962 583.750,202.982 589.375,203.002 595.000,203.021 600.625,203.040 606.250,203.058 611.875,203.077 617.500,203.095 623.125,203.112 628.750,203.130 634.375,203.146 640.000,203.163 645.625,203.179 651.250,203.195 656.875,203.210 662.500,203.225 668.125,203.239 673.750,203.253 679.375,203.266 685.000,203.280 690.625,203.292 696.250,203.304 701.875,203.316 707.500,203.327 713.125,203.337 718.750,203.347 724.375,203.357 730.000,203.366 735.625,203.375 741.250,203.383 746.875,203.390 752.500,203.397 758.125,203.404 763.750,203.409 769.375,203.415 775.000,203.419 780.625,203.424 786.250,203.427 791.875,203.430 797.500,203.433 803.125,203.435 808.750,203.436 814.375,203.437 820.000,203.438" fill="none" stroke="#b2182b" stroke-width="3" stroke-dasharray="8 5"/>
+<text x="835" y="130" font-size="17" text-anchor="start">solid: t=0</text>
+<text x="835" y="158" font-size="17" text-anchor="start">dashed: t=T</text>
+<text x="100" y="420" font-size="17" text-anchor="start">q=100; T=ln(q); x=(1, 1); zero flux at both ends</text>
+<text x="55" y="465" font-size="22" text-anchor="start">2  Less sensitivity still leaves a noiseless shrinkage bias</text>
+<path d="M100 490 V715 H820" fill="none" stroke="#333"/>
+<path d="M460.000 715 v6" stroke="#333"/>
+<text x="448" y="738" font-size="17" text-anchor="start">0.01</text>
+<path d="M490.000 715 v6" stroke="#333"/>
+<text x="478" y="756" font-size="17" text-anchor="start">0.011</text>
+<path d="M760.000 715 v6" stroke="#333"/>
+<text x="748" y="738" font-size="17" text-anchor="start">0.02</text>
+<path d="M94 685.833 H820" stroke="#ddd"/>
+<text x="88" y="691" font-size="17" text-anchor="end">0</text>
+<path d="M94 602.500 H820" stroke="#ddd"/>
+<text x="88" y="608" font-size="17" text-anchor="end">1</text>
+<path d="M94 502.500 H820" stroke="#ddd"/>
+<text x="88" y="508" font-size="17" text-anchor="end">2.2</text>
+<text x="350" y="775" font-size="17" text-anchor="start">weak observation y1 (dimensionless)</text>
+<text x="100" y="486" font-size="17" text-anchor="start">estimate of x1 (dimensionless)</text>
+<polyline points="100.000,702.500 820.000,502.500" fill="none" stroke="#2166ac" stroke-width="3" stroke-dasharray=""/>
+<polyline points="100.000,694.167 820.000,594.167" fill="none" stroke="#b2182b" stroke-width="3" stroke-dasharray="8 5"/>
+<polyline points="100.000,602.500 820.000,602.500" fill="none" stroke="#555" stroke-width="3" stroke-dasharray="3 4"/>
+<text x="835" y="530" font-size="17" text-anchor="start">solid: direct</text>
+<text x="835" y="558" font-size="17" text-anchor="start">dashed: ridge</text>
+<text x="835" y="586" font-size="17" text-anchor="start">dotted: truth</text>
+<text x="100" y="820" font-size="17" text-anchor="start">lambda=0.0001; weak gains: direct=100, ridge=50</text>
+<text x="55" y="865" font-size="22" text-anchor="start">3  Independent repeats add precision; absolute scales matter</text>
+<path d="M100 890 V1115 H820" fill="none" stroke="#333"/>
+<path d="M244.000 1115 v6" stroke="#333"/>
+<text x="232" y="1138" font-size="17" text-anchor="start">1</text>
+<path d="M388.000 1115 v6" stroke="#333"/>
+<text x="376" y="1156" font-size="17" text-anchor="start">2</text>
+<path d="M676.000 1115 v6" stroke="#333"/>
+<text x="664" y="1138" font-size="17" text-anchor="start">4</text>
+<path d="M94 1115.000 H820" stroke="#ddd"/>
+<text x="88" y="1120" font-size="17" text-anchor="end">0</text>
+<path d="M94 1002.500 H820" stroke="#ddd"/>
+<text x="88" y="1008" font-size="17" text-anchor="end">1.15</text>
+<path d="M94 919.348 H820" stroke="#ddd"/>
+<text x="88" y="924" font-size="17" text-anchor="end">2</text>
+<text x="350" y="1175" font-size="17" text-anchor="start">m independent observations (count)</text>
+<text x="100" y="886" font-size="17" text-anchor="start">Var(x1 | data) (dimensionless squared)</text>
+<polyline points="244.000,1066.087 388.000,1082.391 676.000,1095.435" fill="none" stroke="#2166ac" stroke-width="3" stroke-dasharray=""/>
+<circle cx="244.000" cy="1066.087" r="4" fill="#2166ac"/>
+<circle cx="388.000" cy="1082.391" r="4" fill="#2166ac"/>
+<circle cx="676.000" cy="1095.435" r="4" fill="#2166ac"/>
+<text x="835" y="912" font-size="14" text-anchor="start">A: nv=0.0001, pv=1</text>
+<polyline points="244.000,919.348 388.000,984.565 676.000,1036.739" fill="none" stroke="#b2182b" stroke-width="3" stroke-dasharray=""/>
+<circle cx="244.000" cy="919.348" r="4" fill="#b2182b"/>
+<circle cx="388.000" cy="984.565" r="4" fill="#b2182b"/>
+<circle cx="676.000" cy="1036.739" r="4" fill="#b2182b"/>
+<text x="835" y="937" font-size="14" text-anchor="start">B: nv=0.0004, pv=4</text>
+</g></svg>

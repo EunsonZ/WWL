@@ -1,0 +1,287 @@
+{
+  "model": {
+    "A_diagonal": [
+      "1",
+      "1/100"
+    ],
+    "T_dimensionless": "ln(100)",
+    "kappa2": 100,
+    "truth": [
+      "1",
+      "1"
+    ],
+    "clean_observation": [
+      "1",
+      "1/100"
+    ],
+    "lambda": "1/10000",
+    "direct_gain": [
+      "1",
+      "100"
+    ],
+    "ridge_gain": [
+      "10000/10001",
+      "50"
+    ],
+    "ridge_noiseless_bias": [
+      "-1/10001",
+      "-1/2"
+    ]
+  },
+  "estimates": [
+    {
+      "case": "main",
+      "method": "direct",
+      "y": [
+        "1",
+        "1/50"
+      ],
+      "estimate": [
+        "1",
+        "2"
+      ],
+      "coordinate_squared_errors": [
+        "0",
+        "1"
+      ],
+      "squared_error_sum": "1",
+      "mse_over_two": "1/2",
+      "residual_y_minus_Ax": [
+        "0",
+        "0"
+      ],
+      "residual_squared_sum": "0"
+    },
+    {
+      "case": "main",
+      "method": "ridge",
+      "y": [
+        "1",
+        "1/50"
+      ],
+      "estimate": [
+        "10000/10001",
+        "1"
+      ],
+      "coordinate_squared_errors": [
+        "1/100020001",
+        "0"
+      ],
+      "squared_error_sum": "1/100020001",
+      "mse_over_two": "1/200040002",
+      "residual_y_minus_Ax": [
+        "1/10001",
+        "1/100"
+      ],
+      "residual_squared_sum": "100030001/1000200010000"
+    },
+    {
+      "case": "changed",
+      "method": "direct",
+      "y": [
+        "1",
+        "11/1000"
+      ],
+      "estimate": [
+        "1",
+        "11/10"
+      ],
+      "coordinate_squared_errors": [
+        "0",
+        "1/100"
+      ],
+      "squared_error_sum": "1/100",
+      "mse_over_two": "1/200",
+      "residual_y_minus_Ax": [
+        "0",
+        "0"
+      ],
+      "residual_squared_sum": "0"
+    },
+    {
+      "case": "changed",
+      "method": "ridge",
+      "y": [
+        "1",
+        "11/1000"
+      ],
+      "estimate": [
+        "10000/10001",
+        "11/20"
+      ],
+      "coordinate_squared_errors": [
+        "1/100020001",
+        "81/400"
+      ],
+      "squared_error_sum": "8101620481/40008000400",
+      "mse_over_two": "8101620481/80016000800",
+      "residual_y_minus_Ax": [
+        "1/10001",
+        "11/2000"
+      ],
+      "residual_squared_sum": "12106420121/400080004000000"
+    },
+    {
+      "case": "noiseless",
+      "method": "direct",
+      "y": [
+        "1",
+        "1/100"
+      ],
+      "estimate": [
+        "1",
+        "1"
+      ],
+      "coordinate_squared_errors": [
+        "0",
+        "0"
+      ],
+      "squared_error_sum": "0",
+      "mse_over_two": "0",
+      "residual_y_minus_Ax": [
+        "0",
+        "0"
+      ],
+      "residual_squared_sum": "0"
+    },
+    {
+      "case": "noiseless",
+      "method": "ridge",
+      "y": [
+        "1",
+        "1/100"
+      ],
+      "estimate": [
+        "10000/10001",
+        "1/2"
+      ],
+      "coordinate_squared_errors": [
+        "1/100020001",
+        "1/4"
+      ],
+      "squared_error_sum": "100020005/400080004",
+      "mse_over_two": "100020005/800160008",
+      "residual_y_minus_Ax": [
+        "1/10001",
+        "1/200"
+      ],
+      "residual_squared_sum": "100060001/4000800040000"
+    }
+  ],
+  "gaussians": [
+    {
+      "name": "A",
+      "noise_variance": "1/10000",
+      "prior_variance": "1",
+      "lambda": "1/10000",
+      "mean": [
+        "10000/10001",
+        "1"
+      ],
+      "covariance_diagonal": [
+        "1/10001",
+        "1/2"
+      ]
+    },
+    {
+      "name": "B",
+      "noise_variance": "1/2500",
+      "prior_variance": "4",
+      "lambda": "1/10000",
+      "mean": [
+        "10000/10001",
+        "1"
+      ],
+      "covariance_diagonal": [
+        "4/10001",
+        "2"
+      ]
+    }
+  ],
+  "repeats": [
+    {
+      "name": "A",
+      "m_independent": 1,
+      "weak_variance": "1/2",
+      "null_variance": "1"
+    },
+    {
+      "name": "A",
+      "m_independent": 2,
+      "weak_variance": "1/3",
+      "null_variance": "1"
+    },
+    {
+      "name": "A",
+      "m_independent": 4,
+      "weak_variance": "1/5",
+      "null_variance": "1"
+    },
+    {
+      "name": "B",
+      "m_independent": 1,
+      "weak_variance": "2",
+      "null_variance": "4"
+    },
+    {
+      "name": "B",
+      "m_independent": 2,
+      "weak_variance": "4/3",
+      "null_variance": "4"
+    },
+    {
+      "name": "B",
+      "m_independent": 4,
+      "weak_variance": "4/5",
+      "null_variance": "4"
+    }
+  ],
+  "coordinate_change": {
+    "case": "A",
+    "definition": "x=Dz, y_new=Sy",
+    "D_diagonal": [
+      "1",
+      "100"
+    ],
+    "S_diagonal": [
+      "1",
+      "100"
+    ],
+    "A_new_diagonal": [
+      "1",
+      "100"
+    ],
+    "noise_new_diagonal": [
+      "1/10000",
+      "1"
+    ],
+    "prior_new_diagonal": [
+      "1",
+      "1/10000"
+    ],
+    "mean_z": [
+      "10000/10001",
+      "1/100"
+    ],
+    "covariance_z_diagonal": [
+      "1/10001",
+      "1/20000"
+    ],
+    "mapped_mean_x": [
+      "10000/10001",
+      "1"
+    ],
+    "mapped_covariance_x_diagonal": [
+      "1/10001",
+      "1/2"
+    ],
+    "original_mean_x": [
+      "10000/10001",
+      "1"
+    ],
+    "original_covariance_x_diagonal": [
+      "1/10001",
+      "1/2"
+    ]
+  }
+}

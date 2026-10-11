@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 570" role="img">
+<title>Charged shell: local force balance and two time slices</title><desc>Left: membrane tensions on two tangents counter outward electric traction with 2 tau/a = p. Right: rest t=0 and observer t&#x27;=0 are different spacelike slices across the shell world tube. Units ct and x are lengths.</desc>
+<rect width="1040" height="100%" fill="#fafafa"/>
+<style>text{font-family:Arial,sans-serif;fill:#19212b} .axis{stroke:#19212b;stroke-width:1.4} .grid{stroke:#ccd4dd;stroke-width:1}</style>
+<text x="40" y="32" font-size="22">Charged shell: local force balance and two time slices</text>
+<defs><marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 Z" fill="#19212b"/></marker></defs>
+<circle cx="235" cy="260" r="125" fill="#eef5fa" stroke="#1769aa" stroke-width="3"/>
+<text x="228" y="264" font-size="20">Q</text>
+<line x1="235" y1="260" x2="360" y2="260" stroke="#19212b" marker-end="url(#arrow)"/>
+<text x="290" y="249" font-size="17">a</text>
+<line x1="360" y1="260" x2="440" y2="260" stroke="#19212b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="375" y="242" font-size="17">p n (out)</text>
+<path d="M360,260 Q357,220 342,195" fill="none" stroke="#a34b19" stroke-width="2.5"/>
+<polygon points="342,195 349.630,200.917 343.627,204.518" fill="#a34b19"/>
+<path d="M360,260 Q357,300 342,325" fill="none" stroke="#a34b19" stroke-width="2.5"/>
+<polygon points="342,325 343.627,315.482 349.630,319.083" fill="#a34b19"/>
+<text x="360" y="195" font-size="16">tangent tension tau</text>
+<text x="90" y="422" font-size="18">p = eps0 E(out)^2 / 2 ; 2 tau/a = p</text>
+<text x="90" y="454" font-size="16">p = 0.0357603 Pa ; tau = 0.000178802 N/m</text>
+<text x="90" y="483" font-size="16">Force arrows show directions, not a common scale.</text>
+<rect x="670" y="105" width="140" height="300" fill="#e8edf1"/>
+<line x1="650" y1="280" x2="980" y2="280" class="axis" marker-end="url(#arrow)"/>
+<line x1="740" y1="420" x2="740" y2="90" class="axis" marker-end="url(#arrow)"/>
+<text x="986" y="286" font-size="17">x/a</text><text x="750" y="93" font-size="17">ct/a</text>
+<line x1="670" y1="105" x2="670" y2="405" stroke="#526171" stroke-width="2"/>
+<line x1="810" y1="105" x2="810" y2="405" stroke="#526171" stroke-width="2"/>
+<text x="672" y="78" font-size="17">shell world tube in S</text>
+<line x1="660" y1="280" x2="955" y2="280" stroke="#1769aa" stroke-width="3"/>
+<text x="836" y="269" font-size="17" style="fill:#1769aa">rest t = 0</text>
+<line x1="660" y1="328.0000" x2="820" y2="232.0000" stroke="#a34b19" stroke-width="3"/>
+<text x="825" y="217.0000" font-size="17" style="fill:#a34b19">t prime = 0</text>
+<text x="648" y="450" font-size="17">Observer slice in rest coordinates: ct = beta x</text>
+<text x="648" y="480" font-size="16">Both slices are spacelike; they select different events.</text>
+<text x="40" y="545" font-size="14">Static shell and its Lorentz transforms only. Field tensor remains covariant; field slice integrals differ.</text>
+</svg>

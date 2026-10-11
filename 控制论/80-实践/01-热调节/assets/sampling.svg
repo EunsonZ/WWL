@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 410" role="img" aria-labelledby="title desc">
+<title id="title">Same gain: changing the sample period</title>
+<desc id="desc">Temperature deviation in K against time in s. Sampled values joined by straight lines, not continuous trajectories. C=10 J/K, H=1 W/K, kp=3 W/K; labels and dash patterns distinguish curves.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="75" y="25" font-size="17">Same gain: changing the sample period</text>
+<path d="M 75.0 95 v 235" stroke="#ddd"/>
+<text x="75.0" y="350" text-anchor="middle" font-size="13">0</text>
+<path d="M 205.0 95 v 235" stroke="#ddd"/>
+<text x="205.0" y="350" text-anchor="middle" font-size="13">12.8</text>
+<path d="M 335.0 95 v 235" stroke="#ddd"/>
+<text x="335.0" y="350" text-anchor="middle" font-size="13">25.6</text>
+<path d="M 465.0 95 v 235" stroke="#ddd"/>
+<text x="465.0" y="350" text-anchor="middle" font-size="13">38.4</text>
+<path d="M 595.0 95 v 235" stroke="#ddd"/>
+<text x="595.0" y="350" text-anchor="middle" font-size="13">51.2</text>
+<path d="M 725.0 95 v 235" stroke="#ddd"/>
+<text x="725.0" y="350" text-anchor="middle" font-size="13">64</text>
+<path d="M 75 330.0 h 650" stroke="#ddd"/>
+<text x="65" y="334.0" text-anchor="end" font-size="13">-8</text>
+<path d="M 75 271.25 h 650" stroke="#ddd"/>
+<text x="65" y="275.25" text-anchor="end" font-size="13">-3</text>
+<path d="M 75 212.5 h 650" stroke="#ddd"/>
+<text x="65" y="216.5" text-anchor="end" font-size="13">2</text>
+<path d="M 75 153.75 h 650" stroke="#ddd"/>
+<text x="65" y="157.75" text-anchor="end" font-size="13">7</text>
+<path d="M 75 95.0 h 650" stroke="#ddd"/>
+<text x="65" y="99.0" text-anchor="end" font-size="13">12</text>
+<text x="390" y="390" font-size="14">time t [s]</text>
+<text x="12" y="55" font-size="14">x [K]</text>
+<polyline points="75.000,236.000 85.156,227.055 95.312,221.514 105.469,218.083 115.625,215.958 125.781,214.642 135.938,213.826 146.094,213.322 156.250,213.009 166.406,212.815 176.562,212.695 186.719,212.621 196.875,212.575 207.031,212.546 217.188,212.529 227.344,212.518 237.500,212.511 247.656,212.507 257.812,212.504 267.969,212.503 278.125,212.502 288.281,212.501 298.438,212.501 308.594,212.500 318.750,212.500 328.906,212.500 339.062,212.500 349.219,212.500 359.375,212.500 369.531,212.500 379.688,212.500 389.844,212.500 400.000,212.500 410.156,212.500 420.312,212.500 430.469,212.500 440.625,212.500 450.781,212.500 460.938,212.500 471.094,212.500 481.250,212.500 491.406,212.500 501.562,212.500 511.719,212.500 521.875,212.500 532.031,212.500 542.188,212.500 552.344,212.500 562.500,212.500 572.656,212.500 582.812,212.500 592.969,212.500 603.125,212.500 613.281,212.500 623.438,212.500 633.594,212.500 643.750,212.500 653.906,212.500 664.062,212.500 674.219,212.500 684.375,212.500 694.531,212.500 704.688,212.500 714.844,212.500 725.000,212.500" fill="none" stroke="#222" stroke-width="2" stroke-dasharray=""/>
+<text x="75" y="45" font-size="12" fill="#222">P stable; Ts=1 s</text>
+<polyline points="75.000,236.000 156.250,184.237 237.500,246.492 318.750,171.619 400.000,261.667 481.250,153.368 562.500,283.618 643.750,126.968 725.000,315.368" fill="none" stroke="#1366a5" stroke-width="2" stroke-dasharray="8 4"/>
+<text x="75" y="61" font-size="12" fill="#1366a5">P unstable; Ts=8 s</text>
+</svg>

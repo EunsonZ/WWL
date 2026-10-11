@@ -1,0 +1,174 @@
+{
+  "si_inputs": {
+    "c_m_per_s": 299792458.0,
+    "epsilon_F_per_m": 8.8541878128e-12,
+    "q_C": 1e-09,
+    "L_m": 3.0,
+    "T_s": 1.0006922855944561e-08,
+    "beta_boost": 0.6,
+    "beta_pulse": 0.2
+  },
+  "uniform_field": {
+    "Eprime_over_E0": [
+      -0.0,
+      1.25,
+      -0.0
+    ],
+    "cBprime_over_E0": [
+      -0.0,
+      0.0,
+      -0.75
+    ],
+    "Bprime_T_for_E0_1V_per_m": [
+      -0.0,
+      0.0,
+      -2.5017307139861402e-09
+    ],
+    "forceprime_over_qE0": [
+      -0.0,
+      0.7999999999999999,
+      0.0
+    ],
+    "invariant_1": 1.0,
+    "invariant_2": 0.0,
+    "matrix_component_max_error": 7.108895957933346e-16,
+    "mixed_field_invariant_max_error": 2.3314683517128287e-15,
+    "covariant_force_max_error": 2.7194799110210365e-16,
+    "four_current_example": [
+      0.925,
+      -0.4750000000000001,
+      -0.2,
+      0.3
+    ]
+  },
+  "test_particle_alpha_t_over_c_1": {
+    "u_y_over_c": 0.7071067811865475,
+    "uprime_y_over_c": 0.565685424949238,
+    "uprime_magnitude_over_c": 0.824621125123532
+  },
+  "uniform_charge": {
+    "retarded_s_in_b_over_c": -1.25,
+    "retarded_time_ns": -12.5086535699307,
+    "retarded_x_m": -2.25,
+    "R_m": 3.75,
+    "kappa": 0.6399999999999999,
+    "E_V_per_m": [
+      1.7323241206214321e-16,
+      1.2482710822584968,
+      0.0
+    ],
+    "B_T": [
+      0.0,
+      0.0,
+      2.4982704846934414e-09
+    ],
+    "phi_V": 3.744813246775489,
+    "generic_closed_form_max_error": 8.881784197001252e-16,
+    "root_residual": 0.0
+  },
+  "pulse": {
+    "arrival_window_tau": [
+      1,
+      2.004987562112089
+    ],
+    "arrival_window_ns": [
+      10.00692285594456,
+      20.06375586118403
+    ],
+    "checks": [
+      {
+        "source_u": 0.25,
+        "observer_tau": 1.2500412632704945,
+        "ex_velocity": -0.10769062836822477,
+        "ex_acceleration": -0.6265317572260163,
+        "ex_total": -0.734222385594241,
+        "finite_difference": [
+          {
+            "step": 0.0002,
+            "e_relative": 1.5409050110473805e-07,
+            "b_relative": 1.9596031023521682e-07
+          },
+          {
+            "step": 0.0001,
+            "e_relative": 3.852326465763615e-08,
+            "b_relative": 4.8990780980921024e-08
+          }
+        ]
+      },
+      {
+        "source_u": 0.5,
+        "observer_tau": 1.5012492197250393,
+        "ex_velocity": -0.23231136135415603,
+        "ex_acceleration": -7.440739865719398e-17,
+        "ex_total": -0.23231136135415612,
+        "finite_difference": [
+          {
+            "step": 0.0002,
+            "e_relative": 6.010047110069738e-08,
+            "b_relative": 2.989587701037117e-07
+          },
+          {
+            "step": 0.0001,
+            "e_relative": 1.502398715878046e-08,
+            "b_relative": 7.474064749326108e-08
+          }
+        ]
+      },
+      {
+        "source_u": 0.75,
+        "observer_tau": 1.7541243085920608,
+        "ex_velocity": -0.1820990253402672,
+        "ex_acceleration": 0.6040514527967359,
+        "ex_total": 0.42195242745646866,
+        "finite_difference": [
+          {
+            "step": 0.0002,
+            "e_relative": 1.4263345307892513e-07,
+            "b_relative": 2.5569572577954935e-07
+          },
+          {
+            "step": 0.0001,
+            "e_relative": 3.5658655174135867e-08,
+            "b_relative": 6.392404716405257e-08
+          }
+        ]
+      }
+    ],
+    "directional_energy_J_per_sr": 4.7058711140542473e-11,
+    "directional_peak_W_per_sr": 0.00940523112209014,
+    "far_energy_quadrature_abs_error": 2.7755575615628914e-17,
+    "finite_distance_acceleration_only_convergence": [
+      {
+        "r_over_L": 10.0,
+        "normalized_energy": 0.19688391729607105,
+        "relative_to_far_limit": -0.0025744229710973343
+      },
+      {
+        "r_over_L": 30.0,
+        "normalized_energy": 0.197225956685366,
+        "relative_to_far_limit": -0.0008416311823140621
+      },
+      {
+        "r_over_L": 100.0,
+        "normalized_energy": 0.19734259241160115,
+        "relative_to_far_limit": -0.0002507476904575201
+      },
+      {
+        "r_over_L": 300.0,
+        "normalized_energy": 0.19737562227692954,
+        "relative_to_far_limit": -8.341643792664222e-05
+      }
+    ]
+  },
+  "static_pulse_field": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "low_speed_error_ratio_when_beta_halved": 4.000225019211799,
+  "rejected_domains": [
+    "boost_beta_1",
+    "on_worldline",
+    "pulse_beta_1"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "model": "SI vacuum prescribed sources; peak harmonic phasors; plane pulse per area",
+  "inputs": {
+    "c_m_s": 299792458.0,
+    "epsilon0_F_m": 8.8541878128e-12,
+    "E0_V_m": 1000.0,
+    "T_s": 1e-08,
+    "f_Hz": 100000000.0,
+    "p0_C_m": 1e-12,
+    "loop_a_m": 0.01,
+    "loop_I0_A": 1.0,
+    "ball_a_m": 0.001,
+    "pair_d_m": 0.1
+  },
+  "pulse": {
+    "ell_m": 1.4989622900000001,
+    "incident_energy_J_m2": 9.954070229973585e-06,
+    "peak_pressure_Pa": 1.77083756256e-05,
+    "impulse_N_s_m2": 6.640640859600001e-14,
+    "quadrature_integral_F2": 0.375,
+    "dimensionless_max_errors": {
+      "g_integral": 1.168905527926256e-10,
+      "h_integral": 7.3622219431968e-11,
+      "g_derivative": 1.309184567421795e-07,
+      "h_derivative": 6.545927599965751e-08
+    },
+    "early_tau": -0.25,
+    "early_incoming_normalized": 0.25,
+    "early_mirror_pressure": 0
+  },
+  "tensor": {
+    "u_prime_over_u0": 2.125,
+    "Sx_prime_over_c_u0": -1.875,
+    "max_element_error_normalized": 0.0
+  },
+  "multipoles": {
+    "ka_loop": 0.020958450219516814,
+    "ka_ball": 0.0020958450219516816,
+    "kd_pair": 0.20958450219516817,
+    "single_electric_power_W": 1.7329160177344424e-05,
+    "loop_m0_A_m2": 0.0003141592653589793,
+    "loop_leading_power_W": 1.902987149335628e-05,
+    "loop_full_phase_far_power_W": 1.902819973151459e-05,
+    "loop_exact_over_leading": 0.9999121506499781,
+    "loop_quadrature_refinement_relative": 1.3766608963905469e-09,
+    "pair_quad_power_W": 1.5223897194685024e-07,
+    "pair_full_phase_far_power_W": 1.520002029787573e-07,
+    "pair_exact_over_leading": 0.9984316173116545,
+    "pair_quadrature_refinement_relative": 6.87124135367867e-09,
+    "pair_quad_over_single": 0.008785132712079289,
+    "pair_symmetric_z_recoil_over_P_div_c": 2.4724761459478008e-17,
+    "pair_exact_over_leading_at_kd_4_point_balls": 0.5705730847678151
+  },
+  "checks": "assertions passed: pulse primitive/quadrature/time derivative; energy/momentum; tensor field vs boost; source-phase and whole-sphere quadrature refinement; quadrupole norm; parity recoil",
+  "not_verified": [
+    "finite beam or hardware",
+    "Obsidian rendering and learner comprehension",
+    "self-consistent feed and radiation reaction",
+    "general radiated angular momentum",
+    "finite-distance pair near-field matching"
+  ]
+}

@@ -49,23 +49,31 @@ $$
 =\operatorname{softmax}\!\left(\frac{QK^\top}{\sqrt{D_h}}+M\right)V
 $$
 
-`M` 在允许位置为 0，在未来位置放一个极小数；softmax 后未来位置权重变成 0。点积、转置和矩阵乘法的权威解释在 [[数学/20-线性代数与几何/02-矩阵乘法线性映射与Einsum|矩阵乘法、线性映射与 Einsum]]，稳定 softmax 见 [[数学/50-信息论/02-指数对数Softmax与LogSumExp|指数、对数、Softmax 与 LogSumExp]]。
+加性掩码 `M` 在允许位置为 0，在未来位置为 `−∞`；本脚本用布尔 `allowed` 配合 `np.where` 把对应 score 置为 `-np.inf`，softmax 后未来位置权重为 0。有限的“极小数”不能无条件代替屏蔽，原因与已有反例见下文。点积、转置和矩阵乘法的权威解释在 [[数学/20-线性代数与几何/02-矩阵乘法线性映射与Einsum|矩阵乘法、线性映射与 Einsum]]，稳定 softmax 见 [[数学/50-信息论/02-指数对数Softmax与LogSumExp|指数、对数、Softmax 与 LogSumExp]]。
 
 ## Shape 账本
 
-本脚本用 `B=1,T=5,D=8,H=2,Dh=4`。每一步都应能对上：
+先固定本次实际输入与模型：`tiny_decoder.py` 的 `main()` 使用同目录 tokenizer 的 `DEMO_TEXT="小模型也能学习。小模型也能生成。"` 建词表，再编码 prompt“小模型也能”。按源码的 `sorted(set(text))`，词表为 `[<unk>,。,也,习,型,学,小,成,模,生,能]`，共 `V=11` 项；prompt 的 IDs 为 `[[6,8,4,2,10]]`。这里没有 BOS、EOS 或 PAD，`<unk>` 的 ID 0 也不表示 padding。
 
-| 对象 | shape | 含义 |
-| --- | --- | --- |
-| token ids | `[B,T]` | 每个位置一个整数 |
-| embedding / block 输入 | `[B,T,D]` | 每个 token 一个 D 维向量 |
-| Q、K、V 分头后 | `[B,H,T,Dh]` | `D=H×Dh` |
-| `Q @ Kᵀ` | `[B,H,T,Tk]` | 每个 query 对每个 key 的分数 |
-| attention 权重 | `[B,H,T,Tk]` | 最后一轴加和为 1 |
-| heads 合并后 | `[B,T,D]` | 回到残差支路的宽度 |
-| logits | `[B,T,V]` | 每个位置预测词表中下一 token 的分数 |
+本次采用 `B=1,T=5,D=8,H=2,Dh=4`、单层 block、FFN 中间宽度 16。上一课的 `2×3×6` 用重复“小模型”演示查表；现在改成一条五字前缀，用两个偶数维 head 演示 RoPE、因果读取和五次缓存前向。词表构造沿用上一课，但 embedding 的宽度与 seed 已换，不能复用上一课那张权重。架构页的 `B=2,T=4,D_ff=24,V=100` 是另一份纸上 shape 配置，这里使用真实字符表与脚本默认 `hidden_dim=16`；两页都保留 `D=H×Dh`、残差宽度不变、softmax 沿 key 轴、输出投向当前词表这几条关系。
 
-如果这些符号还不稳，先回到 [[数学/10-数学语言与基础/01-函数符号索引维度与Shape|函数、索引、维度与 shape]]。
+每一步都应能对上：
+
+| 对象 | 通式 shape | 本次完整前向 | 含义 |
+| --- | --- | --- | --- |
+| token ids | `[B,T]` | `[1,5]` | 每个位置一个整数 |
+| embedding / block 输入、norm 后 | `[B,T,D]` | `[1,5,8]` | 每个 token 一个 D 维向量 |
+| Q、K、V 分头后 | `[B,H,T,Dh]` | `[1,2,5,4]` | `D=H×Dh`；RoPE 不改形状 |
+| `Q @ Kᵀ` | `[B,H,T,Tk]` | `[1,2,5,5]` | 每个 query 对每个 key 的分数 |
+| attention 权重 | `[B,H,T,Tk]` | `[1,2,5,5]` | 最后一轴加和为 1 |
+| heads 合并、输出投影与残差 | `[B,T,D]` | `[1,5,8]` | 回到残差支路的宽度 |
+| FFN 的 gate、up 与逐元素乘积 | `[B,T,hidden_dim]` | `[1,5,16]` | 同一位置的两条特征投影 |
+| FFN down、残差与最终 norm | `[B,T,D]` | `[1,5,8]` | 没有在 T 轴混合位置 |
+| logits | `[B,T,V]` | `[1,5,11]` | 每个位置预测词表中下一 token 的分数 |
+
+如果这些符号还不稳，可借读 [[数学/10-数学语言与基础/01-函数符号索引维度与Shape|函数、索引、维度与 shape]]，再回上表从实际 `[1,5]` 继续。
+
+只跟位置 2 的“型”：ID 4 查 embedding 表的第 4 行得到 8 维向量；RMSNorm 后三个 `8×8` 投影各给 8 维，再拆成两头。每头的 4 维 Q/K 在位置 2 旋转，query 2 的 mask 行是 `[真,真,真,假,假]`，因此读的是“小、模、型”对应的 V，不能读“也、能”。两头输出合成 8 维，经输出投影和第一次残差，再走 `8→16` 的 gate/up、逐元素门控及 `16→8` 的 down 和第二次残差，最终 norm、`8×11` lm_head 得到 11 项 logits。这些 logits 预测位置 3 的 token；随机权重并不保证它把“也”排在第一。
 
 ## RoPE：旋转 Q 和 K，而不是“加位置编号”
 
@@ -98,6 +106,53 @@ x → RMSNorm → causal MHA → +x
 - **lm_head** 把最终隐藏向量映射成 `[B,T,V]` logits。
 
 完整组件顺序见 [[AI/20-LLM/20-架构/01-Transformer完整数据流|Transformer 完整数据流]]，MHA 与 MQA/GQA 的区别见 [[AI/20-LLM/20-架构/02-注意力MHA-MQA与GQA|注意力、MHA、MQA 与 GQA]]。
+
+下面摘出真源 `DecoderBlock.forward` 的函数主体；变量 `values` 始终保存刚才的 `[1,5,8]` 残差流，缓存从 attention 支路返回：
+
+```python
+        attention_output, new_cache = self.attention.forward(
+            rms_norm(values), start_pos=start_pos, cache=cache, use_cache=use_cache
+        )
+        values = values + attention_output
+        values = values + self.feed_forward(rms_norm(values))
+        return values, new_cache
+```
+
+改变 head 数时，也先检查这条链。保持 `D=8` 而令 `H=4`，`Dh=2`，Q/K/V 变为 `[1,4,5,2]`，scores 为 `[1,4,5,5]`，合头后仍是 `[1,5,8]`；每头仍可按相邻两维做 RoPE。若换成 `D=6,H=2`，每头 `Dh=3`，本脚本的全维两两旋转不成立，所以主动拒绝。换词表则必须让 tokenizer 的 ID 与 embedding 行、lm_head 列一致；不能把另一词表的同号 token 直接送入旧模型。下面的缓存规则始终针对同一模型配置与同一前缀。
+
+## 从 prefill 到下一次 decode：cache 的时序
+
+先用这张时序账本检查 cache 的 off-by-one。表里的 5、6 是**序列位置**，不是词表 ID；第一个新 token 的 ID 应从本模型的 11 个候选中选出。
+
+| 阶段 | 输入位置 | 返回 logits 预测 | 返回后 cache 逻辑长度 |
+| --- | ---: | --- | ---: |
+| prefill `0..4` | 5 个 prompt token | 位置 4 之后的第一个新 token | 5 |
+| 采样 | 不做 forward | 从上一行 logits 选出位置 5 的 token | 仍为 5 |
+| decode `5` | 位置 5 的新 token | 位置 5 之后的 token 6 | 6 |
+
+所以，采样后已经确定的完整序列长度（含 prompt）为 6，cache 仍只含已送入 forward 的前 5 项。最后采样的 token 要在下一次 decode 作为输入时才写入 cache；若此时决定停止，就不需要为它再做一次 forward。这是生成调用的状态账本；本页 `main()` 实际只比较原五个输入的整段前向与逐项缓存前向，不执行采样循环。
+
+prefill 若开启 `use_cache=True`，返回的 K/V 各为 `[1,2,5,4]`，来自这一层 RMSNorm 后的投影，其中 K 已按 `0..4` 做过 RoPE，V 没有旋转。下一次输入新 ID 的 shape 是 `[1,1]`，embedding/norm 为 `[1,1,8]`；必须传入这份 cache 和 `start_pos=5`。新 Q/K/V 各为 `[1,2,1,4]`，Q/K 使用绝对位置 5；旧 K/V 与新项拼成 `[1,2,6,4]`，scores/weights 为 `[1,2,1,6]`，这行 query 可以读 key `0..5`。block 返回 `[1,1,8]`，lm_head 返回 `[1,1,11]`，更新后的 cache 长度才是 6。
+
+位置与 mask 的关键两处直接来自 `CausalSelfAttention.forward`：
+
+```python
+        query_positions = np.arange(start_pos, start_pos + sequence)
+        queries = apply_rope(self._split_heads(self.query(values)), query_positions)
+        new_keys = apply_rope(self._split_heads(self.key(values)), query_positions)
+        new_values = self._split_heads(self.value(values))
+```
+
+旧、新 K/V 拼接后，再用全部 key 的绝对位置比较：
+
+```python
+        key_positions = np.arange(keys.shape[2])
+        allowed = key_positions[None, :] <= query_positions[:, None]
+```
+
+若在长度 5 的 cache 后一次输入两项，则 query 位置是 `[5,6]`、key 位置是 `0..6`，scores 为 `[1,2,2,7]`；第一行仍不能读第二个新 token，第二行才可读到它。这里比较的是绝对位置，不能把两行简单套进从零开始的 `2×7` 下三角。
+
+cache 还带着**前缀身份**的要求：它必须由当前权重、当前配置和位置规则，按当前 batch 每条序列的同一 token 顺序生成。换了 prompt、调换 batch 行、更新了权重或改变位置规则，都不能仅因 K/V shape 相同就复用旧 cache。本脚本只保存两个数组，不保存 token IDs、模型身份或校验摘要；它能检查长度、shape、dtype 与有限性，前缀身份由调用者保证。Q 是本次读取请求，不作为未来步骤需要的历史 K/V 保存。多层模型则要为每层保存各自的 K/V，不能拿某一层的 cache 代替全部层。
 
 ## 依赖与 CPU 运行
 
@@ -384,15 +439,7 @@ if __name__ == "__main__":
 
 ## 三个断言各证明什么
 
-先用这张时序账本检查 cache 的 off-by-one：
-
-| 阶段 | 输入位置 | 返回 logits 预测 | 返回后 cache 逻辑长度 |
-| --- | ---: | --- | ---: |
-| prefill `0..4` | 5 个 prompt token | 位置 4 之后的第一个新 token | 5 |
-| 采样 | 不做 forward | 从上一行 logits 选出 token 5 | 仍为 5 |
-| decode `5` | 新 token 5 | 位置 5 之后的 token 6 | 6 |
-
-所以“已返回给用户的 token 数”与“已写入 KV cache 的 token 数”可以短暂相差 1；要继续预测时才把新 token 送入 decode。
+先对照前面的 [[#从 prefill 到下一次 decode：cache 的时序|cache 时序]]，再读 `main()` 中的三个断言。它们检查的是原五项输入，不是采样后多出的 token：
 
 1. `logits.shape == (1,5,V)`：block 和 lm_head 没有丢失 batch 或序列轴。
 2. 改掉最后一个 token 后，前四个位置 logits 仍相同：前面位置没有偷看未来。
@@ -429,6 +476,8 @@ if __name__ == "__main__":
 - 能说明 cache 保存 K/V 而不保存 Q 的原因：未来 query 还没出现，旧 K/V 会被后续 query 重用。
 
 ---
+
+已经对齐完整前向与缓存前向后，下一问题是：怎样通过 next-token loss 更新读出层，生成循环怎样把选出的 ID 反馈到这里的 `start_pos/cache` 接口？下一课复用 `CharTokenizer` 类、单层模型结构和缓存接口，但训练文本改用“小模型会学习。小模型会生成。”、重新建词表并以 seed 23 初始化模型；本页的字符 ID 与随机权重不能直接当作它的输入和参数。它只训练 `lm_head`，其余组件固定；读到生成函数时，可返回本页时序账本核对选择 token 与送入 forward 的先后。
 
 **上一站**：[[AI/20-LLM/50-实现/01-最小Tokenizer与Embedding|最小 Tokenizer 与 Embedding]] · **下一站**：[[AI/20-LLM/50-实现/03-训练循环Generation与KV-Cache实现|训练循环、Generation 与 KV Cache]] · **返回**：[[AI/20-LLM/50-实现/00-LLM实现-MOC|LLM 实现 MOC]]
 

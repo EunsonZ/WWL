@@ -113,3 +113,5 @@ $n=p=10^{21}\,\mathrm{m^{-3}}$、$\mu_n=\mu_p=0.10\,\mathrm{m^2/(V\,s)}$ 时，$
 复算：[[物理/80-实践/04-温度电离与Hall/README#联合求解和检查接口|温度与 Hall 实践]]；回 [[物理/50-半导体物理/03-温度占据电中性与杂质电离#同一教学模型跨三个温区|同一模型温区]] 检查统计输入；完整责任见 [[物理/50-半导体物理/00-半导体物理-MOC#本科主干与主解释归属|课程主干]]。
 
 本页独立推导弛豫时间、角度权重、符号、双载流子式和可辨识例。框架对照 [MIT 3.024 L17](https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/4be419e54b9109dce3f42e7db44d71d7_MIT3_024S13_2012lec17.pdf) 第 2–3 页的迁移率与质量；测量量和方向按 [NIST The Hall Effect](https://www.nist.gov/pml/nanoscale-device-characterization-division/popular-links/hall-effect/hall-effect) 的 Lorentz/片密度框架核对，换向接口参考 [NIST 测量流程](https://www.nist.gov/pml/nanoscale-device-characterization-division/popular-links/hall-effect/resistivity-and-hall)。NIST 页面是其保留的历史说明，本课未执行其中的硬件流程或将其特定容差当作本例验收值。
+
+继续 [[物理/50-半导体物理/05-准Fermi陷阱占据与产生复合#局部热化允许两个准 Fermi 能级|准 Fermi、陷阱占据与产生复合]]：带上本课可辨识的 $n,p,\mu_n,\mu_p$ 和 Hall 公式的适用条件，转向照光/注入后如何用两个准 Fermi 能级及粒子收支描述非平衡，并区分动量散射时间与复合寿命。05 增加局部热化、陷阱状态和连续性条件；本课的平衡双载流子 Hall 式不自动覆盖这些状态。

@@ -19,6 +19,14 @@ tags: [computer-science/cpp]
 
 ## 第一个 target
 
+以下以知识库根目录为起点；先进入 `计算机知识/10-编程语言/02-C++/`，后续命令均在这个目录运行。先确认 CMake 与 C++ 编译器已安装并能从终端调用：
+
+```bash
+cd "计算机知识/10-编程语言/02-C++"
+cmake --version
+c++ --version
+```
+
 <!-- code-sync: ./toolchain.cpp -->
 ```cpp
 #include <iostream>
@@ -28,7 +36,19 @@ int main() {
 }
 ```
 
-对应的课程级构建描述是同目录的 `CMakeLists.txt`：
+`toolchain.cpp` 是一个翻译单元。课程的 CMake 已把它声明为 `toolchain` target。先配置这个目录，再只构建并运行这个目标：
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build --target toolchain
+./build/toolchain
+```
+
+预期输出为 `C++ compiler, linker, and CMake agree.`。在单配置生成器下，编译器把翻译单元编成目标文件，链接器再生成 `build/toolchain` 可执行文件；多配置生成器通常把程序放在配置子目录，需在构建时加 `--config Debug`，并按生成器显示的路径运行。
+
+若要单独观察编译器驱动同时编译和链接同一源码，可在本目录执行 `c++ -std=c++20 toolchain.cpp -o toolchain`，它生成 `toolchain` 可执行文件；运行 `./toolchain` 会得到相同输出。这条命令帮助辨认编译器驱动的职责，后续课程仍以 CMake target 管理项目。
+
+同目录的课程级 `CMakeLists.txt` 声明全部示例 target、共同选项、测试及并发目标的线程依赖。先理解并成功构建 `toolchain`，再看其余目标如何复用同一构建配置：
 
 <!-- code-sync: ./CMakeLists.txt -->
 ```cmake
@@ -63,15 +83,7 @@ find_package(Threads REQUIRED)
 target_link_libraries(concurrency PRIVATE Threads::Threads)
 ```
 
-先用 `cmake --version` 和目标编译器的版本命令确认二者确实存在；缺少 CMake 与“CMake 存在但找不到 C++ 编译器”是两类不同问题。确认工具后，在本目录运行：
-
-```bash
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
-cmake --build build --target toolchain
-./build/toolchain
-```
-
-预期输出为 `C++ compiler, linker, and CMake agree.`。如果 CMake 命令本身不存在，先回到当前平台经审阅的工具链安装说明；如果配置阶段找不到编译器，再记录 `cmake --system-information` 中的候选编译器路径。不要用修改系统默认编译器或全局 include/lib 路径的方式碰运气。
+如果 CMake 命令本身不存在，先回到当前平台经审阅的工具链安装说明；如果配置阶段找不到编译器，再记录 `cmake --system-information` 中的候选编译器路径。不要用修改系统默认编译器或全局 include/lib 路径的方式碰运气。
 
 ## 诊断顺序
 

@@ -1,0 +1,424 @@
+{
+  "accepted_exact_certificate": true,
+  "eta": "2776339/1000000",
+  "gamma_numeric": 1.6662349774266534,
+  "frequency_diagnostic": {
+    "parameter_grid_per_axis": 5,
+    "frequency_count": 202,
+    "peak_observed": {
+      "sigma": 1.6403108853368789,
+      "theta": [
+        -1.0,
+        -1.0
+      ],
+      "omega": 0.0
+    },
+    "proof": false
+  },
+  "trajectory_diagnostics": [
+    {
+      "name": "zero_initial",
+      "xi0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta_mode": "smooth",
+      "measurement_multiplier": 1,
+      "rho_multiplier": 1,
+      "noise_input_multiplier": 1,
+      "saturation_limit": null,
+      "certificate_applies": true,
+      "Ed": 0.8893357991552674,
+      "Ez": 0.24691062697731225,
+      "Ex": 0.14707338144988139,
+      "Eu": 0.3993489821097251,
+      "V0": 0.0,
+      "V_end": 9.072323358182519e-10,
+      "eta_Ed_plus_V0": 2.469097663290936,
+      "dissipation_slack_final": 2.2221870354063915,
+      "minimum_dissipation_slack_on_samples": 0.0,
+      "energy_gain_on_finite_interval": 0.5269106828891307,
+      "scope": "Finite waveform/interval diagnostic; only exact original-model certificate supplies all-input guarantee."
+    },
+    {
+      "name": "nonzero_estimate",
+      "xi0": [
+        0.0,
+        0.0,
+        1.0,
+        -0.5
+      ],
+      "theta_mode": "smooth",
+      "measurement_multiplier": 1,
+      "rho_multiplier": 1,
+      "noise_input_multiplier": 1,
+      "saturation_limit": null,
+      "certificate_applies": true,
+      "Ed": 0.88933579914989,
+      "Ez": 4.730860619923368,
+      "Ex": 1.0624590979948871,
+      "Eu": 14.673606087713907,
+      "V0": 9.762521,
+      "V_end": 9.072323379829523e-10,
+      "eta_Ed_plus_V0": 12.231618663276006,
+      "dissipation_slack_final": 7.500758042445406,
+      "minimum_dissipation_slack_on_samples": 0.0,
+      "energy_gain_on_finite_interval": 2.30641359450839,
+      "scope": "Finite waveform/interval diagnostic; only exact original-model certificate supplies all-input guarantee."
+    },
+    {
+      "name": "measurable_switch",
+      "xi0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta_mode": "switch",
+      "measurement_multiplier": 1,
+      "rho_multiplier": 1,
+      "noise_input_multiplier": 1,
+      "saturation_limit": null,
+      "certificate_applies": true,
+      "Ed": 0.8893357991537463,
+      "Ez": 0.2904698268150649,
+      "Ex": 0.1826134731487505,
+      "Eu": 0.43142541466526035,
+      "V0": 0.0,
+      "V_end": 9.429731752982717e-10,
+      "eta_Ed_plus_V0": 2.4690976632867128,
+      "dissipation_slack_final": 2.178627835528675,
+      "minimum_dissipation_slack_on_samples": 0.0,
+      "energy_gain_on_finite_interval": 0.571501830226397,
+      "scope": "Finite waveform/interval diagnostic; only exact original-model certificate supplies all-input guarantee."
+    },
+    {
+      "name": "measurement_removed",
+      "xi0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta_mode": "smooth",
+      "measurement_multiplier": 0,
+      "rho_multiplier": 1,
+      "noise_input_multiplier": 1,
+      "saturation_limit": null,
+      "certificate_applies": false,
+      "Ed": 0.8893357991811892,
+      "Ez": 0.47685893641428734,
+      "Ex": 0.47269216483616167,
+      "Eu": 0.016667086312504884,
+      "V0": 0.0,
+      "V_end": 0.000813273345747243,
+      "eta_Ed_plus_V0": 2.469097663362904,
+      "dissipation_slack_final": 1.991425453602869,
+      "minimum_dissipation_slack_on_samples": 0.0,
+      "energy_gain_on_finite_interval": 0.7322545443049693,
+      "scope": "Finite waveform/interval diagnostic; only exact original-model certificate supplies all-input guarantee."
+    },
+    {
+      "name": "noise_input_amplified",
+      "xi0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta_mode": "smooth",
+      "measurement_multiplier": 1,
+      "rho_multiplier": 1,
+      "noise_input_multiplier": 20.0,
+      "saturation_limit": null,
+      "certificate_applies": true,
+      "Ed": 166.20931968040304,
+      "Ez": 2.496462333007247,
+      "Ex": 0.2977848488800417,
+      "Eu": 8.794709936508797,
+      "V0": 0.0,
+      "V_end": 4.0124135171988996e-07,
+      "eta_Ed_plus_V0": 461.45341639217054,
+      "dissipation_slack_final": 458.95695365792193,
+      "minimum_dissipation_slack_on_samples": 0.0,
+      "energy_gain_on_finite_interval": 0.12255606913257146,
+      "scope": "Finite waveform/interval diagnostic; only exact original-model certificate supplies all-input guarantee."
+    },
+    {
+      "name": "rho_amplified",
+      "xi0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta_mode": "smooth",
+      "measurement_multiplier": 1,
+      "rho_multiplier": 20.0,
+      "noise_input_multiplier": 1,
+      "saturation_limit": null,
+      "certificate_applies": false,
+      "Ed": 0.8893357991855229,
+      "Ez": 2.4964623330073783,
+      "Ex": 0.2977848488800707,
+      "Eu": 8.794709936509241,
+      "V0": 0.0,
+      "V_end": 4.0124135170618136e-07,
+      "eta_Ed_plus_V0": 2.4690976633749355,
+      "dissipation_slack_final": -0.02736507087379448,
+      "minimum_dissipation_slack_on_samples": -0.2759847333743358,
+      "energy_gain_on_finite_interval": 1.6754428617792374,
+      "scope": "Finite waveform/interval diagnostic; only exact original-model certificate supplies all-input guarantee."
+    },
+    {
+      "name": "outside_box",
+      "xi0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta_mode": "outside",
+      "measurement_multiplier": 1,
+      "rho_multiplier": 1,
+      "noise_input_multiplier": 1,
+      "saturation_limit": null,
+      "certificate_applies": false,
+      "Ed": 0.8893357991478268,
+      "Ez": 0.2916912181614109,
+      "Ex": 0.12226681750511753,
+      "Eu": 0.677697602625174,
+      "V0": 0.0,
+      "V_end": 9.448027344798562e-10,
+      "eta_Ed_plus_V0": 2.4690976632702784,
+      "dissipation_slack_final": 2.1774064441640646,
+      "minimum_dissipation_slack_on_samples": 0.0,
+      "energy_gain_on_finite_interval": 0.5727021186635795,
+      "scope": "Finite waveform/interval diagnostic; only exact original-model certificate supplies all-input guarantee."
+    },
+    {
+      "name": "saturation",
+      "xi0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta_mode": "smooth",
+      "measurement_multiplier": 1,
+      "rho_multiplier": 1,
+      "noise_input_multiplier": 1,
+      "saturation_limit": 0.25,
+      "certificate_applies": false,
+      "Ed": 0.8893357990883413,
+      "Ez": 0.18650795756619826,
+      "Ex": 0.12760120426770893,
+      "Eu": 0.23562701319395774,
+      "V0": 0.0,
+      "V_end": 9.072323351236619e-10,
+      "eta_Ed_plus_V0": 2.4690976631051265,
+      "dissipation_slack_final": 2.282589704631696,
+      "minimum_dissipation_slack_on_samples": 0.0,
+      "energy_gain_on_finite_interval": 0.45794760891271397,
+      "scope": "Finite waveform/interval diagnostic; only exact original-model certificate supplies all-input guarantee."
+    }
+  ],
+  "changed_model_certificate_diagnostics": [
+    {
+      "name": "outside_box",
+      "theta": [
+        5.0,
+        5.0
+      ],
+      "measurement_multiplier": 1,
+      "rho_multiplier": 1,
+      "same_certificate_negative_N": {
+        "positive_definite": false,
+        "leading_principal_minors": [
+          "155244989/25000000",
+          "-65984557584308253/2000000000000000",
+          "-4558662698152797289007273844728804440771001/12304551607350424900000000000000000000000",
+          "-1076719357138816400177088161954931809204994886401089/276852411165384560250000000000000000000000000000",
+          "-1312259583467533966087587222128622179576656379158749951557/92284137055128186750000000000000000000000000000000000",
+          "-1104079215625398383527545937418660174546501906173838939945756291/30761379018376062250000000000000000000000000000000000000000",
+          "-1814593623094571129539582639718637801103967366615070781294365004195871141/18456827411025637350000000000000000000000000000000000000000000000000"
+        ]
+      },
+      "largest_N_eigenvalue_diagnostic": 4.779906078920397,
+      "max_real_F_eigenvalue_diagnostic": -1.5908118577930637,
+      "F_eigenvalues_real_imag": [
+        [
+          -1.5908118577930637,
+          3.339320858273903
+        ],
+        [
+          -1.5908118577930637,
+          -3.339320858273903
+        ],
+        [
+          -8.013788243467982,
+          0.0
+        ],
+        [
+          -16.575558285165446,
+          0.0
+        ]
+      ],
+      "frequency_lower_bound_observed": {
+        "sigma": 1.3056757499930587,
+        "omega": 3.4673685045253166,
+        "right_input_direction_real": [
+          -0.8723592464734209,
+          -0.0711671545592182,
+          0.06127103198673811
+        ],
+        "right_input_direction_imag": [
+          -0.0,
+          -0.4562064503504543,
+          0.14847934705604088
+        ]
+      },
+      "stable_frozen_frequency_bound_exceeds_gamma": false,
+      "meaning": "Failure of this certificate does not alone prove instability or performance failure. F eigenvalues are frozen linear diagnostics."
+    },
+    {
+      "name": "measurement_removed",
+      "theta": [
+        1,
+        -1
+      ],
+      "measurement_multiplier": 0,
+      "rho_multiplier": 1,
+      "same_certificate_negative_N": {
+        "positive_definite": false,
+        "leading_principal_minors": [
+          "-9490539/5000000",
+          "-9770785934739969/400000000000000",
+          "-1105356376261346873453180103963586570701307/2460910321470084980000000000000000000000",
+          "-237770143495602831643027280185682449794856358607727/92284137055128186750000000000000000000000000000",
+          "-1892528267917202985601699156015483523486869689133264785379/276852411165384560250000000000000000000000000000000000",
+          "-379778494473361092269848466461473190594589272757856829530318179/30761379018376062250000000000000000000000000000000000000000",
+          "-1901604738968292807454062289949550287178418618881705995970160612840269913/55370482233076912050000000000000000000000000000000000000000000000000"
+        ]
+      },
+      "largest_N_eigenvalue_diagnostic": 7.058459981795174,
+      "max_real_F_eigenvalue_diagnostic": -0.25000000000000006,
+      "F_eigenvalues_real_imag": [
+        [
+          -0.25000000000000006,
+          0.698212002188447
+        ],
+        [
+          -0.25000000000000006,
+          -0.698212002188447
+        ],
+        [
+          -18.388552957779112,
+          0.0
+        ],
+        [
+          -9.282417286440444,
+          0.0
+        ]
+      ],
+      "frequency_lower_bound_observed": {
+        "sigma": 4.251418466183254,
+        "omega": 0.707945784384138,
+        "right_input_direction_real": [
+          -0.6546194063721199,
+          -0.19176374512932567,
+          0.1523838780666587
+        ],
+        "right_input_direction_imag": [
+          -0.0,
+          -0.6975157156549872,
+          0.15795910538701213
+        ]
+      },
+      "stable_frozen_frequency_bound_exceeds_gamma": true,
+      "meaning": "Failure of this certificate does not alone prove instability or performance failure. F eigenvalues are frozen linear diagnostics."
+    },
+    {
+      "name": "rho_amplified",
+      "theta": [
+        0,
+        0
+      ],
+      "measurement_multiplier": 1,
+      "rho_multiplier": 20.0,
+      "same_certificate_negative_N": {
+        "positive_definite": false,
+        "leading_principal_minors": [
+          "251006757/12500000",
+          "13657213580890123/500000000000000",
+          "834555164385948936277078861556246756572541/3076137901837606225000000000000000000000",
+          "29740369036360401485469976219620518091976910844707/34606551395673070031250000000000000000000000000",
+          "69183319102468253402210111002144460353607526944314649621/69213102791346140062500000000000000000000000000000000",
+          "15060775092269654710065720608005622069749726409939256631216993/8651637848918267507812500000000000000000000000000000000000",
+          "-15942949376489011418630272010690884890308941026242823009022857299297/480646547162125972656250000000000000000000000000000000000000000"
+        ]
+      },
+      "largest_N_eigenvalue_diagnostic": 6.494941017448393,
+      "max_real_F_eigenvalue_diagnostic": -3.0,
+      "F_eigenvalues_real_imag": [
+        [
+          -3.0,
+          0.0
+        ],
+        [
+          -3.999999999999975,
+          0.0
+        ],
+        [
+          -4.845317419201299,
+          0.0
+        ],
+        [
+          -16.425652825018286,
+          0.0
+        ]
+      ],
+      "frequency_lower_bound_observed": {
+        "sigma": 2.7835325222526457,
+        "omega": 4.897788193684462,
+        "right_input_direction_real": [
+          -0.2017277409831916,
+          0.006979298187041895,
+          0.025236077556857143
+        ],
+        "right_input_direction_imag": [
+          -0.0,
+          -0.06294925890242761,
+          0.9770658826854073
+        ]
+      },
+      "stable_frozen_frequency_bound_exceeds_gamma": true,
+      "meaning": "Failure of this certificate does not alone prove instability or performance failure. F eigenvalues are frozen linear diagnostics."
+    }
+  ],
+  "K_numeric": [
+    [
+      -16.14719847678895,
+      5.7556977220898755
+    ],
+    [
+      3.0984338082599905,
+      -5.719028301291593
+    ]
+  ],
+  "L_numeric": [
+    [
+      6.4
+    ],
+    [
+      10.14
+    ]
+  ],
+  "observer_nominal_eigenvalues": [
+    "-3",
+    "-4"
+  ],
+  "runtime_scope": "Exact rational fixed-controller original-form certificate, finite frequency SVD, sample ODE; no physical output or human-learning evidence."
+}

@@ -132,7 +132,7 @@ tests/threaded.rs
 
 本地包未发布；缺独立发布许可/站点元数据仍有Cargo warning。safe Rust、线程join与flush不等于业务回滚、设备实时或协议正确。
 
-本次接续完成配置/features及有限单序列的同步任务流、资源上限与关闭；原首段源码与学习检查点保留。高级批次现已增加共源fixed核、native no_std编译检查及窄C ABI实际调用。异步适配见下方接续；C++调用方与真实嵌入式运行尚缺，#243仍未全阶段完成。实际设备时间戳、实时deadline、采样误差、控制闭环、Obsidian显示及真人学习效果均未验证。
+本次接续完成配置/features及有限单序列的同步任务流、资源上限与关闭；原首段源码与学习检查点保留。高级批次现已增加共源fixed核、native no_std编译检查及窄C ABI实际调用。异步适配见下方接续；C++跨ABI调用方与真实嵌入式运行未验；不能由此冒称#243所有学习和设备层已经完成。实际设备时间戳、实时deadline、采样误差、控制闭环、Obsidian显示及真人学习效果均未验证。
 
 ## 高级接续：固定核与 C 调用
 
@@ -176,3 +176,22 @@ cargo run --manifest-path caller/Cargo.toml --example async --features async --l
 故障试验以oneshot门控制执行节点，不靠sleep：填满容量1队列，实际poll第二次send为Pending后丢弃，核对计数不变；启动后abort并await确认is_cancelled；注入panic并await确认is_panic；另用原子计数模拟已发生效果，ack后取消，观察计数仍为1。该计数是试验外部效果，不是生产worker行为。正常、空批/0样本上限、1024批对象、重复/乱序以及全部单切分边界也运行。具体测试在src/asynchronous.rs，不认证网络/数据库/设备提交。
 
 2026-10-11异步候选实际：默认24项、all-features46项通过；主包与独立caller的async示例输出[2,6,10,14]并观察完成；单独E0505诊断确认pending send借用阻止消费owner。包与独立caller锁文件都保留Tokio 1.52.3/pin-project-lite 0.2.17。旧first/next/advanced产物严格只读，本段不追溯重跑全部历史实验。
+
+
+## 从空目录逐步重建阶段 1–3
+
+阶段0在第11讲原first检查点起步。本段新增小源码快照typed/library/cli，逐步引入拥有记录与Result、lib+持久FIR、Read/Write二进制；它们不是完整组件的文件复制。完整正文分别见第11讲“阶段1的独立构建”和第12讲“阶段2–3的独立构建”。检查点是演化中的教学API：typed的Err退出1；cli显式退出2；cli空白token读入与完整组件一行一token适配不可混用。累计任务限额、配置/feature、async与FFI继续以完整组件为准。
+
+在实践目录中选择一个不存在的输出目录：
+
+```sh
+python3 stages/rebuild.py /absolute/path/to/new-measurement-project
+```
+
+脚本执行cargo new --bin --edition2021 --vcs none，然后在同一新项目逐步装入小步源码，分别test/run，不读取最终src/lib.rs/main.rs。目录存在则拒绝，避免覆盖自己的工作。普通复制更新源码mtime，防止Cargo把上一阶段输出误当新源码；不能用保留旧mtime的复制替代这个步骤。
+
+2026-10-11实际本机复建：新目录Hello world→typed两项测试与20/5、非法4096退出1→library三项测试与twice_mV=[2,6,10,14]→cli五项测试、固定输入20/5、非法输入退出2且stdout空、空输入None。每步fmt --check、test --locked --offline、run --locked --offline。独立源码快照也各自运行测试。阶段1单位误传E0308与移动仍借用owner E0505实际编译拒绝，正常拥有值/借用/移交路径通过。
+
+精确信息：rustc1.89.0(29483883e 2025-08-04)、Cargo1.89.0(c24e10642 2025-06-23)、host/本次target aarch64-apple-darwin、LLVM20.1.7；检查点edition2021、rust-version1.89、无features或外部依赖，Cargo.lock只含measurement-step。完整组件的可选Tokio锁解析与feature合同保留上一接续证据，本段没有重写或追溯重跑完整async/FFI/no_std。旧MSRV/其他target、真实设备、闭环、网络/数据库提交、Obsidian显示和真人理解未验。
+
+四语返程入口在第12讲“Rust读者的四语返程”与“失败之后返回哪一层”：本段给出C count、C++值/视图、Python身份/提交、Rust借用/前缀/ABI的具体对象比较，携ADC标定与控制时序返回问题。跨语言主库各自实际结果与本轮Rust小步复建分开，不因链接存在就冒称已重新运行其他语言。

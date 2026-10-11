@@ -18,6 +18,31 @@ prerequisites:
 >
 > 本讲交付阶段2–3中的串行组件：有界纯核心、标准库文件读写、FIFO批处理、公开调用方和本地包。接续段现已增加严格任务配置、threaded feature与有限单序列的同步任务流及关闭合同。高级接续现已增加共源固定缓冲核和窄C ABI；可选异步适配见末段；真实嵌入式运行仍未交付。前面的VecDeque仍只是串行队列。
 
+## 阶段 2–3 的独立构建：提取库，再加入输入输出
+
+先完成第11讲typed检查点。在同一个Cargo项目中新建src/lib.rs，采用`stages/library/src/lib.rs`，把main.rs换成该目录的短调用者；清单仍无依赖。库源码前半保持make_records/summary的阶段1机制，后半新增Fir2和VecDeque FIFO。二进制通过`use measurement_step::...`调用公开接口，不再把所有实现塞进main。
+
+```sh
+cargo test --locked --offline
+cargo run --locked --offline
+```
+
+这一小步三项测试通过；输出20/5和twice_mV=[2,6,10,14]。新前值只属于一个Fir2，放在while循环之外；每批move进process，不拷贝记录数组。单切分位置0..4含空批都得到同一结果，故意每批default则得到twice_mV=[2,6,6,14]，即[1,3,3,7]mV。VecDeque只有一个同步调用者，不是线程通道。此检查点只示范有限队列与算法状态，不承诺任意调用者队列的累计任务上限；最终组件的TaskConfig、batch对象限额和索引验证见后续段。
+
+阶段3再把lib替换为`stages/cli/src/lib.rs`：已有类型、统计、FIR保持；只新增read_codes与write_report及两项IO测试。main替换为stdin→read_codes→write_report，Err在stderr报告、退出2。Read输入最多6144字节，take(6145)用于侦测超限；UTF-8/整数/码域与IO错误独立拒绝，合法输入每批最多1024项。该教学适配器允许空白分隔，最终read_codes文件合同是一行一token，不能混用两种文件接口。Write写出已接受的统计并flush，错误仍可能留下已写字节。
+
+```sh
+printf '2 4 6 8\n' | cargo run --locked --offline
+printf '2 4096\n' | cargo run --locked --offline
+cargo test --locked --offline
+```
+
+输出sum_mV=20、mean_mV=Some(5.0)；非法输入退出2、stdout空；空输入mean_mV=None。五项测试包括输入长度、非法码、空输入、读取PermissionDenied和写出BrokenPipe。summary拒绝过长切片，再使用上述u32界；不能把外部传来的Vec长度自动当成已验证。
+
+最后进入完整组件，按文件责任迁移这三个小步：Record数组包装为Batch集中不变量，summary元组改为带count/分组的Summary；Fir2输出变为HalfMillivolt；教学的字符串Err改为带位置InputError/ReadError；Read/Write适配加入行长和输出时刻合同，再由TaskConfig与feature启用有界threaded/async以及fixed/ffi。Entry和声明式宏在下方各节按其实际需求引入，不为取代函数而使用。已有主包的独立caller、配置、任务关闭和FFI源码不在小检查点复制，升级后的API以主包为准。
+
+实践README给出单个真正空目录的复建命令：依次cargo new、typed、library、cli，每个状态都实际编译/测试/运行；目标目录存在时拒绝覆盖。源码快照只含这些小步，脚本不能把最终工程当作“从零构建”的结果。
+
 ## 先决定边界，才拆库和二进制
 
 [src/lib.rs](../../../80-实践/10-Rust/01-类型化测量任务/src/lib.rs) 定义类型、解析、统计和 FIR，任何调用者都可复用；[src/main.rs](../../../80-实践/10-Rust/01-类型化测量任务/src/main.rs) 只决定 CLI 输入来自参数还是文件、怎样呈现错误、何时写 stdout。package 中库与二进制是不同 crate，二进制通过 `wwl_measurement` 的公开名字调用库，不能访问私有字段。`tests/contracts.rs` 也从公开 API 调用，因此能发现“只在库内部能用”的接口问题。
@@ -236,3 +261,27 @@ cc -std=c11 -Wall -Wextra -Werror ffi/caller.c target/debug/libwwl_measurement.a
 迁移题：若发送第二批的Future取消后仍调用finish，能否宣称4个输入全处理？答案：不能；它只返回第一批的结果。要保留待发送数据，可在拥有Batch前先reserve容量并设计明确重试合同；本接口故意暴露丢弃语义，不偷换成无损取消。若把unique sender公开clone，哪些关闭论证失效？答案：finish不再保证最后sender消失，EOF可能永远不到，必须增加句柄归属合同。
 
 版本依据为 [Tokio 1.52.3 Sender::send](https://docs.rs/tokio/1.52.3/tokio/sync/mpsc/struct.Sender.html#method.send) 和 [JoinHandle::abort](https://docs.rs/tokio/1.52.3/tokio/task/struct.JoinHandle.html#method.abort)，并核对本机同版缓存源码。设备、实时、多runtime迁移、网络重试与事务提交未验。
+
+
+## Rust 读者的四语返程：同码还缺哪些合同
+
+先固定同一对象：a/b/c/d对应序号0/1/2/3，tick_ms为0/1000/2000/3000，码[2,4,6,8]、1mV/码、零偏置。Rust当前Batch只保存序号和整数mV；身份/显式时刻的映射要由适配层验证，不能由序号自动恢复。带着这个映射进入 [[计算机知识/10-编程语言/02-C++/10-系统课程/15-同码记录的类型资源与统计语义#先把四个适配器投影到同一行集|四适配器的同码行集]]，再返回核对自己的输入：
+
+| 对照入口 | Rust带去的具体问题 | 回到本工程的答案 |
+| --- | --- | --- |
+| [[计算机知识/10-编程语言/03-C语言/10-系统课程/12-测量流工具的完整工程#一个有限对象，两个输入适配器\|C有限对象]] | C文本首项4是count，Rust是否也吃它？ | Rust文件需2、4、6、8各占一行；若把count也改成一行一项，它会成为额外真实码，原C空格行则按Rust文件合同拒绝。C可变标定与Rust固定mV标定不能暗换。 |
+| [[计算机知识/10-编程语言/02-C++/10-系统课程/15-同码记录的类型资源与统计语义#复制同一条记录不等于复制一个拥有者\|C++拥有值与视图]] | span是否具备records()一样的编译期借用约束？ | Rust借用尚在使用时修改Batch被拒绝；C++仍需遵守视图owner和失效合同。to_vec是新数组，不是新采样事实。 |
+| [[计算机知识/10-编程语言/01-Python/10-系统课程/15-同码迁移中的身份单位与恢复边界#从已提交行导出同码有限对象\|Python身份导出]] | 数据库只有a/b已提交时，能否仍按四行统计？ | 不能；先确定已提交行集。Rust给定四码的20/5与Python两行的6/3属于不同对象。 |
+| [[计算机知识/10-编程语言/03-C语言/10-系统课程/12-测量流工具的完整工程#从对象寿命到失败出口\|C释放责任]] | 把Rust切片地址给C，谁能释放？ | 本工程窄ABI只借用调用方buffer，不留指针、不提供释放函数；不能拿Rust Vec指针给C的release，也不能把C指针寿命推断为Rust生命周期已证明。 |
+
+共同统计只核本例交集：N=4、sum20mV、mean5mV。四码平方和120mV²、中心平方和20mV²，描述性方差5mV²、RMS²30mV²是手算比较；当前Rust Summary没有方差/RMS字段，不能因C/C++/Python有这些结果就声称Rust已输出。C++有整数µV标定以及可选N−1方差，C有double标定，Rust固定整数mV；先统一单位和值域，再谈结果相同。四种最大输入量也不同，本例4项满足交集，并不建立统一资源上限。
+
+## 失败之后返回哪一层：内存、任务、恢复与控制
+
+将“失败不改变状态”改写为带对象的句子：Rust parse_codes失败不交付局部Batch；push失败不改旧Batch；fixed核报告Err时不改调用方output和previous；async被取消的send丢弃未入队Batch，finish只给已接受前缀；Write失败可能留下已写字节。这些不是数据库事务或设备回滚。
+
+进入 [[计算机知识/10-编程语言/01-Python/10-系统课程/15-同码迁移中的身份单位与恢复边界#失败时比较各自承诺的状态|Python导入恢复]]，携带“前两行已提交，第三行插入后失败”的轨迹。返回题：把Rust完整[2,4,6,8]再算一次，能否证明Python已恢复c/d？答案不能；要查已提交身份、重放协议和事务结果，计算相同码不验证持久化。再进入 [[计算机知识/20-操作系统/02-操作系统原理/10-系统课程/11-崩溃一致性与恢复状态机#失败处理必须保留“不确定”状态|写出失败与不确定提交]]，返回题：flush返回Err是否证明外部目标没有变？答案不能；当前库未实现fsync/rename/数据库/设备提交协议，必须保留阶段与版本证据。
+
+最后把两批共用Fir2的“一个前值owner”带到 [[控制论/10-系统课程/03-采样保持积分调节与实现边界#先规定测量、计算、保持和更新|控制实现的时间对象]]。返回题：一次循环是先测量、计算、保持，还是先更新积分器？Rust move、通道FIFO与await只约束对象/执行轨迹，不能替你选择控制方程。该页 [[控制论/10-系统课程/03-采样保持积分调节与实现边界#同样的负反馈，换采样周期就失稳|采样周期反例]] 还要求对离散极点/稳定条件复算；本例t=n×1s、FIR初值0和本机任务结束，不证明真实采样、执行器响应、闭环稳定或deadline。若漏掉一个码后把其余项重新编号，类型仍可能合法，但时间对象已变，不能静默当成等间隔的原序列。
+
+撤提示迁移：Python重放后按a-d身份得到四码，把c/d送给新Rust FIR并拿到[3,7]，哪里错了？答案是后缀重启初值0，前值4未移交；完整连续序列的后缀应[5,7]。身份、时间、单位、前值、资源owner和提交层是六份要分别携带的合同，不由“同一码”一项替代。

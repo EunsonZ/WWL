@@ -1,0 +1,7 @@
+observation,x,true,draw,joint_probability,match,draw_mse,draw_psnr_db,mean,mean_mse,mean_psnr_db
+average,1/2,"(0,1)","(0,1)",1/4,True,0,+infinity,"(1/2,1/2)",1/4,6.020599913279624
+average,1/2,"(0,1)","(1,0)",1/4,False,1,0.0,"(1/2,1/2)",1/4,6.020599913279624
+average,1/2,"(1,0)","(0,1)",1/4,False,1,0.0,"(1/2,1/2)",1/4,6.020599913279624
+average,1/2,"(1,0)","(1,0)",1/4,True,0,+infinity,"(1/2,1/2)",1/4,6.020599913279624
+first_pixel,0,"(0,1)","(0,1)",1/2,True,0,+infinity,"(0,1)",0,+infinity
+first_pixel,1,"(1,0)","(1,0)",1/2,True,0,+infinity,"(1,0)",0,+infinity

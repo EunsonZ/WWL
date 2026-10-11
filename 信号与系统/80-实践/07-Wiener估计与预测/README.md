@@ -47,6 +47,8 @@ PYTHONDONTWRITEBYTECODE=1 python3 wiener_lab.py --output /private/tmp/wwl-179-ru
 
 输出目录必须新建不存在；源码拒绝覆盖。`results.json`保存固定输入、理论预测与**实际**MSE各次值/均值/样本散布、各次训练R/p/w、测试误差均值与e·x[n−lag]矩、谱重复值；`train.csv`、`test.csv`、`correlated_test.csv`保存首次完整记录，`estimates.csv`保存共同窗口实际输出。其余重复可由seed、长度和源码复建；Python版本与源SHA由执行者另记录，不假设跨版本随机发生器逐位相同。保留原始stdout/stderr及环境，实际运行后才可以写结果解释。
 
+若要重新执行冻结V2而不受当前工作树后续修改影响，使用 [[信号与系统/80-实践/07-Wiener估计与预测/RESULTS#版本、复制与重新执行|固定Git复建入口]]：传入含固定提交的本地WWL仓库 `--repo`，在库外新目录恢复四份同版输入和原README后实际跑五个数值子进程。原历史结果与原驱动NOTRUN说明保留，新运行以新目录receipt核对。
+
 可先用 `--repeats 1 --train 128 --test 256` 预跑（少于60秒目标），再标准规格；这是工作限额而非硬资源隔离。root统一最多2个实验任务、每任务最多4线程、总预算8GiB，常规5分钟；本源码标准库单线程，未实现OS硬内存/时间cap，执行者按实际耗时/RSS报告并超时停止保全日志。
 
 ## 源码、图与迁移交付

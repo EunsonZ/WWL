@@ -61,12 +61,16 @@ prerequisites:
 
 [identity.json](results/2026-10-10-v2/identity.json) 绑定五文件运行前后；数值业务源SHA为`ed74d2ff722889ca6756e646115ad5bb14fe573233d63b656031e74c94a541ca`，测试SHA为`e4c9fc4c213e5f4c4216ad5352748258a793ded2763a831759ae192120509c58`。V3只补读者解释，当前业务源/测试/图源仍匹配；历史README快照保留运行时字节，不冒充现阅读说明。源真值与 [[信号与系统/80-实践/07-Wiener估计与预测/04-源码与验证|code-sync]] 不变。
 
-原manifest [artifact-hashes.json](results/2026-10-10-v2/artifact-hashes.json) 字节保留；[copy-receipt.json](results/2026-10-10-v2/copy-receipt.json) 映射原路径到本目录，61个原件共3,015,910字节（含原manifest，另有receipt），无manifest条目省略。顶层.md改名.md.txt只改变名称，同SHA；源、输入、原命令、真实exit、环境、CSV/JSON、失败图与最终PNG全部保留，不携带无关缓存。[all-instances.json](results/2026-10-10-v2/all-instances.json) 和各execution.json给真实子进程argv/cwd/time/RSS；[environment.json](results/2026-10-10-v2/environment.json) 给Python3.14.7/macOS和线程环境。最大数值child RSS39,337,984 bytes是观察，不是OS硬资源限制或两任务聚合峰值。
+原manifest [artifact-hashes.json](results/2026-10-10-v2/artifact-hashes.json) 字节保留；[copy-receipt.json](results/2026-10-10-v2/copy-receipt.json) 映射原路径到本目录，61个原件共3,015,910字节（含原manifest，另有receipt），无manifest条目省略。顶层.md改名.md.txt只改变名称，同SHA；原命令、真实exit、环境、CSV/JSON、失败图与最终PNG保留原字节；四份同版源码/镜像/图输入改从固定提交恢复，历史README仍留在包内。原manifest和copy receipt记载当时61份复制，不重新解释为当前包内文件计数。[all-instances.json](results/2026-10-10-v2/all-instances.json) 和各execution.json给真实子进程argv/cwd/time/RSS；[environment.json](results/2026-10-10-v2/environment.json) 给Python3.14.7/macOS和线程环境。最大数值child RSS39,337,984 bytes是观察，不是OS硬资源限制或两任务聚合峰值。
 
-便携入口 [replay.py](results/2026-10-10-v2/replay.py) 与 [REPLAY.md.txt](results/2026-10-10-v2/REPLAY.md.txt) 在当次只做静态核，**驱动NOTRUN**；已有五个真实执行不冒充驱动已跑。用可用标准库Python在本实践目录指定全新、不存在的输出目录：
+当前复建入口 [replay.py](results/2026-10-10-v2/replay.py) 从本地 WWL Git 的固定提交 `03f07ed66d478db56b8d60fdaade19fed7f02bb2` 取回 `wiener_lab.py`、`test_wiener_lab.py`、`04-源码与验证.md` 和 `assets/information-windows.svg`，在库外新目录恢复原 `snapshot/` 相对布局；它不读取当前工作树里的这四份输入。运行时旧版 [snapshot/README.md](results/2026-10-10-v2/snapshot/README.md) 与当前阅读说明不同，仍从包内按原字节复制。先取得含该提交的本地 WWL Git 仓库，再用标准库 Python 在本实践目录指定全新、绝对路径的输出目录；`--repo` 可以指向该仓库子目录，驱动会解析实际 Git 顶层：
 
 ```sh
-PYTHONDONTWRITEBYTECODE=1 python3 -B results/2026-10-10-v2/replay.py --output /private/tmp/wwl-179-replay-01
+PYTHONDONTWRITEBYTECODE=1 python3 -B results/2026-10-10-v2/replay.py --repo /绝对路径/WWL --output /private/tmp/wwl-179-replay-01
 ```
 
-它先核快照及独立工具hash，依次运行8test、预跑1/128/256、标准16/4096/8192和两oracle；每个child真实exit非0或超时即停，最后要求两oracle均all_match且无failed_checks，新stdout/stderr、环境和execution.json留在新目录。60秒预跑/300秒常规及数值库线程环境是工作预算，不是OS硬cap。不复制历史output冒充新输出，不自动重渲染PNG；新视觉证据需另记录。这里完成有限合成模型，现实端口、硬件、一般平稳/遍历前提与真人迁移仍分别未验。
+新执行者运行此命令会实际执行8项测试、预跑1/128/256、标准16/4096/8192和两oracle。驱动在创建目标前核固定提交、五份输入与原 identity/copy receipt 的 SHA/字节数，以及固定配置、运行前预期和独立工具身份；缺提交/输入、身份不匹配、库内目标、已存在目标或输出最终节点为符号链接（含悬空链接）均拒绝。准备阶段失败的结构化 receipt 输出到 stderr，目标保持未创建；可以由调用者把 stderr 保存到另一个库外文件。创建后先写准备 receipt，子进程的 stdout/stderr、环境、execution.json 和最终 `fresh-receipt.json` 留在新目录，失败立即停止。收据先序列化再写；八测试必须报告完整8项与末尾OK，两oracle须均all_match且无failed_checks，才能记录五子进程完成。
+
+线程环境请求1线程，测试/预跑/CSV oracle各60秒，标准CLI与完整oracle各300秒；这些是工作预算而非OS硬cap，也不观测两任务聚合峰值。驱动顺序执行数值任务；协调者仍须控制总并发至多2个。PNG不会自动重渲染，新显示证据须另记录。这里完成有限合成模型，现实端口、硬件、一般平稳/遍历前提与真人迁移仍分别未验。
+
+原 [REPLAY.md.txt](results/2026-10-10-v2/REPLAY.md.txt)、`replay-static.json` 和原报告的 **驱动NOTRUN** 描述的是当次旧入口，仅静态审阅的历史事实保留；当前驱动的恢复和执行需由新运行的 stdout/stderr、五份execution和fresh receipt核对，旧五个真实执行不能替代它。原 [artifact-hashes.json](results/2026-10-10-v2/artifact-hashes.json) 与 [copy-receipt.json](results/2026-10-10-v2/copy-receipt.json) 不因换入口而重写，旧哈希仍用于查旧字节。

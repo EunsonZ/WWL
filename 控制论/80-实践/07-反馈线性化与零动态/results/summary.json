@@ -1,0 +1,178 @@
+{
+  "cases": {
+    "minimum": {
+      "status": "completed",
+      "rows": 301,
+      "final_tau": 6.0,
+      "final_normal": [
+        0.00024756800705643897,
+        -0.0002472607964384625,
+        0.001413195951323211
+      ],
+      "analytic_max_difference": 3.341637979147096e-12,
+      "coordinate_route_max_difference": 4.273195165687541e-14,
+      "plant_identity_max_error": 1.3985787785349405e-17,
+      "step_differences": [
+        8.780391839900502e-10,
+        5.372881469191296e-11,
+        3.1337157988257316e-12
+      ],
+      "final_tau_reference_differences": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "coordinate_route_final_tau_difference": 0.0,
+      "first_export_request_over_limit_tau": null,
+      "amplitude_bound": {
+        "p0": 0.1,
+        "q0": 0.05,
+        "ideal_output_bound": 0.15000000000000002,
+        "internal_bound": 0.07518191617571636,
+        "virtual_input_bound": 0.30000000000000004,
+        "request_bound": 0.3838178170595564,
+        "protected_minimum_case": true
+      }
+    },
+    "nonminimum": {
+      "status": "completed",
+      "rows": 301,
+      "final_tau": 6.0,
+      "final_normal": [
+        0.00024756800705644146,
+        -0.0002472607964384517,
+        21.51607848373768
+      ],
+      "analytic_max_difference": 6.695692889823478e-10,
+      "coordinate_route_max_difference": 4.826435674589726e-12,
+      "plant_identity_max_error": 5.044575868431832e-15,
+      "step_differences": [
+        1.692443057023077e-07,
+        1.0626958869731474e-08,
+        6.276295039991922e-10
+      ],
+      "final_tau_reference_differences": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "coordinate_route_final_tau_difference": 0.0,
+      "first_export_request_over_limit_tau": 2.94,
+      "amplitude_bound": {
+        "p0": 0.1,
+        "q0": 0.05,
+        "ideal_output_bound": 0.15000000000000002,
+        "internal_bound": null,
+        "virtual_input_bound": 0.30000000000000004,
+        "request_bound": null,
+        "protected_minimum_case": false
+      }
+    },
+    "saturated": {
+      "status": "guard_event_stop",
+      "rows": 221,
+      "final_tau": 4.382870904119738,
+      "final_normal": [
+        0.8,
+        2.0170980700398373,
+        4.618713916481557
+      ],
+      "analytic_max_difference": null,
+      "coordinate_route_max_difference": 1.2407958109361967e-10,
+      "plant_identity_max_error": 1.7763568394002505e-15,
+      "step_differences": [
+        1.4593174810124808e-05,
+        5.317480440177488e-06,
+        6.49951234956264e-07
+      ],
+      "final_tau_reference_differences": [
+        3.6985603539818612e-06,
+        1.3464891743808494e-06,
+        1.6467532226727144e-07
+      ],
+      "coordinate_route_final_tau_difference": 3.2519764658900385e-11,
+      "first_export_request_over_limit_tau": 2.94,
+      "amplitude_bound": {
+        "p0": 0.1,
+        "q0": 0.05,
+        "ideal_output_bound": 0.15000000000000002,
+        "internal_bound": null,
+        "virtual_input_bound": 0.30000000000000004,
+        "request_bound": null,
+        "protected_minimum_case": false
+      }
+    },
+    "tracking": {
+      "status": "completed",
+      "rows": 301,
+      "final_tau": 6.0,
+      "final_normal": [
+        0.014235938414655655,
+        -0.04962356243857914,
+        0.051781651292484715
+      ],
+      "analytic_max_difference": 1.2974646596218324e-12,
+      "coordinate_route_max_difference": 1.40232923642578e-13,
+      "plant_identity_max_error": 2.4532694666933986e-17,
+      "step_differences": [
+        3.3766221964369135e-10,
+        2.0794852062215417e-11,
+        1.2164701345228888e-12
+      ],
+      "final_tau_reference_differences": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "coordinate_route_final_tau_difference": 0.0,
+      "first_export_request_over_limit_tau": null,
+      "amplitude_bound": {
+        "p0": 0.05,
+        "q0": 0.0,
+        "ideal_output_bound": 0.15000000000000002,
+        "internal_bound": 0.13839397205857212,
+        "virtual_input_bound": 0.07500000000000001,
+        "request_bound": 0.21830585376836023,
+        "protected_minimum_case": true
+      }
+    },
+    "singular_initial": {
+      "status": "initial_singular_stop",
+      "rows": 1,
+      "final_tau": 0.0,
+      "final_normal": [
+        1.0,
+        0.0,
+        0.02
+      ],
+      "analytic_max_difference": null,
+      "coordinate_route_max_difference": 0.0,
+      "plant_identity_max_error": 0.0,
+      "step_differences": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "final_tau_reference_differences": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "coordinate_route_final_tau_difference": 0.0,
+      "first_export_request_over_limit_tau": null,
+      "amplitude_bound": {
+        "p0": 2.0,
+        "q0": 1.0,
+        "ideal_output_bound": 3.0,
+        "internal_bound": 1.123638323514327,
+        "virtual_input_bound": 6.0,
+        "request_bound": null,
+        "protected_minimum_case": false
+      }
+    }
+  },
+  "trajectory_rows": 1125,
+  "event_rows": 4,
+  "authority_rows": 200,
+  "scope": "finite model checks; general definitions and counterexample proof live in lesson 16"
+}

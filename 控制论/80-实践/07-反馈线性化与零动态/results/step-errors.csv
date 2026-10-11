@@ -1,0 +1,16 @@
+case,step_tau,reference_step_tau,max_normal_state_difference,common_grid_points,status,final_tau,final_tau_difference_from_reference
+minimum,0.02,0.0025,8.780391839900502e-10,301,completed,6.0,0.0
+minimum,0.01,0.0025,5.372881469191296e-11,301,completed,6.0,0.0
+minimum,0.005,0.0025,3.1337157988257316e-12,301,completed,6.0,0.0
+nonminimum,0.02,0.0025,1.692443057023077e-07,301,completed,6.0,0.0
+nonminimum,0.01,0.0025,1.0626958869731474e-08,301,completed,6.0,0.0
+nonminimum,0.005,0.0025,6.276295039991922e-10,301,completed,6.0,0.0
+saturated,0.02,0.0025,1.4593174810124808e-05,220,guard_event_stop,4.382867370234706,3.6985603539818612e-06
+saturated,0.01,0.0025,5.317480440177488e-06,220,guard_event_stop,4.382869722305886,1.3464891743808494e-06
+saturated,0.005,0.0025,6.49951234956264e-07,220,guard_event_stop,4.382870904119738,1.6467532226727144e-07
+tracking,0.02,0.0025,3.3766221964369135e-10,301,completed,6.0,0.0
+tracking,0.01,0.0025,2.0794852062215417e-11,301,completed,6.0,0.0
+tracking,0.005,0.0025,1.2164701345228888e-12,301,completed,6.0,0.0
+singular_initial,0.02,0.0025,0.0,1,initial_singular_stop,0.0,0.0
+singular_initial,0.01,0.0025,0.0,1,initial_singular_stop,0.0,0.0
+singular_initial,0.005,0.0025,0.0,1,initial_singular_stop,0.0,0.0

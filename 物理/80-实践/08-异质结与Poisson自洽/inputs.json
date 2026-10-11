@@ -1,0 +1,13 @@
+{
+  "description": "Synthetic A/B teaching card; not a measured material, process or PDK",
+  "temperature_K": 300.0,
+  "fermi_eV": -0.5,
+  "half_length_m": 6e-7,
+  "materials": {
+    "A": {"Ec0_eV": 0.0, "Eg_eV": 1.0, "Nc_m-3": 1e25, "Nv_m-3": 1e25, "epsilon_r": 10.0, "ND_m-3": 0.0, "NA_m-3": 1e22},
+    "B": {"Ec0_eV": 0.15, "Eg_eV": 1.2, "Nc_m-3": 2e25, "Nv_m-3": 1.5e25, "epsilon_r": 12.0, "ND_m-3": 2e22, "NA_m-3": 0.0}
+  },
+  "sheet_number_m-2": 2e14,
+  "half_cells": [120, 240, 480],
+  "newton": {"max_iterations": 80, "scaled_residual_tolerance": 1e-10, "max_step_V": 0.1, "max_backtracks": 24}
+}

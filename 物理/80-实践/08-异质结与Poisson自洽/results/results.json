@@ -1,0 +1,527 @@
+{
+  "model": "equilibrium 1D nondegenerate MB, fully ionized dopants, fixed sheet, Dirichlet",
+  "constants": {
+    "q_C": 1.602176634e-19,
+    "kB_eV_K-1": 8.617333262145e-05,
+    "epsilon0_F_m-1": 8.8541878188e-12
+  },
+  "input": {
+    "description": "Synthetic A/B teaching card; not a measured material, process or PDK",
+    "temperature_K": 300.0,
+    "fermi_eV": -0.5,
+    "half_length_m": 6e-07,
+    "materials": {
+      "A": {
+        "Ec0_eV": 0.0,
+        "Eg_eV": 1.0,
+        "Nc_m-3": 1e+25,
+        "Nv_m-3": 1e+25,
+        "epsilon_r": 10.0,
+        "ND_m-3": 0.0,
+        "NA_m-3": 1e+22
+      },
+      "B": {
+        "Ec0_eV": 0.15,
+        "Eg_eV": 1.2,
+        "Nc_m-3": 2e+25,
+        "Nv_m-3": 1.5e+25,
+        "epsilon_r": 12.0,
+        "ND_m-3": 2e+22,
+        "NA_m-3": 0.0
+      }
+    },
+    "sheet_number_m-2": 200000000000000.0,
+    "half_cells": [
+      120,
+      240,
+      480
+    ],
+    "newton": {
+      "max_iterations": 80,
+      "scaled_residual_tolerance": 1e-10,
+      "max_step_V": 0.1,
+      "max_backtracks": 24
+    }
+  },
+  "cases": {
+    "zero": {
+      "depletion": {
+        "wA_m": 2.487101416386209e-07,
+        "wB_m": 1.2435507081931045e-07,
+        "phi0_V": 0.23823205788347102,
+        "phiL_V": -0.3214207120034188,
+        "phiR_V": 0.4714207120030087,
+        "D0minus_C_m-2": -0.00039847757757222887,
+        "D0plus_C_m-2": -0.00039847757757222887,
+        "sheet_jump_error_C_m-2": 0.0,
+        "charge_sum_C_m-2": 0.0,
+        "potential_drop_error_V": -3.3306690738754696e-16
+      },
+      "semi_infinite_PB": {
+        "phi0_V": 0.22738842390305541,
+        "D0minus_C_m-2": -0.00038544283957317156,
+        "D0plus_C_m-2": -0.00038544283957317156,
+        "jump_error_C_m-2": 0.0,
+        "scope": "continuum semi-infinite monotone equilibrium, not finite Dirichlet"
+      },
+      "meshes": [
+        {
+          "half_cells": 120,
+          "h_m": 5e-09,
+          "sigma_C_m-2": 0.0,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.2273931115266264,
+          "iterations": 4,
+          "last_step_V": 1.778796165890476e-07,
+          "scaled_residual": 7.92203936878157e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 1.5231007644347927e-16,
+          "D0minus_C_m-2": -0.0003854665174156805,
+          "D0plus_C_m-2": -0.00038546651741567893,
+          "sheet_jump_error_C_m-2": 1.5720931501039814e-18,
+          "interface_half_volume_charge_C_m-2": 3.89935215952519e-06,
+          "boundary_D_left_C_m-2": -5.975489385218242e-09,
+          "boundary_D_right_C_m-2": -9.736175918898744e-12,
+          "volume_charge_C_m-2": 5.965751120245047e-09,
+          "global_charge_error_C_m-2": 2.089054295990684e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        },
+        {
+          "half_cells": 240,
+          "h_m": 2.5e-09,
+          "sigma_C_m-2": 0.0,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.22738956708782695,
+          "iterations": 4,
+          "last_step_V": 1.779621101500849e-07,
+          "scaled_residual": 3.976175074027196e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 7.644641755559511e-17,
+          "D0minus_C_m-2": -0.0003854487846080531,
+          "D0plus_C_m-2": -0.0003854487846080537,
+          "sheet_jump_error_C_m-2": -5.963111948670274e-19,
+          "interface_half_volume_charge_C_m-2": 1.9496833519605553e-06,
+          "boundary_D_left_C_m-2": -5.937410670038086e-09,
+          "boundary_D_right_C_m-2": -9.573232184378924e-12,
+          "volume_charge_C_m-2": 5.92783534775986e-09,
+          "global_charge_error_C_m-2": 2.0900938477808847e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        },
+        {
+          "half_cells": 480,
+          "h_m": 1.25e-09,
+          "sigma_C_m-2": 0.0,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.22738870784281184,
+          "iterations": 4,
+          "last_step_V": 1.7798032253844065e-07,
+          "scaled_residual": 2.234946365444468e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 4.2969346139500215e-17,
+          "D0minus_C_m-2": -0.00038544432748484515,
+          "D0plus_C_m-2": -0.00038544432748484396,
+          "sheet_jump_error_C_m-2": 1.1926223897340549e-18,
+          "interface_half_volume_charge_C_m-2": 9.748425573705376e-07,
+          "boundary_D_left_C_m-2": -5.927913270974317e-09,
+          "boundary_D_right_C_m-2": -9.53280206441112e-12,
+          "volume_charge_C_m-2": 5.918378376975732e-09,
+          "global_charge_error_C_m-2": 2.0919341740969437e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        }
+      ],
+      "mesh_differences": [
+        {
+          "h_coarse_m": 5e-09,
+          "h_refined_m": 2.5e-09,
+          "max_phi_difference_V": 1.1535392789419063e-05,
+          "phi0_difference_V": -3.5444387994354454e-06
+        },
+        {
+          "h_coarse_m": 2.5e-09,
+          "h_refined_m": 1.25e-09,
+          "max_phi_difference_V": 2.8720017076766524e-06,
+          "phi0_difference_V": -8.592450151112541e-07
+        }
+      ],
+      "fine_minus_semi_infinite_phi0_V": 2.8393975642915237e-07,
+      "newton_history": [
+        {
+          "iteration": 0,
+          "scaled_residual_before": 0.002079155700931859,
+          "alpha": 1.0,
+          "accepted_step_V": 0.016282746151793384,
+          "backtracks": 0
+        },
+        {
+          "iteration": 1,
+          "scaled_residual_before": 0.00025196314145026,
+          "alpha": 1.0,
+          "accepted_step_V": 0.003581996274720442,
+          "backtracks": 0
+        },
+        {
+          "iteration": 2,
+          "scaled_residual_before": 7.836794306514652e-06,
+          "alpha": 1.0,
+          "accepted_step_V": 0.0001305569559626335,
+          "backtracks": 0
+        },
+        {
+          "iteration": 3,
+          "scaled_residual_before": 1.0230126839860545e-08,
+          "alpha": 1.0,
+          "accepted_step_V": 1.7798032253844065e-07,
+          "backtracks": 0
+        }
+      ]
+    },
+    "positive": {
+      "depletion": {
+        "wA_m": 2.544254871678212e-07,
+        "wB_m": 1.172127435839106e-07,
+        "phi0_V": 0.2642491785758063,
+        "phiL_V": -0.3214207120034188,
+        "phiR_V": 0.4714207120030087,
+        "D0minus_C_m-2": -0.0004076345706343499,
+        "D0plus_C_m-2": -0.00037559103795434994,
+        "sheet_jump_error_C_m-2": -1.3552527156068805e-20,
+        "charge_sum_C_m-2": 1.3552527156068805e-20,
+        "potential_drop_error_V": 0.0
+      },
+      "semi_infinite_PB": {
+        "phi0_V": 0.2522371479913663,
+        "D0minus_C_m-2": -0.00039487721802063737,
+        "D0plus_C_m-2": -0.0003628336853406375,
+        "jump_error_C_m-2": -1.2197274440461925e-19,
+        "scope": "continuum semi-infinite monotone equilibrium, not finite Dirichlet"
+      },
+      "meshes": [
+        {
+          "half_cells": 120,
+          "h_m": 5e-09,
+          "sigma_C_m-2": 3.2043532679999995e-05,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.2522241799709725,
+          "iterations": 4,
+          "last_step_V": 1.8404475950726307e-07,
+          "scaled_residual": 8.408245415372938e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 1.6165793204937773e-16,
+          "D0minus_C_m-2": -0.0003949190300603802,
+          "D0plus_C_m-2": -0.000362875497380376,
+          "sheet_jump_error_C_m-2": 4.2148359455373985e-18,
+          "interface_half_volume_charge_C_m-2": 3.728227241246812e-06,
+          "boundary_D_left_C_m-2": -6.935524241564541e-09,
+          "boundary_D_right_C_m-2": -7.654612340128497e-12,
+          "volume_charge_C_m-2": -3.203660481260871e-05,
+          "global_charge_error_C_m-2": 2.237942361808798e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        },
+        {
+          "half_cells": 240,
+          "h_m": 2.5e-09,
+          "sigma_C_m-2": 3.2043532679999995e-05,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.2522338250275782,
+          "iterations": 4,
+          "last_step_V": 1.8373857476409698e-07,
+          "scaled_residual": 4.246945494682374e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 8.165228204942004e-17,
+          "D0minus_C_m-2": -0.0003948877475922057,
+          "D0plus_C_m-2": -0.00036284421491220275,
+          "sheet_jump_error_C_m-2": 2.9680034471790684e-18,
+          "interface_half_volume_charge_C_m-2": 1.8640618983792062e-06,
+          "boundary_D_left_C_m-2": -6.892398535693794e-09,
+          "boundary_D_right_C_m-2": -7.523778899581184e-12,
+          "volume_charge_C_m-2": -3.20366478074757e-05,
+          "global_charge_error_C_m-2": 2.2325010221556363e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        },
+        {
+          "half_cells": 480,
+          "h_m": 1.25e-09,
+          "sigma_C_m-2": 3.2043532679999995e-05,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.2522363120475771,
+          "iterations": 4,
+          "last_step_V": 1.836850105956002e-07,
+          "scaled_residual": 2.3130472868919895e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 4.4470923796745276e-17,
+          "D0minus_C_m-2": -0.0003948798553335679,
+          "D0plus_C_m-2": -0.00036283632265356506,
+          "sheet_jump_error_C_m-2": 2.859583229930518e-18,
+          "interface_half_volume_charge_C_m-2": 9.320242792213909e-07,
+          "boundary_D_left_C_m-2": -6.881642733411038e-09,
+          "boundary_D_right_C_m-2": -7.491322975537635e-12,
+          "volume_charge_C_m-2": -3.203665853081935e-05,
+          "global_charge_error_C_m-2": 2.2297905167244225e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        }
+      ],
+      "mesh_differences": [
+        {
+          "h_coarse_m": 5e-09,
+          "h_refined_m": 2.5e-09,
+          "max_phi_difference_V": 1.126068361670396e-05,
+          "phi0_difference_V": 9.645056605667168e-06
+        },
+        {
+          "h_coarse_m": 2.5e-09,
+          "h_refined_m": 1.25e-09,
+          "max_phi_difference_V": 2.837758139778712e-06,
+          "phi0_difference_V": 2.487019998942408e-06
+        }
+      ],
+      "fine_minus_semi_infinite_phi0_V": -8.359437891902743e-07,
+      "newton_history": [
+        {
+          "iteration": 0,
+          "scaled_residual_before": 0.0020773919550328194,
+          "alpha": 1.0,
+          "accepted_step_V": 0.01634248306089554,
+          "backtracks": 0
+        },
+        {
+          "iteration": 1,
+          "scaled_residual_before": 0.0002529774494581557,
+          "alpha": 1.0,
+          "accepted_step_V": 0.0036110455879576355,
+          "backtracks": 0
+        },
+        {
+          "iteration": 2,
+          "scaled_residual_before": 7.933363850980968e-06,
+          "alpha": 1.0,
+          "accepted_step_V": 0.00013266372593119597,
+          "backtracks": 0
+        },
+        {
+          "iteration": 3,
+          "scaled_residual_before": 1.0518559973673874e-08,
+          "alpha": 1.0,
+          "accepted_step_V": 1.836850105956002e-07,
+          "backtracks": 0
+        }
+      ]
+    },
+    "negative": {
+      "depletion": {
+        "wA_m": 2.426607812854682e-07,
+        "wB_m": 1.313303906427341e-07,
+        "phi0_V": 0.2113383565878677,
+        "phiL_V": -0.3214207120034188,
+        "phiR_V": 0.4714207120030087,
+        "D0minus_C_m-2": -0.0003887854337637616,
+        "D0plus_C_m-2": -0.0004208289664437616,
+        "sheet_jump_error_C_m-2": 1.3552527156068805e-20,
+        "charge_sum_C_m-2": -1.3552527156068805e-20,
+        "potential_drop_error_V": -3.3306690738754696e-16
+      },
+      "semi_infinite_PB": {
+        "phi0_V": 0.20149447435038098,
+        "D0minus_C_m-2": -0.00037562934904041755,
+        "D0plus_C_m-2": -0.0004076728817204176,
+        "jump_error_C_m-2": -4.0657581468206416e-20,
+        "scope": "continuum semi-infinite monotone equilibrium, not finite Dirichlet"
+      },
+      "meshes": [
+        {
+          "half_cells": 120,
+          "h_m": 5e-09,
+          "sigma_C_m-2": -3.2043532679999995e-05,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.20150579912923763,
+          "iterations": 4,
+          "last_step_V": 1.7545254338822896e-07,
+          "scaled_residual": 7.665807548649693e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 1.4738373282224826e-16,
+          "D0minus_C_m-2": -0.0003756461544519998,
+          "D0plus_C_m-2": -0.0004076896871319992,
+          "sheet_jump_error_C_m-2": 6.098637220230962e-19,
+          "interface_half_volume_charge_C_m-2": 3.966466747536332e-06,
+          "boundary_D_left_C_m-2": -5.095837224390525e-09,
+          "boundary_D_right_C_m-2": -1.2335131516682787e-11,
+          "volume_charge_C_m-2": 3.2048616180062536e-05,
+          "global_charge_error_C_m-2": 2.03033119830498e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        },
+        {
+          "half_cells": 240,
+          "h_m": 2.5e-09,
+          "sigma_C_m-2": -3.2043532679999995e-05,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.20149729559040472,
+          "iterations": 4,
+          "last_step_V": 1.7553714627961396e-07,
+          "scaled_residual": 3.96692323733055e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 7.626854063667171e-17,
+          "D0minus_C_m-2": -0.00037563355880315723,
+          "D0plus_C_m-2": -0.00040767709148315813,
+          "sheet_jump_error_C_m-2": -9.0801931945661e-19,
+          "interface_half_volume_charge_C_m-2": 1.983239782743888e-06,
+          "boundary_D_left_C_m-2": -5.062766919616512e-09,
+          "boundary_D_right_C_m-2": -1.2131960558877622e-11,
+          "volume_charge_C_m-2": 3.204858331292598e-05,
+          "global_charge_error_C_m-2": 2.033075585054084e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        },
+        {
+          "half_cells": 480,
+          "h_m": 1.25e-09,
+          "sigma_C_m-2": -3.2043532679999995e-05,
+          "phiL_V": -0.3214207120034188,
+          "phiR_V": 0.4714207120030087,
+          "phi0_V": 0.20149517900700198,
+          "iterations": 4,
+          "last_step_V": 1.755685016527657e-07,
+          "scaled_residual": 2.1522195256486235e-14,
+          "residual_scale_C_m-2": 0.0019226119607999997,
+          "max_row_residual_C_m-2": 4.137883002279345e-17,
+          "D0minus_C_m-2": -0.0003756304020330468,
+          "D0plus_C_m-2": -0.0004076739347130454,
+          "sheet_jump_error_C_m-2": 1.3688052427629493e-18,
+          "interface_half_volume_charge_C_m-2": 9.916206888249705e-07,
+          "boundary_D_left_C_m-2": -5.054518905616726e-09,
+          "boundary_D_right_C_m-2": -1.2081543820167994e-11,
+          "volume_charge_C_m-2": 3.204857511532743e-05,
+          "global_charge_error_C_m-2": 2.0343630751339103e-15,
+          "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+          "MB_tail_check_eta_le_minus3": true
+        }
+      ],
+      "mesh_differences": [
+        {
+          "h_coarse_m": 5e-09,
+          "h_refined_m": 2.5e-09,
+          "max_phi_difference_V": 1.4460248587089275e-05,
+          "phi0_difference_V": -8.503538832915769e-06
+        },
+        {
+          "h_coarse_m": 2.5e-09,
+          "h_refined_m": 1.25e-09,
+          "max_phi_difference_V": 3.608569710378262e-06,
+          "phi0_difference_V": -2.116583402739236e-06
+        }
+      ],
+      "fine_minus_semi_infinite_phi0_V": 7.046566209978344e-07,
+      "newton_history": [
+        {
+          "iteration": 0,
+          "scaled_residual_before": 0.002081183626495337,
+          "alpha": 1.0,
+          "accepted_step_V": 0.016257055277112947,
+          "backtracks": 0
+        },
+        {
+          "iteration": 1,
+          "scaled_residual_before": 0.00025146471800351994,
+          "alpha": 1.0,
+          "accepted_step_V": 0.0035693804589958466,
+          "backtracks": 0
+        },
+        {
+          "iteration": 2,
+          "scaled_residual_before": 7.794217737221328e-06,
+          "alpha": 1.0,
+          "accepted_step_V": 0.00012965730999059212,
+          "backtracks": 0
+        },
+        {
+          "iteration": 3,
+          "scaled_residual_before": 1.010398130160632e-08,
+          "alpha": 1.0,
+          "accepted_step_V": 1.755685016527657e-07,
+          "backtracks": 0
+        }
+      ]
+    },
+    "doping_double": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "sigma_C_m-2": 3.2043532679999995e-05,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4893399527668123,
+      "phi0_V": 0.3400669587556214,
+      "iterations": 4,
+      "last_step_V": 2.1147831350035507e-06,
+      "scaled_residual": 2.8050687736926778e-12,
+      "residual_scale_C_m-2": 0.0038452239215999995,
+      "max_row_residual_C_m-2": 1.078611755033626e-14,
+      "D0minus_C_m-2": -0.00044216097257459793,
+      "D0plus_C_m-2": -0.0004101174398877455,
+      "sheet_jump_error_C_m-2": 6.852415228124353e-15,
+      "interface_half_volume_charge_C_m-2": 9.317963834458974e-07,
+      "boundary_D_left_C_m-2": -1.1306840259318353e-08,
+      "boundary_D_right_C_m-2": -1.0050284339957666e-15,
+      "volume_charge_C_m-2": -3.2032226097282025e-05,
+      "global_charge_error_C_m-2": 2.565363218620491e-13,
+      "max_n_over_Nc_or_p_over_Nv": 0.0020570419984606856,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "right_boundary_plus_0.05V": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "sigma_C_m-2": 3.2043532679999995e-05,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.5214207120030088,
+      "phi0_V": 0.2522363141054031,
+      "iterations": 6,
+      "last_step_V": 3.4566227640949964e-09,
+      "scaled_residual": 5.348442737965936e-15,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "max_row_residual_C_m-2": 1.0282979979667206e-17,
+      "D0minus_C_m-2": -0.00039487985612393623,
+      "D0plus_C_m-2": -0.0003628363234439351,
+      "sheet_jump_error_C_m-2": 1.1248597539537109e-18,
+      "interface_half_volume_charge_C_m-2": 9.320242737022178e-07,
+      "boundary_D_left_C_m-2": -6.881642815984072e-09,
+      "boundary_D_right_C_m-2": -0.0002651776007876064,
+      "volume_charge_C_m-2": -0.00029721425182479763,
+      "global_charge_error_C_m-2": 7.196391919872536e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.006917720816438499,
+      "MB_tail_check_eta_le_minus3": true
+    }
+  },
+  "checks": {
+    "domain_extension_same_h_phi0_difference_V": 4.53431181490771e-11,
+    "exact_intrinsic_phi_error_V": 0.0,
+    "exact_intrinsic_scaled_residual": 0.0,
+    "expected_failures": {
+      "iteration_budget_zero": "Newton iteration budget exhausted",
+      "invalid_temperature": "positive finite temperature_K required",
+      "fractional_grid": "half_cells integer in [4,5000] required"
+    },
+    "converged_but_MB_invalid": {
+      "scaled_residual": 8.044472007733854e-15,
+      "max_n_over_Nc_or_p_over_Nv": 109.59183160315575,
+      "MB_tail_check_eta_le_minus3": false
+    },
+    "assertions": [
+      "all five physical teaching cases eta<=-3",
+      "mesh refinement decreases potential discrepancy",
+      "interface and global Gauss balance",
+      "exact intrinsic constant solution",
+      "budget/domain failures visible"
+    ]
+  }
+}

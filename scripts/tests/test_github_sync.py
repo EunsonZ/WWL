@@ -31,7 +31,7 @@ class SecretChecks(unittest.TestCase):
         self.assertEqual(github_askpass.response("Password for 'https://x-access-token@github.com': ", 'example'), 'example')
 
     def test_protected_paths(self):
-        for name in ['.env', 'lab/.env.local', 'tls/example.key', '.obsidian/plugins/service/data.json', '.obsidian/workspace.json', 'lab/node_modules/a.js', 'scripts/__pycache__/a.pyc']:
+        for name in ['.env', 'lab/.env.local', 'tls/example.key', '.obsidian/plugins/service/data.json', '.obsidian/workspace.json', scan.REVIEWED_CSS_PATH, 'lab/node_modules/a.js', 'scripts/__pycache__/a.pyc']:
             self.assertTrue(scan.protected_path(name))
         self.assertFalse(scan.protected_path('.obsidian/types.json'))
         self.assertFalse(scan.protected_path('数学/01-对象.md'))
@@ -105,6 +105,70 @@ class HistoryChecks(unittest.TestCase):
         self.commit(scan.EMPTY_CONFIG_ARCHIVE, b'{"changed":true}')
         findings = scan.scan_pending(self.repo, 'HEAD', base)['findings']
         self.assertIn('archived-config-version-unreviewed', [x['type'] for x in findings])
+
+    def reviewed_css(self):
+        data = (Path(__file__).resolve().parents[2] / scan.REVIEWED_CSS_PATH).read_bytes()
+        self.assertEqual(hashlib.sha256(data).hexdigest(),
+                         '4e201df5fa74ead1d81737d45b855694c5463f47842a25b0a7887a8ebaf45c8d')
+        return data
+
+    def test_exact_reviewed_css_is_accepted(self):
+        self.commit(scan.REVIEWED_CSS_PATH, self.reviewed_css())
+        self.assertEqual(self.run_git('rev-parse', 'HEAD:' + scan.REVIEWED_CSS_PATH),
+                         scan.REVIEWED_CSS_BLOB)
+        self.assertEqual(scan.scan_pending(self.repo, 'HEAD')['findings'], [])
+
+    def test_changed_reviewed_css_blocks(self):
+        base = self.commit(scan.REVIEWED_CSS_PATH, self.reviewed_css())
+        self.commit(scan.REVIEWED_CSS_PATH, self.reviewed_css() + b'/* changed */\n')
+        self.assertIn({'path': scan.REVIEWED_CSS_PATH, 'type': 'reviewed-css-version-unreviewed'},
+                      scan.scan_pending(self.repo, 'HEAD', base)['findings'])
+
+    def test_reviewed_css_blob_at_other_protected_paths_blocks(self):
+        base = self.commit('note.css', self.reviewed_css())
+        paths = ['.obsidian/snippets/other.css', '.obsidian/appearance.json',
+                 '.obsidian/plugins/service/data.json', '.obsidian/app.json',
+                 'archive/' + scan.REVIEWED_CSS_PATH]
+        for name in paths:
+            self.commit(name, self.reviewed_css())
+        findings = scan.scan_pending(self.repo, 'HEAD', base)['findings']
+        for name in paths:
+            self.assertIn({'path': name, 'type': 'protected-local-path'}, findings)
+
+    def test_unreviewed_css_in_pending_history_still_blocks(self):
+        base = self.commit('note.txt', b'safe')
+        self.commit(scan.REVIEWED_CSS_PATH, self.reviewed_css() + b'/* earlier */\n')
+        self.commit(scan.REVIEWED_CSS_PATH, self.reviewed_css())
+        self.assertIn({'path': scan.REVIEWED_CSS_PATH, 'type': 'reviewed-css-version-unreviewed'},
+                      scan.scan_pending(self.repo, 'HEAD', base)['findings'])
+
+    def test_reviewed_css_symlink_mode_blocks_even_with_exact_blob(self):
+        self.commit(scan.REVIEWED_CSS_PATH, self.reviewed_css())
+        self.run_git('update-index', '--cacheinfo', '120000', scan.REVIEWED_CSS_BLOB,
+                     scan.REVIEWED_CSS_PATH)
+        self.run_git('commit', '-m', 'symlink fixture')
+        self.assertIn({'path': scan.REVIEWED_CSS_PATH, 'type': 'reviewed-css-version-unreviewed'},
+                      scan.scan_pending(self.repo, 'HEAD')['findings'])
+
+    def test_reviewed_css_executable_mode_blocks(self):
+        self.commit(scan.REVIEWED_CSS_PATH, self.reviewed_css())
+        self.run_git('update-index', '--chmod=+x', scan.REVIEWED_CSS_PATH)
+        self.run_git('commit', '-m', 'executable fixture')
+        self.assertIn({'path': scan.REVIEWED_CSS_PATH, 'type': 'reviewed-css-version-unreviewed'},
+                      scan.scan_pending(self.repo, 'HEAD')['findings'])
+
+    def test_css_path_exception_still_scans_content_without_leaking_values(self):
+        value = 'ghp_' + 'F' * 36
+        self.commit(scan.REVIEWED_CSS_PATH,
+                    ('/* ' + value + ' */\n-----BEGIN ' + 'PRIVATE KEY-----\n').encode())
+        oid = self.run_git('rev-parse', 'HEAD:' + scan.REVIEWED_CSS_PATH)
+        # Simulate a mistakenly reviewed blob to prove path approval never skips
+        # credential/private-key scanning. No actual secret is used.
+        with patch.object(scan, 'REVIEWED_CSS_BLOB', oid):
+            findings = scan.scan_pending(self.repo, 'HEAD')['findings']
+        self.assertEqual({x['type'] for x in findings}, {'github-token', 'private-key'})
+        self.assertNotIn(value, str(findings))
+        self.assertNotIn('BEGIN PRIVATE KEY', str(findings))
 
     def setup_transport(self):
         head = self.commit('note.txt', b'safe')

@@ -19,6 +19,10 @@ POINTER = re.compile(rb'version https://git-lfs.github.com/spec/v1\noid sha256:(
 # Obsidian configuration. Any changed payload at this path needs a new review.
 EMPTY_CONFIG_ARCHIVE = 'Logs/2026-09-15_C1人机协作整合/originals/.obsidian/app.json.txt'
 EMPTY_CONFIG_BLOB = '9e26dfeeb6e641a33dae4961196235bdb965b21b'
+# Reviewed reading-column math overflow fix. Only this ordinary CSS file and
+# exact Git blob are approved; changed content needs a new review.
+REVIEWED_CSS_PATH = '.obsidian/snippets/wwl-continuous-reading.css'
+REVIEWED_CSS_BLOB = '552b9c71d0fd59b5c8b781e88f1a6ca646f7a405'
 
 
 def redact(value):
@@ -92,6 +96,9 @@ def scan_pending(repo, head, remote_head=None):
                 if path == EMPTY_CONFIG_ARCHIVE:
                     if oid != EMPTY_CONFIG_BLOB:
                         path_findings.add((path, 'archived-config-version-unreviewed'))
+                elif path == REVIEWED_CSS_PATH:
+                    if metadata.split()[:2] != [b'100644', b'blob'] or oid != REVIEWED_CSS_BLOB:
+                        path_findings.add((path, 'reviewed-css-version-unreviewed'))
                 else:
                     path_findings.add((path, 'protected-local-path'))
     findings.extend({'path': redact(path), 'type': kind} for path, kind in sorted(path_findings))

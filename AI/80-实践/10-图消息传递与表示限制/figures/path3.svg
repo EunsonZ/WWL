@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"><title>Path3: features and one message layer</title><desc>Same edges and node order before and after. Positions are layout only, not model features.</desc><rect width="900" height="420" fill="white"/><g font-family="sans-serif" fill="#1d2b36">
+<text x="20" y="40" font-size="21" font-weight="bold">Input: x</text>
+<line x1="80" y1="160" x2="220" y2="160" stroke="#536273" stroke-width="3"/>
+<line x1="220" y1="160" x2="360" y2="160" stroke="#536273" stroke-width="3"/>
+<circle cx="80" cy="160" r="25" fill="#e8f1fa" stroke="#195a83" stroke-width="2"/>
+<text x="80" y="166" text-anchor="middle" font-size="18">1</text>
+<text x="80" y="208" text-anchor="middle" font-size="16">x=1</text>
+<circle cx="220" cy="160" r="25" fill="#e8f1fa" stroke="#195a83" stroke-width="2"/>
+<text x="220" y="166" text-anchor="middle" font-size="18">2</text>
+<text x="220" y="208" text-anchor="middle" font-size="16">x=0</text>
+<circle cx="360" cy="160" r="25" fill="#e8f1fa" stroke="#195a83" stroke-width="2"/>
+<text x="360" y="166" text-anchor="middle" font-size="18">3</text>
+<text x="360" y="208" text-anchor="middle" font-size="16">x=2</text>
+<text x="470" y="40" font-size="21" font-weight="bold">Row mean + W + ReLU</text>
+<line x1="530" y1="160" x2="670" y2="160" stroke="#536273" stroke-width="3"/>
+<line x1="670" y1="160" x2="810" y2="160" stroke="#536273" stroke-width="3"/>
+<circle cx="530" cy="160" r="25" fill="#e8f1fa" stroke="#195a83" stroke-width="2"/>
+<text x="530" y="166" text-anchor="middle" font-size="18">1</text>
+<text x="530" y="208" text-anchor="middle" font-size="16">h=0.5</text>
+<circle cx="670" cy="160" r="25" fill="#e8f1fa" stroke="#195a83" stroke-width="2"/>
+<text x="670" y="166" text-anchor="middle" font-size="18">2</text>
+<text x="670" y="208" text-anchor="middle" font-size="16">h=1</text>
+<circle cx="810" cy="160" r="25" fill="#e8f1fa" stroke="#195a83" stroke-width="2"/>
+<text x="810" y="166" text-anchor="middle" font-size="18">3</text>
+<text x="810" y="208" text-anchor="middle" font-size="16">h=1</text>
+<text x="25" y="290" font-size="18">W=1; graph sum=2.5; target=2</text>
+<text x="25" y="330" font-size="18">gradient=1.25; new W=0.875; new sum=2.1875</text>
+<text x="25" y="380" font-size="16">Dimensionless; layout is not X. Self loops belong to propagation.</text></g></svg>

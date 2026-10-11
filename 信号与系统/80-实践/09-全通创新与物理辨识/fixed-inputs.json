@@ -1,0 +1,10 @@
+{
+  "a_values": ["1/2", "1/3"],
+  "unit_V": "1", "sampling_rate_Hz": "4",
+  "impulse_indices": 9, "covariance_lags": 9,
+  "periodic_record_samples": 16,
+  "periodic_u_over_V0": ["1", "0", "-1", "0"],
+  "periodic_prehistory": "same 4-periodic input on all integer times",
+  "gaussian_model": "iid N(0,1 V^2) on Z; stationary convolution from infinite past; no random finite simulation",
+  "rademacher_model": "iid +/-1 V on Z; stationary convolution; exact fourth moments"
+}

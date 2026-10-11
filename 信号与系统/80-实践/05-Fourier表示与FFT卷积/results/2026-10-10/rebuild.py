@@ -5,9 +5,13 @@ from pathlib import Path
 import argparse,json,os,shutil,subprocess,sys,time
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--work',required=True);p.add_argument('--kind',choices=['v1','v2r1'],required=True);a=p.parse_args()
- work=Path(a.work).resolve();assert work.is_dir() and not any(work.iterdir()),'work must be new and empty'
+ p=argparse.ArgumentParser();p.add_argument('--work',required=True);p.add_argument('--kind',choices=['v1','v2r1'],required=True);p.add_argument('--repo',type=Path,help='local WWL Git repository required for fixed v2r1 restoration');a=p.parse_args()
  base=Path(__file__).resolve().parent
+ if a.kind=='v2r1':
+  if a.repo is None:p.error('--repo is required for --kind v2r1')
+  helper=base.parents[2]/'06-IIR规格与实现/results/2026-10-10/v2r1/replay.py'
+  return subprocess.run([sys.executable,'-B',str(helper),'--repo',str(a.repo),'--output',a.work]).returncode
+ work=Path(a.work).resolve();assert work.is_dir() and not any(work.iterdir()),'work must be new and empty'
  source=base/'v1' if a.kind=='v1' else base.parents[2]/'06-IIR规格与实现/results/2026-10-10/v2r1'
  runs=[];env=os.environ.copy();env.update(PYTHONDONTWRITEBYTECODE='1',OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',MKL_NUM_THREADS='4')
  for d in ('logs','raw','home','tmp'): (work/d).mkdir()
@@ -35,14 +39,8 @@ def main():
    job(name+'-cli',[sys.executable,'-B',lab+'.py','--output',str(work/(name+'-cli-output'))],cwd)
   for name in ('oracle_fourier','oracle_iir','supplementary_delay_retry'):job(name,[sys.executable,'-B',str(work/(name+'.py'))],work)
   expected={'fourier-tests','fourier-cli','iir-tests','iir-cli','oracle_fourier','oracle_iir','supplementary_delay_retry'}
- else:
-  for name in ('snapshot','snapshot-r1'):shutil.copytree(source/name,work/name)
-  for name in ('run_cli.py','run_tests_r1.py','executor_oracle.py'):shutil.copyfile(source/name,work/name)
-  job('iir-cli',[sys.executable,'-B',str(work/'run_cli.py')],work,'cli-run.json')
-  job('iir-tests-r1',[sys.executable,'-B',str(work/'run_tests_r1.py')],work,'r1-test-run.json')
-  job('executor-oracle',[sys.executable,'-B',str(work/'executor_oracle.py')],work)
-  expected={'iir-cli','iir-tests-r1','executor-oracle'}
+
  assert {r['name'] for r in runs}==expected and len(runs)==len(expected)
  assert all(r.get('exit')==0 and not r.get('error') for r in runs)
  print(json.dumps({'status':'PASS','expected_tasks':sorted(expected),'receipt':str(work/'fixed-runs.json')},ensure_ascii=False))
-if __name__=='__main__':main()
+if __name__=='__main__':sys.exit(main())

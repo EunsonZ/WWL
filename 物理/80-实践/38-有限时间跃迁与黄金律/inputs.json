@@ -1,0 +1,15 @@
+{
+  "time_unit": "us",
+  "angular_frequency_unit": "rad/us",
+  "cases": [
+    {"name": "window", "B": 10.0, "N": 200, "gamma": 0.01, "t_max": 8.0},
+    {"name": "narrow_band", "B": 0.2, "N": 200, "gamma": 0.01, "t_max": 8.0},
+    {"name": "sparse", "B": 10.0, "N": 8, "gamma": 0.01, "t_max": 8.0},
+    {"name": "long_time", "B": 10.0, "N": 200, "gamma": 0.01, "t_max": 160.0},
+    {"name": "strong", "B": 10.0, "N": 200, "gamma": 0.5, "t_max": 8.0}
+  ],
+  "two_state": {"g": 0.1, "detunings": [0.0, 1.0], "t_max": 40.0},
+  "samples": 321,
+  "continuum_grid": 32001,
+  "kernel_times": [0.2, 1.0, 4.0]
+}

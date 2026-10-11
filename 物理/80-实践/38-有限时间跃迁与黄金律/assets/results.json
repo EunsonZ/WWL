@@ -1,0 +1,203 @@
+{
+  "model": "finite-closed-star-v1",
+  "inputs": {
+    "time_unit": "us",
+    "angular_frequency_unit": "rad/us",
+    "cases": [
+      {
+        "name": "window",
+        "B": 10.0,
+        "N": 200,
+        "gamma": 0.01,
+        "t_max": 8.0
+      },
+      {
+        "name": "narrow_band",
+        "B": 0.2,
+        "N": 200,
+        "gamma": 0.01,
+        "t_max": 8.0
+      },
+      {
+        "name": "sparse",
+        "B": 10.0,
+        "N": 8,
+        "gamma": 0.01,
+        "t_max": 8.0
+      },
+      {
+        "name": "long_time",
+        "B": 10.0,
+        "N": 200,
+        "gamma": 0.01,
+        "t_max": 160.0
+      },
+      {
+        "name": "strong",
+        "B": 10.0,
+        "N": 200,
+        "gamma": 0.5,
+        "t_max": 8.0
+      }
+    ],
+    "two_state": {
+      "g": 0.1,
+      "detunings": [
+        0.0,
+        1.0
+      ],
+      "t_max": 40.0
+    },
+    "samples": 321,
+    "continuum_grid": 32001,
+    "kernel_times": [
+      0.2,
+      1.0,
+      4.0
+    ]
+  },
+  "cases": [
+    {
+      "name": "window",
+      "B": 10.0,
+      "N": 200,
+      "gamma": 0.01,
+      "t_max": 8.0,
+      "spacing_rad_per_us": 0.1,
+      "J_per_us": 0.0015915494309189536,
+      "g_rad_per_us": 0.012615662610100801,
+      "t_rephase_us": 62.83185307179586,
+      "B_t_max": 80.0,
+      "gamma_t_max": 0.08,
+      "V_norm_rad_per_us": 0.17841241161527713,
+      "eigen_residual_rad_per_us": 7.105427357601002e-15,
+      "orthogonality_residual": 2.6645352591003757e-15,
+      "norm_error_probes": 2.442490654175348e-15,
+      "continuum_refinement_max_abs": 5.081271514661978e-11,
+      "exact_vs_first_max_abs": 0.0030444533251335615,
+      "first_vs_continuum_max_abs": 2.2084376775921566e-07,
+      "continuum_vs_golden_max_abs": 0.0008574717892355982,
+      "end": {
+        "exact": 0.07632702753230358,
+        "first_discrete": 0.07937148085743714,
+        "first_continuum": 0.07937126001366938,
+        "golden": 0.08
+      }
+    },
+    {
+      "name": "narrow_band",
+      "B": 0.2,
+      "N": 200,
+      "gamma": 0.01,
+      "t_max": 8.0,
+      "spacing_rad_per_us": 0.002,
+      "J_per_us": 0.0015915494309189536,
+      "g_rad_per_us": 0.0017841241161527712,
+      "t_rephase_us": 3141.592653589793,
+      "B_t_max": 1.6,
+      "gamma_t_max": 0.08,
+      "V_norm_rad_per_us": 0.025231325220201602,
+      "eigen_residual_rad_per_us": 1.9161409926197331e-16,
+      "orthogonality_residual": 4.218847493575595e-15,
+      "norm_error_probes": 6.661338147764089e-16,
+      "continuum_refinement_max_abs": 1.4270522263881702e-11,
+      "exact_vs_first_max_abs": 0.0004888920424928472,
+      "first_vs_continuum_max_abs": 6.089247331364511e-08,
+      "continuum_vs_golden_max_abs": 0.042010057109784366,
+      "end": {
+        "exact": 0.0375011117401961,
+        "first_discrete": 0.03799000378268895,
+        "first_continuum": 0.037989942890215636,
+        "golden": 0.08
+      }
+    },
+    {
+      "name": "sparse",
+      "B": 10.0,
+      "N": 8,
+      "gamma": 0.01,
+      "t_max": 8.0,
+      "spacing_rad_per_us": 2.5,
+      "J_per_us": 0.0015915494309189536,
+      "g_rad_per_us": 0.06307831305050401,
+      "t_rephase_us": 2.5132741228718345,
+      "B_t_max": 80.0,
+      "gamma_t_max": 0.08,
+      "V_norm_rad_per_us": 0.17841241161527713,
+      "eigen_residual_rad_per_us": 5.896514830225352e-15,
+      "orthogonality_residual": 1.5543122344752192e-15,
+      "norm_error_probes": 4.440892098547609e-16,
+      "continuum_refinement_max_abs": 5.081271514661978e-11,
+      "exact_vs_first_max_abs": 0.00037753098963687337,
+      "first_vs_continuum_max_abs": 0.05959094148346339,
+      "continuum_vs_golden_max_abs": 0.0008574717892355982,
+      "end": {
+        "exact": 0.019402787540569122,
+        "first_discrete": 0.019780318530205995,
+        "first_continuum": 0.07937126001366938,
+        "golden": 0.08
+      }
+    },
+    {
+      "name": "long_time",
+      "B": 10.0,
+      "N": 200,
+      "gamma": 0.01,
+      "t_max": 160.0,
+      "spacing_rad_per_us": 0.1,
+      "J_per_us": 0.0015915494309189536,
+      "g_rad_per_us": 0.012615662610100801,
+      "t_rephase_us": 62.83185307179586,
+      "B_t_max": 1600.0,
+      "gamma_t_max": 1.6,
+      "V_norm_rad_per_us": 0.17841241161527713,
+      "eigen_residual_rad_per_us": 7.105427357601002e-15,
+      "orthogonality_residual": 2.6645352591003757e-15,
+      "norm_error_probes": 2.6645352591003757e-15,
+      "continuum_refinement_max_abs": 9.826932600986993e-10,
+      "exact_vs_first_max_abs": 0.1613382293616028,
+      "first_vs_continuum_max_abs": 1.2567062465712433,
+      "continuum_vs_golden_max_abs": 0.0006676334412284816,
+      "end": {
+        "exact": 0.34756781853809604,
+        "first_discrete": 0.3427289045356546,
+        "first_continuum": 1.5993636984601287,
+        "golden": 1.6
+      }
+    },
+    {
+      "name": "strong",
+      "B": 10.0,
+      "N": 200,
+      "gamma": 0.5,
+      "t_max": 8.0,
+      "spacing_rad_per_us": 0.1,
+      "J_per_us": 0.07957747154594767,
+      "g_rad_per_us": 0.08920620580763855,
+      "t_rephase_us": 62.83185307179586,
+      "B_t_max": 80.0,
+      "gamma_t_max": 4.0,
+      "V_norm_rad_per_us": 1.2615662610100802,
+      "eigen_residual_rad_per_us": 8.881784197001252e-15,
+      "orthogonality_residual": 2.886579864025407e-15,
+      "norm_error_probes": 2.664535259105234e-15,
+      "continuum_refinement_max_abs": 2.5406361459090476e-09,
+      "exact_vs_first_max_abs": 2.986242837662335,
+      "first_vs_continuum_max_abs": 1.1042188386767293e-05,
+      "continuum_vs_golden_max_abs": 0.04287358946177991,
+      "end": {
+        "exact": 0.9823312052095207,
+        "first_discrete": 3.9685740428718557,
+        "first_continuum": 3.968563000683469,
+        "golden": 4.0
+      }
+    }
+  ],
+  "method": "Hermitian diagonalization for finite model; trap refinement for continuum first-order integral",
+  "not_proved": [
+    "irreversibility",
+    "general unbounded-Hamiltonian theorem",
+    "hardware validation",
+    "learner understanding"
+  ]
+}

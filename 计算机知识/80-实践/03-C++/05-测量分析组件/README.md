@@ -165,6 +165,11 @@ UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 \
 
 本段Debug/Release及AddressSanitizer+UndefinedBehaviorSanitizer完整CTest各9/9；显式失败计数在NDEBUG下仍执行。ThreadSanitizer另跑普通分配和已有队列合同2/2，未报告数据竞争；这只覆盖本次调度，不是所有调度的证明。macOS本次关闭LeakSanitizer，只用注入域及独立PMR计数核释放；这不等于整个进程的泄漏认证。测试不注入filesystem路径、真实OS线程/同步原语耗尽、文件内部malloc、所有输入和所有调度；不验证自定义allocator、故障中再次故障或实时停止上界。计数说明这些被观察并重放的请求有正确收尾，不能推成任意类型/allocator的强保证。
 
+## C++20模块门面与独立导入者
+
+新增[advanced/modules/README.md](advanced/modules/README.md)接[[计算机知识/10-编程语言/02-C++/10-系统课程/18-模块接口导入与构建边界|第18讲]]，复用安装的ReportSession公开API和原静态实现。模块接口、实现单元、独立importer、包含consumer及P1689扫描脚本形成可重建链；本机Debug/Release四个同输入比较、类型身份和七个预期拒绝通过。隔离Ninja1.13.2下CMake CXX_MODULES自动与指定增量构建已通过；模块目标不安装BMI或package；模块分支不扩大allocator/ABI/协程/并发原证据。
+
+
 ## 有界任务与性能观察
 
 本段对应[[计算机知识/10-编程语言/02-C++/10-系统课程/14-有界任务关闭取消与性能证据|第14讲]]，版本1.2.0。[report_queue.hpp](include/wwl/report_queue.hpp)是公开合同，[report_queue.cpp](src/report_queue.cpp)是队列与执行器真源，[queue_tests.cpp](tests/queue_tests.cpp)和[batch_cli.cmake](tests/batch_cli.cmake)做真实线程/命令路径验证；内部启动器故障缝隙不安装。[queue.cpp](consumer/queue.cpp)从安装包独立消费公共API。

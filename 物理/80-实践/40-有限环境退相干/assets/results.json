@@ -1,0 +1,2412 @@
+{
+  "model": "finite-longitudinal-spin-bath",
+  "inputs": {
+    "units": {
+      "time": "us",
+      "angular_frequency": "rad/us",
+      "energy": "J"
+    },
+    "samples": 401,
+    "t_max": 12.566370614359172,
+    "dephasing_cases": [
+      {
+        "name": "pure_unpolarized",
+        "omega_s": 1.3,
+        "g": [
+          0.5,
+          1,
+          1.5,
+          2
+        ],
+        "omega_bath": [
+          0.37,
+          0.63,
+          0.89,
+          1.11
+        ],
+        "system_bloch": [
+          1,
+          0,
+          0
+        ],
+        "bath_bloch": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "name": "mixed_unpolarized",
+        "omega_s": 1.3,
+        "g": [
+          0.5,
+          1,
+          1.5,
+          2
+        ],
+        "omega_bath": [
+          0.37,
+          0.63,
+          0.89,
+          1.11
+        ],
+        "system_bloch": [
+          1,
+          0,
+          0
+        ],
+        "bath_bloch": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "name": "polarized_pure",
+        "omega_s": 1.3,
+        "g": [
+          0.5,
+          1,
+          1.5,
+          2
+        ],
+        "omega_bath": [
+          0.37,
+          0.63,
+          0.89,
+          1.11
+        ],
+        "system_bloch": [
+          1,
+          0,
+          0
+        ],
+        "bath_bloch": [
+          [
+            0.6,
+            0,
+            0.8
+          ],
+          [
+            0.6,
+            0,
+            0.8
+          ],
+          [
+            0.6,
+            0,
+            0.8
+          ],
+          [
+            0.6,
+            0,
+            0.8
+          ]
+        ]
+      },
+      {
+        "name": "polarized_mixed",
+        "omega_s": 1.3,
+        "g": [
+          0.5,
+          1,
+          1.5,
+          2
+        ],
+        "omega_bath": [
+          0.37,
+          0.63,
+          0.89,
+          1.11
+        ],
+        "system_bloch": [
+          1,
+          0,
+          0
+        ],
+        "bath_bloch": [
+          [
+            0,
+            0,
+            0.8
+          ],
+          [
+            0,
+            0,
+            0.8
+          ],
+          [
+            0,
+            0,
+            0.8
+          ],
+          [
+            0,
+            0,
+            0.8
+          ]
+        ]
+      },
+      {
+        "name": "bath_eigenstate",
+        "omega_s": 1.3,
+        "g": [
+          0.5,
+          1,
+          1.5,
+          2
+        ],
+        "omega_bath": [
+          0.37,
+          0.63,
+          0.89,
+          1.11
+        ],
+        "system_bloch": [
+          1,
+          0,
+          0
+        ],
+        "bath_bloch": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "name": "changed_coupling",
+        "omega_s": 1.3,
+        "g": [
+          0.5,
+          1,
+          1.5,
+          1.4142135623730951
+        ],
+        "omega_bath": [
+          0.37,
+          0.63,
+          0.89,
+          1.11
+        ],
+        "system_bloch": [
+          1,
+          0,
+          0
+        ],
+        "bath_bloch": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "name": "complex_system",
+        "omega_s": 1.3,
+        "g": [
+          0.5,
+          1,
+          1.5,
+          2
+        ],
+        "omega_bath": [
+          0.37,
+          0.63,
+          0.89,
+          1.11
+        ],
+        "system_bloch": [
+          0.8,
+          0.6,
+          0
+        ],
+        "bath_bloch": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "name": "unequal_population",
+        "omega_s": 1.3,
+        "g": [
+          0.5,
+          1,
+          1.5,
+          2
+        ],
+        "omega_bath": [
+          0.37,
+          0.63,
+          0.89,
+          1.11
+        ],
+        "system_bloch": [
+          0.8,
+          0,
+          0.6
+        ],
+        "bath_bloch": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ]
+      }
+    ],
+    "exchange": {
+      "omega": 1.3,
+      "kappa": 0.5
+    }
+  },
+  "hbar_J_s": 1.0545718176461565e-34,
+  "energy_scale_J_per_rad_per_us": 1.0545718176461564e-28,
+  "basis_index": "system*2**N + sum(b[k]*2**(N-1-k))",
+  "numeric_method": "analytic product on grid; full Hermitian eig/unitary and partial trace at five points",
+  "negativity_boundary": "positive detects entanglement; zero alone does not prove separability",
+  "dephasing": {
+    "pure_unpolarized": {
+      "dimension": 32,
+      "hamiltonian_unit": "rad/us",
+      "energy_order": [
+        "system",
+        "bath",
+        "interaction",
+        "total"
+      ],
+      "initial_global_purity": 1.0,
+      "eigen_residual_max_rad_per_us": 0.0,
+      "initial_system_and_bath_pure": true,
+      "bath_diagonal_in_z": false,
+      "full_checks": [
+        {
+          "t_us": 0.0,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 0.0,
+          "unitary_max_error": 0.0,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.4108584641649516e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.7755575615628914e-17,
+            -2.7755575615628914e-17,
+            0.0,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 1.7596631133100184e-16
+        },
+        {
+          "t_us": 0.7853981633974483,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -6.938893903907228e-18,
+                -3.903127820947816e-17
+              ]
+            ],
+            [
+              [
+                -6.938893903907228e-18,
+                3.903127820947816e-17
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.429615457278479e-17,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -2.3115242767292593e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            -6.938893903907228e-18,
+            -2.7755575615628914e-17,
+            0.0,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 3.469446951953614e-17,
+          "partial_transpose_negativity": 0.5000000000000003
+        },
+        {
+          "t_us": 3.141592653589793,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -4.163336342344337e-17,
+                -2.42861286636753e-17
+              ]
+            ],
+            [
+              [
+                -4.163336342344337e-17,
+                2.42861286636753e-17
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 4.8199097454382924e-17,
+          "unitary_max_error": 1.1102230246251565e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -2.599420070807704e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.0816681711721685e-17,
+            0.0,
+            5.204170427930421e-18,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 0.5000000000000004
+        },
+        {
+          "t_us": 6.283185307179586,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.1545084971874734,
+                -0.4755282581475769
+              ]
+            ],
+            [
+              [
+                -0.1545084971874734,
+                0.4755282581475769
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 1.7554167342883506e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.5097688908412606e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            1.734723475976807e-17,
+            0.0,
+            -3.469446951953614e-18,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 9.953054937999854e-16
+        },
+        {
+          "t_us": 12.566370614359172,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.4045084971874741,
+                0.293892626146236
+              ]
+            ],
+            [
+              [
+                -0.4045084971874741,
+                -0.293892626146236
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.554447978966673e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -2.1032203916952063e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            1.0408340855860843e-17,
+            0.0,
+            -1.3877787807814457e-17,
+            -1.3877787807814457e-16
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.3877787807814457e-16,
+          "partial_transpose_negativity": 1.7265945308074805e-15
+        }
+      ]
+    },
+    "mixed_unpolarized": {
+      "dimension": 32,
+      "hamiltonian_unit": "rad/us",
+      "energy_order": [
+        "system",
+        "bath",
+        "interaction",
+        "total"
+      ],
+      "initial_global_purity": 0.0625,
+      "eigen_residual_max_rad_per_us": 0.0,
+      "initial_system_and_bath_pure": false,
+      "bath_diagonal_in_z": true,
+      "full_checks": [
+        {
+          "t_us": 0.0,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 0.0,
+          "unitary_max_error": 0.0,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": 0.0,
+          "global_purity": 0.0625,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.7755575615628914e-17,
+            -2.7755575615628914e-17,
+            0.0,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": -0.0
+        },
+        {
+          "t_us": 0.7853981633974483,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -6.938893903907228e-18,
+                -3.903127820947816e-17
+              ]
+            ],
+            [
+              [
+                -6.938893903907228e-18,
+                3.903127820947816e-17
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.429615457278479e-17,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.0018235791446865e-17,
+          "global_purity": 0.0625,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            -6.938893903907228e-18,
+            -2.7755575615628914e-17,
+            0.0,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 3.469446951953614e-17,
+          "partial_transpose_negativity": 5.0647711797433353e-17
+        },
+        {
+          "t_us": 3.141592653589793,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -4.163336342344337e-17,
+                -2.42861286636753e-17
+              ]
+            ],
+            [
+              [
+                -4.163336342344337e-17,
+                2.42861286636753e-17
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 4.8199097454382924e-17,
+          "unitary_max_error": 1.1102230246251565e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.7579097588461524e-17,
+          "global_purity": 0.0625,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.0816681711721685e-17,
+            0.0,
+            5.204170427930421e-18,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 6.684463148705907e-17
+        },
+        {
+          "t_us": 6.283185307179586,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.1545084971874734,
+                -0.4755282581475769
+              ]
+            ],
+            [
+              [
+                -0.1545084971874734,
+                0.4755282581475769
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 1.7554167342883506e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -2.3763623472234388e-17,
+          "global_purity": 0.0625,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            1.734723475976807e-17,
+            0.0,
+            -3.469446951953614e-18,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 9.873753340661923e-17
+        },
+        {
+          "t_us": 12.566370614359172,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.4045084971874741,
+                0.293892626146236
+              ]
+            ],
+            [
+              [
+                -0.4045084971874741,
+                -0.293892626146236
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.554447978966673e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -2.0536364321034683e-17,
+          "global_purity": 0.0625,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            1.0408340855860843e-17,
+            0.0,
+            -1.3877787807814457e-17,
+            -1.3877787807814457e-16
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.3877787807814457e-16,
+          "partial_transpose_negativity": 7.325571020309357e-17
+        }
+      ]
+    },
+    "polarized_pure": {
+      "dimension": 32,
+      "hamiltonian_unit": "rad/us",
+      "energy_order": [
+        "system",
+        "bath",
+        "interaction",
+        "total"
+      ],
+      "initial_global_purity": 0.9999999999999999,
+      "eigen_residual_max_rad_per_us": 0.0,
+      "initial_system_and_bath_pure": true,
+      "bath_diagonal_in_z": false,
+      "full_checks": [
+        {
+          "t_us": 0.0,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 0.0,
+          "unitary_max_error": 0.0,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.678785412364404e-16,
+          "global_purity": 0.9999999999999999,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.236166980751353e-19,
+            1.2000000000000002,
+            -2.303929616531697e-18,
+            1.2000000000000004
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 2.425634061019276e-16
+        },
+        {
+          "t_us": 0.7853981633974483,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                1.0570971181733668e-18
+              ],
+              [
+                -0.009626577242791527,
+                0.2932588771215435
+              ]
+            ],
+            [
+              [
+                -0.009626577242791543,
+                -0.2932588771215436
+              ],
+              [
+                0.5,
+                1.5449880957918438e-18
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 6.736447455048117e-17,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.6020852139652106e-18,
+          "hermiticity_max_error": 5.721958498152797e-17,
+          "rho_min_eigenvalue": -6.746242601781112e-17,
+          "global_purity": 1.0000000000000002,
+          "global_purity_error": 3.3306690738754696e-16,
+          "energies_over_hbar_rad_per_us": [
+            -6.173176119589341e-18,
+            1.2000000000000002,
+            -1.9786689647860456e-17,
+            1.2000000000000004
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.748276003132876e-17,
+          "partial_transpose_negativity": 0.4048537513720234
+        },
+        {
+          "t_us": 3.141592653589793,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.49999999999999994,
+                3.9979955110402976e-19
+              ],
+              [
+                0.1880912807335913,
+                -0.2588854381999833
+              ]
+            ],
+            [
+              [
+                0.18809128073359133,
+                0.2588854381999833
+              ],
+              [
+                0.5,
+                3.4457300294304938e-18
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.7238012298709097e-16,
+          "unitary_max_error": 1.1102230246251565e-16,
+          "trace_error": 1.1108888217023824e-16,
+          "hermiticity_max_error": 5.551115123125783e-17,
+          "rho_min_eigenvalue": -1.2343725569682504e-16,
+          "global_purity": 1.0000000000000002,
+          "global_purity_error": 3.3306690738754696e-16,
+          "energies_over_hbar_rad_per_us": [
+            -5.517911431593414e-17,
+            1.2000000000000002,
+            -2.244298497044994e-16,
+            1.2000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.221259200879677e-16,
+          "partial_transpose_negativity": 0.384187454245971
+        },
+        {
+          "t_us": 6.283185307179586,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                -2.1345230270808369e-19
+              ],
+              [
+                -0.15450849718747345,
+                -0.4755282581475768
+              ]
+            ],
+            [
+              [
+                -0.1545084971874735,
+                0.4755282581475768
+              ],
+              [
+                0.5000000000000001,
+                2.0328790734103208e-19
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 4.484050470211362e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.2204460515767586e-16,
+          "hermiticity_max_error": 2.7755575615628914e-17,
+          "rho_min_eigenvalue": -7.878011674630184e-17,
+          "global_purity": 1.0000000000000002,
+          "global_purity_error": 3.3306690738754696e-16,
+          "energies_over_hbar_rad_per_us": [
+            -3.0513514891888915e-17,
+            1.2000000000000006,
+            -1.2340931228316254e-16,
+            1.2000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 4.440892098500626e-16,
+          "partial_transpose_negativity": 8.69615600170444e-16
+        },
+        {
+          "t_us": 12.566370614359172,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                -6.776263578034403e-19
+              ],
+              [
+                -0.40450849718747395,
+                0.29389262614623635
+              ]
+            ],
+            [
+              [
+                -0.40450849718747395,
+                -0.29389262614623635
+              ],
+              [
+                0.5,
+                -1.531435568635775e-18
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 9.710485573708405e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.2090619264392153e-18,
+          "hermiticity_max_error": 1.5515838457795457e-17,
+          "rho_min_eigenvalue": -1.0671562652551244e-16,
+          "global_purity": 1.0000000000000004,
+          "global_purity_error": 5.551115123125783e-16,
+          "energies_over_hbar_rad_per_us": [
+            -6.661067097207818e-18,
+            1.2000000000000002,
+            -5.312590645178972e-18,
+            1.2000000000000004
+          ],
+          "energy_conservation_max_error_rad_per_us": 6.884683795282953e-18,
+          "partial_transpose_negativity": 1.6831412102300819e-15
+        }
+      ]
+    },
+    "polarized_mixed": {
+      "dimension": 32,
+      "hamiltonian_unit": "rad/us",
+      "energy_order": [
+        "system",
+        "bath",
+        "interaction",
+        "total"
+      ],
+      "initial_global_purity": 0.45212176000000015,
+      "eigen_residual_max_rad_per_us": 0.0,
+      "initial_system_and_bath_pure": false,
+      "bath_diagonal_in_z": true,
+      "full_checks": [
+        {
+          "t_us": 0.0,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 0.0,
+          "unitary_max_error": 0.0,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.3232696667893929e-17,
+          "global_purity": 0.45212176000000015,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.236166980751353e-19,
+            1.2000000000000002,
+            -2.303929616531697e-18,
+            1.2000000000000004
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 3.073023453473666e-17
+        },
+        {
+          "t_us": 0.7853981633974483,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                1.0570971181733668e-18
+              ],
+              [
+                -0.009626577242791527,
+                0.2932588771215435
+              ]
+            ],
+            [
+              [
+                -0.009626577242791543,
+                -0.2932588771215436
+              ],
+              [
+                0.5,
+                1.5449880957918438e-18
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 6.736447455048117e-17,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.6020852139652106e-18,
+          "hermiticity_max_error": 5.721958498152797e-17,
+          "rho_min_eigenvalue": -2.773605873969553e-17,
+          "global_purity": 0.45212176000000015,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            -6.173176119589341e-18,
+            1.2000000000000002,
+            -1.9786689647860456e-17,
+            1.2000000000000004
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.748276003132876e-17,
+          "partial_transpose_negativity": 4.427778445538168e-17
+        },
+        {
+          "t_us": 3.141592653589793,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.49999999999999994,
+                3.9979955110402976e-19
+              ],
+              [
+                0.1880912807335913,
+                -0.2588854381999833
+              ]
+            ],
+            [
+              [
+                0.18809128073359133,
+                0.2588854381999833
+              ],
+              [
+                0.5,
+                3.4457300294304938e-18
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.7238012298709097e-16,
+          "unitary_max_error": 1.1102230246251565e-16,
+          "trace_error": 1.1108888217023824e-16,
+          "hermiticity_max_error": 5.551115123125783e-17,
+          "rho_min_eigenvalue": -1.9314436479689033e-17,
+          "global_purity": 0.4521217600000001,
+          "global_purity_error": 5.551115123125783e-17,
+          "energies_over_hbar_rad_per_us": [
+            -5.517911431593414e-17,
+            1.2000000000000002,
+            -2.244298497044994e-16,
+            1.2000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.221259200879677e-16,
+          "partial_transpose_negativity": 4.7332245438628856e-17
+        },
+        {
+          "t_us": 6.283185307179586,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                -2.1345230270808369e-19
+              ],
+              [
+                -0.15450849718747345,
+                -0.4755282581475768
+              ]
+            ],
+            [
+              [
+                -0.1545084971874735,
+                0.4755282581475768
+              ],
+              [
+                0.5000000000000001,
+                2.0328790734103208e-19
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 4.484050470211362e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.2204460515767586e-16,
+          "hermiticity_max_error": 2.7755575615628914e-17,
+          "rho_min_eigenvalue": -1.110863555466323e-17,
+          "global_purity": 0.45212176000000026,
+          "global_purity_error": 1.1102230246251565e-16,
+          "energies_over_hbar_rad_per_us": [
+            -3.0513514891888915e-17,
+            1.2000000000000006,
+            -1.2340931228316254e-16,
+            1.2000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 4.440892098500626e-16,
+          "partial_transpose_negativity": 2.1594812425764842e-17
+        },
+        {
+          "t_us": 12.566370614359172,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                -6.776263578034403e-19
+              ],
+              [
+                -0.40450849718747395,
+                0.29389262614623635
+              ]
+            ],
+            [
+              [
+                -0.40450849718747395,
+                -0.29389262614623635
+              ],
+              [
+                0.5,
+                -1.531435568635775e-18
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 9.710485573708405e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.2090619264392153e-18,
+          "hermiticity_max_error": 6.938893903907228e-18,
+          "rho_min_eigenvalue": -1.1215243823998415e-17,
+          "global_purity": 0.45212176000000026,
+          "global_purity_error": 1.1102230246251565e-16,
+          "energies_over_hbar_rad_per_us": [
+            -6.661067097207818e-18,
+            1.2000000000000002,
+            -5.312590645178972e-18,
+            1.2000000000000004
+          ],
+          "energy_conservation_max_error_rad_per_us": 6.884683795282953e-18,
+          "partial_transpose_negativity": 2.1902014302673858e-17
+        }
+      ]
+    },
+    "bath_eigenstate": {
+      "dimension": 32,
+      "hamiltonian_unit": "rad/us",
+      "energy_order": [
+        "system",
+        "bath",
+        "interaction",
+        "total"
+      ],
+      "initial_global_purity": 1.0,
+      "eigen_residual_max_rad_per_us": 0.0,
+      "initial_system_and_bath_pure": true,
+      "bath_diagonal_in_z": true,
+      "full_checks": [
+        {
+          "t_us": 0.0,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 0.0,
+          "unitary_max_error": 0.0,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": 0.0,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            0.0,
+            1.5,
+            0.0,
+            1.5000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": -0.0
+        },
+        {
+          "t_us": 0.7853981633974483,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.11672268192795272,
+                0.4861849601988383
+              ]
+            ],
+            [
+              [
+                0.11672268192795272,
+                -0.4861849601988383
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 1.5700924586837752e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -5.118929641902863e-17,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            0.0,
+            1.5,
+            0.0,
+            1.5000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 5.118929641902863e-17
+        },
+        {
+          "t_us": 3.141592653589793,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.29389262614623646,
+                -0.4045084971874737
+              ]
+            ],
+            [
+              [
+                0.29389262614623646,
+                0.4045084971874737
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 4.47545209131181e-16,
+          "unitary_max_error": 1.1102230246251565e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -3.272127973575552e-17,
+          "global_purity": 0.9999999999999999,
+          "global_purity_error": 1.1102230246251565e-16,
+          "energies_over_hbar_rad_per_us": [
+            0.0,
+            1.5,
+            0.0,
+            1.5000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 3.272127973575552e-17
+        },
+        {
+          "t_us": 6.283185307179586,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.15450849718747384,
+                -0.4755282581475767
+              ]
+            ],
+            [
+              [
+                -0.15450849718747384,
+                0.4755282581475767
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 9.040822243568021e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -3.720837177074456e-17,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            0.0,
+            1.5,
+            0.0,
+            1.5000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 3.720837177074456e-17
+        },
+        {
+          "t_us": 12.566370614359172,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.4045084971874736,
+                0.2938926261462368
+              ]
+            ],
+            [
+              [
+                -0.4045084971874736,
+                -0.2938926261462368
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 1.8013347191190246e-15,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -3.2259685483159704e-17,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            0.0,
+            1.5,
+            0.0,
+            1.5000000000000002
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 3.2259685483159704e-17
+        }
+      ]
+    },
+    "changed_coupling": {
+      "dimension": 32,
+      "hamiltonian_unit": "rad/us",
+      "energy_order": [
+        "system",
+        "bath",
+        "interaction",
+        "total"
+      ],
+      "initial_global_purity": 1.0,
+      "eigen_residual_max_rad_per_us": 0.0,
+      "initial_system_and_bath_pure": true,
+      "bath_diagonal_in_z": false,
+      "full_checks": [
+        {
+          "t_us": 0.0,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 0.0,
+          "unitary_max_error": 0.0,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.4108584641649516e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.7755575615628914e-17,
+            -2.7755575615628914e-17,
+            1.0408340855860843e-17,
+            -2.7755575615628914e-17
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 1.7596631133100184e-16
+        },
+        {
+          "t_us": 0.7853981633974483,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.028999704910199032,
+                -0.04732321738394539
+              ]
+            ],
+            [
+              [
+                0.028999704910199032,
+                0.04732321738394539
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.1986720415755645e-17,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.9785004756411057e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            0.0,
+            -2.7755575615628914e-17,
+            -1.0408340855860843e-17,
+            -2.7755575615628914e-17
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 0.49690998200031544
+        },
+        {
+          "t_us": 3.141592653589793,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                2.42861286636753e-17,
+                -4.163336342344337e-17
+              ]
+            ],
+            [
+              [
+                2.42861286636753e-17,
+                4.163336342344337e-17
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 4.8199097454382936e-17,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -3.4468871176142515e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.7755575615628914e-17,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 0.5000000000000004
+        },
+        {
+          "t_us": 6.283185307179586,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.1326016931096545,
+                0.40810604788515026
+              ]
+            ],
+            [
+              [
+                0.1326016931096545,
+                -0.40810604788515026
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 2.8305244335018383e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -1.270528663698545e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            1.0408340855860843e-17,
+            0.0,
+            -1.3877787807814457e-17,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 0.2566441985785318
+        },
+        {
+          "t_us": 12.566370614359172,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.1913608520320839,
+                0.13903179719664946
+              ]
+            ],
+            [
+              [
+                -0.1913608520320839,
+                -0.13903179719664946
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.6188843062238402e-16,
+          "unitary_max_error": 1.1102230246251565e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -2.493382450792752e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            1.3877787807814457e-17,
+            -2.7755575615628914e-17,
+            1.0408340855860843e-17,
+            -2.7755575615628914e-17
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.3877787807814457e-17,
+          "partial_transpose_negativity": 0.4405124103561951
+        }
+      ]
+    },
+    "complex_system": {
+      "dimension": 32,
+      "hamiltonian_unit": "rad/us",
+      "energy_order": [
+        "system",
+        "bath",
+        "interaction",
+        "total"
+      ],
+      "initial_global_purity": 1.0,
+      "eigen_residual_max_rad_per_us": 0.0,
+      "initial_system_and_bath_pure": true,
+      "bath_diagonal_in_z": false,
+      "full_checks": [
+        {
+          "t_us": 0.0,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                0.4000000000000001,
+                -0.29999999999999993
+              ]
+            ],
+            [
+              [
+                0.4000000000000001,
+                0.29999999999999993
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 7.850462293418876e-17,
+          "unitary_max_error": 0.0,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -3.9554941571770106e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.7755575615628914e-17,
+            -2.7755575615628914e-17,
+            0.0,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 4.644014030940727e-16
+        },
+        {
+          "t_us": 0.7853981633974483,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -3.122502256758253e-17,
+                -3.122502256758253e-17
+              ]
+            ],
+            [
+              [
+                -3.122502256758253e-17,
+                2.0816681711721685e-17
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.857405371534697e-17,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 7.757919228897728e-18,
+          "rho_min_eigenvalue": -2.531371744225839e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            -6.938893903907228e-18,
+            -2.7755575615628914e-17,
+            0.0,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 3.469446951953614e-17,
+          "partial_transpose_negativity": 0.5000000000000007
+        },
+        {
+          "t_us": 3.141592653589793,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -4.90059381963448e-17,
+                1.3877787807814457e-17
+              ]
+            ],
+            [
+              [
+                -3.5561831257524545e-17,
+                -1.0408340855860843e-17
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 5.0933044018031063e-17,
+          "unitary_max_error": 1.1102230246251565e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 8.420559318810146e-18,
+          "rho_min_eigenvalue": -2.418968612616878e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            2.0816681711721685e-17,
+            0.0,
+            5.204170427930421e-18,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 0.5000000000000007
+        },
+        {
+          "t_us": 6.283185307179586,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.4089237526385248,
+                -0.2877175082055775
+              ]
+            ],
+            [
+              [
+                -0.4089237526385248,
+                0.2877175082055775
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 2.0014830212433607e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 7.757919228897728e-18,
+          "rho_min_eigenvalue": -1.1995628247978683e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            1.734723475976807e-17,
+            0.0,
+            -3.469446951953614e-18,
+            0.0
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 9.77816608714231e-16
+        },
+        {
+          "t_us": 12.566370614359172,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                -0.14727122206223775,
+                0.4778191992294733
+              ]
+            ],
+            [
+              [
+                -0.14727122206223775,
+                -0.4778191992294732
+              ],
+              [
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 4.2276033262255756e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 0.0,
+          "hermiticity_max_error": 9.813077866773595e-18,
+          "rho_min_eigenvalue": -1.9081362082858659e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            1.0408340855860843e-17,
+            0.0,
+            -1.3877787807814457e-17,
+            -1.3877787807814457e-16
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.3877787807814457e-16,
+          "partial_transpose_negativity": 1.7277059001423377e-15
+        }
+      ]
+    },
+    "unequal_population": {
+      "dimension": 32,
+      "hamiltonian_unit": "rad/us",
+      "energy_order": [
+        "system",
+        "bath",
+        "interaction",
+        "total"
+      ],
+      "initial_global_purity": 1.0000000000000002,
+      "eigen_residual_max_rad_per_us": 0.0,
+      "initial_system_and_bath_pure": true,
+      "bath_diagonal_in_z": false,
+      "full_checks": [
+        {
+          "t_us": 0.0,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.8000000000000002,
+                0.0
+              ],
+              [
+                0.4000000000000001,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.4000000000000001,
+                0.0
+              ],
+              [
+                0.20000000000000004,
+                0.0
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 1.1102230246251565e-16,
+          "unitary_max_error": 0.0,
+          "trace_error": 2.220446049250313e-16,
+          "hermiticity_max_error": 0.0,
+          "rho_min_eigenvalue": -4.852135160486872e-16,
+          "global_purity": 1.0000000000000002,
+          "global_purity_error": 0.0,
+          "energies_over_hbar_rad_per_us": [
+            0.3900000000000001,
+            0.0,
+            0.0,
+            0.3899999999999999
+          ],
+          "energy_conservation_max_error_rad_per_us": 0.0,
+          "partial_transpose_negativity": 5.138729562752709e-16
+        },
+        {
+          "t_us": 0.7853981633974483,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.8000000000000002,
+                -3.469446951953614e-18
+              ],
+              [
+                -3.469446951953614e-18,
+                -3.0357660829594124e-17
+              ]
+            ],
+            [
+              [
+                0.0,
+                3.382710778154774e-17
+              ],
+              [
+                0.20000000000000007,
+                2.710505431213761e-20
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 1.1107649934270853e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.2207128651415855e-16,
+          "hermiticity_max_error": 1.5515838457795457e-17,
+          "rho_min_eigenvalue": -1.9195254453948685e-16,
+          "global_purity": 1.0000000000000004,
+          "global_purity_error": 2.220446049250313e-16,
+          "energies_over_hbar_rad_per_us": [
+            0.39,
+            5.551115123125783e-17,
+            2.7755575615628914e-17,
+            0.39
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.1102230246251565e-16,
+          "partial_transpose_negativity": 0.40000000000000036
+        },
+        {
+          "t_us": 3.141592653589793,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.8000000000000002,
+                -7.806255641895632e-18
+              ],
+              [
+                -3.8163916471489756e-17,
+                -1.3877787807814457e-17
+              ]
+            ],
+            [
+              [
+                -3.122502256758253e-17,
+                1.3877787807814457e-17
+              ],
+              [
+                0.20000000000000004,
+                -2.3852447794681098e-18
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 1.1129640277756033e-16,
+          "unitary_max_error": 1.1102230246251565e-16,
+          "trace_error": 2.222783688467051e-16,
+          "hermiticity_max_error": 1.3877787807814457e-17,
+          "rho_min_eigenvalue": -2.0762540146503586e-16,
+          "global_purity": 1.0000000000000004,
+          "global_purity_error": 2.220446049250313e-16,
+          "energies_over_hbar_rad_per_us": [
+            0.3900000000000001,
+            0.0,
+            -2.7755575615628914e-17,
+            0.3899999999999999
+          ],
+          "energy_conservation_max_error_rad_per_us": 2.7755575615628914e-17,
+          "partial_transpose_negativity": 0.40000000000000047
+        },
+        {
+          "t_us": 6.283185307179586,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.8000000000000002,
+                8.673617379884035e-19
+              ],
+              [
+                -0.12360679774997871,
+                -0.3804226065180616
+              ]
+            ],
+            [
+              [
+                -0.12360679774997868,
+                0.3804226065180616
+              ],
+              [
+                0.20000000000000004,
+                -6.505213034913027e-19
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 2.0014830212433607e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.168404344971009e-19,
+          "hermiticity_max_error": 1.3877787807814457e-17,
+          "rho_min_eigenvalue": -3.060133512554244e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 2.220446049250313e-16,
+          "energies_over_hbar_rad_per_us": [
+            0.3900000000000001,
+            0.0,
+            0.0,
+            0.39
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.1102230246251565e-16,
+          "partial_transpose_negativity": 8.684509492322409e-16
+        },
+        {
+          "t_us": 12.566370614359172,
+          "rho_s_complex_pairs": [
+            [
+              [
+                0.8000000000000002,
+                -1.3010426069826053e-18
+              ],
+              [
+                -0.32360679774997936,
+                0.23511410091698878
+              ]
+            ],
+            [
+              [
+                -0.3236067977499794,
+                -0.23511410091698878
+              ],
+              [
+                0.20000000000000004,
+                1.8431436932253575e-18
+              ]
+            ]
+          ],
+          "analytic_rho_max_error": 3.734130795427979e-16,
+          "unitary_max_error": 2.220446049250313e-16,
+          "trace_error": 2.2204526666853527e-16,
+          "hermiticity_max_error": 1.3877787807814457e-17,
+          "rho_min_eigenvalue": -2.3172953031730466e-16,
+          "global_purity": 1.0,
+          "global_purity_error": 2.220446049250313e-16,
+          "energies_over_hbar_rad_per_us": [
+            0.39000000000000007,
+            5.551115123125783e-17,
+            8.326672684688674e-17,
+            0.39
+          ],
+          "energy_conservation_max_error_rad_per_us": 1.1102230246251565e-16,
+          "partial_transpose_negativity": 1.545773198940073e-15
+        }
+      ]
+    }
+  },
+  "exchange": {
+    "basis": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "initial_basis": "01",
+    "h_over_hbar_complex_pairs": [
+      [
+        [
+          1.3,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -1.3,
+          0.0
+        ]
+      ]
+    ],
+    "full_checks": [
+      {
+        "t_us": 0.0,
+        "state_complex_pairs": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.9999999999999998,
+            0.0
+          ],
+          [
+            2.2371143170757382e-17,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "rho_s_complex_pairs": [
+          [
+            [
+              0.9999999999999996,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              5.004680467665246e-34,
+              0.0
+            ]
+          ]
+        ],
+        "rho_max_error": 4.440892098500626e-16,
+        "norm_error": 4.440892098500626e-16,
+        "bare_energy_sum_error_rad_per_us": 0.0
+      },
+      {
+        "t_us": 0.7853981633974483,
+        "state_complex_pairs": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.9238795325112865,
+            -4.104993200261172e-18
+          ],
+          [
+            1.732988154358691e-17,
+            -0.38268343236508967
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "rho_s_complex_pairs": [
+          [
+            [
+              0.8535533905932733,
+              1.5385450682958427e-34
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.14644660940672616,
+              -1.8998964363660434e-34
+            ]
+          ]
+        ],
+        "rho_max_error": 4.440892098500626e-16,
+        "norm_error": 5.551115123125783e-16,
+        "bare_energy_sum_error_rad_per_us": 0.0
+      },
+      {
+        "t_us": 3.141592653589793,
+        "state_complex_pairs": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            6.123233995736765e-17,
+            -2.2371143170757382e-17
+          ],
+          [
+            -1.3977892587259712e-33,
+            -0.9999999999999998
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "rho_s_complex_pairs": [
+          [
+            [
+              4.2498675034211675e-33,
+              -1.3509942480732082e-50
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.9999999999999996,
+              -3.1742319169540395e-50
+            ]
+          ]
+        ],
+        "rho_max_error": 4.440892098500626e-16,
+        "norm_error": 4.440892098500626e-16,
+        "bare_energy_sum_error_rad_per_us": 0.0
+      },
+      {
+        "t_us": 6.283185307179586,
+        "state_complex_pairs": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.9999999999999998,
+            2.7955785174519424e-33
+          ],
+          [
+            -2.2371143170757382e-17,
+            -1.224646799147353e-16
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "rho_s_complex_pairs": [
+          [
+            [
+              0.9999999999999996,
+              6.348463833908079e-50
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.5498065873385096e-32,
+              2.7019884961464163e-50
+            ]
+          ]
+        ],
+        "rho_max_error": 4.440892098500626e-16,
+        "norm_error": 4.440892098500626e-16,
+        "bare_energy_sum_error_rad_per_us": 0.0
+      },
+      {
+        "t_us": 12.566370614359172,
+        "state_complex_pairs": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.9999999999999998,
+            -5.591157034903885e-33
+          ],
+          [
+            2.2371143170757382e-17,
+            2.449293598294706e-16
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "rho_s_complex_pairs": [
+          [
+            [
+              0.9999999999999996,
+              1.2696927667816158e-49
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              6.04908593532408e-32,
+              5.403976992292833e-50
+            ]
+          ]
+        ],
+        "rho_max_error": 4.440892098500626e-16,
+        "norm_error": 4.440892098500626e-16,
+        "bare_energy_sum_error_rad_per_us": 0.0
+      }
+    ]
+  }
+}

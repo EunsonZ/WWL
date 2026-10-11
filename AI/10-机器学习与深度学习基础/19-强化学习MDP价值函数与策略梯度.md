@@ -19,6 +19,20 @@ aliases: []
 
 一个有限 MDP 用状态 $s$、动作 $a$、转移分布、奖励与折扣因子 $\gamma$ 描述。Markov 条件要求状态包含预测下一步所需的信息；真实对话系统只有部分观察时，完整历史或状态估计可能比单条消息更合适。
 
+### 先看同一个有限环境中的一条轨迹
+
+先用后文会完整手算的两状态环境提出问题。折扣因子为 $\gamma=.5$；其中一条完整轨迹是 `(go,finish)`：第一步即时奖励为 0，第二步为 2。
+
+```mermaid
+flowchart LR
+    S0["s₀"] -->|"go, r=0"| S1["s₁"]
+    S0 -->|"quit, r=0.5"| END["end: terminated"]
+    S1 -->|"finish, r=2"| END
+    S1 -->|"quit, r=0"| END
+```
+
+先只问：在 `go` 后刚观察到即时奖励 0 时，未来的奖励怎样进入当前判断？等整条轨迹结束后算出的回报，是否就是这个状态价值本身？先记下这两个问题；定义回报与 Bellman 关系后，我们会回到同一条轨迹，区分模型对照值、一次样本与逐步形成的估计。
+
 ## 回报、价值和优势各回答什么
 
 定义从 $t$ 开始的回报 $G_t=\sum_{k\ge0}\gamma^kr_{t+k}$。$V^\pi(s)$ 是按策略继续行动时的期望回报；$Q^\pi(s,a)$ 是先采取指定动作再继续的期望回报；优势 $A^\pi(s,a)=Q^\pi(s,a)-V^\pi(s)$ 衡量该动作比本状态通常行为好多少。
@@ -30,24 +44,6 @@ V^\pi(s)=\mathbb E_{a\sim\pi,s'}[r(s,a,s')+\gamma V^\pi(s')].
 $$
 
 如果现在奖励为 1，下一状态价值为 4，$\gamma=0.9$，一步目标为 4.6。用估计的价值替代完整未来称为 bootstrap；它减少等待和某些方差，但引入对价值估计误差的依赖。
-
-## 为什么能对离散动作的概率求梯度
-
-动作本身不可微并不妨碍优化动作分布。对一个简化单步任务，
-
-$$
-\nabla_\theta\mathbb E_{a\sim\pi_\theta}[r(a)]
-=\sum_a r(a)\nabla_\theta\pi_\theta(a)
-=\mathbb E[r(a)\nabla_\theta\log\pi_\theta(a)].
-$$
-
-这里假设奖励不直接依赖参数且可交换求和与求导。它通过增加高回报动作的概率工作，而不是对整数 token ID 求导。序列情形把整条轨迹的 log-prob 分解为各步之和，再用适当的回报或优势为每步加权。[^S29]
-
-与动作无关的基线可减方差，因为 $\mathbb E[b(s)\nabla\log\pi(a\mid s)]=b(s)\nabla\sum_a\pi(a\mid s)=0$。基线若依赖当前动作，一般不能直接使用这个无偏结论。组内均值包含当前样本也带来有限样本细节，见 [[AI/20-LLM/30-训练/13-GRPO重要性比率归一化与奖励偏差|GRPO 深入]]。
-
-## on-policy、off-policy 与重要性采样
-
-旧策略 $q$ 采样的数据，要估计新策略 $p$ 的期望，可在支持集覆盖时用 $p(a)/q(a)$ 加权。若 $q(a)=0,p(a)>0$，旧数据不提供该动作的信息，不能凭空校正。长序列的联合概率比是多个 token 比率的乘积，可能有很大方差。
 
 ## 动态规划、Monte Carlo 与 TD 的差别在“目标从哪里来”
 
@@ -65,7 +61,7 @@ $$
 | Monte Carlo | 否 | 否 | 是 | 完整采样回报 $G_t$ |
 | TD(0) | 否 | 是 | 否 | $r+\gamma V(s')$ |
 
-两步轨迹奖励为 $0,2$，$\gamma=0.5$。从第一步看的 Monte Carlo 回报为 $0+0.5\times2=1$。若当前下一状态估值为 3，TD 一步目标为 $0+0.5\times3=1.5$。两个目标不同不表示有一个算错；它们使用了不同信息。
+回到开头的 `(go,finish)` 轨迹：两步奖励为 $0,2$，$\gamma=0.5$。从第一步看的 Monte Carlo 样本回报为 $0+0.5\times2=1$。若当前下一状态估值为 3，TD 一步目标为 $0+0.5\times3=1.5$。两个目标不同不表示有一个算错；它们使用了不同信息。
 
 ## 从 Bellman 最优方程到 Q-learning
 
@@ -86,21 +82,11 @@ $$
 Q-learning 的目标使用 greedy 最大值，行为策略可以探索，因此是 off-policy。SARSA 的目标使用实际下一动作 $Q(s',a')$，在探索策略下学习的是该策略的价值。函数逼近、bootstrap 与 off-policy 三者组合可能不稳定；经验回放和目标网络是工程缓解，不是普遍收敛证明。
 
 
-当s本身不可观察，不能把最近读数直接代入这里的状态价值。[[AI/13-搜索推理与规划/20-部分可观测决策/01-有限模型belief与决策状态#为什么belief足以递推|belief充分性]]给出隐藏状态、固定转移/观测核与可见时域下的条件；[[AI/13-搜索推理与规划/20-部分可观测决策/02-beliefBellman与独立策略树#从条件期望到Bellman递推|belief Bellman]]仍比较当前收益加未来最优值，但后继是按新观测得到的belief，奖励为r=−L。它是已知模型的有限决策计算，不把本文Q-learning样本更新改称已完成POMDP学习。
-
 ### 同一个有限环境，逐回合观察 MC、TD 与 Q-learning
 
-用两非终止状态 $s_0,s_1$ 和终止状态 end，固定 $\gamma=.5$、步长 $\alpha=.5$。每条边是确定性转移，标出动作和立即奖励：
+沿用开头画出的同一环境：两个非终止状态 $s_0,s_1$、终止状态 end、折扣因子 $\gamma=.5$ 和步长 $\alpha=.5$。先手算最优目标：$Q^*(s_1,finish)=2$、$Q^*(s_1,quit)=0$；$Q^*(s_0,go)=0+.5\times2=1$，而 $Q^*(s_0,quit)=.5$。这里可以枚举全部三个完整行动序列验证最优回报为 1；已知模型的解是对照，下面仍模拟只用样本更新的学习者。
 
-```mermaid
-flowchart LR
-    S0["s₀"] -->|"go, r=0"| S1["s₁"]
-    S0 -->|"quit, r=0.5"| END["end: terminated"]
-    S1 -->|"finish, r=2"| END
-    S1 -->|"quit, r=0"| END
-```
-
-先手算最优目标：$Q^*(s_1,finish)=2$、$Q^*(s_1,quit)=0$；$Q^*(s_0,go)=0+.5\times2=1$，而 $Q^*(s_0,quit)=.5$。这里可以枚举全部三个完整行动序列验证最优回报为 1；已知模型的解是对照，下面仍模拟只用样本更新的学习者。
+这条 `(go,finish)` 轨迹的完整回报也为 1；与 `Q^*(s_0,go)` 数值相同只是这条确定轨迹恰好走到最优后续动作，不代表“模型最优值”和“一次样本回报”是同一种量。下表的 MC、TD 与 Q 数值则是固定步长按样本逐步更新的估计。
 
 所有估计从 0 开始。同一批六个完整回合依次是 `(go,finish)` 三次、`(quit)` 一次、`(go,quit)` 两次。MC 回合结束后用完整回报更新 $V\leftarrow V+.5(G-V)$；TD(0) 与 Q-learning 沿时间正序逐步在线更新。每回合无状态重访，first-visit 与 every-visit MC 在这里相同。固定步长和脚本行为让轨迹易跟算，不满足本页就能宣称收敛或最优探索的条件。[^RLworked]
 
@@ -123,6 +109,28 @@ $Q(s_1,quit)$ 始终 0。第一回合 TD 更新 $s_0$ 时下一状态值仍是 0
 
 [^RLworked]: David Silver 作者课程：[Lecture 4: Model-Free Prediction，第 10–12 张](https://davidstarsilver.wordpress.com/wp-content/uploads/2025/04/lecture-4-model-free-prediction-.pdf)，给固定步长 MC 与 TD(0) 更新；[Lecture 5: Model-Free Control，Q-learning 部分](https://davidstarsilver.wordpress.com/wp-content/uploads/2025/04/lecture-5-model-free-control-.pdf)，给 off-policy 最大值目标。2026-09-17 核对；环境与六回合轨迹为教学构造，Sutton/Barto 教材入口沿用文末。
 [^Timeworked]: [Gymnasium 官方：Handling Time Limits](https://gymnasium.farama.org/tutorials/gymnasium_basics/handling_time_limits/)：环境外截断保留 bootstrap、真正终止屏蔽及有限时域状态条件；2026-09-17 核对。
+
+当s本身不可观察，不能把最近读数直接代入这里的状态价值。[[AI/13-搜索推理与规划/20-部分可观测决策/01-有限模型belief与决策状态#为什么belief足以递推|belief充分性]]给出隐藏状态、固定转移/观测核与可见时域下的条件；[[AI/13-搜索推理与规划/20-部分可观测决策/02-beliefBellman与独立策略树#从条件期望到Bellman递推|belief Bellman]]仍比较当前收益加未来最优值，但后继是按新观测得到的belief，奖励为r=−L。它是已知模型的有限决策计算，不把本文Q-learning样本更新改称已完成POMDP学习。
+
+## 为什么能对离散动作的概率求梯度
+
+刚才的 Q-learning 用 Bellman 目标更新动作价值 $Q(s,a)$；策略梯度直接更新参数化策略的概率分布。它可以用回报、$Q$ 值或优势作权重，但更新对象仍是动作概率的参数，不是 Q-learning 的表格更新。
+
+动作本身不可微并不妨碍优化动作分布。对一个简化单步任务，
+
+$$
+\nabla_\theta\mathbb E_{a\sim\pi_\theta}[r(a)]
+=\sum_a r(a)\nabla_\theta\pi_\theta(a)
+=\mathbb E[r(a)\nabla_\theta\log\pi_\theta(a)].
+$$
+
+这里假设奖励不直接依赖参数且可交换求和与求导。它通过增加高回报动作的概率工作，而不是对整数 token ID 求导。序列情形把整条轨迹的 log-prob 分解为各步之和，再用适当的回报或优势为每步加权。[^S29]
+
+与动作无关的基线可减方差，因为 $\mathbb E[b(s)\nabla\log\pi(a\mid s)]=b(s)\nabla\sum_a\pi(a\mid s)=0$。基线若依赖当前动作，一般不能直接使用这个无偏结论。组内均值包含当前样本也带来有限样本细节，见 [[AI/20-LLM/30-训练/13-GRPO重要性比率归一化与奖励偏差|GRPO 深入]]。
+
+## on-policy、off-policy 与重要性采样
+
+旧策略 $q$ 采样的数据，要估计新策略 $p$ 的期望，可在支持集覆盖时用 $p(a)/q(a)$ 加权。若 $q(a)=0,p(a)>0$，旧数据不提供该动作的信息，不能凭空校正。长序列的联合概率比是多个 token 比率的乘积，可能有很大方差。
 
 ## 探索是信息问题，不只是加随机噪声
 

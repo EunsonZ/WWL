@@ -9,9 +9,19 @@
 - [执行前](hash-before.json)/[执行后](hash-after.json)身份、[原冻结](SOURCE_FREEZE.json)、[原产物清单](artifact-hashes.json)和[逐字复制映射](COPY-MAP.json)。原清单的REPORT.md对应本目录REPORT.md.txt，其字节未改。
 - [新一般Itô来源读取范围](sources/SOURCE_READS.md.txt)与[原HTML响应及读取UTC/SHA](sources/baudoin-receipts.json)。这些支持一般定理输入，不由OU实验代证。
 
-`snapshot/` 是原v1实际执行的三文件，对应原六项测试；当前v2的三文件位于 `v2-plot/snapshot/`，对应八项测试。历史execute.py、finalize.py和原命令路径保留原字节，用作记录。它们含恢复区路径，不作为正式复建入口。
+`snapshot/` 保留原v1实际执行的三文件，对应原六项测试。v2三份同版输入改从固定 Git 提交 `4bd34d91aa2d34fce10d4dcccf62ce719669296e` 恢复，继续核 [SOURCE_FREEZE_V2.json](v2-plot/SOURCE_FREEZE_V2.json) 与原工件清单身份；v1与v2的源码/测试不同，不能合并。历史 execute.py、finalize.py 和原命令路径仍按记录保留；原增量脚本与图检查的旧字节可从 [清理前固定提交](https://github.com/EunsonZ/WWL/tree/4bd34d91aa2d34fce10d4dcccf62ce719669296e/数学/30-概率与统计/20-随机过程/OU实验/results/2026-10-10/v2-plot) 取回。原工件清单记载当时文件和哈希，不改写成当前目录盘点。
 
-需要复建时，从库根依实验读者页命令在一个新空目录运行正式ou_lab.py及固定输入；正式v2的八项test另行执行。也可以另建一个新空目录：将v2-plot/snapshot中的三份v2文件放在新目录/snapshot/子目录，将independent_oracle.py放在新目录根。调用新目录/snapshot/ou_lab.py时指定 `--config 新目录/snapshot/fixed-input.json --output 新目录/output`；测试发现目录指定 `-s 新目录/snapshot -p test_ou_lab.py`。确认CLI退出0、report的diagnostics_pass为true且八项v2测试实际成功后，再调用新目录/independent_oracle.py；它按自身所在目录读取snapshot/fixed-input.json与output/report.json。原目录的independent_oracle.py会写本目录核查文件，因此不要直接在这份归档中运行。新复建是操作接口，作者没有执行它；应保存新的命令、环境、退出与输出身份。
+当前正式源码的复建仍可从库根依实验读者页命令运行。需要重新执行冻结v2时，使用含固定提交的本地WWL Git仓库和已具备 NumPy/CairoSVG 的 Python，在本记录目录运行：
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 /含NumPy和CairoSVG的/python -B v2-plot/execute_increment.py --repo /绝对路径/WWL --output /private/tmp/wwl-ou-v2-NEW
+```
+
+输出必须是库外全新、绝对路径目录，最终节点为符号链接（含悬空链接）也拒绝；`--repo` 可为仓库子目录，驱动按实际 Git 顶层判断库内目标。驱动先核固定提交、三个v2输入与冻结/原manifest SHA、保留v1文件的原copy-map SHA/字节数，全部读取与receipt序列化完成后才创建目标；不读取包内已撤除的v2 snapshot。目标内 `v1/` 按原相对名称恢复历史输入/报告以供完整manifest对照，`v2-plot/snapshot/` 保存固定Git取回的v2文件；保留原PLOT差异和预览包装脚本，图检查改用明确的新工作目录和v1对照路径。
+
+新执行依次运行八项v2测试、原三种图表边界检查、两个标注预览、固定规格v2 CLI以及原独立oracle。`v2-plot/plots/` 的实际图仍来自保留的v1真实report，两个边界仍是zero MC samples的合成mock；`numeric/output/` 则是这次新的v2数值输出，两者不混称。独立oracle在 `numeric/` 读取新的snapshot、report与traces，不导入业务源；须实际退出0、94项比较全过和992条轨迹完成，才能给新运行收据。驱动顺序执行、线程环境请求1线程，测试/图/预览各60秒，CLI/oracle各300秒；工作预算不是OS硬隔离，协调者控制总并发至多2个。
+
+准备拒绝在stderr输出结构化失败receipt，不创建或覆盖目标；创建后先写准备receipt，新stdout/stderr、环境、每child执行记录与最终 `fresh-receipt.json` 都写入新目录，失败立即停止。图文件生成与结构检查不等于实看；需要本次显示验收时另看新PNG并记观察。原目录oracle会写归档核查文件，因此复建只使用驱动在新目录复制的oracle，旧报告、原失败/UNKNOWN边界、12份图表产物、freeze与历史回执保留原字节。旧数值/图观察不被称作当前入口重跑，新执行以新目录证据核对。
 
 有限执行和核查已完成。原v1 SVG XML保全。v2图像已独立实际渲染与查看；Obsidian显示、同步、真实金融/硬件与真人学习仍未验。
 

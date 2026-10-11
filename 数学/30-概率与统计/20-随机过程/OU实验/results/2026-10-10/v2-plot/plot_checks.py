@@ -1,8 +1,14 @@
-import os,json,hashlib,difflib,ast,copy,math,time,resource
+import os,json,hashlib,difflib,ast,copy,math,time,resource,argparse
 from pathlib import Path
 import importlib.util
 import xml.etree.ElementTree as ET
-base=Path(__file__).resolve().parent;old=base.parent/'run-20261010-01';start=time.monotonic()
+parser=argparse.ArgumentParser(description='Check restored v2 plots against preserved v1 inputs in a fresh work area.')
+parser.add_argument('--new-dir',type=Path,required=True)
+parser.add_argument('--v1-dir',type=Path,required=True)
+args=parser.parse_args()
+base=args.new_dir.resolve();old=args.v1_dir.resolve();start=time.monotonic()
+if any((base/name).exists() or (base/name).is_symlink() for name in ('plots','independent-diff.txt','plot-checks.json')):
+ raise FileExistsError('plot outputs already exist; use a fresh work area')
 oldbytes=(old/'snapshot/ou_lab.py').read_bytes();newbytes=(base/'snapshot/ou_lab.py').read_bytes()
 assert oldbytes.split(b'def error_svg(report):')[0]==newbytes.split(b'def error_svg(report):')[0]
 assert oldbytes.split(b'def main():')[1]==newbytes.split(b'def main():')[1]

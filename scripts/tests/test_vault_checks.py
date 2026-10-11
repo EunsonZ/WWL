@@ -114,6 +114,72 @@ class LinkTests(VaultFixture):
         self.write("n.md", "[[target#" + visible + "]]\n")
         self.assertFalse(self.report()["issues"])
 
+    def test_math_notation_is_not_a_link_but_real_links_remain(self):
+        self.write("target.md", "# target\n")
+        self.write("n.md", "$[U_z(β)χ](φ)=χ(φ-β)$ [real](target.md)\n"
+                   "$$\n[operator](φ) and [[math-only]]\n$$\n"
+                   "`$[code](missing-code)$`\n"
+                   r"\$[escaped dollar](missing-real)" + "\n"
+                   "$unclosed\n\n[after blank](missing-after-blank)\n"
+                   "[outside](missing-outside)\n"
+                   "$$unclosed [block text](missing-block-text)$\n")
+        report = self.report()
+        self.assertEqual([x["target"] for x in report["issues"]],
+                         ["missing-real", "missing-after-blank", "missing-outside", "missing-block-text"])
+        self.assertEqual([x["resolved"] for x in report["resolved_links"]], ["target.md"])
+
+    def test_math_delimiters_respect_code_and_escaped_closing_dollar(self):
+        text = r"$[operator](φ) + \$ + [operator2](θ)$ [real](target.md)"
+        self.assertEqual([target for _, target, _, _ in references(text)], ["target.md"])
+        text = "```md\n$ [fake](code) $\n```\n[real](target.md)\n"
+        self.assertEqual([target for _, target, _, _ in references(text)], ["target.md"])
+
+    def test_math_in_wiki_heading_fragment_remains_literal(self):
+        self.write("target.md", "# 从 $F$ 到标准形\n")
+        text = ("[[target#从 $F$ 到标准形]]\n"
+                "[[target#从 $G$ 到标准形]]\n"
+                "[[missing#从 $F$ 到标准形]]\n"
+                "$[[math-only]]$\n")
+        self.assertEqual([target for _, target, _, _ in references(text)],
+                         ["target#从 $F$ 到标准形", "target#从 $G$ 到标准形",
+                          "missing#从 $F$ 到标准形"])
+        self.write("n.md", text)
+        report = self.report()
+        self.assertEqual([x["target"] for x in report["issues"]],
+                         ["target#从 $G$ 到标准形", "missing#从 $F$ 到标准形"])
+        self.assertEqual([x["rule"] for x in report["issues"]],
+                         ["link_missing_anchor", "link_missing"])
+        self.assertEqual([(x["target"], x["resolved"]) for x in report["resolved_links"]],
+                         [("target#从 $F$ 到标准形", "target.md"),
+                          ("target#从 $G$ 到标准形", "target.md")])
+
+    def test_literal_dollars_in_real_markdown_link_are_not_masked(self):
+        self.write("price$usd$.md", "# target\n")
+        self.write("n.md", "[$x$ label](price$usd$.md)\n")
+        report = self.report()
+        self.assertFalse(report["issues"])
+        self.assertEqual(report["resolved_links"][0]["resolved"], "price$usd$.md")
+
+    def test_math_in_reference_definition_destinations_remains_literal(self):
+        self.write("price$usd$.md", "# target\n")
+        self.write("target.md", "# 标题$F[x]$\n")
+        text = ("[r]: price$usd$.md\n"
+                "[angle]: <price$usd$.md>\n"
+                "[heading]: target.md#标题$F[x]$\n"
+                "[missing]: missing$usd$.md\n"
+                "[wrong heading]: target.md#标题$F[y]$\n")
+        self.assertEqual([target for _, target, _, _ in references(text)],
+                         ["price$usd$.md", "price$usd$.md", "target.md#标题$F[x]$",
+                          "missing$usd$.md", "target.md#标题$F[y]$"])
+        self.write("n.md", text)
+        report = self.report()
+        self.assertEqual([x["target"] for x in report["issues"]],
+                         ["missing$usd$.md", "target.md#标题$F[y]$"])
+        self.assertEqual([x["rule"] for x in report["issues"]],
+                         ["link_missing", "link_missing_anchor"])
+        self.assertEqual([x["resolved"] for x in report["resolved_links"]],
+                         ["price$usd$.md", "price$usd$.md", "target.md", "target.md"])
+
     def test_aliases_display_alias_and_table_pipe(self):
         self.write("a/topic.md", '---\naliases:\n  - 概念别名\n  - "第二别名"\n---\n# 好标题\n')
         self.write("n.md", "[[概念别名#好标题|显示名]]\n| [[第二别名\\|表格名称]] |\n")

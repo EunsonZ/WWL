@@ -49,7 +49,7 @@ class Fence:
     indent: int
 
 
-def scan(text, *, inline=True):
+def scan(text, *, inline=True, math=False):
     """Blank code/comments without shifting offsets; also locate mirror blocks.
 
     A code-sync marker is active only as its own HTML comment on a line.
@@ -58,6 +58,14 @@ def scan(text, *, inline=True):
     masked = list(text)
     fences, markers, issues = [], [], []
     cursor = 0
+    math_wiki_end = -1
+    math_link_end = -1
+    math_link_spans = {start: end for start, _, _, end in markdown_destinations(text, with_end=True)} if math else {}
+    if math:
+        # Reference-definition targets are literal destinations too; use the
+        # same bounded definition syntax as references(), including <...>.
+        math_link_spans.update({m.start(): m.end() for m in re.finditer(
+            r"^ {0,3}\[(?!\^)[^\]\n]+\]:\s*(<[^>\n]+>|\S+)", text, re.M)})
 
     def blank(start, end):
         for i in range(start, end):
@@ -113,6 +121,24 @@ def scan(text, *, inline=True):
                 blank(cursor, closing.end())
                 cursor = closing.end()
                 continue
+        if cursor in math_link_spans:
+            math_link_end = math_link_spans[cursor]
+        # Math in a wiki target is part of its literal path/heading fragment.
+        if math and text.startswith("[[", cursor):
+            close = text.find("]]", cursor + 2)
+            if close >= 0 and "\n" not in text[cursor:close]:
+                math_wiki_end = close + 2
+        # Reference extraction optionally masks balanced Obsidian math spans.
+        # The default scanner remains unchanged for headings and mirrors.
+        if math and cursor >= max(math_wiki_end, math_link_end) and text[cursor] == "$" and (cursor == 0 or text[cursor - 1] != "$"):
+            block = text.startswith("$$", cursor)
+            width = 2 if block else 1
+            if block or (cursor + 1 < len(text) and not text[cursor + 1].isspace()):
+                close = re.compile(r"(?<![\\$])\$\$(?!\$)" if block else r"(?<![\\\s$])\$(?!\$)").search(text, cursor + width)
+                if close and (block or not re.search(r"\n[ \t]*\r?\n", text[cursor:close.start()])):
+                    blank(cursor, close.end())
+                    cursor = close.end()
+                    continue
         if text[cursor] == "`" and (cursor == 0 or text[cursor - 1] != "\\"):
             run = re.match(r"`+", text[cursor:])[0]
             closing = re.compile(r"(?<!`)" + re.escape(run) + r"(?!`)").search(text, cursor + len(run))
@@ -244,7 +270,7 @@ class Index:
         return None, "ambiguous" if hits else "missing"
 
 
-def markdown_destinations(text):
+def markdown_destinations(text, *, with_end=False):
     """Balanced destination scanner derived from the existing TBM parser."""
     cursor = 0
     while cursor < len(text):
@@ -287,12 +313,13 @@ def markdown_destinations(text):
         else:
             title = re.search(r'''\s+(?:"[^"]*"|'[^']*'|\([^)]*\))\s*$''', raw)
             target = raw[:title.start()] if title else raw
-        yield label, target, label > 0 and text[label - 1] == "!"
+        result = (label, target, label > 0 and text[label - 1] == "!")
+        yield result + (current + 1,) if with_end else result
         cursor = current + 1
 
 
 def references(text):
-    clean, _, _, _ = scan(text)
+    clean, _, _, _ = scan(text, math=True)
     for match in re.finditer(r"(?<![\\\[])!?\[\[([^\]\n]+)\]\]", clean):
         target = re.split(r"\\\||(?<!\\)\|", match[1], maxsplit=1)[0].strip()
         yield text.count("\n", 0, match.start()) + 1, target, "wiki", match[0].startswith("!")

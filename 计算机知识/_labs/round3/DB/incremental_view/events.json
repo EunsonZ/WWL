@@ -1,0 +1,170 @@
+[
+  {
+    "event_id": "a1",
+    "entity_id": "a",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 10
+  },
+  {
+    "event_id": "b1",
+    "entity_id": "b",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 20
+  },
+  {
+    "event_id": "c1",
+    "entity_id": "c",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 20
+  },
+  {
+    "event_id": "b1",
+    "entity_id": "b",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 20
+  },
+  {
+    "event_id": "b1",
+    "entity_id": "b",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 21
+  },
+  {
+    "event_id": "a2",
+    "entity_id": "a",
+    "version": 2,
+    "op": "put",
+    "group": "A",
+    "minutes": 30
+  },
+  {
+    "event_id": "a1-alias",
+    "entity_id": "a",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 10
+  },
+  {
+    "event_id": "a1-bad",
+    "entity_id": "a",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 11
+  },
+  {
+    "event_id": "a2-alias",
+    "entity_id": "a",
+    "version": 2,
+    "op": "put",
+    "group": "A",
+    "minutes": 30
+  },
+  {
+    "event_id": "a2-bad",
+    "entity_id": "a",
+    "version": 2,
+    "op": "put",
+    "group": "A",
+    "minutes": 31
+  },
+  {
+    "event_id": "b2",
+    "entity_id": "b",
+    "version": 2,
+    "op": "delete",
+    "group": null,
+    "minutes": null
+  },
+  {
+    "event_id": "b1-late",
+    "entity_id": "b",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 20
+  },
+  {
+    "event_id": "c2",
+    "entity_id": "c",
+    "version": 2,
+    "op": "put",
+    "group": "B",
+    "minutes": 0
+  },
+  {
+    "event_id": "a3",
+    "entity_id": "a",
+    "version": 3,
+    "op": "delete",
+    "group": null,
+    "minutes": null
+  },
+  {
+    "event_id": "c3",
+    "entity_id": "c",
+    "version": 3,
+    "op": "delete",
+    "group": null,
+    "minutes": null
+  },
+  {
+    "event_id": "z3",
+    "entity_id": "z",
+    "version": 3,
+    "op": "delete",
+    "group": null,
+    "minutes": null
+  },
+  {
+    "event_id": "z2",
+    "entity_id": "z",
+    "version": 2,
+    "op": "put",
+    "group": "A",
+    "minutes": 99
+  },
+  {
+    "event_id": "fix",
+    "entity_id": "d",
+    "version": true,
+    "op": "put",
+    "group": "A",
+    "minutes": 5
+  },
+  {
+    "event_id": "fix",
+    "entity_id": "d",
+    "version": 1,
+    "op": "put",
+    "group": "A",
+    "minutes": 5
+  },
+  {
+    "event_id": "d0",
+    "entity_id": "d",
+    "version": 0,
+    "op": "put",
+    "group": "A",
+    "minutes": 7
+  },
+  {
+    "event_id": "a4",
+    "entity_id": "a",
+    "version": 4,
+    "op": "put",
+    "group": "B",
+    "minutes": 7
+  }
+]

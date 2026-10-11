@@ -49,6 +49,14 @@ if(BUILD_TESTING)
   options(queue_tests)
   add_test(NAME bounded_queue_contracts COMMAND queue_tests)
   set_tests_properties(bounded_queue_contracts PROPERTIES TIMEOUT 20)
+  # Test-only replaceable new/delete live in this executable, never in the library.
+  if(UNIX)
+    add_executable(allocation_faults tests/allocation_faults.cpp)
+    target_link_libraries(allocation_faults PRIVATE measurement)
+    options(allocation_faults)
+    add_test(NAME ordinary_allocation_faults COMMAND allocation_faults)
+    set_tests_properties(ordinary_allocation_faults PROPERTIES TIMEOUT 30)
+  endif()
   add_test(NAME batch_cli COMMAND ${CMAKE_COMMAND}
     -DCLI=$<TARGET_FILE:measurement_batch> -DDATA=${CMAKE_CURRENT_SOURCE_DIR}/data
     -P ${CMAKE_CURRENT_SOURCE_DIR}/tests/batch_cli.cmake)

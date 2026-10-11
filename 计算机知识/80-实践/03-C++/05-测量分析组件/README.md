@@ -71,7 +71,7 @@ consumer 输出 `consumer: sum=20 mV, mean=5 mV`。Debug 同理使用独立 pref
 - channel_means 要求非空通道、每路非空、相同长度及间隔。复用 TensorBuffer 的非零 rank/extent 合同，先拒绝空值再构造内部输入张量 `[通道,样本]`，row-major stride `[样本数,1]`。返回值是拥有的一维 `vector<Millivolts>`，长度为通道数，`result[channel]` 是该通道的均值；输出没有样本轴。
 - Calibration 仅含两个 int，`calibration()` 按值返回，不借用 Batch 成员；从临时 Batch 链式取得标定后仍是独立的值。Batch 拥有码数组；codes 返回只读 span，只允许左值拥有者调用。借用期间禁止拥有者析构、赋值、移动、swap、replace；随后重新取得。channels 参数借用的 Batch 在同步函数整个期间保持。
 - compare_reductions 内部 values 拥有标定后的 float；原并行实现持有它的 span，并在返回前 join 全部 jthread。局部 partial 独立写入，join 后读取，不依赖一次发布 flag。线程创建中途失败时已有 jthread 析构等待，数组晚于线程容器析构；调用方收到异常。
-- replace_from_stream 先读完整候选再 swap 提交。解析错误和真实流 badbit 测试保留旧 Batch；读位置不回滚。已构造 vector 由 RAII 清理的依据是 [N4861 except.ctor](https://timsong-cpp.github.io/cppwp/n4861/except.ctor)。原Batch解析allocator尚未逐点注入；下节ReportSession已针对结果PMR资源逐点故障及活计数验证，计数域不包括普通allocator。不能把结果PMR证据称为全部资源路径实测。
+- replace_from_stream 先读完整候选再 swap 提交。解析错误和真实流 badbit 测试保留旧 Batch；读位置不回滚。已构造 vector 由 RAII 清理的依据是 [N4861 except.ctor](https://timsong-cpp.github.io/cppwp/n4861/except.ctor)。原有结果PMR实验的计数域不包括普通allocator；本页“普通分配失败”另用独立进程检验指定解析、复制和派发路径，不能把任一组证据称为全部资源路径实测。
 
 ## 合法测量归约的绝对误差界
 
@@ -100,7 +100,7 @@ describe 使用精确整数原码总量及微伏和，不从 float 归约结果�
 
 tests.cpp 用原归约代码验证 `[2^54,1,−2^54,1]` 的受控结果 `serial=1 parallel=0 exact_real=2`。逐步舍入解释见正文；这组数超出本应用范围，承担反例责任而非合法测量误差测试。FE_TONEAREST 与 digits 会打印到测试输出，可用 `ctest -V` 查看。
 
-读者应完成正文的新标定输入、替换后旧 view、错位采样通道和 Release 测试迁移题。本实践现在通过下一节继续窗口算法、文本/chrono/filesystem组合、应用参数及结果PMR资源计数；普通allocator逐点失败仍缺。下节交付有界工作队列/取消/关闭及本机性能观察；高级 modules/协程/ABI 分支未交付。返回 [[计算机知识/10-编程语言/02-C++/10-系统课程/00-C++系统课程索引|唯一系统索引]]。
+读者应完成正文的新标定输入、替换后旧 view、错位采样通道和 Release 测试迁移题。本实践现在通过下一节继续窗口算法、文本/chrono/filesystem组合、应用参数及结果PMR资源计数；普通allocator的指定输入路径现由下方独立故障实验接续，OS及其他未选路径仍缺逐点证据。下节交付有界工作队列/取消/关闭及本机性能观察；高级 modules/协程/ABI 分支未交付。返回 [[计算机知识/10-编程语言/02-C++/10-系统课程/00-C++系统课程索引|唯一系统索引]]。
 
 
 ## 窗口报告：完整应用参数与逐点资源故障
@@ -130,6 +130,41 @@ tests.cpp 用原归约代码验证 `[2^54,1,−2^54,1]` 的受控结果 `serial=
 参考实现O(Kw)扫描，结果空间O(K)，无需每窗复制原码vector。每窗继承上文统计误差界，必须用该窗的n,m,q；浮点归约次序反例及TensorBuffer多通道消费保留原真源。文本由to_chars输出数字，简单key=value协议没有宣称通用序列化格式。资源内强保证不回滚输入流位置；磁盘输出不是原子/持久事务，写失败可能留下部分文件。下一节继续同一结果对象的生产队列、取消/关闭与本机分布观察。
 
 
+## 普通分配失败：候选、队列与线程分别保留什么
+
+[allocation_faults.cpp](tests/allocation_faults.cpp)是单独的测试可执行文件，仅在UNIX目标加入CTest；它不会进入库、安装头或消费者。测试替换普通/数组/对齐及nothrow的全局new/delete，开关是线程局部的；固定大小记录和原子活计数不申请堆空间。每个申请块附带本次是否计数的标记，关闭开关或移交线程后释放仍能减去原计数。malloc、系统内部申请与未开启的线程不在注入域内，这不是实际耗尽操作系统内存。
+
+先在同一输入上关闭故障跑完一条成功路径，得到A；对k=1…A每次建立全新的旧状态，仅第k个请求抛bad_alloc，其余请求正常。输入、旧对象、需申请C++堆的比较副本、任务和测试launcher在开启前准备；故障域内仍做不申请C++堆的条件检查，条件失败时可即时fprintf诊断，末尾汇总打印在关闭后进行；待被测对象和结果析构后，注入域live_blocks/live_bytes必须为0。不能在开关打开时把测试记录push到vector，让测试自身扩容占用故障编号。
+
+| 指定路径 | 本机观察请求数A | 失败后实际核对 |
+| --- | ---: | --- |
+| 256码的replace_from_stream | 9 | 原Batch码值、标定、间隔、span地址保持；候选vector释放 |
+| 非空Batch值复制 | 1 | 新副本构造失败，来源及其span保持；成功副本拥有独立数组 |
+| 同码ReportSession替换，w4/h2、40字符label | 10 | 旧settings、窗口内容/地址、文本/借用保持；候选普通资源释放，PMR块/字节回旧值 |
+| 队列推进512项，始终只保留一个旧任务 | 2 | 失败push不改变旧队首、载荷、open状态或等待计数；随后close排空 |
+| 单worker、两个任务的管理线程 | 9 | 派发层bad_alloc经cancel、全部已启动线程退出并join后重抛 |
+| 同执行器的工作线程 | 46 | 含输入解析、new_delete_resource及最终拥有文本复制；失败只记录该任务，另一任务完成；返回前线程退出 |
+
+数字是AppleClang21/libc++本机Debug/Release观察，测试不硬编码这些A。管理线程的计数包括内部测试launcher正常构造真实jthread的包装申请；工作线程关闭主线程注入，反向实验关闭工作线程注入，不将跨线程不稳定次序拼成一个全局序号。工作线程的PMR默认new_delete_resource也经new，故这46点**不是纯普通allocator计数**；前面Session实验另用malloc转发PMR资源及独立计数，明确隔离出普通vector/label路径。两个实验相互补充，原PMR十点实验仍独立保留。
+
+队列槽位少不代表push不会申请内存：本机初始块足够容纳8项，只测“填满容量”实际没有新申请。测试持续pop旧项、push下一项，使deque推进到真实块/映射扩展；未发生失败的先前操作不会被回滚，保证对象是失败push前的那个队首。失败push按值接收的入参可能已经移动或销毁，强保证不承诺恢复调用方的被移交任务。
+
+流也有自己的异常层次：长非法token迫使string扩容，第一个请求失败时，默认istream异常掩码将bad_alloc变成badbit，本实现随后抛runtime_error；设置exceptions(badbit)则本机实际传播原bad_alloc。两种情况旧Batch均保持，但读取位置及流状态不回滚。此负例只核首个token扩容失败，不宣称所有流实现内部申请都受控。
+
+```bash
+ctest --test-dir build-debug -R ordinary_allocation_faults -V
+ctest --test-dir build-release -R ordinary_allocation_faults -V
+cmake -S . -B build-asan -DCMAKE_BUILD_TYPE=Debug \
+  -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer" \
+  -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=address,undefined"
+cmake --build build-asan -j 2
+ASAN_OPTIONS=detect_leaks=0:abort_on_error=1 \
+UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 \
+  ctest --test-dir build-asan --output-on-failure
+```
+
+本段Debug/Release及AddressSanitizer+UndefinedBehaviorSanitizer完整CTest各9/9；显式失败计数在NDEBUG下仍执行。ThreadSanitizer另跑普通分配和已有队列合同2/2，未报告数据竞争；这只覆盖本次调度，不是所有调度的证明。macOS本次关闭LeakSanitizer，只用注入域及独立PMR计数核释放；这不等于整个进程的泄漏认证。测试不注入filesystem路径、真实OS线程/同步原语耗尽、文件内部malloc、所有输入和所有调度；不验证自定义allocator、故障中再次故障或实时停止上界。计数说明这些被观察并重放的请求有正确收尾，不能推成任意类型/allocator的强保证。
+
 ## 有界任务与性能观察
 
 本段对应[[计算机知识/10-编程语言/02-C++/10-系统课程/14-有界任务关闭取消与性能证据|第14讲]]，版本1.2.0。[report_queue.hpp](include/wwl/report_queue.hpp)是公开合同，[report_queue.cpp](src/report_queue.cpp)是队列与执行器真源，[queue_tests.cpp](tests/queue_tests.cpp)和[batch_cli.cmake](tests/batch_cli.cmake)做真实线程/命令路径验证；内部启动器故障缝隙不安装。[queue.cpp](consumer/queue.cpp)从安装包独立消费公共API。
@@ -141,8 +176,8 @@ tests.cpp 用原归约代码验证 `[2^54,1,−2^54,1]` 的受控结果 `serial=
 
 第一条结果依序成功/失败/成功，整体退出2；不因第二份解析失败取消其他任务。任务拥有string和ReportSettings，worker单独拥有ReportSession，结果复制文本后返回。1–3个worker加调用线程最多4个，容量1–8，批次<=64，输入各<=512 KiB，保留结果各<=32 MiB。close拒绝新任务并排空，cancel清待取任务并唤醒两侧；外部stop_token通过stop_callback发出cancel。成功pop后看到stop=false定义已开始，此后取消允许该任务完成。返回/重抛之前全部join；无停止时长上界。CLI读取有字节限额、选项完整解析、按输入序号输出；取消目前由公开API支持，没有OS信号转换入口。
 
-测试验证实际满队列生产者等待、pop释放容量后FIFO接续、close与cancel唤醒满/空两侧、已取WorkItem在cancel后仍拥有输入、1/2/3worker下报告一致、单任务错误隔离、预取消、真实stop_source取消尚未开始任务（gate保持worker未执行；满队列实际等待另由队列测试验证）、部分启动失败后已启动线程均join、坏launcher收尾。普通allocator/OS资源耗尽未逐点实测；没有TSan或穷举全部调度交错的证据。运行时检查使用明确失败计数，Release不依赖assert。
+测试验证实际满队列生产者等待、pop释放容量后FIFO接续、close与cancel唤醒满/空两侧、已取WorkItem在cancel后仍拥有输入、1/2/3worker下报告一致、单任务错误隔离、预取消、真实stop_source取消尚未开始任务（gate保持worker未执行；满队列实际等待另由队列测试验证）、部分启动失败后已启动线程均join、坏launcher收尾。普通分配的指定路径另见上节；OS资源耗尽和穷举全部调度交错未认证。运行时检查使用明确失败计数，Release不依赖assert。
 
 基准固定24任务×2048原码，w32/h16=>各127窗口，队列2。1/2/3worker各1次暖机+7次样本。计时包括任务复制、线程启动、解析、扫描、格式化、拥有结果复制、完整文本一致性校验与join；不包括固定输入生成和输出。原始样本、环境和观察摘要见同目录[evidence/README.md](evidence/README.md)、[benchmark.csv](evidence/benchmark.csv)、[benchmark-runtime.json](evidence/benchmark-runtime.json)。这些是本机观察，不能承诺其他机器/负载、尾延迟或内存硬上限；不包含汇编/向量化/NUMA实验。完整应用峰值还取决于保留结果、窗口存储、线程栈与分配器元数据，队列槽位不能替代总内存证明。
 
-本次Debug/Release完整CTest各8/8；默认安装独立consumer各3/3。自定义public-api目录另行验证结果见证据页。结果PMR故障的10个分配点沿用第13讲真实测试，其计数域没有扩展到本段所有普通分配。高级模块/ABI/协程的接续接口和预期证据列于第14讲；尚未跑这些实验，#244保持未全完成。
+原有界任务段Debug/Release完整CTest各8/8；本段增加普通分配故障后各9/9。默认安装独立consumer仍为3项。自定义public-api目录另行验证结果见证据页。结果PMR故障的10个分配点沿用第13讲真实测试，其计数域没有扩展到本段所有普通分配。高级模块/ABI/协程的接续接口和预期证据列于第14讲；尚未跑这些实验，#244保持未全完成。

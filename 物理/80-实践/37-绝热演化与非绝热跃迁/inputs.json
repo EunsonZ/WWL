@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "energy_scale_frequency_hz": 100000,
+    "sample_intervals": 400,
+    "base_steps": 1600,
+    "maximum_fine_steps": 1000000,
+    "max_step_rotation": 0.2,
+    "norm_tolerance": 1e-10,
+    "convergence_tolerance": 1e-7,
+    "gauge_quadratic": 0.23,
+    "gauge_linear": -0.41,
+    "berry_cone_angle_rad": 1.0471975511965976,
+    "resonant_epsilon": 0.02
+  },
+  "cases": [
+    {"id": "reference", "gap_ratio": 1, "sweep_ratio": 0.25, "half_duration_scaled": 32},
+    {"id": "slower", "gap_ratio": 1, "sweep_ratio": 0.05, "half_duration_scaled": 160},
+    {"id": "faster", "gap_ratio": 1, "sweep_ratio": 5, "half_duration_scaled": 1.6},
+    {"id": "smaller-gap", "gap_ratio": 0.25, "sweep_ratio": 0.25, "half_duration_scaled": 32}
+  ],
+  "boundary_half_durations": [8, 16, 32, 64]
+}

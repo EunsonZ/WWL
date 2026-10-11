@@ -1,0 +1,403 @@
+{
+  "input": {
+    "settings": {
+      "energy_scale_frequency_hz": 100000,
+      "sample_intervals": 400,
+      "base_steps": 1600,
+      "maximum_fine_steps": 1000000,
+      "max_step_rotation": 0.2,
+      "norm_tolerance": 1e-10,
+      "convergence_tolerance": 1e-07,
+      "gauge_quadratic": 0.23,
+      "gauge_linear": -0.41,
+      "berry_cone_angle_rad": 1.0471975511965976,
+      "resonant_epsilon": 0.02
+    },
+    "cases": [
+      {
+        "id": "reference",
+        "gap_ratio": 1,
+        "sweep_ratio": 0.25,
+        "half_duration_scaled": 32
+      },
+      {
+        "id": "slower",
+        "gap_ratio": 1,
+        "sweep_ratio": 0.05,
+        "half_duration_scaled": 160
+      },
+      {
+        "id": "faster",
+        "gap_ratio": 1,
+        "sweep_ratio": 5,
+        "half_duration_scaled": 1.6
+      },
+      {
+        "id": "smaller-gap",
+        "gap_ratio": 0.25,
+        "sweep_ratio": 0.25,
+        "half_duration_scaled": 32
+      }
+    ],
+    "boundary_half_durations": [
+      8,
+      16,
+      32,
+      64
+    ]
+  },
+  "constants": {
+    "h_J_s": 6.62607015e-34,
+    "hbar_J_s": 1.0545718176461565e-34
+  },
+  "environment": {
+    "Python_standard_library_only": true,
+    "algorithm": "unitary affine-H CF4; midpoint cross-check",
+    "physical_device_data": false
+  },
+  "cases": [
+    {
+      "input": {
+        "id": "reference",
+        "gap_ratio": 1,
+        "sweep_ratio": 0.25,
+        "half_duration_scaled": 32
+      },
+      "dimension": 2,
+      "basis": [
+        "+z",
+        "-z"
+      ],
+      "initial_preparation": "instantaneous ground at -L",
+      "Delta_J": 6.62607015e-29,
+      "v_J_per_s": 1.0408206652705308e-23,
+      "Delta_over_h_Hz": 100000,
+      "half_duration_seconds": 5.092958178940651e-05,
+      "kappa": 4.0,
+      "eta_max": 0.125,
+      "grids": [
+        2800,
+        5600,
+        11200
+      ],
+      "max_U_coarse_half": 1.7700565983280942e-10,
+      "max_U_half_fine": 1.1054395918170406e-11,
+      "convergence_ratio": 16.012241749172425,
+      "max_p_half_fine": 1.839233626510506e-12,
+      "max_midpoint_CF4_probability_difference": 1.1073895737553907e-07,
+      "max_unitarity_error": 1.84297022087776e-14,
+      "max_Born_sum_error": 1.6653345369377348e-14,
+      "gauge_state_residual": 2.663725598464241e-14,
+      "max_JRS_bound_violation": 0.0,
+      "P_finite_excited": 0.0018859135014375067,
+      "P_LZ_infinite_excited": 0.0018674427317079893,
+      "finite_minus_LZ": 1.8470769729517353e-05,
+      "JRS_endpoint_amplitude_bound": 0.8720892959706131,
+      "U_final": [
+        [
+          [
+            -0.06836175508809873,
+            1.608630763316743e-15
+          ],
+          [
+            -0.8970145593743447,
+            -0.43668243691695163
+          ]
+        ],
+        [
+          [
+            0.8970145593743447,
+            -0.43668243691695163
+          ],
+          [
+            -0.06836175508809873,
+            -1.608630763316743e-15
+          ]
+        ]
+      ]
+    },
+    {
+      "input": {
+        "id": "slower",
+        "gap_ratio": 1,
+        "sweep_ratio": 0.05,
+        "half_duration_scaled": 160
+      },
+      "dimension": 2,
+      "basis": [
+        "+z",
+        "-z"
+      ],
+      "initial_preparation": "instantaneous ground at -L",
+      "Delta_J": 6.62607015e-29,
+      "v_J_per_s": 2.0816413305410618e-24,
+      "Delta_over_h_Hz": 100000,
+      "half_duration_seconds": 0.00025464790894703254,
+      "kappa": 20.0,
+      "eta_max": 0.025,
+      "grids": [
+        13200,
+        26400,
+        52800
+      ],
+      "max_U_coarse_half": 4.363200211556115e-11,
+      "max_U_half_fine": 2.7212246963475386e-12,
+      "convergence_ratio": 16.03395786247441,
+      "max_p_half_fine": 7.57751066754464e-14,
+      "max_midpoint_CF4_probability_difference": 4.1951121517586065e-09,
+      "max_unitarity_error": 3.907985046680551e-14,
+      "max_Born_sum_error": 3.2529534621517087e-14,
+      "gauge_state_residual": 6.69237061234327e-14,
+      "max_JRS_bound_violation": 0.0,
+      "P_finite_excited": 1.799043839605076e-09,
+      "P_LZ_infinite_excited": 2.2711010683240965e-14,
+      "finite_minus_LZ": 1.7990211285943928e-09,
+      "JRS_endpoint_amplitude_bound": 0.17441785919412264,
+      "U_final": [
+        [
+          [
+            0.11111742715199016,
+            -4.719779602208236e-15
+          ],
+          [
+            0.8885974554496752,
+            -0.4450252572062143
+          ]
+        ],
+        [
+          [
+            -0.8885974554496752,
+            -0.4450252572062143
+          ],
+          [
+            0.11111742715199016,
+            4.719779602208236e-15
+          ]
+        ]
+      ]
+    },
+    {
+      "input": {
+        "id": "faster",
+        "gap_ratio": 1,
+        "sweep_ratio": 5,
+        "half_duration_scaled": 1.6
+      },
+      "dimension": 2,
+      "basis": [
+        "+z",
+        "-z"
+      ],
+      "initial_preparation": "instantaneous ground at -L",
+      "Delta_J": 6.62607015e-29,
+      "v_J_per_s": 2.0816413305410616e-22,
+      "Delta_over_h_Hz": 100000,
+      "half_duration_seconds": 2.5464790894703256e-06,
+      "kappa": 0.2,
+      "eta_max": 2.5,
+      "grids": [
+        1600,
+        3200,
+        6400
+      ],
+      "max_U_coarse_half": 2.072885171873479e-13,
+      "max_U_half_fine": 1.8814022293249997e-14,
+      "convergence_ratio": 11.017767171548313,
+      "max_p_half_fine": 3.2307490016592055e-14,
+      "max_midpoint_CF4_probability_difference": 2.3543928806546432e-08,
+      "max_unitarity_error": 2.4868995751603507e-14,
+      "max_Born_sum_error": 6.661338147750939e-15,
+      "gauge_state_residual": 9.226380847435024e-16,
+      "max_JRS_bound_violation": 0.0,
+      "P_finite_excited": 0.7364182968045634,
+      "P_LZ_infinite_excited": 0.7304026910486456,
+      "finite_minus_LZ": 0.006015605755917752,
+      "JRS_endpoint_amplitude_bound": 17.44178591941226,
+      "U_final": [
+        [
+          [
+            0.8832870118044871,
+            1.1411227865409934e-15
+          ],
+          [
+            0.14768429059138502,
+            -0.4449644986850264
+          ]
+        ],
+        [
+          [
+            -0.14768429059138502,
+            -0.4449644986850264
+          ],
+          [
+            0.8832870118044871,
+            -1.1411227865409934e-15
+          ]
+        ]
+      ]
+    },
+    {
+      "input": {
+        "id": "smaller-gap",
+        "gap_ratio": 0.25,
+        "sweep_ratio": 0.25,
+        "half_duration_scaled": 32
+      },
+      "dimension": 2,
+      "basis": [
+        "+z",
+        "-z"
+      ],
+      "initial_preparation": "instantaneous ground at -L",
+      "Delta_J": 1.6565175375e-29,
+      "v_J_per_s": 1.0408206652705308e-23,
+      "Delta_over_h_Hz": 25000.0,
+      "half_duration_seconds": 5.092958178940651e-05,
+      "kappa": 0.25,
+      "eta_max": 2.0,
+      "grids": [
+        2800,
+        5600,
+        11200
+      ],
+      "max_U_coarse_half": 4.2486918221965366e-11,
+      "max_U_half_fine": 2.6535701048513525e-12,
+      "convergence_ratio": 16.011228851383745,
+      "max_p_half_fine": 1.6606716002343092e-12,
+      "max_midpoint_CF4_probability_difference": 1.5462130331656e-07,
+      "max_unitarity_error": 2.4646951146678475e-14,
+      "max_Born_sum_error": 5.995204332975845e-15,
+      "gauge_state_residual": 1.753669224818822e-14,
+      "max_JRS_bound_violation": 0.0,
+      "P_finite_excited": 0.6751926540900749,
+      "P_LZ_infinite_excited": 0.6752319066557773,
+      "finite_minus_LZ": -3.925256570236346e-05,
+      "JRS_endpoint_amplitude_bound": 13.997071504243493,
+      "U_final": [
+        [
+          [
+            0.8046578140594017,
+            -4.139050213680662e-15
+          ],
+          [
+            -0.558220246394175,
+            0.20227693587943205
+          ]
+        ],
+        [
+          [
+            0.558220246394175,
+            0.20227693587943205
+          ],
+          [
+            0.8046578140594017,
+            4.139050213680662e-15
+          ]
+        ]
+      ]
+    }
+  ],
+  "boundary": [
+    {
+      "half_duration_scaled": 8,
+      "endpoint_detuning_over_gap": 2.0,
+      "P_finite_excited": 0.0007725950695803812,
+      "P_LZ_infinite_excited": 0.0018674427317079893,
+      "finite_minus_LZ": -0.001094847662127608,
+      "max_p_half_fine": 1.4476267407026455e-14,
+      "max_U_half_fine": 1.0959309034018029e-13,
+      "max_unitarity_error": 1.9317880628477724e-14,
+      "JRS_endpoint_amplitude_bound": 0.8326237921249264
+    },
+    {
+      "half_duration_scaled": 16,
+      "endpoint_detuning_over_gap": 4.0,
+      "P_finite_excited": 0.00172805827673049,
+      "P_LZ_infinite_excited": 0.0018674427317079893,
+      "finite_minus_LZ": -0.00013938445497749924,
+      "max_p_half_fine": 3.567528217285343e-13,
+      "max_U_half_fine": 3.323773789570729e-12,
+      "max_unitarity_error": 1.8318679906315083e-14,
+      "JRS_endpoint_amplitude_bound": 0.8635805699801065
+    },
+    {
+      "half_duration_scaled": 32,
+      "endpoint_detuning_over_gap": 8.0,
+      "P_finite_excited": 0.0018859135014375067,
+      "P_LZ_infinite_excited": 0.0018674427317079893,
+      "finite_minus_LZ": 1.8470769729517353e-05,
+      "max_p_half_fine": 1.839233626510506e-12,
+      "max_U_half_fine": 1.1054395918170406e-11,
+      "max_unitarity_error": 1.84297022087776e-14,
+      "JRS_endpoint_amplitude_bound": 0.8720892959706131
+    },
+    {
+      "half_duration_scaled": 64,
+      "endpoint_detuning_over_gap": 16.0,
+      "P_finite_excited": 0.0018622249796881915,
+      "P_LZ_infinite_excited": 0.0018674427317079893,
+      "finite_minus_LZ": -5.217752019797848e-06,
+      "max_p_half_fine": 2.4030083478621123e-13,
+      "max_U_half_fine": 1.8644534488238014e-12,
+      "max_unitarity_error": 4.551914400963142e-14,
+      "JRS_endpoint_amplitude_bound": 0.8742687688184418
+    }
+  ],
+  "berry": [
+    {
+      "points": 360,
+      "band": "upper",
+      "gamma_rad_principal": -1.57076642048027,
+      "analytic_gamma_rad": -1.5707963267948961,
+      "phase_factor_error": 2.990631462495691e-05,
+      "cyclic_gauge_error": 1.3334600007018959e-15
+    },
+    {
+      "points": 360,
+      "band": "lower",
+      "gamma_rad_principal": 1.57076642048027,
+      "analytic_gamma_rad": 1.5707963267948961,
+      "phase_factor_error": 2.990631462495691e-05,
+      "cyclic_gauge_error": 8.88585325822198e-16
+    },
+    {
+      "points": 720,
+      "band": "upper",
+      "gamma_rad_principal": -1.5707888503229974,
+      "analytic_gamma_rad": -1.5707963267948961,
+      "phase_factor_error": 7.476471898675636e-06,
+      "cyclic_gauge_error": 4.4299243758934364e-14
+    },
+    {
+      "points": 720,
+      "band": "lower",
+      "gamma_rad_principal": 1.5707888503229974,
+      "analytic_gamma_rad": 1.5707963267948961,
+      "phase_factor_error": 7.476471898675636e-06,
+      "cyclic_gauge_error": 4.463497807012236e-14
+    },
+    {
+      "points": 1440,
+      "band": "upper",
+      "gamma_rad_principal": -1.5707944576835948,
+      "analytic_gamma_rad": -1.5707963267948961,
+      "phase_factor_error": 1.8691113012889226e-06,
+      "cyclic_gauge_error": 3.6284169996007384e-14
+    },
+    {
+      "points": 1440,
+      "band": "lower",
+      "gamma_rad_principal": 1.5707944576835948,
+      "analytic_gamma_rad": 1.5707963267948961,
+      "phase_factor_error": 1.8691113012889226e-06,
+      "cyclic_gauge_error": 3.6547078198455216e-14
+    }
+  ],
+  "resonant_counterexample": {
+    "epsilon": 0.02,
+    "local_ratio_everywhere": 0.009996001599360257,
+    "omega0_t": 157.07963267948966,
+    "P_excited_at_pi_pulse": 0.9996001599360256,
+    "analytic_P": 0.9996001599360256
+  }
+}

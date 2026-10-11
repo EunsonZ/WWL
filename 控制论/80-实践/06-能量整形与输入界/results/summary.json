@@ -1,0 +1,109 @@
+{
+  "certificate": {
+    "c": 1.0,
+    "s": 0.8414709848078965,
+    "c1": 0.3957932254814226,
+    "c2": 0.7022542485937369,
+    "q": 0.21036774620197413,
+    "alpha": 0.14978033000386629,
+    "beta": 2.5253395997785075,
+    "torque_norm": 2.1540659228538015,
+    "radius": 0.4495839672063343,
+    "torque_bound": 0.9684335032205857,
+    "d_threshold": 0.06888306935655152,
+    "ultimate_radius": 0.3263385120654283
+  },
+  "initial_W": 0.055913510874394015,
+  "omega_rad_per_s": 3.132091952673165,
+  "energy_scale_J": 9.81,
+  "torque_scale_Nm": 9.81,
+  "physical_damping_Nm_s_per_rad": 0.6264183905346331,
+  "cases": {
+    "zero": {
+      "final_e_rad": -7.501808265303448e-06,
+      "final_v_scaled": 1.573109640840857e-05,
+      "max_W": 0.055913510874394015,
+      "max_abs_raw_Nm": 5.798106454695482,
+      "max_abs_applied_Nm": 5.798106454695482,
+      "saturated_export_rows": 0,
+      "first_export_angle_exit_s": null,
+      "derivative_identity_max_error": 6.938893903907228e-18,
+      "certified_inequality_max_excess": 0.0,
+      "step_errors": [
+        3.423478164262082e-10,
+        2.126367440734446e-11,
+        1.249349246126304e-12
+      ],
+      "certificate_applies": true
+    },
+    "constant": {
+      "final_e_rad": 0.05001442188114728,
+      "final_v_scaled": 1.3092876091815858e-05,
+      "max_W": 0.055913510874394015,
+      "max_abs_raw_Nm": 5.798106454695482,
+      "max_abs_applied_Nm": 5.798106454695482,
+      "saturated_export_rows": 0,
+      "first_export_angle_exit_s": null,
+      "derivative_identity_max_error": 1.0408340855860843e-17,
+      "certified_inequality_max_excess": 0.0,
+      "step_errors": [
+        2.835732242205104e-10,
+        1.7612082911295127e-11,
+        1.0346298852586975e-12
+      ],
+      "certificate_applies": true
+    },
+    "square": {
+      "final_e_rad": -0.021901345367262386,
+      "final_v_scaled": -0.041200769497681984,
+      "max_W": 0.055913510874394015,
+      "max_abs_raw_Nm": 5.798106454695482,
+      "max_abs_applied_Nm": 5.798106454695482,
+      "saturated_export_rows": 0,
+      "first_export_angle_exit_s": null,
+      "derivative_identity_max_error": 1.0408340855860843e-17,
+      "certified_inequality_max_excess": 0.0,
+      "step_errors": [
+        3.0789335646945577e-10,
+        1.9070842809700506e-11,
+        1.1189147641405975e-12
+      ],
+      "certificate_applies": true
+    },
+    "small_actuator": {
+      "final_e_rad": 3.0115580483377458,
+      "final_v_scaled": 0.04339101400426802,
+      "max_W": 5.492985431533706,
+      "max_abs_raw_Nm": 29.076564116249923,
+      "max_abs_applied_Nm": 1.4715,
+      "saturated_export_rows": 914,
+      "first_export_angle_exit_s": 0.7598755196087801,
+      "derivative_identity_max_error": 1.3322676295501878e-15,
+      "certified_inequality_max_excess": null,
+      "step_errors": [
+        7.338841798922175e-05,
+        3.27562689772625e-06,
+        3.353073343920969e-06
+      ],
+      "certificate_applies": false
+    },
+    "large_disturbance": {
+      "final_e_rad": 154.72512988809197,
+      "final_v_scaled": 9.901691282702794,
+      "max_W": 3426.22099950509,
+      "max_abs_raw_Nm": 96.71142770732006,
+      "max_abs_applied_Nm": 9.81,
+      "saturated_export_rows": 992,
+      "first_export_angle_exit_s": 0.24903483415749936,
+      "derivative_identity_max_error": 1.7053025658242404e-13,
+      "certified_inequality_max_excess": null,
+      "step_errors": [
+        0.00012098890337137722,
+        1.1487357605921794e-05,
+        3.83042488674603e-06
+      ],
+      "certificate_applies": false
+    }
+  },
+  "scope": "five finite trajectories; the general proof is in lesson 15"
+}

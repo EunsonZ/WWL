@@ -1,0 +1,16 @@
+{
+  "eta": "0.8",
+  "probability_probes": ["0.4", "0.6", "0.8", "0.99"],
+  "hinge_etas": ["0.6", "0.8"],
+  "hinge_score_probes": ["-1", "0", "1", "2"],
+  "four_point_w_probes": ["-1", "0", "0.5", "1"],
+  "four_point_distribution": [[-1, -1, "3/8"], [-1, 1, "1/8"], [1, -1, "1/8"], [1, 1, "3/8"]],
+  "fixed_tie_rule": "predict 1 when probability >= threshold or score >= 0",
+  "four_point_n": 4,
+  "four_point_lambda": "1/2",
+  "clip_epsilon": "0.25",
+  "normalized_clip_gap": "0.01",
+  "true_brier_excess": "0.0025",
+  "cost_false_positive": "9",
+  "cost_false_negative": "1"
+}

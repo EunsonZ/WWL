@@ -5,8 +5,8 @@ stage: 3
 aliases:
   - 循环群表示与周期卷积
 prerequisites:
-  - 数学/25-高等代数/50-模与有限群表示/03-S3表示Maschke与Schur引理
-  - 数学/20-线性代数与几何/11-基变换相似与矩阵表示
+  - "[[数学/25-高等代数/50-模与有限群表示/03-S3表示Maschke与Schur引理]]"
+  - "[[数学/20-线性代数与几何/11-基变换相似与矩阵表示]]"
 sources:
   - https://math.mit.edu/~etingof/representationtheorybook.pdf
 ---

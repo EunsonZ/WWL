@@ -24,7 +24,7 @@ Obsidian 是围绕本地文件工作的笔记与思考环境。Vault 是一个�
 > [!important] 最重要的心智模型
 > 内容存在文件里，链接表达关系，属性提供结构，视图负责呈现。插件应增强工作流，而不是绑架数据。
 
-深入：[[Obsidian知识/00-开始/01-如何使用这个-Vault|01-如何使用这个-Vault]]、[[AGENTS]]。
+深入：[[Obsidian知识/00-开始/01-如何使用这个-Vault|01-如何使用这个-Vault]]、[AGENTS.md](../../AGENTS.md)。
 
 ## 2. 先写出可读的 Markdown
 

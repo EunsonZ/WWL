@@ -5,8 +5,8 @@ stage: 3
 aliases:
   - S3的置换表示与完全可约性
 prerequisites:
-  - 数学/25-高等代数/15-有限群Cauchy与Sylow计数
-  - 数学/25-高等代数/50-模与有限群表示/01-模同态正合列与PID结构
+  - "[[数学/25-高等代数/15-有限群Cauchy与Sylow计数]]"
+  - "[[数学/25-高等代数/50-模与有限群表示/01-模同态正合列与PID结构]]"
 sources:
   - https://math.mit.edu/~etingof/representationtheorybook.pdf
 ---

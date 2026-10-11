@@ -76,7 +76,7 @@ tags:
 - 恢复与同步：[[Obsidian知识/20-功能/01-官方插件实验室/08-File Recovery与Sync边界|File Recovery 与 Sync 边界]]
 - 可审计版本历史：[[Obsidian知识/20-功能/02-社区插件实验室/11-Obsidian-Git|11-Obsidian-Git]]
 - 外部接口：[[Obsidian知识/20-功能/02-社区插件实验室/12-Local-REST-API|12-Local-REST-API]]
-- 当前 agent 交互基线：[[AGENTS]]
+- 当前 agent 交互基线：[AGENTS.md](../../AGENTS.md)
 
 > [!practice] 画出自己的最小工具链
 > 在 [[Obsidian知识/40-视图/01-Canvas/Obsidian功能地图.canvas|Obsidian 功能地图]] 中新增一个分组“我的 Obsidian”，只放你下一周会实际使用的 5 个功能，并将卡片链接到对应课程。

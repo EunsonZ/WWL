@@ -5,8 +5,8 @@ stage: 3
 aliases:
   - 整数Smith完整变换复算
 prerequisites:
-  - 数学/25-高等代数/50-模与有限群表示/02-整数Smith核像商与同调接口
-  - 数学/25-高等代数/50-模与有限群表示/04-特征标正交与S3分解
+  - "[[数学/25-高等代数/50-模与有限群表示/02-整数Smith核像商与同调接口]]"
+  - "[[数学/25-高等代数/50-模与有限群表示/04-特征标正交与S3分解]]"
 sources:
   - https://kconrad.math.uconn.edu/blurbs/linmultialg/modulesoverPID.pdf
 ---

@@ -5,7 +5,7 @@ stage: 3
 aliases:
   - 整数Smith的核像商合同
 prerequisites:
-  - 数学/25-高等代数/50-模与有限群表示/01-模同态正合列与PID结构
+  - "[[数学/25-高等代数/50-模与有限群表示/01-模同态正合列与PID结构]]"
 sources:
   - https://kconrad.math.uconn.edu/blurbs/linmultialg/modulesoverPID.pdf
 ---

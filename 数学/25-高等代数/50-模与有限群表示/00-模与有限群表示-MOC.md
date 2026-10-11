@@ -4,8 +4,8 @@ stage: 3
 aliases:
   - 模与有限群表示课程
 prerequisites:
-  - 数学/25-高等代数/12-环理想商环与同态基本定理
-  - 数学/25-高等代数/16-整环Euclid域PID与唯一分解
+  - "[[数学/25-高等代数/12-环理想商环与同态基本定理]]"
+  - "[[数学/25-高等代数/16-整环Euclid域PID与唯一分解]]"
 sources:
   - https://kconrad.math.uconn.edu/blurbs/linmultialg/modulesoverPID.pdf
   - https://math.mit.edu/~etingof/representationtheorybook.pdf

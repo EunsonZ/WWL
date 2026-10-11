@@ -5,8 +5,8 @@ stage: 3
 aliases:
   - 一般模与PID有限生成模结构
 prerequisites:
-  - 数学/25-高等代数/12-环理想商环与同态基本定理
-  - 数学/25-高等代数/16-整环Euclid域PID与唯一分解
+  - "[[数学/25-高等代数/12-环理想商环与同态基本定理]]"
+  - "[[数学/25-高等代数/16-整环Euclid域PID与唯一分解]]"
 sources:
   - https://kconrad.math.uconn.edu/blurbs/linmultialg/modulesoverPID.pdf
 ---

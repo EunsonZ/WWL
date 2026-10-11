@@ -55,7 +55,7 @@ WorkWithLLM 于 2026-09-02 的历史只读复核记录的是 `5.1.0` 与当时�
 2. 确认地址是 `127.0.0.1` 的 HTTPS endpoint。
 3. 确认 insecure HTTP server 关闭。
 4. 确认真实配置文件被 Git ignore。
-5. 阅读 [[AGENTS]]，确认当前 agent 的允许范围。
+5. 阅读 [AGENTS.md](../../../AGENTS.md)，确认当前 agent 的允许范围。
 
 成功标准：能解释为何“只监听本机”仍不是低风险；能指出身份认证、传输加密、凭据保存和 agent 授权是四个不同边界。
 

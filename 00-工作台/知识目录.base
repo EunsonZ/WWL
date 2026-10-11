@@ -1,6 +1,7 @@
 filters:
   and:
     - file.ext == "md"
+    - '!file.path.contains("/snapshot/")'
     - or:
         - file.inFolder("数学")
         - file.inFolder("AI")

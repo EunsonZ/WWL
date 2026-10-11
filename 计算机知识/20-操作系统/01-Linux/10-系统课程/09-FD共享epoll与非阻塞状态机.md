@@ -18,7 +18,7 @@
 
 ## 先分开三个对象：路径、FD、打开文件描述
 
-路径是一次名称解析的输入；文件描述符（FD）是进程表中的小整数索引；打开文件描述（open file description，OFD）则保存一次打开所关联的偏移和文件状态。两个 FD 数字不同，不代表它们具有独立偏移；同一路径打开两次，也不必共享同一个 OFD。[^dup]
+路径是一次名称解析的输入；文件描述符（FD）是进程表中的小整数索引；打开文件描述（open file description，OFD）则保存一次打开所关联的偏移和文件状态。两个 FD 数字不同，不代表它们具有独立偏移；对这里的普通文件，两次成功的独立 `open` 会创建不同的 OFD，各自维护偏移。文件内容仍是同一个对象；偏移独立不等于复制了文件。[^open]
 
 ```text
 fd1 = open("data", O_RDONLY)   → OFD-A，偏移 0
@@ -29,11 +29,30 @@ read(fd2, 2)                   → 从位置 2 继续，而非从 0 开始
 read(fd3, 2)                   → 仍从位置 0 开始
 ```
 
+把上一讲临时文件中的 `abcdef` 代入这个序列，就能区分“复制引用”与“重新打开”。以下只跟踪成功的普通文件调用，期间没有其他读写者；一次读取两字节，初始偏移为 0。`fd1`、`fd2`、`fd3` 是变量名，实际返回的整数不要求固定。
+
+| 已完成的操作 | 当前 FD 指向 | OFD-A 的下一读取位置 | OFD-B 的下一读取位置 | 本次读到的字节 |
+| --- | --- | ---: | ---: | --- |
+| 两次 `open` 与一次 `dup` | `fd1,fd2 → A`；`fd3 → B` | 0 | 0 | — |
+| `read(fd1, 2)` | 同上 | 2 | 0 | `ab` |
+| `read(fd2, 2)` | 同上 | 4 | 0 | `cd` |
+| `read(fd3, 2)` | 同上 | 4 | 2 | `ab` |
+| `close(fd1)` | `fd2 → A`；`fd3 → B` | 4 | 2 | — |
+| `read(fd2, 2)` | 同上 | 6 | 2 | `ef` |
+
+`dup` 新建的是当前进程 FD 表中的一项，指向已有 OFD，不创建第二个偏移；`close(fd1)` 则删除这一项引用，不把 A 的偏移重置为 0，也不关闭 `fd2`。因此表末的 `ef` 是前面共享偏移的继续。关闭 A 的最后一个相关引用后，才释放这份打开状态。[^dup]
+
+这张表前四行对应既有 [偏移与标志测试](../../../_labs/round4/test_systems.py) 中的 `test_dup_offset_and_fd_flags`；上一讲的 [[计算机知识/20-操作系统/01-Linux/10-系统课程/02-文件描述符管道与进程控制#一个只用临时文件的观察|临时文件观察]] 只用一个 `dup`，得到 `ab`、`cd`。后两行是沿同一接口合同的教学推演，本轮没有重新运行这些程序；高级缓冲 I/O 与底层读取交错时仍需先同步缓冲状态。
+
 ![FD 表指向打开文件描述；dup 共享偏移，但每个 FD 保留自己的描述符标志](../../../_assets/diagrams/round4/fd-sharing.png)
 
 [矢量图](../../../_assets/diagrams/round4/fd-sharing.svg) · [可编辑图源](../../../_assets/diagrams/round4/fd-sharing.dot)
 
-`fork` 后继承的对应 FD 也引用同一个 OFD。`FD_CLOEXEC` 是描述符标志，各 FD 独立；`O_NONBLOCK` 等文件状态标志属于 OFD，通过一方改变会影响其他共享方。注意这里讲的是系统调用 `dup` 语义；Python 等运行时可能主动设置“新 FD 不可继承”，不能把包装库策略误当原始调用默认值。
+如果在 A 的偏移为 4、尚未 `close(fd1)` 时 `fork`，子进程继承的 `fd1`、`fd2` 也指向 A；父子进程各有自己的 FD 表，共享的是这份打开状态。假定随后只有子进程通过 `fd2` 读两字节，它得到 `ef`，父进程再读取也要从偏移 6 开始；若父子并发读取，谁先拿到哪段字节取决于调用顺序，不能保证某个进程一定读到 `ef`。父进程关闭 `fd1`、`fd2` 后，子进程的对应引用仍可存活。[^fork]
+
+标志也按这两层归属判断：`fcntl(fd, F_GETFL/F_SETFL)` 查看或修改文件状态标志，例如 `O_NONBLOCK`；`fcntl(fd, F_GETFD/F_SETFD)` 查看或修改描述符标志，例如 `FD_CLOEXEC`。通过 `fd1` 修改 A 的 `O_NONBLOCK`，共享 A 的 `fd2` 及 fork 继承者也看到变化，独立打开的 `fd3` 不跟着变；只修改 `fd1` 的 `FD_CLOEXEC`，则不修改其他 FD 项。`FD_CLOEXEC` 指成功 `exec` 时关闭该项，不禁止 `fork` 继承它。[^fcntl]
+
+原始 `dup` 创建的新 FD 的 `FD_CLOEXEC` 为关闭状态；Python 等运行时可能主动设置“新 FD 不可继承”，不能把包装库策略误当原始调用默认值。普通文件上设置 `O_NONBLOCK` 也不承诺读写一定不会阻塞；下面的非阻塞解释针对支持该语义的管道或流式连接。[^dup][^open]
 
 关闭 `fd1` 不必销毁对象，`fd2` 仍可能持有引用。已经打开的文件在路径被替换后仍可读原对象，名称和对象生命周期因此必须分别跟踪，见 [[计算机知识/20-操作系统/01-Linux/10-系统课程/10-路径解析权限竞态与可靠部署|路径解析与竞态]]。
 
@@ -80,6 +99,9 @@ epoll 的优势不应被压缩成“所有操作 O(1)”：注册、删除、内
 
 解释为什么 `dup` 不能让两个线程各自从文件开头读取；描述把读预算限制为 4 KiB 后必须新增哪种应用状态；列出“写入系统调用成功、TCP 对端确认、服务端数据库提交”三者分别能证明什么。能回答这三个问题，才算把 FD、I/O 和业务层分开了。
 
+[^open]: Linux man-pages，open(2)，每次成功打开创建 OFD，记录偏移和状态标志，以及普通文件的 O_NONBLOCK 边界：https://man7.org/linux/man-pages/man2/open.2.html 。
+[^fork]: Linux man-pages，fork(2)，继承的 FD 指向父进程对应 FD 的同一 OFD：https://man7.org/linux/man-pages/man2/fork.2.html 。
+[^fcntl]: Linux man-pages，fcntl(2)，描述符标志与文件状态标志：https://man7.org/linux/man-pages/man2/fcntl.2.html 。
 [^dup]: Linux man-pages，dup(2)，共享 OFD、偏移与状态标志，独立描述符标志：https://man7.org/linux/man-pages/man2/dup.2.html 。
 [^epoll]: Linux man-pages，epoll(7)，ET/LT、EAGAIN、ONESHOT、公平性与就绪缓存讨论：https://man7.org/linux/man-pages/man7/epoll.7.html 。
 

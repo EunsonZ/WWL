@@ -304,15 +304,41 @@ def references(text):
 
 
 def title_text(value):
-    value = re.sub(r"\\([!\"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])", r"\1", value)
+    # Escaped punctuation and code-span contents are visible literal text;
+    # protect them before removing Markdown formatting delimiters.
+    literals = []
+    # More NULs than the entire input can contain: original text cannot
+    # collide with generated tokens, even after formatting is removed.
+    literal_prefix = "\x00" * (value.count("\x00") + 1)
+
+    def protect(match):
+        if match[1] is not None:
+            literal = match[1]
+        else:
+            literal = match[3].replace("\n", " ")
+            if literal.startswith(" ") and literal.endswith(" ") and literal.strip():
+                literal = literal[1:-1]
+        literals.append(literal)
+        return literal_prefix + str(len(literals) - 1) + "\x00"
+
+    value = re.sub(r"\\([!\"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])|(?<!`)(`+)(?!`)(.*?)(?<!`)\2(?!`)", protect, value)
     value = re.sub(r"!?\[\[([^]|]+)(?:\|([^]]+))?\]\]", lambda m: m[2] or m[1], value)
     value = re.sub(r"\[([^]]+)\]\([^)]*\)", r"\1", value)
-    value = re.sub(r"[*_~`]", "", value)
+    # Intraword underscores (no_std, foo__bar) are literal, not emphasis.
+    while True:
+        plain = re.sub(r"(?<![\w_])(_{1,3})(?=\S)(.+?)(?<=\S)\1(?![\w_])", r"\2", value)
+        if plain == value:
+            break
+        value = plain
+    value = re.sub(r"[*~`]", "", value)
+    value = re.sub(re.escape(literal_prefix) + r"(\d+)\x00",
+                   lambda m: literals[int(m[1])], value)
     return value.strip()
 
 
 def slug(value):
-    value = re.sub(r"[^\w\- ]", "", title_text(value).casefold())
+    # anchors() supplies already-rendered title text: do not parse it twice.
+    value = re.sub(r"[^\w\- ]", "", value.casefold())
     return re.sub(r"\s", "-", value)
 
 

@@ -12,7 +12,7 @@ from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import check_mirrors
 import check_vault
-from links import Index, anchors, audit, references, scan
+from links import Index, anchors, audit, references, scan, title_text
 
 
 class VaultFixture(unittest.TestCase):
@@ -76,6 +76,43 @@ class LinkTests(VaultFixture):
         self.write("n.md", "[[target#Hello world!]]\n[[target#Setext]]\n[[target#^block-1]]\n[a](target.md#hello-world-1)\n[[target#Hidden]]\n[[target#^hidden]]\n")
         report = self.report()
         self.assertEqual([x["target"] for x in report["issues"]], ["target#Hidden", "target#^hidden"])
+
+    def test_literal_underscores_in_heading_wiki_and_markdown_anchors(self):
+        self.write("target.md", "## no_std 与嵌入式\n# foo__bar\n")
+        self.write("n.md", "[[target#no_std 与嵌入式]]\n"
+                   "[[target#no_std%20与嵌入式]]\n[[target#foo__bar]]\n"
+                   "[slug](target.md#no_std-与嵌入式)\n"
+                   "[[target#nostd 与嵌入式]]\n[[target#foobar]]\n")
+        self.assertEqual([x["target"] for x in self.report()["issues"]],
+                         ["target#nostd 与嵌入式", "target#foobar"])
+
+    def test_emphasis_code_and_escaped_heading_underscores(self):
+        self.write("target.md", "# _Italic_ __Bold__ ___Both___\n"
+                   "# _Outer __Inner__ end_\n"
+                   "# `no_std` and `` _literal_ ``\n"
+                   r"# \_escaped\_ and \*star\*" + "\n"
+                   "_Setext_ no_std\n======\n")
+        self.write("n.md", "[[target#Italic Bold Both]]\n"
+                   "[[target#Outer Inner end]]\n"
+                   "[[target#no_std and _literal_]]\n"
+                   "[code slug](target.md#no_std-and-_literal_)\n"
+                   "[[target#_escaped_ and *star*]]\n"
+                   "[[target#Setext no_std]]\n"
+                   "[[target#no_std and literal]]\n"
+                   "[[target#escaped and star]]\n")
+        self.assertEqual([x["target"] for x in self.report()["issues"]],
+                         ["target#no_std and literal", "target#escaped and star"])
+
+    def test_literal_nul_sequences_cannot_collide_with_heading_tokens(self):
+        raw = "\x0099\x00"
+        self.assertEqual(title_text(raw), raw)
+        self.assertEqual(anchors("# " + raw + "\n")[0], {raw})
+        mixed = raw + " `no_std` " + r"\_escaped\_"
+        visible = raw + " no_std _escaped_"
+        self.assertEqual(title_text(mixed), visible)
+        self.write("target.md", "# " + mixed + "\n")
+        self.write("n.md", "[[target#" + visible + "]]\n")
+        self.assertFalse(self.report()["issues"])
 
     def test_aliases_display_alias_and_table_pipe(self):
         self.write("a/topic.md", '---\naliases:\n  - 概念别名\n  - "第二别名"\n---\n# 好标题\n')

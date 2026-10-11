@@ -1,0 +1,656 @@
+{
+  "model": "finite 1D equilibrium MB bulks plus localized two-state equilibrium interface; fully ionized dopants; no dipole",
+  "base_card": {
+    "description": "Synthetic A/B teaching card; not a measured material, process or PDK",
+    "temperature_K": 300.0,
+    "fermi_eV": -0.5,
+    "half_length_m": 6e-07,
+    "materials": {
+      "A": {
+        "Ec0_eV": 0.0,
+        "Eg_eV": 1.0,
+        "Nc_m-3": 1e+25,
+        "Nv_m-3": 1e+25,
+        "epsilon_r": 10.0,
+        "ND_m-3": 0.0,
+        "NA_m-3": 1e+22
+      },
+      "B": {
+        "Ec0_eV": 0.15,
+        "Eg_eV": 1.2,
+        "Nc_m-3": 2e+25,
+        "Nv_m-3": 1.5e+25,
+        "epsilon_r": 12.0,
+        "ND_m-3": 2e+22,
+        "NA_m-3": 0.0
+      }
+    },
+    "sheet_number_m-2": 200000000000000.0,
+    "half_cells": [
+      120,
+      240,
+      480
+    ],
+    "newton": {
+      "max_iterations": 80,
+      "scaled_residual_tolerance": 1e-10,
+      "max_step_V": 0.1,
+      "max_backtracks": 24
+    }
+  },
+  "interface_input": {
+    "description": "Equilibrium localized two-charge-state interface; synthetic card consumed from practice 08",
+    "base_card": "../08-异质结与Poisson自洽/inputs.json",
+    "fixed_sheet_C_m-2": 0.0,
+    "states": [
+      {
+        "name": "acceptor",
+        "type": "acceptor",
+        "N_m-2": 800000000000000.0,
+        "Et0_eV": -0.27,
+        "empty_over_filled_weight": 1.0
+      }
+    ],
+    "half_cells": [
+      120,
+      240,
+      480
+    ],
+    "short_half_length_m": 1.5e-07,
+    "fermi_change_eV": 0.05,
+    "density_factor": 2.0
+  },
+  "cases": {
+    "equilibrium": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.20153999617473017,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -3.1989014049577983e-05,
+      "sheet_derivative_C_m-2_V-1": -0.0009285690547617129,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.24957465184186728,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.4715399961747302,
+          "Et_minus_EF_eV": 0.02846000382526981,
+          "occupied_number_m-2": 199659721473493.8,
+          "charge_C_m-2": -3.1989014049577983e-05,
+          "charge_derivative_C_m-2_V-1": -0.0009285690547617129,
+          "frozen": false
+        }
+      ],
+      "scaled_residual": 4.336027465161511e-15,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 4,
+      "D0minus_C_m-2": -0.0003756474915928428,
+      "D0plus_C_m-2": -0.0004076365056424187,
+      "sheet_jump_error_C_m-2": 2.1277467635028025e-18,
+      "boundary_D_left_C_m-2": -5.055931655531825e-09,
+      "boundary_D_right_C_m-2": -1.2076721554940428e-11,
+      "volume_charge_C_m-2": 3.1994057904509264e-05,
+      "global_gauss_error_C_m-2": 2.6969529040576923e-18,
+      "electrode_charge_left_C_m-2": -5.055931655531825e-09,
+      "electrode_charge_right_C_m-2": 1.2076721554940428e-11,
+      "total_including_electrodes_C_m-2": -2.6969529040576923e-18,
+      "integrated_numbers": {
+        "electron_number_m-2": 9456342146110938.0,
+        "hole_number_m-2": 3656033348850697.0,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -9.398677582733717e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "zero_states": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.22738870784281184,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": 0.0,
+      "sheet_derivative_C_m-2_V-1": 0.0,
+      "traps": [],
+      "scaled_residual": 2.234946365444468e-14,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 0,
+      "D0minus_C_m-2": -0.00038544432748484515,
+      "D0plus_C_m-2": -0.00038544432748484396,
+      "sheet_jump_error_C_m-2": 1.1926223897340549e-18,
+      "boundary_D_left_C_m-2": -5.927913270974317e-09,
+      "boundary_D_right_C_m-2": -9.53280206441112e-12,
+      "volume_charge_C_m-2": 5.918378376975732e-09,
+      "global_gauss_error_C_m-2": 2.0919341740969437e-15,
+      "electrode_charge_left_C_m-2": -5.927913270974317e-09,
+      "electrode_charge_right_C_m-2": 9.53280206441112e-12,
+      "total_including_electrodes_C_m-2": -2.0919341740969437e-15,
+      "integrated_numbers": {
+        "electron_number_m-2": 9595857211901578.0,
+        "hole_number_m-2": 3595894151513874.5,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -8.008703960914923e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "density_changed": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.19035944568161972,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -4.5502294350548214e-05,
+      "sheet_derivative_C_m-2_V-1": -0.001447684998312755,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.17750186443608212,
+          "N_m-2": 1600000000000000.0,
+          "Et_eV": -0.46035944568161974,
+          "Et_minus_EF_eV": 0.03964055431838026,
+          "occupied_number_m-2": 284002983097731.4,
+          "charge_C_m-2": -4.5502294350548214e-05,
+          "charge_derivative_C_m-2_V-1": -0.001447684998312755,
+          "frozen": false
+        }
+      ],
+      "scaled_residual": 1.8539975838235394e-13,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 4,
+      "D0minus_C_m-2": -0.00037136755917804024,
+      "D0plus_C_m-2": -0.000416869853528232,
+      "sheet_jump_error_C_m-2": 3.564788980496558e-16,
+      "boundary_D_left_C_m-2": -4.713572812394096e-09,
+      "boundary_D_right_C_m-2": -1.3325683530421167e-11,
+      "volume_charge_C_m-2": 4.550699459719142e-05,
+      "global_gauss_error_C_m-2": 4.856615869013037e-16,
+      "electrode_charge_left_C_m-2": -4.713572812394096e-09,
+      "electrode_charge_right_C_m-2": 1.3325683530421167e-11,
+      "total_including_electrodes_C_m-2": -4.856615869013037e-16,
+      "integrated_numbers": {
+        "electron_number_m-2": 9398503085082778.0,
+        "hole_number_m-2": 3682535404812542.5,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -6.911788849595091e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "frozen_at_solution": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.2015399962001612,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -3.1989014049577983e-05,
+      "sheet_derivative_C_m-2_V-1": 0.0,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.24957465184186728,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.4715399962001612,
+          "Et_minus_EF_eV": 0.028460003799838818,
+          "occupied_number_m-2": 199659721473493.8,
+          "charge_C_m-2": -3.1989014049577983e-05,
+          "charge_derivative_C_m-2_V-1": 0.0,
+          "frozen": true
+        }
+      ],
+      "scaled_residual": 1.5726421808600935e-12,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 3,
+      "D0minus_C_m-2": -0.0003756474916026903,
+      "D0plus_C_m-2": -0.0004076365056522496,
+      "sheet_jump_error_C_m-2": 1.871604000253102e-17,
+      "boundary_D_left_C_m-2": -5.055931655531825e-09,
+      "boundary_D_right_C_m-2": -1.2076721554940428e-11,
+      "volume_charge_C_m-2": 3.199405774250824e-05,
+      "global_gauss_error_C_m-2": 1.6200371800350125e-13,
+      "electrode_charge_left_C_m-2": -5.055931655531825e-09,
+      "electrode_charge_right_C_m-2": 1.2076721554940428e-11,
+      "total_including_electrodes_C_m-2": -1.6200371800350125e-13,
+      "integrated_numbers": {
+        "electron_number_m-2": 9456342147067484.0,
+        "hole_number_m-2": 3656033348796115.5,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -8.782037597132586e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "one_shot_fixed": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.17749352356334921,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -6.0853120019306507e-05,
+      "sheet_derivative_C_m-2_V-1": 0.0,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.47476912601218935,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.44749352356334926,
+          "Et_minus_EF_eV": 0.05250647643665074,
+          "occupied_number_m-2": 379815300809751.5,
+          "charge_C_m-2": -6.0853120019306507e-05,
+          "charge_derivative_C_m-2_V-1": 0.0,
+          "frozen": true
+        }
+      ],
+      "scaled_residual": 4.498094138237079e-15,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 4,
+      "D0minus_C_m-2": -0.00036639516057013525,
+      "D0plus_C_m-2": -0.0004272482805894404,
+      "sheet_jump_error_C_m-2": 1.3755815063409838e-18,
+      "boundary_D_left_C_m-2": -4.343797150169563e-09,
+      "boundary_D_right_C_m-2": -1.488435572606535e-11,
+      "volume_charge_C_m-2": 6.085744893210107e-05,
+      "global_gauss_error_C_m-2": -1.2197274440461925e-19,
+      "electrode_charge_left_C_m-2": -4.343797150169563e-09,
+      "electrode_charge_right_C_m-2": 1.488435572606535e-11,
+      "total_including_electrodes_C_m-2": 1.2197274440461925e-19,
+      "integrated_numbers": {
+        "electron_number_m-2": 9333572713468304.0,
+        "hole_number_m-2": 3713415033226492.5,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -8.538092108323347e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "old_sheet_density_change": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.2015399962001612,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -3.1989014049577983e-05,
+      "sheet_derivative_C_m-2_V-1": 0.0,
+      "traps": [],
+      "scaled_residual": 1.5726421808600935e-12,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 3,
+      "D0minus_C_m-2": -0.0003756474916026903,
+      "D0plus_C_m-2": -0.0004076365056522496,
+      "sheet_jump_error_C_m-2": 1.871604000253102e-17,
+      "boundary_D_left_C_m-2": -5.055931655531825e-09,
+      "boundary_D_right_C_m-2": -1.2076721554940428e-11,
+      "volume_charge_C_m-2": 3.199405774250824e-05,
+      "global_gauss_error_C_m-2": 1.6200371800350125e-13,
+      "electrode_charge_left_C_m-2": -5.055931655531825e-09,
+      "electrode_charge_right_C_m-2": 1.2076721554940428e-11,
+      "total_including_electrodes_C_m-2": -1.6200371800350125e-13,
+      "integrated_numbers": {
+        "electron_number_m-2": 9456342147067484.0,
+        "hole_number_m-2": 3656033348796115.5,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -8.782037597132586e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "EF_shift_neutral_ends": {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "phiL_V": -0.3714207120034188,
+      "phiR_V": 0.4214207120030087,
+      "phi0_V": 0.15153999617473018,
+      "fermi_eV": -0.45,
+      "sheet_C_m-2": -3.1989014049577983e-05,
+      "sheet_derivative_C_m-2_V-1": -0.0009285690547617129,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.24957465184186728,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.4215399961747302,
+          "Et_minus_EF_eV": 0.02846000382526981,
+          "occupied_number_m-2": 199659721473493.8,
+          "charge_C_m-2": -3.1989014049577983e-05,
+          "charge_derivative_C_m-2_V-1": -0.0009285690547617129,
+          "frozen": false
+        }
+      ],
+      "scaled_residual": 4.213110206191782e-15,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 4,
+      "D0minus_C_m-2": -0.0003756474915928428,
+      "D0plus_C_m-2": -0.0004076365056424187,
+      "sheet_jump_error_C_m-2": 2.1277467635028025e-18,
+      "boundary_D_left_C_m-2": -5.055931655530145e-09,
+      "boundary_D_right_C_m-2": -1.2076721554940428e-11,
+      "volume_charge_C_m-2": 3.199405790450931e-05,
+      "global_gauss_error_C_m-2": 2.6495190590114515e-18,
+      "electrode_charge_left_C_m-2": -5.055931655530145e-09,
+      "electrode_charge_right_C_m-2": 1.2076721554940428e-11,
+      "total_including_electrodes_C_m-2": -2.6495190590114515e-18,
+      "integrated_numbers": {
+        "electron_number_m-2": 9456342146110938.0,
+        "hole_number_m-2": 3656033348850697.5,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -9.290257365485166e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158684,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "short_clamp_before": {
+      "half_cells": 480,
+      "h_m": 3.125e-10,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.17887499210281033,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -1.5582709342577936e-05,
+      "sheet_derivative_C_m-2_V-1": -0.0005294851050098298,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.12157452720798087,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.44887499210281034,
+          "Et_minus_EF_eV": 0.051125007897189656,
+          "occupied_number_m-2": 97259621766384.7,
+          "charge_C_m-2": -1.5582709342577936e-05,
+          "charge_derivative_C_m-2_V-1": -0.0005294851050098298,
+          "frozen": false
+        }
+      ],
+      "scaled_residual": 1.858824751648197e-11,
+      "residual_scale_C_m-2": 0.00048065299019999994,
+      "iterations": 3,
+      "D0minus_C_m-2": -0.0004141911205823683,
+      "D0plus_C_m-2": -0.0004297738299160117,
+      "sheet_jump_error_C_m-2": 8.934530632692672e-15,
+      "boundary_D_left_C_m-2": -0.00019213590196740126,
+      "boundary_D_right_C_m-2": -5.573537676549988e-05,
+      "volume_charge_C_m-2": 0.00015198323453123442,
+      "global_gauss_error_C_m-2": 1.3244884789626044e-14,
+      "electrode_charge_left_C_m-2": -0.00019213590196740126,
+      "electrode_charge_right_C_m-2": 5.573537676549988e-05,
+      "total_including_electrodes_C_m-2": -1.3244884789626044e-14,
+      "integrated_numbers": {
+        "electron_number_m-2": 665663506394205.0,
+        "hole_number_m-2": 114268243886802.52,
+        "dopant_net_number_m-2": 1500000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -8.131516293641283e-20,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "short_clamp_EF_changed": {
+      "half_cells": 480,
+      "h_m": 3.125e-10,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.14834073939156348,
+      "fermi_eV": -0.45,
+      "sheet_C_m-2": -2.9111142716962498e-05,
+      "sheet_derivative_C_m-2_V-1": -0.0008703143659628031,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.22712182679480472,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.41834073939156347,
+          "Et_minus_EF_eV": 0.031659260608436546,
+          "occupied_number_m-2": 181697461435843.78,
+          "charge_C_m-2": -2.9111142716962498e-05,
+          "charge_derivative_C_m-2_V-1": -0.0008703143659628031,
+          "frozen": false
+        }
+      ],
+      "scaled_residual": 7.135545136836201e-14,
+      "residual_scale_C_m-2": 0.00048065299019999994,
+      "iterations": 5,
+      "D0minus_C_m-2": -0.0003972951509841293,
+      "D0plus_C_m-2": -0.0004264062937010904,
+      "sheet_jump_error_C_m-2": 1.4060746924421386e-18,
+      "boundary_D_left_C_m-2": -0.00015987653429042463,
+      "boundary_D_right_C_m-2": -0.0002891656060194284,
+      "volume_charge_C_m-2": -0.00010017792901204707,
+      "global_gauss_error_C_m-2": 5.7970934910084315e-18,
+      "electrode_charge_left_C_m-2": -0.00015987653429042463,
+      "electrode_charge_right_C_m-2": 0.0002891656060194284,
+      "total_including_electrodes_C_m-2": -5.7970934910084315e-18,
+      "integrated_numbers": {
+        "electron_number_m-2": 2143916578482939.2,
+        "hole_number_m-2": 18655125493562.836,
+        "dopant_net_number_m-2": 1500000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": 2.303929616531697e-19,
+      "max_n_over_Nc_or_p_over_Nv": 0.006917720816438499,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    "short_clamp_frozen": {
+      "half_cells": 480,
+      "h_m": 3.125e-10,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.15721705577213194,
+      "fermi_eV": -0.45,
+      "sheet_C_m-2": -1.5582709342577936e-05,
+      "sheet_derivative_C_m-2_V-1": 0.0,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.12157452720798087,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.427217055772132,
+          "Et_minus_EF_eV": 0.02278294422786803,
+          "occupied_number_m-2": 97259621766384.7,
+          "charge_C_m-2": -1.5582709342577936e-05,
+          "charge_derivative_C_m-2_V-1": 0.0,
+          "frozen": true
+        }
+      ],
+      "scaled_residual": 6.667137861794571e-14,
+      "residual_scale_C_m-2": 0.00048065299019999994,
+      "iterations": 5,
+      "D0minus_C_m-2": -0.00040257650086174593,
+      "D0plus_C_m-2": -0.00041815921020432425,
+      "sheet_jump_error_C_m-2": -3.7947076036992655e-19,
+      "boundary_D_left_C_m-2": -0.00016504789309321059,
+      "boundary_D_right_C_m-2": -0.0002875680073065127,
+      "volume_charge_C_m-2": -0.00010693740487072836,
+      "global_gauss_error_C_m-2": 4.187730891225261e-18,
+      "electrode_charge_left_C_m-2": -0.00016504789309321059,
+      "electrode_charge_right_C_m-2": 0.0002875680073065127,
+      "total_including_electrodes_C_m-2": -4.187730891225261e-18,
+      "integrated_numbers": {
+        "electron_number_m-2": 2185616712016484.2,
+        "hole_number_m-2": 18165929116548.305,
+        "dopant_net_number_m-2": 1500000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -5.421010862427522e-20,
+      "max_n_over_Nc_or_p_over_Nv": 0.006917720816438499,
+      "MB_tail_check_eta_le_minus3": true
+    }
+  },
+  "meshes": [
+    {
+      "half_cells": 120,
+      "h_m": 5e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.2015460159010644,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -3.199460410711448e-05,
+      "sheet_derivative_C_m-2_V-1": -0.000928677345819797,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.24961826483541832,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.47154601590106443,
+          "Et_minus_EF_eV": 0.02845398409893557,
+          "occupied_number_m-2": 199694611868334.66,
+          "charge_C_m-2": -3.199460410711448e-05,
+          "charge_derivative_C_m-2_V-1": -0.000928677345819797,
+          "frozen": false
+        }
+      ],
+      "scaled_residual": 1.0512888304425391e-15,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 4,
+      "D0minus_C_m-2": -0.0003756614974679693,
+      "D0plus_C_m-2": -0.0004076561015750836,
+      "sheet_jump_error_C_m-2": 1.8295911660692887e-19,
+      "boundary_D_left_C_m-2": -5.097114414940936e-09,
+      "boundary_D_right_C_m-2": -1.2330722116628813e-11,
+      "volume_charge_C_m-2": 3.199968889080704e-05,
+      "global_gauss_error_C_m-2": 2.710505431213761e-19,
+      "electrode_charge_left_C_m-2": -5.097114414940936e-09,
+      "electrode_charge_right_C_m-2": 1.2330722116628813e-11,
+      "total_including_electrodes_C_m-2": -2.710505431213761e-19,
+      "integrated_numbers": {
+        "electron_number_m-2": 9456250628003072.0,
+        "hole_number_m-2": 3655976976594963.5,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -2.236166980751353e-19,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    {
+      "half_cells": 240,
+      "h_m": 2.5e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.20154119586413802,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -3.199012805698336e-05,
+      "sheet_derivative_C_m-2_V-1": -0.000928590636910369,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.24958334320102943,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.471541195864138,
+          "Et_minus_EF_eV": 0.028458804135861993,
+          "occupied_number_m-2": 199666674560823.53,
+          "charge_C_m-2": -3.199012805698336e-05,
+          "charge_derivative_C_m-2_V-1": -0.000928590636910369,
+          "frozen": false
+        }
+      ],
+      "scaled_residual": 2.2127001442948126e-15,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 4,
+      "D0minus_C_m-2": -0.00037565030042599636,
+      "D0plus_C_m-2": -0.00040764042848297904,
+      "sheet_jump_error_C_m-2": 6.776263578034403e-19,
+      "boundary_D_left_C_m-2": -5.064152827397253e-09,
+      "boundary_D_right_C_m-2": -1.2127220866684774e-11,
+      "volume_charge_C_m-2": 3.199518008259068e-05,
+      "global_gauss_error_C_m-2": -7.860465750519907e-19,
+      "electrode_charge_left_C_m-2": -5.064152827397253e-09,
+      "electrode_charge_right_C_m-2": 1.2127220866684774e-11,
+      "total_including_electrodes_C_m-2": 7.860465750519907e-19,
+      "integrated_numbers": {
+        "electron_number_m-2": 9456323873409258.0,
+        "hole_number_m-2": 3656022080233787.5,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": 5.44811591673966e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    },
+    {
+      "half_cells": 480,
+      "h_m": 1.25e-09,
+      "phiL_V": -0.3214207120034188,
+      "phiR_V": 0.4714207120030087,
+      "phi0_V": 0.20153999617473017,
+      "fermi_eV": -0.5,
+      "sheet_C_m-2": -3.1989014049577983e-05,
+      "sheet_derivative_C_m-2_V-1": -0.0009285690547617129,
+      "traps": [
+        {
+          "name": "acceptor",
+          "type": "acceptor",
+          "f": 0.24957465184186728,
+          "N_m-2": 800000000000000.0,
+          "Et_eV": -0.4715399961747302,
+          "Et_minus_EF_eV": 0.02846000382526981,
+          "occupied_number_m-2": 199659721473493.8,
+          "charge_C_m-2": -3.1989014049577983e-05,
+          "charge_derivative_C_m-2_V-1": -0.0009285690547617129,
+          "frozen": false
+        }
+      ],
+      "scaled_residual": 4.336027465161511e-15,
+      "residual_scale_C_m-2": 0.0019226119607999997,
+      "iterations": 4,
+      "D0minus_C_m-2": -0.0003756474915928428,
+      "D0plus_C_m-2": -0.0004076365056424187,
+      "sheet_jump_error_C_m-2": 2.1277467635028025e-18,
+      "boundary_D_left_C_m-2": -5.055931655531825e-09,
+      "boundary_D_right_C_m-2": -1.2076721554940428e-11,
+      "volume_charge_C_m-2": 3.1994057904509264e-05,
+      "global_gauss_error_C_m-2": 2.6969529040576923e-18,
+      "electrode_charge_left_C_m-2": -5.055931655531825e-09,
+      "electrode_charge_right_C_m-2": 1.2076721554940428e-11,
+      "total_including_electrodes_C_m-2": -2.6969529040576923e-18,
+      "integrated_numbers": {
+        "electron_number_m-2": 9456342146110938.0,
+        "hole_number_m-2": 3656033348850697.0,
+        "dopant_net_number_m-2": 6000000000000000.0
+      },
+      "number_vs_volume_error_C_m-2": -9.398677582733717e-18,
+      "max_n_over_Nc_or_p_over_Nv": 0.0010000000000158701,
+      "MB_tail_check_eta_le_minus3": true
+    }
+  ],
+  "mesh_differences": [
+    {
+      "max_phi_difference_V": 1.2654324155869645e-05,
+      "phi0_difference_V": -4.820036926395099e-06
+    },
+    {
+      "max_phi_difference_V": 3.1638335142303298e-06,
+      "phi0_difference_V": -1.1996894078436515e-06
+    }
+  ],
+  "density_sweep_old_sheet_phi0_V": 0.20154211161387706,
+  "semi_infinite_oracle": {
+    "phi0_V": 0.20153959677658,
+    "root_residual_C_m-2": -4.743384504624082e-20,
+    "scope": "semi-infinite equilibrium first integral; not exact finite Dirichlet"
+  },
+  "fine_minus_oracle_phi0_V": 3.9939815016376556e-07,
+  "checks": {
+    "domain_extension_same_h_phi0_difference_V": 1.585878650622874e-11,
+    "zero_states_vs_practice08_max_phi_error_V": 0.0,
+    "frozen_at_solution_max_phi_error_V": 3.209177368290739e-11,
+    "EF_neutral_shift_gauge_error_V": 6.938893903907228e-17,
+    "sheet_derivative_vs_centered_relative_error": 4.711754526399498e-12,
+    "expected_failures": {
+      "negative_N": "nonnegative finite sheet density required",
+      "zero_weight": "positive finite state weight ratio required",
+      "invalid_frozen": "frozen probability in [0,1] required",
+      "zero_iteration_budget": "Newton iteration budget exhausted"
+    }
+  }
+}

@@ -39,6 +39,17 @@ GGUF 为 ggml 及基于 ggml 的执行器保存模型。它希望一个运行产
 
 ## 2. 从文件起点到张量字节
 
+先读 [[AI/80-实践/03-safetensors到GGUF与量化/00-safetensors到GGUF与量化|已有离线实践]]的 `gguf_toy_validator.py`：`build_toy_gguf()` 构造 176 字节的小端 v3 字节串，`parse_toy_gguf()` 返回元数据、张量目录与数据区位置。下面先据这些字段定位字节，再按小端 F32 解码四个值；这里追踪实际生成的 fixture，之后再推广到一般布局。
+
+| 本次读到的字段 | 怎样定位这份张量 |
+| --- | --- |
+| `general.architecture="toy"`、`general.alignment=32` | 这是教学子集，张量数据区按 32 字节对齐 |
+| `toy.weight`、shape `(4,)`、ggml type `0`（F32） | 四个值，各占 4 字节，共 16 字节；名称用于找到张量，不能单凭名称证明模型身份 |
+| 数据区文件内起点 `160`、tensor offset `0` | 数据绝对区间是 `[160+0,160+0+16)=[160,176)`，offset 不是文件内地址 |
+| 小端 F32 解码值 `[-1.0,-0.25,0.5,1.25]` | 从指定区间按指定类型读出值；fixture 没有 tokenizer 或语言模型前向 |
+
+若只把 tensor offset 从 `0` 改为 `4`，即使仍指向文件内附近，也违反本 fixture 的 32 字节对齐，且四值区间会终止于 `180`、越过文件末尾。检查失败发生在容器层，还未进入量化质量问题。与上一页 safetensors 的示意相比，相对 offset 的思想保持，但此处的起点来自目录末尾与 padding，不能套用 `8+N`。下方一般规范和原有转换蓝图继续回答真实架构如何映射；这个受限读取器只接受其声明的子集，不能代替通用 GGUF 或 safetensors 读取器。
+
 以 2026-09-02 核对的 [ggml GGUF 规范快照 `d4716378882593333721eb33f153144b6885caf2`](https://github.com/ggml-org/ggml/blob/d4716378882593333721eb33f153144b6885caf2/docs/gguf.md) 为准，核心布局是：
 
 ```text

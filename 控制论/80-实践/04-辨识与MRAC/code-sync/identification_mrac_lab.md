@@ -4,7 +4,7 @@ stage: 1
 aliases: []
 sources: []
 prerequisites:
-  - 控制论/80-实践/04-辨识与MRAC/README
+  - "[[控制论/80-实践/04-辨识与MRAC/README]]"
 ---
 
 # 辨识与MRAC代码镜像

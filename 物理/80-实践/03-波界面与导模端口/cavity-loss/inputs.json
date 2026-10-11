@@ -1,0 +1,11 @@
+{
+  "base": {"a_m": 0.02, "b_m": 0.01, "length_m": 0.06, "sigma_S_per_m": 58000000.0, "wall_thickness_m": 0.001, "initial_energy_J": 1e-9},
+  "variants": [
+    {"name": "sigma_quarter", "sigma_ratio": 0.25, "all_dimensions_ratio": 1.0, "b_only_ratio": 1.0},
+    {"name": "all_dimensions_double", "sigma_ratio": 1.0, "all_dimensions_ratio": 2.0, "b_only_ratio": 1.0},
+    {"name": "b_one_and_half", "sigma_ratio": 1.0, "all_dimensions_ratio": 1.0, "b_only_ratio": 1.5}
+  ],
+  "simpson_subintervals": 64,
+  "decay_samples": 121,
+  "sweep_samples": 33
+}

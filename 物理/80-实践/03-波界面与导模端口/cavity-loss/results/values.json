@@ -1,0 +1,356 @@
+{
+  "model": "TE101 fixed PEC mode, thick normal conductor, weak-loss surface perturbation",
+  "phasors": "peak exp(+i omega t)",
+  "constants": {
+    "c0_m_per_s": 299792458.0,
+    "mu0_H_per_m_approx": 1.2566370614359173e-06,
+    "epsilon0_F_per_m_derived": 8.854187817620389e-12
+  },
+  "input": {
+    "base": {
+      "a_m": 0.02,
+      "b_m": 0.01,
+      "length_m": 0.06,
+      "sigma_S_per_m": 58000000.0,
+      "wall_thickness_m": 0.001,
+      "initial_energy_J": 1e-09
+    },
+    "variants": [
+      {
+        "name": "sigma_quarter",
+        "sigma_ratio": 0.25,
+        "all_dimensions_ratio": 1.0,
+        "b_only_ratio": 1.0
+      },
+      {
+        "name": "all_dimensions_double",
+        "sigma_ratio": 1.0,
+        "all_dimensions_ratio": 2.0,
+        "b_only_ratio": 1.0
+      },
+      {
+        "name": "b_one_and_half",
+        "sigma_ratio": 1.0,
+        "all_dimensions_ratio": 1.0,
+        "b_only_ratio": 1.5
+      }
+    ],
+    "simpson_subintervals": 64,
+    "decay_samples": 121,
+    "sweep_samples": 33
+  },
+  "cases": {
+    "base": {
+      "parameters": {
+        "a_m": 0.02,
+        "b_m": 0.01,
+        "length_m": 0.06,
+        "sigma_S_per_m": 58000000.0,
+        "wall_thickness_m": 0.001,
+        "initial_energy_J": 1e-09
+      },
+      "omega_rad_per_s": 49638577257.016174,
+      "frequency_Hz": 7900224938.503059,
+      "kx_per_m": 157.07963267948966,
+      "kz_per_m": 52.35987755982989,
+      "electric_peak_V_per_m": 8677.20794863627,
+      "delta_m": 7.435093021647851e-07,
+      "surface_resistance_ohm": 0.023189191123964708,
+      "face_Ht_squared_integrals_A2": {
+        "x0": 0.14323944878270578,
+        "xa": 0.14323944878270578,
+        "y0": 0.15915494309189532,
+        "yb": 0.15915494309189532,
+        "z0": 0.005305164769729845,
+        "zl": 0.005305164769729845
+      },
+      "face_power_W": {
+        "x0": 0.0016608034771567592,
+        "xa": 0.0016608034771567592,
+        "y0": 0.0018453371968408436,
+        "yb": 0.0018453371968408436,
+        "z0": 6.15112398946948e-05,
+        "zl": 6.15112398946948e-05
+      },
+      "total_wall_power_W": 0.007135303827784595,
+      "Q_wall": 6956.757337189412,
+      "geometry_factor_ohm": 161.32157549512908,
+      "energy_time_constant_s": 1.4014820169339378e-07,
+      "amplitude_time_constant_s": 2.8029640338678755e-07,
+      "energy_loss_per_period_fraction_leading_order": 0.0009031772998018708,
+      "omega_epsilon_over_sigma": 7.577746310915193e-09,
+      "delta_over_min_dimension": 7.43509302164785e-05,
+      "wall_thickness_over_delta": 1344.973085189953,
+      "nearest_competing_PEC_mode": "TE102",
+      "nearest_competing_omega_rad_per_s": 56596685925.33482,
+      "mode_gap_rad_per_s": 6958108668.318649,
+      "mode_gap_over_energy_decay_rate": 975.1664170520737,
+      "approximation_screens": {
+        "good_conductor_eta_lt_1e-3": true,
+        "thin_skin_delta_over_min_dimension_lt_1e-3": true,
+        "thick_wall_t_over_delta_gt_10": true,
+        "weak_loss_Q_gt_100": true,
+        "mode_gap_in_energy_decay_rates_gt_10": true
+      },
+      "quadrature": {
+        "subintervals_per_direction": 64,
+        "face_Ht_squared_integrals_A2": {
+          "x0": 0.14323944878270575,
+          "xa": 0.14323944878270575,
+          "y0": 0.1591549430918953,
+          "yb": 0.1591549430918953,
+          "z0": 0.005305164769729844,
+          "zl": 0.005305164769729844
+        },
+        "electric_time_average_energy_J": 4.999999999999999e-10,
+        "magnetic_time_average_energy_J": 4.999999999999998e-10,
+        "total_wall_power_W": 0.007135303827784594,
+        "Q_wall": 6956.757337189411,
+        "face_relative_errors": {
+          "x0": -2.220446049250313e-16,
+          "xa": -2.220446049250313e-16,
+          "y0": -2.220446049250313e-16,
+          "yb": -2.220446049250313e-16,
+          "z0": -1.1102230246251565e-16,
+          "zl": -1.1102230246251565e-16
+        },
+        "total_energy_relative_error": -2.220446049250313e-16,
+        "power_relative_error": -1.1102230246251565e-16
+      }
+    },
+    "sigma_quarter": {
+      "parameters": {
+        "a_m": 0.02,
+        "b_m": 0.01,
+        "length_m": 0.06,
+        "sigma_S_per_m": 14500000.0,
+        "wall_thickness_m": 0.001,
+        "initial_energy_J": 1e-09
+      },
+      "omega_rad_per_s": 49638577257.016174,
+      "frequency_Hz": 7900224938.503059,
+      "kx_per_m": 157.07963267948966,
+      "kz_per_m": 52.35987755982989,
+      "electric_peak_V_per_m": 8677.20794863627,
+      "delta_m": 1.4870186043295702e-06,
+      "surface_resistance_ohm": 0.046378382247929416,
+      "face_Ht_squared_integrals_A2": {
+        "x0": 0.14323944878270578,
+        "xa": 0.14323944878270578,
+        "y0": 0.15915494309189532,
+        "yb": 0.15915494309189532,
+        "z0": 0.005305164769729845,
+        "zl": 0.005305164769729845
+      },
+      "face_power_W": {
+        "x0": 0.0033216069543135184,
+        "xa": 0.0033216069543135184,
+        "y0": 0.003690674393681687,
+        "yb": 0.003690674393681687,
+        "z0": 0.0001230224797893896,
+        "zl": 0.0001230224797893896
+      },
+      "total_wall_power_W": 0.01427060765556919,
+      "Q_wall": 3478.378668594706,
+      "geometry_factor_ohm": 161.32157549512908,
+      "energy_time_constant_s": 7.007410084669689e-08,
+      "amplitude_time_constant_s": 1.4014820169339378e-07,
+      "energy_loss_per_period_fraction_leading_order": 0.0018063545996037417,
+      "omega_epsilon_over_sigma": 3.031098524366077e-08,
+      "delta_over_min_dimension": 0.000148701860432957,
+      "wall_thickness_over_delta": 672.4865425949765,
+      "nearest_competing_PEC_mode": "TE102",
+      "nearest_competing_omega_rad_per_s": 56596685925.33482,
+      "mode_gap_rad_per_s": 6958108668.318649,
+      "mode_gap_over_energy_decay_rate": 487.58320852603686,
+      "approximation_screens": {
+        "good_conductor_eta_lt_1e-3": true,
+        "thin_skin_delta_over_min_dimension_lt_1e-3": true,
+        "thick_wall_t_over_delta_gt_10": true,
+        "weak_loss_Q_gt_100": true,
+        "mode_gap_in_energy_decay_rates_gt_10": true
+      },
+      "quadrature": {
+        "subintervals_per_direction": 64,
+        "face_Ht_squared_integrals_A2": {
+          "x0": 0.14323944878270575,
+          "xa": 0.14323944878270575,
+          "y0": 0.1591549430918953,
+          "yb": 0.1591549430918953,
+          "z0": 0.005305164769729844,
+          "zl": 0.005305164769729844
+        },
+        "electric_time_average_energy_J": 4.999999999999999e-10,
+        "magnetic_time_average_energy_J": 4.999999999999998e-10,
+        "total_wall_power_W": 0.014270607655569189,
+        "Q_wall": 3478.3786685947057,
+        "face_relative_errors": {
+          "x0": -2.220446049250313e-16,
+          "xa": -2.220446049250313e-16,
+          "y0": -2.220446049250313e-16,
+          "yb": -2.220446049250313e-16,
+          "z0": -1.1102230246251565e-16,
+          "zl": -1.1102230246251565e-16
+        },
+        "total_energy_relative_error": -2.220446049250313e-16,
+        "power_relative_error": -1.1102230246251565e-16
+      }
+    },
+    "all_dimensions_double": {
+      "parameters": {
+        "a_m": 0.04,
+        "b_m": 0.02,
+        "length_m": 0.12,
+        "sigma_S_per_m": 58000000.0,
+        "wall_thickness_m": 0.002,
+        "initial_energy_J": 1e-09
+      },
+      "omega_rad_per_s": 24819288628.508087,
+      "frequency_Hz": 3950112469.2515297,
+      "kx_per_m": 78.53981633974483,
+      "kz_per_m": 26.179938779914945,
+      "electric_peak_V_per_m": 3067.8562911232593,
+      "delta_m": 1.0514809388719947e-06,
+      "surface_resistance_ohm": 0.016397234293986342,
+      "face_Ht_squared_integrals_A2": {
+        "x0": 0.07161972439135292,
+        "xa": 0.07161972439135292,
+        "y0": 0.07957747154594767,
+        "yb": 0.07957747154594767,
+        "z0": 0.0026525823848649235,
+        "zl": 0.0026525823848649235
+      },
+      "face_power_W": {
+        "x0": 0.0005871827004578711,
+        "xa": 0.0005871827004578711,
+        "y0": 0.0006524252227309678,
+        "yb": 0.0006524252227309678,
+        "z0": 2.17475074243656e-05,
+        "zl": 2.17475074243656e-05
+      },
+      "total_wall_power_W": 0.002522710861226409,
+      "Q_wall": 9838.340576391804,
+      "geometry_factor_ohm": 161.32157549512903,
+      "energy_time_constant_s": 3.9639897515399484e-07,
+      "amplitude_time_constant_s": 7.927979503079897e-07,
+      "energy_loss_per_period_fraction_leading_order": 0.0006386427933036585,
+      "omega_epsilon_over_sigma": 3.788873155457596e-09,
+      "delta_over_min_dimension": 5.257404694359973e-05,
+      "wall_thickness_over_delta": 1902.0791781024157,
+      "nearest_competing_PEC_mode": "TE102",
+      "nearest_competing_omega_rad_per_s": 28298342962.66741,
+      "mode_gap_rad_per_s": 3479054334.1593246,
+      "mode_gap_over_energy_decay_rate": 1379.09357256582,
+      "approximation_screens": {
+        "good_conductor_eta_lt_1e-3": true,
+        "thin_skin_delta_over_min_dimension_lt_1e-3": true,
+        "thick_wall_t_over_delta_gt_10": true,
+        "weak_loss_Q_gt_100": true,
+        "mode_gap_in_energy_decay_rates_gt_10": true
+      },
+      "quadrature": {
+        "subintervals_per_direction": 64,
+        "face_Ht_squared_integrals_A2": {
+          "x0": 0.0716197243913529,
+          "xa": 0.0716197243913529,
+          "y0": 0.07957747154594766,
+          "yb": 0.07957747154594766,
+          "z0": 0.002652582384864923,
+          "zl": 0.002652582384864923
+        },
+        "electric_time_average_energy_J": 4.999999999999999e-10,
+        "magnetic_time_average_energy_J": 4.999999999999999e-10,
+        "total_wall_power_W": 0.0025227108612264084,
+        "Q_wall": 9838.340576391802,
+        "face_relative_errors": {
+          "x0": -2.220446049250313e-16,
+          "xa": -2.220446049250313e-16,
+          "y0": -2.220446049250313e-16,
+          "yb": -2.220446049250313e-16,
+          "z0": -1.1102230246251565e-16,
+          "zl": -1.1102230246251565e-16
+        },
+        "total_energy_relative_error": -2.220446049250313e-16,
+        "power_relative_error": -2.220446049250313e-16
+      }
+    },
+    "b_one_and_half": {
+      "parameters": {
+        "a_m": 0.02,
+        "b_m": 0.015,
+        "length_m": 0.06,
+        "sigma_S_per_m": 58000000.0,
+        "wall_thickness_m": 0.001,
+        "initial_energy_J": 1e-09
+      },
+      "omega_rad_per_s": 49638577257.016174,
+      "frequency_Hz": 7900224938.503059,
+      "kx_per_m": 157.07963267948966,
+      "kz_per_m": 52.35987755982989,
+      "electric_peak_V_per_m": 7084.910622060403,
+      "delta_m": 7.435093021647851e-07,
+      "surface_resistance_ohm": 0.023189191123964708,
+      "face_Ht_squared_integrals_A2": {
+        "x0": 0.14323944878270584,
+        "xa": 0.14323944878270584,
+        "y0": 0.10610329539459691,
+        "yb": 0.10610329539459691,
+        "z0": 0.005305164769729846,
+        "zl": 0.005305164769729846
+      },
+      "face_power_W": {
+        "x0": 0.0016608034771567598,
+        "xa": 0.0016608034771567598,
+        "y0": 0.0012302247978938962,
+        "yb": 0.0012302247978938962,
+        "z0": 6.151123989469481e-05,
+        "zl": 6.151123989469481e-05
+      },
+      "total_wall_power_W": 0.005905079029890702,
+      "Q_wall": 8406.081782437202,
+      "geometry_factor_ohm": 194.9302370566142,
+      "energy_time_constant_s": 1.6934574371285073e-07,
+      "amplitude_time_constant_s": 3.3869148742570147e-07,
+      "energy_loss_per_period_fraction_leading_order": 0.0007474570756981003,
+      "omega_epsilon_over_sigma": 7.577746310915193e-09,
+      "delta_over_min_dimension": 4.9567286810985675e-05,
+      "wall_thickness_over_delta": 1344.973085189953,
+      "nearest_competing_PEC_mode": "TE102",
+      "nearest_competing_omega_rad_per_s": 56596685925.33482,
+      "mode_gap_rad_per_s": 6958108668.318649,
+      "mode_gap_over_energy_decay_rate": 1178.3260872712551,
+      "approximation_screens": {
+        "good_conductor_eta_lt_1e-3": true,
+        "thin_skin_delta_over_min_dimension_lt_1e-3": true,
+        "thick_wall_t_over_delta_gt_10": true,
+        "weak_loss_Q_gt_100": true,
+        "mode_gap_in_energy_decay_rates_gt_10": true
+      },
+      "quadrature": {
+        "subintervals_per_direction": 64,
+        "face_Ht_squared_integrals_A2": {
+          "x0": 0.1432394487827058,
+          "xa": 0.1432394487827058,
+          "y0": 0.10610329539459688,
+          "yb": 0.10610329539459688,
+          "z0": 0.005305164769729845,
+          "zl": 0.005305164769729845
+        },
+        "electric_time_average_energy_J": 4.999999999999998e-10,
+        "magnetic_time_average_energy_J": 4.999999999999999e-10,
+        "total_wall_power_W": 0.0059050790298907,
+        "Q_wall": 8406.081782437204,
+        "face_relative_errors": {
+          "x0": -2.220446049250313e-16,
+          "xa": -2.220446049250313e-16,
+          "y0": -2.220446049250313e-16,
+          "yb": -2.220446049250313e-16,
+          "z0": -1.1102230246251565e-16,
+          "zl": -1.1102230246251565e-16
+        },
+        "total_energy_relative_error": -2.220446049250313e-16,
+        "power_relative_error": -3.3306690738754696e-16
+      }
+    }
+  }
+}

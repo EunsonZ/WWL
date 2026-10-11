@@ -1,0 +1,21 @@
+[package]
+name = "wwl-measurement"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+description = "Bounded typed measurement teaching component"
+publish = false
+include = ["Cargo.toml", "Cargo.lock", "README.md", "src/**", "tests/**", "fixtures/**", "ffi/**", "examples/**"]
+
+[features]
+default = []
+threaded = []
+fixed = []
+ffi = ["fixed"]
+
+[lib]
+crate-type = ["rlib", "staticlib"]
+
+[[example]]
+name = "fixed"
+required-features = ["fixed"]

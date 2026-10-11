@@ -1,0 +1,13 @@
+[package]
+name = "measurement-caller"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+publish = false
+
+[dependencies]
+wwl-measurement = { path = ".." }
+
+[features]
+default = []
+threaded = ["wwl-measurement/threaded"]

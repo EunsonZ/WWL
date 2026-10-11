@@ -5,7 +5,7 @@ aliases:
 ---
 # 2026-10-10 固定输入实际证据
 
-独立执行槽已实际运行课程 r1 的固定 CLI、7项 unittest 和独立 oracle；本页携带完整原始输入、命令、逐项结果与失败记录。课程作者只组装并核对证据字节，没有重跑这些实验。入口回到 [[数学/36-拓扑学/20-同调与上同调/80-有限链与杯积复算|有限链与杯积复算]]。
+独立执行槽已实际运行课程 r1 的固定 CLI、7项 unittest 和独立 oracle；本页保留命令、逐项结果与失败记录；原始输入由固定提交和三份独有 r1 字节共同恢复。课程作者只组装并核对证据字节，没有重跑这些实验。入口回到 [[数学/36-拓扑学/20-同调与上同调/80-有限链与杯积复算|有限链与杯积复算]]。
 
 ## 实际观察与范围
 
@@ -34,12 +34,16 @@ CairoSVG默认渲染虽exit0却缺中文字形；自有Fontconfig尝试仍缺字
 
 ## 字节身份与可携带复建
 
-[copy-receipt.json](copy-receipt.json)逐项记录原61个必要artifact到本目录的路径与SHA，全部按原字节复制；原manifest另存[raw/artifact-manifest.json](raw/artifact-manifest.json)。原Markdown仅追加`.txt`，明确是历史context，内容字节不变。原B的[source snapshot](raw/source-snapshot.json)、[执行后源码核对](raw/post-run-source-check.json)绑定r1的14文件；后续正文两处术语修订与80证据增量不冒用这些旧哈希，实验两份源码和两幅SVG保持同字节。
+[copy-receipt.json](copy-receipt.json)逐项记录当时原61个必要artifact到本目录的路径与SHA，原回执保持不变；原manifest另存[raw/artifact-manifest.json](raw/artifact-manifest.json)。原Markdown仅追加`.txt`，明确是历史context，内容字节不变。原B的[source snapshot](raw/source-snapshot.json)、[执行后源码核对](raw/post-run-source-check.json)绑定r1的14文件；后续正文两处术语修订与80证据增量不冒用这些旧哈希，实验两份源码和两幅SVG保持同字节。
 
-[replay.py](replay.py)是新增可携带数字协议入口，**目前只经AST静态检查，未运行**。它验证归档输入SHA，再创建不存在的新目录；只复制snapshot、#152已验证实现与oracle源输入，不复制旧logs或旧output。先生成新独立期望，再运行新CLI/测试/oracle，每个child保存新命令、stdout/stderr、status与exit；最后核全部7模型/42组群、625AW、7拒绝、阶3与预期写入失败。它不运行图像渲染。
+[replay.py](replay.py)从固定提交 `3f9aa24095230fd8116fc780cb00d75b9fc90a56` 导出13份同字节输入：snapshot中的历史AGENTS、三份MOC、同调01/02/04/05、两份SVG、源码和测试，以及#152的`integer_smith.py`。它们的工作树重复副本已撤出；原receipt仍给出各自旧路径、大小和SHA。覆盖05、同调03与80三份正文在该提交中与r1不同，仍从本包`raw/snapshot/`保留字节恢复，不能用最新main或固定提交的不同版本替代。
+
+入口要求本地WWL Git仓库含该完整提交对象，逐份用`git show <固定SHA>:<源码路径>`读取并按原receipt核大小与SHA；缺对象或字节不符时在创建目标前失败。先用`git rev-parse --show-toplevel`解析真实仓库根，即使`--repo`给的是其子目录，新目录也必须是该真实库根外不存在的绝对路径，恢复后保持旧snapshot/dependency152相对布局。历史AGENTS仅是`snapshot/`里的导出数据，不覆盖当前权限约定。helpers仍保留原字节；旧logs/output不复制为新结果。
+
+2026-10-12已用Python3.14.7实际从固定提交恢复，并运行7模型CLI、7项unittest、独立oracle的42组整数群、625AW配对、625指定W零张量配对、7拒绝与阶3检查。重复输出CLI实测exit1且报告SHA不变。每child请求单线程、限时60秒；线程环境请求仍不是OS硬限制。复建入口重用已存在目标时失败且全部目标字节不变；child非零会保留新stdout/stderr和failed receipt。此轮未重跑SVG渲染、Obsidian、同步或真人理解；原图像成功与失败记录继续保留。
 
 ```bash
-python3 -B replay.py --new-dir /private/tmp/wwl-topology154-new-replay
+python3 -B replay.py --repo /绝对路径/WWL --new-dir /private/tmp/wwl-topology154-new-replay
 ```
 
-从本目录运行时把`--new-dir`换成新的不存在绝对目录。上层返回0还须读取新目录`fresh-receipt.json`：status应为completed、exit_code应为0，各child应completed且exit0，测试stderr应为7 tests OK，CLI/oracle stderr应空；oracle内预期的重复输出CLI则应exit1且前后SHA相同。新helper如果超时或child出错，保留新raw与失败receipt并返回非零。历史包中的旧成功logs不能作为这次复建的结果。
+从本目录运行时把`--repo`换成本地WWL Git仓库，把`--new-dir`换成库外新的不存在绝对目录。上层返回0还须读取新目录`fresh-receipt.json`：status应为completed、exit_code应为0，各child应completed且exit0，测试stderr应为7 tests OK，CLI/oracle stderr应空；oracle内预期的重复输出CLI则应exit1且前后SHA相同。新helper如果超时或child出错，保留新raw与失败receipt并返回非零。历史包中的旧成功logs不能作为这次复建的结果。

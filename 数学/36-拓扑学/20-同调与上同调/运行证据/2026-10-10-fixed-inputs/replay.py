@@ -1,7 +1,7 @@
 """Prepare a fresh copy and run the fixed numeric protocol; never alter archived logs.
 
-This helper is new delivery glue. It has only been statically checked by its
-author; the historical successful run is documented separately in raw/.
+Restore receipt-checked inputs from a fixed Git commit and retained r1 bytes.
+Historical observations remain separate in raw/.
 """
 from __future__ import annotations
 
@@ -20,23 +20,51 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def fresh_copy(destination):
+FIXED_REF = "3f9aa24095230fd8116fc780cb00d75b9fc90a56"
+RETAINED_R1 = {
+    "snapshot/数学/36-拓扑学/10-覆盖空间与van-Kampen/05-普适覆盖存在与子群分类.md",
+    "snapshot/数学/36-拓扑学/20-同调与上同调/03-圆周环面RP2的整数同调与挠.md",
+    "snapshot/数学/36-拓扑学/20-同调与上同调/80-有限链与杯积复算.md",
+}
+
+
+def fresh_copy(destination, repository):
     source = Path(__file__).resolve().parent
     receipt = json.loads((source / "copy-receipt.json").read_text(encoding="utf-8"))
     helpers = {"prepare_expectations.py", "execute_oracle.py", "oracle_core.py", "verify_protocol.py"}
     selected = [e for e in receipt["files"]
                 if e["original_path"].startswith(("snapshot/", "dependency152/"))
                 or e["original_path"] in helpers]
-    # Verify input bytes before creating anything in the fresh destination.
+    # Git accepts -C at a subdirectory; containment must use the real worktree root.
+    repository = Path(subprocess.run(
+        ["git", "-C", str(repository), "rev-parse", "--show-toplevel"],
+        capture_output=True, check=True, timeout=60, text=True).stdout.strip()).resolve()
+    # Resolve only the pinned commit; current main and local edits are not inputs.
+    if destination.is_relative_to(repository):
+        raise ValueError("--new-dir must be outside --repo")
+    inputs = {}
     for entry in selected:
-        data = (source / entry["portable_path"]).read_bytes()
+        original = entry["original_path"]
+        if original == "dependency152/integer_smith.py":
+            git_path = "数学/25-高等代数/50-模与有限群表示/code/integer_smith.py"
+        elif original.startswith("snapshot/") and original not in RETAINED_R1:
+            git_path = original.removeprefix("snapshot/")
+        else:
+            git_path = None
+        if git_path is None:
+            data = (source / entry["portable_path"]).read_bytes()
+        else:
+            data = subprocess.run(
+                ["git", "-C", str(repository), "show", FIXED_REF + ":" + git_path],
+                capture_output=True, check=True, timeout=60).stdout
         if len(data) != entry["bytes"] or digest(data) != entry["sha256"]:
-            raise ValueError("archived input byte mismatch: " + entry["original_path"])
+            raise ValueError("fixed input byte mismatch: " + original)
+        inputs[original] = data
     destination.mkdir(parents=True, exist_ok=False)
     for entry in selected:
         target = destination / entry["original_path"]
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes((source / entry["portable_path"]).read_bytes())
+        target.write_bytes(inputs[entry["original_path"]])
     for name in ("logs", "tmp", "state"):
         (destination / name).mkdir()
     return selected
@@ -49,7 +77,7 @@ def run_child(root, name, relative_cwd, arguments):
     if any(p.exists() for p in (out, err, rec)):
         raise FileExistsError("fresh child logs already exist")
     env = os.environ.copy()
-    requested = {key: "4" for key in (
+    requested = {key: "1" for key in (
         "OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
         "VECLIB_MAXIMUM_THREADS", "NUMEXPR_NUM_THREADS")}
     env.update(requested)
@@ -116,11 +144,13 @@ def check_fresh_results(root):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--new-dir", type=Path, required=True)
+    parser.add_argument("--repo", type=Path, required=True,
+                        help="local WWL Git repository containing the fixed commit")
     args = parser.parse_args()
     if not args.new_dir.is_absolute():
         parser.error("--new-dir must be an absolute, nonexistent directory")
     root = args.new_dir.resolve()
-    inputs = fresh_copy(root)
+    inputs = fresh_copy(root, args.repo.resolve())
     children = []
     try:
         children.append(run_child(root, "prepare-expectations", ".",
@@ -138,6 +168,7 @@ def main():
         (root / "fresh-receipt.json").write_text(json.dumps(final, ensure_ascii=False, indent=2) + "\n")
         raise
     final = {"status": "completed", "exit_code": 0, "children": children,
+             "restored_from_git_ref": FIXED_REF,
              "copied_input_sha256": {e["original_path"]: e["sha256"] for e in inputs},
              "observations": observations}
     (root / "fresh-receipt.json").write_text(json.dumps(final, ensure_ascii=False, indent=2) + "\n")

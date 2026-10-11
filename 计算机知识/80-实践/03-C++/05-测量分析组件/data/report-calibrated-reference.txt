@@ -1,0 +1,4 @@
+label=sensor-A count=4 interval_ms=250 gain_uV_per_code=500 offset_uV=1000 window=2 hop=1 windows=3
+begin=0 end=2 first_ms=0 last_ms=250 sum_mV=5 mean_mV=2.5 population_variance_mV2=0.25 rms_squared_mV2=6.5
+begin=1 end=3 first_ms=250 last_ms=500 sum_mV=7 mean_mV=3.5 population_variance_mV2=0.25 rms_squared_mV2=12.5
+begin=2 end=4 first_ms=500 last_ms=750 sum_mV=9 mean_mV=4.5 population_variance_mV2=0.25 rms_squared_mV2=20.5

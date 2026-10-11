@@ -1,0 +1,72 @@
+---
+type: practice
+stage: 1
+aliases:
+  - 闭环辨识与直接MRAC复算
+sources:
+  - https://flyingv.ucsd.edu/krstic/teaching/282/ioannousun.pdf
+prerequisites:
+  - "[[控制论/10-系统课程/10-闭环辨识从激励到控制条件]]"
+  - "[[控制论/10-系统课程/11-直接MRAC有界跟踪与参数收敛]]"
+  - "[[控制论/10-系统课程/12-扰动下的σ修正与数字实现边界]]"
+---
+
+# 辨识与MRAC：一份合成记录、八个连续例和两个数字采样例
+
+这份实践把三页正文的不同责任拆开复算：精确分数核辨识的秩与条件矩；固定种子合成数据比较OLS/IV；连续RK4核MRAC的能量恒等式、不变量和泄漏包络；数字保持另核局部雅可比。源码是 [identification_mrac_lab.py](identification_mrac_lab.py)，阅读镜像见 [[控制论/80-实践/04-辨识与MRAC/code-sync/identification_mrac_lab|完整代码]]。代码只使用Python标准库，计算和输出串行，不安装依赖，不连接设备。
+
+## 对象与运行接口
+
+离散辨识取 $x_{k+1}=0.9x_k+0.1u_k$，温差单位K、功率偏差单位W，采样周期 $10\ln(10/9)$ 秒。控制实际使用有噪读数 $y_k=x_k+n_k$，$u_k=-2y_k+r_k$；$r_k=\pm1$W、$n_k=\pm0.1$K独立零均值，固定种子24612011，前200拍不用来估计，随后12000拍记录全部保存。物理状态和噪声列只是合成器核对信息，OLS/IV分别只用正文指定的可见量，不把真状态偷偷给估计器。
+
+连续自适应另用 $\tau=t/(10\,\mathrm s)$、$y=x/(1\,\mathrm K)$、$v=U/(1\,\mathrm W)$，真 $a=-1,a_m=1,\gamma=2$。模拟器知道真值用于检查，控制更新只用当前状态、参考、旧估计及先验中心。八个案例的名称、初值、扰动、泄漏和终点写在 [summary.json](assets/summary.json)。连续步长是 $\Delta\tau=0.02,0.01,0.005$，每个案例每个步长都实际运行，最细连续步对应0.05秒；数字采样另取1秒、6秒，每组50拍。
+
+作者在本候选目录实际运行的命令是：
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 -B identification_mrac_lab.py > run-output.txt
+```
+
+工作目录是本README所在目录。退出码0；运行输出末尾为：
+
+```text
+PASS: exact identification moments, finite OLS/IV, RK4 refinement, ideal invariants, leakage comparison, digital local derivative
+```
+
+实际Python版本、串行标记与本次进程峰值RSS见 [run-output.txt](run-output.txt) 末行；内存记录来自macOS的 `resource.getrusage` 字节值，不把其他平台的KiB值直接当同单位。串行标准库运算远小于本任务4线程、8GiB限制；这里没有将这些限制转换为真实设备时限证书。
+
+默认输出到源码相邻的 `assets/`。独立核对冻结候选时，请指定一个新的输出目录，避免改动冻结字节：
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 -B identification_mrac_lab.py --output-dir /private/tmp/wwl-control-identification-rerun
+```
+
+不同机器浮点末位、Python版本及RSS可能变化；解析分数和明确误差容限才是数值断言的依据，不能要求运行日志字节相同。
+
+## 读结果时按证明职责分开
+
+| 核对对象 | 独立依据与实际结果 | 不能推出什么 |
+| --- | --- | --- |
+| 无参考闭环秩1；两拍激励秩2 | `Fraction`重建回归矩阵，恢复 $\alpha=9/10,\beta=1/10$ | 一般噪声模型的统计一致性。 |
+| 闭环测量噪声偏差 | 条件矩精确给OLS总体值 $\alpha=468/775$；12000拍OLS约0.601149、IV约0.895649，见 [estimates.csv](assets/estimates.csv) | 单条有限记录证明概率极限、置信区间或参数硬包围集。 |
+| 错模型进入控制 | 用总体OLS估计模型配置极点0.8，真实极点精确是 $1699/1550>1$ | 用拟合误差小认证控制稳定。 |
+| 理想MRAC | 最细有激励例 $e(300s)\approx5.09\times10^{-7}$K；逐步核 $V+a_m\int e^2=V(0)$，最大缺陷约 $1.62\times10^{-11}$ | 由300秒终点替代全时有界/PE证明。 |
+| 无激励瞬态 | $\hat a_\infty=-2+\sqrt{6.97}$ 的解析不变量；终点误差约 $7.8\times10^{-11}$ | 跟踪好就参数学对。 |
+| 泄漏修正 | 对已声明 $D,A$ 逐步比较 $V$ 与 $e^{-\mu\tau}V_0+(C/\mu)(1-e^{-\mu\tau})$；有限最小裕量0在初值处 | 对未建模噪声、漂移、饱和仍保留同一证书。 |
+| 数字保持 | 精确保持矩阵加中心差分独立核雅可比，最大差约 $4.4\times10^{-11}$；1秒/6秒局部根模约0.961182/1.044144 | 连续RK4缩步替代数字更新、局部谱替代全局保证。 |
+
+八个案例三种步长在共同0.1归一化时间网格比较 $y,y_r,\hat a$。全部最细/中间步差小于 $4.4\times10^{-9}$，最大值来自粗初始猜测案例。网格上比较不是严格全轨迹误差上界；能量/不变量与泄漏比较则在每个积分步核对。CSV中连续轨迹按0.1归一化时间（物理1秒）导出，辨识原始记录全量导出。CSV使用 `csv.writer` 的标准CRLF行结束，不是镜像损坏。
+
+## 同式图和数据
+
+- [identification.csv](assets/identification.csv)：辨识完整合成输入、读数与核对列；[estimates.csv](assets/estimates.csv)：每500拍OLS/IV估计。
+- [mrac.csv](assets/mrac.csv)：八个连续案例的温差、参考、误差、参数、动作、$V$ 与比较包络；[digital.csv](assets/digital.csv)：两个数字案例50拍。
+- [identification.svg](assets/identification.svg)、[mrac.svg](assets/mrac.svg)、[leakage.svg](assets/leakage.svg) 全由同一脚本上述数据生成，线型、文字和颜色共同区别对象。各图解决偏差、无激励、漂移/残差三个具体问题。
+
+代码输出完整摘要后执行明确断言；导出CSV/图并不另引入一套方程。对应主解释是 [[控制论/10-系统课程/10-闭环辨识从激励到控制条件|闭环辨识]] → [[控制论/10-系统课程/11-直接MRAC有界跟踪与参数收敛|直接MRAC]] → [[控制论/10-系统课程/12-扰动下的σ修正与数字实现边界|稳健与数字边界]]。
+
+## 撤提示任务与未验接口
+
+撤去公式提示，独立改一份源码副本并交理由：移除 $r$ 重算回归秩；把噪声改成相关序列指出IV哪条正交条件失效；将 $\gamma$ 改成8重推数字局部采样界；把负载改成0.2W重推泄漏界；将 $a_0$ 设为真值且 $d=0$，区分比较界与PE参数结论。说明每次变化首先改动哪条方程或假设，不能只提交一张更平滑的曲线。
+
+未连接热硬件，也未做真人撤提示验收。若要落设备，接口至少记录校准后的温度/实际功率、工作点、状态/噪声区分、采样与执行时间戳、旧/新参数、实际限幅、丢更新和执行器延迟；先明确输入增益/方向及扰动/参数集合如何验证，再为实际保持/更新时序重证条件。记录应能独立检查设备deadline及温度/功率限制；本CPU数值结果不代填这些状态。返回 [[控制论/00-控制论-MOC|入口]]。

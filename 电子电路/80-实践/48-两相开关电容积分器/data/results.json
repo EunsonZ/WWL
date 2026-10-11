@@ -1,0 +1,188 @@
+{
+  "model": "ideal OTA, complete settling, nonoverlap, A-to-ground Cp only",
+  "endpoints": {
+    "S1": [
+      "x",
+      "A"
+    ],
+    "S2": [
+      "A",
+      "s"
+    ],
+    "Cs": [
+      "A",
+      "0"
+    ],
+    "Cf": [
+      "s",
+      "o"
+    ],
+    "OTA+": [
+      "0"
+    ]
+  },
+  "phases": [
+    [
+      "phi1",
+      true,
+      false
+    ],
+    [
+      "dead",
+      false,
+      false
+    ],
+    [
+      "phi2",
+      false,
+      true
+    ],
+    [
+      "dead",
+      false,
+      false
+    ]
+  ],
+  "input_shape": [
+    4
+  ],
+  "state_shape": [
+    5
+  ],
+  "y0_V": "1/2",
+  "alpha": "1/4",
+  "alpha_with_Cp": "3/10",
+  "Req_ohm": "1000000",
+  "nominal": [
+    {
+      "n": 0,
+      "x_V": "1",
+      "y_before_V": "1/2",
+      "qf_before_C": "-1/500000000000",
+      "qs_sample_C": "1/1000000000000",
+      "qp_sample_C": "0",
+      "q_union_C": "-1/1000000000000",
+      "qs_after_C": "0",
+      "qp_after_C": "0",
+      "qf_after_C": "-1/1000000000000",
+      "w_after_V": "1/4",
+      "zero_input_V": "1/2",
+      "zero_state_after_V": "-1/4",
+      "sum_after_V": "1/4"
+    },
+    {
+      "n": 1,
+      "x_V": "-1/2",
+      "y_before_V": "1/4",
+      "qf_before_C": "-1/1000000000000",
+      "qs_sample_C": "-1/2000000000000",
+      "qp_sample_C": "0",
+      "q_union_C": "-3/2000000000000",
+      "qs_after_C": "0",
+      "qp_after_C": "0",
+      "qf_after_C": "-3/2000000000000",
+      "w_after_V": "3/8",
+      "zero_input_V": "1/2",
+      "zero_state_after_V": "-1/8",
+      "sum_after_V": "3/8"
+    },
+    {
+      "n": 2,
+      "x_V": "3/2",
+      "y_before_V": "3/8",
+      "qf_before_C": "-3/2000000000000",
+      "qs_sample_C": "3/2000000000000",
+      "qp_sample_C": "0",
+      "q_union_C": "0",
+      "qs_after_C": "0",
+      "qp_after_C": "0",
+      "qf_after_C": "0",
+      "w_after_V": "0",
+      "zero_input_V": "1/2",
+      "zero_state_after_V": "-1/2",
+      "sum_after_V": "0"
+    },
+    {
+      "n": 3,
+      "x_V": "-1",
+      "y_before_V": "0",
+      "qf_before_C": "0",
+      "qs_sample_C": "-1/1000000000000",
+      "qp_sample_C": "0",
+      "q_union_C": "-1/1000000000000",
+      "qs_after_C": "0",
+      "qp_after_C": "0",
+      "qf_after_C": "-1/1000000000000",
+      "w_after_V": "1/4",
+      "zero_input_V": "1/2",
+      "zero_state_after_V": "-1/4",
+      "sum_after_V": "1/4"
+    }
+  ],
+  "A_ground_parasitic": [
+    {
+      "n": 0,
+      "x_V": "1",
+      "y_before_V": "1/2",
+      "qf_before_C": "-1/500000000000",
+      "qs_sample_C": "1/1000000000000",
+      "qp_sample_C": "1/5000000000000",
+      "q_union_C": "-1/1250000000000",
+      "qs_after_C": "0",
+      "qp_after_C": "0",
+      "qf_after_C": "-1/1250000000000",
+      "w_after_V": "1/5",
+      "zero_input_V": "1/2",
+      "zero_state_after_V": "-3/10",
+      "sum_after_V": "1/5"
+    },
+    {
+      "n": 1,
+      "x_V": "-1/2",
+      "y_before_V": "1/5",
+      "qf_before_C": "-1/1250000000000",
+      "qs_sample_C": "-1/2000000000000",
+      "qp_sample_C": "-1/10000000000000",
+      "q_union_C": "-7/5000000000000",
+      "qs_after_C": "0",
+      "qp_after_C": "0",
+      "qf_after_C": "-7/5000000000000",
+      "w_after_V": "7/20",
+      "zero_input_V": "1/2",
+      "zero_state_after_V": "-3/20",
+      "sum_after_V": "7/20"
+    },
+    {
+      "n": 2,
+      "x_V": "3/2",
+      "y_before_V": "7/20",
+      "qf_before_C": "-7/5000000000000",
+      "qs_sample_C": "3/2000000000000",
+      "qp_sample_C": "3/10000000000000",
+      "q_union_C": "1/2500000000000",
+      "qs_after_C": "0",
+      "qp_after_C": "0",
+      "qf_after_C": "1/2500000000000",
+      "w_after_V": "-1/10",
+      "zero_input_V": "1/2",
+      "zero_state_after_V": "-3/5",
+      "sum_after_V": "-1/10"
+    },
+    {
+      "n": 3,
+      "x_V": "-1",
+      "y_before_V": "-1/10",
+      "qf_before_C": "1/2500000000000",
+      "qs_sample_C": "-1/1000000000000",
+      "qp_sample_C": "-1/5000000000000",
+      "q_union_C": "-1/1250000000000",
+      "qs_after_C": "0",
+      "qp_after_C": "0",
+      "qf_after_C": "-1/1250000000000",
+      "w_after_V": "1/5",
+      "zero_input_V": "1/2",
+      "zero_state_after_V": "-3/10",
+      "sum_after_V": "1/5"
+    }
+  ]
+}

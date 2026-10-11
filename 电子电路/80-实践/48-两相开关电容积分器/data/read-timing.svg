@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 650" role="img" aria-labelledby="title desc">
+<title id="title">Read phase and charge trajectory</title><desc id="desc">Four cycles. phi1 sample read is before transfer, phi2 read after transfer. Dead gaps prevent S1 and S2 from conducting together. Charge rows come from ledger CSV.</desc>
+<rect width="100%" height="100%" fill="#fafbfc"/>
+<g font-family="Arial,sans-serif" font-size="18" fill="#152b3c" stroke-linecap="round">
+<text x="25" y="35" font-size="23" fill="#152b3c">Read timing: y[n] before, w[n]=y[n+1] after</text>
+<text x="25" y="65" font-size="16" fill="#152b3c">Symbolic phase positions; no OTA settling-time guarantee</text>
+<text x="20" y="130" font-size="18" fill="#152b3c">phi1</text>
+<polyline points="95,150 95,150 95,110 157,110 157,150 250,150" fill="none" stroke="#007a68" stroke-width="3"/>
+<text x="107" y="101" font-size="16" fill="#152b3c">n=0</text>
+<text x="139" y="178" font-size="17" fill="#007a68">y[0]</text>
+<polyline points="250,150 250,150 250,110 312,110 312,150 405,150" fill="none" stroke="#007a68" stroke-width="3"/>
+<text x="262" y="101" font-size="16" fill="#152b3c">n=1</text>
+<text x="294" y="178" font-size="17" fill="#007a68">y[1]</text>
+<polyline points="405,150 405,150 405,110 467,110 467,150 560,150" fill="none" stroke="#007a68" stroke-width="3"/>
+<text x="417" y="101" font-size="16" fill="#152b3c">n=2</text>
+<text x="449" y="178" font-size="17" fill="#007a68">y[2]</text>
+<polyline points="560,150 560,150 560,110 622,110 622,150 715,150" fill="none" stroke="#007a68" stroke-width="3"/>
+<text x="572" y="101" font-size="16" fill="#152b3c">n=3</text>
+<text x="604" y="178" font-size="17" fill="#007a68">y[3]</text>
+<text x="20" y="215" font-size="18" fill="#152b3c">phi2</text>
+<polyline points="95,235 172.5,235 172.5,195 234.5,195 234.5,235 250,235" fill="none" stroke="#275ca3" stroke-width="3"/>
+<text x="183" y="266" font-size="17" fill="#275ca3">w[0]</text>
+<polyline points="250,235 327.5,235 327.5,195 389.5,195 389.5,235 405,235" fill="none" stroke="#275ca3" stroke-width="3"/>
+<text x="338" y="266" font-size="17" fill="#275ca3">w[1]</text>
+<polyline points="405,235 482.5,235 482.5,195 544.5,195 544.5,235 560,235" fill="none" stroke="#275ca3" stroke-width="3"/>
+<text x="493" y="266" font-size="17" fill="#275ca3">w[2]</text>
+<polyline points="560,235 637.5,235 637.5,195 699.5,195 699.5,235 715,235" fill="none" stroke="#275ca3" stroke-width="3"/>
+<text x="648" y="266" font-size="17" fill="#275ca3">w[3]</text>
+<text x="25" y="313" font-size="20" fill="#152b3c">First up to four input records; all voltages in V</text>
+<text x="25" y="347" font-size="16" fill="#152b3c">n</text>
+<text x="85" y="347" font-size="16" fill="#152b3c">x[n]</text>
+<text x="190" y="347" font-size="16" fill="#152b3c">y[n]</text>
+<text x="295" y="347" font-size="16" fill="#152b3c">w[n]</text>
+<text x="425" y="347" font-size="16" fill="#152b3c">zero-input + zero-state</text>
+<text x="25" y="386" font-size="18" fill="#152b3c">0</text>
+<text x="85" y="386" font-size="18" fill="#152b3c">1</text>
+<text x="190" y="386" font-size="18" fill="#152b3c">1/2</text>
+<text x="295" y="386" font-size="18" fill="#152b3c">1/4</text>
+<text x="425" y="386" font-size="18" fill="#152b3c">1/2 + (-1/4)</text>
+<text x="25" y="434" font-size="18" fill="#152b3c">1</text>
+<text x="85" y="434" font-size="18" fill="#152b3c">-1/2</text>
+<text x="190" y="434" font-size="18" fill="#152b3c">1/4</text>
+<text x="295" y="434" font-size="18" fill="#152b3c">3/8</text>
+<text x="425" y="434" font-size="18" fill="#152b3c">1/2 + (-1/8)</text>
+<text x="25" y="482" font-size="18" fill="#152b3c">2</text>
+<text x="85" y="482" font-size="18" fill="#152b3c">3/2</text>
+<text x="190" y="482" font-size="18" fill="#152b3c">3/8</text>
+<text x="295" y="482" font-size="18" fill="#152b3c">0</text>
+<text x="425" y="482" font-size="18" fill="#152b3c">1/2 + (-1/2)</text>
+<text x="25" y="530" font-size="18" fill="#152b3c">3</text>
+<text x="85" y="530" font-size="18" fill="#152b3c">-1</text>
+<text x="190" y="530" font-size="18" fill="#152b3c">0</text>
+<text x="295" y="530" font-size="18" fill="#152b3c">1/4</text>
+<text x="425" y="530" font-size="18" fill="#152b3c">1/2 + (-1/4)</text>
+<text x="25" y="605" font-size="17" fill="#152b3c">Positive x adds positive A-plate charge; output must decrease.</text>
+</g></svg>

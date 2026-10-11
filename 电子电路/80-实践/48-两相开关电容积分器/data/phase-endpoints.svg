@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1010" role="img" aria-labelledby="title desc">
+<title id="title">SC actual endpoints and phase states</title><desc id="desc">S1 connects x to A; S2 connects A to s. Cs from A to 0, Cf from s to o, OTA positive input at 0. Same endpoints in every panel.</desc>
+<rect width="100%" height="100%" fill="#fafbfc"/>
+<g font-family="Arial,sans-serif" font-size="18" fill="#152b3c" stroke-linecap="round">
+<text x="25" y="36" font-size="25" fill="#152b3c">Two-phase inverting SC integrator</text>
+<text x="25" y="67" font-size="16" fill="#152b3c">Cs=1/1000000000000 F; Cf=1/250000000000 F</text>
+<text x="25" y="90" font-size="22" fill="#152b3c">phi1: S1=ON, S2=OFF</text>
+<path d="M48,225 L85,225" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M85,225 L117,225" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M172,225 L204,225" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M117,225 L172,225" fill="none" stroke="#007a68" stroke-width="3"/>
+<circle cx="117" cy="225" r="4" fill="#29485d"/>
+<circle cx="172" cy="225" r="4" fill="#29485d"/>
+<text x="113" y="183" font-size="17" fill="#152b3c">S1 / phi1</text>
+<path d="M204,225 L295,225" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M295,225 L327,225" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M382,225 L414,225" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M327,225 L382,200" fill="none" stroke="#b34b27" stroke-width="3"/>
+<circle cx="327" cy="225" r="4" fill="#29485d"/>
+<circle cx="382" cy="225" r="4" fill="#29485d"/>
+<text x="323" y="183" font-size="17" fill="#152b3c">S2 / phi2</text>
+<path d="M414,225 L460,225" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M460,225 L475,225" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M475,193 L475,292 L570,242 Z" fill="#edf2f5" stroke="#29485d" stroke-width="3"/>
+<text x="484" y="228" font-size="22" fill="#152b3c">−</text>
+<text x="484" y="273" font-size="22" fill="#152b3c">+</text>
+<path d="M460,265 L475,265" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M460,265 L460,313" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="446" y="338" font-size="20" fill="#152b3c">0</text>
+<path d="M570,242 L670,242" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M260,225 L260,261" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M237,261 L283,261" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M237,273 L283,273" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M260,273 L260,314" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="247" y="339" font-size="18" fill="#152b3c">B=0</text>
+<text x="211" y="216" font-size="18" fill="#152b3c">A</text>
+<text x="289" y="271" font-size="18" fill="#152b3c">Cs</text>
+<path d="M445,225 L445,160" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M445,160 L513,160" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M513,143 L513,177" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M525,143 L525,177" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M525,160 L630,160" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M630,160 L630,242" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="510" y="131" font-size="18" fill="#152b3c">Cf</text>
+<text x="36" y="216" font-size="18" fill="#152b3c">x</text>
+<text x="443" y="216" font-size="18" fill="#152b3c">s=0</text>
+<text x="649" y="229" font-size="18" fill="#152b3c">o</text>
+<text x="584" y="279" font-size="17" fill="#152b3c">OTA</text>
+<text x="25" y="375" font-size="22" fill="#152b3c">dead: S1=OFF, S2=OFF</text>
+<path d="M48,510 L85,510" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M85,510 L117,510" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M172,510 L204,510" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M117,510 L172,485" fill="none" stroke="#b34b27" stroke-width="3"/>
+<circle cx="117" cy="510" r="4" fill="#29485d"/>
+<circle cx="172" cy="510" r="4" fill="#29485d"/>
+<text x="113" y="468" font-size="17" fill="#152b3c">S1 / phi1</text>
+<path d="M204,510 L295,510" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M295,510 L327,510" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M382,510 L414,510" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M327,510 L382,485" fill="none" stroke="#b34b27" stroke-width="3"/>
+<circle cx="327" cy="510" r="4" fill="#29485d"/>
+<circle cx="382" cy="510" r="4" fill="#29485d"/>
+<text x="323" y="468" font-size="17" fill="#152b3c">S2 / phi2</text>
+<path d="M414,510 L460,510" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M460,510 L475,510" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M475,478 L475,577 L570,527 Z" fill="#edf2f5" stroke="#29485d" stroke-width="3"/>
+<text x="484" y="513" font-size="22" fill="#152b3c">−</text>
+<text x="484" y="558" font-size="22" fill="#152b3c">+</text>
+<path d="M460,550 L475,550" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M460,550 L460,598" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="446" y="623" font-size="20" fill="#152b3c">0</text>
+<path d="M570,527 L670,527" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M260,510 L260,546" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M237,546 L283,546" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M237,558 L283,558" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M260,558 L260,599" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="247" y="624" font-size="18" fill="#152b3c">B=0</text>
+<text x="211" y="501" font-size="18" fill="#152b3c">A</text>
+<text x="289" y="556" font-size="18" fill="#152b3c">Cs</text>
+<path d="M445,510 L445,445" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M445,445 L513,445" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M513,428 L513,462" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M525,428 L525,462" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M525,445 L630,445" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M630,445 L630,527" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="510" y="416" font-size="18" fill="#152b3c">Cf</text>
+<text x="36" y="501" font-size="18" fill="#152b3c">x</text>
+<text x="443" y="501" font-size="18" fill="#152b3c">s=0</text>
+<text x="649" y="514" font-size="18" fill="#152b3c">o</text>
+<text x="584" y="564" font-size="17" fill="#152b3c">OTA</text>
+<text x="25" y="660" font-size="22" fill="#152b3c">phi2: S1=OFF, S2=ON</text>
+<path d="M48,795 L85,795" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M85,795 L117,795" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M172,795 L204,795" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M117,795 L172,770" fill="none" stroke="#b34b27" stroke-width="3"/>
+<circle cx="117" cy="795" r="4" fill="#29485d"/>
+<circle cx="172" cy="795" r="4" fill="#29485d"/>
+<text x="113" y="753" font-size="17" fill="#152b3c">S1 / phi1</text>
+<path d="M204,795 L295,795" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M295,795 L327,795" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M382,795 L414,795" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M327,795 L382,795" fill="none" stroke="#007a68" stroke-width="3"/>
+<circle cx="327" cy="795" r="4" fill="#29485d"/>
+<circle cx="382" cy="795" r="4" fill="#29485d"/>
+<text x="323" y="753" font-size="17" fill="#152b3c">S2 / phi2</text>
+<path d="M414,795 L460,795" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M460,795 L475,795" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M475,763 L475,862 L570,812 Z" fill="#edf2f5" stroke="#29485d" stroke-width="3"/>
+<text x="484" y="798" font-size="22" fill="#152b3c">−</text>
+<text x="484" y="843" font-size="22" fill="#152b3c">+</text>
+<path d="M460,835 L475,835" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M460,835 L460,883" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="446" y="908" font-size="20" fill="#152b3c">0</text>
+<path d="M570,812 L670,812" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M260,795 L260,831" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M237,831 L283,831" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M237,843 L283,843" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M260,843 L260,884" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="247" y="909" font-size="18" fill="#152b3c">B=0</text>
+<text x="211" y="786" font-size="18" fill="#152b3c">A</text>
+<text x="289" y="841" font-size="18" fill="#152b3c">Cs</text>
+<path d="M445,795 L445,730" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M445,730 L513,730" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M513,713 L513,747" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M525,713 L525,747" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M525,730 L630,730" fill="none" stroke="#29485d" stroke-width="3"/>
+<path d="M630,730 L630,812" fill="none" stroke="#29485d" stroke-width="3"/>
+<text x="510" y="701" font-size="18" fill="#152b3c">Cf</text>
+<text x="36" y="786" font-size="18" fill="#152b3c">x</text>
+<text x="443" y="786" font-size="18" fill="#152b3c">s=0</text>
+<text x="649" y="799" font-size="18" fill="#152b3c">o</text>
+<text x="584" y="849" font-size="17" fill="#152b3c">OTA</text>
+<text x="25" y="972" font-size="17" fill="#152b3c">Cf remains connected. No reset switch. Dead time: both OFF.</text>
+</g></svg>

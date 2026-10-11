@@ -12,6 +12,7 @@ default = []
 threaded = []
 fixed = []
 ffi = ["fixed"]
+async = ["threaded", "dep:tokio"]
 
 [lib]
 crate-type = ["rlib", "staticlib"]
@@ -19,3 +20,10 @@ crate-type = ["rlib", "staticlib"]
 [[example]]
 name = "fixed"
 required-features = ["fixed"]
+
+[dependencies]
+tokio = { version = "=1.52.3", optional = true, default-features = false, features = ["rt", "sync"] }
+
+[[example]]
+name = "async"
+required-features = ["async"]

@@ -7,7 +7,13 @@ publish = false
 
 [dependencies]
 wwl-measurement = { path = ".." }
+tokio = { version = "=1.52.3", optional = true, default-features = false, features = ["rt", "sync"] }
 
 [features]
 default = []
 threaded = ["wwl-measurement/threaded"]
+async = ["wwl-measurement/async", "dep:tokio"]
+
+[[example]]
+name = "async"
+required-features = ["async"]

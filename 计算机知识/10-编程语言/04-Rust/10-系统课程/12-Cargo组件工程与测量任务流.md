@@ -16,7 +16,7 @@ prerequisites:
 
 > **入口**：[[计算机知识/10-编程语言/04-Rust/10-系统课程/00-Rust系统课程索引|Rust 主索引]] · **工程**：[[计算机知识/80-实践/10-Rust/01-类型化测量任务/README|运行、测试与证据]]。先完成 [[计算机知识/10-编程语言/04-Rust/10-系统课程/11-类型化数据管道与标准库实作#谁有数据，谁只是看一眼|Batch 的拥有关系]]。
 >
-> 本讲交付阶段2–3中的串行组件：有界纯核心、标准库文件读写、FIFO批处理、公开调用方和本地包。接续段现已增加严格任务配置、threaded feature与有限单序列的同步任务流及关闭合同。高级接续现已增加共源固定缓冲核和窄C ABI；异步适配与真实嵌入式运行仍未交付。前面的VecDeque仍只是串行队列。
+> 本讲交付阶段2–3中的串行组件：有界纯核心、标准库文件读写、FIFO批处理、公开调用方和本地包。接续段现已增加严格任务配置、threaded feature与有限单序列的同步任务流及关闭合同。高级接续现已增加共源固定缓冲核和窄C ABI；可选异步适配见末段；真实嵌入式运行仍未交付。前面的VecDeque仍只是串行队列。
 
 ## 先决定边界，才拆库和二进制
 
@@ -78,9 +78,9 @@ cargo package --locked --offline --list
 cargo package --locked --offline
 ```
 
-调用方断言20/5与滤波值后打印结果。API 文档在本地 target/doc/wwl_measurement/index.html；它不是上传 docs.rs 的证据。库没有外部依赖，default feature为空；后续同步段定义threaded feature。没有定义异步feature，避免“打开开关却没有实现”。
+调用方断言20/5与滤波值后打印结果。API 文档在本地 target/doc/wwl_measurement/index.html；它不是上传 docs.rs 的证据。默认库没有外部依赖，default feature为空；后续同步段定义threaded feature，末段async feature引入精确版本的可选Tokio依赖。
 
-`Cargo.lock` 固定本 package 的依赖解析，本例只列自身；独立 caller 有自己的锁文件。edition2021 决定语言兼容规则；rust-version1.89 是本次已验证的支持下限，不声称最早能编译的历史版本就是1.89。Cargo/rustc 实际为1.89.0，target 为 aarch64-apple-darwin。低于声明版本没有安装/验证；不因所用 API 较早存在就声称完整旧工具链兼容。
+`Cargo.lock` 固定本 package 的依赖解析，当前包含自身、可选Tokio 1.52.3及pin-project-lite 0.2.17；锁文件中的解析集合不同于某次feature构建实际编译的依赖树，默认feature仍不编译这两个运行时依赖。独立 caller 有自己的锁文件，同样保留可选依赖解析。edition2021 决定语言兼容规则；rust-version1.89 是本次已验证的支持下限，不声称最早能编译的历史版本就是1.89。Cargo/rustc 实际为1.89.0，target 为 aarch64-apple-darwin。低于声明版本没有安装/验证；不因所用 API 较早存在就声称完整旧工具链兼容。
 
 include 明确只装入 manifest、锁、README、src、tests、fixtures；`caller`、阶段0检查点、构建 target 与过程证据均不在 `.crate` 中，仍作为课程仓库中的伴随材料。打包会生成规范化 Cargo.toml 与 Cargo.toml.orig，README 所述包文件不能假装保留 caller。`publish=false` 防止误发布，打包是本地校验，不需要 registry 凭据；许可尚未为独立发布指定。本轮解包重新测试的是实际 archive 内文件，不能用源码目录成功代替这一结果。
 
@@ -214,8 +214,25 @@ cc -std=c11 -Wall -Wextra -Werror ffi/caller.c target/debug/libwwl_measurement.a
 
 此C函数是有限同步调用，没有Future、runtime或JoinHandle，不能通过drop某个句柄取消。正常返回时该次计算已结束；它不对调用线程被强制终止、异步信号重入或并发修改同一previous提供安全保证。公开kernel按输入上限与范围证明没有主动panic路径，但unsafe合同被破坏不能靠catch_unwind修复；不把Rust panic跨C边界传播作为错误协议。
 
-本kernel只改调用方内存；之后把output写到设备或文件，是调用方另一项外部动作。函数返回成功、线程join或flush都不证明设备已接收，也不表示取消可以撤销设备命令。异步适配仍未实现：需要明确runtime版本、handle拥有者及取消后完成观察，继续回 [[计算机知识/10-编程语言/04-Rust/10-系统课程/10-Pin投影任务所有权与取消协议#Future 和 JoinHandle 必须分开|Future与JoinHandle]] 核对，不能把同步C返回改名为异步取消。
+本kernel只改调用方内存；之后把output写到设备或文件，是调用方另一项外部动作。函数返回成功、线程join或flush都不证明设备已接收，也不表示取消可以撤销设备命令。下方异步接续明确了runtime版本、handle拥有者及取消后完成观察，继续回 [[计算机知识/10-编程语言/04-Rust/10-系统课程/10-Pin投影任务所有权与取消协议#Future 和 JoinHandle 必须分开|Future与JoinHandle]] 核对，不能把同步C返回改名为异步取消。
 
 ## 后续任务流的验收门，而不是已有结果
 
-共源fixed核和本机窄C调用已实现；仍未实现异步适配、真实嵌入式启动/中断/DMA/设备任务与实时期限。继续复用 [[计算机知识/10-编程语言/04-Rust/10-系统课程/07-Unsafe别名FFI与表示|FFI主解释]] 与 [[计算机知识/10-编程语言/04-Rust/10-系统课程/08-集合宏工程与生态全景#no_std 与嵌入式|no_std主解释]]。迁移题：更换芯片但保留同一核源码，哪些证据不能搬过去？答案包含target/ABI、指针对齐和有效区、启动与panic、中断/缓存/DMA、真实采样时序、设备输出与闭环稳定；本轮native数组结果只认证同一算法和本机C路径。
+共源fixed核和本机窄C调用已实现；异步适配见下方接续；仍未实现真实嵌入式启动/中断/DMA/设备任务与实时期限。继续复用 [[计算机知识/10-编程语言/04-Rust/10-系统课程/07-Unsafe别名FFI与表示|FFI主解释]] 与 [[计算机知识/10-编程语言/04-Rust/10-系统课程/08-集合宏工程与生态全景#no_std 与嵌入式|no_std主解释]]。迁移题：更换芯片但保留同一核源码，哪些证据不能搬过去？答案包含target/ABI、指针对齐和有效区、启动与panic、中断/缓存/DMA、真实采样时序、设备输出与闭环稳定；本轮native数组结果只认证同一算法和本机C路径。
+
+
+## 可选异步适配：谁持有 handle，谁确认结束
+
+旧瓶颈是同步sender.send在当前线程等待容量；当调用方本身是Future，需要把等待让给executor，但Fir2跨批状态不能因调度改变归属。src/asynchronous.rs复用原Batch/Fir2和TaskConfig，仅新增可选async feature。固定Tokio 1.52.3、rt/sync，示例使用current_thread runtime，存活覆盖整个任务；native Rust/Cargo1.89.0，edition2021，未将版本号当成全部平台兼容证明。命令、源码与故障运行在 [[计算机知识/80-实践/10-Rust/01-类型化测量任务/README#可选异步接续|异步工程接续]]。
+
+拥有图是：调用方拥有runtime和AsyncTask；AsyncTask拥有唯一Sender及JoinHandle；spawn的Future拥有Receiver、持久Fir2和结果Vec。send(&mut self, Batch)借用控制器跨await并move输入，其他safe调用者不能同时发送或消费控制器。正常finish消费控制器，drop sender，receiver读完FIFO后观察EOF，await handle取得结果。这里不需要手写Pin投影，也不需要到处clone。
+
+取消信号是handle.abort()；cancel_and_wait继续await同一handle，返回JoinError::is_cancelled表示任务取消已经完成。若任务先完成，可取得正常输出，不能把请求取消当作一定取消。Drop AsyncTask发abort却不能await；丢弃finish/cancel的Future同样不能声称退出已观察。实现把handle保留在self里直到await返回，防止中途丢弃等待Future后意外只detach任务。单批处理是有限同步计算，abort在runtime调度处生效；1024项上限并非取消延迟或deadline保证。对照 [[计算机知识/10-编程语言/04-Rust/10-系统课程/10-Pin投影任务所有权与取消协议#Future 和 JoinHandle 必须分开|Future和JoinHandle主解释]]。
+
+有界队列最多16批，明确拒绝同步配置容量0；累计最多1024批对象及max_samples样本。样本身份连续从0开始，重复/乱序拒绝，不自作重排。预验证失败不入队，成功send之后计数才递增；等待send被丢弃则拥有的Batch丢失、计数不变。此API可用finish获取已接受前缀，不提供全计划事务。接收端关闭的send错误提示调用finish追查worker源；JoinError原样保存于source，取消与panic可区分。纯worker没有外部副作用；测试另外注入一个可观察原子计数，ack确认效果发生再abort/await，计数仍为1，以反例解释取消确认不等于回滚。
+
+手算仍是sum20/mean5、FIR[1,3,5,7]mV；两批共用worker得到同一结果。满队列试验让worker等待oneshot，第一批填满队列，第二批poll为Pending，再丢弃其Future并核对计数；释放门后finish仅返回第一批。另测panic、abort完成观察、空输入、样本/对象上限与重复/乱序，runtime之外start返回NoRuntime。试验不使用固定sleep作为调度证明。
+
+迁移题：若发送第二批的Future取消后仍调用finish，能否宣称4个输入全处理？答案：不能；它只返回第一批的结果。要保留待发送数据，可在拥有Batch前先reserve容量并设计明确重试合同；本接口故意暴露丢弃语义，不偷换成无损取消。若把unique sender公开clone，哪些关闭论证失效？答案：finish不再保证最后sender消失，EOF可能永远不到，必须增加句柄归属合同。
+
+版本依据为 [Tokio 1.52.3 Sender::send](https://docs.rs/tokio/1.52.3/tokio/sync/mpsc/struct.Sender.html#method.send) 和 [JoinHandle::abort](https://docs.rs/tokio/1.52.3/tokio/task/struct.JoinHandle.html#method.abort)，并核对本机同版缓存源码。设备、实时、多runtime迁移、网络重试与事务提交未验。

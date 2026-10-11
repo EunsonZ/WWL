@@ -12,7 +12,7 @@ prerequisites:
 
 # 类型化测量任务：串行组件与运行入口
 
-课程主线见 [[计算机知识/10-编程语言/04-Rust/10-系统课程/11-类型化数据管道与标准库实作|第11讲]] 与 [[计算机知识/10-编程语言/04-Rust/10-系统课程/12-Cargo组件工程与测量任务流|第12讲]]；它们从零程序推进到公开组件，本 README 负责重跑与证据边界。无 C/C++ 前置、设备、在线服务或第三方依赖。
+课程主线见 [[计算机知识/10-编程语言/04-Rust/10-系统课程/11-类型化数据管道与标准库实作|第11讲]] 与 [[计算机知识/10-编程语言/04-Rust/10-系统课程/12-Cargo组件工程与测量任务流|第12讲]]；它们从零程序推进到公开组件，本 README 负责重跑与证据边界。基础主线无 C/C++ 前置、设备、在线服务或第三方依赖；可选async接续使用下方明确的缓存运行时。
 
 ## 进入工程后执行
 
@@ -79,9 +79,9 @@ sum手算20，mean手算5。Fir2初始前值0，一项一输出、EOF无尾项�
 
 ## 版本、包与复建边界
 
-edition2021；rust-version1.89为本轮实际验证的支持下限，非“最早可兼容版本”推断。rustc1.89.0(29483883e,2025-08-04)，Cargo1.89.0(c24e10642,2025-06-23)，target aarch64-apple-darwin；无外部依赖、default feature为空，threaded=[]，新增fixed=[]、ffi=[fixed]分支、publish=false。旧课“未安装rustc”仍保留原批次身份。
+edition2021；rust-version1.89为本轮实际验证的支持下限，非“最早可兼容版本”推断。rustc1.89.0(29483883e,2025-08-04)，Cargo1.89.0(c24e10642,2025-06-23)，target aarch64-apple-darwin；默认构建无外部依赖、default feature为空，threaded=[]，新增fixed=[]、ffi=[fixed]分支、publish=false。旧课“未安装rustc”仍保留原批次身份。
 
-主包include覆盖Cargo.toml/Cargo.lock/README、src/**、tests/**、fixtures/**、ffi/**和examples/**，实际归档共22个成员（见下方清单）。Cargo产生的归档包含规范化manifest及Cargo.toml.orig；独立Rust消费工程caller/、首课检查点stages/first/、nostd/共源检查器与过程证据不随主包交付，ffi/caller.c则包含在主包中。解包者能测试和运行库/CLI，完整学习检查点和独立调用方从课程仓库取用。本包未设置发布许可、未上传registry、未安装到用户PATH。
+主包include覆盖Cargo.toml/Cargo.lock/README、src/**、tests/**、fixtures/**、ffi/**和examples/**，当前实际归档共24个成员（见下方清单）。Cargo产生的归档包含规范化manifest及Cargo.toml.orig；独立Rust消费工程caller/、首课检查点stages/first/、nostd/共源检查器与过程证据不随主包交付，ffi/caller.c则包含在主包中。解包者能测试和运行库/CLI，完整学习检查点和独立调用方从课程仓库取用。本包未设置发布许可、未上传registry、未安装到用户PATH。
 
 ## 配置与同步分支的运行合同
 
@@ -108,6 +108,7 @@ Cargo.lock
 Cargo.toml
 Cargo.toml.orig
 README.md
+examples/async.rs
 examples/fixed.rs
 ffi/caller.c
 ffi/wwl_measurement.h
@@ -115,6 +116,7 @@ fixtures/fixed.txt
 fixtures/invalid.conf
 fixtures/invalid.txt
 fixtures/task.conf
+src/asynchronous.rs
 src/config.rs
 src/ffi.rs
 src/fixed_core.rs
@@ -130,7 +132,7 @@ tests/threaded.rs
 
 本地包未发布；缺独立发布许可/站点元数据仍有Cargo warning。safe Rust、线程join与flush不等于业务回滚、设备实时或协议正确。
 
-本次接续完成配置/features及有限单序列的同步任务流、资源上限与关闭；原首段源码与学习检查点保留。高级批次现已增加共源fixed核、native no_std编译检查及窄C ABI实际调用。异步适配、C++调用方与真实嵌入式运行尚缺，#243仍未全阶段完成。实际设备时间戳、实时deadline、采样误差、控制闭环、Obsidian显示及真人学习效果均未验证。
+本次接续完成配置/features及有限单序列的同步任务流、资源上限与关闭；原首段源码与学习检查点保留。高级批次现已增加共源fixed核、native no_std编译检查及窄C ABI实际调用。异步适配见下方接续；C++调用方与真实嵌入式运行尚缺，#243仍未全阶段完成。实际设备时间戳、实时deadline、采样误差、控制闭环、Obsidian显示及真人学习效果均未验证。
 
 ## 高级接续：固定核与 C 调用
 
@@ -155,3 +157,22 @@ C/Rust须使用同一native target/兼容ABI。此链接命令验证于aarch64 m
 工具链为Rust/Cargo1.89.0、Apple clang21，native aarch64-apple-darwin。最终本地归档解包后，all-features测试、fixed example及实际C caller再跑通过；nostd伴随目录不随主包，仍需课程源码树。没有将同版复制说成重新跑首课检查点。
 
 本批未安装依赖、runtime或芯片target。no_std check只验证本机core环境编译；测试运行的是相同核的native std调用及C路径，未运行固件。无Future/JoinHandle，无异步取消完成观察；C函数是有限同步调用，不能以drop句柄取消。设备deadline、中断、DMA、内存映射硬件、采样误差、闭环和C++仍未验证。
+
+
+## 可选异步接续
+
+async feature固定Tokio =1.52.3（仅rt/sync）；锁文件另含pin-project-lite 0.2.17。本机已有缓存，离线构建，没有安装或联网下载组件。默认feature仍无运行时依赖；锁文件可以含未启用的可选依赖。初次使用者没有缓存时需另行获取依赖，本轮离线结果不代表空缓存可构建。Rust/Cargo1.89.0、edition2021、aarch64-apple-darwin验证；更早MSRV未测。
+
+```sh
+cargo test --features async --locked --offline
+cargo run --example async --features async --locked --offline
+cargo run --manifest-path caller/Cargo.toml --example async --features async --locked --offline
+```
+
+示例建立current_thread runtime并保持其存活至block_on返回，结果twice_mV=[2,6,10,14]。AsyncTask拥有唯一sender和JoinHandle，worker拥有Receiver、Fir2与结果Vec；send只借用&mut控制器，批数据move到队列。finish关闭唯一sender，再await handle；cancel_and_wait发abort再await，JoinError区分取消/panic，source保留原错误。Drop控制器请求abort但无法await；丢弃finish/cancel future也会走此路径，不能报告“已退出”。若任务已完成，cancel可以拿到成功结果；取消不承诺赢过完成。
+
+异步容量1..16：同步配置中的0容量rendezvous在此明确拒绝。最多1024成功入队批对象（空批也计数）、配置max_samples以内样本，队列以批对象计容量，结果最多1024项；单批纯计算有限但无实时deadline。所有索引须连续从0开始，重复/乱序在入队前拒绝；无重排、重试去重或持久化事件身份保证。send成功仅表示接受入队；finish成功才拿到全部接受输入的结果。拒绝或取消尚未入队的send不会改变计数，但会丢弃其拥有Batch；若随后finish，得到的是已接受前缀，调用方不能将它当作原计划全部成功。默认worker无外部IO。
+
+故障试验以oneshot门控制执行节点，不靠sleep：填满容量1队列，实际poll第二次send为Pending后丢弃，核对计数不变；启动后abort并await确认is_cancelled；注入panic并await确认is_panic；另用原子计数模拟已发生效果，ack后取消，观察计数仍为1。该计数是试验外部效果，不是生产worker行为。正常、空批/0样本上限、1024批对象、重复/乱序以及全部单切分边界也运行。具体测试在src/asynchronous.rs，不认证网络/数据库/设备提交。
+
+2026-10-11异步候选实际：默认24项、all-features46项通过；主包与独立caller的async示例输出[2,6,10,14]并观察完成；单独E0505诊断确认pending send借用阻止消费owner。包与独立caller锁文件都保留Tokio 1.52.3/pin-project-lite 0.2.17。旧first/next/advanced产物严格只读，本段不追溯重跑全部历史实验。

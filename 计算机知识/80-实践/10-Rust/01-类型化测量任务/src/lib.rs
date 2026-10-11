@@ -380,3 +380,6 @@ mod report_index_tests {
         assert!(!text.contains("t=0 s"));
     }
 }
+
+#[cfg(feature = "async")]
+pub mod asynchronous;

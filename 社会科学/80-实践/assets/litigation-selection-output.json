@@ -1,0 +1,544 @@
+{
+  "synthetic": true,
+  "units": {
+    "counts": "disputes",
+    "rates": "dimensionless exact fractions"
+  },
+  "unobserved_label": null,
+  "scenarios": {
+    "original": {
+      "selection": "resource_or_evidence",
+      "label_rule": "evidence",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ],
+      "overall": {
+        "disputes": 100,
+        "entered": 75,
+        "observed_wins": 50,
+        "coverage": "3/4",
+        "record_win_rate": "2/3",
+        "potential_wins": 50,
+        "potential_win_rate": "1/2"
+      },
+      "by_resource": {
+        "0": {
+          "disputes": 50,
+          "entered": 25,
+          "observed_wins": 25,
+          "coverage": "1/2",
+          "record_win_rate": "1",
+          "potential_wins": 25,
+          "potential_win_rate": "1/2"
+        },
+        "1": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 25,
+          "coverage": "1",
+          "record_win_rate": "1/2",
+          "potential_wins": 25,
+          "potential_win_rate": "1/2"
+        }
+      },
+      "resource_evidence_covariance": {
+        "all": "0",
+        "selected": "-1/9"
+      },
+      "cell_labels": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 0,
+          "observed_label": null
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 0,
+          "observed_label": 0
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        }
+      ]
+    },
+    "entry_only_aid": {
+      "selection": "all",
+      "label_rule": "evidence",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ],
+      "overall": {
+        "disputes": 100,
+        "entered": 100,
+        "observed_wins": 50,
+        "coverage": "1",
+        "record_win_rate": "1/2",
+        "potential_wins": 50,
+        "potential_win_rate": "1/2"
+      },
+      "by_resource": {
+        "0": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 25,
+          "coverage": "1",
+          "record_win_rate": "1/2",
+          "potential_wins": 25,
+          "potential_win_rate": "1/2"
+        },
+        "1": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 25,
+          "coverage": "1",
+          "record_win_rate": "1/2",
+          "potential_wins": 25,
+          "potential_win_rate": "1/2"
+        }
+      },
+      "resource_evidence_covariance": {
+        "all": "0",
+        "selected": "0"
+      },
+      "cell_labels": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 0,
+          "observed_label": 0
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 0,
+          "observed_label": 0
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        }
+      ]
+    },
+    "evidence_deteriorates": {
+      "selection": "resource_or_evidence",
+      "label_rule": "evidence",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 50
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 0
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ],
+      "overall": {
+        "disputes": 100,
+        "entered": 50,
+        "observed_wins": 25,
+        "coverage": "1/2",
+        "record_win_rate": "1/2",
+        "potential_wins": 25,
+        "potential_win_rate": "1/4"
+      },
+      "by_resource": {
+        "0": {
+          "disputes": 50,
+          "entered": 0,
+          "observed_wins": 0,
+          "coverage": "0",
+          "record_win_rate": null,
+          "potential_wins": 0,
+          "potential_win_rate": "0"
+        },
+        "1": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 25,
+          "coverage": "1",
+          "record_win_rate": "1/2",
+          "potential_wins": 25,
+          "potential_win_rate": "1/2"
+        }
+      },
+      "resource_evidence_covariance": {
+        "all": "1/8",
+        "selected": "0"
+      },
+      "cell_labels": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 50,
+          "potential_label": 0,
+          "observed_label": null
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 0,
+          "potential_label": 1,
+          "observed_label": 1
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 0,
+          "observed_label": 0
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        }
+      ]
+    },
+    "aid_also_improves_evidence": {
+      "selection": "all",
+      "label_rule": "evidence",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 0
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 50
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ],
+      "overall": {
+        "disputes": 100,
+        "entered": 100,
+        "observed_wins": 75,
+        "coverage": "1",
+        "record_win_rate": "3/4",
+        "potential_wins": 75,
+        "potential_win_rate": "3/4"
+      },
+      "by_resource": {
+        "0": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 50,
+          "coverage": "1",
+          "record_win_rate": "1",
+          "potential_wins": 50,
+          "potential_win_rate": "1"
+        },
+        "1": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 25,
+          "coverage": "1",
+          "record_win_rate": "1/2",
+          "potential_wins": 25,
+          "potential_win_rate": "1/2"
+        }
+      },
+      "resource_evidence_covariance": {
+        "all": "-1/8",
+        "selected": "-1/8"
+      },
+      "cell_labels": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 0,
+          "potential_label": 0,
+          "observed_label": 0
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 50,
+          "potential_label": 1,
+          "observed_label": 1
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 0,
+          "observed_label": 0
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        }
+      ]
+    },
+    "alternative_unseen_original": {
+      "selection": "resource_or_evidence",
+      "label_rule": "unseen_cell_wins",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ],
+      "overall": {
+        "disputes": 100,
+        "entered": 75,
+        "observed_wins": 50,
+        "coverage": "3/4",
+        "record_win_rate": "2/3",
+        "potential_wins": 75,
+        "potential_win_rate": "3/4"
+      },
+      "by_resource": {
+        "0": {
+          "disputes": 50,
+          "entered": 25,
+          "observed_wins": 25,
+          "coverage": "1/2",
+          "record_win_rate": "1",
+          "potential_wins": 50,
+          "potential_win_rate": "1"
+        },
+        "1": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 25,
+          "coverage": "1",
+          "record_win_rate": "1/2",
+          "potential_wins": 25,
+          "potential_win_rate": "1/2"
+        }
+      },
+      "resource_evidence_covariance": {
+        "all": "0",
+        "selected": "-1/9"
+      },
+      "cell_labels": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": null
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 0,
+          "observed_label": 0
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        }
+      ]
+    },
+    "alternative_unseen_all": {
+      "selection": "all",
+      "label_rule": "unseen_cell_wins",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ],
+      "overall": {
+        "disputes": 100,
+        "entered": 100,
+        "observed_wins": 75,
+        "coverage": "1",
+        "record_win_rate": "3/4",
+        "potential_wins": 75,
+        "potential_win_rate": "3/4"
+      },
+      "by_resource": {
+        "0": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 50,
+          "coverage": "1",
+          "record_win_rate": "1",
+          "potential_wins": 50,
+          "potential_win_rate": "1"
+        },
+        "1": {
+          "disputes": 50,
+          "entered": 50,
+          "observed_wins": 25,
+          "coverage": "1",
+          "record_win_rate": "1/2",
+          "potential_wins": 25,
+          "potential_win_rate": "1/2"
+        }
+      },
+      "resource_evidence_covariance": {
+        "all": "0",
+        "selected": "0"
+      },
+      "cell_labels": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25,
+          "potential_label": 0,
+          "observed_label": 0
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25,
+          "potential_label": 1,
+          "observed_label": 1
+        }
+      ]
+    }
+  }
+}

@@ -97,6 +97,15 @@ shared memory 只有在省下的 global traffic 或更好的访问模式大于�
 
 shared memory 被划分为 banks。一个 warp 的不同 threads 同时访问不同 banks 时可并行服务；多个 threads 的地址落到同一个 bank 且不是可广播的同地址访问时，请求会拆分，形成 bank conflict。
 
+先把映射算出来，再看 padding 为什么有用。这里采用教学模型：32 个 bank，每个 32-bit word 映射到一个 bank。shared tile 的基址为 `B` 字节且按 4 字节对齐，行跨度 `stride` 以 32-bit word 计。一个 warp 的 lane `t=0..31` 各执行一次标量读取 `tile[row=t][col=c]`，其中 `c` 是同一个合法列索引。于是 lane `t` 访问的 word address 是
+
+```text
+wordaddress(t) = B/4 + t*stride + c
+bank(t) = wordaddress(t) mod 32
+```
+
+`B/4` 和固定列 `c` 只让所有 lane 的 bank 编号整体轮转，不改变它们之间的映射关系。对 `stride=32`，`bank(t)=(B/4+c) mod 32`，32 个 lane 都落在同一个 bank，但访问不同 word，因而会冲突。改为 `stride=33` 后，`bank(t)=(B/4+c+t) mod 32`；`t=0..31` 恰好遍历全部 32 个 bank。例如 `B/4=5`、`c=7` 时（两种 stride 都合法），stride 32 的 32 个 lane 都落在 bank 12；stride 33 的 lane 0 落在 bank 12，lane 31 落在 bank 11，中间依次经过其余 bank。33 列 tile 还允许访问额外列 `c=32`：此时 stride 33 的 lane 0 落在 bank `(5+32) mod 32=5`，仍由 32 个 lane 各访问一个 bank。这里的结论要求完整 warp、每 lane 一次 32-bit 标量读取和上述 32-bank 映射；若只有部分 lane active，只看 active lane 的地址。多个 lane 读同一 shared 地址时适用下方的 broadcast 例外，不能只凭 bank 编号相同就算冲突。
+
 经典 transpose tile：
 
 ```cpp

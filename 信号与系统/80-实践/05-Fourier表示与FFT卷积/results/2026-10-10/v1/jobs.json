@@ -1,0 +1,88 @@
+[
+  {
+    "name": "fourier-tests",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_fourier_lab.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/source-layout/信号与系统/80-实践/05-Fourier表示与FFT卷积",
+    "returncode": 0,
+    "timed_out": false,
+    "timeout_seconds": 60,
+    "elapsed_seconds": 0.09026629199979652,
+    "cumulative_children_max_rss_bytes_macos": 25362432
+  },
+  {
+    "name": "fourier-cli",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "fourier_lab.py",
+      "--output",
+      "/private/tmp/wwl-recovery-177178-a1ca2a3cbbf9/fourier"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/source-layout/信号与系统/80-实践/05-Fourier表示与FFT卷积",
+    "returncode": 0,
+    "timed_out": false,
+    "timeout_seconds": 60,
+    "elapsed_seconds": 0.0443810000006124,
+    "cumulative_children_max_rss_bytes_macos": 25362432,
+    "transient_output": "/private/tmp/wwl-recovery-177178-a1ca2a3cbbf9/fourier",
+    "durable_copy": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/fourier-cli-output",
+    "copied_files": [
+      {
+        "path": "results.json",
+        "bytes": 8410,
+        "sha256": "9099e6d912c1e7a72cdb61ee8782be4bcb384b59d0e7a830b9909fbd09553885",
+        "copy_identical": true
+      }
+    ]
+  },
+  {
+    "name": "iir-tests",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_iir_lab.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/source-layout/信号与系统/80-实践/06-IIR规格与实现",
+    "returncode": 0,
+    "timed_out": false,
+    "timeout_seconds": 60,
+    "elapsed_seconds": 0.2616158330001781,
+    "cumulative_children_max_rss_bytes_macos": 27099136
+  },
+  {
+    "name": "iir-cli",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "iir_lab.py",
+      "--output",
+      "/private/tmp/wwl-recovery-177178-a1ca2a3cbbf9/iir"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/source-layout/信号与系统/80-实践/06-IIR规格与实现",
+    "returncode": 0,
+    "timed_out": false,
+    "timeout_seconds": 60,
+    "elapsed_seconds": 2.8278755000001183,
+    "cumulative_children_max_rss_bytes_macos": 27574272,
+    "transient_output": "/private/tmp/wwl-recovery-177178-a1ca2a3cbbf9/iir",
+    "durable_copy": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/iir-cli-output",
+    "copied_files": [
+      {
+        "path": "results.json",
+        "bytes": 36703,
+        "sha256": "521df55b0e40adebef842758cd85caeb608c39828a0595b94fc90f5780d00934",
+        "copy_identical": true
+      }
+    ]
+  }
+]

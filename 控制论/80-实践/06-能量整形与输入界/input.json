@@ -1,0 +1,13 @@
+{
+  "physical": {"m_kg": 1.0, "l_m": 1.0, "g_m_per_s2": 9.81},
+  "design": {"gamma": 0.2, "kappa": 1.0, "kd": 0.8, "epsilon": 0.25, "r_rad": 1.0, "h": 0.08, "a_max": 1.0, "d_max": 0.05},
+  "initial": {"e_rad": 0.3, "v_scaled": 0.0},
+  "integration": {"end_tau": 20.0, "base_step_tau": 0.02, "switch_interval_tau": 2.0},
+  "cases": [
+    {"name": "zero", "disturbance": "constant", "d": 0.0, "a_max": 1.0, "certified": true},
+    {"name": "constant", "disturbance": "constant", "d": 0.05, "a_max": 1.0, "certified": true},
+    {"name": "square", "disturbance": "square", "d": 0.05, "a_max": 1.0, "certified": true},
+    {"name": "small_actuator", "disturbance": "constant", "d": 0.05, "a_max": 0.15, "certified": false},
+    {"name": "large_disturbance", "disturbance": "constant", "d": 3.0, "a_max": 1.0, "certified": false}
+  ]
+}

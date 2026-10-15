@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="写时复制：改页表之后还要处理旧翻译"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  parent [label="fork 后父进程 PTE\n指向 P0，只读"];
+  child [label="fork 后子进程 PTE\n指向 P0，只读"];
+  p0 [label="物理页 P0\n父子共享原内容",fillcolor="#e9f3e5"];
+  fault [label="子进程写入 → 权限异常\n内核确认是合法 CoW"];
+  p1 [label="分配并复制到 P1\n子进程 PTE 改指 P1，可写",fillcolor="#e6eff8"];
+  tlb [label="使受影响地址空间的旧 TLB 翻译失效\n必要时通知其他处理器"];
+  retry [label="重新执行写指令\n子进程写 P1；父进程仍观察 P0"];
+  parent->p0;child->p0;{rank=same;parent;child};child->fault;fault->p1;p1->tlb;tlb->retry;
+
+}

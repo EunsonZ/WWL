@@ -1,0 +1,48 @@
+--- executed-v1/ou_lab.py
++++ v2/ou_lab.py
+@@ -178,23 +178,39 @@
+ 
+ def error_svg(report):
+     rows = report['rows']
+-    lo_log = math.floor(math.log2(min(row['theory']['strong_rmse'] for row in rows))) - 1
+-    hi_log = math.ceil(math.log2(max(row['theory']['strong_rmse'] for row in rows))) + 1
++    errors = [row['theory']['strong_rmse'] for row in rows] + [row['strong_rmse']['estimate'] for row in rows]
++    # A zero error is valid (e.g. sigma=0, x0=mu), but has no logarithm.
++    log_y = all(value > 0 for value in errors)
++    if log_y:
++        lo_y = math.floor(math.log2(min(errors))) - 1
++        hi_y = math.ceil(math.log2(max(errors))) + 1
++        transform_y = math.log2
++        low_label, high_label = f'2^{lo_y}', f'2^{hi_y}'
++    else:
++        lo_y = 0.0
++        hi_y = max([row['strong_rmse']['estimate'] + 2 * row['strong_rmse']['delta_method_se'] for row in rows] + errors)
++        hi_y = 1.1 * hi_y if hi_y > 0 else 1.0
++        transform_y = lambda value: value
++        low_label, high_label = '0', f'{hi_y:.6g}'
+     lo_h = math.log2(min(row['theory']['h'] for row in rows))
+     hi_h = math.log2(max(row['theory']['h'] for row in rows))
+     def pos(h, error):
+         return (75 + 500 * (math.log2(h) - lo_h) / max(hi_h - lo_h, 1),
+-                265 - 190 * (math.log2(error) - lo_log) / (hi_log - lo_log))
++                265 - 190 * (transform_y(error) - lo_y) / (hi_y - lo_y))
+     points = ' '.join(f'{pos(row["theory"]["h"], row["theory"]["strong_rmse"])[0]:.2f},{pos(row["theory"]["h"], row["theory"]["strong_rmse"])[1]:.2f}' for row in rows)
+     marks = []
+     for row in rows:
+         x, y = pos(row['theory']['h'], row['strong_rmse']['estimate'])
+         se = row['strong_rmse']['delta_method_se']
+-        _, low = pos(row['theory']['h'], max(row['strong_rmse']['estimate'] - 2 * se, 1e-15))
++        lower = row['strong_rmse']['estimate'] - 2 * se
++        lower = max(lower, 2 ** lo_y) if log_y else max(lower, 0.0)
++        _, low = pos(row['theory']['h'], lower)
+         _, high = pos(row['theory']['h'], row['strong_rmse']['estimate'] + 2 * se)
+         marks.append(f'<path d="M{x:.2f},{low:.2f} V{high:.2f}" stroke="#b44517"/><circle cx="{x:.2f}" cy="{y:.2f}" r="4" fill="#b44517"/>')
+-    labels = ''.join(f'<text x="{pos(1/m, .01)[0]:.2f}" y="290" text-anchor="middle">1/{m}</text>' for m in sorted((row['theory']['steps'] for row in rows), reverse=True))
+-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 340" role="img" aria-labelledby="title desc"><title id="title">OU terminal strong RMS error against time step</title><desc id="desc">Log base two axes. Blue connected values are exact analytic RMS errors. Orange dots are Monte Carlo values, bars show plus or minus two estimated delta method standard errors. This additive noise OU case approaches order one; the figure is not a general proof.</desc><rect width="650" height="340" fill="white"/><g font-family="sans-serif" font-size="13" fill="#222"><text x="75" y="28">OU strong RMS error, T=1; log2 axes</text><path d="M75,55 V265 H590" fill="none" stroke="#333"/><polyline points="{points}" fill="none" stroke="#185fa0" stroke-width="2"/>{''.join(marks)}{labels}<text x="335" y="327" text-anchor="middle">Time step h</text><text x="17" y="164" transform="rotate(-90 17 164)" text-anchor="middle">Terminal RMS error (state units)</text><text x="82" y="52">Blue: analytic; orange: MC +/- 2 estimated SE</text><text x="30" y="269">2^{lo_log}</text><text x="35" y="79">2^{hi_log}</text></g></svg>'''
++    labels = ''.join(f'<text x="{pos(row["theory"]["h"], row["theory"]["strong_rmse"])[0]:.2f}" y="290" text-anchor="middle">{row["theory"]["h"]:.6g}</text>' for row in rows)
++    scale = 'log2' if log_y else 'linear (zero error included)'
++    T = report['config']['T']
++    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 340" role="img" aria-labelledby="title desc"><title id="title">OU terminal strong RMS error against time step, T={T:g}</title><desc id="desc">Time step on log base two axis; error axis is {scale}. Blue connected values are exact analytic RMS errors. Orange dots are Monte Carlo values, bars show plus or minus two estimated delta method standard errors. This additive noise OU case approaches order one; the figure is not a general proof.</desc><rect width="650" height="340" fill="white"/><g font-family="sans-serif" font-size="13" fill="#222"><text x="75" y="28">OU strong RMS error, T={T:g}; y: {scale}</text><path d="M75,55 V265 H590" fill="none" stroke="#333"/><polyline points="{points}" fill="none" stroke="#185fa0" stroke-width="2"/>{''.join(marks)}{labels}<text x="335" y="327" text-anchor="middle">Time step h (log2 axis)</text><text x="17" y="164" transform="rotate(-90 17 164)" text-anchor="middle">Terminal RMS error (state units)</text><text x="82" y="52">Blue: analytic; orange: MC +/- 2 estimated SE</text><text x="30" y="269">{low_label}</text><text x="35" y="79">{high_label}</text></g></svg>'''
+ 
+ 
+ def main():

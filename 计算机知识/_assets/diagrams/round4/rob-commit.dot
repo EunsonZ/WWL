@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="乱序完成，按序提交"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  issue [label="程序顺序：I1 → I2 → I3\n指令依次占据 ROB 项",fillcolor="#e6eff8"];
+  i1 [label="ROB 头部 I1\n较早的 load 尚未完成"];
+  i2 [label="I2：独立算术已执行完成\n结果暂存在推测状态"];
+  i3 [label="I3：更年轻的 store 已算出地址\n尚不能成为架构已提交效果"];
+  fault [label="I1 检测到异常"];
+  flush [label="不提交 I1；丢弃更年轻推测状态\n恢复到异常之前的架构边界",fillcolor="#fff0df"];
+  good [label="若头部正常完成\n才允许按序推进提交边界"];
+  issue->i1;issue->i2;issue->i3;{rank=same;i1;i2;i3};i1->fault;i1->good;fault->flush;i2->flush[style=dashed];i3->flush[style=dashed];
+
+}

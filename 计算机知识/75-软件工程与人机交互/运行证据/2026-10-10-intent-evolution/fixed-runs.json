@@ -1,0 +1,67 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "sqlite": "3.53.4",
+  "git": "git version 2.55.0",
+  "environment": {
+    "HOME": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/home",
+    "XDG_CONFIG_HOME": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/home",
+    "TMPDIR": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/tmp",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "GIT_CONFIG_COUNT": "1",
+    "GIT_CONFIG_KEY_0": "core.hooksPath",
+    "GIT_CONFIG_VALUE_0": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/empty-hooks",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "preflight_timeout_seconds": 60,
+  "dependency_preparation": "None; installed Python/Git/stdlib SQLite only",
+  "runs": [
+    {
+      "name": "unittest",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_reservation.py",
+        "test_reservation_v2.py",
+        "test_git_evolution_lab.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/snapshot/计算机知识/75-软件工程与人机交互",
+      "started_unix": 1791566264.328379,
+      "elapsed_seconds": 0.44927000999450684,
+      "exit": 0
+    },
+    {
+      "name": "default-demo",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "reservation_v2.py"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/snapshot/计算机知识/75-软件工程与人机交互",
+      "started_unix": 1791566264.777994,
+      "elapsed_seconds": 0.0342710018157959,
+      "exit": 0
+    },
+    {
+      "name": "git-lab",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "git_evolution_lab.py",
+        "--parent",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/git-scratch"
+      ],
+      "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments174/run-20261010-01/snapshot/计算机知识/75-软件工程与人机交互",
+      "started_unix": 1791566264.812577,
+      "elapsed_seconds": 0.27193593978881836,
+      "exit": 0
+    }
+  ]
+}

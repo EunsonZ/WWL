@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="B+ 树：内部导航，叶层承载有序条目",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"root" [label="根页\n分隔键 20 | 40"];
+"l" [label="叶页\n5 10 15"];
+"m" [label="叶页\n20 25 30"];
+"r" [label="叶页\n40 50 60"];
+"root" -> "l" [label="<20"];
+"root" -> "m" [label="20..39"];
+"root" -> "r" [label="≥40"];
+"l" -> "m" [label="叶链"];
+"m" -> "r" [label="叶链"];
+{rank=same;l;m;r;}
+}

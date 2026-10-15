@@ -1,0 +1,135 @@
+---
+type: lab
+aliases: []
+sources: []
+prerequisites:
+  - "[[数学/20-线性代数与几何/17-矩阵范数条件数与数值稳定性#换坐标时，预测、惩罚与误差度量要一起带走]]"
+---
+# 正则尺度复算：同一目标与不同轨迹
+
+主解释见[[数学/20-线性代数与几何/17-矩阵范数条件数与数值稳定性#换坐标时，预测、惩罚与误差度量要一起带走|坐标与度量]]，更新的完整推导在[[AI/11-数学与统计桥梁/04-优化曲率条件数与AdamW#同一二维碗换坐标后为何走不同的路|二维碗]]。这里只复算声明的标量目标和2×2矩阵，不训练模型、不做硬件测量。所有源码使用标准库精确分数，只读同目录输入，输出到标准输出。
+
+## 固定输入与执行接口
+
+[scaling_inputs.json](scaling_inputs.json) 指定特征数值缩放100和迁移题的10，坐标梯度步长1/100。对应原单样本目标固定为 $(w-1)^2+w^2$；二维目标固定 $L(w)=(w_1^2+100w_2^2)/2$，$D=\operatorname{diag}(1,1/10)$、$w_0=(1,1)$。
+
+```bash
+python3 -B scaling.py
+python3 -B scaling.py | python3 -B verify_scaling.py
+```
+
+[scaling.py](scaling.py) 输出改变/保持惩罚时的系数与预测、$D^\top HD$、$DD^\top$和两种更新。[verify_scaling.py](verify_scaling.py) 不导入实现：直接检查两个原目标的导数与正曲率，在非最优坐标回代目标相等，并在v坐标从球形目标直接更新再映回；不照抄预条件乘法路线作为唯一依据。
+
+预期：尺度100时错误沿用字面惩罚得系数 `100/10001`、预测 `10000/10001`；保持目标需惩罚系数10000，得 `1/200`、预测 `1/2`。尺度10对应 `10/101`、`100/101`，或正确的惩罚100、`1/20`、`1/2`。$D^\top HD=I$、$DD^\top=\operatorname{diag}(1,1/100)$；原坐标普通一步为 `(99/100,0)`，新坐标普通一步映回为 `(99/100,99/100)`。
+
+oracle固定为本页输入，迁移先独立改写预期再调整核对。精确代数不能证明仪器误差变小、可逆缩放改变rank，或任意神经网络的标准化都改善泛化。非作者仍须核参数空间、残差权重、截距/reduction与物理单位之间的解释。源码和静态解析不代表已经运行；执行、独立审阅、Obsidian显示和真人理解分别记录。
+
+## 规范源码与输入镜像
+
+以下镜像只供离线阅读与逐字核对；规范文件在同目录。执行层由固定来源的独立复算另行记录。
+
+<!-- code-sync: ./scaling.py -->
+```python
+"""Exact coordinate/penalty and two-dimensional update examples."""
+import json
+from fractions import Fraction as F
+from pathlib import Path
+
+
+def mm(a,b):
+    return [[sum(a[i][k]*b[k][j] for k in range(len(b)))
+             for j in range(len(b[0]))] for i in range(len(a))]
+
+
+def transpose(a):
+    return [list(x) for x in zip(*a)]
+
+
+def stringify(value):
+    if isinstance(value,list):return [stringify(x) for x in value]
+    if isinstance(value,dict):return {k:stringify(v) for k,v in value.items()}
+    return str(value)
+
+
+def calculate(config):
+    scales=[F(x) for x in config['feature_scales']]
+    if any(x <= 0 for x in scales):raise ValueError('Scales must be positive.')
+    eta=F(config['step_size'])
+    h=[[F(1),F(0)],[F(0),F(100)]]
+    d=[[F(1),F(0)],[F(0),F(1,10)]]
+    w=[[F(1)],[F(1)]]
+    hv=mm(mm(transpose(d),h),d)
+    preconditioner=mm(d,transpose(d))
+    gradient=mm(h,w)
+    preconditioned=mm(preconditioner,gradient)
+    scalar=[]
+    for scale in scales:
+        raw=scale/(scale*scale+1)
+        preserved=scale/(2*scale*scale)
+        scalar.append({'scale':scale,'untransformed_coefficient':raw,
+                       'untransformed_prediction':scale*raw,
+                       'transformed_penalty':scale*scale,
+                       'preserved_coefficient':preserved,
+                       'preserved_prediction':scale*preserved})
+    return stringify({'scalar':scalar,'hessian_v':hv,'dd_transpose':preconditioner,
+                      'ordinary_w_step':[w[i][0]-eta*gradient[i][0] for i in range(2)],
+                      'mapped_v_step':[w[i][0]-eta*preconditioned[i][0] for i in range(2)]})
+
+
+if __name__ == '__main__':
+    config=json.loads(Path(__file__).with_name('scaling_inputs.json').read_text())
+    print(json.dumps(calculate(config),indent=2))
+```
+
+<!-- code-sync: ./scaling_inputs.json -->
+```json
+{
+  "feature_scales": ["100", "10"],
+  "step_size": "1/100"
+}
+```
+
+<!-- code-sync: ./verify_scaling.py -->
+```python
+"""Direct stationarity and coordinate-step oracle, no implementation import."""
+import json
+import sys
+from fractions import Fraction as F
+
+
+def matrix(raw):return [[F(x) for x in row] for row in raw]
+
+
+if __name__ == '__main__':
+    got=json.load(sys.stdin)
+    assert len(got['scalar'])==2
+    for row,expected_scale in zip(got['scalar'],(F(100),F(10))):
+        scale=F(row['scale']);assert scale==expected_scale
+        raw=F(row['untransformed_coefficient'])
+        proper=F(row['preserved_coefficient'])
+        penalty=F(row['transformed_penalty'])
+        assert penalty==scale*scale
+        # Differentiate each original scalar objective directly; both curvatures positive.
+        assert scale*(scale*raw-1)+raw == 0
+        assert scale*(scale*proper-1)+penalty*proper == 0
+        assert F(row['untransformed_prediction'])==scale*raw!=F(1,2)
+        assert F(row['preserved_prediction'])==scale*proper==F(1,2)
+        # Independently compare objectives at corresponding nonoptimal coordinates.
+        for v in (F(-1),F(0),F(1,3)):
+            w=scale*v
+            assert (w-1)**2+w*w==(scale*v-1)**2+penalty*v*v
+    assert matrix(got['hessian_v'])==[[F(1),F(0)],[F(0),F(1)]]
+    assert matrix(got['dd_transpose'])==[[F(1),F(0)],[F(0),F(1,100)]]
+    # Update in v directly from L(Dv)=1/2(v1^2+v2^2), then map to w.
+    v_initial=[F(1),F(10)];eta=F(1,100)
+    v_next=[x-eta*x for x in v_initial]
+    mapped=[v_next[0],v_next[1]/10]
+    assert [F(x) for x in got['mapped_v_step']]==mapped==[F(99,100),F(99,100)]
+    assert [F(x) for x in got['ordinary_w_step']]==[F(99,100),F(0)]
+    print('PASS: changed/preserved objectives, exact scale square, Hessian, and distinct trajectories')
+```
+
+
+## 2026-10-10 的实际独立执行
+
+尺度100/10的两个目标与预测、二维原例和两种普通梯度的一步均获标准库精确分数核对；业务CLI、作者供件verify及外部独立oracle全部退出0。外部oracle另外以非对角D/Λ和加权残差核对应点目标相等，以二次型中心差分核更新，并核D=diag(1,1/5)迁移的一步(.99,.96)。原预期、输出、环境/命令、源码身份及新目录复建在 [[AI/80-实践/抽取单位与正则尺度/results/2026-10-10/r1/README|实际结果入口]]。供件verify不冒充外部独审，有限执行不建立一般深网改善、降低实际仪器误差、Obsidian显示或真人理解。

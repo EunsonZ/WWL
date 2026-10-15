@@ -1,0 +1,54 @@
+{
+  "scope": "AI and mathematics existing navigation only",
+  "workspace": "/private/tmp/wwl-structure-q7y1fsjr/stage",
+  "live_vault_modified": false,
+  "baseline": {
+    "method": "SHA-256 inventory of Markdown files",
+    "before_inventory": "/private/tmp/wwl-structure-q7y1fsjr/evidence/nav-ai-math-before.sha256",
+    "after_inventory": "/private/tmp/wwl-structure-q7y1fsjr/evidence/nav-ai-math-after.sha256"
+  },
+  "changed_files": [
+    {
+      "path": "AI/README.md",
+      "change": "Replaced import-package instructions with the current in-vault AI reading entry and links to the root, AI home, core MOCs, practice, resources, and maintained cross-domain homes."
+    },
+    {
+      "path": "AI/00-开始/00-AI-首页.md",
+      "change": "Marked import and revision records as historical, added the root README return link, and replaced an obsolete missing-math statement with the current mathematics-domain entry."
+    },
+    {
+      "path": "AI/00-开始/02-学习路线与先修诊断.md",
+      "change": "Reframed the stale import-round callout as current route use, pointed cross-domain mathematics to its maintained home, and added a root return link."
+    },
+    {
+      "path": "AI/00-开始/03-8GB-16GB与24GB实践路线.md",
+      "change": "Reframed the stale import-round callout as current route use and added a root return link."
+    },
+    {
+      "path": "AI/90-资源/00-AI资源-MOC.md",
+      "change": "Changed the absent historical Logs navigation target to its original path plus the explicit note that this vault does not include it."
+    },
+    {
+      "path": "数学/00-数学-首页.md",
+      "change": "Added explicit entry from and return to the root README while retaining all existing mathematics-domain navigation."
+    },
+    {
+      "path": "数学/01-数学学习路线.md",
+      "change": "Added root README entry/return guidance while retaining the existing route content and mathematics-home navigation."
+    }
+  ],
+  "unchanged_historical_records": [
+    "AI/00-交付说明.md",
+    "AI/00-开始/05-问题驱动知识图谱与难点导航.md"
+  ],
+  "checks": [
+    "Verified all newly added README and navigation destinations exist in the stage tree.",
+    "Confirmed no active AI or mathematics navigation link to Obsidian知识 remains in the edited navigation files.",
+    "Confirmed the absent Logs target in AI/90-资源/00-AI资源-MOC.md is preserved as plain original-path text with 本库未收录.",
+    "Compared before/after SHA-256 inventories to identify the staged Markdown changes."
+  ],
+  "not_run": [
+    "Obsidian UI rendering",
+    "whole-vault mechanical link rewrite"
+  ]
+}

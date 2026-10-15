@@ -1,0 +1,63 @@
+[
+  {
+    "name": "tests",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-02/snapshot",
+      "-p",
+      "test_ou_lab.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timeout": false,
+    "wall_seconds": 0.10338354200030153,
+    "child_max_rss_bytes": 41320448,
+    "child_user_seconds": 0.07688099999999999,
+    "child_system_seconds": 0.015094999999999999
+  },
+  {
+    "name": "plots",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-02/plot_checks.py"
+    ],
+    "exit_code": 0,
+    "timeout": false,
+    "wall_seconds": 0.30848279200108664,
+    "child_max_rss_bytes": 65060864,
+    "child_user_seconds": 0.202013,
+    "child_system_seconds": 0.030934
+  },
+  {
+    "name": "boundary-audit-previews",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-02/render_boundary_previews.py"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.17940245799945842,
+    "child_max_rss_bytes": 52396032,
+    "child_user_seconds": 0.148485,
+    "child_system_seconds": 0.020853999999999998
+  },
+  {
+    "name": "boundary-audit-previews",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments146/run-20261010-02/render_boundary_previews.py"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.18305908299953444,
+    "child_max_rss_bytes": 52396032,
+    "child_user_seconds": 0.148039,
+    "child_system_seconds": 0.018826
+  }
+]

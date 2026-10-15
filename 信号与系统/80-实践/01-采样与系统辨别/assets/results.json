@@ -1,0 +1,38 @@
+{
+  "schema": "wwl-signals-u2-v1",
+  "runtime": {
+    "python": "3.14.7",
+    "numpy": "2.5.3",
+    "machine": "arm64"
+  },
+  "sampling": {
+    "fs_hz": 8,
+    "count": 32,
+    "start_s": 0,
+    "phase2_rad": 0,
+    "phase6_rad": 0
+  },
+  "dft": {
+    "N": 32,
+    "window": "rectangular",
+    "normalization": "|rfft|/N; double internal bins only",
+    "units": "V, not PSD"
+  },
+  "quantizer": {
+    "delta_v": 0.25,
+    "rule": "floor(v/delta+0.5)",
+    "half_ties": "greater grid value",
+    "clipping": false
+  },
+  "alias_max_sample_error_v": 2.1803664869915592e-14,
+  "alias_difference_at_1_16_s_v": 1.414213562373095,
+  "nyquist_phase0_max_v": 1.0779367755043061e-14,
+  "quant_max_error_v": 0.11275472883574245,
+  "quant_first_input_v": 0.7929292859742529,
+  "quant_first_output_v": 0.75,
+  "constant_quant_error_v": -0.1,
+  "pulse_visible_sample_count": 0,
+  "fixed_offset_s": 0.01,
+  "shifted_alias_max_difference_v": 0.49345778624898606,
+  "scope": "deterministic ideal/analytical CPU teaching models; no ADC, instrument, random jitter, human or production evidence"
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660" role="img" aria-labelledby="title desc">
+  <title id="title">理想同轴的径向电场、环向磁场与闭合控制面能流</title>
+  <desc id="desc">左图为同轴横截面：电场径向由内导体指向外导体，磁场环向，Poynting矢量沿正z。右图为一段无源无负载控制体，左端负向外通量与右端正向外通量抵消，侧面通量为零。</desc>
+  <defs>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6Z" fill="#1769aa"/></marker>
+    <marker id="orangeArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6Z" fill="#c35d13"/></marker>
+    <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6Z" fill="#27834b"/></marker>
+  </defs>
+  <rect width="1000" height="660" fill="#fffdf9"/>
+  <g font-family="Hiragino Sans GB, Microsoft YaHei, Arial Unicode MS, sans-serif" fill="#142c3e">
+    <text x="36" y="42" font-size="25" font-weight="700">理想同轴：截面功率与闭合面通量是同一方向约定的两种读法</text>
+    <text x="36" y="69" font-size="15">示例：a=1 mm，b=4 mm，V=1 V，I=20 mA；均匀无损介质、理想导体、稳态、忽略端部。</text>
+    <rect x="36" y="95" width="430" height="365" rx="16" fill="#eef6fb" stroke="#75a9cd" stroke-width="2"/>
+    <text x="60" y="129" font-size="20" font-weight="700">横截面 r-phi：场在两导体之间</text>
+    <circle cx="246" cy="288" r="135" fill="#f9ead5" stroke="#b36b2f" stroke-width="18"/>
+    <circle cx="246" cy="288" r="47" fill="#d6e2e8" stroke="#4e6574" stroke-width="3"/>
+    <text x="215" y="294" font-size="15">内导体</text><text x="322" y="166" font-size="14">外导体</text>
+    <path d="M296 288H358" stroke="#1769aa" stroke-width="3" marker-end="url(#blueArrow)"/>
+    <path d="M281 253L324 210" stroke="#1769aa" stroke-width="3" marker-end="url(#blueArrow)"/>
+    <path d="M281 323L324 366" stroke="#1769aa" stroke-width="3" marker-end="url(#blueArrow)"/>
+    <path d="M151 218 A118 118 0 0 1 342 225" fill="none" stroke="#c35d13" stroke-width="3" marker-end="url(#orangeArrow)"/>
+    <circle cx="246" cy="385" r="13" fill="#ffffff" stroke="#27834b" stroke-width="2.5"/>
+    <path d="M238 377L254 393 M254 377L238 393" stroke="#27834b" stroke-width="2.5"/>
+    <text x="70" y="444" font-size="14">E/H 箭头与 S 圆内叉只给方向；三者不能共用长度或单位尺度。</text>
+    <rect x="520" y="95" width="444" height="365" rx="16" fill="#f2f8ed" stroke="#7aa56c" stroke-width="2"/>
+    <text x="545" y="129" font-size="20" font-weight="700">z 向控制体：外法向决定通量符号</text>
+    <path d="M610 210 L840 210 L895 270 L665 270Z" fill="#d9edf8" stroke="#397da6" stroke-width="2"/>
+    <path d="M665 270 L895 270 L895 355 L665 355Z" fill="#c4dfef" stroke="#397da6" stroke-width="2"/>
+    <path d="M610 210 L665 270 L665 355 L610 293Z" fill="#bad4e3" stroke="#397da6" stroke-width="2"/>
+    <text x="699" y="292" font-size="16">无源、无负载同轴段</text>
+    <path d="M554 315H660" stroke="#27834b" stroke-width="5" marker-end="url(#greenArrow)"/>
+    <text x="538" y="346" font-size="15">S 沿 +z 进入</text>
+    <path d="M896 316H948" stroke="#27834b" stroke-width="5" marker-end="url(#greenArrow)"/>
+    <text x="680" y="382" font-size="15">right end: flux_out=+VI</text>
+    <text x="720" y="403" font-size="15">= +20 mW</text>
+    <path d="M610 316H548" stroke="#c35d13" stroke-width="3" marker-end="url(#orangeArrow)"/>
+    <text x="535" y="426" font-size="15">left end: n=-z, flux_out=-VI=-20 mW</text>
+    <text x="570" y="448" font-size="16" font-weight="700">side: S dot n=0; total flux_out=0</text>
+    <rect x="36" y="474" width="430" height="34" rx="8" fill="#ffffff" stroke="#1769aa" stroke-width="1.5"/>
+    <text x="55" y="496" font-size="15" fill="#1769aa">E(r) = V/[r ln(b/a)] ; radial outward</text>
+    <rect x="36" y="518" width="430" height="34" rx="8" fill="#ffffff" stroke="#c35d13" stroke-width="1.5"/>
+    <text x="55" y="540" font-size="15" fill="#c35d13">H(r) = I/(2*pi*r) ; azimuthal</text>
+    <rect x="36" y="562" width="430" height="34" rx="8" fill="#ffffff" stroke="#27834b" stroke-width="1.5"/>
+    <text x="55" y="584" font-size="15" fill="#27834b">S = E x H ; +z into page in this r-phi view</text>
+    <text x="38" y="628" font-size="14">任一截面取 n=+z 时 integral S dot n dA = VI = 20 mW；若包住耗散负载，入射功率对应正吸收。</text>
+    <text x="38" y="650" font-size="13">这是稳态 TEM 教学图，不预测10 cm线对100 ps边沿的启动时序；那需要时变传输线和边界模型。</text>
+  </g>
+</svg>

@@ -1,0 +1,151 @@
+{
+  "schema": "wwl-import-validator-tool-tests-v1",
+  "batch": "2026-09-08_双来源知识增量导入",
+  "scope": "Shared read-only import acceptance validator; no stage teaching material or transaction tool was modified.",
+  "files": [
+    {
+      "path": "tools/validate_import.py",
+      "sha256": "47d27d42054bc6e6c53a577c2805ff70cdeba7fedb19c7c3a8fbf4c12ce8a195"
+    },
+    {
+      "path": "tools/test_import_validation.py",
+      "sha256": "7f73aa36b1455b0075367f6cbc631fd17aa7e387b91b7257b9669b478ed071ef"
+    },
+    {
+      "path": "tools/links.py",
+      "sha256": "798498fca147a26c7f27d341f4b5d9ce621ea2b5f3b131c1d5a274c7c70544a1"
+    },
+    {
+      "path": "tools/check_mirrors.py",
+      "sha256": "21cd2ee78737b0adda23f3187da6eddb20adef94d7f5ea096c307af97df1a09e"
+    },
+    {
+      "path": "tools/test_links.py",
+      "sha256": "a76b13ac5b24511a620ba5903d872771f10a51ad071316b68a30ad261abfc292"
+    },
+    {
+      "path": "tools/test_mirrors.py",
+      "sha256": "61d80f17c91ad8823b43523bbec8f94edd34b5d31c7e91f515be68b3492e28e4"
+    }
+  ],
+  "baseline_contract": {
+    "identity_fields": ["rule", "path", "target", "line", "reason"],
+    "matching": "all five fields must match exactly",
+    "globs_allowed": false,
+    "directory_waivers_allowed": false,
+    "suppressible_rules": [
+      "link.missing",
+      "link.ambiguous",
+      "link.missing_anchor",
+      "link.missing_image",
+      "link.case_mismatch",
+      "json.invalid",
+      "markdown.unclosed_fence",
+      "format.syntax",
+      "mirror.missing",
+      "mirror.mismatched",
+      "mirror.unparsed"
+    ],
+    "non_suppressible_examples": [
+      "path.case_nfc_collision",
+      "canvas.file_target",
+      "canvas.node_id",
+      "canvas.edge_id",
+      "canvas.edge_endpoint",
+      "tasknotes.hash",
+      "original.hash",
+      "pdf.hash",
+      "imported_test.hash",
+      "fixture.snippet_hash"
+    ],
+    "inventory_fallback": "When --baseline is known-diagnostics.json, sibling baseline.json supplies the original 8-file TaskNotes hashes."
+  },
+  "coverage": [
+    "explicit wrong-directory links do not fall back to a basename",
+    "fenced link and task examples are inactive",
+    "active #task/frontmatter task tags and dynamic .base embeds are detected",
+    "Canvas exact file targets, node ids, edge ids, and endpoints are validated",
+    "case-folded NFC collisions use the complete relative path",
+    "teaching exceptions are exactly two broken links, one island, three hashed snippets, and four static TaskNotes samples",
+    "a teaching exception cannot hide a different target, line, or reason",
+    "TaskNotes remains exactly eight baseline-identical files",
+    "raw originals, PDFs, and imported test files are checked against their fragment hashes",
+    "a Markdown table is recognized only by an adjacent header and valid delimiter row, with optional boundary pipes and physically continuous body rows",
+    "unescaped wikilink alias pipes are rejected only on recognized table rows; ordinary callouts, multiple inline wikilinks, math bars, and fenced examples are ignored",
+    "borderless Markdown tables still expose real unescaped wikilink alias errors",
+    "import manifests are discovered in development fragments, final artifacts, or the baseline parent without a directory-wide exemption",
+    "HTML code elements suppress embedded wikilinks while adjacent real links remain active",
+    "inline backtick code suppresses code-sync examples while adjacent real HTML code-sync markers remain active",
+    ".base YAML syntax is delegated to the existing Ruby/Psych format checker",
+    "existing links.py and check_mirrors.py behavior remains covered"
+  ],
+  "commands": [
+    {
+      "cwd": "/private/tmp/wwl-dual-import-75zcpdpm/tools",
+      "command": "python3 -B -c 'import ast,pathlib; [ast.parse(pathlib.Path(p).read_text()) for p in (\"validate_import.py\",\"test_import_validation.py\")]'",
+      "exit_code": 0,
+      "result": "Both Python files parsed successfully."
+    },
+    {
+      "cwd": "/private/tmp/wwl-dual-import-75zcpdpm/tools",
+      "command": "python3 -B -m unittest -v test_import_validation test_links test_mirrors",
+      "exit_code": 0,
+      "tests_run": 38,
+      "passed": 38,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_seconds": 0.068,
+      "breakdown": {
+        "new_validator_tests": 16,
+        "link_tests": 18,
+        "mirror_tests": 4
+      }
+    },
+    {
+      "cwd": "/private/tmp/wwl-dual-import-75zcpdpm/tools",
+      "command": "python3 -B validate_import.py --help",
+      "exit_code": 0,
+      "result": "CLI exposes root, required --baseline, optional --work, and optional --output."
+    },
+    {
+      "cwd": "/private/tmp/wwl-dual-import-75zcpdpm/tools",
+      "command": "python3 -B -c 'run links.audit_tree, check_mirrors.check, and audit_table_pipes against ../stage; print only named false-positive and count summaries'",
+      "exit_code": 0,
+      "table_diagnostics": 0,
+      "former_table_false_positive": {
+        "path": "AI/00-开始/00-AI-首页.md",
+        "line": 22,
+        "present": false
+      },
+      "html_code_link_false_positive": {
+        "path": "Clippings/AGoodStart101/语法参考/obsidian-markdown/PROPERTIES.md",
+        "line": 13,
+        "target": "Other Note",
+        "present": false
+      },
+      "inline_code_sync_false_positive": {
+        "path": "Logs/2026-09-01_2322-Codex-建设AI-LLM数学与计算机先修知识域.md",
+        "line": 82,
+        "present": false
+      },
+      "mirror_counts": {
+        "checked": 139,
+        "missing": 0,
+        "mismatched": 1,
+        "unparsed": 0
+      },
+      "result": "All three named parser false positives are absent. The one remaining mirror mismatch is a separate pre-existing CMake mirror diagnostic."
+    }
+  ],
+  "not_run": [
+    {
+      "check": "full isolated-stage validation",
+      "reason": "The parent task is still generating the exact known-diagnostics baseline. Running with the raw file inventory would label inherited diagnostics as new and would not test the intended 34-to-18/16 baseline transition."
+    },
+    {
+      "check": "Obsidian UI behavior",
+      "reason": "This validator provides static file, link, Canvas, Base syntax, fixture, and hash evidence only."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "currency": "USD",
+  "actor": "single-controller",
+  "controller": {
+    "id": "single-controller",
+    "confirmed": true,
+    "active_claimants": [
+      "single-controller"
+    ]
+  },
+  "authorized_budget": "10",
+  "spent": {
+    "amount": "3",
+    "complete": true
+  },
+  "reservations": [
+    {
+      "id": "prior-attempt",
+      "problem_id": "existing-question",
+      "amount": "2",
+      "state": "cancel_requested",
+      "usage_reconciled": false
+    }
+  ],
+  "proposals": [
+    {
+      "id": "new-attempt",
+      "problem_id": "new-question",
+      "work": "3",
+      "review": "1",
+      "closeout": "1"
+    }
+  ]
+}

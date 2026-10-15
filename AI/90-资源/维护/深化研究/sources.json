@@ -1,0 +1,398 @@
+{
+  "S01": {
+    "title": "Dive into Deep Learning：Linear Algebra",
+    "url": "https://d2l.ai/chapter_preliminaries/linear-algebra.html",
+    "scope": "教材作者章节；基础定义",
+    "checked": "2026-09-06"
+  },
+  "S02": {
+    "title": "Dive into Deep Learning：Calculus",
+    "url": "https://d2l.ai/chapter_preliminaries/calculus.html",
+    "scope": "教材作者章节；链式法则",
+    "checked": "2026-09-06"
+  },
+  "S03": {
+    "title": "Dive into Deep Learning：Probability and Statistics",
+    "url": "https://d2l.ai/chapter_preliminaries/probability.html",
+    "scope": "教材作者章节；概率基础",
+    "checked": "2026-09-06"
+  },
+  "S04": {
+    "title": "PyTorch 2.10：Autograd mechanics",
+    "url": "https://docs.pytorch.org/docs/2.10/notes/autograd.html",
+    "scope": "固定版本官方接口",
+    "checked": "2026-09-06"
+  },
+  "S05": {
+    "title": "PyTorch 2.10：scaled_dot_product_attention",
+    "url": "https://docs.pytorch.org/docs/2.10/generated/torch.nn.functional.scaled_dot_product_attention.html",
+    "scope": "固定版本；布尔掩码、dropout、非方形因果",
+    "checked": "2026-09-06"
+  },
+  "S06": {
+    "title": "PyTorch 2.10：ConvTranspose2d",
+    "url": "https://docs.pytorch.org/docs/2.10/generated/torch.nn.ConvTranspose2d.html",
+    "scope": "固定版本；转置非逆、output_padding",
+    "checked": "2026-09-06"
+  },
+  "S07": {
+    "title": "PyTorch 2.10：Reproducibility",
+    "url": "https://docs.pytorch.org/docs/2.10/notes/randomness.html",
+    "scope": "固定版本；复现边界",
+    "checked": "2026-09-06"
+  },
+  "S08": {
+    "title": "PyTorch：AMP examples",
+    "url": "https://docs.pytorch.org/docs/stable/notes/amp_examples.html",
+    "scope": "动态官方页面；累积和缩放",
+    "checked": "2026-09-06"
+  },
+  "S09": {
+    "title": "PyTorch：DistributedDataParallel",
+    "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.parallel.DistributedDataParallel.html",
+    "scope": "动态官方页面；梯度通信约定",
+    "checked": "2026-09-06"
+  },
+  "S10": {
+    "title": "scikit-learn：Common pitfalls",
+    "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+    "scope": "动态官方文档；泄漏与管线",
+    "checked": "2026-09-06"
+  },
+  "S11": {
+    "title": "scikit-learn：Nested versus non-nested cross-validation",
+    "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html",
+    "scope": "官方方法示例",
+    "checked": "2026-09-06"
+  },
+  "S12": {
+    "title": "scikit-learn：Probability calibration",
+    "url": "https://scikit-learn.org/stable/modules/calibration.html",
+    "scope": "官方文档；校准与评分规则",
+    "checked": "2026-09-06"
+  },
+  "S13": {
+    "title": "Angelopoulos与Bates：A Gentle Introduction to Conformal Prediction",
+    "url": "https://arxiv.org/abs/2107.07511v6",
+    "scope": "2022修订；有限样本边际保证",
+    "checked": "2026-09-06"
+  },
+  "S14": {
+    "title": "Hoffmann等：Training Compute-Optimal Large Language Models",
+    "url": "https://arxiv.org/abs/2203.15556",
+    "scope": "2022原始研究；经验拟合而非普适常数",
+    "checked": "2026-09-06"
+  },
+  "S15": {
+    "title": "Rafailov等：Direct Preference Optimization",
+    "url": "https://arxiv.org/abs/2305.18290",
+    "scope": "2023原始研究；KL正则和偏好模型",
+    "checked": "2026-09-06"
+  },
+  "S16": {
+    "title": "Shao等：DeepSeekMath",
+    "url": "https://arxiv.org/html/2402.03300v3",
+    "scope": "2024；GRPO原始来源",
+    "checked": "2026-09-06"
+  },
+  "S17": {
+    "title": "Yu等：DAPO",
+    "url": "https://arxiv.org/abs/2503.14476",
+    "scope": "2025；归一化、裁剪与动态采样",
+    "checked": "2026-09-06"
+  },
+  "S18": {
+    "title": "Zheng等：Group Sequence Policy Optimization",
+    "url": "https://arxiv.org/abs/2507.18071",
+    "scope": "2025；序列级优化",
+    "checked": "2026-09-06"
+  },
+  "S19": {
+    "title": "Leviathan等：Fast Inference from Transformers via Speculative Decoding",
+    "url": "https://arxiv.org/abs/2211.17192",
+    "scope": "2022/2023；接受拒绝校正",
+    "checked": "2026-09-06"
+  },
+  "S20": {
+    "title": "Dao与Gu：Transformers are SSMs",
+    "url": "https://arxiv.org/abs/2405.21060",
+    "scope": "2024；结构化状态空间对偶",
+    "checked": "2026-09-06"
+  },
+  "S21": {
+    "title": "Zadouri等：FlashAttention-4",
+    "url": "https://arxiv.org/abs/2603.05451v1",
+    "scope": "2026-03-05；论文身份已核对；未复现GPU速度",
+    "checked": "2026-09-06"
+  },
+  "S22": {
+    "title": "Lahoti等：Mamba-3",
+    "url": "https://arxiv.org/abs/2603.15569v1",
+    "scope": "2026-03-16；论文身份已核对；未复现模型训练",
+    "checked": "2026-09-06"
+  },
+  "S23": {
+    "title": "Loshchilov与Hutter：Decoupled Weight Decay Regularization",
+    "url": "https://arxiv.org/abs/1711.05101",
+    "scope": "原始研究；解耦权重衰减",
+    "checked": "2026-09-06"
+  },
+  "S24": {
+    "title": "scikit-learn：Linear Models",
+    "url": "https://scikit-learn.org/stable/modules/linear_model.html",
+    "scope": "官方文档；回归、分类及正则化",
+    "checked": "2026-09-06"
+  },
+  "S25": {
+    "title": "scikit-learn：Support Vector Machines",
+    "url": "https://scikit-learn.org/stable/modules/svm.html",
+    "scope": "官方文档；间隔、核与实现边界",
+    "checked": "2026-09-06"
+  },
+  "S26": {
+    "title": "scikit-learn：Ensembles",
+    "url": "https://scikit-learn.org/stable/modules/ensemble.html",
+    "scope": "官方文档；集成学习",
+    "checked": "2026-09-06"
+  },
+  "S27": {
+    "title": "scikit-learn：Decomposing signals",
+    "url": "https://scikit-learn.org/stable/modules/decomposition.html",
+    "scope": "官方文档；PCA与矩阵分解",
+    "checked": "2026-09-06"
+  },
+  "S28": {
+    "title": "scikit-learn：Gaussian mixture models",
+    "url": "https://scikit-learn.org/stable/modules/mixture.html",
+    "scope": "官方文档；混合分布与EM",
+    "checked": "2026-09-06"
+  },
+  "S29": {
+    "title": "Sutton等：Policy Gradient Methods for Reinforcement Learning",
+    "url": "https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation",
+    "scope": "原始研究；策略梯度",
+    "checked": "2026-09-06"
+  },
+  "S30": {
+    "title": "Vaswani等：Attention Is All You Need",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "scope": "2017；Transformer原始研究",
+    "checked": "2026-09-06"
+  },
+  "S31": {
+    "title": "Su等：RoFormer",
+    "url": "https://arxiv.org/abs/2104.09864",
+    "scope": "2021；旋转位置编码",
+    "checked": "2026-09-06"
+  },
+  "S32": {
+    "title": "DeepSeek-AI：DeepSeek-V2",
+    "url": "https://arxiv.org/abs/2405.04434",
+    "scope": "2024；MLA与MoE设计",
+    "checked": "2026-09-06"
+  },
+  "S33": {
+    "title": "Fedus等：Switch Transformers",
+    "url": "https://arxiv.org/abs/2101.03961",
+    "scope": "2021；稀疏路由与均衡",
+    "checked": "2026-09-06"
+  },
+  "S34": {
+    "title": "Hu等：LoRA",
+    "url": "https://arxiv.org/abs/2106.09685",
+    "scope": "2021；低秩参数更新",
+    "checked": "2026-09-06"
+  },
+  "S35": {
+    "title": "Dettmers等：QLoRA",
+    "url": "https://arxiv.org/abs/2305.14314",
+    "scope": "2023；量化基座与低秩适配",
+    "checked": "2026-09-06"
+  },
+  "S36": {
+    "title": "Schulman等：Proximal Policy Optimization Algorithms",
+    "url": "https://arxiv.org/abs/1707.06347",
+    "scope": "2017；PPO裁剪目标",
+    "checked": "2026-09-06"
+  },
+  "S37": {
+    "title": "PyTorch 2.10：DataLoader与Dataset",
+    "url": "https://docs.pytorch.org/docs/2.10/data.html",
+    "scope": "固定版本；数据分片、组批与进程",
+    "checked": "2026-09-06"
+  },
+  "S38": {
+    "title": "PyTorch 2.10：Gradcheck mechanics",
+    "url": "https://docs.pytorch.org/docs/2.10/notes/gradcheck.html",
+    "scope": "固定版本；数值梯度核验",
+    "checked": "2026-09-06"
+  },
+  "S39": {
+    "title": "PyTorch 2.10：DDP design note",
+    "url": "https://docs.pytorch.org/docs/2.10/notes/ddp.html",
+    "scope": "固定版本；桶化和通信重叠",
+    "checked": "2026-09-06"
+  },
+  "S40": {
+    "title": "PyTorch 2.10：AMP examples",
+    "url": "https://docs.pytorch.org/docs/2.10/notes/amp_examples.html",
+    "scope": "固定版本；有效batch、unscale与梯度累积",
+    "checked": "2026-09-06"
+  },
+  "S41": {
+    "title": "PyTorch 2.10：DistributedDataParallel",
+    "url": "https://docs.pytorch.org/docs/2.10/generated/torch.nn.parallel.DistributedDataParallel.html",
+    "scope": "固定版本；no_sync、求均值与未用参数",
+    "checked": "2026-09-06"
+  },
+  "S42": {
+    "title": "He等：Deep Residual Learning",
+    "url": "https://arxiv.org/abs/1512.03385",
+    "scope": "2015；残差网络原始研究",
+    "checked": "2026-09-06"
+  },
+  "S43": {
+    "title": "Zhang：Making Convolutional Networks Shift-Invariant Again",
+    "url": "https://arxiv.org/abs/1904.11486",
+    "scope": "2019；下采样与抗混叠",
+    "checked": "2026-09-06"
+  },
+  "S44": {
+    "title": "Carion等：End-to-End Object Detection with Transformers",
+    "url": "https://arxiv.org/abs/2005.12872",
+    "scope": "2020；集合预测和二分匹配",
+    "checked": "2026-09-06"
+  },
+  "S45": {
+    "title": "Howard等：MobileNets",
+    "url": "https://arxiv.org/abs/1704.04861",
+    "scope": "2017；深度可分离卷积",
+    "checked": "2026-09-06"
+  },
+  "S46": {
+    "title": "Olsson等：In-context Learning and Induction Heads",
+    "url": "https://arxiv.org/abs/2209.11895",
+    "scope": "2022；小模型干预与大模型相关证据须区分",
+    "checked": "2026-09-06"
+  },
+  "S47": {
+    "title": "von Oswald等：Transformers learn in-context by gradient descent",
+    "url": "https://arxiv.org/abs/2212.07677",
+    "scope": "2022/2023；回归任务中的构造与实验",
+    "checked": "2026-09-06"
+  },
+  "S48": {
+    "title": "Kwon等：PagedAttention",
+    "url": "https://arxiv.org/abs/2309.06180",
+    "scope": "2023；KV分页与服务系统",
+    "checked": "2026-09-06"
+  },
+  "S49": {
+    "title": "Kirkpatrick等：Overcoming catastrophic forgetting",
+    "url": "https://arxiv.org/abs/1612.00796",
+    "scope": "2016/2017；EWC原始研究",
+    "checked": "2026-09-06"
+  },
+  "S50": {
+    "title": "Ilharco等：Editing Models with Task Arithmetic",
+    "url": "https://arxiv.org/abs/2212.04089",
+    "scope": "2022/2023；任务向量与经验合并",
+    "checked": "2026-09-06"
+  },
+  "S51": {
+    "title": "Lin等：AWQ",
+    "url": "https://arxiv.org/abs/2306.00978",
+    "scope": "2023；激活感知权重量化",
+    "checked": "2026-09-06"
+  },
+  "S52": {
+    "title": "Chen等：Evaluating Large Language Models Trained on Code",
+    "url": "https://arxiv.org/abs/2107.03374",
+    "scope": "2021；功能评测与pass@k",
+    "checked": "2026-09-06"
+  },
+  "S53": {
+    "title": "Cormack等：Reciprocal Rank Fusion",
+    "url": "https://research.google/pubs/reciprocal-rank-fusion-outperforms-condorcet-and-individual-rank-learning-methods/",
+    "scope": "2009；作者机构论文入口",
+    "checked": "2026-09-06"
+  },
+  "S54": {
+    "title": "OWASP：LLM Prompt Injection Prevention Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+    "scope": "动态官方安全指南；工程边界而非绝对保证",
+    "checked": "2026-09-06"
+  },
+  "S55": {
+    "title": "OWASP：AI Agent Security Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html",
+    "scope": "动态官方安全指南；授权、工具与审计",
+    "checked": "2026-09-06"
+  },
+  "S56": {
+    "title": "Zheng等：Judging LLM-as-a-Judge",
+    "url": "https://arxiv.org/abs/2306.05685",
+    "scope": "2023；位置、冗长与自偏好偏差",
+    "checked": "2026-09-06"
+  },
+  "S57": {
+    "title": "Lewis等：Retrieval-Augmented Generation",
+    "url": "https://arxiv.org/abs/2005.11401",
+    "scope": "2020；参数与非参数记忆的结合",
+    "checked": "2026-09-06"
+  },
+  "S58": {
+    "title": "Anthropic：Towards Monosemanticity",
+    "url": "https://www.anthropic.com/research/towards-monosemanticity-decomposing-language-models-with-dictionary-learning",
+    "scope": "2023；作者机构说明；小模型字典学习证据",
+    "checked": "2026-09-06"
+  },
+  "S59": {
+    "title": "Nie等：Large Language Diffusion Models",
+    "url": "https://arxiv.org/abs/2502.09992",
+    "scope": "2025；LLaDA与离散遮蔽生成",
+    "checked": "2026-09-06"
+  },
+  "S60": {
+    "title": "Abadi等：Deep Learning with Differential Privacy",
+    "url": "https://arxiv.org/abs/1607.00133",
+    "scope": "2016；DP-SGD与隐私会计",
+    "checked": "2026-09-06"
+  },
+  "S61": {
+    "title": "Bourtoule等：Machine Unlearning",
+    "url": "https://arxiv.org/abs/1912.03817",
+    "scope": "2019/2021；SISA与重训练参照",
+    "checked": "2026-09-06"
+  },
+  "S62": {
+    "title": "Radford等：Learning Transferable Visual Models",
+    "url": "https://arxiv.org/abs/2103.00020",
+    "scope": "2021；CLIP图文对比学习",
+    "checked": "2026-09-06"
+  },
+  "S63": {
+    "title": "PyTorch 2.10：CTCLoss",
+    "url": "https://docs.pytorch.org/docs/2.10/generated/torch.nn.CTCLoss.html",
+    "scope": "固定版本；路径求和、shape、reduction与不可能对齐",
+    "checked": "2026-09-06"
+  },
+  "S64": {
+    "title": "Ho等：Denoising Diffusion Probabilistic Models",
+    "url": "https://arxiv.org/abs/2006.11239",
+    "scope": "2020；DDPM与去噪目标",
+    "checked": "2026-09-06"
+  },
+  "S65": {
+    "title": "Lipman等：Flow Matching for Generative Modeling",
+    "url": "https://arxiv.org/abs/2210.02747",
+    "scope": "2022/2023；概率路径与向量场回归",
+    "checked": "2026-09-06"
+  },
+  "S66": {
+    "title": "Ho与Salimans：Classifier-Free Diffusion Guidance",
+    "url": "https://arxiv.org/abs/2207.12598",
+    "scope": "2022；无分类器引导",
+    "checked": "2026-09-06"
+  }
+}

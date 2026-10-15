@@ -1,0 +1,16 @@
+{
+  "c_m_s": 299792458.0,
+  "epsilon0_F_m": 8.8541878128e-12,
+  "q_C": 1e-9,
+  "pulse_L_m": 3.0,
+  "pulse_b": 0.2,
+  "angle_intervals": 80,
+  "azimuth_nodes": 16,
+  "time_intervals": 100,
+  "cases": [
+    {"beta": 0.0, "a_perp": 0.0, "a_parallel": 1.0},
+    {"beta": 0.6, "a_perp": 0.0, "a_parallel": 1.0},
+    {"beta": 0.6, "a_perp": 1.0, "a_parallel": 0.0},
+    {"beta": 0.995, "a_perp": 0.6, "a_parallel": 0.8}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "phase": "compilation preparation only, no rendering yet",
+  "argv": [
+    "/usr/bin/xcrun",
+    "swiftc",
+    "-swift-version",
+    "5",
+    "-module-cache-path",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/webkit-graph-01/module-cache",
+    "-framework",
+    "AppKit",
+    "-framework",
+    "WebKit",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/webkit-graph-01/StaticSVG.swift",
+    "-o",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/webkit-graph-01/StaticSVG"
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "timeout_seconds": 60,
+  "elapsed_seconds": 2.794285832999776,
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "compiler_cache": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/webkit-graph-01/module-cache",
+    "compiler_tmp": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/webkit-graph-01/compiler-tmp"
+  }
+}

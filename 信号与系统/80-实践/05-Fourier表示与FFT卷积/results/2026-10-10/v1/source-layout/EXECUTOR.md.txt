@@ -1,0 +1,29 @@
+# 独立执行与numeric交接（候选作者未运行）
+
+执行者使用冻结候选的副本或从候选目录只读运行。Python标准库即可，不需NumPy/SciPy/GPU/安装/现实设备；保存Python版本、命令、cwd、退出码、完整stderr/stdout与新输出JSON。执行输出必须在库外且全新，可选择 `/private/tmp/wwl-recovery-177-run-01` 和 `/private/tmp/wwl-recovery-178-run-01`；二CLI拒绝已有输出目录或有AGENTS.md祖先。重跑换名，不覆盖旧证据。
+
+从候选 `信号与系统/80-实践/05-Fourier表示与FFT卷积/`：
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v test_fourier_lab.py
+PYTHONDONTWRITEBYTECODE=1 python3 fourier_lab.py --output /private/tmp/wwl-recovery-177-run-01
+```
+
+固定期望：四点DFT=(4,−2j,0,2j)，DTFS除4；对称full=(1,3,4,3,1,0)、N4=(2,3,4,3)；非对称full=(1,4,8,8)、N3=(9,4,8)、valid=(5,10)、翻核full=(2,5,10,4)。C₀S₀=(2,5,2)、S₀C₀=(0,5,10)、CₚSₚ=SₚCₚ=(6,5,10)。主OLA两非空块间插空，full相同且offset0/2/4，EOF两尾；所有32分块及M1/2/4/9、非法块原子拒绝、重复EOF、EOF后push拒绝。复数保留，小残差容差2e−11·(1+|target|)，整数折回8不可解释为误差。另以独立显式DFT/双循环/矩阵核；不让仓库FFT成为自己的oracle。
+
+从候选 `信号与系统/80-实践/06-IIR规格与实现/`：
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v test_iir_lab.py
+PYTHONDONTWRITEBYTECODE=1 python3 iir_lab.py --output /private/tmp/wwl-recovery-178-run-01
+```
+
+固定主输入n0..11999，.6cos(2π1000n/48000)+.3cos(2π10000n/48000)V，初态零；同拍48kHz，fp6000/fsb8000，通误差.01、阻幅.001、群延迟预算96sample。预计N27、13二阶+1一阶，迁移96k N30、fp5k N17；π/2、T=.00025的预扭曲8000rad/s。执行者独立核整数阶数、完整系数/极点、精确等价模型与实际有限精度轨迹。
+
+`results.json`额外含新 `coefficient_band_bounds`：对binary64及binary32固定SOS分别用每带65536闭区间/局部商积导数界，核两组 `within_amplitude_contract`；否为未达标/界不足，不可代填PASS。核全部 `binary32_section_radii<1`、`delay.upper_samples≤96`，保存最大值与网格余量。该数学界配浮点计算，不是向外区间认证。binary32实际非FMA逐乘/加/存储舍入另比较；默认直接展开高阶模型可能超有限范围，这是要报告的结构反例，保存首次失败样点和前缀，不能称完成12000拍。SOS长记录看两种次序是否完整、最大误差、内部峰值；短512拍测试容差2e−5·(1+|target|)V，不认证长记录。
+
+W8F4、精确有符号24位乘加、round-to-even、每次输出/状态存储饱和：2V输入20拍，高→低首输出128饱和127、末总输出16code=1V；低→高末32code=2V、零饱和。独立逐拍检查，不仅检查末值。旧a=.75/q₀1零输入的一格固定点必须保留；a1 −1.98→−1.9802的二阶分母必须有根>1。r=.99全通DC增加199sample=4.145833ms，幅度仍1，是延迟超预算反例。
+
+图：5张SVG真源保留，README给每项数字与公式/JSON键。若执行者具备既有渲染依赖，可只读渲染全部5图到结果目录，查看默认/窄列文字、箭头、尺度与数值身份；不能把XML有效写成视觉PASS。缺渲染器保持NOTRUN，不安装新依赖来强制通过。实际Obsidian/真人/设备不在本CPU实验中代验。
+
+作者等待独立结果，不运行上述命令。独立核查者的新算法或值发现由主进程回交作者修订，避免执行者直接改变候选后失去共同版本。

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560">
+<rect width="920" height="560" fill="white"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker></defs>
+<g font-family="sans-serif" font-size="18" fill="#17202a">
+<text x="460" y="35" text-anchor="middle" font-size="22">Hall axes and sign: Jx &gt; 0, Bz &gt; 0, Jy = 0</text>
+<rect x="180" y="140" width="550" height="175" fill="#f1f7fc" stroke="#17202a"/>
+<text x="455" y="170" text-anchor="middle" fill="#b03a2e">+ + + : electron deficit at +y</text>
+<text x="455" y="302" text-anchor="middle" fill="#1565c0">- - - : electron excess at -y</text>
+<path d="M 300 215 H 610" stroke="#17202a" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="455" y="205" text-anchor="middle">Jx and conventional current: +x</text>
+<path d="M 610 260 H 300" stroke="#1565c0" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="455" y="285" text-anchor="middle" fill="#1565c0">electron vx &lt; 0</text>
+<path d="M 765 180 V 275" stroke="#b03a2e" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="785" y="230" fill="#b03a2e">Ey &lt; 0</text>
+<path d="M 75 350 H 150 M 75 350 V 275" stroke="#17202a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="155" y="355">+x</text><text x="65" y="264">+y</text>
+<circle cx="90" cy="195" r="15" fill="none" stroke="#17202a"/><circle cx="90" cy="195" r="4" fill="#17202a"/>
+<text x="36" y="225">+z: out</text>
+<text x="460" y="360" text-anchor="middle">Ey = vx Bz; RH = Ey / (Jx Bz) = -1/(q n)</text>
+<text x="460" y="402" text-anchor="middle">Same L=1 um, A=1 um^2, same G=21.6293846 uS</text>
+<text x="460" y="443" text-anchor="middle">n=1e+21 m^-3, mu=0.135 m^2/(V s): RH=-0.006241509 m^3/C</text>
+<text x="460" y="485" text-anchor="middle">n=2e+21 m^-3, mu=0.0675 m^2/(V s): RH=-0.003120755 m^3/C</text>
+<text x="460" y="532" text-anchor="middle" font-size="15">Single isotropic electron band, constant momentum relaxation time, Hall factor 1, weak B</text>
+</g></svg>

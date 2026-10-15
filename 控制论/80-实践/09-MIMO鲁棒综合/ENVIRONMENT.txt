@@ -1,0 +1,21 @@
+Actual tested environment: macOS 27.0.1 arm64, Python 3.14.7.
+Dependencies and all transitive versions: requirements-lock.txt.
+All installations were confined to this experiment's .venv; no system environment upgraded.
+From a fresh experiment directory containing the supplied sources and input:
+  python3 -m venv .venv
+  .venv/bin/python -m pip install -r requirements-lock.txt
+  python3 -B numerical_guard.py --threads 1 --timeout 60 --lock-timeout 60 -- .venv/bin/python -B run_experiment.py --preflight
+  python3 -B numerical_guard.py --threads 1 --timeout 60 --lock-timeout 60 -- .venv/bin/python -B run_experiment.py
+  python3 -B numerical_guard.py --threads 1 --timeout 60 --lock-timeout 60 -- .venv/bin/python -B run_experiment.py --verify-only
+  python3 -B numerical_guard.py --threads 1 --timeout 60 --lock-timeout 60 -- .venv/bin/python -B verify_original_form.py
+This guard limits threads, runtime, and two shared numerical slots; it is not a hard memory limit.
+Matplotlib cache is confined to .mpl-cache. No external web/app/service is required at runtime.
+The synthesis constraint X >= (1/5)I is a deliberate convex design restriction, not a theorem that the unconstrained optimum uses this scale.
+Synthesis status is diagnostic only. Exact acceptance uses rational Sylvester tests and epsilon=1/1000000.
+The frozen certificate can be checked without rerunning synthesis using --verify-only and verify_original_form.py.
+No claim of exact global optimality. A newly solved candidate may differ with versions/platform; its exact acceptance must be rerun.
+Frequency and trajectory figures are finite diagnostics. They do not certify all frequencies/parameters. No physical experiment performed.
+
+Final interface: run a COPY of source and inputs in a NEW disposable directory. Full mode overwrites derived files in that copy; do not run it over frozen submitted outputs. Input Cz/Dzu/B1 matrices are authoritative; performance/units text is descriptive. Unsupported theta box, dimensions, or nonzero Dzw is rejected. verify-only rejects inconsistent stored P/K or schema. Full synthesis may try at most 10 rational diagonal increments of 1/denominator to repair rounded X; all exact conditions must pass and the increment is recorded. verify-only never repairs certificates. Final actual checks: 2 valid full changed-input runs (weight1, B1-scaled), 13 invalid main-entry rejections, and 6 original-form rejections.
+
+Original-form trial eta=1/100 is diagnostic only, not an acceptance gate: it fails on the default card; with B1=0 and the same P/K it actually passes at all four vertices. Original certificate acceptance depends only on its own eta. This final small delta did not rerun the unchanged SDP.

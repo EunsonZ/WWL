@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="590" viewBox="0 0 420 590">
+<rect width="420" height="100%" style="fill:white;stroke:none"/>
+<style>text{font-family:Arial,sans-serif;font-size:14px;fill:#111}path,line,rect,polygon,circle{stroke:#111;stroke-width:2;fill:none} .node{fill:#111}</style>
+<text x="16" y="25">Inverting Schmitt comparator: open-drain output</text>
+<polygon points="230,215 230,305 300,260"/>
+<text x="235" y="244">−</text>
+<text x="235" y="285">+</text>
+<text x="258" y="264">CMP</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="258,233 258,195"/>
+<text x="262" y="203">+5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="258,287 258,325"/>
+<text x="262" y="321">0 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="30,240 230,240"/>
+<text x="30" y="226">vi</text>
+<text x="32" y="327">Vref 2.5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="30,280 94.0,280.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="166.0,280.0 230,280"/>
+<rect x="94.0" y="274" width="72.0" height="12"/>
+<text x="108.0" y="267">Rref 10k</text>
+<text x="18" y="303">stiff ref</text>
+<circle class="node" cx="195" cy="280" r="3"/>
+<text x="171" y="303">vt</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="195,280 195,380"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="195,380 246.2,380.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="303.8,380.0 355,380"/>
+<rect x="246.2" y="374" width="57.60000000000002" height="12"/>
+<text x="253.0" y="367">Rfb 20k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="355,380 355,260 300,260"/>
+<circle class="node" cx="355" cy="260" r="3"/>
+<text x="361" y="266">vo</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="355,90 355.0,131.6"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="355.0,178.4 355,220"/>
+<rect x="349" y="131.6" width="12" height="46.80000000000001"/>
+<text x="367" y="155.0">Rp 10k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="355,220 355,260"/>
+<text x="315" y="70">+5 V pullup</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="355,380 355.0,415.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="355.0,425.0 355,460"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="343.0,415.0 367.0,415.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="343.0,425.0 367.0,425.0"/>
+<text x="370.0" y="423.0">Co</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="355,460 355,468"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="343,468 367,468"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="347,473 363,473"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="351,478 359,478"/>
+<text x="245" y="455">Co=100pF</text>
+<text x="16" y="505">Released: vo=4.375 V; feedback loads Rp.</text>
+<text x="16" y="531">Low state: sink holds 0.1 V, requires 0.57 mA.</text>
+<text x="16" y="557">Positive feedback: high output raises vt to 3.125 V.</text>
+<text x="16" y="583">Polarity here: high for v+ > v−; choose matching part.</text>
+</svg>

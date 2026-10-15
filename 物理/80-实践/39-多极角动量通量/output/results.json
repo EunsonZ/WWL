@@ -1,0 +1,86 @@
+{
+  "input": {
+    "frequency_Hz": 100000000.0,
+    "p0_C_m": 1e-12,
+    "ka": 0.2,
+    "ellipticity": 1.0,
+    "magnetic_ratio": 1.0,
+    "magnetic_phase_rad": 0.0,
+    "origin_shift_dimensionless": [
+      0.5,
+      0.0,
+      0.0
+    ],
+    "kr": [
+      0.3,
+      0.5,
+      1.0,
+      2.0,
+      10.0,
+      100.0
+    ],
+    "n_mu": 16,
+    "n_phi": 48,
+    "n_r": 16
+  },
+  "constants": {
+    "c_m_s": 299792458.0,
+    "epsilon0_F_m": 8.8541878128e-12
+  },
+  "source_radius_m": 0.09542690318473886,
+  "shape_factor": 0.9960057100548318,
+  "analytic_SI": {
+    "power_W": 5.157300381707843e-05,
+    "Fx_N": 0.0,
+    "Fy_N": 0.0,
+    "Fz_N": 5.73430078496487e-14,
+    "Jx_N_m": 0.0,
+    "Jy_N_m": 0.0,
+    "Jz_N_m": 5.4720656583901464e-14,
+    "shift_Jx_N_m": 0.0,
+    "shift_Jy_N_m": 1.3680164145975366e-14,
+    "shift_Jz_N_m": 5.4720656583901464e-14
+  },
+  "source_integrals": [
+    {
+      "refinement": 1,
+      "outward_equivalent_SI": {
+        "power_W": 5.157300381707896e-05,
+        "Fx_N": 1.35690192960312e-26,
+        "Fy_N": -3.1476398866574685e-27,
+        "Fz_N": 5.734300784968128e-14,
+        "Jx_N_m": 3.8079583320934803e-28,
+        "Jy_N_m": -5.94184935698921e-29,
+        "Jz_N_m": 5.4720656583901956e-14,
+        "shift_Jx_N_m": 3.8079583320934803e-28,
+        "shift_Jy_N_m": 1.368016414598308e-14,
+        "shift_Jz_N_m": 5.47206565839027e-14
+      },
+      "scaled_max_error": 1.8937457576412896e-13
+    },
+    {
+      "refinement": 2,
+      "outward_equivalent_SI": {
+        "power_W": 5.157300381707658e-05,
+        "Fx_N": 7.911153541213058e-27,
+        "Fy_N": 1.7187430897028532e-27,
+        "Fz_N": 5.734300784956465e-14,
+        "Jx_N_m": 1.1973225555006735e-28,
+        "Jy_N_m": -3.9914758040851705e-29,
+        "Jz_N_m": 5.4720656583901956e-14,
+        "shift_Jx_N_m": 1.1973225555006735e-28,
+        "shift_Jy_N_m": 1.3680164145955275e-14,
+        "shift_Jz_N_m": 5.4720656583901546e-14
+      },
+      "scaled_max_error": 4.885408073794704e-13
+    }
+  ],
+  "max_scaled_error": 4.885408073794704e-13,
+  "normalization": "power by ps; force by ps/c; torque by ps/(c k); all errors divided by dimensionless analytic power",
+  "pass": true,
+  "environment": {
+    "numpy": "2.5.3",
+    "threads": 1
+  },
+  "elapsed_s": 0.04790033400058746
+}

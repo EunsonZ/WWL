@@ -1,0 +1,146 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "fixed_input_sha256": "203a523e145be2088b4de1789c7771cbe3b66c7a4bbdcd3bb74d69c1480d52ab",
+  "arithmetic": "Fraction; exact tails. SVG coordinates only use floats.",
+  "claim_boundary": "No finite random stationary-law simulation; Gaussian finite-dimensional law follows analytic proof in Wiener03.",
+  "plot_model_a": "1/2",
+  "unit_V": "1",
+  "sampling_rate_Hz": "4",
+  "periodic_record_samples": 16,
+  "models": [
+    {
+      "a": "1/2",
+      "impulse": [
+        "-1/2",
+        "3/4",
+        "3/8",
+        "3/16",
+        "3/32",
+        "3/64",
+        "3/128",
+        "3/256",
+        "3/512"
+      ],
+      "pole_z": "1/2",
+      "zero_z": "2",
+      "inverse_causal_pole_z": "2",
+      "stationary_variance_V2": "1",
+      "stationary_covariance_V2": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "covariance_prefix": [
+        "262141/262144",
+        "-3/524288",
+        "-3/1048576",
+        "-3/2097152",
+        "-3/4194304",
+        "-3/8388608",
+        "-3/16777216",
+        "-3/33554432",
+        "-3/67108864"
+      ],
+      "covariance_exact_tail": [
+        "3/262144",
+        "3/524288",
+        "3/1048576",
+        "3/2097152",
+        "3/4194304",
+        "3/8388608",
+        "3/16777216",
+        "3/33554432",
+        "3/67108864"
+      ],
+      "impulse_crop_missing_energy": "3/262144",
+      "cross_ratio_pi_2": [
+        "-4/5",
+        "-3/5"
+      ],
+      "reverse_cross_ratio_pi_2": [
+        "-4/5",
+        "3/5"
+      ],
+      "magnitude_squared_coherence": "1",
+      "normalized_outer_F": "1",
+      "physical_u_given_x_past_conditional_variance_V2": "3/4",
+      "rademacher_normalized_fourth_moment_identity": "1",
+      "rademacher_normalized_fourth_moment_allpass": "11/5",
+      "rademacher_cross_cubic_moment": "-3/20",
+      "gaussian_Hz_PSD_V2_per_Hz": "1/4"
+    },
+    {
+      "a": "1/3",
+      "impulse": [
+        "-1/3",
+        "8/9",
+        "8/27",
+        "8/81",
+        "8/243",
+        "8/729",
+        "8/2187",
+        "8/6561",
+        "8/19683"
+      ],
+      "pole_z": "1/3",
+      "zero_z": "3",
+      "inverse_causal_pole_z": "3",
+      "stationary_variance_V2": "1",
+      "stationary_covariance_V2": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "covariance_prefix": [
+        "387420481/387420489",
+        "-8/1162261467",
+        "-8/3486784401",
+        "-8/10460353203",
+        "-8/31381059609",
+        "-8/94143178827",
+        "-8/282429536481",
+        "-8/847288609443",
+        "-8/2541865828329"
+      ],
+      "covariance_exact_tail": [
+        "8/387420489",
+        "8/1162261467",
+        "8/3486784401",
+        "8/10460353203",
+        "8/31381059609",
+        "8/94143178827",
+        "8/282429536481",
+        "8/847288609443",
+        "8/2541865828329"
+      ],
+      "impulse_crop_missing_energy": "8/387420489",
+      "cross_ratio_pi_2": [
+        "-3/5",
+        "-4/5"
+      ],
+      "reverse_cross_ratio_pi_2": [
+        "-3/5",
+        "4/5"
+      ],
+      "magnitude_squared_coherence": "1",
+      "normalized_outer_F": "1",
+      "physical_u_given_x_past_conditional_variance_V2": "8/9",
+      "rademacher_normalized_fourth_moment_identity": "1",
+      "rademacher_normalized_fourth_moment_allpass": "77/45",
+      "rademacher_cross_cubic_moment": "-16/45",
+      "gaussian_Hz_PSD_V2_per_Hz": "1/4"
+    }
+  ]
+}

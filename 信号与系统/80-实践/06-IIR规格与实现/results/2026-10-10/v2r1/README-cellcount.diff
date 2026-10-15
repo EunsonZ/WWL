@@ -1,0 +1,11 @@
+--- README-before-cellcount.md
++++ README.md
+@@ -49,7 +49,7 @@
+ 
+ executor_oracle.py不调用被测expected/report/run/design作为预期；仅导入冻结公开API作补充操作测试。读取实际机器系数，binary32期待由独立struct round生成，与所有dyadic整数分数/Decimal exact records逐节一致；Schur/Jury与binomial恒等式独立按Fraction核。
+ 
+-- 全部两模型7500 accepted cells，逐一检查首尾/邻接覆盖、阈值、全局min/max聚合。每cell对14节用精确二次多项式端点/内部顶点求真实Q最小值，核记录的0<Q.lower≤该精确最小值，没有仅复用source interval Horner。
++- 全部两模型7490 accepted cells，逐一检查首尾/邻接覆盖、阈值、全局min/max聚合。每cell对14节用精确二次多项式端点/内部顶点求真实Q最小值，核记录的0<Q.lower≤该精确最小值，没有仅复用source interval Horner。
+ - 独立由系数自相关展开P/Q。延迟用相位商导数 `degree/2−E/Q`，与source J/Q表达不同但同一固定Q，不能从ideal poles代填。每模型分布选65个pass cell及全部11个stop cell，核左右端和1/3有理内部点，共456点；全带cover/阈值则检查每个cell。报告保留边界点的完整精确Fraction、记录区间和模型身份。
+ - Outward精度24独立四则/跨零平方的exact corner范围；外部Decimal context精度3时输入.1仍精确dyadic、1/7仍包围；布尔/非有限输入在固定suite检查。保守wideNone、失稳/非对称/空级联/含零除法拒绝另有具体异常回执。
+ - max_depth1/max_cells1实际返回not_certified/false，accepted+unresolved仍覆盖闭域；两个迁移规格96k/5k实际unsupported/false，不挪用主带边。失败/未证分支不会被期待文件代写true。

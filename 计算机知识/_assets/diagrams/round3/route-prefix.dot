@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="最长前缀匹配：选择最具体的可用路由",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"ip" [label="目的 192.0.2.130"];
+"d" [label="0.0.0.0/0 → G0"];
+"r24" [label="192.0.2.0/24 → G1"];
+"r25" [label="192.0.2.128/25 → G2\n选择此项"];
+"ip" -> "d" [label="匹配 0 位"];
+"ip" -> "r24" [label="匹配 24 位"];
+"ip" -> "r25" [label="匹配 25 位"];
+
+}

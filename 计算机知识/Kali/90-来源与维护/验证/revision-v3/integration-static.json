@@ -1,0 +1,30 @@
+{
+  "checker_version": "1.0",
+  "scope": "计算机知识/Kali",
+  "status": "passed",
+  "counts": {
+    "markdown": 88,
+    "wikilinks_including_prerequisites": 1390,
+    "headings": 831,
+    "block_ids": 3,
+    "reachable_notes": 88,
+    "unique_frontmatter_source_urls": 193,
+    "canvas": 1,
+    "canvas_nodes": 22,
+    "canvas_edges": 25,
+    "python_sources": 13,
+    "files_at_check": 183
+  },
+  "issues": [],
+  "not_run": [
+    "Obsidian UI/rendering",
+    "Kali tool execution",
+    "external URL availability sweep"
+  ],
+  "limitations": [
+    "Limited Markdown dialect; not a full Obsidian parser",
+    "Specific secret patterns only, not a comprehensive secret detector",
+    "Reads this topic only, not the rest of an existing Vault",
+    "Trusted local filesystem assumed; not a race-resistant hostile-input sandbox"
+  ]
+}

@@ -1,0 +1,22 @@
+digraph G {
+    graph [rankdir=TB, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="缓存续写的掩码：比较绝对位置，而不是矩阵左上角"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    pos [label="已缓存 5 个 token
+新 query 的绝对位置：5、6
+key 的绝对位置：0…6"];
+    table [shape=plain, label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8">
+      <TR><TD>q / k</TD><TD>0</TD><TD>1</TD><TD>2</TD><TD>3</TD><TD>4</TD><TD>5</TD><TD>6</TD></TR>
+      <TR><TD>5</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD><TD BGCOLOR="#ffe4dc">×</TD></TR>
+      <TR><TD>6</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD><TD>✓</TD></TR>
+    </TABLE>>];
+    rule [label="可见条件：key_position ≤ query_position
+布尔 True 在 SDPA 中表示允许参与
+缓存中的 key 不应重复旋转", fillcolor="#e6f3e9"];
+    rope [label="固定内容与频率时：R(m)ᵀR(n)=R(n−m)
+这不是整个网络的任意平移不变性", fillcolor="#fff3de"];
+    pos -> table -> rule -> rope;
+    
+    }

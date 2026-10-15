@@ -1,0 +1,635 @@
+{
+  "status": "PASS",
+  "started_unix": 1791567625.429502,
+  "elapsed_seconds": 0.0006120204925537109,
+  "pid": 28758,
+  "fixed_comparisons": "All actual PDE and complex fixed fields match independent expectations",
+  "entropy_RH_reverse_counterexamples": [
+    {
+      "left": 2,
+      "right": -2,
+      "speed": 0.0,
+      "RH_residual": 0.0,
+      "entropy_jump": -5.333333333333333,
+      "entropy_admissible": true
+    },
+    {
+      "left": -2,
+      "right": 2,
+      "speed": 0.0,
+      "RH_residual": 0.0,
+      "entropy_jump": 5.333333333333333,
+      "entropy_admissible": false
+    },
+    {
+      "left": 3,
+      "right": 1,
+      "speed": 2.0,
+      "RH_residual": 0.0,
+      "entropy_jump": -0.6666666666666666,
+      "entropy_admissible": true
+    },
+    {
+      "left": 1,
+      "right": 3,
+      "speed": 2.0,
+      "RH_residual": 0.0,
+      "entropy_jump": 0.6666666666666666,
+      "entropy_admissible": false
+    }
+  ],
+  "corner_full_coefficient_checks": [
+    {
+      "radius": 0.1,
+      "theta": 0.3,
+      "entries": [
+        1.8643919680099268,
+        -4.40970168247792,
+        -1.8643919680099268
+      ],
+      "frobenius_squared": 45.84285267765704,
+      "radial_expected": 45.84285267765705
+    },
+    {
+      "radius": 0.2,
+      "theta": 1.1,
+      "entries": [
+        1.8896818863253102,
+        -0.19748622922148454,
+        -1.8896818863253102
+      ],
+      "frobenius_squared": 7.219796884476207,
+      "radial_expected": 7.219796884476209
+    },
+    {
+      "radius": 0.05,
+      "theta": 2.4,
+      "entries": [
+        -0.7042302367709329,
+        12.043506337653064,
+        0.7042302367709329
+      ],
+      "frobenius_squared": 291.0839702629439,
+      "radial_expected": 291.0839702629439
+    }
+  ],
+  "initial_average_supplement": {
+    "boundary_example": "Supplementary zero-Neumann compatible u0=2+cos(pi*x) on[0,1]; main text/script use periodic data",
+    "initial_mean": 2.0,
+    "initial_mean_square": 4.5,
+    "variance": 0.5,
+    "ODE_bound_1_over_initial_mean": 0.5,
+    "endpoint_derivative": [
+      0.0,
+      -3.8473413874435795e-16
+    ],
+    "scope": "Finite initial averages and boundary derivatives only; no Neumann/PDE blowup solver or theorem certification"
+  },
+  "Hartogs_membership": {
+    "z": 0.4,
+    "w": 0.2,
+    "r": 0.5,
+    "epsilon": 0.25,
+    "rho": 0.7,
+    "inside_bidisk": true,
+    "original_H_membership": false,
+    "all_quadrature_points_in_annulus": true
+  },
+  "Hartogs_error_comparisons": [
+    {
+      "N": 16,
+      "computed": [
+        0.6650000013113933,
+        -7.309138110651834e-18
+      ],
+      "ideal": 0.6650000013113933,
+      "theoretical_error": 1.3113932277103635e-09,
+      "measured_error_to_true": 1.3113932162411857e-09,
+      "distance_to_ideal": 7.309138110651834e-18,
+      "tolerance": 1e-14,
+      "rounding_dominates_theoretical_error": false
+    },
+    {
+      "N": 32,
+      "computed": [
+        0.665,
+        1.5496013726045042e-18
+      ],
+      "ideal": 0.665,
+      "theoretical_error": 2.5860935201531345e-18,
+      "measured_error_to_true": 1.5496013726045042e-18,
+      "distance_to_ideal": 1.5496013726045042e-18,
+      "tolerance": 1e-14,
+      "rounding_dominates_theoretical_error": true
+    }
+  ],
+  "CP1_fixed_expected": {
+    "z": [
+      1.0,
+      1.0
+    ],
+    "w": [
+      0.5,
+      -0.5
+    ],
+    "dw_dz": [
+      0.0,
+      0.5
+    ],
+    "vector_z": [
+      2.0,
+      0.0
+    ],
+    "vector_w": [
+      0.0,
+      1.0
+    ],
+    "form_z": [
+      1.0,
+      0.0
+    ],
+    "form_w": [
+      -0.0,
+      -2.0
+    ],
+    "pairing_z": [
+      2.0,
+      0.0
+    ],
+    "pairing_w": [
+      2.0,
+      0.0
+    ]
+  },
+  "CP1_vectorfield_finite_supplement": [
+    {
+      "coefficients": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "z": [
+        1.0,
+        1.0
+      ],
+      "transition_value": [
+        -0.0,
+        0.5
+      ],
+      "polynomial_in_w": [
+        -0.0,
+        0.5
+      ],
+      "value_at_w0": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "z": [
+        2.0,
+        -0.5
+      ],
+      "transition_value": [
+        -0.20761245674740486,
+        -0.11072664359861592
+      ],
+      "polynomial_in_w": [
+        -0.20761245674740486,
+        -0.11072664359861592
+      ],
+      "value_at_w0": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "z": [
+        -0.3,
+        0.7
+      ],
+      "transition_value": [
+        1.1890606420927472,
+        -1.2485136741973843
+      ],
+      "polynomial_in_w": [
+        1.1890606420927472,
+        -1.2485136741973843
+      ],
+      "value_at_w0": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "z": [
+        1.0,
+        1.0
+      ],
+      "transition_value": [
+        -0.5,
+        0.5
+      ],
+      "polynomial_in_w": [
+        -0.5,
+        0.5
+      ],
+      "value_at_w0": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "z": [
+        2.0,
+        -0.5
+      ],
+      "transition_value": [
+        -0.4705882352941177,
+        -0.11764705882352941
+      ],
+      "polynomial_in_w": [
+        -0.47058823529411764,
+        -0.11764705882352941
+      ],
+      "value_at_w0": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "z": [
+        -0.3,
+        0.7
+      ],
+      "transition_value": [
+        0.5172413793103448,
+        1.2068965517241383
+      ],
+      "polynomial_in_w": [
+        0.5172413793103449,
+        1.2068965517241381
+      ],
+      "value_at_w0": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "z": [
+        1.0,
+        1.0
+      ],
+      "transition_value": [
+        -1.0,
+        0.0
+      ],
+      "polynomial_in_w": [
+        -1.0,
+        0.0
+      ],
+      "value_at_w0": [
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "z": [
+        2.0,
+        -0.5
+      ],
+      "transition_value": [
+        -1.0,
+        0.0
+      ],
+      "polynomial_in_w": [
+        -1.0,
+        -0.0
+      ],
+      "value_at_w0": [
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "z": [
+        -0.3,
+        0.7
+      ],
+      "transition_value": [
+        -1.0,
+        -2.220446049250313e-16
+      ],
+      "polynomial_in_w": [
+        -1.0,
+        -0.0
+      ],
+      "value_at_w0": [
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          2.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0
+        ]
+      ],
+      "z": [
+        1.0,
+        1.0
+      ],
+      "transition_value": [
+        -1.5,
+        2.5
+      ],
+      "polynomial_in_w": [
+        -1.5,
+        2.5
+      ],
+      "value_at_w0": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          2.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0
+        ]
+      ],
+      "z": [
+        2.0,
+        -0.5
+      ],
+      "transition_value": [
+        -1.0380622837370241,
+        0.4463667820069205
+      ],
+      "polynomial_in_w": [
+        -1.0380622837370241,
+        0.44636678200692037
+      ],
+      "value_at_w0": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "coefficients": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          2.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0
+        ]
+      ],
+      "z": [
+        -0.3,
+        0.7
+      ],
+      "transition_value": [
+        3.472057074910821,
+        3.3543400713436395
+      ],
+      "polynomial_in_w": [
+        3.472057074910821,
+        3.354340071343639
+      ],
+      "value_at_w0": [
+        0.0,
+        1.0
+      ]
+    }
+  ],
+  "torus_translation_finite_supplement": [
+    {
+      "lattice_shift": [
+        0,
+        0
+      ],
+      "translated": [
+        0.17,
+        0.23
+      ],
+      "representative": [
+        0.17,
+        0.23
+      ],
+      "translation_derivative": 1,
+      "dz_coefficient_preserved": true
+    },
+    {
+      "lattice_shift": [
+        1,
+        0
+      ],
+      "translated": [
+        1.17,
+        0.23
+      ],
+      "representative": [
+        0.16999999999999993,
+        0.23
+      ],
+      "translation_derivative": 1,
+      "dz_coefficient_preserved": true
+    },
+    {
+      "lattice_shift": [
+        0,
+        1
+      ],
+      "translated": [
+        0.17,
+        1.23
+      ],
+      "representative": [
+        0.17,
+        0.22999999999999998
+      ],
+      "translation_derivative": 1,
+      "dz_coefficient_preserved": true
+    },
+    {
+      "lattice_shift": [
+        -2,
+        2
+      ],
+      "translated": [
+        -1.83,
+        2.23
+      ],
+      "representative": [
+        0.16999999999999993,
+        0.22999999999999998
+      ],
+      "translation_derivative": 1,
+      "dz_coefficient_preserved": true
+    },
+    {
+      "lattice_shift": [
+        2,
+        -2
+      ],
+      "translated": [
+        2.17,
+        -1.77
+      ],
+      "representative": [
+        0.16999999999999993,
+        0.22999999999999998
+      ],
+      "translation_derivative": 1,
+      "dz_coefficient_preserved": true
+    }
+  ],
+  "supplement_scope": "Vectorfield coefficients/torus translations/Neumann initial average are own finite arithmetic, not execution of nonexistent candidate interfaces or general topology/classification/blowup proofs",
+  "resource_self_ru_maxrss_bytes_macos": 17743872,
+  "scope": "Finite formula checks only; source reviewer owns general mathematics. No real PDE integration, plot generation, GUI, devices or human learning."
+}

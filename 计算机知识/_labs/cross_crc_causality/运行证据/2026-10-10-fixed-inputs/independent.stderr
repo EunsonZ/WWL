@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219/oracle.py", line 82, in <module>
+    result=expectation() if sys.argv[1]=='prepare' else run();name='expectations-before-run.json' if sys.argv[1]=='prepare' else 'independent-results.json';text=json.dumps(result,indent=2)+'\n';(P/name).write_text(text);print(text)
+                                                        ~~~^^
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments219/oracle.py", line 70, in run
+    frame=bytes.fromhex('54494e59010000001800000002000000ac2a93d80000000006869')
+ValueError: fromhex() arg must contain an even number of hexadecimal digits

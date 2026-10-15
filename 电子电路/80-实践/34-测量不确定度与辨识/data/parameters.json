@@ -1,0 +1,38 @@
+{
+  "data_kind": "SYNTHETIC teaching model, not instrument readings",
+  "pair_A": {
+    "R_ohm": 1000,
+    "C_F": 1e-06
+  },
+  "pair_B": {
+    "R_ohm": 2000,
+    "C_F": 5e-07
+  },
+  "U_step_V": 1,
+  "v0_V": 0,
+  "tau_s": 0.001,
+  "voltage_times_s": [
+    0.00025,
+    0.0005,
+    0.001,
+    0.002
+  ],
+  "sigma_voltage_V": 0.001,
+  "extra_current_time_s": 0.001,
+  "sigma_current_A": 1e-06,
+  "grid_shape": [
+    81,
+    81
+  ],
+  "MC_samples": 10000,
+  "MC_seed": 23,
+  "budget_inputs": {
+    "t_s": 0.001,
+    "V_V": 0.6321205588285577,
+    "U_V": 1,
+    "ut_s": 2e-06,
+    "uv_V": 0.001,
+    "uu_V": 0.001,
+    "rho_V_U": 0.6
+  }
+}

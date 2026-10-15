@@ -1,0 +1,366 @@
+{
+  "protocol": "incremental-view-v1",
+  "source": "teaching expectations; independently check actual execution",
+  "first_counts": {
+    "applied": 11,
+    "duplicate": 1,
+    "id_conflict": 1,
+    "stale": 3,
+    "version_conflict": 2,
+    "same_version": 1,
+    "invalid": 2
+  },
+  "replay_counts": {
+    "duplicate": 16,
+    "id_conflict": 1,
+    "version_conflict": 2,
+    "invalid": 2
+  },
+  "prefixes": [
+    {
+      "step": 1,
+      "decision": "applied",
+      "view": [
+        [
+          "A",
+          10,
+          1
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 10,
+        "count": 1
+      }
+    },
+    {
+      "step": 2,
+      "decision": "applied",
+      "view": [
+        [
+          "A",
+          30,
+          2
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 30,
+        "count": 2
+      }
+    },
+    {
+      "step": 3,
+      "decision": "applied",
+      "view": [
+        [
+          "A",
+          50,
+          3
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 50,
+        "count": 3
+      }
+    },
+    {
+      "step": 4,
+      "decision": "duplicate",
+      "view": [
+        [
+          "A",
+          50,
+          3
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 50,
+        "count": 3
+      }
+    },
+    {
+      "step": 5,
+      "decision": "id_conflict",
+      "view": [
+        [
+          "A",
+          50,
+          3
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 50,
+        "count": 3
+      }
+    },
+    {
+      "step": 6,
+      "decision": "applied",
+      "view": [
+        [
+          "A",
+          70,
+          3
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 70,
+        "count": 3
+      }
+    },
+    {
+      "step": 7,
+      "decision": "stale",
+      "view": [
+        [
+          "A",
+          70,
+          3
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 70,
+        "count": 3
+      }
+    },
+    {
+      "step": 8,
+      "decision": "version_conflict",
+      "view": [
+        [
+          "A",
+          70,
+          3
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 70,
+        "count": 3
+      }
+    },
+    {
+      "step": 9,
+      "decision": "same_version",
+      "view": [
+        [
+          "A",
+          70,
+          3
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 70,
+        "count": 3
+      }
+    },
+    {
+      "step": 10,
+      "decision": "version_conflict",
+      "view": [
+        [
+          "A",
+          70,
+          3
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 70,
+        "count": 3
+      }
+    },
+    {
+      "step": 11,
+      "decision": "applied",
+      "view": [
+        [
+          "A",
+          50,
+          2
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 50,
+        "count": 2
+      }
+    },
+    {
+      "step": 12,
+      "decision": "stale",
+      "view": [
+        [
+          "A",
+          50,
+          2
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 50,
+        "count": 2
+      }
+    },
+    {
+      "step": 13,
+      "decision": "applied",
+      "view": [
+        [
+          "A",
+          30,
+          1
+        ],
+        [
+          "B",
+          0,
+          1
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 30,
+        "count": 2
+      }
+    },
+    {
+      "step": 14,
+      "decision": "applied",
+      "view": [
+        [
+          "B",
+          0,
+          1
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 0,
+        "count": 1
+      }
+    },
+    {
+      "step": 15,
+      "decision": "applied",
+      "view": [],
+      "global_batch": {
+        "sum_minutes": null,
+        "count": 0
+      }
+    },
+    {
+      "step": 16,
+      "decision": "applied",
+      "view": [],
+      "global_batch": {
+        "sum_minutes": null,
+        "count": 0
+      }
+    },
+    {
+      "step": 17,
+      "decision": "stale",
+      "view": [],
+      "global_batch": {
+        "sum_minutes": null,
+        "count": 0
+      }
+    },
+    {
+      "step": 18,
+      "decision": "invalid",
+      "view": [],
+      "global_batch": {
+        "sum_minutes": null,
+        "count": 0
+      }
+    },
+    {
+      "step": 19,
+      "decision": "applied",
+      "view": [
+        [
+          "A",
+          5,
+          1
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 5,
+        "count": 1
+      }
+    },
+    {
+      "step": 20,
+      "decision": "invalid",
+      "view": [
+        [
+          "A",
+          5,
+          1
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 5,
+        "count": 1
+      }
+    },
+    {
+      "step": 21,
+      "decision": "applied",
+      "view": [
+        [
+          "A",
+          5,
+          1
+        ],
+        [
+          "B",
+          7,
+          1
+        ]
+      ],
+      "global_batch": {
+        "sum_minutes": 12,
+        "count": 2
+      }
+    }
+  ],
+  "final_entities": [
+    [
+      "a",
+      4,
+      "B",
+      7
+    ],
+    [
+      "b",
+      2,
+      null,
+      null
+    ],
+    [
+      "c",
+      3,
+      null,
+      null
+    ],
+    [
+      "d",
+      1,
+      "A",
+      5
+    ],
+    [
+      "z",
+      3,
+      null,
+      null
+    ]
+  ],
+  "final_view": [
+    [
+      "A",
+      5,
+      1
+    ],
+    [
+      "B",
+      7,
+      1
+    ]
+  ]
+}

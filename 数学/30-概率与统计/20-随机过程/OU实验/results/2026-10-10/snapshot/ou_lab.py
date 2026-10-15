@@ -1,0 +1,230 @@
+"""OU endpoint errors: exact Brownian coupling, analytic moments, and MC SE.
+NumPy only. No experiment runs on import. Outputs never replace existing files.
+"""
+from __future__ import annotations
+import argparse
+import csv
+import hashlib
+import json
+import math
+import platform
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+import numpy as np
+
+
+def validate(c):
+    for key in ('kappa', 'mu', 'sigma', 'x0', 'T'):
+        if not math.isfinite(c[key]):
+            raise ValueError(f'{key} must be finite')
+    if c['kappa'] <= 0 or c['sigma'] < 0 or c['T'] <= 0:
+        raise ValueError('require kappa,T > 0 and sigma >= 0')
+    integer_keys = ('fine_steps', 'paths', 'chunk', 'seed', 'independent_seed', 'trace_paths')
+    for key in integer_keys:
+        if type(c[key]) is not int or c[key] <= 0:
+            raise ValueError(f'{key} must be a positive integer')
+    if c['paths'] < 2 or c['trace_paths'] > min(c['chunk'], c['paths']):
+        raise ValueError('require paths >= 2 and trace_paths <= chunk,paths')
+    if c['seed'] == c['independent_seed']:
+        raise ValueError('independent terminal draw needs a separate generator seed')
+    if not c['steps'] or len(set(c['steps'])) != len(c['steps']):
+        raise ValueError('steps must be nonempty and unique')
+    for m in c['steps']:
+        if type(m) is not int or m < 1 or c['fine_steps'] % m:
+            raise ValueError('every step count must divide fine_steps')
+        if not 0 < c['kappa'] * c['T'] / m < 1:
+            raise ValueError('this experiment requires 0 < kappa*h < 1')
+    if not math.isfinite(c['diagnostic_se_multiplier']) or c['diagnostic_se_multiplier'] <= 0:
+        raise ValueError('SE multiplier must be positive and finite')
+
+
+def exact_moments(c):
+    decay = math.exp(-c['kappa'] * c['T'])
+    mean = c['mu'] + (c['x0'] - c['mu']) * decay
+    var = c['sigma'] ** 2 * (-math.expm1(-2 * c['kappa'] * c['T'])) / (2 * c['kappa'])
+    return mean, var
+
+
+def segment_constants(kappa, h):
+    r = math.exp(-kappa * h)
+    v = -math.expm1(-2 * kappa * h) / (2 * kappa)
+    cov = -math.expm1(-kappa * h) / kappa
+    residual = v - cov * cov / h
+    # Rounding only: never hide a materially negative covariance determinant.
+    if residual < -32 * np.finfo(float).eps * h:
+        raise ArithmeticError('invalid joint Gaussian covariance')
+    return r, v, cov, max(residual, 0.0)
+
+
+def analytic(c, m):
+    k, s = c['kappa'], c['sigma']
+    h = c['T'] / m
+    a = 1 - k * h
+    r, _, cov, _ = segment_constants(k, h)
+    mean, var = exact_moments(c)
+    mh = c['mu'] + (c['x0'] - c['mu']) * a ** m
+    vh = s ** 2 * h * (1 - a ** (2 * m)) / (1 - a * a)
+    cross = s ** 2 * cov * (1 - (a * r) ** m) / (1 - a * r)
+    mse = (mh - mean) ** 2 + vh + var - 2 * cross
+    if mse < -1e-13:
+        raise ArithmeticError('negative analytic MSE')
+    return {'steps': m, 'h': h, 'mean': mh, 'variance': vh,
+            'second_moment': vh + mh * mh, 'cross_covariance': cross,
+            'strong_mse': max(mse, 0.0), 'strong_rmse': math.sqrt(max(mse, 0.0)),
+            'weak_mean_bias': mh - mean, 'weak_second_bias': vh + mh * mh - (var + mean * mean),
+            'independent_noise_mse': (mh - mean) ** 2 + vh + var}
+
+
+def coupled_segments(rng, n, c):
+    h = c['T'] / c['fine_steps']
+    _, _, cov, residual = segment_constants(c['kappa'], h)
+    z = rng.standard_normal((n, c['fine_steps'], 2))
+    dw = math.sqrt(h) * z[:, :, 0]
+    j = (cov / h) * dw + math.sqrt(residual) * z[:, :, 1]
+    return dw, j
+
+
+def aggregate_segments(dw, j, m, kappa, T):
+    n, fine = dw.shape
+    if j.shape != dw.shape or fine % m:
+        raise ValueError('coupled segment shapes or grid ratio invalid')
+    q = fine // m
+    # J for a coarse segment weights its earlier fine segments by OU decay.
+    weights = np.exp(-kappa * (T / fine) * np.arange(q - 1, -1, -1))
+    return dw.reshape(n, m, q).sum(axis=2), (j.reshape(n, m, q) * weights).sum(axis=2)
+
+
+def evolve(increments, multiplier, sigma, x0, mu):
+    x = np.full(increments.shape[0], x0 - mu, dtype=float)
+    trajectory = np.empty((increments.shape[0], increments.shape[1] + 1))
+    trajectory[:, 0] = x0
+    for step in range(increments.shape[1]):
+        x = multiplier * x + sigma * increments[:, step]
+        trajectory[:, step + 1] = mu + x
+    return trajectory
+
+
+def mean_se(values):
+    return {'estimate': float(np.mean(values)),
+            'se': float(np.std(values, ddof=1) / math.sqrt(values.size))}
+
+
+def diagnostic(stats, truth, multiplier):
+    delta = stats['estimate'] - truth
+    se = stats['se']
+    return {'truth': truth, 'estimate': stats['estimate'], 'se': se,
+            'difference': delta, 'z': delta / se if se > 0 else None,
+            'within_predeclared_se_band': abs(delta) <= multiplier * se + 1e-12}
+
+
+def run(c):
+    validate(c)
+    n = c['paths']
+    rng = np.random.default_rng(c['seed'])
+    exact = np.empty(n)
+    euler = {m: np.empty(n) for m in c['steps']}
+    trace_rows = []
+    agreement = 0.0
+    for start in range(0, n, c['chunk']):
+        count = min(c['chunk'], n - start)
+        dw, j = coupled_segments(rng, count, c)
+        r = math.exp(-c['kappa'] * c['T'] / c['fine_steps'])
+        ref = evolve(j, r, c['sigma'], c['x0'], c['mu'])
+        exact[start:start + count] = ref[:, -1]
+        for m in c['steps']:
+            coarse_dw, coarse_j = aggregate_segments(dw, j, m, c['kappa'], c['T'])
+            em = evolve(coarse_dw, 1 - c['kappa'] * c['T'] / m, c['sigma'], c['x0'], c['mu'])
+            coarse_exact = evolve(coarse_j, math.exp(-c['kappa'] * c['T'] / m),
+                                  c['sigma'], c['x0'], c['mu'])
+            agreement = max(agreement, float(np.max(np.abs(coarse_exact - ref[:, ::c['fine_steps'] // m]))))
+            euler[m][start:start + count] = em[:, -1]
+            if start == 0:
+                for p in range(c['trace_paths']):
+                    for step in range(m + 1):
+                        trace_rows.append({'path': p, 'steps': m, 'time': step * c['T'] / m,
+                                           'euler': float(em[p, step]), 'exact': float(coarse_exact[p, step])})
+    mt, vt = exact_moments(c)
+    independent = mt + math.sqrt(vt) * np.random.default_rng(c['independent_seed']).standard_normal(n)
+    band = c['diagnostic_se_multiplier']
+    exact_checks = {}
+    for name, values in [('coupled', exact), ('independent_terminal', independent)]:
+        exact_checks[name] = {'mean': diagnostic(mean_se(values), mt, band),
+                             'second_moment': diagnostic(mean_se(values * values), mt * mt + vt, band)}
+    rows = []
+    for m in c['steps']:
+        theory = analytic(c, m)
+        error = euler[m] - exact
+        mse = diagnostic(mean_se(error * error), theory['strong_mse'], band)
+        rmse = math.sqrt(max(mse['estimate'], 0.0))
+        rows.append({'theory': theory, 'strong_mse': mse,
+                     'strong_rmse': {'estimate': rmse, 'delta_method_se': mse['se'] / (2 * rmse) if rmse else 0.0},
+                     'weak_mean_bias': diagnostic(mean_se(error), theory['weak_mean_bias'], band),
+                     'weak_second_bias': diagnostic(mean_se(euler[m] ** 2 - exact ** 2), theory['weak_second_bias'], band),
+                     'euler_mean': diagnostic(mean_se(euler[m]), theory['mean'], band),
+                     'euler_second_moment': diagnostic(mean_se(euler[m] ** 2), theory['second_moment'], band),
+                     'independent_noise_mse': diagnostic(mean_se((euler[m] - independent) ** 2), theory['independent_noise_mse'], band)})
+    observed = [row[key]['within_predeclared_se_band'] for row in rows
+                for key in ('strong_mse', 'weak_mean_bias', 'weak_second_bias', 'euler_mean', 'euler_second_moment', 'independent_noise_mse')]
+    observed += [stats['within_predeclared_se_band'] for check in exact_checks.values() for stats in check.values()]
+    return {'schema': 'wwl-ou-report-v1', 'config': c,
+            'exact_theory': {'mean': mt, 'variance': vt, 'second_moment': mt * mt + vt},
+            'exact_terminal_checks': exact_checks, 'rows': rows,
+            'coarse_exact_vs_fine_exact_max_abs': agreement,
+            'diagnostics_pass': all(observed) and agreement <= 1e-12,
+            'diagnostic_meaning': 'Observed 6-SE bands are diagnostics using estimated SE; no finite-sample guarantee or proof of convergence.',
+            'coupling': 'Fine pairs (dW,J) are jointly Gaussian. Every grid aggregates the same pairs. Exact OU uses weighted J, never fine Euler.'}, trace_rows
+
+
+def error_svg(report):
+    rows = report['rows']
+    lo_log = math.floor(math.log2(min(row['theory']['strong_rmse'] for row in rows))) - 1
+    hi_log = math.ceil(math.log2(max(row['theory']['strong_rmse'] for row in rows))) + 1
+    lo_h = math.log2(min(row['theory']['h'] for row in rows))
+    hi_h = math.log2(max(row['theory']['h'] for row in rows))
+    def pos(h, error):
+        return (75 + 500 * (math.log2(h) - lo_h) / max(hi_h - lo_h, 1),
+                265 - 190 * (math.log2(error) - lo_log) / (hi_log - lo_log))
+    points = ' '.join(f'{pos(row["theory"]["h"], row["theory"]["strong_rmse"])[0]:.2f},{pos(row["theory"]["h"], row["theory"]["strong_rmse"])[1]:.2f}' for row in rows)
+    marks = []
+    for row in rows:
+        x, y = pos(row['theory']['h'], row['strong_rmse']['estimate'])
+        se = row['strong_rmse']['delta_method_se']
+        _, low = pos(row['theory']['h'], max(row['strong_rmse']['estimate'] - 2 * se, 1e-15))
+        _, high = pos(row['theory']['h'], row['strong_rmse']['estimate'] + 2 * se)
+        marks.append(f'<path d="M{x:.2f},{low:.2f} V{high:.2f}" stroke="#b44517"/><circle cx="{x:.2f}" cy="{y:.2f}" r="4" fill="#b44517"/>')
+    labels = ''.join(f'<text x="{pos(1/m, .01)[0]:.2f}" y="290" text-anchor="middle">1/{m}</text>' for m in sorted((row['theory']['steps'] for row in rows), reverse=True))
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 340" role="img" aria-labelledby="title desc"><title id="title">OU terminal strong RMS error against time step</title><desc id="desc">Log base two axes. Blue connected values are exact analytic RMS errors. Orange dots are Monte Carlo values, bars show plus or minus two estimated delta method standard errors. This additive noise OU case approaches order one; the figure is not a general proof.</desc><rect width="650" height="340" fill="white"/><g font-family="sans-serif" font-size="13" fill="#222"><text x="75" y="28">OU strong RMS error, T=1; log2 axes</text><path d="M75,55 V265 H590" fill="none" stroke="#333"/><polyline points="{points}" fill="none" stroke="#185fa0" stroke-width="2"/>{''.join(marks)}{labels}<text x="335" y="327" text-anchor="middle">Time step h</text><text x="17" y="164" transform="rotate(-90 17 164)" text-anchor="middle">Terminal RMS error (state units)</text><text x="82" y="52">Blue: analytic; orange: MC +/- 2 estimated SE</text><text x="30" y="269">2^{lo_log}</text><text x="35" y="79">2^{hi_log}</text></g></svg>'''
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--config', type=Path, default=Path(__file__).with_name('fixed-input.json'))
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    raw = args.config.read_bytes()
+    c = json.loads(raw)
+    validate(c)
+    names = ('report.json', 'traces.csv', 'strong-error.svg')
+    if args.output.exists() and any((args.output / name).exists() for name in names):
+        parser.error('output files already exist; choose a new output directory')
+    report, traces = run(c)
+    report['execution'] = {'utc': datetime.now(timezone.utc).isoformat(), 'python': sys.version,
+                           'numpy': np.__version__, 'platform': platform.platform(),
+                           'source_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                           'config_sha256': hashlib.sha256(raw).hexdigest()}
+    args.output.mkdir(parents=True, exist_ok=True)
+    with (args.output / 'report.json').open('x') as f:
+        json.dump(report, f, ensure_ascii=False, indent=2, allow_nan=False); f.write('\n')
+    with (args.output / 'traces.csv').open('x', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=['path','steps','time','euler','exact'])
+        writer.writeheader(); writer.writerows(traces)
+    with (args.output / 'strong-error.svg').open('x') as f:
+        f.write(error_svg(report) + '\n')
+    print(json.dumps({'diagnostics_pass': report['diagnostics_pass'], 'output': str(args.output),
+                      'paths': c['paths'], 'source_sha256': report['execution']['source_sha256']}))
+    return 0 if report['diagnostics_pass'] else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

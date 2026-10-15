@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="580" viewBox="0 0 420 580">
+<rect width="420" height="100%" style="fill:white;stroke:none"/>
+<style>text{font-family:Arial,sans-serif;font-size:14px;fill:#111}path,line,rect,polygon,circle{stroke:#111;stroke-width:2;fill:none} .node{fill:#111}</style>
+<text x="16" y="25">MFB: actual node equations use x, y, vo</text>
+<polygon points="270,245 270,335 340,290"/>
+<text x="275" y="274">−</text>
+<text x="275" y="315">+</text>
+<text x="298" y="294">A</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="298,263 298,225"/>
+<text x="302" y="233">+5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="298,317 298,355"/>
+<text x="302" y="351">−5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="20,270 30,270"/>
+<text x="20" y="254">vi</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="30,270 66.80000000000001,270.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="108.2,270.0 145,270"/>
+<rect x="66.80000000000001" y="264" width="41.39999999999999" height="12"/>
+<text x="65.5" y="257">R1</text>
+<circle class="node" cx="145" cy="270" r="3"/>
+<text x="144" y="253">x</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145,270 185.0,270.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="230.0,270.0 270,270"/>
+<rect x="185.0" y="264" width="45.0" height="12"/>
+<text x="185.5" y="257">R3</text>
+<text x="243" y="251">y</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="340,290 385,290"/>
+<text x="361" y="315">vo</text>
+<circle class="node" cx="385" cy="290" r="3"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145,270 145.0,337.5"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145.0,347.5 145,415"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="133.0,337.5 157.0,337.5"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="133.0,347.5 157.0,347.5"/>
+<text x="160.0" y="345.5">C2</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145,415 145,423"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="133,423 157,423"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="137,428 153,428"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="141,433 149,433"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145,270 145,110"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="145,110 221.8,110.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="308.20000000000005,110.0 385,110"/>
+<rect x="221.8" y="104" width="86.40000000000003" height="12"/>
+<text x="243.0" y="97">R2</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="385,110 385,290"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="230,270 230,165"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="230,165 302.5,165.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="312.5,165.0 385,165"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="302.5,153.0 302.5,177.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="312.5,153.0 312.5,177.0"/>
+<text x="292.5" y="146.0">C1</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="385,165 385,110"/>
+<circle class="node" cx="230" cy="270" r="3"/>
+<circle class="node" cx="385" cy="165" r="3"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="270,310 235,310 235,415"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="235,415 235,423"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="223,423 247,423"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="227,428 243,428"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="231,433 239,433"/>
+<text x="16" y="500">R1=R2=R3=10k; C1=10nF; C2=45nF.</text>
+<text x="16" y="525">Ideal gain −1, Q=1/√2, f0=750.264 Hz.</text>
+<text x="16" y="551">Amp rails ±5 V; unloaded small-signal output.</text>
+<text x="16" y="576">Crossings without dots are not joined. Reference: 0 V.</text>
+</svg>

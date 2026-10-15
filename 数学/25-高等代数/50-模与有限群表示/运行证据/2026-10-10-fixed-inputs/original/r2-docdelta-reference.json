@@ -1,0 +1,23 @@
+{
+  "executed_snapshot": "r1",
+  "r2_behavior_binding": "REUSED_EXACT_SOURCE",
+  "source_files_unchanged": [
+    {
+      "path": "数学/25-高等代数/50-模与有限群表示/code/examples.py",
+      "sha256": "2ccb0251b65c88abae9414d1f2e30eebbdf125963ebb80458f4660f379977b7f",
+      "bytes": 6194
+    },
+    {
+      "path": "数学/25-高等代数/50-模与有限群表示/code/integer_smith.py",
+      "sha256": "71d9ef1efafcf162d46599462e4740ab3ff8ec48ce64058d93df8ec4fe8ee397",
+      "bytes": 8096
+    }
+  ],
+  "06_r2": {
+    "path": "数学/25-高等代数/50-模与有限群表示/06-整数Smith与表示精确复算.md",
+    "sha256": "8bea73cb37a046a247fd0c760d67ad225875f7119bb5256f38f75069bc5a6550",
+    "bytes": 12954
+  },
+  "06_r2_execution": "NOTRUN_DOC_ONLY; domain review separate",
+  "author_explanation": "Each smith call guards its own input. homology checks A and C, not an original-B entry cap or global coordinate bit cap. Source/mirror unchanged; three consumers added."
+}

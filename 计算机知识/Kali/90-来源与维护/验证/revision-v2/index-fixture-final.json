@@ -1,0 +1,110 @@
+{
+  "status": "passed",
+  "tool_index_entries": 239,
+  "source_entries": 177,
+  "exact_generated_tables_match": true,
+  "fixture_regeneration": [
+    {
+      "generator": "generate_fixtures.py",
+      "subdirectory": ".",
+      "files": 15,
+      "status": "passed"
+    },
+    {
+      "generator": "generate_reasoning_fixtures.py",
+      "subdirectory": "v2/",
+      "files": 9,
+      "status": "passed"
+    }
+  ],
+  "reviewed_lab_bash_blocks_run": 7,
+  "standalone_cli_runs": 2,
+  "scope": "Only G–J individually reviewed, network-free examples in a temporary HOME; not automatic execution of all notes. Matching output interpretation additionally covered by unit tests. All other examples remain reference unless explicitly recorded.",
+  "runs": [
+    {
+      "note": "07-综合实验/10-实验G路由与扫描状态推理.md",
+      "bash_block": 1,
+      "source_sha256": "0da1d0216ccc5be366a8ee0a29b7e414fa1ed0269e6d4c5ee92a1ff78d7f57db",
+      "returncode": 0,
+      "stdout": "192.168.56.37 192.168.56.32/27 expected= 192.168.56.32/27\n192.168.56.64 192.168.56.0/24 expected= 192.168.56.0/24\n198.51.100.7 0.0.0.0/0 expected= 0.0.0.0/0\n2001:db8::1 None expected= None\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "note": "07-综合实验/10-实验G路由与扫描状态推理.md",
+      "bash_block": 2,
+      "source_sha256": "5e9ceb0f9b4620e36bfab343c6b8588d221575ec5725578c9d87d3e2f6f8b415",
+      "returncode": 0,
+      "stdout": "filtered\nopen|filtered\nclosed\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "note": "07-综合实验/11-实验H扫描XML差异与不确定性.md",
+      "bash_block": 1,
+      "source_sha256": "de531e3d92b49f53823034fd01ac50d6b1fc13d95d205867e2c66400013e31d1",
+      "returncode": 0,
+      "stdout": "scope_before= (('tcp', '22,8000'), ('udp', '53'))\nscope_after= (('tcp', '443,8000'), ('udp', '53'))\n[\n  {\n    \"address\": \"127.0.0.1\",\n    \"protocol\": \"tcp\",\n    \"port\": 22,\n    \"before\": \"open\",\n    \"after\": \"not_observed\",\n    \"relation\": \"coverage_gap\",\n    \"before_finished\": \"success\",\n    \"after_finished\": \"error\"\n  },\n  {\n    \"address\": \"127.0.0.1\",\n    \"protocol\": \"tcp\",\n    \"port\": 443,\n    \"before\": \"not_observed\",\n    \"after\": \"open\",\n    \"relation\": \"coverage_gap\",\n    \"before_finished\": \"success\",\n    \"after_finished\": \"error\"\n  },\n  {\n    \"address\": \"127.0.0.1\",\n    \"protocol\": \"tcp\",\n    \"port\": 8000,\n    \"before\": \"open\",\n    \"after\": \"closed\",\n    \"relation\": \"explicit_change\",\n    \"before_finished\": \"success\",\n    \"after_finished\": \"error\"\n  },\n  {\n    \"address\": \"127.0.0.1\",\n    \"protocol\": \"udp\",\n    \"port\": 53,\n    \"before\": \"open|filtered\",\n    \"after\": \"open|filtered\",\n    \"relation\": \"same\",\n    \"before_finished\": \"success\",\n    \"after_finished\": \"error\"\n  }\n]\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "note": "07-综合实验/12-实验I多租户字段与动作授权.md",
+      "bash_block": 1,
+      "source_sha256": "209821f2df2de89f6be11eac93fecf9b5ab75b229093e9e19026fd15cd6b78b1",
+      "returncode": 0,
+      "stdout": "('alice', 17, 'edit') True\n('bob', 17, 'edit') False\n('bob', 18, 'approve') True\n('bob', 20, 'approve') False\n('carol', 18, 'read') False\n('alice', 21, 'submit') False\nreviewer fields: ['id', 'status', 'title']\nowner fields: ['id', 'private_note', 'status', 'title']\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "note": "07-综合实验/13-实验J时间线与检测基率.md",
+      "bash_block": 1,
+      "source_sha256": "fbfa8cf319bea7ed5dab35e1bc27b7edcdf01132a13f46fb04a4464334be62c8",
+      "returncode": 0,
+      "stdout": "2026-09-05T08:00:00+00:00\nFalse\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "note": "07-综合实验/13-实验J时间线与检测基率.md",
+      "bash_block": 2,
+      "source_sha256": "c711e36a43e2412c41ee3742cab6dcea4db7ab50c85aca5ab1c92972a92c74a6",
+      "returncode": 0,
+      "stdout": "{'precision': 0.08264462809917356, 'recall': 0.9, 'fpr': 0.01}\n{'precision': None, 'recall': None, 'fpr': None}\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "note": "07-综合实验/13-实验J时间线与检测基率.md",
+      "bash_block": 3,
+      "source_sha256": "543c776d2295b4249d6d7f48fc51063503468d147b6a96565f43cff99e466699",
+      "returncode": 0,
+      "stdout": "-0.0\n8.0\n1.0 1.0\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "offline_lab.py",
+        "--fixtures",
+        "fixtures"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"provenance\": \"SYNTHETIC OFFLINE DEMO; not a security scan\",\n  \"authorization\": {\n    \"alice_17\": true,\n    \"bob_17\": false,\n    \"bob_18\": true,\n    \"unknown_17\": false\n  },\n  \"sql\": {\n    \"normal_safe\": [\n      \"alice\"\n    ],\n    \"injection_unsafe\": [\n      \"alice\",\n      \"bob\"\n    ],\n    \"injection_safe\": []\n  },\n  \"logs\": {\n    \"records\": 6,\n    \"statuses\": {\n      \"200\": 3,\n      \"403\": 1,\n      \"404\": 1,\n      \"500\": 1\n    }\n  },\n  \"toy_hashes\": {\n    \"targets\": 2,\n    \"candidates\": 5,\n    \"matches\": 2\n  }\n}\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "reasoning_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"synthetic\": true,\n  \"network_io\": false,\n  \"route\": {\n    \"prefix\": \"192.168.56.32/27\",\n    \"interface\": \"lab-specific\",\n    \"metric\": 900\n  },\n  \"udp_no_response\": \"open|filtered\",\n  \"authorization\": {\n    \"bob_approve_18\": true,\n    \"bob_approve_20\": false,\n    \"carol_read_17\": false,\n    \"bob_fields_18\": [\n      \"id\",\n      \"status\",\n      \"title\"\n    ]\n  },\n  \"utc\": \"2026-09-05T08:00:00+00:00\",\n  \"metrics\": {\n    \"precision\": 0.08264462809917356,\n    \"recall\": 0.9,\n    \"fpr\": 0.01\n  },\n  \"entropy_uniform_byte_histogram\": 8.0\n}\n",
+      "stderr": "",
+      "status": "passed"
+    }
+  ]
+}

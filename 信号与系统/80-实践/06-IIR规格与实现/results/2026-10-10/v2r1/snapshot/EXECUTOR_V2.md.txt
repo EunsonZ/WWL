@@ -1,0 +1,24 @@
+# #178 V2 受影响执行交接
+
+只运行V2的IIR目录，#177已有V1源审/运行无需因本5文件修订重跑。先记录 `candidate-v2/信号与系统/80-实践/06-IIR规格与实现/` 两Python源SHA、Python版本、cwd。V1候选/证据只读保留。输出必须新库外目录（如 `/private/tmp/wwl-recovery-178-v2-run-01`），不得覆盖旧运行。
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v test_iir_lab.py
+PYTHONDONTWRITEBYTECODE=1 python3 iir_lab.py --output /private/tmp/wwl-recovery-178-v2-run-01
+```
+
+标准库即可，无安装。单元测试新增精确Fraction oracle、低精度有向算术、同模型幅度/延迟、Nyquist、拒绝分支、资源耗尽/未认证及完整域覆盖；全规格认证在CLI运行，不把短测试PASS当闭带PASS。
+
+CLI保持主12k拍二音、N27/SOS、直接型/升降次序binary32、W8/F4与迁移设计观察；同时输出两套 `machine_certificates`，它们认证**固定精确dyadic系数的线性传函**，不认证每运算舍入后的非线性轨迹。每套必须：
+
+- `certified=true/status=certified`，精确系数与实际binary64或binary32源一致，所有 `exact_schur_conditions=true`。
+- pass/stop均 `partition_covers_closed_domain=true`、`certified=true`、`unresolved_cells=[]`；首尾是声明c域，所有接收cell端点精确相邻，Q.lower>0。
+- pass平方幅度lower≥.9801、upper≤1.0201；stop平方幅度upper≤.000001。用Decimal/Fraction比较字符串，不能先float再做认证比较。
+- pass同SOS延迟lower≥0、upper≤96；J/Q分母是记录的同固定系数Q。不得把 `ideal_pole_delay_estimate` 的值拿来代填。
+- `pass_endpoint_proof`的rational正且平方≤1/2；无浮点sqrt端点。
+
+默认80位精度、深度24（最多28）、每带131072次cell求值，分别对binary64和32独立做。预期两套主模型可认证；尚未执行。记录真实cell数、maxdepth/limits、各带最坏界、运行时间与完整stdout。若返回not_certified、maxdepth/maxcells或异常，保全未决cell交回作者；该状态不能签PASS。新证书算法不调用sin/cos/complex abs/sqrt；设计器的三角函数只生成待认证的机器系数，输入本身有精确dyadic身份。
+
+独立numeric建议用接收cells中的端点及rational内部点，Fraction直接多项式P/Q和相位商导数式作独立核（避免复用Outward或lab strict_cell作为oracle）；检查全分区覆盖和全局聚合还需查看所有cells。有限抽点可以发现错误，不能替代包含性/覆盖源码独审；另派未参与方案者签此新层。
+
+原12k轨迹、饱和、N27/30/17、直接结构失败位置与SOS完整输出仍按EXECUTOR.md原输入验；JSON旧字段 `coefficient_band_bounds`/`delay`不再是验收入口。实际运算舍入、0.9V主输入与2V故障输入保持分开。无需重跑未变的Fourier、图或FIR。

@@ -1,0 +1,11 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=LR;
+a [label="拥有者\n负责资源释放"]; b [label="有效存储\n对象 / 数组元素"];
+c [label="借用者\n指针、引用、切片或视图"]; d [label="生命期结束 / 存储迁移"];
+a->b [label="拥有"]; c->b [style=dashed,label="仅在有效期内访问"];
+a->d; d->c [label="重新判断所有借用是否有效",style=dashed];
+
+}

@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "code=JSON.stringify({active:app.workspace.getActiveFile()?.path,text:app.workspace.getMostRecentLeaf().view.containerEl.innerText.slice(0,2400)})"
+  ],
+  "exit": 0,
+  "stdout": "=> {\"active\":\"信号与系统/20-数字信号处理/04-IIR设计二阶节与幅相取舍.md\",\"text\":\"信号与系统\\n/\\n20-数字信号处理\\n/\\n04-IIR设计二阶节与幅相取舍\\n04-IIR设计二阶节与幅相取舍\\nProperties\\nlesson\\nsignals-and-systems\\ndraft\\npartial\\n数字IIR设计与SOS结构\\nhttps://docs.python.org/3/library/decimal.html\\nhttps://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/51e3beff8c8ce2289ba292fcdb0040f4_lec08.pdf\\nhttps://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/2c6fe95a4d44834ccf0c0d9017118703_lec07.pdf\\nhttps://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/aa0fbb84ec39521a7a44e481c7ce0d7c_lec03.pdf\\n信号与系统/20-数字信号处理/01-FIR滤波设计与频率规格\\n电子电路/12-交流与变换域/18-采样混叠与双线性预扭曲\\nAdd property\\n\\n\\nIIR设计、二阶节与幅相取舍\\n\\n\\n已有193抽头FIR以2ms群延迟换线性相位与有限记忆。递归利用旧状态，可能以更少乘法达到相同幅度规格，但新的责任是极点、启动、状态尺度和舍入反馈。设计要给出一份从数字规格到完整系数和实际递推的合同；知道一阶RC会衰减，还不能决定一般滤波器怎样实现。\\n\\n\\n第一次读先手算两个一阶节：高增益节 𝐺ℎ(𝑧) =4/(1 −.5𝑧−1)，低增益节 𝐺𝑙(𝑧) =.0625/(1 −.5𝑧−1)。二者DC分别8、1/8，乘积DC为1；调换先后在精确零态下不改变输出，却把中间DC幅度改变64倍。快进入口从带边的tan映射与Butterworth阶数不等式进入，最后两入口汇到同一结构与误差问题。\"}\n",
+  "stderr": "",
+  "time": "2026-10-09T19:31:09.863211+00:00"
+}

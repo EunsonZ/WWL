@@ -1,0 +1,647 @@
+{
+  "units": {
+    "time": "ns",
+    "data": "unsigned 8-bit words",
+    "controls": "bool"
+  },
+  "buffer": [
+    {
+      "edge": 0,
+      "time_ns": 0,
+      "sv": false,
+      "sd": 0,
+      "mr": true,
+      "reset": true,
+      "full_before": false,
+      "data_before": 0,
+      "ready": false,
+      "valid": false,
+      "push": false,
+      "pop": false,
+      "full_after": false,
+      "data_after": 0
+    },
+    {
+      "edge": 1,
+      "time_ns": 10,
+      "sv": true,
+      "sd": 161,
+      "mr": true,
+      "reset": false,
+      "full_before": false,
+      "data_before": 0,
+      "ready": true,
+      "valid": false,
+      "push": true,
+      "pop": false,
+      "full_after": true,
+      "data_after": 161
+    },
+    {
+      "edge": 2,
+      "time_ns": 20,
+      "sv": true,
+      "sd": 178,
+      "mr": false,
+      "reset": false,
+      "full_before": true,
+      "data_before": 161,
+      "ready": false,
+      "valid": true,
+      "push": false,
+      "pop": false,
+      "full_after": true,
+      "data_after": 161
+    },
+    {
+      "edge": 3,
+      "time_ns": 30,
+      "sv": true,
+      "sd": 178,
+      "mr": false,
+      "reset": false,
+      "full_before": true,
+      "data_before": 161,
+      "ready": false,
+      "valid": true,
+      "push": false,
+      "pop": false,
+      "full_after": true,
+      "data_after": 161
+    },
+    {
+      "edge": 4,
+      "time_ns": 40,
+      "sv": true,
+      "sd": 178,
+      "mr": true,
+      "reset": false,
+      "full_before": true,
+      "data_before": 161,
+      "ready": true,
+      "valid": true,
+      "push": true,
+      "pop": true,
+      "full_after": true,
+      "data_after": 178
+    },
+    {
+      "edge": 5,
+      "time_ns": 50,
+      "sv": false,
+      "sd": 0,
+      "mr": true,
+      "reset": false,
+      "full_before": true,
+      "data_before": 178,
+      "ready": true,
+      "valid": true,
+      "push": false,
+      "pop": true,
+      "full_after": false,
+      "data_after": 178
+    },
+    {
+      "edge": 6,
+      "time_ns": 60,
+      "sv": false,
+      "sd": 0,
+      "mr": true,
+      "reset": false,
+      "full_before": false,
+      "data_before": 178,
+      "ready": true,
+      "valid": false,
+      "push": false,
+      "pop": false,
+      "full_after": false,
+      "data_after": 178
+    }
+  ],
+  "fsm10101": [
+    {
+      "edge": 1,
+      "input": 1,
+      "before": 0,
+      "after": 1,
+      "hit_before": 0,
+      "hit_after": 0
+    },
+    {
+      "edge": 2,
+      "input": 0,
+      "before": 1,
+      "after": 2,
+      "hit_before": 0,
+      "hit_after": 0
+    },
+    {
+      "edge": 3,
+      "input": 1,
+      "before": 2,
+      "after": 3,
+      "hit_before": 0,
+      "hit_after": 1
+    },
+    {
+      "edge": 4,
+      "input": 0,
+      "before": 3,
+      "after": 2,
+      "hit_before": 1,
+      "hit_after": 0
+    },
+    {
+      "edge": 5,
+      "input": 1,
+      "before": 2,
+      "after": 3,
+      "hit_before": 0,
+      "hit_after": 1
+    }
+  ],
+  "pipeline": [
+    {
+      "edge": 1,
+      "input": 10,
+      "before": [
+        null,
+        null
+      ],
+      "after": [
+        10,
+        null
+      ]
+    },
+    {
+      "edge": 2,
+      "input": 20,
+      "before": [
+        10,
+        null
+      ],
+      "after": [
+        20,
+        10
+      ]
+    },
+    {
+      "edge": 3,
+      "input": 30,
+      "before": [
+        20,
+        10
+      ],
+      "after": [
+        30,
+        20
+      ]
+    },
+    {
+      "edge": 4,
+      "input": 40,
+      "before": [
+        30,
+        20
+      ],
+      "after": [
+        40,
+        30
+      ]
+    }
+  ],
+  "timing": {
+    "setup_slack_ns": 1.0,
+    "hold_slack_ns": 0.0,
+    "minimum_period_ns": 9.0
+  },
+  "mtbf_model": "hypothetical tau=.05ns/aperture=.01ns/fc100MHz/fd1MHz; not a device",
+  "log_mtbf_seconds": 3.092244721017863,
+  "handshake": [
+    {
+      "time_ns": 0,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": true,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 1,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": true,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 8,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": true,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": true,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 10,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": true,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": true,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 15,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": true,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": true,
+      "ack2": false,
+      "capture": true
+    },
+    {
+      "time_ns": 20,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": true,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": true,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 22,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": true,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": true,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 29,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": true,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": true,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 30,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": true,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": true,
+      "ack2": true,
+      "capture": false
+    },
+    {
+      "time_ns": 36,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": true,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_high",
+      "req2": true,
+      "ack2": true,
+      "capture": false
+    },
+    {
+      "time_ns": 40,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": false,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": true,
+      "ack2": true,
+      "capture": false
+    },
+    {
+      "time_ns": 43,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": true,
+      "ack2": true,
+      "capture": false
+    },
+    {
+      "time_ns": 50,
+      "source_edge": true,
+      "destination_edge": true,
+      "req": false,
+      "ack": true,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": false,
+      "ack2": true,
+      "capture": false
+    },
+    {
+      "time_ns": 57,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": false,
+      "ack2": true,
+      "capture": false
+    },
+    {
+      "time_ns": 60,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": false,
+      "ack2": true,
+      "capture": false
+    },
+    {
+      "time_ns": 64,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": false,
+      "ack2": true,
+      "capture": false
+    },
+    {
+      "time_ns": 70,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 71,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 78,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "wait_low",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 80,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 85,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 90,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 92,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 99,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 100,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 106,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 110,
+      "source_edge": true,
+      "destination_edge": false,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 113,
+      "source_edge": false,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    },
+    {
+      "time_ns": 120,
+      "source_edge": true,
+      "destination_edge": true,
+      "req": false,
+      "ack": false,
+      "data": 42,
+      "source_phase": "done",
+      "req2": false,
+      "ack2": false,
+      "capture": false
+    }
+  ],
+  "captures": [
+    [
+      15,
+      42
+    ]
+  ],
+  "latch_events": [
+    [
+      0,
+      false,
+      false
+    ],
+    [
+      2,
+      false,
+      true
+    ],
+    [
+      3,
+      true,
+      true
+    ],
+    [
+      5,
+      false,
+      true
+    ],
+    [
+      7,
+      true,
+      true
+    ],
+    [
+      8,
+      true,
+      false
+    ],
+    [
+      10,
+      false,
+      false
+    ]
+  ],
+  "counter": [
+    {
+      "edge": 1,
+      "time_ns": 10,
+      "enable": true,
+      "before": 6,
+      "carry": false,
+      "after": 7
+    },
+    {
+      "edge": 2,
+      "time_ns": 20,
+      "enable": false,
+      "before": 7,
+      "carry": false,
+      "after": 7
+    },
+    {
+      "edge": 3,
+      "time_ns": 30,
+      "enable": true,
+      "before": 7,
+      "carry": true,
+      "after": 0
+    },
+    {
+      "edge": 4,
+      "time_ns": 40,
+      "enable": true,
+      "before": 0,
+      "carry": false,
+      "after": 1
+    }
+  ]
+}

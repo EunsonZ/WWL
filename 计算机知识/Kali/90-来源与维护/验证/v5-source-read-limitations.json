@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-06",
+  "scope": "representative failed endpoints and successful fallbacks, not complete request log",
+  "failures": [
+    {
+      "url": "https://wiki.nftables.org/wiki-nftables/index.php/Matching_connection_tracking_stateful_metainformation",
+      "observed": "fetch failed",
+      "handling": "used official nftables manpage instead"
+    },
+    {
+      "url": "https://www.first.org/epss/model",
+      "observed": "fetch failed",
+      "handling": "used FIRST EPSS root and did not claim unobserved model internals"
+    },
+    {
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/SSRF_Prevention_Cheat_Sheet.html",
+      "observed": "wrong/nonworking URL",
+      "handling": "used Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "url": "https://www.netexec.wiki/",
+      "observed": "fetch failed",
+      "handling": "used upstream GitHub repository description"
+    },
+    {
+      "url": "https://w1.fi/cgit/hostap/plain/wpa_supplicant/README",
+      "observed": "fetch failed",
+      "handling": "used w1.fi/wpa_supplicant/"
+    },
+    {
+      "url": "https://apktool.org/docs/intro",
+      "observed": "fetch failed",
+      "handling": "used apktool.org/"
+    },
+    {
+      "url": "https://www.openwall.com/john/doc/FAQ.shtml",
+      "observed": "later refetch failed after initial successful read",
+      "handling": "only the initial successful read supports the source record"
+    },
+    {
+      "url": "https://yara.readthedocs.io/en/stable/writingrules.html",
+      "observed": "fetch failed",
+      "handling": "used commandline.html for current CLI scope; retained historical rule references without reread claim"
+    },
+    {
+      "url": "https://yara.readthedocs.io/en/latest/writingrules.html",
+      "observed": "fetch failed",
+      "handling": "not a successfully read source"
+    },
+    {
+      "url": "https://clang.llvm.org/docs/LibFuzzer.html",
+      "observed": "fetch failed",
+      "handling": "used llvm.org/docs/LibFuzzer.html"
+    },
+    {
+      "url": "https://exiftool.org/faq.html",
+      "observed": "fetch failed",
+      "handling": "no new ExifTool-specific API claim based on this endpoint"
+    },
+    {
+      "url": "https://exiftool.org/",
+      "observed": "fetch failed",
+      "handling": "generic metadata-evidence reasoning only; old sources remain historical"
+    }
+  ],
+  "version_cautions": [
+    "PostgreSQL current documentation read was 18; do not infer installed server version.",
+    "OpenSSL documentation used 3.5, separate from v3 historical execution.",
+    "Suricata latest and Clang docs may be development documentation; core mechanisms only, not installed feature claims."
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "synthetic": true,
+  "window": "same 100 disputes; resources/evidence before entry; all entrants adjudicated and recorded by window end",
+  "scenarios": [
+    {
+      "name": "original",
+      "selection": "resource_or_evidence",
+      "label_rule": "evidence",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ]
+    },
+    {
+      "name": "entry_only_aid",
+      "selection": "all",
+      "label_rule": "evidence",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ]
+    },
+    {
+      "name": "evidence_deteriorates",
+      "selection": "resource_or_evidence",
+      "label_rule": "evidence",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 50
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 0
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ]
+    },
+    {
+      "name": "aid_also_improves_evidence",
+      "selection": "all",
+      "label_rule": "evidence",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 0
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 50
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ]
+    },
+    {
+      "name": "alternative_unseen_original",
+      "selection": "resource_or_evidence",
+      "label_rule": "unseen_cell_wins",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ]
+    },
+    {
+      "name": "alternative_unseen_all",
+      "selection": "all",
+      "label_rule": "unseen_cell_wins",
+      "cells": [
+        {
+          "resource": 0,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 0,
+          "evidence": 1,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 0,
+          "count": 25
+        },
+        {
+          "resource": 1,
+          "evidence": 1,
+          "count": 25
+        }
+      ]
+    }
+  ]
+}

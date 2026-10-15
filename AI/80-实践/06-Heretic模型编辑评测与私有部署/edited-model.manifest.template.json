@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact_type": "independent_edited_model",
+  "artifact_state": "template_not_materialized",
+  "experiment_id": "REPLACE_WITH_UNIQUE_EXPERIMENT_ID",
+  "base_model": {
+    "original_manifest_path": "/ABSOLUTE/PATH/TO/original-model.manifest.json",
+    "original_manifest_sha256": "REPLACE_WITH_SHA256",
+    "original_revision": "REPLACE_WITH_40_TO_64_HEX_COMMIT"
+  },
+  "experiment": {
+    "manifest_path": "/ABSOLUTE/PATH/TO/experiment.manifest.json",
+    "manifest_sha256": "REPLACE_WITH_SHA256"
+  },
+  "tool": {
+    "repository": "https://github.com/p-e-w/heretic",
+    "commit": "REPLACE_WITH_40_TO_64_HEX_COMMIT",
+    "license_spdx": "AGPL-3.0-or-later",
+    "local_modifications_manifest": "/ABSOLUTE/PATH/TO/heretic-source-changes.json"
+  },
+  "edit": {
+    "direction_manifest_sha256": "REPLACE_WITH_SHA256",
+    "trial_ledger_sha256": "REPLACE_WITH_SHA256",
+    "selected_trial_id": "REPLACE_WITH_SELECTED_TRIAL_ID",
+    "selection_validation_result_sha256": "REPLACE_WITH_SHA256",
+    "changed_tensor_manifest": "/ABSOLUTE/PATH/TO/changed-tensors.json"
+  },
+  "output": {
+    "directory": "/ABSOLUTE/PATH/TO/heretic-lab/models/edited/REPLACE_WITH_EXPERIMENT_ID",
+    "independent_from_original": true,
+    "original_unchanged": true,
+    "files": [
+      {
+        "path": "REPLACE_WITH_SAFE_RELATIVE_FILENAME",
+        "size_bytes": 0,
+        "sha256": "REPLACE_WITH_SHA256"
+      }
+    ]
+  },
+  "licenses": {
+    "tool_record": "/ABSOLUTE/PATH/TO/heretic-tool-license-record.md",
+    "base_model_record": "/ABSOLUTE/PATH/TO/model-license-record.md",
+    "derived_weight_distribution_decision": "not_reviewed_do_not_distribute",
+    "data_record": "/ABSOLUTE/PATH/TO/data-license-ledger.md"
+  },
+  "evaluation": {
+    "plan_sha256": "REPLACE_WITH_SHA256",
+    "service_gate": "blocked_until_all_quality_and_safety_gates_pass"
+  },
+  "notes": "模板不是模型产物；修改完成并计算真实哈希后另存为新文件，不得覆盖原模型 manifest。"
+}

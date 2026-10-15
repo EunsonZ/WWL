@@ -1,0 +1,21 @@
+{
+  "model_status": "original_bounded_teaching_not_measured",
+  "thermal": {
+    "Cj_J_per_K": 2.0,
+    "Cb_J_per_K": 8.0,
+    "Rjb_K_per_W": 5.0,
+    "Rba_K_per_W": 20.0,
+    "Rja_K_per_W": 100.0,
+    "Ta_K": 300.0
+  },
+  "power_W": 0.2,
+  "feedback_W_per_K": 0,
+  "mc_n": 10000,
+  "mc_seed": 2403,
+  "sigma_global": 0.03,
+  "sigma_local": 0.01,
+  "threshold": 0.02,
+  "grid_size": 9,
+  "grid_link_W_per_K": 0.1,
+  "grid_boundary_K": 300
+}

@@ -1,0 +1,113 @@
+{
+  "model": "harmonic oscillator, interior leading WKB, two simple turning points",
+  "diagnostics": [
+    {
+      "n": 0,
+      "energy_over_hbar_omega": 0.5,
+      "action_over_hbar": 1.5707963267948968,
+      "exact_action": 1.5707963267948966,
+      "points": [
+        {
+          "eta_over_turning": 0,
+          "epsilon": 0.0,
+          "relative_equation_residual": 0.5,
+          "exact": 0.7511255444649425,
+          "wkb": 0.7978845608028654
+        },
+        {
+          "eta_over_turning": 0.5,
+          "epsilon": 0.769800358919501,
+          "relative_equation_residual": 1.6296296296296295,
+          "exact": 0.6628659664424795,
+          "wkb": 0.7611638559523967
+        },
+        {
+          "eta_over_turning": 0.9,
+          "epsilon": 10.867061078079246,
+          "relative_equation_residual": 161.46668610584646,
+          "exact": 0.5009833202015626,
+          "wkb": 0.8792684933218947
+        },
+        {
+          "eta_over_turning": 0.99,
+          "epsilon": 352.65949394886985,
+          "relative_equation_residual": 156723.49271927102,
+          "exact": 0.46013632649385927,
+          "wkb": 1.5035582291844403
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "energy_over_hbar_omega": 5.5,
+      "action_over_hbar": 17.278759594743864,
+      "exact_action": 17.27875959474386,
+      "points": [
+        {
+          "eta_over_turning": 0,
+          "epsilon": 0.0,
+          "relative_equation_residual": 0.004132231404958678,
+          "exact": 0.0,
+          "wkb": 1.6096223608734598e-16
+        },
+        {
+          "eta_over_turning": 0.5,
+          "epsilon": 0.06998185081086372,
+          "relative_equation_residual": 0.013468013468013467,
+          "exact": -0.3964176262393436,
+          "wkb": -0.4016116406997252
+        },
+        {
+          "eta_over_turning": 0.9,
+          "epsilon": 0.9879146434617494,
+          "relative_equation_residual": 1.3344354223623667,
+          "exact": 0.5191671780775744,
+          "wkb": 0.5939060472862153
+        },
+        {
+          "eta_over_turning": 0.99,
+          "epsilon": 32.05995399535156,
+          "relative_equation_residual": 1295.235477018749,
+          "exact": 0.383698513695322,
+          "wkb": 0.833325426313882
+        }
+      ]
+    },
+    {
+      "n": 20,
+      "energy_over_hbar_omega": 20.5,
+      "action_over_hbar": 64.40264939859077,
+      "exact_action": 64.40264939859075,
+      "points": [
+        {
+          "eta_over_turning": 0,
+          "epsilon": 0.0,
+          "relative_equation_residual": 0.000297441998810232,
+          "exact": 0.31529120094180285,
+          "wkb": 0.3153146123212707
+        },
+        {
+          "eta_over_turning": 0.5,
+          "epsilon": 0.018775618510231733,
+          "relative_equation_residual": 0.0009694405887148303,
+          "exact": 0.2442575928132574,
+          "wkb": 0.24536571989486694
+        },
+        {
+          "eta_over_turning": 0.9,
+          "epsilon": 0.26505027019705474,
+          "relative_equation_residual": 0.09605394771317452,
+          "exact": 0.4384317988557588,
+          "wkb": 0.4363775578331158
+        },
+        {
+          "eta_over_turning": 0.99,
+          "epsilon": 8.601451071923574,
+          "relative_equation_residual": 93.23229786987987,
+          "exact": 0.36430261656998736,
+          "wkb": 0.6160945929721685
+        }
+      ]
+    }
+  ]
+}

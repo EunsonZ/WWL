@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "code=(async()=>{let out=[];for(let h of [\"3. 熵：来源分布自身的平均不确定性\",\"5. KL 散度：用 $Q$ 代替 $P$ 多付出的平均代价\",\"从平均损失到有限码流\"]){await app.workspace.openLinkText(\"数学/50-信息论/01-熵交叉熵KL散度与互信息#\"+h,\"Obsidian知识/10-基础/02-链接与知识网络/04-全局图谱与局部图谱.md\",false);await new Promise(r=>setTimeout(r,200));let l=app.workspace.getMostRecentLeaf();out.push({heading:h,state:l.getViewState(),cursor:l.view.editor?.getCursor(),scroll:l.view.editor?.getScrollInfo()});}return JSON.stringify(out);})()"
+  ],
+  "exit": 0,
+  "stdout": "[warn] Measure loop restarted more than 5 times\n=> [{\"heading\":\"3. 熵：来源分布自身的平均不确定性\",\"state\":{\"type\":\"markdown\",\"state\":{\"file\":\"数学/50-信息论/01-熵交叉熵KL散度与互信息.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"01-熵交叉熵KL散度与互信息\"},\"cursor\":{\"line\":79,\"ch\":0},\"scroll\":{\"top\":2041,\"left\":0,\"clientHeight\":939,\"clientWidth\":527,\"height\":939,\"width\":542}},{\"heading\":\"5. KL 散度：用 $Q$ 代替 $P$ 多付出的平均代价\",\"state\":{\"type\":\"markdown\",\"state\":{\"file\":\"数学/50-信息论/01-熵交叉熵KL散度与互信息.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"01-熵交叉熵KL散度与互信息\"},\"cursor\":{\"line\":129,\"ch\":0},\"scroll\":{\"top\":3073.5,\"left\":0,\"clientHeight\":939,\"clientWidth\":527,\"height\":939,\"width\":542}},{\"heading\":\"从平均损失到有限码流\",\"state\":{\"type\":\"markdown\",\"state\":{\"file\":\"数学/50-信息论/01-熵交叉熵KL散度与互信息.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"01-熵交叉熵KL散度与互信息\"},\"cursor\":{\"line\":271,\"ch\":0},\"scroll\":{\"top\":6967.5,\"left\":0,\"clientHeight\":939,\"clientWidth\":527,\"height\":939,\"width\":542}}]\n",
+  "stderr": "",
+  "time": "2026-10-09T19:25:00.387944+00:00"
+}

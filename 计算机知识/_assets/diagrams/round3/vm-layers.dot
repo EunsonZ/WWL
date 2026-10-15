@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="虚拟内存的几个不同“大小”",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"va" [label="虚拟地址空间\n保留、映射、未映射区域"];
+"pt" [label="页表与权限"];
+"ram" [label="当前驻留物理页\nRSS 的相关范围"];
+"file" [label="文件映射后备"];
+"swap" [label="交换后备\n适用于相应匿名页"];
+"va" -> "pt";
+"pt" -> "ram" [label="驻留映射"];
+"ram" -> "file" [label="回写 / 再读取"];
+"ram" -> "swap" [label="换出 / 换入"];
+
+}

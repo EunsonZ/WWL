@@ -1,0 +1,370 @@
+{
+  "previous_entries": 177,
+  "current_entries": 196,
+  "read_unique_urls": 39,
+  "new_entries": 19,
+  "reread_existing": 20,
+  "retained_not_reread": 157,
+  "new_ids": [
+    "v3_rfc9525",
+    "v3_sqlite_tx",
+    "v3_aptget",
+    "v3_ipv6",
+    "v3_iproute",
+    "v3_openssl_req",
+    "v3_jq",
+    "v3_ss",
+    "v3_ssh_config",
+    "v3_burp_http",
+    "v3_pg_rls",
+    "v3_openssl_x509",
+    "v3_openssl_options",
+    "v3_python_sqlite",
+    "v3_sqlite_isolation",
+    "v3_openssl_client",
+    "v3_openssl_errors",
+    "v3_yara_cli",
+    "v3_unicode"
+  ],
+  "reread_ids": [
+    "httpcache",
+    "kalisources",
+    "opensslverify",
+    "bash",
+    "curl",
+    "bindmanual",
+    "ssh",
+    "nmapversion",
+    "nmapxml",
+    "tshark",
+    "ffuf",
+    "acl",
+    "tcp",
+    "suricata-eve",
+    "zeek-conn-current",
+    "kubenetpolicy",
+    "binutils-readelf",
+    "icat",
+    "hashcat",
+    "john"
+  ],
+  "reads": [
+    {
+      "ledger_id": "httpcache",
+      "url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "accessed": "2026-09-05",
+      "section": "§2、4.1、4.2.3、4.3、5.2；缓存键、年龄、验证与指令",
+      "web_reference": "turn873546view0",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_rfc9525",
+      "url": "https://www.rfc-editor.org/rfc/rfc9525.html",
+      "accessed": "2026-09-05",
+      "section": "§1.3、2、6；DNS/IP 参考身份，CN 与 SAN 边界",
+      "web_reference": "turn191775view4",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_sqlite_tx",
+      "url": "https://www.sqlite.org/lang_transaction.html",
+      "accessed": "2026-09-05",
+      "section": "DEFERRED/IMMEDIATE、COMMIT 与 SQLITE_BUSY",
+      "web_reference": "turn873546view4",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "kalisources",
+      "url": "https://www.kali.org/docs/general-use/kali-apt-sources/",
+      "accessed": "2026-09-05",
+      "section": "默认配置、kali.sources 与旧 sources.list，2026.2 变化",
+      "web_reference": "turn459117view0",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_aptget",
+      "url": "https://manpages.debian.org/testing/apt/apt-get.8.en.html",
+      "accessed": "2026-09-05",
+      "section": "check、simulation、update 与安装状态",
+      "web_reference": "turn459117view1",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_ipv6",
+      "url": "https://man7.org/linux/man-pages/man7/ipv6.7.html",
+      "accessed": "2026-09-05",
+      "section": "IPV6_V6ONLY、IPv4 映射地址、scope ID",
+      "web_reference": "turn459117view4",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_iproute",
+      "url": "https://man7.org/linux/man-pages/man8/ip-route.8.html",
+      "accessed": "2026-09-05",
+      "section": "路由对象、get/show、规则上下文；背景交叉核查",
+      "web_reference": "turn459117view5",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "opensslverify",
+      "url": "https://docs.openssl.org/3.5/man1/openssl-verify/",
+      "accessed": "2026-09-05",
+      "section": "CAfile、untrusted、purpose、verify_hostname、verify_ip、attime",
+      "web_reference": "turn459117view6",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_openssl_req",
+      "url": "https://docs.openssl.org/3.5/man1/openssl-req/",
+      "accessed": "2026-09-05",
+      "section": "EC、密钥生成、证书请求与扩展",
+      "web_reference": "turn459117view7",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_jq",
+      "url": "https://jqlang.org/manual/",
+      "accessed": "2026-09-05",
+      "section": "exit-status 最后一个输出、slurp、all、type、floor",
+      "web_reference": "turn941659view0",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "bash",
+      "url": "https://manpages.debian.org/testing/bash/bash.1.en.html",
+      "accessed": "2026-09-05",
+      "section": "退出状态、管道、重定向和子 Shell",
+      "web_reference": "turn941659view1",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "curl",
+      "url": "https://curl.se/docs/manpage.html",
+      "accessed": "2026-09-05",
+      "section": "-q 第一参数、write-out 时间量、retry、data-binary",
+      "web_reference": "turn941659view2",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "bindmanual",
+      "url": "https://bind9.readthedocs.io/en/latest/manpages.html",
+      "accessed": "2026-09-05",
+      "section": "dig 查询条件、-4/-6、@server、TCP、状态；读取页面为开发文档分支",
+      "web_reference": "turn941659view3",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_ss",
+      "url": "https://man7.org/linux/man-pages/man8/ss.8.html",
+      "accessed": "2026-09-05",
+      "section": "-4/-6、listening 与进程；独立观察 IPv4/IPv6",
+      "web_reference": "turn941659view4",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "ssh",
+      "url": "https://man.openbsd.org/ssh",
+      "accessed": "2026-09-05",
+      "section": "-L、-D、转发端点与实际解析位置",
+      "web_reference": "turn941659view5",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_ssh_config",
+      "url": "https://man.openbsd.org/ssh_config",
+      "accessed": "2026-09-05",
+      "section": "ExitOnForwardFailure 的连接范围限制",
+      "web_reference": "turn941659view6",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "nmapversion",
+      "url": "https://nmap.org/book/man-version-detection.html",
+      "accessed": "2026-09-05",
+      "section": "version intensity、端口推断与探测匹配",
+      "web_reference": "turn890586view0",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "nmapxml",
+      "url": "https://nmap.org/book/output-formats-xml-output.html",
+      "accessed": "2026-09-05",
+      "section": "service method/conf、scaninfo 与 runstats",
+      "web_reference": "turn890586view1",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "tshark",
+      "url": "https://www.wireshark.org/docs/man-pages/tshark.html",
+      "accessed": "2026-09-05",
+      "section": "-r、-Y、-T fields、字段出现次数与二次解析",
+      "web_reference": "turn890586view2",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "ffuf",
+      "url": "https://github.com/ffuf/ffuf",
+      "accessed": "2026-09-05",
+      "section": "matcher、filter、自动校准与预算；非真实目标执行",
+      "web_reference": "turn890586view3",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_burp_http",
+      "url": "https://portswigger.net/burp/documentation/desktop/tools/repeater/http-messages",
+      "accessed": "2026-09-05",
+      "section": "请求发送与历史对照；三次对照是本包教学方法",
+      "web_reference": "turn890586view4",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_pg_rls",
+      "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+      "accessed": "2026-09-05",
+      "section": "读取为 PostgreSQL 18；USING/WITH CHECK、owner、BYPASSRLS、FORCE",
+      "web_reference": "turn191775view2",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_openssl_x509",
+      "url": "https://docs.openssl.org/3.5/man1/openssl-x509/",
+      "accessed": "2026-09-05",
+      "section": "证书字段、日期、DER/PEM、微型 CA",
+      "web_reference": "turn973107view0",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_openssl_options",
+      "url": "https://docs.openssl.org/3.5/man1/openssl-verification-options/",
+      "accessed": "2026-09-05",
+      "section": "显式信任、身份、用途与时间",
+      "web_reference": "turn973107view1",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_python_sqlite",
+      "url": "https://docs.python.org/3.13/library/sqlite3.html",
+      "accessed": "2026-09-05",
+      "section": "isolation_level、显式事务、连接上下文、异常",
+      "web_reference": "turn973107view2",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_sqlite_isolation",
+      "url": "https://sqlite.org/isolation.html",
+      "accessed": "2026-09-05",
+      "section": "写事务串行化、快照与连接可见性",
+      "web_reference": "turn973107view3",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "acl",
+      "url": "https://manpages.debian.org/testing/acl/acl.5.en.html",
+      "accessed": "2026-09-05",
+      "section": "访问判定顺序、mask、命名用户、不回退和继承",
+      "web_reference": "turn191775view3",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "tcp",
+      "url": "https://www.rfc-editor.org/rfc/rfc9293.html",
+      "accessed": "2026-09-05",
+      "section": "§3；序号、确认与字节流，重叠区间是教学简化",
+      "web_reference": "turn191775view0",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_openssl_client",
+      "url": "https://docs.openssl.org/3.5/man1/openssl-s_client/",
+      "accessed": "2026-09-05",
+      "section": "verify_return_error、证书诊断与默认继续行为",
+      "web_reference": "turn191775view1",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_openssl_errors",
+      "url": "https://docs.openssl.org/3.5/man3/X509_STORE_CTX_get_error/",
+      "accessed": "2026-09-05",
+      "section": "证书路径错误、名称/用途/时间/签名类别；数字结合本轮输出",
+      "web_reference": "turn787385view0",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "suricata-eve",
+      "url": "https://docs.suricata.io/en/latest/output/eve/eve-json-output.html",
+      "accessed": "2026-09-05",
+      "section": "读取为 9.0 开发文档；event_type、flow_id、事务关联",
+      "web_reference": "turn787385view1",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "zeek-conn-current",
+      "url": "https://docs.zeek.org/en/current/reference/logs/conn.html",
+      "accessed": "2026-09-05",
+      "section": "读取页面为 8.2.2；uid 与连接粒度，跨日志关联",
+      "web_reference": "turn787385view2",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_yara_cli",
+      "url": "https://yara.readthedocs.io/en/stable/commandline.html",
+      "accessed": "2026-09-05",
+      "section": "读取为 4.4 文档；目录递归、跳过大文件、错误与超时",
+      "web_reference": "turn787385view3",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "kubenetpolicy",
+      "url": "https://kubernetes.io/docs/concepts/services-networking/network-policies/",
+      "accessed": "2026-09-05",
+      "section": "同项选择器交集、分项并集；单独 podSelector 范围与 ICMP 边界",
+      "web_reference": "turn787385view4",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "binutils-readelf",
+      "url": "https://sourceware.org/binutils/docs/binutils/readelf.html",
+      "accessed": "2026-09-05",
+      "section": "program headers、sections、symbols；数值换算另作独立模型验证",
+      "web_reference": "turn787385view5",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "v3_unicode",
+      "url": "https://docs.python.org/3.13/library/unicodedata.html",
+      "accessed": "2026-09-05",
+      "section": "normalize 与 NFC；不规定应用必须规范化口令",
+      "web_reference": "turn716149view0",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "icat",
+      "url": "https://www.sleuthkit.org/sleuthkit/man/icat.html",
+      "accessed": "2026-09-05",
+      "section": "inode/type/id、-o、-b、-h 去掉 holes；逻辑内容变化",
+      "web_reference": "turn716149view1",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "hashcat",
+      "url": "https://hashcat.net/wiki/doku.php?id=hashcat",
+      "accessed": "2026-09-05",
+      "section": "输入、potfile、show 与会话结果来源",
+      "web_reference": "turn716149view2",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    },
+    {
+      "ledger_id": "john",
+      "url": "https://www.openwall.com/john/doc/EXAMPLES.shtml",
+      "accessed": "2026-09-05",
+      "section": "wordlist、pot 与 show；不混写本轮候选与历史结果",
+      "web_reference": "turn716149view3",
+      "state": "v3 本轮网页已读取；不代表全部接口实测"
+    }
+  ],
+  "not_counted": [
+    "Earlier OpenSSL 3.0 and generic Python sqlite3 pages were background comparisons; citations use corresponding 3.5/3.13 pages instead.",
+    "Failed GNU/Netfilter/ACL lookup paths were not counted as successful verification; successful official alternative pages are recorded."
+  ],
+  "authority": "sources.json remains the current source ledger; this file records the v3 review operation"
+}

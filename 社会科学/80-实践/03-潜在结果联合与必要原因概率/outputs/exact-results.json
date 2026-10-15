@@ -1,0 +1,91 @@
+{
+  "scope": "exact synthetic model; not a confidence interval or legal probability",
+  "type_order": [
+    "11",
+    "10",
+    "01",
+    "00"
+  ],
+  "q_bounds": [
+    "0",
+    "1/10"
+  ],
+  "pn_bounds_under_joint_independence": [
+    "1/2",
+    "1"
+  ],
+  "cases": [
+    {
+      "name": "model_alpha",
+      "q": "1/10",
+      "types_11_10_01_00": [
+        "1/10",
+        "1/10",
+        "0",
+        "4/5"
+      ],
+      "p1": "1/5",
+      "p0": "1/10",
+      "ate": "1/10",
+      "pn_under_joint_independence": "1/2",
+      "monotone_y1_ge_y0": true
+    },
+    {
+      "name": "model_beta",
+      "q": "0",
+      "types_11_10_01_00": [
+        "0",
+        "1/5",
+        "1/10",
+        "7/10"
+      ],
+      "p1": "1/5",
+      "p0": "1/10",
+      "ate": "1/10",
+      "pn_under_joint_independence": "1",
+      "monotone_y1_ge_y0": false
+    },
+    {
+      "name": "transfer",
+      "q": "1/20",
+      "types_11_10_01_00": [
+        "1/20",
+        "3/20",
+        "1/20",
+        "3/4"
+      ],
+      "p1": "1/5",
+      "p0": "1/10",
+      "ate": "1/10",
+      "pn_under_joint_independence": "3/4",
+      "monotone_y1_ge_y0": false
+    }
+  ],
+  "separate_independence_example": {
+    "assignment_probability": "1/2",
+    "types_given_a1": [
+      "2/25",
+      "3/25",
+      "1/50",
+      "39/50"
+    ],
+    "types_given_a0": [
+      "1/50",
+      "9/50",
+      "2/25",
+      "18/25"
+    ],
+    "population_types": [
+      "1/20",
+      "3/20",
+      "1/20",
+      "3/4"
+    ],
+    "p1_in_both_groups": "1/5",
+    "p0_in_both_groups": "1/10",
+    "actual_conditional_pn": "3/5",
+    "population_joint_ratio": "3/4",
+    "joint_independence": false,
+    "ratio_equality": false
+  }
+}

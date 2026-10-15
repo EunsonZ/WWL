@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 410" role="img" aria-labelledby="title desc">
+<title id="title">Same plant: constant cooling disturbance</title>
+<desc id="desc">Temperature deviation in K against time in s. Sampled values joined by straight lines, not continuous trajectories. C=10 J/K, H=1 W/K, kp=3 W/K; labels and dash patterns distinguish curves.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="75" y="25" font-size="17">Same plant: constant cooling disturbance</text>
+<path d="M 75.0 95 v 235" stroke="#ddd"/>
+<text x="75.0" y="350" text-anchor="middle" font-size="13">0</text>
+<path d="M 205.0 95 v 235" stroke="#ddd"/>
+<text x="205.0" y="350" text-anchor="middle" font-size="13">8</text>
+<path d="M 335.0 95 v 235" stroke="#ddd"/>
+<text x="335.0" y="350" text-anchor="middle" font-size="13">16</text>
+<path d="M 465.0 95 v 235" stroke="#ddd"/>
+<text x="465.0" y="350" text-anchor="middle" font-size="13">24</text>
+<path d="M 595.0 95 v 235" stroke="#ddd"/>
+<text x="595.0" y="350" text-anchor="middle" font-size="13">32</text>
+<path d="M 725.0 95 v 235" stroke="#ddd"/>
+<text x="725.0" y="350" text-anchor="middle" font-size="13">40</text>
+<path d="M 75 330.0 h 650" stroke="#ddd"/>
+<text x="65" y="334.0" text-anchor="end" font-size="13">0</text>
+<path d="M 75 271.25 h 650" stroke="#ddd"/>
+<text x="65" y="275.25" text-anchor="end" font-size="13">0.55</text>
+<path d="M 75 212.5 h 650" stroke="#ddd"/>
+<text x="65" y="216.5" text-anchor="end" font-size="13">1.1</text>
+<path d="M 75 153.75 h 650" stroke="#ddd"/>
+<text x="65" y="157.75" text-anchor="end" font-size="13">1.65</text>
+<path d="M 75 95.0 h 650" stroke="#ddd"/>
+<text x="65" y="99.0" text-anchor="end" font-size="13">2.2</text>
+<text x="390" y="390" font-size="14">time t [s]</text>
+<text x="12" y="55" font-size="14">x [K]</text>
+<polyline points="75.000,330.000 91.250,248.679 107.500,198.313 123.750,167.119 140.000,147.799 156.250,135.833 172.500,128.422 188.750,123.832 205.000,120.989 221.250,119.228 237.500,118.138 253.750,117.463 270.000,117.044 286.250,116.785 302.500,116.625 318.750,116.525 335.000,116.464 351.250,116.426 367.500,116.402 383.750,116.387 400.000,116.378 416.250,116.373 432.500,116.369 448.750,116.367 465.000,116.366 481.250,116.365 497.500,116.364 513.750,116.364 530.000,116.364 546.250,116.364 562.500,116.364 578.750,116.364 595.000,116.364 611.250,116.364 627.500,116.364 643.750,116.364 660.000,116.364 676.250,116.364 692.500,116.364 708.750,116.364 725.000,116.364" fill="none" stroke="#222" stroke-width="2" stroke-dasharray=""/>
+<text x="75" y="45" font-size="12" fill="#222">P nominal; Ts=1 s; d=0 W</text>
+<polyline points="75.000,330.000 91.250,269.009 107.500,231.235 123.750,207.839 140.000,193.349 156.250,184.375 172.500,178.817 188.750,175.374 205.000,173.242 221.250,171.921 237.500,171.103 253.750,170.597 270.000,170.283 286.250,170.089 302.500,169.969 318.750,169.894 335.000,169.848 351.250,169.819 367.500,169.802 383.750,169.791 400.000,169.784 416.250,169.780 432.500,169.777 448.750,169.775 465.000,169.774 481.250,169.774 497.500,169.773 513.750,169.773 530.000,169.773 546.250,169.773 562.500,169.773 578.750,169.773 595.000,169.773 611.250,169.773 627.500,169.773 643.750,169.773 660.000,169.773 676.250,169.773 692.500,169.773 708.750,169.773 725.000,169.773" fill="none" stroke="#1366a5" stroke-width="2" stroke-dasharray="8 4"/>
+<text x="75" y="61" font-size="12" fill="#1366a5">P disturbed; Ts=1 s; d=-2 W</text>
+<polyline points="75.000,330.000 91.250,269.009 107.500,223.103 123.750,188.860 140.000,163.589 156.250,145.178 172.500,131.977 188.750,122.704 205.000,116.367 221.250,112.201 237.500,109.620 253.750,108.180 270.000,107.545 286.250,107.463 302.500,107.748 318.750,108.264 335.000,108.911 351.250,109.620 367.500,110.343 383.750,111.047 400.000,111.713 416.250,112.327 432.500,112.885 448.750,113.384 465.000,113.825 481.250,114.212 497.500,114.548 513.750,114.839 530.000,115.087 546.250,115.299 562.500,115.479 578.750,115.631 595.000,115.759 611.250,115.866 627.500,115.956 643.750,116.030 660.000,116.091 676.250,116.142 692.500,116.184 708.750,116.218 725.000,116.246" fill="none" stroke="#a34900" stroke-width="2" stroke-dasharray="2 3"/>
+<text x="75" y="77" font-size="12" fill="#a34900">PI disturbed; Ts=1 s; d=-2 W</text>
+</svg>

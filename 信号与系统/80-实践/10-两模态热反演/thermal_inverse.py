@@ -1,0 +1,267 @@
+#!/usr/bin/env python3
+"""Two normalized Neumann heat modes: exact rational inverse and Gaussian output.
+
+Python 3.10+ standard library. Rational inputs are strings; plots alone use floats.
+The CLI creates a NEW output directory and never overwrites an existing result.
+"""
+import argparse
+import csv
+from fractions import Fraction as F
+import html
+import json
+import math
+from pathlib import Path
+import re
+
+
+def rational(value, positive=False):
+    if not isinstance(value, str) or not re.fullmatch(r'-?\d{1,7}(?:/\d{1,7})?', value):
+        raise ValueError('expected a bounded integer or rational STRING')
+    try:
+        answer = F(value)
+    except ZeroDivisionError as exc:
+        raise ValueError('zero denominator') from exc
+    if abs(answer) > 1000000 or (positive and answer <= 0):
+        raise ValueError('rational out of range or not positive')
+    return answer
+
+
+def pair(value, positive=False):
+    if not isinstance(value, list) or len(value) != 2:
+        raise ValueError('expected exactly two coordinates')
+    return tuple(rational(v, positive) for v in value)
+
+
+def read_inputs(path):
+    def unique_pairs(pairs):
+        out = {}
+        for key, value in pairs:
+            if key in out:
+                raise ValueError('duplicate JSON key')
+            out[key] = value
+        return out
+    raw = json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique_pairs)
+    required = {'decay_denominator', 'truth', 'observation', 'changed_observation',
+                'lambda', 'gaussian_cases', 'repeat_counts', 'parameter_scale',
+                'observation_scale'}
+    if not isinstance(raw, dict) or set(raw) != required:
+        raise ValueError('unexpected or missing input keys')
+    q = raw['decay_denominator']
+    if type(q) is not int or not 2 <= q <= 10000:
+        raise ValueError('decay_denominator must be integer 2..10000')
+    cases = raw['gaussian_cases']
+    if not isinstance(cases, list) or not 1 <= len(cases) <= 8:
+        raise ValueError('expected 1..8 Gaussian cases')
+    parsed_cases = []
+    names = set()
+    for case in cases:
+        if not isinstance(case, dict) or set(case) != {'name', 'noise_variance', 'prior_variance'}:
+            raise ValueError('invalid Gaussian case keys')
+        name = case['name']
+        if not isinstance(name, str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,16}', name) or name in names:
+            raise ValueError('invalid or duplicate case name')
+        names.add(name)
+        parsed_cases.append((name, rational(case['noise_variance'], True),
+                             rational(case['prior_variance'], True)))
+    counts = raw['repeat_counts']
+    if (not isinstance(counts, list) or not 1 <= len(counts) <= 32 or
+            any(type(m) is not int or not 1 <= m <= 1000 for m in counts) or
+            len(counts) != len(set(counts))):
+        raise ValueError('repeat_counts must be distinct integers 1..1000')
+    return {'q': q, 'a': (F(1), F(1, q)), 'truth': pair(raw['truth']),
+            'observation': pair(raw['observation']), 'changed': pair(raw['changed_observation']),
+            'lam': rational(raw['lambda'], True), 'cases': parsed_cases, 'counts': counts,
+            'd': pair(raw['parameter_scale'], True), 's': pair(raw['observation_scale'], True)}
+
+
+def inverse(a, y):
+    return tuple(v / h for h, v in zip(a, y))
+
+
+def ridge(a, y, lam):
+    return tuple(h * v / (h * h + lam) for h, v in zip(a, y))
+
+
+def posterior(a, y, noise_variance, prior_variance, m=1):
+    # y is the average of m genuinely independent rows with the same A.
+    covariance = tuple(1 / (1 / prior_variance + m * h * h / noise_variance) for h in a)
+    mean = tuple(c * m * h * v / noise_variance for c, h, v in zip(covariance, a, y))
+    return mean, covariance
+
+
+def encode(value):
+    if isinstance(value, F):
+        return str(value)
+    if isinstance(value, dict):
+        return {k: encode(v) for k, v in value.items()}
+    if isinstance(value, (tuple, list)):
+        return [encode(v) for v in value]
+    return value
+
+
+def solve(p):
+    a, x, lam = p['a'], p['truth'], p['lam']
+    clean = tuple(h * v for h, v in zip(a, x))
+    records = []
+    for name, y in [('main', p['observation']), ('changed', p['changed']), ('noiseless', clean)]:
+        for method, estimate in [('direct', inverse(a, y)), ('ridge', ridge(a, y, lam))]:
+            errors = tuple((v - t)**2 for v, t in zip(estimate, x))
+            residual = tuple(v - h * z for h, z, v in zip(a, estimate, y))
+            records.append({'case': name, 'method': method, 'y': y, 'estimate': estimate,
+                            'coordinate_squared_errors': errors, 'squared_error_sum': sum(errors),
+                            'mse_over_two': sum(errors) / 2, 'residual_y_minus_Ax': residual,
+                            'residual_squared_sum': sum(v * v for v in residual)})
+    gaussians = []
+    repeats = []
+    for name, nv, pv in p['cases']:
+        mean, cov = posterior(a, p['observation'], nv, pv)
+        gaussians.append({'name': name, 'noise_variance': nv, 'prior_variance': pv,
+                         'lambda': nv / pv, 'mean': mean, 'covariance_diagonal': cov})
+        for m in p['counts']:
+            _, variance = posterior(a, p['observation'], nv, pv, m)
+            # The exact-zero countermodel removes the weak measurement direction.
+            _, null_variance = posterior((a[0], F(0)), p['observation'], nv, pv, m)
+            repeats.append({'name': name, 'm_independent': m,
+                            'weak_variance': variance[1], 'null_variance': null_variance[1]})
+    name, nv, pv = p['cases'][0]
+    mean, covariance = posterior(a, p['observation'], nv, pv)
+    d, s = p['d'], p['s']
+    transformed_a = tuple(si * ai * di for si, ai, di in zip(s, a, d))
+    transformed_noise = tuple(si * si * nv for si in s)
+    transformed_prior = tuple(pv / (di * di) for di in d)
+    transformed_y = tuple(si * yi for si, yi in zip(s, p['observation']))
+    precision = tuple(1 / pri + ai * ai / noi for pri, ai, noi in
+                      zip(transformed_prior, transformed_a, transformed_noise))
+    zcov = tuple(1 / v for v in precision)
+    zmean = tuple(ci * ai * yi / noi for ci, ai, yi, noi in
+                  zip(zcov, transformed_a, transformed_y, transformed_noise))
+    return {'model': {'A_diagonal': a, 'T_dimensionless': 'ln(' + str(p['q']) + ')',
+                      'kappa2': p['q'], 'truth': x, 'clean_observation': clean, 'lambda': lam,
+                      'direct_gain': tuple(1 / h for h in a),
+                      'ridge_gain': tuple(h / (h * h + lam) for h in a),
+                      'ridge_noiseless_bias': tuple(-lam * v / (h * h + lam) for h, v in zip(a, x))},
+            'estimates': records, 'gaussians': gaussians, 'repeats': repeats,
+            'coordinate_change': {'case': name, 'definition': 'x=Dz, y_new=Sy',
+                                  'D_diagonal': d, 'S_diagonal': s, 'A_new_diagonal': transformed_a,
+                                  'noise_new_diagonal': transformed_noise,
+                                  'prior_new_diagonal': transformed_prior,
+                                  'mean_z': zmean, 'covariance_z_diagonal': zcov,
+                                  'mapped_mean_x': tuple(di * zi for di, zi in zip(d, zmean)),
+                                  'mapped_covariance_x_diagonal': tuple(di * di * ci for di, ci in zip(d, zcov)),
+                                  'original_mean_x': mean, 'original_covariance_x_diagonal': covariance}}
+
+
+def make_svg(p, result):
+    lines = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1210" viewBox="0 0 1200 1210">',
+             '<title>Two-mode heat inverse: smoothing, bias and posterior variance</title>',
+             '<desc>All axes are dimensionless. Neumann modes phi0 and phi1; T=ln(q). '
+             'Panel one shows true heat profiles; panel two weak-coordinate estimators versus observation; '
+             'panel three independent-repeat posterior variances. Values come from inputs.json.</desc>',
+             '<rect width="1200" height="1210" fill="white"/>',
+             '<g font-family="Arial,sans-serif" font-size="17" fill="#17202a">']
+    def text(x, y, value, size=17, anchor='start'):
+        lines.append(f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}">{html.escape(str(value))}</text>')
+    def short(value):
+        return f'{float(value):.4g}'
+    def path(points, color, dash=''):
+        points = ' '.join(f'{x:.3f},{y:.3f}' for x, y in points)
+        lines.append(f'<polyline points="{points}" fill="none" stroke="{color}" stroke-width="3" stroke-dasharray="{dash}"/>')
+    def panel(top, title, xlabel, ylabel, xmin, xmax, ymin, ymax, xticks, yticks):
+        left, right, bottom = 100, 820, top + 225
+        text(55, top - 25, title, 22)
+        lines.append(f'<path d="M100 {top} V{bottom} H820" fill="none" stroke="#333"/>')
+        fx = lambda x: left + (x - xmin) / (xmax - xmin) * (right - left)
+        fy = lambda y: bottom - (y - ymin) / (ymax - ymin) * (bottom - top)
+        for index, tick in enumerate(sorted(set(xticks))):
+            lines.append(f'<path d="M{fx(tick):.3f} {bottom} v6" stroke="#333"/>')
+            text(round(fx(tick)-12), bottom + 23 + (18 if index % 2 else 0), f'{tick:.4g}')
+        for tick in sorted(set(yticks)):
+            lines.append(f'<path d="M94 {fy(tick):.3f} H820" stroke="#ddd"/>')
+            text(88, round(fy(tick)+5), f'{tick:.4g}', anchor='end')
+        text(350, bottom + 60, xlabel)
+        text(100, top - 4, ylabel)
+        return fx, fy
+    a, x, lam = p['a'], p['truth'], p['lam']
+    profiles = []
+    for attenuation in (F(1), F(1, p['q'])):
+        profiles.append([(i / 128 * math.pi,
+                          float(x[0]) / math.sqrt(math.pi) + float(x[1] * attenuation) *
+                          math.sqrt(2 / math.pi) * math.cos(i / 128 * math.pi)) for i in range(129)])
+    min_u = min(v for curve in profiles for _, v in curve)
+    max_u = max(v for curve in profiles for _, v in curve)
+    padding = max(0.1, (max_u - min_u) * 0.1)
+    fx, fy = panel(90, '1  Forward diffusion keeps the mean and attenuates the cosine',
+                   'space xi (dimensionless)', 'u (temperature / theta0)', 0, math.pi,
+                   min_u - padding, max_u + padding, [0, 1, 2, math.pi],
+                   [round(min_u, 2), round((min_u + max_u) / 2, 2), round(max_u, 2)])
+    for curve, color, dash in zip(profiles, ['#2166ac', '#b2182b'], ['', '8 5']):
+        path([(fx(z), fy(v)) for z, v in curve], color, dash)
+    text(835, 130, 'solid: t=0')
+    text(835, 158, 'dashed: t=T')
+    text(100, 420, f'q={p["q"]}; T=ln(q); x=({short(x[0])}, {short(x[1])}); zero flux at both ends')
+    ys = [F(0), p['observation'][1], p['changed'][1], a[1] * x[1]]
+    lo, hi = min(ys), max(ys)
+    pad = max(F(1, 1000), (hi - lo) / 10)
+    lo, hi = lo - pad, hi + pad
+    gain_d, gain_r = 1 / a[1], a[1] / (a[1]**2 + lam)
+    vals = [float(gain * y) for gain in (gain_d, gain_r) for y in (lo, hi)] + [float(x[1])]
+    ymin, ymax = min(vals) - 0.15, max(vals) + 0.15
+    fx, fy = panel(490, '2  Less sensitivity still leaves a noiseless shrinkage bias',
+                   'weak observation y1 (dimensionless)', 'estimate of x1 (dimensionless)',
+                   float(lo), float(hi), ymin, ymax,
+                   [float(a[1] * x[1]), float(p['changed'][1]), float(p['observation'][1])],
+                   [0, float(x[1]), round(ymax - 0.15, 2)])
+    for gain, color, dash in [(gain_d, '#2166ac', ''), (gain_r, '#b2182b', '8 5')]:
+        path([(fx(float(y)), fy(float(gain * y))) for y in (lo, hi)], color, dash)
+    path([(fx(float(lo)), fy(float(x[1]))), (fx(float(hi)), fy(float(x[1])))], '#555', '3 4')
+    text(835, 530, 'solid: direct')
+    text(835, 558, 'dashed: ridge')
+    text(835, 586, 'dotted: truth')
+    text(100, 820, f'lambda={short(lam)}; weak gains: direct={short(gain_d)}, ridge={short(gain_r)}')
+    items = result['repeats']
+    ytop = max(float(item['weak_variance']) for item in items) * 1.15
+    fx, fy = panel(890, '3  Independent repeats add precision; absolute scales matter',
+                   'm independent observations (count)', 'Var(x1 | data) (dimensionless squared)',
+                   0, max(p['counts']) + 1, 0, ytop,
+                   (sorted(p['counts']) if len(p['counts']) <= 4 else
+                    [min(p['counts']), sorted(p['counts'])[len(p['counts'])//2], max(p['counts'])]),
+                   [0, ytop / 2, ytop / 1.15])
+    colors = ['#2166ac', '#b2182b', '#1b7837', '#762a83', '#e08214', '#008080', '#444444', '#984ea3']
+    for (name, nv, pv), color in zip(p['cases'], colors):
+        curve = [(fx(m), fy(float(1 / (1 / pv + m * a[1]**2 / nv)))) for m in sorted(p['counts'])]
+        path(curve, color)
+        for z, v in curve:
+            lines.append(f'<circle cx="{z:.3f}" cy="{v:.3f}" r="4" fill="{color}"/>')
+        text(835, 912 + 25 * p['cases'].index((name, nv, pv)),
+             f'{name}: nv={short(nv)}, pv={short(pv)}', size=14)
+    lines.append('</g></svg>')
+    return '\n'.join(lines) + '\n'
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--input', type=Path, default=Path(__file__).with_name('inputs.json'))
+    parser.add_argument('--out', type=Path, required=True, help='NEW result directory')
+    args = parser.parse_args()
+    try:
+        parameters = read_inputs(args.input)
+        result = solve(parameters)
+        svg = make_svg(parameters, result)
+        args.out.mkdir(parents=True, exist_ok=False)
+        (args.out / 'results.json').write_text(json.dumps(encode(result), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        with (args.out / 'estimates.csv').open('w', encoding='utf-8', newline='') as handle:
+            writer = csv.writer(handle)
+            writer.writerow(['case', 'method', 'x0_hat', 'x1_hat', 'err0_squared', 'err1_squared',
+                             'error_squared_sum', 'mse_over_two', 'residual_squared_sum'])
+            for row in result['estimates']:
+                writer.writerow([row['case'], row['method'], *row['estimate'],
+                                 *row['coordinate_squared_errors'], row['squared_error_sum'],
+                                 row['mse_over_two'], row['residual_squared_sum']])
+        (args.out / 'thermal_inverse.svg').write_text(svg, encoding='utf-8')
+    except (ValueError, OSError, json.JSONDecodeError) as exc:
+        parser.exit(2, f'error: {exc}\n')
+    print(f'Wrote exact JSON, CSV and same-model SVG to {args.out}')
+
+
+if __name__ == '__main__':
+    main()

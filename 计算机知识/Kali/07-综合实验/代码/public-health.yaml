@@ -1,0 +1,23 @@
+# ORIGINAL SYNTHETIC TEACHING TEMPLATE. No claim of a vulnerability.
+# Run only against the explicitly started loopback service in Lab A.
+id: kali-lab-public-health
+info:
+  name: Synthetic public health fixture
+  author: kali-course
+  severity: info
+  description: Recognizes the public synthetic fixture; not a vulnerability test.
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/health"
+    redirects: false
+    matchers-condition: and
+    matchers:
+      - type: status
+        status: [200]
+      - type: word
+        part: body
+        condition: and
+        words:
+          - '"status":"ok"'
+          - '"synthetic":true'

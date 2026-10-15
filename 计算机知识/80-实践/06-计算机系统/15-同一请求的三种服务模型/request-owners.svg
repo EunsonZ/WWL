@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="1030" viewBox="0 0 425 1030" role="img" aria-labelledby="title desc">
+<title id="title">同一行请求在三种服务模型中的所有者</title>
+<desc id="desc">425 像素宽的纵向图。客户端发送两行后半关闭。迭代模型的处理者拥有连接状态；预线程模型由 acceptor、容量有限的队列和 worker 交接；事件循环拥有 selector 和带 generation 的连接状态。三种模型都必须在输出排空后关闭。</desc>
+<rect x="0" y="0" width="425" height="1030" fill="#fbfcfe"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9z" fill="#28445c"/></marker></defs>
+<style>
+text{font-family:'Arial Unicode MS','Hiragino Sans GB','PingFang SC',Arial,sans-serif;fill:#172b3a}
+.title{font-size:21px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:16px}.small{font-size:15px}
+.box{fill:#eef5fb;stroke:#28445c;stroke-width:2}.queue{fill:#fff3d9;stroke:#8a5a00;stroke-width:2}.event{fill:#eaf7ee;stroke:#27734a;stroke-width:2}
+.flow{stroke:#28445c;stroke-width:2.4;marker-end:url(#arrow)}.handoff{stroke:#8a5a00;stroke-width:2.4;stroke-dasharray:7 5;marker-end:url(#arrow)}
+</style>
+<text x="20" y="35" class="title">同一对象：行、缓冲与关闭责任</text>
+<rect x="34" y="65" width="357" height="102" rx="12" class="box"/>
+<text x="56" y="96" class="head">client</text><text x="56" y="122" class="body">两条 UTF-8 行 → FIN / half-close</text><text x="56" y="148" class="small">字节仍在 socket buffer，尚非业务完成</text>
+<line x1="212" y1="168" x2="212" y2="205" class="flow"/>
+<text x="22" y="227" class="head">1. 迭代：一个 handler 独占连接</text>
+<rect x="34" y="244" width="357" height="115" rx="12" class="box"/>
+<text x="56" y="276" class="body">owner：当前 handler</text><text x="56" y="303" class="body">pending → output → close</text><text x="56" y="330" class="small">慢 client 会延迟下一次 accept</text>
+<line x1="212" y1="360" x2="212" y2="396" class="flow"/>
+<text x="22" y="419" class="head">2. 有界预线程：交接必须有槽</text>
+<rect x="34" y="438" width="100" height="123" rx="12" class="queue"/><text x="49" y="472" class="body">acceptor</text><text x="49" y="500" class="small">交接前</text><text x="49" y="524" class="small">拥有 socket</text>
+<line x1="135" y1="500" x2="167" y2="500" class="handoff"/>
+<rect x="170" y="438" width="94" height="123" rx="12" class="queue"/><text x="186" y="472" class="body">queue</text><text x="186" y="500" class="small">有限槽</text><text x="181" y="524" class="small">满：busy</text>
+<line x1="265" y1="500" x2="297" y2="500" class="flow"/>
+<rect x="300" y="438" width="91" height="123" rx="12" class="box"/><text x="314" y="472" class="body">worker</text><text x="314" y="500" class="small">拥有</text><text x="314" y="524" class="small">socket</text>
+<line x1="212" y1="563" x2="212" y2="600" class="flow"/>
+<text x="22" y="623" class="head">3. 事件循环：状态跟随 generation</text>
+<rect x="34" y="641" width="145" height="127" rx="12" class="event"/><text x="51" y="675" class="body">listener</text><text x="51" y="703" class="body">+ selector</text><text x="51" y="731" class="small">readiness</text><text x="51" y="753" class="small">不是完成</text>
+<line x1="180" y1="704" x2="215" y2="704" class="flow"/>
+<rect x="218" y="641" width="173" height="127" rx="12" class="event"/><text x="235" y="675" class="body">connection state</text><text x="235" y="703" class="small">fd + generation</text><text x="235" y="728" class="small">pending / output</text><text x="235" y="753" class="small">旧 event：忽略</text>
+<line x1="212" y1="770" x2="212" y2="807" class="flow"/>
+<rect x="34" y="825" width="357" height="158" rx="12" class="box"/>
+<text x="56" y="858" class="head">共同关闭条件</text>
+<text x="56" y="890" class="body">peer EOF ≠ response complete</text>
+<text x="56" y="918" class="body">read EOF 且 output 排空后，</text>
+<text x="56" y="946" class="body">相应 owner 才可 shutdown / close</text>
+<text x="56" y="971" class="small">实线：数据/控制流；虚线：队列交接</text>
+</svg>

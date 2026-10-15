@@ -1,0 +1,41 @@
+{
+  "model": "transactions-v3.1",
+  "sqlite_version": "3.46.1",
+  "synthetic": true,
+  "network_io": false,
+  "operations": [
+    {
+      "report_id": 17,
+      "status": "submitted",
+      "version": 1,
+      "replayed": false
+    },
+    {
+      "report_id": 17,
+      "status": "submitted",
+      "version": 1,
+      "replayed": true
+    },
+    {
+      "report_id": 17,
+      "status": "approved",
+      "version": 2,
+      "replayed": false
+    }
+  ],
+  "negative_cases": {
+    "cross_tenant": "PermissionError",
+    "stale_state": "ConflictError",
+    "key_content_conflict": "ConflictError",
+    "writer_contention": {
+      "class": "OperationalError",
+      "sqlite_errorcode": 5,
+      "sqlite_errorname": "SQLITE_BUSY"
+    }
+  },
+  "event_count": 2,
+  "final_report_17": [
+    "approved",
+    2
+  ]
+}

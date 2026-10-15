@@ -1,0 +1,14 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="测试时计算：候选是否更好，取决于验证与预算", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+p [label="问题与总预算"];
+g [label="候选生成\n并行采样 / 逐步搜索"];
+v [label="结果 / 过程验证\n测试、证据、工具"];
+s [label="选择或修订\n记录实际成本"];
+e [label="预算或成功条件\n提交 / 停止 / 人工复核"];
+p -> g;
+g -> v;
+v -> s;
+s -> e;
+}

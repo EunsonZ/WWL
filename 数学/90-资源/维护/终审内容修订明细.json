@@ -1,0 +1,38 @@
+[
+  {
+    "path": "90-资源/06-统一符号约定与定理条件索引.md",
+    "type": "统一复内积约定",
+    "before": "矩阵计算默认 $\\langle x,y\\rangle=x^*y$，对第一变量共轭线性、第二变量线性。",
+    "after": "本库默认 $\\langle x,y\\rangle=y^*x$，对第一变量线性、第二变量共轭线性。"
+  },
+  {
+    "path": "90-资源/06-统一符号约定与定理条件索引.md",
+    "type": "匹配投影系数与内积约定",
+    "before": "$x=\\sum_j e_j\\langle e_j,x\\rangle$",
+    "after": "$x=\\sum_j\\langle x,e_j\\rangle e_j$"
+  },
+  {
+    "path": "90-资源/06-统一符号约定与定理条件索引.md",
+    "type": "表述修正",
+    "before": "$\\mathbb N$ 的是否包含0按局部说明",
+    "after": "$\\mathbb N$ 是否包含0按局部说明"
+  },
+  {
+    "path": "46-数理方程/06-Fourier方法与Sturm-Liouville谱.md",
+    "type": "Sturm–Liouville正交推导的共轭",
+    "before": "$$(\\lambda-\\mu)\\int_a^b wX\\overline Y=0,$$",
+    "after": "$$(\\lambda-\\overline\\mu)\\int_a^b wX\\overline Y=0,$$"
+  },
+  {
+    "path": "46-数理方程/06-Fourier方法与Sturm-Liouville谱.md",
+    "type": "先证明实谱再推出正交",
+    "before": "所以不同特征值的特征函数加权正交。取同一函数及共轭，边界自伴性给出特征值实数。",
+    "after": "先取 $Y=X$、$\\mu=\\lambda$，由于 $\\int_a^b w|X|^2>0$，得 $\\lambda=\\overline\\lambda$，即特征值实数。再对不同实特征值使用同一等式，得到加权正交。"
+  },
+  {
+    "path": "16-数学分析/13-Fourier级数正交展开与收敛.md",
+    "type": "明确分段C1及端点条件",
+    "before": "一条方便的充分条件是周期延拓在一周期上分段 $C^1$，此时",
+    "after": "一条方便的充分条件是周期延拓在一周期上分段 $C^1$，这里指存在有限分割，使函数在各子区间内 $C^1$ 且函数和一阶导数具有有限单侧延拓；此时"
+  }
+]

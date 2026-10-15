@@ -1,0 +1,29 @@
+{
+  "seed": 62026,
+  "ntrain": 6000,
+  "ntest_per_class": 12000,
+  "sigma": 1.0,
+  "amplitude": 1.25,
+  "template": [
+    0.0,
+    1.0,
+    2.0,
+    1.0,
+    0.0
+  ],
+  "record_length": 24,
+  "search_positions": 20,
+  "alpha": 0.01,
+  "threshold_single": 2.3263478740408408,
+  "threshold_bonferroni": 3.2905267314919247,
+  "threshold_calibrated": 3.312161204689107,
+  "fpr_at_one_position": 0.010416666666666666,
+  "fpr_global_using_single": 0.14183333333333334,
+  "fpr_global_bonferroni": 0.009166666666666667,
+  "fpr_global_calibrated": 0.008666666666666666,
+  "tpr_global_calibrated": 0.4295833333333333,
+  "arrival_mae_all_h1_samples": 0.8795,
+  "arrival_mae_detected_only_samples": 0.1982541222114452,
+  "known_arrival_theory_tpr": 0.768986834229953,
+  "evidence": "finite simulated records, not confidence interval or NP proof"
+}

@@ -1,0 +1,283 @@
+{
+  "model": {
+    "tensor_shape": [
+      2,
+      2
+    ],
+    "flat_basis": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "row_major_index": "2*i+j",
+    "units": "Bell probabilities dimensionless; scatter q=k ell",
+    "relative_mass_kg": 1e-30,
+    "ell_m": 1e-09,
+    "g_J_m": 1.1121217185735181e-29,
+    "hbar_J_s": 1.0545718176461565e-34
+  },
+  "bell": [
+    {
+      "theta_rad": 0,
+      "joint_xx_pp_pm_mp_mm": [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.4999999999999999
+      ],
+      "expect_xx": 0.9999999999999998,
+      "expect_xy": 0.0,
+      "global_purity": 0.9999999999999996,
+      "local_purity": 0.4999999999999998,
+      "local_half_identity_residual": 1.1102230246251565e-16,
+      "joint_analytic_residual": 1.1102230246251565e-16
+    },
+    {
+      "theta_rad": 1.5707963267948966,
+      "joint_xx_pp_pm_mp_mm": [
+        0.24999999999999997,
+        0.24999999999999992,
+        0.24999999999999992,
+        0.24999999999999997
+      ],
+      "expect_xx": 6.123233995736765e-17,
+      "expect_xy": 0.9999999999999998,
+      "global_purity": 0.9999999999999996,
+      "local_purity": 0.4999999999999998,
+      "local_half_identity_residual": 1.1102230246251565e-16,
+      "joint_analytic_residual": 5.551115123125783e-17
+    },
+    {
+      "theta_rad": 3.141592653589793,
+      "joint_xx_pp_pm_mp_mm": [
+        0.0,
+        0.4999999999999999,
+        0.4999999999999999,
+        0.0
+      ],
+      "expect_xx": -0.9999999999999998,
+      "expect_xy": 1.224646799147353e-16,
+      "global_purity": 0.9999999999999996,
+      "local_purity": 0.4999999999999998,
+      "local_half_identity_residual": 1.1102230246251565e-16,
+      "joint_analytic_residual": 1.1102230246251565e-16
+    },
+    {
+      "theta_rad": 4.71238898038469,
+      "joint_xx_pp_pm_mp_mm": [
+        0.2499999999999999,
+        0.25,
+        0.25,
+        0.2499999999999999
+      ],
+      "expect_xx": -1.8369701987210294e-16,
+      "expect_xy": -0.9999999999999998,
+      "global_purity": 0.9999999999999996,
+      "local_purity": 0.4999999999999998,
+      "local_half_identity_residual": 1.1102230246251565e-16,
+      "joint_analytic_residual": 5.551115123125783e-17
+    },
+    {
+      "theta_rad": 6.283185307179586,
+      "joint_xx_pp_pm_mp_mm": [
+        0.4999999999999999,
+        0.0,
+        0.0,
+        0.4999999999999999
+      ],
+      "expect_xx": 0.9999999999999998,
+      "expect_xy": -2.449293598294706e-16,
+      "global_purity": 0.9999999999999996,
+      "local_purity": 0.4999999999999998,
+      "local_half_identity_residual": 1.1102230246251565e-16,
+      "joint_analytic_residual": 1.1102230246251565e-16
+    }
+  ],
+  "asymmetric_partial_trace": {
+    "A_diag": [
+      0.625,
+      0.375
+    ],
+    "A_offdiag_real_imag": [
+      0.125,
+      0.25
+    ],
+    "B_diag": [
+      0.25,
+      0.75
+    ],
+    "B_offdiag_real_imag": [
+      -0.125,
+      -0.125
+    ],
+    "A_residual": 1.1102230246251565e-16,
+    "B_residual": 2.220446049250313e-16
+  },
+  "classical_mixture": {
+    "joint_xx": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "expect_xy": 0.0,
+    "global_purity": 0.5,
+    "local_purity": 0.5
+  },
+  "exchange": {
+    "singlet_swap": -1,
+    "triplet_swap": 1,
+    "nonorthogonal_overlap_abs2": 0.5,
+    "normalized_sym_antisym_norms": {
+      "1": 1.0,
+      "-1": 0.9999999999999998
+    }
+  },
+  "scattering": [
+    {
+      "q": 0.1,
+      "zeta": 10.0,
+      "r_real_imag": [
+        -0.9900990099009901,
+        -0.09900990099009901
+      ],
+      "t_real_imag": [
+        0.009900990099009901,
+        -0.09900990099009901
+      ],
+      "R": 0.9900990099009901,
+      "T": 0.009900990099009905,
+      "even_phase_rad": -1.4711276743037345,
+      "port_unitarity_residual": 3.469446951953614e-18,
+      "continuity_residual": 8.673617379884035e-18,
+      "jump_residual_xi": 3.469446951953614e-18,
+      "parity_eigenvalue_residual": 1.1102230246251565e-16,
+      "net_current_over_incoming": [
+        0.009900990099009927,
+        0.009900990099009927,
+        0.009900990099009901,
+        0.009900990099009905
+      ]
+    },
+    {
+      "q": 0.5,
+      "zeta": 2.0,
+      "r_real_imag": [
+        -0.8,
+        -0.4
+      ],
+      "t_real_imag": [
+        0.2,
+        -0.4
+      ],
+      "R": 0.8000000000000002,
+      "T": 0.20000000000000004,
+      "even_phase_rad": -1.1071487177940906,
+      "port_unitarity_residual": 2.220446049250313e-16,
+      "continuity_residual": 5.551115123125783e-17,
+      "jump_residual_xi": 0.0,
+      "parity_eigenvalue_residual": 1.1102230246251565e-16,
+      "net_current_over_incoming": [
+        0.19999999999999996,
+        0.1999999999999999,
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "q": 1,
+      "zeta": 1.0,
+      "r_real_imag": [
+        -0.5,
+        -0.5
+      ],
+      "t_real_imag": [
+        0.5,
+        -0.5
+      ],
+      "R": 0.5000000000000001,
+      "T": 0.5000000000000001,
+      "even_phase_rad": -0.7853981633974483,
+      "port_unitarity_residual": 0.0,
+      "continuity_residual": 0.0,
+      "jump_residual_xi": 0.0,
+      "parity_eigenvalue_residual": 0.0,
+      "net_current_over_incoming": [
+        0.5000000000000001,
+        0.4999999999999999,
+        0.5000000000000001,
+        0.49999999999999994
+      ]
+    },
+    {
+      "q": 2,
+      "zeta": 0.5,
+      "r_real_imag": [
+        -0.2,
+        -0.4
+      ],
+      "t_real_imag": [
+        0.8,
+        -0.4
+      ],
+      "R": 0.20000000000000004,
+      "T": 0.8000000000000002,
+      "even_phase_rad": -0.46364760900080615,
+      "port_unitarity_residual": 2.220446049250313e-16,
+      "continuity_residual": 0.0,
+      "jump_residual_xi": 2.220446049250313e-16,
+      "parity_eigenvalue_residual": 1.1102230246251565e-16,
+      "net_current_over_incoming": [
+        0.7999999999999999,
+        0.8,
+        0.8000000000000003,
+        0.8
+      ]
+    },
+    {
+      "q": 4,
+      "zeta": 0.25,
+      "r_real_imag": [
+        -0.058823529411764705,
+        -0.23529411764705882
+      ],
+      "t_real_imag": [
+        0.9411764705882353,
+        -0.23529411764705882
+      ],
+      "R": 0.058823529411764705,
+      "T": 0.9411764705882353,
+      "even_phase_rad": -0.24497866312686414,
+      "port_unitarity_residual": 0.0,
+      "continuity_residual": 0.0,
+      "jump_residual_xi": 1.1102230246251565e-16,
+      "parity_eigenvalue_residual": 0.0,
+      "net_current_over_incoming": [
+        0.9411764705882354,
+        0.9411764705882352,
+        0.9411764705882352,
+        0.9411764705882351
+      ]
+    }
+  ],
+  "dimensional_example": {
+    "q": 1,
+    "relative_energy_J": 5.560608592867591e-21,
+    "A_per_sqrt_m": 31622.776601683792,
+    "incoming_current_per_s": 105457181764615.64
+  },
+  "attractive_bound": {
+    "g_J_m": -1.1121217185735181e-29,
+    "kappa_per_m": 999999999.9999999,
+    "energy_J": -5.560608592867591e-21,
+    "norm_coarse": 1.0000000008888466,
+    "norm_fine": 1.000000000055555,
+    "tail_probability": 4.248354255291589e-18,
+    "one_sided_fd_step_xi": 1e-05,
+    "jump_residual_xi": 9.999965520757215e-06,
+    "outside_origin_equation_residual": 6.904577086741526e-07,
+    "continuous_spectrum_still_present": true
+  },
+  "checks_passed": true
+}

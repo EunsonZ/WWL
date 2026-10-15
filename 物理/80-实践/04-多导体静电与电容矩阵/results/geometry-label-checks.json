@@ -1,0 +1,31 @@
+{
+  "solver_sha256": "06d8064ee150dfd4d0552d827a09ac7f5ae51e1264731f5214567d1ff316a69f",
+  "input_sha256": "dba6f6aafdd52437fdf26c1dd508bb77d9cbe0d5200afe4459fc4f8e64136eba",
+  "cases": [
+    {
+      "case": "default",
+      "input_voltages_V": [
+        1.0,
+        0.25,
+        0.0
+      ],
+      "geometry_label": "Conductor 3: r = c, U3 = 0 V",
+      "fields_label": "U1/U2/U3=1/0.25/0 V",
+      "solver_exit_code": 0,
+      "labels_match_input": true
+    },
+    {
+      "case": "common_shift_plus_7_V",
+      "input_voltages_V": [
+        8.0,
+        7.25,
+        7.0
+      ],
+      "geometry_label": "Conductor 3: r = c, U3 = 7 V",
+      "fields_label": "U1/U2/U3=8/7.25/7 V",
+      "solver_exit_code": 0,
+      "labels_match_input": true
+    }
+  ],
+  "checks": "PASS"
+}

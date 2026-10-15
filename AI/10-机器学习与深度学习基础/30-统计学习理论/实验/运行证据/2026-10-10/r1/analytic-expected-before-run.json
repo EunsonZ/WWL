@@ -1,0 +1,21 @@
+{
+  "state": "analytic_expected_not_executed",
+  "risk_loss": "normalized hinge score loss (1-y*w*x)/2, not 0-1 error",
+  "n4_count_probabilities": ["1/256", "3/64", "27/128", "27/64", "81/256"],
+  "n4": [
+    {"lambda": "1/8", "weights": ["-1", "-1", "0", "1", "1"], "expected_train": "57/256", "expected_risk": "21/64", "expected_gap": "27/256", "expected_excess": "5/64", "beta": "1", "actual_replace_one": "1/2", "expected_shifted_risk": "43/64"},
+    {"lambda": "1/2", "weights": ["-1", "-1/2", "0", "1/2", "1"], "expected_train": "9/32", "expected_risk": "3/8", "expected_gap": "3/32", "expected_excess": "1/8", "beta": "1/4", "actual_replace_one": "1/4", "expected_shifted_risk": "5/8"},
+    {"lambda": "2", "weights": ["-1/4", "-1/8", "0", "1/8", "1/4"], "expected_train": "57/128", "expected_risk": "15/32", "expected_gap": "3/128", "expected_excess": "7/32", "beta": "1/16", "actual_replace_one": "1/16", "expected_shifted_risk": "17/32"}
+  ],
+  "all_n_formulas": {
+    "lambda_1/2": {"expected_risk": "3/8", "expected_gap": "3/(8*n)", "expected_train": "3/8-3/(8*n)"},
+    "lambda_2": {"expected_risk": "15/32", "expected_gap": "3/(32*n)", "expected_train": "15/32-3/(32*n)"},
+    "rademacher_even_n": "comb(n,n/2)/2**n",
+    "threshold_growth": "m+1",
+    "interval_growth": "1+m*(m+1)/2"
+  },
+  "rademacher_n4": "3/8",
+  "erm_transfer": "7/100",
+  "repeated_n64_lambda_1/2": {"valid_n": 4, "expected_gap": "3/32", "invalid_iid_row_beta": "1/64"},
+  "finite_class_epsilon_float": {"approximately": 0.12008666, "absolute_tolerance": 0.000001}
+}

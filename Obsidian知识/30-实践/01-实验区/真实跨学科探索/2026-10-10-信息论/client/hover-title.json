@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "code=(async()=>{let l=app.workspace.getMostRecentLeaf();let a=[...l.view.containerEl.querySelectorAll(\"a.internal-link\")].find(a=>a.dataset.href?.includes(\"#2. 熵给出\"));if(!a)return \"missing anchor\";a.scrollIntoView({block:\"center\"});app.workspace.trigger(\"hover-link\",{event:new MouseEvent(\"mouseover\",{bubbles:true,ctrlKey:true,metaKey:true}),source:\"preview\",hoverParent:l.view, targetEl:a,linktext:a.dataset.href,sourcePath:l.view.file.path});await new Promise(r=>setTimeout(r,600));return JSON.stringify({href:a.dataset.href,popovers:[...document.querySelectorAll(\".hover-popover\")].map(x=>x.innerText.slice(0,6500))});})()"
+  ],
+  "exit": 0,
+  "stdout": "=> missing anchor\n",
+  "stderr": "",
+  "time": "2026-10-09T19:26:08.431918+00:00"
+}

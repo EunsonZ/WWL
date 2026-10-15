@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="570" viewBox="0 0 1000 570" role="img" aria-labelledby="title desc">
+  <title id="title">RC kT/C：谱积分与平衡概率的两条推理</title>
+  <desc id="desc">左侧从单边热噪声谱和RC传递函数积分到kBT除以C；右侧从电荷二次能量的归一化Boltzmann密度，经q等于Cv的Jacobian换元得到电压方差。两条路径适用相同的经典平衡模型。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6Z" fill="#315f8c"/></marker></defs>
+  <rect width="1000" height="570" fill="#fffdf8"/>
+  <g font-family="Hiragino Sans GB, Microsoft YaHei, Arial Unicode MS, sans-serif" fill="#152b3d">
+    <text x="35" y="40" font-size="25" font-weight="700">同一平衡方差的两条推理：不要跳过概率归一化与换元</text>
+    <text x="35" y="69" font-size="15">共同前提：经典连续电荷、线性 C、同温被动 RC、已达到热平衡；并非断开保持样本独立的证明。</text>
+    <rect x="35" y="100" width="425" height="330" rx="16" fill="#edf5fb" stroke="#78a8cc" stroke-width="2"/>
+    <text x="60" y="137" font-size="21" font-weight="700">路径 A：频域面积</text>
+    <rect x="68" y="164" width="355" height="52" rx="8" fill="#fff" stroke="#78a8cc"/>
+    <text x="102" y="187" font-size="16">单边热源：S_e(f) = 4 k_B*T*R_s</text>
+    <text x="183" y="207" font-size="14">[V^2/Hz]</text>
+    <path d="M245 216V244" stroke="#315f8c" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="68" y="251" width="355" height="55" rx="8" fill="#fff" stroke="#78a8cc"/>
+    <text x="82" y="284" font-size="17">|H(f)|^2 = 1 / [1+(f/f_c)^2]</text>
+    <path d="M245 306V334" stroke="#315f8c" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="68" y="341" width="355" height="63" rx="8" fill="#fff" stroke="#78a8cc"/>
+    <text x="105" y="367" font-size="15">S_v(f) = S_e(f) * |H(f)|^2</text>
+    <text x="86" y="392" font-size="14">integral_0^inf S_v(f) df = k_B*T/C</text>
+    <path d="M458 265H528" stroke="#315f8c" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="540" y="100" width="425" height="330" rx="16" fill="#fff2e5" stroke="#d89554" stroke-width="2"/>
+    <text x="565" y="137" font-size="21" font-weight="700">路径 B：平衡概率</text>
+    <rect x="573" y="164" width="355" height="52" rx="8" fill="#fff" stroke="#d89554"/>
+    <text x="650" y="196" font-size="18">U(q) = q^2/(2C)</text>
+    <path d="M750 216V244" stroke="#a85e1c" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="573" y="251" width="355" height="55" rx="8" fill="#fff" stroke="#d89554"/>
+    <text x="588" y="277" font-size="14">p(q)=sqrt[1/(2*pi*C*k_B*T)] exp[-q^2/(2*C*k_B*T)]</text>
+    <text x="644" y="298" font-size="14">integral p(q) dq = 1</text>
+    <path d="M750 306V334" stroke="#a85e1c" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="573" y="341" width="355" height="63" rx="8" fill="#fff" stroke="#d89554"/>
+    <text x="597" y="369" font-size="16">q=C*v, dq=C*dv (Jacobian)</text>
+    <text x="580" y="394" font-size="13">p(v)=sqrt[C/(2*pi*k_B*T)] exp[-C*v^2/(2*k_B*T)]</text>
+    <path d="M245 430V458H390" stroke="#315f8c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+    <path d="M750 430V458H610" stroke="#a85e1c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+    <rect x="390" y="437" width="220" height="54" rx="11" fill="#e7f4e9" stroke="#4b9461" stroke-width="2"/>
+    <text x="418" y="469" font-size="20" font-weight="700">Var(v) = k_B*T/C</text>
+    <text x="39" y="555" font-size="13">p(v) 的单位为 1/V。有限频带积分、热化暂态与采样相关性需要另列边界，不能由此图省略。</text>
+  </g>
+</svg>

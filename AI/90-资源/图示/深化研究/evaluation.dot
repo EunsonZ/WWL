@@ -1,0 +1,21 @@
+digraph G {
+    graph [rankdir=TB, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="嵌套验证：把选模型与评估选择过程分开"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    all [label="开发数据
+先规定用户 / 时间等拆分单位"];
+    outer [label="外层训练部分"];
+    inner [label="内层训练 / 验证
+拟合预处理 + 选超参数"];
+    fit [label="用所选设置
+重训外层训练部分"];
+    hold [label="外层留出部分
+只评估，不参与选择", fillcolor="#e6f3e9"];
+    report [label="汇总各外层折
+评估的是选择过程"];
+    final [label="反复看最终测试集再调整
+仍然会造成选择偏差", fillcolor="#fff3de"];
+    all -> outer;outer -> inner;inner -> fit;all -> hold;fit -> hold;hold -> report;report -> final [style=dashed];
+    
+    }

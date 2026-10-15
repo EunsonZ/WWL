@@ -1,0 +1,55 @@
+# #153 独立有限符号执行回执
+
+本次只写 experiments153/run-20261010-01。#158冻结包、作者源码、主库、Git/GitHub、Logs/CHANGES均未改；未安装依赖、未派生代理。执行使用现有锁定 `.venv-issues-111plus`，macOS27.0.1 arm64、Python3.14.7。environment.json保存只读依赖metadata及数值线程环境请求（各4）；全部计算只用标准库。
+
+## 运行身份
+
+author153 freeze-r2 SHA256=`a208bc3d61f5df6c693cad8fed4bc63739e314a23cbd2c18592b1c9be2aadf11`。复制前核freeze内逐项身份，复制后及六个实例后再次检查原文件；四项均未漂移，见 identity.json 与各execution。
+
+| 精确快照 | SHA256 |
+|---|---|
+|code/affine_exact.py|0a161e6013480582ddfe8913f56923ebf7999cbcd2218d4ccd6c702e0f25a14e|
+|code/examples.py|aaad83edad161f0d4a4cba4ad9e2afd882e277e61d06455c3a759b40ad31eca3|
+|code/fixed-inputs.json|2f9adc05819d9f9946385600cfdd9fc336db3684d54c88efae1d1601fadfc269|
+|code/independent-expected.json|b2ccccac46cfa3a78f74de19eccae131ddc92f2e3f30873a393a861a32b6efca|
+
+## 全部实际实例
+
+各实例均由直接exec+wait4取得子进程真实exit/RSS/CPU时间；60秒timeout实际全部未触发，没有使用曾受限的time-l。stdout/stderr及执行完整命令/cwd/环境绑定均保存，all-instances.json汇总。
+
+| 实例 | 子进程exit | 墙钟秒 | 子进程峰值RSS bytes | 结果 |
+|---|---:|---:|---:|---|
+|fixed-cli|0|0.039454|21168128|`python -B code/affine_exact.py --input code/fixed-inputs.json`|
+|examples-cli|0|0.031689|18792448|`python -B code/examples.py`|
+|api-probe|0|0.031686|20463616|90个API实际观测（63个预期拒绝），原结果捕获|
+|oracle|0|0.031649|19054592|首版277项独立比较全部match|
+|fixed-reject|1|0.039450|21364736|固定原点改为[false,0]，CLI实际拒绝，空stdout，stderr为integer fixed points required|
+|oracle-r2|0|0.030367|19415040|增加8项边界成功值与3项CLI失败检查，288项全部match|
+
+两个固定CLI输出为相同6908字节JSON，SHA256=`9eb8e57210a618bcb6dd5a05981cd38e5a54b39f1b623d9b0f03efe449cc301c`，stderr为空。fixed-reject是故意负向输入，exit1是预期停止证据，没有业务修复或重试造通过。捕获器外层exit0表示成功收到了子进程记录，不能覆盖其exit1。
+
+r1 oracle原结果在oracle-results-r1.json、oracle-stdout.json；r2在oracle-results.json、oracle-r2-stdout.json。r1工具源码在加检查时未预先另存，其现存独立版本 independent_oracle-r1.py 是通过逆转那次明确的纯追加编辑恢复，事后哈希标明该来源；r2源码及所有业务快照、API源码有最终精确身份。没有把恢复的r1副本称为另一次执行。
+
+资源为各子进程真实ru_maxrss。环境4线程请求不是OS硬4线程限制；没有观测A/B聚合峰值，不将单进程RSS当作8GiB聚合硬约束证明。实例均串行且远低于5分钟上限。
+
+## 独立结果与数学边界
+
+independent_oracle.py不导入/调用业务源码。api_probe.py只用于调用被测snapshot API并记录结果，独立oracle仅读取其JSON观测值。oracle以自有Fraction系数表卷积、逐项微分/精确值与一元参数展开重建答案；任意除法仅验返回商/余式的证书与单项式不可除条件，不用被测divide算期望。
+
+- 八多项式身份、G=(x-y²,y⁴-y)与原f/g的双向理想恒等式全部精确匹配。
+- S=xy-y⁶，商y,-y²，余式0；独立重组S=q₁G₁+q₂G₂严格相等。两种除式顺序的新增小有理多项式证书也分别重组且余式无可除单项式。
+- 抛物线(t,t²)、尖点(t²,t³)、节点(t²-1,t(t²-1))代入的全部系数为0。
+- 六Jacobian及切维数分别核对：axis原点(0,1)/1，double_axis原点(0,0)/2，cusp原点(0,0)/2，cusp(1,1)(-3,2)/1，node原点(0,0)/2，parabola(2,4)(-4,1)/1。新增矩阵秩用非零2×2子式与一行成倍关系独立证实为2。
+- 三齐次式YZ-X²、XY-Z²、Y²Z-X³与手写预期吻合。Z=0的精确限制式为-X²、XY、-X³，指定无穷点逐个代入0且为非零射影代表；其分类来自这些方程的代数解读，CLI没有自动分类全部点。
+- (y)与(y²)在域上同点集，y不能属于(y²)由单项式y次数直接判别；样本点值也吻合。对I=(x,y-x²)，独立展开得到y∈I，展示生成式齐次化在[0:1:0]同时为0，而完整理想的Y在那里为1，确实排除假无穷点。
+- 标准单项式1,y,y²,y³与手写预期一致；char0中y(y³-1)四根互异由导数在0为-1、在立方根处为3核对。char3的y(y-1)³差式系数均被3整除是独立代数检查；Q业务源码没有处理其他特征，不称为源码char3运行。
+
+90个API观测覆盖真正bool/float/指数/shape/零除式/nvars0或4拒绝，以及输入128/129项、指数12/13、分子/分母10⁶或超界、对象256/257项、总次数64/65、4096/4097bit边界、矩阵shape/数量、有理类型和幂/代入限制。边界合法值已独立检查编码或精确项数，不只看无异常。
+
+除法步数停止用**仅内存中**MAX_STEPS=2/3故障注入：对x³-1除x-1，阈值2实际raise ValueError division step bound exceeded，阈值3实际返回x²+x+1和余式0；恢复2000，没有改磁盘源码。公开常数2000也已核对。没有自然运行一个2001步的实例，不把这一探针称为原2000/2001边界负荷试验。它核对了真实停止分支与阈值语义，非近似成功。
+
+全部288项比较match、failed_checks=[]。这是固定有限证书及API行为核对，不能代一般Nullstellensatz、Hilbert基定理、任意Gröbner算法、概型或整课学习效果的证明；同点集与闭包论证的通用条件仍归理论独审。
+
+## 正式交付待接入
+
+数值与oracle已结束，A槽可释放。必要snapshot、固定/负向输入、原stdout/stderr、环境/完整命令/资源/失败记录、两版oracle/API工具与比较结果应由获授权作者/组装者复制到正式lab候选，并在80添加实际结果入口。capture.py中含恢复目录身份检查，是此次证据捕获器，不能未经改写就宣传为完全可迁移复建驱动。本恢复区不替代正式主库/远端交付。Obsidian、跨设备、人学习未验。

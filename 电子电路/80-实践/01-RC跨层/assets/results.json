@@ -1,0 +1,53 @@
+{
+  "environment": {
+    "python": "3.14.7",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  },
+  "nominal": {
+    "tau_s": 0.001,
+    "v_at_tau_V": 0.6321205588285577,
+    "fc_Hz": 159.15494309189532
+  },
+  "coefficients": {
+    "0.00025": {
+      "exact": [
+        0.7788007830714049,
+        0.22119921692859512
+      ],
+      "euler": [
+        0.75,
+        0.25
+      ]
+    },
+    "0.0025": {
+      "exact": [
+        0.0820849986238988,
+        0.9179150013761012
+      ],
+      "euler": [
+        -1.5,
+        2.5
+      ]
+    }
+  },
+  "loaded": {
+    "gain": 0.8928571428571428,
+    "tau_s": 0.0010714285714285713
+  },
+  "tolerance_at_1ms_V": {
+    "min": 0.5478090776034498,
+    "max": 0.7317375465300391
+  },
+  "fixed_point": {
+    "quantum_V": 6.103515625e-05,
+    "max_difference_V": 0.00012206825134641885,
+    "last_state_V": 0.9998779296875
+  },
+  "rlc_energy_balance_max_defect_W": [
+    1.734723475976807e-18,
+    8.673617379884035e-19,
+    5.421010862427522e-19
+  ],
+  "verified": "CPU analytic reference only; no SPICE/device/client/human evidence"
+}

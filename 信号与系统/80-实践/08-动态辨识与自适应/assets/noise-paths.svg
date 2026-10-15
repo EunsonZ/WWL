@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 700" role="img" aria-labelledby="title desc">
+  <title id="title">动态辨识中，噪声位置与反馈路径改变回归矩</title>
+  <desc id="desc">第一栏是过程创新进入状态递推，理想观测时旧状态和当前创新正交。第二栏在状态后加白测量噪声，旧输出含旧噪声，代回误差含负 a 倍旧噪声，故协方差为负 a 倍测量噪声方差。第三栏是可解同期反馈，噪声通过反馈进入输入，因此输入与扰动相关；独立参考可在相关矩满秩时作工具。电压统一用伏，增益无量纲。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#334155"/></marker></defs>
+  <rect width="1080" height="700" fill="#f8fafc"/>
+  <g font-family="sans-serif" fill="#0f172a" font-size="16">
+    <text x="30" y="38" font-size="24" font-weight="bold">更新公式相同，不代表输入与误差仍正交</text>
+    <text x="30" y="67">全部信号单位 V；a、b、g、κ 无量纲；先固定生成路径，再选择辨识模型。</text>
+    <rect x="25" y="87" width="1030" height="151" rx="10" fill="#eff6ff"/>
+    <text x="43" y="117" font-size="20" font-weight="bold">过程创新：理想观察 y[k]=x[k]</text>
+    <text x="44" y="160">x[k−1], u[k−1]</text>
+    <path d="M221 154 H290" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="301" y="130" width="292" height="49" rx="5" fill="white" stroke="#2563eb"/><text x="316" y="160">x[k]=a x[k−1]+b u[k−1]+w[k]</text>
+    <path d="M594 154 H653" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="666" y="160">y[k]=x[k]</text>
+    <text x="44" y="211">w[k] 独立过去，当前输入不预知 w[k] ⇒ E[(y[k−1],u[k−1])ᵀ w[k]]=0</text>
+    <rect x="25" y="253" width="1030" height="219" rx="10" fill="#fff7ed"/>
+    <text x="43" y="284" font-size="20" font-weight="bold">状态后测量噪声：同一状态，另一份回归误差</text>
+    <text x="44" y="327">x[k]</text><path d="M112 320 H226" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="236" y="299" width="106" height="44" rx="5" fill="white" stroke="#d97706"/><text x="252" y="327">+ v[k]</text>
+    <path d="M343 320 H424" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/><text x="437" y="327">y[k]=x[k]+v[k]</text>
+    <text x="44" y="369">代回：y[k]=a y[k−1]+b u[k−1]+ε[k]；ε[k]=w[k]+v[k]−a v[k−1]</text>
+    <text x="44" y="407">旧回归量含 +v[k−1]，有效误差含 −a v[k−1] ⇒ Cov(y[k−1],ε[k])=−a Var(v)</text>
+    <text x="44" y="444">增加同样数据不会消掉这个总体相关；先重设噪声模型、工具或观测。</text>
+    <rect x="25" y="487" width="1030" height="187" rx="10" fill="#f0fdf4"/>
+    <text x="43" y="519" font-size="20" font-weight="bold">同期可解闭环：参考独立，实际输入已受扰动影响</text>
+    <text x="44" y="564">独立 r[k]</text><path d="M142 557 H213" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="225" y="535" width="137" height="44" rx="5" fill="white" stroke="#15803d"/><text x="240" y="564">u=r−κy</text>
+    <path d="M363 557 H440" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="452" y="535" width="158" height="44" rx="5" fill="white" stroke="#15803d"/><text x="467" y="564">y=g u+e</text>
+    <path d="M611 557 H689 V596 H292 V582" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="731" y="559">1+κg ≠ 0</text><text x="731" y="587">u=(r−κe)/(1+κg)</text>
+    <text x="44" y="639">E[ue]=−κ Var(e)/(1+κg)；E[re]=0 且 E[ru]≠0 时，参考 IV 恢复 g。</text>
+  </g>
+</svg>

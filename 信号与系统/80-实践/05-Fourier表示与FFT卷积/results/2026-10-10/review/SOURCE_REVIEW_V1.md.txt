@@ -1,0 +1,79 @@
+# #177 / #178 独立源审 V1
+
+结论：#177 的本轮重要数学、算法合同和跨页改动 accept（仅源审）；#178 的理想设计推导、结构与字长合同 accept（仅源审），机器系数完整频带认证 reject。实际实验尚待执行者交付；当前不能把两 issue 标成已完成。只覆盖 author177178 的 27 文件，不覆盖 #179 或整个信号方向。
+
+## 授权、独立性与输入身份
+
+授权工作根 `/Users/ysz/Misc/Obsidian/Valults/WLM/WWL`；仅本 `review177178/` 写审阅证据。已读 root 与 author177178/AGENTS.md；上级链与 recovery 层未见额外 AGENTS。未运行候选模块、测试或实验，未修改候选、正式正文、共享清单、Git 或 GitHub；无派生代理。主库已有混合改动，仅只读观察。
+
+先读当前 GitHub 正文/评论与正文要求，再读源码和作者 HANDOFF 自评。fresh 原始 issue JSON 在本目录：#177 updatedAt 2026-10-09T12:46:54Z，含完整正文及 1 条实质评论；#178 updatedAt 2026-10-09T12:46:55Z，无评论。所有追加条款保留。
+
+完整 27 文件 byte length / SHA256 在 `reviewed-inputs-v1.json`。关键身份：
+
+| 输入 | bytes | SHA256 |
+| --- | ---: | --- |
+| Fourier 主课 | 21670 | b396755cadc8f4cd7baa8edeae00af2b1dc26fd4af74fbefde292e9103028e78 |
+| IIR 主课 | 17400 | d2b1b29469f2855c6a163cc4a5b8c2e30a661c4ab07bb673cac335a7ef1d4698 |
+| fourier_lab.py | 10153 | dcc718f9dd94f3bae9f22d41ceba43a62a3db157ce059b83dce7c0ccf6c7bf1f |
+| test_fourier_lab.py | 6598 | 90dcee1ea85bf4945331bbde57b7156a77321dbe87e85c5567bd107018ca5030 |
+| iir_lab.py | 15913 | 35e632eede562b18d301488fad4ed1a5387077ec8ea3afe702783fff4dbc0b86 |
+| test_iir_lab.py | 7175 | 20b415542991cef6280a6db9889eeb7959f13fcba95e492b51a3440ae1abcfed |
+
+未参与上述冻结版撰写。发现 R1 后，应主进程要求向作者提供了 c=cosθ 的幅度平方多项式区间方案；若后续修订采用该新增论证，本审阅者已参与该论证设计，不能成为其唯一独立审阅者。旧 V1 的 accept 不自动转移到新字节。模型/effort 的实际派发值、token 用量与费用在此执行上下文未提供可核查数值，均 unknown；不以角色名或来源配置猜测。
+
+## 分项结论与推理
+
+| 项 | 状态 | 核对结果及范围 |
+| --- | --- | --- |
+| F1 CTFS/CTFT/DTFS/DTFT | accept | 时间定义域、周期性、分析负/合成正指数、1/T0、1/N、1/(2π)一致。CTFT V·s 与采样后V相符。DTFT θ为rad/sample，CT频率ω为rad/s。非零周期序列的谱按分布处理，未作普通密度平方。 |
+| F2 恢复条件 | accept | CTFS L1只保证系数；L2恢复与有有限单侧迹的分段C1逐点恢复分开。CTFT L1∩逆谱L1给连续代表，L2用延拓；DTFT ℓ1绝对一致/逐样点逆与ℓ2系数解释分开。必要数学主文实际提供相关条件，未用有限数值实验替无限Fourier定理。 |
+| F3 取样/周期化 | accept | Schwartz 足以支持CT周期化换积分和Poisson公式；1/Ts正确。离散ℓ1周期化的a=Xd/N正确。CTFS取样明确p本身为绝对可和级数的连续代表且T0=N Ts；有限根单位正交留下Σm c(k+mN)，无多余1/Ts。仅L2不能点采样的警告准确。 |
+| F4 DFT/FFT | accept | 原四点DFT、DTFS/4、Parseval及π/4处DTFT手算一致。偶奇拆分、WN^(k+N/2)负号、N=2^p、逆共轭/除N与O(NlogN)推理完整。 |
+| F5 卷积与边界 | accept | 有限DFT乘法用有限根单位正交推出同余条件，再用N≥L+M−1取消折回。非对称full/N3/valid/翻核裁剪结果逐项一致；C0/S0反例和Cp=I+2Sp^-1一般交换成立，未把不可逆S0当平移群。 |
+| F6 OLA与API | accept | tail=M−1、push发布P、空块不进时钟、短于核的块仍加完整旧tail、首次EOF保全尾部，与代码一致；先完成局部计算才提交，坏块不修改状态。OLS只讲索引、不冒认API。运行结果另验。 |
+| F7 迁移与五类失败 | accept | z=(2,-1,3)、g=(2,-1)给full=(4,-4,7,-3)、N3=(1,-4,7)、valid=(5,-5)；物理采样、截窗泄漏、循环折回、补零网格及舍入分层清楚。 |
+| I1 原型阶数与极点 | accept | ep/es带边不等式、截止区间和ceil公式正确；27/30/17的具体数值待独立执行复算。pk都在LHP；pk与-pk构成1+(-1)^N(s/Ωc)^(2N)的根，DC归一化固定常数；s=jΩ给目标幅度平方。 |
+| I2 双线性与ROC | accept | 两带预扭曲、8000rad/s单位检查及|2fs-p|²-|2fs+p|²=-8fs Re(p)>0正确。无穷远零点映z=-1，因果ROC取最外极点之外，圆内极点给绝对可和h及BIBO。 |
+| I3 SOS与直接型 | accept | 共轭节a1=-2Re(r),a2=|r|²、DC归一化b0、单实极点节与N27=13二阶+1一阶一致。直接I/II/转置II旧状态同时更新正确；零态乘积可交换不外推非零初态。Decimal80是固定binary64系数的高精度近似轨迹，非精确超越原型证书。 |
+| I4 有限字长 | accept | 指定binary32各乘/加/存储舍入、非FMA模型；W8/F4先round-even再输出/状态饱和且24位累加器检查明确。高增益首输出128→127、两顺序末1V/2V及旧q=1不动点手算合理；20拍全轨迹与长记录需执行证据。微扰多项式在z=1变负从而根>1的反例成立。 |
+| I5 全通与延迟公式 | accept | A_r的幅值恒1和DC199sample=4.145833ms成立；主设计z=-1零点不满足严格稳定因果逆的最小相位定义。主H的N/2与极点相位贡献合并为半Poisson核和，负相位导数号正确；θ=π处零频响不定义群延迟。 |
+| I6 延迟网格导数数学界 | accept | 对限定极点模型，d为到指定弧最小距离，|τ'|≤Σ(1-|r|²)|r|/d^4正确，最近网格距离≤h/2；未认证实际binary求界的误差或另一系数模型（R1/R2）。 |
+| I7 幅度局部商积数学界 | accept | V>0与U由三角不等式给出，商法则给Li，乘积导数Ki避免除零，|abs(H)-abs(H0)|≤Kδ成立；Nyquist分子为零时prefix/suffix仍合法。该accept仅为精确实数定理。 |
+| I8 固定机器系数全带与延迟计算认证 | reject / blocked | R1缺计算误差包围；R2需明确同一传函对象。#178的整带要求尚未完成，不能仅改措辞便关闭。 |
+| C1 12个局部桥、4代码镜像 | accept | 既有标题与主解释保留；三组FFT/CNN/STFT往返兑现对象/核方向/索引承诺，三组IIR桥兑现双带设计/同规格/字长目的。4 code-sync block逐byte匹配真源。 |
+| C2 5张SVG内容 | accept / blocked | 图中对象、蝶形中间量、OLA全局位置、设计链、16V与.25V中间尺度和127/16上界与正文一致，可编辑SVG真源存在。仅内容accept；尚无实际渲染/窄列查看证据，显示层blocked(needed)，不等于整个issue统一门槛。 |
+| E 数值实验 | blocked(needed) | 未见执行者完整stdout/oracle/input/SHA，本审未运行。等待A交付后另立执行补审，不能将准备测试当已通过。 |
+
+## R1：普通浮点输出不能独立认证固定机器SOS的闭频带
+
+`iir_lab.py:89–117` 的 cmath.exp、复乘加、abs、lower_d减法与prefix/suffix乘积都按普通float运行；`120–143` 把这些数直接比较规格并输出within_amplitude_contract。该flag即使为true，也没有给出lower_d不被高估、K/margin不被低估、中心幅度误差和实际闭区间覆盖的外包围。小样点检查容差1e−12及65536分块都不能证明这些计算误差的方向。`151–171` 的delay求界也存在同类责任。
+
+正文已坦诚披露浮点非向外认证，故不称数学推导错误；但README“连续幅度界/群延迟证书”及验收true的读法必须与证据一致。#178明确要求整个目标频带，不可只把词改成估计便声称issue完成。
+
+允许的最小修复可以保留公式、改用有明确误差保护的包围运算；不强制安装包。对本主规格，一个更轻的严格算法是把每节实系数幅度平方写成c=cosθ的二次多项式：
+
+P(c)=b0²+b1²+b2²+2b1(b0+b2)c+2b0b2(2c²−1)。
+
+Q按a0=1,a1,a2同式。固定binary64/binary32系数按精确dyadic输入有理或有向Decimal区间；pass c∈[√2/2,1]，stop c∈[-1,1/2]。前者可用精确平方验证的有理下端略扩大闭带，避免任何三角函数调用。每cell包围P/Q及其乘积，逐节Q.lower>0；最终|H|²与精确(99/100)²、(101/100)²、1/1000000比较。只给向内舍入的小数或随机高精度抽点不够。需保留覆盖与最坏cell证据，超范围或区间分母不正时失败/细分。此处是修复建议，尚未实现或认证。
+
+## R2：延迟校验还须绑定具体模型
+
+`delay_certificate`用design()['poles']，没有从binary64/binary32固定SOS重新定义其同一传函的群延迟；`delay.upper_samples`因此不是所有生成系数模型的共同证书。即便相位差分抽点一致，也未把另一模型全带延迟差包围。文档/结果应标明对象；签固定机器系数全合同需在该模型上推界，或证明与原型极点模型的误差足够小。此项可与R1的有向包围一起修，不要求硬件测量。
+
+## 一手依据与链接复核
+
+已直接打开原始来源，未把课程目录当定理证明：
+
+- [MIT6.003 Lecture19](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/57963f2e8c8bcb3050d7cb87e9201fd2_MIT6_003F11_lec19.pdf)，PDF4–8页四表示/线谱；26–38页CT取样及DT周期化。候选的绝对收敛/换序条件比讲义图式更明确，系数折合式另以有限正交核查。
+- [MIT6.341 Lecture19](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/4ee39a5e74c9f5099ac516ce57215c96_lec19.pdf)，PDF1、3–4页DFT归一化与时间抽取。
+- [MIT6.341 Lecture16](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/6e5190ef6e0d66c78bfdce2be6ce7125_lec16.pdf)，PDF1–5页循环折回、足够补零、OLA/OLS。
+- [MIT6.341 Lecture8](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/51e3beff8c8ce2289ba292fcdb0040f4_lec08.pdf)，PDF2–5页同规格资源、tan映射、Butterworth单调幅度及系数量化/SOS；具体27阶数字是候选独立设计，不从讲义直接抄值。
+- [MIT6.341 Lecture7](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/2c6fe95a4d44834ccf0c0d9017118703_lec07.pdf)，PDF1–3页直接型、转置与级联理想同传函、有限精度差别。
+- [MIT6.341 Lecture3](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/aa0fbb84ec39521a7a44e481c7ce0d7c_lec03.pdf)，PDF1–2页全通、严格最小相位与稳定因果逆定义。
+- [Lebl §11.8](https://www.jirka.org/ra/html/sec_fourier.html)，正交/Fourier投影、局部光滑充分收敛条件；[Ivrii §5.2](https://www.math.utoronto.ca/courses/apm346h1/20181/PDE-textbook/Chapter5/S5.2.html)，L2延拓及卷积换元。相关现有数学两页也已读取，未重审其全部PDE/Laplace内容。
+
+`static-review-v1.json`以候选叠加正式库只读检查170 wikilinks及19本地Markdown链接，0未解析；4镜像精确一致。最早输入清单内的简陋原始regex错误来自代码围栏/转义pipe/显式扩展名，修正解析结果单独保存，未把这些工具误报转成内容缺陷。链接存在性与手工检查关键桥的兑现分开。没有运行仓库检查器自身全套测试。
+
+## 未覆盖与下一步
+
+完整数值、严格机器包围、图渲染、Obsidian、真人与真实音频/ADC/运放/实时deadline分别未验。后四层没有被用于阻塞独立理论项。A交付后只补审其实际输入、stdout、环境、完整系数与轨迹、独立oracle和一致SHA；作者修订后仅重审受影响差异，保持V1原签收身份不变。

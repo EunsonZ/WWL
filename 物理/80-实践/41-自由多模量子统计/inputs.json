@@ -1,0 +1,182 @@
+{
+  "units": {
+    "energy": "eV",
+    "temperature": "K"
+  },
+  "cases": [
+    {
+      "name": "boson_base",
+      "statistics": "boson",
+      "energies_eV": [
+        0,
+        0,
+        0.04,
+        0.04
+      ],
+      "labels": [
+        "L_alpha",
+        "L_beta",
+        "U_alpha",
+        "U_beta"
+      ],
+      "upper_modes": [
+        2,
+        3
+      ],
+      "N": 2,
+      "temperature_K": 334.8356149173282
+    },
+    {
+      "name": "fermion_base",
+      "statistics": "fermion",
+      "energies_eV": [
+        0,
+        0,
+        0.04,
+        0.04
+      ],
+      "labels": [
+        "L_alpha",
+        "L_beta",
+        "U_alpha",
+        "U_beta"
+      ],
+      "upper_modes": [
+        2,
+        3
+      ],
+      "N": 2,
+      "temperature_K": 334.8356149173282
+    },
+    {
+      "name": "boson_gap2",
+      "statistics": "boson",
+      "energies_eV": [
+        0,
+        0,
+        0.08,
+        0.08
+      ],
+      "labels": [
+        "L_alpha",
+        "L_beta",
+        "U_alpha",
+        "U_beta"
+      ],
+      "upper_modes": [
+        2,
+        3
+      ],
+      "N": 2,
+      "temperature_K": 334.8356149173282
+    },
+    {
+      "name": "fermion_gap2",
+      "statistics": "fermion",
+      "energies_eV": [
+        0,
+        0,
+        0.08,
+        0.08
+      ],
+      "labels": [
+        "L_alpha",
+        "L_beta",
+        "U_alpha",
+        "U_beta"
+      ],
+      "upper_modes": [
+        2,
+        3
+      ],
+      "N": 2,
+      "temperature_K": 334.8356149173282
+    },
+    {
+      "name": "boson_N3",
+      "statistics": "boson",
+      "energies_eV": [
+        0,
+        0,
+        0.04,
+        0.04
+      ],
+      "labels": [
+        "L_alpha",
+        "L_beta",
+        "U_alpha",
+        "U_beta"
+      ],
+      "upper_modes": [
+        2,
+        3
+      ],
+      "N": 3,
+      "temperature_K": 334.8356149173282
+    },
+    {
+      "name": "fermion_N3",
+      "statistics": "fermion",
+      "energies_eV": [
+        0,
+        0,
+        0.04,
+        0.04
+      ],
+      "labels": [
+        "L_alpha",
+        "L_beta",
+        "U_alpha",
+        "U_beta"
+      ],
+      "upper_modes": [
+        2,
+        3
+      ],
+      "N": 3,
+      "temperature_K": 334.8356149173282
+    }
+  ],
+  "temperatures_K": [
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300,
+    325,
+    350,
+    375,
+    400,
+    425,
+    450,
+    475,
+    500,
+    525,
+    550,
+    575,
+    600,
+    625,
+    650,
+    675,
+    700,
+    725,
+    750,
+    775,
+    800,
+    825,
+    850,
+    875,
+    900,
+    925,
+    950,
+    975,
+    1000
+  ],
+  "number_cutoff": 16
+}

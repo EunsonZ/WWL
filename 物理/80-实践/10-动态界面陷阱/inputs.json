@@ -1,0 +1,17 @@
+{
+  "description": "Synthetic clamped carrier reservoirs and finite quasi-static electrostatic feedback, not full DD",
+  "half_length_m": 1.5e-7,
+  "half_cells": 120,
+  "dt_s": 1e-7,
+  "duration_s": 5e-5,
+  "initial_F_eV": -0.5,
+  "final_Fn_eV": -0.45,
+  "final_Fp_eV": -0.45,
+  "fixed_sheet_C_m-2": 0.0,
+  "states": [
+    {"name": "acceptor", "type": "acceptor", "N_m-2": 8e14, "Et0_eV": -0.27, "empty_over_filled_weight": 1.0, "cn_m3_s-1": 1e-15, "cp_m3_s-1": 1e-15}
+  ],
+  "density_factor": 2.0,
+  "capture_factors": [0.2, 5.0],
+  "dos_bin_centers_eV": [-0.29, -0.27, -0.25]
+}

@@ -1,0 +1,58 @@
+{
+  "recorded_utc": "2026-10-11T19:26:31.420813+00:00",
+  "executor": "crc_order_author",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "runs": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "crc.py",
+        "crc_inputs.json"
+      ],
+      "working_directory": "/private/tmp/wwl-stage-crc-order-20261012/candidate/计算机知识/_labs/cross_crc_causality",
+      "exit_code": 0,
+      "stdout": "crc7_output.json",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "crc.py",
+        "crc8_inputs.json"
+      ],
+      "working_directory": "/private/tmp/wwl-stage-crc-order-20261012/candidate/计算机知识/_labs/cross_crc_causality",
+      "exit_code": 0,
+      "stdout": "crc8_output.json",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "verify_crc.py",
+        "/private/tmp/wwl-stage-crc-order-20261012/candidate/计算机知识/_labs/cross_crc_causality/运行证据/2026-10-12-lengths/crc7_output.json"
+      ],
+      "working_directory": "/private/tmp/wwl-stage-crc-order-20261012/candidate/计算机知识/_labs/cross_crc_causality",
+      "exit_code": 0,
+      "stdout": "original7_verify.json",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "verify_crc_lengths.py",
+        "/private/tmp/wwl-stage-crc-order-20261012/candidate/计算机知识/_labs/cross_crc_causality/运行证据/2026-10-12-lengths/crc7_output.json",
+        "/private/tmp/wwl-stage-crc-order-20261012/candidate/计算机知识/_labs/cross_crc_causality/运行证据/2026-10-12-lengths/crc8_output.json"
+      ],
+      "working_directory": "/private/tmp/wwl-stage-crc-order-20261012/candidate/计算机知识/_labs/cross_crc_causality",
+      "exit_code": 0,
+      "stdout": "lengths_report.json",
+      "stderr": ""
+    }
+  ],
+  "boundary": "author finite implementation cross-check; not non-author independent acceptance"
+}

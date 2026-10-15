@@ -1,0 +1,14 @@
+{
+  "model": "f=0.5*(x*x+10*y*y), initial=(2,0.6)",
+  "dimensions": "parameters=2; graph=3; all quantities dimensionless",
+  "hessian_eigenvalues": [
+    1,
+    10
+  ],
+  "condition_number_2": 10,
+  "converges_for_all_initial_points": "0 < eta < 0.2",
+  "analytical_reference": "passed",
+  "eta_0_2_boundary": "passed",
+  "finite_but_divergent": "passed",
+  "scope": "exact Euclidean GD, no momentum; toy numerical evidence"
+}

@@ -1,0 +1,17 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="编译全链条：每个阶段保留后续所需语义",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"0" [label="字符 → token"];
+"1" [label="AST → 名称绑定 / 类型"];
+"2" [label="IR / CFG / SSA"];
+"3" [label="分析与优化"];
+"4" [label="指令选择 / 寄存器分配"];
+"5" [label="目标文件 → 链接 / 运行时"];
+"0" -> "1";
+"1" -> "2";
+"2" -> "3";
+"3" -> "4";
+"4" -> "5";
+
+}

@@ -1,0 +1,121 @@
+[
+  {
+    "family": "R",
+    "file": "resistors-array.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Electronic-Axial-Lead-Resistors-Array.jpg",
+    "author": "Evan-Amos",
+    "license": "public domain",
+    "date": "2018-08-01",
+    "title": "Axial resistor / MPN unknown",
+    "pins": [
+      "a,b: two ends; no vendor pin numbers",
+      "Band code is a clue, ratings unverified"
+    ],
+    "symbol": "R",
+    "sha256": "e3eac56f8415650139ac923d01e6b82029d2849a2b7a73628dcf731b1fe0fb9d",
+    "changes": "Original bytes retained; external-image SVG resize and original symbols/text annotation; no retouch"
+  },
+  {
+    "family": "C",
+    "file": "ceramic-220nf.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:CeramicCapacitor-220nF.jpg",
+    "author": "Xofc",
+    "license": "CC BY-SA 4.0",
+    "date": "2015-05-22",
+    "title": "Ceramic code224 / MPN unknown",
+    "pins": [
+      "a,b: two nonpolar ceramic leads",
+      "224 -> 22 x 10^4 pF = 220 nF",
+      "Tolerance / voltage / manufacturer unknown"
+    ],
+    "symbol": "C",
+    "sha256": "8c06ba1c9b924dea1ec6336939963bbda4ab611011512e6050ceb3f4d3b33466",
+    "changes": "Original bytes retained; external-image SVG resize and original symbols/text annotation; no retouch; added SVG detail crop window"
+  },
+  {
+    "family": "L",
+    "file": "inductors-ec24.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:EC24_miniature_axial_inductors.jpg",
+    "author": "Retired electrician",
+    "license": "CC0 1.0",
+    "date": "2023-04-23",
+    "title": "EC24 source family / MPN unknown",
+    "pins": [
+      "a,b: axial two-terminal inductor",
+      "Green body cannot prove R or L",
+      "Inductance / Isat / DCR unknown"
+    ],
+    "symbol": "L",
+    "sha256": "a94a0577be2a37480dbbbde6371153234ba7f885d5d100060b25fd95d7fbbcb5",
+    "changes": "Original bytes retained; external-image SVG resize and original symbols/text annotation; no retouch"
+  },
+  {
+    "family": "D",
+    "file": "diode-1n4148.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Diode_1n4148.jpg",
+    "author": "Vonvon; scaled/contrast Ulfbastel",
+    "license": "CC BY-SA 3.0",
+    "date": "2010-01-26; current2020-07-27",
+    "title": "1N4148 source identification",
+    "pins": [
+      "Band = K; opposite = A",
+      "Vishay DO35 reference, not photo vendor",
+      "No certified current/voltage of photo"
+    ],
+    "symbol": "D",
+    "sha256": "0193b15031dbe2b7a9f784661bcfbf68ce90718d513230a82418c65d9901dc60",
+    "changes": "Original bytes retained; external-image SVG resize and original symbols/text annotation; no retouch; added SVG detail crop window"
+  },
+  {
+    "family": "MOS",
+    "file": "mos-irf630.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Electronic-Component-Through-Hole-Transistor.jpg",
+    "author": "Evan-Amos",
+    "license": "public domain",
+    "date": "2019-05-21",
+    "title": "IRF630 marking / vendor unverified",
+    "pins": [
+      "Vishay IRF630 TO220AB reference",
+      "Reference G-D-S; tab D",
+      "Reference map is not photo authentication"
+    ],
+    "symbol": "MOS",
+    "sha256": "c4fad0842cd6b965730f86b79d1f67222b473ad45b1d65fba101ca2922abeb05",
+    "changes": "Original bytes retained; external-image SVG resize and original symbols/text annotation; no retouch"
+  },
+  {
+    "family": "BJT",
+    "file": "bc547-pinout-cc0.png",
+    "page": "https://commons.wikimedia.org/wiki/File:BC547_transistor_pinout.png",
+    "author": "Warddr",
+    "license": "CC0 1.0",
+    "date": "2022-03-08",
+    "title": "BC547 marking / vendor unverified",
+    "pins": [
+      "onsemi BC546/D Rev8 reference",
+      "Pin1 C / pin2 B / pin3 E",
+      "Photo L/M/R positions not certified pins"
+    ],
+    "symbol": "BJT",
+    "sha256": "d8670d5d2f233d12c3aec420579c24cd2a44767ee5b53514b12c3177f397b2b6",
+    "changes": "Original bytes retained; external-image SVG resize and original symbols/text annotation; no retouch; original PNG already contains Warddr C/B/E and symbol annotations, not factory markings"
+  },
+  {
+    "family": "OP",
+    "file": "opamp-lm358.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:LM358_SMD_operational_amplifier_IMG_0990.JPG",
+    "author": "Hans Haase",
+    "license": "CC BY-SA 3.0",
+    "date": "2014-05-02",
+    "title": "LM358 / pin1 photo unclear",
+    "pins": [
+      "TI LM358 8-pin TOP VIEW reference",
+      "1O1 2IN1- 3IN1+ 4V-",
+      "5IN2+ 6IN2- 7O2 8V+",
+      "Text rotation does not prove photo pin1"
+    ],
+    "symbol": "OP",
+    "sha256": "74e93e113c4017a7b8146f5106986924e6e1fe2dd8128adba5ab40ef64d20d31",
+    "changes": "Original bytes retained; external-image SVG resize and original symbols/text annotation; no retouch"
+  }
+]

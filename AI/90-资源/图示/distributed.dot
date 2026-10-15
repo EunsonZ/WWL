@@ -1,0 +1,14 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="不等 token 数：先汇总分母，再匹配梯度平均约定", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+r0 [label="rank 0\n8 token；损失和 8"];
+r1 [label="rank 1\n2 token；损失和 6"];
+n [label="全局 N=8+2=10\nrank 数 R=2"];
+b [label="每个 rank 反传 R·Sᵣ/N\nDDP 再平均梯度"];
+out [label="目标：(8+6)/10=1.4\n错误：(1+3)/2=2"];
+r0 -> n;
+r1 -> n;
+n -> b;
+b -> out;
+}

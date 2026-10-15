@@ -1,0 +1,21 @@
+# #178 V2R1：修正独立包围测试的宽区间夹具
+
+完整候选在 `candidate-v2r1/`，从冻结 `candidate-v2/` 复制27目标；只改变 `信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py` 和对应 `04-源码与验证.md`。实际整合目标仍相对正式库 `/Users/ysz/Misc/Obsidian/Valults/WLM/WWL`；正式库原基线在 `baseline/`、基线到V1在 `DIFF.patch`、V1到V2在 `V2_DIFF.patch`，本次V2到V2R1差异在 `V2R1_DIFF.patch`。源算法、课程、README、#177均不改。V1/V2候选以及已有执行原始证据保留。
+
+## 真实失败及修订理由
+
+独立执行者在 V2 11项测试中10项成功、1项ERROR：`test_strict_cell_exact_rational_transfer_and_delay` 对 `c∈[.9,1]` 无条件索引了 `strict_cell` 返回值，但该函数在任何节的向外分母下界≤0时按合同返回None。旧原始日志：`../experiments178v2/run-20261010-01/logs/iir-tests.stderr`。该失败是测试错误，不能撤销、改写成旧版本PASS。
+
+夹具的第二节分母系数为 a1=−1、a2=1/4，故 Q(c)=c²−(5/2)c+25/16=(5/4−c)²。整个 [.9,1] 上真实Q≥1/16>0；然而区间Horner `(c−5/2)c+25/16` 重复使用c，第一步给[−8/5,−3/2]，再乘[9/10,1]并加25/16，包围下界为−3/80。这个包围包含真值，但不足以允许除法。返回None要求上层细分，不能视作Q失稳，也不能跳过Q.lower>0直接签认证。
+
+精确有理传函/群延迟的正例改为 [.71,.72] 和 [.90,.901]；第二节区间Horner下界分别为2737/10000和1209/10000>0，第一节Q=5/4−c也在两闭区间全为正。新增显式 `assertIsNotNone`，然后保持原有独立Fraction多项式P/Q和相位商导数式 `degree/2−E/Q` 对两端及内部中点的双向包围断言。没有放宽数值容差或删掉幅度/延迟断言。
+
+另增 `test_strict_cell_wide_positive_denominator_is_unproved`：保留旧 [.9,1] 的真实正分母与Horner负下界的精确分数关系，要求同一夹具返回None。这使不能证明的宽区间成为有效拒绝回归；资源耗尽与闭域覆盖原测试继续负责全认证函数的false出口。测试点包含性只能发现错误，全部频率的结论仍依赖包含性证明和无缝覆盖独立源审。
+
+## 验证与交接
+
+静态结果在 `evidence-v2r1/static-v2r1.json`：237链接0问题、4镜像匹配、4AST、5SVG XML。作者没有导入或运行实验源/测试。冻结V2原27目标全部SHA仍与 `evidence-v2/targets-v2.json` 一致；新目标身份在 `evidence-v2r1/targets-v2r1.json`，回执见 `V2R1_RECEIPT.json`。
+
+由未参与测试修改的独立审者检查：窄区间确实满足Q.lower>0，Fraction oracle来自传函/相位商导数而非复制区间实现，宽区间拒绝合同被保留。独立执行者改用V2R1实践目录，以新日志目录重跑受影响IIR suite（现在12项）和标准CLI。运行命令、固定输入与全带预期沿用 `EXECUTOR_V2.md`，仅候选版本及输出目录换为V2R1；例：`/private/tmp/wwl-recovery-178-v2r1-run-01`。原 `experiments178v2/run-20261010-01/` 不覆盖。记录两Python源SHA、环境、实际stdout/stderr及完整JSON。预期12项测试通过，但作者未执行；CLI全规格预期保持两套固定binary64/binary32模型的严格幅度和同SOS通带群延迟认证。
+
+必要未验层：V2R1真实suite/CLI与独立测试补审；V2包围源码新层独立审仍依其已有交接推进。静态成功不是运行成功，V1观察不能代填V2R1。Obsidian显示、硬件与真人仍各自未验，不增加本修订范围。#178不能在真实CLI认证与必要独立审完成前关闭。

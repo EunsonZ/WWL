@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="450" viewBox="0 0 425 450" role="img" aria-labelledby="title desc">
+<title id="title">同一原文的匹配、解析与模型编码分叉</title>
+<desc id="desc">同一原文分为三支：regex 输出匹配文本与 span；本题 lexer 输出类别、拼写和 span，再由 parser 按文法构造 AST；模型 tokenizer 按固定词表和编码规则输出供查词表的 ID。三支的职责和产物类型不同。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#334155"/></marker></defs>
+<rect width="425" height="450" fill="#fafcff"/>
+<g fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)">
+<path d="M212.5 77 V91 H72.5 V108"/><path d="M212.5 77 V108"/><path d="M212.5 77 V91 H352.5 V108"/>
+<path d="M212.5 196 V225"/><path d="M212.5 293 V323"/><path d="M352.5 196 V225"/>
+</g>
+<g stroke="#64748b" stroke-width="1.2">
+<rect x="22" y="18" width="381" height="59" rx="7" fill="#eaf1fb"/>
+<rect x="10" y="108" width="125" height="88" rx="7" fill="#fff8e9"/>
+<rect x="150" y="108" width="125" height="88" rx="7" fill="#edf8f3"/>
+<rect x="290" y="108" width="125" height="88" rx="7" fill="#f4f0fc"/>
+<rect x="150" y="225" width="125" height="68" rx="7" fill="#edf8f3"/>
+<rect x="290" y="225" width="125" height="68" rx="7" fill="#f4f0fc"/>
+<rect x="150" y="323" width="125" height="76" rx="7" fill="#edf8f3"/>
+</g>
+<g font-family="Arial Unicode MS, Arial, sans-serif" text-anchor="middle" fill="#172033">
+<text x="212.5" y="41" font-size="15" font-weight="bold">同一原文 s</text>
+<text x="212.5" y="63" font-size="13">括号、注释、emoji、组合重音</text>
+<text x="72.5" y="132" font-size="13" font-weight="bold">regex 匹配</text>
+<text x="72.5" y="154" font-size="12">文本片段 + span</text>
+<text x="72.5" y="179" font-size="12">会匹配注释中的 9</text>
+<text x="212.5" y="132" font-size="13" font-weight="bold">本题 lexer</text>
+<text x="212.5" y="154" font-size="12">类别、拼写、span</text>
+<text x="212.5" y="179" font-size="12">跳过本题注释</text>
+<text x="352.5" y="132" font-size="13" font-weight="bold">模型 tokenizer</text>
+<text x="352.5" y="154" font-size="12">固定词表、编码规则</text>
+<text x="352.5" y="179" font-size="12">处理完整原文</text>
+<text x="248" y="214" font-size="11">token 流</text>
+<text x="212.5" y="251" font-size="13" font-weight="bold">本题 parser</text>
+<text x="212.5" y="275" font-size="12">按文法构造 AST</text>
+<text x="352.5" y="251" font-size="13" font-weight="bold">模型 ID 序列</text>
+<text x="352.5" y="275" font-size="12">供查词表</text>
+<text x="212.5" y="346" font-size="13" font-weight="bold">AST</text>
+<text x="212.5" y="369" font-size="12">Let → Mul → Add</text>
+<text x="212.5" y="389" font-size="12">保留运算分组</text>
+<text x="212.5" y="428" font-size="12">三条分支责任不同；AST 不是模型 ID</text>
+</g>
+</svg>

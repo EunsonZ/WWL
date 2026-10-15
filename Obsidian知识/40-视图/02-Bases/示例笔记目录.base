@@ -1,0 +1,56 @@
+filters:
+  and:
+    - file.inFolder("Obsidian知识/30-实践/01-实验区/数据")
+    - file.hasTag("playground/sample")
+properties:
+  file.name:
+    displayName: 样例
+  note.type:
+    displayName: 类型
+  note.status:
+    displayName: 状态
+  note.created:
+    displayName: 创建日期
+  note.topics:
+    displayName: 主题
+  note.rating:
+    displayName: 评分
+  note.energy:
+    displayName: 精力
+  note.progress:
+    displayName: 进度
+  note.fixture_reviewed:
+    displayName: 已复习
+  note.related:
+    displayName: 相关笔记
+views:
+  - type: table
+    name: 全部样例
+    order:
+      - file.name
+      - type
+      - status
+      - created
+      - topics
+      - rating
+      - energy
+      - progress
+      - fixture_reviewed
+      - related
+      - file.tags
+    sort:
+      - property: type
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: cards
+    name: 样例卡片
+    order:
+      - file.name
+      - type
+      - status
+      - topics
+      - rating
+      - energy
+      - progress
+      - fixture_reviewed

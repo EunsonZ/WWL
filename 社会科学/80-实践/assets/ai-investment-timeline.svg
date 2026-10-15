@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="385" viewBox="0 0 1000 385" role="img" aria-labelledby="title desc">
+<title id="title">初始投资与终值的共同估值时点</title>
+<desc id="desc">t0 投入100；t1经营现金0；t2经营现金0且处置收到121。按年10%贴现，121的现值100，净现值为0。箭头不是金额比例。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#172554} .heading{font-size:24px;font-weight:700} .label{font-size:19px} .small{font-size:16px} .note{font-size:17px;fill:#475569} .box{fill:#eff6ff;stroke:#64748b;stroke-width:1.5} .arrow{fill:none;stroke:#334155;stroke-width:2;marker-end:url(#arrow)}</style></defs>
+<rect width="1000" height="385" fill="white"/>
+<text x="38" y="44" class="heading">One valuation date for all cash flows</text>
+<text x="38" y="76" class="note">Money in the same currency; r = 10% per year; no operating cash flow</text>
+<path d="M140,130 H890" class="arrow"/>
+<g class="label" text-anchor="middle">
+  <text x="170" y="120">t = 0</text><text x="510" y="120">t = 1</text><text x="850" y="120">t = 2</text>
+  <text x="170" y="177">Invest -100</text><text x="510" y="177">Cash 0</text><text x="850" y="177">Sell asset +121</text>
+</g>
+<path d="M170,136 V152 M510,136 V152 M850,136 V152" stroke="#334155" stroke-width="2"/>
+<path d="M850,198 V242 H225" class="arrow"/>
+<text x="540" y="231" class="label" text-anchor="middle">121 / (1.10 × 1.10) = 100 today</text>
+<rect x="95" y="268" width="810" height="56" rx="8" class="box"/>
+<text x="500" y="304" class="heading" text-anchor="middle">NPV at t = 0: -100 + 100 = 0</text>
+<text x="38" y="359" class="note">The horizontal position shows time. Arrow length does not encode money.</text>
+</svg>

@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="流量可以撤销：先走 s→a→b→t 后的残量增广",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"s" [label="s"];
+"a" [label="a"];
+"b" [label="b"];
+"t" [label="t"];
+"s" -> "b" [label="剩余容量 1"];
+"b" -> "a" [label="反向边：撤销 a→b 的 1"];
+"a" -> "t" [label="剩余容量 1"];
+s -> a [style=dashed,label="首轮已用"]; a -> b [style=dashed,label="首轮已用"]; b -> t [style=dashed,label="首轮已用"];
+}

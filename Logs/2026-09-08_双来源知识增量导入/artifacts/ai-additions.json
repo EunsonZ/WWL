@@ -1,0 +1,66 @@
+{
+  "batch": "2026-09-08_双来源知识增量导入",
+  "scope": "stage/AI Markdown only; no source code, tests, metadata status, or original source text was modified",
+  "source_copies": [
+    "Clippings/WorkWithLLM/对话原稿/Obsidian_兼容版 (1).md",
+    "Clippings/WorkWithLLM/对话原稿/Obsidian_兼容版 (1) 1.md",
+    "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限.md",
+    "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 1.md",
+    "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 2.md",
+    "Clippings/WorkWithLLM/教学收件箱/Untitled.md",
+    "Clippings/WorkWithLLM/教学收件箱/Untitled 1.md",
+    "Clippings/WorkWithLLM/教学收件箱/Untitled 2.md"
+  ],
+  "additions": [
+    {
+      "target": "AI/20-LLM/10-原理/09-Scaling推导数据配比与计算预算.md",
+      "before_after_range": { "before": "line 47 lifecycle objective paragraph", "after": "lines 49-61, 训练 FLOPs 最优不是资产或服务最优" },
+      "sources": [
+        "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 2.md#这些超大资本支出能否摊开",
+        "Clippings/WorkWithLLM/教学收件箱/Untitled 1.md#十九、怎样判断这轮市场最终能否承载自身"
+      ],
+      "why_new": "Separates loss/FLOPs-optimal allocation from lifecycle cost objects and utilization without adding a financial forecast.",
+      "verification_limits": "Algebraic cost decomposition only; current company, facility, energy, and revenue figures from the raw material were intentionally not imported."
+    },
+    {
+      "target": "AI/90-资源/03-GPU显存与资源预算表.md",
+      "before_after_range": { "before": "line 40 LoRA/QLoRA boundary", "after": "lines 42-50, 放得下与训练得动是两份账" },
+      "sources": [
+        "Clippings/WorkWithLLM/教学收件箱/Untitled 1.md#2019 年的真正稀缺品不是磁盘",
+        "Clippings/WorkWithLLM/教学收件箱/Untitled 1.md#GPT-2 到 GPT-3 的训练状态规模",
+        "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 2.md#存储不紧缺，为什么模型仍然受制于内存"
+      ],
+      "why_new": "Adds the conditional 12/16 B-per-parameter teaching estimate and makes capacity, bandwidth, and interconnect separate budget dimensions.",
+      "verification_limits": "Not a universal optimizer-memory formula or a GPU benchmark; activations, buffers, sharding, dtype, and implementation vary."
+    },
+    {
+      "target": "AI/20-LLM/20-架构/13-MoE路由梯度负载均衡与通信成本.md",
+      "before_after_range": { "before": "line 41 expert-parallel communication paragraph", "after": "lines 43-49, 稀疏算力为何不自动等于低系统成本" },
+      "sources": [
+        "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 2.md#条件计算：MoE、Mixture-of-Depths 和动态 token 路由"
+      ],
+      "why_new": "Connects active-parameter sparsity to total residency, all-to-all traffic, utilization, and tail latency without repeating routing mathematics.",
+      "verification_limits": "Mechanism-level explanation only; excludes volatile vendor/model/capital-market assertions."
+    },
+    {
+      "target": "AI/20-LLM/70-工程应用与工具链/09-Agent状态机幂等执行与提示注入边界.md",
+      "before_after_range": { "before": "line 43 memory/budget/stopping section", "after": "lines 45-51, 监督能力也是系统容量" },
+      "sources": [
+        "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 2.md#人类监督带宽是一个可以计算的硬约束",
+        "Clippings/WorkWithLLM/对话原稿/分析大模型算力极限 2.md#我之前的 p^n 可靠性模型过度悲观"
+      ],
+      "why_new": "Turns human review into observable queue/capacity conditions and preserves the source's correction of simplistic reliability claims.",
+      "verification_limits": "No universal human-to-agent ratio, productivity estimate, or labor-market conclusion is asserted."
+    },
+    {
+      "target": "AI/20-LLM/70-工程应用与工具链/10-LLM评测污染裁判偏差与统计检验.md",
+      "before_after_range": { "before": "line 43 coverage/calibration section", "after": "lines 45-51, 长任务还要按失败结构看尾部" },
+      "sources": [
+        "Clippings/WorkWithLLM/教学收件箱/Untitled.md#可靠性数学说明了为什么 80% benchmark 成绩远远不够",
+        "Clippings/WorkWithLLM/教学收件箱/Untitled.md#我之前的 p^n 可靠性模型过度悲观"
+      ],
+      "why_new": "Adds trace-based conditional failure, recovery, and handoff measurements for long workflows while rejecting independent identical-step multiplication as a conclusion.",
+      "verification_limits": "No current model autonomy-duration number or benchmark score was imported; validation requires real traces and a defined task protocol."
+    }
+  ]
+}

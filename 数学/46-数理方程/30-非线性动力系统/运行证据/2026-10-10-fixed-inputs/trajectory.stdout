@@ -1,0 +1,47 @@
+{
+  "pendulum_recomputed_from_full_traces": [
+    {
+      "step": 0.05,
+      "length": 401,
+      "endpoint": [
+        0.01031401714050236,
+        -0.0006166521155238903
+      ],
+      "max_energy_increase": -1.123013682047258e-09,
+      "max_abs_angle": 1.5707963267948966,
+      "initial_energy": 0.9999999999999999,
+      "final_energy": 5.337913318470555e-05
+    },
+    {
+      "step": 0.025,
+      "length": 801,
+      "endpoint": [
+        0.01031400897350486,
+        -0.0006166549542367162
+      ],
+      "max_energy_increase": -7.438127891390423e-11,
+      "max_abs_angle": 1.5707963267948966,
+      "initial_energy": 0.9999999999999999,
+      "final_energy": 5.337905070212923e-05
+    },
+    {
+      "step": 0.0125,
+      "length": 1601,
+      "endpoint": [
+        0.010314008459691545,
+        -0.0006166551191542952
+      ],
+      "max_energy_increase": -2.1384671811119915e-11,
+      "max_abs_angle": 1.5707963267948966,
+      "initial_energy": 0.9999999999999999,
+      "final_energy": 5.337904550439809e-05
+    }
+  ],
+  "endpoint_adjacent_differences": [
+    8.64627889183776e-09,
+    5.396312910887701e-10
+  ],
+  "Poincare_radius_derivative_actual_finite_difference": 0.1353352832578203,
+  "independent_variational_derivative": 0.1353352832366127,
+  "scope": "Independent energy/angle computation over frozen RK4 trajectory outputs; does not prove invariant basin or general return-map theorem."
+}

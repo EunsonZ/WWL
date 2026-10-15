@@ -1,0 +1,4 @@
+label=adc count=4 interval_ms=1000 gain_uV_per_code=1000 offset_uV=0 window=2 hop=1 windows=3
+begin=0 end=2 first_ms=0 last_ms=1000 sum_mV=6 mean_mV=3 population_variance_mV2=1 rms_squared_mV2=10
+begin=1 end=3 first_ms=1000 last_ms=2000 sum_mV=10 mean_mV=5 population_variance_mV2=1 rms_squared_mV2=26
+begin=2 end=4 first_ms=2000 last_ms=3000 sum_mV=14 mean_mV=7 population_variance_mV2=1 rms_squared_mV2=50

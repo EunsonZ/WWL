@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "groups": [
+    {
+      "generator": "generate_fixtures.py",
+      "count": 15,
+      "files": [
+        {
+          "path": "hashes-sha256.txt",
+          "sha256": "55c582ee64f20246fa077027e0d7bb8f031f9a8d71d1be129eee7998424784bc"
+        },
+        {
+          "path": "nmap-before.xml",
+          "sha256": "b32ca6177807c8a0409195be1b9ba027d984ad3c86f600fe2dfd514bb32398cf"
+        },
+        {
+          "path": "paths.txt",
+          "sha256": "20b5a845fc74cf4da3aadc1cdb152f1d522d88eb22a2e7056559c167c6f7c1bd"
+        },
+        {
+          "path": "nmap-after.xml",
+          "sha256": "34a4c8b706ecfa2358b68d77abfd5c5aef65bd1474d29c48eb507d374ec53f50"
+        },
+        {
+          "path": "candidate-words.txt",
+          "sha256": "e1512688d00b6e7b360324cab053bcc292bb4f600e13d5fc8e1e1d75516c19b9"
+        },
+        {
+          "path": "http-lab.pcap",
+          "sha256": "a7948316b3faede347436efb5553eb03a7e5d5ca0126d6fbb4fe9b90675491c6"
+        },
+        {
+          "path": "expected.json",
+          "sha256": "3c277ac7a58ad6d41b0c9108995f79d4288cf9d4561d2063e43e594d4b8abdeb"
+        },
+        {
+          "path": "access.jsonl",
+          "sha256": "ee947ca4c5a4c56c58b72fb8785d07fe588f39ccc8705ba8d23bac84d6d54ef7"
+        },
+        {
+          "path": "files/negative.txt",
+          "sha256": "172b273484a999bbe440f36f0d6448d2f43fdfff0fc48163123abfd134827c32"
+        },
+        {
+          "path": "files/positive.txt",
+          "sha256": "5e9797c0b1f21e2dabf962edf24f12417ade0b4f31b8ddac3f7de7d445ae6df0"
+        },
+        {
+          "path": "web/index.html",
+          "sha256": "8eddeb401292fa70acab401b63459d178ee5946c86c5d0871289de4fb277dc72"
+        },
+        {
+          "path": "web/robots.txt",
+          "sha256": "c2fd4f79a8c5c07559b28fae5f8099b449d8de490ce51fc8e2cfeb26794a37d2"
+        },
+        {
+          "path": "web/health",
+          "sha256": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c"
+        },
+        {
+          "path": "iac/pod.yaml",
+          "sha256": "19f87bb653e64bf5307052152b65568648e71d5df8d6443b7a5b919d9d5efb0a"
+        },
+        {
+          "path": "web/api/status.json",
+          "sha256": "85cbd954618c75697f5809af2b047fccd52bdb95f60951206f7643d64124cd3c"
+        }
+      ],
+      "command": [
+        "generate_fixtures.py",
+        "/tmp/kali-v3-repro-7oe5b0od/fixture1"
+      ],
+      "stdout": "Synthetic fixtures v1.0 created: /tmp/kali-v3-repro-7oe5b0od/fixture1\n",
+      "overwrite_negative": {
+        "returncode": 2,
+        "stderr": "usage: generate_fixtures.py [-h] destination\ngenerate_fixtures.py: error: Refusing to overwrite existing destination: /tmp/kali-v3-repro-7oe5b0od/fixture1\n",
+        "bytes_unchanged": true
+      }
+    },
+    {
+      "generator": "generate_reasoning_fixtures.py",
+      "count": 9,
+      "files": [
+        {
+          "path": "scan-after.xml",
+          "sha256": "f6c65346806c3ddc852c72ce93e36b0c054193b8c7369e146a405f21677240e5"
+        },
+        {
+          "path": "expected-v2.json",
+          "sha256": "5891b58d1019d2e62cc3eb576d49e30525d21f69d2955834e1e89787f5ec67b2"
+        },
+        {
+          "path": "records.json",
+          "sha256": "4581a94feb8b67fccbe1aa2295ded9b0b8ad21d77182c18b7cd18281429fd4f0"
+        },
+        {
+          "path": "metrics.json",
+          "sha256": "dfb2c82775effa4aaddfa79980d33746d6e366af189d6505106ed115823ce08c"
+        },
+        {
+          "path": "route-cases.json",
+          "sha256": "cad440b0f44a45b39c12e2c1cf61a280af8135d62e21bbcd8054e1b884ae4938"
+        },
+        {
+          "path": "scan-before.xml",
+          "sha256": "92d75a90d735e8fd4533106d69c4ea139702e1c5dcde8997d246293033a26cdb"
+        },
+        {
+          "path": "scan-aggregate.xml",
+          "sha256": "cf32f418716e54a28e9e9bfbabbae9c735bd4bec93f16da7ea3c3180e4f5d78a"
+        },
+        {
+          "path": "timeline.json",
+          "sha256": "b5a634d00639b398d4e5eb54dd80d745505910f3a6906bc0036a9c725f1dc4a8"
+        },
+        {
+          "path": "authorization-cases.json",
+          "sha256": "7b566bfb4b9cecee7b22a45d9d954d9203149b51d98a3518f12f46bb3242e171"
+        }
+      ],
+      "command": [
+        "generate_reasoning_fixtures.py",
+        "/tmp/kali-v3-repro-7oe5b0od/fixture2"
+      ],
+      "stdout": "Created reasoning-v2.0 synthetic fixtures in a new directory.\n",
+      "overwrite_negative": {
+        "returncode": 1,
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/kali-v3-repro-7oe5b0od/kali-lab/code/generate_reasoning_fixtures.py\", line 100, in <module>\n    generate(args.destination)\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/kali-v3-repro-7oe5b0od/kali-lab/code/generate_reasoning_fixtures.py\", line 87, in generate\n    raise FileExistsError(destination)\nFileExistsError: /tmp/kali-v3-repro-7oe5b0od/fixture2\n",
+        "bytes_unchanged": true
+      }
+    }
+  ]
+}

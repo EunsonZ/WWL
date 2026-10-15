@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments153/run-20261010-01/snapshot/code/affine_exact.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments153/run-20261010-01/snapshot/code/affine_exact.py", line 288, in main
+    print(json.dumps(fixed_report(data), ensure_ascii=False, indent=2))
+                     ~~~~~~~~~~~~^^^^^^
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments153/run-20261010-01/snapshot/code/affine_exact.py", line 249, in fixed_report
+    raise ValueError("integer fixed points required")
+ValueError: integer fixed points required

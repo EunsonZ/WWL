@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="借用：能力与存活区间必须兼容",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"o" [label="所有者 Vec<T>"];
+"sh" [label="共享借用 &T\n可有多个，只读权限"];
+"mu" [label="独占借用 &mut T\n有效期间排他访问"];
+"end" [label="借用最后一次使用结束\n不一定等于大括号结尾"];
+"o" -> "sh" [label="共享路径"];
+"o" -> "mu" [label="独占路径"];
+"sh" -> "end";
+"mu" -> "end";
+sh -> mu [style=dashed,label="不可冲突重叠",dir=none,color="#9A4A38"];
+}

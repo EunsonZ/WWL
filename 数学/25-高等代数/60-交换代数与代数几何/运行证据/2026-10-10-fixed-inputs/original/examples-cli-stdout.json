@@ -1,0 +1,435 @@
+{
+  "schema": "wwl-affine-report-v1",
+  "domain": "Q",
+  "order": "lex x>y",
+  "inputs": {
+    "f": {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            2,
+            0
+          ],
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            1
+          ],
+          "numerator": -1,
+          "denominator": 1
+        }
+      ]
+    },
+    "g": {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            1,
+            0
+          ],
+          "numerator": -1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            2
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    },
+    "parabola": {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            2,
+            0
+          ],
+          "numerator": -1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            1
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    },
+    "cusp": {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            3,
+            0
+          ],
+          "numerator": -1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            2
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    },
+    "node": {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            3,
+            0
+          ],
+          "numerator": -1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            2,
+            0
+          ],
+          "numerator": -1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            2
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    },
+    "axis": {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            0,
+            1
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    },
+    "double_axis": {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            0,
+            2
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    },
+    "hyperbola": {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            1,
+            1
+          ],
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            0
+          ],
+          "numerator": -1,
+          "denominator": 1
+        }
+      ]
+    }
+  },
+  "basis": [
+    {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            1,
+            0
+          ],
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            2
+          ],
+          "numerator": -1,
+          "denominator": 1
+        }
+      ]
+    },
+    {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            0,
+            4
+          ],
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            1
+          ],
+          "numerator": -1,
+          "denominator": 1
+        }
+      ]
+    }
+  ],
+  "identities": {
+    "g1_plus_g": {
+      "variables": 2,
+      "terms": []
+    },
+    "g2_minus_f_minus_x_plus_y2_times_g": {
+      "variables": 2,
+      "terms": []
+    },
+    "f_minus_x_plus_y2_times_g1_minus_g2": {
+      "variables": 2,
+      "terms": []
+    },
+    "parabola_parameter": {
+      "variables": 1,
+      "terms": []
+    },
+    "cusp_parameter": {
+      "variables": 1,
+      "terms": []
+    },
+    "node_parameter": {
+      "variables": 1,
+      "terms": []
+    }
+  },
+  "s_polynomial": {
+    "variables": 2,
+    "terms": [
+      {
+        "powers": [
+          1,
+          1
+        ],
+        "numerator": 1,
+        "denominator": 1
+      },
+      {
+        "powers": [
+          0,
+          6
+        ],
+        "numerator": -1,
+        "denominator": 1
+      }
+    ]
+  },
+  "s_quotients": [
+    {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            0,
+            1
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    },
+    {
+      "variables": 2,
+      "terms": [
+        {
+          "powers": [
+            0,
+            2
+          ],
+          "numerator": -1,
+          "denominator": 1
+        }
+      ]
+    }
+  ],
+  "s_remainder": {
+    "variables": 2,
+    "terms": []
+  },
+  "jacobians": {
+    "axis@origin": {
+      "point": [
+        0,
+        0
+      ],
+      "row": [
+        "0",
+        "1"
+      ],
+      "rank": 1,
+      "tangent_dimension": 1
+    },
+    "double_axis@origin": {
+      "point": [
+        0,
+        0
+      ],
+      "row": [
+        "0",
+        "0"
+      ],
+      "rank": 0,
+      "tangent_dimension": 2
+    },
+    "cusp@origin": {
+      "point": [
+        0,
+        0
+      ],
+      "row": [
+        "0",
+        "0"
+      ],
+      "rank": 0,
+      "tangent_dimension": 2
+    },
+    "cusp@cusp_regular": {
+      "point": [
+        1,
+        1
+      ],
+      "row": [
+        "-3",
+        "2"
+      ],
+      "rank": 1,
+      "tangent_dimension": 1
+    },
+    "node@origin": {
+      "point": [
+        0,
+        0
+      ],
+      "row": [
+        "0",
+        "0"
+      ],
+      "rank": 0,
+      "tangent_dimension": 2
+    },
+    "parabola@parabola_regular": {
+      "point": [
+        2,
+        4
+      ],
+      "row": [
+        "-4",
+        "1"
+      ],
+      "rank": 1,
+      "tangent_dimension": 1
+    }
+  },
+  "homogeneous": {
+    "parabola": {
+      "variables": 3,
+      "terms": [
+        {
+          "powers": [
+            2,
+            0,
+            0
+          ],
+          "numerator": -1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            1,
+            1
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    },
+    "hyperbola": {
+      "variables": 3,
+      "terms": [
+        {
+          "powers": [
+            1,
+            1,
+            0
+          ],
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            0,
+            2
+          ],
+          "numerator": -1,
+          "denominator": 1
+        }
+      ]
+    },
+    "cusp": {
+      "variables": 3,
+      "terms": [
+        {
+          "powers": [
+            3,
+            0,
+            0
+          ],
+          "numerator": -1,
+          "denominator": 1
+        },
+        {
+          "powers": [
+            0,
+            2,
+            1
+          ],
+          "numerator": 1,
+          "denominator": 1
+        }
+      ]
+    }
+  }
+}

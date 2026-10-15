@@ -1,0 +1,241 @@
+{
+  "count": 23,
+  "passed": 23,
+  "tolerances": "Exact integer/rational checks where appropriate; displayed rounded decimals bracketed explicitly. No statistical or runtime experiment claimed.",
+  "cases": [
+    {
+      "name": "bandwidth_delay_product_bytes",
+      "value": 500000,
+      "expected": 500000,
+      "passed": true,
+      "formula": "100e6 bit/s × 40/1000 s ÷ 8",
+      "note": "01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "window_limited_mbit_per_second",
+      "value": 26.2144,
+      "expected_interval": [
+        26.2143,
+        26.2145
+      ],
+      "passed": true,
+      "formula": "128 KiB ×8÷0.04s",
+      "note": "01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "sniper_nominal_requests",
+      "value": 6,
+      "expected": 6,
+      "passed": true,
+      "formula": "2 positions, shared 3-item set",
+      "note": "03-Web与API安全/03-BurpSuite工作流.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "battering_ram_nominal_requests",
+      "value": 3,
+      "expected": 3,
+      "passed": true,
+      "formula": "same value at both positions",
+      "note": "03-Web与API安全/03-BurpSuite工作流.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "pitchfork_nominal_requests",
+      "value": 3,
+      "expected": 3,
+      "passed": true,
+      "formula": "pair until shorter sequence exhausted",
+      "note": "03-Web与API安全/03-BurpSuite工作流.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "cluster_bomb_nominal_requests",
+      "value": 12,
+      "expected": 12,
+      "passed": true,
+      "formula": "Cartesian product of 3 and 4",
+      "note": "03-Web与API安全/03-BurpSuite工作流.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "independent_multiple_test_family_error",
+      "value": 0.6415140775914581,
+      "expected_interval": [
+        0.6415,
+        0.6416
+      ],
+      "passed": true,
+      "formula": "1-(1-alpha)^20, alpha=.05; not Sequencer algorithm",
+      "note": "03-Web与API安全/03-BurpSuite工作流.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "graphql_synthetic_node_count_a",
+      "value": 211,
+      "expected": 211,
+      "passed": true,
+      "formula": "1+10+200; not runtime cost",
+      "note": "03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "graphql_synthetic_node_count_b",
+      "value": 2101,
+      "expected": 2101,
+      "passed": true,
+      "formula": "1+100+2000; not runtime cost",
+      "note": "03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "shannon_entropy_bits",
+      "value": 1.3567796494470397,
+      "expected_interval": [
+        1.3567,
+        1.3569
+      ],
+      "passed": true,
+      "formula": "-sum p log2(p)",
+      "note": "05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "min_entropy_bits",
+      "value": 0.5145731728297583,
+      "expected_interval": [
+        0.5145,
+        0.5147
+      ],
+      "passed": true,
+      "formula": "-log2(max p)",
+      "note": "05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "expected_guess_count",
+      "value": 1.6,
+      "expected": 1.6,
+      "passed": true,
+      "formula": "sum rank*p",
+      "note": "05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "top_two_success_probability",
+      "value": 0.8,
+      "expected": 0.8,
+      "passed": true,
+      "formula": "0.7+0.1",
+      "note": "05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "argon_memory_mib",
+      "value": 64,
+      "expected": 64,
+      "passed": true,
+      "formula": "m=65536 KiB total; not multiplied by p",
+      "note": "05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "argon_memory_parallelism_upper_bound",
+      "value": 32,
+      "expected": 32,
+      "passed": true,
+      "formula": "2 GiB /64 MiB, overhead ignored",
+      "note": "05-密码无线与专门领域/01-哈希口令KDF与估算.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "independent_capture_opportunities",
+      "value": 0.8784233454094307,
+      "expected_interval": [
+        0.8784,
+        0.8785
+      ],
+      "passed": true,
+      "formula": "1-(1-q)^20, q=.1; independence assumed",
+      "note": "05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "received_power_ratio",
+      "value": 10.0,
+      "expected": 10.0,
+      "passed": true,
+      "formula": "10^(delta_dB/10); not distance",
+      "note": "05-密码无线与专门领域/05-KismetBluetooth与无线风险.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "clock_difference_error_interval",
+      "value": [
+        1.8,
+        2.2
+      ],
+      "expected": [
+        1.8,
+        2.2
+      ],
+      "passed": true,
+      "formula": "shared fixed bias cancels; remaining difference error ±.2",
+      "note": "06-取证逆向与检测/01-取证流程镜像与时间线.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "unsigned_ff_value",
+      "value": 255,
+      "expected": 255,
+      "passed": true,
+      "formula": "8-bit unsigned interpretation",
+      "note": "06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "signed_ff_value",
+      "value": -1,
+      "expected": -1,
+      "passed": true,
+      "formula": "8-bit two-complement signed interpretation",
+      "note": "06-取证逆向与检测/05-GhidraRadare2与静态逆向.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "zero_of_30_one_sided_upper_bound",
+      "value": 0.09503385285530419,
+      "expected_interval": [
+        0.095,
+        0.0951
+      ],
+      "passed": true,
+      "formula": "(1-p)^30=.05; iid detection opportunity",
+      "note": "00-导航与方法/04-从观察到结论的安全方法.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "zero_of_300_one_sided_upper_bound",
+      "value": 0.00993608194445772,
+      "expected_interval": [
+        0.00993,
+        0.00995
+      ],
+      "passed": true,
+      "formula": "(1-p)^300=.05; iid detection opportunity",
+      "note": "00-导航与方法/04-从观察到结论的安全方法.md",
+      "kind": "original teaching model, not software benchmark"
+    },
+    {
+      "name": "Q07_problem_matches_canonical_inputs",
+      "value": true,
+      "expected": true,
+      "passed": true,
+      "formula": "text constraint cross-check after draft correction",
+      "note": "07-综合实验/08-自检题与答案定位.md",
+      "kind": "original teaching model, not software benchmark"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "model": "vacuum, infinite plane symmetry, finite z control layer; all extensive values per area",
+  "inputs": {
+    "c_m_per_s": 299792458.0,
+    "epsilon0_F_per_m": 8.8541878128e-12,
+    "pulse_T_s": 2e-09,
+    "wave_E0_V_per_m": 1000.0,
+    "static_Eq_V_per_m": 500.0,
+    "control_half_length_in_cT": 2.0,
+    "tau_start": -1.0,
+    "tau_end": 4.0,
+    "free_amplitudes": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "space_intervals_per_half": 200,
+    "time_intervals": 1000
+  },
+  "derived_mu0_H_per_m": 1.2566370621200548e-06,
+  "one_travelling_pulse_energy_J_per_m2": 1.451635241871148e-06,
+  "local_checks": {
+    "finite_difference_step_dimensionless": 0.0001,
+    "away_from_sheet_Maxwell_max_normalized": 1.3175644220098093e-07,
+    "away_from_sheet_Poynting_max_normalized": 1.3877787807814457e-13,
+    "sheet_Ampere_jump_normalized": 0.0,
+    "source_field_before_lightcone_at_zeta_0_67_tau_0_25": 0.0,
+    "charge_rho_C_per_m3_at_zeta_0_25": -2.4919642798518966e-08,
+    "invalid_zero_E_Gauss_residual_at_zeta_0_25_normalized": 1.6875
+  },
+  "cases": {
+    "case-0": {
+      "alpha": 0.0,
+      "initial_control_energy_J_per_m2": 2.262841140091964e-07,
+      "final_control_energy_J_per_m2": 2.262841140091964e-07,
+      "net_outward_energy_J_per_m2": 2.903270483742296e-06,
+      "source_to_field_work_J_per_m2": 2.903270483742296e-06,
+      "matter_work_J_per_m2": -2.903270483742296e-06,
+      "initial_field_momentum_z_N_s_per_m2": 0.0,
+      "stress_impulse_z_N_s_per_m2": 0.0,
+      "matter_impulse_z_N_s_per_m2": 0.0,
+      "matter_impulse_x_N_s_per_m2": -2.896186054721723e-31,
+      "cross_outward_energy_J_per_m2": 0.0,
+      "errors": {
+        "energy_integral_normalized": 0.0,
+        "momentum_z_integral_normalized": 0.0,
+        "momentum_x_integral_normalized": -1.6354893955010023e-17,
+        "cross_energy_integral_normalized": 0.0,
+        "energy_rate_max_normalized": 1.1987677814850883e-06,
+        "momentum_z_rate_max_normalized": 1.3877787807814457e-14,
+        "momentum_x_rate_max_normalized": 2.8033131371785203e-15
+      },
+      "analytic_source_to_field_work_J_per_m2": 2.903270483742296e-06,
+      "analytic_matter_impulse_z_N_s_per_m2": 0.0,
+      "source_work_relative_to_one_pulse_error": 0.0,
+      "coarse_to_fine_max_rate_error": {
+        "energy_rate_max_normalized": [
+          1.9581330267470776e-05,
+          1.1987677814850883e-06
+        ],
+        "momentum_z_rate_max_normalized": [
+          7.864079757761527e-15,
+          1.3877787807814457e-14
+        ],
+        "momentum_x_rate_max_normalized": [
+          1.096345236817342e-15,
+          2.8033131371785203e-15
+        ]
+      }
+    },
+    "case-1": {
+      "alpha": 1.0,
+      "initial_control_energy_J_per_m2": 1.6779193558803445e-06,
+      "final_control_energy_J_per_m2": 2.262841140091964e-07,
+      "net_outward_energy_J_per_m2": 1.451635241871148e-06,
+      "source_to_field_work_J_per_m2": 0.0,
+      "matter_work_J_per_m2": -0.0,
+      "initial_field_momentum_z_N_s_per_m2": 4.842133960125002e-15,
+      "stress_impulse_z_N_s_per_m2": 4.842133960125001e-15,
+      "matter_impulse_z_N_s_per_m2": 9.684267920250002e-15,
+      "matter_impulse_x_N_s_per_m2": -7.524680936497809e-32,
+      "cross_outward_energy_J_per_m2": -2.903270483742296e-06,
+      "errors": {
+        "energy_integral_normalized": 0.0,
+        "momentum_z_integral_normalized": 0.0,
+        "momentum_x_integral_normalized": -4.249221439384762e-18,
+        "cross_energy_integral_normalized": 0.0,
+        "energy_rate_max_normalized": 5.993838574358534e-07,
+        "momentum_z_rate_max_normalized": 1.1987677734914826e-06,
+        "momentum_x_rate_max_normalized": 3.0714985991414645e-07
+      },
+      "analytic_source_to_field_work_J_per_m2": 0.0,
+      "analytic_matter_impulse_z_N_s_per_m2": 9.684267920250002e-15,
+      "source_work_relative_to_one_pulse_error": 0.0,
+      "coarse_to_fine_max_rate_error": {
+        "energy_rate_max_normalized": [
+          9.790665134845611e-06,
+          5.993838574358534e-07
+        ],
+        "momentum_z_rate_max_normalized": [
+          1.9581330267914865e-05,
+          1.1987677734914826e-06
+        ],
+        "momentum_x_rate_max_normalized": [
+          7.107648092918861e-06,
+          3.0714985991414645e-07
+        ]
+      }
+    },
+    "case-2": {
+      "alpha": 2.0,
+      "initial_control_energy_J_per_m2": 6.032825081493789e-06,
+      "final_control_energy_J_per_m2": 2.262841140091964e-07,
+      "net_outward_energy_J_per_m2": 2.903270483742296e-06,
+      "source_to_field_work_J_per_m2": -2.903270483742296e-06,
+      "matter_work_J_per_m2": 2.903270483742296e-06,
+      "initial_field_momentum_z_N_s_per_m2": 1.9368535840500007e-14,
+      "stress_impulse_z_N_s_per_m2": 0.0,
+      "matter_impulse_z_N_s_per_m2": 1.9368535840500004e-14,
+      "matter_impulse_x_N_s_per_m2": 1.2878931900853014e-31,
+      "cross_outward_energy_J_per_m2": -5.806540967484592e-06,
+      "errors": {
+        "energy_integral_normalized": 0.0,
+        "momentum_z_integral_normalized": -2.220446049250313e-16,
+        "momentum_x_integral_normalized": 7.272791233451512e-18,
+        "cross_energy_integral_normalized": 0.0,
+        "energy_rate_max_normalized": 1.1987677757119286e-06,
+        "momentum_z_rate_max_normalized": 2.397535542542073e-06,
+        "momentum_x_rate_max_normalized": 6.142997197033928e-07
+      },
+      "analytic_source_to_field_work_J_per_m2": -2.903270483742296e-06,
+      "analytic_matter_impulse_z_N_s_per_m2": 1.9368535840500004e-14,
+      "source_work_relative_to_one_pulse_error": 0.0,
+      "coarse_to_fine_max_rate_error": {
+        "energy_rate_max_normalized": [
+          1.958133026480624e-05,
+          1.1987677757119286e-06
+        ],
+        "momentum_z_rate_max_normalized": [
+          3.916266052605977e-05,
+          2.397535542542073e-06
+        ],
+        "momentum_x_rate_max_normalized": [
+          1.4215296185893234e-05,
+          6.142997197033928e-07
+        ]
+      }
+    }
+  },
+  "coarse_grid_cases": {
+    "case-0": {
+      "alpha": 0.0,
+      "initial_control_energy_J_per_m2": 2.262841137117271e-07,
+      "final_control_energy_J_per_m2": 2.262841137117271e-07,
+      "net_outward_energy_J_per_m2": 2.9032704837422965e-06,
+      "source_to_field_work_J_per_m2": 2.903270483742296e-06,
+      "matter_work_J_per_m2": -2.903270483742296e-06,
+      "initial_field_momentum_z_N_s_per_m2": 0.0,
+      "stress_impulse_z_N_s_per_m2": 0.0,
+      "matter_impulse_z_N_s_per_m2": 0.0,
+      "matter_impulse_x_N_s_per_m2": -1.5225594220670472e-31,
+      "cross_outward_energy_J_per_m2": 0.0,
+      "errors": {
+        "energy_integral_normalized": 1.1102230246251565e-16,
+        "momentum_z_integral_normalized": 0.0,
+        "momentum_x_integral_normalized": -8.597962084483732e-18,
+        "cross_energy_integral_normalized": 0.0,
+        "energy_rate_max_normalized": 1.9581330267470776e-05,
+        "momentum_z_rate_max_normalized": 7.864079757761527e-15,
+        "momentum_x_rate_max_normalized": 1.096345236817342e-15
+      }
+    },
+    "case-1": {
+      "alpha": 1.0,
+      "initial_control_energy_J_per_m2": 1.6779193555828746e-06,
+      "final_control_energy_J_per_m2": 2.262841137117271e-07,
+      "net_outward_energy_J_per_m2": 1.4516352418711482e-06,
+      "source_to_field_work_J_per_m2": 0.0,
+      "matter_work_J_per_m2": -0.0,
+      "initial_field_momentum_z_N_s_per_m2": 4.842133960124999e-15,
+      "stress_impulse_z_N_s_per_m2": 4.842133960125002e-15,
+      "matter_impulse_z_N_s_per_m2": 9.684267920250002e-15,
+      "matter_impulse_x_N_s_per_m2": 1.1557639420777171e-32,
+      "cross_outward_energy_J_per_m2": -2.9032704837422965e-06,
+      "errors": {
+        "energy_integral_normalized": 1.1102230246251565e-16,
+        "momentum_z_integral_normalized": 0.0,
+        "momentum_x_integral_normalized": 6.526651379626792e-19,
+        "cross_energy_integral_normalized": -1.1102230246251565e-16,
+        "energy_rate_max_normalized": 9.790665134845611e-06,
+        "momentum_z_rate_max_normalized": 1.9581330267914865e-05,
+        "momentum_x_rate_max_normalized": 7.107648092918861e-06
+      }
+    },
+    "case-2": {
+      "alpha": 2.0,
+      "initial_control_energy_J_per_m2": 6.0328250811963176e-06,
+      "final_control_energy_J_per_m2": 2.262841137117271e-07,
+      "net_outward_energy_J_per_m2": 2.9032704837422965e-06,
+      "source_to_field_work_J_per_m2": -2.903270483742296e-06,
+      "matter_work_J_per_m2": 2.903270483742296e-06,
+      "initial_field_momentum_z_N_s_per_m2": 1.9368535840499995e-14,
+      "stress_impulse_z_N_s_per_m2": 0.0,
+      "matter_impulse_z_N_s_per_m2": 1.9368535840500004e-14,
+      "matter_impulse_x_N_s_per_m2": 3.890211456144898e-32,
+      "cross_outward_energy_J_per_m2": -5.806540967484593e-06,
+      "errors": {
+        "energy_integral_normalized": 3.3306690738754696e-16,
+        "momentum_z_integral_normalized": 4.440892098500626e-16,
+        "momentum_x_integral_normalized": 2.1968200462842215e-18,
+        "cross_energy_integral_normalized": -2.220446049250313e-16,
+        "energy_rate_max_normalized": 1.958133026480624e-05,
+        "momentum_z_rate_max_normalized": 3.916266052605977e-05,
+        "momentum_x_rate_max_normalized": 1.4215296185893234e-05
+      }
+    }
+  },
+  "elapsed_s": 1.8282540829968639,
+  "execution": "author run, one process, Python standard library"
+}

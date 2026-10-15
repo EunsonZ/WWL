@@ -1,0 +1,24 @@
+[
+  {
+    "argv": [
+      "/opt/pyvenv/bin/python",
+      "/mnt/data/kali_v5_work/计算机知识/Kali/90-来源与维护/工具/check_vault.py",
+      "--self-test"
+    ],
+    "exit_code": 0,
+    "output": "v5-validator-tests.txt",
+    "kind": "existing checker regression, not Kali or lab tests"
+  },
+  {
+    "argv": [
+      "/opt/pyvenv/bin/python",
+      "/mnt/data/kali_v5_work/计算机知识/Kali/90-来源与维护/工具/check_vault.py",
+      "/mnt/data/kali_v5_work",
+      "--report",
+      "/mnt/data/kali_v5_admin/cli-final-static.json"
+    ],
+    "exit_code": 0,
+    "output": "v5-static-check.json",
+    "kind": "document static validation; not lab or Kali execution"
+  }
+]

@@ -1,0 +1,19 @@
+digraph G {
+    graph [rankdir=TB, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="保形预测：拟合、校准、测试必须分开"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    train [label="训练集
+拟合预测器 f"];
+    cal [label="独立校准集：n = 9
+计算误差分数 s₁,…,s₉"];
+    sort [label="排序 s₍₁₎ ≤ … ≤ s₍₉₎
+α = 0.2 → k = ceil(10 × 0.8) = 8"];
+    test [label="测试点 x
+集合：误差分数 ≤ s₍₈₎", fillcolor="#e6f3e9"];
+    limit [label="交换性下：边际覆盖保证
+不是每个子群、每个 x 都覆盖
+k > n 时采用 +∞", fillcolor="#fff3de"];
+    train -> cal [label="模型冻结"];cal -> sort;sort -> test;test -> limit;
+    
+    }

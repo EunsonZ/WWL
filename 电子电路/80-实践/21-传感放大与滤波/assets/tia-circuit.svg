@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="490" viewBox="0 0 420 490">
+<rect width="420" height="100%" style="fill:white;stroke:none"/>
+<style>text{font-family:Arial,sans-serif;font-size:14px;fill:#111}path,line,rect,polygon,circle{stroke:#111;stroke-width:2;fill:none} .node{fill:#111}</style>
+<text x="16" y="25">TIA: current enters X; small signal about 0 V</text>
+<polygon points="270,195 270,285 340,240"/>
+<text x="275" y="224">−</text>
+<text x="275" y="265">+</text>
+<text x="298" y="244">A</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="298,213 298,175"/>
+<text x="302" y="183">+5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="298,267 298,305"/>
+<text x="302" y="301">−5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="30,220 270,220"/>
+<circle class="node" cx="150" cy="220" r="3"/>
+<text x="32" y="205">i →</text>
+<text x="154" y="212">X = v−</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="150,220 150.0,287.5"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="150.0,297.5 150,365"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="138.0,287.5 162.0,287.5"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="138.0,297.5 162.0,297.5"/>
+<text x="165.0" y="295.5">CT 30 pF</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="150,365 150,373"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="138,373 162,373"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="142,378 158,378"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="146,383 154,383"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="150,220 150,100"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="150,100 220.4,100.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="299.6,100.0 370,100"/>
+<rect x="220.4" y="94" width="79.20000000000002" height="12"/>
+<text x="238.0" y="87">RF 1 MΩ</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="370,100 370,240 340,240"/>
+<circle class="node" cx="370" cy="240" r="3"/>
+<text x="347" y="270">vo</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="150,150 150,160"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="150,150 255.0,150.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="265.0,150.0 370,150"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="255.0,138.0 255.0,162.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="265.0,138.0 265.0,162.0"/>
+<text x="245.0" y="131.0">CF 1 pF</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="370,150 370,100"/>
+<circle class="node" cx="150" cy="150" r="3"/>
+<circle class="node" cx="370" cy="150" r="3"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="270,260 235,260 235,365"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="235,365 235,373"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="223,373 247,373"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="227,378 243,378"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="231,383 239,383"/>
+<text x="16" y="420">RF and CF share both endpoints; CT includes input C.</text>
+<text x="16" y="445">Loop model: set i=0, vo→divider X→−A→vo.</text>
+<text x="16" y="469">A(s)=A0/(1+s/wp); no extra poles or delay here.</text>
+</svg>

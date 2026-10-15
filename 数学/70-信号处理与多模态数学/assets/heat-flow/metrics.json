@@ -1,0 +1,112 @@
+{
+  "input": {
+    "v0": 1.0,
+    "kappa": 0.5,
+    "s": 0.0,
+    "t": 1.0,
+    "seed": 22620261012,
+    "samples": 40000,
+    "plot_paths": 4,
+    "plot_steps": 200,
+    "quadrature_intervals": 4000,
+    "quadrature_sd": 10,
+    "state_unit": "U",
+    "time_unit": "Tu"
+  },
+  "python": "3.14.7",
+  "model": "X=X0+sqrt(2*kappa)*W; Z=X0*sqrt(v_t/v0); v_t=v0+2*kappa*t",
+  "units": {
+    "variance": "U^2",
+    "covariance": "U^2",
+    "h_difference": "nat",
+    "J": "U^-2"
+  },
+  "quadrature": {
+    "radius": 14.142135623730951,
+    "dx": 0.007071067811865475,
+    "rows": [
+      {
+        "time": 0.0,
+        "mass": 1.0,
+        "h_quadrature": 1.418938533204673,
+        "J_quadrature": 1.0,
+        "h_formula": 1.4189385332046727,
+        "J_formula": 1.0
+      },
+      {
+        "time": 0.5,
+        "mass": 1.0,
+        "h_quadrature": 1.621671087258755,
+        "J_quadrature": 0.6666666666666666,
+        "h_formula": 1.621671087258755,
+        "J_formula": 0.6666666666666666
+      },
+      {
+        "time": 1.0,
+        "mass": 1.0,
+        "h_quadrature": 1.7655121234846456,
+        "J_quadrature": 0.5,
+        "h_formula": 1.7655121234846454,
+        "J_formula": 0.5
+      }
+    ]
+  },
+  "PDE_finite_differences": {
+    "time": 0.5,
+    "dt": 0.0001,
+    "dx": 0.001224744871391589,
+    "rows": [
+      {
+        "x": -2.449489742783178,
+        "time_derivative_fd": 0.044083439529087054,
+        "kappa_laplacian_fd": 0.04408343344068182,
+        "absolute_residual": 6.088405231363669e-09
+      },
+      {
+        "x": 0,
+        "time_derivative_fd": -0.10857833628002966,
+        "kappa_laplacian_fd": -0.10857830882541704,
+        "absolute_residual": 2.7454612624988606e-08
+      },
+      {
+        "x": 1.224744871391589,
+        "time_derivative_fd": 1.952604744559494e-10,
+        "kappa_laplacian_fd": -1.095420050963488e-08,
+        "absolute_residual": 1.114946098409083e-08
+      }
+    ]
+  },
+  "de_Bruijn": {
+    "h_derivative_fd_of_quadrature": 0.33333333382623564,
+    "kappa_J_quadrature": 0.3333333333333333
+  },
+  "covariance_known_zero_means": {
+    "SDE": {
+      "estimate": 1.006534630820034,
+      "standard_error": 0.00873461271236661,
+      "formula": 1.0
+    },
+    "ODE": {
+      "estimate": 1.4257628501033672,
+      "standard_error": 0.010132117384547598,
+      "formula": 1.4142135623730951
+    }
+  },
+  "second_moments": {
+    "SDE_s": {
+      "estimate": 1.0081665796719501,
+      "standard_error": 0.0071644889103917135
+    },
+    "SDE_t": {
+      "estimate": 2.0042205935087214,
+      "standard_error": 0.014224395655213693
+    },
+    "ODE_t": {
+      "estimate": 2.0163331593439007,
+      "standard_error": 0.014328977820783429
+    }
+  },
+  "entropy_increment_s_to_t": 0.34657359027997264,
+  "boundary": "v0=0 deliberately rejected: no unique deterministic flow from the point initial condition",
+  "matplotlib": "3.11.2"
+}

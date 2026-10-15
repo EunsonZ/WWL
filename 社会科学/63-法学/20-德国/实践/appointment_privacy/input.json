@@ -1,0 +1,101 @@
+{
+  "scenario": "D-GDPR synthetic only",
+  "behavior_date": "2026-06-01",
+  "query": "count of bookings for 2026-06-01 morning",
+  "adjacency": "add/remove one adult user with at most one booking in this cohort",
+  "target_id": "p10",
+  "records": [
+    {
+      "pid": "p01",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p02",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p03",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p04",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p05",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p06",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p07",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p08",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p09",
+      "slot": "2026-06-01 morning"
+    },
+    {
+      "pid": "p10",
+      "slot": "2026-06-01 morning"
+    }
+  ],
+  "mapping": [
+    {
+      "pid": "p01",
+      "name": "Person01",
+      "contact": "person01@example.invalid"
+    },
+    {
+      "pid": "p02",
+      "name": "Person02",
+      "contact": "person02@example.invalid"
+    },
+    {
+      "pid": "p03",
+      "name": "Person03",
+      "contact": "person03@example.invalid"
+    },
+    {
+      "pid": "p04",
+      "name": "Person04",
+      "contact": "person04@example.invalid"
+    },
+    {
+      "pid": "p05",
+      "name": "Person05",
+      "contact": "person05@example.invalid"
+    },
+    {
+      "pid": "p06",
+      "name": "Person06",
+      "contact": "person06@example.invalid"
+    },
+    {
+      "pid": "p07",
+      "name": "Person07",
+      "contact": "person07@example.invalid"
+    },
+    {
+      "pid": "p08",
+      "name": "Person08",
+      "contact": "person08@example.invalid"
+    },
+    {
+      "pid": "p09",
+      "name": "Person09",
+      "contact": "person09@example.invalid"
+    },
+    {
+      "pid": "p10",
+      "name": "Person10",
+      "contact": "person10@example.invalid"
+    }
+  ]
+}

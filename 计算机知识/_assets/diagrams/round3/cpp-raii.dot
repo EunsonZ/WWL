@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="RAII：构造成功的资源按逆序释放",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"0" [label="构造资源 A"];
+"1" [label="构造资源 B"];
+"2" [label="使用 A、B\n正常返回或异常展开"];
+"3" [label="析构 B"];
+"4" [label="析构 A"];
+"0" -> "1";
+"1" -> "2";
+"2" -> "3";
+"3" -> "4";
+
+}

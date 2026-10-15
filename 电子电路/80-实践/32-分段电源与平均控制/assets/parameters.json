@@ -1,0 +1,260 @@
+{
+  "identity": "synthetic CPU; ideal switching separate from loss estimate; not SPICE or measured",
+  "comparison_CCM": {
+    "initial_i_A": 0.49,
+    "initial_v_V": 4.95,
+    "cycles": 400,
+    "steps_per_interval": 32,
+    "control_K_per_V": 0.01,
+    "instantaneous_vs_averaged_initial": "equal numerical states, not phase-matched cycle means",
+    "switched_min_i_A": 0.2276194139913245,
+    "averaged_min_i_A": 0.45698078121649205,
+    "idle_records": 0,
+    "observed_max_cycle_endpoint_v_difference_V": 0.1282369155159353,
+    "scope": "finite mode check, not averaging error bound or global stability proof"
+  },
+  "design_candidates": [
+    {
+      "l_H": 5e-05,
+      "fs_Hz": 50000.0,
+      "feasible": false,
+      "reason": "CCM model not valid"
+    },
+    {
+      "l_H": 5e-05,
+      "fs_Hz": 100000.0,
+      "delta_i_A": 0.5833333333333334,
+      "delta_v_V": 0.007291666666666667,
+      "estimated_shared_rise_K": 6.749656327160494,
+      "loss_W": 0.16874140817901234,
+      "objective": 0.16874140817901234,
+      "feasible": false
+    },
+    {
+      "l_H": 5e-05,
+      "fs_Hz": 200000.0,
+      "delta_i_A": 0.2916666666666667,
+      "delta_v_V": 0.0018229166666666667,
+      "estimated_shared_rise_K": 7.384464081790123,
+      "loss_W": 0.18461160204475308,
+      "objective": 0.18461160204475308,
+      "feasible": true
+    },
+    {
+      "l_H": 0.0001,
+      "fs_Hz": 50000.0,
+      "delta_i_A": 0.5833333333333334,
+      "delta_v_V": 0.014583333333333334,
+      "estimated_shared_rise_K": 6.380856327160494,
+      "loss_W": 0.15952140817901234,
+      "objective": 0.15952140817901234,
+      "feasible": false
+    },
+    {
+      "l_H": 0.0001,
+      "fs_Hz": 100000.0,
+      "delta_i_A": 0.2916666666666667,
+      "delta_v_V": 0.0036458333333333334,
+      "estimated_shared_rise_K": 6.646864081790122,
+      "loss_W": 0.16617160204475306,
+      "objective": 0.16617160204475306,
+      "feasible": true
+    },
+    {
+      "l_H": 0.0001,
+      "fs_Hz": 200000.0,
+      "delta_i_A": 0.14583333333333334,
+      "delta_v_V": 0.0009114583333333333,
+      "estimated_shared_rise_K": 7.35876602044753,
+      "loss_W": 0.18396915051118826,
+      "objective": 0.18396915051118826,
+      "feasible": true
+    },
+    {
+      "l_H": 0.0002,
+      "fs_Hz": 50000.0,
+      "delta_i_A": 0.2916666666666667,
+      "delta_v_V": 0.007291666666666667,
+      "estimated_shared_rise_K": 6.278064081790124,
+      "loss_W": 0.15695160204475309,
+      "objective": 0.15695160204475309,
+      "feasible": true
+    },
+    {
+      "l_H": 0.0002,
+      "fs_Hz": 100000.0,
+      "delta_i_A": 0.14583333333333334,
+      "delta_v_V": 0.0018229166666666667,
+      "estimated_shared_rise_K": 6.62116602044753,
+      "loss_W": 0.16552915051118827,
+      "objective": 0.16552915051118827,
+      "feasible": true
+    },
+    {
+      "l_H": 0.0002,
+      "fs_Hz": 200000.0,
+      "delta_i_A": 0.07291666666666667,
+      "delta_v_V": 0.0004557291666666667,
+      "estimated_shared_rise_K": 7.352341505111882,
+      "loss_W": 0.18380853762779706,
+      "objective": 0.18380853762779706,
+      "feasible": true
+    },
+    {
+      "l_H": 0.0004,
+      "fs_Hz": 50000.0,
+      "delta_i_A": 0.14583333333333334,
+      "delta_v_V": 0.0036458333333333334,
+      "estimated_shared_rise_K": 6.25236602044753,
+      "loss_W": 0.15630915051118827,
+      "objective": 0.15630915051118827,
+      "feasible": true
+    },
+    {
+      "l_H": 0.0004,
+      "fs_Hz": 100000.0,
+      "delta_i_A": 0.07291666666666667,
+      "delta_v_V": 0.0009114583333333333,
+      "estimated_shared_rise_K": 6.614741505111882,
+      "loss_W": 0.16536853762779705,
+      "objective": 0.16536853762779705,
+      "feasible": true
+    },
+    {
+      "l_H": 0.0004,
+      "fs_Hz": 200000.0,
+      "delta_i_A": 0.036458333333333336,
+      "delta_v_V": 0.00022786458333333334,
+      "estimated_shared_rise_K": 7.350735376277971,
+      "loss_W": 0.18376838440694926,
+      "objective": 0.18376838440694926,
+      "feasible": true
+    }
+  ],
+  "params_SI": {
+    "vin": 12.0,
+    "l": 0.0001,
+    "c": 0.0001,
+    "r": 10.0,
+    "fs": 100000.0,
+    "d": 0.4166666666666667
+  },
+  "ccm": {
+    "v_ccm": 5.0,
+    "delta_i_A": 0.2916666666666667,
+    "critical_A": 0.14583333333333334,
+    "r_boundary_ohm": 34.28571428571429,
+    "mode": "CCM",
+    "v_V": 5.0,
+    "d2": 0.5833333333333333,
+    "d3": 0,
+    "peak_dcm_A": 0.2916666666666667,
+    "ripple_cap_ccm_V": 0.0036458333333333334,
+    "energy_L_at_ccm_mean_J": 1.25e-05,
+    "energy_C_ccm_J": 0.00125
+  },
+  "dcm_R100": {
+    "v_ccm": 5.0,
+    "delta_i_A": 0.2916666666666667,
+    "critical_A": 0.14583333333333334,
+    "r_boundary_ohm": 34.28571428571429,
+    "mode": "DCM",
+    "v_V": 7.125633429679738,
+    "d2": 0.28502533718718936,
+    "d3": 0.2983079961461439,
+    "peak_dcm_A": 0.2030986070966776,
+    "ripple_cap_ccm_V": 0.0036458333333333334,
+    "energy_L_at_ccm_mean_J": 1.2500000000000002e-07,
+    "energy_C_ccm_J": 0.00125
+  },
+  "loss_estimate": {
+    "parts": {
+      "mos_W": 0.005356023341049383,
+      "copper_W": 0.025708912037037037,
+      "diode_W": 0.11666666666666665,
+      "overlap_W": 0.012000000000000002,
+      "gate_W": 0.005,
+      "coss_W": 0.00144
+    },
+    "total_W": 0.16617160204475306,
+    "efficiency": 0.9376740784736767,
+    "identity": "illustrative loss estimate, ideal Q unchanged; not device extraction"
+  },
+  "buck_matrices": {
+    "Aon": [
+      [
+        0.0,
+        -10000.0
+      ],
+      [
+        10000.0,
+        -1000.0
+      ]
+    ],
+    "Aoff": [
+      [
+        0.0,
+        -10000.0
+      ],
+      [
+        10000.0,
+        -1000.0
+      ]
+    ],
+    "Bon": [
+      10000.0,
+      0.0
+    ],
+    "Boff": [
+      0.0,
+      0.0
+    ]
+  },
+  "boost_matrices": {
+    "Aon": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -250.0
+      ]
+    ],
+    "Aoff": [
+      [
+        0.0,
+        -10000.0
+      ],
+      [
+        10000.0,
+        -250.0
+      ]
+    ],
+    "Bon": [
+      10000.0,
+      0.0
+    ],
+    "Boff": [
+      10000.0,
+      0.0
+    ]
+  },
+  "three_phase_at_pi_over_2": {
+    "duty": [
+      0.9,
+      0.30000000000000004,
+      0.2999999999999998
+    ],
+    "phase_V": [
+      4.800000000000001,
+      -2.3999999999999995,
+      -2.400000000000002
+    ],
+    "line_V": [
+      7.199999999999999,
+      2.6645352591003757e-15,
+      -7.200000000000003
+    ]
+  }
+}

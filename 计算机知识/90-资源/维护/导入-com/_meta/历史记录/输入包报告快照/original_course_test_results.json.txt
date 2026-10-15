@@ -1,0 +1,141 @@
+{
+  "scope": "原包数据结构算法及编译原理的纯 Python 单元测试；不包含 CUDA、系统级操作或全部代码块。",
+  "suites": [
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/01-线性结构与摊还/test_dynamic_array.py",
+      "status": "PASS",
+      "tests_run": 3,
+      "returncode": 0,
+      "log": "test_append_preserves_order_and_records_doubling (__main__.DynamicIntArrayTests.test_append_preserves_order_and_records_doubling) ... ok\ntest_pop_and_empty_boundary (__main__.DynamicIntArrayTests.test_pop_and_empty_boundary) ... ok\ntest_rejects_invalid_constructor_value_and_index (__main__.DynamicIntArrayTests.test_rejects_invalid_constructor_value_and_index) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/02-哈希堆与树/test_structures.py",
+      "status": "PASS",
+      "tests_run": 4,
+      "returncode": 0,
+      "log": "test_empty_and_duplicate_tree_boundary (__main__.StructuresTests.test_empty_and_duplicate_tree_boundary) ... ok\ntest_hash_frequency_and_heap_top_k (__main__.StructuresTests.test_hash_frequency_and_heap_top_k) ... ok\ntest_rejects_invalid_values (__main__.StructuresTests.test_rejects_invalid_values) ... ok\ntest_tree_validator_rejects_a_deep_global_order_violation (__main__.StructuresTests.test_tree_validator_rejects_a_deep_global_order_violation) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/test_graph_algorithms.py",
+      "status": "PASS",
+      "tests_run": 3,
+      "returncode": 0,
+      "log": "test_bfs_and_dijkstra_choose_different_questions (__main__.GraphAlgorithmsTests.test_bfs_and_dijkstra_choose_different_questions) ... ok\ntest_rejects_missing_start_and_negative_weight (__main__.GraphAlgorithmsTests.test_rejects_missing_start_and_negative_weight) ... ok\ntest_single_vertex_boundary (__main__.GraphAlgorithmsTests.test_single_vertex_boundary) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/04-排序二分与动态规划/test_algorithms.py",
+      "status": "PASS",
+      "tests_run": 4,
+      "returncode": 0,
+      "log": "test_checked_binary_search_separates_validation_from_logarithmic_core (__main__.AlgorithmsTests.test_checked_binary_search_separates_validation_from_logarithmic_core) ... ok\ntest_empty_and_unreachable_boundaries (__main__.AlgorithmsTests.test_empty_and_unreachable_boundaries) ... ok\ntest_rejects_broken_preconditions (__main__.AlgorithmsTests.test_rejects_broken_preconditions) ... ok\ntest_sort_binary_search_and_dp_examples (__main__.AlgorithmsTests.test_sort_binary_search_and_dp_examples) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/05-栈队列与单调结构/test_stack_queue.py",
+      "status": "PASS",
+      "tests_run": 4,
+      "returncode": 0,
+      "log": "test_bracket_failure_examples (__main__.StackQueueTests.test_bracket_failure_examples) ... ok\ntest_bracket_stack_invariant_on_nested_and_empty (__main__.StackQueueTests.test_bracket_stack_invariant_on_nested_and_empty) ... ok\ntest_window_deque_invariant_with_repeated_values (__main__.StackQueueTests.test_window_deque_invariant_with_repeated_values) ... ok\ntest_window_rejects_invalid_boundaries (__main__.StackQueueTests.test_window_rejects_invalid_boundaries) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/06-贪心选择与失败反例/test_greedy_activity.py",
+      "status": "PASS",
+      "tests_run": 4,
+      "returncode": 0,
+      "log": "test_earliest_finish_keeps_selected_schedule_compatible (__main__.GreedyActivityTests.test_earliest_finish_keeps_selected_schedule_compatible) ... ok\ntest_earliest_start_counterexample_is_not_optimal (__main__.GreedyActivityTests.test_earliest_start_counterexample_is_not_optimal) ... ok\ntest_empty_and_touching_boundaries (__main__.GreedyActivityTests.test_empty_and_touching_boundaries) ... ok\ntest_rejects_invalid_activity_preconditions (__main__.GreedyActivityTests.test_rejects_invalid_activity_preconditions) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/07-KMP与重叠匹配/test_kmp.py",
+      "status": "PASS",
+      "tests_run": 4,
+      "returncode": 0,
+      "log": "test_empty_pattern_matches_every_text_boundary (__main__.KmpTests.test_empty_pattern_matches_every_text_boundary) ... ok\ntest_empty_text_and_pattern_longer_than_text (__main__.KmpTests.test_empty_text_and_pattern_longer_than_text) ... ok\ntest_full_match_fallback_preserves_overlapping_matches (__main__.KmpTests.test_full_match_fallback_preserves_overlapping_matches) ... ok\ntest_prefix_table_invariant_on_repeated_prefixes (__main__.KmpTests.test_prefix_table_invariant_on_repeated_prefixes) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/08-回溯与安全剪枝/test_backtracking.py",
+      "status": "PASS",
+      "tests_run": 4,
+      "returncode": 0,
+      "log": "test_nonnegative_pruning_invariant_with_repeated_values (__main__.BacktrackingTests.test_nonnegative_pruning_invariant_with_repeated_values) ... ok\ntest_rejects_negative_values_before_using_pruning (__main__.BacktrackingTests.test_rejects_negative_values_before_using_pruning) ... ok\ntest_unchecked_pruning_negative_counterexample_loses_solution (__main__.BacktrackingTests.test_unchecked_pruning_negative_counterexample_loses_solution) ... ok\ntest_zero_target_and_unreachable_boundaries (__main__.BacktrackingTests.test_zero_target_and_unreachable_boundaries) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/09-图分解与数据流不动点/test_graph_dataflow.py",
+      "status": "PASS",
+      "tests_run": 4,
+      "returncode": 0,
+      "log": "test_dataflow_contract_rejects_missing_block_facts (__main__.GraphDataflowTests.test_dataflow_contract_rejects_missing_block_facts) ... ok\ntest_fixed_seed_scc_matches_mutual_reachability (__main__.GraphDataflowTests.test_fixed_seed_scc_matches_mutual_reachability) ... ok\ntest_known_scc_partition_and_condensation_dag (__main__.GraphDataflowTests.test_known_scc_partition_and_condensation_dag) ... ok\ntest_worklist_reaches_loop_fixed_point (__main__.GraphDataflowTests.test_worklist_reaches_loop_fixed_point) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/10-区间结构与外存代价/test_interval_external.py",
+      "status": "PASS",
+      "tests_run": 5,
+      "returncode": 0,
+      "log": "test_difference_array_uses_two_writes_per_update_and_one_scan (__main__.IntervalExternalTests.test_difference_array_uses_two_writes_per_update_and_one_scan) ... ok\ntest_fenwick_queries_and_updates_have_logarithmic_touch_counts (__main__.IntervalExternalTests.test_fenwick_queries_and_updates_have_logarithmic_touch_counts) ... ok\ntest_fixed_seed_paged_index_matches_sorted_reference (__main__.IntervalExternalTests.test_fixed_seed_paged_index_matches_sorted_reference) ... ok\ntest_invalid_ranges_are_rejected (__main__.IntervalExternalTests.test_invalid_ranges_are_rejected) ... ok\ntest_page_size_changes_transfers_not_query_result (__main__.IntervalExternalTests.test_page_size_changes_transfers_not_query_result) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/test_retrieval_lab.py",
+      "status": "PASS",
+      "tests_run": 10,
+      "returncode": 0,
+      "log": "test_bloom_duplicate_insertions_do_not_raise_theoretical_fpr (__main__.ProbabilisticStructureTests.test_bloom_duplicate_insertions_do_not_raise_theoretical_fpr) ... ok\ntest_bloom_has_no_false_negative_for_inserted_items (__main__.ProbabilisticStructureTests.test_bloom_has_no_false_negative_for_inserted_items) ... ok\ntest_count_min_never_underestimates_non_negative_stream (__main__.ProbabilisticStructureTests.test_count_min_never_underestimates_non_negative_stream) ... ok\ntest_probability_structures_reject_broken_budgets (__main__.ProbabilisticStructureTests.test_probability_structures_reject_broken_budgets) ... ok\ntest_reservoir_is_bounded_and_reproducible (__main__.ProbabilisticStructureTests.test_reservoir_is_bounded_and_reproducible) ... ok\ntest_exact_cosine_is_oracle_and_honors_visibility (__main__.RetrievalTests.test_exact_cosine_is_oracle_and_honors_visibility) ... ok\ntest_inverted_postings_and_filter_before_top_k (__main__.RetrievalTests.test_inverted_postings_and_filter_before_top_k) ... ok\ntest_report_labels_latency_and_memory_as_measurements (__main__.RetrievalTests.test_report_labels_latency_and_memory_as_measurements) ... ok\ntest_toy_lsh_is_reproducible_but_evaluated_by_recall (__main__.RetrievalTests.test_toy_lsh_is_reproducible_but_evaluated_by_recall) ... ok\ntest_vector_and_k_preconditions (__main__.RetrievalTests.test_vector_and_k_preconditions) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/08-编译原理/01-MiniLang词法解析与诊断/test_minilang_frontend.py",
+      "status": "PASS",
+      "tests_run": 4,
+      "returncode": 0,
+      "log": "test_lexical_error_has_source_position (__main__.FrontendTests.test_lexical_error_has_source_position) ... ok\ntest_maximal_munch_and_spans (__main__.FrontendTests.test_maximal_munch_and_spans) ... ok\ntest_pratt_precedence (__main__.FrontendTests.test_pratt_precedence) ... ok\ntest_statement_recovery_keeps_next_statement (__main__.FrontendTests.test_statement_recovery_keeps_next_statement) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/08-编译原理/02-名称解析类型检查与错误定位/test_minilang_semantics.py",
+      "status": "PASS",
+      "tests_run": 3,
+      "returncode": 0,
+      "log": "test_arity_and_i32_bool_conflicts_are_diagnostic (__main__.SemanticTests.test_arity_and_i32_bool_conflicts_are_diagnostic) ... ok\ntest_duplicate_and_undeclared_names_report_their_spans (__main__.SemanticTests.test_duplicate_and_undeclared_names_report_their_spans) ... ok\ntest_shadowing_has_distinct_symbol_identity (__main__.SemanticTests.test_shadowing_has_distinct_symbol_identity) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/08-编译原理/03-三地址码CFG与SSA/test_minilang_ir.py",
+      "status": "PASS",
+      "tests_run": 10,
+      "returncode": 0,
+      "log": "test_dominators_for_diamond (__main__.IRTests.test_dominators_for_diamond) ... ok\ntest_ssa_has_phi_and_verifies (__main__.IRTests.test_ssa_has_phi_and_verifies) ... ok\ntest_tac_blocks_and_edges_have_terminators (__main__.IRTests.test_tac_blocks_and_edges_have_terminators) ... ok\ntest_verifier_rejects_missing_phi_predecessor_and_definition (__main__.IRTests.test_verifier_rejects_missing_phi_predecessor_and_definition) ... ok\ntest_verifier_rejects_missing_target_block (__main__.IRTests.test_verifier_rejects_missing_target_block) ... ok\ntest_verifier_rejects_same_block_use_before_definition (__main__.IRTests.test_verifier_rejects_same_block_use_before_definition) ... ok\ntest_verifier_rejects_undefined_branch_condition (__main__.IRTests.test_verifier_rejects_undefined_branch_condition) ... ok\ntest_verifier_rejects_unknown_terminator (__main__.IRTests.test_verifier_rejects_unknown_terminator) ... ok\ntest_verifier_rejects_unreachable_block_under_its_contract (__main__.IRTests.test_verifier_rejects_unreachable_block_under_its_contract) ... ok\ntest_verifier_rejects_wrong_terminator_arity (__main__.IRTests.test_verifier_rejects_wrong_terminator_arity) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/08-编译原理/04-数据流优化与差分验证/test_dataflow_opt.py",
+      "status": "PASS",
+      "tests_run": 5,
+      "returncode": 0,
+      "log": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/08-编译原理/05-字节码VM内联缓存与JIT观察/test_bytecode_vm.py",
+      "status": "PASS",
+      "tests_run": 6,
+      "returncode": 0,
+      "log": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/08-编译原理/06-指令选择寄存器分配与重定位/test_toy_codegen.py",
+      "status": "PASS",
+      "tests_run": 6,
+      "returncode": 0,
+      "log": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/08-编译原理/08-AI计算图Lowering融合与Shape特化/test_tensor_lowering.py",
+      "status": "PASS",
+      "tests_run": 6,
+      "returncode": 0,
+      "log": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "计算机知识/80-实践/08-编译原理/09-MiniLang端到端编译器/test_minilang.py",
+      "status": "PASS",
+      "tests_run": 6,
+      "returncode": 0,
+      "log": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n"
+    }
+  ],
+  "suite_count": 19,
+  "test_count": 95,
+  "failed_suites": 0
+}

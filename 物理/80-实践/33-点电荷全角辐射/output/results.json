@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "beta": 0.0,
+      "a_perp": 0.0,
+      "a_parallel": 1.0,
+      "integral": 8.377580409572781,
+      "oracle": 8.377580409572781,
+      "rel_error": 0.0,
+      "mesh_change": 0.0,
+      "z_momentum_residual": 1.4632760253260973e-17
+    },
+    {
+      "beta": 0.6,
+      "a_perp": 0.0,
+      "a_parallel": 1.0,
+      "integral": 31.957933080950852,
+      "oracle": 31.957933080950855,
+      "rel_error": -1.1102230246251565e-16,
+      "mesh_change": 0.0,
+      "z_momentum_residual": -1.1102230246251565e-16
+    },
+    {
+      "beta": 0.6,
+      "a_perp": 1.0,
+      "a_parallel": 0.0,
+      "integral": 20.453077171808552,
+      "oracle": 20.45307717180855,
+      "rel_error": 2.220446049250313e-16,
+      "mesh_change": 2.220446049250313e-16,
+      "z_momentum_residual": 2.220446049250313e-16
+    },
+    {
+      "beta": 0.995,
+      "a_perp": 0.6,
+      "a_parallel": 0.8,
+      "integral": 5432376.40423236,
+      "oracle": 5432376.404232473,
+      "rel_error": -2.0761170560490427e-14,
+      "mesh_change": 4.218847493575595e-15,
+      "z_momentum_residual": -2.0650148258027912e-14
+    }
+  ],
+  "pulse": {
+    "T_s": 1.0006922855944561e-08,
+    "W_J": 4.0967059074626134e-10,
+    "W_full_angle_J": 4.0967059074626134e-10,
+    "time_mesh_relative_change": 0.0,
+    "full_angle_relative_difference": 0.0,
+    "W_NR_J": 3.9423813655075297e-10,
+    "relativistic_to_NR": 1.03914500593608,
+    "W_y_J_sr": 4.705871114054247e-11,
+    "wrong_4pi_y_to_total": 1.4434944030248924
+  },
+  "peak_gamma_theta": {
+    "emission": 0.5017379381501758,
+    "arrival": 0.4487995439368644
+  }
+}

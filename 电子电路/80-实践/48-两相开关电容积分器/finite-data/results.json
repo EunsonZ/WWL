@@ -1,0 +1,172 @@
+{
+  "model": "A(s)=A0/(1+s*tau_a); zero OTA input current; ideal output drive; Cs sample completely established; no switch injection/thermal source except given eta; Cp A-to-ground",
+  "read_protocol": "y[n] before phi2, w[n] phi2 end, next y[n+1] after isolated interval; generally w != next y",
+  "ag_exact": "404/405",
+  "bg_exact": "20/81",
+  "alpha_exact": "1/4",
+  "initial_equilibrium": true,
+  "tau1_s": 3.207920792079208e-08,
+  "tau2_s": 4e-08,
+  "rho1": 0.08259326325034504,
+  "rho2": 0.011108996538242306,
+  "max_step_V": 1.0,
+  "absolute_error_V": 0.0001,
+  "phi2_required_s": 3.6841361487904733e-07,
+  "static": [
+    {
+      "n": 0,
+      "ideal_after_V": "1/4",
+      "static_after_V": "34/135"
+    },
+    {
+      "n": 1,
+      "ideal_after_V": "3/8",
+      "static_after_V": "20486/54675"
+    },
+    {
+      "n": 2,
+      "ideal_after_V": "0",
+      "static_after_V": "75094/22143375"
+    },
+    {
+      "n": 3,
+      "ideal_after_V": "1/4",
+      "static_after_V": "2244675476/8968066875"
+    }
+  ],
+  "physical": [
+    {
+      "n": 0,
+      "x_V": 1.0,
+      "r_before_V": -0.505,
+      "y_before_V": 0.5,
+      "Qunion_C": -1.02e-12,
+      "target2_V": 0.2518518518518518,
+      "w_phi2_V": 0.25460852877060086,
+      "s_phi2_V": -0.00031317698351931436,
+      "qf_after_C": -1.0196868230164805e-12,
+      "r_after_V": -0.25492170575412015,
+      "target1_V": 0.2523977284694259,
+      "y_next_V": 0.2525803256806948,
+      "s_next_V": -0.002341380073425381,
+      "read_difference_V": -0.0020282030899060888,
+      "static_relation_residual_V": 0.0022329083041866945
+    },
+    {
+      "n": 1,
+      "x_V": -0.5,
+      "r_before_V": -0.25492170575412015,
+      "y_before_V": 0.2525803256806948,
+      "Qunion_C": -1.5196868230164806e-12,
+      "target2_V": 0.3752313143250569,
+      "w_phi2_V": 0.3738687849167947,
+      "s_phi2_V": -0.004842336669860359,
+      "qf_after_C": -1.5148444863466202e-12,
+      "r_after_V": -0.37871112158665504,
+      "target1_V": 0.3749615065214406,
+      "y_next_V": 0.3748712550782888,
+      "s_next_V": -0.003839866508366263,
+      "read_difference_V": 0.0010024701614940734,
+      "static_relation_residual_V": -0.001103648820692412
+    },
+    {
+      "n": 2,
+      "x_V": 1.5,
+      "r_before_V": -0.37871112158665504,
+      "y_before_V": 0.3748712550782888,
+      "Qunion_C": -1.4844486346620168e-14,
+      "target2_V": 0.0036653052707704115,
+      "w_phi2_V": 0.007789030882157081,
+      "s_phi2_V": 0.003262327436401631,
+      "qf_after_C": -1.81068137830218e-14,
+      "r_after_V": -0.00452670344575545,
+      "target1_V": 0.004481884599757871,
+      "y_next_V": 0.004755032603267469,
+      "s_next_V": 0.00022832915751201926,
+      "read_difference_V": -0.0030339982788896115,
+      "static_relation_residual_V": 0.003340217745223202
+    },
+    {
+      "n": 3,
+      "x_V": -1.0,
+      "r_before_V": -0.00452670344575545,
+      "y_before_V": 0.004755032603267469,
+      "Qunion_C": -1.0181068137830217e-12,
+      "target2_V": 0.25138439846494365,
+      "w_phi2_V": 0.2486445936933574,
+      "s_phi2_V": -0.004705687801918446,
+      "qf_after_C": -1.0134011259811034e-12,
+      "r_after_V": -0.25335028149527583,
+      "target1_V": 0.25084186286660975,
+      "y_next_V": 0.25066038323535145,
+      "s_next_V": -0.0026898982599243837,
+      "read_difference_V": 0.002015789541994051,
+      "static_relation_residual_V": -0.0022192418649848718
+    }
+  ],
+  "noise": {
+    "information": "given eta covariance; white input OTA noise in disjoint windows; eta independent of OTA; deterministic initial state; phi2-switch noise NOT included",
+    "eta_mean_variance_V2_exact": "33/6400000000",
+    "eta_yN_variance_V2": 4.969073861135842e-09,
+    "zeta1_variance_V2": 7.58753783817427e-10,
+    "zeta2_variance_V2": 9.524811292065932e-10,
+    "OTA_phi1_yN_variance_V2": 7.587676246318298e-10,
+    "OTA_phi2_yN_variance_V2": 1.7764292140085844e-10,
+    "selected_ports_yN_variance_V2": 5.90548440716853e-09,
+    "M": [
+      [
+        0.9953364945109646,
+        -0.0022217993076484614
+      ],
+      [
+        -0.9847549226639014,
+        0.0029356408027999387
+      ]
+    ],
+    "N": [
+      0.24883412362774113,
+      -0.24618873066597535
+    ],
+    "G2": [
+      -0.2,
+      0.26425796359681136
+    ],
+    "G1": [
+      0.0,
+      1.0
+    ],
+    "rows": [
+      {
+        "j": 0,
+        "eta_to_yN": -0.24455400023972743,
+        "zeta1_to_yN": 0.0021905956316402232,
+        "zeta2_to_yN": 0.19670527909390192
+      },
+      {
+        "j": 1,
+        "eta_to_yN": -0.2451579959415257,
+        "zeta1_to_yN": 0.0021965457923011343,
+        "zeta2_to_yN": 0.19719113459970744
+      },
+      {
+        "j": 2,
+        "eta_to_yN": -0.24576334985210846,
+        "zeta1_to_yN": 0.0029356408027999387,
+        "zeta2_to_yN": 0.1977267509931799
+      },
+      {
+        "j": 3,
+        "eta_to_yN": -0.24618873066597535,
+        "zeta1_to_yN": 1.0,
+        "zeta2_to_yN": 0.26425796359681136
+      }
+    ]
+  },
+  "input_shape": [
+    4
+  ],
+  "state_shape": [
+    5,
+    2
+  ]
+}

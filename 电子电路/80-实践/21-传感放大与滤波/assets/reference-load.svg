@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="460" viewBox="0 0 420 460">
+<rect width="420" height="100%" style="fill:white;stroke:none"/>
+<style>text{font-family:Arial,sans-serif;font-size:14px;fill:#111}path,line,rect,polygon,circle{stroke:#111;stroke-width:2;fill:none} .node{fill:#111}</style>
+<text x="16" y="25">Reference loading: DC draw and switched charge</text>
+<text x="18" y="70">Videal = 2.5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="35,90 35,140"/>
+<circle cx="35" cy="165" r="25"/>
+<text x="28" y="161">+</text>
+<text x="29" y="179">−</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="35,190 35,300"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="35,300 35,308"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="23,308 47,308"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="27,313 43,313"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="31,318 39,318"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="35,140 87.80000000000001,140.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="147.2,140.0 200,140"/>
+<rect x="87.80000000000001" y="134" width="59.39999999999998" height="12"/>
+<text x="95.5" y="127">Ro 0.1Ω</text>
+<circle class="node" cx="200" cy="140" r="3"/>
+<text x="208" y="124">vREF</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200,140 200.0,191.2"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200.0,248.8 200,300"/>
+<rect x="194" y="191.2" width="12" height="57.60000000000002"/>
+<text x="212" y="220.0">Rload 2.5k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200,300 200,308"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="188,308 212,308"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="192,313 208,313"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="196,318 204,318"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200,140 360,140"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="360,140 360.0,215.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="360.0,225.0 360,300"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="348.0,215.0 372.0,215.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="348.0,225.0 372.0,225.0"/>
+<text x="375.0" y="223.0">Cref</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="360,300 360,308"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="348,308 372,308"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="352,313 368,313"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="356,318 364,318"/>
+<text x="240" y="72">ADC charge draw</text>
+<text x="250" y="96">Δq per event ↓</text>
+<text x="16" y="355">DC: Δv≈−Ro ΔI = −0.1 mV at 1 mA.</text>
+<text x="16" y="381">Fast event: Δv≈−Δq/Cref before replenishment.</text>
+<text x="16" y="407">Cref, ESR, buffer loop and event spacing need checking.</text>
+<text x="16" y="433">This source is a model; Cref is not a universal fix.</text>
+</svg>

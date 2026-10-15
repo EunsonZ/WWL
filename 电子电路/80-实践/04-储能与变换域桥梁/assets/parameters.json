@@ -1,0 +1,27 @@
+{
+  "scope": "Analytic CPU teaching diagrams; no measurement/SPICE/client/human evidence",
+  "rc": {
+    "R_ohm": 1000,
+    "C_F": 1e-06,
+    "source_V": 1,
+    "initial_V": 0.4
+  },
+  "rl": {
+    "R_ohm": 100,
+    "L_H": 0.01,
+    "source_V": 1,
+    "initial_A": 0.02
+  },
+  "figure_widths_px": [
+    360,
+    425
+  ],
+  "figures": [
+    "switch-state",
+    "charge-energy",
+    "s-modal",
+    "roc-regions",
+    "origin-jump",
+    "initial-sources"
+  ]
+}

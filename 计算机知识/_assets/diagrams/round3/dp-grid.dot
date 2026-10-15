@@ -1,0 +1,13 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="LCS 状态依赖：只保留子问题所需前缀",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"diag" [label="dp[i-1][j-1]"];
+"up" [label="dp[i-1][j]"];
+"left" [label="dp[i][j-1]"];
+"cur" [label="dp[i][j]\n字符相等：左上 + 1\n否则：上、左取 max"];
+"diag" -> "cur" [label="匹配"];
+"up" -> "cur" [label="不匹配候选"];
+"left" -> "cur" [label="不匹配候选"];
+
+}

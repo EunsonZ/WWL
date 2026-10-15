@@ -1,0 +1,14 @@
+# Kružkov 原文条件补签
+
+结论：accept。原报告的原文读取 blocked 已解除；候选11文件未变化，本补签是新增原始证据，未改候选哈希沿用旧签。
+
+[MathNet官方目录](https://www.mathnet.ru/php/archive.phtml?jrnid=sm&option_lang=eng&paperid=3372&wshow=paper) 确认题名、卷期、页码与DOI。官方PDF在web持续Timeout，shell urllib SSL EOF；本审阅改用 [University of Montenegro保存的IOP原论文副本](https://www.ucg.ac.me/skladiste/blog_2503/objava_7962/fajlovi/kruzhkov_first_order_quasilinear_equations_in_several_independent_variables.pdf)，curl正常证书验证下载成功，以本机Foundation/PDFKit提取指定页。没有安装组件，没有关闭证书验证。保留原PDF以复查；它多一页IOP下载封面，因此PDF页码=英文印刷页码−215。
+
+原PDF 3286862 bytes，SHA256 `b9179100ca857401fa081816b108f9e734fa4fd49c59b01977f42f4be515a316`。本审阅实际读核PDF第5、8、14、15、22、24页（印刷220、223、229、230、237、239）：
+
+- §2 Definition1给有界可测解、全部常数k的熵测试和初始局部L1迹。
+- §3 Theorem1给特征锥截面的局部L1稳定；自治无源时增长指数为0，波速上界仅依赖有界状态区间中的f'。令锥底半径趋∞，若初始差在L1，单调收敛得到全文使用的全直线L1收缩。Theorem2给唯一性；自治时其增长条件自动成立。
+- §4 p230先给较强光滑条件，却已明确自治式(1.5)只需一阶导连续，并指向§5第4条；p237 Theorem4/5处理黏性存在。
+- §5第4条 p239明确通过光滑逼近弱化条件，自治式(1.5)只需flux连续可微。因此候选“f∈C1”有原文直接支持，既不是假称§4较强一般条件就是C1，也不必依赖二手材料。
+
+候选最后“§2–4”的来源定位可以兑现声明：§4已指出自治C1弱化与§5第4条。建议以后需要时补p239更精确阅读出口；本轮无需为此修改已冻结正文。报告保留“不在本页证明一般存在/双变量法”的边界。

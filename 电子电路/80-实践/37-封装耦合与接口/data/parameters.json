@@ -1,0 +1,30 @@
+{
+  "interface": {
+    "lanes": 16,
+    "rate_bps": 16000000000.0,
+    "coding": 1,
+    "payload_bytes": 64,
+    "frame_bytes": 68,
+    "utilization": 0.8,
+    "message_bytes": 256,
+    "fixed_s": 2e-09,
+    "energy_J_per_wire_bit": 5e-13,
+    "idle_W": 0.02
+  },
+  "RLC": {
+    "R_ohm": 20,
+    "L_H": 2e-10,
+    "C_F": 5e-13
+  },
+  "thermal": {
+    "baseline_W": [
+      8,
+      4
+    ],
+    "Ra_K_W": 2,
+    "R12_K_W": 4,
+    "C_J_K": 2,
+    "ambient_K": 300
+  },
+  "geometry": "schematic coordinates independent of manufactured dimensions; die areas1cm2 for cost/power examples only"
+}

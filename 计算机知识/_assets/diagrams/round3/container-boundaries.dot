@@ -1,0 +1,20 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="容器边界：多个机制共同作用，不等于独立内核",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"p" [label="容器进程"];
+"ns" [label="namespaces\n隔离名称 / 视图"];
+"cg" [label="cgroups\n限制与记账资源"];
+"sec" [label="capabilities / seccomp / MAC\n授权与限制"];
+"fs" [label="挂载与根文件系统\n检查 bind mount 暴露"];
+"k" [label="共享宿主内核"];
+"p" -> "ns";
+"p" -> "cg";
+"p" -> "sec";
+"p" -> "fs";
+"ns" -> "k";
+"cg" -> "k";
+"sec" -> "k";
+"fs" -> "k";
+
+}

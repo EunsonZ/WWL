@@ -1,0 +1,30 @@
+{
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "tools": [
+    {
+      "argv": [
+        "/usr/bin/xcrun",
+        "swift",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0\n",
+      "stderr": "swift-driver version: 1.168.6 "
+    },
+    {
+      "argv": [
+        "/usr/bin/xcrun",
+        "--show-sdk-version"
+      ],
+      "returncode": 0,
+      "stdout": "27.0\n",
+      "stderr": "2026-10-10 01:51:58.655 xcodebuild[32210:189357]  DVTFilePathFSEvents: Failed to start fs event stream.\n"
+    }
+  ],
+  "rendering": "system AppKit/WebKit through compiled StaticSVG",
+  "data_store": "nonPersistent",
+  "network_navigation": "only exact local source file URL allowed",
+  "content_javascript": false,
+  "compiler_cache": "module-cache/",
+  "compiler_tmp": "compiler-tmp/"
+}

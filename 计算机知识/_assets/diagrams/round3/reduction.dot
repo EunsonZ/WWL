@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="证明 B 至少与 A 一样难：归约方向 A → B",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"0" [label="已知难问题 A 的实例 x"];
+"1" [label="多项式时间变换 f"];
+"2" [label="B 的实例 f(x)"];
+"3" [label="假设可用的 B 求解器"];
+"4" [label="转换结果\n得到 A 的答案"];
+"0" -> "1";
+"1" -> "2";
+"2" -> "3";
+"3" -> "4";
+
+}

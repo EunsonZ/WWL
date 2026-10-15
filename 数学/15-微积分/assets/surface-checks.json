@@ -1,0 +1,44 @@
+{
+  "model": "r(u,v)=(u,v,u*u+v*v), F=(0,0,1)",
+  "domain": "[0,1]^2",
+  "units": "all dimensionless",
+  "orientation": "upward N_z=1 everywhere",
+  "regular": "norm(N)>=1",
+  "local_point": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "r_u": [
+    1,
+    0,
+    1
+  ],
+  "r_v": [
+    0,
+    1,
+    1
+  ],
+  "N": [
+    -1,
+    -1,
+    1
+  ],
+  "local_area_density": 1.7320508075688772,
+  "local_unit_normal": [
+    -0.5773502691896258,
+    -0.5773502691896258,
+    0.5773502691896258
+  ],
+  "flux_up_quadrature": 1.0,
+  "flux_up_exact": 1,
+  "flux_down_exact": -1,
+  "area_quadrature_order_32": 1.8615641807530916,
+  "area_exact": 1.861564180753091,
+  "area_formula": "1+(7*log(5)-atan(4/3))/12",
+  "display_patch_delta": 0.2,
+  "normal_arrow_display_length": 0.42,
+  "font_file_observed": "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+  "numpy_version": "2.5.3",
+  "evidence": "local numeric and generated files only; no Obsidian or learner validation"
+}

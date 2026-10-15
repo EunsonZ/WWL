@@ -1,0 +1,17 @@
+# Exact rebuild interface
+
+No installation or network/device input is required. Use the existing locked `.venv-issues-111plus/bin/python`. Copy this run's `snapshot/` and helper Python files into a NEW sibling under `experiments180/`, with copied TARGETS_V2.json. Existing logs open exclusively and output directory creation rejects existing paths. Preserve existing evidence.
+
+In that new sibling, run independent `analytic_expected.py` first, then use its monitor.py with names/timeouts below. The monitor uses the new sibling's base path and original V2 source is checked against TARGETS_V2. Set the output argument to that NEW sibling's absolute `output` path.
+
+```sh
+set -e  # Stop on any failed expected-value, suite, CLI, probe or oracle process.
+python -B analytic_expected.py
+python -B monitor.py suite-preflight 60 -m unittest -v test_identification_lab.py
+python -B monitor.py standard 300 identification_lab.py --output /ABSOLUTE/NEW-SIBLING/output
+python -B monitor.py deterministic-probes 60 /ABSOLUTE/NEW-SIBLING/source_probes.py
+python -B monitor.py independent-oracle 300 /ABSOLUTE/NEW-SIBLING/independent_oracle.py
+python -B monitor.py additional-analytic 60 /ABSOLUTE/NEW-SIBLING/additional_analytic.py
+```
+
+The word python above denotes the verified locked interpreter, not an instruction to install or change Python. The actual absolute argv for this run are in process-observations.json. Set MPLCONFIGDIR to the NEW sibling's own writable cache before using render_evidence.py. Actual trajectory and physical-lag charts are rendered by installed Matplotlib. Frozen schematic SVG uses existing system Quick Look, whose exact argv/wait4 evidence are in qlmanage-approved-observation.json; ordinary sandbox thumbnail generation fails and a normal scoped approval is necessary. Do not reuse old output as proof of a new execution or rerun numerics just to repair a font renderer. Source_probes supplies business observations, while independent_oracle imports no business code.

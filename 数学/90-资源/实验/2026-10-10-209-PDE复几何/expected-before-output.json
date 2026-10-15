@@ -1,0 +1,277 @@
+{
+  "entropy_RH": [
+    {
+      "left": 2,
+      "right": -2,
+      "speed": 0.0,
+      "RH_residual": 0.0,
+      "entropy_jump": -5.333333333333333,
+      "entropy_admissible": true
+    },
+    {
+      "left": -2,
+      "right": 2,
+      "speed": 0.0,
+      "RH_residual": 0.0,
+      "entropy_jump": 5.333333333333333,
+      "entropy_admissible": false
+    },
+    {
+      "left": 3,
+      "right": 1,
+      "speed": 2.0,
+      "RH_residual": 0.0,
+      "entropy_jump": -0.6666666666666666,
+      "entropy_admissible": true
+    },
+    {
+      "left": 1,
+      "right": 3,
+      "speed": 2.0,
+      "RH_residual": 0.0,
+      "entropy_jump": 0.6666666666666666,
+      "entropy_admissible": false
+    }
+  ],
+  "shock": [
+    {
+      "xi": -0.1,
+      "U": 1.5231883119115297,
+      "U_prime": -8.39948683228052,
+      "epsilon_U_prime": -0.839948683228052,
+      "product_rhs": -0.8399486832280523
+    },
+    {
+      "xi": 0,
+      "U": 0.0,
+      "U_prime": -20.0,
+      "epsilon_U_prime": -2.0,
+      "product_rhs": -2.0
+    },
+    {
+      "xi": 0.1,
+      "U": -1.5231883119115297,
+      "U_prime": -8.399486832280521,
+      "epsilon_U_prime": -0.8399486832280522,
+      "product_rhs": -0.8399486832280523
+    }
+  ],
+  "material": [
+    {
+      "a": 1,
+      "slope": 1,
+      "flux": 1
+    },
+    {
+      "a": 2,
+      "slope": 0.5,
+      "flux": 1
+    }
+  ],
+  "corner": {
+    "alpha": 0.6666666666666666,
+    "laplace_coefficient": 0.0,
+    "H1_radial": 0.11811759842764437,
+    "H2": [
+      {
+        "cutoff": 0.1,
+        "radial_factor": 3.1826201007345483,
+        "hessian_frobenius_coefficient": "8/81",
+        "full_H2_seminorm_on_sector_annulus": 1.4812586559459056
+      },
+      {
+        "cutoff": 0.01,
+        "radial_factor": 28.53675720079363,
+        "hessian_frobenius_coefficient": "8/81",
+        "full_H2_seminorm_on_sector_annulus": 13.281609893227984
+      },
+      {
+        "cutoff": 0.001,
+        "radial_factor": 146.22023685031536,
+        "hessian_frobenius_coefficient": "8/81",
+        "full_H2_seminorm_on_sector_annulus": 68.05398842890521
+      }
+    ],
+    "full_H1_gradient_factor": 2.0943951023931953,
+    "Hessian_samples": [
+      {
+        "radius": 0.1,
+        "theta": 0.3,
+        "entries": [
+          1.8643919680099268,
+          -4.40970168247792,
+          -1.8643919680099268
+        ],
+        "frobenius_squared": 45.84285267765704,
+        "radial_expected": 45.84285267765705
+      },
+      {
+        "radius": 0.2,
+        "theta": 1.1,
+        "entries": [
+          1.8896818863253102,
+          -0.19748622922148454,
+          -1.8896818863253102
+        ],
+        "frobenius_squared": 7.219796884476207,
+        "radial_expected": 7.219796884476209
+      },
+      {
+        "radius": 0.05,
+        "theta": 2.4,
+        "entries": [
+          -0.7042302367709329,
+          12.043506337653064,
+          0.7042302367709329
+        ],
+        "frobenius_squared": 291.0839702629439,
+        "radial_expected": 291.0839702629439
+      }
+    ]
+  },
+  "heat": [
+    {
+      "t": 0,
+      "amplitude": 1.0,
+      "mean_square": 1.5
+    },
+    {
+      "t": 0.1,
+      "amplitude": 0.20189651799465538,
+      "mean_square": 1.020381101989183
+    },
+    {
+      "t": 0.25,
+      "amplitude": 0.01831563888873418,
+      "mean_square": 1.0001677313139512
+    }
+  ],
+  "explicit_heat": [
+    {
+      "r": 0.4,
+      "steps": 1,
+      "gain": "-3/5",
+      "amplitude": -0.6,
+      "values": [
+        -0.6,
+        0.6,
+        -0.6,
+        0.6,
+        -0.6,
+        0.6,
+        -0.6,
+        0.6
+      ],
+      "mean_square": 0.36
+    },
+    {
+      "r": 0.4,
+      "steps": 2,
+      "gain": "-3/5",
+      "amplitude": 0.36,
+      "values": [
+        0.36,
+        -0.36,
+        0.36,
+        -0.36,
+        0.36,
+        -0.36,
+        0.36,
+        -0.36
+      ],
+      "mean_square": 0.1296
+    },
+    {
+      "r": 0.6,
+      "steps": 1,
+      "gain": "-7/5",
+      "amplitude": -1.4,
+      "values": [
+        -1.4,
+        1.4,
+        -1.4,
+        1.4,
+        -1.4,
+        1.4,
+        -1.4,
+        1.4
+      ],
+      "mean_square": 1.96
+    },
+    {
+      "r": 0.6,
+      "steps": 2,
+      "gain": "-7/5",
+      "amplitude": 1.96,
+      "values": [
+        1.96,
+        -1.96,
+        1.96,
+        -1.96,
+        1.96,
+        -1.96,
+        1.96,
+        -1.96
+      ],
+      "mean_square": 3.8416
+    }
+  ],
+  "reaction": [
+    {
+      "t": 0.0,
+      "u": 2.0
+    },
+    {
+      "t": 0.1,
+      "u": 2.5
+    },
+    {
+      "t": 0.25,
+      "u": 4.0
+    },
+    {
+      "t": 0.4,
+      "u": 10.0
+    }
+  ],
+  "average_initial_example": {
+    "boundary_example": "Supplementary zero-Neumann compatible u0=2+cos(pi*x) on[0,1]; main text/script use periodic data",
+    "initial_mean": 2.0,
+    "initial_mean_square": 4.5,
+    "variance": 0.5,
+    "ODE_bound_1_over_initial_mean": 0.5,
+    "endpoint_derivative": [
+      0.0,
+      -3.8473413874435795e-16
+    ],
+    "scope": "Finite initial averages and boundary derivatives only; no Neumann/PDE blowup solver or theorem certification"
+  },
+  "Hartogs_membership": {
+    "z": 0.4,
+    "w": 0.2,
+    "r": 0.5,
+    "epsilon": 0.25,
+    "rho": 0.7,
+    "inside_bidisk": true,
+    "original_H_membership": false,
+    "all_quadrature_points_in_annulus": true
+  },
+  "Hartogs_exact_discrete": [
+    {
+      "N": 16,
+      "ideal_exact_fraction": "4419979765756933/6646586100813000",
+      "error_exact_fraction": "1089536/830823262601625",
+      "ideal": 0.6650000013113933,
+      "ideal_error": 1.3113932277103635e-09
+    },
+    {
+      "N": 32,
+      "ideal_exact_fraction": "146888880674441445958604793733/220885534848784128402066381000",
+      "error_exact_fraction": "71403831296/27610691856098016050258297625",
+      "ideal": 0.665,
+      "ideal_error": 2.5860935201531345e-18
+    }
+  ],
+  "true_filled_value": 0.665,
+  "derivation": "(1/N)sum exp(2pi i j k/N) = 1 for N|k else0; C=5/8,w^2=1/25,q=2/7; ideal=(C+w²)/(1-q^N) for N>2"
+}

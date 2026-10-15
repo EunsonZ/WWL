@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/supplementary_delay.py", line 10, in <module>
+    poles=np.array(poles);zeros=np.array(zeros);assert len(poles)==len(zeros)==27 and max(abs(poles))<1 and max(abs(zeros+1))<1e-14
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

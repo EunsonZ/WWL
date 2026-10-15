@@ -1,0 +1,45 @@
+{
+  "provisional_record": [
+    {
+      "phase": "first-controlled-patch",
+      "problem": "apply_patch returned 0 but ignored absolute path; exact-content assertion stopped batch",
+      "scope": "no note bytes changed",
+      "fix": "use vault-relative paths and explicit cwd; verify exact after bytes; maintain trailing newline for edited notes"
+    }
+  ],
+  "corrected_record": [
+    {
+      "phase": "first-controlled-patch",
+      "observed": "absolute-path patch returned zero without applying changes",
+      "affected": "first proposed Shell change only; no bytes changed on this first attempt",
+      "fix": "relative vault path and explicit cwd; require Done! plus byte-content checks"
+    },
+    {
+      "phase": "second-controlled-patch",
+      "observed": "relative patch applied first Shell change, but assertion assumed a trailing newline not preserved by apply_patch",
+      "affected": "one partial Shell edit, no general reset",
+      "fix": "restore only own partial edit from v2 baseline using patch; normalize comparison and log actual bytes; then reapply intended batch"
+    },
+    {
+      "phase": "tls-negative-oracle",
+      "observed": "nonzero exit alone wrongly accepted simulated invalid-option output as expected certificate rejection",
+      "fix": "require expected X509 error set, exit status and result shape; preserve counterexample and initial snapshot; 18 focused oracle tests"
+    },
+    {
+      "phase": "intermediate-static",
+      "observed": "K/L linked to not-yet-created v3 maintenance page; two broken links",
+      "fix": "create the actual maintenance note and integrate navigation; final outcome recorded in final static report"
+    },
+    {
+      "phase": "integration-execution-limit",
+      "observed": "the integration driver was interrupted after already applying earlier controlled patches",
+      "scope": "later current-evidence link migration and Canvas not yet complete",
+      "fix": "resume only the remaining tail, not rerun additions; subsequent integration static check passed"
+    },
+    {
+      "phase": "transaction-negative-oracle",
+      "observed": "injected SQLITE_IOERR was mislabeled as the intended writer contention by the initial demo; new regression first failed with RuntimeError not raised",
+      "fix": "transactions-v3.1 requires actual SQLITE_BUSY; missing diagnostic code no longer defaults to success; Python >=3.11 declared consistently; 28 transaction methods passed"
+    }
+  ]
+}

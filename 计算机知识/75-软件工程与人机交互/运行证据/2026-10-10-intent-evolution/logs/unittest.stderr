@@ -1,0 +1,27 @@
+test_adjacent_allowed_overlap_rejected_without_change (test_reservation.ReservationTests.test_adjacent_allowed_overlap_rejected_without_change) ... ok
+test_cancel_authority_release_and_idempotence (test_reservation.ReservationTests.test_cancel_authority_release_and_idempotence) ... ok
+test_duration_and_opening_boundaries (test_reservation.ReservationTests.test_duration_and_opening_boundaries) ... ok
+test_finite_minute_occupancy_oracle (test_reservation.ReservationTests.test_finite_minute_occupancy_oracle) ... ok
+test_invalid_and_unknown_cancel_do_not_change_state (test_reservation.ReservationTests.test_invalid_and_unknown_cancel_do_not_change_state) ... ok
+test_invalid_inputs_leave_state_and_id_unchanged (test_reservation.ReservationTests.test_invalid_inputs_leave_state_and_id_unchanged) ... ok
+test_snapshot_and_records_are_immutable (test_reservation.ReservationTests.test_snapshot_and_records_are_immutable) ... ok
+test_before_commit_fault_has_no_partial_business_state (test_reservation_v2.EvolutionTests.test_before_commit_fault_has_no_partial_business_state) ... ok
+test_committed_reply_loss_restart_replay_preserves_identity (test_reservation_v2.EvolutionTests.test_committed_reply_loss_restart_replay_preserves_identity) ... ok
+test_duplicate_effect_after_lost_ack_is_idempotent_in_this_sink (test_reservation_v2.EvolutionTests.test_duplicate_effect_after_lost_ack_is_idempotent_in_this_sink) ... ok
+test_fence_blocks_old_new_writes_without_erasing_replay (test_reservation_v2.EvolutionTests.test_fence_blocks_old_new_writes_without_erasing_replay) ... ok
+test_foreign_database_is_not_initialized_as_authority (test_reservation_v2.EvolutionTests.test_foreign_database_is_not_initialized_as_authority) ... ok
+test_import_rolls_back_if_a_later_legacy_record_overlaps (test_reservation_v2.EvolutionTests.test_import_rolls_back_if_a_later_legacy_record_overlaps) ... ok
+test_independent_connections_recheck_committed_authority (test_reservation_v2.EvolutionTests.test_independent_connections_recheck_committed_authority) ... ok
+test_invalid_inputs_not_registered_and_invalid_interval_is_decision (test_reservation_v2.EvolutionTests.test_invalid_inputs_not_registered_and_invalid_interval_is_decision) ... ok
+test_key_conflict_does_not_rewrite_original_accepted_result (test_reservation_v2.EvolutionTests.test_key_conflict_does_not_rewrite_original_accepted_result) ... ok
+test_legacy_exception_and_new_v2_decisions (test_reservation_v2.EvolutionTests.test_legacy_exception_and_new_v2_decisions) ... ok
+test_rejected_intent_is_stable_and_new_intent_reconsiders (test_reservation_v2.EvolutionTests.test_rejected_intent_is_stable_and_new_intent_reconsiders) ... ok
+test_unsupported_schema_does_not_create_business_tables (test_reservation_v2.EvolutionTests.test_unsupported_schema_does_not_create_business_tables) ... ok
+test_v1_refactor_relative_to_v1_contract_and_wrong_change (test_reservation_v2.EvolutionTests.test_v1_refactor_relative_to_v1_contract_and_wrong_change) ... ok
+test_v2_oracle_uses_occupied_minutes_not_implementation_formula (test_reservation_v2.EvolutionTests.test_v2_oracle_uses_occupied_minutes_not_implementation_formula) ... ok
+test_real_dag_text_conflict_and_semantic_witness (test_git_evolution_lab.GitEvolutionTests.test_real_dag_text_conflict_and_semantic_witness) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.372s
+
+OK

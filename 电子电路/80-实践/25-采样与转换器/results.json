@@ -1,0 +1,164 @@
+{
+  "quantizer": [
+    {
+      "code": 0,
+      "binary": "000",
+      "center_V": 0.1875,
+      "error_V": 0.2875,
+      "overload": true,
+      "delta_V": 0.375
+    },
+    {
+      "code": 0,
+      "binary": "000",
+      "center_V": 0.1875,
+      "error_V": 0.1875,
+      "overload": false,
+      "delta_V": 0.375
+    },
+    {
+      "code": 1,
+      "binary": "001",
+      "center_V": 0.5625,
+      "error_V": 0.1875,
+      "overload": false,
+      "delta_V": 0.375
+    },
+    {
+      "code": 5,
+      "binary": "101",
+      "center_V": 2.0625,
+      "error_V": 0.1625000000000001,
+      "overload": false,
+      "delta_V": 0.375
+    },
+    {
+      "code": 7,
+      "binary": "111",
+      "center_V": 2.8125,
+      "error_V": -0.1875,
+      "overload": false,
+      "delta_V": 0.375
+    },
+    {
+      "code": 7,
+      "binary": "111",
+      "center_V": 2.8125,
+      "error_V": -0.2875000000000001,
+      "overload": true,
+      "delta_V": 0.375
+    }
+  ],
+  "sar": {
+    "code": 5,
+    "trace": [
+      {
+        "decision": 1,
+        "bit_index": 2,
+        "trial_code": 4,
+        "dac_V": 1.5,
+        "keep": true,
+        "retained_code": 4
+      },
+      {
+        "decision": 2,
+        "bit_index": 1,
+        "trial_code": 6,
+        "dac_V": 2.25,
+        "keep": false,
+        "retained_code": 4
+      },
+      {
+        "decision": 3,
+        "bit_index": 0,
+        "trial_code": 5,
+        "dac_V": 1.875,
+        "keep": true,
+        "retained_code": 5
+      }
+    ],
+    "overload": false
+  },
+  "r2r_code5_nodes_V": [
+    1.875,
+    1.3125,
+    1.40625
+  ],
+  "string_mismatch_code4": {
+    "open_V": 1.5365853658536586,
+    "rout_ohm": 2048.7804878048782,
+    "loaded_V": 1.5365853658536586
+  },
+  "current_mismatch_codes3_4_V": [
+    0.003,
+    0.0029
+  ],
+  "cdac_code5_top_V": -0.02499999999999991,
+  "U4_failed_residual_V": 0.27088049545886594,
+  "U4_half_lsb_V": 2.5177001953125e-05,
+  "reference_cycle": [
+    {
+      "cycle": 0,
+      "before_V": 3.0,
+      "after_V": 2.99998,
+      "next_before_V": 2.9999926424111765
+    },
+    {
+      "cycle": 1,
+      "before_V": 2.9999926424111765,
+      "after_V": 2.9999726424111763,
+      "next_before_V": 2.9999899357055115
+    },
+    {
+      "cycle": 2,
+      "before_V": 2.9999899357055115,
+      "after_V": 2.9999699357055114,
+      "next_before_V": 2.9999889399641444
+    },
+    {
+      "cycle": 3,
+      "before_V": 2.9999889399641444,
+      "after_V": 2.9999689399641443,
+      "next_before_V": 2.9999885736513665
+    }
+  ],
+  "delta_sigma_DC": {
+    "output": [
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "state": [
+      0.0,
+      -0.75,
+      0.5,
+      -0.25,
+      -1.0,
+      0.25,
+      -0.5,
+      0.75,
+      0.0,
+      -0.75,
+      0.5,
+      -0.25,
+      -1.0,
+      0.25,
+      -0.5,
+      0.75,
+      0.0
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="640" viewBox="0 0 1560 640">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Noto Sans CJK SC, sans-serif" fill="black"><text x="35" y="58" font-size="36">互相关：同一个核，在各个位置重复使用</text>
+<text x="50" y="150" font-size="25">输入 X：3×3</text>
+<rect x="50" y="172" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="83" y="216" text-anchor="middle" font-size="25">1</text>
+<rect x="117" y="172" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="150" y="216" text-anchor="middle" font-size="25">2</text>
+<rect x="184" y="172" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="217" y="216" text-anchor="middle" font-size="25">3</text>
+<rect x="50" y="239" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="83" y="283" text-anchor="middle" font-size="25">4</text>
+<rect x="117" y="239" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="150" y="283" text-anchor="middle" font-size="25">5</text>
+<rect x="184" y="239" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="217" y="283" text-anchor="middle" font-size="25">6</text>
+<rect x="50" y="306" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="83" y="350" text-anchor="middle" font-size="25">7</text>
+<rect x="117" y="306" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="150" y="350" text-anchor="middle" font-size="25">8</text>
+<rect x="184" y="306" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="217" y="350" text-anchor="middle" font-size="25">9</text>
+<text x="480" y="150" font-size="25">核 K：2×2</text>
+<rect x="480" y="172" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="513" y="216" text-anchor="middle" font-size="25">1</text>
+<rect x="547" y="172" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="580" y="216" text-anchor="middle" font-size="25">0</text>
+<rect x="480" y="239" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="513" y="283" text-anchor="middle" font-size="25">0</text>
+<rect x="547" y="239" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="580" y="283" text-anchor="middle" font-size="25">-1</text>
+<text x="890" y="150" font-size="25">输出 Y：2×2</text>
+<rect x="890" y="172" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="923" y="216" text-anchor="middle" font-size="25">-4</text>
+<rect x="957" y="172" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="990" y="216" text-anchor="middle" font-size="25">-4</text>
+<rect x="890" y="239" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="923" y="283" text-anchor="middle" font-size="25">-4</text>
+<rect x="957" y="239" width="67" height="67" fill="none" stroke="black" stroke-width="2"/>
+<text x="990" y="283" text-anchor="middle" font-size="25">-4</text>
+<text x="35" y="515" font-size="25">左上输出：1×1 + 2×0 + 4×0 + 5×(−1) = −4</text>
+<text x="35" y="557" font-size="25">stride=1，padding=0。可学习卷积核通常不预先固定为差分核。</text>
+</g></svg>

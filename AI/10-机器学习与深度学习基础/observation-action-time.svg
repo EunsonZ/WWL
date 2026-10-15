@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="700" viewBox="0 0 850 700" role="img" aria-labelledby="title desc">
+<title id="title">观测采样、到达、状态预测与动作生效</title>
+<desc id="desc">采样0秒，到达0.12秒，计算0.16秒，动作生效0.20秒。信息传递和状态预测用实线，行动可能改变下一次状态与观察用虚线，须另外核验。到达时刻不等于状态时刻。</desc>
+<style>text {font-family: "Arial Unicode MS", "PingFang SC", "Hiragino Sans GB", sans-serif; fill:#182536; font-size:26px} .small {font-size:24px} .title {font-size:30px;font-weight:bold} .head {font-size:28px;font-weight:bold} .line {stroke:#334155;stroke-width:3;fill:none} .dash {stroke:#334155;stroke-width:3;fill:none;stroke-dasharray:9 6} .box {fill:#f4f7fb;stroke:#64748b;stroke-width:2}</style><defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#334155"/></marker></defs>
+<rect width="850" height="700" fill="#fffdf8"/>
+<text x="30" y="45" class="title" text-anchor="start">证据属于何时？动作又在何时生效？</text>
+<text x="30" y="87" class="small" text-anchor="start">教学时间线 · 秒(s) · 不按图中距离计时</text>
+<path d="M75,135 L790,135" class="line" marker-end="url(#arrow)"/>
+<path d="M100,125 L100,145" class="line"/>
+<text x="100" y="119" class="" text-anchor="middle">0.00</text>
+<path d="M310,125 L310,145" class="line"/>
+<text x="310" y="119" class="" text-anchor="middle">0.12</text>
+<path d="M520,125 L520,145" class="line"/>
+<text x="520" y="119" class="" text-anchor="middle">0.16</text>
+<path d="M730,125 L730,145" class="line"/>
+<text x="730" y="119" class="" text-anchor="middle">0.20</text>
+<rect x="25" y="180" width="180" height="204" rx="7" class="box"/>
+<text x="115" y="218" class="head" text-anchor="middle">① 采样</text>
+<text x="115" y="264" class="small" text-anchor="middle">位置 p(0.00)</text>
+<text x="115" y="306" class="small" text-anchor="middle">传感器读取</text>
+<text x="115" y="348" class="small" text-anchor="middle">状态属于0.00</text>
+<rect x="235" y="180" width="180" height="204" rx="7" class="box"/>
+<text x="325" y="218" class="head" text-anchor="middle">② 到达</text>
+<text x="325" y="264" class="small" text-anchor="middle">读数首次可用</text>
+<text x="325" y="306" class="small" text-anchor="middle">年龄0.12 s</text>
+<text x="325" y="348" class="small" text-anchor="middle">保留采样标签</text>
+<rect x="445" y="180" width="180" height="204" rx="7" class="box"/>
+<text x="535" y="218" class="head" text-anchor="middle">③ 计算</text>
+<text x="535" y="264" class="small" text-anchor="middle">条件更新旧态</text>
+<text x="535" y="306" class="small" text-anchor="middle">传播至动作时</text>
+<text x="535" y="348" class="small" text-anchor="middle">核对模型/输入</text>
+<rect x="655" y="180" width="180" height="204" rx="7" class="box"/>
+<text x="745" y="218" class="head" text-anchor="middle">④ 生效</text>
+<text x="745" y="264" class="small" text-anchor="middle">动作 u(0.20)</text>
+<text x="745" y="306" class="small" text-anchor="middle">年龄0.20 s</text>
+<text x="745" y="348" class="small" text-anchor="middle">检查时限/回退</text>
+<path d="M206,290 L229,290" class="line" marker-end="url(#arrow)"/>
+<path d="M416,290 L439,290" class="line" marker-end="url(#arrow)"/>
+<path d="M626,290 L649,290" class="line" marker-end="url(#arrow)"/>
+<text x="150" y="435" class="small" text-anchor="start">实线：信息传递 / 条件更新 / 状态预测</text>
+<path d="M742,394 L742,483" class="line"/>
+<path d="M742,483 L105,483 L105,399" class="dash" marker-end="url(#arrow)"/>
+<text x="150" y="528" class="small" text-anchor="start">虚线：行动可能改变下一次状态与观察</text>
+<text x="150" y="564" class="small" text-anchor="start">需要具体模型与证据；不是已识别因果效应</text>
+<rect x="25" y="590" width="800" height="84" rx="7" class="box"/>
+<text x="45" y="624" class="small" text-anchor="start">到达时刻 ≠ 状态时刻。不能只调 R 来修复错时点。</text>
+<text x="45" y="658" class="small" text-anchor="start">未知时点 / 冲突 / 超时 → 保留未知或已验证回退。</text>
+</svg>

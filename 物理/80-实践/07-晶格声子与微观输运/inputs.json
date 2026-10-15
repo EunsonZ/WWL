@@ -1,0 +1,9 @@
+{
+  "identity": "teaching-models; hexagonal geometry, cubic one-orbital electrons, monatomic chain, 3D continuum LA deformation potential are distinct cards",
+  "hexagonal": {"a_nm": 0.5, "c_nm": 0.8, "cells": [8, 10, 12]},
+  "tight_binding": {"a_nm": 0.5, "t_eV": 0.25, "onsite_eV": 0.0},
+  "chain": {"a_nm": 0.5, "mass_kg": 5e-26, "spring_N_per_m": 20.0, "cells": 32},
+  "acoustic": {"mass_ratio": 0.2, "deformation_eV": 5.0, "rho_kg_per_m3": 5000.0, "sound_m_per_s": 5000.0, "temperature_K": [150.0, 300.0, 600.0], "density_per_m3": 1e21, "cutoff_q_per_m": 6283185307.179586},
+  "screened_impurity": {"screening_over_k": [0.2, 1.0, 4.0]},
+  "energy_integral": {"maximum_over_kBT": 40.0, "intervals": 4000}
+}

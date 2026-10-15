@@ -1,0 +1,112 @@
+{
+  "model": "local scalar Lorentz; +i omega t; peak phasors; SI",
+  "scope": "transparent prepared plane wave + externally driven local zero-state pulse",
+  "input": {
+    "f0_hz": 1000000000.0,
+    "strength": 0.5,
+    "Epeak_V_m": 100.0,
+    "main_ratio": 0.75,
+    "area_m2": 1e-06,
+    "length_m": 0.002,
+    "loss_gamma_ratio": 0.08,
+    "sweep_intervals": [
+      [
+        0.2,
+        0.9
+      ],
+      [
+        1.3,
+        2.0
+      ]
+    ],
+    "sweep_points_per_band": 101,
+    "loss_interval": [
+      0.7,
+      1.5
+    ],
+    "pulse_duration_tau": 40.0,
+    "pulse_final_tau": 80.0,
+    "pulse_drive_ratio": 0.75,
+    "pulse_steps": 8000
+  },
+  "constants": {
+    "eps0_F_m": 8.8541878128e-12,
+    "c_m_s": 299792458.0,
+    "mu0_H_m": 1.2566370621200546e-06
+  },
+  "main": {
+    "band": 0,
+    "ratio": 0.75,
+    "frequency_hz": 750000000.0,
+    "epsr": 2.142857142857143,
+    "n": 1.4638501094227998,
+    "group_index": 2.467633041598434,
+    "phase_speed_m_s": 204797237.14213404,
+    "group_speed_m_s": 121489886.440249,
+    "group_fd_m_s": 121489886.35257249,
+    "energy_speed_m_s": 121489886.44024903,
+    "electric_J_m3": 2.2135469532e-08,
+    "magnetic_J_m3": 4.7433148997142855e-08,
+    "kinetic_J_m3": 3.252558788375511e-08,
+    "potential_J_m3": 5.7823267348897957e-08,
+    "stored_J_m3": 1.5991747376179593e-07,
+    "brillouin_J_m3": 1.5991747376179593e-07,
+    "flux_W_m2": 19.42835572713209,
+    "control_power_W": 1.9428355727132088e-05,
+    "control_energy_J": 3.1983494752359183e-16,
+    "R": 0.03544269680555223,
+    "T": 0.9645573031944479
+  },
+  "pulse": [
+    {
+      "gamma_ratio": 0.0,
+      "dtau": 0.01,
+      "final": {
+        "gamma_ratio": 0.0,
+        "tau": 80.0,
+        "time_s": 1.2732395447351626e-08,
+        "drive": 0.0,
+        "polarization_scaled": -0.38990567165794116,
+        "velocity_scaled": -1.2183014748095278,
+        "kinetic_scaled": 1.4842584835230703,
+        "potential_scaled": 0.15202643279103023,
+        "stored_scaled": 1.6362849163141004,
+        "work_scaled": 1.6362849164533066,
+        "heat_scaled": 0.0,
+        "balance_scaled": 1.3920620212104495e-10
+      },
+      "max_absolute_balance_scaled": 1.3920620212104495e-10,
+      "refined_max_absolute_balance_scaled": 4.376055073862517e-12,
+      "final_refinement_absolute_state_difference": 5.505288502849481e-09
+    },
+    {
+      "gamma_ratio": 0.08,
+      "dtau": 0.01,
+      "final": {
+        "gamma_ratio": 0.08,
+        "tau": 80.0,
+        "time_s": 1.2732395447351626e-08,
+        "drive": 0.0,
+        "polarization_scaled": 0.013017561878807597,
+        "velocity_scaled": -0.12155554222425395,
+        "kinetic_scaled": 0.014775749845432385,
+        "potential_scaled": 0.00016945691726858478,
+        "stored_scaled": 0.01494520676270097,
+        "work_scaled": 2.2315491481602554,
+        "heat_scaled": 2.216603941712121,
+        "balance_scaled": -3.145665949944032e-10
+      },
+      "max_absolute_balance_scaled": 3.145665949944032e-10,
+      "refined_max_absolute_balance_scaled": 2.0545787293713147e-11,
+      "final_refinement_absolute_state_difference": 1.6177419404073135e-09
+    }
+  ],
+  "diagnostics": {
+    "max_R_T_residual": 4.440892098500626e-16,
+    "max_Brillouin_relative_difference": 4.440892098500626e-16,
+    "max_group_energy_relative_difference": 6.661338147750939e-16,
+    "max_group_fd_relative_difference": 6.114355799446969e-09,
+    "max_loss_identity_relative_difference": 8.881784197001252e-16
+  },
+  "elapsed_s": 0.11515020800288767
+}

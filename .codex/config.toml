@@ -1,0 +1,8 @@
+# 本项目的子代理目标配置；合并同名块，不覆盖用户其他设置。
+# 23 个子线程加主线程，目标总并发为 24；不是已验证吞吐、账户额度或权限。
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
+[agents]
+max_concurrent_threads_per_session = 23
+default_subagent_model = "gpt-6.1-sol"
+default_subagent_reasoning_effort = "medium"

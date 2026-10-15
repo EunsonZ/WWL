@@ -1,0 +1,1034 @@
+"""Pure-math and manifest checks for the Heretic lab.
+
+This module uses only the Python standard library.  It never downloads or
+loads a model, edits weights, starts a service, or opens a network connection.
+Its numerical output describes synthetic vectors and probability distributions
+only; it is not evidence about any model's behaviour.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+import os
+import re
+import sys
+from pathlib import Path, PurePosixPath
+from typing import Any, Mapping, Sequence
+
+
+HEX_COMMIT_RE = re.compile(r"^[0-9a-f]{40,64}$")
+SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+HERETIC_OFFICIAL_REPOSITORY = "https://github.com/p-e-w/heretic"
+PLACEHOLDER_MARKERS = ("REPLACE", "FILL", "TODO", "EXAMPLE", "ABSOLUTE/PATH")
+REQUIRED_SPLITS = {
+    "direction_train",
+    "search_objective",
+    "selection_validation",
+    "final_test",
+}
+REQUIRED_DIMENSIONS = {
+    "refusal",
+    "kl",
+    "language_quality",
+    "general_capability",
+}
+SENSITIVE_KEY_FRAGMENTS = (
+    "api_key",
+    "apikey",
+    "access_token",
+    "auth_token",
+    "authorization",
+    "bearer_token",
+    "cookie",
+    "credential",
+    "hf_token",
+    "password",
+    "private_key",
+    "private_url",
+    "secret",
+    "session_token",
+    "signed_url",
+    "webhook",
+)
+SECRET_VALUE_RE = re.compile(
+    r"(?:\bBearer\s+[A-Za-z0-9._~+/=-]+|\bhf_[A-Za-z0-9]{16,}|\bsk-[A-Za-z0-9]{16,}|"
+    r"[?&](?:X-Amz-Signature|Signature|token|access_token)=)",
+    re.IGNORECASE,
+)
+ORIGINAL_MANIFEST_PATH = "/lab/manifests/original-model.json"
+EXPERIMENT_MANIFEST_PATH = "/lab/manifests/experiment.json"
+EDITED_MANIFEST_PATH = "/lab/manifests/edited-model.json"
+EVALUATION_PLAN_PATH = "/lab/manifests/evaluation-plan.json"
+ORIGINAL_MANIFEST_SHA256 = "56789abcdef01234" * 4
+EXPERIMENT_MANIFEST_SHA256 = "6789abcdef012345" * 4
+EDITED_MANIFEST_SHA256 = "789abcdef0123456" * 4
+EVALUATION_PLAN_SHA256 = "89abcdef01234567" * 4
+
+
+class ManifestError(ValueError):
+    """Raised when a lab manifest violates a safety or provenance contract."""
+
+
+def dot(left: Sequence[float], right: Sequence[float]) -> float:
+    """Return the Euclidean dot product of two equally sized vectors."""
+
+    if len(left) != len(right) or not left:
+        raise ValueError("vectors must be non-empty and have the same length")
+    return math.fsum(a * b for a, b in zip(left, right))
+
+
+def unit_vector(direction: Sequence[float]) -> tuple[float, ...]:
+    """Return a unit vector with the same direction."""
+
+    length = math.sqrt(dot(direction, direction))
+    if not math.isfinite(length) or length == 0.0:
+        raise ValueError("direction must have a finite, non-zero norm")
+    return tuple(value / length for value in direction)
+
+
+def remove_direction(
+    vector: Sequence[float], direction: Sequence[float]
+) -> tuple[float, ...]:
+    """Compute x - (u dot x)u, where u is the unit direction."""
+
+    if len(vector) != len(direction):
+        raise ValueError("vector and direction must have the same length")
+    unit = unit_vector(direction)
+    coefficient = dot(unit, vector)
+    return tuple(value - coefficient * axis for value, axis in zip(vector, unit))
+
+
+def kl_divergence(p: Sequence[float], q: Sequence[float]) -> float:
+    """Compute D_KL(p || q) in nats for finite discrete distributions."""
+
+    if len(p) != len(q) or not p:
+        raise ValueError("p and q must be non-empty and have the same length")
+    if any(not math.isfinite(value) or value < 0.0 for value in (*p, *q)):
+        raise ValueError("probabilities must be finite and non-negative")
+    if not math.isclose(math.fsum(p), 1.0, rel_tol=0.0, abs_tol=1e-12):
+        raise ValueError("p must sum to 1")
+    if not math.isclose(math.fsum(q), 1.0, rel_tol=0.0, abs_tol=1e-12):
+        raise ValueError("q must sum to 1")
+
+    terms: list[float] = []
+    for p_value, q_value in zip(p, q):
+        if p_value == 0.0:
+            continue
+        if q_value == 0.0:
+            return math.inf
+        terms.append(p_value * (math.log(p_value) - math.log(q_value)))
+    return math.fsum(terms)
+
+
+def _require_mapping(value: Any, label: str) -> Mapping[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ManifestError(f"{label} must be an object")
+    return value
+
+
+def _require_text(mapping: Mapping[str, Any], key: str, label: str) -> str:
+    value = mapping.get(key)
+    if not isinstance(value, str) or not value.strip():
+        raise ManifestError(f"{label}.{key} must be non-empty text")
+    upper_value = value.upper()
+    if any(marker in upper_value for marker in PLACEHOLDER_MARKERS):
+        raise ManifestError(f"{label}.{key} still contains a placeholder")
+    return value
+
+
+def _require_true(mapping: Mapping[str, Any], key: str, label: str) -> None:
+    if mapping.get(key) is not True:
+        raise ManifestError(f"{label}.{key} must be true")
+
+
+def _require_false(mapping: Mapping[str, Any], key: str, label: str) -> None:
+    if mapping.get(key) is not False:
+        raise ManifestError(f"{label}.{key} must be false")
+
+
+def _require_sha256(value: Any, label: str) -> str:
+    if not isinstance(value, str) or not SHA256_RE.fullmatch(value):
+        raise ManifestError(f"{label} must be a lowercase SHA-256 digest")
+    if len(set(value)) == 1:
+        raise ManifestError(f"{label} looks like a placeholder digest")
+    return value
+
+
+def _require_commit(value: Any, label: str) -> str:
+    if not isinstance(value, str) or not HEX_COMMIT_RE.fullmatch(value):
+        raise ManifestError(f"{label} must be a 40-64 character immutable commit")
+    if len(set(value)) == 1:
+        raise ManifestError(f"{label} looks like a placeholder commit")
+    return value
+
+
+def _absolute_path(value: Any, label: str) -> str:
+    if not isinstance(value, str) or not os.path.isabs(value):
+        raise ManifestError(f"{label} must be an absolute path")
+    if any(marker in value.upper() for marker in PLACEHOLDER_MARKERS):
+        raise ManifestError(f"{label} still contains a placeholder")
+    return os.path.normpath(value)
+
+
+def _is_within(child: str, parent: str) -> bool:
+    try:
+        return os.path.commonpath((child, parent)) == parent
+    except ValueError:
+        return False
+
+
+def _reject_embedded_secrets(value: Any, label: str = "manifest") -> None:
+    if isinstance(value, Mapping):
+        for key, child in value.items():
+            key_text = str(key).lower()
+            if any(fragment in key_text for fragment in SENSITIVE_KEY_FRAGMENTS):
+                raise ManifestError(f"{label}.{key} is a forbidden sensitive field")
+            _reject_embedded_secrets(child, f"{label}.{key}")
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            _reject_embedded_secrets(child, f"{label}[{index}]")
+    elif isinstance(value, str) and SECRET_VALUE_RE.search(value):
+        raise ManifestError(f"{label} looks like an embedded credential or signed URL")
+
+
+def file_sha256(path: str | Path) -> str:
+    """Hash a manifest exactly as stored, without following application data."""
+
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def validate_original_manifest(manifest: Mapping[str, Any]) -> dict[str, Any]:
+    """Validate an immutable original-model manifest without touching files."""
+
+    _reject_embedded_secrets(manifest)
+    if manifest.get("schema_version") != 1:
+        raise ManifestError("original.schema_version must equal 1")
+    if manifest.get("artifact_type") != "immutable_original_model":
+        raise ManifestError("original.artifact_type must be immutable_original_model")
+    if manifest.get("artifact_state") != "ready":
+        raise ManifestError("original.artifact_state must be ready")
+
+    model = _require_mapping(manifest.get("model"), "original.model")
+    _require_text(model, "publisher", "original.model")
+    _require_text(model, "repository_id", "original.model")
+    revision = _require_commit(model.get("revision"), "original.model.revision")
+    _require_commit(
+        model.get("tokenizer_revision"), "original.model.tokenizer_revision"
+    )
+    _require_text(model, "chat_template_revision", "original.model")
+
+    model_license = _require_mapping(manifest.get("model_license"), "original.model_license")
+    _require_text(model_license, "identifier", "original.model_license")
+    _absolute_path(
+        model_license.get("source_document"), "original.model_license.source_document"
+    )
+    _require_true(model_license, "reviewed_for_intended_use", "original.model_license")
+
+    source = _require_mapping(manifest.get("source"), "original.source")
+    source_directory = _absolute_path(source.get("directory"), "original.source.directory")
+    _require_true(source, "read_only", "original.source")
+    _require_true(source, "download_complete", "original.source")
+
+    files = manifest.get("files")
+    if not isinstance(files, list) or not files:
+        raise ManifestError("original.files must contain at least one file record")
+    seen_paths: set[str] = set()
+    for index, item in enumerate(files):
+        record = _require_mapping(item, f"original.files[{index}]")
+        relative_path = _require_text(record, "path", f"original.files[{index}]")
+        parsed = PurePosixPath(relative_path)
+        if parsed.is_absolute() or ".." in parsed.parts or relative_path in seen_paths:
+            raise ManifestError("original file paths must be unique safe relative paths")
+        seen_paths.add(relative_path)
+        if type(record.get("size_bytes")) is not int or record["size_bytes"] <= 0:
+            raise ManifestError("original file size_bytes must be a positive integer")
+        _require_sha256(record.get("sha256"), f"original.files[{index}].sha256")
+
+    return {
+        "artifact_type": "immutable_original_model",
+        "revision": revision,
+        "source_directory": source_directory,
+        "file_count": len(files),
+    }
+
+
+def validate_experiment_manifest(
+    manifest: Mapping[str, Any], original_manifest: Mapping[str, Any]
+) -> dict[str, Any]:
+    """Validate provenance, path separation, licensing, and network defaults."""
+
+    _reject_embedded_secrets(manifest)
+    if manifest.get("schema_version") != 1:
+        raise ManifestError("experiment.schema_version must equal 1")
+    experiment_id = _require_text(manifest, "experiment_id", "experiment")
+
+    tool = _require_mapping(manifest.get("tool"), "experiment.tool")
+    repository = _require_text(tool, "repository", "experiment.tool")
+    if repository != HERETIC_OFFICIAL_REPOSITORY:
+        raise ManifestError(
+            "experiment.tool.repository must name the reviewed official Heretic upstream; "
+            "record forks and their reviewed diff separately"
+        )
+    tool_commit = _require_commit(tool.get("commit"), "experiment.tool.commit")
+    if tool.get("license_spdx") != "AGPL-3.0-or-later":
+        raise ManifestError("experiment.tool.license_spdx must be AGPL-3.0-or-later")
+    _require_true(tool, "license_reviewed", "experiment.tool")
+
+    licenses = _require_mapping(manifest.get("licenses"), "experiment.licenses")
+    for account in ("tool", "model", "data"):
+        _absolute_path(licenses.get(account), f"experiment.licenses.{account}")
+    if len({licenses["tool"], licenses["model"], licenses["data"]}) != 3:
+        raise ManifestError("tool, model, and data license records must be separate")
+
+    original_ref = _require_mapping(
+        manifest.get("original_model"), "experiment.original_model"
+    )
+    _absolute_path(
+        original_ref.get("manifest_path"), "experiment.original_model.manifest_path"
+    )
+    _require_sha256(
+        original_ref.get("manifest_sha256"),
+        "experiment.original_model.manifest_sha256",
+    )
+    if original_ref.get("immutable") is not True:
+        raise ManifestError("experiment.original_model.immutable must be true")
+
+    original_result = validate_original_manifest(original_manifest)
+    paths = _require_mapping(manifest.get("paths"), "experiment.paths")
+    normalized_paths = {
+        key: _absolute_path(paths.get(key), f"experiment.paths.{key}")
+        for key in (
+            "original_directory",
+            "working_copy_directory",
+            "edited_output_directory",
+            "run_directory",
+            "evaluation_directory",
+        )
+    }
+    if len(set(normalized_paths.values())) != len(normalized_paths):
+        raise ManifestError("experiment paths must all be distinct")
+    if normalized_paths["original_directory"] != original_result["source_directory"]:
+        raise ManifestError("experiment original path must match the original manifest")
+    for key in (
+        "working_copy_directory",
+        "edited_output_directory",
+        "run_directory",
+        "evaluation_directory",
+    ):
+        if _is_within(normalized_paths[key], normalized_paths["original_directory"]):
+            raise ManifestError(f"{key} must not be inside the immutable original directory")
+    writable_keys = (
+        "working_copy_directory",
+        "edited_output_directory",
+        "run_directory",
+        "evaluation_directory",
+    )
+    for left_index, left_key in enumerate(writable_keys):
+        for right_key in writable_keys[left_index + 1 :]:
+            left = normalized_paths[left_key]
+            right = normalized_paths[right_key]
+            if _is_within(left, right) or _is_within(right, left):
+                raise ManifestError("writable experiment paths must not contain one another")
+    _require_true(paths, "destinations_must_not_exist", "experiment.paths")
+    _require_true(paths, "refuse_overwrite", "experiment.paths")
+
+    data_records = manifest.get("data")
+    if not isinstance(data_records, list):
+        raise ManifestError("experiment.data must be a list")
+    observed_splits: set[str] = set()
+    for index, item in enumerate(data_records):
+        record = _require_mapping(item, f"experiment.data[{index}]")
+        split = _require_text(record, "split", f"experiment.data[{index}]")
+        if split in observed_splits:
+            raise ManifestError("each data split must appear exactly once")
+        observed_splits.add(split)
+        _require_text(record, "dataset_id", f"experiment.data[{index}]")
+        _require_sha256(
+            record.get("manifest_sha256"),
+            f"experiment.data[{index}].manifest_sha256",
+        )
+        _absolute_path(
+            record.get("license_record"),
+            f"experiment.data[{index}].license_record",
+        )
+        _require_true(record, "no_raw_text_in_git", f"experiment.data[{index}]")
+    if observed_splits != REQUIRED_SPLITS:
+        raise ManifestError("experiment.data must define the four isolated splits")
+
+    edit_plan = _require_mapping(manifest.get("edit_plan"), "experiment.edit_plan")
+    if edit_plan.get("direction_method") != "paired_mean_difference_then_unit_normalize":
+        raise ManifestError("experiment edit direction method must be fixed")
+    _require_text(edit_plan, "layer_and_token_position", "experiment.edit_plan")
+    controls = edit_plan.get("negative_controls")
+    required_controls = {
+        "random_direction_same_dimension",
+        "label_permutation_direction",
+        "sham_copy_without_edit",
+    }
+    if not isinstance(controls, list) or set(controls) != required_controls:
+        raise ManifestError("experiment negative controls must contain exactly the three required controls")
+    if edit_plan.get("projection") != "x_prime=(I-alpha*u*u^T)x":
+        raise ManifestError("experiment projection must be explicit")
+    _require_text(edit_plan, "tpe_search_space", "experiment.edit_plan")
+    if type(edit_plan.get("tpe_budget")) is not int or edit_plan["tpe_budget"] <= 0:
+        raise ManifestError("experiment.edit_plan.tpe_budget must be a positive integer")
+    if not isinstance(edit_plan.get("tpe_seed"), int):
+        raise ManifestError("experiment.edit_plan.tpe_seed must be an integer")
+    _require_text(edit_plan, "selection_rule", "experiment.edit_plan")
+    _require_false(edit_plan, "final_test_used_during_search", "experiment.edit_plan")
+
+    edited_artifact = _require_mapping(
+        manifest.get("edited_artifact"), "experiment.edited_artifact"
+    )
+    if edited_artifact.get("artifact_type") != "independent_edited_model":
+        raise ManifestError("experiment edited artifact type must be independent_edited_model")
+    base_manifest_sha256 = _require_sha256(
+        edited_artifact.get("base_manifest_sha256"),
+        "experiment.edited_artifact.base_manifest_sha256",
+    )
+    selected_trial_id = _require_text(
+        edited_artifact, "selected_trial_id", "experiment.edited_artifact"
+    )
+    changed_tensor_manifest = _absolute_path(
+        edited_artifact.get("changed_tensor_manifest"),
+        "experiment.edited_artifact.changed_tensor_manifest",
+    )
+    output_manifest = _absolute_path(
+        edited_artifact.get("output_manifest"),
+        "experiment.edited_artifact.output_manifest",
+    )
+    _require_true(
+        edited_artifact,
+        "must_not_replace_original",
+        "experiment.edited_artifact",
+    )
+
+    network = _require_mapping(manifest.get("network"), "experiment.network")
+    if network.get("editing_network") != "none":
+        raise ManifestError("editing_network must be none")
+    if network.get("bind_host") != "127.0.0.1":
+        raise ManifestError("bind_host must be 127.0.0.1")
+    for key in (
+        "service_enabled",
+        "allow_lan",
+        "allow_public",
+        "upload_enabled",
+        "telemetry_enabled",
+    ):
+        _require_false(network, key, "experiment.network")
+
+    gate = _require_mapping(manifest.get("execution_gate"), "experiment.execution_gate")
+    _require_true(gate, "paths_reviewed", "experiment.execution_gate")
+    _require_true(gate, "licenses_reviewed", "experiment.execution_gate")
+    _require_true(gate, "data_reviewed", "experiment.execution_gate")
+    _require_true(gate, "output_budget_reviewed", "experiment.execution_gate")
+
+    return {
+        "experiment_id": experiment_id,
+        "tool_commit": tool_commit,
+        "original_revision": original_result["revision"],
+        "original_manifest_path": _absolute_path(
+            original_ref.get("manifest_path"), "experiment.original_model.manifest_path"
+        ),
+        "original_manifest_sha256": _require_sha256(
+            original_ref.get("manifest_sha256"),
+            "experiment.original_model.manifest_sha256",
+        ),
+        "base_manifest_sha256": base_manifest_sha256,
+        "edited_output_directory": normalized_paths["edited_output_directory"],
+        "selected_trial_id": selected_trial_id,
+        "changed_tensor_manifest": changed_tensor_manifest,
+        "output_manifest": output_manifest,
+        "isolated_splits": sorted(observed_splits),
+        "network": "none",
+        "service_enabled": False,
+    }
+
+
+def validate_edited_manifest(manifest: Mapping[str, Any]) -> dict[str, Any]:
+    """Validate the independent edited artifact and its provenance references."""
+
+    _reject_embedded_secrets(manifest)
+    if manifest.get("schema_version") != 1:
+        raise ManifestError("edited.schema_version must equal 1")
+    if manifest.get("artifact_type") != "independent_edited_model":
+        raise ManifestError("edited.artifact_type must be independent_edited_model")
+    if manifest.get("artifact_state") != "ready":
+        raise ManifestError("edited.artifact_state must be ready")
+    experiment_id = _require_text(manifest, "experiment_id", "edited")
+
+    base = _require_mapping(manifest.get("base_model"), "edited.base_model")
+    original_path = _absolute_path(
+        base.get("original_manifest_path"), "edited.base_model.original_manifest_path"
+    )
+    original_sha256 = _require_sha256(
+        base.get("original_manifest_sha256"), "edited.base_model.original_manifest_sha256"
+    )
+    original_revision = _require_commit(
+        base.get("original_revision"), "edited.base_model.original_revision"
+    )
+
+    experiment = _require_mapping(manifest.get("experiment"), "edited.experiment")
+    experiment_path = _absolute_path(
+        experiment.get("manifest_path"), "edited.experiment.manifest_path"
+    )
+    experiment_sha256 = _require_sha256(
+        experiment.get("manifest_sha256"), "edited.experiment.manifest_sha256"
+    )
+
+    tool = _require_mapping(manifest.get("tool"), "edited.tool")
+    if tool.get("repository") != HERETIC_OFFICIAL_REPOSITORY:
+        raise ManifestError("edited.tool.repository must name the reviewed official Heretic upstream")
+    tool_commit = _require_commit(tool.get("commit"), "edited.tool.commit")
+    if tool.get("license_spdx") != "AGPL-3.0-or-later":
+        raise ManifestError("edited.tool.license_spdx must be AGPL-3.0-or-later")
+    _absolute_path(
+        tool.get("local_modifications_manifest"),
+        "edited.tool.local_modifications_manifest",
+    )
+
+    edit = _require_mapping(manifest.get("edit"), "edited.edit")
+    _require_sha256(edit.get("direction_manifest_sha256"), "edited.edit.direction_manifest_sha256")
+    _require_sha256(edit.get("trial_ledger_sha256"), "edited.edit.trial_ledger_sha256")
+    selected_trial_id = _require_text(edit, "selected_trial_id", "edited.edit")
+    _require_sha256(
+        edit.get("selection_validation_result_sha256"),
+        "edited.edit.selection_validation_result_sha256",
+    )
+    changed_tensor_manifest = _absolute_path(
+        edit.get("changed_tensor_manifest"), "edited.edit.changed_tensor_manifest"
+    )
+
+    output = _require_mapping(manifest.get("output"), "edited.output")
+    output_directory = _absolute_path(output.get("directory"), "edited.output.directory")
+    _require_true(output, "independent_from_original", "edited.output")
+    _require_true(output, "original_unchanged", "edited.output")
+    files = output.get("files")
+    if not isinstance(files, list) or not files:
+        raise ManifestError("edited.output.files must contain at least one file record")
+    seen_paths: set[str] = set()
+    for index, item in enumerate(files):
+        record = _require_mapping(item, f"edited.output.files[{index}]")
+        relative_path = _require_text(record, "path", f"edited.output.files[{index}]")
+        parsed = PurePosixPath(relative_path)
+        if parsed.is_absolute() or ".." in parsed.parts or relative_path in seen_paths:
+            raise ManifestError("edited output file paths must be unique safe relative paths")
+        seen_paths.add(relative_path)
+        if type(record.get("size_bytes")) is not int or record["size_bytes"] <= 0:
+            raise ManifestError("edited output size_bytes must be a positive integer")
+        _require_sha256(record.get("sha256"), f"edited.output.files[{index}].sha256")
+
+    licenses = _require_mapping(manifest.get("licenses"), "edited.licenses")
+    license_paths = [
+        _absolute_path(licenses.get(key), f"edited.licenses.{key}")
+        for key in ("tool_record", "base_model_record", "data_record")
+    ]
+    if len(set(license_paths)) != 3:
+        raise ManifestError("edited tool, base model, and data license records must be separate")
+    if licenses.get("derived_weight_distribution_decision") not in {
+        "not_reviewed_do_not_distribute",
+        "reviewed_private_only",
+        "reviewed_distribution_allowed",
+    }:
+        raise ManifestError("edited derived-weight distribution decision must be explicit")
+
+    evaluation = _require_mapping(manifest.get("evaluation"), "edited.evaluation")
+    evaluation_plan_sha256 = _require_sha256(
+        evaluation.get("plan_sha256"), "edited.evaluation.plan_sha256"
+    )
+    if evaluation.get("service_gate") != "blocked_until_all_quality_and_safety_gates_pass":
+        raise ManifestError("edited service gate must remain blocked pending all gates")
+
+    return {
+        "experiment_id": experiment_id,
+        "original_manifest_path": original_path,
+        "original_manifest_sha256": original_sha256,
+        "original_revision": original_revision,
+        "experiment_manifest_path": experiment_path,
+        "experiment_manifest_sha256": experiment_sha256,
+        "tool_commit": tool_commit,
+        "selected_trial_id": selected_trial_id,
+        "changed_tensor_manifest": changed_tensor_manifest,
+        "output_directory": output_directory,
+        "evaluation_plan_sha256": evaluation_plan_sha256,
+    }
+
+
+def validate_evaluation_plan(plan: Mapping[str, Any]) -> dict[str, Any]:
+    """Validate a paired four-dimension evaluation plan."""
+
+    _reject_embedded_secrets(plan)
+    if plan.get("schema_version") != 1:
+        raise ManifestError("evaluation.schema_version must equal 1")
+    experiment_id = _require_text(plan, "experiment_id", "evaluation")
+
+    comparison = _require_mapping(plan.get("comparison"), "evaluation.comparison")
+    if comparison.get("baseline_artifact") != "immutable_original_model":
+        raise ManifestError("evaluation baseline must be immutable_original_model")
+    if comparison.get("candidate_artifact") != "independent_edited_model":
+        raise ManifestError("evaluation candidate must be independent_edited_model")
+    _require_true(comparison, "paired", "evaluation.comparison")
+    _require_true(comparison, "same_tokenizer_template_and_decoding", "evaluation.comparison")
+    original_manifest_sha256 = _require_sha256(
+        comparison.get("original_manifest_sha256"),
+        "evaluation.comparison.original_manifest_sha256",
+    )
+    experiment_manifest_sha256 = _require_sha256(
+        comparison.get("experiment_manifest_sha256"),
+        "evaluation.comparison.experiment_manifest_sha256",
+    )
+
+    splits = plan.get("splits")
+    if not isinstance(splits, list):
+        raise ManifestError("evaluation.splits must be a list")
+    split_map: dict[str, Mapping[str, Any]] = {}
+    for index, item in enumerate(splits):
+        record = _require_mapping(item, f"evaluation.splits[{index}]")
+        name = _require_text(record, "name", f"evaluation.splits[{index}]")
+        if name in split_map:
+            raise ManifestError("evaluation split names must be unique")
+        split_map[name] = record
+    if set(split_map) != REQUIRED_SPLITS:
+        raise ManifestError("evaluation must define the four isolated splits")
+    if split_map["direction_train"].get("used_for_search") is not False:
+        raise ManifestError("direction_train must estimate the direction only")
+    if split_map["search_objective"].get("used_for_search") is not True:
+        raise ManifestError("search_objective must be the only search-scoring split")
+    if split_map["final_test"].get("used_for_search") is not False:
+        raise ManifestError("final_test must never be used for search")
+    if split_map["selection_validation"].get("used_for_search") is not False:
+        raise ManifestError("selection_validation must not score search trials")
+
+    dimensions = _require_mapping(plan.get("dimensions"), "evaluation.dimensions")
+    if set(dimensions) != REQUIRED_DIMENSIONS:
+        raise ManifestError("evaluation must contain exactly the four required dimensions")
+    for name in REQUIRED_DIMENSIONS:
+        record = _require_mapping(dimensions.get(name), f"evaluation.dimensions.{name}")
+        _require_true(
+            record,
+            "reports_baseline_and_edited",
+            f"evaluation.dimensions.{name}",
+        )
+        _require_text(record, "metric", f"evaluation.dimensions.{name}")
+        _require_text(record, "gate", f"evaluation.dimensions.{name}")
+    _require_true(
+        _require_mapping(dimensions["refusal"], "evaluation.dimensions.refusal"),
+        "human_review",
+        "evaluation.dimensions.refusal",
+    )
+    if dimensions["kl"].get("direction") != "D_KL(original||edited)":
+        raise ManifestError("evaluation KL direction must be explicit")
+
+    safety_gate = _require_mapping(plan.get("safety_stop_gate"), "evaluation.safety_stop_gate")
+    _require_true(safety_gate, "independent_of_composite_score", "evaluation.safety_stop_gate")
+    if safety_gate.get("on_regression") != "stop_before_service":
+        raise ManifestError("safety regression must stop before service")
+
+    return {
+        "experiment_id": experiment_id,
+        "dimensions": sorted(dimensions),
+        "paired": True,
+        "original_manifest_sha256": original_manifest_sha256,
+        "experiment_manifest_sha256": experiment_manifest_sha256,
+        "final_test_used_for_search": False,
+    }
+
+
+def validate_manifest_bundle(
+    original: Mapping[str, Any],
+    experiment: Mapping[str, Any],
+    edited: Mapping[str, Any],
+    evaluation: Mapping[str, Any],
+    *,
+    original_path: str,
+    original_sha256: str,
+    experiment_path: str,
+    experiment_sha256: str,
+    edited_path: str,
+    edited_sha256: str,
+    evaluation_path: str,
+    evaluation_sha256: str,
+) -> dict[str, Any]:
+    """Close the identity and digest chain across all four lab manifests."""
+
+    actual = {
+        "original_path": _absolute_path(original_path, "bundle.original_path"),
+        "original_sha256": _require_sha256(original_sha256, "bundle.original_sha256"),
+        "experiment_path": _absolute_path(experiment_path, "bundle.experiment_path"),
+        "experiment_sha256": _require_sha256(experiment_sha256, "bundle.experiment_sha256"),
+        "edited_path": _absolute_path(edited_path, "bundle.edited_path"),
+        "edited_sha256": _require_sha256(edited_sha256, "bundle.edited_sha256"),
+        "evaluation_path": _absolute_path(evaluation_path, "bundle.evaluation_path"),
+        "evaluation_sha256": _require_sha256(evaluation_sha256, "bundle.evaluation_sha256"),
+    }
+    original_result = validate_original_manifest(original)
+    experiment_result = validate_experiment_manifest(experiment, original)
+    edited_result = validate_edited_manifest(edited)
+    evaluation_result = validate_evaluation_plan(evaluation)
+
+    if len({experiment_result["experiment_id"], edited_result["experiment_id"], evaluation_result["experiment_id"]}) != 1:
+        raise ManifestError("all experiment_id values must match")
+    expected_pairs = (
+        (experiment_result["original_manifest_path"], actual["original_path"], "experiment original path"),
+        (experiment_result["original_manifest_sha256"], actual["original_sha256"], "experiment original hash"),
+        (experiment_result["base_manifest_sha256"], actual["original_sha256"], "edited artifact base hash"),
+        (experiment_result["output_manifest"], actual["edited_path"], "experiment output manifest path"),
+        (edited_result["original_manifest_path"], actual["original_path"], "edited original path"),
+        (edited_result["original_manifest_sha256"], actual["original_sha256"], "edited original hash"),
+        (edited_result["experiment_manifest_path"], actual["experiment_path"], "edited experiment path"),
+        (edited_result["experiment_manifest_sha256"], actual["experiment_sha256"], "edited experiment hash"),
+        (edited_result["original_revision"], original_result["revision"], "edited original revision"),
+        (edited_result["tool_commit"], experiment_result["tool_commit"], "edited tool commit"),
+        (edited_result["selected_trial_id"], experiment_result["selected_trial_id"], "selected trial"),
+        (edited_result["changed_tensor_manifest"], experiment_result["changed_tensor_manifest"], "changed tensor manifest"),
+        (edited_result["output_directory"], experiment_result["edited_output_directory"], "edited output directory"),
+        (edited_result["evaluation_plan_sha256"], actual["evaluation_sha256"], "edited evaluation plan hash"),
+        (evaluation_result["original_manifest_sha256"], actual["original_sha256"], "evaluation original hash"),
+        (evaluation_result["experiment_manifest_sha256"], actual["experiment_sha256"], "evaluation experiment hash"),
+    )
+    for recorded, expected, label in expected_pairs:
+        if recorded != expected:
+            raise ManifestError(f"{label} does not match the validated manifest bundle")
+
+    return {
+        "experiment_id": experiment_result["experiment_id"],
+        "identity_and_hash_chain": "closed",
+        "manifest_identities": actual,
+        "original": original_result,
+        "experiment": experiment_result,
+        "edited": edited_result,
+        "evaluation": evaluation_result,
+    }
+
+
+def _fixture_original() -> dict[str, Any]:
+    return {
+        "schema_version": 1,
+        "artifact_type": "immutable_original_model",
+        "artifact_state": "ready",
+        "model": {
+            "publisher": "Local Synthetic Publisher",
+            "repository_id": "local/synthetic-model",
+            "revision": "0123456789abcdef0123456789abcdef01234567",
+            "tokenizer_revision": "0123456789abcdef0123456789abcdef01234567",
+            "chat_template_revision": "template-v1-fixed",
+        },
+        "model_license": {
+            "identifier": "LicenseRef-Synthetic-Model",
+            "source_document": "/lab/licenses/model-license.txt",
+            "reviewed_for_intended_use": True,
+        },
+        "source": {
+            "directory": "/lab/models/original/0123456789abcdef",
+            "read_only": True,
+            "download_complete": True,
+        },
+        "files": [
+            {
+                "path": "weights.safetensors",
+                "size_bytes": 128,
+                "sha256": "0123456789abcdef" * 4,
+            }
+        ],
+    }
+
+
+def _fixture_experiment() -> dict[str, Any]:
+    split_digests = {
+        "direction_train": "123456789abcdef0" * 4,
+        "search_objective": "23456789abcdef01" * 4,
+        "selection_validation": "3456789abcdef012" * 4,
+        "final_test": "456789abcdef0123" * 4,
+    }
+    return {
+        "schema_version": 1,
+        "experiment_id": "synthetic-heretic-lab-001",
+        "tool": {
+            "repository": HERETIC_OFFICIAL_REPOSITORY,
+            "commit": "89abcdef0123456789abcdef0123456789abcdef",
+            "license_spdx": "AGPL-3.0-or-later",
+            "license_reviewed": True,
+        },
+        "licenses": {
+            "tool": "/lab/licenses/heretic-tool-license.md",
+            "model": "/lab/licenses/model-license.md",
+            "data": "/lab/licenses/data-license-ledger.md",
+        },
+        "original_model": {
+            "manifest_path": ORIGINAL_MANIFEST_PATH,
+            "manifest_sha256": ORIGINAL_MANIFEST_SHA256,
+            "immutable": True,
+        },
+        "paths": {
+            "original_directory": "/lab/models/original/0123456789abcdef",
+            "working_copy_directory": "/lab/models/work/synthetic-heretic-lab-001",
+            "edited_output_directory": "/lab/models/edited/synthetic-heretic-lab-001",
+            "run_directory": "/lab/runs/synthetic-heretic-lab-001",
+            "evaluation_directory": "/lab/evaluations/synthetic-heretic-lab-001",
+            "destinations_must_not_exist": True,
+            "refuse_overwrite": True,
+        },
+        "data": [
+            {
+                "split": split,
+                "dataset_id": f"local-{split}-v1",
+                "manifest_sha256": digest,
+                "license_record": f"/lab/licenses/{split}.md",
+                "no_raw_text_in_git": True,
+            }
+            for split, digest in split_digests.items()
+        ],
+        "edit_plan": {
+            "direction_method": "paired_mean_difference_then_unit_normalize",
+            "layer_and_token_position": "layer-4-final-input-token",
+            "negative_controls": [
+                "random_direction_same_dimension",
+                "label_permutation_direction",
+                "sham_copy_without_edit",
+            ],
+            "projection": "x_prime=(I-alpha*u*u^T)x",
+            "tpe_search_space": "layers=3..5;alpha=0.1..0.5",
+            "tpe_budget": 12,
+            "tpe_seed": 7,
+            "selection_rule": "all_gates_then_lowest_kl",
+            "final_test_used_during_search": False,
+        },
+        "edited_artifact": {
+            "artifact_type": "independent_edited_model",
+            "base_manifest_sha256": ORIGINAL_MANIFEST_SHA256,
+            "selected_trial_id": "trial-007",
+            "changed_tensor_manifest": "/lab/runs/synthetic-heretic-lab-001/changed-tensors.json",
+            "output_manifest": EDITED_MANIFEST_PATH,
+            "must_not_replace_original": True,
+        },
+        "network": {
+            "editing_network": "none",
+            "service_enabled": False,
+            "bind_host": "127.0.0.1",
+            "allow_lan": False,
+            "allow_public": False,
+            "upload_enabled": False,
+            "telemetry_enabled": False,
+        },
+        "execution_gate": {
+            "paths_reviewed": True,
+            "licenses_reviewed": True,
+            "data_reviewed": True,
+            "output_budget_reviewed": True,
+        },
+    }
+
+
+def _fixture_evaluation() -> dict[str, Any]:
+    return {
+        "schema_version": 1,
+        "experiment_id": "synthetic-heretic-lab-001",
+        "comparison": {
+            "baseline_artifact": "immutable_original_model",
+            "candidate_artifact": "independent_edited_model",
+            "paired": True,
+            "same_tokenizer_template_and_decoding": True,
+            "original_manifest_sha256": ORIGINAL_MANIFEST_SHA256,
+            "experiment_manifest_sha256": EXPERIMENT_MANIFEST_SHA256,
+        },
+        "splits": [
+            {"name": "direction_train", "used_for_search": False},
+            {"name": "search_objective", "used_for_search": True},
+            {"name": "selection_validation", "used_for_search": False},
+            {"name": "final_test", "used_for_search": False},
+        ],
+        "dimensions": {
+            "refusal": {
+                "metric": "paired_label_confusion_matrix",
+                "gate": "predeclared_threshold_and_manual_safety_review",
+                "reports_baseline_and_edited": True,
+                "human_review": True,
+            },
+            "kl": {
+                "metric": "mean_and_quantiles_per_token_kl",
+                "gate": "predeclared_distribution_drift_budget",
+                "reports_baseline_and_edited": True,
+                "direction": "D_KL(original||edited)",
+            },
+            "language_quality": {
+                "metric": "blinded_paired_rubric",
+                "gate": "predeclared_noninferiority_margin",
+                "reports_baseline_and_edited": True,
+            },
+            "general_capability": {
+                "metric": "paired_fixed_task_suite",
+                "gate": "predeclared_per_task_and_aggregate_margins",
+                "reports_baseline_and_edited": True,
+            },
+        },
+        "safety_stop_gate": {
+            "independent_of_composite_score": True,
+            "on_regression": "stop_before_service",
+        },
+    }
+
+
+def _fixture_edited() -> dict[str, Any]:
+    return {
+        "schema_version": 1,
+        "artifact_type": "independent_edited_model",
+        "artifact_state": "ready",
+        "experiment_id": "synthetic-heretic-lab-001",
+        "base_model": {
+            "original_manifest_path": ORIGINAL_MANIFEST_PATH,
+            "original_manifest_sha256": ORIGINAL_MANIFEST_SHA256,
+            "original_revision": "0123456789abcdef0123456789abcdef01234567",
+        },
+        "experiment": {
+            "manifest_path": EXPERIMENT_MANIFEST_PATH,
+            "manifest_sha256": EXPERIMENT_MANIFEST_SHA256,
+        },
+        "tool": {
+            "repository": HERETIC_OFFICIAL_REPOSITORY,
+            "commit": "89abcdef0123456789abcdef0123456789abcdef",
+            "license_spdx": "AGPL-3.0-or-later",
+            "local_modifications_manifest": "/lab/runs/synthetic-heretic-lab-001/source-changes.json",
+        },
+        "edit": {
+            "direction_manifest_sha256": "89abcdef01234567" * 4,
+            "trial_ledger_sha256": "9abcdef012345678" * 4,
+            "selected_trial_id": "trial-007",
+            "selection_validation_result_sha256": "abcdef0123456789" * 4,
+            "changed_tensor_manifest": "/lab/runs/synthetic-heretic-lab-001/changed-tensors.json",
+        },
+        "output": {
+            "directory": "/lab/models/edited/synthetic-heretic-lab-001",
+            "independent_from_original": True,
+            "original_unchanged": True,
+            "files": [
+                {"path": "model.safetensors", "size_bytes": 128, "sha256": "bcdef0123456789a" * 4}
+            ],
+        },
+        "licenses": {
+            "tool_record": "/lab/licenses/heretic-tool-license.md",
+            "base_model_record": "/lab/licenses/model-license.md",
+            "derived_weight_distribution_decision": "not_reviewed_do_not_distribute",
+            "data_record": "/lab/licenses/data-license-ledger.md",
+        },
+        "evaluation": {
+            "plan_sha256": EVALUATION_PLAN_SHA256,
+            "service_gate": "blocked_until_all_quality_and_safety_gates_pass",
+        },
+        "notes": "synthetic fixture only",
+    }
+
+
+def demo_result() -> dict[str, Any]:
+    """Return deterministic toy math plus in-memory manifest validation."""
+
+    vector = (3.0, 4.0)
+    direction = (1.0, 1.0)
+    projected = remove_direction(vector, direction)
+    unit = unit_vector(direction)
+    original = _fixture_original()
+    experiment = _fixture_experiment()
+    edited = _fixture_edited()
+    evaluation = _fixture_evaluation()
+    return {
+        "scope": "synthetic_math_and_manifest_only",
+        "does_not_describe_model_behavior": True,
+        "projection": {
+            "input": vector,
+            "direction": direction,
+            "output": projected,
+            "residual_dot_direction": dot(projected, unit),
+        },
+        "kl_nats": {
+            "p_to_q": kl_divergence((0.75, 0.25), (0.5, 0.5)),
+            "q_to_p": kl_divergence((0.5, 0.5), (0.75, 0.25)),
+        },
+        "validation": validate_manifest_bundle(
+            original,
+            experiment,
+            edited,
+            evaluation,
+            original_path=ORIGINAL_MANIFEST_PATH,
+            original_sha256=ORIGINAL_MANIFEST_SHA256,
+            experiment_path=EXPERIMENT_MANIFEST_PATH,
+            experiment_sha256=EXPERIMENT_MANIFEST_SHA256,
+            edited_path=EDITED_MANIFEST_PATH,
+            edited_sha256=EDITED_MANIFEST_SHA256,
+            evaluation_path=EVALUATION_PLAN_PATH,
+            evaluation_sha256=EVALUATION_PLAN_SHA256,
+        ),
+    }
+
+
+def _load_json(path: str) -> Mapping[str, Any]:
+    with Path(path).open("r", encoding="utf-8") as handle:
+        value = json.load(handle)
+    return _require_mapping(value, path)
+
+
+def _manifest_identity(path: str) -> tuple[str, str]:
+    candidate = Path(path)
+    if candidate.is_symlink():
+        raise ManifestError(f"manifest path must not be a symlink: {path}")
+    resolved = candidate.resolve(strict=True)
+    if not resolved.is_file():
+        raise ManifestError(f"manifest path must be a regular file: {resolved}")
+    return str(resolved), file_sha256(resolved)
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    subparsers.add_parser("demo", help="run deterministic toy math and in-memory checks")
+    validate_parser = subparsers.add_parser("validate", help="validate four linked JSON files")
+    validate_parser.add_argument("original_manifest")
+    validate_parser.add_argument("experiment_manifest")
+    validate_parser.add_argument("edited_manifest")
+    validate_parser.add_argument("evaluation_plan")
+    args = parser.parse_args(argv)
+
+    try:
+        if args.command == "demo":
+            result = demo_result()
+        else:
+            original_path, original_sha256 = _manifest_identity(args.original_manifest)
+            experiment_path, experiment_sha256 = _manifest_identity(args.experiment_manifest)
+            edited_path, edited_sha256 = _manifest_identity(args.edited_manifest)
+            evaluation_path, evaluation_sha256 = _manifest_identity(args.evaluation_plan)
+            original = _load_json(original_path)
+            experiment = _load_json(experiment_path)
+            edited = _load_json(edited_path)
+            evaluation = _load_json(evaluation_path)
+            result = {
+                "scope": "manifest_validation_only",
+                "validation": validate_manifest_bundle(
+                    original,
+                    experiment,
+                    edited,
+                    evaluation,
+                    original_path=original_path,
+                    original_sha256=original_sha256,
+                    experiment_path=experiment_path,
+                    experiment_sha256=experiment_sha256,
+                    edited_path=edited_path,
+                    edited_sha256=edited_sha256,
+                    evaluation_path=evaluation_path,
+                    evaluation_sha256=evaluation_sha256,
+                ),
+            }
+    except (ManifestError, OSError, json.JSONDecodeError, ValueError) as error:
+        print(f"validation failed: {error}", file=sys.stderr)
+        return 2
+
+    print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

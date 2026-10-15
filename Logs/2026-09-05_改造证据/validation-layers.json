@@ -1,0 +1,93 @@
+{
+  "records": [
+    {
+      "name": "static",
+      "command": [
+        "scripts/check-vault"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "vault-check: 0 error(s), 0 warning(s)",
+        "vault-check-v2: 0 critical, 3 review candidate(s), 1598 style finding(s), 0 exact style waiver(s)"
+      ],
+      "raw_output_private": "static-latest.txt"
+    },
+    {
+      "name": "semantic",
+      "command": [
+        "scripts/check-vault",
+        "--semantic"
+      ],
+      "exit_code": 1,
+      "summary": [
+        "ERROR [semantic.runtime] obsidian cannot read the active Vault: The CLI is unable to find Obsidian. Please make sure Obsidian is running and try again.",
+        "vault-check: 1 error(s), 0 warning(s)",
+        "vault-check-v2: 0 critical, 3 review candidate(s), 1598 style finding(s), 0 exact style waiver(s)"
+      ],
+      "raw_output_private": "semantic-latest.txt"
+    },
+    {
+      "name": "local_restore",
+      "command": [
+        "scripts/check-vault",
+        "--profile",
+        "local_restore"
+      ],
+      "exit_code": 1,
+      "summary": [
+        "ERROR [contract.required] .obsidian/community-plugins.json required Vault path is missing",
+        "vault-check: 1 error(s), 0 warning(s)",
+        "vault-check-v2: 0 critical, 3 review candidate(s), 1598 style finding(s), 0 exact style waiver(s)"
+      ],
+      "raw_output_private": "local_restore-latest.txt"
+    },
+    {
+      "name": "review",
+      "command": [
+        "scripts/check-vault",
+        "--review"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "vault-check: 0 error(s), 0 warning(s)",
+        "vault-check-v2: 0 critical, 697 review candidate(s), 1598 style finding(s), 0 exact style waiver(s)"
+      ],
+      "raw_output_private": "review-latest.txt"
+    },
+    {
+      "name": "diff_check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "summary": [],
+      "raw_output_private": "diff_check-latest.txt"
+    },
+    {
+      "name": "share_export_scan",
+      "exit_code": 0,
+      "summary": "share archive rechecked: 748 files; rotation status is a separate requirement\n"
+    },
+    {
+      "name": "exported_static",
+      "exit_code": 0,
+      "files": 748,
+      "archive_sha256": "9c4beba591c210b5302fae3c61a17a9ccf452c6cb5729122156ab940f4ccce2c",
+      "summary": [
+        "vault-check: 0 error(s), 0 warning(s)",
+        "vault-check-v2: 0 critical, 3 review candidate(s), 1598 style finding(s), 0 exact style waiver(s)"
+      ]
+    }
+  ],
+  "credential_rotation": "blocked: user confirmed not rotated",
+  "local_rest_state": {
+    "exists": true,
+    "mode": "0o600",
+    "git_ignored": true,
+    "content_read": false
+  },
+  "commit": "not_run: final acceptance pending",
+  "temp_cleanup": "not_run: final acceptance pending"
+}

@@ -1,0 +1,12 @@
+{
+  "description": "Equilibrium localized two-charge-state interface; synthetic card consumed from practice 08",
+  "base_card": "../08-异质结与Poisson自洽/inputs.json",
+  "fixed_sheet_C_m-2": 0.0,
+  "states": [
+    {"name": "acceptor", "type": "acceptor", "N_m-2": 8e14, "Et0_eV": -0.27, "empty_over_filled_weight": 1.0}
+  ],
+  "half_cells": [120, 240, 480],
+  "short_half_length_m": 1.5e-7,
+  "fermi_change_eV": 0.05,
+  "density_factor": 2.0
+}

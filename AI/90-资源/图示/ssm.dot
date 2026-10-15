@@ -1,0 +1,16 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="状态递推：固定宽度摘要，不是无损保存整个历史", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+h0 [label="状态 h₀"];
+x1 [label="输入 x₁"];
+h1 [label="状态 h₁\n保留 + 写入"];
+x2 [label="输入 x₂"];
+h2 [label="状态 h₂\n保留 + 写入"];
+y [label="读取 y₂\n表示能力受状态约束"];
+h0 -> h1;
+x1 -> h1;
+h1 -> h2;
+x2 -> h2;
+h2 -> y;
+}

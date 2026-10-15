@@ -1,0 +1,73 @@
+{
+  "Ts_s": 1.053605156578263,
+  "allowed_gap_factors": {
+    "1": "1/2",
+    "2": "1/20",
+    "3": "-71/200",
+    "4": "-1439/2000",
+    "5": "-20951/20000"
+  },
+  "rho_1_to_4": "1439/2000",
+  "physical_decay_rate_per_s": 0.07811245764111378,
+  "finite_sequences_checked": 256,
+  "finite_sequence_length": 4,
+  "held_vs_factor_max_error_K": 3.3306690738754696e-16,
+  "sampled_intersample_ratio_max": 1.0,
+  "delay_T_s": 3.5667494393873245,
+  "delay_stable_d_upper_s": 3.0538164955118186,
+  "delay_roots": {
+    "0": {
+      "trace": -0.5000000000000002,
+      "det": 0.0,
+      "root_moduli": [
+        0.0,
+        0.5000000000000002
+      ],
+      "schur": [
+        1.5000000000000002,
+        0.4999999999999998,
+        1.0
+      ]
+    },
+    "0.5": {
+      "trace": 0.046640106136302206,
+      "det": 0.5466401061363024,
+      "root_moduli": [
+        0.7393511385913343,
+        0.7393511385913343
+      ],
+      "schur": [
+        1.5000000000000002,
+        1.5932802122726046,
+        0.45335989386369757
+      ]
+    },
+    "1": {
+      "trace": 0.7,
+      "det": 1.2000000000000002,
+      "root_moduli": [
+        1.0954451150103324,
+        1.0954451150103324
+      ],
+      "schur": [
+        1.5000000000000002,
+        2.9000000000000004,
+        -0.20000000000000018
+      ]
+    }
+  },
+  "two_flow_vs_augmented_max_error_K": 1.6653345369377348e-16,
+  "delay_rk4_errors_4_8_16": [
+    1.0172555575671538e-08,
+    6.240737926432871e-10,
+    3.8643782618308364e-11
+  ],
+  "packet_accepted_sequences": [
+    0,
+    2,
+    3
+  ],
+  "scope": "Exact finite checks; zero-delay fresh-success theorem and fixed-delay theorem are separate."
+}
+PASS: exact gap factors, 256 finite sequences, held flow, fixed-delay augmentation, RK4 refinement, packet ordering
+{"python": "3.14.7", "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O", "serial": true, "thread_ceiling": 4, "configured_numeric_threads": 1, "elapsed_s": 0.029359417007071897, "peak_rss_raw": 23379968, "peak_rss_unit": "bytes"}

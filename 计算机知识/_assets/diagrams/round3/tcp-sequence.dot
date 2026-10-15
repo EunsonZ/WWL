@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="TCP 字节序号示意：SYN 和 FIN 各占一个序号",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"c" [label="客户端\nISN=1000"];
+"s" [label="服务端\nISN=7000"];
+"d" [label="首段数据\nseq=1001，len=500"];
+"ack" [label="服务端 ACK=1501\n下一次期望的字节"];
+"c" -> "s" [label="SYN seq=1000"];
+"s" -> "c" [label="SYN+ACK seq=7000 ack=1001"];
+"c" -> "d" [label="ACK=7001，发送数据"];
+"d" -> "ack" [label="连续完整接收"];
+
+}

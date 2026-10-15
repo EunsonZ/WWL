@@ -1,0 +1,161 @@
+{
+  "name": "fence-before-old-writer",
+  "schedule": "first acquires write transaction; second starts operation; release first; second obtains lock",
+  "events": [
+    {
+      "phase": "ready",
+      "label": "second",
+      "pid": 21354
+    },
+    {
+      "phase": "ready",
+      "label": "first",
+      "pid": 21353
+    },
+    {
+      "phase": "started",
+      "label": "first",
+      "pid": 21353
+    },
+    {
+      "phase": "started",
+      "label": "second",
+      "pid": 21354
+    },
+    {
+      "phase": "finished",
+      "label": "first",
+      "result": null,
+      "trace": [
+        {
+          "kind": "operation_started",
+          "monotonic_ns": 3744375813583,
+          "pid": 21353,
+          "operation": "fence",
+          "args": [
+            3
+          ],
+          "kwargs": {}
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744375834333,
+          "pid": 21353,
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "kind": "write_lock_acquired",
+          "monotonic_ns": 3744375859500,
+          "pid": 21353
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744386223625,
+          "pid": 21353,
+          "sql": "SELECT writer_epoch FROM metadata"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744386238041,
+          "pid": 21353,
+          "sql": "UPDATE metadata SET writer_epoch=3"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744386385791,
+          "pid": 21353,
+          "sql": "COMMIT"
+        },
+        {
+          "kind": "returned",
+          "monotonic_ns": 3744386602083,
+          "pid": 21353,
+          "value": null
+        },
+        {
+          "kind": "closed",
+          "monotonic_ns": 3744386628250,
+          "pid": 21353
+        }
+      ],
+      "elapsed_seconds": 0.014442791
+    },
+    {
+      "phase": "finished",
+      "label": "second",
+      "result": {
+        "error": "WriterFenced",
+        "message": "new decisions require current epoch and v2 policy"
+      },
+      "trace": [
+        {
+          "kind": "operation_started",
+          "monotonic_ns": 3744381760708,
+          "pid": 21354,
+          "operation": "reserve",
+          "args": [
+            "a",
+            "old",
+            540,
+            600
+          ],
+          "kwargs": {
+            "writer_epoch": 2
+          }
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744381834750,
+          "pid": 21354,
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "kind": "write_lock_acquired",
+          "monotonic_ns": 3744393969083,
+          "pid": 21354
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744394001500,
+          "pid": 21354,
+          "sql": "SELECT fingerprint,outcome FROM intents WHERE actor='a' AND intent_id='old'"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744394012583,
+          "pid": 21354,
+          "sql": "SELECT writer_epoch FROM metadata"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744394022333,
+          "pid": 21354,
+          "sql": "ROLLBACK"
+        },
+        {
+          "kind": "raised",
+          "monotonic_ns": 3744394032875,
+          "pid": 21354,
+          "error": "WriterFenced",
+          "message": "new decisions require current epoch and v2 policy"
+        },
+        {
+          "kind": "closed",
+          "monotonic_ns": 3744394060250,
+          "pid": 21354
+        }
+      ],
+      "elapsed_seconds": 0.021858333
+    }
+  ],
+  "final_state": {
+    "epoch": 3,
+    "bookings": [],
+    "events": [],
+    "intents": []
+  },
+  "child_exitcodes": [
+    0,
+    0
+  ]
+}

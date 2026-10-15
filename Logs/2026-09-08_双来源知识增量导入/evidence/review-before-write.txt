@@ -1,0 +1,83 @@
+# 双来源增量导入独立终审（写回前）
+
+- 首轮复核时间：2026-09-08T23:51:21+08:00
+- 修后复核时间：2026-09-09T00:01:30+08:00
+- 最终静态证据复核时间：2026-09-09T00:12:02+08:00
+- 范围：`tools/transaction.py`、隔离事务负例、五篇 AI 增补、原稿哈希、双来源单目标、30 份 PDF、TaskNotes 静态夹具与当前链接审计。
+- 正式库状态：本次复核期间未执行 `apply`；所有事务测试均在 `tempfile.TemporaryDirectory` 中完成。
+- 本报告是写回前条件审阅；最终 `write-plan.json`、备份和验收产物生成后仍须按下列门槛复核。
+
+## 当前结论
+
+`tools/transaction.py` 的已知事务阻断已经修复；修后版本 SHA-256 为 `ebbe5e09e1de33b2a96f3fb9b41efe976b4dc2a7ec1341d165d795ccf9419a12`，隔离测试 4/4 通过。完整来源映射、known-diagnostics、最终 stage 静态审计和来源保护证据也已通过本次复核。**未发现剩余代码或数据保全阻断，批准进入最终 plan、备份、dry-run 与写回；事务命令自身的哈希／并发检查若失败则必须停止。** 本报告冻结时正式库尚未写入。
+
+## 已解除的阻断项 F01：备份后的写入清单没有绑定恢复凭据
+
+`backup()` 把当时的清单保存为 `backup/transaction.json`，随后 `apply()` 却只信任可修改的 `work/write-plan.json`，没有比较两份清单或冻结摘要。`apply()` 也没有重新执行 `plan()` 中的 protected-path 检查。
+
+隔离负例 `work/tools/test_transaction.py::test_apply_rejects_manifest_changed_after_backup`：
+
+1. 对 2 个修改和 1 个新增生成清单并备份；
+2. 备份后向工作清单追加 `TaskNotes/escape.md`；
+3. 当前 `apply()` 未拒绝，报告 `written: 4`，并实际写入该受保护路径；
+4. `backup/transaction.json` 仍只有原 3 行，故既有恢复凭据不会移除第 4 个新增文件。
+
+修后 `apply()` 在任何正式写入前读取 `backup/transaction.json` 并要求它与工作清单完全一致；不一致时抛出 `Manifest changed after backup`。它还逐行重新执行 protected-path 规则。上述负例现于替换前被拒绝，`TaskNotes/escape.md` 不存在于 live。
+
+修后隔离结果为 **4/4 通过**，测试文件 SHA-256 为 `ec6256da7977caad8d98d37851abf9f6e224d2c67c0feb1ac3c6188372326d1d`。第一次执行时测试断言使用小写 `manifest`，而实现消息以大写 `Manifest` 开头，形成一次测试正则假阴性；仅把自有测试改成 `[Mm]anifest` 后通过，工具实现未因此放宽。
+
+## 已解除的事务风险
+
+上一版存在“stage 在全局预检后改变时，错误字节先替换正式文件，再由写后哈希发现”的问题，并且恢复程序会因未写行仍等于 `before` 而拒绝恢复已写部分。当前版本已采用以下顺序：复制 stage 到目标目录私有临时文件、验证临时文件 `after` 哈希、再次验证正式目标仍等于 `before`、再 `os.replace`；恢复时按实际哈希区分 installed、untouched 和 conflict。
+
+隔离测试确认：
+
+- 正常 `plan → backup → apply → rollback preview → rollback commit` 往返成功；修改文件恢复旧字节，新增文件移除。
+- 全局预检后修改下一份 stage 文件时，临时副本哈希检查在替换前拒绝；已写文件可恢复，未写文件保持旧字节。
+- 目标在替换前发生外部修改时，目标复核拒绝替换，外部字节保留。
+
+`atomic_copy()` 的目标复核与 `os.replace()` 之间仍存在极短的非协作写入竞态，普通文件 API 无法与不遵守同一锁的 Obsidian／同步程序建立原子比较交换。这是明确记录的实现限制，不能表述成完全消除了并发竞态。当前没有授权停止用户的 Obsidian 或同步程序，本审阅也不要求、未执行该动作；本批依靠全量写前检查、逐文件 destination guard、临时副本 source hash 和写后验证收窄风险，任一检查失败即停止并按 journal/backup 恢复。
+
+## 原稿与个人资料保全
+
+- `fragments/raw-originals.json` 列出 10 项。逐项重新计算 source、stage 与记录值，10/10 三方 SHA-256 一致。
+- source2 的 `00-Inbox/obsidian_immigration_route_map_2026_zh.md` 与 `00-Inbox/中国大陆光电本科背景_多阶段移民路线图_2026-08-30.md` 均为 72,563 bytes，SHA-256 均为 `b9fa77b8d6365846073fcad905ca714b5aed3d7556fd4bed2a5bae32fa520e37`；两行都映射到唯一目标 `资料/个人规划/中国大陆光电本科背景_多阶段移民路线图_2026-08-30.md`，目标哈希相同。
+- 个人规划 README 明确把该材料限定为 2026-08-30 历史原稿，不推断或更新用户现状、偏好、资格或行动。
+
+## PDF 唯一副本
+
+重新扫描当前 stage：恰有 30 个 `.pdf`，形成 30 个不同 SHA-256；`fragments/pdf-catalog.json` 也恰有 30 个不同 target 和 30 个不同 SHA-256。逐项验证 30/30 目标存在、目标哈希等于 catalog、且该哈希在整个 stage 只出现于该 target。McGill 资料只位于 `资料/个人规划/`，未发现额外旧路径副本。
+
+PDF 名称已在审阅中由长源文件名规范化，catalog、目录 README 与当前 stage 同步；以上 30/30 结论是在规范化完成后重新计算，不沿用改名前结果。
+
+## 五篇 AI 增补
+
+抽查正式 WWL 基线与 stage 的具体 diff：
+
+- Scaling 页把训练 FLOPs 最优与生命周期成本对象分开，明确不作公司、能源或营收预测。
+- GPU 预算页将 12/16 B 每参数标为有条件心算，并明确排除激活、通信 buffer、碎片、分片、offload 等变量。
+- MoE 页区分激活参数与总权重、通信、利用率和尾延迟，没有导入厂商或投资回报断言。
+- Agent 页将人工复核写为有限队列和容量条件，不给出通用人机比例或就业结论。
+- LLM 评测页明确拒绝用独立同分布假设机械计算 `p^n`，要求按 trace 和条件事件测量。
+
+五处均保留原 frontmatter/evidence 状态，并链接到已通过字节保全的原稿副本。未发现把时效性市场数字提升为当前事实的问题。
+
+## TaskNotes 与旧任务状态
+
+- 顶层 `TaskNotes/` 当前 8 文件全部与本批 baseline 哈希一致；最终写入清单必须为顶层 `TaskNotes/` 0 项。`Tags/` 同样不得写入。
+- 新增的四份 `Obsidian知识/30-实践/04-TaskNotes/Tasks/` 页面均为 `type: teaching-fixture`、`fixture_status: static`；TaskNotes 属性位于 fenced YAML，围栏外没有活跃 `task` 标签或动态 view embed。页面显式说明历史状态和完成日期不是当前任务或用户学习成果。
+- `CHANGE.md` 的旧 1–27 节保持原文，仅追加第 28 节说明当前用户授权、来源只读和旧任务状态不因此完成；`AGENTS.md`、`NewAgents.md` 与 baseline 哈希一致。
+
+## 最终映射与静态门槛
+
+- `fragments/source-target-map.json` SHA-256 为 `91bb9988203ed5db490e54bd2eefda7891ded3654e55cc4e6fc3e77cb19aabf9`；2606 条记录与 action counts 总和一致。
+- source2 `TBM/` 共 1768 条，全部为 `retain-existing-wwl`，copy/import 为 0。
+- source1 的 4 个 `00-工作台/` 项全部 `exclude-workspace-state`；2 个 `__pycache__`、`CONTRIBUTING.md`、`config/vault-contract.json` 均明确 exclude。映射不再保留首轮 `import-review` 的不确定处置。
+- 来源映射中的 TaskNotes 相关行全部为 reuse/retain；stage 顶层 8 个 TaskNotes 文件仍与 baseline 完全相同。最终 write plan 还须由事务工具证明这些未变化路径自然为 0 写入。
+- `evidence/source-protection-before-write.json` 记录 2598 个有哈希的可见来源文件、0 changed；另 8 个敏感／治理排除项只核对路径和大小，没有读取正文或生成正文哈希。
+- 本批 Logs、artifacts、evidence 与工具副本已经落入 stage。`evidence/static-stage.json` SHA-256 为 `bb3c6735e352f41f1ecace64990a810fb05c87541546d214fb9bf8bfee7cba51`，结果为 `new=0`、`known=23`、`intentional=2`、`resolved=16`、`passed=true`。23 项 known 由 18 个历史输入包路径、1 个原稿作者链接、1 个未迁移历史 `CONTRIBUTING.md`、2 个历史 `agents.md` 大小写引用和 1 个既有 CMake 镜像差异构成；精确五元组匹配，不使用 glob 或目录豁免。
+- 复跑事务测试 4/4 通过；复跑 import validator、links 和 mirrors 测试 38/38 通过。静态验证覆盖 frontmatter 1017、JSON 244、Bases 12、Canvas 4，格式错误为 0。
+
+实际写入仍必须按事务顺序完成：生成最终 `write-plan.json` 并确认受保护路径 0 写入；创建备份并逐项验证 `before`；确认工作 manifest 与备份 `transaction.json` 完全一致；执行写回后逐项验证正式目标等于 `after`；保存冻结清单、备份路径、事务工具哈希、apply journal 与 rollback preview。任一步失败即停止。备份清单自身明确排除输出文件并保留为恢复凭据，避免自哈希。
+
+本审阅未发现其他阻断；未运行 Obsidian GUI、插件、网络、宏、训练或全库实验。静态 `links.py` 的 anchor 结果仍只代表启发式检查，不能表述为 Obsidian UI 已通过。

@@ -1,0 +1,114 @@
+{
+  "A": [
+    [
+      -1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "B": [
+    [
+      1.0
+    ],
+    [
+      1.0
+    ]
+  ],
+  "C": [
+    [
+      1.0,
+      0.0
+    ]
+  ],
+  "O": {
+    "atol": 0.0,
+    "evidence": "numerical rank at declared coordinates/tolerance, not structural identification",
+    "rank": 1,
+    "rtol": 1e-10,
+    "singular_values": [
+      1.4142135623730951,
+      0.0
+    ],
+    "threshold": 1.4142135623730953e-10
+  },
+  "R": {
+    "atol": 0.0,
+    "evidence": "numerical rank at declared coordinates/tolerance, not structural identification",
+    "rank": 2,
+    "rtol": 1e-10,
+    "singular_values": [
+      1.4142135623730954,
+      1.4142135623730947
+    ],
+    "threshold": 1.4142135623730953e-10
+  },
+  "W_hidden_T1": [
+    [
+      0.4323323583816936,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ]
+  ],
+  "W_observable_T1": [
+    [
+      0.43233235838169226,
+      0.31673764387737824
+    ],
+    [
+      0.31673764387737824,
+      0.24542109027781656
+    ]
+  ],
+  "W_observable_eigenvalues": [
+    0.008639399690272442,
+    0.6691140489692364
+  ],
+  "evidence": "known-model CPU examples, not identification, plant or controller evidence",
+  "hidden_t6": 402.42879349273477,
+  "ic_visible_t6": 403.4287934927347,
+  "near_O_loose": {
+    "atol": 0.0,
+    "evidence": "numerical rank at declared coordinates/tolerance, not structural identification",
+    "rank": 1,
+    "rtol": 1e-10,
+    "singular_values": [
+      1.4142135623730951,
+      1.414213562373095e-12
+    ],
+    "threshold": 1.4142135623730953e-10
+  },
+  "near_O_tight": {
+    "atol": 0.0,
+    "evidence": "numerical rank at declared coordinates/tolerance, not structural identification",
+    "rank": 2,
+    "rtol": 1e-14,
+    "singular_values": [
+      1.4142135623730951,
+      1.414213562373095e-12
+    ],
+    "threshold": 1.4142135623730951e-14
+  },
+  "near_visible_t6": 1.3999500413160677,
+  "normalized_units": true,
+  "numerical_accuracy": "floating point teaching checks; no interval enclosure",
+  "output_t6": 0.997521247823333,
+  "scaled_O": {
+    "atol": 0.0,
+    "evidence": "numerical rank at declared coordinates/tolerance, not structural identification",
+    "rank": 1,
+    "rtol": 1e-10,
+    "singular_values": [
+      1.4142135623730951,
+      1.414213562373095e-12
+    ],
+    "threshold": 1.4142135623730953e-10
+  },
+  "schema": "wwl-state-v1",
+  "time_units": "s"
+}

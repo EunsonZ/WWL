@@ -1,0 +1,25 @@
+{
+  "table_alias_separators": 376,
+  "original_table_alias_separators": 299,
+  "structural_table_rows": 6,
+  "math_repairs": [
+    {
+      "source": "计算机知识/50-数据结构与算法/10-贪心算法与正确性证明.md",
+      "before": "${A,C,E,F\\}$",
+      "after": "$\\{A,C,E,F\\}$",
+      "reason": "集合左花括号未转义，MathJax 报错。"
+    }
+  ],
+  "content_corrections": [
+    {
+      "source": "计算机知识/10-编程语言/02-C++/02-语法类型与函数.md",
+      "reason": "区分实际 const 对象与经 const 视图读取本来可变的对象，避免暗示实际 const 对象能经别名合法修改。"
+    }
+  ],
+  "build_corrections": [
+    {
+      "source": "计算机知识/10-编程语言/02-C++/CMakeLists.txt",
+      "reason": "不恢复用户已退役的 stl.cpp；移除无源码的 stl 构建目标，8 个现存目标重新构建并运行。"
+    }
+  ]
+}

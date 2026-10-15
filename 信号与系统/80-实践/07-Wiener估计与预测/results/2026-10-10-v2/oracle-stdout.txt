@@ -1,0 +1,184 @@
+{
+  "business_source_imported": false,
+  "checks_total": 1529,
+  "all_match": true,
+  "failed_checks": [],
+  "declared_tolerances": {
+    "abs": 1e-10,
+    "rel": 1e-10
+  },
+  "scalar_max_abs_difference": 1.7763568394002505e-15,
+  "DC_exact": [
+    {
+      "N": 1,
+      "tapered": "1",
+      "direct": "1"
+    },
+    {
+      "N": 2,
+      "tapered": "1/2",
+      "direct": "1"
+    },
+    {
+      "N": 7,
+      "tapered": "1/7",
+      "direct": "1"
+    },
+    {
+      "N": 32,
+      "tapered": "1/32",
+      "direct": "1"
+    }
+  ],
+  "summary_tables": {
+    "preflight": [
+      {
+        "method": "current",
+        "population_mse": 0.5,
+        "observed_mean": 0.5096020116443609,
+        "sample_std": null,
+        "standard_error": null
+      },
+      {
+        "method": "two_tap_theory",
+        "population_mse": 0.4666666666666667,
+        "observed_mean": 0.49308711828832963,
+        "sample_std": null,
+        "standard_error": null
+      },
+      {
+        "method": "two_tap_fit",
+        "population_mse": null,
+        "observed_mean": 0.4887865969491206,
+        "sample_std": null,
+        "standard_error": null
+      },
+      {
+        "method": "three_tap_smoothing",
+        "population_mse": 0.4375,
+        "observed_mean": 0.48778557030883546,
+        "sample_std": null,
+        "standard_error": null
+      },
+      {
+        "method": "causal_infinite",
+        "population_mse": 0.4641016151377544,
+        "observed_mean": 0.48720510862822347,
+        "sample_std": null,
+        "standard_error": null
+      },
+      {
+        "method": "bilateral_truncated",
+        "population_mse": null,
+        "observed_mean": 0.4913657784294292,
+        "sample_std": null,
+        "standard_error": null
+      },
+      {
+        "method": "wrong_noise_old_weights",
+        "population_mse": 0.5288888888888889,
+        "observed_mean": 0.5346181534034521,
+        "sample_std": null,
+        "standard_error": null
+      },
+      {
+        "method": "correlated_noise_current",
+        "population_mse": 0.5,
+        "observed_mean": 0.47133247257274563,
+        "sample_std": null,
+        "standard_error": null
+      }
+    ],
+    "standard": [
+      {
+        "method": "current",
+        "population_mse": 0.5,
+        "observed_mean": 0.5006025151657167,
+        "sample_std": 0.009812638973663756,
+        "standard_error": 0.002453159743415939
+      },
+      {
+        "method": "two_tap_theory",
+        "population_mse": 0.4666666666666667,
+        "observed_mean": 0.46712638202978907,
+        "sample_std": 0.008691282704217537,
+        "standard_error": 0.002172820676054384
+      },
+      {
+        "method": "two_tap_fit",
+        "population_mse": null,
+        "observed_mean": 0.4673560836992339,
+        "sample_std": 0.008693904263441934,
+        "standard_error": 0.0021734760658604834
+      },
+      {
+        "method": "three_tap_smoothing",
+        "population_mse": 0.4375,
+        "observed_mean": 0.438068711922404,
+        "sample_std": 0.00841289264120564,
+        "standard_error": 0.00210322316030141
+      },
+      {
+        "method": "causal_infinite",
+        "population_mse": 0.4641016151377544,
+        "observed_mean": 0.4642966429589537,
+        "sample_std": 0.00859298960025669,
+        "standard_error": 0.0021482474000641726
+      },
+      {
+        "method": "bilateral_truncated",
+        "population_mse": null,
+        "observed_mean": 0.43368928865648787,
+        "sample_std": 0.008311122340588138,
+        "standard_error": 0.0020777805851470346
+      },
+      {
+        "method": "wrong_noise_old_weights",
+        "population_mse": 0.5288888888888889,
+        "observed_mean": 0.5303519284299719,
+        "sample_std": 0.007774123423914849,
+        "standard_error": 0.0019435308559787123
+      },
+      {
+        "method": "correlated_noise_current",
+        "population_mse": 0.5,
+        "observed_mean": 0.5019290565077938,
+        "sample_std": 0.006267023123703773,
+        "standard_error": 0.0015667557809259432
+      }
+    ]
+  },
+  "psd_observations": {
+    "preflight": {
+      "single_mean": 0.9468430457743391,
+      "single_sample_variance": 1.0892737435366708,
+      "average_mean": 0.9725412810395201,
+      "average_sample_variance": 0.12369694983544716,
+      "population_expectations": {
+        "mean": 1,
+        "single_variance": 1,
+        "average_variance": 0.125
+      },
+      "statistical_pass_rule": "none; descriptive finite observations only",
+      "two_sided_angular_units": "V^2/(rad/sample)",
+      "physical_Hz_units": "fs not specified; conversion would divide angular PSD by fs with theta=2*pi*f/fs"
+    },
+    "standard": {
+      "single_mean": 0.9468430457743391,
+      "single_sample_variance": 1.0892737435366708,
+      "average_mean": 0.9725412810395201,
+      "average_sample_variance": 0.12369694983544716,
+      "population_expectations": {
+        "mean": 1,
+        "single_variance": 1,
+        "average_variance": 0.125
+      },
+      "statistical_pass_rule": "none; descriptive finite observations only",
+      "two_sided_angular_units": "V^2/(rad/sample)",
+      "physical_Hz_units": "fs not specified; conversion would divide angular PSD by fs with theta=2*pi*f/fs"
+    }
+  },
+  "causal_independent_convolution_taps": 64,
+  "causal_tail_factor": 2.4851748955908218e-37,
+  "general_log_outer_or_BIBO_or_real_sensor_certified": false
+}

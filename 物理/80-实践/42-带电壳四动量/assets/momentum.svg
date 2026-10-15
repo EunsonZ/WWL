@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 560" role="img">
+<title>Observer simultaneous slices: stresses close total momentum</title><desc>Exact passive boost. Field-only and total energy/momentum divided by the total rest energy E0. Material stress contribution has opposite sign to shell velocity. Curves come from beta-sweep.csv.</desc>
+<rect width="1040" height="100%" fill="#fafafa"/>
+<style>text{font-family:Arial,sans-serif;fill:#19212b} .axis{stroke:#19212b;stroke-width:1.4} .grid{stroke:#ccd4dd;stroke-width:1}</style>
+<text x="40" y="32" font-size="22">Observer simultaneous slices: stresses close total momentum</text>
+<line x1="80" y1="455.9259" x2="460" y2="455.9259" class="grid"/>
+<text x="71" y="460.9259" font-size="14" text-anchor="end">0</text>
+<line x1="80" y1="315.1852" x2="460" y2="315.1852" class="grid"/>
+<text x="71" y="320.1852" font-size="14" text-anchor="end">1</text>
+<line x1="80" y1="174.4444" x2="460" y2="174.4444" class="grid"/>
+<text x="71" y="179.4444" font-size="14" text-anchor="end">2</text>
+<line x1="80" y1="90" x2="80" y2="470" class="axis"/>
+<line x1="80" y1="470" x2="460" y2="470" class="axis"/>
+<text x="80.0000" y="492" font-size="13" text-anchor="middle">-0.9</text>
+<text x="143.3333" y="492" font-size="13" text-anchor="middle">-0.6</text>
+<text x="206.6667" y="492" font-size="13" text-anchor="middle">-0.3</text>
+<text x="270.0000" y="492" font-size="13" text-anchor="middle">0</text>
+<text x="333.3333" y="492" font-size="13" text-anchor="middle">0.3</text>
+<text x="396.6667" y="492" font-size="13" text-anchor="middle">0.6</text>
+<text x="460.0000" y="492" font-size="13" text-anchor="middle">0.9</text>
+<text x="270" y="519" font-size="16" text-anchor="middle">observer beta = v/c; shell moves -v</text>
+<text x="80" y="72" font-size="17">E prime / E0</text>
+<polyline data-series="em_E_over_E0" points="80.0000,328.7744 143.3333,394.8317 206.6667,408.8095 270.0000,412.2894 333.3333,408.8095 396.6667,394.8317 460.0000,328.7744" fill="none" stroke="#1769aa" stroke-width="2.5"/>
+<circle cx="80.0000" cy="328.7744" r="3.3" fill="#1769aa"/>
+<circle cx="143.3333" cy="394.8317" r="3.3" fill="#1769aa"/>
+<circle cx="206.6667" cy="408.8095" r="3.3" fill="#1769aa"/>
+<circle cx="270.0000" cy="412.2894" r="3.3" fill="#1769aa"/>
+<circle cx="333.3333" cy="408.8095" r="3.3" fill="#1769aa"/>
+<circle cx="396.6667" cy="394.8317" r="3.3" fill="#1769aa"/>
+<circle cx="460.0000" cy="328.7744" r="3.3" fill="#1769aa"/>
+<text x="80" y="110" fill="#1769aa" style="fill:#1769aa" font-size="15">field</text>
+<polyline data-series="mat_E_over_E0" points="80.0000,260.1862 143.3333,341.0919 206.6667,355.5055 270.0000,358.8217 333.3333,355.5055 396.6667,341.0919 460.0000,260.1862" fill="none" stroke="#a34b19" stroke-width="2.5"/>
+<circle cx="80.0000" cy="260.1862" r="3.3" fill="#a34b19"/>
+<circle cx="143.3333" cy="341.0919" r="3.3" fill="#a34b19"/>
+<circle cx="206.6667" cy="355.5055" r="3.3" fill="#a34b19"/>
+<circle cx="270.0000" cy="358.8217" r="3.3" fill="#a34b19"/>
+<circle cx="333.3333" cy="355.5055" r="3.3" fill="#a34b19"/>
+<circle cx="396.6667" cy="341.0919" r="3.3" fill="#a34b19"/>
+<circle cx="460.0000" cy="260.1862" r="3.3" fill="#a34b19"/>
+<text x="190" y="110" fill="#a34b19" style="fill:#a34b19" font-size="15">membrane</text>
+<polyline data-series="total_E_over_E0" points="80.0000,133.0346 143.3333,279.9976 206.6667,308.3890 270.0000,315.1852 333.3333,308.3890 396.6667,279.9976 460.0000,133.0346" fill="none" stroke="#222222" stroke-width="2.5"/>
+<circle cx="80.0000" cy="133.0346" r="3.3" fill="#222222"/>
+<circle cx="143.3333" cy="279.9976" r="3.3" fill="#222222"/>
+<circle cx="206.6667" cy="308.3890" r="3.3" fill="#222222"/>
+<circle cx="270.0000" cy="315.1852" r="3.3" fill="#222222"/>
+<circle cx="333.3333" cy="308.3890" r="3.3" fill="#222222"/>
+<circle cx="396.6667" cy="279.9976" r="3.3" fill="#222222"/>
+<circle cx="460.0000" cy="133.0346" r="3.3" fill="#222222"/>
+<text x="300" y="110" fill="#222222" style="fill:#222222" font-size="15">total</text>
+<line x1="610" y1="445.2174" x2="990" y2="445.2174" class="grid"/>
+<text x="601" y="450.2174" font-size="14" text-anchor="end">-2</text>
+<line x1="610" y1="362.6087" x2="990" y2="362.6087" class="grid"/>
+<text x="601" y="367.6087" font-size="14" text-anchor="end">-1</text>
+<line x1="610" y1="280.0000" x2="990" y2="280.0000" class="grid"/>
+<text x="601" y="285.0000" font-size="14" text-anchor="end">0</text>
+<line x1="610" y1="197.3913" x2="990" y2="197.3913" class="grid"/>
+<text x="601" y="202.3913" font-size="14" text-anchor="end">1</text>
+<line x1="610" y1="114.7826" x2="990" y2="114.7826" class="grid"/>
+<text x="601" y="119.7826" font-size="14" text-anchor="end">2</text>
+<line x1="610" y1="90" x2="610" y2="470" class="axis"/>
+<line x1="610" y1="470" x2="990" y2="470" class="axis"/>
+<text x="610.0000" y="492" font-size="13" text-anchor="middle">-0.9</text>
+<text x="673.3333" y="492" font-size="13" text-anchor="middle">-0.6</text>
+<text x="736.6667" y="492" font-size="13" text-anchor="middle">-0.3</text>
+<text x="800.0000" y="492" font-size="13" text-anchor="middle">0</text>
+<text x="863.3333" y="492" font-size="13" text-anchor="middle">0.3</text>
+<text x="926.6667" y="492" font-size="13" text-anchor="middle">0.6</text>
+<text x="990.0000" y="492" font-size="13" text-anchor="middle">0.9</text>
+<text x="800" y="519" font-size="16" text-anchor="middle">observer beta = v/c; shell moves -v</text>
+<text x="610" y="72" font-size="17">c p prime x / E0</text>
+<polyline data-series="em_cp_over_E0" points="610.0000,209.4799 673.3333,254.3842 736.6667,269.2589 800.0000,280.0000 863.3333,290.7411 926.6667,305.6158 990.0000,350.5201" fill="none" stroke="#1769aa" stroke-width="2.5"/>
+<circle cx="610.0000" cy="209.4799" r="3.3" fill="#1769aa"/>
+<circle cx="673.3333" cy="254.3842" r="3.3" fill="#1769aa"/>
+<circle cx="736.6667" cy="269.2589" r="3.3" fill="#1769aa"/>
+<circle cx="800.0000" cy="280.0000" r="3.3" fill="#1769aa"/>
+<circle cx="863.3333" cy="290.7411" r="3.3" fill="#1769aa"/>
+<circle cx="926.6667" cy="305.6158" r="3.3" fill="#1769aa"/>
+<circle cx="990.0000" cy="350.5201" r="3.3" fill="#1769aa"/>
+<text x="610" y="110" fill="#1769aa" style="fill:#1769aa" font-size="15">field</text>
+<polyline data-series="mat_cp_over_E0" points="610.0000,179.9481 673.3333,243.6570 736.6667,264.7609 800.0000,280.0000 863.3333,295.2391 926.6667,316.3430 990.0000,380.0519" fill="none" stroke="#a34b19" stroke-width="2.5"/>
+<circle cx="610.0000" cy="179.9481" r="3.3" fill="#a34b19"/>
+<circle cx="673.3333" cy="243.6570" r="3.3" fill="#a34b19"/>
+<circle cx="736.6667" cy="264.7609" r="3.3" fill="#a34b19"/>
+<circle cx="800.0000" cy="280.0000" r="3.3" fill="#a34b19"/>
+<circle cx="863.3333" cy="295.2391" r="3.3" fill="#a34b19"/>
+<circle cx="926.6667" cy="316.3430" r="3.3" fill="#a34b19"/>
+<circle cx="990.0000" cy="380.0519" r="3.3" fill="#a34b19"/>
+<text x="720" y="110" fill="#a34b19" style="fill:#a34b19" font-size="15">membrane</text>
+<polyline data-series="total_cp_over_E0" points="610.0000,109.4279 673.3333,218.0411 736.6667,254.0198 800.0000,280.0000 863.3333,305.9802 926.6667,341.9589 990.0000,450.5721" fill="none" stroke="#222222" stroke-width="2.5"/>
+<circle cx="610.0000" cy="109.4279" r="3.3" fill="#222222"/>
+<circle cx="673.3333" cy="218.0411" r="3.3" fill="#222222"/>
+<circle cx="736.6667" cy="254.0198" r="3.3" fill="#222222"/>
+<circle cx="800.0000" cy="280.0000" r="3.3" fill="#222222"/>
+<circle cx="863.3333" cy="305.9802" r="3.3" fill="#222222"/>
+<circle cx="926.6667" cy="341.9589" r="3.3" fill="#222222"/>
+<circle cx="990.0000" cy="450.5721" r="3.3" fill="#222222"/>
+<text x="830" y="110" fill="#222222" style="fill:#222222" font-size="15">total</text>
+<text x="40" y="552" font-size="13">Exact equilibrium boost; line segments connect supplied samples. E0 = Uem + W. No acceleration or stability model.</text>
+</svg>

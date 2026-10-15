@@ -1,0 +1,54 @@
+{
+  "head": {
+    "text": "CPU expected, not HDL VCD"
+  },
+  "signal": [
+    {
+      "name": "rst_n",
+      "wave": "1....."
+    },
+    {
+      "name": "clk",
+      "wave": "p....."
+    },
+    {
+      "name": "s_valid",
+      "wave": "111100"
+    },
+    {
+      "name": "m_ready",
+      "wave": "100111"
+    },
+    {
+      "name": "push",
+      "wave": "100100"
+    },
+    {
+      "name": "pop",
+      "wave": "000110"
+    },
+    {
+      "name": "preedge output",
+      "wave": "x====x",
+      "data": [
+        "A1",
+        "A1",
+        "A1",
+        "B2"
+      ]
+    },
+    {
+      "name": "postedge head",
+      "wave": "====xx",
+      "data": [
+        "A1",
+        "A1",
+        "A1",
+        "B2"
+      ]
+    }
+  ],
+  "config": {
+    "hscale": 2
+  }
+}

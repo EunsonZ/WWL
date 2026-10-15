@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "cycle": 1,
+      "drive_ns": 20,
+      "edge_ns": 25,
+      "observe_ns": 26,
+      "sv": 1,
+      "source": 161,
+      "mr": 1,
+      "before_full": 0,
+      "before_data": 0,
+      "ready": 1,
+      "valid": 0,
+      "data": 0,
+      "push": 1,
+      "pop": 0,
+      "after_full": 1,
+      "after_data": 161,
+      "status": "predicted_CPU_not_HDL"
+    },
+    {
+      "cycle": 2,
+      "drive_ns": 30,
+      "edge_ns": 35,
+      "observe_ns": 36,
+      "sv": 1,
+      "source": 178,
+      "mr": 0,
+      "before_full": 1,
+      "before_data": 161,
+      "ready": 0,
+      "valid": 1,
+      "data": 161,
+      "push": 0,
+      "pop": 0,
+      "after_full": 1,
+      "after_data": 178,
+      "status": "predicted_CPU_not_HDL",
+      "expected_head": 161,
+      "failure": "post head"
+    }
+  ],
+  "failure_cycle": 2,
+  "model": "CPU prediction, not HDL execution"
+}

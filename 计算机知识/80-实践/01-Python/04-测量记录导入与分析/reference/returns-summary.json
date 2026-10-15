@@ -1,0 +1,141 @@
+{
+  "aggregate": [
+    4,
+    20,
+    5.0
+  ],
+  "calibration_2q_plus_3": {
+    "mean_mV": "13",
+    "n": 4,
+    "pvariance_mV2": "20",
+    "rms2_mV2": "189",
+    "variance_mV2": "80/3"
+  },
+  "committed_prefix": {
+    "mean_mV": "3",
+    "n": 2,
+    "pvariance_mV2": "1",
+    "rms2_mV2": "10",
+    "variance_mV2": "2"
+  },
+  "distinct_ids_same_code": {
+    "mean_mV": "2",
+    "n": 2,
+    "pvariance_mV2": "0",
+    "rms2_mV2": "4",
+    "variance_mV2": "0"
+  },
+  "empty": {
+    "mean_mV": null,
+    "n": 0,
+    "pvariance_mV2": null,
+    "rms2_mV2": null,
+    "variance_mV2": null
+  },
+  "full": {
+    "mean_mV": "5",
+    "n": 4,
+    "pvariance_mV2": "5",
+    "rms2_mV2": "30",
+    "variance_mV2": "20/3"
+  },
+  "groups": [
+    [
+      0,
+      2,
+      12
+    ],
+    [
+      2,
+      2,
+      8
+    ]
+  ],
+  "high": {
+    "mean_mV": "7",
+    "n": 2,
+    "pvariance_mV2": "1",
+    "rms2_mV2": "50",
+    "variance_mV2": "2"
+  },
+  "high_rows": [
+    [
+      "c",
+      2000,
+      6
+    ],
+    [
+      "d",
+      3000,
+      8
+    ]
+  ],
+  "identities": [
+    [
+      "a",
+      0,
+      2
+    ],
+    [
+      "b",
+      1000,
+      4
+    ],
+    [
+      "c",
+      2000,
+      6
+    ],
+    [
+      "d",
+      3000,
+      8
+    ]
+  ],
+  "identity_policy": {
+    "mean_mV": "4",
+    "n": 2,
+    "pvariance_mV2": "4",
+    "rms2_mV2": "20",
+    "variance_mV2": "8"
+  },
+  "one_id_replay": {
+    "mean_mV": "2",
+    "n": 1,
+    "pvariance_mV2": "0",
+    "rms2_mV2": "4",
+    "variance_mV2": null
+  },
+  "replay_500_event_counts": {
+    "duplicates": 1996,
+    "final_rows": 4,
+    "inserted": 4,
+    "read": 2000
+  },
+  "window": [
+    [
+      "a",
+      2,
+      4,
+      5.0
+    ],
+    [
+      "b",
+      4,
+      4,
+      5.0
+    ],
+    [
+      "c",
+      6,
+      4,
+      5.0
+    ],
+    [
+      "d",
+      8,
+      4,
+      5.0
+    ]
+  ]
+}

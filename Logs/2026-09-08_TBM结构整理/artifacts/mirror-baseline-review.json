@@ -1,0 +1,44 @@
+{
+  "status": "review",
+  "scope": "Bounded root standard-library mirror scan against stage and corresponding private baseline pages/sources; no live, plugin, or knowledge code changes.",
+  "scan": {
+    "tool": "/private/tmp/wwl-structure-q7y1fsjr/tools/check_mirrors.py",
+    "checked": 139,
+    "missing": 1,
+    "mismatched": 1,
+    "unparsed": 0
+  },
+  "findings": [
+    {
+      "page": "NewAgents.md",
+      "line": 412,
+      "marker": "./example.py",
+      "finding": "missing source",
+      "stage_page_sha256": "9dc95fc8d575b4986cb2c0749ccdca333fac127b7d3f297c489117409ee6481e",
+      "backup_page_sha256": "9dc95fc8d575b4986cb2c0749ccdca333fac127b7d3f297c489117409ee6481e",
+      "fenced_block_sha256": "957e13c0732e48fd5496f935894dc93a9da7dcd5eb8ffea52646fdf178cda1d1",
+      "source_present_stage": false,
+      "source_present_backup": false,
+      "assessment": "The marker appears inside a fenced Markdown teaching example demonstrating the code-sync syntax itself (lines 409-416), and the page is byte-identical to the backup. It should be excluded by a checker that recognizes fenced teaching examples, or explicitly classified as illustrative rather than enforced sync.",
+      "certainty": "high"
+    },
+    {
+      "page": "计算机知识/10-编程语言/02-C++/01-编译链接与CMake.md",
+      "line": 33,
+      "marker": "./CMakeLists.txt",
+      "finding": "mismatched mirror",
+      "stage_page_sha256": "da7af03d76f6f12efb2f8ae1e7f39bc75b27ca7dd4f474f033e26f9cb38f6633",
+      "backup_page_sha256": "da7af03d76f6f12efb2f8ae1e7f39bc75b27ca7dd4f474f033e26f9cb38f6633",
+      "stage_source_sha256": "dddc01638a1caa91e00045980ba88375d40180f2d53502545f6f4021b0a87892",
+      "backup_source_sha256": "dddc01638a1caa91e00045980ba88375d40180f2d53502545f6f4021b0a87892",
+      "fenced_block_sha256": "cab8e355ce329c2ffa65b1e4cfb5dbd25cb64be635726ff46fe8205821aa34e0",
+      "assessment": "The page and its same-directory CMakeLists.txt source are both byte-identical between stage and backup, while the fenced block differs from the source. This is pre-existing drift in the frozen baseline, not introduced by staging. It remains a real mirror inconsistency requiring later content repair or an explicitly documented historical exception.",
+      "certainty": "high"
+    }
+  ],
+  "rule_recommendations": [
+    "Do not count a code-sync marker located inside a fenced Markdown teaching example as an active mirror contract; detect enclosing fence boundaries before reporting missing sources.",
+    "Retain the CMake mismatch as a review/error finding until the fenced block is synchronized or a precise exception records why it is intentionally historical.",
+    "Preservation conclusion is limited to before/after equality evidence; it does not certify either mirror as semantically correct."
+  ]
+}

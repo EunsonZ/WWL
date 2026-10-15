@@ -1,0 +1,11 @@
+#!/bin/sh
+# A failed upload must not discard or undo a successful local commit.
+if [ "${WWL_GITHUB_SKIP_AUTO_PUSH:-}" = "1" ]; then
+    exit 0
+fi
+root=$(git rev-parse --show-toplevel) || exit 0
+python3 "$root/scripts/github_sync.py" --hook
+if [ "$?" -ne 0 ]; then
+    printf '%s\n' 'WWL: local commit retained; GitHub synchronization failed. Retry: python3 scripts/github_sync.py'
+fi
+exit 0

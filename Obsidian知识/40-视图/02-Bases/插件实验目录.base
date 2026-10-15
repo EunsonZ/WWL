@@ -1,0 +1,58 @@
+filters:
+  or:
+  - and:
+    - file.inFolder("Obsidian知识/20-功能/01-官方插件实验室")
+    - type == "lesson"
+    - file.name != "00-官方插件实验室-MOC"
+  - and:
+    - file.inFolder("Obsidian知识/20-功能/02-社区插件实验室")
+    - type == "plugin-lab"
+    - file.name != "00-社区插件实验室-MOC"
+properties:
+  file.name:
+    displayName: 实验
+  note.stage:
+    displayName: 阶段
+  note.difficulty:
+    displayName: 难度
+  note.status:
+    displayName: 作者标记状态
+  note.estimated_minutes:
+    displayName: 预计分钟
+  note.topics:
+    displayName: 主题
+  note.plugins:
+    displayName: 插件
+  note.risk_level:
+    displayName: 风险等级
+views:
+- type: table
+  name: 核心实验
+  filters:
+    and:
+    - file.inFolder("Obsidian知识/20-功能/01-官方插件实验室")
+  order:
+  - file.name
+  - stage
+  - difficulty
+  - status
+  - estimated_minutes
+  - topics
+  sort:
+  - property: file.name
+    direction: ASC
+- type: table
+  name: 社区实验
+  filters:
+    and:
+    - file.inFolder("Obsidian知识/20-功能/02-社区插件实验室")
+  order:
+  - file.name
+  - plugins
+  - risk_level
+  - difficulty
+  - estimated_minutes
+  - topics
+  sort:
+  - property: file.name
+    direction: ASC

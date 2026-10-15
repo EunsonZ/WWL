@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="520" viewBox="0 0 620 520"><rect width="620" height="520" fill="white"/><style>text{font:18px sans-serif;fill:#111}path,line,rect{stroke:#111;stroke-width:2} .wire{fill:none} .box{fill:#f3f3f3}.dash{stroke-dasharray:7 5}</style><text x="20" y="32">Integration evidence flow (not measured results)</text>
+<rect class="box" x="35" y="65" width="550" height="65"/><text x="50" y="93">Package / PCB / fixture / environment</text><text x="50" y="119">stress -&gt; bias,k ; pressure -&gt; b ; fixture modes</text>
+<path class="wire" d="M310 130 V165 L303 155 M310 165 L317 155"/>
+<rect class="box" x="35" y="170" width="550" height="60"/><text x="50" y="196">mass dynamics -&gt; C or R -&gt; port readout</text><text x="50" y="221">mechanical clipping occurs before digital filter</text>
+<path class="wire" d="M310 230 V265 L303 255 M310 265 L317 255"/>
+<rect class="box" x="35" y="270" width="550" height="60"/><text x="50" y="296">calibration: axes / T / excitation / timestamps</text><text x="50" y="320">residual + repeatability + drift + validity range</text>
+<path class="wire" d="M310 330 V365 L303 355 M310 365 L317 355"/>
+<rect class="box" x="35" y="370" width="550" height="65"/><text x="50" y="397">publish raw records + units + model + uncertainty</text><text x="50" y="423">CPU synthetic / instrument / human: distinct</text><text x="20" y="478">Nonlinear q*a^2: mean shift q*A_peak^2/2 survives LPF.</text></svg>

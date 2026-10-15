@@ -1,0 +1,95 @@
+{
+  "continuous": {
+    "normalized_horizon": 1,
+    "physical_horizon_s": 10,
+    "gramian": 0.43233235838169365,
+    "eta_unbounded": 2.3130352854993315,
+    "v_initial_W": 0.8509181282393217,
+    "v_final_W": 2.3130352854993315,
+    "cost_unbounded": 1.1565176427496657,
+    "U_1_5_reachable_max_K": 0.9481808382428365,
+    "naive_clip_terminal_K": 0.9788176404869472,
+    "eta_capped": 2.384865291475199,
+    "switch_s": 8.240045393765456,
+    "capped_terminal_K": 0.9999999999999999,
+    "cost_capped": 1.159558275509309,
+    "rk4_errors": [
+      {
+        "steps_per_unit": 20,
+        "uncapped_error": 4.194005542856871e-08,
+        "capped_error": 1.808840677242074e-08
+      },
+      {
+        "steps_per_unit": 40,
+        "uncapped_error": 2.616043603964613e-09,
+        "capped_error": 1.3240426532945548e-09
+      },
+      {
+        "steps_per_unit": 80,
+        "uncapped_error": 1.6332202257274275e-10,
+        "capped_error": 7.648903732615508e-11
+      }
+    ]
+  },
+  "discrete": {
+    "sample_period_s": 1.0536051565782636,
+    "a": "9/10",
+    "b_K_per_W": "1/10",
+    "f": "7/10",
+    "epsilon_K": "1/3",
+    "Zmax_K": "2/3",
+    "Vmax_W": "4/3",
+    "terminal_P": "104/51",
+    "z0": "3/5",
+    "v_optimal": [
+      "-4/3",
+      "-4/3"
+    ],
+    "z1": "61/150",
+    "z2": "349/1500",
+    "cost_optimal": "19258601/28687500",
+    "cost_float": 0.6713237821350763,
+    "active_rows_zero_based": [
+      1,
+      3
+    ],
+    "dual": [
+      "44647/318750",
+      "6524/95625"
+    ],
+    "unconstrained_v": [
+      "-161487/49280",
+      "-3159/2464"
+    ],
+    "H": [
+      [
+        "776/10625",
+        "78/2125"
+      ],
+      [
+        "78/2125",
+        "31/510"
+      ]
+    ],
+    "g": [
+      "30429/106250",
+      "2106/10625"
+    ],
+    "KKT_stationarity_exact": true,
+    "terminal_identity_exact": true,
+    "finite_corner_sequences": 64,
+    "finite_corner_steps": 384,
+    "constant_final_x_K": 0.3333333333609157,
+    "constant_final_z_K": 2.7582373816623145e-11,
+    "bound_break_one_step_x_K": "6/5"
+  },
+  "model_error": {
+    "effective_wmax_K": "3/20",
+    "epsilon_K": "1/2",
+    "Zmax_K": "1/2",
+    "Vmax_W": "1",
+    "finite_boundary_cases": 32
+  }
+}
+PASS: continuous RK4, exact QP KKT, terminal shift, tube/model-error checks; serial Python 3.14.7
+RU_MAXRSS_BYTES=19447808

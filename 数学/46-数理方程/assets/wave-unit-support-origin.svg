@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
+  <title id="title">Two- and three-dimensional wave response at the origin</title>
+  <desc id="desc">The horizontal axis is time t and the vertical axis is the origin response. Both curves equal t before one; three dimensions become zero afterwards while two dimensions decay as t minus square root of t squared minus one.</desc>
+  <metadata>Coordinate map: x=90+375t and y=380-300u. Orange samples use u2(t)=t for 0&lt;t&lt;1 and u2(t)=t-sqrt(t^2-1) for 1&lt;t&lt;=2, at increments of .05.</metadata>
+  <rect width="900" height="460" fill="#fffdf9"/>
+  <g stroke="#d9d5cc" stroke-width="1"><path d="M90 80H840M90 165H840M90 250H840M90 335H840"/><path d="M90 80V380M277.5 80V380M465 80V380M652.5 80V380M840 80V380"/></g>
+  <g stroke="#282828" stroke-width="2"><path d="M90 380H850"/><path d="M90 390V70"/></g>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#282828"><text x="855" y="387">t</text><text x="46" y="85">1</text><text x="44" y="255">.5</text><text x="82" y="410">0</text><text x="270" y="410">.5</text><text x="460" y="410">1</text><text x="645" y="410">1.5</text><text x="833" y="410">2</text><text x="18" y="60">u(0,t)</text></g>
+  <path d="M90 380 L465 80 L465 380 L840 380" fill="none" stroke="#3b82f6" stroke-width="6" stroke-linejoin="round"/>
+  <polyline points="90,380 465,80 483.750,161.047 502.500,187.477 521.250,205.367 540.000,218.997 558.750,230.000 577.500,239.199 596.250,247.075 615.000,253.939 633.750,260.000 652.500,265.410 671.250,270.282 690.000,274.700 708.750,278.732 727.500,282.432 746.250,285.842 765.000,288.999 783.750,291.931 802.500,294.665 821.250,297.220 840.000,299.615" fill="none" stroke="#e06c3b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="Arial, sans-serif" font-size="18" font-weight="bold"><text x="685" y="360" fill="#3b82f6">3D: sphere data</text><text x="645" y="265" fill="#b94a22">2D: disk data</text></g>
+  <g fill="#282828"><circle cx="277.5" cy="230" r="5"/><circle cx="840" cy="380" r="5"/><circle cx="840" cy="299.615" r="5"/></g>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#282828"><text x="290" y="220">t=.5: both=.5</text><text x="700" y="438">t=2: 3D=0, 2D=2−√3</text></g>
+</svg>

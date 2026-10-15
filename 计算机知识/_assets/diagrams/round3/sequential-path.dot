@@ -1,0 +1,11 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="同步路径时序：时钟周期必须容纳数据传播",labelloc=t,size="13,9"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"0" [label="源寄存器\nclock-to-Q"];
+"1" [label="组合逻辑\n最长传播延迟"];
+"2" [label="目的寄存器\nsetup time"];
+"0" -> "1";
+"1" -> "2";
+
+}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+  <title id="title">负十九二次整数环的复平面格点</title>
+  <desc id="desc">横轴是实部，纵轴是虚部。蓝点表示 a+b omega；同心圆表示元素范数一、二、三、五。只有正负一落在最小圆上，范数二与三的圆上没有格点。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .axis{stroke:#334155;stroke-width:1.8;marker-end:url(#arrow)}
+      .guide{fill:none;stroke-width:1.6;stroke-dasharray:6 5}
+      .pt{fill:#2563eb;stroke:#fff;stroke-width:1.4}
+      .unit{fill:#dc2626;stroke:#fff;stroke-width:1.6}
+      .label{font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1e293b}
+      .small{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="760" height="420" rx="16" fill="#f8fafc"/>
+  <text x="28" y="34" class="label" font-weight="700">a+bω ↦ (a+b/2, b√19/2)，圆半径为 √N</text>
+  <g transform="translate(305 215)">
+    <line x1="-255" y1="0" x2="270" y2="0" class="axis"/>
+    <line x1="0" y1="165" x2="0" y2="-165" class="axis"/>
+    <circle r="50" class="guide" stroke="#dc2626"/>
+    <circle r="70.71" class="guide" stroke="#f59e0b"/>
+    <circle r="86.60" class="guide" stroke="#8b5cf6"/>
+    <circle r="111.80" class="guide" stroke="#059669"/>
+    <g>
+      <circle cx="-200" cy="0" r="5" class="pt"/><circle cx="-150" cy="0" r="5" class="pt"/>
+      <circle cx="-100" cy="0" r="5" class="pt"/><circle cx="-50" cy="0" r="6" class="unit"/>
+      <circle cx="0" cy="0" r="5" fill="#0f172a"/><circle cx="50" cy="0" r="6" class="unit"/>
+      <circle cx="100" cy="0" r="5" class="pt"/><circle cx="150" cy="0" r="5" class="pt"/>
+      <circle cx="200" cy="0" r="5" class="pt"/>
+      <circle cx="-175" cy="-109" r="5" class="pt"/><circle cx="-125" cy="-109" r="5" class="pt"/>
+      <circle cx="-75" cy="-109" r="5" class="pt"/><circle cx="-25" cy="-109" r="5" class="pt"/>
+      <circle cx="25" cy="-109" r="5" class="pt"/><circle cx="75" cy="-109" r="5" class="pt"/>
+      <circle cx="125" cy="-109" r="5" class="pt"/><circle cx="175" cy="-109" r="5" class="pt"/>
+      <circle cx="-175" cy="109" r="5" class="pt"/><circle cx="-125" cy="109" r="5" class="pt"/>
+      <circle cx="-75" cy="109" r="5" class="pt"/><circle cx="-25" cy="109" r="5" class="pt"/>
+      <circle cx="25" cy="109" r="5" class="pt"/><circle cx="75" cy="109" r="5" class="pt"/>
+      <circle cx="125" cy="109" r="5" class="pt"/><circle cx="175" cy="109" r="5" class="pt"/>
+    </g>
+    <text x="282" y="19" class="small">Re</text>
+    <text x="10" y="-150" class="small">Im</text>
+    <text x="42" y="-8" class="small">1</text>
+    <text x="-67" y="-8" class="small">−1</text>
+  </g>
+  <g transform="translate(610 105)">
+    <line x1="0" y1="0" x2="34" y2="0" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 5"/><text x="43" y="5" class="small">N=1</text>
+    <line x1="0" y1="30" x2="34" y2="30" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/><text x="43" y="35" class="small">N=2</text>
+    <line x1="0" y1="60" x2="34" y2="60" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="6 5"/><text x="43" y="65" class="small">N=3</text>
+    <line x1="0" y1="90" x2="34" y2="90" stroke="#059669" stroke-width="2" stroke-dasharray="6 5"/><text x="43" y="95" class="small">N=5</text>
+  </g>
+  <rect x="535" y="255" width="195" height="108" rx="12" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="551" y="281" class="small">红点：单位 ±1</text>
+  <text x="551" y="306" class="small">N=2、3 圆上无格点</text>
+  <text x="551" y="331" class="small">b=±1 的最近格点</text>
+  <text x="551" y="352" class="small">首次落在 N=5 圆上</text>
+</svg>
+

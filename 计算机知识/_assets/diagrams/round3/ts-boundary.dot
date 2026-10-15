@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="静态类型不替代外部数据验证",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"0" [label="网络 / 文件 / 用户输入"];
+"1" [label="unknown"];
+"2" [label="检查结构、类型、范围\n拒绝 NaN、缺项与越界"];
+"3" [label="可信领域类型"];
+"4" [label="业务操作"];
+"0" -> "1";
+"1" -> "2";
+"2" -> "3";
+"3" -> "4";
+
+}

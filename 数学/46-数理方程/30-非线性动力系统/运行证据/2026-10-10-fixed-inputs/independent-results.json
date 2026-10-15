@@ -1,0 +1,186 @@
+{
+  "feedback": {
+    "a_2_5_cumulative": [
+      "3",
+      "2"
+    ],
+    "a_1_2_cumulative": null,
+    "isolated_3_5": "3/5",
+    "joint_3_5": "6/5",
+    "method": "exact rational matrix powers, adjugate inverse and finite-series identity"
+  },
+  "nonnormal": {
+    "k4": [
+      "2048/125",
+      "256/625"
+    ],
+    "first_component_peak_steps": [
+      4,
+      5
+    ],
+    "coupling_reduction_ratio": 100,
+    "warning": "Euclidean norm peak differs from first-component peak; fixed-coordinate mathematics only"
+  },
+  "euler": {
+    "factors": [
+      "1/2",
+      "-1/2",
+      "-1",
+      "-2"
+    ],
+    "continuous_model": "exp(-t) decreases for all t>=0; discrete numerical instability is not physical instability"
+  },
+  "random_products": {
+    "polynomial_convolution": [
+      {
+        "n": 4,
+        "mean_exact": "14641/10000",
+        "modal_up_count": 1,
+        "modal_ratio": "1/4",
+        "below_one_probability": "297/625"
+      },
+      {
+        "n": 10,
+        "mean_exact": "25937424601/10000000000",
+        "modal_up_count": 4,
+        "modal_ratio": "1/4",
+        "below_one_probability": "6182649/9765625"
+      },
+      {
+        "n": 20,
+        "mean_exact": "672749994932560009201/100000000000000000000",
+        "modal_up_count": 8,
+        "modal_ratio": "1/16",
+        "below_one_probability": "72034569102897/95367431640625"
+      }
+    ],
+    "scope": "finite exact distribution; does not experimentally prove SLLN or general random-process claims"
+  },
+  "pendulum": {
+    "independent_integrator": "implicit midpoint h=1/3200,64000 steps,6 fixed-point iterations",
+    "reference_endpoint": [
+      0.01031400931181541,
+      -0.000616654047592321
+    ],
+    "RK4_endpoint_errors": [
+      8.063574132413658e-09,
+      9.677076456158814e-10,
+      1.3690727317813457e-09
+    ],
+    "V_derivative_defects": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scope": "finite numerical refinement/chain-rule checks, not global LaSalle proof"
+  },
+  "radial": {
+    "cases": [
+      {
+        "input": [
+          1,
+          1,
+          0.25,
+          1
+        ],
+        "oracle_decimal": "0.5744822168935662182805174445389258772903044451446637639609141474562228",
+        "actual": 0.5744822168935663,
+        "absolute_error": 0.0
+      },
+      {
+        "input": [
+          1,
+          0,
+          0.25,
+          1
+        ],
+        "oracle_decimal": "0.6795704571147613088400718678381656244393117734249898937417419069310191",
+        "actual": 0.6795704571147613,
+        "absolute_error": 0.0
+      },
+      {
+        "input": [
+          1,
+          -1,
+          0.1,
+          1
+        ],
+        "oracle_decimal": "0.2809513800549609437790261127749626875356184012928857935551203404870169",
+        "actual": 0.280951380054961,
+        "absolute_error": 5.551115123125783e-17
+      },
+      {
+        "input": [
+          1,
+          -1,
+          0.1,
+          2.3074602584206296
+        ],
+        "oracle_decimal": "70.70714261416872268303941420537841426469153207505920432072892187436901",
+        "actual": 70.70714261420802,
+        "absolute_error": 3.930722414224874e-11
+      },
+      {
+        "input": [
+          1e-06,
+          1,
+          0.001,
+          1e-06
+        ],
+        "oracle_decimal": "0.001",
+        "actual": 0.001,
+        "absolute_error": 0.0
+      }
+    ],
+    "rejections": [
+      {
+        "input": [
+          "1",
+          "-1",
+          "0.1",
+          "2.30766025842063"
+        ],
+        "reason": "nonpositive resolved denominator: beyond blow-up or numerically unresolved"
+      },
+      {
+        "input": [
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        "reason": "finite mu>0, r0>=0, t>=0 required"
+      },
+      {
+        "input": [
+          "1",
+          "1",
+          "1e-09",
+          "1"
+        ],
+        "reason": "outside teaching numerical domain; no stability conclusion"
+      },
+      {
+        "input": [
+          "1",
+          "1",
+          "1",
+          "101"
+        ],
+        "reason": "outside teaching numerical domain; no stability conclusion"
+      },
+      {
+        "input": [
+          "nan",
+          "1",
+          "1",
+          "1"
+        ],
+        "reason": "finite mu>0, r0>=0, t>=0 required"
+      }
+    ],
+    "return_derivative": 0.1353352832366127,
+    "scope": "70-digit linearized reciprocal-square oracle; unsupported/unresolved requests do not establish physical blow-up"
+  }
+}

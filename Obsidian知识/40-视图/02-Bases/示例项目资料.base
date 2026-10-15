@@ -1,0 +1,45 @@
+filters:
+  and:
+    - file.inFolder("Obsidian知识/30-实践/01-实验区/数据")
+    - type == "project"
+
+properties:
+  file.name:
+    displayName: 项目
+  note.status:
+    displayName: 状态
+  note.priority:
+    displayName: 优先级
+  note.progress:
+    displayName: 进度
+  note.due:
+    displayName: 截止日期
+  note.topics:
+    displayName: 主题
+  note.related:
+    displayName: 相关笔记
+
+views:
+  - type: table
+    name: 项目表格
+    order:
+      - file.name
+      - status
+      - priority
+      - progress
+      - due
+      - topics
+      - related
+      - file.tags
+    sort:
+      - property: due
+        direction: ASC
+  - type: list
+    name: 项目清单
+    order:
+      - file.name
+      - status
+      - priority
+      - due
+      - progress
+

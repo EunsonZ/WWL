@@ -1,0 +1,48 @@
+{
+  "inputs": {
+    "c_m_per_s": 299792458.0,
+    "epsilon_F_per_m": 8.8541878128e-12,
+    "p_peak_C_m": 1e-12,
+    "frequency_Hz": 100000000.0,
+    "radius_m": 0.001,
+    "observation_m": 30.0,
+    "pulse_duration_s": 2e-08
+  },
+  "ka": 0.0020958450219516816,
+  "kr": 62.875350658550445,
+  "form_factor": 0.9999995607434333,
+  "point_power_W": 1.7329160177344424e-05,
+  "point_Umax_W_per_sr": 2.068516126391693e-06,
+  "finite_sphere_power_W": 1.732914495345296e-05,
+  "finite_sphere_relative_power_change": -8.785129403943159e-07,
+  "equatorial_relative_complex_field_error": 0.01590649527726122,
+  "directionality": 1.5000000000178366,
+  "window_30m_ns": [
+    100.06589291849363,
+    120.0725642003976
+  ],
+  "window_60m_ns": [
+    200.13512147793926,
+    220.14179275984318
+  ],
+  "original_kernel_quadrature_relative_error": 1.232410916683582e-10,
+  "residual_step_2e_4": {
+    "potential_e": 9.580617132800114e-09,
+    "potential_b": 8.627634225787381e-09,
+    "faraday": 1.4761847321606763e-08,
+    "ampere": 5.49928728841374e-09,
+    "div_e": 2.5048298123800505e-08,
+    "div_b": 3.3382706371415176e-09
+  },
+  "residual_step_1e_4": {
+    "potential_e": 2.396411630046656e-09,
+    "potential_b": 2.158659752838023e-09,
+    "faraday": 3.6895268720128296e-09,
+    "ampere": 1.3758543011627937e-09,
+    "div_e": 6.2647279126269355e-09,
+    "div_b": 8.343064251041804e-10
+  },
+  "finite_radius_average_flux_max_error": 1.4210854715202004e-14,
+  "doubled_frequency_fixed_p_ratio": 15.99995783140532,
+  "doubled_frequency_fixed_current_moment_ratio": 3.99998945785133
+}

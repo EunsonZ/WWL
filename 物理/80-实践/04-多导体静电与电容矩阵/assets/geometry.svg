@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680" role="img" aria-labelledby="title desc">
+<title id="title">Three coaxial conductors with a thick middle shell</title><desc id="desc">Central x-y cross-section in millimetres. Two separate dielectric gaps; metal electric field is zero. No open-end model.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#172b4d;font-size:16px}.small{font-size:13px}.axis{stroke:#52657a;stroke-width:1}.grid{stroke:#dfe7ef;stroke-width:1}</style>
+<text x="35" y="35" class="">Thick-shell three-conductor electrostatic cross-section</text>
+<text x="35" y="61" class="small">a=1, b-=2, b+=2.5, c=5 mm; relative permittivity 2/4</text>
+<circle cx="285" cy="350" r="220.0" fill="#e4f0ff" stroke="#53677d" stroke-width="2"/>
+<circle cx="285" cy="350" r="110.0" fill="#b2bac5" stroke="#53677d" stroke-width="2"/>
+<circle cx="285" cy="350" r="88.0" fill="#fff0d9" stroke="#53677d" stroke-width="2"/>
+<circle cx="285" cy="350" r="44.0" fill="#8b98aa" stroke="#53677d" stroke-width="2"/>
+<path d="M35,350H535 M285,600V100" class="axis" stroke-dasharray="4 4"/>
+<text x="55.0" y="374" class="small">-5</text>
+<text x="187.0" y="374" class="small">-2</text>
+<text x="275.0" y="374" class="small">0</text>
+<text x="363.0" y="374" class="small">2</text>
+<text x="495.0" y="374" class="small">5</text>
+<text x="495" y="396" class="">x (mm)</text>
+<text x="293" y="117" class="">y (mm)</text>
+<text x="580" y="140" class="">Conductor 1: r &lt; a, potential U1</text>
+<text x="580" y="180" class="">Inner gap: a &lt; r &lt; b-, epsilon_1</text>
+<text x="580" y="220" class="">Conductor 2: b- &lt; r &lt; b+, U2</text>
+<text x="580" y="260" class="">Outer gap: b+ &lt; r &lt; c, epsilon_2</text>
+<text x="580" y="300" class="">Conductor 3: r = c, U3 = 0 V</text>
+<text x="580" y="350" class="">Surface normal into dielectric:</text>
+<text x="580" y="380" class="">a: +er; b-: -er; b+: +er; c: -er</text>
+<text x="580" y="425" class="">For U1 &gt; U2 &gt; U3:</text>
+<text x="580" y="455" class="">surface charges: +, -, +, -</text>
+<text x="580" y="495" class="">The middle net charge is a sum,</text>
+<text x="580" y="522" class="">not the charge on only one face.</text>
+<text x="35" y="630" class="small">Finite length: dphi/dz = 0 at both ends. Outside reference surface is excluded.</text>
+</svg>

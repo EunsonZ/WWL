@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+<title>同一后验：精确、独立变分与固定八步轨迹</title>
+<desc>目标是原四变量模型观测 C 等于 1 后的 B,D 边缘。四状态顺序 00、01、10、11；精确和变分分布与八步轨迹频率逐状态比较。八步是教学轨迹，并非平稳分布。</desc>
+<rect width="480" height="480" fill="#f8fafc"/>
+<g font-family="PingFang SC, sans-serif" fill="#0f172a">
+<text x="20" y="31" font-size="26" font-weight="600">同一后验，三种计算</text>
+<text x="20" y="59" font-size="21">固定观测 C=1；先精确消去 A</text>
+<rect x="20" y="77" width="18" height="18" fill="#1d4ed8"/>
+<text x="45" y="94" font-size="21">精确</text>
+<rect x="165" y="77" width="18" height="18" fill="#b45309"/>
+<text x="190" y="94" font-size="21">变分</text>
+<rect x="310" y="77" width="18" height="18" fill="#0f766e"/>
+<text x="335" y="94" font-size="21">八步</text>
+<path d="M 48 254 H 460" stroke="#cbd5e1" fill="none"/>
+<text x="38" y="259" text-anchor="end" font-size="18">0</text>
+<path d="M 48 191.0 H 460" stroke="#cbd5e1" fill="none"/>
+<text x="38" y="196.0" text-anchor="end" font-size="18">0.3</text>
+<path d="M 48 128.0 H 460" stroke="#cbd5e1" fill="none"/>
+<text x="38" y="133.0" text-anchor="end" font-size="18">0.6</text>
+<rect x="70" y="235.78761061946904" width="20" height="18.212389380530972" fill="#1d4ed8"/>
+<rect x="94" y="247.1898908298062" width="20" height="6.810109170193812" fill="#b45309"/>
+<rect x="118" y="227.75" width="20" height="26.25" fill="#0f766e"/>
+<text x="104" y="279" text-anchor="middle" font-size="22">00</text>
+<rect x="173" y="246.1946902654867" width="20" height="7.8053097345132745" fill="#1d4ed8"/>
+<rect x="197" y="240.51066252255433" width="20" height="13.489337477445678" fill="#b45309"/>
+<rect x="221" y="254" width="20" height="0" fill="#0f766e"/>
+<text x="207" y="279" text-anchor="middle" font-size="22">01</text>
+<rect x="276" y="198.8053097345133" width="20" height="55.19469026548672" fill="#1d4ed8"/>
+<rect x="300" y="190.35878354713788" width="20" height="63.64121645286211" fill="#b45309"/>
+<rect x="324" y="175.25" width="20" height="78.75" fill="#0f766e"/>
+<text x="310" y="279" text-anchor="middle" font-size="22">10</text>
+<rect x="379" y="125.21238938053096" width="20" height="128.78761061946904" fill="#1d4ed8"/>
+<rect x="403" y="127.9406631005016" width="20" height="126.0593368994984" fill="#b45309"/>
+<rect x="427" y="149.0" width="20" height="105.0" fill="#0f766e"/>
+<text x="413" y="279" text-anchor="middle" font-size="22">11</text>
+<text x="20" y="280" font-size="18">BD</text>
+<text x="20" y="308" font-size="20" fill="#1d4ed8">精确</text>
+<text x="104" y="308" text-anchor="middle" font-size="20">0.087</text>
+<text x="207" y="308" text-anchor="middle" font-size="20">0.037</text>
+<text x="310" y="308" text-anchor="middle" font-size="20">0.263</text>
+<text x="413" y="308" text-anchor="middle" font-size="20">0.613</text>
+<text x="20" y="334" font-size="20" fill="#b45309">变分</text>
+<text x="104" y="334" text-anchor="middle" font-size="20">0.032</text>
+<text x="207" y="334" text-anchor="middle" font-size="20">0.064</text>
+<text x="310" y="334" text-anchor="middle" font-size="20">0.303</text>
+<text x="413" y="334" text-anchor="middle" font-size="20">0.600</text>
+<text x="20" y="360" font-size="20" fill="#0f766e">八步</text>
+<text x="104" y="360" text-anchor="middle" font-size="20">0.125</text>
+<text x="207" y="360" text-anchor="middle" font-size="20">0.000</text>
+<text x="310" y="360" text-anchor="middle" font-size="20">0.375</text>
+<text x="413" y="360" text-anchor="middle" font-size="20">0.500</text>
+<text x="20" y="389" font-size="20">八步行是频率；其余两行是质量</text>
+<text x="20" y="422" font-size="23" font-weight="600">查询：P(D=1 | C=1)</text>
+<text x="20" y="451" font-size="21">精确 0.6504；变分 0.6645；八步 0.5000</text>
+<text x="20" y="475" font-size="19">八步为固定示例，不能认证收敛</text>
+</g>
+</svg>

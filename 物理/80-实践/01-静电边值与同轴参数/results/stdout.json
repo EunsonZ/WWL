@@ -1,0 +1,115 @@
+{
+  "model": "static linear coax, zero free volume/interface charge, Dirichlet cylindrical faces, Neumann end faces",
+  "python": "3.14.7",
+  "inputs": {
+    "a_m": 0.001,
+    "b_m": 0.004,
+    "length_m": 0.1,
+    "voltage_V": 1.0,
+    "current_A": 0.02,
+    "epsilon_r": 4.0,
+    "mu_r": 1.0,
+    "layer_interface_m": 0.002,
+    "layer_epsilon_r": [
+      2.0,
+      8.0
+    ],
+    "transfer_interface_m": 0.003,
+    "transfer_epsilon_r": [
+      3.0,
+      6.0
+    ],
+    "simpson_subintervals_per_layer": 2000
+  },
+  "constants": {
+    "c0_m_per_s": 299792458.0,
+    "mu0_H_per_m_approx": 1.2566370614359173e-06,
+    "epsilon0_F_per_m_derived": 8.854187817620389e-12
+  },
+  "uniform": {
+    "C_prime_F_per_m": 1.6052147181133822e-10,
+    "L_prime_H_per_m": 2.7725887222397814e-07,
+    "Z0_ohm": 41.560059403167166,
+    "vp_m_per_s": 149896229.0,
+    "finite_model_C_F": 1.6052147181133824e-11,
+    "one_way_delay_s": 6.671281903963041e-10,
+    "E_a_V_per_m": 721.3475204444817,
+    "E_b_V_per_m": 180.33688011112042,
+    "W_E_prime_J_per_m": 8.026073590566911e-11,
+    "W_H_prime_J_per_m": 5.545177444479563e-11,
+    "energy_quadrature_J_per_m": 8.026073590567886e-11,
+    "VI_W": 0.02,
+    "power_quadrature_W": 0.02000000000000243,
+    "DC_V_over_I_ohm": 50.0,
+    "relative_energy_quadrature_error": 1.214195394756157e-13,
+    "relative_power_quadrature_error": 1.214306433183765e-13
+  },
+  "two_layer": {
+    "interface_m": 0.002,
+    "epsilon_r": [
+      2.0,
+      8.0
+    ],
+    "C_prime_F_per_m": 1.284171774490706e-10,
+    "k_C_per_m": 2.0438228568928654e-11,
+    "interface_phi_V": 0.20000000000000007,
+    "layer_voltage_V": [
+      0.7999999999999999,
+      0.20000000000000007
+    ],
+    "interface_E_V_per_m": [
+      577.0780163555853,
+      144.26950408889633
+    ],
+    "interface_D_C_per_m2": [
+      1.0219114284464326e-08,
+      1.0219114284464326e-08
+    ],
+    "bound_interface_sigma_C_per_m2": -3.832167856674122e-09,
+    "W_E_prime_J_per_m": 6.42085887245353e-11,
+    "voltage_quadrature_V": 1.0000000000000029,
+    "energy_quadrature_J_per_m": 6.420858872453548e-11,
+    "residuals": {
+      "phi_a_minus_V_V": 0.0,
+      "phi_b_V": 0.0,
+      "phi_jump_V": -8.326672684688674e-17,
+      "D_jump_C_per_m2": 0.0,
+      "relative_voltage_quadrature_error": 2.886579864025407e-15,
+      "relative_energy_quadrature_error": 2.818092759712566e-15
+    }
+  },
+  "transfer": {
+    "interface_m": 0.003,
+    "epsilon_r": [
+      3.0,
+      6.0
+    ],
+    "C_prime_F_per_m": 1.3432899656192846e-10,
+    "k_C_per_m": 2.1379123803405127e-11,
+    "interface_phi_V": 0.11577178260451948,
+    "layer_voltage_V": [
+      0.8842282173954805,
+      0.11577178260451948
+    ],
+    "interface_E_V_per_m": [
+      268.28640292122975,
+      134.14320146061488
+    ],
+    "interface_D_C_per_m2": [
+      7.126374601135043e-09,
+      7.126374601135043e-09
+    ],
+    "bound_interface_sigma_C_per_m2": -1.1877291001891738e-09,
+    "W_E_prime_J_per_m": 6.716449828096423e-11,
+    "voltage_quadrature_V": 1.0000000000000264,
+    "energy_quadrature_J_per_m": 6.7164498280966e-11,
+    "residuals": {
+      "phi_a_minus_V_V": 0.0,
+      "phi_b_V": 0.0,
+      "phi_jump_V": -1.5265566588595902e-16,
+      "D_jump_C_per_m2": 0.0,
+      "relative_voltage_quadrature_error": 2.6423307986078726e-14,
+      "relative_energy_quadrature_error": 2.636338458658854e-14
+    }
+  }
+}

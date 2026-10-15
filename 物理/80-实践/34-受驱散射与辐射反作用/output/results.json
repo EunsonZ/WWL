@@ -1,0 +1,84 @@
+{
+  "electron": {
+    "r_m": 2.817940322369053e-15,
+    "tau_s": 6.266424759689481e-24,
+    "sigma_T_m2": 6.652458714062416e-29,
+    "omega0_rad_s": 628318530717958.6,
+    "tau_omega0": 3.937310797862731e-09,
+    "Gamma_nr_s-1": 2473885.335493065,
+    "X_abs_m": 5.657596460235615e-11,
+    "v_peak_over_c": 0.00011857445377396268,
+    "I_W_m2": 0.0013272093639964781,
+    "P_in_W": 2.8476868757877124e-15,
+    "P_sc_W": 1.4238434378938564e-15,
+    "P_abs_W": 1.4238434378938564e-15,
+    "sigma_sc_m2": 1.0728099699405336e-12,
+    "sigma_ext_m2": 2.1456199398810667e-12,
+    "balance_relative_error": -1.385090671183434e-16
+  },
+  "gaussian": [
+    {
+      "delta": 0.05,
+      "max_abs_error": 0.0024903519332234447,
+      "Taylor_bound": 0.0025000000000000005,
+      "error_over_delta2": 0.9961407732893777
+    },
+    {
+      "delta": 0.025,
+      "max_abs_error": 0.0006243901099118876,
+      "Taylor_bound": 0.0006250000000000001,
+      "error_over_delta2": 0.9990241758590199
+    },
+    {
+      "delta": 0.0125,
+      "max_abs_error": 0.0001561980438719024,
+      "Taylor_bound": 0.00015625000000000003,
+      "error_over_delta2": 0.9996674807801751
+    }
+  ],
+  "gaussian_quadrature_change_at_t0": 2.033392898503905e-09,
+  "pulse": [
+    {
+      "delta": 0.04,
+      "actual_dt": 0.01,
+      "final_y": 6.09851016940574e-05,
+      "final_v": 8.074061208867069e-05,
+      "work": 2.494816240501285e-07,
+      "radiated_energy": 2.4456442199788783e-07,
+      "balance_remainder": -4.093019341706086e-10,
+      "max_instantaneous_remainder_over_A2": 0.03008258120262776,
+      "remainder_identity_error_over_A2": 1.8275521658593455e-15,
+      "max_v_over_c": 0.0005852984660721511,
+      "work_mesh_change_over_A2": 9.126568777823865e-08,
+      "remainder_mesh_change_over_A2": 5.0132269670044366e-08
+    },
+    {
+      "delta": 0.02,
+      "actual_dt": 0.01,
+      "final_y": 0.00016382059444661567,
+      "final_v": 0.00022092701644435748,
+      "work": 2.646549524794302e-07,
+      "radiated_energy": 2.2620492544568033e-07,
+      "balance_remainder": -1.1631124807672233e-10,
+      "max_instantaneous_remainder_over_A2": 0.009039947683085164,
+      "remainder_identity_error_over_A2": 2.173934047365926e-15,
+      "max_v_over_c": 0.0006550213677106721,
+      "work_mesh_change_over_A2": 1.1156090953785098e-07,
+      "remainder_mesh_change_over_A2": 2.1971026153173726e-08
+    },
+    {
+      "delta": 0.01,
+      "actual_dt": 0.01,
+      "final_y": 0.0002674592151923249,
+      "final_v": 0.0003668532912227551,
+      "work": 2.727649530964031e-07,
+      "radiated_energy": 1.6874652406302138e-07,
+      "balance_remainder": -3.409657008895039e-11,
+      "max_instantaneous_remainder_over_A2": 0.0025206925073923488,
+      "remainder_identity_error_over_A2": 2.5765383611319698e-15,
+      "max_v_over_c": 0.0006945417815762384,
+      "work_mesh_change_over_A2": 1.2294872223622526e-07,
+      "remainder_mesh_change_over_A2": 2.020759884819684e-08
+    }
+  ]
+}

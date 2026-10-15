@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "business_source_imported": false,
+  "short_prefix_exact": [
+    {
+      "lambda": "1",
+      "center": [
+        "0",
+        "0"
+      ],
+      "prefix_solutions": [
+        [
+          "1/4",
+          "0"
+        ],
+        [
+          "1/4",
+          "-1/8"
+        ],
+        [
+          "9/32",
+          "-3/32"
+        ]
+      ]
+    },
+    {
+      "lambda": "1",
+      "center": [
+        "1/3",
+        "-2/5"
+      ],
+      "prefix_solutions": [
+        [
+          "5/12",
+          "-2/5"
+        ],
+        [
+          "5/12",
+          "-13/40"
+        ],
+        [
+          "73/160",
+          "-137/480"
+        ]
+      ]
+    },
+    {
+      "lambda": "1/2",
+      "center": [
+        "0",
+        "0"
+      ],
+      "prefix_solutions": [
+        [
+          "1/3",
+          "0"
+        ],
+        [
+          "1/3",
+          "-1/5"
+        ],
+        [
+          "31/79",
+          "-13/79"
+        ]
+      ]
+    },
+    {
+      "lambda": "1/2",
+      "center": [
+        "1/3",
+        "-2/5"
+      ],
+      "prefix_solutions": [
+        [
+          "4/9",
+          "-2/5"
+        ],
+        [
+          "4/9",
+          "-7/25"
+        ],
+        [
+          "578/1185",
+          "-301/1185"
+        ]
+      ]
+    }
+  ],
+  "closed_loop_exact": [
+    {
+      "kappa": "0",
+      "OLS": "1/2",
+      "IV": "1/2"
+    },
+    {
+      "kappa": "1",
+      "OLS": "-1/4",
+      "IV": "1/2"
+    }
+  ],
+  "LMS_four_axis": {
+    "mean_factor": "-1/2",
+    "mean_square_factor": "5/2",
+    "mean": [
+      "-1/2",
+      "-1"
+    ],
+    "mean_square_norm": "25/2",
+    "model": "iid independent draws; no reused temporal regressor model"
+  },
+  "physical_ARX": {
+    "state_variance": "13/12",
+    "ideal_a": "1/2",
+    "measured_a_OLS": "13/32",
+    "b": "1/4",
+    "lagged_output_true_error_moment_ideal": "0",
+    "lagged_output_true_error_moment_measured": "-1/8"
+  },
+  "impulse_theta": [
+    "1/2",
+    "-1/4"
+  ],
+  "constant_information_rank": 1,
+  "index_contract": {
+    "FIR": {
+      "train": [
+        3,
+        1024
+      ],
+      "validation": [
+        1024,
+        2048
+      ],
+      "test": [
+        2048,
+        4096
+      ]
+    },
+    "AR": {
+      "burn": [
+        0,
+        256
+      ],
+      "train": [
+        256,
+        2304
+      ],
+      "test": [
+        2304,
+        6400
+      ]
+    },
+    "physical_cross_lag": "u[k-lag] times e[k], both within test window; lag0 is u[k], predictor uses u[k-1] at lag1; subtract full-window means and divide by 4096 at every AR lag"
+  }
+}

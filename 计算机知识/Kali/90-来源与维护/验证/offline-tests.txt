@@ -1,0 +1,33 @@
+test_cross_owner_denied (test_offline_lab.AuthorizationTests.test_cross_owner_denied) ... ok
+test_invalid_types_fail_closed (test_offline_lab.AuthorizationTests.test_invalid_types_fail_closed) ... ok
+test_missing_object_and_unknown_user (test_offline_lab.AuthorizationTests.test_missing_object_and_unknown_user) ... ok
+test_owner_allowed (test_offline_lab.AuthorizationTests.test_owner_allowed) ... ok
+test_deterministic_and_no_network (test_offline_lab.FixtureTests.test_deterministic_and_no_network) ... ok
+test_full_demo_from_generated_files (test_offline_lab.FixtureTests.test_full_demo_from_generated_files) ... ok
+test_generate_refuses_overwrite (test_offline_lab.FixtureTests.test_generate_refuses_overwrite) ... ok
+test_generate_refuses_symlink (test_offline_lab.FixtureTests.test_generate_refuses_symlink) ... ok
+test_manifest_matches (test_offline_lab.FixtureTests.test_manifest_matches) ... ok
+test_pcap_headers_and_checksums (test_offline_lab.FixtureTests.test_pcap_headers_and_checksums) ... ok
+test_pcap_sequence_and_http (test_offline_lab.FixtureTests.test_pcap_sequence_and_http) ... ok
+test_pcap_truncation_rejected (test_offline_lab.FixtureTests.test_pcap_truncation_rejected) ... ok
+test_xml_and_marker_fixtures (test_offline_lab.FixtureTests.test_xml_and_marker_fixtures) ... ok
+test_empty_and_bad_hash (test_offline_lab.HashTests.test_empty_and_bad_hash) ... ok
+test_known_sha256_vector (test_offline_lab.HashTests.test_known_sha256_vector) ... ok
+test_toy_candidates (test_offline_lab.HashTests.test_toy_candidates) ... ok
+test_empty_input (test_offline_lab.LogTests.test_empty_input) ... ok
+test_fixture_counts (test_offline_lab.LogTests.test_fixture_counts) ... ok
+test_invalid_second_line_is_not_skipped (test_offline_lab.LogTests.test_invalid_second_line_is_not_skipped) ... ok
+test_invalid_status (test_offline_lab.LogTests.test_invalid_status) ... ok
+test_malformed_and_blank (test_offline_lab.LogTests.test_malformed_and_blank) ... ok
+test_missing_required_field (test_offline_lab.LogTests.test_missing_required_field) ... ok
+test_bad_sql_not_empty_result (test_offline_lab.SQLTests.test_bad_sql_not_empty_result) ... ok
+test_database_isolated_per_call (test_offline_lab.SQLTests.test_database_isolated_per_call) ... ok
+test_injection_demonstrates_difference (test_offline_lab.SQLTests.test_injection_demonstrates_difference) ... ok
+test_input_contract (test_offline_lab.SQLTests.test_input_contract) ... ok
+test_normal_query (test_offline_lab.SQLTests.test_normal_query) ... ok
+test_safe_quote_literal (test_offline_lab.SQLTests.test_safe_quote_literal) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.008s
+
+OK

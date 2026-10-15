@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "states": 16,
+  "LUB_pairs": 256,
+  "ACI_triples": 4096,
+  "message_orders": 3,
+  "oracle": "upper-bound enumeration and event-id set union; independent of subject join",
+  "failure_examples": {
+    "shared_identity": {
+      "actual_increments": 2,
+      "merged": [
+        1,
+        0
+      ],
+      "query": 1
+    },
+    "lost_state_reused_identity": {
+      "actual_increments": 3,
+      "merged": [
+        2,
+        0
+      ],
+      "query": 2
+    },
+    "last_update_not_delivered": {
+      "A": [
+        2,
+        0
+      ],
+      "B": [
+        0,
+        3
+      ],
+      "same": false,
+      "after_delivery": [
+        2,
+        3
+      ]
+    },
+    "wraparound": {
+      "before": [
+        3,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ],
+      "inflationary": false,
+      "merged_with_old": [
+        3,
+        0
+      ],
+      "actual_increments": 4
+    },
+    "repeated_command": {
+      "two_calls": [
+        2,
+        0
+      ],
+      "same_state_twice": [
+        1,
+        0
+      ]
+    }
+  },
+  "booking_overlap": [
+    [
+      "A:1",
+      "B:1"
+    ]
+  ]
+}

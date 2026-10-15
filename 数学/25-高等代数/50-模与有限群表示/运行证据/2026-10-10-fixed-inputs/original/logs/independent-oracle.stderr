@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments152/run-20261010-01/execute_oracle.py", line 65, in <module>
+    R,S,t,block_r,block_s=[assigned(k) for k in ['R','S','t','block_r','block_s']]
+                           ~~~~~~~~^^^
+  File "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments152/run-20261010-01/execute_oracle.py", line 64, in assigned
+    raise ValueError(name)
+ValueError: R

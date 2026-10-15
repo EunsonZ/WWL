@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "code=(async()=>{await new Promise(r=>setTimeout(r,1200));let l=app.workspace.getMostRecentLeaf();let a=[...l.view.containerEl.querySelectorAll(\"a.internal-link\")].find(a=>a.dataset.href?.includes(\"#2. 熵给出\"));if(a)a.scrollIntoView({block:\"center\"});return JSON.stringify({file:l.view.file?.path,text:l.view.containerEl.innerText.slice(0,800),anchor:a?{href:a.dataset.href,r:a.getBoundingClientRect().toJSON()}:null,visibility:document.visibilityState,previewEnabled:app.internalPlugins.getPluginById(\"page-preview\")?.enabled});})()"
+  ],
+  "exit": 0,
+  "stdout": "=> {\"file\":\"Obsidian知识/10-基础/02-链接与知识网络/04-全局图谱与局部图谱.md\",\"text\":\"Obsidian知识\\n/\\n10-基础\\n/\\n02-链接与知识网络\\n/\\n04-全局图谱与局部图谱\",\"anchor\":null,\"visibility\":\"hidden\",\"previewEnabled\":true}\n",
+  "stderr": "",
+  "time": "2026-10-09T19:39:33.370509+00:00"
+}

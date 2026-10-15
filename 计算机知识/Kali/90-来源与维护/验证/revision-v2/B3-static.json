@@ -1,0 +1,79 @@
+{
+  "checker_version": "1.0",
+  "scope": "计算机知识/Kali",
+  "status": "failed",
+  "counts": {
+    "markdown": 78,
+    "wikilinks_including_prerequisites": 1150,
+    "headings": 621,
+    "block_ids": 3,
+    "reachable_notes": 78,
+    "unique_frontmatter_source_urls": 141,
+    "canvas": 1,
+    "canvas_nodes": 12,
+    "canvas_edges": 13,
+    "python_sources": 4,
+    "files_at_check": 120
+  },
+  "issues": [
+    {
+      "level": "error",
+      "rule": "footnote",
+      "path": "计算机知识/Kali/02-信息收集与网络测量/06-ScapyNping与协议实验.md",
+      "detail": "missing definition: v2-scapyusage"
+    },
+    {
+      "level": "error",
+      "rule": "footnote",
+      "path": "计算机知识/Kali/02-信息收集与网络测量/08-NetcatSocatSSH与受控代理.md",
+      "detail": "missing definition: v2-opensshmanual"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/01-系统与网络基础/06-TCPIP路由DNS与TLS.md",
+      "detail": "missing explicit target: 计算机知识/Kali/07-综合实验/10-实验G路由与扫描状态推理.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/02-信息收集与网络测量/03-Nmap主机发现与端口状态.md",
+      "detail": "missing explicit target: 计算机知识/Kali/07-综合实验/10-实验G路由与扫描状态推理.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/02-信息收集与网络测量/04-Nmap服务识别NSE与结果管理.md",
+      "detail": "missing explicit target: 计算机知识/Kali/07-综合实验/11-实验H扫描XML差异与不确定性.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/03-Web与API安全/06-SQL注入原理与sqlmap限界验证.md",
+      "detail": "missing explicit target: 计算机知识/Kali/04-服务身份与主机评估/09-数据库服务与最小权限审计.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/03-Web与API安全/08-认证会话越权与API测试.md",
+      "detail": "missing explicit target: 计算机知识/Kali/07-综合实验/12-实验I多租户字段与动作授权.md"
+    },
+    {
+      "level": "error",
+      "rule": "wikilink",
+      "path": "计算机知识/Kali/03-Web与API安全/12-现代API业务逻辑与并发边界.md",
+      "detail": "missing explicit target: 计算机知识/Kali/07-综合实验/12-实验I多租户字段与动作授权.md"
+    }
+  ],
+  "not_run": [
+    "Obsidian UI/rendering",
+    "Kali tool execution",
+    "external URL availability sweep"
+  ],
+  "limitations": [
+    "Limited Markdown dialect; not a full Obsidian parser",
+    "Specific secret patterns only, not a comprehensive secret detector",
+    "Reads this topic only, not the rest of an existing Vault",
+    "Trusted local filesystem assumed; not a race-resistant hostile-input sandbox"
+  ]
+}

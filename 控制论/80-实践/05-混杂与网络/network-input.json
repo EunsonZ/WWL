@@ -1,0 +1,24 @@
+{
+  "C_J_per_K": 10,
+  "h_W_per_K": 1,
+  "K_W_per_K": 4,
+  "a_numerator": 9,
+  "a_denominator": 10,
+  "x0_K": 0.5,
+  "sequences": {
+    "every4": [4,4,4,4,4,4,4,4,4,4,4,4],
+    "every5": [5,5,5,5,5,5,5,5,5,5,5,5],
+    "mixed": [1,4,2,3,4,1,3,2,4,4,2,1]
+  },
+  "delay_a": 0.7,
+  "delay_fractions": [0,0.5,1],
+  "delay_steps": 20,
+  "packets": [
+    {"seq": 0, "sample_s": 0, "arrival_s": 0, "sample_K": 0.5},
+    {"seq": 2, "sample_s": 2, "arrival_s": 2.1, "sample_K": 0.1},
+    {"seq": 1, "sample_s": 1, "arrival_s": 2.2, "sample_K": 0.2},
+    {"seq": 3, "sample_s": 3, "arrival_s": 3.2, "sample_K": 0.05},
+    {"seq": 3, "sample_s": 3, "arrival_s": 3.3, "sample_K": 0.05}
+  ],
+  "packet_scope": "Standalone ordering fixture with an ideal shared clock; sample values are specified inputs, not a physical trajectory."
+}

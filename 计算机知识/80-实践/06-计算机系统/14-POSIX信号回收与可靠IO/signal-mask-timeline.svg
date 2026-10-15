@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425 820" role="img" aria-labelledby="title desc">
+  <title id="title">SIGCHLD 掩码、等待与回收的纵向时间线</title>
+  <desc id="desc">单线程父进程先阻塞 SIGCHLD，再创建子进程。子进程退出使通知 pending，但仍被 blocked。父进程用 sigsuspend 临时解除阻塞，handler 只置旗标；正常控制流以 waitpid WNOHANG 收集退出状态，直到没有可收集的 child。</desc>
+  <style>
+    text{font-family:'Arial Unicode MS','Hiragino Sans GB','PingFang SC',Arial,sans-serif;fill:#14213d}
+    .heading{font-size:18px;font-weight:700}.label{font-size:16px;font-weight:700}.body{font-size:16px}.note{font-size:14px;fill:#334}
+    .lane{stroke:#40566f;stroke-width:2}.step{fill:#eaf2ff;stroke:#276fbf;stroke-width:2}.signal{fill:#fff3cf;stroke:#bb7b00;stroke-width:2}.safe{fill:#e8f6ed;stroke:#218739;stroke-width:2}
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#276fbf"/></marker></defs>
+  <rect x="0" y="0" width="425" height="820" fill="#fbfaf7"/>
+  <text x="18" y="28" class="heading">SIGCHLD：通知、回收与 EOF 分开追踪</text>
+  <text x="18" y="52" class="note">前提：单线程 parent；handler 只写 sig_atomic_t 旗标。</text>
+  <line x1="78" y1="88" x2="78" y2="745" class="lane"/>
+  <text x="18" y="98" class="label">parent</text>
+  <text x="18" y="386" class="label">child</text>
+  <rect x="105" y="75" width="294" height="74" rx="8" class="step"/>
+  <text x="120" y="105" class="body">1. block SIGCHLD</text><text x="120" y="130" class="note">保存 old mask；改变共享状态前先阻塞</text>
+  <path d="M78 149L78 184" class="lane" marker-end="url(#arrow)"/>
+  <rect x="105" y="178" width="294" height="74" rx="8" class="step"/>
+  <text x="120" y="208" class="body">2. fork；child 等 gate</text><text x="120" y="233" class="note">WNOHANG = 0：存在 child，但尚无状态</text>
+  <path d="M78 252L78 315" class="lane" marker-end="url(#arrow)"/>
+  <rect x="105" y="304" width="294" height="79" rx="8" class="step"/>
+  <text x="120" y="334" class="body">3. 释放 gate；child _exit(23)</text><text x="120" y="359" class="note">exit 使 child 成为可回收状态</text>
+  <path d="M240 383L240 420" fill="none" stroke="#bb7b00" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="105" y="420" width="294" height="80" rx="8" class="signal"/>
+  <text x="120" y="450" class="body">4. SIGCHLD pending + blocked</text><text x="120" y="475" class="note">通知尚未运行；不是 child 数量</text>
+  <path d="M78 500L78 536" class="lane" marker-end="url(#arrow)"/>
+  <rect x="105" y="530" width="294" height="80" rx="8" class="step"/>
+  <text x="120" y="560" class="body">5. sigsuspend 临时解锁</text><text x="120" y="585" class="note">解锁并等待是一个原子等待点</text>
+  <path d="M252 610L252 650" fill="none" stroke="#218739" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="105" y="650" width="294" height="82" rx="8" class="safe"/>
+  <text x="120" y="680" class="body">6. handler：只置旗标</text><text x="120" y="705" class="note">不 printf / malloc / waitpid；返回普通流程</text>
+  <path d="M78 732L78 768" class="lane" marker-end="url(#arrow)"/>
+  <rect x="105" y="755" width="294" height="54" rx="8" class="safe"/>
+  <text x="120" y="778" class="body">7. WNOHANG：PID → reaped</text><text x="120" y="800" class="body">再查：ECHILD</text>
+</svg>

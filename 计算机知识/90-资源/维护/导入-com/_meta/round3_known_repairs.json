@@ -1,0 +1,79 @@
+[
+  {
+    "path": "计算机知识/10-编程语言/01-Python/03-控制流函数与作用域.md",
+    "issue": "嵌套 bool 被 int 类模式接受",
+    "occurrences": 1,
+    "before": "case {\"value\": int(value)} if value >= 0:",
+    "after": "case {\"value\": int(value)} if not isinstance(value, bool) and value >= 0:"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/03-控制流函数与作用域.md",
+    "issue": "增加嵌套 bool 与零值回归断言",
+    "occurrences": 1,
+    "before": "assert (total, count) == (8, 2)",
+    "after": "assert (total, count) == (8, 2)\nassert classify_readings([{\"value\": True}, {\"value\": False}]) == (0, 0)\nassert classify_readings([{\"value\": 0}, 2]) == (2, 2)"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/08-pip与PyPI依赖管理.md",
+    "issue": "补齐 sampleproject 的传递依赖及固定 wheel 哈希",
+    "occurrences": 2,
+    "before": "sampleproject==4.0.0 \\\n    --hash=sha256:c23e447ea90d796d1e645c35c4b2de125040add12a845825546f91c93f391b6b",
+    "after": "sampleproject==4.0.0 \\\n    --hash=sha256:c23e447ea90d796d1e645c35c4b2de125040add12a845825546f91c93f391b6b\npeppercorn==0.6 \\\n    --hash=sha256:46125cad688a9cf3b08e463bcb797891ee73ece93602a8ea6f14e40d1042d454"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/08-pip与PyPI依赖管理.md",
+    "issue": "明确核验范围而不虚报安装成功",
+    "occurrences": 1,
+    "before": "这里的 SHA-256 来自 PyPA `sampleproject` 4.0.0 官方 PyPI wheel 页面，核对日期为 2026-09-01。",
+    "after": "以上是未启用 extras 时的完整示例：`sampleproject` 4.0.0 还依赖 `peppercorn`，后者同样必须固定版本并提供哈希。两个 SHA-256 对应各自的通用 Python wheel，分别依据 [sampleproject 4.0.0 官方元数据](https://pypi.org/pypi/sampleproject/4.0.0/json) 与 [peppercorn 0.6 官方元数据](https://pypi.org/pypi/peppercorn/0.6/json) 于 2026-09-06 复核。本轮核对了元数据与锁定清单，未在联网环境重新执行安装；示例要求 Python 3.9+，还需满足本机 pip、网络与索引配置条件。"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/06-面向对象数据类与类型标注.md",
+    "issue": "温度验证引入有限性判断",
+    "occurrences": 1,
+    "before": "~~~python\nclass Celsius:",
+    "after": "~~~python\nimport math\n\nclass Celsius:"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/06-面向对象数据类与类型标注.md",
+    "issue": "NaN 绕过下界比较；拒绝无穷、布尔及超大整数转换",
+    "occurrences": 1,
+    "before": "        if new_value < -273.15:\n            raise ValueError(\"温度不能低于绝对零度\")\n        self._value = new_value",
+    "after": "        if isinstance(new_value, bool) or not isinstance(new_value, (int, float)):\n            raise TypeError(\"温度必须是非布尔数值\")\n        try:\n            value = float(new_value)\n        except OverflowError as exc:\n            raise ValueError(\"温度超出可表示范围\") from exc\n        if not math.isfinite(value):\n            raise ValueError(\"温度必须是有限值\")\n        if value < -273.15:\n            raise ValueError(\"温度不能低于绝对零度\")\n        self._value = value"
+  },
+  {
+    "path": "计算机知识/10-编程语言/01-Python/06-面向对象数据类与类型标注.md",
+    "issue": "温度错误路径与失败后状态回归",
+    "occurrences": 1,
+    "before": "# today.value = -300  # ValueError",
+    "after": "# today.value = -300  # ValueError\nfor invalid in (float(\"nan\"), float(\"inf\"), -300):\n    try:\n        today.value = invalid\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"无效温度应被拒绝\")\nassert today.value == 20  # 失败赋值保留原状态"
+  },
+  {
+    "path": "编程知识/10-基础/01-正则表达式/02-字符类边界与转义.md",
+    "issue": "正则提案与已部署标准区分",
+    "occurrences": 1,
+    "before": "绝对字符串开头；传统 Python/PCRE 常见，新版 JavaScript 的支持属于版本敏感能力",
+    "after": "绝对字符串开头；Python/PCRE 支持，不能直接作为 JavaScript 通用语法"
+  },
+  {
+    "path": "编程知识/10-基础/01-正则表达式/02-字符类边界与转义.md",
+    "issue": "附可复现运行时反例及日期来源",
+    "occurrences": 1,
+    "before": "跨语言课程不把 `\\A`、`\\Z`、`\\z` 当成可移植基础语法。即使当前运行时已经支持，也要先核对部署版本；校验任务优先使用明确的完整匹配 API 与测试。",
+    "after": "跨语言课程不把 `\\A`、`\\Z`、`\\z` 当成可移植基础语法。2026-09-06 核验时，JavaScript 的 [RegExp Buffer Boundaries 提案](https://tc39.es/proposal-regexp-buffer-boundaries/) 仍标为 Stage 3（页面草案日期 2026-07-10），不能据此宣称所有 JavaScript 运行时已支持。在本次实际运行的 Node 22.16.0 中，`new RegExp(\"\\\\A\", \"u\")` 抛 `SyntaxError`；非 Unicode 模式中的 `\\A` 还可能被当成字面 `A` 的 identity escape，而不是开头锚点。部署时核对标准、引擎和标志三者，严格校验优先使用明确的完整匹配协议与反例测试。"
+  },
+  {
+    "path": "编程知识/90-资源/01-正则表达式速查表.md",
+    "issue": "速查表避免泛称新版支持",
+    "occurrences": 1,
+    "before": "绝对开头；历史上常见于 Python/PCRE，新版 JavaScript 支持属于版本敏感能力",
+    "after": "绝对开头；Python/PCRE 常见，JavaScript 提案与运行时支持须分开核验"
+  },
+  {
+    "path": "编程知识/90-资源/01-正则表达式速查表.md",
+    "issue": "速查表链接回可复核来源",
+    "occurrences": 1,
+    "before": "严格校验优先使用目标语言的完整匹配 API。",
+    "after": "2026-09-06 复核：JavaScript 的 Buffer Boundaries 仍为 Stage 3 提案；Node 22.16.0 的 Unicode 模式不接受 `\\A`。实测与来源见 [[编程知识/10-基础/01-正则表达式/02-字符类边界与转义#锚点约束位置|锚点版本边界]]。\n\n严格校验优先使用目标语言的完整匹配 API。"
+  }
+]

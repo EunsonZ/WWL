@@ -1,0 +1,16 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="Decoder-only Transformer：训练并行，生成逐步", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+t [label="token IDs\n[B,T]"];
+e [label="Embedding\n[B,T,D]"];
+a [label="Norm → causal attention\n+ 残差"];
+f [label="Norm → FFN\n+ 残差"];
+o [label="最后归一化 → 词表投影\n[B,T,V]"];
+l [label="训练：错位目标交叉熵\n推理：末位分布采样"];
+t -> e;
+e -> a;
+a -> f;
+f -> o;
+o -> l;
+}

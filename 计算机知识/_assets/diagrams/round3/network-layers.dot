@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB,bgcolor="white",pad="0.28",nodesep="0.42",ranksep="0.6",fontname="Noto Sans CJK SC",fontsize=21,label="封装：下一跳地址与最终端点不是同一层",labelloc=t,size="10,14"];
+node [shape=box,style="rounded,filled",fillcolor="#F3F6FA",color="#44566C",fontname="Noto Sans CJK SC",fontsize=15,margin="0.16,0.12"];
+edge [color="#44566C",fontname="Noto Sans CJK SC",fontsize=12,arrowsize=0.7];
+"0" [label="应用消息\n订单、查询、对象"];
+"1" [label="传输层\n端口、序号、会话"];
+"2" [label="网络层\n源 / 目的 IP"];
+"3" [label="链路层\n下一跳链路地址"];
+"4" [label="物理层\n比特与信号"];
+"0" -> "1";
+"1" -> "2";
+"2" -> "3";
+"3" -> "4";
+
+}

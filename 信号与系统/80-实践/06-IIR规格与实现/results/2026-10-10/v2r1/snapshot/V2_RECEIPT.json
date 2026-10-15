@@ -1,0 +1,22 @@
+{
+  "version": "V2",
+  "v1_candidate_unchanged": true,
+  "changed_paths": [
+    "信号与系统/20-数字信号处理/04-IIR设计二阶节与幅相取舍.md",
+    "信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md",
+    "信号与系统/80-实践/06-IIR规格与实现/README.md",
+    "信号与系统/80-实践/06-IIR规格与实现/iir_lab.py",
+    "信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py"
+  ],
+  "changes": 5,
+  "experiments": "NOTRUN",
+  "source_imports": false,
+  "semantic_independent_review": "PENDING",
+  "numeric_independent_run": "PENDING",
+  "v2_targets": "evidence-v2/targets-v2.json",
+  "diff": "V2_DIFF.patch",
+  "static": "evidence-v2/static-v2.json",
+  "handoff": "HANDOFF_V2.md",
+  "executor": "EXECUTOR_V2.md",
+  "v2_target_sha_snapshot": "04943ebea5b0b73e354be07084ad0df87504e311537f3932dbf91ae1c706524d"
+}

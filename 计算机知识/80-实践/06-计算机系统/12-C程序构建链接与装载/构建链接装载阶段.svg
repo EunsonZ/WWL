@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="720" viewBox="0 0 425 720" role="img" aria-labelledby="title desc">
+  <title id="title">同一 sum_u32 引用经过编译、链接和装载</title>
+  <desc id="desc">main.c 引用 sum_u32，sum.c 定义 sum_u32。各自成为可重定位目标文件；链接器解析引用并在成功时产生 Mach-O 可执行文件。漏掉定义或出现两个定义都在链接阶段失败。装载和执行成功时输出 sum=100。</desc>
+  <style>
+    text { font-family: 'Arial Unicode MS','Hiragino Sans GB','PingFang SC',Arial,sans-serif; fill:#172033; }
+    .box { fill:#edf5ff; stroke:#2474b5; stroke-width:2; }
+    .bad { fill:#fff0f0; stroke:#b3261e; stroke-width:2; }
+    .good { fill:#ecf8ef; stroke:#227a3c; stroke-width:2; }
+    .arrow { stroke:#4a5568; stroke-width:2; marker-end:url(#arrow); }
+    .title { font-size:18px; font-weight:700; }
+    .label { font-size:17px; font-weight:650; }
+    .body { font-size:16px; }
+    .note { font-size:14px; fill:#4a5568; }
+  </style>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9z" fill="#4a5568"/></marker></defs>
+  <rect x="0" y="0" width="425" height="720" fill="#f8fafc"/>
+  <text x="20" y="28" class="title">追踪同一外部符号：sum_u32</text>
+  <text x="20" y="52" class="note">对象是符号名；不是已确定的函数地址。</text>
+  <rect class="box" x="24" y="78" width="165" height="74" rx="9"/>
+  <text x="43" y="108" class="label">main.c</text><text x="43" y="134" class="body">引用 sum_u32</text>
+  <rect class="box" x="236" y="78" width="165" height="74" rx="9"/>
+  <text x="255" y="108" class="label">sum.c</text><text x="255" y="134" class="body">定义 sum_u32</text>
+  <line class="arrow" x1="106" y1="153" x2="106" y2="209"/><line class="arrow" x1="318" y1="153" x2="318" y2="209"/>
+  <rect class="box" x="24" y="215" width="165" height="74" rx="9"/>
+  <text x="43" y="245" class="label">main.o</text><text x="43" y="271" class="body">未解析引用</text>
+  <rect class="box" x="236" y="215" width="165" height="74" rx="9"/>
+  <text x="255" y="245" class="label">sum.o</text><text x="255" y="271" class="body">一个外部定义</text>
+  <line class="arrow" x1="106" y1="290" x2="106" y2="344"/><line class="arrow" x1="318" y1="290" x2="318" y2="344"/>
+  <rect class="box" x="58" y="350" width="309" height="86" rx="9"/>
+  <text x="76" y="382" class="label">链接器</text><text x="76" y="409" class="body">解析符号、重定位、布局</text>
+  <line class="arrow" x1="212" y1="437" x2="212" y2="488"/>
+  <rect class="good" x="58" y="494" width="309" height="83" rx="9"/>
+  <text x="76" y="526" class="label">可执行程序 → 装载 → 运行</text><text x="76" y="554" class="body">本例成功输出：sum=100</text>
+  <line class="arrow" x1="58" y1="393" x2="21" y2="393"/><line class="arrow" x1="21" y1="393" x2="21" y2="632"/><line class="arrow" x1="21" y1="632" x2="57" y2="632"/>
+  <rect class="bad" x="58" y="588" width="309" height="91" rx="9"/>
+  <text x="76" y="619" class="label">链接阶段的两个失败</text>
+  <text x="76" y="645" class="body">漏 sum.o：定义缺失</text><text x="76" y="668" class="body">两个 sum_u32：定义重复</text>
+  <text x="20" y="708" class="note">格式、符号拼写和重定位类型须按目标 ABI 与工具输出核对。</text>
+</svg>

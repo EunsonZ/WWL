@@ -1,0 +1,14 @@
+{
+  "time_scale_s": 1.0,
+  "integration": {"end_tau": 6.0, "base_step_tau": 0.02, "guard_y": 0.8},
+  "actuator_limit": 1.0,
+  "initial_normal": [0.05, 0.0, 0.02],
+  "tracking": {"amplitude": 0.1, "omega_per_tau": 0.5},
+  "cases": [
+    {"name": "minimum", "sigma": -1, "mode": "ideal", "reference": "zero"},
+    {"name": "nonminimum", "sigma": 1, "mode": "ideal", "reference": "zero"},
+    {"name": "saturated", "sigma": 1, "mode": "saturated", "reference": "zero"},
+    {"name": "tracking", "sigma": -1, "mode": "ideal", "reference": "sine"},
+    {"name": "singular_initial", "sigma": -1, "mode": "ideal", "reference": "zero", "initial_normal": [1.0, 0.0, 0.02]}
+  ]
+}

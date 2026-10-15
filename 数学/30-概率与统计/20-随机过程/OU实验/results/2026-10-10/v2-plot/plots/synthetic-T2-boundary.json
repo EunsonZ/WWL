@@ -1,0 +1,70 @@
+{
+  "config": {
+    "schema": "wwl-ou-fixed-v1",
+    "kappa": 1.0,
+    "mu": 0.0,
+    "sigma": 0.5,
+    "x0": 1.0,
+    "T": 2,
+    "steps": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "fine_steps": 64,
+    "paths": 65536,
+    "chunk": 4096,
+    "seed": 20261010,
+    "independent_seed": 20261011,
+    "trace_paths": 8,
+    "diagnostic_se_multiplier": 6.0
+  },
+  "rows": [
+    {
+      "theory": {
+        "steps": 8,
+        "h": 0.25,
+        "strong_rmse": 0.05523384592884067
+      },
+      "strong_rmse": {
+        "estimate": 0.05523384592884067,
+        "delta_method_se": 0.0
+      }
+    },
+    {
+      "theory": {
+        "steps": 16,
+        "h": 0.125,
+        "strong_rmse": 0.026700730028090088
+      },
+      "strong_rmse": {
+        "estimate": 0.026700730028090088,
+        "delta_method_se": 0.0
+      }
+    },
+    {
+      "theory": {
+        "steps": 32,
+        "h": 0.0625,
+        "strong_rmse": 0.013132004486013675
+      },
+      "strong_rmse": {
+        "estimate": 0.013132004486013675,
+        "delta_method_se": 0.0
+      }
+    },
+    {
+      "theory": {
+        "steps": 64,
+        "h": 0.03125,
+        "strong_rmse": 0.006512682510559509
+      },
+      "strong_rmse": {
+        "estimate": 0.006512682510559509,
+        "delta_method_se": 0.0
+      }
+    }
+  ],
+  "provenance": "SYNTHETIC_PLOT_BOUNDARY_ONLY; deterministic analytic rows; zero MC samples; orange markers mock estimates"
+}

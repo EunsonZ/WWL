@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570">
+<rect width="100%" height="100%" fill="#fafafa"/>
+<text x="65" y="28" font-family="sans-serif" font-size="18">Measured-state feedback: full-rank data can still bias OLS</text>
+<text x="80" y="53" font-family="sans-serif" font-size="13">Discrete alpha estimate; samples N; true alpha=0.9</text>
+<defs><clipPath id="panel0"><rect x="80" y="65" width="800" height="165"/></clipPath></defs>
+<rect x="80" y="65" width="800" height="165" fill="white" stroke="#b4b4b4"/>
+<line x1="80" x2="880" y1="230.000" y2="230.000" stroke="#dedede"/>
+<text x="23" y="234.000" font-family="sans-serif" font-size="12">0.4</text>
+<line x1="80" x2="880" y1="65.000" y2="65.000" stroke="#dedede"/>
+<text x="23" y="69.000" font-family="sans-serif" font-size="12">1</text>
+<line x1="80" x2="880" y1="92.500" y2="92.500" stroke="#777" stroke-dasharray="5 4"/>
+<polyline points="80.000,184.003 114.783,175.730 149.565,171.123 184.348,175.161 219.130,172.157 253.913,170.403 288.696,171.718 323.478,174.724 358.261,175.570 393.043,175.209 427.826,175.941 462.609,175.979 497.391,173.993 532.174,174.432 566.957,173.430 601.739,174.399 636.522,174.058 671.304,174.270 706.087,173.957 740.870,174.444 775.652,174.606 810.435,174.189 845.217,174.607 880.000,174.684" fill="none" stroke="#15688e" stroke-width="2" clip-path="url(#panel0)"/>
+<line x1="80" x2="103" y1="250" y2="250" stroke="#15688e" stroke-width="2"/>
+<text x="110" y="254" font-family="sans-serif" font-size="12" fill="#15688e">OLS from measured y</text>
+<polyline points="80.000,91.343 114.783,90.675 149.565,88.475 184.348,81.122 219.130,80.472 253.913,84.187 288.696,87.090 323.478,91.583 358.261,94.235 393.043,91.918 427.826,93.072 462.609,92.602 497.391,90.800 532.174,91.955 566.957,90.888 601.739,91.125 636.522,93.653 671.304,93.920 706.087,93.303 740.870,93.804 775.652,94.546 810.435,94.093 845.217,93.735 880.000,93.696" fill="none" stroke="#a44d20" stroke-width="2" stroke-dasharray="7 5" clip-path="url(#panel0)"/>
+<line x1="350" x2="373" y1="250" y2="250" stroke="#a44d20" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="380" y="254" font-family="sans-serif" font-size="12" fill="#a44d20">IV from past/current r</text>
+<polyline points="80.000,173.935 880.000,173.935" fill="none" stroke="#247347" stroke-width="2" stroke-dasharray="2 4" clip-path="url(#panel0)"/>
+<line x1="620" x2="643" y1="250" y2="250" stroke="#247347" stroke-width="2" stroke-dasharray="2 4"/>
+<text x="650" y="254" font-family="sans-serif" font-size="12" fill="#247347">Population OLS=468/775</text>
+<text x="80" y="274" font-family="sans-serif" font-size="12">500</text>
+<text x="855" y="274" font-family="sans-serif" font-size="12">12000</text>
+<text x="80" y="303" font-family="sans-serif" font-size="13">Discrete beta [K/W]; samples N; true beta=0.1</text>
+<defs><clipPath id="panel1"><rect x="80" y="315" width="800" height="165"/></clipPath></defs>
+<rect x="80" y="315" width="800" height="165" fill="white" stroke="#b4b4b4"/>
+<line x1="80" x2="880" y1="480.000" y2="480.000" stroke="#dedede"/>
+<text x="23" y="484.000" font-family="sans-serif" font-size="12">0.08</text>
+<line x1="80" x2="880" y1="315.000" y2="315.000" stroke="#dedede"/>
+<text x="23" y="319.000" font-family="sans-serif" font-size="12">0.12</text>
+<line x1="80" x2="880" y1="397.500" y2="397.500" stroke="#777" stroke-dasharray="5 4"/>
+<polyline points="80.000,378.296 114.783,399.802 149.565,384.565 184.348,396.029 219.130,397.164 253.913,391.666 288.696,392.983 323.478,392.025 358.261,391.824 393.043,390.343 427.826,391.545 462.609,394.176 497.391,392.599 532.174,393.641 566.957,393.593 601.739,395.225 636.522,391.540 671.304,391.314 706.087,392.537 740.870,393.190 775.652,391.843 810.435,392.061 845.217,392.687 880.000,394.813" fill="none" stroke="#15688e" stroke-width="2" clip-path="url(#panel1)"/>
+<line x1="80" x2="103" y1="500" y2="500" stroke="#15688e" stroke-width="2"/>
+<text x="110" y="504" font-family="sans-serif" font-size="12" fill="#15688e">OLS</text>
+<polyline points="80.000,369.531 114.783,397.954 149.565,385.255 184.348,391.871 219.130,397.399 253.913,393.423 288.696,394.929 323.478,391.477 358.261,390.698 393.043,388.880 427.826,389.603 462.609,392.429 497.391,390.551 532.174,391.718 566.957,392.649 601.739,394.230 636.522,391.332 671.304,390.805 706.087,392.362 740.870,392.758 775.652,390.820 810.435,391.815 845.217,392.806 880.000,394.792" fill="none" stroke="#a44d20" stroke-width="2" stroke-dasharray="7 5" clip-path="url(#panel1)"/>
+<line x1="350" x2="373" y1="500" y2="500" stroke="#a44d20" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="380" y="504" font-family="sans-serif" font-size="12" fill="#a44d20">IV</text>
+<text x="80" y="524" font-family="sans-serif" font-size="12">500</text>
+<text x="855" y="524" font-family="sans-serif" font-size="12">12000</text>
+</svg>

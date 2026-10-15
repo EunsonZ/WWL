@@ -1,0 +1,18 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.26", nodesep="0.32", ranksep="0.52", fontname="Noto Sans CJK SC", fontsize=19, labelloc="t", label="七个项目集：移进边与 GOTO 边"];
+node [shape=box, style="rounded,filled", fillcolor="#f7f9fb", color="#7891a5", penwidth=1.2, margin="0.18,0.12", fontname="Noto Sans CJK SC", fontsize=13];
+edge [fontname="Noto Sans CJK SC", fontsize=11, color="#50687b", arrowsize=0.75];
+
+  i0 [label="I0\nS′ → ·S\nS → ·CC\nC → ·cC | ·d",fillcolor="#e6eff8"];
+  i1 [label="I1\nS → C·C\nC → ·cC | ·d"];
+  i2 [label="I2\nS′ → S·\n在 $ 接受",fillcolor="#e9f3e5"];
+  i3 [label="I3\nC → c·C\nC → ·cC | ·d"];
+  i4 [label="I4\nC → d·\n按 FOLLOW(C) 归约 r3"];
+  i5 [label="I5\nS → CC·\n在 $ 归约 r1"];
+  i6 [label="I6\nC → cC·\n按 FOLLOW(C) 归约 r2"];
+  i0->i1[label="C",color="#26736d"];i0->i2[label="S",color="#26736d"];
+  i0->i3[label="c"];i0->i4[label="d"];i1->i5[label="C",color="#26736d"];
+  i1->i3[label="c"];i1->i4[label="d"];i3->i6[label="C",color="#26736d"];
+  i3->i3[label="c"];i3->i4[label="d"];
+
+}

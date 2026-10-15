@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="450" viewBox="0 0 820 450">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Arial,sans-serif" font-size="14" fill="#182636">
+<text x="30" y="28" font-size="20">Outer expansion error: b/a=0.35, r/a=0.7</text>
+<path d="M 95.0 65 V 350" stroke="#e0e5eb"/>
+<path d="M 95 350.0 H 790" stroke="#e0e5eb"/>
+<text x="95.0" y="375" text-anchor="middle">0</text>
+<text x="87" y="355.0" text-anchor="end">-8.22</text>
+<path d="M 234.0 65 V 350" stroke="#e0e5eb"/>
+<path d="M 95 293.0 H 790" stroke="#e0e5eb"/>
+<text x="234.0" y="375" text-anchor="middle">6.4</text>
+<text x="87" y="298.0" text-anchor="end">-5.62</text>
+<path d="M 373.0 65 V 350" stroke="#e0e5eb"/>
+<path d="M 95 236.0 H 790" stroke="#e0e5eb"/>
+<text x="373.0" y="375" text-anchor="middle">12.8</text>
+<text x="87" y="241.0" text-anchor="end">-3.02</text>
+<path d="M 512.0 65 V 350" stroke="#e0e5eb"/>
+<path d="M 95 179.0 H 790" stroke="#e0e5eb"/>
+<text x="512.0" y="375" text-anchor="middle">19.2</text>
+<text x="87" y="184.0" text-anchor="end">-0.421</text>
+<path d="M 651.0 65 V 350" stroke="#e0e5eb"/>
+<path d="M 95 122.0 H 790" stroke="#e0e5eb"/>
+<text x="651.0" y="375" text-anchor="middle">25.6</text>
+<text x="87" y="127.0" text-anchor="end">2.18</text>
+<path d="M 790.0 65 V 350" stroke="#e0e5eb"/>
+<path d="M 95 65.0 H 790" stroke="#e0e5eb"/>
+<text x="790.0" y="375" text-anchor="middle">32</text>
+<text x="87" y="70.0" text-anchor="end">4.78</text>
+<path d="M 95 65 V 350 H 790" fill="none" stroke="#182636"/>
+<text x="435" y="402" text-anchor="middle">highest degree L</text>
+<text x="18" y="205" transform="rotate(-90 18 205)" text-anchor="middle">log10(error / unit); unit: V or V/m</text>
+<polyline points="95.000,126.008 116.719,131.278 138.438,137.287 181.875,150.078 268.750,176.356 442.500,229.144 790.000,334.732" fill="none" stroke="#1763a6" stroke-width="2"/>
+<text x="105" y="425" fill="#1763a6">max phi error (V)</text>
+<polyline points="95.000,121.606 116.719,129.149 138.438,136.248 181.875,149.828 268.750,176.342 442.500,229.143 790.000,334.732" fill="none" stroke="#d17a00" stroke-width="2"/>
+<text x="340" y="425" fill="#d17a00">phi bound (V)</text>
+<polyline points="95.000,80.268 116.719,84.441 138.438,89.174 181.875,99.414 268.750,121.596 442.500,169.193 790.000,268.965" fill="none" stroke="#20915c" stroke-width="2"/>
+<text x="575" y="425" fill="#20915c">max Er error (V/m)</text>
+<polyline points="95.000,80.268 116.719,84.441 138.438,89.174 181.875,99.414 268.750,121.596 442.500,169.193 790.000,268.965" fill="none" stroke="#8752ae" stroke-width="2"/>
+<text x="105" y="442" fill="#8752ae">Er bound (V/m)</text>
+</g></svg>

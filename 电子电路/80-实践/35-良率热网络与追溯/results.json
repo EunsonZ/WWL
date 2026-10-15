@@ -1,0 +1,72 @@
+{
+  "status": "finite_CPU_teaching_only",
+  "poisson_yield": 0.9048374180359595,
+  "accepted_bad": 0.0020571898786257968,
+  "zero_failure_upper_n100": 0.029513049607039932,
+  "arrhenius_300_to_350_Ea0_5": 15.847004709996124,
+  "mc": {
+    "n": 10000,
+    "seed": 2403,
+    "passed": 8392,
+    "fraction": 0.8392,
+    "mean_difference": -1.1288032345716198e-05,
+    "variance_difference": 0.00020210359886207522,
+    "mean_average": -0.00028229890104606794,
+    "variance_average": 0.0009523812581942661,
+    "analytic_fraction": 0.8427007929497148
+  },
+  "thermal_final": [
+    200.0,
+    2.979057411618117,
+    2.1892462957338754
+  ],
+  "grid": {
+    "iterations": 119,
+    "max_residual_W": 9.596914374299104e-11,
+    "boundary_flux_W": 0.19999999776684058
+  },
+  "trace_records": [
+    {
+      "serial": "U001",
+      "bom": "BOM-A",
+      "lot": "LOT-X"
+    },
+    {
+      "serial": "U002",
+      "bom": "BOM-A",
+      "lot": "LOT-Y"
+    },
+    {
+      "serial": "U003",
+      "bom": "BOM-B",
+      "lot": "LOT-Z"
+    }
+  ],
+  "affected_LOT_X": [
+    "U001"
+  ],
+  "compliance_reading": {
+    "product": "fictional board A; classification not confirmed",
+    "supply_assumption_V": 5,
+    "regions_to_check": [
+      "EU",
+      "US"
+    ],
+    "limits": null,
+    "test_results": null,
+    "status": "not_run"
+  },
+  "not_run": [
+    "PDK",
+    "STA",
+    "PEX",
+    "LVS",
+    "DRC",
+    "ATE",
+    "SPICE",
+    "EMC",
+    "safety",
+    "hardware",
+    "human"
+  ]
+}

@@ -1,0 +1,20 @@
+digraph G {
+    graph [rankdir=LR, bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.5", fontname="Noto Sans CJK SC", fontsize=21, labelloc="t", label="下采样为何对一个像素的平移敏感"];
+    node [shape=box, style="rounded,filled", fillcolor="#edf4fa", color="#456782", fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.12"];
+    edge [fontname="Noto Sans CJK SC", fontsize=12, color="#4f6474", arrowsize=0.7];
+    
+    input [label="高频输入
++1, −1, +1, −1, …"];
+    even [label="偶数位置抽样
++1, +1, +1, …"];
+    odd [label="先移一格再抽样
+−1, −1, −1, …"];
+    smooth [label="两点均值低通
+(1 + (−1)) / 2 = 0"];
+    result [label="再下采样
+0, 0, 0, …", fillcolor="#e6f3e9"];
+    note [label="低通抑制混叠，但也丢失高频细节
+边界、采样相位、任务仍影响鲁棒性", fillcolor="#fff3de"];
+    input -> even;input -> odd;input -> smooth -> result;result -> note;
+    
+    }

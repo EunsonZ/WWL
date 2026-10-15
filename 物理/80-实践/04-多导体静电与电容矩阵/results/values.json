@@ -1,0 +1,333 @@
+{
+  "model": "two annular dielectric domains, thick PEC middle, finite length end Neumann; no exterior or end correction",
+  "constants": {
+    "epsilon0_F_per_m": 8.854187817620389e-12,
+    "mu0_H_per_m_approx": 1.2566370614359173e-06,
+    "c0_m_per_s": 299792458.0
+  },
+  "input": {
+    "radii_m": {
+      "a": 0.001,
+      "b_inner": 0.002,
+      "b_outer": 0.0025,
+      "c": 0.005
+    },
+    "epsilon_r": [
+      2.0,
+      4.0
+    ],
+    "length_m": 0.1,
+    "voltages_V": [
+      1.0,
+      0.25,
+      0.0
+    ],
+    "voltage_rates_V_per_s": [
+      1000000.0,
+      0.0,
+      0.0
+    ],
+    "mesh_cells_per_material": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "simpson_intervals_per_material": 1024,
+    "curve_intervals_per_gap": 100,
+    "layered_transfer": {
+      "interface_m": 0.0015,
+      "inner_epsilon_r": [
+        3.0,
+        6.0
+      ]
+    }
+  },
+  "gap_capacitances_F_per_m": [
+    1.6052147181133822e-10,
+    3.2104294362267645e-10
+  ],
+  "C_reduced_F_per_m": [
+    [
+      1.6052147181133822e-10,
+      -1.6052147181133822e-10
+    ],
+    [
+      -1.6052147181133822e-10,
+      4.815644154340147e-10
+    ]
+  ],
+  "C_full_F_per_m": [
+    [
+      1.6052147181133822e-10,
+      -1.6052147181133822e-10,
+      0.0
+    ],
+    [
+      -1.6052147181133822e-10,
+      4.815644154340147e-10,
+      -3.2104294362267645e-10
+    ],
+    [
+      0.0,
+      -3.2104294362267645e-10,
+      3.2104294362267645e-10
+    ]
+  ],
+  "reduced_eigenvalues_F_per_m": [
+    9.403130113499144e-11,
+    5.480545861103615e-10
+  ],
+  "conductor_charges_C_per_m": [
+    1.2039110385850367e-10,
+    -4.013036795283456e-11,
+    -8.026073590566911e-11
+  ],
+  "surface_charges_C_per_m": [
+    1.2039110385850367e-10,
+    -1.2039110385850367e-10,
+    8.026073590566911e-11,
+    -8.026073590566911e-11
+  ],
+  "surface_sigma_C_per_m2": [
+    1.9160839283370614e-08,
+    -9.580419641685307e-09,
+    5.109557142232163e-09,
+    -2.5547785711160815e-09
+  ],
+  "charge_balance_C_per_m": 0.0,
+  "row_sums_F_per_m": [
+    0.0,
+    2.5849394142282115e-26,
+    0.0
+  ],
+  "energy_J_per_m": 5.5179255935147515e-11,
+  "integrated_energy_J_per_m": 5.5179255935149784e-11,
+  "integration_relative_error": 4.1107555684534466e-14,
+  "coarse_integrated_energy_J_per_m": 5.5179255935183724e-11,
+  "unit_excitation_checks": [
+    {
+      "excited_conductor": 1,
+      "charges_C_per_m": [
+        1.6052147181133822e-10,
+        -1.6052147181133822e-10,
+        -0.0
+      ],
+      "matrix_column_difference_C_per_m": [
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "excited_conductor": 2,
+      "charges_C_per_m": [
+        -1.6052147181133822e-10,
+        4.815644154340147e-10,
+        -3.2104294362267645e-10
+      ],
+      "matrix_column_difference_C_per_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "excited_conductor": 3,
+      "charges_C_per_m": [
+        0.0,
+        -3.2104294362267645e-10,
+        3.2104294362267645e-10
+      ],
+      "matrix_column_difference_C_per_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "mesh_checks": [
+    {
+      "cells_per_material": 16,
+      "C3_F_per_m": [
+        [
+          1.6054972215228021e-10,
+          -1.6054972215228021e-10,
+          0.0
+        ],
+        [
+          -1.6054972215228021e-10,
+          4.816491664568406e-10,
+          -3.2109944430456043e-10
+        ],
+        [
+          -0.0,
+          -3.2109944430456043e-10,
+          3.2109944430456043e-10
+        ]
+      ],
+      "max_matrix_relative_error": 0.00017599104109371208,
+      "max_reciprocity_residual_F_per_m": 0.0,
+      "charge_balance_C_per_m": -1.2924697071141057e-26,
+      "max_phi_error_V": 2.2247220485160923e-05,
+      "max_boundary_residual_V": 1.1102230246251565e-16,
+      "max_flux_balance_residual_C_per_m": 4.1359030627651384e-25,
+      "energy_J_per_m": 5.518896698984631e-11,
+      "energy_relative_error": 0.00017599104109355593,
+      "discrete_field_vs_terminal_energy_difference_J_per_m": -6.462348535570529e-27
+    },
+    {
+      "cells_per_material": 32,
+      "C3_F_per_m": [
+        [
+          1.6052853798195064e-10,
+          -1.6052853798195064e-10,
+          0.0
+        ],
+        [
+          -1.6052853798195064e-10,
+          4.81585613945852e-10,
+          -3.210570759639013e-10
+        ],
+        [
+          -0.0,
+          -3.210570759639013e-10,
+          3.210570759639013e-10
+        ]
+      ],
+      "max_matrix_relative_error": 4.402009608243059e-05,
+      "max_reciprocity_residual_F_per_m": 0.0,
+      "charge_balance_C_per_m": 2.5849394142282115e-26,
+      "max_phi_error_V": 5.567583695409439e-06,
+      "max_boundary_residual_V": 1.1102230246251565e-16,
+      "max_flux_balance_residual_C_per_m": 1.137373342260413e-24,
+      "energy_J_per_m": 5.518168493129555e-11,
+      "energy_relative_error": 4.402009608262578e-05,
+      "discrete_field_vs_terminal_energy_difference_J_per_m": 6.462348535570529e-27
+    },
+    {
+      "cells_per_material": 64,
+      "C3_F_per_m": [
+        [
+          1.6052323857856453e-10,
+          -1.6052323857856453e-10,
+          0.0
+        ],
+        [
+          -1.6052323857856453e-10,
+          4.815697157356936e-10,
+          -3.2104647715712905e-10
+        ],
+        [
+          -0.0,
+          -3.2104647715712905e-10,
+          3.2104647715712905e-10
+        ]
+      ],
+      "max_matrix_relative_error": 1.1006423043380464e-05,
+      "max_reciprocity_residual_F_per_m": 0.0,
+      "charge_balance_C_per_m": 1.2924697071141057e-26,
+      "max_phi_error_V": 1.3937649371298377e-06,
+      "max_boundary_residual_V": 2.7755575615628914e-17,
+      "max_flux_balance_residual_C_per_m": 2.042102137240287e-24,
+      "energy_J_per_m": 5.5179863261381553e-11,
+      "energy_relative_error": 1.1006423043321906e-05,
+      "discrete_field_vs_terminal_energy_difference_J_per_m": -6.462348535570529e-27
+    },
+    {
+      "cells_per_material": 128,
+      "C3_F_per_m": [
+        [
+          1.6052191351718828e-10,
+          -1.6052191351718828e-10,
+          0.0
+        ],
+        [
+          -1.6052191351718828e-10,
+          4.815657405515648e-10,
+          -3.2104382703437657e-10
+        ],
+        [
+          -0.0,
+          -3.2104382703437657e-10,
+          3.2104382703437657e-10
+        ]
+      ],
+      "max_matrix_relative_error": 2.751693247380765e-06,
+      "max_reciprocity_residual_F_per_m": 0.0,
+      "charge_balance_C_per_m": -1.2924697071141057e-26,
+      "max_phi_error_V": 3.4846408969446685e-07,
+      "max_boundary_residual_V": 0.0,
+      "max_flux_balance_residual_C_per_m": 5.893661864440322e-24,
+      "energy_J_per_m": 5.517940777153347e-11,
+      "energy_relative_error": 2.7516932474002845e-06,
+      "discrete_field_vs_terminal_energy_difference_J_per_m": 0.0
+    }
+  ],
+  "floating_neutral": {
+    "V2_relative_V": 0.3333333333333333,
+    "effective_C_F_per_m": 1.0701431454089215e-10,
+    "charges_C_per_m": [
+      1.0701431454089216e-10,
+      0.0,
+      -1.0701431454089215e-10
+    ],
+    "energy_J_per_m": 5.350715727044607e-11
+  },
+  "port": {
+    "currents_A_entering_conductors": [
+      1.6052147181133822e-05,
+      -1.6052147181133822e-05,
+      0.0
+    ],
+    "power_W": 1.2039110385850367e-05
+  },
+  "layered_transfer": {
+    "inner_cap_F_per_m": 3.0383331795856584e-10,
+    "floating_V2_V": 0.4862295731793669,
+    "effective_C_F_per_m": 1.5610057344990152e-10,
+    "interface_phi_jump_V": 0.0,
+    "interface_D_jump_C_per_m2": 0.0,
+    "interface_E_ratio_left_over_right": 2.0,
+    "field_energy_J_per_m": 7.805028672495243e-11,
+    "terminal_energy_J_per_m": 7.805028672495076e-11,
+    "mesh_checks": [
+      {
+        "cap_F_per_m": 3.0384800712752456e-10,
+        "left_charge_C_per_m": 1.5610812031050708e-10,
+        "right_charge_C_per_m": -1.5610812031050708e-10,
+        "discrete_energy_J_per_m": 4.010186780104798e-11,
+        "max_phi_error_V": 3.665299869837213e-06,
+        "boundary_residual_V": 0,
+        "flux_balance_residual_C_per_m": 2.946830932220161e-24
+      },
+      {
+        "cap_F_per_m": 3.038369907446533e-10,
+        "left_charge_C_per_m": 1.5610246041877728e-10,
+        "right_charge_C_per_m": -1.5610246041877728e-10,
+        "discrete_energy_J_per_m": 4.010041385855306e-11,
+        "max_phi_error_V": 9.18095510948902e-07,
+        "boundary_residual_V": 2.220446049250313e-16,
+        "flux_balance_residual_C_per_m": 1.0727498569047078e-23
+      },
+      {
+        "cap_F_per_m": 3.0383423618597064e-10,
+        "left_charge_C_per_m": 1.5610104520798718e-10,
+        "right_charge_C_per_m": -1.5610104520798718e-10,
+        "discrete_energy_J_per_m": 4.0100050311827296e-11,
+        "max_phi_error_V": 2.2953968648042888e-07,
+        "boundary_residual_V": 2.220446049250313e-16,
+        "flux_balance_residual_C_per_m": 1.8870057723865944e-23
+      },
+      {
+        "cap_F_per_m": 3.038335475173475e-10,
+        "left_charge_C_per_m": 1.5610069139041472e-10,
+        "right_charge_C_per_m": -1.5610069139041472e-10,
+        "discrete_energy_J_per_m": 4.009995942132464e-11,
+        "max_phi_error_V": 5.7385909912888167e-08,
+        "boundary_residual_V": 1.1102230246251565e-16,
+        "flux_balance_residual_C_per_m": 3.864484424271176e-23
+      }
+    ]
+  }
+}

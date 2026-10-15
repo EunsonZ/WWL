@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-06",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "os_release": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.3\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+  "validator_sha256": "4621ebd0d94212711ce679abc316fe5f9c901fc8ed4d7b234b1ca0580cc91839",
+  "executed": [
+    "reviewed local Markdown checker self-tests",
+    "eight synthetic validator regression cases",
+    "23 numerical/text checks"
+  ],
+  "not_run": [
+    "Kali binaries",
+    "existing lab unit/C/OpenSSL/SQLite suites",
+    "Obsidian UI",
+    "real network/services/hardware"
+  ],
+  "dependencies_installed": false,
+  "network_listeners_started": false
+}

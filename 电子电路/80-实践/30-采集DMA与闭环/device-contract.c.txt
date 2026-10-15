@@ -1,0 +1,49 @@
+/* Interface pseudocode only: not a compiled STM32 driver, not a hardware log.
+ * Select ONE actual part, bus-visible memory, interrupt priority, DMA stream,
+ * conversion completion rule, ADC reference and cache policy before adaptation.
+ * F4 DBM/CT example and M7 D-cache example below are separate source cases.
+ */
+struct BlockMeta {
+  uint64_t epoch, generation, start_index, capture_origin_ns, period_ns;
+  unsigned count, calibration_id, status;
+};
+/* For cache-enabled M7 only: buffers occupy exclusive aligned cache lines.
+ * B=4 16-bit samples => 8 useful bytes, allocate at least 32 exclusive bytes.
+ * Buffer must be in memory that this DMA can access, not assumed from its name.
+ */
+ALIGNAS(32) uint16_t rx[2][16];
+
+prepare_inactive_slot(s):
+  assert(cpu_does_not_own(s));
+  /* Handle any dirty cache line BEFORE DMA ownership; clean/invalidate policy
+     depends on memory attributes. No adjacent shared cache-line data. */
+  platform_prepare_dma_receive(rx[s], 32);
+  platform_barrier();
+  configure_only_inactive_DMA_target(s);  /* part-specific CT/EN conditions */
+  mark_DMA_owned(s);
+
+DMA_completion_ISR():
+  read_hardware_completion_and_errors();
+  s = stable_completed_slot_from_actual_CT_and_completion();
+  if (slot_was_reused_or_consumer_busy(s)) {
+    stop_or_resynchronize_DMA_and_inflight_ADC_by_part_contract();
+    record_gap_and_new_epoch();
+    return; /* do not publish possibly overwritten samples */
+  }
+  platform_invalidate_receive_lines_before_CPU_read(rx[s], 32);
+  /* Never clean stale receive cache AFTER DMA: could overwrite fresh SRAM. */
+  platform_barrier();
+  release_publish_READY_with_atomic_or_interrupt_critical_section(s, metadata);
+  /* IRQ timestamp is service observation, sample time derives from trigger. */
+
+CPU_consumer():
+  token = acquire_READY();
+  validate_epoch_index_status_calibration_and_deadline(token);
+  process_stable_samples_and_preserve_filter_state();
+  /* Output update time is a separate controller contract, not this return. */
+  release_FREE_if_token_still_matches_generation();
+
+/* volatile alone does not supply cache visibility, atomic transfer or ordering.
+ * Circular DMA may overwrite despite a full software ring: a stop/resync path
+ * and worst-case service budget are required. All platform_* remain unimplemented.
+ */

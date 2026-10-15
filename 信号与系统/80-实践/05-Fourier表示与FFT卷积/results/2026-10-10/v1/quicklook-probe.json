@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/usr/bin/qlmanage",
+    "-t",
+    "-s",
+    "1100",
+    "-o",
+    ".wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/svg-native-quicklook",
+    ".wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/source-layout/信号与系统/80-实践/05-Fourier表示与FFT卷积/assets/four-point-butterfly.svg"
+  ],
+  "exit_code": 255,
+  "combined_output": "sandbox_extension_issue_file failed for .wwl-recovery/2026-10-10-crash/experiments177178/current-bound-01/svg-native-quicklook: 1 (Operation not permitted)\nsandbox initialization failed: Operation not permitted\n",
+  "scope": "One native renderer attempt; no privilege escalation"
+}

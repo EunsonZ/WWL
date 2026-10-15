@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" role="img" aria-labelledby="title desc">
+  <title id="title">van Kampen 的三个计算模型</title>
+  <desc id="desc">左侧是两个圆的楔和，中央是两点穿孔平面的两个生成闭路，右侧是环面的正方形边界词a b a逆 b逆。</desc>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1d4ed8"/>
+    </marker>
+    <style>
+      .h{font:18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:600;fill:#172033}
+      .t{font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}
+      .g{fill:none;stroke:#2563eb;stroke-width:4}
+    </style>
+  </defs>
+
+  <g transform="translate(15,20)">
+    <text x="95" y="20" text-anchor="middle" class="h">楔圆：无关系</text>
+    <circle cx="65" cy="135" r="54" class="g"/>
+    <circle cx="173" cy="135" r="54" class="g"/>
+    <circle cx="119" cy="135" r="6" fill="#172033"/>
+    <path d="M51 83 A54 54 0 0 1 90 88" class="g" marker-end="url(#arr)"/>
+    <path d="M187 83 A54 54 0 0 1 216 107" class="g" marker-end="url(#arr)"/>
+    <text x="50" y="145" class="t">a</text><text x="183" y="145" class="t">b</text>
+    <text x="119" y="225" text-anchor="middle" class="t">π₁ = F(a,b)</text>
+  </g>
+
+  <g transform="translate(270,20)">
+    <text x="110" y="20" text-anchor="middle" class="h">两孔：两条自由闭路</text>
+    <rect x="10" y="62" width="210" height="145" rx="22" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <circle cx="78" cy="128" r="11" fill="#fff" stroke="#ef4444" stroke-width="4"/>
+    <circle cx="157" cy="128" r="11" fill="#fff" stroke="#ef4444" stroke-width="4"/>
+    <circle cx="30" cy="180" r="5" fill="#172033"/>
+    <path d="M30 180 C48 168,48 151,55 142 C35 107,48 78,78 78 C108 78,121 107,101 142 C87 162,60 162,55 142" class="g" marker-end="url(#arr)"/>
+    <path d="M30 180 C81 190,114 169,133 143 C116 107,129 78,157 78 C188 78,201 108,180 143 C166 162,142 161,133 143" class="g" marker-end="url(#arr)"/>
+    <text x="78" y="130" text-anchor="middle" class="t">q₁</text>
+    <text x="157" y="130" text-anchor="middle" class="t">q₂</text>
+    <text x="110" y="235" text-anchor="middle" class="t">π₁ = F(c₁,c₂)</text>
+  </g>
+
+  <g transform="translate(525,20)">
+    <text x="115" y="20" text-anchor="middle" class="h">环面：边界变关系</text>
+    <rect x="35" y="62" width="160" height="160" fill="#f5f3ff" stroke="#7c3aed" stroke-width="3"/>
+    <path d="M42 218 L188 218" class="g" marker-end="url(#arr)"/>
+    <path d="M191 214 L191 70" class="g" marker-end="url(#arr)"/>
+    <path d="M188 66 L42 66" class="g" marker-end="url(#arr)"/>
+    <path d="M39 70 L39 214" class="g" marker-end="url(#arr)"/>
+    <text x="115" y="247" text-anchor="middle" class="t">a</text>
+    <text x="210" y="148" class="t">b</text>
+    <text x="115" y="55" text-anchor="middle" class="t">a⁻¹</text>
+    <text x="8" y="148" class="t">b⁻¹</text>
+    <text x="115" y="282" text-anchor="middle" class="t">aba⁻¹b⁻¹ = 1</text>
+    <text x="115" y="311" text-anchor="middle" class="t">π₁ = ℤ²</text>
+  </g>
+
+  <text x="390" y="378" text-anchor="middle" class="t">先读几何分解，再写生成元与关系</text>
+</svg>

@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-09",
+  "observed_statistics": [
+    {
+      "label": "各级各类专任教师",
+      "unit": "万人",
+      "year_2024": "1885.10",
+      "year_2025": "1870.10",
+      "change": "-15.00",
+      "pct_change": "-0.7957",
+      "interpretation": "净存量变化；不能据此识别新招聘流量",
+      "sources": [
+        "S02a",
+        "S02b"
+      ]
+    },
+    {
+      "label": "学前专任教师",
+      "unit": "万人",
+      "year_2024": "283.19",
+      "year_2025": "261.26",
+      "change": "-21.93",
+      "pct_change": "-7.7439",
+      "interpretation": "净存量变化；不能据此识别新招聘流量",
+      "sources": [
+        "S02a",
+        "S02b"
+      ]
+    },
+    {
+      "label": "小学专任教师",
+      "unit": "万人",
+      "year_2024": "659.01",
+      "year_2025": "645.82",
+      "change": "-13.19",
+      "pct_change": "-2.0015",
+      "interpretation": "净存量变化；不能据此识别新招聘流量",
+      "sources": [
+        "S02a",
+        "S02b"
+      ]
+    }
+  ],
+  "residual_other_teacher_stock_change_wan": "20.12",
+  "residual_condition": "Only meaningful if year-to-year classification/perimeter is comparable; not a hiring estimate.",
+  "synthetic_examples": {
+    "benefit_funnel": {
+      "eligible_population": 1000,
+      "conditional_probabilities": [
+        "0.8",
+        "0.75",
+        "0.9",
+        "0.95"
+      ],
+      "expected_recipients": "513.000000",
+      "benefit_per_recipient_yuan": 1000,
+      "expected_delivered_yuan": "513000.000000",
+      "note": "Synthetic; chain of conditional probabilities, no independence assumption."
+    },
+    "debt_dynamics": {
+      "initial_debt_pct_gdp": 100,
+      "effective_nominal_interest_rate": ".03",
+      "primary_deficit_ratio": 0,
+      "stock_flow_adjustment_ratio": 0,
+      "cases": [
+        {
+          "nominal_growth": "0.01",
+          "next_debt_pct_gdp": "101.980198"
+        },
+        {
+          "nominal_growth": "0.04",
+          "next_debt_pct_gdp": "99.038462"
+        }
+      ],
+      "note": "Synthetic accounting demonstration, not a China debt forecast."
+    }
+  }
+}

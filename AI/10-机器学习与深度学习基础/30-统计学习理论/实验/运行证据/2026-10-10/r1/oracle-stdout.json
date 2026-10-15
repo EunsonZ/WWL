@@ -1,0 +1,120 @@
+{
+  "oracle_method": "n4 all 256 ordered four-point samples; minimize explicit empirical quadratic via stationary and boundary objective values; n16/64 independent moments plus binomial exact sums; growth binary-string monotonicity and number of one-blocks; repeat original samples 16 times and independently minimize",
+  "business_source_imported": false,
+  "checks_total": 2820,
+  "failed_checks": [],
+  "all_match": true,
+  "tables": [
+    {
+      "n": 4,
+      "lambda": "1/8",
+      "train": "57/256",
+      "risk": "21/64",
+      "gap": "27/256",
+      "shifted_risk": "43/64",
+      "actual_replace_one": "1/2"
+    },
+    {
+      "n": 4,
+      "lambda": "1/2",
+      "train": "9/32",
+      "risk": "3/8",
+      "gap": "3/32",
+      "shifted_risk": "5/8",
+      "actual_replace_one": "1/4"
+    },
+    {
+      "n": 4,
+      "lambda": "2",
+      "train": "57/128",
+      "risk": "15/32",
+      "gap": "3/128",
+      "shifted_risk": "17/32",
+      "actual_replace_one": "1/16"
+    },
+    {
+      "n": 16,
+      "lambda": "1/8",
+      "train": "538245717/2147483648",
+      "risk": "35497257/134217728",
+      "gap": "29710395/2147483648",
+      "shifted_risk": "98720471/134217728",
+      "actual_replace_one": "1/4"
+    },
+    {
+      "n": 16,
+      "lambda": "1/2",
+      "train": "45/128",
+      "risk": "3/8",
+      "gap": "3/128",
+      "shifted_risk": "5/8",
+      "actual_replace_one": "1/16"
+    },
+    {
+      "n": 16,
+      "lambda": "2",
+      "train": "237/512",
+      "risk": "15/32",
+      "gap": "3/512",
+      "shifted_risk": "17/32",
+      "actual_replace_one": "1/64"
+    },
+    {
+      "n": 64,
+      "lambda": "1/8",
+      "train": "10641379463126551122867722858510411709/42535295865117307932921825928971026432",
+      "risk": "166500568892418480146573395075922289/664613997892457936451903530140172288",
+      "gap": "14656945988231606512974426348614787/42535295865117307932921825928971026432",
+      "shifted_risk": "498113429000039456305330135064249999/664613997892457936451903530140172288",
+      "actual_replace_one": "1/16"
+    },
+    {
+      "n": 64,
+      "lambda": "1/2",
+      "train": "189/512",
+      "risk": "3/8",
+      "gap": "3/512",
+      "shifted_risk": "5/8",
+      "actual_replace_one": "1/64"
+    },
+    {
+      "n": 64,
+      "lambda": "2",
+      "train": "957/2048",
+      "risk": "15/32",
+      "gap": "3/2048",
+      "shifted_risk": "17/32",
+      "actual_replace_one": "1/256"
+    }
+  ],
+  "ordered_n4": {
+    "1/8": {
+      "train": "57/256",
+      "risk": "21/64",
+      "gap": "27/256",
+      "shifted_risk": "43/64",
+      "weight": "11/16",
+      "regularized_objective": "557/2048",
+      "mass": "1"
+    },
+    "1/2": {
+      "train": "9/32",
+      "risk": "3/8",
+      "gap": "3/32",
+      "shifted_risk": "5/8",
+      "weight": "1/2",
+      "regularized_objective": "25/64",
+      "mass": "1"
+    },
+    "2": {
+      "train": "57/128",
+      "risk": "15/32",
+      "gap": "3/128",
+      "shifted_risk": "17/32",
+      "weight": "1/8",
+      "regularized_objective": "121/256",
+      "mass": "1"
+    }
+  },
+  "general_theory_certified": false
+}

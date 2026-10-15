@@ -1,0 +1,15 @@
+# 新目录复建接口（仅静态审阅，未执行）
+
+将本包完整保存到任意位置，使用macOS/Linux的Python3.10+标准库，在包目录运行：
+
+```sh
+python3 -B replay.py --output /private/tmp/wwl-179-replay-NEW
+```
+
+NEW换为尚不存在的目录；已存在目录会被拒绝。replay.py先核identity.json的五个snapshot文件和replay-input-hashes.json的固定输入/运行前预期/两个独立oracle身份，再复制到新目录。依次运行实际8test、1/128/256预跑、16/4096/8192标准CLI、完整seed/谱oracle、首次CSV分数oracle，记录每项真实命令、退出码、超时状态、stdout/stderr与资源。任何失败立即停止，最终须五个子进程全部成功且两oracle all_match=true，不能只看外层进程退出。
+
+预跑和CSV oracle限60秒，标准CLI与完整oracle限300秒；环境各请求最多4数值线程，这不是硬OS线程约束。macOS的wait4 ru_maxrss为bytes，Linux为KiB，驱动据平台保留单位说明；未观测A/B聚合峰值。需由主进程控制槽位；此驱动不启动并行任务。
+
+源码不下载模型、不接传感器、不安装组件。PNG图证据不自动重渲染；如需新的显示验证，应另外用已有SVG和适用渲染器保存新的日志/PNG，并实际查看。图中MSE是解析模型参照，不是CLI输出图。
+
+本接口只通过Python AST与控制流静态核对，未执行，不将本包的已保存课程运行称作该驱动重跑。随机数恢复绑定当前Python平台；新环境应核实际结果，不能假设跨Python版本逐位一致。

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="290" viewBox="0 0 1000 290" role="img" aria-label="同一个纯Bool调用的两种求值顺序">
+<rect width="100%" height="100%" fill="#f6f8fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#325b8e"/></marker></defs>
+<text x="30" y="40" font-family="Hiragino Sans GB" font-size="24" fill="#18314d">同一个纯Bool调用的两种求值顺序</text>
+<text x="30" y="95" font-family="Hiragino Sans GB" font-size="18">CBV</text>
+<rect x="150.0" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="278.33333333333337" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">(λx:Bool.true) a</text>
+<path d="M409.6666666666667,91 H428.6666666666667" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="431.6666666666667" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="560.0" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">a 求为 false</text>
+<path d="M691.3333333333334,91 H710.3333333333334" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="713.3333333333334" y="65" width="256.6666666666667" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="841.6666666666667" y="96" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">β 替换得 true</text>
+<text x="30" y="170" font-family="Hiragino Sans GB" font-size="18">CBN</text>
+<rect x="150.0" y="140" width="397.5" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="348.75" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">(λx:Bool.true) a</text>
+<path d="M550.5,166 H569.5" fill="none" stroke="#325b8e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="572.5" y="140" width="397.5" height="52" rx="8" fill="#e1ebf7" stroke="#8aa7c9"/>
+<text x="771.25" y="171" text-anchor="middle" font-family="Hiragino Sans GB" font-size="17" fill="#18314d">直接 β 替换得 true</text>
+<text x="30" y="268" font-family="Hiragino Sans GB" font-size="17" fill="#435a70">a = (λy:Bool.y) false；两种策略都不在 λ 体内部提前求值。</text></svg>

@@ -1,0 +1,41 @@
+[
+  {
+    "case": "negative radius",
+    "expected": "ValueError",
+    "actual": "finite mu>0, r0>=0, t>=0 required"
+  },
+  {
+    "case": "shape mismatch",
+    "expected": "ValueError",
+    "actual": "field must preserve state dimension and return finite values"
+  },
+  {
+    "case": "oversized RK4",
+    "expected": "ValueError",
+    "actual": "outside bounded teaching workload; at most 100000 steps"
+  },
+  {
+    "case": "existing output",
+    "command": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/snapshot/dynamics_lab.py",
+      "--output-dir",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/cli-output"
+    ],
+    "returncode": 1,
+    "refused_without_source_changes": true
+  },
+  {
+    "case": "new inside workspace",
+    "command": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/snapshot/dynamics_lab.py",
+      "--output-dir",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments149142/must-not-be-created"
+    ],
+    "returncode": 1,
+    "refused_without_source_changes": true
+  }
+]

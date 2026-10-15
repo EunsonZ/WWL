@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "currency": "USD",
+  "actor": "single-controller",
+  "controller": {
+    "id": "single-controller",
+    "confirmed": true,
+    "active_claimants": [
+      "single-controller"
+    ]
+  },
+  "authorized_budget": "10",
+  "spent": {
+    "amount": "3",
+    "complete": true
+  },
+  "reservations": [
+    {
+      "id": "prior-attempt",
+      "problem_id": "existing-question",
+      "amount": "2",
+      "state": "cancel_requested",
+      "usage_reconciled": false
+    }
+  ],
+  "proposals": [
+    {
+      "id": "new-attempt",
+      "problem_id": "new-question",
+      "work": "3",
+      "review": "1",
+      "closeout": "1"
+    },
+    {
+      "id": "second-attempt",
+      "problem_id": "another-question",
+      "work": "0.01",
+      "review": "0",
+      "closeout": "0",
+      "zero_cost_evidence": "Teaching assumption: local review and closeout add no API charge; both steps remain required."
+    }
+  ]
+}

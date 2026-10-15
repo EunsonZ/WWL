@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_iir_lab.py"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments178v2/run-20261010-01/snapshot-r1/candidate-v2r1/信号与系统/80-实践/06-IIR规格与实现",
+  "started_unix": 1791568486.235809,
+  "elapsed_seconds": 0.21241378784179688,
+  "timeout_seconds": 60,
+  "exit": 0,
+  "iir_source_sha256": "87344dd861372a9021c7c36ea45ddbf3983b9f1c0654db8b3a6e835c45355e74",
+  "test_source_sha256": "10c75a22f669b8a7107df171a036a5a837bdc4af8a64ce37a4380587c94bab58",
+  "full_CLI_binding": {
+    "status": "REUSED_EXACT_SOURCE",
+    "source_bytes_same_as_executed_V2": true,
+    "original_receipt": "cli-run.json",
+    "original_raw": "raw/iir-cli/results.json",
+    "original_raw_sha256": "62cf461be69d68ae685b1d85b54b8310381b968d6da18a5b360debdafc1f7626",
+    "not_rerun": true,
+    "authorization": "root and author explicitly permit exact unchanged source reuse; only test/mirror changed"
+  },
+  "thread_environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  }
+}

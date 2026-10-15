@@ -1,0 +1,14 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="Flow Matching：本图时间方向为噪声到数据", labelloc="t", fontsize=22, fontname="Noto Sans CJK SC"];
+ node [shape=box, style="rounded", margin="0.16,0.12", fontsize=16, fontname="Noto Sans CJK SC"];
+ edge [fontsize=13, fontname="Noto Sans CJK SC"];
+n [label="噪声 x₀"];
+d [label="数据 x₁"];
+p [label="条件路径\nx_t=(1−t)x₀+t x₁"];
+v [label="目标速度 x₁−x₀\n拟合 v_θ(x_t,t)"];
+o [label="生成时解 ODE\ndx/dt=v_θ(x,t)"];
+n -> p;
+d -> p;
+p -> v;
+v -> o;
+}

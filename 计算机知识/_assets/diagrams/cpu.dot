@@ -1,0 +1,12 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=LR;
+a [label="取指\nPC → 指令"];b [label="译码与读寄存器"];c [label="执行\n运算 / 地址生成"];
+d [label="访存（按指令需要）"];e [label="写回（按指令需要）"];
+a->b->c->d->e;
+x [label="控制、数据和结构冒险\n可能需要停顿、转发或清空"];
+x->b [style=dashed];x->c [style=dashed];
+
+}

@@ -1,0 +1,21 @@
+{
+  "events": [
+    {
+      "id": "A",
+      "time": "2026-09-05T16:00:00+08:00",
+      "uncertainty_seconds": 3
+    },
+    {
+      "id": "B",
+      "time": "2026-09-05T08:00:02Z",
+      "uncertainty_seconds": 1
+    }
+  ],
+  "expected_definitely_before": false,
+  "fixture_version": "reasoning-v2.0",
+  "invalid_examples": [
+    "2026-09-05T08:00:00",
+    "2026-09-05T08:00:00+01:60"
+  ],
+  "synthetic": true
+}

@@ -1,0 +1,6 @@
+{
+  "thermal": {"C_J_per_K": 10, "h_W_per_K": 1, "U_W": 2, "delta_K": 0.5, "x0_K": 0, "q0": 1, "end_s": 40},
+  "switch_cases": [{"name": "c4_dwell1", "c": 4, "dwell": 1}, {"name": "c4_dwell14", "c": 4, "dwell": 14}, {"name": "c1_dwell1", "c": 1, "dwell": 1}],
+  "switch_end": 56,
+  "description": "Finite teaching inputs. Normalized switched states and time are separate from the thermal units."
+}

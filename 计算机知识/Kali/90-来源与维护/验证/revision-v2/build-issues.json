@@ -1,0 +1,37 @@
+[
+  {
+    "stage": "B1",
+    "issue": "补丁帮助程序按片段行构建时无法精确处理前导换行；写后比较捕获差异",
+    "resolution": "仅回滚本轮首个自改文件到原ZIP对应字节；改为全行差异补丁并保留写后精确比较",
+    "status": "fixed_before_batch_completion"
+  },
+  {
+    "stage": "B3静态检查",
+    "issue": "两处来源脚注沿用了未被最终来源账本选用的键；检查器报缺少定义",
+    "resolution": "根据来源账本复用的真实键同步正文与脚注；保留 B3-static.json 原失败记录，最终检查通过",
+    "status": "fixed"
+  },
+  {
+    "stage": "B9索引维护",
+    "issue": "扩展帮助程序要求导航页脚，原工具矩阵没有该页脚，断言阻止后续写入",
+    "resolution": "先补明确导航页脚，再从已经成功完成的索引更新处受控续作，未重复添加账本条目或画布节点",
+    "status": "fixed"
+  },
+  {
+    "stage": "B10验收入口迁移",
+    "issue": "首轮批量小补丁调用超过工具调用时间限制，在部分文件写入后终止",
+    "resolution": "重读实际文件，已完成的精确替换不重做；继续其余补丁并执行全量差异、链接与语法检查。完整影响范围以 changed-files.json 为准，批次编辑日志仅记录各次成功结束调用的增量",
+    "status": "fixed"
+  },
+  {
+    "stage": "新模型测试",
+    "issue": "超长 XML 数字触发了约定之外的整数转换异常；非法 UTC 偏移分钟被日期库归一化",
+    "resolution": "解析前增加输入长度、数值范围与时区小时/分钟检查；原失败与修复后日志均保留",
+    "status": "fixed",
+    "evidence": [
+      "reasoning-before-fix.txt",
+      "reasoning-after-fix.txt",
+      "offline-regression-final.txt"
+    ]
+  }
+]

@@ -1,0 +1,275 @@
+{
+  "name": "same-intent",
+  "schedule": "first acquires write transaction; second starts operation; release first; second obtains lock",
+  "events": [
+    {
+      "phase": "ready",
+      "label": "first",
+      "pid": 21340
+    },
+    {
+      "phase": "ready",
+      "label": "second",
+      "pid": 21341
+    },
+    {
+      "phase": "started",
+      "label": "first",
+      "pid": 21340
+    },
+    {
+      "phase": "started",
+      "label": "second",
+      "pid": 21341
+    },
+    {
+      "phase": "finished",
+      "label": "first",
+      "result": {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "a",
+        "intent_id": "same",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "accepted",
+        "reason": "created",
+        "booking": {
+          "id": 1,
+          "owner": "a",
+          "start": 540,
+          "end": 600,
+          "policy_version": 2
+        },
+        "event_id": "booking:1:created"
+      },
+      "trace": [
+        {
+          "kind": "operation_started",
+          "monotonic_ns": 3744181330833,
+          "pid": 21340,
+          "operation": "reserve",
+          "args": [
+            "a",
+            "same",
+            540,
+            600
+          ],
+          "kwargs": {}
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744181398666,
+          "pid": 21340,
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "kind": "write_lock_acquired",
+          "monotonic_ns": 3744181437541,
+          "pid": 21340
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744187445916,
+          "pid": 21340,
+          "sql": "SELECT fingerprint,outcome FROM intents WHERE actor='a' AND intent_id='same'"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744187465708,
+          "pid": 21340,
+          "sql": "SELECT writer_epoch FROM metadata"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744187472875,
+          "pid": 21340,
+          "sql": "SELECT start,end FROM bookings"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744187493000,
+          "pid": 21340,
+          "sql": "INSERT INTO bookings(owner,start,end,policy_version) VALUES('a',540,600,2)"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744187649916,
+          "pid": 21340,
+          "sql": "INSERT INTO outbox(event_id,booking_id,payload) VALUES('booking:1:created',1,'{\"actor\":\"a\",\"booking\":{\"end\":600,\"id\":1,\"owner\":\"a\",\"policy_version\":2,\"start\":540},\"event_id\":\"booking:1:created\",\"fingerprint\":\"237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489\",\"intent_id\":\"same\",\"kind\":\"booking_created\",\"protocol\":\"wwl-reservation-v2/1\"}')"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744187692958,
+          "pid": 21340,
+          "sql": "INSERT INTO intents VALUES('a','same','237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489','{\"actor\":\"a\",\"booking\":{\"end\":600,\"id\":1,\"owner\":\"a\",\"policy_version\":2,\"start\":540},\"event_id\":\"booking:1:created\",\"fingerprint\":\"237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489\",\"intent_id\":\"same\",\"policy_version\":2,\"protocol\":\"wwl-reservation-v2/1\",\"reason\":\"created\",\"status\":\"accepted\",\"writer_epoch\":2}')"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744187712708,
+          "pid": 21340,
+          "sql": "COMMIT"
+        },
+        {
+          "kind": "returned",
+          "monotonic_ns": 3744187969250,
+          "pid": 21340,
+          "value": {
+            "protocol": "wwl-reservation-v2/1",
+            "actor": "a",
+            "intent_id": "same",
+            "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+            "policy_version": 2,
+            "writer_epoch": 2,
+            "status": "accepted",
+            "reason": "created",
+            "booking": {
+              "id": 1,
+              "owner": "a",
+              "start": 540,
+              "end": 600,
+              "policy_version": 2
+            },
+            "event_id": "booking:1:created"
+          }
+        },
+        {
+          "kind": "closed",
+          "monotonic_ns": 3744187998666,
+          "pid": 21340
+        }
+      ],
+      "elapsed_seconds": 0.008736917
+    },
+    {
+      "phase": "finished",
+      "label": "second",
+      "result": {
+        "actor": "a",
+        "booking": {
+          "end": 600,
+          "id": 1,
+          "owner": "a",
+          "policy_version": 2,
+          "start": 540
+        },
+        "event_id": "booking:1:created",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "intent_id": "same",
+        "policy_version": 2,
+        "protocol": "wwl-reservation-v2/1",
+        "reason": "created",
+        "status": "accepted",
+        "writer_epoch": 2
+      },
+      "trace": [
+        {
+          "kind": "operation_started",
+          "monotonic_ns": 3744184438750,
+          "pid": 21341,
+          "operation": "reserve",
+          "args": [
+            "a",
+            "same",
+            540,
+            600
+          ],
+          "kwargs": {}
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744184516833,
+          "pid": 21341,
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "kind": "write_lock_acquired",
+          "monotonic_ns": 3744189108958,
+          "pid": 21341
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744189143833,
+          "pid": 21341,
+          "sql": "SELECT fingerprint,outcome FROM intents WHERE actor='a' AND intent_id='same'"
+        },
+        {
+          "kind": "sql",
+          "monotonic_ns": 3744189173083,
+          "pid": 21341,
+          "sql": "COMMIT"
+        },
+        {
+          "kind": "returned",
+          "monotonic_ns": 3744189180750,
+          "pid": 21341,
+          "value": {
+            "actor": "a",
+            "booking": {
+              "end": 600,
+              "id": 1,
+              "owner": "a",
+              "policy_version": 2,
+              "start": 540
+            },
+            "event_id": "booking:1:created",
+            "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+            "intent_id": "same",
+            "policy_version": 2,
+            "protocol": "wwl-reservation-v2/1",
+            "reason": "created",
+            "status": "accepted",
+            "writer_epoch": 2
+          }
+        },
+        {
+          "kind": "closed",
+          "monotonic_ns": 3744189210333,
+          "pid": 21341
+        }
+      ],
+      "elapsed_seconds": 0.009743125
+    }
+  ],
+  "final_state": {
+    "epoch": 2,
+    "bookings": [
+      {
+        "id": 1,
+        "owner": "a",
+        "start": 540,
+        "end": 600,
+        "policy_version": 2
+      }
+    ],
+    "events": [
+      {
+        "actor": "a",
+        "booking": {
+          "end": 600,
+          "id": 1,
+          "owner": "a",
+          "policy_version": 2,
+          "start": 540
+        },
+        "event_id": "booking:1:created",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "intent_id": "same",
+        "kind": "booking_created",
+        "protocol": "wwl-reservation-v2/1"
+      }
+    ],
+    "intents": [
+      {
+        "actor": "a",
+        "intent_id": "same",
+        "fingerprint": "237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489",
+        "outcome": "{\"actor\":\"a\",\"booking\":{\"end\":600,\"id\":1,\"owner\":\"a\",\"policy_version\":2,\"start\":540},\"event_id\":\"booking:1:created\",\"fingerprint\":\"237e7ee6a4f8dc200eaebe6d9ca2300add13cea3abf4f0a5d44ab78153db8489\",\"intent_id\":\"same\",\"policy_version\":2,\"protocol\":\"wwl-reservation-v2/1\",\"reason\":\"created\",\"status\":\"accepted\",\"writer_epoch\":2}"
+      }
+    ]
+  },
+  "child_exitcodes": [
+    0,
+    0
+  ]
+}

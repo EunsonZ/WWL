@@ -1,0 +1,14 @@
+{
+  "phase_unit": "pi rad",
+  "time_unit": "s",
+  "initial_phase_pi": "0",
+  "samples": 5,
+  "velocity_A_pi_per_s": "4/5",
+  "velocity_B_pi_per_s": "-6/5",
+  "intervals_s": ["1", "3/2", "1/2"],
+  "noise_safe_pi": ["1/20", "-1/20", "1/20", "-1/20", "1/20"],
+  "noise_unsafe_pi": ["-11/100", "11/100", "-11/100", "11/100", "-11/100"],
+  "delay_samples": [1, 5],
+  "frequency_step_pi_per_sample": "1/2",
+  "amplitude_demo": [1, 1, 0, 1, 1]
+}

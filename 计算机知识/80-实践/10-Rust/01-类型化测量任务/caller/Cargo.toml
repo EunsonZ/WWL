@@ -1,0 +1,19 @@
+[package]
+name = "measurement-caller"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+publish = false
+
+[dependencies]
+wwl-measurement = { path = ".." }
+tokio = { version = "=1.52.3", optional = true, default-features = false, features = ["rt", "sync"] }
+
+[features]
+default = []
+threaded = ["wwl-measurement/threaded"]
+async = ["wwl-measurement/async", "dep:tokio"]
+
+[[example]]
+name = "async"
+required-features = ["async"]

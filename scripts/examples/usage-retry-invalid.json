@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "retry_layers": [
+    "outer",
+    "sdk"
+  ],
+  "max_attempts": 3,
+  "initial_backoff_seconds": "1",
+  "max_backoff_seconds": "30",
+  "jitter": "full",
+  "respect_retry_after": true,
+  "concurrency": 32
+}

@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments209pdecomplex/run-20261010-01/executor_oracle.py"
+  ],
+  "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL",
+  "actual_exit": 0,
+  "started_unix": 1791567625.429502,
+  "elapsed_seconds": 0.0006120204925537109,
+  "stdout": "logs/executor-oracle.stdout",
+  "stderr": "logs/executor-oracle.stderr",
+  "environment": {
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null,
+    "PYTHONDONTWRITEBYTECODE": null
+  },
+  "execution_shape": "Single Python stdlib process; no numeric libraries/workers; no OS thread count measurement",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+}

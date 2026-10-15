@@ -1,0 +1,168 @@
+[
+  {
+    "name": "versions",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-c",
+      "import sys,platform; print(sys.version); print(platform.platform())"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "wall_seconds": 0.03198279099888168,
+    "child_max_rss_bytes_Darwin": 17268736,
+    "child_user_seconds": 0.017766,
+    "child_system_seconds": 0.008851999999999999
+  },
+  {
+    "name": "suite-preflight",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_identification_lab.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "wall_seconds": 0.09204854200106638,
+    "child_max_rss_bytes_Darwin": 29130752,
+    "child_user_seconds": 0.079897,
+    "child_system_seconds": 0.008064
+  },
+  {
+    "name": "standard",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "identification_lab.py",
+      "--output",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/output"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 300,
+    "wall_seconds": 0.09204070799933106,
+    "child_max_rss_bytes_Darwin": 26509312,
+    "child_user_seconds": 0.069866,
+    "child_system_seconds": 0.007535
+  },
+  {
+    "name": "deterministic-probes",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/source_probes.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "wall_seconds": 0.03211279199967976,
+    "child_max_rss_bytes_Darwin": 19431424,
+    "child_user_seconds": 0.018564999999999998,
+    "child_system_seconds": 0.0056099999999999995
+  },
+  {
+    "name": "independent-oracle",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/independent_oracle.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 300,
+    "wall_seconds": 0.10596608299965737,
+    "child_max_rss_bytes_Darwin": 47923200,
+    "child_user_seconds": 0.09297699999999999,
+    "child_system_seconds": 0.008208
+  },
+  {
+    "name": "render-evidence",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/render_evidence.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 300,
+    "wall_seconds": 10.275489333000223,
+    "child_max_rss_bytes_Darwin": 125960192,
+    "child_user_seconds": 9.633437,
+    "child_system_seconds": 0.400186
+  },
+  {
+    "name": "render-chinese-local",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/render_chinese_local.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 300,
+    "wall_seconds": 0.18211587499899906,
+    "child_max_rss_bytes_Darwin": 55001088,
+    "child_user_seconds": 0.147757,
+    "child_system_seconds": 0.019599
+  },
+  {
+    "name": "native-preview",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/native_preview.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 255,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "wall_seconds": 0.046902833000785904,
+    "child_max_rss_bytes_Darwin": 17629184,
+    "child_user_seconds": 0.023108999999999998,
+    "child_system_seconds": 0.008648
+  },
+  {
+    "name": "native-preview-approved",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/native_preview_approved.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "wall_seconds": 0.1670094999990397,
+    "child_max_rss_bytes_Darwin": 94584832,
+    "child_user_seconds": 0.098151,
+    "child_system_seconds": 0.029935
+  },
+  {
+    "name": "additional-analytic",
+    "argv": [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+      "-B",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/additional_analytic.py"
+    ],
+    "cwd": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments180/run-v2-01/snapshot",
+    "exit_code": 0,
+    "timeout": false,
+    "timeout_seconds": 60,
+    "wall_seconds": 0.027098749998913263,
+    "child_max_rss_bytes_Darwin": 16891904,
+    "child_user_seconds": 0.015453999999999999,
+    "child_system_seconds": 0.004732999999999999
+  }
+]

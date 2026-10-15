@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="555" viewBox="0 0 1050 555" role="img" aria-labelledby="title desc">
+<title id="title">四点DFT偶奇拆分与蝶形</title><desc id="desc">输入1,2,1,0的偶支DFT为2,0，奇支DFT为2,2。旋转后0支为2、1支为负2j；加减给输出4,负2j,0,2j。</desc>
+<rect width="1050" height="555" fill="#fff"/>
+<style>text{font-family:system-ui,"PingFang SC",sans-serif;font-size:22px;fill:#152b40}.head{font-size:27px;font-weight:650}.tiny{font-size:19px}.even{fill:#edf7ff;stroke:#3979a6;stroke-width:2}.odd{fill:#fff1e8;stroke:#b87537;stroke-width:2}.edge{fill:none;stroke:#426980;stroke-width:2;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#426980"/></marker></defs>
+<text x="30" y="40" class="head">x = (1, 2, 1, 0)：保留每一步的对象与索引</text>
+<rect x="30" y="80" width="270" height="135" rx="10" class="even"/><text x="48" y="113">偶样本 (x₀,x₂)=(1,1)</text><text x="48" y="151">2点DFT：E₀=2</text><text x="48" y="187">　　　　 E₁=0</text>
+<rect x="30" y="252" width="270" height="135" rx="10" class="odd"/><text x="48" y="285">奇样本 (x₁,x₃)=(2,0)</text><text x="48" y="323">2点DFT：O₀=2</text><text x="48" y="359">　　　　 O₁=2</text>
+<path d="M300,147 L370,147" class="edge"/><path d="M300,319 L370,319" class="edge"/>
+<rect x="380" y="90" width="290" height="295" rx="10" class="even"/>
+<text x="400" y="126">k=0：W₄⁰=1</text><text x="400" y="161">E₀ ± W₄⁰O₀ = 2 ± 2</text><text x="400" y="243">k=1：W₄¹=−j</text><text x="400" y="278">E₁ ± W₄¹O₁ = 0 ± (−2j)</text><text x="400" y="346" class="tiny">每对输出共用一次旋转乘法</text>
+<path d="M670,144 L735,144" class="edge"/><path d="M670,269 L735,269" class="edge"/>
+<rect x="746" y="90" width="273" height="295" rx="10" class="odd"/>
+<text x="767" y="126">k=0　R₀=4（＋）</text><text x="767" y="173">k=2　R₂=0（−）</text><text x="767" y="251">k=1　R₁=−2j（＋）</text><text x="767" y="298">k=3　R₃=2j（−）</text><text x="767" y="350" class="tiny">按k重排：(4,−2j,0,2j)</text>
+<text x="30" y="440">一般式：R[k] = E[k] + WNᵏO[k]；R[k+N/2] = E[k] − WNᵏO[k]</text>
+<text x="30" y="479">每层O(N)，log₂N层 → O(N log N)；这里N=2ᵖ。</text>
+<text x="30" y="520" class="tiny">逆变换除以N；FFT改变计算顺序，DFT对象与边界不变。</text>
+</svg>

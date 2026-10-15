@@ -1,0 +1,32 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "examples.py"
+  ],
+  "cwd_relative": "snapshot/\u6570\u5b66/25-\u9ad8\u7b49\u4ee3\u6570/50-\u6a21\u4e0e\u6709\u9650\u7fa4\u8868\u793a/code",
+  "timeout_seconds": 60,
+  "exit_code": 0,
+  "status": "completed",
+  "wall_seconds": 0.04801011085510254,
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "requested_thread_env": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4"
+  },
+  "child_ru_maxrss": 19660800,
+  "rss_unit": "bytes on Darwin; KB on Linux",
+  "limits": "Environment requests are not OS thread/memory hard limits. No aggregate RSS/thread-count observation. Stdlib single child; no installs/services.",
+  "stdout": {
+    "bytes": 12656,
+    "sha256": "5b2097b0869a38ec59916723a0e990dfb457d1aadbe8d54140b5a552403edc41"
+  },
+  "stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

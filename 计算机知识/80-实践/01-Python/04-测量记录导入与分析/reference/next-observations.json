@@ -1,0 +1,495 @@
+{
+  "science": {
+    "committed": {
+      "code_dtype": "int64",
+      "columns": [
+        "n",
+        "sum_mV",
+        "mean_mV",
+        "pvariance_mV2",
+        "variance_mV2",
+        "rms2_mV2"
+      ],
+      "ddof": [
+        0,
+        1
+      ],
+      "numpy": [
+        4,
+        20.0,
+        5.0,
+        5.0,
+        6.666666666666667,
+        30.0
+      ],
+      "row_ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "scalar": [
+        4,
+        20,
+        "5",
+        "5",
+        "20/3",
+        "30"
+      ],
+      "shape": [
+        4
+      ],
+      "sql": [
+        4,
+        20,
+        5.0,
+        5.0,
+        6.666666666666667,
+        30.0
+      ],
+      "versions": {
+        "numpy": "2.5.3",
+        "python": "3.14.7",
+        "sqlite": "3.53.4"
+      },
+      "voltage_dtype": "float64"
+    },
+    "policy_example": {
+      "drop_missing_only_mean_mV": 4.666666666666667,
+      "duplicates": 1,
+      "input_ids": [
+        "a",
+        "b",
+        "c",
+        "c"
+      ],
+      "note": "nanmean still counts the c replay; an array index does not enforce sample identity",
+      "policy": "reject missing; identical identity replay skipped; conflict rejected",
+      "raw_mean_is_nan": true,
+      "rejected": 1,
+      "selected_ids": [
+        "a",
+        "c"
+      ],
+      "selected_mean_mV": 4.0,
+      "selected_pvariance_mV2": 4.0,
+      "selected_rms2_mV2": 20.0
+    }
+  },
+  "benchmark": {
+    "observations": [
+      {
+        "batch_size": 64,
+        "case": "new",
+        "elapsed_seconds": 0.03452041700074915,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 42534,
+        "repeat_index": 0,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25591808,
+        "rss_peak_before_raw": 24838144,
+        "rss_peak_bytes": 25591808,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "new",
+        "elapsed_seconds": 0.03233029200055171,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 42534,
+        "repeat_index": 1,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25477120,
+        "rss_peak_before_raw": 24707072,
+        "rss_peak_bytes": 25477120,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "new",
+        "elapsed_seconds": 0.031731291994219646,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 42534,
+        "repeat_index": 2,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25673728,
+        "rss_peak_before_raw": 24903680,
+        "rss_peak_bytes": 25673728,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "new",
+        "elapsed_seconds": 0.05580591699981596,
+        "final_rows": 4000,
+        "n": 4000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 44358,
+        "repeat_index": 0,
+        "report": {
+          "duplicates": 0,
+          "inserted": 4000,
+          "read": 4000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25673728,
+        "rss_peak_before_raw": 24870912,
+        "rss_peak_bytes": 25673728,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "new",
+        "elapsed_seconds": 0.05716274998849258,
+        "final_rows": 4000,
+        "n": 4000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 44358,
+        "repeat_index": 1,
+        "report": {
+          "duplicates": 0,
+          "inserted": 4000,
+          "read": 4000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25575424,
+        "rss_peak_before_raw": 24657920,
+        "rss_peak_bytes": 25575424,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "new",
+        "elapsed_seconds": 0.05295625000144355,
+        "final_rows": 4000,
+        "n": 4000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 44358,
+        "repeat_index": 2,
+        "report": {
+          "duplicates": 0,
+          "inserted": 4000,
+          "read": 4000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25378816,
+        "rss_peak_before_raw": 24559616,
+        "rss_peak_bytes": 25378816,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 256,
+        "case": "new",
+        "elapsed_seconds": 0.02056733300560154,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 106214,
+        "repeat_index": 0,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25739264,
+        "rss_peak_before_raw": 24674304,
+        "rss_peak_bytes": 25739264,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 256,
+        "case": "new",
+        "elapsed_seconds": 0.020378040993819013,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 106214,
+        "repeat_index": 1,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25772032,
+        "rss_peak_before_raw": 24739840,
+        "rss_peak_bytes": 25772032,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 256,
+        "case": "new",
+        "elapsed_seconds": 0.020672582992119715,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 106214,
+        "repeat_index": 2,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25722880,
+        "rss_peak_before_raw": 24657920,
+        "rss_peak_bytes": 25722880,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "replay",
+        "elapsed_seconds": 0.012271125000552274,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 39662,
+        "repeat_index": 0,
+        "report": {
+          "duplicates": 2000,
+          "inserted": 0,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25346048,
+        "rss_peak_before_raw": 25264128,
+        "rss_peak_bytes": 25346048,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "replay",
+        "elapsed_seconds": 0.012096791993826628,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 39662,
+        "repeat_index": 1,
+        "report": {
+          "duplicates": 2000,
+          "inserted": 0,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25575424,
+        "rss_peak_before_raw": 25509888,
+        "rss_peak_bytes": 25575424,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "replay",
+        "elapsed_seconds": 0.012184084000182338,
+        "final_rows": 2000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 39662,
+        "repeat_index": 2,
+        "report": {
+          "duplicates": 2000,
+          "inserted": 0,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25640960,
+        "rss_peak_before_raw": 25575424,
+        "rss_peak_bytes": 25640960,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "append",
+        "elapsed_seconds": 0.025535958004184067,
+        "final_rows": 4000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 41710,
+        "repeat_index": 0,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25542656,
+        "rss_peak_before_raw": 25411584,
+        "rss_peak_bytes": 25542656,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "append",
+        "elapsed_seconds": 0.02678770900820382,
+        "final_rows": 4000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 41710,
+        "repeat_index": 1,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25411584,
+        "rss_peak_before_raw": 25296896,
+        "rss_peak_bytes": 25411584,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      },
+      {
+        "batch_size": 64,
+        "case": "append",
+        "elapsed_seconds": 0.02635154200834222,
+        "final_rows": 4000,
+        "n": 2000,
+        "platform": "macOS-27.0.1-arm64-arm-64bit",
+        "python": "3.12.11",
+        "python_peak_bytes": 41710,
+        "repeat_index": 2,
+        "report": {
+          "duplicates": 0,
+          "inserted": 2000,
+          "read": 2000,
+          "rejected": 0
+        },
+        "rss_peak_after_raw": 25559040,
+        "rss_peak_before_raw": 25444352,
+        "rss_peak_bytes": 25559040,
+        "rss_raw_unit": "bytes",
+        "sqlite": "3.49.1"
+      }
+    ],
+    "scope": "generated validated records, local temporary SQLite; elapsed excludes setup for replay/append, includes schema for new; RSS peak is whole process including setup"
+  },
+  "pipeline_failure": {
+    "accounted": 4,
+    "batch_size": 2,
+    "capacity": 1,
+    "committed_report": {
+      "duplicates": 0,
+      "inserted": 2,
+      "read": 2,
+      "rejected": 0
+    },
+    "completed_batch_count": 1,
+    "connection_closed": true,
+    "consumer_closed": true,
+    "error_group": "unhandled errors in a TaskGroup (1 sub-exception)",
+    "final_row_count": 2,
+    "final_rows": [
+      [
+        "a",
+        0,
+        2
+      ],
+      [
+        "b",
+        1000,
+        4
+      ]
+    ],
+    "final_rows_truncated": false,
+    "in_transaction_at_close": false,
+    "joined_before_commit": 2,
+    "producer_cancelled": true,
+    "producer_closed": true,
+    "queue_high_water": 1,
+    "source_closed": true,
+    "tasks_created": 2
+  },
+  "pipeline_recovery": {
+    "accounted": 4,
+    "batch_size": 2,
+    "capacity": 1,
+    "committed_report": {
+      "duplicates": 2,
+      "inserted": 2,
+      "read": 4,
+      "rejected": 0
+    },
+    "completed_batch_count": 2,
+    "connection_closed": true,
+    "consumer_closed": true,
+    "final_row_count": 4,
+    "final_rows": [
+      [
+        "a",
+        0,
+        2
+      ],
+      [
+        "b",
+        1000,
+        4
+      ],
+      [
+        "c",
+        2000,
+        6
+      ],
+      [
+        "d",
+        3000,
+        8
+      ]
+    ],
+    "final_rows_truncated": false,
+    "in_transaction_at_close": false,
+    "joined_before_commit": 2,
+    "producer_cancelled": false,
+    "producer_closed": true,
+    "queue_high_water": 1,
+    "source_closed": true,
+    "tasks_created": 2
+  }
+}

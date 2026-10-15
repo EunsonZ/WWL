@@ -1,0 +1,26 @@
+Joint L04 teaching DC and linear AC; NOT vendor or PDK models
+* Source reference is node0. Explicit closed supply/resistor/device loops.
+* Diode target: Is=1e-12A, nVT=.025V, Q validated within [0,.6]V.
+* ngspice43 B-source exp(x) linearizes above14; use exp(x/2)^2.
+* In this stated Q domain each exponential argument<=12 (<14).
+VSD sd 0 DC 5
+RD sd nd 1k
+BD nd 0 I=1e-12*(exp(v(nd)/.05)^2-1)
+* MOS instance node order D G S B. W/L=1; gamma0, no real process claim.
+VSM sm 0 DC 5
+RM sm nm 2k
+VG ng 0 DC 1.5 AC 1
+M1 nm ng 0 0 MTOY W=1u L=1u
+.model MTOY NMOS (LEVEL=1 VTO=.5 KP=.002 LAMBDA=.02 GAMMA=0 PHI=.6 RD=0 RS=0)
+* RL is AC coupled, not parallel with RM for the DC Q.
+CC nm out 1u
+RL out 0 10k
+.temp 27
+.options tnom=27 reltol=1e-8 abstol=1e-12 vntol=1e-9
+.control
+op
+print v(nd) v(nm) i(VSD) i(VSM)
+ac dec 1 1k 100k
+print v(out)
+.endc
+.end

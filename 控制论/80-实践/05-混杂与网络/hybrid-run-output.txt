@@ -1,0 +1,21 @@
+{
+  "thermal_first_event_s": 2.8768207245178083,
+  "thermal_dwell_s": 5.108256237659907,
+  "thermal_period_s": 10.216512475319814,
+  "thermal_events_count": 8,
+  "root_vs_log_max_error_s": 4.440892098500626e-16,
+  "switch_rho_c4_s1": 2.4284931214145296,
+  "switch_rho_c4_s2": 1.2085545932396,
+  "P_eigen_min": 0.2639320225002102,
+  "P_eigen_max": 4.73606797749979,
+  "dwell_sufficient_bound_normalized": 13.674311490354114,
+  "eigenvector_12cycles_scaled_error": 8.881784197001252e-16,
+  "rk4_two_segment_errors_10_20_40": [
+    1.569974725779133e-05,
+    9.312683193485327e-07,
+    5.6702166517652586e-08
+  ],
+  "scope": "Finite deterministic checks only; general guarantees are proved in lesson 13."
+}
+PASS: event roots, invariant band, exact Lyapunov identity, unstable product, common bound, RK4 refinement
+{"python": "3.14.7", "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O", "serial": true, "thread_ceiling": 4, "configured_numeric_threads": 1, "elapsed_s": 0.03611545800231397, "peak_rss_raw": 23838720, "peak_rss_unit": "bytes"}

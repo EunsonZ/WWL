@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 740" role="img" aria-labelledby="title desc">
+<title id="title">同一三角形读数的势差与残差：填面改变残差身份</title>
+<desc id="desc">边01从0到1，12从1到2，02从0到2，所有箭头固定。左上原读数，右上欧氏势差，左下没有面时的调和残差，右下新增面后的面边界。负读数按固定箭头显示。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#203950"/></marker></defs>
+<rect width="980" height="740" fill="#fff"/>
+<g font-family="Arial Unicode MS, sans-serif" font-size="20" fill="#172e40">
+<g transform="translate(0,0)">
+<text x="42" y="34" font-weight="bold">原读数 y；只有边</text>
+<g stroke="#203950" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M100 250H380"/><path d="M380 250L240 83"/><path d="M100 250L240 83"/></g>
+<g fill="#203950"><circle cx="100" cy="250" r="5"/><circle cx="380" cy="250" r="5"/><circle cx="240" cy="83" r="5"/></g>
+<text x="70" y="273">v₀</text><text x="378" y="273">v₁</text><text x="230" y="72">v₂</text>
+<text x="197" y="275" font-size="18">01: 2</text>
+<text x="327" y="165" font-size="18">12: 1</text>
+<text x="42" y="165" font-size="18">02: 0</text>
+<text x="42" y="317" font-size="18">闭路评价 y^T z = 3</text></g>
+<g transform="translate(490,0)">
+<text x="42" y="34" font-weight="bold">势差 g；只有边</text>
+<g stroke="#203950" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M100 250H380"/><path d="M380 250L240 83"/><path d="M100 250L240 83"/></g>
+<g fill="#203950"><circle cx="100" cy="250" r="5"/><circle cx="380" cy="250" r="5"/><circle cx="240" cy="83" r="5"/></g>
+<text x="70" y="273">v₀</text><text x="378" y="273">v₁</text><text x="230" y="72">v₂</text>
+<text x="197" y="275" font-size="18">01: 1</text>
+<text x="327" y="165" font-size="18">12: 0</text>
+<text x="42" y="165" font-size="18">02: 1</text>
+<text x="42" y="317" font-size="18">φ = (0, 1, 1)</text></g>
+<g transform="translate(0,350)">
+<text x="42" y="34" font-weight="bold">剩余 r；只有边</text>
+<g stroke="#203950" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M100 250H380"/><path d="M380 250L240 83"/><path d="M100 250L240 83"/></g>
+<g fill="#203950"><circle cx="100" cy="250" r="5"/><circle cx="380" cy="250" r="5"/><circle cx="240" cy="83" r="5"/></g>
+<text x="70" y="273">v₀</text><text x="378" y="273">v₁</text><text x="230" y="72">v₂</text>
+<text x="197" y="275" font-size="18">01: 1</text>
+<text x="327" y="165" font-size="18">12: 1</text>
+<text x="42" y="165" font-size="18">02: -1</text>
+<text x="42" y="317" font-size="18">调和 h = r；面项 q = 0</text></g>
+<g transform="translate(490,350)">
+<text x="42" y="34" font-weight="bold">同一 r；填一个面</text>
+<path d="M100 250L380 250L240 83Z" fill="#dfedf9"/>
+<text x="231" y="205">t</text>
+<g stroke="#203950" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M100 250H380"/><path d="M380 250L240 83"/><path d="M100 250L240 83"/></g>
+<g fill="#203950"><circle cx="100" cy="250" r="5"/><circle cx="380" cy="250" r="5"/><circle cx="240" cy="83" r="5"/></g>
+<text x="70" y="273">v₀</text><text x="378" y="273">v₁</text><text x="230" y="72">v₂</text>
+<text x="197" y="275" font-size="18">01: 1</text>
+<text x="327" y="165" font-size="18">12: 1</text>
+<text x="42" y="165" font-size="18">02: -1</text>
+<text x="42" y="317" font-size="18">面项 q = r；h = 0；a = 1</text></g>
+<text x="42" y="726" font-size="18">边序 01、12、02；全部无量纲。箭头是参考方向；负值不改变边方向。浅色只表示右下面 t。</text></g></svg>

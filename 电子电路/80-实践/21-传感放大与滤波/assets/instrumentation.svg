@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="760" viewBox="0 0 420 760">
+<rect width="420" height="100%" style="fill:white;stroke:none"/>
+<style>text{font-family:Arial,sans-serif;font-size:14px;fill:#111}path,line,rect,polygon,circle{stroke:#111;stroke-width:2;fill:none} .node{fill:#111}</style>
+<text x="16" y="25">Three-op-amp INA: DC nodes and real resistor ratios</text>
+<polygon points="70,135 70,225 140,180"/>
+<text x="75" y="164">+</text>
+<text x="75" y="205">−</text>
+<text x="98" y="184">A1</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="98,153 98,115"/>
+<text x="102" y="123">+5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="98,207 98,245"/>
+<text x="102" y="241">−5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="30,160 70,160"/>
+<text x="32" y="145">v1</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="70,200 50,200 50,290"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="50,290 88.4,290.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="131.60000000000002,290.0 170,290"/>
+<rect x="88.4" y="284" width="43.20000000000002" height="12"/>
+<text x="88.0" y="277">Rf 10k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="170,290 170,180 140,180"/>
+<circle class="node" cx="50" cy="290" r="3"/>
+<circle class="node" cx="170" cy="180" r="3"/>
+<text x="140" y="165">o1</text>
+<polygon points="265,135 265,225 335,180"/>
+<text x="270" y="164">+</text>
+<text x="270" y="205">−</text>
+<text x="293" y="184">A2</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="293,153 293,115"/>
+<text x="297" y="123">+5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="293,207 293,245"/>
+<text x="297" y="241">−5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="225,160 265,160"/>
+<text x="227" y="145">v2</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="265,200 245,200 245,290"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="245,290 283.4,290.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="326.6,290.0 365,290"/>
+<rect x="283.4" y="284" width="43.200000000000045" height="12"/>
+<text x="283.0" y="277">Rf 10k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="365,290 365,180 335,180"/>
+<circle class="node" cx="245" cy="290" r="3"/>
+<circle class="node" cx="365" cy="180" r="3"/>
+<text x="335" y="165">o2</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="50,290 50,365"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="50,365 112.4,365.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="182.60000000000002,365.0 245,365"/>
+<rect x="112.4" y="359" width="70.20000000000002" height="12"/>
+<text x="125.5" y="352">Rg 2k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="245,365 245,290"/>
+<polygon points="225,510 225,600 295,555"/>
+<text x="230" y="539">−</text>
+<text x="230" y="580">+</text>
+<text x="253" y="559">A3</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="253,528 253,490"/>
+<text x="257" y="498">+5 V</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="253,582 253,620"/>
+<text x="257" y="616">−5 V</text>
+<text x="16" y="422">A1/A2 inputs: v−=v+ only in linear ideal limit.</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="170,180 185,180 185,475 25,475 25,535"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="25,535 89.0,535.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="161.0,535.0 225,535"/>
+<rect x="89.0" y="529" width="72.0" height="12"/>
+<text x="103.0" y="522">R1 10k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="365,180 395,180 395,445 15,445 15,575"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="15,575 82.2,575.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="157.8,575.0 225,575"/>
+<rect x="82.2" y="569" width="75.60000000000001" height="12"/>
+<text x="98.0" y="562">R3 10k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200,535 200,460"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200,460 246.4,460.0"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="298.6,460.0 345,460"/>
+<rect x="246.4" y="454" width="52.20000000000002" height="12"/>
+<text x="250.5" y="482">R2 100k</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="345,460 345,555 295,555"/>
+<circle class="node" cx="200" cy="535" r="3"/>
+<circle class="node" cx="345" cy="555" r="3"/>
+<text x="348" y="560">vo</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200,575 200.0,603.8"/>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200.0,636.2 200,665"/>
+<rect x="194" y="603.8" width="12" height="32.40000000000009"/>
+<text x="212" y="620.0">R4</text>
+<circle class="node" cx="200" cy="575" r="3"/>
+<text x="126" y="690">Vref = 2.5 V (stiff source)</text>
+<polyline fill="none" stroke="#111" stroke-width="2" points="200,665 200,676"/>
+<text x="16" y="708">R1/R3=10k; R2/R4=100k. All amps ±5 V.</text>
+<text x="16" y="728">Reference node for vi/vo is 0 V.</text>
+<text x="16" y="746">Crossed wires without a dot are not joined.</text>
+</svg>

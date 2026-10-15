@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 535" role="img">
+<title>Change a condition, then recompute Q</title><desc>Same initial energy, uniform normal conductor. Left varies sigma; right compares uniform geometric scale with varying b alone. Points are from scaling.csv.</desc>
+<rect width="900" height="100%" fill="white"/>
+<g font-family="sans-serif" font-size="15" fill="#202020">
+<text x="32" y="30" font-size="21">Change a condition, then recompute Q</text>
+<path d="M78,90 V355 H388" fill="none" stroke="#222"/>
+<text x="78.0" y="378" text-anchor="middle">0.25</text>
+<text x="70" y="360.0" text-anchor="end">0</text>
+<text x="155.5" y="378" text-anchor="middle">1.2</text>
+<text x="70" y="293.8" text-anchor="end">0.55</text>
+<text x="233.0" y="378" text-anchor="middle">2.1</text>
+<text x="70" y="227.5" text-anchor="end">1.1</text>
+<text x="310.5" y="378" text-anchor="middle">3.1</text>
+<text x="70" y="161.2" text-anchor="end">1.7</text>
+<text x="388.0" y="378" text-anchor="middle">4</text>
+<text x="70" y="95.0" text-anchor="end">2.2</text>
+<text x="233.0" y="404" text-anchor="middle">sigma / sigma0</text>
+<text x="78" y="73">Q / Q0</text>
+<polyline points="78.000,294.773 87.688,282.009 97.375,271.167 107.062,261.575 116.750,252.880 126.438,244.869 136.125,237.402 145.812,230.383 155.500,223.738 165.188,217.413 174.875,211.367 184.562,205.565 194.250,199.981 203.938,194.590 213.625,189.375 223.312,184.319 233.000,179.409 242.688,174.632 252.375,169.979 262.062,165.440 271.750,161.006 281.438,156.672 291.125,152.431 300.812,148.277 310.500,144.205 320.188,140.209 329.875,136.287 339.562,132.434 349.250,128.646 358.938,124.921 368.625,121.255 378.312,117.646 388.000,114.091" fill="none" stroke="#246a88" stroke-width="2.5" stroke-dasharray=""/>
+<line x1="78" x2="113" y1="425" y2="425" stroke="#246a88" stroke-width="3" stroke-dasharray=""/>
+<text x="122" y="430">sigma only: sqrt(r)</text>
+<path d="M505,90 V355 H815" fill="none" stroke="#222"/>
+<text x="505.0" y="378" text-anchor="middle">0.5</text>
+<text x="497" y="360.0" text-anchor="end">0</text>
+<text x="582.5" y="378" text-anchor="middle">0.88</text>
+<text x="497" y="293.8" text-anchor="end">0.4</text>
+<text x="660.0" y="378" text-anchor="middle">1.2</text>
+<text x="497" y="227.5" text-anchor="end">0.8</text>
+<text x="737.5" y="378" text-anchor="middle">1.6</text>
+<text x="497" y="161.2" text-anchor="end">1.2</text>
+<text x="815.0" y="378" text-anchor="middle">2</text>
+<text x="497" y="95.0" text-anchor="end">1.6</text>
+<text x="660.0" y="404" text-anchor="middle">dimension ratio s</text>
+<text x="505" y="73">Q / Q0</text>
+<polyline points="505.000,237.885 514.688,232.519 524.375,227.377 534.062,222.435 543.750,217.671 553.438,213.067 563.125,208.607 572.812,204.279 582.500,200.072 592.188,195.976 601.875,191.983 611.562,188.086 621.250,184.278 630.938,180.552 640.625,176.905 650.312,173.331 660.000,169.826 669.688,166.386 679.375,163.007 689.062,159.687 698.750,156.423 708.438,153.211 718.125,150.050 727.812,146.936 737.500,143.869 747.188,140.845 756.875,137.864 766.562,134.923 776.250,132.021 785.938,129.156 795.625,126.327 805.312,123.532 815.000,120.771" fill="none" stroke="#246a88" stroke-width="2.5" stroke-dasharray=""/>
+<line x1="505" x2="540" y1="425" y2="425" stroke="#246a88" stroke-width="3" stroke-dasharray=""/>
+<text x="549" y="430">all dimensions: sqrt(s)</text>
+<polyline points="505.000,245.838 511.458,241.277 517.917,236.890 524.375,232.668 530.833,228.602 537.292,224.683 543.750,220.903 550.208,217.255 556.667,213.732 563.125,210.328 569.583,207.036 576.042,203.853 582.500,200.771 588.958,197.787 595.417,194.896 601.875,192.093 608.333,189.375 614.792,186.738 621.250,184.178 627.708,181.691 634.167,179.276 640.625,176.928 647.083,174.646 653.542,172.425 660.000,170.264 666.458,168.161 672.917,166.113 679.375,164.118 685.833,162.174 692.292,160.279 698.750,158.431 705.208,156.628 711.667,154.870" fill="none" stroke="#a74b18" stroke-width="2.5" stroke-dasharray="7 4"/>
+<line x1="505" x2="540" y1="448" y2="448" stroke="#a74b18" stroke-width="3" stroke-dasharray="7 4"/>
+<text x="549" y="453">b alone: saturates</text>
+<text x="32" y="510">Base Q = 6956.757337; all-dimension scaling also scales wall thickness.</text>
+</g></svg>

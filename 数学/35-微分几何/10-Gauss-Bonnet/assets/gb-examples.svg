@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">球面三角形、北球帽和圆柱带</title>
+  <desc id="desc">三个面板分别显示球面第一卦限三角形及三个转角、北球帽向东边界与向北左法向、圆柱带上下边界的相反方向。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2459a6"/>
+    </marker>
+    <marker id="green-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#198754"/>
+    </marker>
+  </defs>
+  <rect width="900" height="360" rx="16" fill="#fbfcfe"/>
+  <g transform="translate(0,0)">
+    <text x="150" y="30" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#1f2937">球面测地三角形</text>
+    <circle cx="150" cy="184" r="105" fill="#edf5ff" stroke="#7798ba" stroke-width="2"/>
+    <path d="M150,79 C84,120 77,221 150,289 C222,222 217,121 150,79 Z" fill="#d9ebff" stroke="#4775a3" stroke-width="2"/>
+    <path d="M150,79 C183,133 184,236 150,289" fill="none" stroke="#4775a3" stroke-width="2"/>
+    <path d="M150,79 L80,222 L217,222 Z" fill="#ffdca8" fill-opacity="0.9" stroke="#b56b18" stroke-width="4"/>
+    <path d="M100,181 L88,207" stroke="#2459a6" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="150" y="326" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#475569">三边 k_g=0；三角各 α=π/2</text>
+  </g>
+  <line x1="300" y1="48" x2="300" y2="324" stroke="#cbd5e1" stroke-width="2"/>
+  <g transform="translate(300,0)">
+    <text x="150" y="30" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#1f2937">北球帽</text>
+    <path d="M55,208 A100,112 0 0 1 245,208" fill="#d9ebff" stroke="#4775a3" stroke-width="2"/>
+    <ellipse cx="150" cy="207" rx="95" ry="34" fill="#c4e1ff" stroke="#4775a3" stroke-width="3"/>
+    <path d="M74,187 C105,169 158,168 201,181" fill="none" stroke="#2459a6" stroke-width="4" marker-end="url(#arrow)"/>
+    <line x1="203" y1="181" x2="168" y2="133" stroke="#198754" stroke-width="4" marker-end="url(#green-arrow)"/>
+    <text x="216" y="174" font-family="sans-serif" font-size="15" fill="#2459a6">T 向东</text>
+    <text x="161" y="118" font-family="sans-serif" font-size="15" fill="#198754">JT 向北帽</text>
+    <text x="150" y="277" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#475569">∫KdA=2π(1−cos φ₀)</text>
+    <text x="150" y="303" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#475569">∫k_gds=2π cos φ₀</text>
+  </g>
+  <line x1="600" y1="48" x2="600" y2="324" stroke="#cbd5e1" stroke-width="2"/>
+  <g transform="translate(600,0)">
+    <text x="150" y="30" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#1f2937">圆柱带</text>
+    <path d="M63,104 L63,252 C63,279 237,279 237,252 L237,104" fill="#e7f1ff" stroke="#4775a3" stroke-width="2"/>
+    <ellipse cx="150" cy="104" rx="87" ry="30" fill="#d8eaff" stroke="#4775a3" stroke-width="3"/>
+    <ellipse cx="150" cy="252" rx="87" ry="30" fill="#e7f1ff" stroke="#4775a3" stroke-width="3"/>
+    <path d="M78,95 C115,74 180,75 216,94" fill="none" stroke="#2459a6" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M220,260 C183,280 118,280 82,260" fill="none" stroke="#2459a6" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="150" y="326" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#475569">上、下边界方向相反；K=k_g=0</text>
+  </g>
+</svg>

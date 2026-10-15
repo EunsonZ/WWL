@@ -1,0 +1,247 @@
+{
+  "schema": "wwl-imported-tests-v1",
+  "batch": "2026-09-08_双来源知识增量导入",
+  "source": {
+    "vault": "/Users/ysz/Misc/Obsidian/Valults/WorkWithLLM/WorkWithLLM",
+    "path": "scripts/test_numeric_contracts.py",
+    "sha256": "b9cdd1c0afd1c91e56c16839967859a93b4be4f3f8b861e2062ffaebbf10f7ce"
+  },
+  "target": {
+    "kind": "isolated-stage",
+    "root": "/private/tmp/wwl-dual-import-75zcpdpm/stage",
+    "implementation_files_modified": false,
+    "markdown_files_modified": false,
+    "governance_tools_copied": false
+  },
+  "imported_test_count": 13,
+  "imports": [
+    {
+      "source_function": "test_checkpoint_load_fails_closed",
+      "source_lines": "48-56",
+      "target_path": "AI/80-实践/01-微型Transformer预训练/test_checkpoint_contracts.py",
+      "target_function": "test_restricted_checkpoint_load_fails_closed",
+      "layer": "ast_mock_no_torch",
+      "evidence_boundary": "AST extracts load_checkpoint; Mock proves one restricted torch.load call and fail-closed TypeError handling. This is not a real PyTorch checkpoint load."
+    },
+    {
+      "source_function": "test_ppl_has_no_silent_cap_and_is_strict_json",
+      "source_lines": "58-67",
+      "target_path": "AI/80-实践/01-微型Transformer预训练/test_checkpoint_contracts.py",
+      "target_function": "test_ppl_has_no_silent_cap_and_is_strict_json",
+      "layer": "ast_isolated_actual_python",
+      "evidence_boundary": "AST executes the actual metrics_from_nll function with Python math/json; no model or PyTorch is loaded."
+    },
+    {
+      "source_function": "test_lora_path_symlinks_and_containment",
+      "source_lines": "69-82",
+      "target_path": "AI/80-实践/02-SFT-LoRA与QLoRA/test_path_contracts.py",
+      "target_function": "test_symlinks_and_artifact_root_containment",
+      "layer": "actual_stdlib_temp_filesystem",
+      "evidence_boundary": "Runs the actual require_artifact_path against regular paths and file/parent symlinks in a TemporaryDirectory; it does not train or write into the Vault."
+    },
+    {
+      "source_function": "test_huge_equal_logits_and_old_counterexample",
+      "source_lines": "84-90",
+      "target_path": "数学/50-信息论/test_softmax_stability_contracts.py",
+      "target_function": "test_huge_equal_logits_and_old_counterexample",
+      "layer": "actual_stdlib_numeric"
+    },
+    {
+      "source_function": "test_softmax_gradient_and_translation",
+      "source_lines": "92-99",
+      "target_path": "数学/50-信息论/test_softmax_stability_contracts.py",
+      "target_function": "test_gradient_and_translation_invariance",
+      "layer": "actual_stdlib_numeric"
+    },
+    {
+      "source_function": "test_softmax_invalid_and_extreme",
+      "source_lines": "101-105",
+      "target_path": "数学/50-信息论/test_softmax_stability_contracts.py",
+      "target_function": "test_invalid_and_extreme_inputs",
+      "layer": "actual_stdlib_numeric"
+    },
+    {
+      "source_function": "test_causality_and_cache",
+      "source_lines": "107-118",
+      "target_path": "AI/20-LLM/50-实现/test_tiny_numpy_contracts.py",
+      "target_function": "test_causality_cache_and_invalid_cache_state",
+      "layer": "actual_numpy_cpu"
+    },
+    {
+      "source_function": "test_mask_is_not_a_finite_score_floor",
+      "source_lines": "120-127",
+      "target_path": "AI/20-LLM/50-实现/test_tiny_numpy_contracts.py",
+      "target_function": "test_causal_mask_is_not_a_finite_score_floor",
+      "layer": "actual_numpy_cpu"
+    },
+    {
+      "source_function": "test_token_ids",
+      "source_lines": "129-132",
+      "target_path": "AI/20-LLM/50-实现/test_tiny_numpy_contracts.py",
+      "target_function": "test_negative_and_out_of_range_token_ids_are_rejected",
+      "layer": "actual_numpy_cpu"
+    },
+    {
+      "source_function": "test_sampling_boundaries_and_reproducibility",
+      "source_lines": "134-143",
+      "target_path": "AI/20-LLM/50-实现/test_tiny_numpy_contracts.py",
+      "target_function": "test_sampling_boundaries_translation_ties_and_top_k",
+      "layer": "actual_numpy_cpu"
+    },
+    {
+      "source_function": "test_cosine_scale_and_domain",
+      "source_lines": "145-150",
+      "target_path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/test_retrieval_contracts.py",
+      "target_function": "test_cosine_scale_and_domain",
+      "layer": "actual_stdlib_numeric"
+    },
+    {
+      "source_function": "test_key_semantics",
+      "source_lines": "152-161",
+      "target_path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/test_retrieval_contracts.py",
+      "target_function": "test_key_v1_semantics_and_cross_process_stability",
+      "layer": "actual_stdlib_cross_process"
+    },
+    {
+      "source_function": "test_graph_overflow_unreachable_and_direct_input",
+      "source_lines": "163-169",
+      "target_path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/test_graph_contracts.py",
+      "target_function": "test_overflow_unreachable_and_direct_input_validation",
+      "layer": "actual_stdlib_numeric"
+    }
+  ],
+  "source_helper": {
+    "name": "isolated_training_functions",
+    "source_lines": "38-46",
+    "adaptation": "Reimplemented locally as isolated_checkpoint_functions with UTF-8 input, explicit function-presence assertion, and no real torch import."
+  },
+  "excluded": [
+    {
+      "source_function": "test_adam_dpo_and_dft_independent_values",
+      "source_lines": "171-186",
+      "reason": "The requested 14th source method covers already-present Adam/DPO/DFT material outside this import boundary."
+    }
+  ],
+  "created_files": [
+    {
+      "path": "数学/50-信息论/test_softmax_stability_contracts.py",
+      "sha256": "a335ea0a1264b139416fbaeb244432d04f8db360e148f460e78419b97983baf2"
+    },
+    {
+      "path": "AI/20-LLM/50-实现/test_tiny_numpy_contracts.py",
+      "sha256": "cd4437ae290817af25bfe0d3de02f927e419326487ba1913bf86b8d647f7437d"
+    },
+    {
+      "path": "AI/80-实践/01-微型Transformer预训练/test_checkpoint_contracts.py",
+      "sha256": "d3d028377fe4bcac9f3e5cafa1aa4c6faa567130950e3adbaf748b89142d9668"
+    },
+    {
+      "path": "AI/80-实践/02-SFT-LoRA与QLoRA/test_path_contracts.py",
+      "sha256": "eb5c52a3589f600cc775b437efc5d31cb642649c53a8a45eded07921c4a2d7c0"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测/test_retrieval_contracts.py",
+      "sha256": "59a8d77679cb9d7d55d4e4bc1906f71bee3d2c38dc318705f07c9bd3454e827b"
+    },
+    {
+      "path": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路/test_graph_contracts.py",
+      "sha256": "8a088d98a63305dae329f2e26671be744932a98f47b2ca888fff3ab6694a1739"
+    }
+  ],
+  "actual_results": {
+    "imported_contracts": [
+      {
+        "cwd": "数学/50-信息论",
+        "command": "python3 -B test_softmax_stability_contracts.py -v",
+        "exit_code": 0,
+        "run": 3,
+        "passed": 3,
+        "skipped": 0
+      },
+      {
+        "cwd": "AI/20-LLM/50-实现",
+        "command": "python3 -B test_tiny_numpy_contracts.py -v",
+        "exit_code": 0,
+        "run": 4,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "cwd": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测",
+        "command": "python3 -B test_retrieval_contracts.py -v",
+        "exit_code": 0,
+        "run": 2,
+        "passed": 2,
+        "skipped": 0
+      },
+      {
+        "cwd": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路",
+        "command": "python3 -B test_graph_contracts.py -v",
+        "exit_code": 0,
+        "run": 1,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "cwd": "AI/80-实践/01-微型Transformer预训练",
+        "command": "python3 -B test_checkpoint_contracts.py -v",
+        "exit_code": 0,
+        "run": 2,
+        "passed": 2,
+        "skipped": 0,
+        "boundary": "AST/mock plus pure Python only; real PyTorch was not imported."
+      },
+      {
+        "cwd": "AI/80-实践/02-SFT-LoRA与QLoRA",
+        "command": "python3 -B test_path_contracts.py -v",
+        "exit_code": 0,
+        "run": 1,
+        "passed": 1,
+        "skipped": 0
+      }
+    ],
+    "existing_adjacent_regressions": [
+      {
+        "cwd": "计算机知识/80-实践/05-数据结构与算法/11-概率结构与检索评测",
+        "command": "python3 -B test_retrieval_lab.py -v",
+        "exit_code": 0,
+        "run": 10,
+        "passed": 10,
+        "skipped": 0
+      },
+      {
+        "cwd": "计算机知识/80-实践/05-数据结构与算法/03-图遍历与最短路",
+        "command": "python3 -B test_graph_algorithms.py -v",
+        "exit_code": 0,
+        "run": 3,
+        "passed": 3,
+        "skipped": 0
+      },
+      {
+        "cwd": "AI/80-实践/01-微型Transformer预训练",
+        "command": "python3 -B test_tiny_transformer.py -v",
+        "exit_code": 0,
+        "run": 15,
+        "passed": 13,
+        "skipped": 2,
+        "boundary": "Both real TorchModelTests skipped because PyTorch is not installed; 13 standard-library data/checkpoint tests passed."
+      },
+      {
+        "cwd": "AI/80-实践/02-SFT-LoRA与QLoRA",
+        "command": "python3 -B test_practice.py -v",
+        "exit_code": 0,
+        "run": 6,
+        "passed": 6,
+        "skipped": 0
+      }
+    ],
+    "totals": {
+      "imported_run": 13,
+      "imported_passed": 13,
+      "imported_skipped": 0,
+      "existing_run": 34,
+      "existing_passed": 32,
+      "existing_skipped": 2
+    }
+  }
+}

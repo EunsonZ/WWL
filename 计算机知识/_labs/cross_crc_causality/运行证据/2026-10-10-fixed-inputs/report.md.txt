@@ -1,0 +1,17 @@
+# #219 独立 CRC 有限执行
+
+11件冻结候选（5正文、5实验文件、同版AGENTS）运行前逐byte snapshot，结束再次核SHA未漂移。业务crc.py 60秒预跑实际0.040秒exit0，作者verify实际0.048秒exit0；独立oracle最终0.150秒exit0，接口核0.046秒exit0。所有命令从实验目录外以绝对源码路径调用，__file__默认输入/expected便携定位实际有效。业务只stdout，无安装/网络/外部写路径guard，因此未用tmp。完整stdout/stderr、退出码、时间、环境保留。
+
+独立期望先于业务运行保存。非作者oracle不导入crc.py/verify_crc.py、不读crc_expected：先以集合的symmetric-difference表示GF2系数，用乘x的商关系建立单项式余式列，再以列线性组合求syndrome，不复用作者整数长除法或verify逐位消首项。G1011、M1101得到R001、C1101001；E0000001检出，E0001011未检出，接收结果逐项核对。
+
+完整核7bit非零errors127项，跨度1/2/3为7/6/10项、全部检出；跨度4有16项，其中4项漏检，含0001011的各位置平移。非零kernel15项，加零为16；128×128=16384组线性等式核通过。七个单翻转syndrome互不相同，另建的外部译码器在明确最多单错假设下可纠正7例；0001010与0000001同syndrome001，所以CRC字段自身不唯一定位任意错误。可约商环G1001中非零11×111=1001，乘积商类为零，不能把所有商环称域。一般次数/短burst证明仍由独立source审，而非此枚举。
+
+真实CRC32独立实现为32个布尔位的反射register，逐输入LSB反馈；normal04C11DB7独立反射为EDB88320，与作者integer寄存器实现不同路线，再对zlib和binascii交叉核。ASCII123456789得到CBF43926、hi为D8932AAC、empty为0，小端存储分别2639f4cb/ac2a93d8/00000000。toy MSB多项式余式无init/finalXOR，CRC32两者FFFFFFFF；固定两字节CRC map的仿射反例F(a xor b) xor F(a) xor F(b)=F(0000)=41D912FF，不可直比toy零syndrome线性式。
+
+实际已发布TINY正文另存原byte与SHA。按其26byte示例核coverage[24,26)、onlypayload、LSB位处理与u32小端存储；padding改变不影响该CRC。将hi改成ho并重算31F08F99，小端998ff031，仍能通过CRC比对；这本机合成帧演示反认证，不是实际已发布parser、网络或设备执行。invalid generator/negative dividend/width/constant term/degree/message/type等12拒绝与零消息合法共13项有限核；不泛化所有输入安全。
+
+初次非作者oracle运行出现我方TINY fixture十六进制字符串奇数位录入错误，bytes.fromhex ValueError、exit1。原oracle.py、independent.stderr/stdout/receipt完整保留；只在新oracle-retry.py用原发布示例的分组字节改正，重跑exit0，课程源码与课程输出完全未改。不能把此我方fixture失败列为课程bug，也不能抹去失败日志。
+
+Python3.14.7/macOS27.0.1 arm64，标准库zlib版本和扩展SHA在environment.json；整个序列观测子进程峰RSS约22.7MB（含第一次oracle失败），线程环境5项请求4。没有OS硬线程上限/计数或硬RSS限制保证。没有绘图接口或产物，不声称Obsidian/真人/实际协议效果。
+
+复建：在新独立结果目录复制snapshot实验5件，使用crc.py绝对路径将stdout保成JSON，再以verify_crc.py绝对路径读取它；独立复核使用oracle-retry.py verify读取crc.stdout，边界用interface-oracle.py。若先生成新预期，可运行oracle-retry.py prepare；它不用作者期待值。各真实argv/cwd/资源记录在*-receipt.json，所有必要证据见artifact-sha256.json。作者随后补实际reader解释和正式证据包，由独立review219对新增字节签收。

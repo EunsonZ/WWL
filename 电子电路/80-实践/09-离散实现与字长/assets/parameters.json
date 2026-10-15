@@ -1,0 +1,104 @@
+{
+  "models": "analytic CPU and exact integer oracles, not measured",
+  "R_ohm": 1000,
+  "C_F": 1e-06,
+  "tau_s": 0.001,
+  "T_s": 0.00025,
+  "v0_V": 0.4,
+  "interval_methods": {
+    "exact": [
+      0.7788007830714049,
+      0.22119921692859512
+    ],
+    "euler": [
+      0.75,
+      0.25
+    ],
+    "backward": [
+      0.8,
+      0.2
+    ],
+    "trapezoid_hold": [
+      0.7777777777777777,
+      0.2222222222222222
+    ]
+  },
+  "hold_inputs_V": [
+    1.0,
+    0.0,
+    0.5,
+    1.0
+  ],
+  "modal_mu_points": [
+    [
+      -0.25,
+      0
+    ],
+    [
+      -2,
+      0
+    ],
+    [
+      -2.5,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "alias_Hz": [
+    1000,
+    3000
+  ],
+  "sample_rate_Hz": 4000,
+  "fine_format": {
+    "W": 16,
+    "F": 14,
+    "A_code": 12760,
+    "B_code": 3624,
+    "initial_code": 6554,
+    "input_V": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      -0.1,
+      -0.1,
+      -0.1,
+      -0.1
+    ]
+  },
+  "coarse_format": {
+    "W": 8,
+    "F": 4,
+    "fixed_A_code": 12,
+    "cycle_A_code": -12,
+    "initial_code": 1,
+    "input_code": 0
+  },
+  "FIR_codes": [
+    4,
+    8,
+    4
+  ],
+  "canvas_width_px": 425,
+  "preview_widths_px": [
+    360,
+    425
+  ],
+  "minimum_font_source_px": 13,
+  "figures": [
+    "V14-four-domains",
+    "V17-update-timing",
+    "V18-stability-regions",
+    "alias-warp",
+    "integer-path",
+    "limit-cycles",
+    "method-comparison"
+  ]
+}

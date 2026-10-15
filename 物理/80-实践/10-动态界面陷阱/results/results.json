@@ -1,0 +1,367 @@
+{
+  "inputs": {
+    "description": "Synthetic clamped carrier reservoirs and finite quasi-static electrostatic feedback, not full DD",
+    "half_length_m": 1.5e-07,
+    "half_cells": 120,
+    "dt_s": 1e-07,
+    "duration_s": 5e-05,
+    "initial_F_eV": -0.5,
+    "final_Fn_eV": -0.45,
+    "final_Fp_eV": -0.45,
+    "fixed_sheet_C_m-2": 0.0,
+    "states": [
+      {
+        "name": "acceptor",
+        "type": "acceptor",
+        "N_m-2": 800000000000000.0,
+        "Et0_eV": -0.27,
+        "empty_over_filled_weight": 1.0,
+        "cn_m3_s-1": 1e-15,
+        "cp_m3_s-1": 1e-15
+      }
+    ],
+    "density_factor": 2.0,
+    "capture_factors": [
+      0.2,
+      5.0
+    ],
+    "dos_bin_centers_eV": [
+      -0.29,
+      -0.27,
+      -0.25
+    ]
+  },
+  "material_card": {
+    "description": "Synthetic A/B teaching card; not a measured material, process or PDK",
+    "temperature_K": 300.0,
+    "fermi_eV": -0.5,
+    "half_length_m": 6e-07,
+    "materials": {
+      "A": {
+        "Ec0_eV": 0.0,
+        "Eg_eV": 1.0,
+        "Nc_m-3": 1e+25,
+        "Nv_m-3": 1e+25,
+        "epsilon_r": 10.0,
+        "ND_m-3": 0.0,
+        "NA_m-3": 1e+22
+      },
+      "B": {
+        "Ec0_eV": 0.15,
+        "Eg_eV": 1.2,
+        "Nc_m-3": 2e+25,
+        "Nv_m-3": 1.5e+25,
+        "epsilon_r": 12.0,
+        "ND_m-3": 2e+22,
+        "NA_m-3": 0.0
+      }
+    },
+    "sheet_number_m-2": 200000000000000.0,
+    "half_cells": [
+      120,
+      240,
+      480
+    ],
+    "newton": {
+      "max_iterations": 80,
+      "scaled_residual_tolerance": 1e-10,
+      "max_step_V": 0.1,
+      "max_backtracks": 24
+    }
+  },
+  "scope": "Finite quasi-static electrostatic feedback with external uniform Fn/Fp clamps; no DD continuity solve",
+  "cases": {
+    "step": {
+      "dt_s": 1e-07,
+      "half_cells": 120,
+      "steps": 500,
+      "phi0_before_V": 0.17887531672392293,
+      "phi0_0plus_V": 0.15722133890373033,
+      "phi0_end_V": 0.1483436793507385,
+      "occupations_end": [
+        0.2271417900129755
+      ],
+      "equilibrium_phi0_V": 0.1483436793507385,
+      "end_minus_equilibrium_V": 0.0,
+      "max_trap_balance_error_C_m-2": 8.484856832050966e-21,
+      "max_supply_balance_error_C_m-2": 1.871214894492957e-19,
+      "max_gauss_error_C_m-2": 2.1412481569739114e-12,
+      "max_jump_error_C_m-2": 4.788489686691731e-14,
+      "max_scaled_residual": 9.962468687286426e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 2.1807555761199637e-13,
+      "channel_events_m-2": [
+        2691647157013029.5,
+        2607194424105705.5,
+        164733147.00615555,
+        169261385.25638327
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    },
+    "half_dt": {
+      "dt_s": 5e-08,
+      "half_cells": 120,
+      "steps": 1000,
+      "phi0_before_V": 0.17887531672392293,
+      "phi0_0plus_V": 0.15722133890373033,
+      "phi0_end_V": 0.14834367936872983,
+      "occupations_end": [
+        0.22714179013444788
+      ],
+      "equilibrium_phi0_V": 0.14834367936872983,
+      "end_minus_equilibrium_V": 0.0,
+      "max_trap_balance_error_C_m-2": 8.569591146049367e-21,
+      "max_supply_balance_error_C_m-2": 2.0481653711303008e-19,
+      "max_gauss_error_C_m-2": 2.1567706455960685e-12,
+      "max_jump_error_C_m-2": 4.736350743030082e-14,
+      "max_scaled_residual": 9.85398288375978e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 4.799771691210708e-13,
+      "channel_events_m-2": [
+        2691375627662056.0,
+        2606922894669546.5,
+        164726234.1548196,
+        169266468.6885588
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    },
+    "quarter_dt": {
+      "dt_s": 2.5e-08,
+      "half_cells": 120,
+      "steps": 2000,
+      "phi0_before_V": 0.17887531672392293,
+      "phi0_0plus_V": 0.15722133890373033,
+      "phi0_end_V": 0.1483436793466918,
+      "occupations_end": [
+        0.22714178998628226
+      ],
+      "equilibrium_phi0_V": 0.1483436793466918,
+      "end_minus_equilibrium_V": 0.0,
+      "max_trap_balance_error_C_m-2": 7.87637370597417e-21,
+      "max_supply_balance_error_C_m-2": 1.9267904779757528e-19,
+      "max_gauss_error_C_m-2": 2.220787908359693e-12,
+      "max_jump_error_C_m-2": 4.7988932841630874e-14,
+      "max_scaled_residual": 9.984110583687221e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 1.0041689701978385e-12,
+      "channel_events_m-2": [
+        2691240719384856.5,
+        2606787986516833.0,
+        164722816.77731737,
+        169268994.36847755
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    },
+    "fine_mesh": {
+      "dt_s": 1e-07,
+      "half_cells": 240,
+      "steps": 500,
+      "phi0_before_V": 0.17887505696919637,
+      "phi0_0plus_V": 0.15721791307697658,
+      "phi0_end_V": 0.1483413278341912,
+      "occupations_end": [
+        0.22712582240045906
+      ],
+      "equilibrium_phi0_V": 0.1483413278341912,
+      "end_minus_equilibrium_V": 0.0,
+      "max_trap_balance_error_C_m-2": 7.875113043138754e-21,
+      "max_supply_balance_error_C_m-2": 2.475131511029224e-19,
+      "max_gauss_error_C_m-2": 4.449248220826825e-12,
+      "max_jump_error_C_m-2": 4.790889500437892e-14,
+      "max_scaled_residual": 9.96745375312404e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 2.1815882433884326e-13,
+      "channel_events_m-2": [
+        2691453055170725.0,
+        2607012237914582.0,
+        164736691.74619204,
+        169264796.0510261
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    },
+    "density": {
+      "dt_s": 1e-07,
+      "half_cells": 120,
+      "steps": 500,
+      "phi0_before_V": 0.17237973793953143,
+      "phi0_0plus_V": 0.15110723793706993,
+      "phi0_end_V": 0.1388843700844836,
+      "occupations_end": [
+        0.16932431127612402
+      ],
+      "equilibrium_phi0_V": 0.1388843700844836,
+      "end_minus_equilibrium_V": 0.0,
+      "max_trap_balance_error_C_m-2": 1.2402710233537015e-20,
+      "max_supply_balance_error_C_m-2": 1.5320708433462157e-19,
+      "max_gauss_error_C_m-2": 2.032133169420705e-12,
+      "max_jump_error_C_m-2": 4.774435377217709e-14,
+      "max_scaled_residual": 9.93323006371765e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 1.0183520693374248e-13,
+      "channel_events_m-2": [
+        4015165541739925.0,
+        3899749675683292.5,
+        354762111.9117795,
+        363134757.9480126
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    },
+    "slow": {
+      "dt_s": 1e-07,
+      "half_cells": 120,
+      "steps": 500,
+      "phi0_before_V": 0.17887531672392293,
+      "phi0_0plus_V": 0.15722133890373033,
+      "phi0_end_V": 0.14836459972749097,
+      "occupations_end": [
+        0.22689409726126644
+      ],
+      "equilibrium_phi0_V": 0.14834367935371584,
+      "end_minus_equilibrium_V": 2.0920373775129564e-05,
+      "max_trap_balance_error_C_m-2": 8.655617929754882e-21,
+      "max_supply_balance_error_C_m-2": 1.6854963033625513e-19,
+      "max_gauss_error_C_m-2": 2.2348831464657267e-12,
+      "max_jump_error_C_m-2": 6.415668099861091e-15,
+      "max_scaled_residual": 9.76024530094216e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 0.000389784254621689,
+      "channel_events_m-2": [
+        574474428333887.1,
+        490219849634437.7,
+        29901999.061978694,
+        34436743.51006785
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    },
+    "fast": {
+      "dt_s": 1e-07,
+      "half_cells": 120,
+      "steps": 500,
+      "phi0_before_V": 0.17887531672392293,
+      "phi0_0plus_V": 0.15722133890373033,
+      "phi0_end_V": 0.14834367936130036,
+      "occupations_end": [
+        0.2271417900844779
+      ],
+      "equilibrium_phi0_V": 0.14834367936130036,
+      "end_minus_equilibrium_V": 0.0,
+      "max_trap_balance_error_C_m-2": 6.789498467835251e-21,
+      "max_supply_balance_error_C_m-2": 1.3616478557176811e-19,
+      "max_gauss_error_C_m-2": 1.568391988818977e-12,
+      "max_jump_error_C_m-2": 4.679678817847907e-14,
+      "max_scaled_residual": 9.736089460229061e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 5.551115123125783e-17,
+      "channel_events_m-2": [
+        1.3277094987887464e+16,
+        1.3192642254821418e+16,
+        838947115.6428714,
+        843373829.918078
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    },
+    "finite_dos": {
+      "dt_s": 1e-07,
+      "half_cells": 120,
+      "steps": 500,
+      "phi0_before_V": 0.17785529789216728,
+      "phi0_0plus_V": 0.1562617086024558,
+      "phi0_end_V": 0.14736397847135646,
+      "occupations_end": [
+        0.3801798001973972,
+        0.2205580732967231,
+        0.11546934616883031
+      ],
+      "equilibrium_phi0_V": 0.14736397182720062,
+      "end_minus_equilibrium_V": 6.644155836621479e-09,
+      "max_trap_balance_error_C_m-2": 1.0924212458469845e-20,
+      "max_supply_balance_error_C_m-2": 1.604337719899981e-19,
+      "max_gauss_error_C_m-2": 2.2129980173943384e-12,
+      "max_jump_error_C_m-2": 5.8435684947583805e-15,
+      "max_scaled_residual": 9.720429184647204e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 4.71377599842171e-07,
+      "channel_events_m-2": [
+        2565001949711243.5,
+        2480439232757420.5,
+        178672135.33040982,
+        185789086.2275607
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    },
+    "split": {
+      "dt_s": 1e-07,
+      "half_cells": 120,
+      "steps": 500,
+      "phi0_before_V": 0.17887531672392293,
+      "phi0_0plus_V": 0.15803538206064038,
+      "phi0_end_V": 0.14889052967943972,
+      "occupations_end": [
+        0.2308765372740374
+      ],
+      "equilibrium_phi0_V": null,
+      "end_minus_equilibrium_V": null,
+      "max_trap_balance_error_C_m-2": 7.14236743655539e-21,
+      "max_supply_balance_error_C_m-2": 1.8394857932463214e-19,
+      "max_gauss_error_C_m-2": 2.0866263395152938e-12,
+      "max_jump_error_C_m-2": 4.755594992778521e-14,
+      "max_scaled_residual": 9.894027652590238e-11,
+      "max_MB_fraction": 0.006917720816438499,
+      "max_end_f_minus_fstar": 9.073297668749092e-14,
+      "channel_events_m-2": [
+        2737162087131096.0,
+        2649720586550407.0,
+        1133801508.775069,
+        168465232.67122525
+      ],
+      "boundaries_V": [
+        -0.3214207120034188,
+        0.4714207120030087
+      ]
+    }
+  },
+  "time_refinement": [
+    {
+      "max_phi0_difference_V": 2.413555170308057e-05,
+      "max_first_f_difference": 0.00028681739074182255
+    },
+    {
+      "max_phi0_difference_V": 1.1832039302883679e-05,
+      "max_first_f_difference": 0.00014059341624828026
+    }
+  ],
+  "mesh_refinement": {
+    "max_phi0_difference_V": 3.4258267537501386e-06,
+    "max_first_f_difference": 1.599391840967357e-05
+  },
+  "frozen_analytic_max_error": 1.6653345369377348e-16,
+  "guards": {
+    "negative_capture": "ValueError",
+    "invalid_f": "ValueError",
+    "zero_step": "ValueError"
+  }
+}

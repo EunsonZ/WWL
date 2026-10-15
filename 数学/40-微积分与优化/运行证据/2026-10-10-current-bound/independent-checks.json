@@ -1,0 +1,61 @@
+{
+  "status": "pass",
+  "checks": [
+    "parameter cases exact analytic constrained minima and dual values",
+    "finite degenerate dual quadratic minima exact",
+    "proximal updates independently minimize scalar piecewise quadratics; exact valid gap and bad-step cycle",
+    "LP five feasible binary covers exhaust all eight assignments; optimum 3, invalid middle budget 4>3 rejected",
+    "SVM rational margins, multiplier equality, complementarity and primal/dual 1/2",
+    "QP rational mechanics rebuild matches current matrices; independent coordinate minimization, physical cost and Lagrangian minimum agree; clipped point is feasible but worse"
+  ],
+  "coordinate_iterations": 149,
+  "coordinate_solution": [
+    -0.8,
+    -0.8,
+    -0.6587235871879897,
+    -0.06731549557605178,
+    0.26832503514450573,
+    0.4467973738339513,
+    0.5467983784017223,
+    0.6270774547378365
+  ],
+  "qp_checks": {
+    "box_qp": {
+      "physical_rollout_objective": 1.1608503889191786,
+      "independent_lagrangian_minimum": 1.160850388919179,
+      "gap": -4.440892098500626e-16,
+      "stationarity": 4.440892098500626e-16,
+      "complementary": 0.0,
+      "primal_violation": 0.0,
+      "dual_violation": 0.0
+    },
+    "clipped": {
+      "physical_rollout_objective": 1.8471655856219151,
+      "independent_lagrangian_minimum": -5.701149510477821,
+      "gap": 7.548315096099736,
+      "stationarity": 1.4900971877364908,
+      "complementary": 0.0,
+      "primal_violation": 0.0,
+      "dual_violation": 0.0
+    }
+  },
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv-issues-111plus/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "numpy": "2.5.3",
+    "numpy_config": "Build Dependencies:\n  blas:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\n  lapack:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\nCompilers:\n  c:\n    commands: cc\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  c++:\n    commands: c++\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.3.0\nMachine Information:\n  build:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\n  host:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\nPython Information:\n  path: /private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/build-env-cx6mwxg1/bin/python\n  version: '3.14'\nSIMD Extensions:\n  baseline:\n  - NEON\n  - NEON_FP16\n  - NEON_VFPV4\n  - ASIMD\n  found:\n  - ASIMDHP\n  - ASIMDDP\n  not found:\n  - ASIMDFHM\n\n",
+    "self_max_rss_bytes_macos": 34783232
+  },
+  "actual_imported_vault_modules": [
+    {
+      "module": "__main__",
+      "path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments-a/2026-10-10-current-bound/oracle.py"
+    },
+    {
+      "module": "current_bound_lab",
+      "path": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/10-LQR与约束控制/code-sync/lqr_mpc_lab.py"
+    }
+  ],
+  "limitation": "Finite rational examples and floating current-QP residuals; does not prove general duality or strictly enclose floating roundoff"
+}

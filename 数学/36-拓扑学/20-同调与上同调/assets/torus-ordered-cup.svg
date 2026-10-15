@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" role="img" aria-labelledby="title desc">
+  <title id="title">环面有序两三角形与杯积</title>
+  <desc id="desc">正方形对边同向识别，底部和顶部边为 a 向右，左右边为 b 向上，对角线 c 从左下向右上。有序 t1 是 00、10、11，有序 t2 是 00、01、11，整体有向循环为 t1 减 t2。x 与 y 在 a,b,c 上的值分别为1,0,1及0,1,1，前后边乘积使 xy 对循环评价为1，yx为负1。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#203950"/></marker></defs>
+  <rect width="900" height="410" fill="#fff"/>
+  <path d="M70 320L330 320L330 60Z" fill="#e1edf8"/>
+  <path d="M70 320L70 60L330 60Z" fill="#f5ead6"/>
+  <g fill="none" stroke="#203950" stroke-width="3" marker-end="url(#arrow)">
+    <path d="M70 320H330"/><path d="M70 60H330"/><path d="M70 320V60"/><path d="M330 320V60"/><path d="M70 320L330 60"/>
+  </g>
+  <g font-family="sans-serif" fill="#172e40" font-size="18">
+    <text x="42" y="350">00</text><text x="326" y="350">10</text><text x="38" y="46">01</text><text x="326" y="46">11</text>
+    <text x="186" y="348">a →</text><text x="186" y="48">a →</text><text x="38" y="195">b</text><text x="343" y="195">b</text><text x="205" y="178">c</text>
+    <text x="243" y="255">t₁</text><text x="122" y="130">t₂</text>
+    <text x="425" y="65">有序 t₁ = [00,10,11]：前边 a，后边 b</text>
+    <text x="425" y="105">有序 t₂ = [00,01,11]：前边 b，后边 a</text>
+    <text x="425" y="150">z = t₁ − t₂；∂z = 0</text>
+    <text x="425" y="205">x(a,b,c) = (1,0,1)</text><text x="425" y="242">y(a,b,c) = (0,1,1)</text>
+    <text x="425" y="297">(x ∪ y)(z) = 1·1 − 0·0 = 1</text>
+    <text x="425" y="336">(y ∪ x)(z) = 0·0 − 1·1 = −1</text>
+    <text x="70" y="393">商中所有角点为同一顶点；有序参数面的次序仍然保留。</text>
+  </g>
+</svg>

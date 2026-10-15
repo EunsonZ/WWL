@@ -1,0 +1,74 @@
+# #209 PDE 与复几何独立审阅（源审与执行补签）
+
+审阅结论：本包五篇主课的代表性数学论证、两份分支入口、两份 MOC 的新增段落与两份固定输入源码的静态行为可以 accept。一般 Kružkov 定理的精确原文条件已补核 accept，见 SOURCE-ADDENDUM.md；两份原源码的当前版本独立执行亦 accept，见下方执行补签。执行者补充证据曾误标 H² 半范数平方，已局部勘误并获本审阅补签，见对应记录。不关闭 #209。这不是一般 PDE 或复几何全覆盖验收。
+
+工作根 `/Users/ysz/Misc/Obsidian/Valults/WLM/WWL`。只写本 review209pdecomplex 报告目录；没有改正文、候选、共享清单、配置或 Git/GitHub，没有启动新代理，也没有执行候选或数值实验。主库唯一整合者仍为 recovery_writer。工作树存在其他人的修改，本审阅未触碰。
+
+已先读适用根 AGENTS、同字节作者区 AGENTS、维护指南与 issue209.json 中当前覆盖/深度标准，然后独立读候选、核原始来源，最后读 HANDOFF/STATIC 自评。没有参与本候选撰写或行为修改；独立性限于本次可观察的团队分工。实际模型标识、effort、计费用量未由本子任务工具直接给出，不据角色名猜测；没有新增预算/付费请求。
+
+## 所审输入与版本
+
+精确字节见 [SOURCE-RECEIPT.json](SOURCE-RECEIPT.json)。11 个候选共 67,848 bytes，逐文件 SHA-256 全部匹配作者 FREEZE.sha256；FREEZE 自身为 `743ed6d3f874171b530821b7e829b4d74d65cefb2e386dd2f4534e83633e6647`。两个原有 MOC 全文已读，签收范围是本包新增段落与受影响链接，不重新认证既有全部课程。其余九个新文件全文审阅。输入 issue209.json 为 `59cbfa6287f35a02ab81f1dce008ecdf039cc1f6918e5d1305d99eedfdabdff0`；这是作者保存的 fresh issue 输入，本审阅没有重新访问 GitHub 来认证 live issue 状态。其标准保留独立课程深度、条件改变后的迁移及未覆盖高阶方向，不能以链接/文件数量替代能力。
+
+根与复制 AGENTS 同为 `780555ee84f3c1f017e9117cac5563cfe7f6eb4372d4a076f981f9810c1564c9`；其余输入哈希在 receipt。审阅后任何新字节须单独补核，不能仅替换本回执哈希。
+
+## 逐项判断
+
+| 项目与位置（相对候选根） | 结论 | 独立核对、条件和证据 |
+| --- | --- | --- |
+| PDE/01，L19–31 特征梯度爆破 | accept | `1-t cos ξ≥1-t>0` 保证 t<1 的位置可逆；斜率在 ξ=0,t↑1 发散而函数有界。全直线也因 x−ξ 有界而满射，不只局部可逆。非负初始斜率的反例边界成立。 |
+| PDE/01，L33–61 全凸熵 | accept | 按 `[r]=r_R-r_L` 重新积分：Dη=∫η''(f−ℓ)≤0，端点项确实为零；Burgers 平方熵为 −(uL−uR)^3/12。低左高右符号反转，稀疏扇替代成立。光滑凸逼近足以到绝对值熵。 |
+| PDE/01，L63–101 行波、分布初值合同、黏性极限 | accept | tanh 导数与 εU'=½(U−uL)(U−uR) 一致；正黏性排除上升异宿。移动阶跃分布导数给 `[q]−s[η]`，移到非负测试后 ≥0，初始 L1loc 迹另施加。扩散项转导数为 O(ε)，有界强 L1loc 收敛可传 η/q，未以形式极限冒充一般紧性。 |
+| PDE/01，L102–104 / L120，一般 Kružkov 外部输入与来源定位 | accept（原blocked已解除） | 结论在自治一维有界熵解条件下符合标准理论；但本次 MathNet 原论文只成功取得题名/摘要和27页PDF元数据，后续正文 open、screenshot 超时，urllib SSL EOF。摘要不足以独立确认原论文 §2–4 对 flux C1 的精确适用条件；已请求作者仅提供既有原文缓存/有效路径。不得以作者“已核”代签。代表性弦线/行波证明不受此读取阻塞影响。后续已独立读原论文大学IOP副本，§4 p230及§5第4条p239直接支持自治C1，详见 SOURCE-ADDENDUM.md；本项现accept。 |
+| PDE/02，L18–104 Caccioppoli、差分商 | accept | 对称统一椭圆控制算子范数；测试 v=−D−h(η²Dhu) 不预设 H²。平移支持留在固定紧邻域，系数 W1∞ 控制 DhA；四类误差界 2ΛbXY、LXY、2LbY²、F(X+2bY) 正确，Young 可吸收 λX²/2。f 从未被微分。弱子列对光滑测试的离散分部积分识别二阶弱导数，有限覆盖给局部 H²。来源 Hunter 4.27 是 C1 版，本页对 W1∞ 的稍弱条件已自行证明，不错引。 |
+| PDE/02，L106–155 材料、凹角与 FEM 返回 | accept | 通量常数使分布源为0，梯度跳跃使 u''=−δ0/2。凹角 χr^(2/3)sin(2θ/3) 的删顶点 H1 误差 O(δ^(4/3))；顶点不在域内，不漏内部 Dirac。Hessian 平方精确为 2α²(α−1)²r^(2α−4)，α=2/3 给 r^(−5/3) 不可积。α=1 系数退化需单独检查，题解已处理。全局 C²边界/C¹系数条件对照 Hunter 4.30；链接 FEM 的 H² 插值假设真实存在。 |
+| PDE/03，L18–58 Fourier、能量与反向 | accept | 归一化 L² 和普通卷积质量分开；最大化 y^(m/2)e^(−y) 给导数常数准确。Parseval/单调收敛传能量，零模不衰减、零均值才指数衰减。反向模态误差例确实从趋0放大到发散。 |
+| PDE/03，L60–118 mild、续接与非均匀爆破 | accept | 闭球半径2M、T≤1/(8M) 给映射内闭和≤1/2收缩；M=0独立处理。重启使用当前状态与共同步长，不先假定终时极限。有限最大时刻推出 limsup 范数无界。对实值模型在 Duhamel 上直接积分，m'=平均u²≥m²；正平均而不要求逐点正，T*≤1/m0，非均匀例只给上界不伪报精确时刻。 |
+| PDE/03，L120–142 CFL、题解与边界改变 | accept | 8节点最高频给 −.6/−1.4，平方能量两步为 .1296/3.8416；条件必要性限定偶数节点。零 Dirichlet 多出边界通量，所以平均爆破证明不可原样迁移；没有误断言新模型不爆破。−u³仅给先验耗散，不冒充粗糙解构造。 |
+| SCV/01，L18–48 局部全纯、幂级数、恒等 | accept | C1下复线性微分等价CR；实逆函数输入明确。逐变量Cauchy与紧集上几何级数给联合幂级数，无偷用“分别全纯自动连续”。所有阶导数零集合开闭证明成立；超平面反例与实非退化矩形两次一元恒等区分准确。 |
+| SCV/01，L50–102 Hartogs | accept | Fρ积分的参数全纯、完整圆盘重现、固定w后沿z恒等、真重叠拼接四步闭合；纯环带1/w缺少第2步前提。一般紧洞定理精确满足n≥2、相对紧、补集连通，仅列外部输入；已对照 Lebl 4.3.1。它不是此图形证明自动解决的全局问题。 |
+| SCV/01，L75–85 单位根离散积分 | accept（理论/源码） | (.4,.2) 位于指定缺口，ρ=.7采样在环带。令ζ=ρe^(2πij/N)，常数项保留 k=mN，ζ²项保留 k=2+mN；N>2 时相加恰为 .665/(1−(2/7)^N)。计算目标点值仅作oracle，代码求和只读积分圆。N32舍入不能要求严格误差比例。 |
+| SCV/02，L17–46 图册与CP1拓扑 | accept | 商映射开放使比值下降连续；两图逆连续。S³连续满射给紧性，展示映射到S²为连续双射；紧到Hausdorff的闭映射论证不要求先假设源Hausdorff，因此无循环。两图可数基给第二可数；齐次缩放不改变球面表达式。 |
+| SCV/02，L48–87 切余切、全局对象、环面 | accept | (1,0)是复化实切空间的i特征子空间，不混作整实切空间。vw=JF vz、aw=JF^(-T)az保双线性配对，无共轭；z=1+i例配对均2。紧连通最大模给常函数；CP1一形式增长推零。向量场无穷图系数−w²h(1/w)，增长≤C|z|²及Cauchy导数估计给且仅给a+bz+cz²。格点离散闭、商开、基本平行四边形分别兑现Hausdorff/第二可数/紧性。 |
+| SCV/02，L89–98 迁移与外部框架 | accept | ∂z可延拓、dz不可；z²复值不可而射影值可，以齐次平方映射核无共同零点及无穷图w²；反全纯换图无法由实Jacobian修复。MIT lec07确含全纯逆函数与Hausdorff第二可数图册定义。 |
+| 两分支入口、两现有MOC新增段 | accept | 读者终点、先修回补、携带条件返回与不覆盖方向均明确。代表主线已提供完整论证和失效例，未将外部高级理论等待当成本包的空洞替代；未实现更高阶分支仍开放。MOC仅新增一段，不重写原导航。 |
+| 两Python源码 | accept（固定输入静态与指定executor执行） | 逐行核过无外部依赖、stdout JSON、无文件/网络写入；shock/helper并非通用输入校验库，签收只覆盖main固定参数。角点两积分仅径向因子不是完整Sobolev范数，作者接口已说明。无code-sync镜像承诺。本审阅没有执行；已读独立executor current-version raw/stdout/exit/version及oracle，见执行补签。 |
+| 87 wiki链接与2源码链接 | accept（文件/标题与受影响承诺） | 独立候选优先、主库回退逐条检查，87条文件/精确标题均存在。重要消费段另实读：Cauchy/最大模、恒等零点、Lax–Milgram、Riemann问题、跳跃速度、热核、FEM H²插值、基变换、正则化。旧MOC未改链接只签落点存在，不把遍历计数包装成所有旧课语义复核。 |
+
+PDE 为 `数学/46-数理方程/30-正则性与非线性演化/`；SCV 为 `数学/45-复变函数/30-多复变量与复流形/`。各页具体输入哈希绑定 receipt 中完整路径。没有因文风偏好要求改写。
+
+## 本次直接阅读的外部依据
+
+- [Hunter ch4](https://www.math.ucdavis.edu/~hunter/pdes/ch4.pdf)：印刷pp.112–113差分商证明、p.115定理4.30。比对结论、局部/边界分工与C¹系数条件，不将它当本页W1∞推导的替代。
+- [Hunter ch5](https://www.math.ucdavis.edu/~hunter/pdes/ch5.pdf)：§5.4、§5.5及Definition5.48/Theorem5.49，核半群/Duhamel/局部不动点框架。原文全空间Sobolev模型与本页周期C模型不同，本页给了自己的范数与常数证明。
+- [Lebl SCV v4.4，2026-05-31](https://www.jirka.org/scv/scv.pdf)：书首页版本和§4.3 Theorem4.3.1，核一般紧洞定理准确条件；本页图形构造、离散误差独立复算。
+- [MIT18.117 lec07](https://ocw.mit.edu/courses/18-117-topics-in-several-complex-variables-spring-2005/989bea2ba42545febc2830a2b5f59cf2_18117_lec07.pdf)：pp.1–2核全纯逆函数与流形公理。
+- [Kružkov 原论文目录](https://www.mathnet.ru/php/archive.phtml?jrnid=sm&option_lang=eng&paperid=3372&wshow=paper)：出版身份/摘要可读，精确正文读取限制见上表。Stanford守恒律讲义可读；未用它替代Kružkov原文条件签。
+
+## 未覆盖与后续签收边界
+
+指定executor固定实验与补充oracle原记录已经读取（本审阅不重跑）；Obsidian显示、同步和真人理解没有运行或认证。普通客户端/真人层不成为这份数学候选统一阻塞门槛。高级PDE全范围、一般Kružkov构造与双变量法完整证明、一般Hartogs紧洞证明、伪凸/Levi、Kähler/向量丛/上同调等不在本包已经完成的能力范围内；它们仍属 #209 后续实际缺口。未新开/关闭issue或修改其状态。源审后只补来源或execution受影响层，不无理由重跑无关内容。
+
+
+## 指定 executor 当前版本执行补签
+
+执行根为 `../experiments209pdecomplex/run-20261010-01/`。本审阅逐行读run_fixed.py/executor_oracle.py、两份stdout、oracle stdout、期望文件、运行环境/退出记录、source及artifact manifests；11份snapshot字节独立对照作者candidate与FREEZE均一致，14项artifact哈希与manifest均一致。[EXECUTION-RECEIPT.json](EXECUTION-RECEIPT.json)保存本次所审字节。
+
+| 项目 | 结论 | 证据与限制 |
+| --- | --- | --- |
+| 原PDE固定输入程序 | accept | Python3.14.7/macOS27.0.1 arm64，实际约0.0193s、exit0、stderr0bytes。中心行波0/−20、材料通量1、角点径向积分递增、热模态/8节点放大与c2常数反应均与独立手算和raw一致。stdout SHA `d5ff0ae82eed1d68eeccaa853401cd1ab218fb828726ec0a4c2d12360fab35eb`。 |
+| 原complex固定输入程序 | accept | 同解释器，约0.0171s、exit0、stderr0bytes。三角映射与逆、两图配对2正确。Hartogs N16算得.6650000013113933，N32=.665，单位根精确Fraction期望独立于求和循环；虚残差与误差均在1e−14绝对量级容差内。stdout SHA `6cee8226e11af2c611bb1199e219a134b6ab3bd1018d2dea01c9afbff4967e87`。 |
+| 独立oracle固定字段 | accept | 不import候选、不调用被测实现；shock改用指数商，RH/熵从通量差，差分从标量放大因子，Hartogs从Fraction单位根等式；源码先写期待后读stdout，exit0、stderr空。zip未验证长度的潜在一般测试弱点不影响本次，审阅者已直接确认raw各序列完整。 |
+| 补充Hessian/Neumann/向量场/torus有限算术 | accept（算术与边界）；范数名称见下一行 | 明确不是候选缺失接口的执行，也不证明迹、拓扑、向量场全局分类或一般爆破。Neumann仅初始有限均值/方差/端点导数，无演化。N32舍入主导，未要求理论比例。 |
+| executor补充角点字段 `full_H2_seminorm_on_sector_annulus` 与README对应措辞 | reject（原版本标签）；accept（勘误后解释） | 数值等于 `(8/81)(3π/2)∫r^(−5/3)dr`，是Hessian Frobenius半范数的平方；1.4812586559/13.2816098932/68.0539884289不是半范数本身。仅补充证据标签错误，候选正文/原stdout正确；executor已在自有目录以ERRATUM-H2-squared.md修正解释，保留driver/expected/raw原字节，不要求candidate重跑；新增勘误独立补签见下。 |
+
+运行记录的4线程环境变量是请求值，不是OS实际线程测量；resource.ru_maxrss的15,695,872 bytes为固定子进程观察，17,743,872 bytes为oracle自进程观察，两者不得相加宣称整体峰值/硬限额。本审阅没有新增执行或修改被测行为。源码层的函数泛化输入、实际PDE演化、完整高阶定理、GUI与真人层不因有限执行而自动通过。
+
+
+## H² 平方标签勘误签收
+
+accept。执行者只修README解释并新增勘误，原执行driver、expected、stdout与冻结source不变。[ERRATUM-REVIEW-RECEIPT.json](ERRATUM-REVIEW-RECEIPT.json)绑定这次窄审输入。旧README SHA `3e573559a5a1a8a6a987c7bd28a46f4909338dd39198272c73fedaa0ae8d7ff0` 已按原字节保存在 `README-before-H2-erratum.md`；新README SHA `565014d4cb6524354cab02cea6066adae2141b12c72fc12bee9301cbfd50e5d6`，独立勘误 SHA `18e3418436d32e07fb4c90cd8b7cb1b0146daf99215932608ec9269cfeed9215`。
+
+已逐行核差异：正确区分Hessian Frobenius约定下∫|D²w|²与其平方根，并注明混合项计两次，不与另一种多指标半范数约定混同。原错误字段保持历史原值，不假称新版字段已执行。独立对照上一执行receipt的14项文件，只有README改变；其余13项保持旧SHA。原artifact-manifest未改哈希冒签。此窄勘误已解除本包最后的具体reject项；交付证据须同时携带ERRATUM，不能只摘原JSON错误字段名。
+
+最终范围内结论：11文件候选内容、来源条件、关键链接与两固定脚本执行accept；没有剩余阻断候选整合的数学/程序缺陷。此结论仅用于本代表包，不关闭#209，不覆盖一般高级全分支、客户端/同步或真人学习。

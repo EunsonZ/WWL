@@ -1,0 +1,296 @@
+{
+  "version_rechecks": [
+    {
+      "version": "candidate-v2",
+      "files": [
+        {
+          "path": "AI/15-卷积神经网络/01-卷积互相关形状与参数共享.md",
+          "sha256": "240cbc13132b55d23047830fc6c680486a909ef2d06661811a91030bd7047d65",
+          "same": true
+        },
+        {
+          "path": "信号与系统/00-开始/01-信号系统课程地图与覆盖边界.md",
+          "sha256": "be46c324c0b785bf79acbe157bc8ec52d4b05d03117143fd08e7912f3d3ab2ea",
+          "same": true
+        },
+        {
+          "path": "信号与系统/10-连续与离散系统/00-连续与离散系统-MOC.md",
+          "sha256": "5271da7cab0b835b6dcc8e9e84cb44ddc4b68380f4a6508d79b38d90c6280e14",
+          "same": true
+        },
+        {
+          "path": "信号与系统/10-连续与离散系统/02-冲激卷积与零状态响应.md",
+          "sha256": "97da838752aaeed371e12f28ab0c74757ed66023dd3121ecc3115ba69ca61e6e",
+          "same": true
+        },
+        {
+          "path": "信号与系统/10-连续与离散系统/06-Fourier四种表示与FFT卷积.md",
+          "sha256": "b396755cadc8f4cd7baa8edeae00af2b1dc26fd4af74fbefde292e9103028e78",
+          "same": true
+        },
+        {
+          "path": "信号与系统/20-数字信号处理/01-FIR滤波设计与频率规格.md",
+          "sha256": "92c12e083851838462f54f48d63e01c2def0fbc8c20867046788b237283839a8",
+          "same": true
+        },
+        {
+          "path": "信号与系统/20-数字信号处理/04-IIR设计二阶节与幅相取舍.md",
+          "sha256": "28e8004b87dc41758d50850126d959178189d9cdc3aed81d15f388f70ac4ba6e",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/04-源码与验证.md",
+          "sha256": "670837fa179cb0d9c86c1fcda9c60460d61c97861166352e84038e89c1cef293",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/README.md",
+          "sha256": "c8faf3503547fe986e9ce9d2d016cb8cc4ca5e6575c1e759df44cc1eb398dc73",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/assets/four-point-butterfly.svg",
+          "sha256": "f3e0dd0e2afd1efac93f94851014aa0497d724d347fee9b85e89427a49b790ad",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/assets/four-representations.svg",
+          "sha256": "3b90ae94b334ce81a52bf7e9c78d3c2d88f4ca7542996043893f4b500266c74f",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/assets/overlap-add-timeline.svg",
+          "sha256": "cddfe0aa17b69fb288fa2f47455ae6a4c81e12c4fc1f1c4398c230d913a21f8f",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/fourier_lab.py",
+          "sha256": "dcc718f9dd94f3bae9f22d41ceba43a62a3db157ce059b83dce7c0ccf6c7bf1f",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/test_fourier_lab.py",
+          "sha256": "90dcee1ea85bf4945331bbde57b7156a77321dbe87e85c5567bd107018ca5030",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md",
+          "sha256": "f80416583e434eceae658af99c9ec01bd72ac02c6fdc66b79fb18e3b9217e33e",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/README.md",
+          "sha256": "654390ba5f05a7e839145361c9f255a51389d5c9e164215ffdece4158928488c",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/assets/design-chain.svg",
+          "sha256": "3a0a49339611acb7fba925ffadf4a685cf9c98cf4ed65e3fc9a19e9ee0d44453",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/assets/internal-scale.svg",
+          "sha256": "adaf72a8d2e4cc4a4d292ca49662333f70b1c235df9851706bac5b1211d18bf1",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/iir_lab.py",
+          "sha256": "87344dd861372a9021c7c36ea45ddbf3983b9f1c0654db8b3a6e835c45355e74",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py",
+          "sha256": "4160fe8aafbeaca4e517ba41d05088ac388eb2af15fb91e7090c425a79f91703",
+          "same": true
+        },
+        {
+          "path": "数学/16-数学分析/13-Fourier级数正交展开与收敛.md",
+          "sha256": "5e2f78360bb89b34de79940083855e5ce99154c196e0729ff4b66552c11b4d66",
+          "same": true
+        },
+        {
+          "path": "数学/46-数理方程/14-Fourier-Laplace变换解数理方程.md",
+          "sha256": "9bb607d6ba0733950414fc1b70718c40d7fe8411ca86bd6c69589b960c8e9a12",
+          "same": true
+        },
+        {
+          "path": "数学/70-信号处理与多模态数学/01-空间几何Patch卷积与频域.md",
+          "sha256": "cfabbebc8807e61441681355731d7e3791eb644172786784fd60445d98aaa944",
+          "same": true
+        },
+        {
+          "path": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱.md",
+          "sha256": "bd23863b818f9b2c1776eddebb8d1195a47e14bd00358c4051526aceef50cc26",
+          "same": true
+        },
+        {
+          "path": "电子电路/12-交流与变换域/18-采样混叠与双线性预扭曲.md",
+          "sha256": "9768391e73eecdaaefe3012e025b98aa0fb3cdf29be7d5dd73eed7fe155caff2",
+          "same": true
+        },
+        {
+          "path": "电子电路/28-运放比较器与滤波/06-滤波原型与有源实现.md",
+          "sha256": "c752f2a63d20e91f5c5f3ee511ef1fddc2a52ccff12dac9bdeb7dfc3dfb32a13",
+          "same": true
+        },
+        {
+          "path": "电子电路/45-混合信号与采集/05-数字滤波字长与极限环.md",
+          "sha256": "53ad1b4b1d6b291f2a7c08ad527840e759d8a09b36de4f34cf6ad61a8b2e0ecf",
+          "same": true
+        }
+      ]
+    },
+    {
+      "version": "candidate-v2r1",
+      "files": [
+        {
+          "path": "AI/15-卷积神经网络/01-卷积互相关形状与参数共享.md",
+          "sha256": "240cbc13132b55d23047830fc6c680486a909ef2d06661811a91030bd7047d65",
+          "same": true
+        },
+        {
+          "path": "信号与系统/00-开始/01-信号系统课程地图与覆盖边界.md",
+          "sha256": "be46c324c0b785bf79acbe157bc8ec52d4b05d03117143fd08e7912f3d3ab2ea",
+          "same": true
+        },
+        {
+          "path": "信号与系统/10-连续与离散系统/00-连续与离散系统-MOC.md",
+          "sha256": "5271da7cab0b835b6dcc8e9e84cb44ddc4b68380f4a6508d79b38d90c6280e14",
+          "same": true
+        },
+        {
+          "path": "信号与系统/10-连续与离散系统/02-冲激卷积与零状态响应.md",
+          "sha256": "97da838752aaeed371e12f28ab0c74757ed66023dd3121ecc3115ba69ca61e6e",
+          "same": true
+        },
+        {
+          "path": "信号与系统/10-连续与离散系统/06-Fourier四种表示与FFT卷积.md",
+          "sha256": "b396755cadc8f4cd7baa8edeae00af2b1dc26fd4af74fbefde292e9103028e78",
+          "same": true
+        },
+        {
+          "path": "信号与系统/20-数字信号处理/01-FIR滤波设计与频率规格.md",
+          "sha256": "92c12e083851838462f54f48d63e01c2def0fbc8c20867046788b237283839a8",
+          "same": true
+        },
+        {
+          "path": "信号与系统/20-数字信号处理/04-IIR设计二阶节与幅相取舍.md",
+          "sha256": "28e8004b87dc41758d50850126d959178189d9cdc3aed81d15f388f70ac4ba6e",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/04-源码与验证.md",
+          "sha256": "670837fa179cb0d9c86c1fcda9c60460d61c97861166352e84038e89c1cef293",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/README.md",
+          "sha256": "c8faf3503547fe986e9ce9d2d016cb8cc4ca5e6575c1e759df44cc1eb398dc73",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/assets/four-point-butterfly.svg",
+          "sha256": "f3e0dd0e2afd1efac93f94851014aa0497d724d347fee9b85e89427a49b790ad",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/assets/four-representations.svg",
+          "sha256": "3b90ae94b334ce81a52bf7e9c78d3c2d88f4ca7542996043893f4b500266c74f",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/assets/overlap-add-timeline.svg",
+          "sha256": "cddfe0aa17b69fb288fa2f47455ae6a4c81e12c4fc1f1c4398c230d913a21f8f",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/fourier_lab.py",
+          "sha256": "dcc718f9dd94f3bae9f22d41ceba43a62a3db157ce059b83dce7c0ccf6c7bf1f",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/05-Fourier表示与FFT卷积/test_fourier_lab.py",
+          "sha256": "90dcee1ea85bf4945331bbde57b7156a77321dbe87e85c5567bd107018ca5030",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/04-源码与验证.md",
+          "sha256": "f5ea3dafd412e6f1abded22e88a935bc2ce4900653fa671c8c3bb09662a67969",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/README.md",
+          "sha256": "654390ba5f05a7e839145361c9f255a51389d5c9e164215ffdece4158928488c",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/assets/design-chain.svg",
+          "sha256": "3a0a49339611acb7fba925ffadf4a685cf9c98cf4ed65e3fc9a19e9ee0d44453",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/assets/internal-scale.svg",
+          "sha256": "adaf72a8d2e4cc4a4d292ca49662333f70b1c235df9851706bac5b1211d18bf1",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/iir_lab.py",
+          "sha256": "87344dd861372a9021c7c36ea45ddbf3983b9f1c0654db8b3a6e835c45355e74",
+          "same": true
+        },
+        {
+          "path": "信号与系统/80-实践/06-IIR规格与实现/test_iir_lab.py",
+          "sha256": "10c75a22f669b8a7107df171a036a5a837bdc4af8a64ce37a4380587c94bab58",
+          "same": true
+        },
+        {
+          "path": "数学/16-数学分析/13-Fourier级数正交展开与收敛.md",
+          "sha256": "5e2f78360bb89b34de79940083855e5ce99154c196e0729ff4b66552c11b4d66",
+          "same": true
+        },
+        {
+          "path": "数学/46-数理方程/14-Fourier-Laplace变换解数理方程.md",
+          "sha256": "9bb607d6ba0733950414fc1b70718c40d7fe8411ca86bd6c69589b960c8e9a12",
+          "same": true
+        },
+        {
+          "path": "数学/70-信号处理与多模态数学/01-空间几何Patch卷积与频域.md",
+          "sha256": "cfabbebc8807e61441681355731d7e3791eb644172786784fd60445d98aaa944",
+          "same": true
+        },
+        {
+          "path": "数学/70-信号处理与多模态数学/02-采样定理波形STFT与Mel频谱.md",
+          "sha256": "bd23863b818f9b2c1776eddebb8d1195a47e14bd00358c4051526aceef50cc26",
+          "same": true
+        },
+        {
+          "path": "电子电路/12-交流与变换域/18-采样混叠与双线性预扭曲.md",
+          "sha256": "9768391e73eecdaaefe3012e025b98aa0fb3cdf29be7d5dd73eed7fe155caff2",
+          "same": true
+        },
+        {
+          "path": "电子电路/28-运放比较器与滤波/06-滤波原型与有源实现.md",
+          "sha256": "c752f2a63d20e91f5c5f3ee511ef1fddc2a52ccff12dac9bdeb7dfc3dfb32a13",
+          "same": true
+        },
+        {
+          "path": "电子电路/45-混合信号与采集/05-数字滤波字长与极限环.md",
+          "sha256": "53ad1b4b1d6b291f2a7c08ad527840e759d8a09b36de4f34cf6ad61a8b2e0ecf",
+          "same": true
+        }
+      ]
+    }
+  ],
+  "r1_mirrors": [
+    {
+      "source": "iir_lab.py",
+      "exact_mirror_equal": true,
+      "sha256": "87344dd861372a9021c7c36ea45ddbf3983b9f1c0654db8b3a6e835c45355e74"
+    },
+    {
+      "source": "test_iir_lab.py",
+      "exact_mirror_equal": true,
+      "sha256": "10c75a22f669b8a7107df171a036a5a837bdc4af8a64ce37a4380587c94bab58"
+    }
+  ]
+}

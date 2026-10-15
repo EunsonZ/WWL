@@ -1,0 +1,9 @@
+2026-10-10 01:47:57.227 StaticSVG[30627:179653] Failure on line 688 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)
+2026-10-10 01:47:57.299 StaticSVG[30627:179653] Error received in message reply handler: Connection invalid
+2026-10-10 01:47:57.299 StaticSVG[30627:179661] Connection Invalid error for service com.apple.hiservices-xpcservice.
+2026-10-10 01:47:57.373 StaticSVG[30627:179653] IOPMScheduleUserActivityLevelNotification returned 0
+2026-10-10 01:47:57.374 StaticSVG[30627:179653] IOPMScheduleUserActivityLevelNotification returned 0
+sandbox_extension_issue_mach failed for com.apple.coreservices.launchservicesd: 1 (Operation not permitted)
+Could not create a 'com.apple.coreservices.launchservicesd' sandbox extension
+sandbox_extension_issue_file failed for /Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.wwl-recovery/2026-10-10-crash/experiments177178/webkit-graph-01: 1 (Operation not permitted)
+2026-10-10 01:47:57.399 StaticSVG[30627:179653] NOT IMPLEMENTED - CopyPropertiesForAllFonts

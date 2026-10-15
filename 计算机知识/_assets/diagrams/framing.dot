@@ -1,0 +1,13 @@
+digraph G {
+graph [charset="UTF-8", bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.5];
+node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#64748B", fontname="Noto Sans CJK SC", fontsize=13, margin="0.14,0.10"];
+edge [color="#475569", fontname="Noto Sans CJK SC", fontsize=10, arrowsize=0.7];
+rankdir=TB;
+a [label="新字节到达 → 追加缓冲"]; b [shape=diamond,label="头部完整？"];
+c [label="解码长度并检查上限"]; d [shape=diamond,label="正文完整？"];
+e [label="交付一帧并移除对应字节"]; w [label="等待更多字节"];
+x [label="超长 / 非法长度：拒绝"]; z [label="EOF 后仍有半帧：截断错误"];
+a->b; b->c [label="是"]; b->w [label="否"]; c->d [label="合法"]; c->x [label="非法"];
+d->e [label="是"]; d->w [label="否"]; e->b [label="继续解析剩余缓冲"]; w->a [label="又有数据"]; w->z [label="连接结束且残留不完整帧"];
+
+}

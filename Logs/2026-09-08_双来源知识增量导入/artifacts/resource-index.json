@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "batch": "2026-09-08_双来源知识增量导入",
+  "role": "stage resource navigation mapping",
+  "pdf_catalog": {
+    "path": "fragments/pdf-catalog.json",
+    "sha256": "df8f35b60e0f14cc65d720dd6c59ab413d00ad840bd628a075912733519b0efb",
+    "items": 30,
+    "total_pages": 23261,
+    "authoritative_fields": [
+      "original_path",
+      "target",
+      "sha256",
+      "pages",
+      "metadata",
+      "edition_basis",
+      "variant",
+      "source_hash_verified_after_copy"
+    ]
+  },
+  "changes": [
+    {
+      "path": "资料/README.md",
+      "role": "cross-domain book index",
+      "scope": "navigation only; no chapter summary or learning status"
+    },
+    {
+      "path": "资料/个人规划/README.md",
+      "role": "historical personal-material index",
+      "scope": "historical context only; no current-policy advice"
+    },
+    {
+      "path": "数学/90-资源/00-数学资源-MOC.md",
+      "role": "navigation-only pointer to central resource index"
+    }
+  ],
+  "pdf_group_targets": {
+    "数学": "资料/书籍/数学",
+    "物理": "资料/书籍/物理",
+    "电子与信号": "资料/书籍/电子与信号",
+    "钢琴": "资料/书籍/钢琴",
+    "个人规划": "资料/个人规划"
+  },
+  "variant_sets": [
+    {
+      "identity": "Calculus Early Transcendentals, Metric Edition, 9th Edition",
+      "members": [
+        "资料/书籍/数学/Stewart等 - Calculus Early Transcendentals - 第9版Metric - 01880ca4.pdf",
+        "资料/书籍/数学/Stewart等 - Calculus Early Transcendentals - 第9版Metric - ccc5f377.pdf"
+      ],
+      "evidence": "catalog: same title/page count variant; retain"
+    },
+    {
+      "identity": "Linear Algebra Done Right, Second Edition",
+      "members": [
+        "资料/书籍/数学/Axler - Linear Algebra Done Right - 第2版 - 884bcaf7.pdf",
+        "资料/书籍/数学/Axler - Linear Algebra Done Right - 第2版 - bbe1be53.pdf"
+      ],
+      "evidence": "catalog: same rendered first pages; differing file hash; retain both"
+    },
+    {
+      "identity": "textbook and solution manuals are distinct roles",
+      "members": [
+        "资料/书籍/数学/Stewart等 - Calculus Student Solutions Manual - 第9版第1至17章.pdf",
+        "资料/书籍/数学/Kouba - Thomas Calculus Instructor Solutions Manual - 第14版.pdf"
+      ],
+      "evidence": "catalog file titles identify solution-manual role"
+    }
+  ],
+  "math_course_associations": [
+    {
+      "resource": "A First Course in Probability",
+      "course": "数学/30-概率与统计/00-概率与统计-MOC.md",
+      "relationship": "external reference"
+    },
+    {
+      "resource": "Calculus Early Transcendentals variants",
+      "course": "数学/15-微积分/00-微积分-MOC.md",
+      "relationship": "external reference"
+    },
+    {
+      "resource": "Calculus Student Solutions Manual",
+      "course": "数学/15-微积分/00-微积分-MOC.md",
+      "relationship": "solution manual"
+    },
+    {
+      "resource": "The Calculus Lifesaver",
+      "course": "数学/15-微积分/00-微积分-MOC.md",
+      "relationship": "supplementary reference"
+    },
+    {
+      "resource": "Thomas' Calculus and Instructor's Solutions Manual",
+      "course": "数学/15-微积分/00-微积分-MOC.md",
+      "relationship": "textbook and distinct solution manual"
+    },
+    {
+      "resource": "Linear Algebra Done Right variants",
+      "course": "数学/20-线性代数与几何/00-线性代数与几何-MOC.md",
+      "relationship": "external reference"
+    },
+    {
+      "resource": "Linear Algebra and Its Applications",
+      "course": "数学/20-线性代数与几何/00-线性代数与几何-MOC.md",
+      "relationship": "external reference"
+    },
+    {
+      "resource": "Complex Variables Introduction and Applications",
+      "course": "数学/45-复变函数/00-复变函数-MOC.md",
+      "relationship": "external reference"
+    }
+  ],
+  "personal_originals": [
+    {
+      "source": "source2/00-Inbox/obsidian_immigration_route_map_2026_zh.md",
+      "target": "资料/个人规划/中国大陆光电本科背景_多阶段移民路线图_2026-08-30.md",
+      "sha256": "b9fa77b8d6365846073fcad905ca714b5aed3d7556fd4bed2a5bae32fa520e37",
+      "bytes": 72563,
+      "copy_mode": "byte-preserving"
+    },
+    {
+      "source": "source2/00-Inbox/中国大陆光电本科背景_多阶段移民路线图_2026-08-30.md",
+      "target": "资料/个人规划/中国大陆光电本科背景_多阶段移民路线图_2026-08-30.md",
+      "sha256": "b9fa77b8d6365846073fcad905ca714b5aed3d7556fd4bed2a5bae32fa520e37",
+      "bytes": 72563,
+      "copy_mode": "byte-preserving"
+    }
+  ],
+  "limitations": [
+    "No PDF was read in full or summarized chapter by chapter.",
+    "PDF page count and embedded metadata are catalog observations, not reading status or bibliographic certification.",
+    "No personal status, current policy, admission requirement, or course completion is asserted."
+  ]
+}

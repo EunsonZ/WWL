@@ -1,0 +1,15 @@
+{
+  "description": "Synthetic binary damage outcome; type order is (11, 10, 01, 00), all probabilities dimensionless.",
+  "p1": "1/5",
+  "p0": "1/10",
+  "q_cases": [
+    {"name": "model_alpha", "q": "1/10"},
+    {"name": "model_beta", "q": "0"},
+    {"name": "transfer", "q": "1/20"}
+  ],
+  "separate_independence_example": {
+    "assignment_probability": "1/2",
+    "types_given_a1": ["2/25", "3/25", "1/50", "39/50"],
+    "types_given_a0": ["1/50", "9/50", "2/25", "18/25"]
+  }
+}

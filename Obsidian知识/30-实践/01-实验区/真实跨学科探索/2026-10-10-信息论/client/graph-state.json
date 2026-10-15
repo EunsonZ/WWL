@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "code=JSON.stringify(app.workspace.getLeavesOfType(\"localgraph\").map(l=>({state:l.getViewState(),keys:Object.keys(l.view),text:l.view.containerEl.innerText})))"
+  ],
+  "exit": 0,
+  "stdout": "=> [{\"state\":{\"type\":\"localgraph\",\"state\":{\"file\":\"数学/50-信息论/01-熵交叉熵KL散度与互信息.md\",\"options\":{\"collapse-filter\":true,\"search\":\"\",\"localJumps\":1,\"localBacklinks\":true,\"localForelinks\":true,\"localInterlinks\":false,\"showTags\":false,\"showAttachments\":false,\"hideUnresolved\":false,\"collapse-color-groups\":true,\"colorGroups\":[],\"collapse-display\":true,\"showArrow\":false,\"textFadeMultiplier\":0,\"nodeSizeMultiplier\":1,\"lineSizeMultiplier\":1,\"collapse-forces\":true,\"centerStrength\":0.518713248970312,\"repelStrength\":10,\"linkStrength\":1,\"linkDistance\":250,\"scale\":1,\"close\":false}},\"icon\":\"lucide-git-fork\",\"title\":\"Graph of 01-熵交叉熵KL散度与互信息\"},\"keys\":[\"_loaded\",\"_events\",\"_children\",\"icon\",\"navigation\",\"app\",\"leaf\",\"containerEl\",\"canDropAnywhere\",\"leftSidebarToggleEl\",\"headerEl\",\"contentEl\",\"backButtonEl\",\"forwardButtonEl\",\"titleParentEl\",\"titleEl\",\"titleContainerEl\",\"actionsEl\",\"moreOptionsButtonEl\",\"allowNoFile\",\"requestUpdate\",\"renderedFile\",\"renderer\",\"engine\",\"file\"],\"text\":\"数学\\n/\\n50-信息论\\n/\\nLocal graph\\nFilters\\nGroups\\nDisplay\\nForces\"}]\n",
+  "stderr": "",
+  "time": "2026-10-09T19:24:09.024133+00:00"
+}

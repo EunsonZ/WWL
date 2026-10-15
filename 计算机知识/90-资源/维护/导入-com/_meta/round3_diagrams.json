@@ -1,0 +1,394 @@
+[
+  {
+    "id": "c-object",
+    "title": "数组对象与指针：范围由对象决定",
+    "source": "_assets/diagrams/round3/c-object.dot",
+    "svg": "_assets/diagrams/round3/c-object.svg",
+    "png": "_assets/diagrams/round3/c-object.png"
+  },
+  {
+    "id": "c-realloc",
+    "title": "扩容：失败保留旧状态，成功再提交",
+    "source": "_assets/diagrams/round3/c-realloc.dot",
+    "svg": "_assets/diagrams/round3/c-realloc.svg",
+    "png": "_assets/diagrams/round3/c-realloc.png"
+  },
+  {
+    "id": "cpp-raii",
+    "title": "RAII：构造成功的资源按逆序释放",
+    "source": "_assets/diagrams/round3/cpp-raii.dot",
+    "svg": "_assets/diagrams/round3/cpp-raii.svg",
+    "png": "_assets/diagrams/round3/cpp-raii.png"
+  },
+  {
+    "id": "release-acquire",
+    "title": "发布与获取：同步边建立跨线程顺序",
+    "source": "_assets/diagrams/round3/release-acquire.dot",
+    "svg": "_assets/diagrams/round3/release-acquire.svg",
+    "png": "_assets/diagrams/round3/release-acquire.png"
+  },
+  {
+    "id": "rust-borrow",
+    "title": "借用：能力与存活区间必须兼容",
+    "source": "_assets/diagrams/round3/rust-borrow.dot",
+    "svg": "_assets/diagrams/round3/rust-borrow.svg",
+    "png": "_assets/diagrams/round3/rust-borrow.png"
+  },
+  {
+    "id": "rust-sharing",
+    "title": "共享所有权不自动提供可变访问安全",
+    "source": "_assets/diagrams/round3/rust-sharing.dot",
+    "svg": "_assets/diagrams/round3/rust-sharing.svg",
+    "png": "_assets/diagrams/round3/rust-sharing.png"
+  },
+  {
+    "id": "future-state",
+    "title": "Future：poll、唤醒与取消",
+    "source": "_assets/diagrams/round3/future-state.dot",
+    "svg": "_assets/diagrams/round3/future-state.svg",
+    "png": "_assets/diagrams/round3/future-state.png"
+  },
+  {
+    "id": "python-object",
+    "title": "浅复制：外层不同，内部对象仍共享",
+    "source": "_assets/diagrams/round3/python-object.dot",
+    "svg": "_assets/diagrams/round3/python-object.svg",
+    "png": "_assets/diagrams/round3/python-object.png"
+  },
+  {
+    "id": "python-async",
+    "title": "结构化并发：任务作用域拥有子任务",
+    "source": "_assets/diagrams/round3/python-async.dot",
+    "svg": "_assets/diagrams/round3/python-async.svg",
+    "png": "_assets/diagrams/round3/python-async.png"
+  },
+  {
+    "id": "ts-boundary",
+    "title": "静态类型不替代外部数据验证",
+    "source": "_assets/diagrams/round3/ts-boundary.dot",
+    "svg": "_assets/diagrams/round3/ts-boundary.svg",
+    "png": "_assets/diagrams/round3/ts-boundary.png"
+  },
+  {
+    "id": "event-loop",
+    "title": "事件循环：以浏览器常见模型示意，Node 阶段不同",
+    "source": "_assets/diagrams/round3/event-loop.dot",
+    "svg": "_assets/diagrams/round3/event-loop.svg",
+    "png": "_assets/diagrams/round3/event-loop.png"
+  },
+  {
+    "id": "hash-probe",
+    "title": "开放寻址：墓碑不能当作从未占用",
+    "source": "_assets/diagrams/round3/hash-probe.dot",
+    "svg": "_assets/diagrams/round3/hash-probe.svg",
+    "png": "_assets/diagrams/round3/hash-probe.png"
+  },
+  {
+    "id": "avl-rotation",
+    "title": "AVL 左右双旋：保持中序序列 10、20、30",
+    "source": "_assets/diagrams/round3/avl-rotation.dot",
+    "svg": "_assets/diagrams/round3/avl-rotation.svg",
+    "png": "_assets/diagrams/round3/avl-rotation.png"
+  },
+  {
+    "id": "bplus-pages",
+    "title": "B+ 树：内部导航，叶层承载有序条目",
+    "source": "_assets/diagrams/round3/bplus-pages.dot",
+    "svg": "_assets/diagrams/round3/bplus-pages.svg",
+    "png": "_assets/diagrams/round3/bplus-pages.png"
+  },
+  {
+    "id": "fenwick-blocks",
+    "title": "Fenwick 前缀 13：用 lowbit 去掉最低位分块",
+    "source": "_assets/diagrams/round3/fenwick-blocks.dot",
+    "svg": "_assets/diagrams/round3/fenwick-blocks.svg",
+    "png": "_assets/diagrams/round3/fenwick-blocks.png"
+  },
+  {
+    "id": "dp-grid",
+    "title": "LCS 状态依赖：只保留子问题所需前缀",
+    "source": "_assets/diagrams/round3/dp-grid.dot",
+    "svg": "_assets/diagrams/round3/dp-grid.svg",
+    "png": "_assets/diagrams/round3/dp-grid.png"
+  },
+  {
+    "id": "residual-flow",
+    "title": "流量可以撤销：先走 s→a→b→t 后的残量增广",
+    "source": "_assets/diagrams/round3/residual-flow.dot",
+    "svg": "_assets/diagrams/round3/residual-flow.svg",
+    "png": "_assets/diagrams/round3/residual-flow.png"
+  },
+  {
+    "id": "reduction",
+    "title": "证明 B 至少与 A 一样难：归约方向 A → B",
+    "source": "_assets/diagrams/round3/reduction.dot",
+    "svg": "_assets/diagrams/round3/reduction.svg",
+    "png": "_assets/diagrams/round3/reduction.png"
+  },
+  {
+    "id": "sequential-path",
+    "title": "同步路径时序：时钟周期必须容纳数据传播",
+    "source": "_assets/diagrams/round3/sequential-path.dot",
+    "svg": "_assets/diagrams/round3/sequential-path.svg",
+    "png": "_assets/diagrams/round3/sequential-path.png"
+  },
+  {
+    "id": "datapath",
+    "title": "教学 load 数据通路：lw x5,12(x6)",
+    "source": "_assets/diagrams/round3/datapath.dot",
+    "svg": "_assets/diagrams/round3/datapath.svg",
+    "png": "_assets/diagrams/round3/datapath.png"
+  },
+  {
+    "id": "pipeline",
+    "title": "五级流水线：load-use 等待一个周期",
+    "source": "_assets/diagrams/round3/pipeline.dot",
+    "svg": "_assets/diagrams/round3/pipeline.svg",
+    "png": "_assets/diagrams/round3/pipeline.png"
+  },
+  {
+    "id": "cache-address",
+    "title": "32 KiB / 64 B / 4 路：地址分解必须由容量算出",
+    "source": "_assets/diagrams/round3/cache-address.dot",
+    "svg": "_assets/diagrams/round3/cache-address.svg",
+    "png": "_assets/diagrams/round3/cache-address.png"
+  },
+  {
+    "id": "tlb-walk",
+    "title": "地址翻译与数据缓存：不是同一次“命中”",
+    "source": "_assets/diagrams/round3/tlb-walk.dot",
+    "svg": "_assets/diagrams/round3/tlb-walk.svg",
+    "png": "_assets/diagrams/round3/tlb-walk.png"
+  },
+  {
+    "id": "numa-sharing",
+    "title": "NUMA 与伪共享：地址相邻不等于数据独立",
+    "source": "_assets/diagrams/round3/numa-sharing.dot",
+    "svg": "_assets/diagrams/round3/numa-sharing.svg",
+    "png": "_assets/diagrams/round3/numa-sharing.png"
+  },
+  {
+    "id": "dma-path",
+    "title": "DMA：设备地址不必等于 CPU 物理地址",
+    "source": "_assets/diagrams/round3/dma-path.dot",
+    "svg": "_assets/diagrams/round3/dma-path.svg",
+    "png": "_assets/diagrams/round3/dma-path.png"
+  },
+  {
+    "id": "process-state",
+    "title": "进程状态：等待 CPU 与等待事件不是同一件事",
+    "source": "_assets/diagrams/round3/process-state.dot",
+    "svg": "_assets/diagrams/round3/process-state.svg",
+    "png": "_assets/diagrams/round3/process-state.png"
+  },
+  {
+    "id": "fd-sharing",
+    "title": "fork / dup：fd 指向同一个打开文件描述",
+    "source": "_assets/diagrams/round3/fd-sharing.dot",
+    "svg": "_assets/diagrams/round3/fd-sharing.svg",
+    "png": "_assets/diagrams/round3/fd-sharing.png"
+  },
+  {
+    "id": "bounded-queue",
+    "title": "有界队列：条件变量等待的是谓词",
+    "source": "_assets/diagrams/round3/bounded-queue.dot",
+    "svg": "_assets/diagrams/round3/bounded-queue.svg",
+    "png": "_assets/diagrams/round3/bounded-queue.png"
+  },
+  {
+    "id": "deadlock",
+    "title": "单实例资源等待环：每人持有一个并等待另一个",
+    "source": "_assets/diagrams/round3/deadlock.dot",
+    "svg": "_assets/diagrams/round3/deadlock.svg",
+    "png": "_assets/diagrams/round3/deadlock.png"
+  },
+  {
+    "id": "vm-layers",
+    "title": "虚拟内存的几个不同“大小”",
+    "source": "_assets/diagrams/round3/vm-layers.dot",
+    "svg": "_assets/diagrams/round3/vm-layers.svg",
+    "png": "_assets/diagrams/round3/vm-layers.png"
+  },
+  {
+    "id": "durable-replace",
+    "title": "替换文件的持久化协议：每一步都可能失败",
+    "source": "_assets/diagrams/round3/durable-replace.dot",
+    "svg": "_assets/diagrams/round3/durable-replace.svg",
+    "png": "_assets/diagrams/round3/durable-replace.png"
+  },
+  {
+    "id": "network-layers",
+    "title": "封装：下一跳地址与最终端点不是同一层",
+    "source": "_assets/diagrams/round3/network-layers.dot",
+    "svg": "_assets/diagrams/round3/network-layers.svg",
+    "png": "_assets/diagrams/round3/network-layers.png"
+  },
+  {
+    "id": "switch-learning",
+    "title": "交换机：学源地址，按目的地址转发",
+    "source": "_assets/diagrams/round3/switch-learning.dot",
+    "svg": "_assets/diagrams/round3/switch-learning.svg",
+    "png": "_assets/diagrams/round3/switch-learning.png"
+  },
+  {
+    "id": "route-prefix",
+    "title": "最长前缀匹配：选择最具体的可用路由",
+    "source": "_assets/diagrams/round3/route-prefix.dot",
+    "svg": "_assets/diagrams/round3/route-prefix.svg",
+    "png": "_assets/diagrams/round3/route-prefix.png"
+  },
+  {
+    "id": "tcp-sequence",
+    "title": "TCP 字节序号示意：SYN 和 FIN 各占一个序号",
+    "source": "_assets/diagrams/round3/tcp-sequence.dot",
+    "svg": "_assets/diagrams/round3/tcp-sequence.svg",
+    "png": "_assets/diagrams/round3/tcp-sequence.png"
+  },
+  {
+    "id": "dns-chain",
+    "title": "DNS 冷缓存查找：递归器沿委派链继续询问",
+    "source": "_assets/diagrams/round3/dns-chain.dot",
+    "svg": "_assets/diagrams/round3/dns-chain.svg",
+    "png": "_assets/diagrams/round3/dns-chain.png"
+  },
+  {
+    "id": "tls-boundary",
+    "title": "TLS 的保护范围由终止点决定",
+    "source": "_assets/diagrams/round3/tls-boundary.dot",
+    "svg": "_assets/diagrams/round3/tls-boundary.svg",
+    "png": "_assets/diagrams/round3/tls-boundary.png"
+  },
+  {
+    "id": "frame-parser",
+    "title": "长度前缀分帧：任何位置都可能暂时缺数据",
+    "source": "_assets/diagrams/round3/frame-parser.dot",
+    "svg": "_assets/diagrams/round3/frame-parser.svg",
+    "png": "_assets/diagrams/round3/frame-parser.png"
+  },
+  {
+    "id": "er-enrollment",
+    "title": "选课关系：学期进入联系身份，避免误禁重修",
+    "source": "_assets/diagrams/round3/er-enrollment.dot",
+    "svg": "_assets/diagrams/round3/er-enrollment.svg",
+    "png": "_assets/diagrams/round3/er-enrollment.png"
+  },
+  {
+    "id": "sql-order",
+    "title": "SQL 逻辑理解顺序：不是物理执行计划",
+    "source": "_assets/diagrams/round3/sql-order.dot",
+    "svg": "_assets/diagrams/round3/sql-order.svg",
+    "png": "_assets/diagrams/round3/sql-order.png"
+  },
+  {
+    "id": "write-skew",
+    "title": "写偏斜：各写不同行，仍破坏跨行不变量",
+    "source": "_assets/diagrams/round3/write-skew.dot",
+    "svg": "_assets/diagrams/round3/write-skew.svg",
+    "png": "_assets/diagrams/round3/write-skew.png"
+  },
+  {
+    "id": "slotted-page",
+    "title": "槽式页：位置间接层减少记录移动的影响",
+    "source": "_assets/diagrams/round3/slotted-page.dot",
+    "svg": "_assets/diagrams/round3/slotted-page.svg",
+    "png": "_assets/diagrams/round3/slotted-page.png"
+  },
+  {
+    "id": "query-plan",
+    "title": "关系查询树：过滤、连接、投影与数据流",
+    "source": "_assets/diagrams/round3/query-plan.dot",
+    "svg": "_assets/diagrams/round3/query-plan.svg",
+    "png": "_assets/diagrams/round3/query-plan.png"
+  },
+  {
+    "id": "wal-order",
+    "title": "WAL：日志持久化约束先于相关数据页落盘",
+    "source": "_assets/diagrams/round3/wal-order.dot",
+    "svg": "_assets/diagrams/round3/wal-order.svg",
+    "png": "_assets/diagrams/round3/wal-order.png"
+  },
+  {
+    "id": "dfa-ab",
+    "title": "DFA：识别以 ab 结尾的 a/b 字符串",
+    "source": "_assets/diagrams/round3/dfa-ab.dot",
+    "svg": "_assets/diagrams/round3/dfa-ab.svg",
+    "png": "_assets/diagrams/round3/dfa-ab.png"
+  },
+  {
+    "id": "ast-precedence",
+    "title": "表达式 2 + 3 * 4 的 AST：树形决定求值关系",
+    "source": "_assets/diagrams/round3/ast-precedence.dot",
+    "svg": "_assets/diagrams/round3/ast-precedence.svg",
+    "png": "_assets/diagrams/round3/ast-precedence.png"
+  },
+  {
+    "id": "type-unify",
+    "title": "类型推断：生成约束，再求统一替换",
+    "source": "_assets/diagrams/round3/type-unify.dot",
+    "svg": "_assets/diagrams/round3/type-unify.svg",
+    "png": "_assets/diagrams/round3/type-unify.png"
+  },
+  {
+    "id": "ssa-diamond",
+    "title": "SSA 合流：φ 根据实际前驱选择值",
+    "source": "_assets/diagrams/round3/ssa-diamond.dot",
+    "svg": "_assets/diagrams/round3/ssa-diamond.svg",
+    "png": "_assets/diagrams/round3/ssa-diamond.png"
+  },
+  {
+    "id": "register-interference",
+    "title": "干涉图：三个两两冲突的值至少需要三种颜色",
+    "source": "_assets/diagrams/round3/register-interference.dot",
+    "svg": "_assets/diagrams/round3/register-interference.svg",
+    "png": "_assets/diagrams/round3/register-interference.png"
+  },
+  {
+    "id": "compiler-pipeline",
+    "title": "编译全链条：每个阶段保留后续所需语义",
+    "source": "_assets/diagrams/round3/compiler-pipeline.dot",
+    "svg": "_assets/diagrams/round3/compiler-pipeline.svg",
+    "png": "_assets/diagrams/round3/compiler-pipeline.png"
+  },
+  {
+    "id": "shell-argv",
+    "title": "引用保留参数边界：程序收到数组，不是原命令行",
+    "source": "_assets/diagrams/round3/shell-argv.dot",
+    "svg": "_assets/diagrams/round3/shell-argv.svg",
+    "png": "_assets/diagrams/round3/shell-argv.png"
+  },
+  {
+    "id": "linux-fd",
+    "title": "dup 共享偏移，独立 open 通常不共享",
+    "source": "_assets/diagrams/round3/linux-fd.dot",
+    "svg": "_assets/diagrams/round3/linux-fd.svg",
+    "png": "_assets/diagrams/round3/linux-fd.png"
+  },
+  {
+    "id": "service-lifecycle",
+    "title": "服务生命周期：进程启动与业务就绪分开验收",
+    "source": "_assets/diagrams/round3/service-lifecycle.dot",
+    "svg": "_assets/diagrams/round3/service-lifecycle.svg",
+    "png": "_assets/diagrams/round3/service-lifecycle.png"
+  },
+  {
+    "id": "container-boundaries",
+    "title": "容器边界：多个机制共同作用，不等于独立内核",
+    "source": "_assets/diagrams/round3/container-boundaries.dot",
+    "svg": "_assets/diagrams/round3/container-boundaries.svg",
+    "png": "_assets/diagrams/round3/container-boundaries.png"
+  },
+  {
+    "id": "diagnosis-tree",
+    "title": "排障从假设到证据：不要先随机调参数",
+    "source": "_assets/diagrams/round3/diagnosis-tree.dot",
+    "svg": "_assets/diagrams/round3/diagnosis-tree.svg",
+    "png": "_assets/diagrams/round3/diagnosis-tree.png"
+  },
+  {
+    "id": "course-dependencies",
+    "title": "13 学科先修与交叉主线：箭头表示推荐的知识支撑",
+    "source": "_assets/diagrams/round3/course-dependencies.dot",
+    "svg": "_assets/diagrams/round3/course-dependencies.svg",
+    "png": "_assets/diagrams/round3/course-dependencies.png"
+  }
+]

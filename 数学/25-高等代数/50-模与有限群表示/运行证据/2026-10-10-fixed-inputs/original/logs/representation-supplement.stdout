@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "independent_characters_over_six_elements": {
+    "trivial": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sign": [
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1
+    ],
+    "standard": [
+      2,
+      0,
+      0,
+      -1,
+      -1,
+      0
+    ]
+  },
+  "permutation_character": [
+    3,
+    1,
+    1,
+    0,
+    0,
+    1
+  ],
+  "tensor_character": [
+    4,
+    0,
+    0,
+    1,
+    1,
+    0
+  ],
+  "multiplicities": {
+    "permutation": [
+      1,
+      0,
+      1
+    ],
+    "standard_tensor_square": [
+      1,
+      1,
+      1
+    ]
+  },
+  "regular_character": [
+    6,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "regular_multiplicities": {
+    "trivial": 1,
+    "sign": 1,
+    "standard": 2
+  },
+  "regular_dimension": 6,
+  "regular_scope": "supplemental independent finite arithmetic; source CLI has no separate regular-representation matrix API",
+  "F3_actual_source_J": [
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "F3_J_cubed": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "F3_all_projective_lines": [
+    {
+      "line_generator": [
+        1,
+        0
+      ],
+      "Jv": [
+        1,
+        0
+      ],
+      "invariant_scalars": [
+        1
+      ]
+    },
+    {
+      "line_generator": [
+        0,
+        1
+      ],
+      "Jv": [
+        1,
+        1
+      ],
+      "invariant_scalars": []
+    },
+    {
+      "line_generator": [
+        1,
+        1
+      ],
+      "Jv": [
+        2,
+        1
+      ],
+      "invariant_scalars": []
+    },
+    {
+      "line_generator": [
+        1,
+        2
+      ],
+      "Jv": [
+        0,
+        2
+      ],
+      "invariant_scalars": []
+    }
+  ],
+  "F3_no_invariant_complement_to_span_e1": true,
+  "scope": "No general-theorem certification."
+}

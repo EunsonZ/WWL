@@ -1,0 +1,12 @@
+{
+  "description": "Synthetic transport overlay on practice08 A/B; no measured material, process or PDK",
+  "transport": {
+    "A": {"mu_n_m2_Vs": 0.10, "mu_p_m2_Vs": 0.04, "tau_n_s": 1e-6, "tau_p_s": 1e-6},
+    "B": {"mu_n_m2_Vs": 0.08, "mu_p_m2_Vs": 0.03, "tau_n_s": 1e-6, "tau_p_s": 1e-6}
+  },
+  "main_bias_V": -0.02,
+  "half_cells": [60, 120, 240],
+  "continuation_step_V": 0.005,
+  "newton": {"max_iterations": 40, "max_backtracks": 24, "scaled_tolerance": 1e-10, "max_phi_step_V": 0.05, "max_log_step": 1.0},
+  "teaching_low_field_scale_V_m": 1e7
+}

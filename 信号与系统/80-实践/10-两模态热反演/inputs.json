@@ -1,0 +1,14 @@
+{
+  "decay_denominator": 100,
+  "truth": ["1", "1"],
+  "observation": ["1", "1/50"],
+  "changed_observation": ["1", "11/1000"],
+  "lambda": "1/10000",
+  "gaussian_cases": [
+    {"name": "A", "noise_variance": "1/10000", "prior_variance": "1"},
+    {"name": "B", "noise_variance": "1/2500", "prior_variance": "4"}
+  ],
+  "repeat_counts": [1, 2, 4],
+  "parameter_scale": ["1", "100"],
+  "observation_scale": ["1", "100"]
+}

@@ -1,0 +1,9 @@
+{
+  "identity": "original synthetic finite models; no empirical policy data",
+  "thetas": ["0", "1/2", "1"],
+  "u_support": ["0", "1"],
+  "v_support": ["-1", "1"],
+  "cluster_shocks": ["-1", "1"],
+  "copies_per_cluster": [1, 2, 5, 10, 20],
+  "migration": {"groups": 4, "copies": 5, "variance": "1", "rho": "1/2"}
+}

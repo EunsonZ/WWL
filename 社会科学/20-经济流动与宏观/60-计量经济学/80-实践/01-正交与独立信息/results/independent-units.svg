@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="690" viewBox="0 0 960 690">
+<title>Same observations do not identify the effect; copying two shocks does not reduce variance</title>
+<desc>Top: four synthetic observations and the line y=d, identical for theta=0, one half, one. Bottom: two independent clusters, m copies per cluster; true mean variance one half is flat, while an incorrect independence calculation one over two m declines.</desc>
+<rect width="960" height="690" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#18212c;font-size:16px}.small{font-size:14px}.heading{font-size:20px;font-weight:bold}.axis{stroke:#263238;stroke-width:1.5}.grid{stroke:#dfe4e9;stroke-width:1}</style>
+<text x="40" y="32" class="heading">A. Same observed distribution; different intervention effects</text>
+<line x1="90" y1="300.0" x2="90" y2="92.0" class="axis"/>
+<line x1="65" y1="222" x2="460" y2="222" class="axis"/>
+<text x="86.0" y="315">0</text>
+<text x="386.0" y="315">1</text>
+<text x="45" y="279.0">-1</text>
+<text x="45" y="227.0">0</text>
+<text x="45" y="175.0">1</text>
+<text x="45" y="123.0">2</text>
+<text x="445" y="248">D</text>
+<text x="55" y="85">Y</text>
+<line x1="90.0" y1="222.0" x2="390.0" y2="170.0" stroke="#2563a6" stroke-width="3"/>
+<circle cx="90.0" cy="274.0" r="6" fill="#2563a6" stroke="white" stroke-width="1.5"/>
+<circle cx="90.0" cy="170.0" r="6" fill="#2563a6" stroke="white" stroke-width="1.5"/>
+<circle cx="390.0" cy="222.0" r="6" fill="#2563a6" stroke="white" stroke-width="1.5"/>
+<circle cx="390.0" cy="118.0" r="6" fill="#2563a6" stroke="white" stroke-width="1.5"/>
+<text x="505" y="105" class="small">Each point has probability 1/4.</text>
+<text x="505" y="140" class="small">Prediction line: E[Y|D] = D</text>
+<text x="505" y="175" class="small">theta = 0, 1/2, 1: same four points</text>
+<text x="505" y="210" class="small">Replacing D=U by D=d gives ATE=theta.</text>
+<text x="505" y="245" class="small">The line cannot choose the mechanism.</text>
+<text x="40" y="364" class="heading">B. Two independent shocks; m exact copies of each</text>
+<line x1="90" y1="610.00" x2="680" y2="610.00" class="grid"/>
+<text x="40" y="615.00">0</text>
+<line x1="90" y1="512.27" x2="680" y2="512.27" class="grid"/>
+<text x="40" y="517.27">0.25</text>
+<line x1="90" y1="414.55" x2="680" y2="414.55" class="grid"/>
+<text x="40" y="419.55">0.5</text>
+<line x1="90" y1="395" x2="90" y2="610" class="axis"/>
+<line x1="90" y1="610" x2="680" y2="610" class="axis"/>
+<text x="40" y="389" class="small">Variance</text>
+<line x1="90" y1="414.55" x2="680" y2="414.55" stroke="#2563a6" stroke-width="3"/>
+<polyline points="90.00,414.55 121.05,512.27 214.21,570.91 369.47,590.45 680.00,600.23" fill="none" stroke="#b34438" stroke-width="3" stroke-dasharray="7 4"/>
+<text x="85.00" y="632">1</text>
+<circle cx="90.00" cy="414.55" r="4" fill="#b34438"/>
+<text x="116.05" y="632">2</text>
+<circle cx="121.05" cy="512.27" r="4" fill="#b34438"/>
+<text x="209.21" y="632">5</text>
+<circle cx="214.21" cy="570.91" r="4" fill="#b34438"/>
+<text x="364.47" y="632">10</text>
+<circle cx="369.47" cy="590.45" r="4" fill="#b34438"/>
+<text x="675.00" y="632">20</text>
+<circle cx="680.00" cy="600.23" r="4" fill="#b34438"/>
+<text x="285" y="661">m: records per cluster (G=2 fixed)</text>
+<text x="708" y="425" class="small">Solid: true Var = 1/2</text>
+<text x="708" y="462" class="small">Dashed: wrong 1/(2m)</text>
+<text x="708" y="514" class="small">Variance, not standard error.</text>
+<text x="708" y="544" class="small">Known model; no CI claimed.</text>
+</svg>

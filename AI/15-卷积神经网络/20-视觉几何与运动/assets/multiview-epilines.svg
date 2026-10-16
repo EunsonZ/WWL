@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="460" viewBox="0 0 840 460" role="img" aria-labelledby="title desc">
+<title id="title">Right-image epipolar lines from four left pixels</title><desc id="desc">Same known pose and four points as JSON. Each line F pLeft contains the corresponding right pixel. Pixel axes have separately chosen drawing scales, v increases downwards. Color plus point ID identifies each pair.</desc>
+<rect width="840" height="460" fill="white"/><g font-family="sans-serif" font-size="16" fill="#172638">
+<text x="30" y="28">Known pose: right-image lines l_R=F p_L; points from same input</text>
+<text x="30" y="58">u in [139.953, 538.895] px; v in [149.985, 337.834] px</text>
+<path d="M100,80 V350 H690" fill="none" stroke="#536478"/>
+<text x="690" y="375">+u_R (px)</text><text x="10" y="95">v_R (px)</text>
+<path d="M100.00000,220.17050 L650.00000,274.19409" stroke="#176a9b" stroke-width="2" fill="none"/><circle cx="537.78145" cy="263.17145" r="5" fill="#176a9b"/><text x="545.78145" y="256.17145" fill="#176a9b">P0</text><path d="M100.00000,304.35765 L540.28382,350.00000" stroke="#b04e19" stroke-width="2" fill="none"/><circle cx="155.14578" cy="310.07438" r="5" fill="#b04e19"/><text x="163.14578" y="303.07438" fill="#b04e19">P1</text><path d="M650.00000,144.89729 L151.99912,100.00000" stroke="#6e5494" stroke-width="2" fill="none"/><circle cx="594.85422" cy="139.92562" r="5" fill="#6e5494"/><text x="602.85422" y="132.92562" fill="#6e5494">P2</text><path d="M100.00000,191.64362 L650.00000,244.65317" stroke="#267242" stroke-width="2" fill="none"/><circle cx="458.84014" cy="226.22899" r="5" fill="#267242"/><text x="466.84014" y="219.22899" fill="#267242">P3</text><text x="100" y="410">Independent axis drawing scales; v increases downward.</text>
+<text x="100" y="440">Lines constrain candidates; they do not establish correspondence.</text></g></svg>

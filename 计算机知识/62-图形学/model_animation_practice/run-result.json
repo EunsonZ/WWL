@@ -1,0 +1,96 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/run_lab.py",
+    "--spec",
+    "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/spec.json",
+    "--shared-dir",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66",
+    "--out",
+    "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/results"
+  ],
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "elapsed_seconds": 0.465764082968235,
+  "exit_code": 0,
+  "stdout": "{\"splines\": 2, \"patches\": 2, \"renders\": 13, \"comparisons\": 4}\n",
+  "stderr": "",
+  "thread_env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "checks": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/batch_oracle.py",
+        "--spec",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/spec.json",
+        "--actual",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/results/actual.json",
+        "--out",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/oracle-result.json"
+      ],
+      "exit_code": 0,
+      "result": "oracle-result.json",
+      "scope": "author independent batch model, not pixel oracle"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/test_surface_animation.py",
+        "--shared-dir",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66"
+      ],
+      "exit_code": 0,
+      "stdout": "tests.stdout",
+      "stderr": "tests.stderr",
+      "unittest_reported_seconds": 0.02
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/diagrams.py",
+        "--actual",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/results/actual.json",
+        "--spec",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/spec.json",
+        "--out-dir",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/private/tmp/wwl-next-172-analytics/render-env/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/preview_diagram.py",
+        "--svg",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/geometry.svg",
+        "--out",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/geometry.png"
+      ],
+      "exit_code": 0,
+      "scope": "optional resvg-py 0.5.0/PingFang SC 1600px preview only"
+    },
+    {
+      "argv": [
+        "/private/tmp/wwl-next-172-analytics/render-env/bin/python",
+        "-B",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/preview_diagram.py",
+        "--svg",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/motion.svg",
+        "--out",
+        "/private/tmp/wwl-next-168-final/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/model_animation_practice/motion.png"
+      ],
+      "exit_code": 0,
+      "scope": "optional resvg-py 0.5.0/PingFang SC 1600px preview only"
+    }
+  ]
+}

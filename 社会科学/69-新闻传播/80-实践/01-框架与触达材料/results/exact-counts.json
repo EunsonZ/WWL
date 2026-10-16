@@ -1,0 +1,47 @@
+{
+  "data_kind": "synthetic teaching log; not a platform experiment",
+  "unit": "unique eligible person within one fixed 24-hour window",
+  "groups": {
+    "A": {
+      "eligible": 1000,
+      "exposed_unique": 100,
+      "clicked_unique": 20,
+      "exposure_rate": {
+        "fraction": "1/10",
+        "percent": "10"
+      },
+      "person_click_given_exposure": {
+        "fraction": "1/5",
+        "percent": "20"
+      },
+      "target_person_click_rate": {
+        "fraction": "1/50",
+        "percent": "2"
+      }
+    },
+    "B": {
+      "eligible": 1000,
+      "exposed_unique": 500,
+      "clicked_unique": 50,
+      "exposure_rate": {
+        "fraction": "1/2",
+        "percent": "50"
+      },
+      "person_click_given_exposure": {
+        "fraction": "1/10",
+        "percent": "10"
+      },
+      "target_person_click_rate": {
+        "fraction": "1/20",
+        "percent": "5"
+      }
+    }
+  },
+  "not_observed": [
+    "attention",
+    "reading",
+    "understanding",
+    "agreement",
+    "causal effect"
+  ]
+}

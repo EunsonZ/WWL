@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "exact_operator_shape": [
+    12,
+    64
+  ],
+  "rational_rank": 12,
+  "nullity": 52,
+  "selection_candidates": 13,
+  "certificate_count": 8,
+  "certificates": [
+    {
+      "gap": 6.822375997472818e-12,
+      "stationarity_norm": 9.975690013919345e-08,
+      "model_distance_upper_from_floating_gap": 0.00011681075290805054,
+      "not_interval_arithmetic": true
+    },
+    {
+      "gap": 1.7613788899639715e-11,
+      "stationarity_norm": 9.970186847944222e-08,
+      "model_distance_upper_from_floating_gap": 0.00018769011108547896,
+      "not_interval_arithmetic": true
+    },
+    {
+      "gap": 3.733176962006368e-11,
+      "stationarity_norm": 9.998514784963077e-08,
+      "model_distance_upper_from_floating_gap": 0.00027324629776106276,
+      "not_interval_arithmetic": true
+    },
+    {
+      "gap": 1.1746745243179646e-10,
+      "stationarity_norm": 9.976469404184275e-08,
+      "model_distance_upper_from_floating_gap": 0.0004847008405847806,
+      "not_interval_arithmetic": true
+    },
+    {
+      "gap": 2.358653983236536e-08,
+      "stationarity_norm": 5.631561974985324e-08,
+      "model_distance_upper_from_floating_gap": 0.006868266132345974,
+      "not_interval_arithmetic": true
+    },
+    {
+      "gap": 2.449270300464157e-11,
+      "stationarity_norm": 9.955587965332318e-08,
+      "model_distance_upper_from_floating_gap": 0.00022132646929204635,
+      "not_interval_arithmetic": true
+    },
+    {
+      "gap": 2.294697591664896e-11,
+      "stationarity_norm": 9.970483827529645e-08,
+      "model_distance_upper_from_floating_gap": 0.00021422873717897402,
+      "not_interval_arithmetic": true
+    },
+    {
+      "gap": 1.3245507989034788e-10,
+      "stationarity_norm": 9.713266998131073e-08,
+      "model_distance_upper_from_floating_gap": 0.0005146942391174548,
+      "not_interval_arithmetic": true
+    }
+  ],
+  "linear_reference": "AAt eigensystem/normal solves; explicit rational scatter matrix",
+  "tv_reference": "independent primal-dual certificate, not repeated ADMM; floating arithmetic not interval proof",
+  "absolute_relative_tolerance": 1e-10,
+  "scope": "fixed raw development/evaluation/PSF; no imaging_lab import; not real acquisition or generic pixel oracle"
+}

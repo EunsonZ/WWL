@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "/private/tmp/wwl-next-183/\u4fe1\u53f7\u4e0e\u7cfb\u7edf/80-\u5b9e\u8df5/17-\u4e8c\u7ef4PSF\u4e0e\u4fdd\u7559\u8bc4\u4f30/run_lab.py",
+    "--spec",
+    "/private/tmp/wwl-next-183/\u4fe1\u53f7\u4e0e\u7cfb\u7edf/80-\u5b9e\u8df5/17-\u4e8c\u7ef4PSF\u4e0e\u4fdd\u7559\u8bc4\u4f30/spec.json",
+    "--development",
+    "/private/tmp/wwl-next-183/\u4fe1\u53f7\u4e0e\u7cfb\u7edf/80-\u5b9e\u8df5/17-\u4e8c\u7ef4PSF\u4e0e\u4fdd\u7559\u8bc4\u4f30/development.json",
+    "--evaluation",
+    "/private/tmp/wwl-next-183/\u4fe1\u53f7\u4e0e\u7cfb\u7edf/80-\u5b9e\u8df5/17-\u4e8c\u7ef4PSF\u4e0e\u4fdd\u7559\u8bc4\u4f30/evaluation.json",
+    "--out",
+    "/private/tmp/wwl-next-183/\u4fe1\u53f7\u4e0e\u7cfb\u7edf/80-\u5b9e\u8df5/17-\u4e8c\u7ef4PSF\u4e0e\u4fdd\u7559\u8bc4\u4f30/results"
+  ],
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "elapsed_seconds": 0.26843845803523436,
+  "exit_code": 0,
+  "stdout": "{\"operator\": [12, 64], \"reconstructions\": 4, \"mismatch\": 2, \"locked\": {\"method\": \"tv\", \"parameter\": 0.001}}\n",
+  "stderr": "",
+  "thread_env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  }
+}

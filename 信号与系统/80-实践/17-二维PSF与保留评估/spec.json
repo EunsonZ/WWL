@@ -1,0 +1,121 @@
+{
+  "input_version": "psf-holdout-v2",
+  "shape": [
+    8,
+    8
+  ],
+  "pixel_pitch_mm": 0.1,
+  "intensity_unit": "U",
+  "psf": [
+    [
+      0,
+      0.0625,
+      0
+    ],
+    [
+      0.125,
+      0.5,
+      0.0625
+    ],
+    [
+      0,
+      0.1875,
+      0.0625
+    ]
+  ],
+  "psf_origin": [
+    1,
+    1
+  ],
+  "boundary": "zero",
+  "bin_factor": 2,
+  "detector_rows": [
+    0,
+    1,
+    2
+  ],
+  "noise_sigma_after_binning": 0.02,
+  "candidates": [
+    {
+      "method": "tsvd",
+      "parameter": 0
+    },
+    {
+      "method": "tsvd",
+      "parameter": 0.2
+    },
+    {
+      "method": "tsvd",
+      "parameter": 0.5
+    },
+    {
+      "method": "tsvd",
+      "parameter": 0.8
+    },
+    {
+      "method": "ridge",
+      "parameter": 0.0001
+    },
+    {
+      "method": "ridge",
+      "parameter": 0.001
+    },
+    {
+      "method": "ridge",
+      "parameter": 0.01
+    },
+    {
+      "method": "ridge",
+      "parameter": 0.1
+    },
+    {
+      "method": "tv",
+      "parameter": 0.0003
+    },
+    {
+      "method": "tv",
+      "parameter": 0.001
+    },
+    {
+      "method": "tv",
+      "parameter": 0.003
+    },
+    {
+      "method": "tv",
+      "parameter": 0.01
+    },
+    {
+      "method": "tv",
+      "parameter": 0.03
+    }
+  ],
+  "solver": {
+    "epsilon": 0.001,
+    "rho": 0.2,
+    "tolerance": 1e-07,
+    "max_iterations": 10000
+  },
+  "splits": {
+    "dev_fit": 101,
+    "dev_validation": 202,
+    "test_fit": 303,
+    "test_repeat": 404
+  },
+  "psnr_max": 1,
+  "notes": "Declared candidates/noise protocol fixed before first full run; all images are synthetic publicly inspectable fixtures, no claim of secret human blinding. The fixed display-only TSVD reference changed .5 to existing-grid .8 after inspecting A singular values: .5 cut none. Not selected by test error; family selector/candidate grid unchanged.",
+  "fixed_truncated_reference": 0.8,
+  "physical_interface": {
+    "geometry": "ideal coax from published EM02; inner Dirichlet V, outer 0, end faces Neumann dphi/dz=0",
+    "a_m": 0.001,
+    "b_m": 0.004,
+    "length_m": 0.1,
+    "epsilon_r": 4,
+    "parasitic_pF": 2,
+    "readout_sigma_pF": 0.05,
+    "open_reference_sample_errors_pF": [
+      0.01,
+      -0.02,
+      0.03
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "default_cases": [
+    {"name":"bird_before", "atoms":["Bird","Penguin","Fly"],"hard":[["Bird"],["!Penguin","Bird"],["!Penguin","!Fly"]],"defaults":[{"id":"bird","pre":["Bird"],"just":"Fly","head":"Fly"}],"queries":["Bird","Penguin","Fly","!Fly","!Penguin"]},
+    {"name":"bird_after_penguin", "atoms":["Bird","Penguin","Fly"],"hard":[["Bird"],["!Penguin","Bird"],["!Penguin","!Fly"],["Penguin"]],"defaults":[{"id":"bird","pre":["Bird"],"just":"Fly","head":"Fly"}],"queries":["Bird","Penguin","Fly","!Fly","!Penguin"]},
+    {"name":"two_groups", "atoms":["Q","R","Approve"],"hard":[["Q"],["R"]],"defaults":[{"id":"group_q","pre":["Q"],"just":"Approve","head":"Approve"},{"id":"group_r","pre":["R"],"just":"!Approve","head":"!Approve"}],"queries":["Q","R","Approve","!Approve"]},
+    {"name":"exception_also_default", "atoms":["Bird","Penguin","Fly"],"hard":[["Bird"],["Penguin"],["!Penguin","Bird"]],"defaults":[{"id":"bird","pre":["Bird"],"just":"Fly","head":"Fly"},{"id":"penguin","pre":["Penguin"],"just":"!Fly","head":"!Fly"}],"queries":["Fly","!Fly"]},
+    {"name":"no_extension", "atoms":["p"],"hard":[],"defaults":[{"id":"self_defeat","pre":[],"just":"p","head":"!p"}],"queries":["p","!p"]},
+    {"name":"unsupported_cycle", "atoms":["p","q"],"hard":[],"defaults":[{"id":"pq","pre":["p"],"just":"q","head":"q"},{"id":"qp","pre":["q"],"just":"p","head":"p"}],"queries":["p","q","!p"]},
+    {"name":"hard_inconsistent", "atoms":["p"],"hard":[["p"],["!p"]],"defaults":[],"queries":["p","!p"]},
+    {"name":"classical_precondition", "atoms":["p","q","r"],"hard":[["p","q"],["!q"]],"defaults":[{"id":"pr","pre":["p"],"just":"r","head":"r"}],"queries":["p","r"]}
+  ],
+  "time": {"sequence":["Pick","MoveAB","Drop"],"invalid_sequence":["MoveAB","Pick"],"observation_atom":"AtB","actual_state":["AtB","Holding"],"then_observe_atom":"Holding","incompatible_observation_atom":"AtA"}
+}

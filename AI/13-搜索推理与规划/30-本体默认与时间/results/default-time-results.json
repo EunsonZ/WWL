@@ -1,0 +1,2850 @@
+{
+  "model": "finite proposition Reiter defaults; separate finite deterministic action progression",
+  "default_cases": [
+    {
+      "name": "bird_before",
+      "atoms": [
+        "Bird",
+        "Penguin",
+        "Fly"
+      ],
+      "valuation_encoding": "bit i is atoms[i]; rows 0..2^n-1",
+      "hard_models": [
+        1,
+        3,
+        5
+      ],
+      "normal": true,
+      "status": "ok",
+      "extension_count": 1,
+      "extensions": [
+        {
+          "inconsistent": false,
+          "models": [
+            5
+          ],
+          "entailed_literals": [
+            "Bird",
+            "!Penguin",
+            "Fly"
+          ],
+          "selected_heads": [
+            "Fly"
+          ]
+        }
+      ],
+      "queries": {
+        "Bird": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true
+          ]
+        },
+        "Penguin": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": false,
+          "per_extension": [
+            false
+          ]
+        },
+        "Fly": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true
+          ]
+        },
+        "!Fly": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": false,
+          "per_extension": [
+            false
+          ]
+        },
+        "!Penguin": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true
+          ]
+        }
+      },
+      "candidate_count": 2,
+      "candidate_checks": [
+        {
+          "candidate_models": [
+            1,
+            3,
+            5
+          ],
+          "selected_heads": [],
+          "fixed": false,
+          "blocked_defaults": [],
+          "gamma_models": [
+            5
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                1,
+                3,
+                5
+              ],
+              "entailed_literals": [
+                "Bird"
+              ],
+              "enabled_defaults": [
+                "bird"
+              ],
+              "after_models": [
+                5
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                5
+              ],
+              "entailed_literals": [
+                "Bird",
+                "!Penguin",
+                "Fly"
+              ],
+              "enabled_defaults": [
+                "bird"
+              ],
+              "after_models": [
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            5
+          ],
+          "selected_heads": [
+            "Fly"
+          ],
+          "fixed": true,
+          "blocked_defaults": [],
+          "gamma_models": [
+            5
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                1,
+                3,
+                5
+              ],
+              "entailed_literals": [
+                "Bird"
+              ],
+              "enabled_defaults": [
+                "bird"
+              ],
+              "after_models": [
+                5
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                5
+              ],
+              "entailed_literals": [
+                "Bird",
+                "!Penguin",
+                "Fly"
+              ],
+              "enabled_defaults": [
+                "bird"
+              ],
+              "after_models": [
+                5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bird_after_penguin",
+      "atoms": [
+        "Bird",
+        "Penguin",
+        "Fly"
+      ],
+      "valuation_encoding": "bit i is atoms[i]; rows 0..2^n-1",
+      "hard_models": [
+        3
+      ],
+      "normal": true,
+      "status": "ok",
+      "extension_count": 1,
+      "extensions": [
+        {
+          "inconsistent": false,
+          "models": [
+            3
+          ],
+          "entailed_literals": [
+            "Bird",
+            "Penguin",
+            "!Fly"
+          ],
+          "selected_heads": []
+        }
+      ],
+      "queries": {
+        "Bird": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true
+          ]
+        },
+        "Penguin": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true
+          ]
+        },
+        "Fly": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": false,
+          "per_extension": [
+            false
+          ]
+        },
+        "!Fly": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true
+          ]
+        },
+        "!Penguin": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": false,
+          "per_extension": [
+            false
+          ]
+        }
+      },
+      "candidate_count": 1,
+      "candidate_checks": [
+        {
+          "candidate_models": [
+            3
+          ],
+          "selected_heads": [],
+          "fixed": true,
+          "blocked_defaults": [
+            "bird"
+          ],
+          "gamma_models": [
+            3
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                3
+              ],
+              "entailed_literals": [
+                "Bird",
+                "Penguin",
+                "!Fly"
+              ],
+              "enabled_defaults": [],
+              "after_models": [
+                3
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "two_groups",
+      "atoms": [
+        "Q",
+        "R",
+        "Approve"
+      ],
+      "valuation_encoding": "bit i is atoms[i]; rows 0..2^n-1",
+      "hard_models": [
+        3,
+        7
+      ],
+      "normal": true,
+      "status": "ok",
+      "extension_count": 2,
+      "extensions": [
+        {
+          "inconsistent": false,
+          "models": [
+            3
+          ],
+          "entailed_literals": [
+            "Q",
+            "R",
+            "!Approve"
+          ],
+          "selected_heads": [
+            "!Approve"
+          ]
+        },
+        {
+          "inconsistent": false,
+          "models": [
+            7
+          ],
+          "entailed_literals": [
+            "Q",
+            "R",
+            "Approve"
+          ],
+          "selected_heads": [
+            "Approve"
+          ]
+        }
+      ],
+      "queries": {
+        "Q": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true,
+            true
+          ]
+        },
+        "R": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true,
+            true
+          ]
+        },
+        "Approve": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": true,
+          "per_extension": [
+            false,
+            true
+          ]
+        },
+        "!Approve": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": true,
+          "per_extension": [
+            true,
+            false
+          ]
+        }
+      },
+      "candidate_count": 3,
+      "candidate_checks": [
+        {
+          "candidate_models": [
+            3,
+            7
+          ],
+          "selected_heads": [],
+          "fixed": false,
+          "blocked_defaults": [],
+          "gamma_models": [],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                3,
+                7
+              ],
+              "entailed_literals": [
+                "Q",
+                "R"
+              ],
+              "enabled_defaults": [
+                "group_q",
+                "group_r"
+              ],
+              "after_models": []
+            },
+            {
+              "stage": 1,
+              "before_models": [],
+              "entailed_literals": [
+                "Q",
+                "!Q",
+                "R",
+                "!R",
+                "Approve",
+                "!Approve"
+              ],
+              "enabled_defaults": [
+                "group_q",
+                "group_r"
+              ],
+              "after_models": []
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            3
+          ],
+          "selected_heads": [
+            "!Approve"
+          ],
+          "fixed": true,
+          "blocked_defaults": [
+            "group_q"
+          ],
+          "gamma_models": [
+            3
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                3,
+                7
+              ],
+              "entailed_literals": [
+                "Q",
+                "R"
+              ],
+              "enabled_defaults": [
+                "group_r"
+              ],
+              "after_models": [
+                3
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                3
+              ],
+              "entailed_literals": [
+                "Q",
+                "R",
+                "!Approve"
+              ],
+              "enabled_defaults": [
+                "group_r"
+              ],
+              "after_models": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            7
+          ],
+          "selected_heads": [
+            "Approve"
+          ],
+          "fixed": true,
+          "blocked_defaults": [
+            "group_r"
+          ],
+          "gamma_models": [
+            7
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                3,
+                7
+              ],
+              "entailed_literals": [
+                "Q",
+                "R"
+              ],
+              "enabled_defaults": [
+                "group_q"
+              ],
+              "after_models": [
+                7
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                7
+              ],
+              "entailed_literals": [
+                "Q",
+                "R",
+                "Approve"
+              ],
+              "enabled_defaults": [
+                "group_q"
+              ],
+              "after_models": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "exception_also_default",
+      "atoms": [
+        "Bird",
+        "Penguin",
+        "Fly"
+      ],
+      "valuation_encoding": "bit i is atoms[i]; rows 0..2^n-1",
+      "hard_models": [
+        3,
+        7
+      ],
+      "normal": true,
+      "status": "ok",
+      "extension_count": 2,
+      "extensions": [
+        {
+          "inconsistent": false,
+          "models": [
+            3
+          ],
+          "entailed_literals": [
+            "Bird",
+            "Penguin",
+            "!Fly"
+          ],
+          "selected_heads": [
+            "!Fly"
+          ]
+        },
+        {
+          "inconsistent": false,
+          "models": [
+            7
+          ],
+          "entailed_literals": [
+            "Bird",
+            "Penguin",
+            "Fly"
+          ],
+          "selected_heads": [
+            "Fly"
+          ]
+        }
+      ],
+      "queries": {
+        "Fly": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": true,
+          "per_extension": [
+            false,
+            true
+          ]
+        },
+        "!Fly": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": true,
+          "per_extension": [
+            true,
+            false
+          ]
+        }
+      },
+      "candidate_count": 3,
+      "candidate_checks": [
+        {
+          "candidate_models": [
+            3,
+            7
+          ],
+          "selected_heads": [],
+          "fixed": false,
+          "blocked_defaults": [],
+          "gamma_models": [],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                3,
+                7
+              ],
+              "entailed_literals": [
+                "Bird",
+                "Penguin"
+              ],
+              "enabled_defaults": [
+                "bird",
+                "penguin"
+              ],
+              "after_models": []
+            },
+            {
+              "stage": 1,
+              "before_models": [],
+              "entailed_literals": [
+                "Bird",
+                "!Bird",
+                "Penguin",
+                "!Penguin",
+                "Fly",
+                "!Fly"
+              ],
+              "enabled_defaults": [
+                "bird",
+                "penguin"
+              ],
+              "after_models": []
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            3
+          ],
+          "selected_heads": [
+            "!Fly"
+          ],
+          "fixed": true,
+          "blocked_defaults": [
+            "bird"
+          ],
+          "gamma_models": [
+            3
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                3,
+                7
+              ],
+              "entailed_literals": [
+                "Bird",
+                "Penguin"
+              ],
+              "enabled_defaults": [
+                "penguin"
+              ],
+              "after_models": [
+                3
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                3
+              ],
+              "entailed_literals": [
+                "Bird",
+                "Penguin",
+                "!Fly"
+              ],
+              "enabled_defaults": [
+                "penguin"
+              ],
+              "after_models": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            7
+          ],
+          "selected_heads": [
+            "Fly"
+          ],
+          "fixed": true,
+          "blocked_defaults": [
+            "penguin"
+          ],
+          "gamma_models": [
+            7
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                3,
+                7
+              ],
+              "entailed_literals": [
+                "Bird",
+                "Penguin"
+              ],
+              "enabled_defaults": [
+                "bird"
+              ],
+              "after_models": [
+                7
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                7
+              ],
+              "entailed_literals": [
+                "Bird",
+                "Penguin",
+                "Fly"
+              ],
+              "enabled_defaults": [
+                "bird"
+              ],
+              "after_models": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "no_extension",
+      "atoms": [
+        "p"
+      ],
+      "valuation_encoding": "bit i is atoms[i]; rows 0..2^n-1",
+      "hard_models": [
+        0,
+        1
+      ],
+      "normal": false,
+      "status": "no_extension",
+      "extension_count": 0,
+      "extensions": [],
+      "queries": {
+        "p": {
+          "status": "not_reported_no_extension"
+        },
+        "!p": {
+          "status": "not_reported_no_extension"
+        }
+      },
+      "candidate_count": 2,
+      "candidate_checks": [
+        {
+          "candidate_models": [
+            0,
+            1
+          ],
+          "selected_heads": [],
+          "fixed": false,
+          "blocked_defaults": [],
+          "gamma_models": [
+            0
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                0,
+                1
+              ],
+              "entailed_literals": [],
+              "enabled_defaults": [
+                "self_defeat"
+              ],
+              "after_models": [
+                0
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                0
+              ],
+              "entailed_literals": [
+                "!p"
+              ],
+              "enabled_defaults": [
+                "self_defeat"
+              ],
+              "after_models": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            0
+          ],
+          "selected_heads": [
+            "!p"
+          ],
+          "fixed": false,
+          "blocked_defaults": [
+            "self_defeat"
+          ],
+          "gamma_models": [
+            0,
+            1
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                0,
+                1
+              ],
+              "entailed_literals": [],
+              "enabled_defaults": [],
+              "after_models": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "unsupported_cycle",
+      "atoms": [
+        "p",
+        "q"
+      ],
+      "valuation_encoding": "bit i is atoms[i]; rows 0..2^n-1",
+      "hard_models": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "normal": true,
+      "status": "ok",
+      "extension_count": 1,
+      "extensions": [
+        {
+          "inconsistent": false,
+          "models": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "entailed_literals": [],
+          "selected_heads": []
+        }
+      ],
+      "queries": {
+        "p": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": false,
+          "per_extension": [
+            false
+          ]
+        },
+        "q": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": false,
+          "per_extension": [
+            false
+          ]
+        },
+        "!p": {
+          "status": "ok",
+          "skeptical": false,
+          "credulous": false,
+          "per_extension": [
+            false
+          ]
+        }
+      },
+      "candidate_count": 4,
+      "candidate_checks": [
+        {
+          "candidate_models": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "selected_heads": [],
+          "fixed": true,
+          "blocked_defaults": [],
+          "gamma_models": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "entailed_literals": [],
+              "enabled_defaults": [],
+              "after_models": [
+                0,
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            1,
+            3
+          ],
+          "selected_heads": [
+            "p"
+          ],
+          "fixed": false,
+          "blocked_defaults": [],
+          "gamma_models": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "entailed_literals": [],
+              "enabled_defaults": [],
+              "after_models": [
+                0,
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            2,
+            3
+          ],
+          "selected_heads": [
+            "q"
+          ],
+          "fixed": false,
+          "blocked_defaults": [],
+          "gamma_models": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "entailed_literals": [],
+              "enabled_defaults": [],
+              "after_models": [
+                0,
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            3
+          ],
+          "selected_heads": [
+            "q",
+            "p"
+          ],
+          "fixed": false,
+          "blocked_defaults": [],
+          "gamma_models": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "entailed_literals": [],
+              "enabled_defaults": [],
+              "after_models": [
+                0,
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hard_inconsistent",
+      "atoms": [
+        "p"
+      ],
+      "valuation_encoding": "bit i is atoms[i]; rows 0..2^n-1",
+      "hard_models": [],
+      "normal": true,
+      "status": "hard_inconsistent",
+      "extension_count": 1,
+      "extensions": [
+        {
+          "inconsistent": true,
+          "models": [],
+          "entailed_literals": [
+            "p",
+            "!p"
+          ]
+        }
+      ],
+      "queries": {
+        "p": {
+          "status": "blocked_inconsistent_hard_knowledge"
+        },
+        "!p": {
+          "status": "blocked_inconsistent_hard_knowledge"
+        }
+      }
+    },
+    {
+      "name": "classical_precondition",
+      "atoms": [
+        "p",
+        "q",
+        "r"
+      ],
+      "valuation_encoding": "bit i is atoms[i]; rows 0..2^n-1",
+      "hard_models": [
+        1,
+        5
+      ],
+      "normal": true,
+      "status": "ok",
+      "extension_count": 1,
+      "extensions": [
+        {
+          "inconsistent": false,
+          "models": [
+            5
+          ],
+          "entailed_literals": [
+            "p",
+            "!q",
+            "r"
+          ],
+          "selected_heads": [
+            "r"
+          ]
+        }
+      ],
+      "queries": {
+        "p": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true
+          ]
+        },
+        "r": {
+          "status": "ok",
+          "skeptical": true,
+          "credulous": true,
+          "per_extension": [
+            true
+          ]
+        }
+      },
+      "candidate_count": 2,
+      "candidate_checks": [
+        {
+          "candidate_models": [
+            1,
+            5
+          ],
+          "selected_heads": [],
+          "fixed": false,
+          "blocked_defaults": [],
+          "gamma_models": [
+            5
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                1,
+                5
+              ],
+              "entailed_literals": [
+                "p",
+                "!q"
+              ],
+              "enabled_defaults": [
+                "pr"
+              ],
+              "after_models": [
+                5
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                5
+              ],
+              "entailed_literals": [
+                "p",
+                "!q",
+                "r"
+              ],
+              "enabled_defaults": [
+                "pr"
+              ],
+              "after_models": [
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "candidate_models": [
+            5
+          ],
+          "selected_heads": [
+            "r"
+          ],
+          "fixed": true,
+          "blocked_defaults": [],
+          "gamma_models": [
+            5
+          ],
+          "trace": [
+            {
+              "stage": 0,
+              "before_models": [
+                1,
+                5
+              ],
+              "entailed_literals": [
+                "p",
+                "!q"
+              ],
+              "enabled_defaults": [
+                "pr"
+              ],
+              "after_models": [
+                5
+              ]
+            },
+            {
+              "stage": 1,
+              "before_models": [
+                5
+              ],
+              "entailed_literals": [
+                "p",
+                "!q",
+                "r"
+              ],
+              "enabled_defaults": [
+                "pr"
+              ],
+              "after_models": [
+                5
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "time": {
+    "atoms": [
+      "AtA",
+      "AtB",
+      "HandEmpty",
+      "Holding",
+      "PkgA",
+      "PkgB"
+    ],
+    "actions": [
+      {
+        "name": "Pick",
+        "pre": [
+          "AtA",
+          "HandEmpty",
+          "PkgA"
+        ],
+        "add": [
+          "Holding"
+        ],
+        "delete": [
+          "HandEmpty",
+          "PkgA"
+        ]
+      },
+      {
+        "name": "MoveAB",
+        "pre": [
+          "AtA"
+        ],
+        "add": [
+          "AtB"
+        ],
+        "delete": [
+          "AtA"
+        ]
+      },
+      {
+        "name": "Drop",
+        "pre": [
+          "AtB",
+          "Holding"
+        ],
+        "add": [
+          "HandEmpty",
+          "PkgB"
+        ],
+        "delete": [
+          "Holding"
+        ]
+      },
+      {
+        "name": "MoveBA",
+        "pre": [
+          "AtB"
+        ],
+        "add": [
+          "AtA"
+        ],
+        "delete": [
+          "AtB"
+        ]
+      }
+    ],
+    "ssa_cause_table": {
+      "AtA": {
+        "positive_actions": [
+          "MoveBA"
+        ],
+        "negative_actions": [
+          "MoveAB"
+        ]
+      },
+      "AtB": {
+        "positive_actions": [
+          "MoveAB"
+        ],
+        "negative_actions": [
+          "MoveBA"
+        ]
+      },
+      "HandEmpty": {
+        "positive_actions": [
+          "Drop"
+        ],
+        "negative_actions": [
+          "Pick"
+        ]
+      },
+      "Holding": {
+        "positive_actions": [
+          "Pick"
+        ],
+        "negative_actions": [
+          "Drop"
+        ]
+      },
+      "PkgA": {
+        "positive_actions": [],
+        "negative_actions": [
+          "Pick"
+        ]
+      },
+      "PkgB": {
+        "positive_actions": [
+          "Drop"
+        ],
+        "negative_actions": []
+      }
+    },
+    "sequence": [
+      "Pick",
+      "MoveAB",
+      "Drop"
+    ],
+    "states": [
+      [
+        "AtA",
+        "HandEmpty",
+        "PkgA"
+      ],
+      [
+        "AtA",
+        "Holding"
+      ],
+      [
+        "AtB",
+        "Holding"
+      ],
+      [
+        "AtB",
+        "HandEmpty",
+        "PkgB"
+      ]
+    ],
+    "steps": [
+      {
+        "time_before": 0,
+        "time_after": 1,
+        "action": "Pick",
+        "rows": [
+          {
+            "fluent": "AtA",
+            "before": true,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": true
+          },
+          {
+            "fluent": "AtB",
+            "before": false,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": false
+          },
+          {
+            "fluent": "HandEmpty",
+            "before": true,
+            "positive_cause": false,
+            "negative_cause": true,
+            "after": false
+          },
+          {
+            "fluent": "Holding",
+            "before": false,
+            "positive_cause": true,
+            "negative_cause": false,
+            "after": true
+          },
+          {
+            "fluent": "PkgA",
+            "before": true,
+            "positive_cause": false,
+            "negative_cause": true,
+            "after": false
+          },
+          {
+            "fluent": "PkgB",
+            "before": false,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": false
+          }
+        ]
+      },
+      {
+        "time_before": 1,
+        "time_after": 2,
+        "action": "MoveAB",
+        "rows": [
+          {
+            "fluent": "AtA",
+            "before": true,
+            "positive_cause": false,
+            "negative_cause": true,
+            "after": false
+          },
+          {
+            "fluent": "AtB",
+            "before": false,
+            "positive_cause": true,
+            "negative_cause": false,
+            "after": true
+          },
+          {
+            "fluent": "HandEmpty",
+            "before": false,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": false
+          },
+          {
+            "fluent": "Holding",
+            "before": true,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": true
+          },
+          {
+            "fluent": "PkgA",
+            "before": false,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": false
+          },
+          {
+            "fluent": "PkgB",
+            "before": false,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": false
+          }
+        ]
+      },
+      {
+        "time_before": 2,
+        "time_after": 3,
+        "action": "Drop",
+        "rows": [
+          {
+            "fluent": "AtA",
+            "before": false,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": false
+          },
+          {
+            "fluent": "AtB",
+            "before": true,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": true
+          },
+          {
+            "fluent": "HandEmpty",
+            "before": false,
+            "positive_cause": true,
+            "negative_cause": false,
+            "after": true
+          },
+          {
+            "fluent": "Holding",
+            "before": true,
+            "positive_cause": false,
+            "negative_cause": true,
+            "after": false
+          },
+          {
+            "fluent": "PkgA",
+            "before": false,
+            "positive_cause": false,
+            "negative_cause": false,
+            "after": false
+          },
+          {
+            "fluent": "PkgB",
+            "before": false,
+            "positive_cause": true,
+            "negative_cause": false,
+            "after": true
+          }
+        ]
+      }
+    ],
+    "goal_satisfied": true,
+    "ssa_strips_comparison_count": 88,
+    "ssa_strips_comparisons": [
+      {
+        "state": [
+          "AtB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "PkgA"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "Holding"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "Holding"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "Holding",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "Holding"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "Holding"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "PkgA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "Holding"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "Holding",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "PkgA"
+        ],
+        "action": "Pick",
+        "after": [
+          "AtA",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "PkgA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "Pick",
+        "after": [
+          "AtA",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "Holding"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "Pick",
+        "after": [
+          "AtA",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "Pick",
+        "after": [
+          "AtA",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "PkgA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "PkgA"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "Holding",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "Holding",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ],
+        "action": "Pick",
+        "after": [
+          "AtA",
+          "AtB",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "Pick",
+        "after": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "Pick",
+        "after": [
+          "AtA",
+          "AtB",
+          "Holding"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgA"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "Pick",
+        "after": [
+          "AtA",
+          "AtB",
+          "Holding",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveAB",
+        "after": [
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "Drop",
+        "after": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "PkgA",
+          "PkgB"
+        ]
+      },
+      {
+        "state": [
+          "AtA",
+          "AtB",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ],
+        "action": "MoveBA",
+        "after": [
+          "AtA",
+          "HandEmpty",
+          "Holding",
+          "PkgA",
+          "PkgB"
+        ]
+      }
+    ],
+    "belief_example": {
+      "independent_scenario": true,
+      "before": [
+        [
+          "AtA",
+          "HandEmpty",
+          "PkgA"
+        ],
+        [
+          "AtA",
+          "HandEmpty",
+          "PkgB"
+        ],
+        [
+          "AtA",
+          "Holding"
+        ],
+        [
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ],
+        [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ],
+        [
+          "AtB",
+          "Holding"
+        ]
+      ],
+      "after_AtB": [
+        [
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ],
+        [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ],
+        [
+          "AtB",
+          "Holding"
+        ]
+      ],
+      "after_Holding": [
+        [
+          "AtB",
+          "Holding"
+        ]
+      ],
+      "after_Drop": [
+        [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ]
+      ],
+      "actual_before_observations": [
+        "AtB",
+        "Holding"
+      ],
+      "actual_after_observations": [
+        "AtB",
+        "Holding"
+      ],
+      "actual_after_Drop": [
+        "AtB",
+        "HandEmpty",
+        "PkgB"
+      ]
+    },
+    "effects_only_after_MoveAB": {
+      "model_count": 16,
+      "valid_delivery_model_count": 3,
+      "valid_models": [
+        [
+          "AtB",
+          "Holding"
+        ],
+        [
+          "AtB",
+          "HandEmpty",
+          "PkgB"
+        ],
+        [
+          "AtB",
+          "HandEmpty",
+          "PkgA"
+        ]
+      ],
+      "with_ssa": [
+        "AtB",
+        "Holding"
+      ]
+    },
+    "omitted_event": {
+      "predicted_after_MoveAB": [
+        "AtB",
+        "Holding"
+      ],
+      "constructed_actual_after_omitted_Drop": [
+        "AtB",
+        "HandEmpty",
+        "PkgB"
+      ],
+      "match": false,
+      "meaning": "declared omitted physical event, not diagnosis from mismatch alone"
+    },
+    "failures": {
+      "invalid_sequence": "inapplicable action: missing AtA",
+      "drop_before_holding_observation": "action is not applicable in every possible world; cannot silently discard worlds",
+      "conflicting_observation": "observation conflicts with every modeled world"
+    }
+  },
+  "bayes_comparison": {
+    "prior_F": "4/5",
+    "likelihood_e_given_F": "1/10",
+    "likelihood_e_given_not_F": "3/5",
+    "posterior_F": "2/5",
+    "meaning": "separate stipulated probability model; no conversion of a default to hard negation"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "wwl-relations-v1",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "models": [
+    "bilinear",
+    "distmult",
+    "no_graph"
+  ],
+  "persons": 8,
+  "sites": 8,
+  "query_heads": {
+    "train": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "val": [
+      1,
+      5
+    ],
+    "test": [
+      3,
+      7
+    ]
+  },
+  "target_relation": "next",
+  "positive_clockwise_offsets": [
+    1,
+    2
+  ],
+  "candidate_policy": "Person tails, exclude head; exhaustive seven tails per head",
+  "negative_policy": "complete rows for train heads only: tails not among train positives are negative; no heldout truth lookup",
+  "message_policy": "support at and at_inv only, fixed across all stages; no next or next_inv, including train targets",
+  "epochs": 600,
+  "learning_rate": 0.03,
+  "l2": 0.01,
+  "initialization_sd": 0.05,
+  "selection": "earliest minimum validation BCE over complete val query rows; all checkpoints selected before test access",
+  "filter_policy": {
+    "train": [
+      "train"
+    ],
+    "val": [
+      "train",
+      "val"
+    ],
+    "test": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  "rank_tie_tolerance": 1e-10,
+  "rank_ties": "average: 1 + strictly-greater + 0.5 * other equal scores",
+  "prediction": "tail only; no head-prediction averaging",
+  "encoder": "fixed one-layer relation mean, identity activation; train decoder only",
+  "sampling_warning": "one constructed transductive KG; correlated queries and seed initialization groups are not iid graphs",
+  "threads": 1
+}

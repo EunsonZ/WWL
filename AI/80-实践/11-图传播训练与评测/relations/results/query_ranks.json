@@ -1,0 +1,2414 @@
+[
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "bilinear",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 3.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 3.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 2.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 2.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "distmult",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 17,
+    "model": "no_graph",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "bilinear",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 3.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 3.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 2.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 2.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "distmult",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 29,
+    "model": "no_graph",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "bilinear",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 2.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 1.5,
+    "filtered_rank": 1.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 3.5,
+    "filtered_rank": 2.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 2.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.0,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 2.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.0,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 3.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 1.0,
+    "filtered_rank": 1.0,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "distmult",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 3.0,
+    "filtered_rank": 2.0,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "train",
+    "head": 0,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "train",
+    "head": 2,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "train",
+    "head": 4,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "train",
+    "head": 6,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 2,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      3
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "val",
+    "head": 1,
+    "relation": "next",
+    "tail": 3,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      2
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 6,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      7
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "val",
+    "head": 5,
+    "relation": "next",
+    "tail": 7,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      6
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 4,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      5
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "test",
+    "head": 3,
+    "relation": "next",
+    "tail": 5,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      4
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 0,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      1
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  },
+  {
+    "seed": 43,
+    "model": "no_graph",
+    "split": "test",
+    "head": 7,
+    "relation": "next",
+    "tail": 1,
+    "raw_rank": 4.0,
+    "filtered_rank": 3.5,
+    "removed_tails": [
+      0
+    ],
+    "filter_truth_splits": [
+      "train",
+      "val",
+      "test"
+    ]
+  }
+]

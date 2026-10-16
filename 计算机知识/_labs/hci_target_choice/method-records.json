@@ -1,0 +1,62 @@
+{
+  "identity": "CONSTRUCTED FORMATIVE EXAMPLE, not historical five records, not actual participant observations",
+  "records": [
+    {
+      "id": "M1",
+      "condition": {
+        "width": 128,
+        "n": 4,
+        "cue": "brief",
+        "target": 0
+      },
+      "actions": [
+        "start",
+        "select target0",
+        "stop without confirmation"
+      ],
+      "quote_constructed": "我以为已经有了。",
+      "interpretation": "possible selected/created model confusion; interruption or task misunderstanding also possible",
+      "time_s": null,
+      "observed_human": false
+    },
+    {
+      "id": "M2",
+      "condition": {
+        "width": 128,
+        "n": 4,
+        "cue": "explicit",
+        "target": 0
+      },
+      "actions": [
+        "start",
+        "select target0",
+        "confirm",
+        "explain booking2"
+      ],
+      "quote_constructed": "这里写还没创建，我还要确认。",
+      "interpretation": "consistent with feedback hypothesis, different constructed person cannot estimate causal effect",
+      "time_s": null,
+      "observed_human": false
+    },
+    {
+      "id": "M3",
+      "condition": {
+        "width": 128,
+        "n": 4,
+        "cue": "explicit",
+        "target": 0
+      },
+      "actions": [
+        "start",
+        "select target1",
+        "confirm rejected",
+        "select target0",
+        "confirm succeeds"
+      ],
+      "quote_constructed": null,
+      "interpretation": "explicit phase feedback does not prevent all target-selection errors",
+      "time_s": null,
+      "observed_human": false
+    }
+  ]
+}

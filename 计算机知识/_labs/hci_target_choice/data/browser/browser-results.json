@@ -1,0 +1,3643 @@
+{
+  "identity": "Actual headless-browser automation on synthetic local task; no human participants or AT audio",
+  "checks": [
+    {
+      "name": "w64-n2-brief valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n2-brief count",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "w64-n2-brief exact width",
+      "actual": [
+        64,
+        64
+      ],
+      "expected": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "w64-n2-brief same height",
+      "actual": [
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w64-n2-brief before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n2-brief first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w64-n2-brief starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n2-brief pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n2-brief selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n2-brief cue text only",
+      "actual": "已选择。",
+      "expected": "已选择。"
+    },
+    {
+      "name": "w64-n2-brief only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w64-n2-brief wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w64-n2-brief wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w64-n2-brief correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w64-n2-brief confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n2-brief cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w64-n2-explicit valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n2-explicit count",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "w64-n2-explicit exact width",
+      "actual": [
+        64,
+        64
+      ],
+      "expected": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "w64-n2-explicit same height",
+      "actual": [
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w64-n2-explicit before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n2-explicit first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w64-n2-explicit starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n2-explicit pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n2-explicit selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n2-explicit cue text only",
+      "actual": "已选择630–660分钟，尚未创建；请确认创建。",
+      "expected": "已选择630–660分钟，尚未创建；请确认创建。"
+    },
+    {
+      "name": "w64-n2-explicit only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w64-n2-explicit wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w64-n2-explicit wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w64-n2-explicit correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w64-n2-explicit confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n2-explicit cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w64-n4-brief valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n4-brief count",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "name": "w64-n4-brief exact width",
+      "actual": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "expected": [
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "name": "w64-n4-brief same height",
+      "actual": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w64-n4-brief before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n4-brief first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w64-n4-brief starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n4-brief pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n4-brief selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n4-brief cue text only",
+      "actual": "已选择。",
+      "expected": "已选择。"
+    },
+    {
+      "name": "w64-n4-brief only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w64-n4-brief wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w64-n4-brief wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w64-n4-brief correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w64-n4-brief confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n4-brief cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w64-n4-explicit valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n4-explicit count",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "name": "w64-n4-explicit exact width",
+      "actual": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "expected": [
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "name": "w64-n4-explicit same height",
+      "actual": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w64-n4-explicit before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n4-explicit first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w64-n4-explicit starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n4-explicit pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n4-explicit selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n4-explicit cue text only",
+      "actual": "已选择630–660分钟，尚未创建；请确认创建。",
+      "expected": "已选择630–660分钟，尚未创建；请确认创建。"
+    },
+    {
+      "name": "w64-n4-explicit only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w64-n4-explicit wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w64-n4-explicit wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w64-n4-explicit correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w64-n4-explicit confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n4-explicit cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w64-n8-brief valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n8-brief count",
+      "actual": 8,
+      "expected": 8
+    },
+    {
+      "name": "w64-n8-brief exact width",
+      "actual": [
+        64,
+        64,
+        64,
+        64,
+        64,
+        64,
+        64,
+        64
+      ],
+      "expected": [
+        64,
+        64,
+        64,
+        64,
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "name": "w64-n8-brief same height",
+      "actual": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w64-n8-brief before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n8-brief first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w64-n8-brief starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n8-brief pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n8-brief selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n8-brief cue text only",
+      "actual": "已选择。",
+      "expected": "已选择。"
+    },
+    {
+      "name": "w64-n8-brief only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w64-n8-brief wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w64-n8-brief wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w64-n8-brief correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w64-n8-brief confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n8-brief cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w64-n8-explicit valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n8-explicit count",
+      "actual": 8,
+      "expected": 8
+    },
+    {
+      "name": "w64-n8-explicit exact width",
+      "actual": [
+        64,
+        64,
+        64,
+        64,
+        64,
+        64,
+        64,
+        64
+      ],
+      "expected": [
+        64,
+        64,
+        64,
+        64,
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "name": "w64-n8-explicit same height",
+      "actual": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w64-n8-explicit before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n8-explicit first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w64-n8-explicit starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n8-explicit pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n8-explicit selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w64-n8-explicit cue text only",
+      "actual": "已选择630–660分钟，尚未创建；请确认创建。",
+      "expected": "已选择630–660分钟，尚未创建；请确认创建。"
+    },
+    {
+      "name": "w64-n8-explicit only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w64-n8-explicit wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w64-n8-explicit wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w64-n8-explicit correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w64-n8-explicit confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w64-n8-explicit cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w128-n2-brief valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n2-brief count",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "w128-n2-brief exact width",
+      "actual": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ]
+    },
+    {
+      "name": "w128-n2-brief same height",
+      "actual": [
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w128-n2-brief before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n2-brief first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w128-n2-brief starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n2-brief pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n2-brief selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n2-brief cue text only",
+      "actual": "已选择。",
+      "expected": "已选择。"
+    },
+    {
+      "name": "w128-n2-brief only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w128-n2-brief wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w128-n2-brief wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w128-n2-brief correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w128-n2-brief confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n2-brief cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w128-n2-explicit valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n2-explicit count",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "w128-n2-explicit exact width",
+      "actual": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ]
+    },
+    {
+      "name": "w128-n2-explicit same height",
+      "actual": [
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w128-n2-explicit before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n2-explicit first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w128-n2-explicit starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n2-explicit pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n2-explicit selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n2-explicit cue text only",
+      "actual": "已选择630–660分钟，尚未创建；请确认创建。",
+      "expected": "已选择630–660分钟，尚未创建；请确认创建。"
+    },
+    {
+      "name": "w128-n2-explicit only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w128-n2-explicit wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w128-n2-explicit wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w128-n2-explicit correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w128-n2-explicit confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n2-explicit cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w128-n4-brief valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n4-brief count",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "name": "w128-n4-brief exact width",
+      "actual": [
+        128,
+        128,
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "w128-n4-brief same height",
+      "actual": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w128-n4-brief before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n4-brief first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w128-n4-brief starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n4-brief pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n4-brief selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n4-brief cue text only",
+      "actual": "已选择。",
+      "expected": "已选择。"
+    },
+    {
+      "name": "w128-n4-brief only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w128-n4-brief wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w128-n4-brief wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w128-n4-brief correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w128-n4-brief confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n4-brief cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w128-n4-explicit valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n4-explicit count",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "name": "w128-n4-explicit exact width",
+      "actual": [
+        128,
+        128,
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "w128-n4-explicit same height",
+      "actual": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w128-n4-explicit before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n4-explicit first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w128-n4-explicit starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n4-explicit pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n4-explicit selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n4-explicit cue text only",
+      "actual": "已选择630–660分钟，尚未创建；请确认创建。",
+      "expected": "已选择630–660分钟，尚未创建；请确认创建。"
+    },
+    {
+      "name": "w128-n4-explicit only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w128-n4-explicit wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w128-n4-explicit wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w128-n4-explicit correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w128-n4-explicit confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n4-explicit cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w128-n8-brief valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n8-brief count",
+      "actual": 8,
+      "expected": 8
+    },
+    {
+      "name": "w128-n8-brief exact width",
+      "actual": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "w128-n8-brief same height",
+      "actual": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w128-n8-brief before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n8-brief first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w128-n8-brief starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n8-brief pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n8-brief selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n8-brief cue text only",
+      "actual": "已选择。",
+      "expected": "已选择。"
+    },
+    {
+      "name": "w128-n8-brief only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w128-n8-brief wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w128-n8-brief wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w128-n8-brief correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w128-n8-brief confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n8-brief cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "w128-n8-explicit valid idle",
+      "actual": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ],
+      "expected": [
+        true,
+        "idle",
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n8-explicit count",
+      "actual": 8,
+      "expected": 8
+    },
+    {
+      "name": "w128-n8-explicit exact width",
+      "actual": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "w128-n8-explicit same height",
+      "actual": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "name": "w128-n8-explicit before start disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n8-explicit first target horizontal centers",
+      "actual": 290.203125,
+      "expected": 290.203125
+    },
+    {
+      "name": "w128-n8-explicit starts without creating",
+      "actual": [
+        "choosing",
+        null,
+        1
+      ],
+      "expected": [
+        "choosing",
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n8-explicit pointer origin within event quantization",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n8-explicit selection is not creation",
+      "actual": [
+        "selected",
+        1,
+        null,
+        1
+      ],
+      "expected": [
+        "selected",
+        1,
+        null,
+        1
+      ]
+    },
+    {
+      "name": "w128-n8-explicit cue text only",
+      "actual": "已选择630–660分钟，尚未创建；请确认创建。",
+      "expected": "已选择630–660分钟，尚未创建；请确认创建。"
+    },
+    {
+      "name": "w128-n8-explicit only selected pressed",
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "w128-n8-explicit wrong confirmation rejects",
+      "actual": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ],
+      "expected": [
+        "selected",
+        null,
+        1,
+        "slot1"
+      ]
+    },
+    {
+      "name": "w128-n8-explicit wrong feedback",
+      "actual": "未创建：所选时段不符任务，请重新选择。",
+      "expected": "未创建：所选时段不符任务，请重新选择。"
+    },
+    {
+      "name": "w128-n8-explicit correct creates once",
+      "actual": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ],
+      "expected": [
+        "confirmed",
+        0,
+        2,
+        "restart"
+      ]
+    },
+    {
+      "name": "w128-n8-explicit confirmed disabled",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "w128-n8-explicit cancel preserves existing",
+      "actual": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ],
+      "expected": [
+        "idle",
+        null,
+        1,
+        "startTrial"
+      ]
+    },
+    {
+      "name": "brief initial keyboard focus",
+      "actual": "startTrial",
+      "expected": "startTrial"
+    },
+    {
+      "name": "brief keyboard starts without pointer origin",
+      "actual": [
+        "choosing",
+        null
+      ],
+      "expected": [
+        "choosing",
+        null
+      ]
+    },
+    {
+      "name": "brief Tab to first slot",
+      "actual": "slot0",
+      "expected": "slot0"
+    },
+    {
+      "name": "brief Tab to second slot",
+      "actual": "slot1",
+      "expected": "slot1"
+    },
+    {
+      "name": "brief ShiftTab back",
+      "actual": "slot0",
+      "expected": "slot0"
+    },
+    {
+      "name": "brief visible focus",
+      "actual": "3px",
+      "expected": "3px"
+    },
+    {
+      "name": "brief Enter select only",
+      "actual": [
+        "selected",
+        null
+      ],
+      "expected": [
+        "selected",
+        null
+      ]
+    },
+    {
+      "name": "brief confirm reachable",
+      "actual": "confirm",
+      "expected": "confirm"
+    },
+    {
+      "name": "brief Enter confirmation",
+      "actual": [
+        "confirmed",
+        2
+      ],
+      "expected": [
+        "confirmed",
+        2
+      ]
+    },
+    {
+      "name": "brief Enter restart",
+      "actual": [
+        "idle",
+        1
+      ],
+      "expected": [
+        "idle",
+        1
+      ]
+    },
+    {
+      "name": "brief AX target full name",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "brief AX status",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "brief 375 no horizontal overflow",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "brief 375 hitbox width",
+      "actual": 128,
+      "expected": 128
+    },
+    {
+      "name": "explicit initial keyboard focus",
+      "actual": "startTrial",
+      "expected": "startTrial"
+    },
+    {
+      "name": "explicit keyboard starts without pointer origin",
+      "actual": [
+        "choosing",
+        null
+      ],
+      "expected": [
+        "choosing",
+        null
+      ]
+    },
+    {
+      "name": "explicit Tab to first slot",
+      "actual": "slot0",
+      "expected": "slot0"
+    },
+    {
+      "name": "explicit Tab to second slot",
+      "actual": "slot1",
+      "expected": "slot1"
+    },
+    {
+      "name": "explicit ShiftTab back",
+      "actual": "slot0",
+      "expected": "slot0"
+    },
+    {
+      "name": "explicit visible focus",
+      "actual": "3px",
+      "expected": "3px"
+    },
+    {
+      "name": "explicit Enter select only",
+      "actual": [
+        "selected",
+        null
+      ],
+      "expected": [
+        "selected",
+        null
+      ]
+    },
+    {
+      "name": "explicit confirm reachable",
+      "actual": "confirm",
+      "expected": "confirm"
+    },
+    {
+      "name": "explicit Enter confirmation",
+      "actual": [
+        "confirmed",
+        2
+      ],
+      "expected": [
+        "confirmed",
+        2
+      ]
+    },
+    {
+      "name": "explicit Enter restart",
+      "actual": [
+        "idle",
+        1
+      ],
+      "expected": [
+        "idle",
+        1
+      ]
+    },
+    {
+      "name": "explicit AX target full name",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "explicit AX status",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "explicit 375 no horizontal overflow",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "explicit 375 hitbox width",
+      "actual": 128,
+      "expected": 128
+    },
+    {
+      "name": "invalid {\"width\":63,\"n\":4,\"cue\":\"explicit\",\"target\":0} fails closed",
+      "actual": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ],
+      "expected": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ]
+    },
+    {
+      "name": "invalid {\"width\":64,\"n\":3,\"cue\":\"explicit\",\"target\":0} fails closed",
+      "actual": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ],
+      "expected": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ]
+    },
+    {
+      "name": "invalid {\"width\":64,\"n\":2,\"cue\":\"explicit\",\"target\":2} fails closed",
+      "actual": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ],
+      "expected": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ]
+    },
+    {
+      "name": "invalid {\"width\":64,\"n\":2,\"cue\":\"other\",\"target\":0} fails closed",
+      "actual": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ],
+      "expected": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ]
+    },
+    {
+      "name": "invalid {\"width\":64,\"n\":2,\"cue\":\"explicit\",\"target\":\"NaN\"} fails closed",
+      "actual": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ],
+      "expected": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ]
+    },
+    {
+      "name": "invalid {} fails closed",
+      "actual": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ],
+      "expected": [
+        false,
+        "idle",
+        null,
+        1,
+        0,
+        true
+      ]
+    }
+  ],
+  "variants": {
+    "brief": {
+      "ax": [
+        {
+          "role": "status",
+          "name": "",
+          "properties": [
+            {
+              "name": "live",
+              "value": {
+                "type": "token",
+                "value": "polite"
+              }
+            },
+            {
+              "name": "atomic",
+              "value": {
+                "type": "boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "relevant",
+              "value": {
+                "type": "tokenList",
+                "value": "additions text"
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "确认创建",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "重新开始",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "开始一轮",
+          "properties": [
+            {
+              "name": "disabled",
+              "value": {
+                "type": "boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "role": "group",
+          "name": "候选预约时段",
+          "properties": []
+        },
+        {
+          "role": "button",
+          "name": "选择600–630分钟",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "focused",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "pressed",
+              "value": {
+                "type": "tristate",
+                "value": "true"
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "选择630–660分钟",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "pressed",
+              "value": {
+                "type": "tristate",
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "选择660–690分钟",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "pressed",
+              "value": {
+                "type": "tristate",
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "选择690–720分钟",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "pressed",
+              "value": {
+                "type": "tristate",
+                "value": "false"
+              }
+            }
+          ]
+        }
+      ],
+      "selected": {
+        "configOK": true,
+        "width": 128,
+        "n": 4,
+        "target": 0,
+        "cue": "brief",
+        "phase": "selected",
+        "selected": 0,
+        "created": null,
+        "trial": {
+          "started": 44.30000001192093,
+          "origin": null,
+          "input": "keyboard"
+        },
+        "events": [
+          {
+            "kind": "start",
+            "origin": null,
+            "input": "keyboard"
+          },
+          {
+            "kind": "select",
+            "index": 0,
+            "elapsed_from_start_ms": 3.599999964237213,
+            "input": "keyboard",
+            "endpoint": null
+          },
+          {
+            "kind": "confirmed",
+            "index": 0
+          },
+          {
+            "kind": "reset"
+          },
+          {
+            "kind": "start",
+            "origin": null,
+            "input": "keyboard"
+          },
+          {
+            "kind": "select",
+            "index": 0,
+            "elapsed_from_start_ms": 1,
+            "input": "keyboard",
+            "endpoint": null
+          }
+        ],
+        "targets": [
+          {
+            "index": 0,
+            "x": 496,
+            "y": 268.203125,
+            "width": 128,
+            "height": 44,
+            "disabled": false,
+            "pressed": "true"
+          },
+          {
+            "index": 1,
+            "x": 496,
+            "y": 333.796875,
+            "width": 128,
+            "height": 44,
+            "disabled": false,
+            "pressed": "false"
+          },
+          {
+            "index": 2,
+            "x": 496,
+            "y": 399.390625,
+            "width": 128,
+            "height": 44,
+            "disabled": false,
+            "pressed": "false"
+          },
+          {
+            "index": 3,
+            "x": 496,
+            "y": 464.984375,
+            "width": 128,
+            "height": 44,
+            "disabled": false,
+            "pressed": "false"
+          }
+        ],
+        "focus": "slot0",
+        "status": "已选择。",
+        "task": "请选择600–630分钟，选中后确认创建；保持已有预约。",
+        "bookings": 1,
+        "confirmDisabled": false
+      }
+    },
+    "explicit": {
+      "ax": [
+        {
+          "role": "status",
+          "name": "",
+          "properties": [
+            {
+              "name": "live",
+              "value": {
+                "type": "token",
+                "value": "polite"
+              }
+            },
+            {
+              "name": "atomic",
+              "value": {
+                "type": "boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "relevant",
+              "value": {
+                "type": "tokenList",
+                "value": "additions text"
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "确认创建",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "重新开始",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "开始一轮",
+          "properties": [
+            {
+              "name": "disabled",
+              "value": {
+                "type": "boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "role": "group",
+          "name": "候选预约时段",
+          "properties": []
+        },
+        {
+          "role": "button",
+          "name": "选择600–630分钟",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "focused",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "pressed",
+              "value": {
+                "type": "tristate",
+                "value": "true"
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "选择630–660分钟",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "pressed",
+              "value": {
+                "type": "tristate",
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "选择660–690分钟",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "pressed",
+              "value": {
+                "type": "tristate",
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "role": "button",
+          "name": "选择690–720分钟",
+          "properties": [
+            {
+              "name": "invalid",
+              "value": {
+                "type": "token",
+                "value": "false"
+              }
+            },
+            {
+              "name": "focusable",
+              "value": {
+                "type": "booleanOrUndefined",
+                "value": true
+              }
+            },
+            {
+              "name": "pressed",
+              "value": {
+                "type": "tristate",
+                "value": "false"
+              }
+            }
+          ]
+        }
+      ],
+      "selected": {
+        "configOK": true,
+        "width": 128,
+        "n": 4,
+        "target": 0,
+        "cue": "explicit",
+        "phase": "selected",
+        "selected": 0,
+        "created": null,
+        "trial": {
+          "started": 32.80000001192093,
+          "origin": null,
+          "input": "keyboard"
+        },
+        "events": [
+          {
+            "kind": "start",
+            "origin": null,
+            "input": "keyboard"
+          },
+          {
+            "kind": "select",
+            "index": 0,
+            "elapsed_from_start_ms": 3.5,
+            "input": "keyboard",
+            "endpoint": null
+          },
+          {
+            "kind": "confirmed",
+            "index": 0
+          },
+          {
+            "kind": "reset"
+          },
+          {
+            "kind": "start",
+            "origin": null,
+            "input": "keyboard"
+          },
+          {
+            "kind": "select",
+            "index": 0,
+            "elapsed_from_start_ms": 0.9000000357627869,
+            "input": "keyboard",
+            "endpoint": null
+          }
+        ],
+        "targets": [
+          {
+            "index": 0,
+            "x": 496,
+            "y": 268.203125,
+            "width": 128,
+            "height": 44,
+            "disabled": false,
+            "pressed": "true"
+          },
+          {
+            "index": 1,
+            "x": 496,
+            "y": 333.796875,
+            "width": 128,
+            "height": 44,
+            "disabled": false,
+            "pressed": "false"
+          },
+          {
+            "index": 2,
+            "x": 496,
+            "y": 399.390625,
+            "width": 128,
+            "height": 44,
+            "disabled": false,
+            "pressed": "false"
+          },
+          {
+            "index": 3,
+            "x": 496,
+            "y": 464.984375,
+            "width": 128,
+            "height": 44,
+            "disabled": false,
+            "pressed": "false"
+          }
+        ],
+        "focus": "slot0",
+        "status": "已选择600–630分钟，尚未创建；请确认创建。",
+        "task": "请选择600–630分钟，选中后确认创建；保持已有预约。",
+        "bookings": 1,
+        "confirmDisabled": false
+      }
+    }
+  },
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/155.0.8059.80",
+    "revision": "@43a195105613ac83c21d3f14de279f4a045c7da0",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "jsVersion": "15.5.35.23"
+  },
+  "conditions": [
+    {
+      "id": "w64-n2-brief",
+      "params": {
+        "width": 64,
+        "n": 2,
+        "cue": "brief",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          232,
+          290.203125
+        ],
+        "target": [
+          560,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            232,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 33.09999996423721,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 100.29999995231628,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w64-n2-explicit",
+      "params": {
+        "width": 64,
+        "n": 2,
+        "cue": "explicit",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          232,
+          290.203125
+        ],
+        "target": [
+          560,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            232,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 32.90000003576279,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 99.90000003576279,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w64-n4-brief",
+      "params": {
+        "width": 64,
+        "n": 4,
+        "cue": "brief",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          232,
+          290.203125
+        ],
+        "target": [
+          560,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            232,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 25.19999998807907,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 91.59999996423721,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w64-n4-explicit",
+      "params": {
+        "width": 64,
+        "n": 4,
+        "cue": "explicit",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          232,
+          290.203125
+        ],
+        "target": [
+          560,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            232,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 31.80000001192093,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 99.30000001192093,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w64-n8-brief",
+      "params": {
+        "width": 64,
+        "n": 8,
+        "cue": "brief",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          224.5,
+          290.203125
+        ],
+        "target": [
+          552.5,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            224,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 35.299999952316284,
+          "input": "pointer",
+          "endpoint": [
+            552,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 102.19999998807907,
+          "input": "pointer",
+          "endpoint": [
+            552,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w64-n8-explicit",
+      "params": {
+        "width": 64,
+        "n": 8,
+        "cue": "explicit",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          224.5,
+          290.203125
+        ],
+        "target": [
+          552.5,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            224,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 33.80000001192093,
+          "input": "pointer",
+          "endpoint": [
+            552,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 100.10000002384186,
+          "input": "pointer",
+          "endpoint": [
+            552,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w128-n2-brief",
+      "params": {
+        "width": 128,
+        "n": 2,
+        "cue": "brief",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          232,
+          290.203125
+        ],
+        "target": [
+          560,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            232,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 32.60000002384186,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 99.80000001192093,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w128-n2-explicit",
+      "params": {
+        "width": 128,
+        "n": 2,
+        "cue": "explicit",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          232,
+          290.203125
+        ],
+        "target": [
+          560,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            232,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 22.399999976158142,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 89.60000002384186,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w128-n4-brief",
+      "params": {
+        "width": 128,
+        "n": 4,
+        "cue": "brief",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          232,
+          290.203125
+        ],
+        "target": [
+          560,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            232,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 24.5,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 91.60000002384186,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w128-n4-explicit",
+      "params": {
+        "width": 128,
+        "n": 4,
+        "cue": "explicit",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          232,
+          290.203125
+        ],
+        "target": [
+          560,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            232,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 21.799999952316284,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 90.59999996423721,
+          "input": "pointer",
+          "endpoint": [
+            560,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w128-n8-brief",
+      "params": {
+        "width": 128,
+        "n": 8,
+        "cue": "brief",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          224.5,
+          290.203125
+        ],
+        "target": [
+          552.5,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            224,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 34.799999952316284,
+          "input": "pointer",
+          "endpoint": [
+            552,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 101.19999998807907,
+          "input": "pointer",
+          "endpoint": [
+            552,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    },
+    {
+      "id": "w128-n8-explicit",
+      "params": {
+        "width": 128,
+        "n": 8,
+        "cue": "explicit",
+        "target": 0
+      },
+      "geometry": {
+        "origin": [
+          224.5,
+          290.203125
+        ],
+        "target": [
+          552.5,
+          290.203125
+        ]
+      },
+      "events": [
+        {
+          "kind": "start",
+          "origin": [
+            224,
+            290
+          ],
+          "input": "pointer"
+        },
+        {
+          "kind": "select",
+          "index": 1,
+          "elapsed_from_start_ms": 32.60000002384186,
+          "input": "pointer",
+          "endpoint": [
+            552,
+            355
+          ]
+        },
+        {
+          "kind": "wrong-confirm",
+          "index": 1
+        },
+        {
+          "kind": "select",
+          "index": 0,
+          "elapsed_from_start_ms": 99,
+          "input": "pointer",
+          "endpoint": [
+            552,
+            290
+          ]
+        },
+        {
+          "kind": "confirmed",
+          "index": 0
+        },
+        {
+          "kind": "reset"
+        }
+      ]
+    }
+  ],
+  "check_count": 226
+}

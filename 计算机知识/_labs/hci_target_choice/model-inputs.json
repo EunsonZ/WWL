@@ -1,0 +1,126 @@
+{
+  "identity": "CONSTRUCTED MODEL RECORDS, no participants, no measured movement or reaction times",
+  "fitts": {
+    "formula": "MT_s = a_s + b_s_per_bit * log2(1+D_axis/W_axis)",
+    "a_s": 0.18,
+    "b_s_per_bit": 0.12,
+    "rows": [
+      {
+        "id": "F1",
+        "D_css_px": 64,
+        "W_css_px": 64,
+        "movement_s": 0.31
+      },
+      {
+        "id": "F2",
+        "D_css_px": 128,
+        "W_css_px": 64,
+        "movement_s": 0.36
+      },
+      {
+        "id": "F3",
+        "D_css_px": 256,
+        "W_css_px": 64,
+        "movement_s": 0.46
+      },
+      {
+        "id": "F4",
+        "D_css_px": 128,
+        "W_css_px": 128,
+        "movement_s": 0.29
+      },
+      {
+        "id": "F5",
+        "D_css_px": 256,
+        "W_css_px": 128,
+        "movement_s": 0.38
+      },
+      {
+        "id": "F6",
+        "D_css_px": 512,
+        "W_css_px": 64,
+        "movement_s": 0.55
+      }
+    ]
+  },
+  "choice": {
+    "formula": "RT_s = a_s + b_s_per_bit * H(p), not log2(n+1)",
+    "a_s": 0.3,
+    "b_s_per_bit": 0.15,
+    "rows": [
+      {
+        "id": "C1",
+        "probabilities": [
+          1.0
+        ],
+        "reaction_s": 0.31
+      },
+      {
+        "id": "C2",
+        "probabilities": [
+          0.5,
+          0.5
+        ],
+        "reaction_s": 0.44
+      },
+      {
+        "id": "C3",
+        "probabilities": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "reaction_s": 0.62
+      },
+      {
+        "id": "C4",
+        "probabilities": [
+          0.125,
+          0.125,
+          0.125,
+          0.125,
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "reaction_s": 0.74
+      },
+      {
+        "id": "C5",
+        "probabilities": [
+          0.7,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "reaction_s": 0.51
+      }
+    ]
+  },
+  "speed_accuracy": {
+    "identity": "another constructed alternative, not the Fitts fit sample",
+    "narrow": {
+      "attempts": 20,
+      "correct": 14,
+      "mean_correct_s": 0.42
+    },
+    "wide": {
+      "attempts": 20,
+      "correct": 19,
+      "mean_correct_s": 0.48
+    }
+  },
+  "attention": {
+    "identity": "conditional probability illustration, not measured human detection",
+    "plain": {
+      "notice": 0.9,
+      "interpret_given_notice": 0.8
+    },
+    "salient_ambiguous": {
+      "notice": 0.98,
+      "interpret_given_notice": 0.6
+    }
+  }
+}

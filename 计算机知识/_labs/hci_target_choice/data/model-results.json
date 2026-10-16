@@ -1,0 +1,193 @@
+{
+  "identity": "CONSTRUCTED MODEL RECORDS, no participants, no measured movement or reaction times",
+  "fitts_rows": [
+    {
+      "id": "F1",
+      "D_css_px": 64,
+      "W_css_px": 64,
+      "movement_s": 0.31,
+      "ID_bits": 1.0,
+      "declared_prediction_s": 0.3
+    },
+    {
+      "id": "F2",
+      "D_css_px": 128,
+      "W_css_px": 64,
+      "movement_s": 0.36,
+      "ID_bits": 1.584962500721156,
+      "declared_prediction_s": 0.3701955000865387
+    },
+    {
+      "id": "F3",
+      "D_css_px": 256,
+      "W_css_px": 64,
+      "movement_s": 0.46,
+      "ID_bits": 2.321928094887362,
+      "declared_prediction_s": 0.45863137138648347
+    },
+    {
+      "id": "F4",
+      "D_css_px": 128,
+      "W_css_px": 128,
+      "movement_s": 0.29,
+      "ID_bits": 1.0,
+      "declared_prediction_s": 0.3
+    },
+    {
+      "id": "F5",
+      "D_css_px": 256,
+      "W_css_px": 128,
+      "movement_s": 0.38,
+      "ID_bits": 1.584962500721156,
+      "declared_prediction_s": 0.3701955000865387
+    },
+    {
+      "id": "F6",
+      "D_css_px": 512,
+      "W_css_px": 64,
+      "movement_s": 0.55,
+      "ID_bits": 3.169925001442312,
+      "declared_prediction_s": 0.5603910001730774
+    }
+  ],
+  "choice_rows": [
+    {
+      "id": "C1",
+      "probabilities": [
+        1.0
+      ],
+      "reaction_s": 0.31,
+      "H_bits": -0.0,
+      "declared_prediction_s": 0.3
+    },
+    {
+      "id": "C2",
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "reaction_s": 0.44,
+      "H_bits": 1.0,
+      "declared_prediction_s": 0.44999999999999996
+    },
+    {
+      "id": "C3",
+      "probabilities": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "reaction_s": 0.62,
+      "H_bits": 2.0,
+      "declared_prediction_s": 0.6
+    },
+    {
+      "id": "C4",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ],
+      "reaction_s": 0.74,
+      "H_bits": 3.0,
+      "declared_prediction_s": 0.75
+    },
+    {
+      "id": "C5",
+      "probabilities": [
+        0.7,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "reaction_s": 0.51,
+      "H_bits": 1.3567796494470397,
+      "declared_prediction_s": 0.503516947417056
+    }
+  ],
+  "fitts_OLS": {
+    "a_s": 0.18532670274707091,
+    "b_s_per_bit": 0.11611944763475149,
+    "residuals_s": [
+      0.008553849618177567,
+      -0.009371672852605983,
+      0.005052289426997758,
+      -0.01144615038182245,
+      0.010628327147394034,
+      -0.0034166429581410362
+    ],
+    "SSE_s2": 0.0004421713694195638,
+    "R2": 0.9907656518742869,
+    "n_constructed_records": 6,
+    "inference": "descriptive OLS only, no participants, population interval or empirical validation"
+  },
+  "choice_OLS": {
+    "a_s": 0.3078300943093849,
+    "b_s_per_bit": 0.14691883948628473,
+    "residuals_s": [
+      0.0021699056906150926,
+      -0.014748933795669605,
+      0.018332226718045574,
+      -0.008586612768239132,
+      0.0028334141552478487
+    ],
+    "SSE_s2": 0.000640068229863879,
+    "R2": 0.9941235013784073,
+    "n_constructed_records": 5,
+    "inference": "descriptive OLS only, no participants, population interval or empirical validation"
+  },
+  "change_conditions": {
+    "double_D_and_W_same_ID": [
+      1.584962500721156,
+      1.584962500721156
+    ],
+    "double_W_at_D256": [
+      2.321928094887362,
+      1.584962500721156
+    ],
+    "same_n_different_uncertainty": [
+      2.0,
+      1.3567796494470397
+    ],
+    "n4_H_vs_log2nplus1": [
+      2.0,
+      2.321928094887362
+    ],
+    "outside_fit_new_device_example": {
+      "D_css_px": 256,
+      "W_css_px": 64,
+      "a_s": 0.3,
+      "b_s_per_bit": 0.25,
+      "time_s": 0.8804820237218405,
+      "identity": "chosen alternative device coefficients, not a measurement"
+    }
+  },
+  "attention_conditional": {
+    "plain": 0.7200000000000001,
+    "salient_ambiguous": 0.588
+  },
+  "speed_accuracy": {
+    "narrow": {
+      "attempts": 20,
+      "correct": 14,
+      "mean_correct_s": 0.42,
+      "correct_rate": 0.7
+    },
+    "wide": {
+      "attempts": 20,
+      "correct": 19,
+      "mean_correct_s": 0.48,
+      "correct_rate": 0.95
+    }
+  },
+  "contrast": {
+    "black_white": 21.0,
+    "gray119_white": 4.478089453577215
+  }
+}

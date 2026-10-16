@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>时段选择研究材料</title>
+<style>
+* { box-sizing:border-box; }
+body { font:18px/1.6 system-ui;max-width:42rem;margin:1rem auto;padding:0 1rem;background:white;color:#111; }
+button { font:inherit;min-height:44px;padding:.3rem .6rem;margin:.3rem 0; }
+:focus-visible { outline:3px solid #1459b8;outline-offset:3px; }
+#stage { display:grid;grid-template-columns:80px minmax(0,1fr);gap:16px;align-items:start; }
+#startTrial { width:80px;font-size:14px; }
+#choices { display:grid;gap:12px;justify-items:center; }
+.slot { width:var(--target-width);height:44px;padding:0;font:12px ui-monospace,monospace;border:2px solid #444;border-radius:4px;background:#fff;color:#111; }
+.slot[aria-pressed="true"] { border:3px solid #1459b8;background:#e8f0fe; }
+#status { min-height:6rem;padding:.6rem;border:2px solid #444; }
+#task { min-height:4rem; }
+</style>
+<h1>时段选择研究材料</h1>
+<p>合成社区预约。已有540–600分钟预约；候选都是30分钟半开区间。本地内存运行，刷新复位，没有真实服务。</p>
+<p id="task">点击“开始一轮”查看指定时段；选择后还需确认创建。数字单位为从午夜起的分钟。</p>
+<div id="stage"><button id="startTrial" type="button">开始一轮</button><div id="choices" role="group" aria-label="候选预约时段"></div></div>
+<p id="status" role="status" aria-live="polite" aria-atomic="true">尚未开始，未创建新预约。</p>
+<button id="confirm" type="button" disabled>确认创建</button>
+<button id="restart" type="button">重新开始</button>
+<h2>本页活动预约</h2><ul id="bookings"></ul>
+<script>
+'use strict';
+const q=new URLSearchParams(location.search);
+const width=Number(q.get('width')), n=Number(q.get('n')), target=Number(q.get('target')), cue=q.get('cue');
+const configOK=['64','128'].includes(q.get('width'))&&['2','4','8'].includes(q.get('n'))&&
+    q.has('target')&&/^\d+$/.test(q.get('target'))&&Number.isInteger(target)&&target>=0&&target<n&&['brief','explicit'].includes(cue);
+const start=document.getElementById('startTrial'), confirm=document.getElementById('confirm'), restart=document.getElementById('restart');
+const choices=document.getElementById('choices'), task=document.getElementById('task'), status=document.getElementById('status'), list=document.getElementById('bookings');
+let phase='idle', selected=null, trial=null, created=null;
+const events=[];
+const label=i=>`${600+30*i}–${630+30*i}`;
+function renderBookings(){
+    list.replaceChildren();let item=document.createElement('li');item.textContent='预约1：540–600分钟';list.append(item);
+    if(created!==null){item=document.createElement('li');item.textContent=`预约2：${label(created)}分钟 `;
+        const cancel=document.createElement('button');cancel.type='button';cancel.id='cancel';cancel.textContent='取消预约2';
+        cancel.addEventListener('click',()=>reset('已取消预约2，区间已释放；未创建新预约。'));item.append(cancel);list.append(item);}
+}
+function reflect(){
+    for(const b of choices.children){b.disabled=phase==='idle'||phase==='confirmed'||!configOK;b.setAttribute('aria-pressed',String(Number(b.dataset.index)===selected));}
+    confirm.disabled=phase!=='selected';start.disabled=!configOK||phase!=='idle';renderBookings();
+}
+function reset(message='已复位；点击开始一轮，未创建新预约。'){
+    phase='idle';selected=null;created=null;trial=null;status.textContent=message;
+    task.textContent='点击“开始一轮”查看指定时段；选择后还需确认创建。数字单位为从午夜起的分钟。';
+    events.push({kind:'reset'});reflect();start.focus();
+}
+if(configOK){
+    document.documentElement.style.setProperty('--target-width',`${width}px`);
+    for(let i=0;i<n;i++){
+        const b=document.createElement('button');b.type='button';b.className='slot';b.dataset.index=i;b.id=`slot${i}`;
+        b.textContent=label(i);b.setAttribute('aria-label',`选择${label(i)}分钟`);b.setAttribute('aria-pressed','false');
+        b.addEventListener('click',event=>{
+            if(!['choosing','selected'].includes(phase))return;
+            selected=i;phase='selected';
+            status.textContent=cue==='brief'?'已选择。':`已选择${label(i)}分钟，尚未创建；请确认创建。`;
+            events.push({kind:'select',index:i,elapsed_from_start_ms:performance.now()-trial.started,
+                input:event.detail>0?'pointer':'keyboard',endpoint:event.detail>0?[event.clientX,event.clientY]:null});reflect();
+        });choices.append(b);
+    }
+    start.addEventListener('click',event=>{
+        if(phase!=='idle')return;
+        phase='choosing';trial={started:performance.now(),origin:event.detail>0?[event.clientX,event.clientY]:null,input:event.detail>0?'pointer':'keyboard'};
+        task.textContent=`请选择${label(target)}分钟，选中后确认创建；保持已有预约。`;
+        status.textContent='任务已开始，尚未选择，未创建新预约。';events.push({kind:'start',origin:trial.origin,input:trial.input});reflect();
+    });
+    confirm.addEventListener('click',()=>{
+        if(phase!=='selected')return;
+        if(selected!==target){status.textContent='未创建：所选时段不符任务，请重新选择。';events.push({kind:'wrong-confirm',index:selected});document.getElementById(`slot${selected}`).focus();return;}
+        created=selected;phase='confirmed';status.textContent=`已创建预约2：${label(created)}分钟。`;events.push({kind:'confirmed',index:created});reflect();restart.focus();
+    });
+    restart.addEventListener('click',()=>reset());reflect();start.focus();
+}else{
+    status.textContent='研究材料参数无效，未启动，也未创建预约。';start.disabled=true;confirm.disabled=true;restart.disabled=true;renderBookings();
+}
+Object.defineProperty(window,'hciTarget',{value:Object.freeze({snapshot:()=>({configOK,width,n,target,cue,phase,selected,created,
+    trial:trial?structuredClone(trial):null,events:structuredClone(events),
+    targets:Array.from(choices.children,b=>{const r=b.getBoundingClientRect();return {index:Number(b.dataset.index),x:r.x,y:r.y,width:r.width,height:r.height,disabled:b.disabled,pressed:b.getAttribute('aria-pressed')};})})})});
+</script>
+</html>

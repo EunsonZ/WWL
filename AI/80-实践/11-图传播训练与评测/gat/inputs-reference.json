@@ -1,0 +1,14 @@
+{
+  "schema": "wwl-gat-input-reference-v1",
+  "shared_inputs_commit": "f85e46ec299b30bd1de695ac3f95dd4a3ebb24ec",
+  "published_sage_commit": "97998c1cf1b053f8f5699b6c7f78e9e2a43cb864",
+  "read_only_relative_files": [
+    "../inputs.json",
+    "../graph_task.py",
+    "../graphsage/results/baseline_reference.json",
+    "../graphsage/results/selection.json",
+    "../graphsage/results/raw_predictions.json"
+  ],
+  "shared_inputs_sha256": "171fb27b61a04736206c8f283f6a4358ce440cef7634579ec0cc33f8369d60b5",
+  "note": "No copied input/training framework. Both controls reused after new GAT selection, not retrained."
+}

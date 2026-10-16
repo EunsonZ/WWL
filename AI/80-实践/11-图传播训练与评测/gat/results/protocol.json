@@ -1,0 +1,34 @@
+{
+  "schema": "wwl-gat-v1",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "regimes": [
+    "homophily",
+    "heterophily"
+  ],
+  "variants": [
+    "attention",
+    "uniform"
+  ],
+  "hidden_heads": 2,
+  "hidden_per_head": 4,
+  "output_heads": 2,
+  "output_per_head": 1,
+  "layers": 2,
+  "hidden_activation": "ELU alpha=1 after concatenation",
+  "output_combination": "mean head scalar logits, no output activation",
+  "self_loops": "include one self entry in each masked row-softmax",
+  "leaky_slope": 0.2,
+  "epochs": 120,
+  "learning_rate": 0.03,
+  "l2": 0.001,
+  "dropout": 0.0,
+  "selection": "each variant independently selects earliest epoch with minimum validation graph-mean cross entropy; no architecture/head/seed search",
+  "threshold": "logit >= 0",
+  "baselines": "reuse published validation-selected no_graph and full-neighbor GraphSAGE predictions after new model selection; do not retrain",
+  "test_status": "public teaching benchmark reused, not a new blind test",
+  "threads": 1
+}

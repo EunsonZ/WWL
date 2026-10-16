@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 470" role="img"><title>GAT masked attention on the three-node path</title><desc>Rows are receivers, columns senders. Self is included. Nonedges are zero. Same head_forward as training source, W=1, left=right=1, bias=0, no post-activation.</desc>
+<rect width="1050" height="470" fill="white"/><g font-family="sans-serif" fill="#192f3f">
+<text x="25" y="30" font-size="20" >One head: W=1, aL=aR=1; self included; no post-activation</text>
+<line x1="90" y1="180" x2="240" y2="180" stroke="#536273" stroke-width="3"/>
+<line x1="240" y1="180" x2="390" y2="180" stroke="#536273" stroke-width="3"/>
+<circle cx="90" cy="180" r="28" fill="#e8f2fa" stroke="#23648b" stroke-width="2"/>
+<text x="90" y="186" font-size="19" text-anchor="middle">1</text>
+<text x="90" y="235" font-size="17" text-anchor="middle">X=1</text>
+<circle cx="240" cy="180" r="28" fill="#e8f2fa" stroke="#23648b" stroke-width="2"/>
+<text x="240" y="186" font-size="19" text-anchor="middle">2</text>
+<text x="240" y="235" font-size="17" text-anchor="middle">X=0</text>
+<circle cx="390" cy="180" r="28" fill="#e8f2fa" stroke="#23648b" stroke-width="2"/>
+<text x="390" y="186" font-size="19" text-anchor="middle">3</text>
+<text x="390" y="235" font-size="17" text-anchor="middle">X=2</text>
+<text x="70" y="95" font-size="20" >Input graph: path 1-2-3</text>
+<text x="550" y="95" font-size="19" >alpha: row receiver i, column sender j</text>
+<text x="655" y="127" font-size="16" text-anchor="middle">j=1</text>
+<text x="760" y="127" font-size="16" text-anchor="middle">j=2</text>
+<text x="865" y="127" font-size="16" text-anchor="middle">j=3</text>
+<text x="570" y="171" font-size="16" >i=1</text>
+<rect x="605" y="140" width="100" height="55" fill="rgb(116,181,223)" stroke="white"/>
+<text x="655" y="173" font-size="15" text-anchor="middle">0.7311</text>
+<rect x="710" y="140" width="100" height="55" fill="rgb(200,224,241)" stroke="white"/>
+<text x="760" y="173" font-size="15" text-anchor="middle">0.2689</text>
+<rect x="815" y="140" width="100" height="55" fill="rgb(248,250,252)" stroke="white"/>
+<text x="865" y="173" font-size="15" text-anchor="middle">0 (masked)</text>
+<text x="570" y="236" font-size="16" >i=2</text>
+<rect x="605" y="205" width="100" height="55" fill="rgb(204,227,242)" stroke="white"/>
+<text x="655" y="238" font-size="15" text-anchor="middle">0.2447</text>
+<rect x="710" y="205" width="100" height="55" fill="rgb(232,241,248)" stroke="white"/>
+<text x="760" y="238" font-size="15" text-anchor="middle">0.0900</text>
+<rect x="815" y="205" width="100" height="55" fill="rgb(128,187,225)" stroke="white"/>
+<text x="865" y="238" font-size="15" text-anchor="middle">0.6652</text>
+<text x="570" y="301" font-size="16" >i=3</text>
+<rect x="605" y="270" width="100" height="55" fill="rgb(248,250,252)" stroke="white"/>
+<text x="655" y="303" font-size="15" text-anchor="middle">0 (masked)</text>
+<rect x="710" y="270" width="100" height="55" fill="rgb(227,239,247)" stroke="white"/>
+<text x="760" y="303" font-size="15" text-anchor="middle">0.1192</text>
+<rect x="815" y="270" width="100" height="55" fill="rgb(89,166,217)" stroke="white"/>
+<text x="865" y="303" font-size="15" text-anchor="middle">0.8808</text>
+<text x="30" y="320" font-size="17" >Nonedge 1 &lt;- 3 stays zero, despite raw score r13=3.</text>
+<text x="30" y="360" font-size="19" >o = alpha Z = (0.731059, 1.575210, 1.761594)</text>
+<text x="30" y="405" font-size="17" >Each receiver row sums to 1; columns need not sum to 1.</text>
+<text x="30" y="445" font-size="14" >Features and outputs are synthetic dimensionless scalars; attention coefficients are dimensionless.</text>
+</g></svg>

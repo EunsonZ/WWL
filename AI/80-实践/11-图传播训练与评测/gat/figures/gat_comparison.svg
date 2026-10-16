@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110 460" role="img"><title>GAT and uniform control versus published no-graph and GraphSAGE controls</title><desc>Each marker is a seed average over four independent test graphs. Short horizontal bars are three-seed means. Published controls reused, not retrained. Parameter and compute budgets differ.</desc>
+<rect width="1110" height="460" fill="white"/><g font-family="sans-serif" fill="#192f3f">
+<text x="20" y="28" font-size="20" >TEST graph-mean accuracy; fixed architecture, validation-selected epoch</text>
+<text x="70" y="65" font-size="20" >homophily</text>
+<line x1="70" y1="90" x2="70" y2="350" stroke="#536273" />
+<line x1="70" y1="350" x2="510" y2="350" stroke="#536273" />
+<line x1="70" y1="350" x2="510" y2="350" stroke="#e6ebef" />
+<text x="60" y="355" font-size="13" text-anchor="end">0</text>
+<line x1="70" y1="285.0" x2="510" y2="285.0" stroke="#e6ebef" />
+<text x="60" y="290.0" font-size="13" text-anchor="end">0.25</text>
+<line x1="70" y1="220.0" x2="510" y2="220.0" stroke="#e6ebef" />
+<text x="60" y="225.0" font-size="13" text-anchor="end">0.5</text>
+<line x1="70" y1="155.0" x2="510" y2="155.0" stroke="#e6ebef" />
+<text x="60" y="160.0" font-size="13" text-anchor="end">0.75</text>
+<line x1="70" y1="90" x2="510" y2="90" stroke="#e6ebef" />
+<text x="60" y="95" font-size="13" text-anchor="end">1</text>
+<circle cx="101" cy="157.70833333333334" r="4" fill="#52616b"/>
+<rect x="106" y="137.45833333333331" width="8" height="8" fill="#52616b"/>
+<path d="M119,171.66666666666666 l-5,9 h10 z" fill="#52616b"/>
+<line x1="86" y1="158.6111111111111" x2="134" y2="158.6111111111111" stroke="#52616b" stroke-width="3"/>
+<text x="110" y="377" font-size="14" text-anchor="middle">no_graph*</text>
+<text x="110" y="404" font-size="13" text-anchor="middle">mean=0.7361</text>
+<circle cx="221" cy="103.54166666666669" r="4" fill="#34814f"/>
+<rect x="226" y="91.41666666666666" width="8" height="8" fill="#34814f"/>
+<path d="M239,136.45833333333334 l-5,9 h10 z" fill="#34814f"/>
+<line x1="206" y1="113.47222222222223" x2="254" y2="113.47222222222223" stroke="#34814f" stroke-width="3"/>
+<text x="230" y="377" font-size="14" text-anchor="middle">SAGE_full*</text>
+<text x="230" y="404" font-size="13" text-anchor="middle">mean=0.9097</text>
+<circle cx="341" cy="98.125" r="4" fill="#b65626"/>
+<rect x="346" y="99.54166666666669" width="8" height="8" fill="#b65626"/>
+<path d="M359,128.33333333333334 l-5,9 h10 z" fill="#b65626"/>
+<line x1="326" y1="111.66666666666669" x2="374" y2="111.66666666666669" stroke="#b65626" stroke-width="3"/>
+<text x="350" y="377" font-size="14" text-anchor="middle">uniform</text>
+<text x="350" y="404" font-size="13" text-anchor="middle">mean=0.9167</text>
+<circle cx="461" cy="98.125" r="4" fill="#166b99"/>
+<rect x="466" y="94.125" width="8" height="8" fill="#166b99"/>
+<path d="M479,131.04166666666669 l-5,9 h10 z" fill="#166b99"/>
+<line x1="446" y1="110.76388888888891" x2="494" y2="110.76388888888891" stroke="#166b99" stroke-width="3"/>
+<text x="470" y="377" font-size="14" text-anchor="middle">GAT</text>
+<text x="470" y="404" font-size="13" text-anchor="middle">mean=0.9201</text>
+<text x="620" y="65" font-size="20" >heterophily</text>
+<line x1="620" y1="90" x2="620" y2="350" stroke="#536273" />
+<line x1="620" y1="350" x2="1060" y2="350" stroke="#536273" />
+<line x1="620" y1="350" x2="1060" y2="350" stroke="#e6ebef" />
+<text x="610" y="355" font-size="13" text-anchor="end">0</text>
+<line x1="620" y1="285.0" x2="1060" y2="285.0" stroke="#e6ebef" />
+<text x="610" y="290.0" font-size="13" text-anchor="end">0.25</text>
+<line x1="620" y1="220.0" x2="1060" y2="220.0" stroke="#e6ebef" />
+<text x="610" y="225.0" font-size="13" text-anchor="end">0.5</text>
+<line x1="620" y1="155.0" x2="1060" y2="155.0" stroke="#e6ebef" />
+<text x="610" y="160.0" font-size="13" text-anchor="end">0.75</text>
+<line x1="620" y1="90" x2="1060" y2="90" stroke="#e6ebef" />
+<text x="610" y="95" font-size="13" text-anchor="end">1</text>
+<circle cx="651" cy="155.0" r="4" fill="#52616b"/>
+<rect x="656" y="137.45833333333334" width="8" height="8" fill="#52616b"/>
+<path d="M669,144.58333333333331 l-5,9 h10 z" fill="#52616b"/>
+<line x1="636" y1="148.68055555555554" x2="684" y2="148.68055555555554" stroke="#52616b" stroke-width="3"/>
+<text x="660" y="377" font-size="14" text-anchor="middle">no_graph*</text>
+<text x="660" y="404" font-size="13" text-anchor="middle">mean=0.7743</text>
+<circle cx="771" cy="100.83333333333331" r="4" fill="#34814f"/>
+<rect x="776" y="99.54166666666666" width="8" height="8" fill="#34814f"/>
+<path d="M789,90.41666666666666 l-5,9 h10 z" fill="#34814f"/>
+<line x1="756" y1="99.93055555555554" x2="804" y2="99.93055555555554" stroke="#34814f" stroke-width="3"/>
+<text x="780" y="377" font-size="14" text-anchor="middle">SAGE_full*</text>
+<text x="780" y="404" font-size="13" text-anchor="middle">mean=0.9618</text>
+<circle cx="891" cy="141.45833333333331" r="4" fill="#b65626"/>
+<rect x="896" y="140.16666666666669" width="8" height="8" fill="#b65626"/>
+<path d="M909,163.54166666666666 l-5,9 h10 z" fill="#b65626"/>
+<line x1="876" y1="151.38888888888889" x2="924" y2="151.38888888888889" stroke="#b65626" stroke-width="3"/>
+<text x="900" y="377" font-size="14" text-anchor="middle">uniform</text>
+<text x="900" y="404" font-size="13" text-anchor="middle">mean=0.7639</text>
+<circle cx="1011" cy="117.08333333333331" r="4" fill="#166b99"/>
+<rect x="1016" y="115.79166666666669" width="8" height="8" fill="#166b99"/>
+<path d="M1029,117.5 l-5,9 h10 z" fill="#166b99"/>
+<line x1="996" y1="119.79166666666669" x2="1044" y2="119.79166666666669" stroke="#166b99" stroke-width="3"/>
+<text x="1020" y="377" font-size="14" text-anchor="middle">GAT</text>
+<text x="1020" y="404" font-size="13" text-anchor="middle">mean=0.8854</text>
+<text x="25" y="443" font-size="14" >circle=seed17; square=seed29; triangle=seed43; *published/reused; no confidence intervals; public test benchmark</text>
+</g></svg>

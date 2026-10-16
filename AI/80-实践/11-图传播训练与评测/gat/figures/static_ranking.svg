@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 410" role="img"><title>Static ordering is different from constant attention values</title><desc>Two shared keys -1,+1 and query offsets -2,+2. Conditional softmax over these TWO keys only. Full GAT rows also contain self; adding candidates does not reverse pair ordering.</desc>
+<rect width="850" height="410" fill="white"/><g font-family="sans-serif" fill="#192f3f">
+<text x="25" y="30" font-size="20" >One additive GAT head: shared-key ranking stays fixed</text>
+<text x="25" y="65" font-size="16" >Conditional weights over the common two keys ONLY (self omitted here)</text>
+<text x="30" y="140" font-size="18" >query=-2</text>
+<rect x="210" y="115" width="180.5905529493966" height="25" fill="#52616b"/>
+<text x="405.5905529493966" y="134" font-size="16" >key=-1: 0.4013</text>
+<rect x="210" y="155" width="269.40944705060343" height="25" fill="#166b99"/>
+<text x="494.40944705060343" y="174" font-size="16" >key=1: 0.5987</text>
+<text x="30" y="260" font-size="18" >query=2</text>
+<rect x="210" y="235" width="53.6413149099529" height="25" fill="#52616b"/>
+<text x="278.6413149099529" y="254" font-size="16" >key=-1: 0.1192</text>
+<rect x="210" y="275" width="396.35868509004706" height="25" fill="#166b99"/>
+<text x="621.3586850900471" y="294" font-size="16" >key=1: 0.8808</text>
+<text x="25" y="360" font-size="16" >Both prefer key +1; preference strength changes across the LeakyReLU branches.</text>
+<text x="25" y="394" font-size="13" >Bar length: conditional attention probability, dimensionless; this is not a whole-network impossibility claim.</text>
+</g></svg>

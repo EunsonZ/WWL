@@ -1,0 +1,344 @@
+{
+  "input_version": "kv-partition-v1",
+  "unit": "integer milliseconds since UTC epoch",
+  "day_ms": 86400000,
+  "initial_teachers": {
+    "T7": "555-0100"
+  },
+  "actions": [
+    {
+      "request_id": "R01",
+      "clock_ms": 0,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 0,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "A",
+        "phone_at_enrollment": "555-0100"
+      },
+      "event_ms": 0
+    },
+    {
+      "request_id": "R02",
+      "clock_ms": 1,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C20"
+      ],
+      "expected_version": 0,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "B",
+        "phone_at_enrollment": "555-0100"
+      },
+      "event_ms": 86399999
+    },
+    {
+      "request_id": "R03",
+      "clock_ms": 10,
+      "op": "cache_fill",
+      "student": "S1",
+      "term": "T1",
+      "ttl_ms": 50
+    },
+    {
+      "request_id": "R04",
+      "clock_ms": 20,
+      "op": "teacher",
+      "teacher_id": "T7",
+      "phone": "555-0199"
+    },
+    {
+      "request_id": "R05",
+      "clock_ms": 60,
+      "op": "clock"
+    },
+    {
+      "request_id": "R06",
+      "clock_ms": 61,
+      "op": "cache_fill",
+      "student": "S1",
+      "term": "T1",
+      "ttl_ms": 50
+    },
+    {
+      "request_id": "R07",
+      "clock_ms": 62,
+      "op": "cache_fill",
+      "student": "S1",
+      "term": "T1",
+      "ttl_ms": null
+    },
+    {
+      "request_id": "R08",
+      "clock_ms": 70,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 1,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "B",
+        "phone_at_enrollment": "555-0100"
+      },
+      "event_ms": 100
+    },
+    {
+      "request_id": "R09",
+      "clock_ms": 71,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 1,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "C",
+        "phone_at_enrollment": "555-0100"
+      },
+      "event_ms": 101
+    },
+    {
+      "request_id": "R10",
+      "clock_ms": 72,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 0,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "C",
+        "phone_at_enrollment": "555-0100"
+      },
+      "event_ms": 102
+    },
+    {
+      "request_id": "R11",
+      "clock_ms": 80,
+      "op": "cas",
+      "key": [
+        "S2",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 0,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "A",
+        "phone_at_enrollment": "555-0100"
+      },
+      "event_ms": 86400000
+    },
+    {
+      "request_id": "R12",
+      "clock_ms": 90,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C20"
+      ],
+      "expected_version": 1,
+      "after": null,
+      "event_ms": 86400000
+    },
+    {
+      "request_id": "R13",
+      "clock_ms": 91,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C20"
+      ],
+      "expected_version": 2,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "C",
+        "phone_at_enrollment": "555-0199"
+      },
+      "event_ms": 86400000
+    },
+    {
+      "request_id": "R14",
+      "clock_ms": 100,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 2,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "C",
+        "phone_at_enrollment": "555-0100"
+      },
+      "event_ms": 50
+    },
+    {
+      "request_id": "R15",
+      "clock_ms": 101,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 3,
+      "after": null,
+      "event_ms": 86400001
+    },
+    {
+      "request_id": "R16",
+      "clock_ms": 102,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 2,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "B",
+        "phone_at_enrollment": "555-0100"
+      },
+      "event_ms": 86400001
+    },
+    {
+      "request_id": "R17",
+      "clock_ms": 103,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C10"
+      ],
+      "expected_version": 4,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "A",
+        "phone_at_enrollment": "555-0199"
+      },
+      "event_ms": 86400002
+    },
+    {
+      "request_id": "R18",
+      "clock_ms": 104,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T2",
+        "C10"
+      ],
+      "expected_version": 0,
+      "after": {
+        "teacher_id": "T7",
+        "grade": "A",
+        "phone_at_enrollment": "555-0199"
+      },
+      "event_ms": 172800001
+    },
+    {
+      "request_id": "R19",
+      "clock_ms": 105,
+      "op": "cas",
+      "key": [
+        "S1",
+        "T1",
+        "C30"
+      ],
+      "expected_version": 0,
+      "after": {
+        "teacher_id": "T7",
+        "phone_at_enrollment": "555-0199"
+      },
+      "event_ms": 172800002
+    },
+    {
+      "request_id": "R20",
+      "clock_ms": 1000,
+      "op": "clock"
+    }
+  ],
+  "queries": [
+    {
+      "id": "all_S1",
+      "student": "S1",
+      "lo_ms": 0,
+      "hi_ms": 172800003,
+      "page_size": 2
+    },
+    {
+      "id": "late_50_100",
+      "student": "S1",
+      "lo_ms": 50,
+      "hi_ms": 100,
+      "page_size": 2
+    },
+    {
+      "id": "day_seam",
+      "student": "S1",
+      "lo_ms": 86399999,
+      "hi_ms": 86400001,
+      "page_size": 1
+    },
+    {
+      "id": "S2",
+      "student": "S2",
+      "lo_ms": 0,
+      "hi_ms": 172800000,
+      "page_size": 2
+    },
+    {
+      "id": "empty",
+      "student": "S9",
+      "lo_ms": 0,
+      "hi_ms": 86400000,
+      "page_size": 2
+    }
+  ],
+  "layouts": [
+    {
+      "id": "daily",
+      "bucket_ms": 86400000,
+      "shards": 1
+    },
+    {
+      "id": "half_day",
+      "bucket_ms": 43200000,
+      "shards": 1
+    },
+    {
+      "id": "daily_sharded",
+      "bucket_ms": 86400000,
+      "shards": 2
+    }
+  ],
+  "key_collision_pairs": [
+    [
+      "a:b",
+      "c"
+    ],
+    [
+      "a",
+      "b:c"
+    ]
+  ]
+}

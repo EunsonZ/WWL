@@ -1,0 +1,1075 @@
+{
+  "main": [
+    {
+      "request_id": "R01",
+      "response": [
+        "accepted",
+        "1"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": []
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R02",
+      "response": [
+        "accepted",
+        "1"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": []
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R08",
+      "response": [
+        "accepted",
+        "2"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 2,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": []
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R09",
+      "response": [
+        "version_conflict",
+        "2"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 2,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": []
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R10",
+      "response": [
+        "version_conflict",
+        "2"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 2,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": []
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R11",
+      "response": [
+        "accepted",
+        "1"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 2,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R12",
+      "response": [
+        "accepted",
+        "2"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 2,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 2,
+            "deleted": true,
+            "value": null
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R13",
+      "response": [
+        "accepted",
+        "3"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 2,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "B",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 3,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "C",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R14",
+      "response": [
+        "accepted",
+        "3"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 3,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "C",
+              "phone_at_enrollment": "555-0100"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 3,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "C",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R15",
+      "response": [
+        "accepted",
+        "4"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 4,
+            "deleted": true,
+            "value": null
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 3,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "C",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R16",
+      "response": [
+        "version_conflict",
+        "4"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 4,
+            "deleted": true,
+            "value": null
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 3,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "C",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R17",
+      "response": [
+        "accepted",
+        "5"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 5,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 3,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "C",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": []
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R18",
+      "response": [
+        "accepted",
+        "1"
+      ],
+      "called_lua": true,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 5,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 3,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "C",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T2",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": [
+              "C10"
+            ]
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request_id": "R19",
+      "response": [
+        "invalid_payload"
+      ],
+      "called_lua": false,
+      "snapshot": {
+        "authority": [
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C10"
+            ],
+            "version": 5,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T1",
+              "C20"
+            ],
+            "version": 3,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "C",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S1",
+              "T2",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0199"
+            }
+          },
+          {
+            "key": [
+              "S2",
+              "T1",
+              "C10"
+            ],
+            "version": 1,
+            "deleted": false,
+            "value": {
+              "teacher_id": "T7",
+              "grade": "A",
+              "phone_at_enrollment": "555-0100"
+            }
+          }
+        ],
+        "rosters": [
+          {
+            "student": "S1",
+            "term": "T1",
+            "courses": [
+              "C10",
+              "C20"
+            ]
+          },
+          {
+            "student": "S1",
+            "term": "T2",
+            "courses": [
+              "C10"
+            ]
+          },
+          {
+            "student": "S2",
+            "term": "T1",
+            "courses": [
+              "C10"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "probes": {
+    "NX": [
+      {
+        "type": "simple",
+        "value": "OK"
+      },
+      {
+        "type": "null",
+        "value": null
+      },
+      {
+        "type": "bulk",
+        "value": "first"
+      }
+    ],
+    "bare_SET": {
+      "A_read": "{\"version\":1,\"value\":\"old\"}",
+      "B_read": "{\"version\":1,\"value\":\"old\"}",
+      "final": "{\"version\":2,\"value\":\"B\"}"
+    },
+    "CAS": {
+      "A_read": "{\"version\":1,\"deleted\":false,\"value\":{\"owner\":\"old\"}}",
+      "B_read": "{\"version\":1,\"deleted\":false,\"value\":{\"owner\":\"old\"}}",
+      "A_response": [
+        "accepted",
+        "2"
+      ],
+      "B_response": [
+        "version_conflict",
+        "2"
+      ],
+      "final": "{\"version\":2,\"deleted\":false,\"value\":{\"owner\":\"A\"}}"
+    },
+    "TTL": {
+      "pttl_observed": [
+        50,
+        39,
+        26,
+        15,
+        4,
+        -2
+      ],
+      "cache_after": null,
+      "authority_after": "{\"version\":5,\"deleted\":false,\"value\":{\"teacher_id\":\"T7\",\"grade\":\"A\",\"phone_at_enrollment\":\"555-0199\"}}"
+    },
+    "ordinary_SET_clears_TTL": {
+      "before_pttl_ms": 10000,
+      "after_pttl_ms": -1
+    },
+    "Lua_error_no_rollback": {
+      "error": {
+        "type": "error",
+        "value": "WRONGTYPE Operation against a key holding the wrong kind of value script: 9ff02d90729b36515228d6953cbcae56eea74306, on @user_script:1."
+      },
+      "prior_write_after_error": "written-before-error"
+    },
+    "CAS_type_preflight": {
+      "reply": [
+        "invalid_type"
+      ],
+      "authority_after": null
+    },
+    "normal_restart_no_persistence": {
+      "before": "exists-before-normal-stop",
+      "after": null,
+      "authority_after": null
+    }
+  },
+  "info_server": "# Server\r\nredis_version:8.10.2\r\nredis_git_sha1:00000000\r\nredis_git_dirty:1\r\nredis_build_id:9065abe6fce3e677\r\nredis_mode:standalone\r\nos:Darwin 27.0.0 arm64\r\narch_bits:64\r\nmonotonic_clock:ARM CNTVCT @ 1000 ticks/us\r\nmultiplexing_api:kqueue\r\natomicvar_api:c11-builtin\r\ngcc_version:4.2.1\r\nprocess_id:16139\r\nprocess_supervised:no\r\nrun_id:706c0b62807cedf46e13aa6906ed5aaa234380c9\r\ntcp_port:16379\r\nserver_time_usec:1792166953053419\r\nuptime_in_seconds:0\r\nuptime_in_days:0\r\nhz:10\r\nconfigured_hz:10\r\nlru_clock:13782057\r\nexecutable:/private/tmp/wwl-next-171-kv-redis/redis-8.10.2/src/redis-server\r\nconfig_file:/private/tmp/wwl-next-171-kv-redis/redis.conf\r\nio_threads_active:0\r\nlistener0:name=tcp,bind=127.0.0.1,port=16379\r\n",
+  "info_persistence": "# Persistence\r\nloading:0\r\nasync_loading:0\r\ncurrent_cow_peak:0\r\ncurrent_cow_size:0\r\ncurrent_cow_size_age:0\r\ncurrent_fork_perc:0.00\r\ncurrent_save_keys_processed:0\r\ncurrent_save_keys_total:0\r\nrdb_changes_since_last_save:0\r\nrdb_bgsave_in_progress:0\r\nrdb_last_save_time:1792166953\r\nrdb_last_bgsave_status:ok\r\nrdb_last_bgsave_time_sec:-1\r\nrdb_current_bgsave_time_sec:-1\r\nrdb_saves:0\r\nrdb_saves_consecutive_failures:0\r\nrdb_last_cow_size:0\r\nrdb_last_load_keys_expired:0\r\nrdb_last_load_keys_loaded:0\r\naof_enabled:0\r\naof_rewrite_in_progress:0\r\naof_rewrite_scheduled:0\r\naof_last_rewrite_time_sec:-1\r\naof_current_rewrite_time_sec:-1\r\naof_last_bgrewrite_status:ok\r\naof_rewrites:0\r\naof_rewrites_consecutive_failures:0\r\naof_last_write_status:ok\r\naof_last_cow_size:0\r\nbackup_in_progress:0\r\nmodule_fork_in_progress:0\r\nmodule_fork_last_cow_size:0\r\n",
+  "configuration": [
+    "save",
+    "",
+    "appendonly",
+    "no",
+    "bind",
+    "127.0.0.1",
+    "maxmemory",
+    "67108864",
+    "port",
+    "16379",
+    "io-threads",
+    "1"
+  ],
+  "authority_no_TTL": -1,
+  "status": "PASS"
+}

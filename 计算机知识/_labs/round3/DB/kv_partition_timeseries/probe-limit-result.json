@@ -1,0 +1,58 @@
+[
+  {
+    "kind": "fixed_regression",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py",
+      "--spec",
+      "/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/spec.json",
+      "--out",
+      "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/kv-probe-bound-ix_7h55n/fixed.json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"prefixes\": 20, \"accepted_audit_points\": 10}\n",
+    "stderr": "",
+    "byte_identical": true
+  },
+  {
+    "kind": "one_ms_bucket",
+    "input_delta": {
+      "layouts[0].bucket_ms": 1
+    },
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py",
+      "--spec",
+      "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/kv-probe-bound-ix_7h55n/one_ms_bucket.json",
+      "--out",
+      "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/kv-probe-bound-ix_7h55n/one_ms_bucket-out.json"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py\", line 135, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py\", line 133, in main\n    a=p.parse_args();r=run(json.loads(a.spec.read_text()));a.out.write_text(json.dumps(r,ensure_ascii=True,indent=2)+'\\n')\n                       ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py\", line 83, in run\n    if probes>1000:raise ValueError('partition_probe_limit: each query/page must touch at most 1000 partitions')\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: partition_probe_limit: each query/page must touch at most 1000 partitions\n",
+    "output_exists": false
+  },
+  {
+    "kind": "total_work",
+    "input_delta": {
+      "layout": "bucket_ms=864000/shards1",
+      "actions": "100 CAS cloned from R01, unique T000..T099, expected/event i",
+      "all_page_size": 1
+    },
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py",
+      "--spec",
+      "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/kv-probe-bound-ix_7h55n/total_work.json",
+      "--out",
+      "/var/folders/1f/bst508fx099463k844kkd4zc0000gn/T/kv-probe-bound-ix_7h55n/total_work-out.json"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py\", line 135, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py\", line 133, in main\n    a=p.parse_args();r=run(json.loads(a.spec.read_text()));a.out.write_text(json.dumps(r,ensure_ascii=True,indent=2)+'\\n')\n                       ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py\", line 86, in run\n    if total_probe_bound>1000000:raise ValueError('total_probe_limit: worst-case prefix/page partition probes exceed 1000000')\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: total_probe_limit: worst-case prefix/page partition probes exceed 1000000\n",
+    "output_exists": false
+  }
+]

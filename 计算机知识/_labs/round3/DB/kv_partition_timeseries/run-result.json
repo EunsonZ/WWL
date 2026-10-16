@@ -1,0 +1,109 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "kv_model.py",
+        "--spec",
+        "spec.json",
+        "--out",
+        "actual.json"
+      ],
+      "cwd": "/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries",
+      "exit_code": 0,
+      "seconds": 0.04230899998219684,
+      "stdout": "{\"prefixes\": 20, \"accepted_audit_points\": 10}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "batch_oracle.py",
+        "--spec",
+        "spec.json",
+        "--actual",
+        "actual.json",
+        "--out",
+        "oracle-result.json"
+      ],
+      "cwd": "/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries",
+      "exit_code": 0,
+      "seconds": 0.04944249999243766,
+      "stdout": "{\"status\": \"PASS\", \"prefixes\": 20, \"layout_queries\": 300, \"method\": \"raw full-prefix history, fresh SQLite range ordering, independent page slicing; no model import\"}\n",
+      "stderr": ""
+    }
+  ],
+  "thread_env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "test_initial": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_batch_oracle_detects_content_mutation (__main__.Behavior.test_batch_oracle_detects_content_mutation) ... ok\ntest_cache_deadline_and_plain_set (__main__.Behavior.test_cache_deadline_and_plain_set) ... /private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a0e2b60>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a0e2d40>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a0e2e30>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a0e2f20>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a0e3010>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a0e32e0>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a0e3880>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a0e3a60>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a1507c0>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a1508b0>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a1509a0>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a150a90>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a150b80>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a150c70>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a150d60>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a150e50>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a150f40>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a151030>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a151120>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a151210>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/kv_model.py:37: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a151300>\n  result.setdefault(key,[]).append(point)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_cas_retains_tombstone (__main__.Behavior.test_cas_retains_tombstone) ... ok\ntest_half_open_ties_late_and_all_layouts (__main__.Behavior.test_half_open_ties_late_and_all_layouts) ... ok\ntest_key_tuple_and_hash_tag (__main__.Behavior.test_key_tuple_and_hash_tag) ... ok\ntest_missing_grade_and_no_registered_row (__main__.Behavior.test_missing_grade_and_no_registered_row) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.024s\n\nOK\n",
+    "note": "SQLite context manager did not close connections; changed oracle to contextlib.closing, result values unaffected"
+  },
+  "test_final": {
+    "argv": [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/test_kv.py"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_batch_oracle_detects_content_mutation (__main__.Behavior.test_batch_oracle_detects_content_mutation) ... ok\ntest_cache_deadline_and_plain_set (__main__.Behavior.test_cache_deadline_and_plain_set) ... ok\ntest_cas_retains_tombstone (__main__.Behavior.test_cas_retains_tombstone) ... ok\ntest_half_open_ties_late_and_all_layouts (__main__.Behavior.test_half_open_ties_late_and_all_layouts) ... ok\ntest_key_tuple_and_hash_tag (__main__.Behavior.test_key_tuple_and_hash_tag) ... ok\ntest_missing_grade_and_no_registered_row (__main__.Behavior.test_missing_grade_and_no_registered_row) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.019s\n\nOK\n"
+  },
+  "saved_Redis_check": {
+    "argv": [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-171-kv/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/kv_partition_timeseries/verify_redis.py"
+    ],
+    "exit_code": 0,
+    "CAS_snapshots": 14,
+    "actual_Lua_calls": 13,
+    "boundary": "saved result comparison, no engine launched"
+  },
+  "figure": {
+    "source": "render_figures.py",
+    "input": "actual.json",
+    "svg": "partition-order.svg",
+    "png_renderer": "resvg-py==0.5.0/PingFang SC/1600px",
+    "actual_render_and_view": true,
+    "scope": "display only; not numerical group rerun"
+  },
+  "input_version": "kv-partition-v1",
+  "sha256": {
+    "verify_redis.py": "4e60cf19a23e2a45d167a78ca901f3e90a03ef8e532b67a6d190a22e0a4366f5",
+    "spec.json": "0031d6c4a15d48610ca526cbdf4371074163a8219ac5b178c9da1d780dc791f3",
+    "test_kv.py": "40190b74a3e0c66a32c59a73e9671f3ec8c2dbd49b240e826c8782208ef1561e",
+    "probe-limit-result.json": "9359e054cff36e9d351b2db671db5a0457a02553e7a0296e66f9c244b4457614",
+    "cassandra_interface.cql": "81911ed8198972a4f5b4c65ff98b59827392f64aa7590e3f939b73c257754559",
+    "actual.json": "2cc2ef197ae9c15163b7089714f0de01b940619fb3fbed8b923de9c49125802b",
+    "kv_model.py": "47e194294462e2aa2a86bfb5aa1018a57226950a373559e281386c204f3d62b3",
+    "render_figures.py": "98c603ce9812270c555bbf23be4a26800d698cf11c0c0b48eff186f9e4b42233",
+    "README.md": "e474ca1d2cae677b378c705f8fcabe8562eb5523ce304d450bce4e2283dc1853",
+    "partition-order.png": "84e2aec683e143d8331953c525c81552b209575c1542f1acbea4b7d018924bd5",
+    "cas.lua": "2fbf682ab1b4dc2f7aca46e7f51a7409eca521839678da18aadc80269c003bb5",
+    "batch_oracle.py": "464c7d13f603847919782c39135362f8b14cb5fd115259523c2ff4e073bbac86",
+    "partition-order.svg": "7966bf5d505c1634c895d170095071c538f69398f5f15fdb8229313a53d3ca05",
+    "oracle-result.json": "6c8986a03bf592e91d6cd3497263cd3c6e28a1640e2f991e65ce7120b953cf07"
+  },
+  "probe_guard_delta": {
+    "record": "probe-limit-result.json",
+    "fixed_output_byte_identical": true,
+    "per_page_limit": 1000,
+    "worst_case_total_limit": 1000000,
+    "rejected_before_output": [
+      "one_ms_bucket",
+      "total_work"
+    ],
+    "old_numerical_suite_not_repeated": true
+  }
+}

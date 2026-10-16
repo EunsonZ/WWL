@@ -38,7 +38,7 @@ loading时清空旧查询结果，同时保留阅读列表；成功时可以是0
 
 ## 同一时间线推导发布条件
 
-设初始generation=0。t0提交Web得到ticket=1；t1提交网络，generation=2并对前一个controller调用abort；t2网络合法结果发布；t3旧Web返回，1≠2被忽略。若Web先在t2完成，也因generation已是2被忽略，直到网络完成。这覆盖两种完成顺序，正确性来自每个完成分支都检查ticket，而不是希望“快请求通常先回来”。响应头先到、JSON后到也一样：最终提交前再检查ticket。
+旧请求晚到，不等于升职成最新意图。设初始generation=0。t0提交Web得到ticket=1；t1提交网络，generation=2并对前一个controller调用abort；t2网络合法结果发布；t3旧Web返回，1≠2被忽略。若Web先在t2完成，也因generation已是2被忽略，直到网络完成。这覆盖两种完成顺序，正确性来自每个完成分支都检查ticket，而不是希望“快请求通常先回来”。响应头先到、JSON后到也一样：最终提交前再检查ticket。
 
 取消把generation从2增到3，立即显示cancelled，阅读列表保留。之后任何ticket=2的成功/错误都不能改变界面。AbortController尽力停止受支持API的本地等待与读取；代号过滤即使面对不观察signal的测试transport也能保住状态。两者的职责分别是资源清理与发布权限，不能仅调用abort就省略代号检查。finally只在ticket仍最新时清理controller，避免旧请求清掉新请求的取消句柄。
 

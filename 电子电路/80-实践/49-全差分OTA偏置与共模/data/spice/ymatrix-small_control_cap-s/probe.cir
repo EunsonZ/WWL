@@ -1,0 +1,44 @@
+11 MOS OTA and resistor-sensed CMFB
+.options reltol=1e-8 abstol=1e-15 vntol=1e-10 gmin=1e-18
+.temp 27
+.model NN NMOS LEVEL=1 KP=100u VTO=.6 LAMBDA=.04 GAMMA=0 PHI=.6 TNOM=27 TOX=1e3 IS=1e-30 CGSO=0 CGDO=0 CGBO=0 CBD=0 CBS=0
+.model PP PMOS LEVEL=1 KP=50u VTO=-.7 LAMBDA=.04 GAMMA=0 PHI=.6 TNOM=27 TOX=1e3 IS=1e-30 CGSO=0 CGDO=0 CGBO=0 CBD=0 CBS=0
+VDD vdd 0 3.3
+VREF ref 0 1.65
+IREF vdd vb 5e-05
+VD ud 0 DC 0 AC 0
+VCIN uc 0 DC 0 AC 0
+BGP gp 0 V={1.5+v(uc)+.5*(v(ud)+0.1*(v(op)-v(om)))}
+BGM gm 0 V={1.5+v(uc)-.5*(v(ud)+0.1*(v(op)-v(om)))}
+M1 op gp s 0 NN W=4u L=1u
+M2 om gm s 0 NN W=4u L=1u
+M3 op vc vdd vdd PP W=4e-06 L=1u
+M4 om vc vdd vdd PP W=4e-06 L=1u
+M5 s vb 0 0 NN W=10u L=1u
+M6 vb vb 0 0 NN W=10u L=1u
+M7 vm sense sc 0 NN W=1u L=50u
+M8 vc ref sc 0 NN W=1u L=50u
+M9 sc vb 0 0 NN W=1u L=10u
+M10 vm vm vdd vdd PP W=1u L=50u
+M11 vc vm vdd vdd PP W=1u L=50u
+R1 op sense 200000
+R2 om sense 200000
+C_op op 0 2e-11
+C_om om 0 2e-11
+C_s s 0 5e-12
+C_vb vb 0 5e-12
+C_sense sense 0 5e-12
+C_sc sc 0 5e-12
+C_vm vm 0 5e-12
+C_vc vc 0 2e-11
+ITEST 0 s DC 0 AC 1
+.control
+set noaskquit
+set numdgt=15
+ac lin 1 1000 1000
+set wr_vecnames
+set wr_singlescale
+wrdata response.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc)
+quit
+.endc
+.end

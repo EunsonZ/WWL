@@ -1,0 +1,386 @@
+[
+  {
+    "head": 0,
+    "qid": "Q142",
+    "degree": 5,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [
+      "Q38",
+      "Q29",
+      "Q31"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.6000000000000001,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 1,
+    "qid": "Q183",
+    "degree": 4,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [
+      "Q31",
+      "Q55"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 2,
+    "qid": "Q38",
+    "degree": 3,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 3,
+    "qid": "Q29",
+    "degree": 4,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [
+      "Q45",
+      "Q1028"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.25,
+      0.0,
+      0.0,
+      0.25,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 4,
+    "qid": "Q45",
+    "degree": 1,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [
+      "Q29"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 5,
+    "qid": "Q31",
+    "degree": 3,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [
+      "Q55"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.3333333333333333,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 6,
+    "qid": "Q55",
+    "degree": 2,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [
+      "Q31"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 7,
+    "qid": "Q39",
+    "degree": 3,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [
+      "Q38"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.3333333333333333,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 8,
+    "qid": "Q79",
+    "degree": 1,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [
+      "Q1016"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 9,
+    "qid": "Q1016",
+    "degree": 5,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [
+      "Q948",
+      "Q1032"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.4,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 10,
+    "qid": "Q948",
+    "degree": 2,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [
+      "Q1016"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 11,
+    "qid": "Q262",
+    "degree": 7,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [
+      "Q38",
+      "Q29",
+      "Q1016",
+      "Q948",
+      "Q1028",
+      "Q1032"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.5714285714285714,
+      0.0,
+      0.0,
+      0.2857142857142857,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 12,
+    "qid": "Q1028",
+    "degree": 2,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [
+      "Q29"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 13,
+    "qid": "Q912",
+    "degree": 2,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [
+      "Q1032"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 14,
+    "qid": "Q1032",
+    "degree": 4,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [
+      "Q1016"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.25,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 15,
+    "qid": "Q657",
+    "degree": 2,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [
+      "Q1016",
+      "Q1032"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 16,
+    "qid": "Q159",
+    "degree": 1,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 17,
+    "qid": "Q43",
+    "degree": 0,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 18,
+    "qid": "Q148",
+    "degree": 2,
+    "training_seed_available": false,
+    "labeled_neighbor_qids": [
+      "Q159",
+      "Q668"
+    ],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.75,
+      0.25,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "head": 19,
+    "qid": "Q668",
+    "degree": 1,
+    "training_seed_available": true,
+    "labeled_neighbor_qids": [],
+    "own_label_direct_coefficient": 0.0,
+    "label_message": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+]

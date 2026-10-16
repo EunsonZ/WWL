@@ -1,0 +1,2405 @@
+{
+  "panel_entities": 20,
+  "eligible_entities": 20,
+  "excluded": [],
+  "labels": {
+    "Q142": "France",
+    "Q183": "Germany",
+    "Q38": "Italy",
+    "Q29": "Spain",
+    "Q45": "Portugal",
+    "Q31": "Belgium",
+    "Q55": "Netherlands",
+    "Q39": "Switzerland",
+    "Q79": "Egypt",
+    "Q1016": "Libya",
+    "Q948": "Tunisia",
+    "Q262": "Algeria",
+    "Q1028": "Morocco",
+    "Q912": "Mali",
+    "Q1032": "Niger",
+    "Q657": "Chad",
+    "Q159": "Russia",
+    "Q43": "Turkey",
+    "Q148": "People's Republic of China",
+    "Q668": "India",
+    "Q15": "Africa",
+    "Q51": "Antarctica",
+    "Q48": "Asia",
+    "Q46": "Europe",
+    "Q49": "North America",
+    "Q538": "Insular Oceania",
+    "Q18": "South America"
+  },
+  "raw_best_P30_count": 23,
+  "unique_best_P30_count": 23,
+  "raw_best_P47_count": 145,
+  "unique_best_P47_count": 145,
+  "duplicate_P30_statements": 0,
+  "duplicate_P47_statements": 0,
+  "used_statements": [
+    {
+      "head": "Q142",
+      "property": "P30",
+      "statement_id": "q142$CB0749F2-18AD-4CFB-800A-0FFD25D7BD38",
+      "rank": "preferred",
+      "value": "Q46",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$7D442C3C-57B9-4286-BD79-4F063C20770A",
+      "rank": "preferred",
+      "value": "Q29",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$835AD379-388A-4904-9E72-82D4982622F5",
+      "rank": "preferred",
+      "value": "Q228",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$3401D9DC-BE68-4286-B181-2A974893F8F7",
+      "rank": "preferred",
+      "value": "Q31",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$F56FC315-C93A-4D67-B21D-45FF2FBB85F0",
+      "rank": "preferred",
+      "value": "Q32",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$34EF4732-F290-4AF9-8249-B0D8B745143C",
+      "rank": "preferred",
+      "value": "Q183",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$F96B4D1E-0807-403A-A9A0-224FC77E5D32",
+      "rank": "preferred",
+      "value": "Q39",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$4C4EA644-A332-4B9D-89BC-EDAC4FA07767",
+      "rank": "preferred",
+      "value": "Q38",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$011540F1-DC4D-4331-BB37-BE788F60099B",
+      "rank": "preferred",
+      "value": "Q235",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$CD8E12FE-425B-4AFE-8B76-74E9F4CC15CD",
+      "rank": "preferred",
+      "value": "Q155",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$268D888D-803F-4229-9157-52FE3BB03B12",
+      "rank": "preferred",
+      "value": "Q730",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "q142$0BEE3139-50C3-41A0-A05B-1FDAAD864E0B",
+      "rank": "preferred",
+      "value": "Q29999",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P30",
+      "statement_id": "q183$76123936-F15F-4D73-BB22-1E86BC0614FE",
+      "rank": "normal",
+      "value": "Q46",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$B5ABD9B7-ECFF-4F53-B758-4B1DEE81DEBB",
+      "rank": "preferred",
+      "value": "Q35",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$04C4B3A8-C617-453F-85DB-3E9C7E1C459D",
+      "rank": "preferred",
+      "value": "Q36",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$BC1F18EB-7ACE-41A1-B3C5-6CE272304AEA",
+      "rank": "preferred",
+      "value": "Q39",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$420094B1-9C14-443B-B122-9C25F098D21F",
+      "rank": "preferred",
+      "value": "Q142",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$CCCBA994-7549-46A8-B708-361643639380",
+      "rank": "preferred",
+      "value": "Q32",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$54652106-3397-46F0-9121-2BC668D91C9A",
+      "rank": "preferred",
+      "value": "Q31",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$9BF4CD99-D336-45E3-A6AF-C81A39180E04",
+      "rank": "preferred",
+      "value": "Q55",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$ACDC5367-6A21-402D-8CA0-947E20D93B21",
+      "rank": "preferred",
+      "value": "Q40",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "q183$D21719CB-4C47-4258-8992-CF89CDB30CDA",
+      "rank": "preferred",
+      "value": "Q213",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q38",
+      "property": "P30",
+      "statement_id": "q38$9348E4E4-1E38-4DAB-A936-8D380370F307",
+      "rank": "preferred",
+      "value": "Q46",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "q38$1BD5AF0F-A618-4AD9-BC9A-095B6EC43175",
+      "rank": "preferred",
+      "value": "Q238",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "q38$10684554-1BAD-4C8E-BFCE-56729AA5FE55",
+      "rank": "preferred",
+      "value": "Q237",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "q38$22E80028-56E6-48D9-B865-6E489440F71D",
+      "rank": "preferred",
+      "value": "Q142",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "q38$8496C135-579F-456B-B35D-8625B467C0D0",
+      "rank": "preferred",
+      "value": "Q39",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "Q38$47e2f42b-413e-d17c-69c8-ff072fb5bfa6",
+      "rank": "preferred",
+      "value": "Q40",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "Q38$8e6ebc1e-4328-9607-d6b1-efb341371e65",
+      "rank": "preferred",
+      "value": "Q215",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "Q38$8e00adda-4aaa-cdf9-01f1-4e251eab3dcd",
+      "rank": "preferred",
+      "value": "Q233",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q29",
+      "property": "P30",
+      "statement_id": "q29$A06E990B-9100-4FB2-8AD0-836FFE6BF9B3",
+      "rank": "preferred",
+      "value": "Q46",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "q29$589E67EA-E604-4908-A9CF-63D4678C0B5C",
+      "rank": "preferred",
+      "value": "Q228",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "q29$AEB973C5-A6FF-4CD7-84C4-B84D2CADACAD",
+      "rank": "preferred",
+      "value": "Q45",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "q29$2C22F759-35BB-4C30-B483-C3B334381694",
+      "rank": "preferred",
+      "value": "Q1028",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "q29$3C2257DC-5290-442A-9356-2F6C61A8C0F6",
+      "rank": "preferred",
+      "value": "Q142",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "q29$47F72970-C2FF-4A70-9974-CA4BF1668B58",
+      "rank": "preferred",
+      "value": "Q1410",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q45",
+      "property": "P30",
+      "statement_id": "q45$07C2A38E-1E81-4E2A-A0E0-A5C4CE78DFF4",
+      "rank": "normal",
+      "value": "Q46",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q45",
+      "property": "P47",
+      "statement_id": "q45$878DC4C0-D0EF-4FAC-9619-246E5185C4C8",
+      "rank": "normal",
+      "value": "Q29",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q31",
+      "property": "P30",
+      "statement_id": "q31$639B3CF8-46BA-4888-95FB-E0504D8E7F74",
+      "rank": "normal",
+      "value": "Q46",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q31",
+      "property": "P47",
+      "statement_id": "q31$02EB0A5C-18F9-4F5C-B945-82A3EDFFE4FC",
+      "rank": "preferred",
+      "value": "Q183",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q31",
+      "property": "P47",
+      "statement_id": "q31$3B0E9CC5-A615-48E6-9A47-7C016D5627F1",
+      "rank": "preferred",
+      "value": "Q32",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q31",
+      "property": "P47",
+      "statement_id": "q31$F4C8DEDD-47A5-41BC-BCB6-40F81F0C40FF",
+      "rank": "preferred",
+      "value": "Q142",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q31",
+      "property": "P47",
+      "statement_id": "Q31$0F968DEC-B6D9-41A9-9A21-E023338DB768",
+      "rank": "preferred",
+      "value": "Q55",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q55",
+      "property": "P30",
+      "statement_id": "q55$C1156D1A-15C9-4833-9CD6-CDF386150ABE",
+      "rank": "preferred",
+      "value": "Q46",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q55",
+      "property": "P47",
+      "statement_id": "q55$0B013E7B-7990-4BEC-905F-BEA3C29F9B99",
+      "rank": "preferred",
+      "value": "Q183",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q55",
+      "property": "P47",
+      "statement_id": "q55$34AD2C75-1B03-4E03-8DBF-B08D17980DAF",
+      "rank": "preferred",
+      "value": "Q31",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q39",
+      "property": "P30",
+      "statement_id": "q39$C373ED9F-F3CE-4831-AF26-E2B894A975BF",
+      "rank": "normal",
+      "value": "Q46",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "q39$8BAA1F7F-4838-4A22-B75B-3F4C3A2521EE",
+      "rank": "preferred",
+      "value": "Q40",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "q39$F932C7B9-9DE8-4CC0-8CDB-69687217BF99",
+      "rank": "preferred",
+      "value": "Q347",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "q39$6A8FF502-99E7-4E91-AD63-3D7C8A4A0CF8",
+      "rank": "preferred",
+      "value": "Q183",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "q39$B4CCB1F4-8D1C-4D8E-B566-7FFFDDFA2AC5",
+      "rank": "preferred",
+      "value": "Q142",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "q39$DC846BE4-915B-45D1-836E-8ABC25C26C6A",
+      "rank": "preferred",
+      "value": "Q38",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "Q39$DA8FCFCB-4321-4D5D-A21E-D20CCCFE2FF2",
+      "rank": "preferred",
+      "value": "Q458",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q79",
+      "property": "P30",
+      "statement_id": "Q79$bb475323-405c-4eb8-af2d-82da0902461b",
+      "rank": "preferred",
+      "value": "Q15",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q79",
+      "property": "P47",
+      "statement_id": "q79$B7EF1444-C049-4E28-B96F-3107DFF5860B",
+      "rank": "normal",
+      "value": "Q1049",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q79",
+      "property": "P47",
+      "statement_id": "q79$9F9D8F3F-EAB7-4AA8-A7DA-DA7926179170",
+      "rank": "normal",
+      "value": "Q1016",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q79",
+      "property": "P47",
+      "statement_id": "q79$4ECF1868-0E30-435A-8927-5ED1CF0C8AB0",
+      "rank": "normal",
+      "value": "Q801",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q79",
+      "property": "P47",
+      "statement_id": "Q79$8A1BD4D1-62E2-4EFF-8D32-5C36D73275DB",
+      "rank": "normal",
+      "value": "Q219060",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1016",
+      "property": "P30",
+      "statement_id": "q1016$0145C2B5-1253-4580-A3B5-75B68A937583",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q1016",
+      "property": "P47",
+      "statement_id": "q1016$93D9AD11-369B-493B-A56C-9587AF92265E",
+      "rank": "normal",
+      "value": "Q79",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1016",
+      "property": "P47",
+      "statement_id": "q1016$193161B0-1807-43BB-9F74-B144B759500A",
+      "rank": "normal",
+      "value": "Q1049",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1016",
+      "property": "P47",
+      "statement_id": "q1016$41AB6455-19F9-4FD4-880D-65268547F83E",
+      "rank": "normal",
+      "value": "Q948",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1016",
+      "property": "P47",
+      "statement_id": "q1016$7C8A5703-77FE-4F39-9CDE-00A0C4FBDCD8",
+      "rank": "normal",
+      "value": "Q262",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1016",
+      "property": "P47",
+      "statement_id": "q1016$D4656231-0E18-479E-BF52-3A1ADE55B118",
+      "rank": "normal",
+      "value": "Q657",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1016",
+      "property": "P47",
+      "statement_id": "q1016$EC450E6F-D95E-4637-B647-CE6F4E446CCD",
+      "rank": "normal",
+      "value": "Q1032",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q948",
+      "property": "P30",
+      "statement_id": "Q948$5794cc06-4b85-ef50-1a39-05469affe8c1",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q948",
+      "property": "P47",
+      "statement_id": "q948$78AE3FA6-BBA4-4A1D-B33B-C3554C6F75C9",
+      "rank": "normal",
+      "value": "Q1016",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q948",
+      "property": "P47",
+      "statement_id": "q948$2FD5CB81-576A-495B-9CB2-23593BD79733",
+      "rank": "normal",
+      "value": "Q262",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P30",
+      "statement_id": "q262$27DB1E34-FF60-4AA5-BCFB-D4264EE440B2",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "q262$5F319A2E-EF52-4CC9-821F-C4CCA2291457",
+      "rank": "normal",
+      "value": "Q1028",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "q262$53821912-B306-459A-B618-3D642FB82C9A",
+      "rank": "normal",
+      "value": "Q1016",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "q262$32541BEB-C51B-4A39-AC59-F91E8B8B0DB9",
+      "rank": "normal",
+      "value": "Q1032",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "q262$A8B485B8-041D-48F9-A000-FFC319544EF2",
+      "rank": "normal",
+      "value": "Q912",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "q262$87409FE2-B2E7-447A-8132-C9E7834952C1",
+      "rank": "normal",
+      "value": "Q948",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "q262$F3609BC3-D068-4A5B-9273-868C8F13A327",
+      "rank": "normal",
+      "value": "Q1025",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "Q262$ED46CA88-7B60-4107-862A-75A9D19EF4FA",
+      "rank": "normal",
+      "value": "Q6250",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "Q262$365de5c0-47f6-cdab-d916-d85ea5e1f65d",
+      "rank": "normal",
+      "value": "Q38",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q262",
+      "property": "P47",
+      "statement_id": "Q262$b9b6007c-475c-df42-459b-7d81d9c4f9fa",
+      "rank": "normal",
+      "value": "Q29",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1028",
+      "property": "P30",
+      "statement_id": "q1028$1f5a6494-4157-444d-0e84-870e8bd90e79",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q1028",
+      "property": "P47",
+      "statement_id": "q1028$EE4EBB2F-3D01-410A-99B5-64CF64900B72",
+      "rank": "normal",
+      "value": "Q262",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1028",
+      "property": "P47",
+      "statement_id": "q1028$3DA09AB1-1D47-4D7F-97DF-C4B17EDE1FBA",
+      "rank": "normal",
+      "value": "Q6250",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1028",
+      "property": "P47",
+      "statement_id": "q1028$DC1B8CAE-B067-48C8-8160-CB8B802268E3",
+      "rank": "normal",
+      "value": "Q29",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1028",
+      "property": "P47",
+      "statement_id": "Q1028$FD37BD50-4453-42BC-B223-0A3B1309E724",
+      "rank": "normal",
+      "value": "Q458",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q912",
+      "property": "P30",
+      "statement_id": "q912$C5AFC2DF-EFA5-49D9-A958-B6E5F781CA77",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q912",
+      "property": "P47",
+      "statement_id": "q912$61E80647-E296-444C-8E85-E3B95091007F",
+      "rank": "normal",
+      "value": "Q262",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q912",
+      "property": "P47",
+      "statement_id": "q912$AC6B99BF-18F7-4271-BEAB-04C04504E7D7",
+      "rank": "normal",
+      "value": "Q1032",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q912",
+      "property": "P47",
+      "statement_id": "q912$39F217CB-2EAE-4ECA-8FA2-FF316AE0C5F5",
+      "rank": "normal",
+      "value": "Q965",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q912",
+      "property": "P47",
+      "statement_id": "q912$B6C1BE7D-06A4-45F0-A070-D0174F93734B",
+      "rank": "normal",
+      "value": "Q1008",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q912",
+      "property": "P47",
+      "statement_id": "q912$7861A80E-81AA-444C-BDC2-F6423EFFC5D5",
+      "rank": "normal",
+      "value": "Q1006",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q912",
+      "property": "P47",
+      "statement_id": "q912$A4A29F7B-6012-47D0-BBAE-F74AE3D5FE84",
+      "rank": "normal",
+      "value": "Q1041",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q912",
+      "property": "P47",
+      "statement_id": "q912$9CF42A1E-8467-42D0-ABA4-CA386B50A346",
+      "rank": "normal",
+      "value": "Q1025",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1032",
+      "property": "P30",
+      "statement_id": "q1032$ED5BA5D3-7CB5-44D2-A3A2-4F2E3605BEBD",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q1032",
+      "property": "P47",
+      "statement_id": "q1032$77EB6D0D-FC02-424B-BFFA-D85CB95EBD03",
+      "rank": "normal",
+      "value": "Q657",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1032",
+      "property": "P47",
+      "statement_id": "q1032$9D02EB4C-F76F-4EEB-A9D1-3D6A5564DBFA",
+      "rank": "normal",
+      "value": "Q1016",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1032",
+      "property": "P47",
+      "statement_id": "q1032$D2E01C07-2F08-4881-8E04-C04C3C76CDAC",
+      "rank": "normal",
+      "value": "Q262",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1032",
+      "property": "P47",
+      "statement_id": "q1032$3DCA376A-96EC-4CD7-B239-F659D4CB6F31",
+      "rank": "normal",
+      "value": "Q912",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1032",
+      "property": "P47",
+      "statement_id": "q1032$9056F2F8-9EEE-4443-9B90-B3799ACAEDC5",
+      "rank": "normal",
+      "value": "Q965",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1032",
+      "property": "P47",
+      "statement_id": "q1032$5019E6A2-FB3A-4007-B496-F66C3B92E368",
+      "rank": "normal",
+      "value": "Q962",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1032",
+      "property": "P47",
+      "statement_id": "q1032$E51817DF-D383-4922-94DD-601A8824B327",
+      "rank": "normal",
+      "value": "Q1033",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q1032",
+      "property": "P47",
+      "statement_id": "Q1032$D0D8E902-FAEE-45C4-B7AC-DE79778D5E35",
+      "rank": "normal",
+      "value": "Q7172",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q657",
+      "property": "P30",
+      "statement_id": "q657$28CA1BBA-BFCB-4330-8AC3-93AF25C4259C",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q657",
+      "property": "P47",
+      "statement_id": "q657$78C5CFCC-160F-4CA0-B1F4-7D2025A8D68E",
+      "rank": "normal",
+      "value": "Q1009",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q657",
+      "property": "P47",
+      "statement_id": "q657$82D77693-97A3-424F-BD99-CCF58FB98DC3",
+      "rank": "normal",
+      "value": "Q1016",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q657",
+      "property": "P47",
+      "statement_id": "q657$B56EF4ED-A28B-4CB7-8D24-E880C821F22D",
+      "rank": "normal",
+      "value": "Q1032",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q657",
+      "property": "P47",
+      "statement_id": "q657$6AFE3C78-DDBE-4C36-B94D-058B2673843D",
+      "rank": "normal",
+      "value": "Q1033",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q657",
+      "property": "P47",
+      "statement_id": "q657$9D37356E-4E48-442D-B8B6-7F8872F68788",
+      "rank": "normal",
+      "value": "Q1049",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q657",
+      "property": "P47",
+      "statement_id": "Q657$e1d42c1e-4ecd-2c12-1c70-5ac78ea0acea",
+      "rank": "normal",
+      "value": "Q929",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q657",
+      "property": "P47",
+      "statement_id": "Q657$E9A01CFF-8591-485E-9E4C-F10E2BCBEEB7",
+      "rank": "normal",
+      "value": "Q7172",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q159",
+      "property": "P30",
+      "statement_id": "Q159$b525fd39-4fac-7688-e7aa-12ed1fe9a298",
+      "rank": "normal",
+      "value": "Q46",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P30",
+      "statement_id": "Q159$1df390d5-43d7-4ee0-9457-4b5f9725d013",
+      "rank": "normal",
+      "value": "Q48",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P30",
+      "statement_id": "Q159$7418c183-4a00-030d-1e92-b3c51995a114",
+      "rank": "normal",
+      "value": "Q5401",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$5A8C7ECF-C086-43C0-A1B5-C4ECBD754411",
+      "rank": "normal",
+      "value": "Q227",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$CEBF3ABD-B26A-4789-9D1D-02AB898F7C40",
+      "rank": "normal",
+      "value": "Q184",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$A4BFADBA-DC15-4F8E-A4BE-AAFD1D745F10",
+      "rank": "normal",
+      "value": "Q148",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$C0F47FC1-9A42-423D-AC19-4FB338D8F364",
+      "rank": "normal",
+      "value": "Q191",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$E1194D05-095B-4370-8AB1-D1C9648F4C6F",
+      "rank": "normal",
+      "value": "Q33",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$61E1AAD9-8261-4BA0-9403-ACD7FEA1BD11",
+      "rank": "normal",
+      "value": "Q230",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$589C43D9-66FB-475E-A0B5-1574E5A34C97",
+      "rank": "normal",
+      "value": "Q232",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$FB9DC318-038E-4513-B849-BC4395A24868",
+      "rank": "normal",
+      "value": "Q211",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$1ABE474D-F081-4CE1-99BA-08BD02E08468",
+      "rank": "normal",
+      "value": "Q37",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$335B6EC3-E716-4000-B390-131A746EFD68",
+      "rank": "normal",
+      "value": "Q423",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$D81AF9FD-2990-4788-964F-20A0F92F2426",
+      "rank": "normal",
+      "value": "Q20",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$18CB3D40-182B-402A-8FF7-D6933977CC2F",
+      "rank": "normal",
+      "value": "Q17",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$D5160290-8DAA-4CE0-ACB3-242D556A00FB",
+      "rank": "normal",
+      "value": "Q30",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$236F2E6D-A5DA-4C09-81D3-D77D4D1AB229",
+      "rank": "normal",
+      "value": "Q212",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$A0248FBA-8938-4115-AEA5-F5FBF878DBD6",
+      "rank": "normal",
+      "value": "Q711",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$B158FA83-B916-4645-BF45-F554DCF54C7E",
+      "rank": "normal",
+      "value": "Q36",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "Q159$AC311EDF-EB00-492E-BB10-F7C917AB61BE",
+      "rank": "normal",
+      "value": "Q458",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "Q159$D2B2A4CB-5716-40E2-893B-77319BC73E65",
+      "rank": "normal",
+      "value": "Q34",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q43",
+      "property": "P30",
+      "statement_id": "q43$05DBEBB8-5D18-40BB-9A4C-409073AA44F5",
+      "rank": "normal",
+      "value": "Q48",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P30",
+      "statement_id": "q43$06B2B7D5-CFBC-41AA-A3A2-44EB43F08D57",
+      "rank": "normal",
+      "value": "Q46",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "q43$531EC4C4-4FBC-402E-9C79-B8253E922B2E",
+      "rank": "preferred",
+      "value": "Q41",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "q43$855A1B9F-7A49-49FC-9A07-D12A364C9CA7",
+      "rank": "preferred",
+      "value": "Q219",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "q43$4DC50AB6-3598-41FF-9357-CBD309574411",
+      "rank": "preferred",
+      "value": "Q858",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "q43$E32E664E-F545-4AB6-A09C-69987B2936F2",
+      "rank": "preferred",
+      "value": "Q796",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "q43$7017D4A9-5D17-4DBD-8AFD-29D412134969",
+      "rank": "preferred",
+      "value": "Q399",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "q43$C2C46F6C-9FB6-4349-BF92-9F0184788CB7",
+      "rank": "preferred",
+      "value": "Q794",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "q43$DFEC9A1A-A5CC-46F7-A442-3924D5D60A05",
+      "rank": "preferred",
+      "value": "Q230",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "q43$a0e821bf-4de2-6dca-14aa-420e8eb17411",
+      "rank": "preferred",
+      "value": "Q227",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$F458A21A-702C-4073-9564-52A6F41A32E4",
+      "rank": "preferred",
+      "value": "Q7172",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$BDC21845-4A8E-43E6-9DAE-470D9ADA66AF",
+      "rank": "preferred",
+      "value": "Q458",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P30",
+      "statement_id": "q148$46E9381A-E9A0-4339-AC30-30BFC92B3447",
+      "rank": "normal",
+      "value": "Q48",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$88F50AE9-CBAB-49CC-9C63-3BA86BE0CCC2",
+      "rank": "preferred",
+      "value": "Q711",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$73B0B608-54D8-4003-8897-683B73578684",
+      "rank": "preferred",
+      "value": "Q232",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$07DDE1D9-92FC-4CF2-B8AB-C674B82DCC8F",
+      "rank": "preferred",
+      "value": "Q813",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$3BF0464C-C4EE-4D80-8604-E6D4F68A2BEE",
+      "rank": "preferred",
+      "value": "Q863",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$066DC1BB-6655-48E5-8E5C-DAE93C63F4C6",
+      "rank": "preferred",
+      "value": "Q843",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$90331C6C-6A00-449E-8C16-228C599D9EE2",
+      "rank": "preferred",
+      "value": "Q668",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$6727957E-A6F1-4A47-8066-F4EAE0C551A4",
+      "rank": "preferred",
+      "value": "Q837",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$70B6FDB5-A202-42CC-B0E5-D2F51B656B08",
+      "rank": "preferred",
+      "value": "Q917",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$265839EA-427E-45A7-858B-0A405DD854EC",
+      "rank": "preferred",
+      "value": "Q836",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$9D2D3ED4-07A6-4A85-951D-BD8A4128A6AC",
+      "rank": "preferred",
+      "value": "Q819",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$EB318342-7D6B-4412-9BFF-38B6121908A7",
+      "rank": "preferred",
+      "value": "Q881",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$D4DD8EEF-D444-471A-A8F7-C6D839891E12",
+      "rank": "preferred",
+      "value": "Q159",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$DA91298D-65F3-4CCF-8960-0AF429DB41BE",
+      "rank": "preferred",
+      "value": "Q423",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "q148$8F99D9AD-DDDA-44DC-94F8-7DB36786DFAC",
+      "rank": "preferred",
+      "value": "Q889",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "Q148$fe910b86-4dd9-2aa1-9426-180e52c6bbb2",
+      "rank": "preferred",
+      "value": "Q884",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "Q148$8961945C-DBC6-4A9C-A74C-E02EA7FF2422",
+      "rank": "preferred",
+      "value": "Q17",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P30",
+      "statement_id": "q668$EFFE083D-8F92-4223-8E36-28CB7E71DA16",
+      "rank": "normal",
+      "value": "Q48",
+      "qualifiers_present": false
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "q668$0DC6B6EF-C66E-4F77-B87B-CFD84E815E80",
+      "rank": "normal",
+      "value": "Q837",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "q668$92B995F0-D78C-4054-B1C7-99EA77D5A754",
+      "rank": "normal",
+      "value": "Q902",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "q668$CD527911-6B34-4541-8D1B-168C5AB3D9A9",
+      "rank": "normal",
+      "value": "Q917",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "q668$6C69721F-EFD9-45D3-92F8-29570CE50D01",
+      "rank": "normal",
+      "value": "Q836",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "q668$B3325A51-367D-48FE-A1A5-5E13297F9538",
+      "rank": "normal",
+      "value": "Q843",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "q668$8738C55E-4BD2-44B5-8153-C9F8B86ACC37",
+      "rank": "normal",
+      "value": "Q148",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "Q668$5ff2bc16-491d-b88b-4977-46adc3c847ef",
+      "rank": "normal",
+      "value": "Q252",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "Q668$12653b28-4714-5866-d3d0-bb6bad2ec189",
+      "rank": "normal",
+      "value": "Q854",
+      "qualifiers_present": true
+    },
+    {
+      "head": "Q668",
+      "property": "P47",
+      "statement_id": "Q668$929a66bc-44bd-3a52-ebda-5bc680d17270",
+      "rank": "normal",
+      "value": "Q889",
+      "qualifiers_present": true
+    }
+  ],
+  "discarded_statements": [
+    {
+      "head": "Q142",
+      "property": "P30",
+      "statement_id": "Q142$38452aea-45b2-211d-c82a-734b122d4590",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P30",
+      "statement_id": "Q142$263bf77b-4a09-dc44-5e88-60d8b4f9208a",
+      "rank": "normal",
+      "value": "Q828",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P30",
+      "statement_id": "Q142$7bb03249-4acf-e492-5dea-851dc547c8bc",
+      "rank": "normal",
+      "value": "Q538",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P30",
+      "statement_id": "Q142$37b800fa-4f72-2031-f20e-ca677daa64fd",
+      "rank": "normal",
+      "value": "Q51",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$ED3D4F24-16AB-4691-85F7-1760A01B4D4C",
+      "rank": "normal",
+      "value": "Q145",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$E28FAE2A-2A7F-41BE-A588-554877C9F163",
+      "rank": "normal",
+      "value": "Q29999",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$AD8D86ED-A525-4EBD-8DEE-6C7DA27E27BB",
+      "rank": "normal",
+      "value": "Q3456417",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$2601ca6c-48cd-e638-62d0-94b6c5630b73",
+      "rank": "normal",
+      "value": "Q717",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$7400576F-1EB6-44D2-BE61-8CAF22F209A4",
+      "rank": "normal",
+      "value": "Q153943",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$40fdeb40-4b6e-eb45-339c-ea4519f18c18",
+      "rank": "normal",
+      "value": "Q713750",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$f72b6db2-4b20-2a63-13cb-f4b22c218ef7",
+      "rank": "normal",
+      "value": "Q4018",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$efd489f4-4c9b-0501-4062-ee6f8505323d",
+      "rank": "normal",
+      "value": "Q1027",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$78872781-7F7C-4D6D-8F94-B8B8649022A8",
+      "rank": "normal",
+      "value": "Q685",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q142",
+      "property": "P47",
+      "statement_id": "Q142$68EE56F9-E5B6-41CE-99A8-F779C1FCD060",
+      "rank": "normal",
+      "value": "Q124653007",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "Q183$82bfb754-4c6a-c783-0bcf-f6620823920e",
+      "rank": "normal",
+      "value": "Q33946",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "Q183$7ccdfc77-4013-d98c-057c-a8f94f7fffdc",
+      "rank": "normal",
+      "value": "Q16957",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "Q183$7af343ff-49a9-4862-e5a4-9dcb24814af7",
+      "rank": "normal",
+      "value": "Q310293",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "Q183$55403EFD-B819-467E-8C87-6730A8C59598",
+      "rank": "normal",
+      "value": "Q29999",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "Q183$781BD598-4F7F-44B5-92D7-9F13FD74F86E",
+      "rank": "normal",
+      "value": "Q756617",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "Q183$c21b600e-49e8-9eb7-45f8-9a43b5c22a38",
+      "rank": "normal",
+      "value": "Q13116",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "Q183$77682CA6-0C5F-49F7-AA96-662C776BF8F2",
+      "rank": "normal",
+      "value": "Q145",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q183",
+      "property": "P47",
+      "statement_id": "Q183$DC5164A9-3C75-4FC2-AE8E-6ACE9DE93052",
+      "rank": "normal",
+      "value": "Q34",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q38",
+      "property": "P30",
+      "statement_id": "Q38$f017d564-44b0-848c-6355-60a5f74590cf",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "Q38$7EC7A0F1-F77B-4F03-BD01-0E1621C3C142",
+      "rank": "normal",
+      "value": "Q36704",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "Q38$1328568a-4e96-e46f-1c98-d59191916179",
+      "rank": "normal",
+      "value": "Q13924",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "Q38$1c580495-440e-54d9-8378-38a32aac2b1a",
+      "rank": "normal",
+      "value": "Q262",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q38",
+      "property": "P47",
+      "statement_id": "Q38$c3f6e0d7-426b-fc88-9880-b9b4bfe74877",
+      "rank": "normal",
+      "value": "Q83286",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P30",
+      "statement_id": "Q29$563dd3bb-4341-cc6a-dfdf-640e0f9b3221",
+      "rank": "normal",
+      "value": "Q15",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P30",
+      "statement_id": "Q29$bf1cc4e7-4233-0529-a918-71a4c4e37fb9",
+      "rank": "deprecated",
+      "value": "Q828",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P30",
+      "statement_id": "Q29$358C9241-9C73-4C01-B434-AB216ACBCC29",
+      "rank": "deprecated",
+      "value": "Q55643",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P30",
+      "statement_id": "Q29$569d77cd-46c1-3a1f-d594-8fb09e34d8e3",
+      "rank": "normal",
+      "value": "Q48",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "Q29$7C316A78-9D00-4D7D-A100-6AB9BE736CA6",
+      "rank": "normal",
+      "value": "Q1025",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "Q29$4EBFE5BA-F022-41DE-8D92-FFD88B7EF3FC",
+      "rank": "normal",
+      "value": "Q458",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "Q29$2E52368C-EED1-43D1-B7B7-1088A8D2781B",
+      "rank": "normal",
+      "value": "Q7172",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "Q29$4ad896ad-471b-9ad6-0933-d8ff3ea0b375",
+      "rank": "normal",
+      "value": "Q45670",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "Q29$beda4d23-45d6-fbdd-7279-73e52cc52a36",
+      "rank": "normal",
+      "value": "Q262",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "Q29$41472BFC-F717-4992-BC82-ABAFCBDA7637",
+      "rank": "normal",
+      "value": "Q145",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q29",
+      "property": "P47",
+      "statement_id": "Q29$BEEAB959-E2CD-43D1-9B0F-AC29B352D7F3",
+      "rank": "normal",
+      "value": "Q131839713",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q31",
+      "property": "P47",
+      "statement_id": "Q31$6d8a5423-4971-00ba-55b1-7f3536c2a313",
+      "rank": "normal",
+      "value": "Q151938",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q31",
+      "property": "P47",
+      "statement_id": "Q31$800302BB-FC91-461F-9AA1-D0E22FDC2076",
+      "rank": "normal",
+      "value": "Q7318",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q31",
+      "property": "P47",
+      "statement_id": "Q31$D9DD42E6-C0D4-4AB2-BAA9-93911852C989",
+      "rank": "normal",
+      "value": "Q145",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q55",
+      "property": "P30",
+      "statement_id": "q55$5D78AD0C-F87B-4333-B2A4-2D356EDFB48B",
+      "rank": "normal",
+      "value": "Q27611",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q55",
+      "property": "P47",
+      "statement_id": "Q55$19230656-59BD-4792-A991-3E948EED7C3B",
+      "rank": "normal",
+      "value": "Q7318",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "Q39$406AE192-1123-4920-9E3A-2BCDCA707648",
+      "rank": "normal",
+      "value": "Q28513",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "Q39$8abed1d4-4692-14f2-1d52-82558fe86533",
+      "rank": "normal",
+      "value": "Q713750",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "Q39$0BBD2B73-F7C2-495C-B135-25DA108662BA",
+      "rank": "normal",
+      "value": "Q131964",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q39",
+      "property": "P47",
+      "statement_id": "Q39$D9DBD4AC-15DA-4CF8-9747-872C75049664",
+      "rank": "normal",
+      "value": "Q7318",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q79",
+      "property": "P30",
+      "statement_id": "Q79$38b9cb16-4432-f1d7-2c12-7f2d5d757d64",
+      "rank": "normal",
+      "value": "Q48",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$7C9E3456-B874-4291-8063-CA7804FCB208",
+      "rank": "deprecated",
+      "value": "Q31354462",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "q159$5194D7CD-8AE6-4EA2-BFA6-54C5F3E38D0B",
+      "rank": "deprecated",
+      "value": "Q23427",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "Q159$7593c4c6-4ff5-aaca-8735-847412204331",
+      "rank": "deprecated",
+      "value": "Q16746854",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "Q159$59d45b51-4f31-20b8-1755-cbe98d201505",
+      "rank": "deprecated",
+      "value": "Q16150196",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q159",
+      "property": "P47",
+      "statement_id": "Q159$4D1B0F6D-0FBB-496D-ABEF-67E37D30A505",
+      "rank": "deprecated",
+      "value": "Q114318324",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$4461AB22-6A11-4C6B-921D-D05964DA44B1",
+      "rank": "normal",
+      "value": "Q131083",
+      "qualifiers_present": false,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$6B585E2F-E0A6-4367-85C7-F64AA20C1836",
+      "rank": "normal",
+      "value": "Q15180",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$BC77E084-1C31-45E4-8BDF-5037D624BB10",
+      "rank": "normal",
+      "value": "Q147909",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$9341a26b-4571-2c03-8c5c-ce38a2bcb37f",
+      "rank": "normal",
+      "value": "Q146720",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$3535b6a3-455f-7a18-f67d-0877d6273cad",
+      "rank": "normal",
+      "value": "Q146872",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$2dc55cd7-4b82-db04-b96c-837175a961a8",
+      "rank": "normal",
+      "value": "Q146880",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$ea30e551-4aa5-95c6-0304-8b0ba8eb3108",
+      "rank": "normal",
+      "value": "Q26234937",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$c99921b9-40c7-a04b-dff7-c7732506ad72",
+      "rank": "normal",
+      "value": "Q146885",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$44329364-49b6-28b6-290f-80c003c79867",
+      "rank": "normal",
+      "value": "Q170468",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$995fbf52-451a-e6ce-e64f-702e80d86a10",
+      "rank": "normal",
+      "value": "Q212",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$11bff65c-4c7e-1f86-8f74-2d1f297ec446",
+      "rank": "normal",
+      "value": "Q229",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q43",
+      "property": "P47",
+      "statement_id": "Q43$915bb385-4a25-9353-a29d-77631e58c32d",
+      "rank": "normal",
+      "value": "Q23681",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "Q148$3ECEF26E-49EB-41A2-A2F9-9FF36D4BC6D9",
+      "rank": "deprecated",
+      "value": "Q15180",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    },
+    {
+      "head": "Q148",
+      "property": "P47",
+      "statement_id": "Q148$3ba9cbc3-4814-6fc2-13ed-b25b1ef6857a",
+      "rank": "normal",
+      "value": "Q865",
+      "qualifiers_present": true,
+      "reason": "not best nondeprecated rank"
+    }
+  ],
+  "P30_outside_candidates": [
+    [
+      "Q159",
+      "Q5401"
+    ]
+  ],
+  "P47_outside_eligible_panel": [
+    [
+      "Q1016",
+      "Q1049"
+    ],
+    [
+      "Q1028",
+      "Q458"
+    ],
+    [
+      "Q1028",
+      "Q6250"
+    ],
+    [
+      "Q1032",
+      "Q1033"
+    ],
+    [
+      "Q1032",
+      "Q7172"
+    ],
+    [
+      "Q1032",
+      "Q962"
+    ],
+    [
+      "Q1032",
+      "Q965"
+    ],
+    [
+      "Q142",
+      "Q155"
+    ],
+    [
+      "Q142",
+      "Q228"
+    ],
+    [
+      "Q142",
+      "Q235"
+    ],
+    [
+      "Q142",
+      "Q29999"
+    ],
+    [
+      "Q142",
+      "Q32"
+    ],
+    [
+      "Q142",
+      "Q730"
+    ],
+    [
+      "Q148",
+      "Q17"
+    ],
+    [
+      "Q148",
+      "Q232"
+    ],
+    [
+      "Q148",
+      "Q423"
+    ],
+    [
+      "Q148",
+      "Q711"
+    ],
+    [
+      "Q148",
+      "Q813"
+    ],
+    [
+      "Q148",
+      "Q819"
+    ],
+    [
+      "Q148",
+      "Q836"
+    ],
+    [
+      "Q148",
+      "Q837"
+    ],
+    [
+      "Q148",
+      "Q843"
+    ],
+    [
+      "Q148",
+      "Q863"
+    ],
+    [
+      "Q148",
+      "Q881"
+    ],
+    [
+      "Q148",
+      "Q884"
+    ],
+    [
+      "Q148",
+      "Q889"
+    ],
+    [
+      "Q148",
+      "Q917"
+    ],
+    [
+      "Q159",
+      "Q17"
+    ],
+    [
+      "Q159",
+      "Q184"
+    ],
+    [
+      "Q159",
+      "Q191"
+    ],
+    [
+      "Q159",
+      "Q20"
+    ],
+    [
+      "Q159",
+      "Q211"
+    ],
+    [
+      "Q159",
+      "Q212"
+    ],
+    [
+      "Q159",
+      "Q227"
+    ],
+    [
+      "Q159",
+      "Q230"
+    ],
+    [
+      "Q159",
+      "Q232"
+    ],
+    [
+      "Q159",
+      "Q30"
+    ],
+    [
+      "Q159",
+      "Q33"
+    ],
+    [
+      "Q159",
+      "Q34"
+    ],
+    [
+      "Q159",
+      "Q36"
+    ],
+    [
+      "Q159",
+      "Q37"
+    ],
+    [
+      "Q159",
+      "Q423"
+    ],
+    [
+      "Q159",
+      "Q458"
+    ],
+    [
+      "Q159",
+      "Q711"
+    ],
+    [
+      "Q183",
+      "Q213"
+    ],
+    [
+      "Q183",
+      "Q32"
+    ],
+    [
+      "Q183",
+      "Q35"
+    ],
+    [
+      "Q183",
+      "Q36"
+    ],
+    [
+      "Q183",
+      "Q40"
+    ],
+    [
+      "Q262",
+      "Q1025"
+    ],
+    [
+      "Q262",
+      "Q6250"
+    ],
+    [
+      "Q29",
+      "Q1410"
+    ],
+    [
+      "Q29",
+      "Q228"
+    ],
+    [
+      "Q31",
+      "Q32"
+    ],
+    [
+      "Q38",
+      "Q215"
+    ],
+    [
+      "Q38",
+      "Q233"
+    ],
+    [
+      "Q38",
+      "Q237"
+    ],
+    [
+      "Q38",
+      "Q238"
+    ],
+    [
+      "Q38",
+      "Q40"
+    ],
+    [
+      "Q39",
+      "Q347"
+    ],
+    [
+      "Q39",
+      "Q40"
+    ],
+    [
+      "Q39",
+      "Q458"
+    ],
+    [
+      "Q43",
+      "Q219"
+    ],
+    [
+      "Q43",
+      "Q227"
+    ],
+    [
+      "Q43",
+      "Q230"
+    ],
+    [
+      "Q43",
+      "Q399"
+    ],
+    [
+      "Q43",
+      "Q41"
+    ],
+    [
+      "Q43",
+      "Q458"
+    ],
+    [
+      "Q43",
+      "Q7172"
+    ],
+    [
+      "Q43",
+      "Q794"
+    ],
+    [
+      "Q43",
+      "Q796"
+    ],
+    [
+      "Q43",
+      "Q858"
+    ],
+    [
+      "Q657",
+      "Q1009"
+    ],
+    [
+      "Q657",
+      "Q1033"
+    ],
+    [
+      "Q657",
+      "Q1049"
+    ],
+    [
+      "Q657",
+      "Q7172"
+    ],
+    [
+      "Q657",
+      "Q929"
+    ],
+    [
+      "Q668",
+      "Q252"
+    ],
+    [
+      "Q668",
+      "Q836"
+    ],
+    [
+      "Q668",
+      "Q837"
+    ],
+    [
+      "Q668",
+      "Q843"
+    ],
+    [
+      "Q668",
+      "Q854"
+    ],
+    [
+      "Q668",
+      "Q889"
+    ],
+    [
+      "Q668",
+      "Q902"
+    ],
+    [
+      "Q668",
+      "Q917"
+    ],
+    [
+      "Q79",
+      "Q1049"
+    ],
+    [
+      "Q79",
+      "Q219060"
+    ],
+    [
+      "Q79",
+      "Q801"
+    ],
+    [
+      "Q912",
+      "Q1006"
+    ],
+    [
+      "Q912",
+      "Q1008"
+    ],
+    [
+      "Q912",
+      "Q1025"
+    ],
+    [
+      "Q912",
+      "Q1041"
+    ],
+    [
+      "Q912",
+      "Q965"
+    ]
+  ],
+  "P47_self_removed": [],
+  "direct_within_panel_edges": 52,
+  "symmetric_closure_edges": 54,
+  "added_reverse_edges": [
+    [
+      "Q29",
+      "Q262"
+    ],
+    [
+      "Q38",
+      "Q262"
+    ]
+  ],
+  "multi_label_entities": [
+    "Q159",
+    "Q43"
+  ],
+  "split_counts": {
+    "train": {
+      "heads": 11,
+      "positives": 12
+    },
+    "val": {
+      "heads": 4,
+      "positives": 4
+    },
+    "test": {
+      "heads": 5,
+      "positives": 6
+    }
+  },
+  "collection_start": "2026-10-16T16:09:08.488307+00:00",
+  "collection_end": "2026-10-16T16:16:48.155200+00:00",
+  "warning": "separate property reads, not an atomic dump or event time; best-rank qualifier-free projection of recorded statements"
+}

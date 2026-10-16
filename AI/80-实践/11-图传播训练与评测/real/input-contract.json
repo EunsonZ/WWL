@@ -1,0 +1,29 @@
+{
+  "raw_source": "source-responses.json",
+  "source_license": "CC0-1.0 structured data",
+  "source_api": "official Wikidata REST item labels and property-filtered statements, 67 per-response records",
+  "panel": "panel.json",
+  "fixed_inputs": "inputs.json",
+  "projection_audit": "source-audit.json",
+  "normalizer": "wikidata_task.py prepare",
+  "parent_read_only": [
+    "../graph_task.py",
+    "../relations/relations.py"
+  ],
+  "identity": {
+    "source_sha256": "9029962c3e639da3c2fe259f05014e5337638254906c9cf837e5d9bc4c271420",
+    "inputs_sha256": "9112152df7d39528fe8402ea11458cf27924d60cf2d23b61e922e39f3f46641b",
+    "protocol_sha256": "6df6047e5057beef2dedb52b028c1268a4d6873c6ae7d6e5f07ec43ba1d8d39c",
+    "parent_core_sha256": "d6c4de5ee7202c546f0c5f25be865b8d5e11f589145e3456cf6363a3ce979cdc",
+    "parent_relations_sha256": "5f2e75ac5417bf0807941aede4d7f5f864a79878f2ffa7b5d0074f02f8e2732c",
+    "raw_source_sha256": "6060979a29f28e7118325b9bdffb28d177c76aca73c92ae61ae54061cb4ecc1a",
+    "panel_sha256": "ce8b394f214f8e51bbd16008bf3dca33fbd25ef5dc97c04b842937a31b83fef5"
+  },
+  "model_parameters_chosen_before_preview": true,
+  "graph_unit": "one static purposive panel, not iid graph samples",
+  "split_unit": "all projected P30 values for a QID grouped by fixed hash",
+  "feature_labels": "ONLY train P30 inverse seeds; no val/test seed, no P47 self edge; supervised feature construction, not presample fixed encoder",
+  "negative_assumption": "candidate not in best-rank projection is coded zero for record-reconstruction benchmark, not certified false in the world",
+  "time_scope": "multiple property retrieval timestamps, no reliable event-time split",
+  "preview": "20 epochs also computed test outputs after its own selection; only resource output inspected; no protocol change"
+}

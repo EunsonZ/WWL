@@ -1,0 +1,19 @@
+{
+  "identity": "original synthetic one-period state economies; no market return data",
+  "three_state": {
+    "A": [["1", "1"], ["1", "2"], ["1", "3"]],
+    "prices": ["1", "2"],
+    "physical_P": ["1/2", "1/3", "1/6"],
+    "uniform_P": ["1/3", "1/3", "1/3"],
+    "t_values": ["1/5", "1/4", "1/3"],
+    "H": ["0", "0", "1"],
+    "H_quotes": ["-1/10", "0", "1/4", "1/2", "3/5"],
+    "migration_G": ["1", "0", "1"]
+  },
+  "binary": {
+    "A": [["1", "120"], ["1", "80"]],
+    "prices": ["20/21", "100"],
+    "call": ["20", "0"],
+    "physical_cases": [["1/2", "1/2"], ["4/5", "1/5"]]
+  }
+}

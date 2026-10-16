@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="460" viewBox="0 0 980 460">
+<title>Strictly positive state prices and the nonunique price of an unspanned state-three claim</title>
+<desc>Left: state-price coordinates pi1 and pi2 with pi3=1-pi1-pi2. The admissible segment is pi=(t,1-2t,t), zero less than t less than one half. Right: the new claim H=(0,0,1) has price c=t; both endpoints excluded under unrestricted trading. These are pricing weights, not real probabilities or confidence intervals.</desc>
+<rect width="980" height="460" fill="white"/>
+<style>text{font-family:Arial,sans-serif;font-size:14px;fill:#18212c}.head{font-size:18px;font-weight:bold}.axis{stroke:#263238;stroke-width:1.5}.grid{stroke:#dfe4e8;stroke-width:1}</style>
+<text x="25" y="30" class="head">A. State-price plane (R_f=1, sum pi=1)</text>
+<text x="505" y="30" class="head">B. H is unspanned: extension price c=t</text>
+<polygon points="85.0,340.0 415.0,340.0 85.0,90.0" fill="#f6f8fb" stroke="#a6b0bb"/>
+<line x1="85.0" y1="340.0" x2="415.0" y2="340.0" class="axis"/>
+<line x1="85.0" y1="340.0" x2="85.0" y2="90.0" class="axis"/>
+<line x1="85.0" y1="90.0" x2="250.0" y2="340.0" stroke="#2563a6" stroke-width="4"/>
+<circle cx="85.0" cy="90.0" r="6" fill="white" stroke="#2563a6" stroke-width="2.5"/>
+<circle cx="250.0" cy="340.0" r="6" fill="white" stroke="#2563a6" stroke-width="2.5"/>
+<circle cx="151.0" cy="190.0" r="4" fill="#2563a6"/>
+<circle cx="167.5" cy="215.0" r="4" fill="#2563a6"/>
+<circle cx="195.0" cy="256.6666666666667" r="4" fill="#2563a6"/>
+<text x="45" y="85">pi2</text>
+<text x="420" y="347">pi1</text>
+<text x="62" y="361">0</text>
+<text x="243" y="361">1/2</text>
+<text x="412" y="361">1</text>
+<text x="66" y="95">1</text>
+<text x="150" y="105">(0,1,0): endpoint excluded</text>
+<text x="205" y="328">(1/2,0,1/2)</text>
+<text x="85" y="398">pi3=1-pi1-pi2; line: pi1=pi3=t</text>
+<text x="85" y="427">State prices are not physical P.</text>
+<line x1="565.0" y1="340.0" x2="875.0" y2="340.0" class="axis"/>
+<line x1="565.0" y1="340.0" x2="565.0" y2="90.0" class="axis"/>
+<line x1="565.0" y1="340.0" x2="875.0" y2="90.0" stroke="#2563a6" stroke-width="4"/>
+<circle cx="565.0" cy="340.0" r="6" fill="white" stroke="#2563a6" stroke-width="2.5"/>
+<text x="561.0" y="363">0</text>
+<text x="525" y="344.0">0</text>
+<circle cx="875.0" cy="90.0" r="6" fill="white" stroke="#2563a6" stroke-width="2.5"/>
+<text x="871.0" y="363">1/2</text>
+<text x="525" y="94.0">1/2</text>
+<circle cx="689.0" cy="240.0" r="4" fill="#2563a6"/>
+<circle cx="720.0" cy="215.0" r="4" fill="#2563a6"/>
+<circle cx="771.6666666666666" cy="173.33333333333334" r="4" fill="#2563a6"/>
+<text x="535" y="65">c: current H price</text>
+<text x="895" y="347">t</text>
+<text x="580" y="110">c=1/2: -B+S-2H pays (0,1,0)</text>
+<text x="600" y="320">c=0: free H pays (0,0,1)</text>
+<text x="565" y="398">0 &lt; c &lt; 1/2 under two-way trading</text>
+<text x="565" y="427">Not a price forecast or confidence interval.</text>
+</svg>

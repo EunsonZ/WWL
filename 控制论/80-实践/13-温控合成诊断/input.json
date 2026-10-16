@@ -1,0 +1,72 @@
+{
+  "schema": "wwl-thermal-diagnosis-input-v1",
+  "C_J_per_K": 10.0,
+  "h_W_per_K": 1.0,
+  "Ts_s": 1.0,
+  "r_K": 2.0,
+  "kp_W_per_K": 3.0,
+  "ki_W_per_K_s": 0.4,
+  "steps": 150,
+  "cases": [
+    {
+      "id": "case-01",
+      "meaning": "healthy",
+      "beta_K": 0.0,
+      "d_W": 0.0,
+      "x0_K": 0.0,
+      "z0_K_s": 0.0,
+      "u_min_W": 0.0,
+      "u_max_W": 10.0,
+      "delay_samples": 0,
+      "previous_limited_command_W": 0.0
+    },
+    {
+      "id": "case-02",
+      "meaning": "B_sensor_offset",
+      "beta_K": 0.2,
+      "d_W": 0.0,
+      "x0_K": -0.2,
+      "z0_K_s": 0.0,
+      "u_min_W": 0.0,
+      "u_max_W": 10.0,
+      "delay_samples": 0,
+      "previous_limited_command_W": 0.0
+    },
+    {
+      "id": "case-03",
+      "meaning": "C_heat_disturbance",
+      "beta_K": 0.0,
+      "d_W": 0.2,
+      "x0_K": 0.0,
+      "z0_K_s": 0.0,
+      "u_min_W": 0.0,
+      "u_max_W": 10.0,
+      "delay_samples": 0,
+      "previous_limited_command_W": 0.0
+    },
+    {
+      "id": "case-04",
+      "meaning": "insufficient_power",
+      "beta_K": 0.0,
+      "d_W": 0.0,
+      "x0_K": 0.0,
+      "z0_K_s": 0.0,
+      "u_min_W": 0.0,
+      "u_max_W": 1.5,
+      "delay_samples": 0,
+      "previous_limited_command_W": 0.0
+    },
+    {
+      "id": "case-05",
+      "meaning": "one_sample_delay",
+      "beta_K": 0.0,
+      "d_W": 0.0,
+      "x0_K": 0.0,
+      "z0_K_s": 0.0,
+      "u_min_W": 0.0,
+      "u_max_W": 10.0,
+      "delay_samples": 1,
+      "previous_limited_command_W": 0.0
+    }
+  ]
+}

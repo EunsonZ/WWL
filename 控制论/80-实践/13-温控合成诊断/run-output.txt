@@ -1,0 +1,138 @@
+Author CPU self-check only; independent review pending.
+Python: 3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]
+Platform: macOS-27.0.1-arm64-arm-64bit-Mach-O
+Executable: /opt/homebrew/opt/python@3.14/bin/python3.14
+Numerical tolerances: exported observations 1e-9 K; internal B/C equivalence 1e-12 K; original held ODE 1e-13 K.
+External working directory: /private/tmp/wwl-thermal-author-ready-20261016-euzqvucz
+COMMAND: ['/opt/homebrew/opt/python@3.14/bin/python3.14', '-B', '/private/tmp/wwl-20261016-thermal/控制论/80-实践/13-温控合成诊断/thermal_diagnosis.py', '--output-dir', '/private/tmp/wwl-thermal-author-ready-20261016-euzqvucz/default']
+EXIT: 0
+STDOUT:
+generated teaching synthetic records: /private/tmp/wwl-thermal-author-ready-20261016-euzqvucz/default
+
+STDERR:
+
+COMMAND: ['/opt/homebrew/opt/python@3.14/bin/python3.14', '-B', '/private/tmp/wwl-20261016-thermal/控制论/80-实践/13-温控合成诊断/thermal_diagnosis.py', '--input', '/private/tmp/wwl-20261016-thermal/控制论/80-实践/13-温控合成诊断/input-transfer.json', '--output-dir', '/private/tmp/wwl-thermal-author-ready-20261016-euzqvucz/transfer']
+EXIT: 0
+STDOUT:
+generated teaching synthetic records: /private/tmp/wwl-thermal-author-ready-20261016-euzqvucz/transfer
+
+STDERR:
+
+COMMAND: ['/opt/homebrew/opt/python@3.14/bin/python3.14', '-B', '/private/tmp/wwl-20261016-thermal/控制论/80-实践/13-温控合成诊断/thermal_diagnosis.py', '--output-dir', '/private/tmp/wwl-thermal-author-ready-20261016-euzqvucz/default']
+EXIT: 2
+STDOUT:
+
+STDERR:
+error: [Errno 17] File exists: '/private/tmp/wwl-thermal-author-ready-20261016-euzqvucz/default'
+
+Refused existing output: all output file SHA-256 values unchanged.
+COMMAND: ['/opt/homebrew/opt/python@3.14/bin/python3.14', '-B', '-m', 'unittest', '-v', 'test_thermal_diagnosis.py']
+EXIT: 0
+STDOUT:
+
+STDERR:
+test_acceptance_window_and_delay_schur (test_thermal_diagnosis.ThermalDiagnosisTests.test_acceptance_window_and_delay_schur) ... ok
+test_dimensional_transfer (test_thermal_diagnosis.ThermalDiagnosisTests.test_dimensional_transfer) ... ok
+test_external_output_and_refuse_existing (test_thermal_diagnosis.ThermalDiagnosisTests.test_external_output_and_refuse_existing) ... ok
+test_independent_reference_error_intervals (test_thermal_diagnosis.ThermalDiagnosisTests.test_independent_reference_error_intervals) ... ok
+test_observation_equivalence_and_distinct_truth (test_thermal_diagnosis.ThermalDiagnosisTests.test_observation_equivalence_and_distinct_truth) ... ok
+test_old_integral_and_exact_hold (test_thermal_diagnosis.ThermalDiagnosisTests.test_old_integral_and_exact_hold) ... ok
+test_positive_control_saturation_and_delay (test_thermal_diagnosis.ThermalDiagnosisTests.test_positive_control_saturation_and_delay) ... ok
+test_reject_nonfinite_input (test_thermal_diagnosis.ThermalDiagnosisTests.test_reject_nonfinite_input) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.016s
+
+OK
+
+Frozen data/ is byte-for-byte copied from the final default output above; no CSV edited.
+default summary:
+{
+  "case-01": {
+    "meaning": "healthy",
+    "last_y_K": 2.0000000000001963,
+    "last_x_K": 2.0000000000001963,
+    "last_z_K_s": 1.013855666087693e-12,
+    "max_abs_command_W": 8.0,
+    "max_applied_W": 8.0
+  },
+  "case-02": {
+    "meaning": "B_sensor_offset",
+    "last_y_K": 2.0000000000002056,
+    "last_x_K": 1.8000000000002057,
+    "last_z_K_s": -0.49999999999893996,
+    "max_abs_command_W": 8.0,
+    "max_applied_W": 8.0
+  },
+  "case-03": {
+    "meaning": "C_heat_disturbance",
+    "last_y_K": 2.000000000000206,
+    "last_x_K": 2.000000000000206,
+    "last_z_K_s": -0.4999999999989373,
+    "max_abs_command_W": 8.0,
+    "max_applied_W": 8.0
+  },
+  "case-04": {
+    "meaning": "insufficient_power",
+    "last_y_K": 1.499999541146518,
+    "last_x_K": 1.499999541146518,
+    "last_z_K_s": 90.76249309537802,
+    "max_abs_command_W": 39.60499855664118,
+    "max_applied_W": 1.5
+  },
+  "case-05": {
+    "meaning": "one_sample_delay",
+    "last_y_K": 2.000000000002055,
+    "last_x_K": 2.000000000002055,
+    "last_z_K_s": 1.2018830375382095e-11,
+    "max_abs_command_W": 8.8,
+    "max_applied_W": 8.8
+  }
+}
+
+transfer summary:
+{
+  "case-01": {
+    "meaning": "healthy",
+    "last_y_K": 2.0000000000001963,
+    "last_x_K": 2.0000000000001963,
+    "last_z_K_s": 1.013855666087693e-12,
+    "max_abs_command_W": 16.0,
+    "max_applied_W": 16.0
+  },
+  "case-02": {
+    "meaning": "B_sensor_offset",
+    "last_y_K": 2.0000000000002056,
+    "last_x_K": 1.8000000000002057,
+    "last_z_K_s": -0.49999999999893996,
+    "max_abs_command_W": 16.0,
+    "max_applied_W": 16.0
+  },
+  "case-03": {
+    "meaning": "C_heat_disturbance",
+    "last_y_K": 2.000000000000206,
+    "last_x_K": 2.000000000000206,
+    "last_z_K_s": -0.4999999999989373,
+    "max_abs_command_W": 16.0,
+    "max_applied_W": 16.0
+  },
+  "case-04": {
+    "meaning": "insufficient_power",
+    "last_y_K": 1.499999541146518,
+    "last_x_K": 1.499999541146518,
+    "last_z_K_s": 90.76249309537802,
+    "max_abs_command_W": 79.20999711328236,
+    "max_applied_W": 3.0
+  },
+  "case-05": {
+    "meaning": "one_sample_delay",
+    "last_y_K": 2.000000000002055,
+    "last_x_K": 2.000000000002055,
+    "last_z_K_s": 1.2018830375382095e-11,
+    "max_abs_command_W": 17.6,
+    "max_applied_W": 17.6
+  }
+}
+
+
+Integration note (2026-10-16): the first line records the author-run historical state. Non-author review subsequently ACCEPTED all seven #270 conditions using an independent 60-digit Decimal ODE oracle and separate delay-stability reasoning. This author log is preserved; integration did not rerun these experiments. Independent evidence summary: https://github.com/EunsonZ/WWL/issues/270

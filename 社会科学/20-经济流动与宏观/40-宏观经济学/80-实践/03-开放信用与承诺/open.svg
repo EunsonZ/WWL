@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="510" viewBox="0 0 1100 510">
+<title>Open economy: closure and import leakage</title><desc>Synthetic exact rational outputs. Left: date-0 output by input scenario. Right: balanced-budget fiscal derivatives holding future deviations zero; not empirical multipliers.</desc>
+<rect width="1100" height="510" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#182b3a;font-size:15px}.small{font-size:13px}.title{font-size:20px;font-weight:bold}</style>
+<text x="30" y="30" class="title">Open economy: closure and import leakage</text>
+<text x="45" y="65" class="">Date-0 output deviation x (goods units)</text>
+<line x1="65" y1="390" x2="505" y2="390" stroke="#687d8c" stroke-width="1"/>
+<rect x="78" y="316.364" width="44" height="73.6364" fill="#2878a0"/>
+<text x="70" y="306.364" class="small">4/11</text>
+<text x="62" y="420" class="small">F / float</text>
+<rect x="183" y="120" width="44" height="270" fill="#df8b2b"/>
+<text x="175" y="110" class="small">4/3</text>
+<text x="167" y="420" class="small">F / peg</text>
+<rect x="288" y="242.727" width="44" height="147.273" fill="#2878a0"/>
+<text x="280" y="232.727" class="small">8/11</text>
+<text x="272" y="420" class="small">M / float</text>
+<rect x="393" y="390" width="44" height="1" fill="#df8b2b"/>
+<text x="385" y="380" class="small">0</text>
+<text x="377" y="420" class="small">M / peg</text>
+<text x="50" y="460" class="small">F/M are the fiscal/money scenarios in inputs.json.</text>
+<text x="615" y="65" class="">Balanced-budget fiscal dx / dG</text>
+<line x1="630" y1="336" x2="680" y2="338.571" stroke="#2878a0" stroke-width="3"/>
+<line x1="680" y1="338.571" x2="730" y2="340.909" stroke="#2878a0" stroke-width="3"/>
+<line x1="730" y1="340.909" x2="830" y2="345" stroke="#2878a0" stroke-width="3"/>
+<line x1="830" y1="345" x2="930" y2="348.462" stroke="#2878a0" stroke-width="3"/>
+<line x1="930" y1="348.462" x2="1030" y2="351.429" stroke="#2878a0" stroke-width="3"/>
+<circle cx="630" cy="336" r="4" fill="#2878a0"/>
+<circle cx="680" cy="338.571" r="4" fill="#2878a0"/>
+<circle cx="730" cy="340.909" r="4" fill="#2878a0"/>
+<circle cx="830" cy="345" r="4" fill="#2878a0"/>
+<circle cx="930" cy="348.462" r="4" fill="#2878a0"/>
+<circle cx="1030" cy="351.429" r="4" fill="#2878a0"/>
+<line x1="650" y1="460" x2="680" y2="460" stroke="#2878a0" stroke-width="3"/>
+<text x="690" y="465" class="small">float</text>
+<line x1="630" y1="120" x2="680" y2="174" stroke="#df8b2b" stroke-width="3"/>
+<line x1="680" y1="174" x2="730" y2="210" stroke="#df8b2b" stroke-width="3"/>
+<line x1="730" y1="210" x2="830" y2="255" stroke="#df8b2b" stroke-width="3"/>
+<line x1="830" y1="255" x2="930" y2="282" stroke="#df8b2b" stroke-width="3"/>
+<line x1="930" y1="282" x2="1030" y2="300" stroke="#df8b2b" stroke-width="3"/>
+<circle cx="630" cy="120" r="4" fill="#df8b2b"/>
+<circle cx="680" cy="174" r="4" fill="#df8b2b"/>
+<circle cx="730" cy="210" r="4" fill="#df8b2b"/>
+<circle cx="830" cy="255" r="4" fill="#df8b2b"/>
+<circle cx="930" cy="282" r="4" fill="#df8b2b"/>
+<circle cx="1030" cy="300" r="4" fill="#df8b2b"/>
+<line x1="650" y1="480" x2="680" y2="480" stroke="#df8b2b" stroke-width="3"/>
+<text x="690" y="485" class="small">peg</text>
+<line x1="630" y1="390" x2="630" y2="396" stroke="#aab5bc" stroke-width="1"/>
+<text x="620" y="415" class="small">0</text>
+<line x1="680" y1="390" x2="680" y2="396" stroke="#aab5bc" stroke-width="1"/>
+<text x="670" y="415" class="small">1/8</text>
+<line x1="730" y1="390" x2="730" y2="396" stroke="#aab5bc" stroke-width="1"/>
+<text x="720" y="415" class="small">1/4</text>
+<line x1="830" y1="390" x2="830" y2="396" stroke="#aab5bc" stroke-width="1"/>
+<text x="820" y="415" class="small">1/2</text>
+<line x1="930" y1="390" x2="930" y2="396" stroke="#aab5bc" stroke-width="1"/>
+<text x="920" y="415" class="small">3/4</text>
+<line x1="1030" y1="390" x2="1030" y2="396" stroke="#aab5bc" stroke-width="1"/>
+<text x="1020" y="415" class="small">1</text>
+<line x1="625" y1="390" x2="1035" y2="390" stroke="#d9e0e4" stroke-width="1"/>
+<text x="582" y="394" class="small">0.00</text>
+<line x1="625" y1="322.5" x2="1035" y2="322.5" stroke="#d9e0e4" stroke-width="1"/>
+<text x="582" y="326.5" class="small">0.25</text>
+<line x1="625" y1="255" x2="1035" y2="255" stroke="#d9e0e4" stroke-width="1"/>
+<text x="582" y="259" class="small">0.50</text>
+<line x1="625" y1="187.5" x2="1035" y2="187.5" stroke="#d9e0e4" stroke-width="1"/>
+<text x="582" y="191.5" class="small">0.75</text>
+<line x1="625" y1="120" x2="1035" y2="120" stroke="#d9e0e4" stroke-width="1"/>
+<text x="582" y="124" class="small">1.00</text>
+<text x="930" y="440" class="small">import slope m</text>
+</svg>

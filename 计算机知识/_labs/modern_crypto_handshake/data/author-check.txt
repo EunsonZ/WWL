@@ -1,0 +1,14 @@
+WWL-HS/1 author final execution 2026-10-16. All private/scalar/seed inputs PUBLIC; no network/random secrets/remote/hardware target.
+Actual environment reused /private/tmp/wwl-next-170/runtime/bin/python (3.12.11, cryptography50.0.2), OpenSSL4.0.3 macOS27.0.1 arm64. No new dependency install this unit.
+Single process via existing shared two-slot runner, thread limits1, timeout120s. Estimate seconds/<5min; no performance or constant-time measurement.
+
+Actual final commands (historical execution paths):
+WWL_AEAD_SOURCE='/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/计算机知识/_labs/modern_crypto_aead/aead_lab.py' /private/tmp/wwl-next-context/run_local.py --timeout 120 -- /private/tmp/wwl-next-170/runtime/bin/python -B -m unittest discover -s /private/tmp/wwl-next-170-handshake/vault/计算机知识/_labs/modern_crypto_handshake -p test_handshake_lab.py -v
+WWL_AEAD_SOURCE='/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/计算机知识/_labs/modern_crypto_aead/aead_lab.py' /private/tmp/wwl-next-context/run_local.py --timeout 120 -- /private/tmp/wwl-next-170/runtime/bin/python -B /private/tmp/wwl-next-170-handshake/vault/计算机知识/_labs/modern_crypto_handshake/handshake_lab.py --output /private/tmp/wwl-next-170-handshake/author-run-final-20261016
+
+Final 8tests 0.035s PASS exit0; CLI exit0. data/results.json copied byte-for-byte from final run. Earlier author-run-20261016 was an intermediate result before explicit before-commit zero-contribution check and extra Finished output fields; it is not the retained final evidence.
+Public vector SHA0907d2d1607e028d86975e9d4ddca73423642b0f38a86ab1bef356355bb31e67.
+Reused AEAD source SHA7f293e4d8ed157be86f117ce2b5bfdf0563c7da7951f7b9e3afe56a6cfcdcf4f; no previous AEAD source changed or old bulk tests rerun.
+Portable fresh external environment/output commands are in README. Original /private/tmp paths here document actual execution, not required reproduction dependencies.
+
+Scope: exact finite arithmetic, published primitive vectors, known MITM legs and payload change, signature/transcript/identity binding, local stage gates and failure-state behavior, equivalent X25519 encodings and selected all-zero-contribution rejection. Not general TLS/AKE/EUF-CMA/forward-security/constant-time/durable-state certification.

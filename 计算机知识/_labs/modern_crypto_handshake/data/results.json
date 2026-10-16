@@ -1,0 +1,126 @@
+{
+  "environment": {
+    "python": "3.12.11",
+    "cryptography": "50.0.2",
+    "openssl": "OpenSSL 4.0.3 29 Sep 2026",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "vectors_sha256": "0907d2d1607e028d86975e9d4ddca73423642b0f38a86ab1bef356355bb31e67",
+  "reused_aead_source_sha256": "7f293e4d8ed157be86f117ce2b5bfdf0563c7da7951f7b9e3afe56a6cfcdcf4f",
+  "small_group": {
+    "p": 23,
+    "g": 5,
+    "order": 22,
+    "powers_exponents_0_to_21": [
+      1,
+      5,
+      2,
+      10,
+      4,
+      20,
+      8,
+      17,
+      16,
+      11,
+      9,
+      22,
+      18,
+      21,
+      13,
+      19,
+      3,
+      15,
+      6,
+      7,
+      12,
+      14
+    ],
+    "a": 6,
+    "b": 15,
+    "A": 8,
+    "B": 19,
+    "shared_A": 2,
+    "shared_B": 2,
+    "public_enumeration_recovers_a": 6,
+    "public_enumeration_recovers_b": 15,
+    "MITM": {
+      "eve_to_I_exponent": 7,
+      "eve_to_R_exponent": 13,
+      "E1": 17,
+      "E2": 21,
+      "I_leg": [
+        12,
+        12
+      ],
+      "R_leg": [
+        7,
+        7
+      ]
+    },
+    "legendre_g_A_B_shared": [
+      22,
+      1,
+      22,
+      1
+    ]
+  },
+  "RFC7748": {
+    "alice_public": "8520f0098930a754748b7ddcb43ef75a0dbf3a0d26381af4eba4a98eaa9b4e6a",
+    "bob_public": "de9edb7d7b7dc1b4d35b61c2ece435373f8343c85b78674dadfc7e146f882b4f",
+    "shared": "4a5d9d5ba4ce2de1728e3bf480350f25e07e21c947d19e3376f09b3c1e161742"
+  },
+  "RFC8032_test1_test2_signatures": [
+    "e5564300c360ac729086e2cc806e828a84877f1eb8e5d974d873e065224901555fb8821590a33bacc61e39701cf9b46bd25bf5f0595bbe24655141438e7a100b",
+    "92a009a9f0d4cab8720e820b5f642540a2b27b5416503f8fb3762223ebdb69da085ac1e43e15996e458f3613d0f11d8c387b2eaeb4302aeeb00d291612bb0c00"
+  ],
+  "authenticated": {
+    "transcript_hex": "57574c2d41414401000857574c2d48532f31002a5832353531392d456432353531392d484b44465348413235362d4368614368613230506f6c79313330350009616c6963652e6c61620007626f622e6c616257574c2d41414401000d636f6e746578742f726f6c657300147075626c69632d7061796d656e74732d64656d6f00014900015257574c2d414144010013492d6570682f522d6570682f492d6e6f6e636500208520f0098930a754748b7ddcb43ef75a0dbf3a0d26381af4eba4a98eaa9b4e6a0020de9edb7d7b7dc1b4d35b61c2ece435373f8343c85b78674dadfc7e146f882b4f0020aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa57574c2d414144010019522d6e6f6e63652f492d7369676b65792f522d7369676b65790020bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb0020d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a00203d4017c3e843895a92b70aa74d1b7ebc9c982ccf2ec4968cc0cd55f12af4660c",
+    "transcript_sha256": "49bf6a7efc6f6488c88a344a8d178cf27cbc798ec2487079ec77cac975f211f5",
+    "I_signature": "699f7f9559661d0f7ecf54f0f41b6da50474ecbb831f057e092d0b7356062a28bcb8c23d239c1da11cd7653bdf644a07dc2737372fa4b86055f5e3a6ab83b000",
+    "R_signature": "ac00b5d1a8909eca9dade9455cd49c2b9285651eb949991769bb2da454b9e7adf5a14934b4d76a36801831ce1e5b638ccb45f4ebc98ff5bdb6ebe68d7a467407",
+    "I_finished_hmac": "ef8562f3fb5638e7be26738f1b9eab1b2cb8b14c55301cfdbd734e4a67710982",
+    "R_finished_hmac": "2bef0cb19d03da0a313d33c870e17944207802b551c2b3d343d3d68997f3c4f7",
+    "all_four_derived_keys_agree": true,
+    "keys_PUBLIC_FIXTURES": {
+      "i2r-aead": "dfb8e8834599243738fce2f1d22c5c86bed824ead773f53e9516f9b74386dc60",
+      "r2i-aead": "9f7ab24f9202219d94831b83b391478eb5bf714b34f462b12a69c014e32bbe5b",
+      "I-finished": "9e0731a1e90898ecac8310fc1aaf64be053aaf90ad76c3daf7dd16d6238b44ed",
+      "R-finished": "15942ed3a22a7ca71df5949a03687b2a001ba94778961bfadac7aa50e91f1f70"
+    },
+    "I_state": "confirmed",
+    "R_state": "confirmed",
+    "record_sealed_hex": "8b55bd6ddc898c28f56ad98212c9c07fb380a0ce37479de1aa37e9",
+    "record_plaintext_hex": "616d6f756e743d30313030",
+    "record_replay_rejected": true,
+    "old_transcript_vs_fresh_R_nonce_rejected": true
+  },
+  "MITM": {
+    "I_Eve_shared": "56fbd51932d6e88d05ba265e56b0bf979892664498e3e983f43410320b57ed3a",
+    "Eve_R_shared": "56f164071021ecb3f3cb82732c7462a37f78467328ec8e2b355b7a8c0dfb3d78",
+    "each_leg_matches": true,
+    "same_end_to_end_shared": false,
+    "Eve_read_public_payload": "amount=0100",
+    "R_received_changed_public_payload": "amount=0900",
+    "mixed_transcript_signatures_rejected": true
+  },
+  "X25519_input_semantics": {
+    "five_zero_contribution_inputs_rejected": [
+      "0",
+      "1",
+      "57896044618658097711785492504343953926634992332820282019728792003956564819948",
+      "57896044618658097711785492504343953926634992332820282019728792003956564819949",
+      "57896044618658097711785492504343953926634992332820282019728792003956564819950"
+    ],
+    "high_bit_alias_same_shared": true,
+    "noncanonical_p_plus_9_same_as_9": true,
+    "actual_wire_bytes_bound_in_transcript": true
+  },
+  "not_proved": [
+    "TLS interoperability",
+    "general authenticated key exchange security",
+    "EUF-CMA from finite tests",
+    "forward secrecy of public fixtures",
+    "production nonce/replay durability",
+    "constant time or side-channel resistance"
+  ]
+}

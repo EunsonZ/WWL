@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="660" viewBox="0 0 1050 660" role="img" aria-labelledby="title desc">
+<title id="title">控制点、曲线采样点与索引网格分别是什么</title>
+<desc id="desc">左侧灰虚线为控制多边形，黑实线二次曲线，蓝点是N4样本。右侧同一采样的Y总跨度0.25窄带，十顶点八三角形，索引按正Z绕序。下表误差来自同一actual.json。</desc>
+<rect width="1050" height="660" fill="white"/><g font-family="PingFang SC,sans-serif" fill="#172b44">
+<text x="35" y="40" font-size="25">控制点通常不在曲线上；样本与连接一起决定网格</text>
+<text x="35" y="78" font-size="18">对象空间XY，横纵显示缩放不同，勿据图量角/距离；+Z向读者，右图为数组下标</text>
+<polyline points="80.000,400.000 260.000,160.000 440.000,400.000" fill="none" stroke="#8b8b8b" stroke-dasharray="7 5"/>
+<path d="M80.0 400.0 Q260.0 160.0 440.0 400.0" fill="none" stroke="#171717" stroke-width="3"/>
+<rect x="75.0" y="395.0" width="10" height="10" fill="white" stroke="#666"/><text x="89.0" y="388.0" font-size="16">P0 控制点</text>
+<rect x="255.0" y="155.0" width="10" height="10" fill="white" stroke="#666"/><text x="269.0" y="148.0" font-size="16">P1 控制点</text>
+<rect x="435.0" y="395.0" width="10" height="10" fill="white" stroke="#666"/><text x="449.0" y="388.0" font-size="16">P2 控制点</text>
+<polyline points="80.000,400.000 170.000,310.000 260.000,280.000 350.000,310.000 440.000,400.000" fill="none" stroke="#1c70b0" stroke-width="2"/>
+<circle cx="80.0" cy="400.0" r="4" fill="#1c70b0"/><text x="68.0" y="425.0" font-size="14">t=0</text>
+<circle cx="170.0" cy="310.0" r="4" fill="#1c70b0"/><text x="158.0" y="335.0" font-size="14">t=0.25</text>
+<circle cx="260.0" cy="280.0" r="4" fill="#1c70b0"/><text x="248.0" y="305.0" font-size="14">t=0.5</text>
+<circle cx="350.0" cy="310.0" r="4" fill="#1c70b0"/><text x="338.0" y="335.0" font-size="14">t=0.75</text>
+<circle cx="440.0" cy="400.0" r="4" fill="#1c70b0"/><text x="428.0" y="425.0" font-size="14">t=1</text>
+<polygon points="590.000,415.000 680.000,325.000 590.000,385.000" fill="#eef3fc" stroke="#44627e"/>
+<polygon points="680.000,325.000 680.000,295.000 590.000,385.000" fill="#dce9fb" stroke="#44627e"/>
+<polygon points="680.000,325.000 770.000,295.000 680.000,295.000" fill="#eef3fc" stroke="#44627e"/>
+<polygon points="770.000,295.000 770.000,265.000 680.000,295.000" fill="#dce9fb" stroke="#44627e"/>
+<polygon points="770.000,295.000 860.000,325.000 770.000,265.000" fill="#eef3fc" stroke="#44627e"/>
+<polygon points="860.000,325.000 860.000,295.000 770.000,265.000" fill="#dce9fb" stroke="#44627e"/>
+<polygon points="860.000,325.000 950.000,415.000 860.000,295.000" fill="#eef3fc" stroke="#44627e"/>
+<polygon points="950.000,415.000 950.000,385.000 860.000,295.000" fill="#dce9fb" stroke="#44627e"/>
+<circle cx="590.0" cy="415.0" r="3" fill="#244b71"/><text x="595.0" y="434.0" font-size="14">0</text>
+<circle cx="590.0" cy="385.0" r="3" fill="#244b71"/><text x="595.0" y="377.0" font-size="14">1</text>
+<circle cx="680.0" cy="325.0" r="3" fill="#244b71"/><text x="685.0" y="344.0" font-size="14">2</text>
+<circle cx="680.0" cy="295.0" r="3" fill="#244b71"/><text x="685.0" y="287.0" font-size="14">3</text>
+<circle cx="770.0" cy="295.0" r="3" fill="#244b71"/><text x="775.0" y="314.0" font-size="14">4</text>
+<circle cx="770.0" cy="265.0" r="3" fill="#244b71"/><text x="775.0" y="257.0" font-size="14">5</text>
+<circle cx="860.0" cy="325.0" r="3" fill="#244b71"/><text x="865.0" y="344.0" font-size="14">6</text>
+<circle cx="860.0" cy="295.0" r="3" fill="#244b71"/><text x="865.0" y="287.0" font-size="14">7</text>
+<circle cx="950.0" cy="415.0" r="3" fill="#244b71"/><text x="955.0" y="434.0" font-size="14">8</text>
+<circle cx="950.0" cy="385.0" r="3" fill="#244b71"/><text x="955.0" y="377.0" font-size="14">9</text>
+<text x="35" y="465" font-size="18">同参数点到折线点的最大距离（非最近点距离）</text>
+<text x="35" y="502" font-size="16">几何</text><text x="280" y="502" font-size="16">误差</text><text x="450" y="502" font-size="16">顶点/边/面</text><text x="690" y="502" font-size="16">64px覆盖数</text>
+<text x="35" y="535" font-size="16">base_n4</text><text x="280" y="535" font-size="16">0.0625</text><text x="450" y="535" font-size="16">10/17/8</text><text x="690" y="535" font-size="16">54</text>
+<text x="35" y="560" font-size="16">base_n8</text><text x="280" y="560" font-size="16">0.015625</text><text x="450" y="560" font-size="16">18/33/16</text><text x="690" y="560" font-size="16">58</text>
+<text x="35" y="585" font-size="16">base_n16</text><text x="280" y="585" font-size="16">0.00390625</text><text x="450" y="585" font-size="16">34/65/32</text><text x="690" y="585" font-size="16">56</text>
+<text x="35" y="610" font-size="16">raised_n4</text><text x="280" y="610" font-size="16">0.09375</text><text x="450" y="610" font-size="16">10/17/8</text><text x="690" y="610" font-size="16">60</text>
+<text x="35" y="635" font-size="16">nonuniform</text><text x="280" y="635" font-size="16">0.36</text><text x="450" y="635" font-size="16">10/17/8</text><text x="690" y="635" font-size="16">62</text>
+</g></svg>

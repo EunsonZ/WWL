@@ -1,0 +1,87 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_lab.py",
+    "--spec",
+    "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/spec.json",
+    "--renderer",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/renderer.py",
+    "--out",
+    "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/results"
+  ],
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "elapsed_seconds": 0.15182312502292916,
+  "exit_code": 0,
+  "stdout": "{\"cases\": 5, \"renders\": 10}\n",
+  "stderr": "",
+  "thread_env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "additional_checks": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/curve_mesh_oracle.py",
+        "--spec",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/spec.json",
+        "--actual",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/results/actual.json",
+        "--out",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/oracle-result.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"cases\": 5}\n",
+      "stderr": "",
+      "record": "oracle-result.json",
+      "scope": "author independent algorithm; fixed input; no generator/renderer import"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/test_curve_mesh.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "tests.stdout",
+      "stderr_file": "tests.stderr",
+      "unittest_reported_seconds": 0.021,
+      "scope": "6 behavior tests; original renderer tests not rerun"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/render_diagram.py",
+        "--actual",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/results/actual.json",
+        "--out",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/construction.svg"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "scope": "diagram caption corrected; geometry/renderer source unchanged"
+    },
+    {
+      "argv": [
+        "/private/tmp/wwl-next-172-analytics/render-env/bin/python",
+        "-B",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/preview_diagram.py",
+        "--svg",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/construction.svg",
+        "--out",
+        "/private/tmp/wwl-next-168/\u8ba1\u7b97\u673a\u77e5\u8bc6/62-\u56fe\u5f62\u5b66/curve_mesh_practice/construction.png"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "scope": "optional resvg-py 0.5.0 preview, PingFang SC,1600px; no geometry computation"
+    }
+  ]
+}

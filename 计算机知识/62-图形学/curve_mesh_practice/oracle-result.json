@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "geometry_absolute_tolerance": 1e-12,
+  "display_byte_tolerance": 1,
+  "cases": [
+    {
+      "id": "base_n4",
+      "exact_error": 0.0625,
+      "pixels": [
+        {
+          "resolution": 64,
+          "checked_nonboundary_pixels": 4096,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 54
+        },
+        {
+          "resolution": 128,
+          "checked_nonboundary_pixels": 16384,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 230
+        }
+      ]
+    },
+    {
+      "id": "base_n8",
+      "exact_error": 0.015625,
+      "pixels": [
+        {
+          "resolution": 64,
+          "checked_nonboundary_pixels": 4096,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 58
+        },
+        {
+          "resolution": 128,
+          "checked_nonboundary_pixels": 16384,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 218
+        }
+      ]
+    },
+    {
+      "id": "base_n16",
+      "exact_error": 0.00390625,
+      "pixels": [
+        {
+          "resolution": 64,
+          "checked_nonboundary_pixels": 4096,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 56
+        },
+        {
+          "resolution": 128,
+          "checked_nonboundary_pixels": 16384,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 220
+        }
+      ]
+    },
+    {
+      "id": "raised_n4",
+      "exact_error": 0.09375,
+      "pixels": [
+        {
+          "resolution": 64,
+          "checked_nonboundary_pixels": 4096,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 60
+        },
+        {
+          "resolution": 128,
+          "checked_nonboundary_pixels": 16384,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 220
+        }
+      ]
+    },
+    {
+      "id": "nonuniform",
+      "exact_error": 0.36,
+      "pixels": [
+        {
+          "resolution": 64,
+          "checked_nonboundary_pixels": 4096,
+          "excluded_exact_boundary_pixels": 0,
+          "covered_pixels": 62
+        },
+        {
+          "resolution": 128,
+          "checked_nonboundary_pixels": 16383,
+          "excluded_exact_boundary_pixels": 1,
+          "covered_pixels": 241
+        }
+      ]
+    }
+  ],
+  "scope": "fixed XY strip + fixed model; no generator/renderer import, no generic image oracle"
+}

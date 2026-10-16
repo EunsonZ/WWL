@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460" role="img"><title>GraphSAGE full and sampled neighbors versus reused no-graph control</title><desc>Each marker is one seed mean over four test graphs. Horizontal short lines are three-seed means. Fanout is not selected on test. Baseline is published and reused, with different parameter budget.</desc>
+<rect width="1100" height="460" fill="white"/><g font-family="sans-serif" fill="#172d3c">
+<text x="20" y="27" font-size="19" >Validation-selected depth/epoch; TEST graph-mean accuracy (3 seeds, 4 graphs/seed)</text>
+<text x="70" y="65" font-size="20" >homophily</text>
+<line x1="70" y1="90" x2="70" y2="350" stroke="#54616c" />
+<line x1="70" y1="350" x2="505" y2="350" stroke="#54616c" />
+<line x1="70" y1="350" x2="505" y2="350" stroke="#e6ebef" />
+<text x="60" y="354" font-size="13" text-anchor="end">0</text>
+<line x1="70" y1="285.0" x2="505" y2="285.0" stroke="#e6ebef" />
+<text x="60" y="289.0" font-size="13" text-anchor="end">0.25</text>
+<line x1="70" y1="220.0" x2="505" y2="220.0" stroke="#e6ebef" />
+<text x="60" y="224.0" font-size="13" text-anchor="end">0.5</text>
+<line x1="70" y1="155.0" x2="505" y2="155.0" stroke="#e6ebef" />
+<text x="60" y="159.0" font-size="13" text-anchor="end">0.75</text>
+<line x1="70" y1="90" x2="505" y2="90" stroke="#e6ebef" />
+<text x="60" y="94" font-size="13" text-anchor="end">1</text>
+<circle cx="101" cy="157.70833333333334" r="4" fill="#52616b"/>
+<rect x="106" y="137.45833333333331" width="8" height="8" fill="#52616b"/>
+<path d="M119,171.66666666666666 l-5,9 h10 z" fill="#52616b"/>
+<line x1="87" y1="158.6111111111111" x2="133" y2="158.6111111111111" stroke="#52616b" stroke-width="3"/>
+<text x="110" y="376" font-size="14" text-anchor="middle">no_graph*</text>
+<text x="110" y="402" font-size="13" text-anchor="middle">mean=0.7361</text>
+<circle cx="216" cy="103.54166666666669" r="4" fill="#166b99"/>
+<rect x="221" y="91.41666666666666" width="8" height="8" fill="#166b99"/>
+<path d="M234,136.45833333333334 l-5,9 h10 z" fill="#166b99"/>
+<line x1="202" y1="113.47222222222223" x2="248" y2="113.47222222222223" stroke="#166b99" stroke-width="3"/>
+<text x="225" y="376" font-size="14" text-anchor="middle">full</text>
+<text x="225" y="402" font-size="13" text-anchor="middle">mean=0.9097</text>
+<circle cx="331" cy="106.25" r="4" fill="#bd5424"/>
+<rect x="336" y="102.25" width="8" height="8" fill="#bd5424"/>
+<path d="M349,147.29166666666669 l-5,9 h10 z" fill="#bd5424"/>
+<line x1="317" y1="121.59722222222223" x2="363" y2="121.59722222222223" stroke="#bd5424" stroke-width="3"/>
+<text x="340" y="376" font-size="14" text-anchor="middle">f2</text>
+<text x="340" y="402" font-size="13" text-anchor="middle">mean=0.8785</text>
+<circle cx="446" cy="98.125" r="4" fill="#34814f"/>
+<rect x="451" y="94.12499999999997" width="8" height="8" fill="#34814f"/>
+<path d="M464,131.04166666666669 l-5,9 h10 z" fill="#34814f"/>
+<line x1="432" y1="110.76388888888889" x2="478" y2="110.76388888888889" stroke="#34814f" stroke-width="3"/>
+<text x="455" y="376" font-size="14" text-anchor="middle">f4</text>
+<text x="455" y="402" font-size="13" text-anchor="middle">mean=0.9201</text>
+<text x="610" y="65" font-size="20" >heterophily</text>
+<line x1="610" y1="90" x2="610" y2="350" stroke="#54616c" />
+<line x1="610" y1="350" x2="1045" y2="350" stroke="#54616c" />
+<line x1="610" y1="350" x2="1045" y2="350" stroke="#e6ebef" />
+<text x="600" y="354" font-size="13" text-anchor="end">0</text>
+<line x1="610" y1="285.0" x2="1045" y2="285.0" stroke="#e6ebef" />
+<text x="600" y="289.0" font-size="13" text-anchor="end">0.25</text>
+<line x1="610" y1="220.0" x2="1045" y2="220.0" stroke="#e6ebef" />
+<text x="600" y="224.0" font-size="13" text-anchor="end">0.5</text>
+<line x1="610" y1="155.0" x2="1045" y2="155.0" stroke="#e6ebef" />
+<text x="600" y="159.0" font-size="13" text-anchor="end">0.75</text>
+<line x1="610" y1="90" x2="1045" y2="90" stroke="#e6ebef" />
+<text x="600" y="94" font-size="13" text-anchor="end">1</text>
+<circle cx="641" cy="155.0" r="4" fill="#52616b"/>
+<rect x="646" y="137.45833333333334" width="8" height="8" fill="#52616b"/>
+<path d="M659,144.58333333333331 l-5,9 h10 z" fill="#52616b"/>
+<line x1="627" y1="148.68055555555554" x2="673" y2="148.68055555555554" stroke="#52616b" stroke-width="3"/>
+<text x="650" y="376" font-size="14" text-anchor="middle">no_graph*</text>
+<text x="650" y="402" font-size="13" text-anchor="middle">mean=0.7743</text>
+<circle cx="756" cy="100.83333333333331" r="4" fill="#166b99"/>
+<rect x="761" y="99.54166666666666" width="8" height="8" fill="#166b99"/>
+<path d="M774,90.41666666666666 l-5,9 h10 z" fill="#166b99"/>
+<line x1="742" y1="99.93055555555554" x2="788" y2="99.93055555555554" stroke="#166b99" stroke-width="3"/>
+<text x="765" y="376" font-size="14" text-anchor="middle">full</text>
+<text x="765" y="402" font-size="13" text-anchor="middle">mean=0.9618</text>
+<circle cx="871" cy="114.375" r="4" fill="#bd5424"/>
+<rect x="876" y="88.70833333333331" width="8" height="8" fill="#bd5424"/>
+<path d="M889,98.54166666666669 l-5,9 h10 z" fill="#bd5424"/>
+<line x1="857" y1="103.54166666666669" x2="903" y2="103.54166666666669" stroke="#bd5424" stroke-width="3"/>
+<text x="880" y="376" font-size="14" text-anchor="middle">f2</text>
+<text x="880" y="402" font-size="13" text-anchor="middle">mean=0.9479</text>
+<circle cx="986" cy="95.41666666666669" r="4" fill="#34814f"/>
+<rect x="991" y="86.0" width="8" height="8" fill="#34814f"/>
+<path d="M1004,93.125 l-5,9 h10 z" fill="#34814f"/>
+<line x1="972" y1="94.51388888888891" x2="1018" y2="94.51388888888891" stroke="#34814f" stroke-width="3"/>
+<text x="995" y="376" font-size="14" text-anchor="middle">f4</text>
+<text x="995" y="402" font-size="13" text-anchor="middle">mean=0.9826</text>
+<text x="40" y="441" font-size="14" >circle=seed17; square=seed29; triangle=seed43; *published baseline reused; no confidence intervals</text>
+</g></svg>

@@ -1,0 +1,107 @@
+{
+  "sqlite_version": "3.53.4",
+  "journal_mode": "wal",
+  "synchronous": "FULL",
+  "failures": [
+    {
+      "probe": "duplicate_node",
+      "error_name": "SQLITE_CONSTRAINT_PRIMARYKEY",
+      "message": "UNIQUE constraint failed: node.id",
+      "rows_changed": 0
+    },
+    {
+      "probe": "duplicate_edge",
+      "error_name": "SQLITE_CONSTRAINT_PRIMARYKEY",
+      "message": "UNIQUE constraint failed: edge.id",
+      "rows_changed": 0
+    },
+    {
+      "probe": "missing_endpoint",
+      "error_name": "SQLITE_CONSTRAINT_FOREIGNKEY",
+      "message": "FOREIGN KEY constraint failed",
+      "rows_changed": 0
+    },
+    {
+      "probe": "null_endpoint",
+      "error_name": "SQLITE_CONSTRAINT_NOTNULL",
+      "message": "NOT NULL constraint failed: edge.dst",
+      "rows_changed": 0
+    },
+    {
+      "probe": "unknown_type",
+      "error_name": "SQLITE_CONSTRAINT_CHECK",
+      "message": "CHECK constraint failed: type IN ('REQUIRES','TEACHES')",
+      "rows_changed": 0
+    }
+  ],
+  "integrity": {
+    "node_count": 6,
+    "edge_count": 8,
+    "foreign_key_check": [],
+    "parallel_ids": [
+      "e1",
+      "e4"
+    ],
+    "rolled_back_transient": true
+  },
+  "index": {
+    "query": "SELECT id FROM edge WHERE src=? AND type=? ORDER BY id",
+    "parameters": [
+      "a",
+      "REQUIRES"
+    ],
+    "without_index_plan": [
+      [
+        4,
+        0,
+        224,
+        "SCAN edge USING INDEX sqlite_autoindex_edge_1"
+      ]
+    ],
+    "with_index_plan": [
+      [
+        4,
+        0,
+        61,
+        "SEARCH edge USING INDEX edge_src_type (src=? AND type=?)"
+      ],
+      [
+        17,
+        0,
+        0,
+        "USE TEMP B-TREE FOR ORDER BY"
+      ]
+    ],
+    "edge_ids": [
+      "e1",
+      "e4",
+      "e5"
+    ]
+  },
+  "snapshot": {
+    "before_edges": [
+      "e1"
+    ],
+    "after_edges": [
+      "e3"
+    ],
+    "unbound_first_hop": [
+      "e1"
+    ],
+    "unbound_second_hop": [
+      "e3"
+    ],
+    "fabricated_path": [
+      "e1",
+      "e3"
+    ],
+    "path_in_either_snapshot": false,
+    "pinned_before": [
+      "e1"
+    ],
+    "pinned_after_writer_commit": [
+      "e1"
+    ]
+  },
+  "boundary": "two actual local SQLite connections, no Neo4j or distributed consistency test"
+}

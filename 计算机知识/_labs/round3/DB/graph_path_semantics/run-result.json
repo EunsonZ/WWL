@@ -1,0 +1,100 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "elapsed_seconds": 0.5916947499499656,
+  "thread_env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "graph_model.py",
+        "--spec",
+        "spec.json",
+        "--out",
+        "actual.json"
+      ],
+      "cwd": "/private/tmp/wwl-next-171/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/graph_path_semantics",
+      "exit_code": 0,
+      "elapsed_seconds": 0.03603637497872114,
+      "stdout": "{\"variants\": 5, \"queries\": 135}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "batch_oracle.py",
+        "--spec",
+        "spec.json",
+        "--actual",
+        "actual.json",
+        "--out",
+        "oracle-result.json"
+      ],
+      "cwd": "/private/tmp/wwl-next-171/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/graph_path_semantics",
+      "exit_code": 0,
+      "elapsed_seconds": 0.13593429198954254,
+      "stdout": "{\"status\": \"PASS\", \"input_version\": \"graph-paths-v1\", \"queries_checked\": 135, \"method\": \"all raw edge products, post-filter connectivity/type/labels/uniqueness; cycle removal for global shortest\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "sqlite_probe.py",
+        "--spec",
+        "spec.json",
+        "--db",
+        "/private/tmp/wwl-next-171/probe.sqlite",
+        "--out",
+        "sqlite-result.json"
+      ],
+      "cwd": "/private/tmp/wwl-next-171/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/graph_path_semantics",
+      "exit_code": 0,
+      "elapsed_seconds": 0.03454487503040582,
+      "stdout": "{\"failures\": 5, \"snapshot\": {\"before_edges\": [\"e1\"], \"after_edges\": [\"e3\"], \"unbound_first_hop\": [\"e1\"], \"unbound_second_hop\": [\"e3\"], \"fabricated_path\": [\"e1\", \"e3\"], \"path_in_either_snapshot\": false, \"pinned_before\": [\"e1\"], \"pinned_after_writer_commit\": [\"e1\"]}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "test_graph.py"
+      ],
+      "cwd": "/private/tmp/wwl-next-171/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/graph_path_semantics",
+      "exit_code": 0,
+      "elapsed_seconds": 0.3851034580147825,
+      "stdout": "",
+      "stderr": "test_cli_and_mutated_answer_detected (__main__.Behavior.test_cli_and_mutated_answer_detected) ... ok\ntest_full_content_and_access_counts (__main__.Behavior.test_full_content_and_access_counts) ... ok\ntest_invalid_identity_and_endpoint (__main__.Behavior.test_invalid_identity_and_endpoint) ... ok\ntest_parallel_identity_and_target_revisit (__main__.Behavior.test_parallel_identity_and_target_revisit) ... ok\ntest_real_constraint_transaction_snapshot (__main__.Behavior.test_real_constraint_transaction_snapshot) ... ok\ntest_type_and_label_filters_before_shortest (__main__.Behavior.test_type_and_label_filters_before_shortest) ... ok\ntest_zero_unreachable_and_direction (__main__.Behavior.test_zero_unreachable_and_direction) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.326s\n\nOK\n"
+    }
+  ],
+  "input_version": "graph-paths-v1",
+  "sha256": {
+    "spec.json": "5e8e954cac7063c841fe3bb02d48cd89389327efa1ac2ab40027481fe633caee",
+    "paths.png": "b879c1826905250a7fb215f57fe0a08eb1227d04ab5e43b64de5f2d9d38e5ae1",
+    "graph_model.py": "c6f51e70c5090d93ccd6acbfdf1cff88358613919042706f340aa9384f3848d8",
+    "paths.svg": "d5fa299152626c3378a8025a33d79bbda7753166973744e29fa2940decda466f",
+    "actual.json": "afc482f4f80f40973b4e536d72416f18b8c2f968d4dfa85ed04b24ad07eba399",
+    "render_figures.py": "eabe22a1a71e4c2ae37d7f865b41dc1fb6377f6c1c5b623e2c344c1b6d537203",
+    "README.md": "b82d4702fc67bde63aa341495ff3932e8e21afbede7feecba10f9d8126d86d38",
+    "sqlite-result.json": "95bd0bb8657934df9a3439f4ad1c66ab42b112402d991175f38936332648292f",
+    "sqlite_probe.py": "7658456fb86ad49cc3ba0981feafba83dda910f8d0677f625210a7af7b5a9ac6",
+    "batch_oracle.py": "f806f82264b01fae39d383f52c91085dbf048f1202fa0bd14732a1de66328dcc",
+    "neo4j_5_26_interface.cypher": "54bee174f1e0f3050811ae4e9d35b63e845ecdf2e2f3540a1774a12a3290e238",
+    "test_graph.py": "a9e0daa3036b36c4ca6f48065c359daf9d3815f24b8ae5d14d6882d4cb11f90f",
+    "oracle-result.json": "3098e02cf98afd0719dd3875f900b8116294b0ea73f62f989a668008e9bff791"
+  },
+  "figure_render": {
+    "command": [
+      "/private/tmp/wwl-next-172-analytics/render-env/bin/python",
+      "/private/tmp/wwl-next-171/preview.py"
+    ],
+    "exit_code": 0,
+    "renderer": "resvg-py==0.5.0",
+    "font": "PingFang SC",
+    "width": 1600,
+    "scope": "actual PNG render only; no calculation rerun"
+  }
+}

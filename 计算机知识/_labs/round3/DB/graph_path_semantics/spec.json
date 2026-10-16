@@ -1,0 +1,462 @@
+{
+  "input_version": "graph-paths-v1",
+  "nodes": [
+    {
+      "id": "a",
+      "label": "Course",
+      "title": "A"
+    },
+    {
+      "id": "b",
+      "label": "Course",
+      "title": "B"
+    },
+    {
+      "id": "c",
+      "label": "Course",
+      "title": "C"
+    },
+    {
+      "id": "d",
+      "label": "Course",
+      "title": "D"
+    },
+    {
+      "id": "z",
+      "label": "Course",
+      "title": "Z"
+    },
+    {
+      "id": "t7",
+      "label": "Teacher",
+      "title": "T7"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "src": "a",
+      "dst": "b",
+      "type": "REQUIRES",
+      "catalog": "T1"
+    },
+    {
+      "id": "e2",
+      "src": "b",
+      "dst": "a",
+      "type": "REQUIRES",
+      "catalog": "T1"
+    },
+    {
+      "id": "e3",
+      "src": "b",
+      "dst": "c",
+      "type": "REQUIRES",
+      "catalog": "T1"
+    },
+    {
+      "id": "e4",
+      "src": "a",
+      "dst": "b",
+      "type": "REQUIRES",
+      "catalog": "T1"
+    },
+    {
+      "id": "e5",
+      "src": "a",
+      "dst": "d",
+      "type": "REQUIRES",
+      "catalog": "T1"
+    },
+    {
+      "id": "e6",
+      "src": "d",
+      "dst": "c",
+      "type": "REQUIRES",
+      "catalog": "T1"
+    },
+    {
+      "id": "e7",
+      "src": "a",
+      "dst": "c",
+      "type": "TEACHES",
+      "catalog": "T1"
+    },
+    {
+      "id": "e8",
+      "src": "t7",
+      "dst": "a",
+      "type": "TEACHES",
+      "catalog": "T1"
+    }
+  ],
+  "variants": [
+    {
+      "id": "core",
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ]
+    },
+    {
+      "id": "parallel",
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ]
+    },
+    {
+      "id": "branching",
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6"
+      ]
+    },
+    {
+      "id": "typed",
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8"
+      ]
+    },
+    {
+      "id": "without_e3",
+      "edge_ids": [
+        "e1",
+        "e2",
+        "e4",
+        "e5",
+        "e6",
+        "e7",
+        "e8"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "a_c_1_1_walk",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 1,
+      "rule": "walk"
+    },
+    {
+      "id": "a_c_1_1_trail",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 1,
+      "rule": "trail"
+    },
+    {
+      "id": "a_c_1_1_simple",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 1,
+      "rule": "simple"
+    },
+    {
+      "id": "a_c_1_2_walk",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 2,
+      "rule": "walk"
+    },
+    {
+      "id": "a_c_1_2_trail",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 2,
+      "rule": "trail"
+    },
+    {
+      "id": "a_c_1_2_simple",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 2,
+      "rule": "simple"
+    },
+    {
+      "id": "a_c_1_3_walk",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 3,
+      "rule": "walk"
+    },
+    {
+      "id": "a_c_1_3_trail",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 3,
+      "rule": "trail"
+    },
+    {
+      "id": "a_c_1_3_simple",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 3,
+      "rule": "simple"
+    },
+    {
+      "id": "a_c_1_4_walk",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 4,
+      "rule": "walk"
+    },
+    {
+      "id": "a_c_1_4_trail",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 4,
+      "rule": "trail"
+    },
+    {
+      "id": "a_c_1_4_simple",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 4,
+      "rule": "simple"
+    },
+    {
+      "id": "a_c_1_5_walk",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 5,
+      "rule": "walk"
+    },
+    {
+      "id": "a_c_1_5_trail",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 5,
+      "rule": "trail"
+    },
+    {
+      "id": "a_c_1_5_simple",
+      "source": "a",
+      "target": "c",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 5,
+      "rule": "simple"
+    },
+    {
+      "id": "a_a_0_0_walk",
+      "source": "a",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 0,
+      "rule": "walk"
+    },
+    {
+      "id": "a_a_0_0_trail",
+      "source": "a",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 0,
+      "rule": "trail"
+    },
+    {
+      "id": "a_a_0_0_simple",
+      "source": "a",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 0,
+      "rule": "simple"
+    },
+    {
+      "id": "a_a_1_4_walk",
+      "source": "a",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 4,
+      "rule": "walk"
+    },
+    {
+      "id": "a_a_1_4_trail",
+      "source": "a",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 4,
+      "rule": "trail"
+    },
+    {
+      "id": "a_a_1_4_simple",
+      "source": "a",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 1,
+      "max_hops": 4,
+      "rule": "simple"
+    },
+    {
+      "id": "a_z_0_5_walk",
+      "source": "a",
+      "target": "z",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 5,
+      "rule": "walk"
+    },
+    {
+      "id": "a_z_0_5_trail",
+      "source": "a",
+      "target": "z",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 5,
+      "rule": "trail"
+    },
+    {
+      "id": "a_z_0_5_simple",
+      "source": "a",
+      "target": "z",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 5,
+      "rule": "simple"
+    },
+    {
+      "id": "c_a_0_5_walk",
+      "source": "c",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 5,
+      "rule": "walk"
+    },
+    {
+      "id": "c_a_0_5_trail",
+      "source": "c",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 5,
+      "rule": "trail"
+    },
+    {
+      "id": "c_a_0_5_simple",
+      "source": "c",
+      "target": "a",
+      "direction": "out",
+      "type": "REQUIRES",
+      "node_label": "Course",
+      "min_hops": 0,
+      "max_hops": 5,
+      "rule": "simple"
+    }
+  ],
+  "limits": {
+    "max_hops": 5,
+    "max_nodes": 20,
+    "max_edges": 12
+  },
+  "snapshot_demo": {
+    "before": [
+      "e1"
+    ],
+    "after": [
+      "e3"
+    ],
+    "first_source": "a",
+    "second_source": "b"
+  }
+}

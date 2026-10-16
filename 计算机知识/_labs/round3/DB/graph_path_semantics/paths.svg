@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+<title id="title">同一属性图，三种路径规则</title>
+<desc id="desc">e1和e4是a到b的两条独立边；e2从b返回a。e3到c，e5 e6经d到c。TEACHES不属于REQUIRES查询。下表来自同一输入的实际完整输出。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#40516d"/></marker></defs>
+<rect width="1000" height="560" fill="white"/>
+<g font-family="PingFang SC, sans-serif" fill="#16263d"><text x="45" y="42" font-size="24">边的身份、方向和类型都参与答案</text><text x="45" y="73" font-size="16">实线：REQUIRES　虚线：TEACHES（查询排除）　z：存在但孤立</text>
+<path d="M180 150 Q290 82 400 150" fill="none" stroke="#40516d" stroke-width="2" marker-end="url(#arrow)"/><text x="285" y="108" font-size="16" text-anchor="middle">e1</text>
+<path d="M402 198 Q290 265 178 198" fill="none" stroke="#40516d" stroke-width="2" marker-end="url(#arrow)"/><text x="285" y="244" font-size="16" text-anchor="middle">e2</text>
+<path d="M465 170 L675 170" fill="none" stroke="#40516d" stroke-width="2" marker-end="url(#arrow)"/><text x="555" y="155" font-size="16" text-anchor="middle">e3</text>
+<path d="M185 175 L395 175" fill="none" stroke="#40516d" stroke-width="2" marker-end="url(#arrow)"/><text x="285" y="166" font-size="16" text-anchor="middle">e4</text>
+<path d="M176 192 L402 342" fill="none" stroke="#40516d" stroke-width="2" marker-end="url(#arrow)"/><text x="255" y="295" font-size="16" text-anchor="middle">e5</text>
+<path d="M455 342 L685 192" fill="none" stroke="#40516d" stroke-width="2" marker-end="url(#arrow)"/><text x="595" y="292" font-size="16" text-anchor="middle">e6</text>
+<path d="M170 139 Q430 75 690 139" fill="none" stroke="#40516d" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/><text x="465" y="99" font-size="16" text-anchor="middle">e7 (TEACHES)</text>
+<path d="M150 330 L150 205" fill="none" stroke="#40516d" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/><text x="75" y="278" font-size="16" text-anchor="middle">e8 (TEACHES)</text>
+<circle cx="150" cy="170" r="34" fill="#eef3fc" stroke="#40516d" stroke-width="2"/><text x="150" y="176" text-anchor="middle" font-size="22">a</text>
+<circle cx="430" cy="170" r="34" fill="#eef3fc" stroke="#40516d" stroke-width="2"/><text x="430" y="176" text-anchor="middle" font-size="22">b</text>
+<circle cx="710" cy="170" r="34" fill="#eef3fc" stroke="#40516d" stroke-width="2"/><text x="710" y="176" text-anchor="middle" font-size="22">c</text>
+<circle cx="430" cy="365" r="34" fill="#eef3fc" stroke="#40516d" stroke-width="2"/><text x="430" y="371" text-anchor="middle" font-size="22">d</text>
+<circle cx="710" cy="365" r="34" fill="#eef3fc" stroke="#40516d" stroke-width="2"/><text x="710" y="371" text-anchor="middle" font-size="22">z</text>
+<circle cx="150" cy="365" r="34" fill="#eef3fc" stroke="#40516d" stroke-width="2"/><text x="150" y="371" text-anchor="middle" font-size="22">t7</text>
+<text x="45" y="440" font-size="18">a → c，1..5 条边：完整输出中的路径数量</text>
+<text x="45" y="474" font-size="17">core:　walk 2　trail 1　simple 1</text>
+<text x="45" y="504" font-size="17">parallel:　walk 6　trail 4　simple 2</text>
+<text x="45" y="534" font-size="17">branching:　walk 9　trail 7　simple 3</text>
+</g></svg>

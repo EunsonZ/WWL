@@ -1,0 +1,1029 @@
+[
+  {
+    "position": 1,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        10,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 1,
+        "sum_minutes": 10,
+        "count": 1,
+        "phase": "early",
+        "position": 1,
+        "watermark": -1
+      }
+    ]
+  },
+  {
+    "position": 2,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        10,
+        1
+      ],
+      [
+        10,
+        "A",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "A",
+        "revision": 1,
+        "sum_minutes": 20,
+        "count": 1,
+        "phase": "early",
+        "position": 2,
+        "watermark": -1
+      }
+    ]
+  },
+  {
+    "position": 3,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        10,
+        2
+      ],
+      [
+        10,
+        "A",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 2,
+        "sum_minutes": 10,
+        "count": 2,
+        "phase": "early",
+        "position": 3,
+        "watermark": -1
+      }
+    ]
+  },
+  {
+    "position": 4,
+    "decision": "duplicate",
+    "cells": [
+      [
+        0,
+        "A",
+        10,
+        2
+      ],
+      [
+        10,
+        "A",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 5,
+    "decision": "watermark",
+    "cells": [
+      [
+        0,
+        "A",
+        10,
+        2
+      ],
+      [
+        10,
+        "A",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 3,
+        "sum_minutes": 10,
+        "count": 2,
+        "phase": "on_time",
+        "position": 5,
+        "watermark": 10
+      }
+    ]
+  },
+  {
+    "position": 6,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        14,
+        3
+      ],
+      [
+        10,
+        "A",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 4,
+        "sum_minutes": 14,
+        "count": 3,
+        "phase": "late",
+        "position": 6,
+        "watermark": 10
+      }
+    ]
+  },
+  {
+    "position": 7,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        19,
+        3
+      ],
+      [
+        10,
+        "A",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 5,
+        "sum_minutes": 19,
+        "count": 3,
+        "phase": "late",
+        "position": 7,
+        "watermark": 10
+      }
+    ]
+  },
+  {
+    "position": 8,
+    "decision": "stale",
+    "cells": [
+      [
+        0,
+        "A",
+        19,
+        3
+      ],
+      [
+        10,
+        "A",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 9,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        4,
+        2
+      ],
+      [
+        10,
+        "A",
+        36,
+        2
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 6,
+        "sum_minutes": 4,
+        "count": 2,
+        "phase": "late",
+        "position": 9,
+        "watermark": 10
+      },
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "A",
+        "revision": 2,
+        "sum_minutes": 36,
+        "count": 2,
+        "phase": "early",
+        "position": 9,
+        "watermark": 10
+      }
+    ]
+  },
+  {
+    "position": 10,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        4,
+        2
+      ],
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "A",
+        "revision": 3,
+        "sum_minutes": 16,
+        "count": 1,
+        "phase": "early",
+        "position": 10,
+        "watermark": 10
+      },
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "B",
+        "revision": 1,
+        "sum_minutes": 20,
+        "count": 1,
+        "phase": "early",
+        "position": 10,
+        "watermark": 10
+      }
+    ]
+  },
+  {
+    "position": 11,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        4,
+        1
+      ],
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 7,
+        "sum_minutes": 4,
+        "count": 1,
+        "phase": "late",
+        "position": 11,
+        "watermark": 10
+      }
+    ]
+  },
+  {
+    "position": 12,
+    "decision": "duplicate",
+    "cells": [
+      [
+        0,
+        "A",
+        4,
+        1
+      ],
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 13,
+    "decision": "watermark",
+    "cells": [
+      [
+        0,
+        "A",
+        4,
+        1
+      ],
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 14,
+    "decision": "applied",
+    "cells": [
+      [
+        0,
+        "A",
+        6,
+        1
+      ],
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 8,
+        "sum_minutes": 6,
+        "count": 1,
+        "phase": "late",
+        "position": 14,
+        "watermark": 14
+      }
+    ]
+  },
+  {
+    "position": 15,
+    "decision": "watermark",
+    "cells": [
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 0,
+        "window_end": 10,
+        "group": "A",
+        "revision": 9,
+        "sum_minutes": 6,
+        "count": 1,
+        "phase": "final",
+        "position": 15,
+        "watermark": 15
+      }
+    ]
+  },
+  {
+    "position": 16,
+    "decision": "expired_old",
+    "cells": [
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 17,
+    "decision": "expired_new",
+    "cells": [
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 18,
+    "decision": "duplicate",
+    "cells": [
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 19,
+    "decision": "stale",
+    "cells": [
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 20,
+    "decision": "version_conflict",
+    "cells": [
+      [
+        10,
+        "A",
+        16,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 21,
+    "decision": "applied",
+    "cells": [
+      [
+        10,
+        "A",
+        18,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "A",
+        "revision": 4,
+        "sum_minutes": 18,
+        "count": 1,
+        "phase": "early",
+        "position": 21,
+        "watermark": 15
+      }
+    ]
+  },
+  {
+    "position": 22,
+    "decision": "watermark",
+    "cells": [
+      [
+        10,
+        "A",
+        18,
+        1
+      ],
+      [
+        10,
+        "B",
+        20,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "A",
+        "revision": 5,
+        "sum_minutes": 18,
+        "count": 1,
+        "phase": "on_time",
+        "position": 22,
+        "watermark": 20
+      },
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "B",
+        "revision": 2,
+        "sum_minutes": 20,
+        "count": 1,
+        "phase": "on_time",
+        "position": 22,
+        "watermark": 20
+      }
+    ]
+  },
+  {
+    "position": 23,
+    "decision": "applied",
+    "cells": [
+      [
+        10,
+        "A",
+        18,
+        1
+      ],
+      [
+        10,
+        "B",
+        0,
+        0
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "B",
+        "revision": 3,
+        "sum_minutes": 0,
+        "count": 0,
+        "phase": "late",
+        "position": 23,
+        "watermark": 20
+      }
+    ]
+  },
+  {
+    "position": 24,
+    "decision": "applied",
+    "cells": [
+      [
+        10,
+        "A",
+        0,
+        0
+      ],
+      [
+        10,
+        "B",
+        19,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "A",
+        "revision": 6,
+        "sum_minutes": 0,
+        "count": 0,
+        "phase": "late",
+        "position": 24,
+        "watermark": 20
+      },
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "B",
+        "revision": 4,
+        "sum_minutes": 19,
+        "count": 1,
+        "phase": "late",
+        "position": 24,
+        "watermark": 20
+      }
+    ]
+  },
+  {
+    "position": 25,
+    "decision": "applied",
+    "cells": [
+      [
+        10,
+        "A",
+        0,
+        0
+      ],
+      [
+        10,
+        "B",
+        0,
+        0
+      ],
+      [
+        20,
+        "B",
+        21,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "B",
+        "revision": 5,
+        "sum_minutes": 0,
+        "count": 0,
+        "phase": "late",
+        "position": 25,
+        "watermark": 20
+      },
+      {
+        "window_start": 20,
+        "window_end": 30,
+        "group": "B",
+        "revision": 1,
+        "sum_minutes": 21,
+        "count": 1,
+        "phase": "early",
+        "position": 25,
+        "watermark": 20
+      }
+    ]
+  },
+  {
+    "position": 26,
+    "decision": "watermark",
+    "cells": [
+      [
+        20,
+        "B",
+        21,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "A",
+        "revision": 7,
+        "sum_minutes": 0,
+        "count": 0,
+        "phase": "final",
+        "position": 26,
+        "watermark": 25
+      },
+      {
+        "window_start": 10,
+        "window_end": 20,
+        "group": "B",
+        "revision": 6,
+        "sum_minutes": 0,
+        "count": 0,
+        "phase": "final",
+        "position": 26,
+        "watermark": 25
+      }
+    ]
+  },
+  {
+    "position": 27,
+    "decision": "applied",
+    "cells": [
+      [
+        20,
+        "B",
+        0,
+        0
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 20,
+        "window_end": 30,
+        "group": "B",
+        "revision": 2,
+        "sum_minutes": 0,
+        "count": 0,
+        "phase": "early",
+        "position": 27,
+        "watermark": 25
+      }
+    ]
+  },
+  {
+    "position": 28,
+    "decision": "watermark",
+    "cells": [
+      [
+        20,
+        "B",
+        0,
+        0
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 20,
+        "window_end": 30,
+        "group": "B",
+        "revision": 3,
+        "sum_minutes": 0,
+        "count": 0,
+        "phase": "on_time",
+        "position": 28,
+        "watermark": 30
+      }
+    ]
+  },
+  {
+    "position": 29,
+    "decision": "applied",
+    "cells": [
+      [
+        20,
+        "B",
+        0,
+        0
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 30,
+    "decision": "stale",
+    "cells": [
+      [
+        20,
+        "B",
+        0,
+        0
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 31,
+    "decision": "watermark",
+    "cells": [],
+    "outputs": [
+      {
+        "window_start": 20,
+        "window_end": 30,
+        "group": "B",
+        "revision": 4,
+        "sum_minutes": 0,
+        "count": 0,
+        "phase": "final",
+        "position": 31,
+        "watermark": 35
+      }
+    ]
+  },
+  {
+    "position": 32,
+    "decision": "applied",
+    "cells": [
+      [
+        30,
+        "C",
+        9,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 30,
+        "window_end": 40,
+        "group": "C",
+        "revision": 1,
+        "sum_minutes": 9,
+        "count": 1,
+        "phase": "early",
+        "position": 32,
+        "watermark": 35
+      }
+    ]
+  },
+  {
+    "position": 33,
+    "decision": "id_conflict",
+    "cells": [
+      [
+        30,
+        "C",
+        9,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 34,
+    "decision": "watermark_regression",
+    "cells": [
+      [
+        30,
+        "C",
+        9,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 35,
+    "decision": "invalid",
+    "cells": [
+      [
+        30,
+        "C",
+        9,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 36,
+    "decision": "watermark",
+    "cells": [],
+    "outputs": [
+      {
+        "window_start": 30,
+        "window_end": 40,
+        "group": "C",
+        "revision": 2,
+        "sum_minutes": 9,
+        "count": 1,
+        "phase": "final",
+        "position": 36,
+        "watermark": 45
+      }
+    ]
+  },
+  {
+    "position": 37,
+    "decision": "expired_old",
+    "cells": [],
+    "outputs": []
+  },
+  {
+    "position": 38,
+    "decision": "duplicate",
+    "cells": [],
+    "outputs": []
+  },
+  {
+    "position": 39,
+    "decision": "applied",
+    "cells": [
+      [
+        40,
+        "B",
+        5,
+        1
+      ]
+    ],
+    "outputs": [
+      {
+        "window_start": 40,
+        "window_end": 50,
+        "group": "B",
+        "revision": 1,
+        "sum_minutes": 5,
+        "count": 1,
+        "phase": "early",
+        "position": 39,
+        "watermark": 45
+      }
+    ]
+  },
+  {
+    "position": 40,
+    "decision": "expired_both",
+    "cells": [
+      [
+        40,
+        "B",
+        5,
+        1
+      ]
+    ],
+    "outputs": []
+  },
+  {
+    "position": 41,
+    "decision": "same_version",
+    "cells": [
+      [
+        40,
+        "B",
+        5,
+        1
+      ]
+    ],
+    "outputs": []
+  }
+]

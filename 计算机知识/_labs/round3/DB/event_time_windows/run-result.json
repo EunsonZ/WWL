@@ -1,0 +1,51 @@
+{
+  "protocol": "event-time-windows-v1",
+  "python": "3.14.7",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "threads": 1,
+  "wall_clock_limit_seconds": 120,
+  "test_exit_code": 0,
+  "test_methods": 6,
+  "test_elapsed_seconds": 0.244,
+  "time_real_seconds": 0.3,
+  "cli_runner_exit_code": 0,
+  "cli_oracle_exit_code": 0,
+  "input_items": 41,
+  "prefixes_checked_default": 41,
+  "ordinary_outputs_default": 29,
+  "side_outputs_default": 4,
+  "variant_policies": [
+    [
+      10,
+      5
+    ],
+    [
+      10,
+      0
+    ],
+    [
+      10,
+      20
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      20,
+      5
+    ]
+  ],
+  "full_log_replay_items": 82,
+  "comparison": "exact JSON values, no numeric tolerance",
+  "sha256": {
+    "events.json": "26cb6886b11177eb461e4c914e2aaab390a0aa735a192925556b2826d320d7c9",
+    "window_runner.py": "538a7c5f5a3553d636058a90e0f977336781bf7bf0639bc33771cdffbd6a450b",
+    "batch_oracle.py": "3ba31a8951c69f5ba8d44bf37b2f1165bdc5a35d0c783e11c80e1b9dac822f71",
+    "test_windows.py": "96ae1a49fc771b0ab8bf5a83d7059fe494aa44d8e678001391ea1f21ef15d926",
+    "actual.json": "84c944717bd76adc24efc864a89d571d4018a25c862bf28150eb98ec21cc1bb5",
+    "oracle-result.json": "7239ab7eecb1ea11a91d9ff0cb29a7b80d36952ce19dc9c491efa3aec0c1da30",
+    "trace-summary.json": "570152b562b0c1f8c08ab88a6b5e61cc225f2d554550f77d446d8cc47b1c0513",
+    "test-result.txt": "679dda36ccb44ac908a85fd273502848c639997839977e3828e4fac90e4e2d87"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "oracle": "independent-history-sql-v1",
+  "prefixes_checked": 41,
+  "width": 10,
+  "lateness": 5,
+  "outputs": 29,
+  "side": [
+    [
+      16,
+      "expired_old",
+      "d3"
+    ],
+    [
+      17,
+      "expired_new",
+      "e1"
+    ],
+    [
+      37,
+      "expired_old",
+      "a9"
+    ],
+    [
+      40,
+      "expired_both",
+      "a10"
+    ]
+  ],
+  "status": "pass"
+}

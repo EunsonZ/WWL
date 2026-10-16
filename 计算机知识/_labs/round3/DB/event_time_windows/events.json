@@ -1,0 +1,317 @@
+[
+  {
+    "event_id": "a1",
+    "entity_id": "a",
+    "version": 1,
+    "op": "put",
+    "event_time": 2,
+    "group": "A",
+    "minutes": 10
+  },
+  {
+    "event_id": "b1",
+    "entity_id": "b",
+    "version": 1,
+    "op": "put",
+    "event_time": 12,
+    "group": "A",
+    "minutes": 20
+  },
+  {
+    "event_id": "c1",
+    "entity_id": "c",
+    "version": 1,
+    "op": "put",
+    "event_time": 7,
+    "group": "A",
+    "minutes": 0
+  },
+  {
+    "event_id": "a1",
+    "entity_id": "a",
+    "version": 1,
+    "op": "put",
+    "event_time": 2,
+    "group": "A",
+    "minutes": 10
+  },
+  {
+    "watermark": 10
+  },
+  {
+    "event_id": "d1",
+    "entity_id": "d",
+    "version": 1,
+    "op": "put",
+    "event_time": 8,
+    "group": "A",
+    "minutes": 4
+  },
+  {
+    "event_id": "a2",
+    "entity_id": "a",
+    "version": 2,
+    "op": "put",
+    "event_time": 3,
+    "group": "A",
+    "minutes": 15
+  },
+  {
+    "event_id": "a-old",
+    "entity_id": "a",
+    "version": 1,
+    "op": "put",
+    "event_time": 2,
+    "group": "A",
+    "minutes": 10
+  },
+  {
+    "event_id": "a3",
+    "entity_id": "a",
+    "version": 3,
+    "op": "put",
+    "event_time": 11,
+    "group": "A",
+    "minutes": 16
+  },
+  {
+    "event_id": "b2",
+    "entity_id": "b",
+    "version": 2,
+    "op": "put",
+    "event_time": 12,
+    "group": "B",
+    "minutes": 20
+  },
+  {
+    "event_id": "c2",
+    "entity_id": "c",
+    "version": 2,
+    "op": "delete",
+    "event_time": null,
+    "group": null,
+    "minutes": null
+  },
+  {
+    "event_id": "b2",
+    "entity_id": "b",
+    "version": 2,
+    "op": "put",
+    "event_time": 12,
+    "group": "B",
+    "minutes": 20
+  },
+  {
+    "watermark": 14
+  },
+  {
+    "event_id": "d2",
+    "entity_id": "d",
+    "version": 2,
+    "op": "put",
+    "event_time": 9,
+    "group": "A",
+    "minutes": 6
+  },
+  {
+    "watermark": 15
+  },
+  {
+    "event_id": "d3",
+    "entity_id": "d",
+    "version": 3,
+    "op": "put",
+    "event_time": 16,
+    "group": "A",
+    "minutes": 7
+  },
+  {
+    "event_id": "e1",
+    "entity_id": "e",
+    "version": 1,
+    "op": "put",
+    "event_time": 4,
+    "group": "B",
+    "minutes": 9
+  },
+  {
+    "event_id": "d2",
+    "entity_id": "d",
+    "version": 2,
+    "op": "put",
+    "event_time": 9,
+    "group": "A",
+    "minutes": 6
+  },
+  {
+    "event_id": "d-old",
+    "entity_id": "d",
+    "version": 1,
+    "op": "put",
+    "event_time": 8,
+    "group": "A",
+    "minutes": 4
+  },
+  {
+    "event_id": "d-bad",
+    "entity_id": "d",
+    "version": 2,
+    "op": "put",
+    "event_time": 9,
+    "group": "A",
+    "minutes": 99
+  },
+  {
+    "event_id": "a4",
+    "entity_id": "a",
+    "version": 4,
+    "op": "put",
+    "event_time": 17,
+    "group": "A",
+    "minutes": 18
+  },
+  {
+    "watermark": 20
+  },
+  {
+    "event_id": "b3",
+    "entity_id": "b",
+    "version": 3,
+    "op": "delete",
+    "event_time": null,
+    "group": null,
+    "minutes": null
+  },
+  {
+    "event_id": "a5",
+    "entity_id": "a",
+    "version": 5,
+    "op": "put",
+    "event_time": 19,
+    "group": "B",
+    "minutes": 19
+  },
+  {
+    "event_id": "a6",
+    "entity_id": "a",
+    "version": 6,
+    "op": "put",
+    "event_time": 21,
+    "group": "B",
+    "minutes": 21
+  },
+  {
+    "watermark": 25
+  },
+  {
+    "event_id": "a7",
+    "entity_id": "a",
+    "version": 7,
+    "op": "delete",
+    "event_time": null,
+    "group": null,
+    "minutes": null
+  },
+  {
+    "watermark": 30
+  },
+  {
+    "event_id": "z3",
+    "entity_id": "z",
+    "version": 3,
+    "op": "delete",
+    "event_time": null,
+    "group": null,
+    "minutes": null
+  },
+  {
+    "event_id": "z2",
+    "entity_id": "z",
+    "version": 2,
+    "op": "put",
+    "event_time": 32,
+    "group": "B",
+    "minutes": 8
+  },
+  {
+    "watermark": 35
+  },
+  {
+    "event_id": "a8",
+    "entity_id": "a",
+    "version": 8,
+    "op": "put",
+    "event_time": 36,
+    "group": "C",
+    "minutes": 9
+  },
+  {
+    "event_id": "a8",
+    "entity_id": "a",
+    "version": 8,
+    "op": "put",
+    "event_time": 36,
+    "group": "C",
+    "minutes": 8
+  },
+  {
+    "watermark": 34
+  },
+  {
+    "event_id": "bad",
+    "entity_id": "q",
+    "version": true,
+    "op": "put",
+    "event_time": 31,
+    "group": "A",
+    "minutes": 1
+  },
+  {
+    "watermark": 45
+  },
+  {
+    "event_id": "a9",
+    "entity_id": "a",
+    "version": 9,
+    "op": "delete",
+    "event_time": null,
+    "group": null,
+    "minutes": null
+  },
+  {
+    "event_id": "e1",
+    "entity_id": "e",
+    "version": 1,
+    "op": "put",
+    "event_time": 4,
+    "group": "B",
+    "minutes": 9
+  },
+  {
+    "event_id": "e2",
+    "entity_id": "e",
+    "version": 2,
+    "op": "put",
+    "event_time": 46,
+    "group": "B",
+    "minutes": 5
+  },
+  {
+    "event_id": "a10",
+    "entity_id": "a",
+    "version": 10,
+    "op": "put",
+    "event_time": 37,
+    "group": "C",
+    "minutes": 10
+  },
+  {
+    "event_id": "e2-alias",
+    "entity_id": "e",
+    "version": 2,
+    "op": "put",
+    "event_time": 46,
+    "group": "B",
+    "minutes": 5
+  }
+]

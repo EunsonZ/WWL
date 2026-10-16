@@ -1,0 +1,12 @@
+WWL modern_crypto_aead author execution, 2026-10-16
+All inputs public; no network/remote/hardware target. Single process, thread limits=1 via shared two-slot runner. Budget <5 minutes, timeout120s; dependency preparation separate.
+Environment: Python3.12.11 cryptography50.0.2 macOS27.0.1 arm64; actual backend OpenSSL4.0.3.
+
+Actual commands (original author candidate paths, historical provenance):
+/private/tmp/wwl-next-context/run_local.py --timeout 120 -- /private/tmp/wwl-next-170/runtime/bin/python -B -m unittest discover -s /private/tmp/wwl-next-170/vault/计算机知识/_labs/modern_crypto_aead -p test_aead_lab.py -v
+/private/tmp/wwl-next-context/run_local.py --timeout 120 -- /private/tmp/wwl-next-170/runtime/bin/python -B /private/tmp/wwl-next-170/vault/计算机知识/_labs/modern_crypto_aead/aead_lab.py --output /private/tmp/wwl-next-170/author-run-20261016
+
+Ran 7 tests in 0.037s; OK; exit0. Generate exit0; results.json copied byte-for-byte to data/results.json.
+Checks: exact OTP/game fractions; posterior under nonuniform message prior; all reuse/flip finite identities; 625 context encodings; published RFC8439 and RFC5869 vectors; 1488 single-bit altered public tuples and 130 truncations; nonce reuse XOR relation; stateless replay vs process ledger; state unchanged on invalid inputs/InvalidTag.
+
+Interpretation: finite vector/API/state checks only. Not general computational-security, constant-time, side-channel, durable-state or real-protocol certification. README supplies portable commands with fresh library-external output; original temporary paths above are execution provenance, not dependencies required for reproduction.

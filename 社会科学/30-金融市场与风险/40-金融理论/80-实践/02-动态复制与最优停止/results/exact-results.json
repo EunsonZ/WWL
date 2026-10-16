@@ -1,0 +1,788 @@
+{
+  "identity": "synthetic finite two-step no-dividend economy; no empirical data",
+  "baseline": {
+    "parameters": {
+      "spot": "100",
+      "up": "6/5",
+      "down": "4/5",
+      "R": "21/20",
+      "strike": "100"
+    },
+    "Q_up": "5/8",
+    "local_state_prices": [
+      "25/42",
+      "5/14"
+    ],
+    "Q_leaves": {
+      "UU": "25/64",
+      "UD": "15/64",
+      "DU": "15/64",
+      "DD": "9/64"
+    },
+    "nodes": {
+      "root": {
+        "S": "100",
+        "B": "1",
+        "exercise": "0",
+        "euro": "925/147",
+        "amer": "1175/147",
+        "continuation": "1175/147"
+      },
+      "U": {
+        "S": "120",
+        "B": "21/20",
+        "exercise": "0",
+        "euro": "10/7",
+        "amer": "10/7",
+        "continuation": "10/7"
+      },
+      "D": {
+        "S": "80",
+        "B": "21/20",
+        "exercise": "20",
+        "euro": "320/21",
+        "amer": "20",
+        "continuation": "320/21"
+      },
+      "UU": {
+        "S": "144",
+        "B": "441/400",
+        "exercise": "0",
+        "euro": "0",
+        "amer": "0",
+        "continuation": null
+      },
+      "UD": {
+        "S": "96",
+        "B": "441/400",
+        "exercise": "4",
+        "euro": "4",
+        "amer": "4",
+        "continuation": null
+      },
+      "DU": {
+        "S": "96",
+        "B": "441/400",
+        "exercise": "4",
+        "euro": "4",
+        "amer": "4",
+        "continuation": null
+      },
+      "DD": {
+        "S": "64",
+        "B": "441/400",
+        "exercise": "36",
+        "euro": "36",
+        "amer": "36",
+        "continuation": null
+      }
+    },
+    "euro_trades": {
+      "U": {
+        "delta": "-1/12",
+        "cash_value": "80/7",
+        "bank_units": "1600/147",
+        "current_wealth": "10/7",
+        "child_wealth": [
+          "0",
+          "4"
+        ]
+      },
+      "D": {
+        "delta": "-1",
+        "cash_value": "2000/21",
+        "bank_units": "40000/441",
+        "current_wealth": "320/21",
+        "child_wealth": [
+          "4",
+          "36"
+        ]
+      },
+      "root": {
+        "delta": "-29/84",
+        "cash_value": "2000/49",
+        "bank_units": "2000/49",
+        "current_wealth": "925/147",
+        "child_wealth": [
+          "10/7",
+          "320/21"
+        ]
+      }
+    },
+    "seller_trades": {
+      "root": {
+        "delta": "-13/28",
+        "cash_value": "8000/147",
+        "bank_units": "8000/147",
+        "wealth": "1175/147",
+        "snell_value": "1175/147",
+        "continuation_cost": "1175/147",
+        "retained_cash": "0",
+        "child_wealth": [
+          "10/7",
+          "20"
+        ]
+      },
+      "U": {
+        "delta": "-1/12",
+        "cash_value": "80/7",
+        "bank_units": "1600/147",
+        "wealth": "10/7",
+        "snell_value": "10/7",
+        "continuation_cost": "10/7",
+        "retained_cash": "0",
+        "child_wealth": [
+          "0",
+          "4"
+        ]
+      },
+      "D": {
+        "delta": "-1",
+        "cash_value": "100",
+        "bank_units": "2000/21",
+        "wealth": "20",
+        "snell_value": "20",
+        "continuation_cost": "320/21",
+        "retained_cash": "100/21",
+        "child_wealth": [
+          "9",
+          "41"
+        ]
+      }
+    },
+    "seller_terminal_wealth": {
+      "UU": "0",
+      "UD": "4",
+      "DU": "9",
+      "DD": "41"
+    },
+    "policies": [
+      {
+        "rule": [
+          "stop",
+          null,
+          null
+        ],
+        "stopping_dates": {
+          "UU": 0,
+          "UD": 0,
+          "DU": 0,
+          "DD": 0
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "0",
+          "DD": "0"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "0",
+          "DD": "0"
+        },
+        "value0": "0",
+        "seller_surplus": {
+          "UU": "1175/147",
+          "UD": "1175/147",
+          "DU": "1175/147",
+          "DD": "1175/147"
+        }
+      },
+      {
+        "rule": [
+          "wait",
+          "stop",
+          "stop"
+        ],
+        "stopping_dates": {
+          "UU": 1,
+          "UD": 1,
+          "DU": 1,
+          "DD": 1
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "20",
+          "DD": "20"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "400/21",
+          "DD": "400/21"
+        },
+        "value0": "50/7",
+        "seller_surplus": {
+          "UU": "10/7",
+          "UD": "10/7",
+          "DU": "0",
+          "DD": "0"
+        }
+      },
+      {
+        "rule": [
+          "wait",
+          "stop",
+          "wait"
+        ],
+        "stopping_dates": {
+          "UU": 1,
+          "UD": 1,
+          "DU": 2,
+          "DD": 2
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "4",
+          "DD": "36"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "1600/441",
+          "DD": "1600/49"
+        },
+        "value0": "800/147",
+        "seller_surplus": {
+          "UU": "10/7",
+          "UD": "10/7",
+          "DU": "5",
+          "DD": "5"
+        }
+      },
+      {
+        "rule": [
+          "wait",
+          "wait",
+          "stop"
+        ],
+        "stopping_dates": {
+          "UU": 2,
+          "UD": 2,
+          "DU": 1,
+          "DD": 1
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "4",
+          "DU": "20",
+          "DD": "20"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "1600/441",
+          "DU": "400/21",
+          "DD": "400/21"
+        },
+        "value0": "1175/147",
+        "seller_surplus": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "0",
+          "DD": "0"
+        }
+      },
+      {
+        "rule": [
+          "wait",
+          "wait",
+          "wait"
+        ],
+        "stopping_dates": {
+          "UU": 2,
+          "UD": 2,
+          "DU": 2,
+          "DD": 2
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "4",
+          "DU": "4",
+          "DD": "36"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "1600/441",
+          "DU": "1600/441",
+          "DD": "1600/49"
+        },
+        "value0": "925/147",
+        "seller_surplus": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "5",
+          "DD": "5"
+        }
+      }
+    ],
+    "optimal_dates": {
+      "UU": 2,
+      "UD": 2,
+      "DU": 1,
+      "DD": 1
+    },
+    "euro0": "925/147",
+    "amer0": "1175/147",
+    "early_exercise_premium": "250/147",
+    "prophet0": "5825/588",
+    "prophet_dates": {
+      "UU": 0,
+      "UD": 2,
+      "DU": 1,
+      "DD": 2
+    },
+    "prophet_discounted": {
+      "UU": "0",
+      "UD": "1600/441",
+      "DU": "400/21",
+      "DD": "1600/49"
+    },
+    "densities": [
+      {
+        "P_up": "1/2",
+        "step_m": [
+          "25/21",
+          "5/7"
+        ],
+        "cumulative_m": {
+          "UU": "625/441",
+          "UD": "125/147",
+          "DU": "125/147",
+          "DD": "25/49"
+        },
+        "euro_via_P": "925/147"
+      },
+      {
+        "P_up": "4/5",
+        "step_m": [
+          "125/168",
+          "25/14"
+        ],
+        "cumulative_m": {
+          "UU": "15625/28224",
+          "UD": "3125/2352",
+          "DU": "3125/2352",
+          "DD": "625/196"
+        },
+        "euro_via_P": "925/147"
+      }
+    ],
+    "static_fit": {
+      "delta": "-1/12",
+      "terminal_cash": "12",
+      "predicted_DD": "20/3",
+      "required_DD": "36",
+      "replicated": false
+    }
+  },
+  "migration": {
+    "parameters": {
+      "spot": "100",
+      "up": "6/5",
+      "down": "4/5",
+      "R": "21/20",
+      "strike": "110"
+    },
+    "Q_up": "5/8",
+    "local_state_prices": [
+      "25/42",
+      "5/14"
+    ],
+    "Q_leaves": {
+      "UU": "25/64",
+      "UD": "15/64",
+      "DU": "15/64",
+      "DD": "9/64"
+    },
+    "nodes": {
+      "root": {
+        "S": "100",
+        "B": "1",
+        "exercise": "10",
+        "euro": "3475/294",
+        "amer": "575/42",
+        "continuation": "575/42"
+      },
+      "U": {
+        "S": "120",
+        "B": "21/20",
+        "exercise": "0",
+        "euro": "5",
+        "amer": "5",
+        "continuation": "5"
+      },
+      "D": {
+        "S": "80",
+        "B": "21/20",
+        "exercise": "30",
+        "euro": "520/21",
+        "amer": "30",
+        "continuation": "520/21"
+      },
+      "UU": {
+        "S": "144",
+        "B": "441/400",
+        "exercise": "0",
+        "euro": "0",
+        "amer": "0",
+        "continuation": null
+      },
+      "UD": {
+        "S": "96",
+        "B": "441/400",
+        "exercise": "14",
+        "euro": "14",
+        "amer": "14",
+        "continuation": null
+      },
+      "DU": {
+        "S": "96",
+        "B": "441/400",
+        "exercise": "14",
+        "euro": "14",
+        "amer": "14",
+        "continuation": null
+      },
+      "DD": {
+        "S": "64",
+        "B": "441/400",
+        "exercise": "46",
+        "euro": "46",
+        "amer": "46",
+        "continuation": null
+      }
+    },
+    "euro_trades": {
+      "U": {
+        "delta": "-7/24",
+        "cash_value": "40",
+        "bank_units": "800/21",
+        "current_wealth": "5",
+        "child_wealth": [
+          "0",
+          "14"
+        ]
+      },
+      "D": {
+        "delta": "-1",
+        "cash_value": "2200/21",
+        "bank_units": "44000/441",
+        "current_wealth": "520/21",
+        "child_wealth": [
+          "14",
+          "46"
+        ]
+      },
+      "root": {
+        "delta": "-83/168",
+        "cash_value": "3000/49",
+        "bank_units": "3000/49",
+        "current_wealth": "3475/294",
+        "child_wealth": [
+          "5",
+          "520/21"
+        ]
+      }
+    },
+    "seller_trades": {
+      "root": {
+        "delta": "-5/8",
+        "cash_value": "1600/21",
+        "bank_units": "1600/21",
+        "wealth": "575/42",
+        "snell_value": "575/42",
+        "continuation_cost": "575/42",
+        "retained_cash": "0",
+        "child_wealth": [
+          "5",
+          "30"
+        ]
+      },
+      "U": {
+        "delta": "-7/24",
+        "cash_value": "40",
+        "bank_units": "800/21",
+        "wealth": "5",
+        "snell_value": "5",
+        "continuation_cost": "5",
+        "retained_cash": "0",
+        "child_wealth": [
+          "0",
+          "14"
+        ]
+      },
+      "D": {
+        "delta": "-1",
+        "cash_value": "110",
+        "bank_units": "2200/21",
+        "wealth": "30",
+        "snell_value": "30",
+        "continuation_cost": "520/21",
+        "retained_cash": "110/21",
+        "child_wealth": [
+          "39/2",
+          "103/2"
+        ]
+      }
+    },
+    "seller_terminal_wealth": {
+      "UU": "0",
+      "UD": "14",
+      "DU": "39/2",
+      "DD": "103/2"
+    },
+    "policies": [
+      {
+        "rule": [
+          "stop",
+          null,
+          null
+        ],
+        "stopping_dates": {
+          "UU": 0,
+          "UD": 0,
+          "DU": 0,
+          "DD": 0
+        },
+        "payments": {
+          "UU": "10",
+          "UD": "10",
+          "DU": "10",
+          "DD": "10"
+        },
+        "discounted_payments": {
+          "UU": "10",
+          "UD": "10",
+          "DU": "10",
+          "DD": "10"
+        },
+        "value0": "10",
+        "seller_surplus": {
+          "UU": "155/42",
+          "UD": "155/42",
+          "DU": "155/42",
+          "DD": "155/42"
+        }
+      },
+      {
+        "rule": [
+          "wait",
+          "stop",
+          "stop"
+        ],
+        "stopping_dates": {
+          "UU": 1,
+          "UD": 1,
+          "DU": 1,
+          "DD": 1
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "30",
+          "DD": "30"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "200/7",
+          "DD": "200/7"
+        },
+        "value0": "75/7",
+        "seller_surplus": {
+          "UU": "5",
+          "UD": "5",
+          "DU": "0",
+          "DD": "0"
+        }
+      },
+      {
+        "rule": [
+          "wait",
+          "stop",
+          "wait"
+        ],
+        "stopping_dates": {
+          "UU": 1,
+          "UD": 1,
+          "DU": 2,
+          "DD": 2
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "14",
+          "DD": "46"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "800/63",
+          "DD": "18400/441"
+        },
+        "value0": "1300/147",
+        "seller_surplus": {
+          "UU": "5",
+          "UD": "5",
+          "DU": "11/2",
+          "DD": "11/2"
+        }
+      },
+      {
+        "rule": [
+          "wait",
+          "wait",
+          "stop"
+        ],
+        "stopping_dates": {
+          "UU": 2,
+          "UD": 2,
+          "DU": 1,
+          "DD": 1
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "14",
+          "DU": "30",
+          "DD": "30"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "800/63",
+          "DU": "200/7",
+          "DD": "200/7"
+        },
+        "value0": "575/42",
+        "seller_surplus": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "0",
+          "DD": "0"
+        }
+      },
+      {
+        "rule": [
+          "wait",
+          "wait",
+          "wait"
+        ],
+        "stopping_dates": {
+          "UU": 2,
+          "UD": 2,
+          "DU": 2,
+          "DD": 2
+        },
+        "payments": {
+          "UU": "0",
+          "UD": "14",
+          "DU": "14",
+          "DD": "46"
+        },
+        "discounted_payments": {
+          "UU": "0",
+          "UD": "800/63",
+          "DU": "800/63",
+          "DD": "18400/441"
+        },
+        "value0": "3475/294",
+        "seller_surplus": {
+          "UU": "0",
+          "UD": "0",
+          "DU": "11/2",
+          "DD": "11/2"
+        }
+      }
+    ],
+    "optimal_dates": {
+      "UU": 2,
+      "UD": 2,
+      "DU": 1,
+      "DD": 1
+    },
+    "euro0": "3475/294",
+    "amer0": "575/42",
+    "early_exercise_premium": "275/147",
+    "prophet0": "91475/4704",
+    "prophet_dates": {
+      "UU": 0,
+      "UD": 2,
+      "DU": 1,
+      "DD": 2
+    },
+    "prophet_discounted": {
+      "UU": "10",
+      "UD": "800/63",
+      "DU": "200/7",
+      "DD": "18400/441"
+    },
+    "densities": [
+      {
+        "P_up": "1/2",
+        "step_m": [
+          "25/21",
+          "5/7"
+        ],
+        "cumulative_m": {
+          "UU": "625/441",
+          "UD": "125/147",
+          "DU": "125/147",
+          "DD": "25/49"
+        },
+        "euro_via_P": "3475/294"
+      },
+      {
+        "P_up": "4/5",
+        "step_m": [
+          "125/168",
+          "25/14"
+        ],
+        "cumulative_m": {
+          "UU": "15625/28224",
+          "UD": "3125/2352",
+          "DU": "3125/2352",
+          "DD": "625/196"
+        },
+        "euro_via_P": "3475/294"
+      }
+    ],
+    "static_fit": {
+      "delta": "-7/24",
+      "terminal_cash": "42",
+      "predicted_DD": "70/3",
+      "required_DD": "46",
+      "replicated": false
+    }
+  },
+  "mandatory_fee": {
+    "time1": "1",
+    "extra_initial_bank_cash": "20/21",
+    "reserve_at1": "1"
+  },
+  "illegal_future_position": {
+    "delta_up": 1,
+    "delta_down": -1,
+    "is_predictable": false,
+    "claimed_gains": [
+      "15",
+      "25"
+    ]
+  },
+  "endpoint_D": {
+    "stock_units": -1,
+    "current_bank_cash": "80",
+    "R_D": "6/5",
+    "initial_cost0": 0,
+    "trade_only_after_history": "D",
+    "terminal_payoffs": {
+      "UU": "0",
+      "UD": "0",
+      "DU": "0",
+      "DD": "32"
+    },
+    "Q_up": "1",
+    "equivalent_to_P": false
+  }
+}

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="950" viewBox="0 0 1100 950">
+<title>两期put：条件定价、合法行权和先知上界</title>
+<desc>完整历史树每节点列股票价S、欧式E、美式V、当日行权g；按结果高亮到达且合同尚存时应行权的节点。下方五种合法停止值与逐路径最大上界统一为零日货币。</desc>
+<rect width="1100" height="950" fill="white"/>
+<style>text{font-family:"Arial","PingFang SC",sans-serif;fill:#182536;font-size:17px}.small{font-size:15px}.title{font-size:25px;font-weight:bold}.box{fill:#f2f7fc;stroke:#476887;stroke-width:1.5}.stop{fill:#fff1d6;stroke:#915b05;stroke-width:2.5}</style>
+<text class="title" x="35" y="32">Two-step put: rebalance and exercise with current information</text>
+<text class="small" x="35" y="57">Synthetic; nodes: local-date money; bars: date-0 money; K=100, R=21/20, Q(up)=5/8</text>
+<line x1="260" y1="252" x2="430" y2="152" stroke="#7f91a1" stroke-width="2"/>
+<line x1="260" y1="252" x2="430" y2="372" stroke="#7f91a1" stroke-width="2"/>
+<line x1="590" y1="152" x2="800" y2="92" stroke="#7f91a1" stroke-width="2"/>
+<line x1="590" y1="152" x2="800" y2="212" stroke="#7f91a1" stroke-width="2"/>
+<line x1="590" y1="372" x2="800" y2="332" stroke="#7f91a1" stroke-width="2"/>
+<line x1="590" y1="372" x2="800" y2="452" stroke="#7f91a1" stroke-width="2"/>
+<rect class="box" x="100" y="220" width="185" height="85" rx="8"/>
+<text x="110" y="243">0 · S=100</text>
+<text class="small" x="110" y="268">E=925/147 · V=1175/147</text>
+<text class="small" x="110" y="291">g=0</text>
+<rect class="box" x="430" y="120" width="185" height="85" rx="8"/>
+<text x="440" y="143">U · S=120</text>
+<text class="small" x="440" y="168">E=10/7 · V=10/7</text>
+<text class="small" x="440" y="191">g=0</text>
+<rect class="stop" x="430" y="340" width="185" height="85" rx="8"/>
+<text x="440" y="363">D · S=80</text>
+<text class="small" x="440" y="388">E=320/21 · V=20</text>
+<text class="small" x="440" y="411">g=20 * stop if reached</text>
+<rect class="box" x="800" y="60" width="185" height="85" rx="8"/>
+<text x="810" y="83">UU · S=144</text>
+<text class="small" x="810" y="108">E=0 · V=0</text>
+<text class="small" x="810" y="131">g=0</text>
+<rect class="box" x="800" y="180" width="185" height="85" rx="8"/>
+<text x="810" y="203">UD · S=96</text>
+<text class="small" x="810" y="228">E=4 · V=4</text>
+<text class="small" x="810" y="251">g=4</text>
+<rect class="box" x="800" y="300" width="185" height="85" rx="8"/>
+<text x="810" y="323">DU · S=96</text>
+<text class="small" x="810" y="348">E=4 · V=4</text>
+<text class="small" x="810" y="371">g=4</text>
+<rect class="box" x="800" y="420" width="185" height="85" rx="8"/>
+<text x="810" y="443">DD · S=64</text>
+<text class="small" x="810" y="468">E=36 · V=36</text>
+<text class="small" x="810" y="491">g=36</text>
+<text class="small" x="35" y="545">UD and DU both end at 96; their histories and prior exercise decisions differ.</text>
+<text x="35" y="585">Five legal stopping rules and a pathwise upper bound (date-0 money)</text>
+<text class="small" x="35" y="634">root: stop</text>
+<rect x="235" y="615" width="0.0000" height="25" fill="#406f99"/>
+<text class="small" x="250.0000" y="634">0 ≈ 0.00000</text>
+<text class="small" x="35" y="678">U: stop / D: stop</text>
+<rect x="235" y="659" width="360.5150" height="25" fill="#406f99"/>
+<text class="small" x="610.5150" y="678">50/7 ≈ 7.14286</text>
+<text class="small" x="35" y="722">U: stop / D: wait</text>
+<rect x="235" y="703" width="274.6781" height="25" fill="#406f99"/>
+<text class="small" x="524.6781" y="722">800/147 ≈ 5.44218</text>
+<text class="small" x="35" y="766">U: wait / D: stop *</text>
+<rect x="235" y="747" width="403.4335" height="25" fill="#915b05"/>
+<text class="small" x="653.4335" y="766">1175/147 ≈ 7.99320</text>
+<text class="small" x="35" y="810">U: wait / D: wait</text>
+<rect x="235" y="791" width="317.5966" height="25" fill="#406f99"/>
+<text class="small" x="567.5966" y="810">925/147 ≈ 6.29252</text>
+<text class="small" x="35" y="854">pathwise-max bound</text>
+<rect x="235" y="835" width="500.0000" height="25" fill="#a23b52"/>
+<text class="small" x="750.0000" y="854">5825/588 ≈ 9.90646</text>
+<text class="small" x="35" y="916">* Highlighted legal maximizers = Snell root; red: pathwise-max bound, not a new admissible action.</text>
+</svg>

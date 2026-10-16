@@ -1,0 +1,83 @@
+{
+  "recorded_at_utc": "2026-10-16T18:01:03.474956+00:00",
+  "scope": "fixed finite differential drive / single-point contact; deterministic; no hardware",
+  "python": "3.14.7",
+  "numpy": "2.5.2",
+  "runner": "/private/tmp/wwl-next-context/run_local.py --timeout 300 -- <argv>",
+  "reader_commands": [
+    "python3 -B 'AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/mobile_contact.py' --output 'AI/45-机器人与具身智能/30-刚体与机械臂/assets/mobile-contact'",
+    "python3 -B 'AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/test_mobile_contact.py'",
+    ".venv/bin/python -B 'AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/render_mobile_contact.py' --results 'AI/45-机器人与具身智能/30-刚体与机械臂/assets/mobile-contact' --output 'AI/45-机器人与具身智能/30-刚体与机械臂/assets/mobile-contact'"
+  ],
+  "formal_argv": [
+    "python3",
+    "-B",
+    "/private/tmp/wwl-next-164-final/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/mobile_contact.py",
+    "--rigid",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/rigid_dynamics.py",
+    "--output",
+    "/private/tmp/wwl-next-164-final/AI/45-机器人与具身智能/30-刚体与机械臂/assets/mobile-contact"
+  ],
+  "test_argv": [
+    "python3",
+    "-B",
+    "/private/tmp/wwl-next-164-final/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/test_mobile_contact.py"
+  ],
+  "test_extra_environment": {
+    "WWL_RIGID_SOURCE": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/rigid_dynamics.py"
+  },
+  "render_argv": [
+    ".venv/bin/python",
+    "-B",
+    "/private/tmp/wwl-next-164-final/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/render_mobile_contact.py",
+    "--results",
+    "/private/tmp/wwl-next-164-final/AI/45-机器人与具身智能/30-刚体与机械臂/assets/mobile-contact",
+    "--output",
+    "/private/tmp/wwl-next-164-final/AI/45-机器人与具身智能/30-刚体与机械臂/assets/mobile-contact"
+  ],
+  "pre_run": {
+    "max_steps": 40,
+    "location_relative_to_candidate": "pre-run",
+    "scope": "interfaces/resources only; incomplete time horizons",
+    "source_sha256": "c2b3ccbed783e92bb028df5af4ea94756fba58ed36b4f16be552a18dfbb2179b",
+    "input_sha256": "600d4966769d2575d230106ada8c6ee705a369c167e7fea2e37f0ee06c13c169",
+    "later_changes": "source added whole-interval clearance audit limited to pure turn/straight; footprint .2 m corrected to .3 m to contain ideal wheels, formal input/raw/plots rebuilt; no timing/wheel/contact parameter tuning"
+  },
+  "thread_limit_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "counts": {
+    "mobile.jsonl": 1083,
+    "contact.jsonl": 724,
+    "events.jsonl": 7,
+    "segments.jsonl": 726
+  },
+  "source_input_dependencies": {
+    "AI/45-机器人与具身智能/30-刚体与机械臂/mobile-contact-inputs.json": "02e7eb883dd9c7ac48c87896d2ab5d29e8db8ca9c1a37c65ff9455a5be16bff3",
+    "AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/mobile_contact.py": "18b7568248b8617a1bc477bdd4978e8a5a692cc90f476a610326b29024166d0c",
+    "AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/render_mobile_contact.py": "27ae28fa92b24fe523da52dc10a5b402bde8fd7894148311efa59fc9e59c776c",
+    "AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/test_mobile_contact.py": "34b88872866937bdd030d6bea43473ee7d15c83c1736e7917cbf689aa0e64ae6",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/rigid_dynamics.py": "8e6f9d17a15860b07788044857ba464a98bb6f80cc72e74b41913c16098bdf9b",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/arm_kinematics.py": "a1e4b57e9be8932148df1684db9f95d047a1a4cc3b27d013eb210ac2e66916a3",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/robotics_lab.py": "c14548f70e059dd1a0c900ee70217e01135141e1c96e58a1486d5b1e8156a144",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/30-刚体与机械臂/dynamics-inputs.json": "46e779b0588cd26dccb9fac62695481d1ef8ae8e7aafb088a00a28ac68913ac4"
+  },
+  "saved_outputs_sha256": {
+    "author-tests.txt": "abfe44a74040b13c48cc27443561b71dc8485ff6d612515cffe8f19a051bb509",
+    "contact-events-energy.svg": "6c0c0e56d1782eb89736d0ed7dc8f5109ac39d9655c779f80f529fefca219ba6",
+    "contact.jsonl": "9034f0e2d31fcab66ec7e50ec697c67e1ee99291d0873607fdc28d2f26ca6e0e",
+    "events.jsonl": "bd91264c92622ed7646eb12be097aed7505c8b2e43283cac091c9e5d290eedc9",
+    "mobile-feasibility.svg": "e249d387236b52dcf240de8cbbea194df4357a6a4a4c470c10af9d238ee45be2",
+    "mobile.jsonl": "9221c54eaa8557ac75098f3b6069c0ab1d04f600c069a54abb437e80507eabda",
+    "results.json": "a503d3361fdd75019c3ca51a55a28ef77496cb717fc8a9b388910d22cefd3dc6",
+    "segments.jsonl": "ae2eb9d35a1dbbb4e39b161df21e5d673b241f563f44038f3c4ce32cf207e383"
+  },
+  "author_tests": "7 tests PASS; raw retained in author-tests.txt; independent review separately",
+  "display": "two saved SVG rendered with existing CairoSVG and viewed as PNG; no live Obsidian or physical robot",
+  "not_run": "old IK/rigid/dynamics suites; no LQR/Kalman rerun; no GPU; no physical wheel/material calibration",
+  "timing_boundary": "formal numerical runtime under 5 min; plotting font-cache startup separate, not claimed robot-time benchmark"
+}

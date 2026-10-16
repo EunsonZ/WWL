@@ -1,0 +1,80 @@
+{
+  "mobile": {
+    "dt_s": 0.01,
+    "wheel_radius_m": 0.1,
+    "track_m": 0.5,
+    "wheel_limit_rad_s": 4.0,
+    "body_radius_m": 0.3,
+    "obstacle_center_W_m": [
+      0.6,
+      0.5
+    ],
+    "obstacle_radius_m": 0.1,
+    "scenarios": [
+      {
+        "id": "slow_feasible",
+        "durations_s": [
+          2.0,
+          5.0,
+          2.0
+        ],
+        "clip_wheels": true
+      },
+      {
+        "id": "fast_unbounded_counterfactual",
+        "durations_s": [
+          0.2,
+          0.5,
+          0.2
+        ],
+        "clip_wheels": false
+      },
+      {
+        "id": "fast_clipped",
+        "durations_s": [
+          0.2,
+          0.5,
+          0.2
+        ],
+        "clip_wheels": true
+      }
+    ]
+  },
+  "contact": {
+    "mass_kg": 1.0,
+    "gravity_m_s2": 9.81,
+    "dt_s": 0.01,
+    "initial_x_y_vx_vy": [
+      0.0,
+      1.0,
+      1.5,
+      0.0
+    ],
+    "scenarios": [
+      {
+        "id": "inelastic_no_friction",
+        "restitution": 0.0,
+        "friction": 0.0,
+        "horizon_s": 2.0
+      },
+      {
+        "id": "inelastic_slide_stop",
+        "restitution": 0.0,
+        "friction": 0.1,
+        "horizon_s": 2.0
+      },
+      {
+        "id": "partial_rebound",
+        "restitution": 0.6,
+        "friction": 0.1,
+        "horizon_s": 1.2
+      },
+      {
+        "id": "elastic_no_friction",
+        "restitution": 1.0,
+        "friction": 0.0,
+        "horizon_s": 2.0
+      }
+    ]
+  }
+}

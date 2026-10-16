@@ -1,0 +1,8 @@
+{
+  "identity": "synthetic economies; no empirical calibration",
+  "solow": {"alpha": "1/2", "s": "1/5", "delta": "1/10", "n": "0", "g": "0", "K0": "1", "A0": "1", "L0": "1", "higher_s": "3/10", "higher_g": "1/50", "level_factor": "2"},
+  "planner": {"alpha": "1/2", "beta": "9/10", "delta": "1", "k0": "1", "migration_beta": "4/5"},
+  "household": {"y0": "2", "y1": "8", "R": "1", "beta": "1", "credit_limit": "1"},
+  "periods": 80,
+  "tolerance": 1e-10
+}

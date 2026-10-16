@@ -1,0 +1,24 @@
+{
+  "identity": "synthetic constant-coefficient GBM and a separate finite random-short-rate economy",
+  "continuous": {
+    "spot": 100.0,
+    "strike": 100.0,
+    "rate": 0.05,
+    "sigma": 0.2,
+    "years": 1.0,
+    "physical_drifts": [0.10, 0.15],
+    "simpson_panels": 8192,
+    "fd_relative_spot_step": 0.0001,
+    "fd_relative_time_step": 0.0001,
+    "static_terminal_spots": [80.0, 120.0]
+  },
+  "term": {
+    "bank_gross_01": "21/20",
+    "short_gross_12": ["1", "6/5"],
+    "discount_01": "20/21",
+    "discount_02": "55/63",
+    "physical_high_probabilities": ["1/4", "3/4", "1/2"],
+    "finite_cashflows": ["3", "103"],
+    "flat_annual_yields": ["1/25", "1/20"]
+  }
+}

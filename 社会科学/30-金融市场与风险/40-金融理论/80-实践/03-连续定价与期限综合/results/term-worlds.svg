@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="740" viewBox="0 0 1060 740">
+<title>同一零息曲线不同真实预期和补偿</title><desc>相同D01/D02与Q，物理P不同；远期减预期含非线性项，持有期补偿为另一个已定义对象。</desc><rect width="1060" height="740" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#17273a;font-size:17px}.small{font-size:14px}.title{font-size:25px;font-weight:bold}</style>
+<text class="title" x="35" y="35">Same observed zero prices; different physical expectations</text>
+<text x="35" y="78">D(0,1)=20/21; D(0,2)=55/63; Q(H)=1/2; forward net=1/11</text>
+<text x="35" y="120">All following rates are fractions of one period (not asset price levels).</text>
+<text x="35" y="180">P(H)=1/4</text>
+<line x1="640" y1="165" x2="640" y2="285" stroke="#a5a5a5"/>
+<text class="small" x="175" y="183">E_P future net short</text>
+<rect x="640.000" y="167" width="83.333" height="20" fill="#24679f"/>
+<text class="small" x="733.333" y="183">1/20 (5.000%)</text>
+<text class="small" x="175" y="217">Forward minus E_P short</text>
+<rect x="640.000" y="201" width="68.182" height="20" fill="#9b6509"/>
+<text class="small" x="718.182" y="217">9/220 (4.091%)</text>
+<text class="small" x="175" y="251">Bond expected excess HPR</text>
+<rect x="640.000" y="235" width="79.545" height="20" fill="#6c469c"/>
+<text class="small" x="729.545" y="251">21/440 (4.773%)</text>
+<text x="35" y="340">P(H)=3/4</text>
+<line x1="640" y1="325" x2="640" y2="445" stroke="#a5a5a5"/>
+<text class="small" x="175" y="343">E_P future net short</text>
+<rect x="640.000" y="327" width="250.000" height="20" fill="#24679f"/>
+<text class="small" x="900.000" y="343">3/20 (15.000%)</text>
+<text class="small" x="175" y="377">Forward minus E_P short</text>
+<rect x="541.515" y="361" width="98.485" height="20" fill="#9b6509"/>
+<text class="small" x="650.000" y="377">-13/220 (-5.909%)</text>
+<text class="small" x="175" y="411">Bond expected excess HPR</text>
+<rect x="560.455" y="395" width="79.545" height="20" fill="#6c469c"/>
+<text class="small" x="650.000" y="411">-21/440 (-4.773%)</text>
+<text x="35" y="500">P(H)=1/2</text>
+<line x1="640" y1="485" x2="640" y2="605" stroke="#a5a5a5"/>
+<text class="small" x="175" y="503">E_P future net short</text>
+<rect x="640.000" y="487" width="166.667" height="20" fill="#24679f"/>
+<text class="small" x="816.667" y="503">1/10 (10.000%)</text>
+<text class="small" x="175" y="537">Forward minus E_P short</text>
+<rect x="624.848" y="521" width="15.152" height="20" fill="#9b6509"/>
+<text class="small" x="650.000" y="537">-1/110 (-0.909%)</text>
+<text class="small" x="175" y="571">Bond expected excess HPR</text>
+<rect x="640.000" y="555" width="0.000" height="20" fill="#6c469c"/>
+<text class="small" x="650.000" y="571">0 (0.000%)</text>
+<text class="small" x="35" y="700">Zero HPR premium at P=Q can coexist with a nonzero forward-forecast gap (Jensen/nonlinearity).</text>
+</svg>

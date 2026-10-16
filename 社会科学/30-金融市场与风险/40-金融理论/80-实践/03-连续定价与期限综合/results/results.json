@@ -1,0 +1,871 @@
+{
+  "identity": "synthetic constant-coefficient GBM and a separate finite random-short-rate economy",
+  "continuous": {
+    "parameters": {
+      "spot": 100.0,
+      "strike": 100.0,
+      "rate": 0.05,
+      "sigma": 0.2,
+      "years": 1.0,
+      "simpson_panels": 8192
+    },
+    "closed_form": {
+      "price": 10.450583572185565,
+      "d1": 0.35000000000000003,
+      "d2": 0.15000000000000002,
+      "delta": 0.6368306511756191,
+      "current_bank_cash": -53.232481545376345,
+      "gamma": 0.018762017345846895,
+      "calendar_theta": -6.414027546438196,
+      "analytic_PDE_residual": 1.1102230246251565e-15
+    },
+    "Q_quadrature": {
+      "value": 10.450583572185865,
+      "abs_error": 3.0020430585864233e-13,
+      "integration_range": [
+        -10.2,
+        10.2
+      ],
+      "payoff_threshold": -0.15
+    },
+    "P_representations": [
+      {
+        "mu": 0.1,
+        "lambda_value": 0.25,
+        "call_via_P_m": 10.450583572185929,
+        "abs_price_error": 3.6415315207705135e-13,
+        "density_mean": 1.0,
+        "normalized_stock_price": 1.0,
+        "m_at_W_zero": 0.9219631718378983,
+        "expected_stock_gross": 1.1051709180756477,
+        "stock_excess_expected_gross": 0.053899821699623596,
+        "covariance_m_stock_gross": -0.05127109637602412,
+        "wrong_positive_density_normalized_stock_price": 1.1051709180756477,
+        "integration_range": [
+          -10.45,
+          10.45
+        ],
+        "payoff_threshold": -0.39999999999999997
+      },
+      {
+        "mu": 0.15,
+        "lambda_value": 0.49999999999999994,
+        "call_via_P_m": 10.450583572185998,
+        "abs_price_error": 4.334310688136611e-13,
+        "density_mean": 1.0,
+        "normalized_stock_price": 1.0,
+        "m_at_W_zero": 0.8394570207692074,
+        "expected_stock_gross": 1.161834242728283,
+        "stock_excess_expected_gross": 0.11056314635225895,
+        "covariance_m_stock_gross": -0.10517091807564771,
+        "wrong_positive_density_normalized_stock_price": 1.2214027581601699,
+        "integration_range": [
+          -10.7,
+          10.7
+        ],
+        "payoff_threshold": -0.65
+      }
+    ],
+    "finite_difference": [
+      {
+        "spot": 80.0,
+        "spot_step": 0.008,
+        "time_step": 0.0001,
+        "delta": 0.22192213666261118,
+        "gamma": 0.018598225459687256,
+        "theta": -3.175290421912891,
+        "PDE_residual": 4.936914252406943e-09,
+        "delta_abs_error": 7.0144314245901285e-09
+      },
+      {
+        "spot": 100.0,
+        "spot_step": 0.01,
+        "time_step": 0.0001,
+        "delta": 0.6368306425770243,
+        "gamma": 0.018762017077733617,
+        "theta": -6.414027551358004,
+        "PDE_residual": -1.0153543628099726e-07,
+        "delta_abs_error": 8.598594836151108e-09
+      },
+      {
+        "spot": 120.0,
+        "spot_step": 0.012,
+        "time_step": 0.0001,
+        "delta": 0.8964550121136245,
+        "gamma": 0.007500246251229075,
+        "theta": -6.2303487784731715,
+        "PDE_residual": 1.722018505567746e-08,
+        "delta_abs_error": 1.09634559208871e-08
+      }
+    ],
+    "static_initial_delta_stress": [
+      {
+        "terminal_spot": 80.0,
+        "wealth": -5.015317142974737,
+        "call_payoff": 0,
+        "wealth_minus_payoff": -5.015317142974737
+      },
+      {
+        "terminal_spot": 120.0,
+        "wealth": 20.457908904050022,
+        "call_payoff": 20.0,
+        "wealth_minus_payoff": 0.45790890405002216
+      }
+    ],
+    "price_curve": [
+      {
+        "spot": 50.0,
+        "call": 0.002399417553309649,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 51.0,
+        "call": 0.0034884403123105617,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 52.0,
+        "call": 0.004992748907157132,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 53.0,
+        "call": 0.007040073673137429,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 54.0,
+        "call": 0.009787407945332338,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 55.00000000000001,
+        "call": 0.013425015455324235,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 56.00000000000001,
+        "call": 0.018180398010283705,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 57.00000000000001,
+        "call": 0.024322099171986855,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 57.99999999999999,
+        "call": 0.032163212762931714,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 59.0,
+        "call": 0.04206446339027581,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 60.0,
+        "call": 0.054436730070419825,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 61.0,
+        "call": 0.0697428934195693,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 62.0,
+        "call": 0.08849890140763983,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 63.0,
+        "call": 0.11127396774132792,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 64.0,
+        "call": 0.13868983970912718,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 65.0,
+        "call": 0.17141909778203335,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 66.0,
+        "call": 0.2101824763133764,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 67.0,
+        "call": 0.2557452221792573,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 68.0,
+        "call": 0.30891253503574756,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 69.0,
+        "call": 0.370524158012298,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 70.0,
+        "call": 0.4414482102153654,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 71.0,
+        "call": 0.5225743716482851,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 72.0,
+        "call": 0.6148065465162205,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 73.0,
+        "call": 0.7190551420270763,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 74.0,
+        "call": 0.8362291065634881,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 75.0,
+        "call": 0.9672278735146875,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 76.0,
+        "call": 1.1129333553095915,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 77.0,
+        "call": 1.2742021266153483,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 78.0,
+        "call": 1.4518579266996898,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 79.0,
+        "call": 1.6466845991240735,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 80.0,
+        "call": 1.859419572812179,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 81.0,
+        "call": 2.0907479727231646,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 82.0,
+        "call": 2.34129743144549,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 83.0,
+        "call": 2.61163365558804,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 84.00000000000001,
+        "call": 2.9022567834074806,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 85.0,
+        "call": 3.2135985531478752,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 86.0,
+        "call": 3.5460202854864953,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 87.0,
+        "call": 3.8998116686125393,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 88.0,
+        "call": 4.275190321075556,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 89.0,
+        "call": 4.672302095812377,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 90.0,
+        "call": 5.091222078817552,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 90.99999999999999,
+        "call": 5.531956227813133,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 92.0,
+        "call": 5.99444358999903,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 93.0,
+        "call": 6.478559033471406,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 94.0,
+        "call": 6.984116424092392,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 95.0,
+        "call": 7.510872178352699,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0
+      },
+      {
+        "spot": 96.0,
+        "call": 8.058529122942097,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 0.877057549928594
+      },
+      {
+        "spot": 97.0,
+        "call": 8.626740593164243,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 1.877057549928594
+      },
+      {
+        "spot": 98.0,
+        "call": 9.21511470482725,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 2.877057549928594
+      },
+      {
+        "spot": 99.0,
+        "call": 9.823218737631592,
+        "terminal_payoff": 0,
+        "discounted_strike_lower": 3.877057549928594
+      },
+      {
+        "spot": 100.0,
+        "call": 10.450583572185565,
+        "terminal_payoff": 0.0,
+        "discounted_strike_lower": 4.877057549928594
+      },
+      {
+        "spot": 101.0,
+        "call": 11.096708127437417,
+        "terminal_payoff": 1.0,
+        "discounted_strike_lower": 5.877057549928594
+      },
+      {
+        "spot": 102.0,
+        "call": 11.761063750361359,
+        "terminal_payoff": 2.0,
+        "discounted_strike_lower": 6.877057549928594
+      },
+      {
+        "spot": 103.0,
+        "call": 12.443098515026335,
+        "terminal_payoff": 3.0,
+        "discounted_strike_lower": 7.877057549928594
+      },
+      {
+        "spot": 104.0,
+        "call": 13.14224139357946,
+        "terminal_payoff": 4.0,
+        "discounted_strike_lower": 8.877057549928594
+      },
+      {
+        "spot": 105.0,
+        "call": 13.857906267073119,
+        "terminal_payoff": 5.0,
+        "discounted_strike_lower": 9.877057549928594
+      },
+      {
+        "spot": 106.0,
+        "call": 14.589495749357667,
+        "terminal_payoff": 6.0,
+        "discounted_strike_lower": 10.877057549928594
+      },
+      {
+        "spot": 106.99999999999999,
+        "call": 15.336404802363319,
+        "terminal_payoff": 6.999999999999986,
+        "discounted_strike_lower": 11.87705754992858
+      },
+      {
+        "spot": 108.0,
+        "call": 16.098024125941095,
+        "terminal_payoff": 8.0,
+        "discounted_strike_lower": 12.877057549928594
+      },
+      {
+        "spot": 108.99999999999999,
+        "call": 16.873743309965903,
+        "terminal_payoff": 8.999999999999986,
+        "discounted_strike_lower": 13.87705754992858
+      },
+      {
+        "spot": 110.00000000000001,
+        "call": 17.662953740590467,
+        "terminal_payoff": 10.000000000000014,
+        "discounted_strike_lower": 14.877057549928608
+      },
+      {
+        "spot": 110.99999999999999,
+        "call": 18.465051256344083,
+        "terminal_payoff": 10.999999999999986,
+        "discounted_strike_lower": 15.87705754992858
+      },
+      {
+        "spot": 112.00000000000001,
+        "call": 19.27943855318773,
+        "terminal_payoff": 12.000000000000014,
+        "discounted_strike_lower": 16.877057549928608
+      },
+      {
+        "spot": 112.99999999999999,
+        "call": 20.105527340650795,
+        "terminal_payoff": 12.999999999999986,
+        "discounted_strike_lower": 17.87705754992858
+      },
+      {
+        "spot": 114.00000000000001,
+        "call": 20.942740253800977,
+        "terminal_payoff": 14.000000000000014,
+        "discounted_strike_lower": 18.877057549928608
+      },
+      {
+        "spot": 114.99999999999999,
+        "call": 21.79051252803113,
+        "terminal_payoff": 14.999999999999986,
+        "discounted_strike_lower": 19.87705754992858
+      },
+      {
+        "spot": 116.00000000000001,
+        "call": 22.648293445519997,
+        "terminal_payoff": 16.000000000000014,
+        "discounted_strike_lower": 20.877057549928608
+      },
+      {
+        "spot": 117.0,
+        "call": 23.51554756373713,
+        "terminal_payoff": 17.0,
+        "discounted_strike_lower": 21.877057549928594
+      },
+      {
+        "spot": 118.00000000000001,
+        "call": 24.391755737559933,
+        "terminal_payoff": 18.000000000000014,
+        "discounted_strike_lower": 22.877057549928608
+      },
+      {
+        "spot": 119.0,
+        "call": 25.27641594746092,
+        "terminal_payoff": 19.0,
+        "discounted_strike_lower": 23.877057549928594
+      },
+      {
+        "spot": 120.0,
+        "call": 26.169043946847296,
+        "terminal_payoff": 20.0,
+        "discounted_strike_lower": 24.877057549928594
+      },
+      {
+        "spot": 121.0,
+        "call": 27.069173742009482,
+        "terminal_payoff": 21.0,
+        "discounted_strike_lower": 25.877057549928594
+      },
+      {
+        "spot": 122.0,
+        "call": 27.976357918298447,
+        "terminal_payoff": 22.0,
+        "discounted_strike_lower": 26.877057549928594
+      },
+      {
+        "spot": 123.0,
+        "call": 28.890167826122834,
+        "terminal_payoff": 23.0,
+        "discounted_strike_lower": 27.877057549928594
+      },
+      {
+        "spot": 124.0,
+        "call": 29.810193640167554,
+        "terminal_payoff": 24.0,
+        "discounted_strike_lower": 28.877057549928594
+      },
+      {
+        "spot": 125.0,
+        "call": 30.736044304909697,
+        "terminal_payoff": 25.0,
+        "discounted_strike_lower": 29.877057549928594
+      },
+      {
+        "spot": 126.0,
+        "call": 31.667347379067706,
+        "terminal_payoff": 26.0,
+        "discounted_strike_lower": 30.877057549928594
+      },
+      {
+        "spot": 127.0,
+        "call": 32.603748791090254,
+        "terminal_payoff": 27.0,
+        "discounted_strike_lower": 31.877057549928594
+      },
+      {
+        "spot": 128.0,
+        "call": 33.544912517188806,
+        "terminal_payoff": 28.0,
+        "discounted_strike_lower": 32.877057549928594
+      },
+      {
+        "spot": 129.0,
+        "call": 34.49052019276472,
+        "terminal_payoff": 29.0,
+        "discounted_strike_lower": 33.877057549928594
+      },
+      {
+        "spot": 130.0,
+        "call": 35.44027066739001,
+        "terminal_payoff": 30.0,
+        "discounted_strike_lower": 34.877057549928594
+      },
+      {
+        "spot": 131.0,
+        "call": 36.3938795127882,
+        "terminal_payoff": 31.0,
+        "discounted_strike_lower": 35.877057549928594
+      },
+      {
+        "spot": 131.99999999999997,
+        "call": 37.351078492538335,
+        "terminal_payoff": 31.99999999999997,
+        "discounted_strike_lower": 36.877057549928566
+      },
+      {
+        "spot": 133.0,
+        "call": 38.311615001502574,
+        "terminal_payoff": 33.0,
+        "discounted_strike_lower": 37.877057549928594
+      },
+      {
+        "spot": 134.0,
+        "call": 39.27525148226604,
+        "terminal_payoff": 34.0,
+        "discounted_strike_lower": 38.877057549928594
+      },
+      {
+        "spot": 135.0,
+        "call": 40.24176482518227,
+        "terminal_payoff": 35.0,
+        "discounted_strike_lower": 39.877057549928594
+      },
+      {
+        "spot": 136.0,
+        "call": 41.210945757945495,
+        "terminal_payoff": 36.0,
+        "discounted_strike_lower": 40.877057549928594
+      },
+      {
+        "spot": 137.0,
+        "call": 42.18259822996916,
+        "terminal_payoff": 37.0,
+        "discounted_strike_lower": 41.877057549928594
+      },
+      {
+        "spot": 138.0,
+        "call": 43.15653879623788,
+        "terminal_payoff": 38.0,
+        "discounted_strike_lower": 42.877057549928594
+      },
+      {
+        "spot": 139.0,
+        "call": 44.13259600472463,
+        "terminal_payoff": 39.0,
+        "discounted_strike_lower": 43.877057549928594
+      },
+      {
+        "spot": 140.0,
+        "call": 45.110609790924826,
+        "terminal_payoff": 40.0,
+        "discounted_strike_lower": 44.877057549928594
+      },
+      {
+        "spot": 141.0,
+        "call": 46.090430882557456,
+        "terminal_payoff": 41.0,
+        "discounted_strike_lower": 45.877057549928594
+      },
+      {
+        "spot": 142.0,
+        "call": 47.07192021701913,
+        "terminal_payoff": 42.0,
+        "discounted_strike_lower": 46.877057549928594
+      },
+      {
+        "spot": 143.00000000000003,
+        "call": 48.05494837375085,
+        "terminal_payoff": 43.00000000000003,
+        "discounted_strike_lower": 47.87705754992862
+      },
+      {
+        "spot": 144.0,
+        "call": 49.03939502328764,
+        "terminal_payoff": 44.0,
+        "discounted_strike_lower": 48.877057549928594
+      },
+      {
+        "spot": 145.0,
+        "call": 50.02514839440998,
+        "terminal_payoff": 45.0,
+        "discounted_strike_lower": 49.877057549928594
+      },
+      {
+        "spot": 146.0,
+        "call": 51.012104760494765,
+        "terminal_payoff": 46.0,
+        "discounted_strike_lower": 50.877057549928594
+      },
+      {
+        "spot": 147.0,
+        "call": 52.000167945881756,
+        "terminal_payoff": 47.0,
+        "discounted_strike_lower": 51.877057549928594
+      },
+      {
+        "spot": 148.0,
+        "call": 52.989248852815265,
+        "terminal_payoff": 48.0,
+        "discounted_strike_lower": 52.877057549928594
+      },
+      {
+        "spot": 149.0,
+        "call": 53.9792650092983,
+        "terminal_payoff": 49.0,
+        "discounted_strike_lower": 53.877057549928594
+      },
+      {
+        "spot": 150.0,
+        "call": 54.970140137999195,
+        "terminal_payoff": 50.0,
+        "discounted_strike_lower": 54.877057549928594
+      }
+    ]
+  },
+  "term": {
+    "R0": "21/20",
+    "short_gross": [
+      "1",
+      "6/5"
+    ],
+    "D01": "20/21",
+    "D02": "55/63",
+    "payoff_matrix": [
+      [
+        "21/20",
+        "1"
+      ],
+      [
+        "21/20",
+        "5/6"
+      ]
+    ],
+    "prices": [
+      "1",
+      "55/63"
+    ],
+    "state_prices_01": [
+      "10/21",
+      "10/21"
+    ],
+    "Q": [
+      "1/2",
+      "1/2"
+    ],
+    "bank_terminal": [
+      "21/20",
+      "63/50"
+    ],
+    "state_prices_02": [
+      "10/21",
+      "25/63"
+    ],
+    "spot_annual": [
+      0.05,
+      0.07025910201901375
+    ],
+    "spot_continuous": [
+      0.048790164169432056,
+      0.06790077057953088
+    ],
+    "forward_gross": "12/11",
+    "forward_net": "1/11",
+    "forward_positions": {
+      "short_ZCB1": -1,
+      "long_ZCB2": "12/11"
+    },
+    "forward_cashflows": [
+      "0",
+      "-1",
+      "12/11"
+    ],
+    "Q_expected_short_gross": "11/10",
+    "bond_holding_gross": [
+      "63/55",
+      "21/22"
+    ],
+    "x_replication": {
+      "bank_units": "40/7",
+      "ZCB2_units": "-6",
+      "cost0": "10/21",
+      "payoff1": [
+        "0",
+        "1"
+      ]
+    },
+    "worlds": [
+      {
+        "P_high": "1/4",
+        "m": [
+          "40/63",
+          "40/21"
+        ],
+        "expected_short_gross": "21/20",
+        "expected_short_net": "1/20",
+        "expected_bond_holding_gross": "483/440",
+        "bond_expected_excess_gross": "21/440",
+        "covariance_m_bond_return": "-1/22",
+        "forward_minus_expected_net_short": "9/220",
+        "measure_difference": "1/20",
+        "jensen_component": "-1/110"
+      },
+      {
+        "P_high": "3/4",
+        "m": [
+          "40/21",
+          "40/63"
+        ],
+        "expected_short_gross": "23/20",
+        "expected_short_net": "3/20",
+        "expected_bond_holding_gross": "441/440",
+        "bond_expected_excess_gross": "-21/440",
+        "covariance_m_bond_return": "1/22",
+        "forward_minus_expected_net_short": "-13/220",
+        "measure_difference": "-1/20",
+        "jensen_component": "-1/110"
+      },
+      {
+        "P_high": "1/2",
+        "m": [
+          "20/21",
+          "20/21"
+        ],
+        "expected_short_gross": "11/10",
+        "expected_short_net": "1/10",
+        "expected_bond_holding_gross": "21/20",
+        "bond_expected_excess_gross": "0",
+        "covariance_m_bond_return": "0",
+        "forward_minus_expected_net_short": "-1/110",
+        "measure_difference": "0",
+        "jensen_component": "-1/110"
+      }
+    ],
+    "flat_yield_regression": [
+      {
+        "yield_rate": "1/25",
+        "denominators": [
+          "26/25",
+          "676/625"
+        ],
+        "discount_factors": [
+          "25/26",
+          "625/676"
+        ],
+        "price": "66325/676",
+        "derivative": "-816875/4394"
+      },
+      {
+        "yield_rate": "1/20",
+        "denominators": [
+          "21/20",
+          "441/400"
+        ],
+        "discount_factors": [
+          "20/21",
+          "400/441"
+        ],
+        "price": "42460/441",
+        "derivative": "-1673200/9261"
+      }
+    ]
+  }
+}

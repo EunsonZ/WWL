@@ -1,0 +1,131 @@
+{
+  "identity": "synthetic reduced-form economies; no estimated policy effects",
+  "parameters": {
+    "a": "1",
+    "b": "1/2",
+    "phi_pi": "3/2",
+    "phi_x": "1/2",
+    "omega": "1",
+    "r_star": "2",
+    "pi_star": "2",
+    "Y_potential": "100",
+    "u_star": "5",
+    "kappa": "1/2",
+    "i_min": "0"
+  },
+  "periods": 16,
+  "scenarios": [
+    {
+      "name": "demand",
+      "p_initial": "0",
+      "d": [
+        "9/4"
+      ],
+      "s": []
+    },
+    {
+      "name": "cost",
+      "p_initial": "0",
+      "d": [],
+      "s": [
+        "1"
+      ]
+    },
+    {
+      "name": "cost_stronger",
+      "p_initial": "0",
+      "changes": {
+        "phi_pi": "3"
+      },
+      "d": [],
+      "s": [
+        "1"
+      ]
+    },
+    {
+      "name": "cost_anchored",
+      "p_initial": "0",
+      "changes": {
+        "omega": "0"
+      },
+      "d": [],
+      "s": [
+        "1"
+      ]
+    },
+    {
+      "name": "lower_bound",
+      "p_initial": "0",
+      "d": [
+        "-9"
+      ],
+      "s": []
+    },
+    {
+      "name": "negative_allowed",
+      "p_initial": "0",
+      "enforce_lower_bound": false,
+      "d": [
+        "-9"
+      ],
+      "s": []
+    },
+    {
+      "name": "two_period_slump",
+      "p_initial": "0",
+      "d": [
+        "-9",
+        "-9"
+      ],
+      "s": [],
+      "periods": 6
+    },
+    {
+      "name": "migration_demand",
+      "p_initial": "0",
+      "changes": {
+        "phi_pi": "2"
+      },
+      "d": [
+        "3"
+      ],
+      "s": []
+    },
+    {
+      "name": "migration_cost",
+      "p_initial": "0",
+      "changes": {
+        "phi_pi": "2"
+      },
+      "d": [],
+      "s": [
+        "1"
+      ]
+    },
+    {
+      "name": "initial_inflation",
+      "p_initial": "1",
+      "d": [],
+      "s": []
+    },
+    {
+      "name": "weak_feedback",
+      "p_initial": "1",
+      "changes": {
+        "phi_pi": "1/2"
+      },
+      "d": [],
+      "s": []
+    },
+    {
+      "name": "weak_anchored",
+      "p_initial": "1",
+      "changes": {
+        "phi_pi": "1/2",
+        "omega": "0"
+      },
+      "d": [],
+      "s": []
+    }
+  ]
+}

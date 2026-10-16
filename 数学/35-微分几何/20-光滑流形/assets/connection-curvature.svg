@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480">
+<title>弯坐标与内在曲率分开核验</title><desc>左：欧氏直线在剪切图中为v等于负u平方，Christoffel非零但曲率零。右：正定度量dx平方加(1加x平方)平方dtheta平方，高斯曲率为负2除以1加x平方。同一有限有理输入生成折线，不是空间嵌入图。</desc>
+<rect width="1200" height="480" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="34" y="36" font-size="24">Nonzero connection coefficients do not determine curvature</text>
+<text x="40" y="80" font-size="20">Euclidean shear: x=u, y=v+u²</text><text x="650" y="80" font-size="20">Abstract metric: g=dx²+(1+x²)²dθ²</text>
+<path d="M70,130 H510 M285,105 V350 M670,170 H1110 M890,145 V340" stroke="#94a3b8" fill="none"/>
+<path d="M105.00,310.00 L150.00,231.25 L195.00,175.00 L240.00,141.25 L285.00,130.00 L330.00,141.25 L375.00,175.00 L420.00,231.25 L465.00,310.00" fill="none" stroke="#2563eb" stroke-width="3"/><path d="M710.00,198.00 L755.00,213.08 L800.00,240.00 L845.00,282.00 L890.00,310.00 L935.00,282.00 L980.00,240.00 L1025.00,213.08 L1070.00,198.00" fill="none" stroke="#b45309" stroke-width="3"/>
+<text x="514" y="134" font-size="16">u</text><text x="294" y="112" font-size="16">v</text><text x="1114" y="174" font-size="16">x</text><text x="900" y="154" font-size="16">K</text>
+<text x="98" y="155" font-size="16">−2</text><text x="459" y="155" font-size="16">2</text><text x="302" y="318" font-size="16">−4</text>
+<text x="704" y="194" font-size="16">−2</text><text x="1067" y="194" font-size="16">2</text><text x="900" y="320" font-size="16">−2</text>
+<text x="45" y="377" font-size="18">v=−u²; Gamma^v_uu=2; R=0; speed²=1</text><text x="650" y="377" font-size="18">K=−2/(1+x²); no 3D embedding asserted</text>
+<text x="45" y="414" font-size="17">Acceleration (0,−2) + correction (0,2) = 0</text><text x="650" y="414" font-size="17">[0,1]×[0,1]: integral omega=2; turn=−2 rad</text>
+<text x="34" y="459" font-size="15">Dimensionless inputs; physical K has unit L^-2. Polylines join 9 rational samples; general proofs are in the lessons.</text>
+</g></svg>

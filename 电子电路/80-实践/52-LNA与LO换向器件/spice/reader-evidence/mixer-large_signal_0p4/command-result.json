@@ -1,0 +1,15 @@
+{
+  "case": "mixer-large_signal_0p4",
+  "argv": [
+    "python3",
+    "/private/tmp/wwl-next-context/run_local.py",
+    "--timeout",
+    "300",
+    "--",
+    "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+    "-b",
+    "mixer.cir"
+  ],
+  "exit": 0,
+  "elapsed_seconds": 0.7951968340203166
+}

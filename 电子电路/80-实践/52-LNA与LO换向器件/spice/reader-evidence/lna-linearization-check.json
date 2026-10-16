@@ -1,0 +1,276 @@
+{
+  "status": "PASS",
+  "node_order": [
+    "s",
+    "d",
+    "out"
+  ],
+  "kb_from_ngspice47_const_h": 1.38064852e-23,
+  "conventions": "4kT*conductance, nlev default2 => channel4kT*(2/3)*abs(gm); RL noisy0; ideal gate/body-source source exact as deck; card epsilon retained not fitted",
+  "rows": [
+    {
+      "Rs_ohm": 25,
+      "frequency_Hz": 1000000,
+      "gm_analytic_S": 0.020174241001832016,
+      "gds_analytic_S": 1.9656019656019657e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        5.883312647474554,
+        0.520477478509446
+      ],
+      "gain_relative_error": 3.655082142247023e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.4456096887810305e-17,
+        "onoise_rd": 4.01389234929199e-18,
+        "onoise_m1_id": 1.9071142668759857e-17
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 7.298686099943552e-10,
+        "onoise_rd": 5.878955100513394e-10,
+        "onoise_m1_id": 6.724301115923481e-10
+      }
+    },
+    {
+      "Rs_ohm": 25,
+      "frequency_Hz": 90000000,
+      "gm_analytic_S": 0.020174241001832016,
+      "gds_analytic_S": 1.9656019656019657e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        5.924245171945685,
+        -0.18404672487965082
+      ],
+      "gain_relative_error": 3.630031213276665e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.455815968065777e-17,
+        "onoise_rd": 4.042332885599349e-18,
+        "onoise_m1_id": 1.9206642152072727e-17
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 7.258391665487807e-10,
+        "onoise_rd": 5.838649563827403e-10,
+        "onoise_m1_id": 6.68402444503613e-10
+      }
+    },
+    {
+      "Rs_ohm": 25,
+      "frequency_Hz": 100000000,
+      "gm_analytic_S": 0.020174241001832016,
+      "gds_analytic_S": 1.9656019656019657e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        5.922961691830721,
+        -0.20569159895447706
+      ],
+      "gain_relative_error": 3.629732166002068e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.4555354257099186e-17,
+        "onoise_rd": 4.041577761723815e-18,
+        "onoise_m1_id": 1.9203141153748118e-17
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 7.257416889672186e-10,
+        "onoise_rd": 5.837672567565733e-10,
+        "onoise_m1_id": 6.683062991896804e-10
+      }
+    },
+    {
+      "Rs_ohm": 25,
+      "frequency_Hz": 110000000,
+      "gm_analytic_S": 0.020174241001832016,
+      "gds_analytic_S": 1.9656019656019657e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        5.9215432616277655,
+        -0.2272173728776872
+      ],
+      "gain_relative_error": 3.6293951464236975e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.4552253744164418e-17,
+        "onoise_rd": 4.040743200959397e-18,
+        "onoise_m1_id": 1.9199271826735306e-17
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 7.256326650662004e-10,
+        "onoise_rd": 5.836586769447649e-10,
+        "onoise_m1_id": 6.681972752886622e-10
+      }
+    },
+    {
+      "Rs_ohm": 50,
+      "frequency_Hz": 1000000,
+      "gm_analytic_S": 0.020169283576765933,
+      "gds_analytic_S": 1.9665683382497545e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        4.411323630403539,
+        0.38986918654579233
+      ],
+      "gain_relative_error": 3.0601382030941913e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.625430326690664e-17,
+        "onoise_rd": 4.0256336494992174e-18,
+        "onoise_m1_id": 1.0724329396922309e-17
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 6.112605976937857e-10,
+        "onoise_rd": 4.4017656186667864e-10,
+        "onoise_m1_id": 4.886979709795014e-10
+      }
+    },
+    {
+      "Rs_ohm": 50,
+      "frequency_Hz": 90000000,
+      "gm_analytic_S": 0.020169283576765933,
+      "gds_analytic_S": 1.9665683382497545e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        4.442726947410479,
+        -0.1324530778765171
+      ],
+      "gain_relative_error": 3.042469095240652e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.637331311645083e-17,
+        "onoise_rd": 4.0553766811402855e-18,
+        "onoise_m1_id": 1.0805024757248592e-17
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 6.084646120285697e-10,
+        "onoise_rd": 4.3736925192661147e-10,
+        "onoise_m1_id": 4.859039837157297e-10
+      }
+    },
+    {
+      "Rs_ohm": 50,
+      "frequency_Hz": 100000000,
+      "gm_analytic_S": 0.020169283576765933,
+      "gds_analytic_S": 1.9665683382497545e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        4.441949779702842,
+        -0.14807660391466326
+      ],
+      "gain_relative_error": 3.0423805798339484e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.6371222857059437e-17,
+        "onoise_rd": 4.054921911896014e-18,
+        "onoise_m1_id": 1.0804155435861089e-17
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 6.084379666759787e-10,
+        "onoise_rd": 4.373401640833663e-10,
+        "onoise_m1_id": 4.858784485861634e-10
+      }
+    },
+    {
+      "Rs_ohm": 50,
+      "frequency_Hz": 110000000,
+      "gm_analytic_S": 0.020169283576765933,
+      "gds_analytic_S": 1.9665683382497545e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        4.441090692601031,
+        -0.16361451173568808
+      ],
+      "gain_relative_error": 3.042318231278098e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.636891192330611e-17,
+        "onoise_rd": 4.054419092963502e-18,
+        "onoise_m1_id": 1.0803194026189052e-17
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 6.084202031075847e-10,
+        "onoise_rd": 4.373199580243181e-10,
+        "onoise_m1_id": 4.858600188839546e-10
+      }
+    },
+    {
+      "Rs_ohm": 100,
+      "frequency_Hz": 1000000,
+      "gm_analytic_S": 0.020159365069366646,
+      "gds_analytic_S": 1.9685039370078743e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        2.940108341459993,
+        0.2595869888648695
+      ],
+      "gain_relative_error": 2.2126901916987628e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.4440443007776238e-17,
+        "onoise_rd": 4.037385614090426e-18,
+        "onoise_m1_id": 4.766117164408475e-18
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 4.4206860394524483e-10,
+        "onoise_rd": 2.932467602079214e-10,
+        "onoise_m1_id": 2.668005816275354e-10
+      }
+    },
+    {
+      "Rs_ohm": 100,
+      "frequency_Hz": 90000000,
+      "gm_analytic_S": 0.020159365069366646,
+      "gds_analytic_S": 1.9685039370078743e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        2.9615032762680826,
+        -0.08459324600390411
+      ],
+      "gain_relative_error": 2.2021332223198689e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.454990340576167e-17,
+        "onoise_rd": 4.0684915974236984e-18,
+        "onoise_m1_id": 4.806224594912316e-18
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 4.404132614155287e-10,
+        "onoise_rd": 2.915552244076025e-10,
+        "onoise_m1_id": 2.651470154546587e-10
+      }
+    },
+    {
+      "Rs_ohm": 100,
+      "frequency_Hz": 100000000,
+      "gm_analytic_S": 0.020159365069366646,
+      "gds_analytic_S": 1.9685039370078743e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        2.961106515866085,
+        -0.09460295635921978
+      ],
+      "gain_relative_error": 2.2023067537002044e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.4548981519622765e-17,
+        "onoise_rd": 4.068351595786919e-18,
+        "onoise_m1_id": 4.806853617517349e-18
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 4.404459019724527e-10,
+        "onoise_rd": 2.9157876113572456e-10,
+        "onoise_m1_id": 2.6518121032381714e-10
+      }
+    },
+    {
+      "Rs_ohm": 100,
+      "frequency_Hz": 110000000,
+      "gm_analytic_S": 0.020159365069366646,
+      "gds_analytic_S": 1.9685039370078743e-05,
+      "Cgs_intrinsic_card_F": 1.1510479332299998e-14,
+      "gain_analytic_re_im": [
+        2.9606677963958012,
+        -0.10455786864476505
+      ],
+      "gain_relative_error": 2.2025403024728446e-10,
+      "noise_output_PSD_V2_Hz": {
+        "onoise_rs": 1.4547961479657203e-17,
+        "onoise_rd": 4.068196527975392e-18,
+        "onoise_m1_id": 4.807548343520662e-18
+      },
+      "noise_PSD_relative_errors": {
+        "onoise_rs": 4.4048786840278353e-10,
+        "onoise_rd": 2.9161162373725347e-10,
+        "onoise_m1_id": 2.652251751555923e-10
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: four nmos commutating bridge baseline; ideal level1 not pdk
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+v(p) = 5.999999999390013e-01
+v(n) = 5.999999999390011e-01
+v(op) = 5.999999999302876e-01
+v(on) = 5.999999999302873e-01
+@m1[id] = -6.09917500533831e-13
+@m1[gm] = 1.742739286214601e-12
+@m1[gds] = 1.400000000121998e-01
+@m3[id] = 6.099999999302876e-13
+@m3[gm] = 0.000000000000000e+00
+@m3[gds] = 0.000000000000000e+00
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+sigp                                       0.6
+sign                                       0.6
+p                                          0.6
+n                                          0.6
+lop                                        1.8
+lon                                          0
+cm                                         0.6
+op                                         0.6
+on                                         0.6
+blon#branch                                  0
+brfn#branch                       -2.43996e-12
+brfp#branch                       -2.43995e-12
+vcm#branch                        -1.39425e-16
+vlo#branch                                   0
+
+ Reference value :  6.56653e-07
+No. of Data Rows : 125283
+binary raw file "full.raw"
+ngspice-47 done

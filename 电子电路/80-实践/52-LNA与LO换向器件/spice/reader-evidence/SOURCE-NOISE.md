@@ -1,0 +1,5 @@
+ngspice47 official source tar: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/47/ngspice-47.tar.gz
+SHA256894e649651f1838a14095e5a5439e7d3aa63e87ede14d283173fda4fcdef675f.
+Local source inspected: mos1set.c:90-91 default NLEV2; mos1noi.c:113-115 NLEV<3 computes Sid=(2/3)*abs(gm); nevalsrc.c:110-111 THERMNOISE multiplies4*k*T and transfer gain; const.h:37 kB1.38064852e-23. Thus this actual stationary MOS1 default channel PSD is4*k*T*(2/3)*abs(gm), not a universal transistor claim. Modern SI kB1.380649e-23 differs in absolute PSD by about3.48e-7; NF ratios cancel it.
+Actual@cgs11.5104793323fF/cgd=cgb0, with full nonzero TOX20nm Meyer retained. Canonical epsOx3.45314379969e-11. LNA body=source, RLnoisy0 and KFdefault0; sourceRs/Rd/channel output density squares sum to total. lna-linearization-check.json compares all12 complex AC/noise rows to independent3x3 nodal equations, maxrelative7.30e-10.
+The ideal mixer4*k*T*Ron model is separate analysis, not actual LO-periodic noise evidence. Neither ordinary stationary.noise nor these finite transient windows certify PSS noise folding.

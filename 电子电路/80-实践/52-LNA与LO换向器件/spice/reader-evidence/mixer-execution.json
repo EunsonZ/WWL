@@ -1,0 +1,122 @@
+[
+  {
+    "case": "mixer-baseline",
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+      "-b",
+      "mixer.cir"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.6766833330038935
+  },
+  {
+    "case": "mixer-blocker_only",
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+      "-b",
+      "mixer.cir"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.7498472910374403
+  },
+  {
+    "case": "mixer-image",
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+      "-b",
+      "mixer.cir"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.6902630840195343
+  },
+  {
+    "case": "mixer-large_signal_0p1",
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+      "-b",
+      "mixer.cir"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.7970137500087731
+  },
+  {
+    "case": "mixer-large_signal_0p4",
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+      "-b",
+      "mixer.cir"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.7951968340203166
+  },
+  {
+    "case": "mixer-wanted",
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+      "-b",
+      "mixer.cir"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.6873101249802858
+  },
+  {
+    "case": "mixer-wanted_with_blocker",
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+      "-b",
+      "mixer.cir"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.7769828749587759
+  },
+  {
+    "case": "mixer-weak_LO",
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/private/tmp/wwl-next-184-env/install/bin/ngspice",
+      "-b",
+      "mixer.cir"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.6164173330180347
+  }
+]

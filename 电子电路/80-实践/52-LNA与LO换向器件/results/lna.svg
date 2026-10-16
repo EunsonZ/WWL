@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1020"><title>共栅MOS：同一个Q点决定匹配、增益和主要噪声</title><desc>同一固定卡的节点、噪声与实际有限窗口数据；非真实工艺或硬件。</desc><style>text{font-family:Arial Unicode MS,PingFang SC,Noto Sans CJK SC,system-ui,sans-serif;font-size:16px;fill:#172033}.title{font-size:24px;font-weight:bold}.small{font-size:13px}</style><rect width="1100" height="1020" fill="#f8fafc"/>
+<text x="40" y="40" class="title">共栅MOS：同一个Q点决定匹配、增益和主要噪声</text>
+<text x="50" y="85" class="">A 实际拓扑：gate交流地，B随S；Cout隔直，RL为吸收读出</text>
+<rect x="120" y="185" width="110" height="38" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<text x="131" y="210" class="">Rs=50Ω</text>
+<path d="M60,204L120,204" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="52" y="175" class="">vb＋e</text>
+<path d="M230,204L395,204" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="335" y="190" class="">S, B</text>
+<rect x="395" y="146" width="115" height="90" rx="3" fill="#e0f2fe" stroke="#0369a1"/>
+<text x="419" y="193" class="">M1 CG</text>
+<path d="M565,164L565,115" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<rect x="520" y="80" width="100" height="35" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<text x="530" y="104" class="">RD=800Ω</text>
+<path d="M565,80L565,66" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="600" y="76" class="small">VDD=1.8V</text>
+<path d="M452,236L452,276" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="470" y="265" class="small">G=VG，交流地</text>
+<path d="M510,164L660,164" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="550" y="148" class="">D</text>
+<path d="M660,149L660,180" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<path d="M670,149L670,180" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<path d="M670,164L850,164" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="635" y="130" class="small">Cout=1nF</text>
+<text x="808" y="145" class="">o</text>
+<path d="M850,164L850,215" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<rect x="807" y="215" width="85" height="38" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<text x="818" y="239" class="">RL=1000</text>
+<path d="M850,253L850,280" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<path d="M831,280L869,280" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="50" y="318" class="small">外支路：Cgs在G–S，Cgd在G–D，Cds在D–S；Meyer Cgs另加到总Cgs。</text>
+<text x="50" y="346" class="small">表中三案主动重偏置VG保持ID，不能与固定VG换Rs的实验混同。</text>
+<text x="85" y="395" class="">B 有限频点：|vo/e|，标记为实际SPICE</text>
+<rect x="85" y="440" width="430" height="255" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<path d="M85,695.0L515,695.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="34" y="699.0" class="small">2.8</text>
+<text x="70.0" y="717" class="small">6</text>
+<path d="M85,631.25L515,631.25" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="34" y="635.25" class="small">3.66</text>
+<text x="177.5" y="717" class="small">6.51</text>
+<path d="M85,567.5L515,567.5" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="34" y="571.5" class="small">4.51</text>
+<text x="285.0" y="717" class="small">7.02</text>
+<path d="M85,503.75L515,503.75" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="34" y="507.75" class="small">5.37</text>
+<text x="392.5" y="717" class="small">7.53</text>
+<path d="M85,440.0L515,440.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="34" y="444.0" class="small">6.22</text>
+<text x="500.0" y="717" class="small">8.04</text>
+<text x="405" y="741" class="small">log10 f/Hz</text>
+<text x="60" y="426" class="small">V/V</text>
+<polyline fill="none" stroke="#0369a1" stroke-width="2" points="85.0000,463.6520 496.6426,462.1000 506.2810,462.1425 515.0000,462.1896"/>
+<circle cx="85.0" cy="463.65203779859434" r="4" fill="#0369a1"/>
+<circle cx="496.6426423825348" cy="462.09995281117074" r="4" fill="#0369a1"/>
+<circle cx="506.2810236132215" cy="462.1425424765621" r="4" fill="#0369a1"/>
+<circle cx="515.0" cy="462.1896167245281" r="4" fill="#0369a1"/>
+<text x="85" y="414" class="small">Rs=25Ω</text>
+<polyline fill="none" stroke="#c2410c" stroke-width="2" points="85.0000,573.8532 496.6426,572.6464 506.2810,572.6676 515.0000,572.6910"/>
+<circle cx="85.0" cy="573.8532225851128" r="4" fill="#c2410c"/>
+<circle cx="496.6426423825348" cy="572.646439932522" r="4" fill="#c2410c"/>
+<circle cx="506.2810236132215" cy="572.6675976526035" r="4" fill="#c2410c"/>
+<circle cx="515.0" cy="572.6909906228489" r="4" fill="#c2410c"/>
+<text x="195" y="414" class="small">Rs=50Ω</text>
+<polyline fill="none" stroke="#059669" stroke-width="2" points="85.0000,683.9948 496.6426,683.1622 506.2810,683.1692 515.0000,683.1769"/>
+<circle cx="85.0" cy="683.9947892241252" r="4" fill="#059669"/>
+<circle cx="496.6426423825348" cy="683.162155110238" r="4" fill="#059669"/>
+<circle cx="506.2810236132215" cy="683.1691545328772" r="4" fill="#059669"/>
+<circle cx="515.0" cy="683.1768994471071" r="4" fill="#059669"/>
+<text x="305" y="414" class="small">Rs=100Ω</text>
+<text x="610" y="395" class="">C 同一频点 110MHz：功率与噪声</text>
+<text x="615" y="435" class="">Rs=25Ω  GT=3.511630</text>
+<text x="615" y="460" class="small">F=2.597005 / NF=4.144727dB</text>
+<text x="615" y="500" class="">Rs=50Ω  GT=3.950011</text>
+<text x="615" y="525" class="small">F=1.907673 / NF=2.805038dB</text>
+<text x="615" y="565" class="">Rs=100Ω  GT=3.510594</text>
+<text x="615" y="590" class="small">F=1.610102 / NF=2.068535dB</text>
+<text x="610" y="660" class="small">噪声条：Rs=50Ω / 110MHz，V²/Hz</text>
+<text x="610" y="697" class="small">source</text>
+<rect x="690" y="681" width="240.0" height="18" rx="3" fill="#0369a1" stroke="none"/>
+<text x="690" y="715" class="small">1.63689e-17</text>
+<text x="610" y="737" class="small">channel</text>
+<rect x="690" y="721" width="158.39577966045425" height="18" rx="3" fill="#c2410c" stroke="none"/>
+<text x="690" y="755" class="small">1.08032e-17</text>
+<text x="610" y="777" class="small">Rd</text>
+<rect x="690" y="761" width="59.445648365044626" height="18" rx="3" fill="#059669" stroke="none"/>
+<text x="690" y="795" class="small">4.05442e-18</text>
+<text x="50" y="910" class="small">D 固定理想gate/B随S/正R与C的三态多项式满足Routh；不认证任意终端或真实封装。</text>
+<text x="50" y="941" class="small">信号源AC 1为线性基激励；实际RF幅度/区域与压缩另查，单位电压比不是功率增益。</text>
+</svg>

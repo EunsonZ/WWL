@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1120"><title>四MOS换向桥：频移、镜像、阻塞和动态共模分开看</title><desc>同一固定卡的节点、噪声与实际有限窗口数据；非真实工艺或硬件。</desc><style>text{font-family:Arial Unicode MS,PingFang SC,Noto Sans CJK SC,system-ui,sans-serif;font-size:16px;fill:#172033}.title{font-size:24px;font-weight:bold}.small{font-size:13px}</style><rect width="1100" height="1120" fill="#f8fafc"/>
+<text x="40" y="40" class="title">四MOS换向桥：频移、镜像、阻塞和动态共模分开看</text>
+<text x="50" y="86" class="">A 四管真实连接：蓝LO+直通，橙LO−交叉，所有B接0V</text>
+<text x="125" y="130" class="">RFp</text>
+<circle cx="150" cy="150" r="4" fill="#172033"/>
+<text x="125" y="250" class="">RFn</text>
+<circle cx="150" cy="270" r="4" fill="#172033"/>
+<text x="745" y="130" class="">op</text>
+<circle cx="770" cy="150" r="4" fill="#172033"/>
+<text x="745" y="250" class="">on</text>
+<circle cx="770" cy="270" r="4" fill="#172033"/>
+<path d="M150,150L770,150" stroke="#0369a1" stroke-width="2" fill="none"/>
+<rect x="405" y="135" width="80" height="30" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<text x="417" y="156" class="small">MOS+</text>
+<path d="M150,270L770,270" stroke="#0369a1" stroke-width="2" fill="none"/>
+<rect x="405" y="255" width="80" height="30" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<text x="417" y="276" class="small">MOS+</text>
+<path d="M150,150L770,270" stroke="#c2410c" stroke-width="2" fill="none"/>
+<path d="M150,270L770,150" stroke="#c2410c" stroke-width="2" fill="none"/>
+<rect x="310" y="175" width="85" height="27" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<text x="317" y="194" class="small">Mnp LO−</text>
+<rect x="540" y="175" width="85" height="27" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<text x="547" y="194" class="small">Mpn LO−</text>
+<path d="M770,150L940,150" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<path d="M770,270L940,270" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<path d="M940,150L940,193" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<rect x="905" y="193" width="70" height="35" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<text x="913" y="216" class="small">RL</text>
+<path d="M940,228L940,270" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="55" y="325" class="small">差分Rs=50Ω（每侧一半），RL=1000Ω；op/on各RB=1MΩ回VCM。</text>
+<text x="55" y="351" class="small">交叉处无节点连接；输出偏置返回不等于瞬时共模钳位。LO有限边沿/Meyer均保留。</text>
+<text x="95" y="400" class="">B 同一500ns–1us有限窗口</text>
+<rect x="95" y="445" width="435" height="300" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<path d="M95,745.0L530,745.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="44" y="749.0" class="small">-90</text>
+<path d="M95,670.0L530,670.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="44" y="674.0" class="small">-53.8</text>
+<path d="M95,595.0L530,595.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="44" y="599.0" class="small">-17.5</text>
+<path d="M95,520.0L530,520.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="44" y="524.0" class="small">18.8</text>
+<path d="M95,445.0L530,445.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="44" y="449.0" class="small">55</text>
+<text x="420" y="791" class="small"></text>
+<text x="70" y="431" class="small">dB re 1mV</text>
+<rect x="116.5" y="568.0288219494462" width="44" height="176.97117805055382" rx="3" fill="#0369a1" stroke="none"/>
+<text x="106.5" y="559.0288219494462" class="small">0.5981mV</text>
+<text x="106.5" y="770" class="small">wanted10</text>
+<rect x="203.5" y="568.0288227410783" width="44" height="176.97117725892167" rx="3" fill="#c2410c" stroke="none"/>
+<text x="193.5" y="559.0288227410783" class="small">0.5981mV</text>
+<text x="193.5" y="770" class="small">image10</text>
+<rect x="290.5" y="717.8691040602138" width="44" height="27.130895939786228" rx="3" fill="#059669" stroke="none"/>
+<text x="280.5" y="708.8691040602138" class="small">0.0001431mV</text>
+<text x="280.5" y="770" class="small">weak10</text>
+<rect x="377.5" y="568.0616038320177" width="44" height="176.93839616798232" rx="3" fill="#7c3aed" stroke="none"/>
+<text x="367.5" y="559.0616038320177" class="small">0.5971mV</text>
+<text x="367.5" y="770" class="small">joint10</text>
+<rect x="464.5" y="460.37144766662493" width="44" height="284.62855233337507" rx="3" fill="#0369a1" stroke="none"/>
+<text x="454.5" y="451.37144766662493" class="small">239.1mV</text>
+<text x="454.5" y="770" class="small">joint30</text>
+<text x="670" y="400" class="">C 实际共模范围/均值</text>
+<rect x="670" y="445" width="350" height="300" rx="3" fill="#fff" stroke="#cbd5e1"/>
+<path d="M670,745.0L1020,745.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="619" y="749.0" class="small">0.3</text>
+<path d="M670,670.0L1020,670.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="619" y="674.0" class="small">0.43</text>
+<path d="M670,595.0L1020,595.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="619" y="599.0" class="small">0.56</text>
+<path d="M670,520.0L1020,520.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="619" y="524.0" class="small">0.69</text>
+<path d="M670,445.0L1020,445.0" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+<text x="619" y="449.0" class="small">0.82</text>
+<text x="910" y="791" class="small"></text>
+<text x="645" y="431" class="small">V</text>
+<path d="M728.3333333333334,689.5946703398246L728.3333333333334,463.3455748619464" stroke="#0369a1" stroke-width="6" fill="none"/>
+<circle cx="728.3333333333334" cy="572.1196640768865" r="4" fill="#172033"/>
+<text x="696.3333333333334" y="770" class="small">baseline</text>
+<path d="M845.0,572.4735369915188L845.0,559.462815771578" stroke="#c2410c" stroke-width="6" fill="none"/>
+<circle cx="845.0" cy="571.8700458960265" r="4" fill="#172033"/>
+<text x="813.0" y="770" class="small">weak LO</text>
+<path d="M961.6666666666667,717.8950768013578L961.6666666666667,463.3286726395736" stroke="#059669" stroke-width="6" fill="none"/>
+<circle cx="961.6666666666667" cy="572.4247748734975" r="4" fill="#172033"/>
+<text x="929.6666666666667" y="770" class="small">joint</text>
+<text x="50" y="846" class="">D 理想常Ron噪声模型：不同RF谱口径，不是实际MOS周期noise仿真</text>
+<text x="60" y="884" class="">两RF带 SSB F=2.705074；全白RF所有奇次带 F=3.172475</text>
+<text x="60" y="917" class="small">包括2Ron和RB热源；实际预选器还改变谐波阻抗/损耗热源，不能只删谱。</text>
+<text x="50" y="978" class="small">弱LO小残余、强音10MHz残余均为有限窗口；步长细化不充PSS/物理IM3或硬件签核。</text>
+<text x="50" y="1010" class="small">本图未给LNA到桥的真实balun/加载连接，两个器件实例不能直接乘GT/Friis。</text>
+</svg>

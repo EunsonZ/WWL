@@ -1,0 +1,361 @@
+{
+  "kind": "nonuniform original finite projection windows, not uniform invented traces",
+  "files": [
+    {
+      "case": "mixer-baseline",
+      "raw_full_original_sha256": "dfe40e49ed18857e48c924cabf7626a4d6bd3e794ff443109791664583ac7af6",
+      "source_waveform_gz_sha256": "b990a3d07d90700e131703a47981d75b73ed6d52944a911c3d8155f16c4d0dfb",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        9e-07,
+        1e-06
+      ],
+      "purpose": "one-period figure only; original full-window projections require replay",
+      "row_count": 11727,
+      "first_time_s": 8.999935801596222e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 107347,
+      "compact_plain_sha256": "e1f779fd59a703b5fba76b1d3644571a25011d51e619d3c288c79fe59fc310b6",
+      "compact_gzip_sha256": "1cd664d12909191730fc405f7437be0cdd198ab4a46f776be9ae240b106d4b11"
+    },
+    {
+      "case": "mixer-wanted",
+      "raw_full_original_sha256": "da6a83bc762e34b83c75ede31300fdd8c861242eafe27dad304b970c551e7c71",
+      "source_waveform_gz_sha256": "f53a3416e631131355929d373d49655af27bef5c1569108d8ac4a60aec5e4d7e",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        5e-07,
+        1e-06
+      ],
+      "purpose": "full original five-IF-cycle projection window",
+      "row_count": 59575,
+      "first_time_s": 4.999950009735054e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 1335927,
+      "compact_plain_sha256": "c3b0d7c8f6b858ca29de115c3c7e52eee71638fe1564d8e09d052d6c5e7a2765",
+      "compact_gzip_sha256": "7755cbd336c61cf344a9c69d5b96112c6cee15b55b5471474b16f3f48d2997b1"
+    },
+    {
+      "case": "mixer-image",
+      "raw_full_original_sha256": "b0be970b3a86a757987106d6d2ef02b64ad83be193740d87801e32413652cda8",
+      "source_waveform_gz_sha256": "8cfc4e8f83dee6f44e3ea0aa3e66ba0f535a193399579f167203c28d114effa5",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        5e-07,
+        1e-06
+      ],
+      "purpose": "full original five-IF-cycle projection window",
+      "row_count": 59563,
+      "first_time_s": 4.999949744997805e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 1333754,
+      "compact_plain_sha256": "4175879d575d0a4fb988cb72964b488e2ab570a5ea437e1f248fa474b7f50d8f",
+      "compact_gzip_sha256": "5a668e5fd19eb67231dbb0576de1e37e6f52fdf3da254e1213b8206777ff7017"
+    },
+    {
+      "case": "mixer-weak_LO",
+      "raw_full_original_sha256": "215643ec1654f7344df96874eef0c414b8707a0110886026f40569174f3776f2",
+      "source_waveform_gz_sha256": "0ae4c6821b4fa47380c3f79f1493536f9e6ccee72bf81a5532e40934972984bd",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        5e-07,
+        1e-06
+      ],
+      "purpose": "full original five-IF-cycle projection window",
+      "row_count": 55539,
+      "first_time_s": 4.99993677276123e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 666062,
+      "compact_plain_sha256": "772ad94d415c4dbf19d8d39d0b2eef9638add11f6871c1ce2a79d5834a2b9f33",
+      "compact_gzip_sha256": "2ee5fc0e7e18dfaa0ecd2a7b405db63d5b961b116f78a27c5bb2ac6d8883fcae"
+    },
+    {
+      "case": "mixer-large_signal_0p1",
+      "raw_full_original_sha256": "7aaca0bf21f9108c3ca36d694e08d38221bbbe0176a19a0d0b168d912d13428e",
+      "source_waveform_gz_sha256": "77a755b0b51a4eea8af16d4cb99683600822213308ae86cbff09b1c12afa657f",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        9e-07,
+        1e-06
+      ],
+      "purpose": "one-period figure only; original full-window projections require replay",
+      "row_count": 11836,
+      "first_time_s": 8.999937573860161e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 281092,
+      "compact_plain_sha256": "f1cb0b170507b47ca8b86ec25673194d9a3d47730cee0049612a5dd30e304e6c",
+      "compact_gzip_sha256": "937c4c31183bfb2419ee7f3aa8396cd9ac7a28dded86210c8193ae0e46caf0fe"
+    },
+    {
+      "case": "mixer-large_signal_0p4",
+      "raw_full_original_sha256": "ec9f1a51974a0fb83e8d92e04ba19e472b8a1d52c78887e1d9b9ad229ffaf72b",
+      "source_waveform_gz_sha256": "daebc5f88d85af951331aa81dd19edb0bc4b7f344417578efaccb3a4de0d5f57",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        9e-07,
+        1e-06
+      ],
+      "purpose": "one-period figure only; original full-window projections require replay",
+      "row_count": 11623,
+      "first_time_s": 8.999989183687507e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 279697,
+      "compact_plain_sha256": "aac383087d4b994f866d809d2dfe2a59243b10f2b9d11eebfb0b1d080bc8cdfc",
+      "compact_gzip_sha256": "7137ea9f0da7b7c8920ef3326e5e838ff3ddcdfb9445076dcee15d7f0c879714"
+    },
+    {
+      "case": "mixer-wanted_with_blocker",
+      "raw_full_original_sha256": "6c43be2cbb2b5624202c632a223b97d80f96aa9db1eb7ed290b31095954dea56",
+      "source_waveform_gz_sha256": "fb096a82578840be76e2baf50498a25d529c3d8f5dd95141a60573c75b0a33cb",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        5e-07,
+        1e-06
+      ],
+      "purpose": "full original five-IF-cycle projection window",
+      "row_count": 59045,
+      "first_time_s": 4.999995882471905e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 1415520,
+      "compact_plain_sha256": "5d816aba03e6fceaf0af42a9ef0f8265e3bc35f6c839df6f8649c3ab307c36c4",
+      "compact_gzip_sha256": "dd7c9153ad5ca8f5f145594b5257d1fc415b2c8dfd9571ea141ba711e43cc2e0"
+    },
+    {
+      "case": "mixer-blocker_only",
+      "raw_full_original_sha256": "7e082e54c1a127bbd54998935bc5537c538dc0bd54a8882d6d0095156b9aaa5b",
+      "source_waveform_gz_sha256": "25570f4b8237c488bc56eb536c9c9704b0c00ab0f347617d950e8b959b28cb06",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        5e-07,
+        1e-06
+      ],
+      "purpose": "full original five-IF-cycle projection window",
+      "row_count": 59051,
+      "first_time_s": 4.999921766756663e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 1415612,
+      "compact_plain_sha256": "024f7082d2e4ba7ee6a6a00dcd5653e4485d6804d6cdc2087b9618eeb660f040",
+      "compact_gzip_sha256": "490d21bab7dda264142d6aeaee83792b4e78113a419f84b296c3e58cf62aa0b3"
+    },
+    {
+      "case": "convergence-step5ps/wanted",
+      "raw_full_original_sha256": "9069baf06c3fbd715915e4d1a2b9d076b75ad3882699623190fc509cccdbc58c",
+      "source_waveform_gz_sha256": "f1237a432906f97cf8316dbc262962ddf522804caf6c94df226994f8d9354837",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        5e-07,
+        1e-06
+      ],
+      "purpose": "full original five-IF-cycle projection window",
+      "row_count": 108647,
+      "first_time_s": 4.999966720794481e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 2359203,
+      "compact_plain_sha256": "c3f3cdf3d6dfe42284d13b73049e65e3687b5eb20a2ddd138cf76d363d6e53f6",
+      "compact_gzip_sha256": "f76e3edaf8252f8729ab72d1ea727369ac32c465abe0e586533f5ec90c78214b"
+    },
+    {
+      "case": "convergence-step5ps/blocker_only",
+      "raw_full_original_sha256": "28bcfdd58a8c83f5d77328d3b65dee07b3555ad3892e51c083058946cf3bb7c7",
+      "source_waveform_gz_sha256": "ece4aa1626febdc9dd6d37e694f9524784abc057d985e71d05efafa50d6f8f0b",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        5e-07,
+        1e-06
+      ],
+      "purpose": "full original five-IF-cycle projection window",
+      "row_count": 108188,
+      "first_time_s": 4.999993908697836e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 2543773,
+      "compact_plain_sha256": "d28f35eb50c69c7785623d0fe0d8ef585e596db6c2b89304db63a10d70b59963",
+      "compact_gzip_sha256": "ccc16353b41e1ad27656f676554382df3fbf9f95b23427e2066e821b8fd4942e"
+    },
+    {
+      "case": "convergence-step5ps/wanted_with_blocker",
+      "raw_full_original_sha256": "c2f2f41738d4613e67ef7f11f01adf17a14e09893d01a69eac079e30898f1410",
+      "source_waveform_gz_sha256": "102c1733ce411e6c7c916f25246a66bf9c1685a9e746531c5fb98598576322da",
+      "source_columns": [
+        "time_s",
+        "p_V",
+        "n_V",
+        "op_V",
+        "on_V",
+        "lop_V",
+        "lon_V"
+      ],
+      "selected": "all original rows spanning declared window, plus immediate actual row before left endpoint for interpolation; no decimation/resampling",
+      "window_s": [
+        5e-07,
+        1e-06
+      ],
+      "purpose": "full original five-IF-cycle projection window",
+      "row_count": 108196,
+      "first_time_s": 4.999993031394091e-07,
+      "last_time_s": 1e-06,
+      "last_time_includes_stop": true,
+      "column_mapping": [
+        "time",
+        "op-on",
+        "(op+on)/2"
+      ],
+      "compact_bytes_gzip": 2544051,
+      "compact_plain_sha256": "ddeca809d93b22c1a2e58745bba698dc7a1b809b7a5a91313760fa9e71a44c43",
+      "compact_gzip_sha256": "009087d63c6827d7e413f1fd852ddb35461ad1bdee404abd1a31f9ff3bedcea8"
+    }
+  ],
+  "note": "The actual immediate row before the declared left endpoint is retained, permitting exact same linear interpolation as the original full trace. No synthetic uniform rows are included.",
+  "canonical_card_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+  "card_identity_note": "Per-case configuration retains the card SHA at actual execution. Author subsequently aligned only oxide epsilon annotation with the unchanged ngspice47 intrinsic constant; final card copy/processed results use the current SHA. No SPICE model parameter was changed by that annotation update.",
+  "formal_whitelist": "Only reader-evidence/ is the formal finite package; no parent pilot*, full.raw.gz, waveform.txt.gz, runtime or caches."
+}

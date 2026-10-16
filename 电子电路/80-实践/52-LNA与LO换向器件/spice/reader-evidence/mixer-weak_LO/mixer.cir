@@ -1,0 +1,32 @@
+Four NMOS commutating bridge weak_LO; ideal LEVEL1 not PDK
+.temp 27
+.options reltol=1e-6 abstol=1e-13 vntol=1e-9 method=gear maxord=2
+BRFP sigp 0 V={0.6+(0.00050000000000000001*cos(2*pi*110000000*time)+0*cos(2*pi*130000000*time))}
+BRFN sign 0 V={0.6-(0.00050000000000000001*cos(2*pi*110000000*time)+0*cos(2*pi*130000000*time))}
+RSP sigp p 25.0
+RSN sign n 25.0
+VLO lop 0 PULSE(0.8 0 2.4750000000000002e-09 5.0000000000000002e-11 5.0000000000000002e-11 4.9500000000000005e-09 1e-08)
+BLON lon 0 V={0.8-v(lop)}
+VCM cm 0 0.6
+RBOP op cm 1000000
+RBON on cm 1000000
+M1 op lop p 0 NN W=0.0001 L=9.9999999999999995e-07
+M2 on lop n 0 NN W=0.0001 L=9.9999999999999995e-07
+M3 op lon n 0 NN W=0.0001 L=9.9999999999999995e-07
+M4 on lon p 0 NN W=0.0001 L=9.9999999999999995e-07
+RL op on 1000
+.model NN NMOS LEVEL=1 KP=0.002 VTO=0.5 LAMBDA=0 GAMMA=0 TOX=2e-08 CGSO=0 CGDO=0 TNOM=27
+.control
+set noaskquit
+set numdgt=15
+set filetype=binary
+op
+print v(p) v(n) v(op) v(on) @m1[id] @m1[gm] @m1[gds] @m3[id] @m3[gm] @m3[gds]
+tran 10p 1u 0 10p
+write full.raw all
+set wr_vecnames
+set wr_singlescale
+wrdata waveform.txt v(p) v(n) v(op) v(on) v(lop) v(lon)
+quit
+.endc
+.end

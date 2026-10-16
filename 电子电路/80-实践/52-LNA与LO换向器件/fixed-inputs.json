@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "reference_ohm": 50,
+  "temperature_K": 300.15,
+  "lna": {
+    "vdd_V": 1.8,
+    "source_bias_V": 0.1,
+    "nominal_Id_A": 0.001,
+    "nominal_Rs_ohm": 50,
+    "Rs_cases_ohm": [
+      25,
+      50,
+      100
+    ],
+    "Rd_ohm": 800,
+    "Rl_ohm": 1000,
+    "kp_A_per_V2": 0.02,
+    "W_m": 1e-05,
+    "L_m": 1e-06,
+    "Vth_V": 0.5,
+    "lambda_per_V": 0.02,
+    "tox_m": 2e-08,
+    "eps_oxide_F_per_m": 3.45314379969e-11,
+    "Cgs_external_F": 5e-13,
+    "Cgd_external_F": 5e-14,
+    "Cds_external_F": 1e-13,
+    "Cout_F": 1e-09,
+    "gamma_channel": 0.6666666666666666,
+    "frequencies_Hz": [
+      1000000,
+      90000000,
+      100000000,
+      110000000
+    ],
+    "signal_available_power_W": 1e-06,
+    "bias_policy": "hold_Id_rebias_gate"
+  },
+  "mixer": {
+    "source_diff_ohm": 50,
+    "load_diff_ohm": 1000,
+    "common_mode_V": 0.6,
+    "LO_high_V": 1.8,
+    "LO_low_V": 0,
+    "LO_Hz": 100000000,
+    "IF_Hz": 10000000,
+    "LO_edge_s": 5e-11,
+    "kp_A_per_V2": 0.002,
+    "W_m": 0.0001,
+    "L_m": 1e-06,
+    "Vth_V": 0.5,
+    "tox_m": 2e-08,
+    "small_signal_peak_V": 0.001,
+    "weak_LO_high_V": 0.8,
+    "blocker_peak_cases_V": [
+      0.1,
+      0.4
+    ],
+    "odd_harmonics": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "output_bias_each_ohm": 1000000,
+    "blocker_Hz": 130000000,
+    "blocker_peak_V": 0.4
+  }
+}

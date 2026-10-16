@@ -1,0 +1,47 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: four nmos commutating bridge weak_lo; ideal level1 not pdk
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+v(p) = 6.004999999694750e-01
+v(n) = 5.994999999695252e-01
+v(op) = 5.999987800024995e-01
+v(on) = 5.999987800024995e-01
+@m1[id] = 6.099987800024995e-13
+@m1[gm] = 0.000000000000000e+00
+@m1[gds] = 0.000000000000000e+00
+@m3[id] = 6.099987800024995e-13
+@m3[gm] = 0.000000000000000e+00
+@m3[gds] = 0.000000000000000e+00
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+sigp                                    0.6005
+sign                                    0.5995
+p                                       0.6005
+n                                       0.5995
+lop                                        0.8
+lon                               -1.11022e-16
+cm                                         0.6
+op                                    0.599999
+on                                    0.599999
+blon#branch                                  0
+brfn#branch                       -1.21899e-12
+brfp#branch                         -1.221e-12
+vcm#branch                           -2.44e-12
+vlo#branch                                   0
+
+ Reference value :  7.60605e-07
+No. of Data Rows : 111035
+binary raw file "full.raw"
+ngspice-47 done

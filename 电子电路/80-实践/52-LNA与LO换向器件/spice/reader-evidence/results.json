@@ -1,0 +1,983 @@
+{
+  "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+  "ngspice_version": "47",
+  "temperature_K": 300.15,
+  "lna": {
+    "25": {
+      "op": {
+        "v(d)": 0.9999999995343847,
+        "v(g)": 0.724136319419322,
+        "v(s)": 0.1250000000145504,
+        "@m1[id]": 0.001000000000582018,
+        "@m1[gm]": 0.0201742409986806,
+        "@m1[gds]": 1.965601965024976e-05,
+        "@m1[vdsat]": 0.09913631940477152,
+        "@m1[cgs]": 1.15104793323e-14,
+        "@m1[cgd]": 0.0,
+        "@m1[cgb]": 0.0
+      },
+      "frequencies": [
+        {
+          "frequency_Hz": 1000000,
+          "gain_out_over_generator_re_im": [
+            5.883312645316876,
+            0.5204774784399431
+          ],
+          "gain_magnitude": 5.906290247533443,
+          "transducer_gain_to_RL": 3.488426448810866,
+          "signal_output_power_W_for_card_available_input": 3.4884264488108652e-06,
+          "input_impedance_re_im": [
+            49.95615927892175,
+            -0.02608505970495305
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 1000000.0,
+            "inoise_spectrum": 1.037382448831408e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 4.367051941062282e-09,
+            "onoise_m1": 4.367051941062282e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.003470076375547e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.003470076375547e-09,
+            "onoise_rs": 3.802117420235631e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 3.802117420235631e-09,
+            "onoise_spectrum": 6.127081840495306e-09
+          },
+          "F": 2.5969064954996908,
+          "NF_dB": 4.144563126560314,
+          "noise_power_sum_relative_error": 0.0
+        },
+        {
+          "frequency_Hz": 90000000,
+          "gain_out_over_generator_re_im": [
+            5.924245169797092,
+            -0.1840467247667597
+          ],
+          "gain_magnitude": 5.927103342169896,
+          "transducer_gain_to_RL": 3.513055402876155,
+          "signal_output_power_W_for_card_available_input": 3.513055402876155e-06,
+          "input_impedance_re_im": [
+            49.99345708019224,
+            0.37612573296263074
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 90000000.0,
+            "inoise_spectrum": 1.037395554986931e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 4.382538321479341e-09,
+            "onoise_m1": 4.382538321479341e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.010555366867367e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.010555366867367e-09,
+            "onoise_rs": 3.815515649304939e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 3.815515649304939e-09,
+            "onoise_spectrum": 6.148750661115233e-09
+          },
+          "F": 2.5969721138749526,
+          "NF_dB": 4.144672862272033,
+          "noise_power_sum_relative_error": -1.6301092035020414e-16
+        },
+        {
+          "frequency_Hz": 100000000,
+          "gain_out_over_generator_re_im": [
+            5.922961689683229,
+            -0.2056915988286945
+          ],
+          "gain_magnitude": 5.926532224773937,
+          "transducer_gain_to_RL": 3.5123784211283913,
+          "signal_output_power_W_for_card_available_input": 3.512378421128391e-06,
+          "input_impedance_re_im": [
+            50.002833182574,
+            0.4177346966375383
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 100000000.0,
+            "inoise_spectrum": 1.037398629596173e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 4.382138877410726e-09,
+            "onoise_m1": 4.382138877410726e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.010367568223402e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.010367568223402e-09,
+            "onoise_rs": 3.815147997985892e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 3.815147997985892e-09,
+            "onoise_spectrum": 6.148176408238038e-09
+          },
+          "F": 2.596987507590986,
+          "NF_dB": 4.144698605275124,
+          "noise_power_sum_relative_error": 3.2608274582444703e-16
+        },
+        {
+          "frequency_Hz": 110000000,
+          "gain_out_over_generator_re_im": [
+            5.921543259481485,
+            -0.2272173727392018
+          ],
+          "gain_magnitude": 5.925900970180409,
+          "transducer_gain_to_RL": 3.5116302308385117,
+          "signal_output_power_W_for_card_available_input": 3.5116302308385115e-06,
+          "input_impedance_re_im": [
+            50.01319548141776,
+            0.4592571108179984
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 110000000.0,
+            "inoise_spectrum": 1.037402027824731e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 4.381697366763981e-09,
+            "onoise_m1": 4.381697366763981e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.010159993284361e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.010159993284361e-09,
+            "onoise_rs": 3.814741633925531e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 3.814741633925531e-09,
+            "onoise_spectrum": 6.147541683153699e-09
+          },
+          "F": 2.597004521632297,
+          "NF_dB": 4.1447270577803055,
+          "noise_power_sum_relative_error": 1.6307504223792212e-16
+        }
+      ]
+    },
+    "50": {
+      "op": {
+        "v(d)": 0.9999999996602771,
+        "v(g)": 0.7491606862181216,
+        "v(s)": 0.1500000000212327,
+        "@m1[id]": 0.001000000000424653,
+        "@m1[gm]": 0.02016928357230403,
+        "@m1[gds]": 1.966568337407574e-05,
+        "@m1[vdsat]": 0.09916068619688889,
+        "@m1[cgs]": 1.15104793323e-14,
+        "@m1[cgd]": 0.0,
+        "@m1[cgb]": 0.0
+      },
+      "frequencies": [
+        {
+          "frequency_Hz": 1000000,
+          "gain_out_over_generator_re_im": [
+            4.411323629049333,
+            0.3898691864942069
+          ],
+          "gain_magnitude": 4.428518278474939,
+          "transducer_gain_to_RL": 3.9223548285573266,
+          "signal_output_power_W_for_card_available_input": 3.9223548285573265e-06,
+          "input_impedance_re_im": [
+            49.96861622353318,
+            -0.02610883645339837
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 1000000.0,
+            "inoise_spectrum": 1.257338713365705e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 3.274802191229472e-09,
+            "onoise_m1": 3.274802191229472e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.006398177762138e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.006398177762138e-09,
+            "onoise_rs": 4.031662592153642e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 4.031662592153642e-09,
+            "onoise_spectrum": 5.568147474374184e-09
+          },
+          "F": 1.9074497261568395,
+          "NF_dB": 2.804531002623591,
+          "noise_power_sum_relative_error": 0.0
+        },
+        {
+          "frequency_Hz": 90000000,
+          "gain_out_over_generator_re_im": [
+            4.442726946059258,
+            -0.1324530778228543
+          ],
+          "gain_magnitude": 4.4447009500151715,
+          "transducer_gain_to_RL": 3.9510733070131536,
+          "signal_output_power_W_for_card_available_input": 3.951073307013154e-06,
+          "input_impedance_re_im": [
+            50.00592404372759,
+            0.37599679086526105
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 90000000.0,
+            "inoise_spectrum": 1.257387887455377e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 3.287099747801759e-09,
+            "onoise_m1": 3.287099747801759e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.013796583413178e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.013796583413178e-09,
+            "onoise_rs": 4.046395075432977e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 4.046395075432977e-09,
+            "onoise_spectrum": 5.588713137910482e-09
+          },
+          "F": 1.9075989284951897,
+          "NF_dB": 2.804870698172095,
+          "noise_power_sum_relative_error": 1.973180556084685e-16
+        },
+        {
+          "frequency_Hz": 100000000,
+          "gain_out_over_generator_re_im": [
+            4.441949778352024,
+            -0.1480766038544187
+          ],
+          "gain_magnitude": 4.4444172299651,
+          "transducer_gain_to_RL": 3.9505689028021305,
+          "signal_output_power_W_for_card_available_input": 3.95056890280213e-06,
+          "input_impedance_re_im": [
+            50.01530295773743,
+            0.41759133702927254
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 100000000.0,
+            "inoise_spectrum": 1.25739942315238e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 3.28696751286221e-09,
+            "onoise_m1": 3.28696751286221e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.01368366684607e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.01368366684607e-09,
+            "onoise_rs": 4.046136780572126e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 4.046136780572126e-09,
+            "onoise_spectrum": 5.588407661206615e-09
+          },
+          "F": 1.9076339305568528,
+          "NF_dB": 2.8049503850630266,
+          "noise_power_sum_relative_error": 3.9467925604123567e-16
+        },
+        {
+          "frequency_Hz": 110000000,
+          "gain_out_over_generator_re_im": [
+            4.441090691250603,
+            -0.1636145116697181
+          ],
+          "gain_magnitude": 4.444103535736052,
+          "transducer_gain_to_RL": 3.9500112472683364,
+          "signal_output_power_W_for_card_available_input": 3.950011247268336e-06,
+          "input_impedance_re_im": [
+            50.02566836315187,
+            0.4590992838172685
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 110000000.0,
+            "inoise_spectrum": 1.257412172960756e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 3.286821263917497e-09,
+            "onoise_m1": 3.286821263917497e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.01355881244885e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.01355881244885e-09,
+            "onoise_rs": 4.045851197627878e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 4.045851197627878e-09,
+            "onoise_spectrum": 5.588069883732448e-09
+          },
+          "F": 1.9076726168961782,
+          "NF_dB": 2.805038458005453,
+          "noise_power_sum_relative_error": 0.0
+        }
+      ]
+    },
+    "100": {
+      "op": {
+        "v(d)": 0.9999999997863964,
+        "v(g)": 0.799209473766568,
+        "v(s)": 0.2000000000267005,
+        "@m1[id]": 0.001000000000267003,
+        "@m1[gm]": 0.02015936506384573,
+        "@m1[gds]": 1.968503935948294e-05,
+        "@m1[vdsat]": 0.09920947373986755,
+        "@m1[cgs]": 1.15104793323e-14,
+        "@m1[cgd]": 0.0,
+        "@m1[cgb]": 0.0
+      },
+      "frequencies": [
+        {
+          "frequency_Hz": 1000000,
+          "gain_out_over_generator_re_im": [
+            2.940108340807485,
+            0.2595869888374139
+          ],
+          "gain_magnitude": 2.9515457747525136,
+          "transducer_gain_to_RL": 3.484648984183766,
+          "signal_output_power_W_for_card_available_input": 3.484648984183766e-06,
+          "input_impedance_re_im": [
+            49.993558057592175,
+            -0.026156479348452524
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 1000000.0,
+            "inoise_spectrum": 1.633448339926816e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 2.183143871378355e-09,
+            "onoise_m1": 2.183143871378355e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.009324665878184e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.009324665878184e-09,
+            "onoise_rs": 3.80005828920986e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 3.80005828920986e-09,
+            "onoise_spectrum": 4.821197545987502e-09
+          },
+          "F": 1.6096421539972408,
+          "NF_dB": 2.06729337014421,
+          "noise_power_sum_relative_error": -2.651432713296841e-16
+        },
+        {
+          "frequency_Hz": 90000000,
+          "gain_out_over_generator_re_im": [
+            2.961503275615797,
+            -0.08459324599025943
+          ],
+          "gain_magnitude": 2.962711202387142,
+          "transducer_gain_to_RL": 3.5110630675001056,
+          "signal_output_power_W_for_card_available_input": 3.5110630675001053e-06,
+          "input_impedance_re_im": [
+            50.03088593214492,
+            0.3757382793961428
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 90000000.0,
+            "inoise_spectrum": 1.63360462300078e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 2.192310332420563e-09,
+            "onoise_m1": 2.192310332420563e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.017050221545688e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.017050221545688e-09,
+            "onoise_rs": 3.814433562057897e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 3.814433562057897e-09,
+            "onoise_spectrum": 4.839898716835835e-09
+          },
+          "F": 1.6099501794815818,
+          "NF_dB": 2.0681243683246446,
+          "noise_power_sum_relative_error": -2.630982244370339e-16
+        },
+        {
+          "frequency_Hz": 100000000,
+          "gain_out_over_generator_re_im": [
+            2.961106515213807,
+            -0.09460295634383409
+          ],
+          "gain_magnitude": 2.9626173417757906,
+          "transducer_gain_to_RL": 3.5108406055162606,
+          "signal_output_power_W_for_card_available_input": 3.5108406055162604e-06,
+          "input_impedance_re_im": [
+            50.040270474983004,
+            0.4173039205785253
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 100000000.0,
+            "inoise_spectrum": 1.633641283999268e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 2.192453788849987e-09,
+            "onoise_m1": 2.192453788849987e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.017015516698043e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.017015516698043e-09,
+            "onoise_rs": 3.814312718330096e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 3.814312718330096e-09,
+            "onoise_spectrum": 4.839853998217101e-09
+          },
+          "F": 1.6100224405936636,
+          "NF_dB": 2.068319292977376,
+          "noise_power_sum_relative_error": -1.315515431686131e-16
+        },
+        {
+          "frequency_Hz": 110000000,
+          "gain_out_over_generator_re_im": [
+            2.960667795743511,
+            -0.1045578686280038
+          ],
+          "gain_magnitude": 2.9625134842975434,
+          "transducer_gain_to_RL": 3.5105944578579087,
+          "signal_output_power_W_for_card_available_input": 3.5105944578579084e-06,
+          "input_impedance_re_im": [
+            50.050642099692155,
+            0.45878286246053984
+          ],
+          "noise_ASD_V_sqrtHz": {
+            "frequency": 110000000.0,
+            "inoise_spectrum": 1.633681802935939e-09,
+            "onoise_m1_1overf": 0.0,
+            "onoise_m1_id": 2.192612218848919e-09,
+            "onoise_m1": 2.192612218848919e-09,
+            "onoise_m1_rd": 0.0,
+            "onoise_m1_rs": 0.0,
+            "onoise_rd": 2.016977076416353e-09,
+            "onoise_rd_1overf": 0.0,
+            "onoise_rd_thermal": 2.016977076416353e-09,
+            "onoise_rs": 3.814179003828871e-09,
+            "onoise_rs_1overf": 0.0,
+            "onoise_rs_thermal": 3.814179003828871e-09,
+            "onoise_spectrum": 4.839804370249239e-09
+          },
+          "F": 1.6101023078288648,
+          "NF_dB": 2.0685347250009753,
+          "noise_power_sum_relative_error": -5.262169642994519e-16
+        }
+      ]
+    }
+  },
+  "mixer": {
+    "mixer-baseline": {
+      "projections": {
+        "10000000": {
+          "cos_V": 1.8098731510382136e-18,
+          "sin_V": 3.506760465920246e-17,
+          "amplitude_V": 3.51142782548206e-17
+        },
+        "30000000": {
+          "cos_V": -1.2468026163378743e-17,
+          "sin_V": -5.0174823649807477e-17,
+          "amplitude_V": 5.1700721510439063e-17
+        },
+        "50000000": {
+          "cos_V": -9.979197546815743e-17,
+          "sin_V": -6.174605448941846e-17,
+          "amplitude_V": 1.1734996213398437e-16
+        }
+      },
+      "DC_output_diff_V": 4.5252364180345036e-17,
+      "common_mode_mean_V": 0.5996592489333968,
+      "common_mode_range_V": [
+        0.39603590474430406,
+        0.7882010035726263
+      ],
+      "configuration": {
+        "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+        "RF_Hz": 110000000,
+        "A_V_peak_differential": 0.0,
+        "blocker_Hz": 130000000,
+        "blocker_V_peak_differential": 0.0,
+        "LO_high_V": 1.8,
+        "LO_Hz": 100000000,
+        "LO_fall_midpoint_s": 2.5e-09,
+        "LO_rise_midpoint_s": 7.500000000000001e-09,
+        "edges_s": 5e-11,
+        "output_bias_each_ohm": 1000000,
+        "effective_differential_Rload_ohm": 999.5002498750624,
+        "node_order": [
+          "p",
+          "n",
+          "op",
+          "on",
+          "lop",
+          "lon"
+        ]
+      },
+      "data_rows": 125283,
+      "final_time_s": 1e-06,
+      "min_dt_s": 1.599186872041727e-16,
+      "max_dt_s": 1.0000000000117218e-11,
+      "projection_window_s": [
+        5e-07,
+        1e-06
+      ],
+      "IF_cos_V": 1.8098731510382136e-18,
+      "IF_sin_V": 3.506760465920246e-17,
+      "IF_amplitude_V": 3.51142782548206e-17,
+      "IF_gain": null,
+      "transducer_gain_wanted_to_physical_RL": null,
+      "deviation_from_ideal_fraction": null,
+      "small_signal_3pct_pass": null,
+      "output_diff_minmax_V": [
+        -1.176836406102666e-14,
+        1.0658141036401503e-14
+      ]
+    },
+    "mixer-wanted": {
+      "projections": {
+        "10000000": {
+          "cos_V": 0.0005981408544736219,
+          "sin_V": 6.745344046317749e-08,
+          "amplitude_V": 0.0005981408582770459
+        },
+        "30000000": {
+          "cos_V": -1.2438029215719093e-09,
+          "sin_V": 1.0614287182394697e-09,
+          "amplitude_V": 1.6351381078105607e-09
+        },
+        "50000000": {
+          "cos_V": 8.792485882461064e-10,
+          "sin_V": 8.319216961707674e-10,
+          "amplitude_V": 1.2104428067828805e-09
+        }
+      },
+      "DC_output_diff_V": 5.92470756599319e-10,
+      "common_mode_mean_V": 0.5996592120534068,
+      "common_mode_range_V": [
+        0.3960531143639626,
+        0.7881838730078066
+      ],
+      "configuration": {
+        "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+        "RF_Hz": 110000000,
+        "A_V_peak_differential": 0.001,
+        "blocker_Hz": 130000000,
+        "blocker_V_peak_differential": 0.0,
+        "LO_high_V": 1.8,
+        "LO_Hz": 100000000,
+        "LO_fall_midpoint_s": 2.5e-09,
+        "LO_rise_midpoint_s": 7.500000000000001e-09,
+        "edges_s": 5e-11,
+        "output_bias_each_ohm": 1000000,
+        "effective_differential_Rload_ohm": 999.5002498750624,
+        "node_order": [
+          "p",
+          "n",
+          "op",
+          "on",
+          "lop",
+          "lon"
+        ]
+      },
+      "data_rows": 125469,
+      "final_time_s": 1e-06,
+      "min_dt_s": 2.840440285322571e-17,
+      "max_dt_s": 1.0000000000117218e-11,
+      "projection_window_s": [
+        5e-07,
+        1e-06
+      ],
+      "IF_cos_V": 0.0005981408544736219,
+      "IF_sin_V": 6.745344046317749e-08,
+      "IF_amplitude_V": 0.0005981408582770459,
+      "IF_gain": 0.5981408582770459,
+      "transducer_gain_wanted_to_physical_RL": 0.07155449726808022,
+      "deviation_from_ideal_fraction": -1.2214224100692839e-05,
+      "small_signal_3pct_pass": true,
+      "output_diff_minmax_V": [
+        -0.0009573854571595097,
+        0.0009571925603192311
+      ]
+    },
+    "mixer-image": {
+      "projections": {
+        "10000000": {
+          "cos_V": 0.000598140765031784,
+          "sin_V": 2.8289064851095636e-07,
+          "amplitude_V": 0.0005981408319283401
+        },
+        "30000000": {
+          "cos_V": 8.065146297573114e-10,
+          "sin_V": -8.098919796428628e-10,
+          "amplitude_V": 1.1429745695781723e-09
+        },
+        "50000000": {
+          "cos_V": -4.189628652575121e-10,
+          "sin_V": -6.693918071769943e-10,
+          "amplitude_V": 7.896931517877476e-10
+        }
+      },
+      "DC_output_diff_V": 3.6897340949701867e-10,
+      "common_mode_mean_V": 0.5996592218882464,
+      "common_mode_range_V": [
+        0.3960347785009572,
+        0.7881732673090073
+      ],
+      "configuration": {
+        "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+        "RF_Hz": 90000000,
+        "A_V_peak_differential": 0.001,
+        "blocker_Hz": 130000000,
+        "blocker_V_peak_differential": 0.0,
+        "LO_high_V": 1.8,
+        "LO_Hz": 100000000,
+        "LO_fall_midpoint_s": 2.5e-09,
+        "LO_rise_midpoint_s": 7.500000000000001e-09,
+        "edges_s": 5e-11,
+        "output_bias_each_ohm": 1000000,
+        "effective_differential_Rload_ohm": 999.5002498750624,
+        "node_order": [
+          "p",
+          "n",
+          "op",
+          "on",
+          "lop",
+          "lon"
+        ]
+      },
+      "data_rows": 125423,
+      "final_time_s": 1e-06,
+      "min_dt_s": 1.387158329147582e-16,
+      "max_dt_s": 1.0000000000117218e-11,
+      "projection_window_s": [
+        5e-07,
+        1e-06
+      ],
+      "IF_cos_V": 0.000598140765031784,
+      "IF_sin_V": 2.8289064851095636e-07,
+      "IF_amplitude_V": 0.0005981408319283401,
+      "IF_gain": 0.59814083192834,
+      "transducer_gain_wanted_to_physical_RL": 0.07155449096398533,
+      "deviation_from_ideal_fraction": -1.2258274567522598e-05,
+      "small_signal_3pct_pass": true,
+      "output_diff_minmax_V": [
+        -0.0009570506964688974,
+        0.00095708226561797
+      ]
+    },
+    "mixer-weak_LO": {
+      "projections": {
+        "10000000": {
+          "cos_V": 4.3031521545477315e-10,
+          "sin_V": -1.4310715738232428e-07,
+          "amplitude_V": 1.4310780434775032e-07
+        },
+        "30000000": {
+          "cos_V": 2.0847605541603392e-10,
+          "sin_V": -5.859815651330459e-09,
+          "amplitude_V": 5.86352297968203e-09
+        },
+        "50000000": {
+          "cos_V": -8.751642041179042e-09,
+          "sin_V": -1.3198372409753775e-10,
+          "amplitude_V": 8.75263720945631e-09
+        }
+      },
+      "DC_output_diff_V": -4.113446643794916e-09,
+      "common_mode_mean_V": 0.6000919204468875,
+      "common_mode_range_V": [
+        0.5990458692147007,
+        0.6215977859959314
+      ],
+      "configuration": {
+        "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+        "RF_Hz": 110000000,
+        "A_V_peak_differential": 0.001,
+        "blocker_Hz": 130000000,
+        "blocker_V_peak_differential": 0.0,
+        "LO_high_V": 0.8,
+        "LO_Hz": 100000000,
+        "LO_fall_midpoint_s": 2.5e-09,
+        "LO_rise_midpoint_s": 7.500000000000001e-09,
+        "edges_s": 5e-11,
+        "output_bias_each_ohm": 1000000,
+        "effective_differential_Rload_ohm": 999.5002498750624,
+        "node_order": [
+          "p",
+          "n",
+          "op",
+          "on",
+          "lop",
+          "lon"
+        ]
+      },
+      "data_rows": 111035,
+      "final_time_s": 1e-06,
+      "min_dt_s": 8.390962485385275e-17,
+      "max_dt_s": 1.0000000000117218e-11,
+      "projection_window_s": [
+        5e-07,
+        1e-06
+      ],
+      "IF_cos_V": 4.3031521545477315e-10,
+      "IF_sin_V": -1.4310715738232428e-07,
+      "IF_amplitude_V": 1.4310780434775032e-07,
+      "IF_gain": 0.0001431078043477503,
+      "transducer_gain_wanted_to_physical_RL": 4.095968733046797e-09,
+      "deviation_from_ideal_fraction": -0.9997607485688084,
+      "small_signal_3pct_pass": null,
+      "output_diff_minmax_V": [
+        -2.15882550422819e-05,
+        2.138763373071839e-05
+      ]
+    },
+    "mixer-large_signal_0p1": {
+      "projections": {
+        "10000000": {
+          "cos_V": 0.059811269667577216,
+          "sin_V": 1.5595678194391507e-05,
+          "amplitude_V": 0.059811271700849336
+        },
+        "30000000": {
+          "cos_V": 3.9503309851311575e-07,
+          "sin_V": -3.46638553868619e-06,
+          "amplitude_V": 3.488822129563733e-06
+        },
+        "50000000": {
+          "cos_V": -8.716159915199721e-09,
+          "sin_V": -1.2264706239953757e-07,
+          "amplitude_V": 1.229563880361789e-07
+        }
+      },
+      "DC_output_diff_V": -4.5664752892032584e-09,
+      "common_mode_mean_V": 0.5996296836352116,
+      "common_mode_range_V": [
+        0.39425508596474257,
+        0.7881507258994488
+      ],
+      "configuration": {
+        "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+        "RF_Hz": 110000000,
+        "A_V_peak_differential": 0.1,
+        "blocker_Hz": 130000000,
+        "blocker_V_peak_differential": 0.0,
+        "LO_high_V": 1.8,
+        "LO_Hz": 100000000,
+        "LO_fall_midpoint_s": 2.5e-09,
+        "LO_rise_midpoint_s": 7.500000000000001e-09,
+        "edges_s": 5e-11,
+        "output_bias_each_ohm": 1000000,
+        "effective_differential_Rload_ohm": 999.5002498750624,
+        "node_order": [
+          "p",
+          "n",
+          "op",
+          "on",
+          "lop",
+          "lon"
+        ]
+      },
+      "data_rows": 127848,
+      "final_time_s": 1e-06,
+      "min_dt_s": 9.401419851900452e-17,
+      "max_dt_s": 1.0000000000117218e-11,
+      "projection_window_s": [
+        5e-07,
+        1e-06
+      ],
+      "IF_cos_V": 0.059811269667577216,
+      "IF_sin_V": 1.5595678194391507e-05,
+      "IF_amplitude_V": 0.059811271700849336,
+      "IF_gain": 0.5981127170084933,
+      "transducer_gain_wanted_to_physical_RL": 0.0715477644494564,
+      "deviation_from_ideal_fraction": -5.926154487700952e-05,
+      "small_signal_3pct_pass": null,
+      "output_diff_minmax_V": [
+        -0.0957418881432559,
+        0.09572791851059159
+      ]
+    },
+    "mixer-large_signal_0p4": {
+      "projections": {
+        "10000000": {
+          "cos_V": 0.23906898368284135,
+          "sin_V": 0.0002683060230992993,
+          "amplitude_V": 0.23906913424210308
+        },
+        "30000000": {
+          "cos_V": 2.223880017240486e-05,
+          "sin_V": -4.7626820848506647e-05,
+          "amplitude_V": 5.256308873386249e-05
+        },
+        "50000000": {
+          "cos_V": 4.712516861593763e-08,
+          "sin_V": -8.124587533377754e-06,
+          "amplitude_V": 8.124724202644316e-06
+        }
+      },
+      "DC_output_diff_V": 1.852515237381484e-08,
+      "common_mode_mean_V": 0.5991304200858839,
+      "common_mode_range_V": [
+        0.3471889876438951,
+        0.7881775693218683
+      ],
+      "configuration": {
+        "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+        "RF_Hz": 110000000,
+        "A_V_peak_differential": 0.4,
+        "blocker_Hz": 130000000,
+        "blocker_V_peak_differential": 0.0,
+        "LO_high_V": 1.8,
+        "LO_Hz": 100000000,
+        "LO_fall_midpoint_s": 2.5e-09,
+        "LO_rise_midpoint_s": 7.500000000000001e-09,
+        "edges_s": 5e-11,
+        "output_bias_each_ohm": 1000000,
+        "effective_differential_Rload_ohm": 999.5002498750624,
+        "node_order": [
+          "p",
+          "n",
+          "op",
+          "on",
+          "lop",
+          "lon"
+        ]
+      },
+      "data_rows": 125703,
+      "final_time_s": 1e-06,
+      "min_dt_s": 6.382859125682143e-17,
+      "max_dt_s": 1.0000000000117218e-11,
+      "projection_window_s": [
+        5e-07,
+        1e-06
+      ],
+      "IF_cos_V": 0.23906898368284135,
+      "IF_sin_V": 0.0002683060230992993,
+      "IF_amplitude_V": 0.23906913424210308,
+      "IF_gain": 0.5976728356052576,
+      "transducer_gain_wanted_to_physical_RL": 0.07144256368408587,
+      "deviation_from_ideal_fraction": -0.0007946669670926276,
+      "small_signal_3pct_pass": null,
+      "output_diff_minmax_V": [
+        -0.3812507486825959,
+        0.3812096258201756
+      ]
+    },
+    "mixer-wanted_with_blocker": {
+      "projections": {
+        "10000000": {
+          "cos_V": 0.0005970143144103117,
+          "sin_V": 6.595009398366994e-06,
+          "amplitude_V": 0.0005970507396861501
+        },
+        "30000000": {
+          "cos_V": 0.23906869651996424,
+          "sin_V": 0.00040863365755115864,
+          "amplitude_V": 0.239069045752939
+        },
+        "50000000": {
+          "cos_V": -6.961375067489841e-07,
+          "sin_V": -7.634529719405054e-06,
+          "amplitude_V": 7.666201893035541e-06
+        }
+      },
+      "DC_output_diff_V": -7.849742328627791e-08,
+      "common_mode_mean_V": 0.599130390219271,
+      "common_mode_range_V": [
+        0.3469818668776464,
+        0.7882303007580724
+      ],
+      "configuration": {
+        "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+        "RF_Hz": 110000000,
+        "A_V_peak_differential": 0.001,
+        "blocker_Hz": 130000000,
+        "blocker_V_peak_differential": 0.4,
+        "LO_high_V": 1.8,
+        "LO_Hz": 100000000,
+        "LO_fall_midpoint_s": 2.5e-09,
+        "LO_rise_midpoint_s": 7.500000000000001e-09,
+        "edges_s": 5e-11,
+        "output_bias_each_ohm": 1000000,
+        "effective_differential_Rload_ohm": 999.5002498750624,
+        "node_order": [
+          "p",
+          "n",
+          "op",
+          "on",
+          "lop",
+          "lon"
+        ]
+      },
+      "data_rows": 125369,
+      "final_time_s": 1e-06,
+      "min_dt_s": 1.2222351909656573e-16,
+      "max_dt_s": 1.0000000000117218e-11,
+      "projection_window_s": [
+        5e-07,
+        1e-06
+      ],
+      "IF_cos_V": 0.0005970143144103117,
+      "IF_sin_V": 6.595009398366994e-06,
+      "IF_amplitude_V": 0.0005970507396861501,
+      "IF_gain": 0.5970507396861501,
+      "transducer_gain_wanted_to_physical_RL": 0.0712939171519558,
+      "deviation_from_ideal_fraction": -0.001834703460303455,
+      "small_signal_3pct_pass": null,
+      "output_diff_minmax_V": [
+        -0.3818469019861488,
+        0.3818552815749672
+      ]
+    },
+    "mixer-blocker_only": {
+      "projections": {
+        "10000000": {
+          "cos_V": -1.1206710042778918e-07,
+          "sin_V": 5.5271292722956275e-06,
+          "amplitude_V": 5.528265281954682e-06
+        },
+        "30000000": {
+          "cos_V": 0.23906877595908047,
+          "sin_V": 0.00040850961490665363,
+          "amplitude_V": 0.239069124979949
+        },
+        "50000000": {
+          "cos_V": -2.3145731937067644e-07,
+          "sin_V": -8.166466647928091e-06,
+          "amplitude_V": 8.169746018231664e-06
+        }
+      },
+      "DC_output_diff_V": -3.3562694992265186e-08,
+      "common_mode_mean_V": 0.599130455559601,
+      "common_mode_range_V": [
+        0.34720450918548973,
+        0.7882034077561804
+      ],
+      "configuration": {
+        "canonical_sha256": "ed3fcdcec4f43beb0aac39a7a0369f1d1aa13110b71b59b02b52ecee4373dbec",
+        "RF_Hz": 110000000,
+        "A_V_peak_differential": 0.0,
+        "blocker_Hz": 130000000,
+        "blocker_V_peak_differential": 0.4,
+        "LO_high_V": 1.8,
+        "LO_Hz": 100000000,
+        "LO_fall_midpoint_s": 2.5e-09,
+        "LO_rise_midpoint_s": 7.500000000000001e-09,
+        "edges_s": 5e-11,
+        "output_bias_each_ohm": 1000000,
+        "effective_differential_Rload_ohm": 999.5002498750624,
+        "node_order": [
+          "p",
+          "n",
+          "op",
+          "on",
+          "lop",
+          "lon"
+        ]
+      },
+      "data_rows": 125365,
+      "final_time_s": 1e-06,
+      "min_dt_s": 5.947018322672443e-17,
+      "max_dt_s": 1.0000000000117218e-11,
+      "projection_window_s": [
+        5e-07,
+        1e-06
+      ],
+      "IF_cos_V": -1.1206710042778918e-07,
+      "IF_sin_V": 5.5271292722956275e-06,
+      "IF_amplitude_V": 5.528265281954682e-06,
+      "IF_gain": null,
+      "transducer_gain_wanted_to_physical_RL": null,
+      "deviation_from_ideal_fraction": null,
+      "small_signal_3pct_pass": null,
+      "output_diff_minmax_V": [
+        -0.38137682421628816,
+        0.38134424422434754
+      ]
+    }
+  },
+  "ideal_on_Ron_ohm": 7.14285714285714,
+  "ideal_small_signal_IF_gain": 0.5981481641927687
+}

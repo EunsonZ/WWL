@@ -1,0 +1,146 @@
+[
+  {
+    "seed": 17,
+    "regime": "homophily",
+    "family": "no_graph",
+    "depth": 4,
+    "epoch": 17,
+    "val_ce": 0.4914134505876116
+  },
+  {
+    "seed": 17,
+    "regime": "homophily",
+    "family": "fixed",
+    "depth": 1,
+    "epoch": 120,
+    "val_ce": 0.4874557627137744
+  },
+  {
+    "seed": 17,
+    "regime": "homophily",
+    "family": "joint",
+    "depth": 4,
+    "epoch": 10,
+    "val_ce": 0.1250089529997022
+  },
+  {
+    "seed": 17,
+    "regime": "heterophily",
+    "family": "no_graph",
+    "depth": 0,
+    "epoch": 28,
+    "val_ce": 0.4595995995634316
+  },
+  {
+    "seed": 17,
+    "regime": "heterophily",
+    "family": "fixed",
+    "depth": 0,
+    "epoch": 120,
+    "val_ce": 0.5068734057504786
+  },
+  {
+    "seed": 17,
+    "regime": "heterophily",
+    "family": "joint",
+    "depth": 1,
+    "epoch": 16,
+    "val_ce": 0.3627624882624833
+  },
+  {
+    "seed": 29,
+    "regime": "homophily",
+    "family": "no_graph",
+    "depth": 2,
+    "epoch": 120,
+    "val_ce": 0.4400408082286389
+  },
+  {
+    "seed": 29,
+    "regime": "homophily",
+    "family": "fixed",
+    "depth": 2,
+    "epoch": 120,
+    "val_ce": 0.4243543956365438
+  },
+  {
+    "seed": 29,
+    "regime": "homophily",
+    "family": "joint",
+    "depth": 4,
+    "epoch": 120,
+    "val_ce": 0.04352006275396161
+  },
+  {
+    "seed": 29,
+    "regime": "heterophily",
+    "family": "no_graph",
+    "depth": 2,
+    "epoch": 15,
+    "val_ce": 0.5402120303936772
+  },
+  {
+    "seed": 29,
+    "regime": "heterophily",
+    "family": "fixed",
+    "depth": 0,
+    "epoch": 120,
+    "val_ce": 0.5421066345468221
+  },
+  {
+    "seed": 29,
+    "regime": "heterophily",
+    "family": "joint",
+    "depth": 1,
+    "epoch": 14,
+    "val_ce": 0.49525282162496725
+  },
+  {
+    "seed": 43,
+    "regime": "homophily",
+    "family": "no_graph",
+    "depth": 0,
+    "epoch": 44,
+    "val_ce": 0.5334119925678326
+  },
+  {
+    "seed": 43,
+    "regime": "homophily",
+    "family": "fixed",
+    "depth": 1,
+    "epoch": 120,
+    "val_ce": 0.48038902117309695
+  },
+  {
+    "seed": 43,
+    "regime": "homophily",
+    "family": "joint",
+    "depth": 4,
+    "epoch": 104,
+    "val_ce": 0.055101789433659475
+  },
+  {
+    "seed": 43,
+    "regime": "heterophily",
+    "family": "no_graph",
+    "depth": 0,
+    "epoch": 22,
+    "val_ce": 0.5064827989282488
+  },
+  {
+    "seed": 43,
+    "regime": "heterophily",
+    "family": "fixed",
+    "depth": 0,
+    "epoch": 120,
+    "val_ce": 0.5134732190644692
+  },
+  {
+    "seed": 43,
+    "regime": "heterophily",
+    "family": "joint",
+    "depth": 1,
+    "epoch": 20,
+    "val_ce": 0.3961240721629058
+  }
+]

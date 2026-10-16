@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 450" role="img">
+<title>Centering norms distinguish component means</title><desc>Global centering is different from distance to component-mean projection. C6 norm is bounded by sqrt(5/6)*(2/3)^k.</desc>
+<rect width="860" height="450" fill="white"/>
+<g font-family="sans-serif" fill="#1b2730">
+<line x1="75" y1="70" x2="75" y2="350" stroke="#e7ebee" />
+<text x="75" y="374" font-size="14" text-anchor="middle">0</text>
+<line x1="185" y1="70" x2="185" y2="350" stroke="#e7ebee" />
+<text x="185" y="374" font-size="14" text-anchor="middle">2</text>
+<line x1="295" y1="70" x2="295" y2="350" stroke="#e7ebee" />
+<text x="295" y="374" font-size="14" text-anchor="middle">4</text>
+<line x1="405" y1="70" x2="405" y2="350" stroke="#e7ebee" />
+<text x="405" y="374" font-size="14" text-anchor="middle">6</text>
+<line x1="515" y1="70" x2="515" y2="350" stroke="#e7ebee" />
+<text x="515" y="374" font-size="14" text-anchor="middle">8</text>
+<line x1="625" y1="70" x2="625" y2="350" stroke="#e7ebee" />
+<text x="625" y="374" font-size="14" text-anchor="middle">10</text>
+<line x1="735" y1="70" x2="735" y2="350" stroke="#e7ebee" />
+<text x="735" y="374" font-size="14" text-anchor="middle">12</text>
+<line x1="75" y1="350" x2="735" y2="350" stroke="#e7ebee" />
+<text x="63" y="355" font-size="14" text-anchor="end">0.0</text>
+<line x1="75" y1="294.0" x2="735" y2="294.0" stroke="#e7ebee" />
+<text x="63" y="299.0" font-size="14" text-anchor="end">0.2</text>
+<line x1="75" y1="238.0" x2="735" y2="238.0" stroke="#e7ebee" />
+<text x="63" y="243.0" font-size="14" text-anchor="end">0.4</text>
+<line x1="75" y1="182.0" x2="735" y2="182.0" stroke="#e7ebee" />
+<text x="63" y="187.0" font-size="14" text-anchor="end">0.6</text>
+<line x1="75" y1="126.0" x2="735" y2="126.0" stroke="#e7ebee" />
+<text x="63" y="131.0" font-size="14" text-anchor="end">0.8</text>
+<line x1="75" y1="70" x2="735" y2="70" stroke="#e7ebee" />
+<text x="63" y="75" font-size="14" text-anchor="end">1.0</text>
+<text x="20" y="28" font-size="19" >Euclidean norm (dimensionless)</text>
+<line x1="75" y1="70" x2="75" y2="350" stroke="#536273" />
+<line x1="75" y1="350" x2="735" y2="350" stroke="#536273" />
+<text x="330" y="409" font-size="17" >Propagation steps k (integer)</text>
+<polyline fill="none" stroke-width="2.5" stroke="#166b99" points="75.000,94.396 130.000,235.690 185.000,277.038 240.000,301.915 295.000,318.036 350.000,328.706 405.000,335.807 460.000,340.538 515.000,343.692 570.000,345.795 625.000,347.197 680.000,348.131 735.000,348.754" />
+<polyline fill="none" stroke-width="2.5" stroke="#bd5424" points="75.000,94.396 130.000,235.690 185.000,235.690 240.000,235.690 295.000,235.690 350.000,235.690 405.000,235.690 460.000,235.690 515.000,235.690 570.000,235.690 625.000,235.690 680.000,235.690 735.000,235.690" />
+<polyline fill="none" stroke-width="2.5" stroke="#30814b" points="75.000,121.381 130.000,350.000 185.000,350.000 240.000,350.000 295.000,350.000 350.000,350.000 405.000,350.000 460.000,350.000 515.000,350.000 570.000,350.000 625.000,350.000 680.000,350.000 735.000,350.000" stroke-dasharray="4 3"/>
+<polyline fill="none" stroke-width="2.5" stroke="#714c92" points="75.000,94.396 130.000,179.597 185.000,236.398 240.000,274.266 295.000,299.510 350.000,316.340 405.000,327.560 460.000,335.040 515.000,340.027 570.000,343.351 625.000,345.567 680.000,347.045 735.000,348.030" stroke-dasharray="7 4"/>
+<line x1="400" y1="30" x2="425" y2="30" stroke="#166b99" stroke-width="3"/>
+<text x="433" y="35" font-size="13" >C6: distance to global mean</text>
+<line x1="400" y1="49" x2="425" y2="49" stroke="#714c92" stroke-width="3"/>
+<text x="433" y="54" font-size="13" >C6: spectral upper bound</text>
+<line x1="400" y1="68" x2="425" y2="68" stroke="#bd5424" stroke-width="3"/>
+<text x="433" y="73" font-size="13" >Two triangles: global centering</text>
+<line x1="400" y1="87" x2="425" y2="87" stroke="#30814b" stroke-width="3"/>
+<text x="433" y="92" font-size="13" >Two triangles: component projection</text>
+</g></svg>

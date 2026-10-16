@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 450" role="img">
+<title>Predeclared test curves by depth and edge regime</title><desc>Each faint mark is a seed average over four independent test graphs. Thick lines are three-seed means. No test-based depth selection is used.</desc>
+<rect width="1120" height="450" fill="white"/>
+<g font-family="sans-serif" fill="#1b2730">
+<text x="25" y="27" font-size="19" >TEST accuracy by predeclared depth; 3 seeds x 4 graphs each (no confidence intervals)</text>
+<text x="70" y="65" font-size="20" >homophily</text>
+<line x1="70" y1="80" x2="70" y2="350" stroke="#536273" />
+<line x1="70" y1="350" x2="470" y2="350" stroke="#536273" />
+<line x1="70" y1="350" x2="470" y2="350" stroke="#e7ebee" />
+<text x="61" y="354" font-size="13" text-anchor="end">0</text>
+<line x1="70" y1="282.5" x2="470" y2="282.5" stroke="#e7ebee" />
+<text x="61" y="286.5" font-size="13" text-anchor="end">0.25</text>
+<line x1="70" y1="215.0" x2="470" y2="215.0" stroke="#e7ebee" />
+<text x="61" y="219.0" font-size="13" text-anchor="end">0.5</text>
+<line x1="70" y1="147.5" x2="470" y2="147.5" stroke="#e7ebee" />
+<text x="61" y="151.5" font-size="13" text-anchor="end">0.75</text>
+<line x1="70" y1="80" x2="470" y2="80" stroke="#e7ebee" />
+<text x="61" y="84" font-size="13" text-anchor="end">1</text>
+<text x="70" y="373" font-size="14" text-anchor="middle">0</text>
+<text x="170" y="373" font-size="14" text-anchor="middle">1</text>
+<text x="270" y="373" font-size="14" text-anchor="middle">2</text>
+<text x="470" y="373" font-size="14" text-anchor="middle">4</text>
+<circle cx="65" cy="155.93750000000003" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="70" cy="141.875" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="75" cy="169.99999999999997" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="165" cy="153.125" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="170" cy="136.24999999999997" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="175" cy="169.99999999999997" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="265" cy="155.93750000000003" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="270" cy="133.4375" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="275" cy="164.375" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="465" cy="150.31250000000003" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="470" cy="130.625" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="475" cy="164.375" r="3" fill="#52616b" opacity=".45"/>
+<polyline fill="none" stroke-width="2.5" stroke="#52616b" points="70.000,155.938 170.000,153.125 270.000,151.250 470.000,148.438" stroke-dasharray="2 4"/>
+<circle cx="65" cy="155.93750000000003" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="70" cy="139.0625" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="75" cy="169.99999999999997" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="165" cy="110.93749999999997" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="170" cy="99.6875" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="175" cy="136.25" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="265" cy="91.25" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="270" cy="99.6875" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="275" cy="127.8125" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="465" cy="94.0625" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="470" cy="102.5" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="475" cy="144.6875" r="3" fill="#bd5424" opacity=".45"/>
+<polyline fill="none" stroke-width="2.5" stroke="#bd5424" points="70.000,155.000 170.000,115.625 270.000,106.250 470.000,113.750" stroke-dasharray="8 4"/>
+<circle cx="65" cy="155.93750000000003" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="70" cy="141.875" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="75" cy="169.99999999999997" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="165" cy="108.125" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="170" cy="99.6875" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="175" cy="136.25" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="265" cy="91.25" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="270" cy="91.25" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="275" cy="127.8125" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="465" cy="94.0625" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="470" cy="88.4375" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="475" cy="139.0625" r="3" fill="#166b99" opacity=".45"/>
+<polyline fill="none" stroke-width="2.5" stroke="#166b99" points="70.000,155.938 170.000,114.688 270.000,103.438 470.000,107.188" />
+<text x="185" y="407" font-size="16" >Depth K (integer)</text>
+<text x="620" y="65" font-size="20" >heterophily</text>
+<line x1="620" y1="80" x2="620" y2="350" stroke="#536273" />
+<line x1="620" y1="350" x2="1020" y2="350" stroke="#536273" />
+<line x1="620" y1="350" x2="1020" y2="350" stroke="#e7ebee" />
+<text x="611" y="354" font-size="13" text-anchor="end">0</text>
+<line x1="620" y1="282.5" x2="1020" y2="282.5" stroke="#e7ebee" />
+<text x="611" y="286.5" font-size="13" text-anchor="end">0.25</text>
+<line x1="620" y1="215.0" x2="1020" y2="215.0" stroke="#e7ebee" />
+<text x="611" y="219.0" font-size="13" text-anchor="end">0.5</text>
+<line x1="620" y1="147.5" x2="1020" y2="147.5" stroke="#e7ebee" />
+<text x="611" y="151.5" font-size="13" text-anchor="end">0.75</text>
+<line x1="620" y1="80" x2="1020" y2="80" stroke="#e7ebee" />
+<text x="611" y="84" font-size="13" text-anchor="end">1</text>
+<text x="620" y="373" font-size="14" text-anchor="middle">0</text>
+<text x="720" y="373" font-size="14" text-anchor="middle">1</text>
+<text x="820" y="373" font-size="14" text-anchor="middle">2</text>
+<text x="1020" y="373" font-size="14" text-anchor="middle">4</text>
+<circle cx="615" cy="147.49999999999997" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="620" cy="136.25" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="625" cy="141.875" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="715" cy="144.68749999999997" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="720" cy="133.4375" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="725" cy="150.31250000000003" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="815" cy="147.49999999999997" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="820" cy="133.43750000000003" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="825" cy="150.31250000000003" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="1015" cy="147.49999999999997" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="1020" cy="136.25" r="3" fill="#52616b" opacity=".45"/>
+<circle cx="1025" cy="139.0625" r="3" fill="#52616b" opacity=".45"/>
+<polyline fill="none" stroke-width="2.5" stroke="#52616b" points="620.000,141.875 720.000,142.812 820.000,143.750 1020.000,140.938" stroke-dasharray="2 4"/>
+<circle cx="615" cy="150.3125" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="620" cy="136.25" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="625" cy="141.875" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="715" cy="136.25" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="720" cy="139.0625" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="725" cy="139.0625" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="815" cy="139.0625" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="820" cy="133.4375" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="825" cy="150.31250000000003" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="1015" cy="167.1875" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="1020" cy="153.125" r="3" fill="#bd5424" opacity=".45"/>
+<circle cx="1025" cy="209.37500000000003" r="3" fill="#bd5424" opacity=".45"/>
+<polyline fill="none" stroke-width="2.5" stroke="#bd5424" points="620.000,142.812 720.000,138.125 820.000,140.938 1020.000,176.563" stroke-dasharray="8 4"/>
+<circle cx="615" cy="147.49999999999997" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="620" cy="136.25" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="625" cy="141.875" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="715" cy="141.875" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="720" cy="133.4375" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="725" cy="139.0625" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="815" cy="130.625" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="820" cy="144.6875" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="825" cy="150.3125" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="1015" cy="141.875" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="1020" cy="139.0625" r="3" fill="#166b99" opacity=".45"/>
+<circle cx="1025" cy="203.75" r="3" fill="#166b99" opacity=".45"/>
+<polyline fill="none" stroke-width="2.5" stroke="#166b99" points="620.000,141.875 720.000,138.125 820.000,141.875 1020.000,161.562" />
+<text x="735" y="407" font-size="16" >Depth K (integer)</text>
+<line x1="260" y1="432" x2="285" y2="432" stroke="#52616b" stroke-width="3"/>
+<text x="294" y="437" font-size="15" >no_graph</text>
+<line x1="480" y1="432" x2="505" y2="432" stroke="#bd5424" stroke-width="3"/>
+<text x="514" y="437" font-size="15" >fixed</text>
+<line x1="700" y1="432" x2="725" y2="432" stroke="#166b99" stroke-width="3"/>
+<text x="734" y="437" font-size="15" >joint</text>
+</g></svg>

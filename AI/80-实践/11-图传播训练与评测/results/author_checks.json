@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-16",
+  "runner": "/private/tmp/wwl-next-context/run_local.py",
+  "threads": 1,
+  "tests": [
+    "test_every_parameter_gradient",
+    "test_permutation_and_no_graph",
+    "test_spectrum",
+    "test_split_inputs_and_metrics"
+  ],
+  "test_result": "4 passed; includes negative tiny, zero, positive tiny logits classification boundary",
+  "test_seconds": 0.043,
+  "preview_seconds": 0.2097667080233805,
+  "formal_seconds": 1.529621958034113,
+  "threshold_correction": "independent reviewer found sigmoid rounding at -1e-20; metrics now uses logits>=0 directly; all 5 numeric result files byte-identical on full rerun",
+  "svg_render": "4 SVGs rendered by existing vault .venv CairoSVG; author visually inspected all 4",
+  "independent_review": "separate reviewer; not certified by this author record"
+}

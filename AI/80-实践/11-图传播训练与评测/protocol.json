@@ -1,0 +1,19 @@
+{
+  "schema": "wwl-graph-task-v1",
+  "seeds": [17, 29, 43],
+  "splits": {"train": 12, "val": 4, "test": 4},
+  "nodes": 24,
+  "features": 2,
+  "noise_sd": 1.4,
+  "clip": 4.0,
+  "regimes": {"homophily": [0.4, 0.04], "heterophily": [0.04, 0.4]},
+  "depths": [0, 1, 2, 4],
+  "families": ["no_graph", "fixed", "joint"],
+  "hidden": 8,
+  "epochs": 120,
+  "learning_rate": 0.03,
+  "l2": 0.001,
+  "selection": "minimum validation graph-mean cross entropy; ties keep earliest epoch, then smaller depth",
+  "threshold": 0.5,
+  "threads": 1
+}

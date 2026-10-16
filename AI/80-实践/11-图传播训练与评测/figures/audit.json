@@ -1,0 +1,1254 @@
+{
+  "label_feature_oracle": {
+    "description": "ILLEGAL: append 2*y-1 as a feature and classify by its sign",
+    "accuracy": 1.0,
+    "per_graph": [
+      {
+        "graph_id": "17-homophily-test-0",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "17-homophily-test-1",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "17-homophily-test-2",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "17-homophily-test-3",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "17-heterophily-test-0",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "17-heterophily-test-1",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "17-heterophily-test-2",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "17-heterophily-test-3",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "29-homophily-test-0",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "29-homophily-test-1",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "29-homophily-test-2",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "29-homophily-test-3",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "29-heterophily-test-0",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "29-heterophily-test-1",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "29-heterophily-test-2",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "29-heterophily-test-3",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "43-homophily-test-0",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "43-homophily-test-1",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "43-homophily-test-2",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "43-homophily-test-3",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "43-heterophily-test-0",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "43-heterophily-test-1",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "43-heterophily-test-2",
+        "correct": 24,
+        "nodes": 24
+      },
+      {
+        "graph_id": "43-heterophily-test-3",
+        "correct": 24,
+        "nodes": 24
+      }
+    ]
+  },
+  "test_selection_optimism": [
+    {
+      "seed": 17,
+      "regime": "homophily",
+      "family": "no_graph",
+      "validation_selected_depth": 4,
+      "honest_test_accuracy": 0.7395833333333333,
+      "ILLEGAL_test_selected_depth": 4,
+      "ILLEGAL_max_test_accuracy": 0.7395833333333333
+    },
+    {
+      "seed": 17,
+      "regime": "homophily",
+      "family": "fixed",
+      "validation_selected_depth": 1,
+      "honest_test_accuracy": 0.8854166666666667,
+      "ILLEGAL_test_selected_depth": 2,
+      "ILLEGAL_max_test_accuracy": 0.9583333333333334
+    },
+    {
+      "seed": 17,
+      "regime": "homophily",
+      "family": "joint",
+      "validation_selected_depth": 4,
+      "honest_test_accuracy": 0.9479166666666666,
+      "ILLEGAL_test_selected_depth": 2,
+      "ILLEGAL_max_test_accuracy": 0.9583333333333334
+    },
+    {
+      "seed": 17,
+      "regime": "heterophily",
+      "family": "no_graph",
+      "validation_selected_depth": 0,
+      "honest_test_accuracy": 0.7500000000000001,
+      "ILLEGAL_test_selected_depth": 1,
+      "ILLEGAL_max_test_accuracy": 0.7604166666666667
+    },
+    {
+      "seed": 17,
+      "regime": "heterophily",
+      "family": "fixed",
+      "validation_selected_depth": 0,
+      "honest_test_accuracy": 0.7395833333333334,
+      "ILLEGAL_test_selected_depth": 1,
+      "ILLEGAL_max_test_accuracy": 0.7916666666666666
+    },
+    {
+      "seed": 17,
+      "regime": "heterophily",
+      "family": "joint",
+      "validation_selected_depth": 1,
+      "honest_test_accuracy": 0.7708333333333334,
+      "ILLEGAL_test_selected_depth": 2,
+      "ILLEGAL_max_test_accuracy": 0.8125
+    },
+    {
+      "seed": 29,
+      "regime": "homophily",
+      "family": "no_graph",
+      "validation_selected_depth": 2,
+      "honest_test_accuracy": 0.8020833333333334,
+      "ILLEGAL_test_selected_depth": 4,
+      "ILLEGAL_max_test_accuracy": 0.8125
+    },
+    {
+      "seed": 29,
+      "regime": "homophily",
+      "family": "fixed",
+      "validation_selected_depth": 2,
+      "honest_test_accuracy": 0.9270833333333334,
+      "ILLEGAL_test_selected_depth": 1,
+      "ILLEGAL_max_test_accuracy": 0.9270833333333334
+    },
+    {
+      "seed": 29,
+      "regime": "homophily",
+      "family": "joint",
+      "validation_selected_depth": 4,
+      "honest_test_accuracy": 0.96875,
+      "ILLEGAL_test_selected_depth": 4,
+      "ILLEGAL_max_test_accuracy": 0.96875
+    },
+    {
+      "seed": 29,
+      "regime": "heterophily",
+      "family": "no_graph",
+      "validation_selected_depth": 2,
+      "honest_test_accuracy": 0.8020833333333333,
+      "ILLEGAL_test_selected_depth": 1,
+      "ILLEGAL_max_test_accuracy": 0.8020833333333334
+    },
+    {
+      "seed": 29,
+      "regime": "heterophily",
+      "family": "fixed",
+      "validation_selected_depth": 0,
+      "honest_test_accuracy": 0.7916666666666666,
+      "ILLEGAL_test_selected_depth": 2,
+      "ILLEGAL_max_test_accuracy": 0.8020833333333334
+    },
+    {
+      "seed": 29,
+      "regime": "heterophily",
+      "family": "joint",
+      "validation_selected_depth": 1,
+      "honest_test_accuracy": 0.8020833333333334,
+      "ILLEGAL_test_selected_depth": 1,
+      "ILLEGAL_max_test_accuracy": 0.8020833333333334
+    },
+    {
+      "seed": 43,
+      "regime": "homophily",
+      "family": "no_graph",
+      "validation_selected_depth": 0,
+      "honest_test_accuracy": 0.6666666666666667,
+      "ILLEGAL_test_selected_depth": 2,
+      "ILLEGAL_max_test_accuracy": 0.6875
+    },
+    {
+      "seed": 43,
+      "regime": "homophily",
+      "family": "fixed",
+      "validation_selected_depth": 1,
+      "honest_test_accuracy": 0.7916666666666666,
+      "ILLEGAL_test_selected_depth": 2,
+      "ILLEGAL_max_test_accuracy": 0.8229166666666666
+    },
+    {
+      "seed": 43,
+      "regime": "homophily",
+      "family": "joint",
+      "validation_selected_depth": 4,
+      "honest_test_accuracy": 0.78125,
+      "ILLEGAL_test_selected_depth": 2,
+      "ILLEGAL_max_test_accuracy": 0.8229166666666666
+    },
+    {
+      "seed": 43,
+      "regime": "heterophily",
+      "family": "no_graph",
+      "validation_selected_depth": 0,
+      "honest_test_accuracy": 0.7708333333333334,
+      "ILLEGAL_test_selected_depth": 4,
+      "ILLEGAL_max_test_accuracy": 0.78125
+    },
+    {
+      "seed": 43,
+      "regime": "heterophily",
+      "family": "fixed",
+      "validation_selected_depth": 0,
+      "honest_test_accuracy": 0.7708333333333334,
+      "ILLEGAL_test_selected_depth": 1,
+      "ILLEGAL_max_test_accuracy": 0.78125
+    },
+    {
+      "seed": 43,
+      "regime": "heterophily",
+      "family": "joint",
+      "validation_selected_depth": 1,
+      "honest_test_accuracy": 0.78125,
+      "ILLEGAL_test_selected_depth": 1,
+      "ILLEGAL_max_test_accuracy": 0.78125
+    }
+  ],
+  "observed_edge_homophily": [
+    {
+      "graph_id": "17-homophily-train-0",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 47,
+      "total_edges": 54,
+      "fraction": 0.8703703703703703
+    },
+    {
+      "graph_id": "17-homophily-train-1",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 44,
+      "total_edges": 48,
+      "fraction": 0.9166666666666666
+    },
+    {
+      "graph_id": "17-homophily-train-2",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 46,
+      "total_edges": 48,
+      "fraction": 0.9583333333333334
+    },
+    {
+      "graph_id": "17-homophily-train-3",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 59,
+      "total_edges": 64,
+      "fraction": 0.921875
+    },
+    {
+      "graph_id": "17-homophily-train-4",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 48,
+      "total_edges": 60,
+      "fraction": 0.8
+    },
+    {
+      "graph_id": "17-homophily-train-5",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 60,
+      "total_edges": 70,
+      "fraction": 0.8571428571428571
+    },
+    {
+      "graph_id": "17-homophily-train-6",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 60,
+      "total_edges": 65,
+      "fraction": 0.9230769230769231
+    },
+    {
+      "graph_id": "17-homophily-train-7",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 40,
+      "total_edges": 47,
+      "fraction": 0.851063829787234
+    },
+    {
+      "graph_id": "17-homophily-train-8",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 45,
+      "total_edges": 47,
+      "fraction": 0.9574468085106383
+    },
+    {
+      "graph_id": "17-homophily-train-9",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 47,
+      "total_edges": 53,
+      "fraction": 0.8867924528301887
+    },
+    {
+      "graph_id": "17-homophily-train-10",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 46,
+      "total_edges": 48,
+      "fraction": 0.9583333333333334
+    },
+    {
+      "graph_id": "17-homophily-train-11",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 55,
+      "total_edges": 64,
+      "fraction": 0.859375
+    },
+    {
+      "graph_id": "17-homophily-val-0",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 49,
+      "total_edges": 56,
+      "fraction": 0.875
+    },
+    {
+      "graph_id": "17-homophily-val-1",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 43,
+      "total_edges": 49,
+      "fraction": 0.8775510204081632
+    },
+    {
+      "graph_id": "17-homophily-val-2",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 55,
+      "total_edges": 64,
+      "fraction": 0.859375
+    },
+    {
+      "graph_id": "17-homophily-val-3",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 50,
+      "total_edges": 58,
+      "fraction": 0.8620689655172413
+    },
+    {
+      "graph_id": "17-homophily-test-0",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 56,
+      "total_edges": 62,
+      "fraction": 0.9032258064516129
+    },
+    {
+      "graph_id": "17-homophily-test-1",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 59,
+      "total_edges": 65,
+      "fraction": 0.9076923076923077
+    },
+    {
+      "graph_id": "17-homophily-test-2",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 43,
+      "total_edges": 46,
+      "fraction": 0.9347826086956522
+    },
+    {
+      "graph_id": "17-homophily-test-3",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 49,
+      "total_edges": 53,
+      "fraction": 0.9245283018867925
+    },
+    {
+      "graph_id": "17-heterophily-train-0",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 2,
+      "total_edges": 62,
+      "fraction": 0.03225806451612903
+    },
+    {
+      "graph_id": "17-heterophily-train-1",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 4,
+      "total_edges": 61,
+      "fraction": 0.06557377049180328
+    },
+    {
+      "graph_id": "17-heterophily-train-2",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 2,
+      "total_edges": 66,
+      "fraction": 0.030303030303030304
+    },
+    {
+      "graph_id": "17-heterophily-train-3",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 6,
+      "total_edges": 63,
+      "fraction": 0.09523809523809523
+    },
+    {
+      "graph_id": "17-heterophily-train-4",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 6,
+      "total_edges": 61,
+      "fraction": 0.09836065573770492
+    },
+    {
+      "graph_id": "17-heterophily-train-5",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 62,
+      "fraction": 0.08064516129032258
+    },
+    {
+      "graph_id": "17-heterophily-train-6",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 66,
+      "fraction": 0.07575757575757576
+    },
+    {
+      "graph_id": "17-heterophily-train-7",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 2,
+      "total_edges": 56,
+      "fraction": 0.03571428571428571
+    },
+    {
+      "graph_id": "17-heterophily-train-8",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 2,
+      "total_edges": 54,
+      "fraction": 0.037037037037037035
+    },
+    {
+      "graph_id": "17-heterophily-train-9",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 2,
+      "total_edges": 69,
+      "fraction": 0.028985507246376812
+    },
+    {
+      "graph_id": "17-heterophily-train-10",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 2,
+      "total_edges": 57,
+      "fraction": 0.03508771929824561
+    },
+    {
+      "graph_id": "17-heterophily-train-11",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 6,
+      "total_edges": 60,
+      "fraction": 0.1
+    },
+    {
+      "graph_id": "17-heterophily-val-0",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 5,
+      "total_edges": 65,
+      "fraction": 0.07692307692307693
+    },
+    {
+      "graph_id": "17-heterophily-val-1",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 9,
+      "total_edges": 66,
+      "fraction": 0.13636363636363635
+    },
+    {
+      "graph_id": "17-heterophily-val-2",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 4,
+      "total_edges": 61,
+      "fraction": 0.06557377049180328
+    },
+    {
+      "graph_id": "17-heterophily-val-3",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 6,
+      "total_edges": 71,
+      "fraction": 0.08450704225352113
+    },
+    {
+      "graph_id": "17-heterophily-test-0",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 6,
+      "total_edges": 55,
+      "fraction": 0.10909090909090909
+    },
+    {
+      "graph_id": "17-heterophily-test-1",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 4,
+      "total_edges": 57,
+      "fraction": 0.07017543859649122
+    },
+    {
+      "graph_id": "17-heterophily-test-2",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 5,
+      "total_edges": 70,
+      "fraction": 0.07142857142857142
+    },
+    {
+      "graph_id": "17-heterophily-test-3",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 5,
+      "total_edges": 58,
+      "fraction": 0.08620689655172414
+    },
+    {
+      "graph_id": "29-homophily-train-0",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 57,
+      "total_edges": 61,
+      "fraction": 0.9344262295081968
+    },
+    {
+      "graph_id": "29-homophily-train-1",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 47,
+      "total_edges": 51,
+      "fraction": 0.9215686274509803
+    },
+    {
+      "graph_id": "29-homophily-train-2",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 54,
+      "total_edges": 59,
+      "fraction": 0.9152542372881356
+    },
+    {
+      "graph_id": "29-homophily-train-3",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 54,
+      "total_edges": 60,
+      "fraction": 0.9
+    },
+    {
+      "graph_id": "29-homophily-train-4",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 52,
+      "total_edges": 58,
+      "fraction": 0.896551724137931
+    },
+    {
+      "graph_id": "29-homophily-train-5",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 61,
+      "total_edges": 69,
+      "fraction": 0.8840579710144928
+    },
+    {
+      "graph_id": "29-homophily-train-6",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 48,
+      "total_edges": 53,
+      "fraction": 0.9056603773584906
+    },
+    {
+      "graph_id": "29-homophily-train-7",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 58,
+      "total_edges": 65,
+      "fraction": 0.8923076923076924
+    },
+    {
+      "graph_id": "29-homophily-train-8",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 51,
+      "total_edges": 58,
+      "fraction": 0.8793103448275862
+    },
+    {
+      "graph_id": "29-homophily-train-9",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 54,
+      "total_edges": 61,
+      "fraction": 0.8852459016393442
+    },
+    {
+      "graph_id": "29-homophily-train-10",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 47,
+      "total_edges": 54,
+      "fraction": 0.8703703703703703
+    },
+    {
+      "graph_id": "29-homophily-train-11",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 44,
+      "total_edges": 48,
+      "fraction": 0.9166666666666666
+    },
+    {
+      "graph_id": "29-homophily-val-0",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 52,
+      "total_edges": 60,
+      "fraction": 0.8666666666666667
+    },
+    {
+      "graph_id": "29-homophily-val-1",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 49,
+      "total_edges": 56,
+      "fraction": 0.875
+    },
+    {
+      "graph_id": "29-homophily-val-2",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 52,
+      "total_edges": 59,
+      "fraction": 0.8813559322033898
+    },
+    {
+      "graph_id": "29-homophily-val-3",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 49,
+      "total_edges": 52,
+      "fraction": 0.9423076923076923
+    },
+    {
+      "graph_id": "29-homophily-test-0",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 44,
+      "total_edges": 47,
+      "fraction": 0.9361702127659575
+    },
+    {
+      "graph_id": "29-homophily-test-1",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 51,
+      "total_edges": 59,
+      "fraction": 0.864406779661017
+    },
+    {
+      "graph_id": "29-homophily-test-2",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 52,
+      "total_edges": 56,
+      "fraction": 0.9285714285714286
+    },
+    {
+      "graph_id": "29-homophily-test-3",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 53,
+      "total_edges": 58,
+      "fraction": 0.9137931034482759
+    },
+    {
+      "graph_id": "29-heterophily-train-0",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 4,
+      "total_edges": 59,
+      "fraction": 0.06779661016949153
+    },
+    {
+      "graph_id": "29-heterophily-train-1",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 62,
+      "fraction": 0.08064516129032258
+    },
+    {
+      "graph_id": "29-heterophily-train-2",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 6,
+      "total_edges": 68,
+      "fraction": 0.08823529411764706
+    },
+    {
+      "graph_id": "29-heterophily-train-3",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 7,
+      "total_edges": 71,
+      "fraction": 0.09859154929577464
+    },
+    {
+      "graph_id": "29-heterophily-train-4",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 3,
+      "total_edges": 62,
+      "fraction": 0.04838709677419355
+    },
+    {
+      "graph_id": "29-heterophily-train-5",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 64,
+      "fraction": 0.078125
+    },
+    {
+      "graph_id": "29-heterophily-train-6",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 6,
+      "total_edges": 58,
+      "fraction": 0.10344827586206896
+    },
+    {
+      "graph_id": "29-heterophily-train-7",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 66,
+      "fraction": 0.07575757575757576
+    },
+    {
+      "graph_id": "29-heterophily-train-8",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 7,
+      "total_edges": 67,
+      "fraction": 0.1044776119402985
+    },
+    {
+      "graph_id": "29-heterophily-train-9",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 57,
+      "fraction": 0.08771929824561403
+    },
+    {
+      "graph_id": "29-heterophily-train-10",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 8,
+      "total_edges": 65,
+      "fraction": 0.12307692307692308
+    },
+    {
+      "graph_id": "29-heterophily-train-11",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 3,
+      "total_edges": 51,
+      "fraction": 0.058823529411764705
+    },
+    {
+      "graph_id": "29-heterophily-val-0",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 3,
+      "total_edges": 58,
+      "fraction": 0.05172413793103448
+    },
+    {
+      "graph_id": "29-heterophily-val-1",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 7,
+      "total_edges": 66,
+      "fraction": 0.10606060606060606
+    },
+    {
+      "graph_id": "29-heterophily-val-2",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 2,
+      "total_edges": 56,
+      "fraction": 0.03571428571428571
+    },
+    {
+      "graph_id": "29-heterophily-val-3",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 3,
+      "total_edges": 66,
+      "fraction": 0.045454545454545456
+    },
+    {
+      "graph_id": "29-heterophily-test-0",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 7,
+      "total_edges": 60,
+      "fraction": 0.11666666666666667
+    },
+    {
+      "graph_id": "29-heterophily-test-1",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 3,
+      "total_edges": 59,
+      "fraction": 0.05084745762711865
+    },
+    {
+      "graph_id": "29-heterophily-test-2",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 5,
+      "total_edges": 64,
+      "fraction": 0.078125
+    },
+    {
+      "graph_id": "29-heterophily-test-3",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 5,
+      "total_edges": 63,
+      "fraction": 0.07936507936507936
+    },
+    {
+      "graph_id": "43-homophily-train-0",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 41,
+      "total_edges": 43,
+      "fraction": 0.9534883720930233
+    },
+    {
+      "graph_id": "43-homophily-train-1",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 56,
+      "total_edges": 65,
+      "fraction": 0.8615384615384616
+    },
+    {
+      "graph_id": "43-homophily-train-2",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 45,
+      "total_edges": 54,
+      "fraction": 0.8333333333333334
+    },
+    {
+      "graph_id": "43-homophily-train-3",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 53,
+      "total_edges": 68,
+      "fraction": 0.7794117647058824
+    },
+    {
+      "graph_id": "43-homophily-train-4",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 49,
+      "total_edges": 55,
+      "fraction": 0.8909090909090909
+    },
+    {
+      "graph_id": "43-homophily-train-5",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 48,
+      "total_edges": 53,
+      "fraction": 0.9056603773584906
+    },
+    {
+      "graph_id": "43-homophily-train-6",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 55,
+      "total_edges": 60,
+      "fraction": 0.9166666666666666
+    },
+    {
+      "graph_id": "43-homophily-train-7",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 48,
+      "total_edges": 54,
+      "fraction": 0.8888888888888888
+    },
+    {
+      "graph_id": "43-homophily-train-8",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 49,
+      "total_edges": 56,
+      "fraction": 0.875
+    },
+    {
+      "graph_id": "43-homophily-train-9",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 50,
+      "total_edges": 53,
+      "fraction": 0.9433962264150944
+    },
+    {
+      "graph_id": "43-homophily-train-10",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 58,
+      "total_edges": 61,
+      "fraction": 0.9508196721311475
+    },
+    {
+      "graph_id": "43-homophily-train-11",
+      "regime": "homophily",
+      "split": "train",
+      "same_edges": 60,
+      "total_edges": 68,
+      "fraction": 0.8823529411764706
+    },
+    {
+      "graph_id": "43-homophily-val-0",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 44,
+      "total_edges": 49,
+      "fraction": 0.8979591836734694
+    },
+    {
+      "graph_id": "43-homophily-val-1",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 60,
+      "total_edges": 67,
+      "fraction": 0.8955223880597015
+    },
+    {
+      "graph_id": "43-homophily-val-2",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 57,
+      "total_edges": 66,
+      "fraction": 0.8636363636363636
+    },
+    {
+      "graph_id": "43-homophily-val-3",
+      "regime": "homophily",
+      "split": "val",
+      "same_edges": 56,
+      "total_edges": 60,
+      "fraction": 0.9333333333333333
+    },
+    {
+      "graph_id": "43-homophily-test-0",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 58,
+      "total_edges": 63,
+      "fraction": 0.9206349206349206
+    },
+    {
+      "graph_id": "43-homophily-test-1",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 53,
+      "total_edges": 56,
+      "fraction": 0.9464285714285714
+    },
+    {
+      "graph_id": "43-homophily-test-2",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 58,
+      "total_edges": 63,
+      "fraction": 0.9206349206349206
+    },
+    {
+      "graph_id": "43-homophily-test-3",
+      "regime": "homophily",
+      "split": "test",
+      "same_edges": 51,
+      "total_edges": 57,
+      "fraction": 0.8947368421052632
+    },
+    {
+      "graph_id": "43-heterophily-train-0",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 6,
+      "total_edges": 54,
+      "fraction": 0.1111111111111111
+    },
+    {
+      "graph_id": "43-heterophily-train-1",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 68,
+      "fraction": 0.07352941176470588
+    },
+    {
+      "graph_id": "43-heterophily-train-2",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 9,
+      "total_edges": 68,
+      "fraction": 0.1323529411764706
+    },
+    {
+      "graph_id": "43-heterophily-train-3",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 63,
+      "fraction": 0.07936507936507936
+    },
+    {
+      "graph_id": "43-heterophily-train-4",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 62,
+      "fraction": 0.08064516129032258
+    },
+    {
+      "graph_id": "43-heterophily-train-5",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 8,
+      "total_edges": 73,
+      "fraction": 0.1095890410958904
+    },
+    {
+      "graph_id": "43-heterophily-train-6",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 61,
+      "fraction": 0.08196721311475409
+    },
+    {
+      "graph_id": "43-heterophily-train-7",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 59,
+      "fraction": 0.0847457627118644
+    },
+    {
+      "graph_id": "43-heterophily-train-8",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 64,
+      "fraction": 0.078125
+    },
+    {
+      "graph_id": "43-heterophily-train-9",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 5,
+      "total_edges": 67,
+      "fraction": 0.07462686567164178
+    },
+    {
+      "graph_id": "43-heterophily-train-10",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 6,
+      "total_edges": 61,
+      "fraction": 0.09836065573770492
+    },
+    {
+      "graph_id": "43-heterophily-train-11",
+      "regime": "heterophily",
+      "split": "train",
+      "same_edges": 7,
+      "total_edges": 63,
+      "fraction": 0.1111111111111111
+    },
+    {
+      "graph_id": "43-heterophily-val-0",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 5,
+      "total_edges": 63,
+      "fraction": 0.07936507936507936
+    },
+    {
+      "graph_id": "43-heterophily-val-1",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 7,
+      "total_edges": 56,
+      "fraction": 0.125
+    },
+    {
+      "graph_id": "43-heterophily-val-2",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 8,
+      "total_edges": 51,
+      "fraction": 0.1568627450980392
+    },
+    {
+      "graph_id": "43-heterophily-val-3",
+      "regime": "heterophily",
+      "split": "val",
+      "same_edges": 7,
+      "total_edges": 64,
+      "fraction": 0.109375
+    },
+    {
+      "graph_id": "43-heterophily-test-0",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 5,
+      "total_edges": 51,
+      "fraction": 0.09803921568627451
+    },
+    {
+      "graph_id": "43-heterophily-test-1",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 5,
+      "total_edges": 62,
+      "fraction": 0.08064516129032258
+    },
+    {
+      "graph_id": "43-heterophily-test-2",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 5,
+      "total_edges": 64,
+      "fraction": 0.078125
+    },
+    {
+      "graph_id": "43-heterophily-test-3",
+      "regime": "heterophily",
+      "split": "test",
+      "same_edges": 6,
+      "total_edges": 61,
+      "fraction": 0.09836065573770492
+    }
+  ]
+}

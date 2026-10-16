@@ -1,0 +1,137 @@
+[
+  {
+    "seed": 17,
+    "model": "bag",
+    "epoch": null,
+    "val_ce": null,
+    "certificate": {
+      "steps": 1,
+      "regularized_train_loss": 0.6931471805599451,
+      "convex_gap_upper_bound": 0.0,
+      "head_norm": 0.0
+    }
+  },
+  {
+    "seed": 17,
+    "model": "fixed",
+    "epoch": null,
+    "val_ce": null,
+    "certificate": {
+      "steps": 40,
+      "regularized_train_loss": 0.23156245294969463,
+      "convex_gap_upper_bound": 6.8993502716496735e-09,
+      "head_norm": 4.0
+    }
+  },
+  {
+    "seed": 17,
+    "model": "sum",
+    "epoch": 236,
+    "val_ce": 0.24364411409024,
+    "certificate": null
+  },
+  {
+    "seed": 17,
+    "model": "mean",
+    "epoch": 240,
+    "val_ce": 0.18968535465940928,
+    "certificate": null
+  },
+  {
+    "seed": 17,
+    "model": "max",
+    "epoch": 70,
+    "val_ce": 0.027944107408142183,
+    "certificate": null
+  },
+  {
+    "seed": 29,
+    "model": "bag",
+    "epoch": null,
+    "val_ce": null,
+    "certificate": {
+      "steps": 1,
+      "regularized_train_loss": 0.6931471805599451,
+      "convex_gap_upper_bound": 0.0,
+      "head_norm": 0.0
+    }
+  },
+  {
+    "seed": 29,
+    "model": "fixed",
+    "epoch": null,
+    "val_ce": null,
+    "certificate": {
+      "steps": 40,
+      "regularized_train_loss": 0.23156245294969463,
+      "convex_gap_upper_bound": 6.8993502716496735e-09,
+      "head_norm": 4.0
+    }
+  },
+  {
+    "seed": 29,
+    "model": "sum",
+    "epoch": 217,
+    "val_ce": 0.18392508511615613,
+    "certificate": null
+  },
+  {
+    "seed": 29,
+    "model": "mean",
+    "epoch": 240,
+    "val_ce": 0.13837405411089726,
+    "certificate": null
+  },
+  {
+    "seed": 29,
+    "model": "max",
+    "epoch": 78,
+    "val_ce": 0.026795237984141473,
+    "certificate": null
+  },
+  {
+    "seed": 43,
+    "model": "bag",
+    "epoch": null,
+    "val_ce": null,
+    "certificate": {
+      "steps": 1,
+      "regularized_train_loss": 0.6931471805599451,
+      "convex_gap_upper_bound": 0.0,
+      "head_norm": 0.0
+    }
+  },
+  {
+    "seed": 43,
+    "model": "fixed",
+    "epoch": null,
+    "val_ce": null,
+    "certificate": {
+      "steps": 40,
+      "regularized_train_loss": 0.23156245294969463,
+      "convex_gap_upper_bound": 6.8993502716496735e-09,
+      "head_norm": 4.0
+    }
+  },
+  {
+    "seed": 43,
+    "model": "sum",
+    "epoch": 234,
+    "val_ce": 0.32703024909789696,
+    "certificate": null
+  },
+  {
+    "seed": 43,
+    "model": "mean",
+    "epoch": 232,
+    "val_ce": 0.26939753202623173,
+    "certificate": null
+  },
+  {
+    "seed": 43,
+    "model": "max",
+    "epoch": 70,
+    "val_ce": 0.023886794295129108,
+    "certificate": null
+  }
+]

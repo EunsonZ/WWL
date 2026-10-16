@@ -1,0 +1,332 @@
+[
+  {
+    "seed": 17,
+    "model": "bag",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 0.5,
+    "cross_entropy": 0.6931471805599453,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 0.5
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 0.5
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 0.5
+      }
+    }
+  },
+  {
+    "seed": 17,
+    "model": "fixed",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.15156245294969461,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 17,
+    "model": "sum",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.2127079133960045,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 17,
+    "model": "mean",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.16493152113050297,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 17,
+    "model": "max",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.027852520751622242,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 29,
+    "model": "bag",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 0.5,
+    "cross_entropy": 0.6931471805599453,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 0.5
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 0.5
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 0.5
+      }
+    }
+  },
+  {
+    "seed": 29,
+    "model": "fixed",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.15156245294969461,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 29,
+    "model": "sum",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.19286938463818215,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 29,
+    "model": "mean",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.1496488799791074,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 29,
+    "model": "max",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.02681782300767045,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 43,
+    "model": "bag",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 0.5,
+    "cross_entropy": 0.6931471805599453,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 0.5
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 0.5
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 0.5
+      }
+    }
+  },
+  {
+    "seed": 43,
+    "model": "fixed",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.15156245294969461,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 43,
+    "model": "sum",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.22117673364496557,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 43,
+    "model": "mean",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.17405015649702862,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  {
+    "seed": 43,
+    "model": "max",
+    "split": "test",
+    "graphs": 12,
+    "accuracy": 1.0,
+    "cross_entropy": 0.0238839987429081,
+    "per_size": {
+      "6": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "8": {
+        "graphs": 4,
+        "accuracy": 1.0
+      },
+      "10": {
+        "graphs": 4,
+        "accuracy": 1.0
+      }
+    }
+  }
+]

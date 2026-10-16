@@ -1,0 +1,142 @@
+{
+  "model": "synthetic continuous two-good choices",
+  "main": {
+    "p0": [
+      "1",
+      "1"
+    ],
+    "p1": [
+      "4",
+      "1"
+    ],
+    "budget": "10",
+    "target": "25",
+    "hicks_expenditure": "20",
+    "hicks_topup": "10",
+    "old_basket_budget": "25",
+    "old_basket_topup": "15",
+    "points": {
+      "A": {
+        "quantity": [
+          "5",
+          "5"
+        ],
+        "utility": "25",
+        "new_price_cost": "25"
+      },
+      "M": {
+        "quantity": [
+          "5/4",
+          "5"
+        ],
+        "utility": "25/4",
+        "new_price_cost": "10"
+      },
+      "H": {
+        "quantity": [
+          "5/2",
+          "10"
+        ],
+        "utility": "25",
+        "new_price_cost": "20"
+      },
+      "S": {
+        "quantity": [
+          "25/8",
+          "25/2"
+        ],
+        "utility": "625/16",
+        "new_price_cost": "25"
+      }
+    }
+  },
+  "transfer": {
+    "p0": [
+      "1",
+      "1"
+    ],
+    "p1": [
+      "9",
+      "1"
+    ],
+    "budget": "12",
+    "target": "36",
+    "hicks_expenditure": "36",
+    "hicks_topup": "24",
+    "old_basket_budget": "60",
+    "old_basket_topup": "48",
+    "points": {
+      "A": {
+        "quantity": [
+          "6",
+          "6"
+        ],
+        "utility": "36",
+        "new_price_cost": "60"
+      },
+      "M": {
+        "quantity": [
+          "2/3",
+          "6"
+        ],
+        "utility": "4",
+        "new_price_cost": "12"
+      },
+      "H": {
+        "quantity": [
+          "2",
+          "18"
+        ],
+        "utility": "36",
+        "new_price_cost": "36"
+      },
+      "S": {
+        "quantity": [
+          "10/3",
+          "30"
+        ],
+        "utility": "100",
+        "new_price_cost": "60"
+      }
+    }
+  },
+  "corner": {
+    "weights": [
+      "2",
+      "1"
+    ],
+    "old": {
+      "kind": "unique",
+      "quantity": [
+        "10",
+        "0"
+      ],
+      "utility": "20"
+    },
+    "new": {
+      "kind": "unique",
+      "quantity": [
+        "0",
+        "10"
+      ],
+      "utility": "10"
+    },
+    "target": "20",
+    "hicks": {
+      "expenditure": "20",
+      "choice": {
+        "kind": "unique",
+        "quantity": [
+          "0",
+          "20"
+        ],
+        "utility": "20"
+      }
+    },
+    "old_basket_budget": "40",
+    "tie_case": {
+      "kind": "segment",
+      "equation": "2*x+1*y=10"
+    }
+  }
+}

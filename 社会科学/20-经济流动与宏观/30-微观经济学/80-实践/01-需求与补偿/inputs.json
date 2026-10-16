@@ -1,0 +1,7 @@
+{
+  "units": {"quantity": "份", "price": "元/份", "budget": "元"},
+  "baseline": {"prices": ["1", "1"], "budget": "10"},
+  "new_prices": ["4", "1"],
+  "transfer": {"baseline_prices": ["1", "1"], "new_prices": ["9", "1"], "budget": "12"},
+  "corner": {"weights": ["2", "1"], "tie_prices": ["2", "1"]}
+}

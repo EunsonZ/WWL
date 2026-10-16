@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="370" viewBox="0 0 980 370">
+<title>One polynomial, three quotient rings</title><desc>Exact roots of X squared minus X plus 5 at primes 2, 5, 19; prime ideals, not repeated labels.</desc>
+<rect width="980" height="370" fill="#f7fafc"/>
+<g font-family="sans-serif" fill="#172b4d">
+<text x="35" y="42" font-size="23">One polynomial, three quotient rings</text>
+<rect x="30" y="72" width="295" height="240" rx="12" fill="#e3edf8" stroke="#50749b"/>
+<text x="47" y="110" font-size="25">p = 2</text>
+<text x="47" y="145" font-size="16">roots = []</text>
+<text x="47" y="190" font-size="16">no root: irreducible</text>
+<text x="47" y="228" font-size="16">F4; (2) prime</text>
+<text x="47" y="266" font-size="16">e=1, f=2, norm=4</text>
+<rect x="350" y="72" width="295" height="240" rx="12" fill="#e3edf8" stroke="#50749b"/>
+<text x="367" y="110" font-size="25">p = 5</text>
+<text x="367" y="145" font-size="16">roots = [0, 1]</text>
+<text x="367" y="190" font-size="16">roots 0, 1: distinct</text>
+<text x="367" y="228" font-size="16">F5 x F5; P0 P1=(5)</text>
+<text x="367" y="266" font-size="16">each e=1, f=1, norm=5</text>
+<rect x="670" y="72" width="295" height="240" rx="12" fill="#e3edf8" stroke="#50749b"/>
+<text x="687" y="110" font-size="25">p = 19</text>
+<text x="687" y="145" font-size="16">roots = [10]</text>
+<text x="687" y="190" font-size="16">root 10: repeated</text>
+<text x="687" y="228" font-size="16">F19[e]/(e^2); P^2=(19)</text>
+<text x="687" y="266" font-size="16">e=2, f=1, norm=19</text>
+<text x="35" y="346" font-size="16">A repeated root gives one prime ideal with exponent 2, not two distinct ideals.</text>
+</g></svg>

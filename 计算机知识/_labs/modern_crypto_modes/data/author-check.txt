@@ -1,0 +1,15 @@
+WWL AES128/modes author execution 2026-10-17. All keys/IV/counter/plaintext PUBLIC; no live secrets, network, remote service or hardware.
+Environment reused Python3.12.11 cryptography50.0.2 (OpenSSL4.0.3 backend) macOS27.0.1 arm64; independent /usr/bin/openssl is LibreSSL3.3.6. No new dependency install.
+Existing shared two-slot runner, single process/thread limits1, timeout120s; estimate seconds/<5min. Not performance or constant-time measurement.
+
+Actual commands (historical execution paths):
+/private/tmp/wwl-next-context/run_local.py --timeout 120 -- /private/tmp/wwl-next-170/runtime/bin/python -B -m unittest discover -s /private/tmp/wwl-next-170-modes/vault/计算机知识/_labs/modern_crypto_modes -p test_modes_lab.py -v
+/private/tmp/wwl-next-context/run_local.py --timeout 120 -- /private/tmp/wwl-next-170/runtime/bin/python -B /private/tmp/wwl-next-170-modes/vault/计算机知识/_labs/modern_crypto_modes/modes_lab.py --openssl /usr/bin/openssl --output /private/tmp/wwl-next-170-modes/author-run-20261017
+
+7tests 0.103s PASS exit0; default generate exit0. data/results.json copied byte-for-byte from this run.
+Vectors SHA9cfe04641ccc3727186ed58e8220b87f5918ae71d6483a3ad1a1d84f21cf2b90.
+No older AEAD/handshake source imported, copied, modified or bulk tests rerun.
+README supplies fresh external output/venv reproduction. Original temporary execution paths are provenance, not required dependencies.
+
+Finite proof/behavior scope: field/Sbox inverses, linear-transform basis, public key expansion/round states and NIST ECB/CBC/CTR, three implementations, predictable-CBC-IV relation, error propagation/malleability, CTR reuse/range overlap/exhaustion and reject-state behavior.
+Not general PRP/IND-CPA/CCA, constant-time, production randomness/counter-state/nonce durability, authenticated messaging, remote TLS or hardware certification.

@@ -1,0 +1,323 @@
+{
+  "environment": {
+    "python": "3.12.11",
+    "cryptography": "50.0.2",
+    "backend": "OpenSSL 4.0.3 29 Sep 2026",
+    "independent_cli": "LibreSSL 3.3.6",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "vectors_sha256": "9cfe04641ccc3727186ed58e8220b87f5918ae71d6483a3ad1a1d84f21cf2b90",
+  "gf": {
+    "57_times_13": "fe",
+    "Sbox_53": "ed",
+    "Sbox_0_1_2_3": [
+      "63",
+      "7c",
+      "77",
+      "7b"
+    ],
+    "Sbox_is_permutation": true
+  },
+  "round_keys": [
+    "2b7e151628aed2a6abf7158809cf4f3c",
+    "a0fafe1788542cb123a339392a6c7605",
+    "f2c295f27a96b9435935807a7359f67f",
+    "3d80477d4716fe3e1e237e446d7a883b",
+    "ef44a541a8525b7fb671253bdb0bad00",
+    "d4d1c6f87c839d87caf2b8bc11f915bc",
+    "6d88a37a110b3efddbf98641ca0093fd",
+    "4e54f70e5f5fc9f384a64fb24ea6dc4f",
+    "ead27321b58dbad2312bf5607f8d292f",
+    "ac7766f319fadc2128d12941575c006e",
+    "d014f9a8c9ee2589e13f0cc8b6630ca6"
+  ],
+  "first_block_40_stage_trace": [
+    {
+      "round": 0,
+      "stage": "AddRoundKey",
+      "state": "40bfabf406ee4d3042ca6b997a5c5816"
+    },
+    {
+      "round": 1,
+      "stage": "SubBytes",
+      "state": "090862bf6f28e3042c747feeda4a6a47"
+    },
+    {
+      "round": 1,
+      "stage": "ShiftRows",
+      "state": "09287f476f746abf2c4a6204da08e3ee"
+    },
+    {
+      "round": 1,
+      "stage": "MixColumns",
+      "state": "529f16c2978615cae01aae54ba1a2659"
+    },
+    {
+      "round": 1,
+      "stage": "AddRoundKey",
+      "state": "f265e8d51fd2397bc3b9976d9076505c"
+    },
+    {
+      "round": 2,
+      "stage": "SubBytes",
+      "state": "894d9b03c0b512212e56883c6038534a"
+    },
+    {
+      "round": 2,
+      "stage": "ShiftRows",
+      "state": "89b5884ac05653032e389b21604d123c"
+    },
+    {
+      "round": 2,
+      "stage": "MixColumns",
+      "state": "0f31e929319a3558aec9589339f04d87"
+    },
+    {
+      "round": 2,
+      "stage": "AddRoundKey",
+      "state": "fdf37cdb4b0c8c1bf7fcd8e94aa9bbf8"
+    },
+    {
+      "round": 3,
+      "stage": "SubBytes",
+      "state": "540d10b9b3fe64af68b0611ed6d3ea41"
+    },
+    {
+      "round": 3,
+      "stage": "ShiftRows",
+      "state": "54fe6141b3b0eab968d310afd60d641e"
+    },
+    {
+      "round": 3,
+      "stage": "MixColumns",
+      "state": "9151abe1e5541cfd014a713eda7e3134"
+    },
+    {
+      "round": 3,
+      "stage": "AddRoundKey",
+      "state": "acd1ec9ca242e2c31f690f7ab704b90f"
+    },
+    {
+      "round": 4,
+      "stage": "SubBytes",
+      "state": "913ecede3a2c982ec0f976daa9f25676"
+    },
+    {
+      "round": 4,
+      "stage": "ShiftRows",
+      "state": "912c76763af956dec0f2ce2ea93e98da"
+    },
+    {
+      "round": 4,
+      "stage": "MixColumns",
+      "state": "4d25cb1eecf716467658c73b49bcc9e9"
+    },
+    {
+      "round": 4,
+      "stage": "AddRoundKey",
+      "state": "a2616e5f44a54d39c029e20092b764e9"
+    },
+    {
+      "round": 5,
+      "stage": "SubBytes",
+      "state": "3aef9fcf1b06e312baa598634fa9431e"
+    },
+    {
+      "round": 5,
+      "stage": "ShiftRows",
+      "state": "3a06981e1ba543cfbaa99f124fefe363"
+    },
+    {
+      "round": 5,
+      "stage": "MixColumns",
+      "state": "f89b35ec4e40724e025b00c734d7d81b"
+    },
+    {
+      "round": 5,
+      "stage": "AddRoundKey",
+      "state": "2c4af31432c3efc9c8a9b87b252ecda7"
+    },
+    {
+      "round": 6,
+      "stage": "SubBytes",
+      "state": "71d60dfa232edfdde8d36c213f31bd5c"
+    },
+    {
+      "round": 6,
+      "stage": "ShiftRows",
+      "state": "712e6c5c23d3bdfae8310ddd3fd6df21"
+    },
+    {
+      "round": 6,
+      "stage": "MixColumns",
+      "state": "a0c563696fb884e44840bfbee1d32f0a"
+    },
+    {
+      "round": 6,
+      "stage": "AddRoundKey",
+      "state": "cd4dc0137eb3ba1993b939ff2bd3bcf7"
+    },
+    {
+      "round": 7,
+      "stage": "SubBytes",
+      "state": "bde3ba7df36df4d4dc561216f1666568"
+    },
+    {
+      "round": 7,
+      "stage": "ShiftRows",
+      "state": "bd6d1268f356657ddc66bad4f1e3f416"
+    },
+    {
+      "round": 7,
+      "stage": "MixColumns",
+      "state": "ac394c731f8de8c76711b210253ddb33"
+    },
+    {
+      "round": 7,
+      "stage": "AddRoundKey",
+      "state": "e26dbb7d40d22134e3b7fda26b9b077c"
+    },
+    {
+      "round": 8,
+      "stage": "SubBytes",
+      "state": "983ceaff09b5fd1811a9543a7f14c510"
+    },
+    {
+      "round": 8,
+      "stage": "ShiftRows",
+      "state": "98b5541009a9c5ff1114ea187f3cfd3a"
+    },
+    {
+      "round": 8,
+      "stage": "MixColumns",
+      "state": "ab05b572c8eb2b92ec04e2fd7d21ec34"
+    },
+    {
+      "round": 8,
+      "stage": "AddRoundKey",
+      "state": "41d7c6537d669140dd2f179d02acc51b"
+    },
+    {
+      "round": 9,
+      "stage": "SubBytes",
+      "state": "830eb4edff338109c115f05e7791a6af"
+    },
+    {
+      "round": 9,
+      "stage": "ShiftRows",
+      "state": "8333f0afff15a6edc191b409770e815e"
+    },
+    {
+      "round": 9,
+      "stage": "MixColumns",
+      "state": "1741a11891c991688c36386f23ad82aa"
+    },
+    {
+      "round": 9,
+      "stage": "AddRoundKey",
+      "state": "bb36c7eb88334d49a4e7112e74f182c4"
+    },
+    {
+      "round": 10,
+      "stage": "SubBytes",
+      "state": "ea05c6e9c4c3e33b4994823192a1131c"
+    },
+    {
+      "round": 10,
+      "stage": "ShiftRows",
+      "state": "eac3821cc49413e949a1c63b9205e331"
+    },
+    {
+      "round": 10,
+      "stage": "AddRoundKey",
+      "state": "3ad77bb40d7a3660a89ecaf32466ef97"
+    }
+  ],
+  "NIST_modes": {
+    "ECB": {
+      "ciphertext": "3ad77bb40d7a3660a89ecaf32466ef97f5d3d58503b9699de785895a96fdbaaf43b1cd7f598ece23881b00e3ed0306887b0c785e27e8ad3f8223207104725dd4",
+      "teaching_encrypt_decrypt": true,
+      "cryptography_encrypt_decrypt": true,
+      "openssl_encrypt_decrypt": true
+    },
+    "CBC": {
+      "ciphertext": "7649abac8119b246cee98e9b12e9197d5086cb9b507219ee95db113a917678b273bed6b8e3c1743b7116e69e222295163ff1caa1681fac09120eca307586e1a7",
+      "teaching_encrypt_decrypt": true,
+      "cryptography_encrypt_decrypt": true,
+      "openssl_encrypt_decrypt": true
+    },
+    "CTR": {
+      "ciphertext": "874d6191b620e3261bef6864990db6ce9806f66b7970fdff8617187bb9fffdff5ae4df3edbd5d35e5b4f09020db03eab1e031dda2fbe03d1792170a0f3009cee",
+      "teaching_encrypt_decrypt": true,
+      "cryptography_encrypt_decrypt": true,
+      "openssl_encrypt_decrypt": true
+    }
+  },
+  "CTR_partial_31byte_exact": true,
+  "ECB_repeated_blocks_equal": true,
+  "CBC_predictable_IV": {
+    "next_iv": "000102030405060708090a0b0c0d0e10",
+    "chosen_plaintext": "6bc1bee22e409f96e93d7e1173931735",
+    "ciphertext_matches_reference": true
+  },
+  "CBC_IV_flip": {
+    "decrypted_hex": "6ac1bee22e409f96e93d7e117393172aae2d8a571e03ac9c9eb76fac45af8e5130c81c46a35ce411e5fbc1191a0a52eff69f2445df4f9b17ad2b417be66c3710",
+    "changed_byte_indices": [
+      0
+    ]
+  },
+  "CBC_C1_flip": {
+    "decrypted_hex": "155b8fb754de88b0a543b30341f4a1c6af2d8a571e03ac9c9eb76fac45af8e5130c81c46a35ce411e5fbc1191a0a52eff69f2445df4f9b17ad2b417be66c3710",
+    "changed_byte_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "P1_changed_bits": 68,
+    "P2_exact_flip": true,
+    "P3_P4_unchanged": true,
+    "authentication_rejection": "none: raw CBC returns bytes"
+  },
+  "CTR_ciphertext_flip": {
+    "changed_byte_indices": [
+      17
+    ],
+    "xor_delta": 4,
+    "authentication_rejection": "none: raw CTR returns bytes"
+  },
+  "CTR_reuse_PUBLIC": {
+    "plaintext_xor": "0000000000000000080000",
+    "ciphertext_xor": "0000000000000000080000"
+  },
+  "CTR_ranges": {
+    "first_reserved_half_open": [
+      7,
+      9
+    ],
+    "different_start_8_overlap_rejected": true,
+    "wrap_rejected_before_state_change": true,
+    "new_guard_reuses_range": true
+  },
+  "not_proved": [
+    "PRP/PRF security",
+    "general IND-CPA or CCA security",
+    "constant time or side-channel resistance",
+    "production IV generation",
+    "durable/concurrent counter uniqueness",
+    "message authenticity"
+  ]
+}

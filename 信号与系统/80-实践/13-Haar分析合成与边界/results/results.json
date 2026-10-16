@@ -1,0 +1,696 @@
+{
+  "model": "causal-Haar-phase1-full-convolution-explicit-extension",
+  "inputs": {
+    "samples_V": [
+      1,
+      3,
+      2,
+      6
+    ],
+    "odd_samples_V": [
+      1,
+      3,
+      2,
+      6,
+      5
+    ],
+    "fs_Hz": 8,
+    "boundary_modes": [
+      "zero",
+      "repeat"
+    ],
+    "basis_lengths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      16,
+      31,
+      32
+    ],
+    "shear_lambda": 0.5
+  },
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "numpy": "2.5.3",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "processes": 1,
+    "threads": 1,
+    "executable": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv/bin/python"
+  },
+  "canonical_resample_source": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/信号与系统/80-实践/02-流式音频重采样/resample_lab.py",
+  "canonical_source_sha256": "773ef32198f5723e5ee7591990840efcdb30a3fbd42937d3fcf5f18d147839b1",
+  "records": [
+    {
+      "samples_V": [
+        1.0,
+        3.0,
+        2.0,
+        6.0
+      ],
+      "boundary": "zero",
+      "original_length": 4,
+      "extended_samples_V": [
+        1.0,
+        3.0,
+        2.0,
+        6.0
+      ],
+      "a_V": [
+        2.82842712474619,
+        5.65685424949238
+      ],
+      "d_V": [
+        -1.414213562373095,
+        -2.82842712474619
+      ],
+      "a_source_fullrate_indices": [
+        1,
+        3
+      ],
+      "restored_extended_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998
+      ],
+      "restored_crop_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998
+      ],
+      "low_only_crop_V": [
+        1.9999999999999996,
+        1.9999999999999996,
+        3.999999999999999,
+        3.999999999999999
+      ],
+      "wrong_detail_sign_crop_V": [
+        2.999999999999999,
+        0.9999999999999998,
+        5.999999999999998,
+        1.9999999999999996
+      ],
+      "input_squared_norm_V2": 50.0,
+      "extended_squared_norm_V2": 50.0,
+      "coefficient_squared_norm_V2": 49.99999999999999,
+      "detail_squared_norm_V2": 9.999999999999998,
+      "low_only_crop_error_V2": 10.0,
+      "wrong_detail_sign_error_V2": 39.999999999999986,
+      "sheared_a_V": [
+        2.1213203435596424,
+        4.242640687119285
+      ],
+      "shear_full_crop_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998
+      ],
+      "shear_low_only_crop_V": [
+        1.4999999999999998,
+        1.4999999999999998,
+        2.9999999999999996,
+        2.9999999999999996
+      ],
+      "shear_coefficient_squared_norm_V2": 32.49999999999999,
+      "shear_low_only_error_V2": 12.500000000000002,
+      "phase0_full_output_V": [
+        0.0,
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999,
+        0.0
+      ],
+      "phase0_correct_delay_crop_V": [
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999
+      ],
+      "phase0_wrong_crop_V": [
+        0.0,
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996
+      ]
+    },
+    {
+      "samples_V": [
+        1.0,
+        3.0,
+        2.0,
+        6.0
+      ],
+      "boundary": "repeat",
+      "original_length": 4,
+      "extended_samples_V": [
+        1.0,
+        3.0,
+        2.0,
+        6.0
+      ],
+      "a_V": [
+        2.82842712474619,
+        5.65685424949238
+      ],
+      "d_V": [
+        -1.414213562373095,
+        -2.82842712474619
+      ],
+      "a_source_fullrate_indices": [
+        1,
+        3
+      ],
+      "restored_extended_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998
+      ],
+      "restored_crop_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998
+      ],
+      "low_only_crop_V": [
+        1.9999999999999996,
+        1.9999999999999996,
+        3.999999999999999,
+        3.999999999999999
+      ],
+      "wrong_detail_sign_crop_V": [
+        2.999999999999999,
+        0.9999999999999998,
+        5.999999999999998,
+        1.9999999999999996
+      ],
+      "input_squared_norm_V2": 50.0,
+      "extended_squared_norm_V2": 50.0,
+      "coefficient_squared_norm_V2": 49.99999999999999,
+      "detail_squared_norm_V2": 9.999999999999998,
+      "low_only_crop_error_V2": 10.0,
+      "wrong_detail_sign_error_V2": 39.999999999999986,
+      "sheared_a_V": [
+        2.1213203435596424,
+        4.242640687119285
+      ],
+      "shear_full_crop_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998
+      ],
+      "shear_low_only_crop_V": [
+        1.4999999999999998,
+        1.4999999999999998,
+        2.9999999999999996,
+        2.9999999999999996
+      ],
+      "shear_coefficient_squared_norm_V2": 32.49999999999999,
+      "shear_low_only_error_V2": 12.500000000000002,
+      "phase0_full_output_V": [
+        0.0,
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999,
+        0.0
+      ],
+      "phase0_correct_delay_crop_V": [
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999
+      ],
+      "phase0_wrong_crop_V": [
+        0.0,
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996
+      ]
+    },
+    {
+      "samples_V": [
+        1.0,
+        3.0,
+        2.0,
+        6.0,
+        5.0
+      ],
+      "boundary": "zero",
+      "original_length": 5,
+      "extended_samples_V": [
+        1.0,
+        3.0,
+        2.0,
+        6.0,
+        5.0,
+        0.0
+      ],
+      "a_V": [
+        2.82842712474619,
+        5.65685424949238,
+        3.5355339059327373
+      ],
+      "d_V": [
+        -1.414213562373095,
+        -2.82842712474619,
+        3.5355339059327373
+      ],
+      "a_source_fullrate_indices": [
+        1,
+        3,
+        5
+      ],
+      "restored_extended_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998,
+        4.999999999999999,
+        0.0
+      ],
+      "restored_crop_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998,
+        4.999999999999999
+      ],
+      "low_only_crop_V": [
+        1.9999999999999996,
+        1.9999999999999996,
+        3.999999999999999,
+        3.999999999999999,
+        2.4999999999999996
+      ],
+      "wrong_detail_sign_crop_V": [
+        2.999999999999999,
+        0.9999999999999998,
+        5.999999999999998,
+        1.9999999999999996,
+        0.0
+      ],
+      "input_squared_norm_V2": 75.0,
+      "extended_squared_norm_V2": 75.0,
+      "coefficient_squared_norm_V2": 74.99999999999999,
+      "detail_squared_norm_V2": 22.499999999999996,
+      "low_only_crop_error_V2": 16.250000000000004,
+      "wrong_detail_sign_error_V2": 64.99999999999999,
+      "sheared_a_V": [
+        2.1213203435596424,
+        4.242640687119285,
+        5.303300858899106
+      ],
+      "shear_full_crop_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998,
+        4.999999999999998
+      ],
+      "shear_low_only_crop_V": [
+        1.4999999999999998,
+        1.4999999999999998,
+        2.9999999999999996,
+        2.9999999999999996,
+        3.749999999999999
+      ],
+      "shear_coefficient_squared_norm_V2": 73.12499999999999,
+      "shear_low_only_error_V2": 14.062500000000004,
+      "phase0_full_output_V": [
+        0.0,
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999,
+        4.999999999999999,
+        0.0,
+        0.0
+      ],
+      "phase0_correct_delay_crop_V": [
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999,
+        4.999999999999999
+      ],
+      "phase0_wrong_crop_V": [
+        0.0,
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999
+      ]
+    },
+    {
+      "samples_V": [
+        1.0,
+        3.0,
+        2.0,
+        6.0,
+        5.0
+      ],
+      "boundary": "repeat",
+      "original_length": 5,
+      "extended_samples_V": [
+        1.0,
+        3.0,
+        2.0,
+        6.0,
+        5.0,
+        5.0
+      ],
+      "a_V": [
+        2.82842712474619,
+        5.65685424949238,
+        7.071067811865475
+      ],
+      "d_V": [
+        -1.414213562373095,
+        -2.82842712474619,
+        0.0
+      ],
+      "a_source_fullrate_indices": [
+        1,
+        3,
+        5
+      ],
+      "restored_extended_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998,
+        4.999999999999999,
+        4.999999999999999
+      ],
+      "restored_crop_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998,
+        4.999999999999999
+      ],
+      "low_only_crop_V": [
+        1.9999999999999996,
+        1.9999999999999996,
+        3.999999999999999,
+        3.999999999999999,
+        4.999999999999999
+      ],
+      "wrong_detail_sign_crop_V": [
+        2.999999999999999,
+        0.9999999999999998,
+        5.999999999999998,
+        1.9999999999999996,
+        4.999999999999999
+      ],
+      "input_squared_norm_V2": 75.0,
+      "extended_squared_norm_V2": 100.0,
+      "coefficient_squared_norm_V2": 99.99999999999999,
+      "detail_squared_norm_V2": 9.999999999999998,
+      "low_only_crop_error_V2": 10.0,
+      "wrong_detail_sign_error_V2": 39.999999999999986,
+      "sheared_a_V": [
+        2.1213203435596424,
+        4.242640687119285,
+        7.071067811865475
+      ],
+      "shear_full_crop_V": [
+        0.9999999999999998,
+        2.999999999999999,
+        1.9999999999999996,
+        5.999999999999998,
+        4.999999999999999
+      ],
+      "shear_low_only_crop_V": [
+        1.4999999999999998,
+        1.4999999999999998,
+        2.9999999999999996,
+        2.9999999999999996,
+        4.999999999999999
+      ],
+      "shear_coefficient_squared_norm_V2": 82.49999999999999,
+      "shear_low_only_error_V2": 12.500000000000002,
+      "phase0_full_output_V": [
+        0.0,
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999,
+        4.999999999999999,
+        4.999999999999999,
+        0.0
+      ],
+      "phase0_correct_delay_crop_V": [
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999,
+        4.999999999999999
+      ],
+      "phase0_wrong_crop_V": [
+        0.0,
+        0.9999999999999998,
+        2.9999999999999996,
+        1.9999999999999996,
+        5.999999999999999
+      ]
+    }
+  ],
+  "finite_basis_checks": [
+    {
+      "length": 1,
+      "boundary": "zero",
+      "basis_count": 1,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 0.25,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 0.1875,
+      "shear_low_symmetry_error": 0.0
+    },
+    {
+      "length": 1,
+      "boundary": "repeat",
+      "basis_count": 1,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 2.220446049250313e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 2.220446049250313e-16,
+      "shear_low_symmetry_error": 0.0
+    },
+    {
+      "length": 2,
+      "boundary": "zero",
+      "basis_count": 2,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 2,
+      "boundary": "repeat",
+      "basis_count": 2,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 3,
+      "boundary": "zero",
+      "basis_count": 3,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 0.25,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 0.1875,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 3,
+      "boundary": "repeat",
+      "basis_count": 3,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 2.220446049250313e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 2.220446049250313e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 4,
+      "boundary": "zero",
+      "basis_count": 4,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 4,
+      "boundary": "repeat",
+      "basis_count": 4,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 5,
+      "boundary": "zero",
+      "basis_count": 5,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 0.25,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 0.1875,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 5,
+      "boundary": "repeat",
+      "basis_count": 5,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 2.220446049250313e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 2.220446049250313e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 7,
+      "boundary": "zero",
+      "basis_count": 7,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 0.25,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 0.1875,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 7,
+      "boundary": "repeat",
+      "basis_count": 7,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 2.220446049250313e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 2.220446049250313e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 8,
+      "boundary": "zero",
+      "basis_count": 8,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 8,
+      "boundary": "repeat",
+      "basis_count": 8,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 16,
+      "boundary": "zero",
+      "basis_count": 16,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 16,
+      "boundary": "repeat",
+      "basis_count": 16,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 31,
+      "boundary": "zero",
+      "basis_count": 31,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 0.25,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 0.1875,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 31,
+      "boundary": "repeat",
+      "basis_count": 31,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 2.220446049250313e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 2.220446049250313e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 32,
+      "boundary": "zero",
+      "basis_count": 32,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    },
+    {
+      "length": 32,
+      "boundary": "repeat",
+      "basis_count": 32,
+      "max_PR_matrix_error": 2.220446049250313e-16,
+      "low_operator_idempotence_error": 1.1102230246251565e-16,
+      "low_operator_symmetry_error": 0.0,
+      "shear_low_idempotence_error": 1.1102230246251565e-16,
+      "shear_low_symmetry_error": 0.49999999999999994
+    }
+  ],
+  "two_level_coefficients": {
+    "a2_V": [
+      5.999999999999999
+    ],
+    "d2_V": [
+      -1.9999999999999998
+    ],
+    "d1_V": [
+      -1.414213562373095,
+      -2.82842712474619
+    ]
+  },
+  "constant_detail_V": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "ramp_detail_V": [
+    -0.7071067811865475,
+    -0.7071067811865475,
+    -0.7071067811865475,
+    -0.7071067811865475
+  ],
+  "elapsed_s": 0.02796658402075991,
+  "checks": "PASS"
+}

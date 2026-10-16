@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="815" viewBox="0 0 940 815" role="img" aria-labelledby="title desc">
+<title id="title">奇长度边界与非正交：可逆不等于每种能量账都相同</title><desc id="desc">All coefficients reconstruct the original after explicit extension and cropping. Zero and repeat-right extension give different low-only endpoints and coefficient squared norms. A finite nonorthogonal shear is invertible but is not Parseval.</desc>
+<rect width="940" height="815" fill="white"/>
+<g font-family="Arial Unicode MS,PingFang SC,Noto Sans CJK SC,system-ui,sans-serif" font-size="14" fill="#203142">
+<text x="30.00" y="32.00" font-size="22" fill="#203142">奇长度边界与非正交：可逆不等于每种能量账都相同</text>
+<text x="35.00" y="60.00" font-size="14" fill="#203142">原长度 N=5，先保存原N/边界；补到偶数，完整合成后再裁回原域。</text>
+<text x="30.00" y="92.00" font-size="18" fill="#203142">A  全系数在所列边界可恢复；删细节后的端点另核</text>
+<path d="M115.00 140.00 L115.00 300.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="111.00" y="321.00" font-size="14" fill="#203142">0</text>
+<path d="M296.25 140.00 L296.25 300.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="292.25" y="321.00" font-size="14" fill="#203142">1</text>
+<path d="M477.50 140.00 L477.50 300.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="473.50" y="321.00" font-size="14" fill="#203142">2</text>
+<path d="M658.75 140.00 L658.75 300.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="654.75" y="321.00" font-size="14" fill="#203142">3</text>
+<path d="M840.00 140.00 L840.00 300.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="836.00" y="321.00" font-size="14" fill="#203142">4</text>
+<path d="M90.00 300.00 L865.00 300.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="304.00" font-size="14" fill="#203142">0</text>
+<path d="M90.00 260.00 L865.00 260.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="264.00" font-size="14" fill="#203142">1.65</text>
+<path d="M90.00 220.00 L865.00 220.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="224.00" font-size="14" fill="#203142">3.3</text>
+<path d="M90.00 180.00 L865.00 180.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="184.00" font-size="14" fill="#203142">4.95</text>
+<path d="M90.00 140.00 L865.00 140.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="144.00" font-size="14" fill="#203142">6.6</text>
+<path d="M90.00 140.00 L90.00 300.00" fill="none" stroke="#35485b" stroke-dasharray=""/>
+<path d="M90.00 300.00 L865.00 300.00" fill="none" stroke="#35485b" stroke-dasharray=""/>
+<text x="870.00" y="322.00" font-size="14" fill="#203142">n</text>
+<text x="30.00" y="128.00" font-size="14" fill="#203142">V</text>
+<text x="100.00" y="114.00" font-size="14" fill="#3266a5">原输入</text>
+<polyline points="115.00,275.76 296.25,227.27 477.50,251.52 658.75,154.55 840.00,178.79" fill="none" stroke="#3266a5" stroke-width="2" stroke-dasharray=""/>
+<circle cx="115.00" cy="275.76" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<circle cx="296.25" cy="227.27" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<circle cx="477.50" cy="251.52" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<circle cx="658.75" cy="154.55" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<circle cx="840.00" cy="178.79" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<text x="360.00" y="114.00" font-size="14" fill="#b46314">zero低保留</text>
+<polyline points="115.00,251.52 296.25,251.52 477.50,203.03 658.75,203.03 840.00,239.39" fill="none" stroke="#b46314" stroke-width="2" stroke-dasharray="7 4"/>
+<circle cx="115.00" cy="251.52" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<circle cx="296.25" cy="251.52" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<circle cx="477.50" cy="203.03" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<circle cx="658.75" cy="203.03" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<circle cx="840.00" cy="239.39" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<text x="620.00" y="114.00" font-size="14" fill="#27765d">repeat低保留</text>
+<polyline points="115.00,251.52 296.25,251.52 477.50,203.03 658.75,203.03 840.00,178.79" fill="none" stroke="#27765d" stroke-width="2" stroke-dasharray="3 4"/>
+<rect x="111.00" y="247.52" width="8" height="8" fill="white" stroke="#27765d" stroke-width="2"/>
+<rect x="292.25" y="247.52" width="8" height="8" fill="white" stroke="#27765d" stroke-width="2"/>
+<rect x="473.50" y="199.03" width="8" height="8" fill="white" stroke="#27765d" stroke-width="2"/>
+<rect x="654.75" y="199.03" width="8" height="8" fill="white" stroke="#27765d" stroke-width="2"/>
+<rect x="836.00" y="174.79" width="8" height="8" fill="white" stroke="#27765d" stroke-width="2"/>
+<text x="30.00" y="353.00" font-size="18" fill="#203142">B  原输入、延拓/系数能量与原域误差分别记账</text>
+<text x="35.00" y="394.00" font-size="15" fill="#203142">边界</text>
+<text x="190.00" y="394.00" font-size="15" fill="#203142">原域平方和</text>
+<text x="390.00" y="394.00" font-size="15" fill="#203142">系数平方和</text>
+<text x="610.00" y="394.00" font-size="15" fill="#203142">删d后原域误差</text>
+<path d="M35.00 405.00 L890.00 405.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="35.00" y="445.00" font-size="14" fill="#203142">zero</text>
+<text x="190.00" y="445.00" font-size="14" fill="#203142">75 V²</text>
+<text x="390.00" y="445.00" font-size="14" fill="#203142">75 V²</text>
+<text x="610.00" y="445.00" font-size="14" fill="#203142">16.25 V²</text>
+<text x="35.00" y="492.00" font-size="14" fill="#203142">repeat</text>
+<text x="190.00" y="492.00" font-size="14" fill="#203142">75 V²</text>
+<text x="390.00" y="492.00" font-size="14" fill="#203142">100 V²</text>
+<text x="610.00" y="492.00" font-size="14" fill="#203142">10 V²</text>
+<text x="35.00" y="575.00" font-size="17" fill="#203142">C  四点可逆shear：a′=a+(0.5)d，d′=d（有限双基，非连续小波构造）</text>
+<text x="55.00" y="617.00" font-size="16" fill="#203142">全留仍恢复；系数平方和 32.5 V² ≠ 原 50 V²。</text>
+<text x="55.00" y="657.00" font-size="15" fill="#203142">删d′后恢复 (1.5, 1.5, 3.0, 3.0)，误差 12.5 V²。</text>
+<text x="55.00" y="700.00" font-size="14" fill="#203142">原四维低保留为斜投影；奇长zero裁剪不幂等，不能统称为原域正交投影。</text>
+<text x="35.00" y="768.00" font-size="13" fill="#203142">图只读取results.json。无真实采集、量化码率或去噪真值验证；原生Obsidian显示单独验收。</text>
+</g></svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="790" viewBox="0 0 940 790" role="img" aria-labelledby="title desc">
+<title id="title">四点Haar：两支合起来恢复，删一支才改变信号</title><desc id="desc">The full pair transform is invertible and orthogonal. Correct synthesis, low-only reconstruction and a deliberately wrong detail sign are shown from the same saved samples. Units are V; energies are discrete squared norms in V squared.</desc>
+<rect width="940" height="790" fill="white"/>
+<g font-family="Arial Unicode MS,PingFang SC,Noto Sans CJK SC,system-ui,sans-serif" font-size="14" fill="#203142">
+<text x="30.00" y="32.00" font-size="22" fill="#203142">四点Haar：两支合起来恢复，删一支才改变信号</text>
+<text x="35.00" y="60.00" font-size="14" fill="#203142">分析保留奇相位；合成插零在偶位置。无下标延迟，仍须等每对第二个样点。</text>
+<text x="30.00" y="97.00" font-size="18" fill="#203142">A  同一输入与三种合成结果</text>
+<path d="M115.00 145.00 L115.00 305.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="111.00" y="326.00" font-size="14" fill="#203142">0</text>
+<path d="M356.67 145.00 L356.67 305.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="352.67" y="326.00" font-size="14" fill="#203142">1</text>
+<path d="M598.33 145.00 L598.33 305.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="594.33" y="326.00" font-size="14" fill="#203142">2</text>
+<path d="M840.00 145.00 L840.00 305.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="836.00" y="326.00" font-size="14" fill="#203142">3</text>
+<path d="M90.00 305.00 L865.00 305.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="309.00" font-size="14" fill="#203142">0</text>
+<path d="M90.00 265.00 L865.00 265.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="269.00" font-size="14" fill="#203142">1.65</text>
+<path d="M90.00 225.00 L865.00 225.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="229.00" font-size="14" fill="#203142">3.3</text>
+<path d="M90.00 185.00 L865.00 185.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="189.00" font-size="14" fill="#203142">4.95</text>
+<path d="M90.00 145.00 L865.00 145.00" fill="none" stroke="#ced6df" stroke-dasharray=""/>
+<text x="42.00" y="149.00" font-size="14" fill="#203142">6.6</text>
+<path d="M90.00 145.00 L90.00 305.00" fill="none" stroke="#35485b" stroke-dasharray=""/>
+<path d="M90.00 305.00 L865.00 305.00" fill="none" stroke="#35485b" stroke-dasharray=""/>
+<text x="870.00" y="327.00" font-size="14" fill="#203142">n</text>
+<text x="30.00" y="133.00" font-size="14" fill="#203142">V</text>
+<text x="105.00" y="119.00" font-size="14" fill="#3266a5">原输入 / 全系数恢复</text>
+<polyline points="115.00,280.76 356.67,232.27 598.33,256.52 840.00,159.55" fill="none" stroke="#3266a5" stroke-width="2" stroke-dasharray=""/>
+<circle cx="115.00" cy="280.76" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<circle cx="356.67" cy="232.27" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<circle cx="598.33" cy="256.52" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<circle cx="840.00" cy="159.55" r="4" fill="white" stroke="#3266a5" stroke-width="2"/>
+<text x="365.00" y="119.00" font-size="14" fill="#b46314">只留低支</text>
+<polyline points="115.00,256.52 356.67,256.52 598.33,208.03 840.00,208.03" fill="none" stroke="#b46314" stroke-width="2" stroke-dasharray="7 4"/>
+<circle cx="115.00" cy="256.52" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<circle cx="356.67" cy="256.52" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<circle cx="598.33" cy="208.03" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<circle cx="840.00" cy="208.03" r="4" fill="white" stroke="#b46314" stroke-width="2"/>
+<text x="625.00" y="119.00" font-size="14" fill="#923a81">合成细节符号反号</text>
+<polyline points="115.00,232.27 356.67,280.76 598.33,159.55 840.00,256.52" fill="none" stroke="#923a81" stroke-width="2" stroke-dasharray="3 4"/>
+<rect x="111.00" y="228.27" width="8" height="8" fill="white" stroke="#923a81" stroke-width="2"/>
+<rect x="352.67" y="276.76" width="8" height="8" fill="white" stroke="#923a81" stroke-width="2"/>
+<rect x="594.33" y="155.55" width="8" height="8" fill="white" stroke="#923a81" stroke-width="2"/>
+<rect x="836.00" y="252.52" width="8" height="8" fill="white" stroke="#923a81" stroke-width="2"/>
+<text x="30.00" y="357.00" font-size="18" fill="#203142">B  两个低支系数 + 两个细节系数 = 四个自由度</text>
+<text x="55.00" y="404.00" font-size="14" fill="#203142">输入对 0: (1, 3)</text>
+<text x="300.00" y="404.00" font-size="16" fill="#3266a5">a[0]=2.82843 V</text>
+<text x="550.00" y="404.00" font-size="16" fill="#b46314">d[0]=-1.41421 V</text>
+<path d="M235.00 399.00 L280.00 399.00" fill="none" stroke="#35485b" stroke-dasharray=""/>
+<text x="250.00" y="392.00" font-size="14" fill="#203142">→</text>
+<text x="775.00" y="404.00" font-size="14" fill="#27765d">合成 → 原输入</text>
+<text x="55.00" y="470.00" font-size="14" fill="#203142">输入对 1: (2, 6)</text>
+<text x="300.00" y="470.00" font-size="16" fill="#3266a5">a[1]=5.65685 V</text>
+<text x="550.00" y="470.00" font-size="16" fill="#b46314">d[1]=-2.82843 V</text>
+<path d="M235.00 465.00 L280.00 465.00" fill="none" stroke="#35485b" stroke-dasharray=""/>
+<text x="250.00" y="458.00" font-size="14" fill="#203142">→</text>
+<text x="775.00" y="470.00" font-size="14" fill="#27765d">合成 → 原输入</text>
+<text x="35.00" y="550.00" font-size="18" fill="#203142">离散平方和：50 = 低支 40 + 细节 10 V²</text>
+<text x="35.00" y="591.00" font-size="16" fill="#203142">删细节误差 10 V²；仅改合成细节符号，误差 40 V²。</text>
+<text x="35.00" y="648.00" font-size="18" fill="#203142">C  再拆低支：同一四点的两级Haar</text>
+<text x="55.00" y="685.00" font-size="15" fill="#203142">a₂=6 V，d₂=-2 V；平方和 36 + 4 + 10 V²</text>
+<text x="35.00" y="748.00" font-size="13" fill="#203142">全输入PR来自任意一对的代数恒等；固定N的全部basis另核实现，不从一次素材重建推全输入。</text>
+</g></svg>

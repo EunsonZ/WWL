@@ -1,0 +1,18 @@
+{
+  "Cs_F":"1/1000000000000", "Cf_F":"1/250000000000",
+  "CpA_F":"1/10000000000000", "CpB_F":"1/5000000000000",
+  "CgA_F":"1/200000000000000", "CgB_F":"1/250000000000000",
+  "Ccross_F":"1/1000000000000000", "kappaA_F":"1/50000000000000", "kappaB_F":"1/100000000000000",
+  "clock_high_absolute_V":"5", "clock_low_absolute_V":"0", "Vcm_absolute_V":"3/2", "Vth_V":"1/2",
+  "qoff_C":"1/500000000000000", "x_V":["1/5","4/5","6/5","2/5"], "y0_V":"0",
+  "Cs_relative_mismatch":"1/100", "Cf_relative_mismatch":"-1/200",
+  "A0":"100", "tau_a_s":"81/25000000", "T2_s":"9/50000000", "TH_s":"41/50000000",
+  "aperture_shift_s":["1/1000000000","-1/1000000000","1/500000000","0"],
+  "input_slope_V_per_s":["100000","-200000","150000","0"],
+  "T2_shift_s":["-1/500000000","1/1000000000","0","3/1000000000"],
+  "sample_error_variance_V2":"1/100000000", "sample_error_correlation":"1/2",
+  "qoff_random_std_C":"1/100000000000000000", "ota_single_PSD_V2_per_Hz":"1/10000000000000000",
+  "readout_step_V":"1/1000", "linear_output_limit_V":"1", "tight_limit_probe_V":"3/5",
+  "rc_R_ohm":"2000", "rc_C_F":"1/100000000", "temperature_K":"300", "rc_closed_s":"1/50000", "rc_count":4,
+  "aperture_probe_early_V":"2/5", "aperture_probe_late_V":"3/5"
+}

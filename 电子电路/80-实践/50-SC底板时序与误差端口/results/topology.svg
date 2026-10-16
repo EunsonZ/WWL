@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1120" viewBox="0 0 1100 1120" role="img"><title>四开关SC的板端口和先断B协议</title><desc>四个开关端点、永久反馈、局部参考与六步相位表；所有时钟耦合另列端点，图不代表真实PDK尺寸。</desc><rect width="1100" height="1120" fill="white"/><g font-family="Arial Unicode MS,PingFang SC,Noto Sans CJK SC,system-ui,sans-serif" fill="#172433">
+<text x="48" y="40" font-size="27" fill="#172433" text-anchor="start">先断哪只开关：端点与浮动集合决定电荷</text>
+<text x="48" y="72" font-size="16" fill="#172433" text-anchor="start">局部 0 = Vcm = 1.5 V；clock绝对 5→0 V。开关图画端点，状态在下表。</text>
+<text x="65" y="220" font-size="18" fill="#172433" text-anchor="start">Vcm+x</text>
+<line x1="135" y1="220" x2="162" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="162" y1="220" x2="174" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="206" y1="220" x2="218" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="174" y1="220" x2="202" y2="206" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="190" y="246" font-size="15" fill="#172433" text-anchor="middle">S_AX</text>
+<line x1="218" y1="220" x2="300" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<circle cx="300" cy="220" r="3" fill="#172433"/>
+<text x="300" y="248" font-size="18" fill="#172433" text-anchor="middle">A</text>
+<line x1="300" y1="220" x2="374" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="374" y1="220" x2="395" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="395" y1="207" x2="395" y2="233" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="405" y1="207" x2="405" y2="233" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="405" y1="220" x2="426" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="400" y="199" font-size="16" fill="#172433" text-anchor="middle">Cs</text>
+<line x1="426" y1="220" x2="510" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<circle cx="510" cy="220" r="3" fill="#172433"/>
+<text x="530" y="249" font-size="18" fill="#172433" text-anchor="middle">B</text>
+<line x1="510" y1="220" x2="582" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="582" y1="220" x2="594" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="626" y1="220" x2="638" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="594" y1="220" x2="622" y2="206" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="610" y="246" font-size="15" fill="#172433" text-anchor="middle">S_Bs</text>
+<line x1="638" y1="220" x2="740" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<circle cx="740" cy="220" r="3" fill="#172433"/>
+<text x="735" y="205" font-size="18" fill="#172433" text-anchor="start">s</text>
+<line x1="300" y1="220" x2="300" y2="165" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="300" y1="165" x2="300" y2="110" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="310" y="142" font-size="15" fill="#172433" text-anchor="start">S_A0：A ↔ Vcm</text>
+<text x="300" y="94" font-size="18" fill="#172433" text-anchor="middle">0</text>
+<line x1="510" y1="220" x2="510" y2="335" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="522" y="298" font-size="15" fill="#172433" text-anchor="start">S_B0：B ↔ Vcm</text>
+<text x="510" y="360" font-size="18" fill="#172433" text-anchor="middle">0</text>
+<rect x="292" y="139" width="16" height="22" fill="white"/>
+<line x1="300" y1="160" x2="310" y2="142" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<rect x="502" y="280" width="16" height="24" fill="white"/>
+<line x1="510" y1="303" x2="520" y2="284" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="740" y1="220" x2="740" y2="280" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="740" y1="280" x2="800" y2="280" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<path d="M800.000,260.000 L800.000,340.000 L900.000,300.000 L800.000,260.000" fill="none" stroke="#172433" stroke-width="2" stroke-dasharray=""/>
+<text x="809" y="286" font-size="18" fill="#172433" text-anchor="start">−</text>
+<text x="809" y="325" font-size="18" fill="#172433" text-anchor="start">+</text>
+<text x="837" y="305" font-size="17" fill="#172433" text-anchor="start">OTA</text>
+<line x1="800" y1="320" x2="775" y2="320" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="775" y1="320" x2="775" y2="350" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="775" y="372" font-size="18" fill="#172433" text-anchor="middle">0</text>
+<line x1="900" y1="300" x2="1020" y2="300" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="1020" y="325" font-size="17" fill="#172433" text-anchor="end">Vcm+y</text>
+<line x1="1000" y1="300" x2="1000" y2="140" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="1000" y1="140" x2="880" y2="140" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="828" y1="140" x2="849" y2="140" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="849" y1="127" x2="849" y2="153" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="859" y1="127" x2="859" y2="153" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="859" y1="140" x2="880" y2="140" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="854" y="119" font-size="16" fill="#172433" text-anchor="middle">Cf</text>
+<line x1="828" y1="140" x2="740" y2="140" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<line x1="740" y1="140" x2="740" y2="220" stroke="#72869a" stroke-width="1.5" stroke-dasharray=""/>
+<text x="58" y="425" font-size="20" fill="#172433" text-anchor="start">给定线性支路（下列端点也是图的一部分）</text>
+<text x="80" y="460" font-size="17" fill="#172433" text-anchor="start">CpA：A ↔ Vcm</text>
+<text x="555" y="460" font-size="17" fill="#172433" text-anchor="start">CpB：B ↔ Vcm</text>
+<text x="80" y="491" font-size="17" fill="#172433" text-anchor="start">CgA：A ↔ gA</text>
+<text x="555" y="491" font-size="17" fill="#172433" text-anchor="start">CgB：B ↔ gB</text>
+<text x="80" y="522" font-size="17" fill="#172433" text-anchor="start">Ccross：B ↔ gA</text>
+<text x="555" y="522" font-size="17" fill="#172433" text-anchor="start">Cf：s ↔ 输出；s并非永久接地</text>
+<text x="58" y="585" font-size="20" fill="#172433" text-anchor="start">B先断的完整次序（闭/断按实际端点，不按波形颜色猜）</text>
+<text x="65" y="625" font-size="16" fill="#172433" text-anchor="start">阶段</text>
+<text x="310" y="625" font-size="16" fill="#172433" text-anchor="start">S_AX</text>
+<text x="425" y="625" font-size="16" fill="#172433" text-anchor="start">S_B0</text>
+<text x="540" y="625" font-size="16" fill="#172433" text-anchor="start">S_A0</text>
+<text x="655" y="625" font-size="16" fill="#172433" text-anchor="start">S_Bs</text>
+<text x="765" y="625" font-size="16" fill="#172433" text-anchor="start">约束/浮置</text>
+<line x1="58" y1="678" x2="1040" y2="678" stroke="#e1e6ec" stroke-width="1" stroke-dasharray=""/>
+<text x="65" y="665" font-size="16" fill="#172433" text-anchor="start">track</text>
+<text x="310" y="665" font-size="16" fill="#218261" text-anchor="start">闭</text>
+<text x="425" y="665" font-size="16" fill="#218261" text-anchor="start">闭</text>
+<text x="540" y="665" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="655" y="665" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="765" y="665" font-size="16" fill="#172433" text-anchor="start">A=x，B=0</text>
+<line x1="58" y1="721" x2="1040" y2="721" stroke="#e1e6ec" stroke-width="1" stroke-dasharray=""/>
+<text x="65" y="708" font-size="16" fill="#172433" text-anchor="start">B先释放</text>
+<text x="310" y="708" font-size="16" fill="#218261" text-anchor="start">闭</text>
+<text x="425" y="708" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="540" y="708" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="655" y="708" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="765" y="708" font-size="16" fill="#172433" text-anchor="start">A=x，B浮动</text>
+<line x1="58" y1="764" x2="1040" y2="764" stroke="#e1e6ec" stroke-width="1" stroke-dasharray=""/>
+<text x="65" y="751" font-size="16" fill="#172433" text-anchor="start">A后释放</text>
+<text x="310" y="751" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="425" y="751" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="540" y="751" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="655" y="751" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="765" y="751" font-size="16" fill="#172433" text-anchor="start">A/B均浮动</text>
+<line x1="58" y1="807" x2="1040" y2="807" stroke="#e1e6ec" stroke-width="1" stroke-dasharray=""/>
+<text x="65" y="794" font-size="16" fill="#172433" text-anchor="start">A回参考</text>
+<text x="310" y="794" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="425" y="794" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="540" y="794" font-size="16" fill="#218261" text-anchor="start">闭</text>
+<text x="655" y="794" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="765" y="794" font-size="16" fill="#172433" text-anchor="start">A=0，B浮动</text>
+<line x1="58" y1="850" x2="1040" y2="850" stroke="#e1e6ec" stroke-width="1" stroke-dasharray=""/>
+<text x="65" y="837" font-size="16" fill="#172433" text-anchor="start">转移/读w</text>
+<text x="310" y="837" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="425" y="837" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="540" y="837" font-size="16" fill="#218261" text-anchor="start">闭</text>
+<text x="655" y="837" font-size="16" fill="#218261" text-anchor="start">闭</text>
+<text x="765" y="837" font-size="16" fill="#172433" text-anchor="start">B=s，逐窗建立</text>
+<line x1="58" y1="893" x2="1040" y2="893" stroke="#e1e6ec" stroke-width="1" stroke-dasharray=""/>
+<text x="65" y="880" font-size="16" fill="#172433" text-anchor="start">s侧释放</text>
+<text x="310" y="880" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="425" y="880" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="540" y="880" font-size="16" fill="#218261" text-anchor="start">闭</text>
+<text x="655" y="880" font-size="16" fill="#172433" text-anchor="start">断</text>
+<text x="765" y="880" font-size="16" fill="#172433" text-anchor="start">Cf孤立，随后恢复</text>
+<text x="58" y="985" font-size="16" fill="#172433" text-anchor="start">下拍先将B接回参考；A从参考切回输入时仍需break-before-make，不能把互斥开关重叠。</text>
+<text x="58" y="1020" font-size="17" fill="#172433" text-anchor="start">B净自由电荷守恒 ≠ 只看Cs单板；clock与参考源可经电容提供位移电流。</text>
+<text x="58" y="1055" font-size="16" fill="#172433" text-anchor="start">本图是给定q/C线性端口模型；5V clock不表示任意工艺耐压已经验证。</text>
+</g></svg>

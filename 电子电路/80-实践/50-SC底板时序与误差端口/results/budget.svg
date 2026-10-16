@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1200" viewBox="0 0 1100 1200" role="img"><title>同一输入的断开顺序与端口误差</title><desc>全部四样点的精确电荷模型与有限OTA轨迹，末状态顺序差量；差量是确定望远镜分解，不是独立随机RMS。</desc><rect width="1100" height="1200" fill="white"/><g font-family="Arial Unicode MS,PingFang SC,Noto Sans CJK SC,system-ui,sans-serif" fill="#172433">
+<text x="48" y="40" font-size="27" fill="#172433" text-anchor="start">保护一条信号路径，不保证总偏差自动变小</text>
+<text x="48" y="72" font-size="16" fill="#172433" text-anchor="start">同一相对输入、Cs/Cf、clock与given q；图只读results.json，不补造PDK数据。</text>
+<text x="85" y="115" font-size="20" fill="#172433" text-anchor="start">A  充分建立：BF先断B、AF反序；读off后的恢复值</text>
+<text x="30" y="148" font-size="14" fill="#172433" text-anchor="start">V</text>
+<line x1="85" y1="330.0" x2="1040" y2="330.0" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="335.0" font-size="14" fill="#172433" text-anchor="end">-0.0703</text>
+<line x1="85" y1="287.5" x2="1040" y2="287.5" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="292.5" font-size="14" fill="#172433" text-anchor="end">0.141</text>
+<line x1="85" y1="245.0" x2="1040" y2="245.0" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="250.0" font-size="14" fill="#172433" text-anchor="end">0.352</text>
+<line x1="85" y1="202.5" x2="1040" y2="202.5" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="207.5" font-size="14" fill="#172433" text-anchor="end">0.562</text>
+<line x1="85" y1="160.0" x2="1040" y2="160.0" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="165.0" font-size="14" fill="#172433" text-anchor="end">0.773</text>
+<text x="85.0" y="353" font-size="14" fill="#172433" text-anchor="middle">0</text>
+<text x="403.3333333333333" y="353" font-size="14" fill="#172433" text-anchor="middle">1</text>
+<text x="721.6666666666666" y="353" font-size="14" fill="#172433" text-anchor="middle">2</text>
+<text x="1040.0" y="353" font-size="14" fill="#172433" text-anchor="middle">3</text>
+<text x="1040" y="377" font-size="15" fill="#172433" text-anchor="end">原样点 n（全部保留）</text>
+<text x="88" y="139" font-size="15" fill="#246bb0" text-anchor="start">理想无packet</text>
+<path d="M85.000,305.757 L403.333,265.454 L721.667,204.999 L1040.000,184.847" fill="none" stroke="#246bb0" stroke-width="2" stroke-dasharray=""/>
+<circle cx="85.0" cy="305.7574679943101" r="3.5" fill="#246bb0"/>
+<circle cx="403.3333333333333" cy="265.45400663821715" r="3.5" fill="#246bb0"/>
+<circle cx="721.6666666666666" cy="204.99881460407775" r="3.5" fill="#246bb0"/>
+<circle cx="1040.0" cy="184.84708392603127" r="3.5" fill="#246bb0"/>
+<text x="398" y="139" font-size="15" fill="#b9502c" text-anchor="start">BF含注入/馈通/off</text>
+<path d="M85.000,303.087 L403.333,260.114 L721.667,196.989 L1040.000,174.167" fill="none" stroke="#b9502c" stroke-width="2" stroke-dasharray=""/>
+<circle cx="85.0" cy="303.0873636794689" r="3.5" fill="#b9502c"/>
+<circle cx="403.3333333333333" cy="260.11379800853484" r="3.5" fill="#b9502c"/>
+<circle cx="721.6666666666666" cy="196.9885016595543" r="3.5" fill="#b9502c"/>
+<circle cx="1040.0" cy="174.16666666666669" r="3.5" fill="#b9502c"/>
+<text x="708" y="139" font-size="15" fill="#218261" text-anchor="start">AF同参数</text>
+<path d="M85.000,307.032 L403.333,267.456 L721.667,207.364 L1040.000,188.305" fill="none" stroke="#218261" stroke-width="2" stroke-dasharray="5,3"/>
+<circle cx="85.0" cy="307.0322245322245" r="3.5" fill="#218261"/>
+<circle cx="403.3333333333333" cy="267.45641390378233" r="3.5" fill="#218261"/>
+<circle cx="721.6666666666666" cy="207.36413539045117" r="3.5" fill="#218261"/>
+<circle cx="1040.0" cy="188.3047926468979" r="3.5" fill="#218261"/>
+<text x="85" y="420" font-size="20" fill="#172433" text-anchor="start">B  有限OTA：明确读下一y，不把w当相同状态</text>
+<text x="30" y="453" font-size="14" fill="#172433" text-anchor="start">V</text>
+<line x1="85" y1="635.0" x2="1040" y2="635.0" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="640.0" font-size="14" fill="#172433" text-anchor="end">-0.0699</text>
+<line x1="85" y1="592.5" x2="1040" y2="592.5" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="597.5" font-size="14" fill="#172433" text-anchor="end">0.14</text>
+<line x1="85" y1="550.0" x2="1040" y2="550.0" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="555.0" font-size="14" fill="#172433" text-anchor="end">0.35</text>
+<line x1="85" y1="507.5" x2="1040" y2="507.5" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="512.5" font-size="14" fill="#172433" text-anchor="end">0.559</text>
+<line x1="85" y1="465.0" x2="1040" y2="465.0" stroke="#dce3ea" stroke-width="1" stroke-dasharray=""/>
+<text x="73" y="470.0" font-size="14" fill="#172433" text-anchor="end">0.769</text>
+<text x="85.0" y="658" font-size="14" fill="#172433" text-anchor="middle">0</text>
+<text x="403.3333333333333" y="658" font-size="14" fill="#172433" text-anchor="middle">1</text>
+<text x="721.6666666666666" y="658" font-size="14" fill="#172433" text-anchor="middle">2</text>
+<text x="1040.0" y="658" font-size="14" fill="#172433" text-anchor="middle">3</text>
+<text x="1040" y="682" font-size="15" fill="#172433" text-anchor="end">原样点 n（全部保留）</text>
+<text x="88" y="444" font-size="15" fill="#246bb0" text-anchor="start">实际电容/无packet</text>
+<path d="M85.000,610.712 L403.333,570.258 L721.667,509.683 L1040.000,489.775" fill="none" stroke="#246bb0" stroke-width="2" stroke-dasharray=""/>
+<circle cx="85.0" cy="610.7122072843616" r="3.5" fill="#246bb0"/>
+<circle cx="403.3333333333333" cy="570.2581076901836" r="3.5" fill="#246bb0"/>
+<circle cx="721.6666666666666" cy="509.68328306725374" r="3.5" fill="#246bb0"/>
+<circle cx="1040.0" cy="489.7749338366318" r="3.5" fill="#246bb0"/>
+<text x="398" y="444" font-size="15" fill="#b9502c" text-anchor="start">再加channel/feed/off</text>
+<path d="M85.000,608.057 L403.333,564.956 L721.667,501.742 L1040.000,479.203" fill="none" stroke="#b9502c" stroke-width="2" stroke-dasharray=""/>
+<circle cx="85.0" cy="608.0572802760789" r="3.5" fill="#b9502c"/>
+<circle cx="403.3333333333333" cy="564.9562292682181" r="3.5" fill="#b9502c"/>
+<circle cx="721.6666666666666" cy="501.74240486693594" r="3.5" fill="#b9502c"/>
+<circle cx="1040.0" cy="479.2029836059994" r="3.5" fill="#b9502c"/>
+<text x="708" y="444" font-size="15" fill="#218261" text-anchor="start">再加确定clock偏移</text>
+<path d="M85.000,608.054 L403.333,564.940 L721.667,501.711 L1040.000,479.167" fill="none" stroke="#218261" stroke-width="2" stroke-dasharray="5,3"/>
+<circle cx="85.0" cy="608.0541888513886" r="3.5" fill="#218261"/>
+<circle cx="403.3333333333333" cy="564.9398400963586" r="3.5" fill="#218261"/>
+<circle cx="721.6666666666666" cy="501.71088324027204" r="3.5" fill="#218261"/>
+<circle cx="1040.0" cy="479.1666666666667" r="3.5" fill="#218261"/>
+<text x="65" y="750" font-size="21" fill="#172433" text-anchor="start">C  最后状态的顺序差量（mV）：按表顺序相加，不能RSS</text>
+<text x="85" y="790" font-size="17" fill="#172433" text-anchor="start">有限OTA名义</text>
+<text x="365" y="790" font-size="17" fill="#172433" text-anchor="end">-12.773031971</text>
+<line x1="650" y1="783" x2="507.291463347063" y2="783" stroke="#b9502c" stroke-width="13" stroke-dasharray=""/>
+<line x1="650" y1="768" x2="650" y2="800" stroke="#a5b0bc" stroke-width="1" stroke-dasharray=""/>
+<text x="85" y="828" font-size="17" fill="#172433" text-anchor="start">实际电容</text>
+<text x="365" y="828" font-size="17" fill="#172433" text-anchor="end">+9.500940928</text>
+<line x1="650" y1="821" x2="756.150628903692" y2="821" stroke="#246bb0" stroke-width="13" stroke-dasharray=""/>
+<line x1="650" y1="806" x2="650" y2="838" stroke="#a5b0bc" stroke-width="1" stroke-dasharray=""/>
+<text x="85" y="866" font-size="17" fill="#172433" text-anchor="start">通道包</text>
+<text x="365" y="866" font-size="17" fill="#172433" text-anchor="end">+29.536428929</text>
+<line x1="650" y1="859" x2="980.0" y2="859" stroke="#246bb0" stroke-width="13" stroke-dasharray=""/>
+<line x1="650" y1="844" x2="650" y2="876" stroke="#a5b0bc" stroke-width="1" stroke-dasharray=""/>
+<text x="85" y="904" font-size="17" fill="#172433" text-anchor="start">馈通</text>
+<text x="365" y="904" font-size="17" fill="#172433" text-anchor="end">+24.613690774</text>
+<line x1="650" y1="897" x2="924.9999999999991" y2="897" stroke="#246bb0" stroke-width="13" stroke-dasharray=""/>
+<line x1="650" y1="882" x2="650" y2="914" stroke="#a5b0bc" stroke-width="1" stroke-dasharray=""/>
+<text x="85" y="942" font-size="17" fill="#172433" text-anchor="start">反馈off包</text>
+<text x="365" y="942" font-size="17" fill="#172433" text-anchor="end">-1.981198882</text>
+<line x1="650" y1="935" x2="627.8647705659412" y2="935" stroke="#b9502c" stroke-width="13" stroke-dasharray=""/>
+<line x1="650" y1="920" x2="650" y2="952" stroke="#a5b0bc" stroke-width="1" stroke-dasharray=""/>
+<text x="85" y="980" font-size="17" fill="#172433" text-anchor="start">确定clock变化</text>
+<text x="365" y="980" font-size="17" fill="#172433" text-anchor="end">+0.179211545</text>
+<line x1="650" y1="973" x2="652.00226675779" y2="973" stroke="#246bb0" stroke-width="13" stroke-dasharray=""/>
+<line x1="650" y1="958" x2="650" y2="990" stroke="#a5b0bc" stroke-width="1" stroke-dasharray=""/>
+<text x="65" y="1060" font-size="17" fill="#172433" text-anchor="start">同一实际窗口的所选噪声方差小计：6.09877301e-09 V²；不是全硬件RMS。</text>
+<text x="65" y="1095" font-size="16" fill="#172433" text-anchor="start">未知参考/转移热源/有色OTA与其交叉项在正文保留端口、状态和协方差接口。</text>
+<text x="65" y="1130" font-size="16" fill="#172433" text-anchor="start">确定轨迹摆幅须检查相起点y、转移末w、恢复末y；过载后的线性值仅作失败证据。</text>
+<text x="65" y="1165" font-size="15" fill="#172433" text-anchor="start">颜色外仍以标签/虚线区分；横轴显示全部原样点，纵轴与差量单位分开。</text>
+</g></svg>

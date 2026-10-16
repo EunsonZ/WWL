@@ -1,0 +1,1506 @@
+{
+  "model": "given-charge-four-switch-bottom-sampling-v1",
+  "inputs": {
+    "Cs_F": "1/1000000000000",
+    "Cf_F": "1/250000000000",
+    "CpA_F": "1/10000000000000",
+    "CpB_F": "1/5000000000000",
+    "CgA_F": "1/200000000000000",
+    "CgB_F": "1/250000000000000",
+    "Ccross_F": "1/1000000000000000",
+    "kappaA_F": "1/50000000000000",
+    "kappaB_F": "1/100000000000000",
+    "clock_high_absolute_V": "5",
+    "clock_low_absolute_V": "0",
+    "Vcm_absolute_V": "3/2",
+    "Vth_V": "1/2",
+    "qoff_C": "1/500000000000000",
+    "x_V": [
+      "1/5",
+      "4/5",
+      "6/5",
+      "2/5"
+    ],
+    "y0_V": "0",
+    "Cs_relative_mismatch": "1/100",
+    "Cf_relative_mismatch": "-1/200",
+    "A0": "100",
+    "tau_a_s": "81/25000000",
+    "T2_s": "9/50000000",
+    "TH_s": "41/50000000",
+    "aperture_shift_s": [
+      "1/1000000000",
+      "-1/1000000000",
+      "1/500000000",
+      "0"
+    ],
+    "input_slope_V_per_s": [
+      "100000",
+      "-200000",
+      "150000",
+      "0"
+    ],
+    "T2_shift_s": [
+      "-1/500000000",
+      "1/1000000000",
+      "0",
+      "3/1000000000"
+    ],
+    "sample_error_variance_V2": "1/100000000",
+    "sample_error_correlation": "1/2",
+    "qoff_random_std_C": "1/100000000000000000",
+    "ota_single_PSD_V2_per_Hz": "1/10000000000000000",
+    "readout_step_V": "1/1000",
+    "linear_output_limit_V": "1",
+    "tight_limit_probe_V": "3/5",
+    "rc_R_ohm": "2000",
+    "rc_C_F": "1/100000000",
+    "temperature_K": "300",
+    "rc_closed_s": "1/50000",
+    "rc_count": 4,
+    "aperture_probe_early_V": "2/5",
+    "aperture_probe_late_V": "3/5"
+  },
+  "published_source": {
+    "path": "电子电路/80-实践/48-两相开关电容积分器/finite_ota_budget.py",
+    "sha256": "ef440af7e11abfb26db158368a106e112adc8cd61b47ad9d87776d74f7f13a2d"
+  },
+  "relative_reference": "all A B s x y and Cp reference are relative to Vcm; gate inputs absolute then translated",
+  "sequences": {
+    "bottom_first": [
+      {
+        "n": 0,
+        "y_before_V": "0",
+        "qf_before_C": "0",
+        "qB_effective_C": "-51/200000000000000",
+        "y_transfer_V": "51/800",
+        "qf_transfer_C": "-51/200000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "253/4000",
+        "qf_after_off_C": "-253/1000000000000000",
+        "edge": {
+          "order": "bottom_first",
+          "x_V": "1/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "241/200000000000000",
+          "qA_channel_C": "-7/125000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/400000000000000",
+          "qB_transfer_effective_C": "-51/200000000000000",
+          "output_increment_before_off_V": "51/800",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "1/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "407/2000000000000000",
+              "qB_free_C": "-87/400000000000000"
+            },
+            {
+              "stage": "B_reference_opens_A_clamped",
+              "A_V": "1/5",
+              "B_V": "-10/241",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "118087/482000000000000000",
+              "qB_free_C": "-99/400000000000000"
+            },
+            {
+              "stage": "A_input_opens_both_floating",
+              "A_V": "-1452/13261",
+              "B_V": "-966711/3195901",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "18219/96400000000000000",
+              "qB_free_C": "-99/400000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-51/241",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "21123/96400000000000000",
+              "qB_free_C": "-99/400000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 1,
+        "y_before_V": "253/4000",
+        "qf_before_C": "-253/1000000000000000",
+        "qB_effective_C": "-171/200000000000000",
+        "y_transfer_V": "277/1000",
+        "qf_transfer_C": "-277/250000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "553/2000",
+        "qf_after_off_C": "-553/500000000000000",
+        "edge": {
+          "order": "bottom_first",
+          "x_V": "4/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "241/200000000000000",
+          "qA_channel_C": "-11/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/400000000000000",
+          "qB_transfer_effective_C": "-171/200000000000000",
+          "output_increment_before_off_V": "171/800",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "4/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "1733/2000000000000000",
+              "qB_free_C": "-327/400000000000000"
+            },
+            {
+              "stage": "B_reference_opens_A_clamped",
+              "A_V": "4/5",
+              "B_V": "-10/241",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "437653/482000000000000000",
+              "qB_free_C": "-339/400000000000000"
+            },
+            {
+              "stage": "A_input_opens_both_floating",
+              "A_V": "7083/13261",
+              "B_V": "-851031/3195901",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "83289/96400000000000000",
+              "qB_free_C": "-339/400000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-171/241",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "69123/96400000000000000",
+              "qB_free_C": "-339/400000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 2,
+        "y_before_V": "553/2000",
+        "qf_before_C": "-553/500000000000000",
+        "qB_effective_C": "-251/200000000000000",
+        "y_transfer_V": "2361/4000",
+        "qf_transfer_C": "-2361/1000000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "2359/4000",
+        "qf_after_off_C": "-2359/1000000000000000",
+        "edge": {
+          "order": "bottom_first",
+          "x_V": "6/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "241/200000000000000",
+          "qA_channel_C": "-9/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/400000000000000",
+          "qB_transfer_effective_C": "-251/200000000000000",
+          "output_increment_before_off_V": "251/800",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "6/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "2617/2000000000000000",
+              "qB_free_C": "-487/400000000000000"
+            },
+            {
+              "stage": "B_reference_opens_A_clamped",
+              "A_V": "6/5",
+              "B_V": "-10/241",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "650697/482000000000000000",
+              "qB_free_C": "-499/400000000000000"
+            },
+            {
+              "stage": "A_input_opens_both_floating",
+              "A_V": "12773/13261",
+              "B_V": "-773911/3195901",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "126669/96400000000000000",
+              "qB_free_C": "-499/400000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-251/241",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "101123/96400000000000000",
+              "qB_free_C": "-499/400000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 3,
+        "y_before_V": "2359/4000",
+        "qf_before_C": "-2359/1000000000000000",
+        "qB_effective_C": "-91/200000000000000",
+        "y_transfer_V": "1407/2000",
+        "qf_transfer_C": "-1407/500000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "703/1000",
+        "qf_after_off_C": "-703/250000000000000",
+        "edge": {
+          "order": "bottom_first",
+          "x_V": "2/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "241/200000000000000",
+          "qA_channel_C": "-13/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/400000000000000",
+          "qB_transfer_effective_C": "-91/200000000000000",
+          "output_increment_before_off_V": "91/800",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "2/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "849/2000000000000000",
+              "qB_free_C": "-167/400000000000000"
+            },
+            {
+              "stage": "B_reference_opens_A_clamped",
+              "A_V": "2/5",
+              "B_V": "-10/241",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "224609/482000000000000000",
+              "qB_free_C": "-179/400000000000000"
+            },
+            {
+              "stage": "A_input_opens_both_floating",
+              "A_V": "1393/13261",
+              "B_V": "-928151/3195901",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "39909/96400000000000000",
+              "qB_free_C": "-179/400000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-91/241",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "37123/96400000000000000",
+              "qB_free_C": "-179/400000000000000"
+            }
+          ]
+        }
+      }
+    ],
+    "input_first": [
+      {
+        "n": 0,
+        "y_before_V": "0",
+        "qf_before_C": "0",
+        "qB_effective_C": "-781/4420000000000000",
+        "y_transfer_V": "781/17680",
+        "qf_transfer_C": "-781/4420000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "2413/55250",
+        "qf_after_off_C": "-2413/13812500000000000",
+        "edge": {
+          "order": "input_first",
+          "x_V": "1/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "241/200000000000000",
+          "qA_channel_C": "-7/125000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/400000000000000",
+          "qB_transfer_effective_C": "-781/4420000000000000",
+          "output_increment_before_off_V": "781/17680",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "1/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "407/2000000000000000",
+              "qB_free_C": "-87/400000000000000"
+            },
+            {
+              "stage": "A_input_opens_B_clamped",
+              "A_V": "28/221",
+              "B_V": "0",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "59/400000000000000",
+              "qB_free_C": "-2461/17680000000000000"
+            },
+            {
+              "stage": "B_reference_opens_both_floating",
+              "A_V": "-70692/2930681",
+              "B_V": "-2210/13261",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "59/400000000000000",
+              "qB_free_C": "-14957/88400000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-7810/53261",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "3283783/21304400000000000000",
+              "qB_free_C": "-14957/88400000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 1,
+        "y_before_V": "2413/55250",
+        "qf_before_C": "-2413/13812500000000000",
+        "qB_effective_C": "-3481/4420000000000000",
+        "y_transfer_V": "106329/442000",
+        "qf_transfer_C": "-106329/110500000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "26527/110500",
+        "qf_after_off_C": "-26527/27625000000000000",
+        "edge": {
+          "order": "input_first",
+          "x_V": "4/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "241/200000000000000",
+          "qA_channel_C": "-11/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/400000000000000",
+          "qB_transfer_effective_C": "-3481/4420000000000000",
+          "output_increment_before_off_V": "3481/17680",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "4/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "1733/2000000000000000",
+              "qB_free_C": "-327/400000000000000"
+            },
+            {
+              "stage": "A_input_opens_B_clamped",
+              "A_V": "163/221",
+              "B_V": "0",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "329/400000000000000",
+              "qB_free_C": "-13261/17680000000000000"
+            },
+            {
+              "stage": "B_reference_opens_both_floating",
+              "A_V": "1719543/2930681",
+              "B_V": "-2210/13261",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "329/400000000000000",
+              "qB_free_C": "-68957/88400000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-34810/53261",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "14083783/21304400000000000000",
+              "qB_free_C": "-68957/88400000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 2,
+        "y_before_V": "26527/110500",
+        "qf_before_C": "-26527/27625000000000000",
+        "qB_effective_C": "-5281/4420000000000000",
+        "y_transfer_V": "238133/442000",
+        "qf_transfer_C": "-238133/110500000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "29739/55250",
+        "qf_after_off_C": "-29739/13812500000000000",
+        "edge": {
+          "order": "input_first",
+          "x_V": "6/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "241/200000000000000",
+          "qA_channel_C": "-9/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/400000000000000",
+          "qB_transfer_effective_C": "-5281/4420000000000000",
+          "output_increment_before_off_V": "5281/17680",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "6/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "2617/2000000000000000",
+              "qB_free_C": "-487/400000000000000"
+            },
+            {
+              "stage": "A_input_opens_B_clamped",
+              "A_V": "253/221",
+              "B_V": "0",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "509/400000000000000",
+              "qB_free_C": "-20461/17680000000000000"
+            },
+            {
+              "stage": "B_reference_opens_both_floating",
+              "A_V": "2913033/2930681",
+              "B_V": "-2210/13261",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "509/400000000000000",
+              "qB_free_C": "-104957/88400000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-52810/53261",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "21283783/21304400000000000000",
+              "qB_free_C": "-104957/88400000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 3,
+        "y_before_V": "29739/55250",
+        "qf_before_C": "-29739/13812500000000000",
+        "qB_effective_C": "-1681/4420000000000000",
+        "y_transfer_V": "279937/442000",
+        "qf_transfer_C": "-279937/110500000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "69929/110500",
+        "qf_after_off_C": "-69929/27625000000000000",
+        "edge": {
+          "order": "input_first",
+          "x_V": "2/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "241/200000000000000",
+          "qA_channel_C": "-13/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/400000000000000",
+          "qB_transfer_effective_C": "-1681/4420000000000000",
+          "output_increment_before_off_V": "1681/17680",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "2/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "849/2000000000000000",
+              "qB_free_C": "-167/400000000000000"
+            },
+            {
+              "stage": "A_input_opens_B_clamped",
+              "A_V": "73/221",
+              "B_V": "0",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "149/400000000000000",
+              "qB_free_C": "-6061/17680000000000000"
+            },
+            {
+              "stage": "B_reference_opens_both_floating",
+              "A_V": "526053/2930681",
+              "B_V": "-2210/13261",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "149/400000000000000",
+              "qB_free_C": "-32957/88400000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-16810/53261",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "6883783/21304400000000000000",
+              "qB_free_C": "-32957/88400000000000000"
+            }
+          ]
+        }
+      }
+    ],
+    "bottom_first_no_cross": [
+      {
+        "n": 0,
+        "y_before_V": "0",
+        "qf_before_C": "0",
+        "qB_effective_C": "-1/4000000000000",
+        "y_transfer_V": "1/16",
+        "qf_transfer_C": "-1/4000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "31/500",
+        "qf_after_off_C": "-31/125000000000000",
+        "edge": {
+          "order": "bottom_first",
+          "x_V": "1/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "301/250000000000000",
+          "qA_channel_C": "-7/125000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/500000000000000",
+          "qB_transfer_effective_C": "-1/4000000000000",
+          "output_increment_before_off_V": "1/16",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "1/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "407/2000000000000000",
+              "qB_free_C": "-107/500000000000000"
+            },
+            {
+              "stage": "B_reference_opens_A_clamped",
+              "A_V": "1/5",
+              "B_V": "-25/602",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "147507/602000000000000000",
+              "qB_free_C": "-61/250000000000000"
+            },
+            {
+              "stage": "A_input_opens_both_floating",
+              "A_V": "-524/5507",
+              "B_V": "-950375/3315214",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "22759/120400000000000000",
+              "qB_free_C": "-61/250000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-125/602",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "25903/120400000000000000",
+              "qB_free_C": "-61/250000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 1,
+        "y_before_V": "31/500",
+        "qf_before_C": "-31/125000000000000",
+        "qB_effective_C": "-17/20000000000000",
+        "y_transfer_V": "549/2000",
+        "qf_transfer_C": "-549/500000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "137/500",
+        "qf_after_off_C": "-137/125000000000000",
+        "edge": {
+          "order": "bottom_first",
+          "x_V": "4/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "301/250000000000000",
+          "qA_channel_C": "-11/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/500000000000000",
+          "qB_transfer_effective_C": "-17/20000000000000",
+          "output_increment_before_off_V": "17/80",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "4/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "1733/2000000000000000",
+              "qB_free_C": "-407/500000000000000"
+            },
+            {
+              "stage": "B_reference_opens_A_clamped",
+              "A_V": "4/5",
+              "B_V": "-25/602",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "546633/602000000000000000",
+              "qB_free_C": "-211/250000000000000"
+            },
+            {
+              "stage": "A_input_opens_both_floating",
+              "A_V": "3021/5507",
+              "B_V": "-829975/3315214",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "104029/120400000000000000",
+              "qB_free_C": "-211/250000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-425/602",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "85903/120400000000000000",
+              "qB_free_C": "-211/250000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 2,
+        "y_before_V": "137/500",
+        "qf_before_C": "-137/125000000000000",
+        "qB_effective_C": "-1/800000000000",
+        "y_transfer_V": "1173/2000",
+        "qf_transfer_C": "-1173/500000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "293/500",
+        "qf_after_off_C": "-293/125000000000000",
+        "edge": {
+          "order": "bottom_first",
+          "x_V": "6/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "301/250000000000000",
+          "qA_channel_C": "-9/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/500000000000000",
+          "qB_transfer_effective_C": "-1/800000000000",
+          "output_increment_before_off_V": "5/16",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "6/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "2617/2000000000000000",
+              "qB_free_C": "-607/500000000000000"
+            },
+            {
+              "stage": "B_reference_opens_A_clamped",
+              "A_V": "6/5",
+              "B_V": "-25/602",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "812717/602000000000000000",
+              "qB_free_C": "-311/250000000000000"
+            },
+            {
+              "stage": "A_input_opens_both_floating",
+              "A_V": "16153/16521",
+              "B_V": "-2249125/9945642",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "158209/120400000000000000",
+              "qB_free_C": "-311/250000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-625/602",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "125903/120400000000000000",
+              "qB_free_C": "-311/250000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "n": 3,
+        "y_before_V": "293/500",
+        "qf_before_C": "-293/125000000000000",
+        "qB_effective_C": "-9/20000000000000",
+        "y_transfer_V": "1397/2000",
+        "qf_transfer_C": "-1397/500000000000000",
+        "qoff_C": "1/500000000000000",
+        "y_after_off_V": "349/500",
+        "qf_after_off_C": "-349/125000000000000",
+        "edge": {
+          "order": "bottom_first",
+          "x_V": "2/5",
+          "Cs_F": "1/1000000000000",
+          "Cf_F": "1/250000000000",
+          "LA_F": "221/200000000000000",
+          "LB_F": "301/250000000000000",
+          "qA_channel_C": "-13/250000000000000",
+          "qB_channel_C": "-3/100000000000000",
+          "clock_change_V": "-5",
+          "qB_transfer_baseline_C": "3/500000000000000",
+          "qB_transfer_effective_C": "-9/20000000000000",
+          "output_increment_before_off_V": "9/80",
+          "stages": [
+            {
+              "stage": "track_A=x_B=0",
+              "A_V": "2/5",
+              "B_V": "0",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "7/2",
+              "qA_free_C": "849/2000000000000000",
+              "qB_free_C": "-207/500000000000000"
+            },
+            {
+              "stage": "B_reference_opens_A_clamped",
+              "A_V": "2/5",
+              "B_V": "-25/602",
+              "gA_relative_V": "7/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "280549/602000000000000000",
+              "qB_free_C": "-111/250000000000000"
+            },
+            {
+              "stage": "A_input_opens_both_floating",
+              "A_V": "1973/16521",
+              "B_V": "-2730725/9945642",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "49849/120400000000000000",
+              "qB_free_C": "-111/250000000000000"
+            },
+            {
+              "stage": "A_transfer_clamps_to_reference_B_floating",
+              "A_V": "0",
+              "B_V": "-225/602",
+              "gA_relative_V": "-3/2",
+              "gB_relative_V": "-3/2",
+              "qA_free_C": "45903/120400000000000000",
+              "qB_free_C": "-111/250000000000000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "finite_cases": {
+    "finite_nominal": [
+      {
+        "n": 0,
+        "sampled_x_V": 0.2,
+        "qB_effective_C": -2e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.0,
+        "y_before_V": 0.0,
+        "target2_V": 0.049357732505768685,
+        "w_transfer_V": 0.048704524849629706,
+        "r_after_off_V": -0.04970008692484223,
+        "y_next_V": 0.049208006856275445,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 1,
+        "sampled_x_V": 0.8,
+        "qB_effective_C": -8e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.04970008692484223,
+        "y_before_V": 0.049208006856275445,
+        "target2_V": 0.24649260194207107,
+        "w_transfer_V": 0.2438817079360861,
+        "r_after_off_V": -0.24835308468056727,
+        "y_next_V": 0.24589414324807046,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 2,
+        "sampled_x_V": 1.2,
+        "qB_effective_C": -1.2e-12,
+        "qoff_C": 0.0,
+        "r_before_V": -0.24835308468056727,
+        "y_before_V": 0.24589414324807046,
+        "target2_V": 0.5413092974475313,
+        "w_transfer_V": 0.5373997288618997,
+        "r_after_off_V": -0.5458172933719229,
+        "y_next_V": 0.5404131617543552,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 3,
+        "sampled_x_V": 0.4,
+        "qB_effective_C": -4e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.5458172933719229,
+        "y_before_V": 0.5404131617543552,
+        "target2_V": 0.6375215442770182,
+        "w_transfer_V": 0.6362363973361278,
+        "r_after_off_V": -0.6435992377094574,
+        "y_next_V": 0.6372269680291578,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      }
+    ],
+    "finite_actual_caps": [
+      {
+        "n": 0,
+        "sampled_x_V": 0.2,
+        "qB_effective_C": -2.02e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.0,
+        "y_before_V": 0.0,
+        "target2_V": 0.05009982762683069,
+        "w_transfer_V": 0.049428009263961174,
+        "r_after_off_V": -0.050443701877904305,
+        "y_next_V": 0.04994425928504968,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 1,
+        "sampled_x_V": 0.8,
+        "qB_effective_C": -8.08e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.050443701877904305,
+        "y_before_V": 0.04994425928504968,
+        "target2_V": 0.2501930662518283,
+        "w_transfer_V": 0.24750781099176933,
+        "r_after_off_V": -0.25206697282561286,
+        "y_next_V": 0.2495712602233627,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 2,
+        "sampled_x_V": 1.2,
+        "qB_effective_C": -1.212e-12,
+        "qoff_C": 0.0,
+        "r_before_V": -0.25206697282561286,
+        "y_before_V": 0.2495712602233627,
+        "target2_V": 0.5494181604052479,
+        "w_transfer_V": 0.545397335122332,
+        "r_after_off_V": -0.553971956500399,
+        "y_next_V": 0.548487085643935,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 3,
+        "sampled_x_V": 0.4,
+        "qB_effective_C": -4.04e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.553971956500399,
+        "y_before_V": 0.548487085643935,
+        "target2_V": 0.6470339133351326,
+        "w_transfer_V": 0.6457124403564506,
+        "r_after_off_V": -0.6531951880470983,
+        "y_next_V": 0.6467279089575151,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      }
+    ],
+    "plus_channel": [
+      {
+        "n": 0,
+        "sampled_x_V": 0.2,
+        "qB_effective_C": -2.32e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.0,
+        "y_before_V": 0.0,
+        "target2_V": 0.057540396086261,
+        "w_transfer_V": 0.056768802719004925,
+        "r_after_off_V": -0.057935340770662376,
+        "y_next_V": 0.05736172353530458,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 1,
+        "sampled_x_V": 0.8,
+        "qB_effective_C": -8.38e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.057935340770662376,
+        "y_before_V": 0.05736172353530458,
+        "target2_V": 0.2650287469505416,
+        "w_transfer_V": 0.26224401641749495,
+        "r_after_off_V": -0.2670277451808456,
+        "y_next_V": 0.2643839061196322,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 2,
+        "sampled_x_V": 1.2,
+        "qB_effective_C": -1.242e-12,
+        "qoff_C": 0.0,
+        "r_before_V": -0.2670277451808456,
+        "y_before_V": 0.2643839061196322,
+        "target2_V": 0.5716267378860763,
+        "w_transfer_V": 0.5675067361611565,
+        "r_after_off_V": -0.5763794244957788,
+        "y_next_V": 0.5706726975205481,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 3,
+        "sampled_x_V": 0.4,
+        "qB_effective_C": -4.34e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.5763794244957788,
+        "y_before_V": 0.5706726975205481,
+        "target2_V": 0.6765932388777637,
+        "w_transfer_V": 0.6751728873903516,
+        "r_after_off_V": -0.6830269812651545,
+        "y_next_V": 0.6762643378862829,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      }
+    ],
+    "plus_feed": [
+      {
+        "n": 0,
+        "sampled_x_V": 0.2,
+        "qB_effective_C": -2.57e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.0,
+        "y_before_V": 0.0,
+        "target2_V": 0.06374086980245292,
+        "w_transfer_V": 0.06288613059820804,
+        "r_after_off_V": -0.06417837318129409,
+        "y_next_V": 0.06354294374385033,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 1,
+        "sampled_x_V": 0.8,
+        "qB_effective_C": -8.63e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.06417837318129409,
+        "y_before_V": 0.06354294374385033,
+        "target2_V": 0.27739181419946934,
+        "w_transfer_V": 0.2745241876055996,
+        "r_after_off_V": -0.2794950554768728,
+        "y_next_V": 0.2767277776998566,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 2,
+        "sampled_x_V": 1.2,
+        "qB_effective_C": -1.267e-12,
+        "qoff_C": 0.0,
+        "r_before_V": -0.2794950554768728,
+        "y_before_V": 0.2767277776998566,
+        "target2_V": 0.5901338857867667,
+        "w_transfer_V": 0.5859312370268438,
+        "r_after_off_V": -0.5950523144919286,
+        "y_next_V": 0.5891607074177256,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 3,
+        "sampled_x_V": 0.4,
+        "qB_effective_C": -4.59e-13,
+        "qoff_C": 0.0,
+        "r_before_V": -0.5950523144919286,
+        "y_before_V": 0.5891607074177256,
+        "target2_V": 0.7012260101632897,
+        "w_transfer_V": 0.6997232599186026,
+        "r_after_off_V": -0.7078868089468678,
+        "y_next_V": 0.7008780286602561,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      }
+    ],
+    "plus_off": [
+      {
+        "n": 0,
+        "sampled_x_V": 0.2,
+        "qB_effective_C": -2.57e-13,
+        "qoff_C": 2e-15,
+        "r_before_V": -0.0,
+        "y_before_V": 0.0,
+        "target2_V": 0.06374086980245292,
+        "w_transfer_V": 0.06288613059820804,
+        "r_after_off_V": -0.06367586061848002,
+        "y_next_V": 0.06304540655294925,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 1,
+        "sampled_x_V": 0.8,
+        "qB_effective_C": -8.63e-13,
+        "qoff_C": 2e-15,
+        "r_before_V": -0.06367586061848002,
+        "y_before_V": 0.06304540655294925,
+        "target2_V": 0.276895776302174,
+        "w_transfer_V": 0.2740281296033853,
+        "r_after_off_V": -0.2784915399356775,
+        "y_next_V": 0.2757341979561028,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 2,
+        "sampled_x_V": 1.2,
+        "qB_effective_C": -1.267e-12,
+        "qoff_C": 2e-15,
+        "r_before_V": -0.2784915399356775,
+        "y_before_V": 0.2757341979561028,
+        "target2_V": 0.5891433001262408,
+        "w_transfer_V": 0.5849406112168765,
+        "r_after_off_V": -0.5935493010218831,
+        "y_next_V": 0.5876725752691695,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 3,
+        "sampled_x_V": 0.4,
+        "qB_effective_C": -4.59e-13,
+        "qoff_C": 2e-15,
+        "r_before_V": -0.5935493010218831,
+        "y_before_V": 0.5876725752691695,
+        "target2_V": 0.6997423623971265,
+        "w_transfer_V": 0.6982395520186908,
+        "r_after_off_V": -0.7058857980762243,
+        "y_next_V": 0.6988968297784347,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      }
+    ],
+    "plus_clock": [
+      {
+        "n": 0,
+        "sampled_x_V": 0.2001,
+        "qB_effective_C": -2.57101e-13,
+        "qoff_C": 2e-15,
+        "r_before_V": -0.0,
+        "y_before_V": 0.0,
+        "target2_V": 0.06376591971626634,
+        "w_transfer_V": 0.0628688818841544,
+        "r_after_off_V": -0.06369126828208443,
+        "y_next_V": 0.0630606616654287,
+        "window_shift_s": -2e-09,
+        "within_linear_swing": true
+      },
+      {
+        "n": 1,
+        "sampled_x_V": 0.8002,
+        "qB_effective_C": -8.63202e-13,
+        "qoff_C": 2e-15,
+        "r_before_V": -0.06369126828208443,
+        "y_before_V": 0.0630606616654287,
+        "target2_V": 0.2769610852720635,
+        "w_transfer_V": 0.2741606596866084,
+        "r_after_off_V": -0.2785732235838511,
+        "y_next_V": 0.2758150728552846,
+        "window_shift_s": 1e-09,
+        "within_linear_swing": true
+      },
+      {
+        "n": 2,
+        "sampled_x_V": 1.2003,
+        "qB_effective_C": -1.267303e-12,
+        "qoff_C": 2e-15,
+        "r_before_V": -0.2785732235838511,
+        "y_before_V": 0.2758150728552846,
+        "target2_V": 0.5892990810559972,
+        "w_transfer_V": 0.5850953876871523,
+        "r_after_off_V": -0.5937064048392298,
+        "y_next_V": 0.5878281236031762,
+        "window_shift_s": 0.0,
+        "within_linear_swing": true
+      },
+      {
+        "n": 3,
+        "sampled_x_V": 0.4,
+        "qB_effective_C": -4.59e-13,
+        "qoff_C": 2e-15,
+        "r_before_V": -0.5937064048392298,
+        "y_before_V": 0.5878281236031762,
+        "target2_V": 0.6998974419970819,
+        "w_transfer_V": 0.6984988448763118,
+        "r_after_off_V": -0.7060668017364841,
+        "y_next_V": 0.6990760413232465,
+        "window_shift_s": 3e-09,
+        "within_linear_swing": true
+      }
+    ]
+  },
+  "nominal_ideal_after_V": [
+    0.05,
+    0.25,
+    0.55,
+    0.65
+  ],
+  "controlled_telescope": [
+    {
+      "component_added": "finite_nominal",
+      "delta_y_V": [
+        -0.0007919931437245578,
+        -0.0041058567519295375,
+        -0.00958683824564488,
+        -0.01277303197084223
+      ]
+    },
+    {
+      "component_added": "finite_actual_caps",
+      "delta_y_V": [
+        0.0007362524287742381,
+        0.003677116975292244,
+        0.008073923889579837,
+        0.009500940928357293
+      ]
+    },
+    {
+      "component_added": "plus_channel",
+      "delta_y_V": [
+        0.007417464250254899,
+        0.014812645896269488,
+        0.022185611876613054,
+        0.029536428928767844
+      ]
+    },
+    {
+      "component_added": "plus_feed",
+      "delta_y_V": [
+        0.006181220208545751,
+        0.01234387158022443,
+        0.018488009897177582,
+        0.02461369077397313
+      ]
+    },
+    {
+      "component_added": "plus_off",
+      "delta_y_V": [
+        -0.000497537190901079,
+        -0.000993579743753803,
+        -0.0014881321485561427,
+        -0.0019811988818213555
+      ]
+    },
+    {
+      "component_added": "plus_clock",
+      "delta_y_V": [
+        1.5255112479448107e-05,
+        8.087489918179314e-05,
+        0.00015554833400666102,
+        0.00017921154481181922
+      ]
+    }
+  ],
+  "selected_noise": {
+    "contract": "about plus_clock deterministic windows; deterministic initial; given eta covariance; off packets iid; disjoint white OTA innovations; all three source groups independent; NOT full hardware noise",
+    "load_alpha": 0.30527638190954776,
+    "signal_Cs_over_Cf": 0.2537688442211055,
+    "M_each_cycle": [
+      [
+        [
+          0.9937388332316714,
+          -0.0032901284802921674
+        ],
+        [
+          -0.9838998348827637,
+          0.003257552950864758
+        ]
+      ],
+      [
+        [
+          0.9939640367648199,
+          -0.0030619854186143027
+        ],
+        [
+          -0.9841228086779583,
+          0.003031668731383484
+        ]
+      ],
+      [
+        [
+          0.9938907597725699,
+          -0.0031362188781374535
+        ],
+        [
+          -0.9840502572004837,
+          0.0031051672061582895
+        ]
+      ],
+      [
+        [
+          0.9941054284629612,
+          -0.0029187481680311234
+        ],
+        [
+          -0.984262800458295,
+          0.002889849671401333
+        ]
+      ]
+    ],
+    "Gq_per_C_each_cycle": [
+      [
+        249683123927.55566,
+        -247211013789.63913
+      ],
+      [
+        249739707729.85428,
+        -247267037356.27097
+      ],
+      [
+        249721296425.26886,
+        -247248808341.83008
+      ],
+      [
+        249775233282.1511,
+        -247302211170.4259
+      ]
+    ],
+    "Goff_per_C_each_cycle": [
+      [
+        251256281407.0352,
+        -248768595450.6591
+      ],
+      [
+        251256281407.0352,
+        -248768595450.47766
+      ],
+      [
+        251256281407.0352,
+        -248768595450.54004
+      ],
+      [
+        251256281407.0352,
+        -248768595450.3469
+      ]
+    ],
+    "eta_to_final_y": [
+      0.2474394619090619,
+      0.24824132730241785,
+      0.2489709533855636,
+      0.24977523328213014
+    ],
+    "off_C_to_final_y": [
+      -246533151421.56247,
+      -247276041473.9027,
+      -248021115014.2436,
+      -248768595450.3469
+    ],
+    "zeta1_to_final_y": [
+      0.0030134794207960385,
+      0.003095837042276105,
+      0.002889849671401333,
+      1.0
+    ],
+    "zeta2_to_final_y": [
+      0.2294822637785113,
+      0.23017377358142113,
+      0.230867315856496,
+      0.23156309856870372
+    ],
+    "zeta1_variance_each_cycle_V2": [
+      7.639652854174305e-10,
+      7.639652854174305e-10,
+      7.639652854174305e-10,
+      7.639652854174305e-10
+    ],
+    "zeta2_variance_each_cycle_V2": [
+      9.939841459866644e-10,
+      9.940104856065177e-10,
+      9.940021228481638e-10,
+      9.940260558137818e-10
+    ],
+    "eta_covariance_V2": [
+      [
+        1e-08,
+        5e-09,
+        2.5e-09,
+        1.25e-09
+      ],
+      [
+        5e-09,
+        1e-08,
+        5e-09,
+        2.5e-09
+      ],
+      [
+        2.5e-09,
+        5e-09,
+        1e-08,
+        5e-09
+      ],
+      [
+        1.25e-09,
+        2.5e-09,
+        5e-09,
+        1e-08
+      ]
+    ],
+    "terms": {
+      "given_sample_port_V2": 5.098965544407608e-09,
+      "given_off_packet_V2": 2.4532432301209736e-11,
+      "white_OTA_isolated_V2": 7.639859250827642e-10,
+      "white_OTA_transfer_V2": 2.1128911293314625e-10
+    },
+    "selected_total_V2": 6.098773014724728e-09
+  },
+  "rc_memory": {
+    "tau_s": 2e-05,
+    "rho": 0.36787944117144233,
+    "equilibrium_V2": 4.141947e-13,
+    "first_zero_initial_V2": 3.581395429603962e-13,
+    "R_doubled_closed_halved_first_V2": 1.6297291535952372e-13,
+    "zero_initial_covariance_V2": [
+      [
+        3.581395429603962e-13,
+        1.3175217492566632e-13,
+        4.8468916484776244e-14,
+        1.7830717910604794e-14
+      ],
+      [
+        1.3175217492566632e-13,
+        4.066084594451724e-13,
+        1.495828928362711e-13,
+        5.5028471025415165e-14
+      ],
+      [
+        4.8468916484776244e-14,
+        1.495828928362711e-13,
+        4.131680139858113e-13,
+        1.5199601809501493e-13
+      ],
+      [
+        1.7830717910604794e-14,
+        5.5028471025415165e-14,
+        1.5199601809501493e-13,
+        4.1405575315747474e-13
+      ]
+    ],
+    "stationary_covariance_V2": [
+      [
+        4.141947e-13,
+        1.5237371477217321e-13,
+        5.605515703960383e-14,
+        2.06215398465069e-14
+      ],
+      [
+        1.5237371477217321e-13,
+        4.141947e-13,
+        1.5237371477217321e-13,
+        5.605515703960383e-14
+      ],
+      [
+        5.605515703960383e-14,
+        1.5237371477217321e-13,
+        4.141947e-13,
+        1.5237371477217321e-13
+      ],
+      [
+        2.06215398465069e-14,
+        5.605515703960383e-14,
+        1.5237371477217321e-13,
+        4.141947e-13
+      ]
+    ],
+    "zero_initial_average_V2": 1.6883063450652198e-13,
+    "stationary_average_V2": 1.772802997802793e-13,
+    "incorrect_independent_stationary_average_V2": 1.03548675e-13
+  },
+  "readout": [
+    {
+      "n": 0,
+      "linear_prediction_V": 0.0630606616654287,
+      "rounded_readout_V": 0.063,
+      "quantization_error_V": -6.066166542870177e-05
+    },
+    {
+      "n": 1,
+      "linear_prediction_V": 0.2758150728552846,
+      "rounded_readout_V": 0.276,
+      "quantization_error_V": 0.00018492714471540772
+    },
+    {
+      "n": 2,
+      "linear_prediction_V": 0.5878281236031762,
+      "rounded_readout_V": 0.588,
+      "quantization_error_V": 0.00017187639682381128
+    },
+    {
+      "n": 3,
+      "linear_prediction_V": 0.6990760413232465,
+      "rounded_readout_V": 0.6990000000000001,
+      "quantization_error_V": -7.60413232464563e-05
+    }
+  ],
+  "tight_swing_first_violation": {
+    "finite_nominal": 3,
+    "finite_actual_caps": 3,
+    "plus_channel": 3,
+    "plus_feed": 3,
+    "plus_off": 3,
+    "plus_clock": 3
+  },
+  "aperture_probe": {
+    "early_x_V": "2/5",
+    "late_A_V": "3/5",
+    "signal_only_B_change_between_releases_V": "40/241",
+    "sampled_signal_charge_C": "-1/2500000000000",
+    "ideal_signal_output_increment_V": "1/10",
+    "wrong_late_value_prediction_V": "3/20"
+  },
+  "environment": {
+    "python": "3.14.7",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  },
+  "elapsed_seconds": 0.03315937495790422
+}

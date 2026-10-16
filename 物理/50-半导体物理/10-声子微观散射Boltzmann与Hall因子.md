@@ -217,3 +217,7 @@ $$\tau_{\rm tr}^{-1}=\frac{A_k}{4k^4}\left[\ln\left(1+\frac{4k^2}{q_s^2}\right)-
 回 [[物理/50-半导体物理/04-弛豫时间Hall符号与可辨识测量#Hall 因子与双载流子会改变反推量|Hall 反推边界]]，携带本节具体 $r_H=3\pi/8$ 和屏蔽角核；回 [[电子电路/22-半导体与真实元件/01-能带载流子掺杂与输运#电场和浓度梯度，两种不同的推动|漂移扩散]] 时携带局部热化、低场和非简并条件；复算见 [[物理/80-实践/07-晶格声子与微观输运/README#声子到电流的独立检查|声子与微观输运接口]]。这给出微观输运的代表完整链，未完成一般多谷磁输运、光学/谷间非弹性机制或实际工艺校准。
 
 本课推导对应 [MIT 6.730 L8](https://ocw.mit.edu/courses/6-730-physics-for-solid-state-applications-spring-2003/333aadd4c8c3174f76ef6819f846ddc1_lecture_8c.pdf) 的谐矩阵/长波，[L27](https://ocw.mit.edu/courses/6-730-physics-for-solid-state-applications-spring-2003/5b96b61fa8e79d9c426d1b331c023af7_lecture_27b.pdf) 的弱转移/占据收支，[L28](https://ocw.mit.edu/courses/6-730-physics-for-solid-state-applications-spring-2003/ab1f8e1036e814ac14c58209bc275ca5_lecture_28c.pdf) 的 LA 形变势/能量动量条件。Hall 热权重和屏蔽角积分在本页逐步给出，不把原讲义的真实硅例参数移植到教学卡。独立语义、数值与真实显示分别验收。
+
+## 将温度幂律带回器件级联合设计
+
+去 [[电子电路/26-放大电路/10-OTA噪声摆幅与双环联合规格#温度、材料近似和失配进入哪里|OTA的温度参数族]]，携带本页等分配、准弹性、非简并单带的条件，区分从该卡推得的迁移率幂律与反型层工艺标定。该处实际改变KP/阈值并重求完整Q、两环、噪声与余量，保留一个低输入共模余量失败角；返回时不能以拟合温度指数、能带图或四个确定角代替材料/器件统计证据。

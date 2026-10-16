@@ -1,0 +1,158 @@
+{
+  "input_version": "ota-joint-v1",
+  "state_order": [
+    "op",
+    "om",
+    "s",
+    "vb",
+    "sense",
+    "sc",
+    "vm",
+    "vc",
+    "gp",
+    "gm"
+  ],
+  "base_source": "\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/49-\u5168\u5dee\u5206OTA\u504f\u7f6e\u4e0e\u5171\u6a21/ota_model.py",
+  "base_source_sha256": "a79e7b688e9737fa211ba5f1a32301632a9d7a1bbdbb0f7b205325cdffc0a653",
+  "default": {
+    "vdd": 3.3,
+    "vic": 1.5,
+    "reference": 1.65,
+    "iref": 5e-05,
+    "rdet": 2000000.0,
+    "rgate": 20000.0,
+    "cgate": 5e-10,
+    "cout": 2e-11,
+    "ccontrol": 1e-08,
+    "cbridge": 5e-12,
+    "feedback": 0.1,
+    "temperature_K": 300.15,
+    "kp_scale": 1.0,
+    "threshold_shift": 0.0,
+    "mismatch": 1.0
+  },
+  "designs": {
+    "starting": {
+      "cout": 2e-11,
+      "ccontrol": 1e-08
+    },
+    "dm_only": {
+      "cout": 1e-10,
+      "ccontrol": 1e-08
+    },
+    "balanced": {
+      "cout": 1e-10,
+      "ccontrol": 3e-08
+    },
+    "heavy_output": {
+      "cout": 3e-10,
+      "ccontrol": 1e-08
+    },
+    "mismatch": {
+      "cout": 1e-10,
+      "ccontrol": 3e-08,
+      "mismatch": 1.02
+    }
+  },
+  "budget": {
+    "minimum_abs_DC_gain": 8,
+    "minimum_headroom_V": 0.05,
+    "maximum_dc_cm_error_V": 0.01,
+    "minimum_dm_PM_deg": 55,
+    "minimum_cm_PM_deg": 60,
+    "maximum_dm_noise_rms_V": 6e-05,
+    "maximum_cm_noise_rms_V": 8e-05,
+    "maximum_supply_power_W": 0.0004,
+    "maximum_settling_1pct_s": 0.0001,
+    "minimum_average_10_90_slew_V_s": 50000,
+    "maximum_step_cm_error_V": 0.01,
+    "minimum_linear_output_differential_peak_V": 1.25,
+    "maximum_relative_DC_gain_error": 0.01
+  },
+  "noise": {
+    "single_sided": true,
+    "independent_sources": true,
+    "kB_J_K": 1.38064852e-23,
+    "gamma": 0.6666666666666666,
+    "mos_NLEV": 2,
+    "mos_KF": 0,
+    "frequency_Hz": [
+      1,
+      100000.0
+    ],
+    "log_grid_count": 401,
+    "integral": "trapezoid on frequency_Hz, no 2pi factor",
+    "sources": "11 d-to-s MOS channel current + 2 detector resistors + 2 gate resistors; ideal VDD/reference/Iref/B-sources noiseless"
+  },
+  "input_common_grid_V": [
+    1.35,
+    1.5,
+    1.7,
+    1.9,
+    2.05
+  ],
+  "input_common_failure_V": [
+    1.2,
+    2.3
+  ],
+  "differential_DC_grid_V": [
+    -0.15,
+    -0.1,
+    -0.05,
+    0,
+    0.05,
+    0.1,
+    0.15
+  ],
+  "differential_DC_failure_V": [
+    -0.2,
+    0.2
+  ],
+  "steps": {
+    "duration_s": 0.002,
+    "count": 2001,
+    "amplitudes_V": [
+      0.001,
+      0.06,
+      0.35
+    ],
+    "budget_amplitude_V": 0.06,
+    "window": "t=0 post ideal source step through t=2ms, evaluate sampled trace at 1us interval; max derivative from ODE at those states; first crossings without interpolation"
+  },
+  "corner_inputs": [
+    [
+      3.0,
+      273.15,
+      0.9,
+      0.02
+    ],
+    [
+      3.6,
+      333.15,
+      1.1,
+      -0.02
+    ],
+    [
+      3.0,
+      333.15,
+      0.9,
+      0.02
+    ],
+    [
+      3.6,
+      273.15,
+      1.1,
+      -0.02
+    ]
+  ],
+  "corner_mapping": {
+    "KP_scale": "p*(T/300.15)^(-1.5)",
+    "VTO_magnitude_shift": "deltaVT-.001*(T-300.15)",
+    "temperature_once": "deck TEMP=TNOM=T Celsius, supplied KP/VTO already mapped; Lambda fixed .04/Gamma0; no calibrated process or yield"
+  },
+  "cut_contract": {
+    "dm": "remove only feedback derivative in ideal driving summation, hold same DC and CMFB",
+    "cm": "remove only vc-to-M3/M4 gm action, keep Cbridge and all other paths; not whole physical wire disconnection"
+  },
+  "development_note": "finite preflight used to choose educational budgets/designs; not preregistered blind optimization or claim optimum; final spec frozen before full formal outputs"
+}

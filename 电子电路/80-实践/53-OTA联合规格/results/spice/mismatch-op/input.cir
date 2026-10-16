@@ -1,0 +1,49 @@
+11 MOS plus explicit gate RC and bridge capacitors; no PDK
+.options reltol=1e-8 abstol=1e-15 vntol=1e-10 gmin=1e-18
+.temp 27
+.model NN NMOS LEVEL=1 KP=0.0001 VTO=0.6 LAMBDA=.04 GAMMA=0 PHI=.6 TNOM=27 TOX=1e3 IS=1e-30 CGSO=0 CGDO=0 CGBO=0 CBD=0 CBS=0 NLEV=2 KF=0
+.model PP PMOS LEVEL=1 KP=5e-05 VTO=-0.7 LAMBDA=.04 GAMMA=0 PHI=.6 TNOM=27 TOX=1e3 IS=1e-30 CGSO=0 CGDO=0 CGBO=0 CBD=0 CBS=0 NLEV=2 KF=0
+VDD vdd 0 3.3
+VREF ref 0 1.65
+IREF vdd vb 5e-05
+VD ud 0 DC 0 AC 1
+VCIN uc 0 DC 0 AC 0
+BGP dp 0 V={1.5+v(uc)+.5*(v(ud)+0.1*(v(op)-v(om)))}
+BGM dm 0 V={1.5+v(uc)-.5*(v(ud)+0.1*(v(op)-v(om)))}
+RGp gp dp 20000
+RGm gm dm 20000
+M1 op gp s 0 NN W=4u L=1u
+M2 om gm s 0 NN W=4u L=1u
+M3 op vc vdd vdd PP W=4.08e-06 L=1u
+M4 om vc vdd vdd PP W=4u L=1u
+M5 s vb 0 0 NN W=10u L=1u
+M6 vb vb 0 0 NN W=10u L=1u
+M7 vm sense sc 0 NN W=1u L=50u
+M8 vc ref sc 0 NN W=1u L=50u
+M9 sc vb 0 0 NN W=1u L=10u
+M10 vm vm vdd vdd PP W=1u L=50u
+M11 vc vm vdd vdd PP W=1u L=50u
+RDp op sense 2000000
+RDm om sense 2000000
+C_op op 0 1e-10
+C_om om 0 1e-10
+C_s s 0 5e-12
+C_vb vb 0 5e-12
+C_sense sense 0 5e-12
+C_sc sc 0 5e-12
+C_vm vm 0 5e-12
+C_vc vc 0 3e-08
+C_gp gp 0 5e-10
+C_gm gm 0 5e-10
+CB_op op vc 5e-12
+CB_om om vc 5e-12
+.control
+set noaskquit
+set numdgt=15
+set wr_vecnames
+set wr_singlescale
+op
+wrdata operating.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+quit
+.endc
+.end

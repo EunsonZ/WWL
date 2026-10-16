@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "/private/tmp/wwl-next-184-env/python-env/bin/python",
+    "-B",
+    "/private/tmp/wwl-next-184-next/\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/52-OTA\u8054\u5408\u89c4\u683c/run_joint.py",
+    "--spec",
+    "/private/tmp/wwl-next-184-next/\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/52-OTA\u8054\u5408\u89c4\u683c/spec.json",
+    "--base",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/49-\u5168\u5dee\u5206OTA\u504f\u7f6e\u4e0e\u5171\u6a21/ota_model.py",
+    "--out",
+    "/private/tmp/wwl-next-184-next/\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/52-OTA\u8054\u5408\u89c4\u683c/results",
+    "--ngspice",
+    "/private/tmp/wwl-next-184-env/install/bin/ngspice"
+  ],
+  "elapsed_seconds": 3.823177333048079,
+  "exit_code": 0,
+  "stdout": "{\"starting\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": false, \"cm_margin\": true, \"dm_noise\": false, \"cm_noise\": false, \"power\": true, \"settling\": true, \"slew\": true, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": true}, \"all_met\": false, \"failed\": [\"dm_margin\", \"dm_noise\", \"cm_noise\"]}, \"dm_only\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": true, \"cm_margin\": false, \"dm_noise\": true, \"cm_noise\": true, \"power\": true, \"settling\": true, \"slew\": true, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": true}, \"all_met\": false, \"failed\": [\"cm_margin\"]}, \"balanced\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": true, \"cm_margin\": true, \"dm_noise\": true, \"cm_noise\": true, \"power\": true, \"settling\": true, \"slew\": true, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": true}, \"all_met\": true, \"failed\": []}, \"heavy_output\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": true, \"cm_margin\": false, \"dm_noise\": true, \"cm_noise\": true, \"power\": true, \"settling\": true, \"slew\": false, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": true}, \"all_met\": false, \"failed\": [\"cm_margin\", \"slew\"]}, \"mismatch\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": true, \"cm_margin\": true, \"dm_noise\": true, \"cm_noise\": true, \"power\": true, \"settling\": true, \"slew\": true, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": true}, \"all_met\": true, \"failed\": []}, \"corner_1\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": true, \"cm_margin\": true, \"dm_noise\": true, \"cm_noise\": true, \"power\": true, \"settling\": true, \"slew\": true, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": true}, \"all_met\": true, \"failed\": []}, \"corner_2\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": true, \"cm_margin\": true, \"dm_noise\": true, \"cm_noise\": true, \"power\": true, \"settling\": true, \"slew\": true, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": true}, \"all_met\": true, \"failed\": []}, \"corner_3\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": true, \"cm_margin\": true, \"dm_noise\": true, \"cm_noise\": true, \"power\": true, \"settling\": true, \"slew\": true, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": false}, \"all_met\": false, \"failed\": [\"common_input_grid\"]}, \"corner_4\": {\"checks\": {\"all_nominal_MOS_saturated\": true, \"positive_region_margin\": true, \"gain\": true, \"dc_common_error\": true, \"internal_stability\": true, \"dm_margin\": true, \"cm_margin\": true, \"dm_noise\": true, \"cm_noise\": true, \"power\": true, \"settling\": true, \"slew\": true, \"step_common\": true, \"linear_swing\": true, \"common_input_grid\": true}, \"all_met\": true, \"failed\": []}}\n",
+  "stderr": "",
+  "thread_env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/private/tmp/wwl-next-184-env/python-env/bin/python",
+    "-B",
+    "/private/tmp/wwl-next-184-next/\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/52-OTA\u8054\u5408\u89c4\u683c/verify_evidence.py",
+    "--lab",
+    "/private/tmp/wwl-next-184-next/\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/52-OTA\u8054\u5408\u89c4\u683c",
+    "--results",
+    "/private/tmp/wwl-next-184-next/\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/52-OTA\u8054\u5408\u89c4\u683c/results",
+    "--out",
+    "/private/tmp/wwl-next-184-next/\u7535\u5b50\u7535\u8def/80-\u5b9e\u8df5/52-OTA\u8054\u5408\u89c4\u683c/verification.json"
+  ],
+  "elapsed_seconds": 0.22916783398250118,
+  "exit_code": 0,
+  "stdout": "{\"status\": \"PASS\", \"independent_layer\": \"raw SPICE op/AC/noise/Y/transient; no author model import; not physical device\", \"cases\": 9, \"noise_sources\": 15, \"noise_frequencies_each\": 401, \"raw_Y_dimension\": 10, \"checks\": {\"starting_op_V\": 2.219779915435538e-12, \"dm_only_op_V\": 2.219779915435538e-12, \"balanced_op_V\": 2.219779915435538e-12, \"heavy_output_op_V\": 2.219779915435538e-12, \"mismatch_op_V\": 2.2168933355715126e-12, \"corner_1_op_V\": 6.926661466621908e-10, \"corner_2_op_V\": 2.8772539906185557e-12, \"corner_3_op_V\": 8.723723965431418e-10, \"corner_4_op_V\": 2.4855673075308005e-12, \"raw_Y_max_J_error_S\": 8.239936510889834e-18, \"raw_Y_max_C_error_F\": 2.3244220034100744e-23, \"raw_Y_root_nearest_max_s_inv\": 2.2158026695251465e-05, \"starting_raw_dm_RMS_V\": 0.00012078075521250399, \"starting_maximum_total_PSD_relative_error\": 8.341329765924497e-13, \"dm_only_raw_dm_RMS_V\": 5.566219469906523e-05, \"dm_only_maximum_total_PSD_relative_error\": 3.622520051365912e-13, \"balanced_raw_dm_RMS_V\": 5.566219469906523e-05, \"balanced_maximum_total_PSD_relative_error\": 3.622520051365912e-13, \"mismatch_raw_dm_RMS_V\": 5.569033273420163e-05, \"mismatch_maximum_total_PSD_relative_error\": 3.5122623001917176e-13, \"step_0.06_first_SPICE_time_s\": 5e-09, \"step_0.06_max_node_error_V\": 5.244014297667299e-05, \"step_0.35_first_SPICE_time_s\": 5e-09, \"step_0.35_max_node_error_V\": 2.688721255439397e-05}}\n",
+  "stderr": "",
+  "thread_env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  }
+}

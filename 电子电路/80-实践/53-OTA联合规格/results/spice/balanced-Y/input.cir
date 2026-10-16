@@ -1,0 +1,98 @@
+11 MOS plus explicit gate RC and bridge capacitors; no PDK
+.options reltol=1e-8 abstol=1e-15 vntol=1e-10 gmin=1e-18
+.temp 27
+.model NN NMOS LEVEL=1 KP=0.0001 VTO=0.6 LAMBDA=.04 GAMMA=0 PHI=.6 TNOM=27 TOX=1e3 IS=1e-30 CGSO=0 CGDO=0 CGBO=0 CBD=0 CBS=0 NLEV=2 KF=0
+.model PP PMOS LEVEL=1 KP=5e-05 VTO=-0.7 LAMBDA=.04 GAMMA=0 PHI=.6 TNOM=27 TOX=1e3 IS=1e-30 CGSO=0 CGDO=0 CGBO=0 CBD=0 CBS=0 NLEV=2 KF=0
+VDD vdd 0 3.3
+VREF ref 0 1.65
+IREF vdd vb 5e-05
+VD ud 0 DC 0 AC 1
+VCIN uc 0 DC 0 AC 0
+BGP dp 0 V={1.5+v(uc)+.5*(v(ud)+0.1*(v(op)-v(om)))}
+BGM dm 0 V={1.5+v(uc)-.5*(v(ud)+0.1*(v(op)-v(om)))}
+RGp gp dp 20000
+RGm gm dm 20000
+M1 op gp s 0 NN W=4u L=1u
+M2 om gm s 0 NN W=4u L=1u
+M3 op vc vdd vdd PP W=4e-06 L=1u
+M4 om vc vdd vdd PP W=4u L=1u
+M5 s vb 0 0 NN W=10u L=1u
+M6 vb vb 0 0 NN W=10u L=1u
+M7 vm sense sc 0 NN W=1u L=50u
+M8 vc ref sc 0 NN W=1u L=50u
+M9 sc vb 0 0 NN W=1u L=10u
+M10 vm vm vdd vdd PP W=1u L=50u
+M11 vc vm vdd vdd PP W=1u L=50u
+RDp op sense 2000000
+RDm om sense 2000000
+C_op op 0 1e-10
+C_om om 0 1e-10
+C_s s 0 5e-12
+C_vb vb 0 5e-12
+C_sense sense 0 5e-12
+C_sc sc 0 5e-12
+C_vm vm 0 5e-12
+C_vc vc 0 3e-08
+C_gp gp 0 5e-10
+C_gm gm 0 5e-10
+CB_op op vc 5e-12
+CB_om om vc 5e-12
+IP0 op 0 AC 0
+IP1 om 0 AC 0
+IP2 s 0 AC 0
+IP3 vb 0 AC 0
+IP4 sense 0 AC 0
+IP5 sc 0 AC 0
+IP6 vm 0 AC 0
+IP7 vc 0 AC 0
+IP8 gp 0 AC 0
+IP9 gm 0 AC 0
+.control
+set noaskquit
+set numdgt=15
+set wr_vecnames
+set wr_singlescale
+alter VD AC=0
+alter IP0 AC=1
+ac lin 1 1k 1k
+wrdata node-0.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP0 AC=0
+alter IP1 AC=1
+ac lin 1 1k 1k
+wrdata node-1.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP1 AC=0
+alter IP2 AC=1
+ac lin 1 1k 1k
+wrdata node-2.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP2 AC=0
+alter IP3 AC=1
+ac lin 1 1k 1k
+wrdata node-3.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP3 AC=0
+alter IP4 AC=1
+ac lin 1 1k 1k
+wrdata node-4.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP4 AC=0
+alter IP5 AC=1
+ac lin 1 1k 1k
+wrdata node-5.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP5 AC=0
+alter IP6 AC=1
+ac lin 1 1k 1k
+wrdata node-6.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP6 AC=0
+alter IP7 AC=1
+ac lin 1 1k 1k
+wrdata node-7.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP7 AC=0
+alter IP8 AC=1
+ac lin 1 1k 1k
+wrdata node-8.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP8 AC=0
+alter IP9 AC=1
+ac lin 1 1k 1k
+wrdata node-9.txt v(op) v(om) v(s) v(vb) v(sense) v(sc) v(vm) v(vc) v(gp) v(gm)
+alter IP9 AC=0
+quit
+.endc
+.end

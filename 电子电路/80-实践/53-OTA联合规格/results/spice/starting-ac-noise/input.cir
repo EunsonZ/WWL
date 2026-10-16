@@ -1,0 +1,65 @@
+11 MOS plus explicit gate RC and bridge capacitors; no PDK
+.options reltol=1e-8 abstol=1e-15 vntol=1e-10 gmin=1e-18
+.temp 27
+.model NN NMOS LEVEL=1 KP=0.0001 VTO=0.6 LAMBDA=.04 GAMMA=0 PHI=.6 TNOM=27 TOX=1e3 IS=1e-30 CGSO=0 CGDO=0 CGBO=0 CBD=0 CBS=0 NLEV=2 KF=0
+.model PP PMOS LEVEL=1 KP=5e-05 VTO=-0.7 LAMBDA=.04 GAMMA=0 PHI=.6 TNOM=27 TOX=1e3 IS=1e-30 CGSO=0 CGDO=0 CGBO=0 CBD=0 CBS=0 NLEV=2 KF=0
+VDD vdd 0 3.3
+VREF ref 0 1.65
+IREF vdd vb 5e-05
+VD ud 0 DC 0 AC 1
+VCIN uc 0 DC 0 AC 0
+BGP dp 0 V={1.5+v(uc)+.5*(v(ud)+0.1*(v(op)-v(om)))}
+BGM dm 0 V={1.5+v(uc)-.5*(v(ud)+0.1*(v(op)-v(om)))}
+RGp gp dp 20000
+RGm gm dm 20000
+M1 op gp s 0 NN W=4u L=1u
+M2 om gm s 0 NN W=4u L=1u
+M3 op vc vdd vdd PP W=4e-06 L=1u
+M4 om vc vdd vdd PP W=4u L=1u
+M5 s vb 0 0 NN W=10u L=1u
+M6 vb vb 0 0 NN W=10u L=1u
+M7 vm sense sc 0 NN W=1u L=50u
+M8 vc ref sc 0 NN W=1u L=50u
+M9 sc vb 0 0 NN W=1u L=10u
+M10 vm vm vdd vdd PP W=1u L=50u
+M11 vc vm vdd vdd PP W=1u L=50u
+RDp op sense 2000000
+RDm om sense 2000000
+C_op op 0 2e-11
+C_om om 0 2e-11
+C_s s 0 5e-12
+C_vb vb 0 5e-12
+C_sense sense 0 5e-12
+C_sc sc 0 5e-12
+C_vm vm 0 5e-12
+C_vc vc 0 1e-08
+C_gp gp 0 5e-10
+C_gm gm 0 5e-10
+CB_op op vc 5e-12
+CB_om om vc 5e-12
+BOBS obs 0 V={(v(op)+v(om))/2}
+.control
+set noaskquit
+set numdgt=15
+set wr_vecnames
+set wr_singlescale
+ac dec 80 1 100k
+wrdata ac-dm.txt v(op) v(om)
+alter VD AC=0
+alter VCIN AC=1
+ac dec 80 1 100k
+wrdata ac-cm.txt v(op) v(om)
+alter VD AC=1
+alter VCIN AC=0
+set sqrnoise
+noise v(op,om) VD dec 80 1 100k 1
+wrdata integrated-dm.txt onoise_total inoise_total
+setplot previous
+wrdata noise-dm.txt onoise_spectrum inoise_spectrum onoise_m1_id onoise_m2_id onoise_m3_id onoise_m4_id onoise_m5_id onoise_m6_id onoise_m7_id onoise_m8_id onoise_m9_id onoise_m10_id onoise_m11_id onoise_rdp_thermal onoise_rdm_thermal onoise_rgp_thermal onoise_rgm_thermal
+noise v(obs) VD dec 80 1 100k 1
+wrdata integrated-cm.txt onoise_total
+setplot previous
+wrdata noise-cm.txt onoise_spectrum onoise_m1_id onoise_m2_id onoise_m3_id onoise_m4_id onoise_m5_id onoise_m6_id onoise_m7_id onoise_m8_id onoise_m9_id onoise_m10_id onoise_m11_id onoise_rdp_thermal onoise_rdm_thermal onoise_rgp_thermal onoise_rgm_thermal
+quit
+.endc
+.end

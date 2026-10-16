@@ -1,0 +1,224 @@
+{
+  "store": {
+    "pid": 5333,
+    "client": {
+      "current": {
+        "actor": "D",
+        "intent_id": "android-D-recovery-1",
+        "start": 690,
+        "end": 720,
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "phase": "unknown",
+        "result": null
+      },
+      "draft": {
+        "start_raw": "690",
+        "end_raw": "720"
+      },
+      "intents": [
+        {
+          "actor": "D",
+          "intent_id": "android-D-recovery-1",
+          "start": 690,
+          "end": 720,
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+          "phase": "unknown",
+          "result": null
+        }
+      ],
+      "trace": [
+        {
+          "seq": 1,
+          "kind": "process_store_open",
+          "detail": "inflight is uncertain, never inferred rejected"
+        },
+        {
+          "seq": 2,
+          "kind": "activity_create",
+          "detail": "pid=4866 instance=bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 3,
+          "kind": "activity_resume",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 4,
+          "kind": "activity_pause",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 5,
+          "kind": "activity_resume",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 6,
+          "kind": "ui_ignored",
+          "detail": "refresh:bd222972-63fe-4fb0-8075-030b8289d422:3"
+        },
+        {
+          "seq": 7,
+          "kind": "persisted_before_send",
+          "detail": "android-D-recovery-1"
+        },
+        {
+          "seq": 8,
+          "kind": "activity_pause",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 9,
+          "kind": "activity_resume",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 10,
+          "kind": "ui_ignored",
+          "detail": "refresh:bd222972-63fe-4fb0-8075-030b8289d422:7"
+        },
+        {
+          "seq": 11,
+          "kind": "sending",
+          "detail": "android-D-recovery-1"
+        },
+        {
+          "seq": 12,
+          "kind": "send_same_identity",
+          "detail": "android-D-recovery-1"
+        },
+        {
+          "seq": 13,
+          "kind": "unknown",
+          "detail": "android-D-recovery-1"
+        },
+        {
+          "seq": 14,
+          "kind": "attempt_uncertain",
+          "detail": "android-D-recovery-1"
+        },
+        {
+          "seq": 15,
+          "kind": "activity_pause",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 16,
+          "kind": "activity_stop",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 17,
+          "kind": "activity_resume",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 18,
+          "kind": "activity_pause",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 19,
+          "kind": "activity_stop",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 20,
+          "kind": "process_store_open",
+          "detail": "inflight is uncertain, never inferred rejected"
+        },
+        {
+          "seq": 21,
+          "kind": "activity_create",
+          "detail": "pid=5333 instance=7e0a2b11-c57c-494f-8a19-066d19d6bf75"
+        },
+        {
+          "seq": 22,
+          "kind": "activity_resume",
+          "detail": "7e0a2b11-c57c-494f-8a19-066d19d6bf75"
+        }
+      ]
+    },
+    "mock_authority": {
+      "bookings": [
+        {
+          "id": 1,
+          "owner": "A",
+          "start": 540,
+          "end": 600,
+          "policy_version": 1
+        },
+        {
+          "id": 2,
+          "owner": "B",
+          "start": 600,
+          "end": 630,
+          "policy_version": 1
+        },
+        {
+          "id": 3,
+          "owner": "C",
+          "start": 650,
+          "end": 680,
+          "policy_version": 1
+        },
+        {
+          "id": 4,
+          "owner": "D",
+          "start": 690,
+          "end": 720,
+          "policy_version": 2
+        }
+      ],
+      "intents": [
+        {
+          "protocol": "wwl-reservation-v2/1",
+          "actor": "D",
+          "intent_id": "android-D-recovery-1",
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+          "policy_version": 2,
+          "writer_epoch": 2,
+          "status": "accepted",
+          "reason": "created",
+          "booking": {
+            "id": 4,
+            "owner": "D",
+            "start": 690,
+            "end": 720,
+            "policy_version": 2
+          },
+          "event_id": "booking:4:created"
+        }
+      ],
+      "outbox": [
+        {
+          "protocol": "wwl-reservation-v2/1",
+          "event_id": "booking:4:created",
+          "kind": "booking_created",
+          "booking": {
+            "id": 4,
+            "owner": "D",
+            "start": 690,
+            "end": 720,
+            "policy_version": 2
+          },
+          "actor": "D",
+          "intent_id": "android-D-recovery-1",
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867"
+        }
+      ]
+    }
+  },
+  "ui": {
+    "pid": 5333,
+    "activity_instance": "7e0a2b11-c57c-494f-8a19-066d19d6bf75",
+    "generation": 1,
+    "foreground": true,
+    "actor": "D",
+    "intent_id": "android-D-recovery-1",
+    "start_raw": "690",
+    "end_raw": "720",
+    "message": "结果未知：保留原意图和输入，请查询/同意图重放。",
+    "phase": "unknown"
+  }
+}

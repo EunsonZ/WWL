@@ -1,0 +1,58 @@
+{
+  "protocol": "wwl-reservation-v2/1",
+  "actor": "D",
+  "policy_version": 2,
+  "writer_epoch": 2,
+  "legacy": [
+    {
+      "owner": "A",
+      "start": 540,
+      "end": 600,
+      "policy_version": 1
+    },
+    {
+      "owner": "B",
+      "start": 600,
+      "end": 630,
+      "policy_version": 1
+    },
+    {
+      "owner": "C",
+      "start": 650,
+      "end": 680,
+      "policy_version": 1
+    }
+  ],
+  "recovery": {
+    "intent_id": "android-D-recovery-1",
+    "start": 690,
+    "end": 720,
+    "canonical": "{\"actor\":\"D\",\"end\":720,\"op\":\"reserve\",\"policy_version\":2,\"start\":690}",
+    "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+    "expected_booking_id": 4
+  },
+  "new_screen": {
+    "intent_id": "android-D-next-1",
+    "start": 810,
+    "end": 840,
+    "expected_phase": "queued"
+  },
+  "draft_after_edit": {
+    "start_raw": "bad",
+    "end_raw": "840"
+  },
+  "failure_modes": [
+    "drop after mock commit",
+    "before mock commit rollback",
+    "delay reply 3 seconds"
+  ],
+  "identity_oracle": [
+    "actor/id",
+    "original normalized parameters",
+    "fingerprint",
+    "original accepted result",
+    "booking id",
+    "event id"
+  ],
+  "not_real_network": true
+}

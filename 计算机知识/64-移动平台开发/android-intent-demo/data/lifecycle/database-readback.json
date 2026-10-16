@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "sqlite_version": "3.53.4",
+  "read_only": true,
+  "checks": [
+    {
+      "label": "client integrity_check",
+      "pass": true
+    },
+    {
+      "label": "authority integrity_check",
+      "pass": true
+    },
+    {
+      "label": "client old exact identity/params/fp/accepted",
+      "pass": true
+    },
+    {
+      "label": "old result equals original pre-kill accepted",
+      "pass": true
+    },
+    {
+      "label": "authority exact original outcome",
+      "pass": true
+    },
+    {
+      "label": "exact four bookings",
+      "pass": true
+    },
+    {
+      "label": "new exact queued no result",
+      "pass": true
+    },
+    {
+      "label": "two client records",
+      "pass": true
+    },
+    {
+      "label": "one authority identity",
+      "pass": true
+    },
+    {
+      "label": "current points to new durable intent",
+      "pass": true
+    },
+    {
+      "label": "invalid raw draft persisted",
+      "pass": true
+    },
+    {
+      "label": "exact one original effect event",
+      "pass": true
+    }
+  ],
+  "bookings": [
+    [
+      1,
+      "A",
+      540,
+      600,
+      1
+    ],
+    [
+      2,
+      "B",
+      600,
+      630,
+      1
+    ],
+    [
+      3,
+      "C",
+      650,
+      680,
+      1
+    ],
+    [
+      4,
+      "D",
+      690,
+      720,
+      2
+    ]
+  ],
+  "client_intents": [
+    [
+      "D",
+      "android-D-next-1",
+      810,
+      840,
+      "365b9197a3397f7ee50806306d1e1201585232f3d9d927aac8b975413b6372dc",
+      "queued",
+      null
+    ],
+    [
+      "D",
+      "android-D-recovery-1",
+      690,
+      720,
+      "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+      "accepted",
+      {
+        "protocol": "wwl-reservation-v2/1",
+        "actor": "D",
+        "intent_id": "android-D-recovery-1",
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "policy_version": 2,
+        "writer_epoch": 2,
+        "status": "accepted",
+        "reason": "created",
+        "booking": {
+          "id": 4,
+          "owner": "D",
+          "start": 690,
+          "end": 720,
+          "policy_version": 2
+        },
+        "event_id": "booking:4:created"
+      }
+    ]
+  ],
+  "journal_mode_at_read": {
+    "client": "delete",
+    "authority": "delete"
+  },
+  "sha256": {
+    "client.db": "59e7b5e3a1c24bc56716fdcf0a18de55ff1b752d68b08d4ed4e4d49fa14bc26a",
+    "mock-authority.db": "e687c9dc0478b1607d9aeb94db5509f04c9eea0691fe23e526a7b615b5c8fa52"
+  },
+  "limit": "Integrity plus exact required business rows are verified; no generic WAL/power-loss completeness guarantee is inferred."
+}

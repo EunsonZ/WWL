@@ -1,0 +1,132 @@
+{
+  "current_source_sha256": {
+    "settings.gradle.kts": "ed65094ee3db39c981da43b916dd216a2315809494df913aed8b3227dc559e7d",
+    "build.gradle.kts": "9cabc320df7c8a42949fc637fede81fb2ab075ff23abd821f791451e10f966d5",
+    "gradle.properties": "cf5dabad46d362747c848cc404414b8fc92f121ca7d1bd26d2f49a156bcfb757",
+    "app/build.gradle.kts": "9d61aba3078d41165a09341299d6c58bf26a640b37ead272bd6f83cdd1503d29",
+    "app/src/main/AndroidManifest.xml": "09f0efc02afaf8b36b9139f6c63be7b5bd10c57c58cc0ef5fff20001190d9b9b",
+    "app/src/androidTest/java/org/wwl/intentdemo/ActivityStateTest.kt": "f8064a4d236b27ed44015ff942c17fb424109c5aadccec4fad2cb95c3fe820c3",
+    "app/src/androidTest/java/org/wwl/intentdemo/StoreInstrumentedTest.kt": "d822156c9dfdbf24776bdc2679cf095d6564bc78401226825ddd4fad932ef917",
+    "app/src/main/java/org/wwl/intentdemo/IntentApp.kt": "190b90246f0a9409a9d08c053f3ceb08a4454c935e3582719f2501cf1eaacc60",
+    "app/src/main/java/org/wwl/intentdemo/MainActivity.kt": "26b3a43779ed64c1a6896a1c08d7741b25ab8e3333ed2d2a666bf2c169ee0d42",
+    "app/src/main/java/org/wwl/intentdemo/Protocol.kt": "38987217b6fc69d656b7dec7a7c02f2dacebb0772c1fe58e8d042b5f8075f86e",
+    "app/src/main/java/org/wwl/intentdemo/Stores.kt": "3a25fcc2eb3fbc5b08235ca53754f8d809161ae108017115c9ba74d6947af704",
+    "app/src/test/java/org/wwl/intentdemo/ProtocolTest.kt": "99de64666243f8764edc84e8ab8b2f2de26ace85658d4e40723ab85f5309a618",
+    "tools/check_lifecycle.py": "a05e2c7d2cfaa9305c21dcaafe98a021311a3f609f0a55ea6cc6207143daaa1c",
+    "lab-inputs.json": "dd9e5c6d28cdd93c750b854d0835cb4fdae219f19539690978c8a16eef269c15"
+  },
+  "final_apk_sha256": {
+    "app/build/outputs/apk/debug/app-debug.apk": "bbf748c69d9c6a1a4fd9b30e2b6c9b0546669d1d810ed9dea2ab5b8891074402",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "e106c9a8aacf0f8ec566bbe3acfbb279769e3e49d64d8756a65ef5c1a2ec249f"
+  },
+  "first_store_logic_unchanged": {
+    "Stores.kt": true,
+    "Protocol.kt": true,
+    "IntentApp.kt": true
+  },
+  "junit": {
+    "jvm-3.xml": {
+      "tests": "3",
+      "failures": "0",
+      "time_s": "0.016",
+      "cases": [
+        {
+          "class": "org.wwl.intentdemo.ProtocolTest",
+          "name": "textAndEscaping",
+          "failed": false
+        },
+        {
+          "class": "org.wwl.intentdemo.ProtocolTest",
+          "name": "canonicalKnownValue",
+          "failed": false
+        },
+        {
+          "class": "org.wwl.intentdemo.ProtocolTest",
+          "name": "intervalAndBuffer",
+          "failed": false
+        }
+      ]
+    },
+    "android-first-6pass-2fail.xml": {
+      "tests": "8",
+      "failures": "2",
+      "time_s": "91.939",
+      "cases": [
+        {
+          "class": "org.wwl.intentdemo.ActivityStateTest",
+          "name": "recreateAndRealOrientationKeepDurableIdentityAndBundleDraft",
+          "failed": true
+        },
+        {
+          "class": "org.wwl.intentdemo.ActivityStateTest",
+          "name": "immediateSendWhilePersistingDoesNotSendOldDisplayedIntent",
+          "failed": true
+        },
+        {
+          "class": "org.wwl.intentdemo.StoreInstrumentedTest",
+          "name": "bufferAndInvalidIntervalAreDurableBusinessRejections",
+          "failed": false
+        },
+        {
+          "class": "org.wwl.intentdemo.StoreInstrumentedTest",
+          "name": "sameKeyDifferentParametersCannotReplaceOriginal",
+          "failed": false
+        },
+        {
+          "class": "org.wwl.intentdemo.StoreInstrumentedTest",
+          "name": "committedLostReplyReopensAndReplaysOriginalDecision",
+          "failed": false
+        },
+        {
+          "class": "org.wwl.intentdemo.StoreInstrumentedTest",
+          "name": "queuedBeforeAnySendSurvivesReopen",
+          "failed": false
+        },
+        {
+          "class": "org.wwl.intentdemo.StoreInstrumentedTest",
+          "name": "rollbackIsUnknownNotFinalRejection",
+          "failed": false
+        },
+        {
+          "class": "org.wwl.intentdemo.StoreInstrumentedTest",
+          "name": "malformedResultsAreNotDisplayedAsAccepted",
+          "failed": false
+        }
+      ]
+    },
+    "android-fixed-2pass.xml": {
+      "tests": "2",
+      "failures": "0",
+      "time_s": "4.102",
+      "cases": [
+        {
+          "class": "org.wwl.intentdemo.ActivityStateTest",
+          "name": "recreateAndRealOrientationKeepDurableIdentityAndBundleDraft",
+          "failed": false
+        },
+        {
+          "class": "org.wwl.intentdemo.ActivityStateTest",
+          "name": "immediateSendWhilePersistingDoesNotSendOldDisplayedIntent",
+          "failed": false
+        }
+      ]
+    }
+  },
+  "scope": "Final APK and test APK built from matching canonical source copy; Kotlin/Gradle/manifest files unchanged since that build. Complete same-ID rotation/lifecycle uses the current separately executed Python driver; earlier resumed driver is preserved under data/lifecycle. This is not deterministic APK reproduction or API26/real-network proof.",
+  "files_in_final_build_copy_sha256": {
+    "settings.gradle.kts": "ed65094ee3db39c981da43b916dd216a2315809494df913aed8b3227dc559e7d",
+    "build.gradle.kts": "9cabc320df7c8a42949fc637fede81fb2ab075ff23abd821f791451e10f966d5",
+    "gradle.properties": "cf5dabad46d362747c848cc404414b8fc92f121ca7d1bd26d2f49a156bcfb757",
+    "app/build.gradle.kts": "9d61aba3078d41165a09341299d6c58bf26a640b37ead272bd6f83cdd1503d29",
+    "app/src/main/AndroidManifest.xml": "09f0efc02afaf8b36b9139f6c63be7b5bd10c57c58cc0ef5fff20001190d9b9b",
+    "app/src/androidTest/java/org/wwl/intentdemo/ActivityStateTest.kt": "f8064a4d236b27ed44015ff942c17fb424109c5aadccec4fad2cb95c3fe820c3",
+    "app/src/androidTest/java/org/wwl/intentdemo/StoreInstrumentedTest.kt": "d822156c9dfdbf24776bdc2679cf095d6564bc78401226825ddd4fad932ef917",
+    "app/src/main/java/org/wwl/intentdemo/IntentApp.kt": "190b90246f0a9409a9d08c053f3ceb08a4454c935e3582719f2501cf1eaacc60",
+    "app/src/main/java/org/wwl/intentdemo/MainActivity.kt": "26b3a43779ed64c1a6896a1c08d7741b25ab8e3333ed2d2a666bf2c169ee0d42",
+    "app/src/main/java/org/wwl/intentdemo/Protocol.kt": "38987217b6fc69d656b7dec7a7c02f2dacebb0772c1fe58e8d042b5f8075f86e",
+    "app/src/main/java/org/wwl/intentdemo/Stores.kt": "3a25fcc2eb3fbc5b08235ca53754f8d809161ae108017115c9ba74d6947af704",
+    "app/src/test/java/org/wwl/intentdemo/ProtocolTest.kt": "99de64666243f8764edc84e8ab8b2f2de26ace85658d4e40723ab85f5309a618"
+  },
+  "complete_lifecycle_driver_sha256": "a05e2c7d2cfaa9305c21dcaafe98a021311a3f609f0a55ea6cc6207143daaa1c",
+  "historical_resumed_driver_sha256": "94d6d3e261fe7007d5d3ec9adfafd6297dd1758493c66ec49ba20c6e2ce450f4"
+}

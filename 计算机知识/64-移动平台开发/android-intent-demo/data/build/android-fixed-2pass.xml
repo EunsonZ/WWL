@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="org.wwl.intentdemo.ActivityStateTest" tests="2" failures="0" errors="0" skipped="0" time="4.102" timestamp="2026-10-16T19:08:24" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5580 - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="recreateAndRealOrientationKeepDurableIdentityAndBundleDraft" classname="org.wwl.intentdemo.ActivityStateTest" time="1.091" />
+  <testcase name="immediateSendWhilePersistingDoesNotSendOldDisplayedIntent" classname="org.wwl.intentdemo.ActivityStateTest" time="2.54" />
+</testsuite>

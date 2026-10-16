@@ -1,0 +1,1127 @@
+[
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "getprop",
+      "ro.kernel.qemu"
+    ],
+    "returncode": 0,
+    "stdout": "1\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "getprop",
+      "ro.build.version.sdk"
+    ],
+    "returncode": 0,
+    "stdout": "35\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "getprop",
+      "ro.build.version.release"
+    ],
+    "returncode": 0,
+    "stdout": "15\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "getprop",
+      "ro.product.cpu.abi"
+    ],
+    "returncode": 0,
+    "stdout": "arm64-v8a\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am",
+      "start",
+      "-W",
+      "-n",
+      "org.wwl.intentdemo/.MainActivity"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.intentdemo/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: org.wwl.intentdemo/.MainActivity\nTotalTime: 465\nWaitTime: 466\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/store-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"client\": {\n    \"current\": null,\n    \"draft\": {\n      \"start_raw\": \"690\",\n      \"end_raw\": \"720\"\n    },\n    \"intents\": [],\n    \"trace\": [\n      {\n        \"seq\": 1,\n        \"kind\": \"process_store_open\",\n        \"detail\": \"inflight is uncertain, never inferred rejected\"\n      },\n      {\n        \"seq\": 2,\n        \"kind\": \"activity_create\",\n        \"detail\": \"pid=4866 instance=bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 3,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      }\n    ]\n  },\n  \"mock_authority\": {\n    \"bookings\": [\n      {\n        \"id\": 1,\n        \"owner\": \"A\",\n        \"start\": 540,\n        \"end\": 600,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 2,\n        \"owner\": \"B\",\n        \"start\": 600,\n        \"end\": 630,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 3,\n        \"owner\": \"C\",\n        \"start\": 650,\n        \"end\": 680,\n        \"policy_version\": 1\n      }\n    ],\n    \"intents\": [],\n    \"outbox\": []\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/ui-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"activity_instance\": \"bd222972-63fe-4fb0-8075-030b8289d422\",\n  \"generation\": 1,\n  \"foreground\": true,\n  \"actor\": null,\n  \"intent_id\": null,\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"没有待显示意图；草稿不是已预约。\",\n  \"phase\": null\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am",
+      "start",
+      "-W",
+      "-n",
+      "org.wwl.intentdemo/.MainActivity",
+      "--es",
+      "lab_command",
+      "queue",
+      "--es",
+      "intent_id",
+      "android-D-recovery-1",
+      "--es",
+      "start_raw",
+      "690",
+      "--es",
+      "end_raw",
+      "720"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.intentdemo/.MainActivity (has extras) }\nWarning: Activity not started, intent has been delivered to currently running top-most instance.\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: org.wwl.intentdemo/.MainActivity\nTotalTime: 0\nWaitTime: 10\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/store-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"client\": {\n    \"current\": null,\n    \"draft\": {\n      \"start_raw\": \"690\",\n      \"end_raw\": \"720\"\n    },\n    \"intents\": [],\n    \"trace\": [\n      {\n        \"seq\": 1,\n        \"kind\": \"process_store_open\",\n        \"detail\": \"inflight is uncertain, never inferred rejected\"\n      },\n      {\n        \"seq\": 2,\n        \"kind\": \"activity_create\",\n        \"detail\": \"pid=4866 instance=bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 3,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 4,\n        \"kind\": \"activity_pause\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      }\n    ]\n  },\n  \"mock_authority\": {\n    \"bookings\": [\n      {\n        \"id\": 1,\n        \"owner\": \"A\",\n        \"start\": 540,\n        \"end\": 600,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 2,\n        \"owner\": \"B\",\n        \"start\": 600,\n        \"end\": 630,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 3,\n        \"owner\": \"C\",\n        \"start\": 650,\n        \"end\": 680,\n        \"policy_version\": 1\n      }\n    ],\n    \"intents\": [],\n    \"outbox\": []\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/ui-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"activity_instance\": \"bd222972-63fe-4fb0-8075-030b8289d422\",\n  \"generation\": 1,\n  \"foreground\": true,\n  \"actor\": null,\n  \"intent_id\": null,\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"没有待显示意图；草稿不是已预约。\",\n  \"phase\": null\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/store-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"client\": {\n    \"current\": {\n      \"actor\": \"D\",\n      \"intent_id\": \"android-D-recovery-1\",\n      \"start\": 690,\n      \"end\": 720,\n      \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n      \"phase\": \"queued\",\n      \"result\": null\n    },\n    \"draft\": {\n      \"start_raw\": \"690\",\n      \"end_raw\": \"720\"\n    },\n    \"intents\": [\n      {\n        \"actor\": \"D\",\n        \"intent_id\": \"android-D-recovery-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      }\n    ],\n    \"trace\": [\n      {\n        \"seq\": 1,\n        \"kind\": \"process_store_open\",\n        \"detail\": \"inflight is uncertain, never inferred rejected\"\n      },\n      {\n        \"seq\": 2,\n        \"kind\": \"activity_create\",\n        \"detail\": \"pid=4866 instance=bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 3,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 4,\n        \"kind\": \"activity_pause\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 5,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 6,\n        \"kind\": \"ui_ignored\",\n        \"detail\": \"refresh:bd222972-63fe-4fb0-8075-030b8289d422:3\"\n      },\n      {\n        \"seq\": 7,\n        \"kind\": \"persisted_before_send\",\n        \"detail\": \"android-D-recovery-1\"\n      }\n    ]\n  },\n  \"mock_authority\": {\n    \"bookings\": [\n      {\n        \"id\": 1,\n        \"owner\": \"A\",\n        \"start\": 540,\n        \"end\": 600,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 2,\n        \"owner\": \"B\",\n        \"start\": 600,\n        \"end\": 630,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 3,\n        \"owner\": \"C\",\n        \"start\": 650,\n        \"end\": 680,\n        \"policy_version\": 1\n      }\n    ],\n    \"intents\": [],\n    \"outbox\": []\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/ui-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"activity_instance\": \"bd222972-63fe-4fb0-8075-030b8289d422\",\n  \"generation\": 5,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"android-D-recovery-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "returncode": 0,
+    "stdout": "<binary>",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am",
+      "start",
+      "-W",
+      "-n",
+      "org.wwl.intentdemo/.MainActivity",
+      "--es",
+      "lab_command",
+      "drop"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.intentdemo/.MainActivity (has extras) }\nWarning: Activity not started, intent has been delivered to currently running top-most instance.\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: org.wwl.intentdemo/.MainActivity\nTotalTime: 0\nWaitTime: 16\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/store-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"client\": {\n    \"current\": {\n      \"actor\": \"D\",\n      \"intent_id\": \"android-D-recovery-1\",\n      \"start\": 690,\n      \"end\": 720,\n      \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n      \"phase\": \"queued\",\n      \"result\": null\n    },\n    \"draft\": {\n      \"start_raw\": \"690\",\n      \"end_raw\": \"720\"\n    },\n    \"intents\": [\n      {\n        \"actor\": \"D\",\n        \"intent_id\": \"android-D-recovery-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      }\n    ],\n    \"trace\": [\n      {\n        \"seq\": 1,\n        \"kind\": \"process_store_open\",\n        \"detail\": \"inflight is uncertain, never inferred rejected\"\n      },\n      {\n        \"seq\": 2,\n        \"kind\": \"activity_create\",\n        \"detail\": \"pid=4866 instance=bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 3,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 4,\n        \"kind\": \"activity_pause\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 5,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 6,\n        \"kind\": \"ui_ignored\",\n        \"detail\": \"refresh:bd222972-63fe-4fb0-8075-030b8289d422:3\"\n      },\n      {\n        \"seq\": 7,\n        \"kind\": \"persisted_before_send\",\n        \"detail\": \"android-D-recovery-1\"\n      },\n      {\n        \"seq\": 8,\n        \"kind\": \"activity_pause\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 9,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      }\n    ]\n  },\n  \"mock_authority\": {\n    \"bookings\": [\n      {\n        \"id\": 1,\n        \"owner\": \"A\",\n        \"start\": 540,\n        \"end\": 600,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 2,\n        \"owner\": \"B\",\n        \"start\": 600,\n        \"end\": 630,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 3,\n        \"owner\": \"C\",\n        \"start\": 650,\n        \"end\": 680,\n        \"policy_version\": 1\n      }\n    ],\n    \"intents\": [],\n    \"outbox\": []\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/ui-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"activity_instance\": \"bd222972-63fe-4fb0-8075-030b8289d422\",\n  \"generation\": 8,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"android-D-recovery-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/store-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"client\": {\n    \"current\": {\n      \"actor\": \"D\",\n      \"intent_id\": \"android-D-recovery-1\",\n      \"start\": 690,\n      \"end\": 720,\n      \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n      \"phase\": \"unknown\",\n      \"result\": null\n    },\n    \"draft\": {\n      \"start_raw\": \"690\",\n      \"end_raw\": \"720\"\n    },\n    \"intents\": [\n      {\n        \"actor\": \"D\",\n        \"intent_id\": \"android-D-recovery-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"unknown\",\n        \"result\": null\n      }\n    ],\n    \"trace\": [\n      {\n        \"seq\": 1,\n        \"kind\": \"process_store_open\",\n        \"detail\": \"inflight is uncertain, never inferred rejected\"\n      },\n      {\n        \"seq\": 2,\n        \"kind\": \"activity_create\",\n        \"detail\": \"pid=4866 instance=bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 3,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 4,\n        \"kind\": \"activity_pause\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 5,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 6,\n        \"kind\": \"ui_ignored\",\n        \"detail\": \"refresh:bd222972-63fe-4fb0-8075-030b8289d422:3\"\n      },\n      {\n        \"seq\": 7,\n        \"kind\": \"persisted_before_send\",\n        \"detail\": \"android-D-recovery-1\"\n      },\n      {\n        \"seq\": 8,\n        \"kind\": \"activity_pause\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 9,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"bd222972-63fe-4fb0-8075-030b8289d422\"\n      },\n      {\n        \"seq\": 10,\n        \"kind\": \"ui_ignored\",\n        \"detail\": \"refresh:bd222972-63fe-4fb0-8075-030b8289d422:7\"\n      },\n      {\n        \"seq\": 11,\n        \"kind\": \"sending\",\n        \"detail\": \"android-D-recovery-1\"\n      },\n      {\n        \"seq\": 12,\n        \"kind\": \"send_same_identity\",\n        \"detail\": \"android-D-recovery-1\"\n      },\n      {\n        \"seq\": 13,\n        \"kind\": \"unknown\",\n        \"detail\": \"android-D-recovery-1\"\n      },\n      {\n        \"seq\": 14,\n        \"kind\": \"attempt_uncertain\",\n        \"detail\": \"android-D-recovery-1\"\n      }\n    ]\n  },\n  \"mock_authority\": {\n    \"bookings\": [\n      {\n        \"id\": 1,\n        \"owner\": \"A\",\n        \"start\": 540,\n        \"end\": 600,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 2,\n        \"owner\": \"B\",\n        \"start\": 600,\n        \"end\": 630,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 3,\n        \"owner\": \"C\",\n        \"start\": 650,\n        \"end\": 680,\n        \"policy_version\": 1\n      },\n      {\n        \"id\": 4,\n        \"owner\": \"D\",\n        \"start\": 690,\n        \"end\": 720,\n        \"policy_version\": 2\n      }\n    ],\n    \"intents\": [\n      {\n        \"protocol\": \"wwl-reservation-v2\\/1\",\n        \"actor\": \"D\",\n        \"intent_id\": \"android-D-recovery-1\",\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"policy_version\": 2,\n        \"writer_epoch\": 2,\n        \"status\": \"accepted\",\n        \"reason\": \"created\",\n        \"booking\": {\n          \"id\": 4,\n          \"owner\": \"D\",\n          \"start\": 690,\n          \"end\": 720,\n          \"policy_version\": 2\n        },\n        \"event_id\": \"booking:4:created\"\n      }\n    ],\n    \"outbox\": [\n      {\n        \"protocol\": \"wwl-reservation-v2\\/1\",\n        \"event_id\": \"booking:4:created\",\n        \"kind\": \"booking_created\",\n        \"booking\": {\n          \"id\": 4,\n          \"owner\": \"D\",\n          \"start\": 690,\n          \"end\": 720,\n          \"policy_version\": 2\n        },\n        \"actor\": \"D\",\n        \"intent_id\": \"android-D-recovery-1\",\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\"\n      }\n    ]\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "run-as",
+      "org.wwl.intentdemo",
+      "cat",
+      "files/ui-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 4866,\n  \"activity_instance\": \"bd222972-63fe-4fb0-8075-030b8289d422\",\n  \"generation\": 9,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"android-D-recovery-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"结果未知：保留原意图和输入，请查询\\/同意图重放。\",\n  \"phase\": \"unknown\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "returncode": 0,
+    "stdout": "<binary>",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "input",
+      "keyevent",
+      "KEYCODE_HOME"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am",
+      "kill",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "pidof",
+      "org.wwl.intentdemo"
+    ],
+    "returncode": 0,
+    "stdout": "4866\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "store": {
+    "pid": 4866,
+    "client": {
+      "current": {
+        "actor": "D",
+        "intent_id": "android-D-recovery-1",
+        "start": 690,
+        "end": 720,
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "phase": "queued",
+        "result": null
+      },
+      "draft": {
+        "start_raw": "690",
+        "end_raw": "720"
+      },
+      "intents": [
+        {
+          "actor": "D",
+          "intent_id": "android-D-recovery-1",
+          "start": 690,
+          "end": 720,
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+          "phase": "queued",
+          "result": null
+        }
+      ],
+      "trace": [
+        {
+          "seq": 1,
+          "kind": "process_store_open",
+          "detail": "inflight is uncertain, never inferred rejected"
+        },
+        {
+          "seq": 2,
+          "kind": "activity_create",
+          "detail": "pid=4866 instance=bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 3,
+          "kind": "activity_resume",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 4,
+          "kind": "activity_pause",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 5,
+          "kind": "activity_resume",
+          "detail": "bd222972-63fe-4fb0-8075-030b8289d422"
+        },
+        {
+          "seq": 6,
+          "kind": "ui_ignored",
+          "detail": "refresh:bd222972-63fe-4fb0-8075-030b8289d422:3"
+        },
+        {
+          "seq": 7,
+          "kind": "persisted_before_send",
+          "detail": "android-D-recovery-1"
+        }
+      ]
+    },
+    "mock_authority": {
+      "bookings": [
+        {
+          "id": 1,
+          "owner": "A",
+          "start": 540,
+          "end": 600,
+          "policy_version": 1
+        },
+        {
+          "id": 2,
+          "owner": "B",
+          "start": 600,
+          "end": 630,
+          "policy_version": 1
+        },
+        {
+          "id": 3,
+          "owner": "C",
+          "start": 650,
+          "end": 680,
+          "policy_version": 1
+        }
+      ],
+      "intents": [],
+      "outbox": []
+    }
+  },
+  "ui": {
+    "pid": 4866,
+    "activity_instance": "bd222972-63fe-4fb0-8075-030b8289d422",
+    "generation": 5,
+    "foreground": true,
+    "actor": "D",
+    "intent_id": "android-D-recovery-1",
+    "start_raw": "690",
+    "end_raw": "720",
+    "message": "本地待发送：尚无服务承诺。",
+    "phase": "queued"
+  }
+}

@@ -1,0 +1,33 @@
+# Finite Android environment handoff
+
+This directory contains environment facts and reproduction inputs only. Course raw lifecycle and build evidence
+are already copied to the candidate data/lifecycle/ and data/build/; do not duplicate those directories.
+ENVIRONMENT.md and sdk-versions.json record the actual installed tools. Runtime, SDK, AVD, caches, private adb
+keys and debug signing keys stay outside the published package. API26 and real hardware were not tested.
+
+`start_owned_android.py` is a reproduction-only copy: set WWL175_ENV_ROOT to an isolated root containing
+sdk/, avd/WWL175_API35_20261017.ini and that AVD directory, then run python3 start_owned_android.py.
+It refuses occupied task ports, uses only dedicated server15037 and known emulator5580/5581, 2GiB/2cores.
+It combines the successful process argv with the separately successful explicit emulator registration from
+resume_owned_adb.py. This combined path-parameterized launcher was AST checked only, not re-run.
+The original executed recovery script and actual process argv/registration response are retained here.
+No `adb devices` on default5037 or USB connection is needed. Do not launch against occupied ports/current AVD.
+Create a new AVD only in an explicitly isolated ANDROID_AVD_HOME using the pinned API35 arm64 image.
+
+Actual build shell: source env.sh in the original isolated root, JAVA_TOOL_OPTIONS='-Duser.home=ROOT/java-user -XX:ActiveProcessorCount=1',
+then dedicated Gradle8.9 --no-daemon --max-workers=1 -Dorg.gradle.jvmargs='-Xmx1536m -XX:ActiveProcessorCount=1'
+assembleDebug testDebugUnitTest assembleDebugAndroidTest; local.properties points sdk.dir to that root/sdk.
+Child network proxy properties used 127.0.0.1:6152 for this host only; availability is not portable.
+Use ADB_SERVER_SOCKET=tcp:127.0.0.1:15037 ANDROID_ADB_SERVER_PORT=15037 ANDROID_SERIAL=emulator-5580
+for selected connectedDebugAndroidTest and tools/check_lifecycle.py --adb ROOT/sdk/platform-tools/adb
+--serial emulator-5580 --output NEW_EMPTY_DIRECTORY (through shared run_local.py --timeout180).
+Gradle connected task uninstalls its target afterward; actual driver run reinstalled the current debug APK
+on the synthetic device first, without clearing data. Guest state operations must be scoped to this app.
+
+`verify_exported_databases.py --directory PATH_TO_LIFECYCLE_RAW` opens both exported databases read-only,
+checks integrity and actual required intent/result/bookings/event rows, and writes database-readback.json.
+The successful12 checks are preserved with the raw lifecycle, not inferred from a successful cat command.
+
+Shutdown after reviewers release the window: only the dedicated server/client environment above and
+`adb -P15037 -s emulator-5580 emu kill`, followed by `adb -P15037 kill-server`.
+Never kill user5037, scan devices, or remove AVD data. Verify recorded process identity before PID fallback.

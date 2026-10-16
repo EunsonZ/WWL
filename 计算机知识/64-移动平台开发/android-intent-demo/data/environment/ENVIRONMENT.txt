@@ -1,0 +1,61 @@
+# #175 isolated Android environment and actual layers
+
+Root: /private/tmp/wwl-next-175-env. No global installation or other repository.
+JDK17 actual 17.0.20.1+0 arm64 from existing /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home.
+Gradle8.9 actual --version passes. Official zip source https://services.gradle.org/distributions/gradle-8.9-bin.zip
+SHA256 d725d707bfabd4dfdc958c624003b3c80accc03f7037b5122c4b1d0ef15cecab matches official .sha256.
+Official wrapper v8.9.0 scripts/Jar delivered wrapper-delivery/;
+JarSHA256498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17 matches official wrapper SHA.
+
+SDK commandline-tools19: official https://dl.google.com/android/repository/commandlinetools-mac-13114758_latest.zip,
+repository SHA1 c3e06a1959762e89167d1cbaa988605f6f7c1d24. sdkmanager19 runs on explicitJDK17.
+Repository snapshot/download logs are under downloads/; platform35 rev2, buildtools34.0.0,
+platform-tools37.0.1, emulator37.2.12 (arm64 build16428233), GoogleAPIs35 arm64-v8a r09 installed.
+The stable engine selected by sdkmanager differs from preview entry37.3.4, as expected.
+Current actual revisions are in each sdk/.../source.properties/package.xml; wrappers/SDK tools not course proof.
+Official repository metadata https://dl.google.com/android/repository/repository2-3.xml
+and system images https://dl.google.com/android/repository/sys-img/google_apis/sys-img2-3.xml.
+GoogleAPIs image archive arm64-v8a-35_r09.zip size1778933980B, SHA1 16f5bceca236b2737008977c4aaf826e46a8de7d.
+Engine arm64 archive emulator-darwin_aarch64-16428233.zip size416112708B,
+SHA1 3af4fe44ce82b3d88ae5678a53735f27ad729c15. sdkmanager validates downloaded archive checksums.
+
+SDK manager direct connection stalled; own process jstack showed native network connect (not compile issue).
+Bounded Java probes to official host worked; use of the existing macOS system HTTP proxy127.0.0.1:6152
+as child-only `--proxy=http --proxy_host=127.0.0.1 --proxy_port=6152` completed sdkmanager exit0.
+No system proxy change. Actual install log sdk-install-proxy.log; prior failed/stopped attempts remain separate.
+Final install invocation included platforms;android-35 build-tools;34.0.0 platform-tools emulator
+system-images;android-35;google_apis;arm64-v8a, licenses accepted only within local SDK.
+
+Source env.sh in task subprocess only: explicitJAVA_HOME/SDKROOT/GRADLE_USER_HOME/ANDROID_USER_HOME/AVD_HOME.
+Gradle child uses child-only HTTP/HTTPS proxy properties and Java user.home local java-user/;
+CPUActiveProcessorCount1, max-workers1, heap1536MiB, no persistent Gradle daemon.
+Initial dependency help passed2m14s; first cold APK/unit/test-APK build passed57s.
+After author race-guard revision, fresh course-final build passed14s (69tasks).
+The first connectedDebugAndroidTest had 8 cases: 6 store PASS and 2 ActivityScenario launch failures.
+Logcat traced the failed launcher matching to MainActivity replacing launcher Intent identity.
+After the author's narrow source correction, course-fixed rebuilt APK/test APK and JVM3 PASS;
+a selected re-run of both Activity tests PASS (course-fixed-connected.log, 12s).
+Raw XML/log/source identities are already separately delivered by the author under project/data/build/.
+External lifecycle resumed raw23 assertions and actual exported SQLite12 checks PASS are under
+project/data/lifecycle/. The initial HOME/am kill did not kill the retained previous process;
+the resumed driver verified exact own package cmdline and used run-as SIGKILL. This is not LMK evidence.
+A later fresh same-intent rotation/lifecycle extension passed31 assertions plus12 actual SQLite checks.
+Its separate lifecycle-rotation-final raw records same PID5786 rotation0→90 with new Activity and unchanged
+FIRST id/fingerprint, restored free rotation mode, then exact own-package SIGKILL and new PID6107 recovery.
+Original/resumed earlier raw is retained separately; fresh run cleared only synthetic org.wwl.intentdemo data.
+
+Own AVD WWL175_API35_20261017, API35arm64, memory2048MiB/cores2; no existing AVD touched.
+Own adb server localhost15037, ANDROID_ADB_SERVER_PORT15037, ADB_SERVER_SOCKET=tcp:127.0.0.1:15037.
+ADB_LOCAL_TRANSPORT_MAX_PORT0 disables local automatic emulator scan; ADB_MDNS_AUTO_CONNECT0;
+--one-device WWL175_NO_PHYSICAL_DEVICE excludes physical USB. Own adbkey under android-user/.
+Own emulator console5580/adb5581/gRPC18554; actualserial emulator-5580. boot_completed=1 recorded.
+Qt CPUfeature detection fails in sandbox (-version says noNEON), while approved outside-sandbox -version
+and actualownAVDboot succeed. No system/driver install performed.
+
+Initial adb launch used mutually-exclusive -P/-L, then numeric-host -L was unsupported; both failedlogs were
+inspected. Only task port15037 auto-started instance was stopped, never user default5037.
+Correct dedicated server uses `adb -L tcp:localhost:15037 --one-device WWL175_NO_PHYSICAL_DEVICE server nodaemon`.
+Only known own emulator5581 was explicitly registered via host:emulator:5581, no port/device discovery.
+Actual recovery script resume_owned_adb.py, processes/argv/env in android-runtime/owned-processes.json.
+start_owned_android.py corrected for futurefreshport use; not rerun against already running ownAVD.
+Do not publish adb privatekey/debugkeystore, SDK/runtime/AVD/caches. Package only source/evidence/build outputs as needed.

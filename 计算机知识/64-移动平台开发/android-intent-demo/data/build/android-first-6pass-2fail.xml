@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="org.wwl.intentdemo.ActivityStateTest" tests="8" failures="2" errors="0" skipped="0" time="91.939" timestamp="2026-10-16T19:03:07" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5580 - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="recreateAndRealOrientationKeepDurableIdentityAndBundleDraft" classname="org.wwl.intentdemo.ActivityStateTest" time="45.42">
+    <failure>java.lang.AssertionError: Activity never becomes requested state "[STARTED, DESTROYED, RESUMED, CREATED]" (last lifecycle transition = "PRE_ON_CREATE")
+at androidx.test.core.app.ActivityScenario.waitForActivityToBecomeAnyOf(ActivityScenario.java:454)
+at androidx.test.core.app.ActivityScenario.launchInternal(ActivityScenario.java:380)
+at androidx.test.core.app.ActivityScenario.launch(ActivityScenario.java:203)
+at org.wwl.intentdemo.ActivityStateTest.recreateAndRealOrientationKeepDurableIdentityAndBundleDraft(ActivityStateTest.kt:39)
+</failure>
+  </testcase>
+  <testcase name="immediateSendWhilePersistingDoesNotSendOldDisplayedIntent" classname="org.wwl.intentdemo.ActivityStateTest" time="45.242">
+    <failure>java.lang.AssertionError: Activity never becomes requested state "[STARTED, DESTROYED, RESUMED, CREATED]" (last lifecycle transition = "PRE_ON_CREATE")
+at androidx.test.core.app.ActivityScenario.waitForActivityToBecomeAnyOf(ActivityScenario.java:454)
+at androidx.test.core.app.ActivityScenario.launchInternal(ActivityScenario.java:380)
+at androidx.test.core.app.ActivityScenario.launch(ActivityScenario.java:203)
+at org.wwl.intentdemo.ActivityStateTest.immediateSendWhilePersistingDoesNotSendOldDisplayedIntent(ActivityStateTest.kt:19)
+</failure>
+  </testcase>
+  <testcase name="bufferAndInvalidIntervalAreDurableBusinessRejections" classname="org.wwl.intentdemo.StoreInstrumentedTest" time="0.029" />
+  <testcase name="sameKeyDifferentParametersCannotReplaceOriginal" classname="org.wwl.intentdemo.StoreInstrumentedTest" time="0.032" />
+  <testcase name="committedLostReplyReopensAndReplaysOriginalDecision" classname="org.wwl.intentdemo.StoreInstrumentedTest" time="0.001" />
+  <testcase name="queuedBeforeAnySendSurvivesReopen" classname="org.wwl.intentdemo.StoreInstrumentedTest" time="0.033" />
+  <testcase name="rollbackIsUnknownNotFinalRejection" classname="org.wwl.intentdemo.StoreInstrumentedTest" time="0.0" />
+  <testcase name="malformedResultsAreNotDisplayedAsAccepted" classname="org.wwl.intentdemo.StoreInstrumentedTest" time="0.001" />
+</testsuite>

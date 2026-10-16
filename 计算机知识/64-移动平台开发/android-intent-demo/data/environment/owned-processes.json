@@ -1,0 +1,45 @@
+{
+  "adb_pid": 33509,
+  "emulator_pid": 32285,
+  "adb_argv": [
+    "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+    "-L",
+    "tcp:localhost:15037",
+    "--one-device",
+    "WWL175_NO_PHYSICAL_DEVICE",
+    "server",
+    "nodaemon"
+  ],
+  "emulator_argv": [
+    "/private/tmp/wwl-next-175-env/sdk/emulator/emulator",
+    "-avd",
+    "WWL175_API35_20261017",
+    "-no-window",
+    "-no-audio",
+    "-no-snapshot",
+    "-memory",
+    "2048",
+    "-cores",
+    "2",
+    "-gpu",
+    "swiftshader",
+    "-port",
+    "5580",
+    "-grpc",
+    "18554",
+    "-no-boot-anim",
+    "-no-metrics"
+  ],
+  "environment": {
+    "ANDROID_SDK_ROOT": "/private/tmp/wwl-next-175-env/sdk",
+    "ANDROID_USER_HOME": "/private/tmp/wwl-next-175-env/android-user",
+    "ANDROID_AVD_HOME": "/private/tmp/wwl-next-175-env/avd",
+    "ANDROID_EMULATOR_HOME": "/private/tmp/wwl-next-175-env/emulator-user",
+    "ANDROID_ADB_SERVER_PORT": "15037",
+    "ADB_SERVER_SOCKET": "tcp:127.0.0.1:15037",
+    "ADB_LOCAL_TRANSPORT_MAX_PORT": "0",
+    "ADB_MDNS_AUTO_CONNECT": "0",
+    "ADB_VENDOR_KEYS": "/private/tmp/wwl-next-175-env/android-user/adbkey"
+  },
+  "initial_failed_adb_pid": 33143
+}

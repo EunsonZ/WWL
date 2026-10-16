@@ -2,7 +2,7 @@
 
 对应 [[计算机知识/55-数据库/10-系统课程/20-图模型路径语义与访问代价|第20讲]]。读者要能在同一先修目录上分别回答可达、全部最少边数路径及长度界内 walk/trail/simple，改变平行边、标签、关系类型与目录版本后重新求解；并说明索引、唯一性与一致观察各保障什么。
 
-实际计算只用 **Python 3.11+ 标准库**（异常 `sqlite_errorname` 需3.11+）；本次 Python **3.14.7**、SQLite **3.53.4**。`graph_model.py` 是有限本地属性图模型，不是 Redis、Neo4j 或生产数据库。`sqlite_probe.py` 才是真实 SQLite 的表约束、访问计划与两个连接的受控交错。Neo4j 5.26 接口没有执行，未验项见下文。
+实际计算只用 **Python 3.11+ 标准库**（异常 `sqlite_errorname` 需3.11+）；本次 Python **3.14.7**、SQLite **3.53.4**。`graph_model.py` 是有限本地属性图模型，不是 Redis、Neo4j 或生产数据库。`sqlite_probe.py` 实际执行SQLite表约束、访问计划与两个连接的受控交错。后续在本机独立Neo4j Community **5.26.32**／Temurin21实例完成三查询、唯一性与跨语句读取增量；[原始HTTP和隔离复建](neo4j-run/README.md)与这两个旧运行层分开记录，未验项见下文。
 
 ## 固定输入和答案身份
 
@@ -73,16 +73,26 @@ p.with_suffix(".png").write_bytes(resvg_py.svg_to_bytes(
 
 这些是输入变化与预期，不是只改结果JSON。测试包含CLI实际退出、错误输入拒绝和oracle错误检测。
 
+## 真实 Neo4j 5.26.32 的本机结果
+
+2026-10-16，macOS arm64的全新Community **5.26.32** 实例，Temurin **21.0.12.1+1-LTS**，Python标准库通过回环HTTP执行原 [neo4j_5_26_interface.cypher](neo4j_5_26_interface.cypher) 的五条语句：唯一约束、完整typed建图、trail/simple/全部最短三查询。实际7/3/3条，最短2跳；完整node/edge序列与原独立真值精确对应，没有只比数量。传统5.26语法已实际运行，没有使用Cypher25新关键词。
+
+对 `Entity.id IS UNIQUE`，重复id:a实际拒绝；无id的Entity在显式事务内创建成功，`n.id`返回null，再ROLLBACK，最终6节点8关系。这是缺属性被允许的观察，不是存了一个普通null业务id，也不增加属性存在性、关系id或先修无环约束。
+
+同一个显式reader事务先读s1，writer另一个提交事务原子删s1添s3，reader第二条语句再读到s3。随后同reader执行完整路径MATCH返回空。完整原请求/响应与同一transaction URL保留；**本次Neo4j显式事务不提供SQLite WAL实验中的固定跨语句快照**。完整MATCH在writer提交后执行、期间无并发写；这次空集不能外推所有单条Cypher的隔离性质。
+
+[neo4j-run/README.md](neo4j-run/README.md)保留重要性、断言、失败判据、版本/来源、完整配置与隔离复建。两轮服务均由各自脚本启动和正常关闭；只监听127.0.0.1:17471，Bolt/HTTPS关闭，结束端口关闭。数值runner线程环境1不表示JVM只有一个线程：本次JVM另声明ActiveProcessorCount=2、heap256–512MiB/pagecache64MiB；未认证严格CPU/RSS或OS线程上限。没有启动生产实例、外部集群或故障测试。
+
+旧模型135查询/独核1080组、SQLite与图显示结果按原同版复用，未重跑。增量的原始执行来自独立运行者；本轮仅把必要证据归入此lab，并实际运行离线 [verify_recorded.py](neo4j-run/verify_recorded.py) 对完整三查询、版本/约束/同reader身份和清理记录核对，不重新启动Neo4j。
+
 ## 真实图引擎的未验接口
 
-[neo4j_5_26_interface.cypher](neo4j_5_26_interface.cypher) 是**未执行**的Neo4j5.26传统语法接口：只在明确归自己、可丢弃的空数据库导入完整typed图，Entity统一标签的id唯一约束约束业务namespace；它不让id必填，也未增加关系id/端点业务约束。三个查询分别返回trail7、simple3、有界全部最短2跳/3条；用业务关系id比较，不依赖Neo4j内部id。`collect`用于展示先过滤后最小化，未作为大图优化方案。脚本不表达重复同一关系的walk，也没有使用Cypher25新关键词。
+三固定查询与上述两个有限探针已经实跑；Neo4j实际只执行原typed输入的 `*1..5` 三条查询；尚未执行最大长度改为1等其他长度界变式、错误中间标签、反方向、相同端点、重复关系walk或加权路径。脚本中的collect展示先过滤后取min，没有做大图优化认证；没有EXPLAIN/PROFILE或索引前后延迟/DB hits测量。
 
-真实验收应记录实际server/driver/edition版本、导入节点/边、约束DDL及成功/失败输入、完整查询文本、原始edge/node结果和EXPLAIN/PROFILE。用L1/5、平行边、错误中间标签、反方向和相同端点变式核语义；以同一问题比较可达、一个最短和全部最短，先声明零长度约定。再比较起点id索引/无索引、出入边方向与高出度热点，记录构建和更新、候选工作/结果体积/延迟分位，而非把本模型计数贴到引擎性能栏。
-
-并发接口：实际运行两个会话，在首跳读后暂停，另一会话同事务删e1添e3并COMMIT，再继续次跳；检查实际隔离/事务/书签允许什么观察，并记录完整时间顺序。不得预设Neo4j会提供与SQLite相同的快照。真实复制/failover/网络断开、跨分片事务和生产高并发全部未验。若以后运行故障测试，只操作自己创建的临时进程和数据库，记录确认与恢复边界；本包不作任何这些故障保证。
+后续真实验收仍应按固定server/driver/edition版本、查询文本、原始结果和具体计划核：起点id索引、出入边方向、高出度热点、构建与写维护、结果体积和延迟分位。模型36对200的逻辑边检查不能贴进Neo4j吞吐栏。其他跨语句事务协议、同一语句执行期间更新、书签/因果、复制/failover/网络断开、跨分片与生产压力全部未验。未来若另做故障测试，只操作自己创建的临时进程/数据库，记录确认与恢复边界；本次两轮正常启停不充当崩溃恢复证据。
 
 ## 依据和下一问题
 
-[Neo4j关系唯一性](https://neo4j.com/docs/cypher-manual/5/patterns/unique-relationship-paths/)、[变长路径与过滤](https://neo4j.com/docs/cypher-manual/5/patterns/variable-length-paths/)、[索引与计划](https://neo4j.com/docs/cypher-manual/5/indexes/performance-indexes/using-indexes/)、[唯一性/存在性约束](https://neo4j.com/docs/cypher-manual/current/schema/constraints/create-constraints/)在2026-10-16实际查读；链接可能展示后续语法，接口仍限定传统5.26语法且未执行。[SQLite外键](https://www.sqlite.org/foreignkeys.html)和[EXPLAIN](https://www.sqlite.org/eqp.html)支持本地探测口径。
+[Neo4j关系唯一性](https://neo4j.com/docs/cypher-manual/5/patterns/unique-relationship-paths/)、[变长路径与过滤](https://neo4j.com/docs/cypher-manual/5/patterns/variable-length-paths/)、[索引与计划](https://neo4j.com/docs/cypher-manual/5/indexes/performance-indexes/using-indexes/)、[唯一性/存在性约束](https://neo4j.com/docs/cypher-manual/current/schema/constraints/create-constraints/)在2026-10-16实际查读；链接可能展示后续语法，传统5.26接口已按上述固定范围在5.26.32实跑。[SQLite外键](https://www.sqlite.org/foreignkeys.html)和[EXPLAIN](https://www.sqlite.org/eqp.html)支持本地探测口径。
 
 返回第20讲迁移题和第08讲模型选择。#171的键值协议/键设计、宽列/时序完整访问单元仍未由本包兑现；已交第13讲文档查询和#172事实/窗口/恢复/分析模型不重跑或重建，不因图代表章通过就关闭整课。

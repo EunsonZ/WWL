@@ -1,0 +1,527 @@
+[
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "CALL dbms.components() YIELD name,versions,edition RETURN name,versions,edition"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "name",
+            "versions",
+            "edition"
+          ],
+          "data": [
+            {
+              "row": [
+                "Neo4j Kernel",
+                [
+                  "5.26.32"
+                ],
+                "community"
+              ],
+              "meta": [
+                null,
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5EQOQ"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "CREATE CONSTRAINT fixture_entity_id FOR (n:Entity) REQUIRE n.id IS UNIQUE"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [],
+          "data": []
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5EQmQ"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "CREATE (a:Entity:Course {id:'a'}), (b:Entity:Course {id:'b'}),\n       (c:Entity:Course {id:'c'}), (d:Entity:Course {id:'d'}),\n       (z:Entity:Course {id:'z'}), (t:Entity:Teacher {id:'t7'}),\n       (a)-[:REQUIRES {id:'e1',catalog:'T1'}]->(b),\n       (b)-[:REQUIRES {id:'e2',catalog:'T1'}]->(a),\n       (b)-[:REQUIRES {id:'e3',catalog:'T1'}]->(c),\n       (a)-[:REQUIRES {id:'e4',catalog:'T1'}]->(b),\n       (a)-[:REQUIRES {id:'e5',catalog:'T1'}]->(d),\n       (d)-[:REQUIRES {id:'e6',catalog:'T1'}]->(c),\n       (a)-[:TEACHES {id:'e7',catalog:'T1'}]->(c),\n       (t)-[:TEACHES {id:'e8',catalog:'T1'}]->(a)"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [],
+          "data": []
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5EQ+Q"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "MATCH p=(a:Course {id:'a'})-[:REQUIRES*1..5]->(c:Course {id:'c'})\nWHERE all(n IN nodes(p) WHERE n:Course)\n  AND all(r IN relationships(p) WHERE r.catalog='T1')\nRETURN [n IN nodes(p) | n.id] AS node_ids,\n       [r IN relationships(p) | r.id] AS edge_ids\nORDER BY size(edge_ids), edge_ids"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "node_ids",
+            "edge_ids"
+          ],
+          "data": [
+            {
+              "row": [
+                [
+                  "a",
+                  "b",
+                  "c"
+                ],
+                [
+                  "e1",
+                  "e3"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                [
+                  "a",
+                  "b",
+                  "c"
+                ],
+                [
+                  "e4",
+                  "e3"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                [
+                  "a",
+                  "d",
+                  "c"
+                ],
+                [
+                  "e5",
+                  "e6"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                [
+                  "a",
+                  "b",
+                  "a",
+                  "b",
+                  "c"
+                ],
+                [
+                  "e1",
+                  "e2",
+                  "e4",
+                  "e3"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                [
+                  "a",
+                  "b",
+                  "a",
+                  "d",
+                  "c"
+                ],
+                [
+                  "e1",
+                  "e2",
+                  "e5",
+                  "e6"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                [
+                  "a",
+                  "b",
+                  "a",
+                  "b",
+                  "c"
+                ],
+                [
+                  "e4",
+                  "e2",
+                  "e1",
+                  "e3"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                [
+                  "a",
+                  "b",
+                  "a",
+                  "d",
+                  "c"
+                ],
+                [
+                  "e4",
+                  "e2",
+                  "e5",
+                  "e6"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5EQ+Q"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "MATCH p=(a:Course {id:'a'})-[:REQUIRES*1..5]->(c:Course {id:'c'})\nWHERE all(n IN nodes(p) WHERE n:Course)\n  AND all(r IN relationships(p) WHERE r.catalog='T1')\n  AND all(n IN nodes(p) WHERE single(m IN nodes(p) WHERE m=n))\nRETURN [r IN relationships(p) | r.id] AS edge_ids ORDER BY edge_ids"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "edge_ids"
+          ],
+          "data": [
+            {
+              "row": [
+                [
+                  "e1",
+                  "e3"
+                ]
+              ],
+              "meta": [
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                [
+                  "e4",
+                  "e3"
+                ]
+              ],
+              "meta": [
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                [
+                  "e5",
+                  "e6"
+                ]
+              ],
+              "meta": [
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5EQ+Q"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "MATCH p=(a:Course {id:'a'})-[:REQUIRES*1..5]->(c:Course {id:'c'})\nWHERE all(n IN nodes(p) WHERE n:Course)\n  AND all(r IN relationships(p) WHERE r.catalog='T1')\nWITH collect(p) AS candidates, min(length(p)) AS hops\nUNWIND [p IN candidates WHERE length(p)=hops] AS p\nRETURN hops,[r IN relationships(p) | r.id] AS edge_ids ORDER BY edge_ids"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "hops",
+            "edge_ids"
+          ],
+          "data": [
+            {
+              "row": [
+                2,
+                [
+                  "e1",
+                  "e3"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                2,
+                [
+                  "e4",
+                  "e3"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "row": [
+                2,
+                [
+                  "e5",
+                  "e6"
+                ]
+              ],
+              "meta": [
+                null,
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5EQ+Q"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "CREATE (:Entity {id:'a'})"
+    ],
+    "status": 200,
+    "response": {
+      "results": [],
+      "errors": [
+        {
+          "code": "Neo.ClientError.Schema.ConstraintValidationFailed",
+          "message": "Node(0) already exists with label `Entity` and property `id` = 'a'"
+        }
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx",
+    "statements": [
+      "CREATE (n:Entity) RETURN n.id AS missing_id"
+    ],
+    "status": 201,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "missing_id"
+          ],
+          "data": [
+            {
+              "row": [
+                null
+              ],
+              "meta": [
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "commit": "http://127.0.0.1:17471/db/neo4j/tx/8/commit",
+      "transaction": {
+        "expires": "Fri, 16 Oct 2026 15:48:54 GMT"
+      }
+    }
+  },
+  {
+    "method": "DELETE",
+    "path": "/db/neo4j/tx/8",
+    "statements": [],
+    "status": 200,
+    "response": {
+      "results": [],
+      "errors": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "MATCH (n) RETURN count(n) AS nodes",
+      "MATCH ()-[r]->() RETURN count(r) AS edges",
+      "SHOW CONSTRAINTS YIELD name,type RETURN name,type"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "nodes"
+          ],
+          "data": [
+            {
+              "row": [
+                6
+              ],
+              "meta": [
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "columns": [
+            "edges"
+          ],
+          "data": [
+            {
+              "row": [
+                8
+              ],
+              "meta": [
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "columns": [
+            "name",
+            "type"
+          ],
+          "data": [
+            {
+              "row": [
+                "fixture_entity_id",
+                "UNIQUENESS"
+              ],
+              "meta": [
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5EQ+Q"
+      ]
+    }
+  }
+]

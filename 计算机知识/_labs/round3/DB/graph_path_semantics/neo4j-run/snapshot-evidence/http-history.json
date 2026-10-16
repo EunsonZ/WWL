@@ -1,0 +1,183 @@
+[
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "CREATE (a:Scratch {id:'sx'}),(b:Scratch {id:'sy'}),(c:Scratch {id:'sz'}),(a)-[:SCRATCH_EDGE {id:'s1'}]->(b)"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [],
+          "data": []
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5ERKQ"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx",
+    "statements": [
+      "MATCH (:Scratch {id:'sx'})-[r:SCRATCH_EDGE]->(b) RETURN r.id AS edge,b.id AS destination"
+    ],
+    "status": 201,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "edge",
+            "destination"
+          ],
+          "data": [
+            {
+              "row": [
+                "s1",
+                "sy"
+              ],
+              "meta": [
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "commit": "http://127.0.0.1:17471/db/neo4j/tx/2/commit",
+      "transaction": {
+        "expires": "Fri, 16 Oct 2026 15:49:36 GMT"
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "MATCH (:Scratch {id:'sx'})-[r:SCRATCH_EDGE]->(:Scratch {id:'sy'}) DELETE r",
+      "MATCH (b:Scratch {id:'sy'}),(c:Scratch {id:'sz'}) CREATE (b)-[:SCRATCH_EDGE {id:'s3'}]->(c)"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [],
+          "data": []
+        },
+        {
+          "columns": [],
+          "data": []
+        }
+      ],
+      "notifications": [
+        {
+          "code": "Neo.ClientNotification.Statement.CartesianProduct",
+          "severity": "INFORMATION",
+          "title": "This query builds a cartesian product between disconnected patterns.",
+          "description": "If a part of a query contains multiple disconnected patterns, this will build a cartesian product between all those parts. This may produce a large amount of data and slow down query processing. While occasionally intended, it may often be possible to reformulate the query that avoids the use of this cross product, perhaps by adding a relationship between the different parts or by using OPTIONAL MATCH (identifier is: (c))",
+          "position": {
+            "offset": 0,
+            "line": 1,
+            "column": 1
+          }
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5EROQ"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/2",
+    "statements": [
+      "MATCH (:Scratch {id:'sy'})-[r:SCRATCH_EDGE]->(c) RETURN r.id AS edge,c.id AS destination"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "edge",
+            "destination"
+          ],
+          "data": [
+            {
+              "row": [
+                "s3",
+                "sz"
+              ],
+              "meta": [
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "commit": "http://127.0.0.1:17471/db/neo4j/tx/2/commit",
+      "transaction": {
+        "expires": "Fri, 16 Oct 2026 15:49:36 GMT"
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/2",
+    "statements": [
+      "MATCH p=(:Scratch {id:'sx'})-[:SCRATCH_EDGE*1..2]->(:Scratch {id:'sz'}) RETURN [r IN relationships(p) | r.id] AS edge_ids"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [
+            "edge_ids"
+          ],
+          "data": []
+        }
+      ],
+      "errors": [],
+      "commit": "http://127.0.0.1:17471/db/neo4j/tx/2/commit",
+      "transaction": {
+        "expires": "Fri, 16 Oct 2026 15:49:36 GMT"
+      }
+    }
+  },
+  {
+    "method": "DELETE",
+    "path": "/db/neo4j/tx/2",
+    "statements": [],
+    "status": 200,
+    "response": {
+      "results": [],
+      "errors": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/db/neo4j/tx/commit",
+    "statements": [
+      "MATCH (n:Scratch) DETACH DELETE n"
+    ],
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "columns": [],
+          "data": []
+        }
+      ],
+      "errors": [],
+      "lastBookmarks": [
+        "FB:kcwQosA4XCFNSp+BJ9UWocj5ERSQ"
+      ]
+    }
+  }
+]

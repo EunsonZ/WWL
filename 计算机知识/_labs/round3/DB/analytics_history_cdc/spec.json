@@ -1,0 +1,485 @@
+{
+  "protocol": "wwl-db19-spec-v1",
+  "source_id": "local-trigger-source-A",
+  "source_operations": [
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f1",
+        "customer_id": "c1",
+        "occurred_day": 9,
+        "minutes": 10,
+        "version": 1,
+        "channel": "web",
+        "note": "booking f1",
+        "source_ref": "ref-f1"
+      }
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f2",
+        "customer_id": "c1",
+        "occurred_day": 10,
+        "minutes": 20,
+        "version": 1,
+        "channel": "web",
+        "note": "booking f2",
+        "source_ref": "ref-f2"
+      }
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f3",
+        "customer_id": "c2",
+        "occurred_day": 6,
+        "minutes": 10,
+        "version": 1,
+        "channel": "phone",
+        "note": "booking f3",
+        "source_ref": "ref-f3"
+      }
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f4",
+        "customer_id": "c3",
+        "occurred_day": 4,
+        "minutes": 5,
+        "version": 1,
+        "channel": "web",
+        "note": "booking f4",
+        "source_ref": "ref-f4"
+      }
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "flate",
+        "customer_id": "c1",
+        "occurred_day": 3,
+        "minutes": 7,
+        "version": 1,
+        "channel": "web",
+        "note": "booking flate",
+        "source_ref": "ref-flate"
+      }
+    },
+    {
+      "op": "update",
+      "row": {
+        "fact_id": "f2",
+        "customer_id": "c1",
+        "occurred_day": 10,
+        "minutes": 25,
+        "version": 2,
+        "channel": "web",
+        "note": "booking f2",
+        "source_ref": "ref-f2"
+      }
+    },
+    {
+      "op": "delete",
+      "key": "f4",
+      "version": 2
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f5",
+        "customer_id": "c3",
+        "occurred_day": 5,
+        "minutes": 6,
+        "version": 1,
+        "channel": "web",
+        "note": "booking f5",
+        "source_ref": "ref-f5"
+      }
+    },
+    {
+      "op": "migrate_to_seconds"
+    },
+    {
+      "op": "update",
+      "row": {
+        "fact_id": "f1",
+        "customer_id": "c1",
+        "occurred_day": 9,
+        "duration_seconds": 660,
+        "version": 2,
+        "channel": "web",
+        "note": "booking f1",
+        "source_ref": "ref-f1"
+      }
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f6",
+        "customer_id": "c2",
+        "occurred_day": 11,
+        "duration_seconds": 600,
+        "version": 1,
+        "channel": "phone",
+        "note": "booking f6",
+        "source_ref": "ref-f6"
+      }
+    },
+    {
+      "op": "delete",
+      "key": "f2",
+      "version": 3
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f2",
+        "customer_id": "c1",
+        "occurred_day": 10,
+        "duration_seconds": 1260,
+        "version": 4,
+        "channel": "web",
+        "note": "booking f2",
+        "source_ref": "ref-f2"
+      }
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f7",
+        "customer_id": "c1",
+        "occurred_day": 20,
+        "duration_seconds": 90,
+        "version": 1,
+        "channel": "web",
+        "note": "booking f7",
+        "source_ref": "ref-f7"
+      }
+    },
+    {
+      "op": "update",
+      "row": {
+        "fact_id": "flate",
+        "customer_id": "c1",
+        "occurred_day": 10,
+        "duration_seconds": 480,
+        "version": 2,
+        "channel": "web",
+        "note": "booking flate",
+        "source_ref": "ref-flate"
+      }
+    },
+    {
+      "op": "insert",
+      "row": {
+        "fact_id": "f8",
+        "customer_id": "c2",
+        "occurred_day": 12,
+        "duration_seconds": 0,
+        "version": 1,
+        "channel": "web",
+        "note": "booking f8",
+        "source_ref": "ref-f8"
+      }
+    },
+    {
+      "op": "rollback_probe",
+      "row": {
+        "fact_id": "rolled-back",
+        "customer_id": "c2",
+        "occurred_day": 12,
+        "duration_seconds": 600,
+        "version": 1,
+        "channel": "web",
+        "note": "booking rolled-back",
+        "source_ref": "ref-rolled-back"
+      }
+    }
+  ],
+  "dimension_snapshots": [
+    {
+      "revision": "r1",
+      "rows": [
+        {
+          "sk": "c1-old",
+          "customer_id": "c1",
+          "region": "North",
+          "valid_from": 0,
+          "valid_to": 10
+        },
+        {
+          "sk": "c1-new",
+          "customer_id": "c1",
+          "region": "South",
+          "valid_from": 10,
+          "valid_to": null
+        },
+        {
+          "sk": "c2-only",
+          "customer_id": "c2",
+          "region": "East",
+          "valid_from": 0,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "revision": "r2",
+      "rows": [
+        {
+          "sk": "c1-old",
+          "customer_id": "c1",
+          "region": "North",
+          "valid_from": 0,
+          "valid_to": 10
+        },
+        {
+          "sk": "c1-new",
+          "customer_id": "c1",
+          "region": "South",
+          "valid_from": 10,
+          "valid_to": null
+        },
+        {
+          "sk": "c2-only",
+          "customer_id": "c2",
+          "region": "East",
+          "valid_from": 0,
+          "valid_to": null
+        },
+        {
+          "sk": "c3-late",
+          "customer_id": "c3",
+          "region": "West",
+          "valid_from": 0,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "revision": "overlap",
+      "rows": [
+        {
+          "sk": "c1-old",
+          "customer_id": "c1",
+          "region": "North",
+          "valid_from": 0,
+          "valid_to": 10
+        },
+        {
+          "sk": "c1-new",
+          "customer_id": "c1",
+          "region": "South",
+          "valid_from": 10,
+          "valid_to": null
+        },
+        {
+          "sk": "c2-only",
+          "customer_id": "c2",
+          "region": "East",
+          "valid_from": 0,
+          "valid_to": null
+        },
+        {
+          "sk": "c2-overlap",
+          "customer_id": "c2",
+          "region": "Mid",
+          "valid_from": 6,
+          "valid_to": 13
+        }
+      ]
+    },
+    {
+      "revision": "gap",
+      "rows": [
+        {
+          "sk": "c1-old",
+          "customer_id": "c1",
+          "region": "North",
+          "valid_from": 0,
+          "valid_to": 8
+        },
+        {
+          "sk": "c1-new",
+          "customer_id": "c1",
+          "region": "South",
+          "valid_from": 10,
+          "valid_to": null
+        },
+        {
+          "sk": "c2-only",
+          "customer_id": "c2",
+          "region": "East",
+          "valid_from": 0,
+          "valid_to": null
+        }
+      ]
+    }
+  ],
+  "delivery_plan": [
+    {
+      "capture": 1
+    },
+    {
+      "capture": 2
+    },
+    {
+      "capture": 3
+    },
+    {
+      "capture": 4
+    },
+    {
+      "capture": 5
+    },
+    {
+      "capture": 6
+    },
+    {
+      "capture": 7
+    },
+    {
+      "capture": 8
+    },
+    {
+      "capture": 9
+    },
+    {
+      "capture": 10
+    },
+    {
+      "capture": 11
+    },
+    {
+      "capture": 12
+    },
+    {
+      "capture": 13
+    },
+    {
+      "capture": 14
+    },
+    {
+      "capture": 15
+    },
+    {
+      "capture": 1
+    },
+    {
+      "capture": 1,
+      "patch": {
+        "event_id": "alias-f1-old"
+      }
+    },
+    {
+      "capture": 1,
+      "after_patch": {
+        "minutes": 11
+      }
+    },
+    {
+      "capture": 1,
+      "patch": {
+        "event_id": "claim-f1-bad"
+      },
+      "after_patch": {
+        "minutes": 11
+      }
+    },
+    {
+      "capture": 12,
+      "patch": {
+        "event_id": "alias-f2-v4"
+      }
+    },
+    {
+      "literal": {
+        "kind": "transport_tombstone",
+        "key": "f4",
+        "value": null
+      }
+    },
+    {
+      "literal": {
+        "kind": "transport_tombstone",
+        "key": "f2",
+        "value": null
+      }
+    },
+    {
+      "capture": 13,
+      "patch": {
+        "event_id": "unknown-schema",
+        "schema_version": 3
+      }
+    },
+    {
+      "capture": 13,
+      "patch": {
+        "event_id": "repair-schema"
+      },
+      "after_remove": [
+        "duration_seconds"
+      ]
+    },
+    {
+      "capture": 13,
+      "patch": {
+        "event_id": "repair-schema"
+      }
+    },
+    {
+      "capture": 13,
+      "patch": {
+        "event_id": "null-seconds"
+      },
+      "after_patch": {
+        "duration_seconds": null
+      }
+    },
+    {
+      "capture": 11
+    },
+    {
+      "capture": 11,
+      "patch": {
+        "event_id": "alias-f2-delete"
+      }
+    },
+    {
+      "capture": 3,
+      "patch": {
+        "event_id": "alias-f3-schema2",
+        "schema_version": 2
+      },
+      "after_remove": [
+        "minutes"
+      ],
+      "after_patch": {
+        "duration_seconds": 600
+      }
+    },
+    {
+      "capture": 13,
+      "patch": {
+        "event_id": "bool-seconds"
+      },
+      "after_patch": {
+        "duration_seconds": true
+      }
+    }
+  ],
+  "workload": {
+    "repeat": 128,
+    "batch_sizes": [
+      1,
+      16,
+      64,
+      2048
+    ],
+    "day_at_least": 10,
+    "channel": "web"
+  }
+}

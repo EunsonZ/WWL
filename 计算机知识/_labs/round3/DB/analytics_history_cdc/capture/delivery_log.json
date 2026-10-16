@@ -1,0 +1,598 @@
+[
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:1",
+    "source_pos": 1,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f1",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f1",
+      "customer_id": "c1",
+      "occurred_day": 9,
+      "minutes": 10,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f1",
+      "source_ref": "ref-f1"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:2",
+    "source_pos": 2,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f2",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f2",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "minutes": 20,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f2",
+      "source_ref": "ref-f2"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:3",
+    "source_pos": 3,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f3",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f3",
+      "customer_id": "c2",
+      "occurred_day": 6,
+      "minutes": 10,
+      "version": 1,
+      "channel": "phone",
+      "note": "booking f3",
+      "source_ref": "ref-f3"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:4",
+    "source_pos": 4,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f4",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f4",
+      "customer_id": "c3",
+      "occurred_day": 4,
+      "minutes": 5,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f4",
+      "source_ref": "ref-f4"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:5",
+    "source_pos": 5,
+    "schema_version": 1,
+    "op": "c",
+    "key": "flate",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "flate",
+      "customer_id": "c1",
+      "occurred_day": 3,
+      "minutes": 7,
+      "version": 1,
+      "channel": "web",
+      "note": "booking flate",
+      "source_ref": "ref-flate"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:6",
+    "source_pos": 6,
+    "schema_version": 1,
+    "op": "u",
+    "key": "f2",
+    "version": 2,
+    "before": {
+      "fact_id": "f2",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "minutes": 20,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f2",
+      "source_ref": "ref-f2"
+    },
+    "after": {
+      "fact_id": "f2",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "minutes": 25,
+      "version": 2,
+      "channel": "web",
+      "note": "booking f2",
+      "source_ref": "ref-f2"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:7",
+    "source_pos": 7,
+    "schema_version": 1,
+    "op": "d",
+    "key": "f4",
+    "version": 2,
+    "before": {
+      "fact_id": "f4",
+      "customer_id": "c3",
+      "occurred_day": 4,
+      "minutes": 5,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f4",
+      "source_ref": "ref-f4"
+    },
+    "after": null
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:8",
+    "source_pos": 8,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f5",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f5",
+      "customer_id": "c3",
+      "occurred_day": 5,
+      "minutes": 6,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f5",
+      "source_ref": "ref-f5"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:9",
+    "source_pos": 9,
+    "schema_version": 2,
+    "op": "u",
+    "key": "f1",
+    "version": 2,
+    "before": {
+      "fact_id": "f1",
+      "customer_id": "c1",
+      "occurred_day": 9,
+      "duration_seconds": 600,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f1",
+      "source_ref": "ref-f1"
+    },
+    "after": {
+      "fact_id": "f1",
+      "customer_id": "c1",
+      "occurred_day": 9,
+      "duration_seconds": 660,
+      "version": 2,
+      "channel": "web",
+      "note": "booking f1",
+      "source_ref": "ref-f1"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:10",
+    "source_pos": 10,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f6",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f6",
+      "customer_id": "c2",
+      "occurred_day": 11,
+      "duration_seconds": 600,
+      "version": 1,
+      "channel": "phone",
+      "note": "booking f6",
+      "source_ref": "ref-f6"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:11",
+    "source_pos": 11,
+    "schema_version": 2,
+    "op": "d",
+    "key": "f2",
+    "version": 3,
+    "before": {
+      "fact_id": "f2",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "duration_seconds": 1500,
+      "version": 2,
+      "channel": "web",
+      "note": "booking f2",
+      "source_ref": "ref-f2"
+    },
+    "after": null
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:12",
+    "source_pos": 12,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f2",
+    "version": 4,
+    "before": null,
+    "after": {
+      "fact_id": "f2",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "duration_seconds": 1260,
+      "version": 4,
+      "channel": "web",
+      "note": "booking f2",
+      "source_ref": "ref-f2"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:13",
+    "source_pos": 13,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f7",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f7",
+      "customer_id": "c1",
+      "occurred_day": 20,
+      "duration_seconds": 90,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f7",
+      "source_ref": "ref-f7"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:14",
+    "source_pos": 14,
+    "schema_version": 2,
+    "op": "u",
+    "key": "flate",
+    "version": 2,
+    "before": {
+      "fact_id": "flate",
+      "customer_id": "c1",
+      "occurred_day": 3,
+      "duration_seconds": 420,
+      "version": 1,
+      "channel": "web",
+      "note": "booking flate",
+      "source_ref": "ref-flate"
+    },
+    "after": {
+      "fact_id": "flate",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "duration_seconds": 480,
+      "version": 2,
+      "channel": "web",
+      "note": "booking flate",
+      "source_ref": "ref-flate"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:15",
+    "source_pos": 15,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f8",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f8",
+      "customer_id": "c2",
+      "occurred_day": 12,
+      "duration_seconds": 0,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f8",
+      "source_ref": "ref-f8"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:1",
+    "source_pos": 1,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f1",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f1",
+      "customer_id": "c1",
+      "occurred_day": 9,
+      "minutes": 10,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f1",
+      "source_ref": "ref-f1"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "alias-f1-old",
+    "source_pos": 1,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f1",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f1",
+      "customer_id": "c1",
+      "occurred_day": 9,
+      "minutes": 10,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f1",
+      "source_ref": "ref-f1"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:1",
+    "source_pos": 1,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f1",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f1",
+      "customer_id": "c1",
+      "occurred_day": 9,
+      "minutes": 11,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f1",
+      "source_ref": "ref-f1"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "claim-f1-bad",
+    "source_pos": 1,
+    "schema_version": 1,
+    "op": "c",
+    "key": "f1",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f1",
+      "customer_id": "c1",
+      "occurred_day": 9,
+      "minutes": 11,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f1",
+      "source_ref": "ref-f1"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "alias-f2-v4",
+    "source_pos": 12,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f2",
+    "version": 4,
+    "before": null,
+    "after": {
+      "fact_id": "f2",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "duration_seconds": 1260,
+      "version": 4,
+      "channel": "web",
+      "note": "booking f2",
+      "source_ref": "ref-f2"
+    }
+  },
+  {
+    "kind": "transport_tombstone",
+    "key": "f4",
+    "value": null
+  },
+  {
+    "kind": "transport_tombstone",
+    "key": "f2",
+    "value": null
+  },
+  {
+    "kind": "change",
+    "event_id": "unknown-schema",
+    "source_pos": 13,
+    "schema_version": 3,
+    "op": "c",
+    "key": "f7",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f7",
+      "customer_id": "c1",
+      "occurred_day": 20,
+      "duration_seconds": 90,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f7",
+      "source_ref": "ref-f7"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "repair-schema",
+    "source_pos": 13,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f7",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f7",
+      "customer_id": "c1",
+      "occurred_day": 20,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f7",
+      "source_ref": "ref-f7"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "repair-schema",
+    "source_pos": 13,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f7",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f7",
+      "customer_id": "c1",
+      "occurred_day": 20,
+      "duration_seconds": 90,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f7",
+      "source_ref": "ref-f7"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "null-seconds",
+    "source_pos": 13,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f7",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f7",
+      "customer_id": "c1",
+      "occurred_day": 20,
+      "duration_seconds": null,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f7",
+      "source_ref": "ref-f7"
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "local-trigger-source-A:11",
+    "source_pos": 11,
+    "schema_version": 2,
+    "op": "d",
+    "key": "f2",
+    "version": 3,
+    "before": {
+      "fact_id": "f2",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "duration_seconds": 1500,
+      "version": 2,
+      "channel": "web",
+      "note": "booking f2",
+      "source_ref": "ref-f2"
+    },
+    "after": null
+  },
+  {
+    "kind": "change",
+    "event_id": "alias-f2-delete",
+    "source_pos": 11,
+    "schema_version": 2,
+    "op": "d",
+    "key": "f2",
+    "version": 3,
+    "before": {
+      "fact_id": "f2",
+      "customer_id": "c1",
+      "occurred_day": 10,
+      "duration_seconds": 1500,
+      "version": 2,
+      "channel": "web",
+      "note": "booking f2",
+      "source_ref": "ref-f2"
+    },
+    "after": null
+  },
+  {
+    "kind": "change",
+    "event_id": "alias-f3-schema2",
+    "source_pos": 3,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f3",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f3",
+      "customer_id": "c2",
+      "occurred_day": 6,
+      "version": 1,
+      "channel": "phone",
+      "note": "booking f3",
+      "source_ref": "ref-f3",
+      "duration_seconds": 600
+    }
+  },
+  {
+    "kind": "change",
+    "event_id": "bool-seconds",
+    "source_pos": 13,
+    "schema_version": 2,
+    "op": "c",
+    "key": "f7",
+    "version": 1,
+    "before": null,
+    "after": {
+      "fact_id": "f7",
+      "customer_id": "c1",
+      "occurred_day": 20,
+      "duration_seconds": true,
+      "version": 1,
+      "channel": "web",
+      "note": "booking f7",
+      "source_ref": "ref-f7"
+    }
+  }
+]

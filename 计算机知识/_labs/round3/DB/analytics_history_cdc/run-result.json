@@ -1,0 +1,176 @@
+{
+  "protocol": "wwl-db19-run-v1",
+  "python": "3.14.7",
+  "sqlite": "3.53.4",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "cpu_threads": 1,
+  "wall_clock_limit_seconds": 300,
+  "elapsed_seconds": 0.4837257910403423,
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/capture_source.py",
+        "--input",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/spec.json",
+        "--db",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/source.sqlite",
+        "--out",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/capture"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/analytics_runner.py",
+        "--input",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/spec.json",
+        "--deliveries",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/capture/delivery_log.json",
+        "--out",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/actual.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/layout_workload.py",
+        "--input",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/spec.json",
+        "--actual",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/actual.json",
+        "--work",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/layouts",
+        "--out",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/layout-result.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/star_model.py",
+        "--input",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/spec.json",
+        "--actual",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/actual.json",
+        "--work",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/stars",
+        "--out",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/star-result.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/batch_oracle.py",
+        "--input",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/spec.json",
+        "--deliveries",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/capture/delivery_log.json",
+        "--actual",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/actual.json",
+        "--out",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/oracle-result.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/render_figures.py",
+        "--input",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc/spec.json",
+        "--actual",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/actual.json",
+        "--layout",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/layout-result.json",
+        "--out",
+        "/private/tmp/wwl-next-172-analytics/final-rebuild/figures"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/private/tmp/wwl-next-172-analytics/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/analytics_history_cdc",
+        "-p",
+        "test_analytics.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_actual_capture_migration_and_rollback (test_analytics.AnalyticsBehavior.test_actual_capture_migration_and_rollback) ... ok\ntest_actual_star_preserves_grain_and_exposes_wrong_joins (test_analytics.AnalyticsBehavior.test_actual_star_preserves_grain_and_exposes_wrong_joins) ... ok\ntest_cli_reports_escaped_surrogates_without_partial_file (test_analytics.AnalyticsBehavior.test_cli_reports_escaped_surrogates_without_partial_file) ... ok\ntest_full_prefixes_replay_and_reverse_capture (test_analytics.AnalyticsBehavior.test_full_prefixes_replay_and_reverse_capture) ... ok\ntest_layout_equal_results_bytes_calls_and_boundaries (test_analytics.AnalyticsBehavior.test_layout_equal_results_bytes_calls_and_boundaries) ... ok\ntest_oracle_detects_wrong_dimension_identity_and_claim (test_analytics.AnalyticsBehavior.test_oracle_detects_wrong_dimension_identity_and_claim) ... ok\ntest_schema_null_missing_transport_and_business_tombstones (test_analytics.AnalyticsBehavior.test_schema_null_missing_transport_and_business_tombstones) ... ok\ntest_temporal_boundaries_unknown_overlap_and_late_dimension (test_analytics.AnalyticsBehavior.test_temporal_boundaries_unknown_overlap_and_late_dimension) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.155s\n\nOK\n"
+    }
+  ],
+  "exact_rebuilt_files": [
+    "capture/captured_changes.json",
+    "capture/capture-observed.json",
+    "capture/delivery_log.json",
+    "actual.json",
+    "layout-result.json",
+    "star-result.json",
+    "oracle-result.json",
+    "figures/projection-batches.svg",
+    "figures/scd-boundary.svg"
+  ],
+  "sha256": {
+    "layout_workload.py": "afd31bea4f814bcc13034cd707aa4f65542079502b740d1ceb59bcdcf1fc075a",
+    "test_analytics.py": "001d5fd23cf88185b61dce40a3ea2e1ace52b5fe0870ace1be59cd1e614b441a",
+    "analytics_runner.py": "eeea18ea30dddb3d59ce33778d77511d2fd7a9d4a920ec463042cc7058f7d0f4",
+    "render_figures.py": "4b0dc87d67978310ca3570513ad0a18f2295e2733f5f2000d392540cd397f537",
+    "star_model.py": "2f1d0ff07622f51c70c77ab53d334fc1c945401ecce1c3edd5cc32bed7c3bd6d",
+    "batch_oracle.py": "5776ed2152617ba4ab5d8911fb9ced141f589a77b543bf01073865ccca84fd97",
+    "capture_source.py": "77da2287a7f9538bd056c2077e6fe6ad804ff38ba79a63bfd6e3fc78375c1274",
+    "spec.json": "dbc934079c6f1cc6c8920f06f931964de0ffb2becc799a7da1e4eee6f998fa05",
+    "capture/captured_changes.json": "371b446817a62c4b088abd931ee470d769b4210d0ed11a4aa6939e759bec5e88",
+    "capture/capture-observed.json": "04df6cf0725e2a4ecfd2272bab63f2d4afbb7c524bf573dbf87ead61752520a3",
+    "capture/delivery_log.json": "e712b2803ee296491d7f3684877abf1daba4d8bc1105109a079b8a71345b728b",
+    "actual.json": "94b722c209b91afe484b267f8b5ca81b8b289a84d4de1b429b247fd85ef567d0",
+    "layout-result.json": "88b0cb3bfa695e9ee72129dea1cc17c9a07cea011c9c1542b3cfe73d64f01fce",
+    "star-result.json": "d5b7fc4d6493e040bd7a7c27d2d3e4339657c492fe790d5f12d25e941c8cd6c1",
+    "oracle-result.json": "6c23c0bdf09f4474dd72720faca02091d593fbdbc8403078f350ddb0a92e542d",
+    "figures/projection-batches.svg": "491ff2f71a5ce927b354ae015e6707918934650ad98b31270070ec56753a0f0b",
+    "figures/scd-boundary.svg": "ad09264e6e7fde4a5c33fcf04c74090fb9b13d3d03e150bba4fa87a1e58aab4c",
+    "figures/projection-batches.png": "5cbf49b43d5b43bc077818832b85de77d95e5b5d2804b29de4d6270644513cf2",
+    "figures/scd-boundary.png": "ecf5ed3962e40f65e214cba18bdc11e55d6ca8da091d2af75b565494f6b73d2f"
+  },
+  "rendering": {
+    "calculation_dependencies": "Python standard library, SQLite JSON functions",
+    "optional_png_renderer": "resvg-py 0.5.0 in isolated /private/tmp/wwl-next-172-analytics/render-env",
+    "command": [
+      "/private/tmp/wwl-next-172-analytics/render-env/bin/python",
+      "-B",
+      "/private/tmp/wwl-next-172-analytics/preview_figures.py"
+    ],
+    "native_preview": "qlmanage failed sandbox initialization; no image produced by that attempt",
+    "png_observation": "two generated PNGs actually viewed; labels and numeric content inspected"
+  },
+  "status": "pass"
+}

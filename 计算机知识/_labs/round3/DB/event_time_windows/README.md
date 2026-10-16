@@ -68,4 +68,4 @@ python3 -B -m unittest discover \
 
 2026-10-16实际查读 [Beam Basics 的 Window/Watermark/Trigger](https://beam.apache.org/documentation/basics/)，以及 [Programming Guide §8.4](https://beam.apache.org/documentation/programming-guide/#watermarks-and-late-data)、[§9.1与§9.4](https://beam.apache.org/documentation/programming-guide/#triggers)。它们支持：窗口按元素时间划分、watermark估计完整性、trigger决定pane发布、允许迟到和累积模式需要显式配置。官方模型的“超过最大时间戳加允许迟到后可能回收”不等于本分钟合同的 `W≥e+L`，也不提供本课entity版本裁决、跨窗整条拒绝、revision编号或外部sink原子性；这些是上文明确声明并由源码实现的教学政策。
 
-下一步回主解释末尾的源—状态—输出恢复问题；星型/维度历史、列存、CDC/schema演化仍是 #172 的其他未完范围。此实验不关闭 #172，也不把真人理解、Obsidian显示、真实业务、生产服务或硬件验收写成已完成。
+下一步接 [[计算机知识/55-数据库/10-系统课程/18-源位置状态快照与目标恢复|第18讲的两资源恢复]]，它用无窗事实隔离源位置/state/sink故障，未为本窗口模型实现持久恢复；[[计算机知识/55-数据库/10-系统课程/19-分析模型维度历史与变更捕获|第19讲]] 再接星型/SCD、schema单位/本地捕获与行列/批成本。整课状态回当前#172；本实验不认证真人理解、Obsidian显示、真实业务、生产服务或硬件。

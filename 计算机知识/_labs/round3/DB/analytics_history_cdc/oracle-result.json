@@ -1,0 +1,32 @@
+{
+  "oracle": "independent-history-sql-asof-v1",
+  "prefixes": 30,
+  "dimension_snapshots": 4,
+  "groups": [
+    [
+      "matched",
+      "East",
+      1200,
+      3
+    ],
+    [
+      "matched",
+      "North",
+      660,
+      1
+    ],
+    [
+      "matched",
+      "South",
+      1830,
+      3
+    ],
+    [
+      "unmatched",
+      null,
+      360,
+      1
+    ]
+  ],
+  "status": "pass"
+}

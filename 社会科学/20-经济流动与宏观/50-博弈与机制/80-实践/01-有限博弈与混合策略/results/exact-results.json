@@ -1,0 +1,704 @@
+{
+  "identity": "synthetic finite expected-utility games, not measured human preferences",
+  "games": {
+    "prisoners_dilemma": {
+      "cells": [
+        {
+          "row_action": 0,
+          "column_action": 0,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "3",
+          "column_payoff": "3"
+        },
+        {
+          "row_action": 0,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "0",
+          "column_payoff": "5"
+        },
+        {
+          "row_action": 1,
+          "column_action": 0,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "5",
+          "column_payoff": "0"
+        },
+        {
+          "row_action": 1,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "1",
+          "column_payoff": "1"
+        }
+      ],
+      "pure_equilibria": [
+        [
+          1,
+          1
+        ]
+      ],
+      "isolated_interior": null
+    },
+    "weak_variant": {
+      "cells": [
+        {
+          "row_action": 0,
+          "column_action": 0,
+          "row_best_responses": [
+            0,
+            1
+          ],
+          "column_best_responses": [
+            0,
+            1
+          ],
+          "row_payoff": "3",
+          "column_payoff": "3"
+        },
+        {
+          "row_action": 0,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            0,
+            1
+          ],
+          "row_payoff": "0",
+          "column_payoff": "3"
+        },
+        {
+          "row_action": 1,
+          "column_action": 0,
+          "row_best_responses": [
+            0,
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "3",
+          "column_payoff": "0"
+        },
+        {
+          "row_action": 1,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "1",
+          "column_payoff": "1"
+        }
+      ],
+      "pure_equilibria": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "isolated_interior": null
+    },
+    "matching_pennies": {
+      "cells": [
+        {
+          "row_action": 0,
+          "column_action": 0,
+          "row_best_responses": [
+            0
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "1",
+          "column_payoff": "-1"
+        },
+        {
+          "row_action": 0,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "-1",
+          "column_payoff": "1"
+        },
+        {
+          "row_action": 1,
+          "column_action": 0,
+          "row_best_responses": [
+            0
+          ],
+          "column_best_responses": [
+            0
+          ],
+          "row_payoff": "-1",
+          "column_payoff": "1"
+        },
+        {
+          "row_action": 1,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            0
+          ],
+          "row_payoff": "1",
+          "column_payoff": "-1"
+        }
+      ],
+      "pure_equilibria": [],
+      "isolated_interior": {
+        "p": "1/2",
+        "q": "1/2",
+        "check": {
+          "row_pure": [
+            "0",
+            "0"
+          ],
+          "column_pure": [
+            "0",
+            "0"
+          ],
+          "current": [
+            "0",
+            "0"
+          ],
+          "max_unilateral_gain": [
+            "0",
+            "0"
+          ]
+        }
+      }
+    },
+    "coordination": {
+      "cells": [
+        {
+          "row_action": 0,
+          "column_action": 0,
+          "row_best_responses": [
+            0
+          ],
+          "column_best_responses": [
+            0
+          ],
+          "row_payoff": "4",
+          "column_payoff": "4"
+        },
+        {
+          "row_action": 0,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            0
+          ],
+          "row_payoff": "0",
+          "column_payoff": "3"
+        },
+        {
+          "row_action": 1,
+          "column_action": 0,
+          "row_best_responses": [
+            0
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "3",
+          "column_payoff": "0"
+        },
+        {
+          "row_action": 1,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "2",
+          "column_payoff": "2"
+        }
+      ],
+      "pure_equilibria": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "isolated_interior": {
+        "p": "2/3",
+        "q": "2/3",
+        "check": {
+          "row_pure": [
+            "8/3",
+            "8/3"
+          ],
+          "column_pure": [
+            "8/3",
+            "8/3"
+          ],
+          "current": [
+            "8/3",
+            "8/3"
+          ],
+          "max_unilateral_gain": [
+            "0",
+            "0"
+          ]
+        }
+      }
+    },
+    "weighted_two": {
+      "cells": [
+        {
+          "row_action": 0,
+          "column_action": 0,
+          "row_best_responses": [
+            0
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "2",
+          "column_payoff": "-2"
+        },
+        {
+          "row_action": 0,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "0",
+          "column_payoff": "0"
+        },
+        {
+          "row_action": 1,
+          "column_action": 0,
+          "row_best_responses": [
+            0
+          ],
+          "column_best_responses": [
+            0
+          ],
+          "row_payoff": "0",
+          "column_payoff": "0"
+        },
+        {
+          "row_action": 1,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            0
+          ],
+          "row_payoff": "1",
+          "column_payoff": "-1"
+        }
+      ],
+      "pure_equilibria": [],
+      "isolated_interior": {
+        "p": "1/3",
+        "q": "1/3",
+        "check": {
+          "row_pure": [
+            "2/3",
+            "2/3"
+          ],
+          "column_pure": [
+            "-2/3",
+            "-2/3"
+          ],
+          "current": [
+            "2/3",
+            "-2/3"
+          ],
+          "max_unilateral_gain": [
+            "0",
+            "0"
+          ]
+        }
+      }
+    },
+    "migration_three": {
+      "cells": [
+        {
+          "row_action": 0,
+          "column_action": 0,
+          "row_best_responses": [
+            0
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "3",
+          "column_payoff": "-3"
+        },
+        {
+          "row_action": 0,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            1
+          ],
+          "row_payoff": "0",
+          "column_payoff": "0"
+        },
+        {
+          "row_action": 1,
+          "column_action": 0,
+          "row_best_responses": [
+            0
+          ],
+          "column_best_responses": [
+            0
+          ],
+          "row_payoff": "0",
+          "column_payoff": "0"
+        },
+        {
+          "row_action": 1,
+          "column_action": 1,
+          "row_best_responses": [
+            1
+          ],
+          "column_best_responses": [
+            0
+          ],
+          "row_payoff": "1",
+          "column_payoff": "-1"
+        }
+      ],
+      "pure_equilibria": [],
+      "isolated_interior": {
+        "p": "1/4",
+        "q": "1/4",
+        "check": {
+          "row_pure": [
+            "3/4",
+            "3/4"
+          ],
+          "column_pure": [
+            "-3/4",
+            "-3/4"
+          ],
+          "current": [
+            "3/4",
+            "-3/4"
+          ],
+          "max_unilateral_gain": [
+            "0",
+            "0"
+          ]
+        }
+      }
+    }
+  },
+  "transforms": {
+    "weighted_two": {
+      "cube_matrix": [
+        [
+          "8",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "cube_interior": {
+        "p": "1/3",
+        "q": "1/9",
+        "check": {
+          "row_pure": [
+            "8/9",
+            "8/9"
+          ],
+          "column_pure": [
+            "-2/3",
+            "-2/3"
+          ],
+          "current": [
+            "8/9",
+            "-2/3"
+          ],
+          "max_unilateral_gain": [
+            "0",
+            "0"
+          ]
+        }
+      },
+      "old_mix_after_cube": {
+        "row_pure": [
+          "8/3",
+          "2/3"
+        ],
+        "column_pure": [
+          "-2/3",
+          "-2/3"
+        ],
+        "current": [
+          "4/3",
+          "-2/3"
+        ],
+        "max_unilateral_gain": [
+          "4/3",
+          "0"
+        ]
+      },
+      "affine_interior": {
+        "p": "1/3",
+        "q": "1/3",
+        "check": {
+          "row_pure": [
+            "25/3",
+            "25/3"
+          ],
+          "column_pure": [
+            "-2/3",
+            "-2/3"
+          ],
+          "current": [
+            "25/3",
+            "-2/3"
+          ],
+          "max_unilateral_gain": [
+            "0",
+            "0"
+          ]
+        }
+      }
+    },
+    "migration_three": {
+      "cube_matrix": [
+        [
+          "27",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "cube_interior": {
+        "p": "1/4",
+        "q": "1/28",
+        "check": {
+          "row_pure": [
+            "27/28",
+            "27/28"
+          ],
+          "column_pure": [
+            "-3/4",
+            "-3/4"
+          ],
+          "current": [
+            "27/28",
+            "-3/4"
+          ],
+          "max_unilateral_gain": [
+            "0",
+            "0"
+          ]
+        }
+      },
+      "old_mix_after_cube": {
+        "row_pure": [
+          "27/4",
+          "3/4"
+        ],
+        "column_pure": [
+          "-3/4",
+          "-3/4"
+        ],
+        "current": [
+          "9/4",
+          "-3/4"
+        ],
+        "max_unilateral_gain": [
+          "9/2",
+          "0"
+        ]
+      },
+      "affine_interior": {
+        "p": "1/4",
+        "q": "1/4",
+        "check": {
+          "row_pure": [
+            "17/2",
+            "17/2"
+          ],
+          "column_pure": [
+            "-3/4",
+            "-3/4"
+          ],
+          "current": [
+            "17/2",
+            "-3/4"
+          ],
+          "max_unilateral_gain": [
+            "0",
+            "0"
+          ]
+        }
+      }
+    }
+  },
+  "matching_simultaneous_best_response_cycle": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "observed_action": {
+    "column_plans": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "A": [
+      [
+        "1",
+        "1",
+        "-1",
+        "-1"
+      ],
+      [
+        "-1",
+        "1",
+        "-1",
+        "1"
+      ]
+    ],
+    "B": [
+      [
+        "-1",
+        "-1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "-1",
+        "1",
+        "-1"
+      ]
+    ],
+    "pure_equilibria": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "coordination_shared_coin": {
+    "joint": [
+      [
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ]
+    ],
+    "expected": [
+      "3",
+      "3"
+    ]
+  },
+  "coordination_independent_half": {
+    "row_pure": [
+      "2",
+      "5/2"
+    ],
+    "column_pure": [
+      "2",
+      "5/2"
+    ],
+    "current": [
+      "9/4",
+      "9/4"
+    ],
+    "max_unilateral_gain": [
+      "1/4",
+      "1/4"
+    ]
+  }
+}

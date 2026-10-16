@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="450" viewBox="0 0 980 450">
+<title>Matching pennies: pure action utilities and mutual best responses</title>
+<desc>Left: row H utility 2q-1 and T utility 1-2q intersect at q=one half. Right: blue row best response and dashed red column best response meet only at p=q=one half. Central full horizontal and vertical segments represent indifference, not a learning trajectory.</desc>
+<rect width="980" height="450" fill="white"/>
+<style>text{font-family:Arial,sans-serif;font-size:15px;fill:#18212c}.head{font-size:19px;font-weight:bold}.axis{stroke:#263238;stroke-width:1.5}.grid{stroke:#dce2e8;stroke-width:1}</style>
+<text x="30" y="30" class="head">A. Row action utilities given q</text>
+<text x="515" y="30" class="head">B. Mutual best responses in (p,q)</text>
+<line x1="80" y1="340.0" x2="430" y2="340.0" class="grid"/>
+<text x="45" y="345.0">-1</text>
+<line x1="80" y1="210.0" x2="430" y2="210.0" class="grid"/>
+<text x="45" y="215.0">0</text>
+<line x1="80" y1="80.0" x2="430" y2="80.0" class="grid"/>
+<text x="45" y="85.0">1</text>
+<line x1="80" y1="80" x2="80" y2="340" class="axis"/>
+<line x1="80" y1="210.0" x2="430" y2="210.0" class="axis"/>
+<text x="75.0" y="365">0</text>
+<text x="250.0" y="365">1/2</text>
+<text x="425.0" y="365">1</text>
+<line x1="80.0" y1="340.0" x2="430.0" y2="80.0" stroke="#2563a6" stroke-width="3" />
+<line x1="80.0" y1="80.0" x2="430.0" y2="340.0" stroke="#b34438" stroke-width="3" stroke-dasharray="7 4"/>
+<circle cx="255.0" cy="210.0" r="5" fill="#18212c"/>
+<text x="90" y="65">Utility (not money)</text>
+<text x="90" y="395">Solid H: 2q-1; dashed T: 1-2q</text>
+<text x="150" y="425">q = P(column H)</text>
+<line x1="575.0" y1="80" x2="575.0" y2="340" class="grid"/>
+<line x1="575" y1="340.0" x2="910" y2="340.0" class="grid"/>
+<text x="570.0" y="365">0</text>
+<text x="535" y="345.0">0</text>
+<line x1="742.5" y1="80" x2="742.5" y2="340" class="grid"/>
+<line x1="575" y1="210.0" x2="910" y2="210.0" class="grid"/>
+<text x="737.5" y="365">1/2</text>
+<text x="535" y="215.0">1/2</text>
+<line x1="910.0" y1="80" x2="910.0" y2="340" class="grid"/>
+<line x1="575" y1="80.0" x2="910" y2="80.0" class="grid"/>
+<text x="905.0" y="365">1</text>
+<text x="535" y="85.0">1</text>
+<line x1="575" y1="80" x2="575" y2="340" class="axis"/>
+<line x1="575" y1="340" x2="910" y2="340" class="axis"/>
+<line x1="575.0" y1="340.0" x2="575.0" y2="210.0" stroke="#2563a6" stroke-width="4" />
+<line x1="575.0" y1="210.0" x2="910.0" y2="210.0" stroke="#2563a6" stroke-width="4" />
+<line x1="910.0" y1="210.0" x2="910.0" y2="80.0" stroke="#2563a6" stroke-width="4" />
+<line x1="575.0" y1="80.0" x2="742.5" y2="80.0" stroke="#b34438" stroke-width="4" stroke-dasharray="7 4"/>
+<line x1="742.5" y1="340.0" x2="742.5" y2="80.0" stroke="#b34438" stroke-width="4" stroke-dasharray="7 4"/>
+<line x1="742.5" y1="340.0" x2="910.0" y2="340.0" stroke="#b34438" stroke-width="4" stroke-dasharray="7 4"/>
+<circle cx="742.5" cy="210.0" r="7" fill="#18212c" stroke="white" stroke-width="2"/>
+<text x="585" y="65">q = P(column H)</text>
+<text x="585" y="395">Solid blue: row BR; dashed red: column BR</text>
+<text x="665" y="425">p = P(row H)</text>
+</svg>

@@ -1,0 +1,115 @@
+{
+  "state": {
+    "entities": [
+      [
+        "a",
+        "{\"entity_id\":\"a\",\"event_id\":\"a1\",\"group\":\"A\",\"minutes\":10,\"op\":\"put\",\"version\":1}"
+      ],
+      [
+        "f",
+        "{\"entity_id\":\"f\",\"event_id\":\"f1\",\"group\":\"F\",\"minutes\":11,\"op\":\"put\",\"version\":1}"
+      ]
+    ],
+    "seen": [
+      [
+        "a1",
+        "{\"entity_id\":\"a\",\"event_id\":\"a1\",\"group\":\"A\",\"minutes\":10,\"op\":\"put\",\"version\":1}",
+        "applied"
+      ],
+      [
+        "f1",
+        "{\"entity_id\":\"f\",\"event_id\":\"f1\",\"group\":\"F\",\"minutes\":11,\"op\":\"put\",\"version\":1}",
+        "applied"
+      ]
+    ],
+    "claims": [
+      [
+        "a",
+        1,
+        "{\"group\":\"A\",\"minutes\":10,\"op\":\"put\"}"
+      ],
+      [
+        "f",
+        1,
+        "{\"group\":\"F\",\"minutes\":11,\"op\":\"put\"}"
+      ]
+    ],
+    "totals": [
+      [
+        "A",
+        10,
+        1
+      ],
+      [
+        "F",
+        11,
+        1
+      ]
+    ],
+    "positions": [
+      [
+        1,
+        "applied"
+      ],
+      [
+        2,
+        "applied"
+      ]
+    ],
+    "deliveries": [
+      [
+        "[\"teaching-authority-A\",\"a1\"]",
+        "51cc16bd4cc0896f03ca63246ae6f6a78fe71a2015f24a6f5ab447e5253e4026",
+        "{\"effect_id\":\"[\\\"teaching-authority-A\\\",\\\"a1\\\"]\",\"effect_seq\":2,\"fingerprint\":\"51cc16bd4cc0896f03ca63246ae6f6a78fe71a2015f24a6f5ab447e5253e4026\",\"status\":\"committed\"}"
+      ],
+      [
+        "[\"teaching-authority-A\",\"f1\"]",
+        "03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179",
+        "{\"effect_id\":\"[\\\"teaching-authority-A\\\",\\\"f1\\\"]\",\"effect_seq\":1,\"fingerprint\":\"03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179\",\"status\":\"committed\"}"
+      ]
+    ],
+    "checkpoint": 2
+  },
+  "sink": {
+    "effects": [
+      [
+        1,
+        "[\"teaching-authority-A\",\"f1\"]",
+        "03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179",
+        "{\"delta\":[[\"F\",11,1]],\"event\":{\"entity_id\":\"f\",\"event_id\":\"f1\",\"group\":\"F\",\"minutes\":11,\"op\":\"put\",\"version\":1},\"protocol\":\"wwl-db18-recovery-v1\"}",
+        "{\"effect_id\":\"[\\\"teaching-authority-A\\\",\\\"f1\\\"]\",\"effect_seq\":1,\"fingerprint\":\"03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179\",\"status\":\"committed\"}"
+      ],
+      [
+        2,
+        "[\"teaching-authority-A\",\"a1\"]",
+        "51cc16bd4cc0896f03ca63246ae6f6a78fe71a2015f24a6f5ab447e5253e4026",
+        "{\"delta\":[[\"A\",10,1]],\"event\":{\"entity_id\":\"a\",\"event_id\":\"a1\",\"group\":\"A\",\"minutes\":10,\"op\":\"put\",\"version\":1},\"protocol\":\"wwl-db18-recovery-v1\"}",
+        "{\"effect_id\":\"[\\\"teaching-authority-A\\\",\\\"a1\\\"]\",\"effect_seq\":2,\"fingerprint\":\"51cc16bd4cc0896f03ca63246ae6f6a78fe71a2015f24a6f5ab447e5253e4026\",\"status\":\"committed\"}"
+      ]
+    ],
+    "receipts": [
+      [
+        "[\"teaching-authority-A\",\"a1\"]",
+        "51cc16bd4cc0896f03ca63246ae6f6a78fe71a2015f24a6f5ab447e5253e4026",
+        "{\"effect_id\":\"[\\\"teaching-authority-A\\\",\\\"a1\\\"]\",\"effect_seq\":2,\"fingerprint\":\"51cc16bd4cc0896f03ca63246ae6f6a78fe71a2015f24a6f5ab447e5253e4026\",\"status\":\"committed\"}"
+      ],
+      [
+        "[\"teaching-authority-A\",\"f1\"]",
+        "03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179",
+        "{\"effect_id\":\"[\\\"teaching-authority-A\\\",\\\"f1\\\"]\",\"effect_seq\":1,\"fingerprint\":\"03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179\",\"status\":\"committed\"}"
+      ]
+    ],
+    "totals": [
+      [
+        "A",
+        10,
+        1
+      ],
+      [
+        "F",
+        11,
+        1
+      ]
+    ]
+  }
+}

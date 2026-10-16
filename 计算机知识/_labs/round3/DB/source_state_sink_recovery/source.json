@@ -1,0 +1,150 @@
+{
+  "protocol": "wwl-db18-source-v1",
+  "source_id": "teaching-authority-A",
+  "events": [
+    {
+      "event_id": "f1",
+      "entity_id": "f",
+      "version": 1,
+      "op": "put",
+      "group": "F",
+      "minutes": 11
+    },
+    {
+      "event_id": "a1",
+      "entity_id": "a",
+      "version": 1,
+      "op": "put",
+      "group": "A",
+      "minutes": 10
+    },
+    {
+      "event_id": "b1",
+      "entity_id": "b",
+      "version": 1,
+      "op": "put",
+      "group": "A",
+      "minutes": 20
+    },
+    {
+      "event_id": "a1",
+      "entity_id": "a",
+      "version": 1,
+      "op": "put",
+      "group": "A",
+      "minutes": 10
+    },
+    {
+      "event_id": "a2",
+      "entity_id": "a",
+      "version": 2,
+      "op": "put",
+      "group": "A",
+      "minutes": 15
+    },
+    {
+      "event_id": "c1",
+      "entity_id": "c",
+      "version": 1,
+      "op": "put",
+      "group": "B",
+      "minutes": 0
+    },
+    {
+      "event_id": "a-old",
+      "entity_id": "a",
+      "version": 1,
+      "op": "put",
+      "group": "A",
+      "minutes": 10
+    },
+    {
+      "event_id": "a2-bad",
+      "entity_id": "a",
+      "version": 2,
+      "op": "put",
+      "group": "A",
+      "minutes": 99
+    },
+    {
+      "event_id": "b2",
+      "entity_id": "b",
+      "version": 2,
+      "op": "delete",
+      "group": null,
+      "minutes": null
+    },
+    {
+      "event_id": "d3",
+      "entity_id": "d",
+      "version": 3,
+      "op": "delete",
+      "group": null,
+      "minutes": null
+    },
+    {
+      "event_id": "d2",
+      "entity_id": "d",
+      "version": 2,
+      "op": "put",
+      "group": "B",
+      "minutes": 9
+    },
+    {
+      "event_id": "a3",
+      "entity_id": "a",
+      "version": 3,
+      "op": "put",
+      "group": "B",
+      "minutes": 7
+    },
+    {
+      "event_id": "c2",
+      "entity_id": "c",
+      "version": 2,
+      "op": "delete",
+      "group": null,
+      "minutes": null
+    },
+    {
+      "event_id": "d4",
+      "entity_id": "d",
+      "version": 4,
+      "op": "put",
+      "group": "A",
+      "minutes": 4
+    },
+    {
+      "event_id": "a3-alias",
+      "entity_id": "a",
+      "version": 3,
+      "op": "put",
+      "group": "B",
+      "minutes": 7
+    },
+    {
+      "event_id": "b1",
+      "entity_id": "b",
+      "version": 1,
+      "op": "put",
+      "group": "A",
+      "minutes": 21
+    },
+    {
+      "event_id": "fix",
+      "entity_id": "e",
+      "version": true,
+      "op": "put",
+      "group": "A",
+      "minutes": 3
+    },
+    {
+      "event_id": "fix",
+      "entity_id": "e",
+      "version": 1,
+      "op": "put",
+      "group": "A",
+      "minutes": 3
+    }
+  ]
+}

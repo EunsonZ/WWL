@@ -1,0 +1,30 @@
+{
+  "state": {
+    "entities": [],
+    "seen": [],
+    "claims": [],
+    "totals": [],
+    "positions": [],
+    "deliveries": [],
+    "checkpoint": 0
+  },
+  "sink": {
+    "effects": [
+      [
+        1,
+        "[\"teaching-authority-A\",\"f1\"]",
+        "03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179",
+        "{\"delta\":[[\"F\",11,1]],\"event\":{\"entity_id\":\"f\",\"event_id\":\"f1\",\"group\":\"F\",\"minutes\":11,\"op\":\"put\",\"version\":1},\"protocol\":\"wwl-db18-recovery-v1\"}",
+        "{\"effect_id\":\"[\\\"teaching-authority-A\\\",\\\"f1\\\"]\",\"effect_seq\":1,\"fingerprint\":\"03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179\",\"status\":\"committed\"}"
+      ]
+    ],
+    "receipts": [],
+    "totals": [
+      [
+        "F",
+        11,
+        1
+      ]
+    ]
+  }
+}

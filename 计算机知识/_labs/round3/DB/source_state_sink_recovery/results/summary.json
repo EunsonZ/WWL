@@ -1,0 +1,864 @@
+{
+  "protocol": "wwl-db18-recovery-v1",
+  "python": "3.14.7",
+  "sqlite": "3.53.4",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "cpu_threads": 1,
+  "wall_clock_limit_seconds": 300,
+  "elapsed_seconds": 3.6863101669587195,
+  "source_sha256": "102fa17e364a84d67fed1d00f05e19e4f7916844ffe7ba20379b5da724305666",
+  "source_files_sha256": {
+    "recovery_worker.py": "374b358d2dfcaa55b567b64df5d0ebb08f76fe13d4014a2e1e540bc1eb64cfa1",
+    "batch_oracle.py": "025ea8aab218b5fbc3fb68058228a9242b858896154869dc3fbb5f0fb16847de",
+    "test_recovery.py": "82380faadc8629b15407ea481157f2d23a3e98caff11aa4ba161f6233c195914",
+    "run_experiment.py": "eb0e9d78dc41357403e0404075d7600c2829336a94fb82788968763a91480a59"
+  },
+  "scenarios": [
+    {
+      "name": "normal_b1",
+      "fault": "none",
+      "at": 0,
+      "returncodes": [
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 18,
+      "cut_state_totals": [
+        [
+          "A",
+          7,
+          2
+        ],
+        [
+          "B",
+          7,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ],
+      "cut_sink_totals": [
+        [
+          "A",
+          7,
+          2
+        ],
+        [
+          "B",
+          7,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "normal_b2",
+      "fault": "none",
+      "at": 0,
+      "returncodes": [
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 18,
+      "cut_state_totals": [
+        [
+          "A",
+          7,
+          2
+        ],
+        [
+          "B",
+          7,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ],
+      "cut_sink_totals": [
+        [
+          "A",
+          7,
+          2
+        ],
+        [
+          "B",
+          7,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "normal_b4",
+      "fault": "none",
+      "at": 0,
+      "returncodes": [
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 18,
+      "cut_state_totals": [
+        [
+          "A",
+          7,
+          2
+        ],
+        [
+          "B",
+          7,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ],
+      "cut_sink_totals": [
+        [
+          "A",
+          7,
+          2
+        ],
+        [
+          "B",
+          7,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "normal_b7",
+      "fault": "none",
+      "at": 0,
+      "returncodes": [
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 18,
+      "cut_state_totals": [
+        [
+          "A",
+          7,
+          2
+        ],
+        [
+          "B",
+          7,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ],
+      "cut_sink_totals": [
+        [
+          "A",
+          7,
+          2
+        ],
+        [
+          "B",
+          7,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "kill_sink_naive",
+      "fault": "after_sink",
+      "at": 1,
+      "returncodes": [
+        -9,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": false,
+          "sink_effects": false,
+          "sink_receipts": false,
+          "sink_totals": false
+        },
+        "all_match": false,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            22,
+            2
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 12
+      },
+      "cut_checkpoint": 0,
+      "cut_state_totals": [],
+      "cut_sink_totals": [
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "kill_sink_dedupe",
+      "fault": "after_sink",
+      "at": 1,
+      "returncodes": [
+        -9,
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 0,
+      "cut_state_totals": [],
+      "cut_sink_totals": [
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "kill_offset_first",
+      "fault": "after_offset",
+      "at": 2,
+      "returncodes": [
+        -9,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": false,
+          "sink_effects": false,
+          "sink_receipts": false,
+          "sink_totals": false
+        },
+        "all_match": false,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 10
+      },
+      "cut_checkpoint": 2,
+      "cut_state_totals": [],
+      "cut_sink_totals": []
+    },
+    {
+      "name": "kill_atomic_before",
+      "fault": "before_state_commit",
+      "at": 2,
+      "returncodes": [
+        -9,
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 0,
+      "cut_state_totals": [],
+      "cut_sink_totals": [
+        [
+          "A",
+          10,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "kill_atomic_after",
+      "fault": "after_state_commit",
+      "at": 2,
+      "returncodes": [
+        -9,
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 2,
+      "cut_state_totals": [
+        [
+          "A",
+          10,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ],
+      "cut_sink_totals": [
+        [
+          "A",
+          10,
+          1
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "kill_update_sink",
+      "fault": "after_sink",
+      "at": 5,
+      "returncodes": [
+        -9,
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 4,
+      "cut_state_totals": [
+        [
+          "A",
+          30,
+          2
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ],
+      "cut_sink_totals": [
+        [
+          "A",
+          35,
+          2
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "kill_atomic_b4",
+      "fault": "before_state_commit",
+      "at": 4,
+      "returncodes": [
+        -9,
+        0,
+        0,
+        0
+      ],
+      "comparison": {
+        "checks": {
+          "state": true,
+          "sink_effects": true,
+          "sink_receipts": true,
+          "sink_totals": true
+        },
+        "all_match": true,
+        "expected_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "actual_totals": [
+          [
+            "A",
+            7,
+            2
+          ],
+          [
+            "B",
+            7,
+            1
+          ],
+          [
+            "F",
+            11,
+            1
+          ]
+        ],
+        "expected_effects": 11,
+        "actual_effects": 11
+      },
+      "cut_checkpoint": 0,
+      "cut_state_totals": [],
+      "cut_sink_totals": [
+        [
+          "A",
+          30,
+          2
+        ],
+        [
+          "F",
+          11,
+          1
+        ]
+      ]
+    }
+  ],
+  "controlled_sigkills": 7,
+  "correct_scenarios": 9,
+  "intentional_counterexamples": 2,
+  "status": "pass"
+}

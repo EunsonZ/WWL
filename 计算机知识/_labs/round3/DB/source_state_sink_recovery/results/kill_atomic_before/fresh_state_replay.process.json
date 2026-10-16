@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "-u",
+    "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/recovery_worker.py",
+    "--source",
+    "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/source.json",
+    "--state",
+    "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/fresh_state.sqlite",
+    "--sink",
+    "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/sink.sqlite",
+    "--batch-size",
+    "2",
+    "--checkpoint-mode",
+    "atomic",
+    "--sink-mode",
+    "dedupe",
+    "--fault",
+    "none",
+    "--at",
+    "0",
+    "--token",
+    "45eb57253fb54bb3b671acc0afd1acef"
+  ],
+  "pid": 69079,
+  "returncode": 0,
+  "elapsed_seconds": 0.10456979199079797,
+  "observed_barrier": null,
+  "signal": null
+}

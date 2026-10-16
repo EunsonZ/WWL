@@ -1,0 +1,43 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "-u",
+    "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/recovery_worker.py",
+    "--source",
+    "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/source.json",
+    "--state",
+    "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_sink_dedupe/state.sqlite",
+    "--sink",
+    "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_sink_dedupe/sink.sqlite",
+    "--batch-size",
+    "2",
+    "--checkpoint-mode",
+    "atomic",
+    "--sink-mode",
+    "dedupe",
+    "--fault",
+    "after_sink",
+    "--at",
+    "1",
+    "--token",
+    "9bb481d3403b4d6b8e16ab9678ea585d"
+  ],
+  "pid": 69070,
+  "returncode": -9,
+  "elapsed_seconds": 0.06064095802139491,
+  "observed_barrier": {
+    "kind": "after_sink",
+    "phase": "barrier",
+    "pid": 69070,
+    "position": 1,
+    "result": {
+      "effect_id": "[\"teaching-authority-A\",\"f1\"]",
+      "effect_seq": 1,
+      "fingerprint": "03ea6ccf29626d550026481c10c29446a92e16c397ce7717fbebcf221dfcf179",
+      "status": "committed"
+    },
+    "token": "9bb481d3403b4d6b8e16ab9678ea585d"
+  },
+  "signal": 9
+}

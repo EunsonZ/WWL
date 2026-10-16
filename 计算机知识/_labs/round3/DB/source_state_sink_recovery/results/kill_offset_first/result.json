@@ -1,0 +1,155 @@
+{
+  "name": "kill_offset_first",
+  "batch_size": 2,
+  "checkpoint_mode": "offset_first_bad",
+  "sink_mode": "dedupe",
+  "fault": "after_offset",
+  "at": 2,
+  "runs": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-u",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/recovery_worker.py",
+        "--source",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/source.json",
+        "--state",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_offset_first/state.sqlite",
+        "--sink",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_offset_first/sink.sqlite",
+        "--batch-size",
+        "2",
+        "--checkpoint-mode",
+        "offset_first_bad",
+        "--sink-mode",
+        "dedupe",
+        "--fault",
+        "after_offset",
+        "--at",
+        "2",
+        "--token",
+        "4aa97a1ddae3406589d21c379048c32d"
+      ],
+      "pid": 69074,
+      "returncode": -9,
+      "elapsed_seconds": 0.06404049997217953,
+      "observed_barrier": {
+        "kind": "after_offset",
+        "phase": "barrier",
+        "pid": 69074,
+        "position": 2,
+        "token": "4aa97a1ddae3406589d21c379048c32d"
+      },
+      "signal": 9
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-u",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/recovery_worker.py",
+        "--source",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/source.json",
+        "--state",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_offset_first/state.sqlite",
+        "--sink",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_offset_first/sink.sqlite",
+        "--batch-size",
+        "2",
+        "--checkpoint-mode",
+        "offset_first_bad",
+        "--sink-mode",
+        "dedupe",
+        "--fault",
+        "none",
+        "--at",
+        "0",
+        "--token",
+        "91dc5cc2e3594f97ace9b2f6daa44230"
+      ],
+      "pid": 69075,
+      "returncode": 0,
+      "elapsed_seconds": 0.18369391601299867,
+      "observed_barrier": null,
+      "signal": null
+    }
+  ],
+  "comparison": {
+    "checks": {
+      "state": false,
+      "sink_effects": false,
+      "sink_receipts": false,
+      "sink_totals": false
+    },
+    "all_match": false,
+    "expected_totals": [
+      [
+        "A",
+        7,
+        2
+      ],
+      [
+        "B",
+        7,
+        1
+      ],
+      [
+        "F",
+        11,
+        1
+      ]
+    ],
+    "actual_totals": [
+      [
+        "A",
+        7,
+        2
+      ],
+      [
+        "B",
+        7,
+        1
+      ]
+    ],
+    "expected_effects": 11,
+    "actual_effects": 10
+  },
+  "committed_prefix_checks": [
+    {
+      "position": 4,
+      "match": false
+    },
+    {
+      "position": 6,
+      "match": false
+    },
+    {
+      "position": 8,
+      "match": false
+    },
+    {
+      "position": 10,
+      "match": false
+    },
+    {
+      "position": 12,
+      "match": false
+    },
+    {
+      "position": 14,
+      "match": false
+    },
+    {
+      "position": 16,
+      "match": false
+    },
+    {
+      "position": 18,
+      "match": false
+    }
+  ],
+  "cut_checkpoint": 2,
+  "cut_state_totals": [],
+  "cut_sink_totals": []
+}

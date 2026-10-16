@@ -1,0 +1,237 @@
+{
+  "name": "kill_atomic_before",
+  "batch_size": 2,
+  "checkpoint_mode": "atomic",
+  "sink_mode": "dedupe",
+  "fault": "before_state_commit",
+  "at": 2,
+  "runs": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-u",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/recovery_worker.py",
+        "--source",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/source.json",
+        "--state",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/state.sqlite",
+        "--sink",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/sink.sqlite",
+        "--batch-size",
+        "2",
+        "--checkpoint-mode",
+        "atomic",
+        "--sink-mode",
+        "dedupe",
+        "--fault",
+        "before_state_commit",
+        "--at",
+        "2",
+        "--token",
+        "cadc4253790f4b25a8d91eda3951d938"
+      ],
+      "pid": 69076,
+      "returncode": -9,
+      "elapsed_seconds": 0.0692512919777073,
+      "observed_barrier": {
+        "kind": "before_state_commit",
+        "phase": "barrier",
+        "pid": 69076,
+        "position": 2,
+        "token": "cadc4253790f4b25a8d91eda3951d938"
+      },
+      "signal": 9
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-u",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/recovery_worker.py",
+        "--source",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/source.json",
+        "--state",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/state.sqlite",
+        "--sink",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/sink.sqlite",
+        "--batch-size",
+        "2",
+        "--checkpoint-mode",
+        "atomic",
+        "--sink-mode",
+        "dedupe",
+        "--fault",
+        "none",
+        "--at",
+        "0",
+        "--token",
+        "8e8b768e851f4145a1807c920b84519d"
+      ],
+      "pid": 69077,
+      "returncode": 0,
+      "elapsed_seconds": 0.14922825002577156,
+      "observed_barrier": null,
+      "signal": null
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-u",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/recovery_worker.py",
+        "--source",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/source.json",
+        "--state",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/state.sqlite",
+        "--sink",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/sink.sqlite",
+        "--batch-size",
+        "2",
+        "--checkpoint-mode",
+        "atomic",
+        "--sink-mode",
+        "dedupe",
+        "--fault",
+        "none",
+        "--at",
+        "0",
+        "--token",
+        "36977146957648e5a50ed3ba75df240b"
+      ],
+      "pid": 69078,
+      "returncode": 0,
+      "elapsed_seconds": 0.044128375011496246,
+      "observed_barrier": null,
+      "signal": null
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-u",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/recovery_worker.py",
+        "--source",
+        "/private/tmp/wwl-next-172-recovery/计算机知识/_labs/round3/DB/source_state_sink_recovery/source.json",
+        "--state",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/fresh_state.sqlite",
+        "--sink",
+        "/private/tmp/wwl-next-172-recovery/sqlite-final-resources/kill_atomic_before/sink.sqlite",
+        "--batch-size",
+        "2",
+        "--checkpoint-mode",
+        "atomic",
+        "--sink-mode",
+        "dedupe",
+        "--fault",
+        "none",
+        "--at",
+        "0",
+        "--token",
+        "45eb57253fb54bb3b671acc0afd1acef"
+      ],
+      "pid": 69079,
+      "returncode": 0,
+      "elapsed_seconds": 0.10456979199079797,
+      "observed_barrier": null,
+      "signal": null
+    }
+  ],
+  "comparison": {
+    "checks": {
+      "state": true,
+      "sink_effects": true,
+      "sink_receipts": true,
+      "sink_totals": true
+    },
+    "all_match": true,
+    "expected_totals": [
+      [
+        "A",
+        7,
+        2
+      ],
+      [
+        "B",
+        7,
+        1
+      ],
+      [
+        "F",
+        11,
+        1
+      ]
+    ],
+    "actual_totals": [
+      [
+        "A",
+        7,
+        2
+      ],
+      [
+        "B",
+        7,
+        1
+      ],
+      [
+        "F",
+        11,
+        1
+      ]
+    ],
+    "expected_effects": 11,
+    "actual_effects": 11
+  },
+  "committed_prefix_checks": [
+    {
+      "position": 2,
+      "match": true
+    },
+    {
+      "position": 4,
+      "match": true
+    },
+    {
+      "position": 6,
+      "match": true
+    },
+    {
+      "position": 8,
+      "match": true
+    },
+    {
+      "position": 10,
+      "match": true
+    },
+    {
+      "position": 12,
+      "match": true
+    },
+    {
+      "position": 14,
+      "match": true
+    },
+    {
+      "position": 16,
+      "match": true
+    },
+    {
+      "position": 18,
+      "match": true
+    }
+  ],
+  "cut_checkpoint": 0,
+  "cut_state_totals": [],
+  "cut_sink_totals": [
+    [
+      "A",
+      10,
+      1
+    ],
+    [
+      "F",
+      11,
+      1
+    ]
+  ]
+}

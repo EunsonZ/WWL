@@ -1,0 +1,29 @@
+{
+  "test_command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/private/tmp/wwl-next-172-recovery/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/source_state_sink_recovery",
+    "-p",
+    "test_recovery.py",
+    "-v"
+  ],
+  "test_exit_code": 0,
+  "experiment_command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "/private/tmp/wwl-next-172-recovery/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/source_state_sink_recovery/run_experiment.py",
+    "--out",
+    "/private/tmp/wwl-next-172-recovery/\u8ba1\u7b97\u673a\u77e5\u8bc6/_labs/round3/DB/source_state_sink_recovery/results",
+    "--work",
+    "/private/tmp/wwl-next-172-recovery/sqlite-final-resources"
+  ],
+  "experiment_exit_code": 0,
+  "elapsed_seconds": 4.086186208005529,
+  "wrapper": "/private/tmp/wwl-next-context/run_local.py --timeout 300",
+  "cpu_threads": 1,
+  "wall_clock_limit_seconds": 300
+}

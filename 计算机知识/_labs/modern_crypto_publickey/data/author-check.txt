@@ -1,0 +1,15 @@
+WWL public RSA author run 2026-10-17. ALL private factors/exponents already public RFC7520 examples; NO new keys or credentials generated, no network/remote/TLS/hardware target.
+Python3.12.11 cryptography50.0.2 OpenSSL4.0.3 backend macOS27.0.1 arm64; existing isolated environment reused, no new dependency install.
+Existing shared two-slot runner, single process/thread limits1, timeout120s; estimate seconds/<5min. Not a performance/constant-time measurement.
+
+Actual commands (original execution paths):
+WWL_AEAD_SOURCE='/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/计算机知识/_labs/modern_crypto_aead/aead_lab.py' /private/tmp/wwl-next-context/run_local.py --timeout 120 -- /private/tmp/wwl-next-170/runtime/bin/python -B -m unittest discover -s /private/tmp/wwl-next-170-publickey/vault/计算机知识/_labs/modern_crypto_publickey -p test_publickey_lab.py -v
+WWL_AEAD_SOURCE='/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/计算机知识/_labs/modern_crypto_aead/aead_lab.py' /private/tmp/wwl-next-context/run_local.py --timeout 120 -- /private/tmp/wwl-next-170/runtime/bin/python -B /private/tmp/wwl-next-170-publickey/vault/计算机知识/_labs/modern_crypto_publickey/publickey_lab.py --output /private/tmp/wwl-next-170-publickey/author-run-20261017
+
+6tests0.387s PASS exit0; default CLI exit0. Both data/results.json and randomized-samples.json copied byte-for-byte from this actual run.
+Fixture SHA25c576d985cf4ca8cc28327f025d91cfaf1cf5fbb32203fd02ef2c64425c6f4d.
+AEAD canonical encoding reused read-only, source SHA7f293e4d8ed157be86f117ce2b5bfdf0563c7da7951f7b9e3afe56a6cfcdcf4f. No older lab tests rerun.
+Fresh randomized samples will have DIFFERENT raw bytes; verify decryption/signatures, not equality with stored samples. Fixed teaching seed/salt encodings and published PSS vector are separate evidence. README supplies portable fresh external reproduction; /private/tmp paths above are historical provenance.
+
+Finite claims: all55 toy residues incl15nonunits; CRT/RSA attacks; RFC7520 public PSS vector; independent public encodings vs mature OAEP/PSS; selected 512 low-bit changes plus malformed/parameters/purpose guards; actual randomized mature sample relations.
+Not a proof of general RSA/IND-CCA/EUF-CMA assumptions, factoring equivalence, constant-time/platform/production credential lifecycle, full TLS or general multisession AKE security.

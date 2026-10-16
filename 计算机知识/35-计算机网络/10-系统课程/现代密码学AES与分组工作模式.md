@@ -196,7 +196,7 @@ ECB 的模式泄漏、CBC/CTR 的可塑性，不代表 AES 单块置换被逆向
 
 **答案**：① `fe`；第一项 `ad XOR 35 XOR 53 XOR 45=8e`；索引改变就不是同一 state，不能声称匹配。② 是；查询0得常量项，查询128个单位向量并各 XOR $E(0)$ 得线性部分的列，可计算任意输入映射。③ 成功率1、优势1/2；随机置换也保留块相等性，所以不修复。④ 取 $Q=P\oplus V\oplus W$；不要求IV保密，而要在选明文之前不可预测。⑤ $P_2$ 改变、$P_3$ 同位置精确翻，$P_1,P_4$ 不变；CTR仅对应明文 bit 精确翻。⑥ A用100/101，B冲突；最后值可处理16byte，17byte越界先拒；零长度不保留输入。⑦ 不能，裸CTR没有认证拒绝；guard重启即失去历史，不提供持久唯一性。
 
-[[计算机知识/_labs/modern_crypto_modes/data/results.json|本次保留结果]] 支撑有限精确例。公开向量、轮迹、128个线性基变换核查与库互证不证明一般 PRP/IND-CPA/CCA、常数时间、侧信道或生产状态安全，也没有运行真实秘密、远程服务或硬件。具体签名数学、公钥加密与一般多会话 AKE/组合课程仍待接续；本单元不关闭整门现代密码学。
+[[计算机知识/_labs/modern_crypto_modes/data/results.json|本次保留结果]] 支撑有限精确例。公开向量、轮迹、128个线性基变换核查与库互证不证明一般 PRP/IND-CPA/CCA、常数时间、侧信道或生产状态安全，也没有运行真实秘密、远程服务或硬件。具体公钥加密与签名数学继续到 [[计算机知识/35-计算机网络/10-系统课程/现代密码学RSA加密与签名编码|RSA的CRT与OAEP/PSS]]：块密码模式和RSA原始幂都必须区分正确性与完整方案安全。一般多会话AKE与完整协议归约留作扩展，不由本模式实验声称已证。
 
 [^aes]: [NIST FIPS197-upd1](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197-upd1.pdf)，§§3–5：state/域运算、S-box、轮变换、key扩展与正逆算法。2023更新文本，本页固定AES128，不把其他key长度误称其他block长度。
 [^core]: [NIST AES_Core128公开例](https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/examples/AES_Core128.pdf)，首明文块的轮迹；逐字输入与定位在实践向量文件，非从作者积分/同一实现自生成期望。

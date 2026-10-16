@@ -1,0 +1,28 @@
+{
+  "model": "ideal fixed-base planar 2R, unrestricted joint angles; position task in W",
+  "units": {"length": "m", "joint_angle": "rad", "joint_speed": "rad/s", "force": "N", "torque": "N m", "power": "W"},
+  "configurations": [
+    {"id": "straight", "q_rad": [0.0, 0.0], "lengths_m": [1.0, 1.0]},
+    {"id": "regular", "q_rad": [0.5235987755982988, -1.0471975511965976], "lengths_m": [1.0, 1.0]},
+    {"id": "folded_equal", "q_rad": [0.0, 3.141592653589793], "lengths_m": [1.0, 1.0]},
+    {"id": "unequal", "q_rad": [-0.7, 1.2], "lengths_m": [1.3, 0.8]},
+    {"id": "quarter", "q_rad": [1.5707963267948966, -1.5707963267948966], "lengths_m": [1.0, 1.0]}
+  ],
+  "targets": [
+    {"id": "two_solutions", "target_W_m": [1.0, 1.0], "lengths_m": [1.0, 1.0]},
+    {"id": "outer", "target_W_m": [2.0, 0.0], "lengths_m": [1.0, 1.0]},
+    {"id": "origin_family", "target_W_m": [0.0, 0.0], "lengths_m": [1.0, 1.0]},
+    {"id": "too_far", "target_W_m": [2.1, 0.0], "lengths_m": [1.0, 1.0]},
+    {"id": "inner_boundary", "target_W_m": [0.5, 0.0], "lengths_m": [1.5, 1.0]},
+    {"id": "inner_long_second", "target_W_m": [0.5, 0.0], "lengths_m": [1.0, 1.5]},
+    {"id": "inner_hole", "target_W_m": [0.25, 0.0], "lengths_m": [1.5, 1.0]},
+    {"id": "unequal_regular", "target_W_m": [-0.5, 1.0], "lengths_m": [1.3, 0.8]}
+  ],
+  "power_cases": [
+    {"id": "straight_power", "q_rad": [0.0, 0.0], "qdot_rad_s": [0.3, -0.2], "force_W_N": [3.0, -2.0]},
+    {"id": "straight_horizontal", "q_rad": [0.0, 0.0], "qdot_rad_s": [0.3, -0.2], "force_W_N": [3.0, 0.0]},
+    {"id": "regular_power", "q_rad": [0.5235987755982988, -1.0471975511965976], "qdot_rad_s": [0.3, -0.2], "force_W_N": [3.0, -2.0]}
+  ],
+  "near_singular": {"epsilon_rad": [0.5, 0.1, 0.02, 0.005], "velocity_W_m_s": [-0.1, 0.0], "joint_limit_rad_s": 1.0},
+  "null_curve_epsilon_rad": [0.0, 0.005, 0.02, 0.1, 0.3]
+}

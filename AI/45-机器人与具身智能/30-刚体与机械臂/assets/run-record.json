@@ -1,0 +1,25 @@
+{
+  "kind": "local finite kinematics computation; no robot, no closed-loop simulation",
+  "python": "3.14.7",
+  "numpy": "2.5.2",
+  "numerical_threads": 1,
+  "runner": "/private/tmp/wwl-next-context/run_local.py --timeout 300 --",
+  "short_pre_run": "same fixed input, exit 0; no parameter search",
+  "formal": "5 configurations, 8 target cases, 3 power pairs, 4 inverse-speed cases, 5 finite-null-curve points; exit 0",
+  "tests": "6 unittest methods, exit 0; see author-tests.txt",
+  "source_inputs_sha256": {
+    "inputs.json": "13cc579cc26330845e0f3e1e93a46dd0c74d49684651e2ff499e4c91acafe2d3",
+    "code-sync/arm_kinematics.py": "a1e4b57e9be8932148df1684db9f95d047a1a4cc3b27d013eb210ac2e66916a3",
+    "code-sync/test_arm_kinematics.py": "c9a57d6c533e7dc956afa390e3cb41bc79eeec979cb81f7d1565942484a4ef13",
+    "code-sync/render_figures.py": "5423407decafe67beb653058e90903c80e1f4ac28171e476adc092f692873994",
+    "assets/results.json": "2a26fb91fa82b8f76c62d87a583068bc7dced17f928e5949a56f8ebcc08c473d"
+  },
+  "base_source": "AI/45-机器人与具身智能/robotics_lab.py",
+  "base_sha256": "c14548f70e059dd1a0c900ee70217e01135141e1c96e58a1486d5b1e8156a144",
+  "figure_python": "repository existing .venv/bin/python, Matplotlib Agg; no new installed dependency",
+  "unverified": [
+    "physical robot and actuator behaviour",
+    "nonlinear arm feedback and measurement pipeline",
+    "general SE(3)/twist/dynamics/nonholonomic/contact remaining course units"
+  ]
+}

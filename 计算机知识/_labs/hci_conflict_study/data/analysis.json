@@ -1,0 +1,412 @@
+{
+  "identity": "SIMULATED TEACHING INPUTS ONLY; no participants or observed human effects",
+  "legacy_reused": {
+    "registered_attempts": 5,
+    "started": 5,
+    "prestart_technical_failure": 0,
+    "outcomes_started": {
+      "abandoned": 0,
+      "assisted": 1,
+      "failed": 1,
+      "technical_failure": 0,
+      "unaided": 3
+    },
+    "unaided_fraction": [
+      3,
+      5
+    ],
+    "including_help_fraction": [
+      4,
+      5
+    ],
+    "unaided_rate": 0.6,
+    "including_help_rate": 0.8,
+    "completion_time_observed_n": 0,
+    "completion_time_missing_n": 4,
+    "mean_observed_completion_s": null
+  },
+  "one_new_alternative_record": {
+    "withdraw_after_start": {
+      "registered_attempts": 6,
+      "started": 6,
+      "prestart_technical_failure": 0,
+      "outcomes_started": {
+        "abandoned": 1,
+        "assisted": 1,
+        "failed": 1,
+        "technical_failure": 0,
+        "unaided": 3
+      },
+      "unaided_fraction": [
+        3,
+        6
+      ],
+      "including_help_fraction": [
+        4,
+        6
+      ],
+      "unaided_rate": 0.5,
+      "including_help_rate": 0.6666666666666666,
+      "completion_time_observed_n": 0,
+      "completion_time_missing_n": 4,
+      "mean_observed_completion_s": null
+    },
+    "technical_after_start": {
+      "registered_attempts": 6,
+      "started": 6,
+      "prestart_technical_failure": 0,
+      "outcomes_started": {
+        "abandoned": 0,
+        "assisted": 1,
+        "failed": 1,
+        "technical_failure": 1,
+        "unaided": 3
+      },
+      "unaided_fraction": [
+        3,
+        6
+      ],
+      "including_help_fraction": [
+        4,
+        6
+      ],
+      "unaided_rate": 0.5,
+      "including_help_rate": 0.6666666666666666,
+      "completion_time_observed_n": 0,
+      "completion_time_missing_n": 4,
+      "mean_observed_completion_s": null
+    },
+    "technical_before_start": {
+      "registered_attempts": 6,
+      "started": 5,
+      "prestart_technical_failure": 1,
+      "outcomes_started": {
+        "abandoned": 0,
+        "assisted": 1,
+        "failed": 1,
+        "technical_failure": 0,
+        "unaided": 3
+      },
+      "unaided_fraction": [
+        3,
+        5
+      ],
+      "including_help_fraction": [
+        4,
+        5
+      ],
+      "unaided_rate": 0.6,
+      "including_help_rate": 0.8,
+      "completion_time_observed_n": 0,
+      "completion_time_missing_n": 4,
+      "mean_observed_completion_s": null
+    }
+  },
+  "fixed_AB": {
+    "participants": 4,
+    "complete_pairs": 4,
+    "incomplete_pairs": 0,
+    "by_condition": {
+      "A": {
+        "success": 4,
+        "attempts": 4,
+        "observed_completion_n": 4,
+        "mean_observed_completion_s": 105.0
+      },
+      "B": {
+        "success": 4,
+        "attempts": 4,
+        "observed_completion_n": 4,
+        "mean_observed_completion_s": 85.0
+      }
+    },
+    "paired_differences": [
+      {
+        "id": "F1",
+        "order": "AB",
+        "B_minus_A_s": -18.0
+      },
+      {
+        "id": "F2",
+        "order": "AB",
+        "B_minus_A_s": -22.0
+      },
+      {
+        "id": "F3",
+        "order": "AB",
+        "B_minus_A_s": -20.0
+      },
+      {
+        "id": "F4",
+        "order": "AB",
+        "B_minus_A_s": -20.0
+      }
+    ],
+    "by_order_n": {
+      "AB": 4,
+      "BA": 0
+    },
+    "by_order_mean_s": {
+      "AB": -20.0,
+      "BA": null
+    },
+    "naive_complete_pair_mean_s": -20.0,
+    "equal_order_contrast_s": null
+  },
+  "balanced": {
+    "participants": 8,
+    "complete_pairs": 8,
+    "incomplete_pairs": 0,
+    "by_condition": {
+      "A": {
+        "success": 8,
+        "attempts": 8,
+        "observed_completion_n": 8,
+        "mean_observed_completion_s": 97.5
+      },
+      "B": {
+        "success": 8,
+        "attempts": 8,
+        "observed_completion_n": 8,
+        "mean_observed_completion_s": 87.5
+      }
+    },
+    "paired_differences": [
+      {
+        "id": "T1",
+        "order": "AB",
+        "B_minus_A_s": -34.0
+      },
+      {
+        "id": "T2",
+        "order": "AB",
+        "B_minus_A_s": -26.0
+      },
+      {
+        "id": "T3",
+        "order": "AB",
+        "B_minus_A_s": -32.0
+      },
+      {
+        "id": "T4",
+        "order": "AB",
+        "B_minus_A_s": -28.0
+      },
+      {
+        "id": "T5",
+        "order": "BA",
+        "B_minus_A_s": 6.0
+      },
+      {
+        "id": "T6",
+        "order": "BA",
+        "B_minus_A_s": 14.0
+      },
+      {
+        "id": "T7",
+        "order": "BA",
+        "B_minus_A_s": 8.0
+      },
+      {
+        "id": "T8",
+        "order": "BA",
+        "B_minus_A_s": 12.0
+      }
+    ],
+    "by_order_n": {
+      "AB": 4,
+      "BA": 4
+    },
+    "by_order_mean_s": {
+      "AB": -30.0,
+      "BA": 10.0
+    },
+    "naive_complete_pair_mean_s": -10.0,
+    "equal_order_contrast_s": -10.0
+  },
+  "conditional_interval": {
+    "estimate_s": -10.0,
+    "pooled_residual_variance_s2": 13.333333333333334,
+    "standard_error_s": 1.2909944487358056,
+    "df": 6,
+    "critical_rounded": 2.447,
+    "conditional_95_interval_s": [
+      -13.159063416056517,
+      -6.840936583943483
+    ],
+    "meaning": "normal independent equal-variance difference errors and no differential carryover assumed; not verified human evidence"
+  },
+  "dropout_alternative": {
+    "participants": 8,
+    "complete_pairs": 7,
+    "incomplete_pairs": 1,
+    "by_condition": {
+      "A": {
+        "success": 7,
+        "attempts": 8,
+        "observed_completion_n": 7,
+        "mean_observed_completion_s": 96.71428571428571
+      },
+      "B": {
+        "success": 8,
+        "attempts": 8,
+        "observed_completion_n": 8,
+        "mean_observed_completion_s": 87.5
+      }
+    },
+    "paired_differences": [
+      {
+        "id": "T1",
+        "order": "AB",
+        "B_minus_A_s": -34.0
+      },
+      {
+        "id": "T2",
+        "order": "AB",
+        "B_minus_A_s": -26.0
+      },
+      {
+        "id": "T3",
+        "order": "AB",
+        "B_minus_A_s": -32.0
+      },
+      {
+        "id": "T4",
+        "order": "AB",
+        "B_minus_A_s": -28.0
+      },
+      {
+        "id": "T5",
+        "order": "BA",
+        "B_minus_A_s": 6.0
+      },
+      {
+        "id": "T6",
+        "order": "BA",
+        "B_minus_A_s": 14.0
+      },
+      {
+        "id": "T7",
+        "order": "BA",
+        "B_minus_A_s": 8.0
+      }
+    ],
+    "by_order_n": {
+      "AB": 4,
+      "BA": 3
+    },
+    "by_order_mean_s": {
+      "AB": -30.0,
+      "BA": 9.333333333333334
+    },
+    "naive_complete_pair_mean_s": -13.142857142857142,
+    "equal_order_contrast_s": -10.333333333333332
+  },
+  "differential_carryover_alternative": {
+    "participants": 8,
+    "complete_pairs": 8,
+    "incomplete_pairs": 0,
+    "by_condition": {
+      "A": {
+        "success": 8,
+        "attempts": 8,
+        "observed_completion_n": 8,
+        "mean_observed_completion_s": 97.5
+      },
+      "B": {
+        "success": 8,
+        "attempts": 8,
+        "observed_completion_n": 8,
+        "mean_observed_completion_s": 81.5
+      }
+    },
+    "paired_differences": [
+      {
+        "id": "T1",
+        "order": "AB",
+        "B_minus_A_s": -46.0
+      },
+      {
+        "id": "T2",
+        "order": "AB",
+        "B_minus_A_s": -38.0
+      },
+      {
+        "id": "T3",
+        "order": "AB",
+        "B_minus_A_s": -44.0
+      },
+      {
+        "id": "T4",
+        "order": "AB",
+        "B_minus_A_s": -40.0
+      },
+      {
+        "id": "T5",
+        "order": "BA",
+        "B_minus_A_s": 6.0
+      },
+      {
+        "id": "T6",
+        "order": "BA",
+        "B_minus_A_s": 14.0
+      },
+      {
+        "id": "T7",
+        "order": "BA",
+        "B_minus_A_s": 8.0
+      },
+      {
+        "id": "T8",
+        "order": "BA",
+        "B_minus_A_s": 12.0
+      }
+    ],
+    "by_order_n": {
+      "AB": 4,
+      "BA": 4
+    },
+    "by_order_mean_s": {
+      "AB": -42.0,
+      "BA": 10.0
+    },
+    "naive_complete_pair_mean_s": -16.0,
+    "equal_order_contrast_s": -16.0
+  },
+  "completion_selection": {
+    "participants": 2,
+    "complete_pairs": 1,
+    "incomplete_pairs": 1,
+    "by_condition": {
+      "A": {
+        "success": 2,
+        "attempts": 2,
+        "observed_completion_n": 2,
+        "mean_observed_completion_s": 65.0
+      },
+      "B": {
+        "success": 1,
+        "attempts": 2,
+        "observed_completion_n": 1,
+        "mean_observed_completion_s": 40.0
+      }
+    },
+    "paired_differences": [
+      {
+        "id": "S1",
+        "order": "AB",
+        "B_minus_A_s": 10.0
+      }
+    ],
+    "by_order_n": {
+      "AB": 1,
+      "BA": 0
+    },
+    "by_order_mean_s": {
+      "AB": 10.0,
+      "BA": null
+    },
+    "naive_complete_pair_mean_s": 10.0,
+    "equal_order_contrast_s": null
+  }
+}

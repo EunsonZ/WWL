@@ -1,0 +1,202 @@
+{
+  "identity": "Entirely synthetic comparison, distinct from legacy five; no human measurements.",
+  "synthetic": true,
+  "fixed_AB": {
+    "known_generating_tau_s": 0,
+    "known_period_s": -20,
+    "rows": [
+      {
+        "id": "F1",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 90
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 72
+        }
+      },
+      {
+        "id": "F2",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 100
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 78
+        }
+      },
+      {
+        "id": "F3",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 110
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 90
+        }
+      },
+      {
+        "id": "F4",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 120
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 100
+        }
+      }
+    ]
+  },
+  "balanced": {
+    "known_generating_tau_s": -10,
+    "known_period_s": -20,
+    "rows": [
+      {
+        "id": "T1",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 90
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 56
+        }
+      },
+      {
+        "id": "T2",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 100
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 74
+        }
+      },
+      {
+        "id": "T3",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 110
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 78
+        }
+      },
+      {
+        "id": "T4",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 120
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 92
+        }
+      },
+      {
+        "id": "T5",
+        "order": "BA",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 79
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 85
+        }
+      },
+      {
+        "id": "T6",
+        "order": "BA",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 81
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 95
+        }
+      },
+      {
+        "id": "T7",
+        "order": "BA",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 97
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 105
+        }
+      },
+      {
+        "id": "T8",
+        "order": "BA",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 103
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 115
+        }
+      }
+    ]
+  },
+  "dropout": {
+    "identity": "Alternative to balanced T8: second-period A is abandoned; not a ninth participant.",
+    "id": "T8",
+    "condition": "A",
+    "outcome": "abandoned",
+    "elapsed_s": 40,
+    "completion_s": null
+  },
+  "completion_selection": {
+    "identity": "Separate two-person teaching counterexample; not an estimate of interface effectiveness.",
+    "rows": [
+      {
+        "id": "S1",
+        "order": "AB",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 30
+        },
+        "B": {
+          "outcome": "unaided",
+          "completion_s": 40
+        }
+      },
+      {
+        "id": "S2",
+        "order": "BA",
+        "A": {
+          "outcome": "unaided",
+          "completion_s": 100
+        },
+        "B": {
+          "outcome": "abandoned",
+          "completion_s": null
+        }
+      }
+    ]
+  },
+  "conditional_interval": {
+    "model": "d_i=tau+s_i*period+epsilon_i; s=+1 AB/-1 BA; independent normal equal-variance errors, no differential carryover, fixed balanced groups",
+    "t_975_df6_rounded": 2.447,
+    "source": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3672.htm"
+  }
+}

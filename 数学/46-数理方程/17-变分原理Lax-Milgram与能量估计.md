@@ -18,6 +18,8 @@ tags:
 $$J(v)=\frac12\int_\Omega|\nabla v|^2-\langle f,v\rangle,\qquad v\in H_0^1(\Omega).$$
 沿 $v+\varepsilon w$ 求一阶变化，得到 $J'(v)w=\int\nabla v\cdot\nabla w-\langle f,w\rangle$，驻点恰为弱解。二次项非负且 Poincaré 控制零模，所以能量严格凸，驻点是唯一全局最小点。
 
+如果先从极小化序列证明存在，[[数学/16-数学分析/20-泛函分析/11-弱紧性与Eberlein-Smulian定理#直接法：提取极限之后，还要保住可行性与能量|弱子列提取与直接法]] 给出完整逻辑：反身空间中的有界序列可抽弱子列，约束弱闭保住可行性，能量弱下半连续保住下界。这条一般存在路线不自动提供唯一性、误差估计或收敛速率；下面的 Lax–Milgram 则还使用双线性型的有界性与强制性。
+
 ## Lax–Milgram 的条件与意义
 
 在实 Hilbert 空间 $V$ 上，若双线性型 $a$ 有界 $|a(u,v)|\le M\|u\|\|v\|$，且强制（coercive）$a(v,v)\ge\alpha\|v\|^2$、$\alpha>0$，那么对每个连续线性泛函 $F$，存在唯一 $u$ 使 $a(u,v)=F(v)$ 对所有 $v$ 成立，且

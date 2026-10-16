@@ -1,0 +1,65 @@
+{
+  "contract": "single-band-parallel-planes-v1",
+  "observation_positions": [
+    [
+      -1.5,
+      -1.5,
+      -2.0
+    ],
+    [
+      0.5,
+      -1.5,
+      -2.0
+    ],
+    [
+      -1.5,
+      0.5,
+      -2.0
+    ]
+  ],
+  "observation_triangles": [
+    [
+      0,
+      1,
+      2
+    ]
+  ],
+  "observation_role": "window on infinite floor, not a physical boundary",
+  "floor_z_m": -2.0,
+  "ceiling_z_m": 2.0,
+  "rho_floor": 0.6,
+  "rho_ceiling": 0.5,
+  "ceiling_emission_W_m2_sr": 4.0,
+  "emission_cos_min": 0.5,
+  "rr_survival": 0.5,
+  "viewport": [
+    64,
+    64
+  ],
+  "image_spp": [
+    4,
+    64
+  ],
+  "image_seed": 16920261017,
+  "benchmark_rho": 0.6,
+  "benchmark_Li_W_m2_sr": 2.0,
+  "benchmark_n": [
+    1,
+    4,
+    16,
+    64,
+    256
+  ],
+  "benchmark_replicates": 2048,
+  "benchmark_seed": 1690901,
+  "disk_radius_m": 1.0,
+  "disk_distance_m": 2.0,
+  "display_reference_W_m2_sr": 1.0,
+  "display_exposure": 1.0,
+  "ggx_alpha": [
+    0.15,
+    0.5,
+    1.0
+  ],
+  "disk_emission_W_m2_sr": 4.0
+}

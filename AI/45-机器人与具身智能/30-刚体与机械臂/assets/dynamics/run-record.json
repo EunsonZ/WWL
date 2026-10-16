@@ -1,0 +1,55 @@
+{
+  "kind": "finite rigid arrays and vertical planar 2R sampled-feedback simulation, not physical robot",
+  "python": "3.14.7",
+  "numpy": "2.5.2",
+  "numerical_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "pre_run": "40 intervals per each fixed case, exit 0; formal core model/gains/timing/limits unchanged",
+  "formal": "6 cases x 1200 held-torque intervals and 1201 states, exit 0",
+  "runner": "/private/tmp/wwl-next-context/run_local.py --timeout 300 --",
+  "tests": "6 unittest methods, exit 0; author-tests.txt; no old IK/32FD rerun",
+  "assertions": {
+    "all_raw_values_finite": true,
+    "actual_torque_within_declared_limits": true,
+    "all_energy_residual_below_5e-5_J": true,
+    "max_energy_residual_J": 3.620201622367425e-07
+  },
+  "source_inputs_outputs_sha256": {
+    "dynamics-inputs.json": "46e779b0588cd26dccb9fac62695481d1ef8ae8e7aafb088a00a28ac68913ac4",
+    "code-sync/rigid_dynamics.py": "8e6f9d17a15860b07788044857ba464a98bb6f80cc72e74b41913c16098bdf9b",
+    "code-sync/test_rigid_dynamics.py": "1c90fcb45e503b2ba513a92bf71ceb7ba002ff48e9aa95587695d15ef61160c7",
+    "code-sync/render_dynamics.py": "b44bdb53ba527f9fd0b0f7f89d8cd70947ae9ec9d59f1a0b408974ecde34b573",
+    "assets/dynamics/trajectories.jsonl": "e8a50fb19ffdd31570a02ffa9bebd6ba2433b1cc9d835bdc868203011679b15a",
+    "assets/dynamics/reference-path.json": "25a3f5fc1e3ff9fe47e188667362671ff36a6f309e12aa6813a3fe136f00733e",
+    "assets/dynamics/results.json": "dab8baf873136310523012f19f219b688ea09ff5c5f4f56a7859c2ec8836c087"
+  },
+  "reused_kinematics_sha256": "a1e4b57e9be8932148df1684db9f95d047a1a4cc3b27d013eb210ac2e66916a3",
+  "reused_SE2_sha256": "c14548f70e059dd1a0c900ee70217e01135141e1c96e58a1486d5b1e8156a144",
+  "overlay_wiki_references": 75,
+  "all_candidate_mirrors_including_unchanged_old_80": 6,
+  "unverified": [
+    "physical robot, calibrated motor/force/encoder loop",
+    "noise estimation and delayed sensing",
+    "nonholonomic and contact units remain next original scope"
+  ],
+  "reader_command": "python3 -B AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/rigid_dynamics.py --output /private/tmp/wwl-rigid-dynamics",
+  "formal_argv": [
+    "python3",
+    "/private/tmp/wwl-next-context/run_local.py",
+    "--timeout",
+    "300",
+    "--",
+    "python3",
+    "-B",
+    "/private/tmp/wwl-next-164-dynamics/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/rigid_dynamics.py",
+    "--kinematics",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/45-机器人与具身智能/30-刚体与机械臂/code-sync/arm_kinematics.py",
+    "--output",
+    "/private/tmp/wwl-next-164-dynamics/AI/45-机器人与具身智能/30-刚体与机械臂/assets/dynamics"
+  ]
+}

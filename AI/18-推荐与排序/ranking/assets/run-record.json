@@ -1,0 +1,104 @@
+{
+  "task": "#162 implicit ranking and cold-start finite teaching benchmark",
+  "provenance": "Original public synthetic 8x6 rating table reused with explicit relevance >=3; no measured clicks or human utility, no external data download.",
+  "protocol_timing": "BPR samplers, split/visibility, checkpoints and selection fixed before pre-run. Train-only pre-run executed20 steps; formal train/validation/selection then test. Later isolated finite randomized-experiment teaching function added without changing model protocol; current-source formal command rerun to bind identity. A/B item0 versus item4 chosen as an illustrative fixed contrast, not model selection or a new blind test.",
+  "runtime": {
+    "python": "3.14.7",
+    "numpy": "2.5.2",
+    "numerical_wall_seconds_approx": 0.15,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "runner": "/private/tmp/wwl-next-context/run_local.py --timeout 300 -- <interpreter> -B <script> <arguments>; two global slots; threads forced1",
+  "actual_commands": [
+    [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/code-sync/make_ranking_inputs.py",
+      "--ratings-source",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/18-推荐与排序/code-sync/make_ratings_inputs.py",
+      "--output",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/inputs"
+    ],
+    [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/code-sync/ranking_lab.py",
+      "--parent",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/18-推荐与排序/code-sync/ratings_lab.py",
+      "--pre-run-steps",
+      "20",
+      "--output",
+      "/private/tmp/wwl-next-162-ranking/pre-run"
+    ],
+    [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/code-sync/ranking_lab.py",
+      "--parent",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/18-推荐与排序/code-sync/ratings_lab.py",
+      "--output",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/assets"
+    ],
+    [
+      "env",
+      "WWL_RATINGS_SOURCE=/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/18-推荐与排序/code-sync/ratings_lab.py",
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/code-sync/test_ranking_lab.py"
+    ],
+    [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv/bin/python",
+      "-B",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/code-sync/render_ranking.py",
+      "--results",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/assets",
+      "--output",
+      "/private/tmp/wwl-next-162-ranking/AI/18-推荐与排序/ranking/assets"
+    ],
+    [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv/bin/python",
+      "-B",
+      "/private/tmp/wwl162-ranking-visual/render_saved.py"
+    ]
+  ],
+  "render_validation": "Saved SVGs actually converted with existing CairoSVG via runner and PNGs visually inspected; not Obsidian or human comprehension evidence.",
+  "identity": {
+    "canonical_sources": {
+      "make_ranking_inputs.py": "dfe1ec4343fd26953bf66c3b38cdc079216e10a580ad03afad2e014d92ed9351",
+      "ranking_lab.py": "bd0e3507e0bf9e2aacd4dc7bb8ac664dbf1be9827774f091d89c647eff49ff52",
+      "render_ranking.py": "2837a5afa4e7eb0ece4232f1daf21680312274f7ad4b13d31855751a229327fa",
+      "test_ranking_lab.py": "1bf85f0b3a2089d14186830a06ae67ed947edcec4397df7e6ca6de40f4f7bee0"
+    },
+    "inputs": {
+      "diagnostic-truth.json": "0f8b9966e0c8f8d761acfff33d2fdf8536d60d05863de846fcf5c4e6cf2e45b9",
+      "protocol.json": "9e8f5ed283c0519b45a565f533c8ee440777d241157ebb27fa5ab506d844e522",
+      "test.json": "49c39210eb1ae205649c2e5e50086e9b8885c365d11eb1077c33e494517bddf2",
+      "train.json": "26bbdce88d299c1a1e726029ab53110d539ed9c2ac6531d853302f80dceba15b",
+      "val.json": "7bc829aae7de9958a5a75759af447c743231dd39c30081ea6229b0f595fd0322"
+    },
+    "reused_parent": {
+      "AI/18-推荐与排序/code-sync/ratings_lab.py": "9b23b6a2faac9b80c0173eb7f3025821b4bd0b6d60f42fcf91ab2d95b776924d",
+      "AI/18-推荐与排序/code-sync/make_ratings_inputs.py": "5b40d275f019598933918234253bca08aeda6f269921fd948d21976dd0cb9ce1"
+    },
+    "outputs": {
+      "author-tests.txt": "e8cb639e769c74038a681846c4bfe9a7dbd3892642173f86c28a4a3abe566047",
+      "checkpoints.json": "c6cb9701551ed5fc747123337bd05323be6a9af49c8f5faa2d4e40351b142e84",
+      "pairs.json": "44fed34ad1435d67d678a747e64760ea63038f362e19b60cd02bed01c6727360",
+      "query-predictions.jsonl": "8d8b3dd05b5bfdfff21d3905b98dce6dbf76e8f03f1d48fc997d0e2eda5b545d",
+      "randomization.json": "57cb6275453ebb2e28a0e4210c67d3775357d19e43a833b53669a17d7ef0c60c",
+      "ranking-candidates.svg": "4d21129d98425353a22569e0af38420af8f74d61481b32d17a6a9f4452f5d174",
+      "results.json": "fc3a288450bf167968108116d6f28565fa0d766f005328838e8d98babe2af8bd",
+      "sampling-and-randomization.svg": "3581752a57612a8004d6289974a4f020e2ab7fc38648c238afe35e42445b46d9",
+      "training-curves.json": "8ffcf6d608e66fd62a098f13f50df4a586b7dd9f4305e31a757e7fab1a2dd0fa",
+      "validation-queries.json": "82b0620fe69cbbb75fe7c2fd50d155a1efd82508f2d226095997bbd55289e3eb"
+    }
+  },
+  "unverified": "No real online randomized trial, human preference/welfare or real drift identification; no production-scale performance/Obsidian client or human learning validation. Small legal public recommendation logs remain locally possible extensions, not assumed externally impossible.",
+  "display_delta": "Independent display review requested a shorter panel B title and shortened ATE guide line to avoid clipping/overlap. Only renderer, matching practice mirror, two rebuilt SVGs and this identity record changed; numerical source/results unchanged. Rebuilt SVGs again Cairo-rendered and visually inspected."
+}

@@ -1,0 +1,83 @@
+{
+  "dataset": "synthetic-ranking-v1",
+  "provenance": "Public synthetic rating fixture reused by explicit threshold >=3 as controlled binary relevance; these are not measured clicks or human preferences.",
+  "parent_fixture_sha256": "5b40d275f019598933918234253bca08aeda6f269921fd948d21976dd0cb9ce1",
+  "users": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "items": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "train_users": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "train_items": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "train_through": 14,
+  "user_group": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    2,
+    2
+  ],
+  "item_group": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    2
+  ],
+  "side_information": "Fixed teaching metadata, known at serving; an extra input used only by content baseline, not learned from test labels.",
+  "rank": 2,
+  "regularization": 0.01,
+  "seed": 17,
+  "initial_factor_std": 0.1,
+  "learning_rate": 0.2,
+  "epochs": 300,
+  "checkpoints": [
+    0,
+    50,
+    150,
+    300
+  ],
+  "selection": "max full-candidate validation macro NDCG@2; earliest exact tie",
+  "samplers": [
+    "uniform",
+    "popularity_plus_one"
+  ],
+  "neighbor_k": 2,
+  "K": 2,
+  "retriever_size": 2,
+  "negative_pool": "train eligible items minus each user training positives; known nonclick and unexposed mixed; no validation/test-positive filtering",
+  "positive_weighting": "uniform train user, then uniform positive within that user",
+  "tie_break": "descending score, then ascending item ID",
+  "cold_rule": "no feedback for user 6/7 or item 4/5; unknown collaborative score explicitly falls back to training popularity",
+  "audit_truth": "Complete synthetic relevance labels for every candidate; real unobserved items are not assumed negative.",
+  "iid_claim": false
+}

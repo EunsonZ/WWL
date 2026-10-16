@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<title>Same sphere point, two coordinate reports</title><desc>Left: Y=0 meridian, P=(4/5,0,3/5), north projection u=2 and south projection s=1/2. Right: inversion at u=(1,0), radial derivative -1 and transverse derivative +1.</desc>
+<rect width="1000" height="440" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#172b4d">
+<text x="30" y="40" font-size="23">Same sphere point, two coordinate reports</text>
+<circle cx="220" cy="200" r="100" fill="#e5eff9" stroke="#527598" stroke-width="2"/>
+<line x1="80" x2="455" y1="200" y2="200" stroke="#8494a7"/>
+<text x="85" y="224" font-size="15">Z=0</text>
+<line x1="220" y1="100" x2="420.0" y2="200.0" stroke="#1f64a0" stroke-width="2"/>
+<line x1="220" y1="300" x2="300.0" y2="140.0" stroke="#20826b" stroke-width="2"/>
+<circle cx="220" cy="100" r="4" fill="#172b4d"/>
+<text x="202" y="88" font-size="17">N</text>
+<circle cx="220" cy="300" r="4" fill="#172b4d"/>
+<text x="202" y="325" font-size="17">S</text>
+<circle cx="300.0" cy="140.0" r="4" fill="#172b4d"/>
+<text x="312.0" y="135.0" font-size="17">P</text>
+<circle cx="420.0" cy="200.0" r="4" fill="#172b4d"/>
+<text x="408.0" y="230.0" font-size="17">u=2</text>
+<circle cx="270.0" cy="200.0" r="4" fill="#172b4d"/>
+<text x="262.0" y="249.0" font-size="17">s=1/2</text>
+<text x="55" y="355" font-size="16">Section Y=0; projection coordinates live at Z=0.</text>
+<line x1="510" x2="510" y1="75" y2="365" stroke="#c3ceda"/>
+<text x="555" y="100" font-size="18">At u=(1,0), I(u)=u</text>
+<text x="555" y="130" font-size="17">DI = diag(-1, 1)</text>
+<line x1="670" x2="825" y1="235" y2="235" stroke="#8494a7"/>
+<line x1="745" x2="745" y1="155" y2="315" stroke="#8494a7"/>
+<circle cx="745" cy="235" r="5" fill="#172b4d"/>
+<path d="M745 235 L685 235 l10 -6 m-10 6 l10 6" fill="none" stroke="#bc4553" stroke-width="3"/>
+<path d="M745 235 L745 175 l-6 10 m6 -10 l6 10" fill="none" stroke="#20826b" stroke-width="3"/>
+<text x="555" y="287" font-size="16">radial direction reverses</text>
+<text x="775" y="181" font-size="16">transverse</text>
+<text x="775" y="203" font-size="16">keeps sign</text>
+<text x="555" y="345" font-size="17">det(DI) &lt; 0: raw charts are not oriented.</text>
+<text x="30" y="412" font-size="16">The origin is valid in each single chart, but is excluded from their overlap transition.</text>
+</g></svg>

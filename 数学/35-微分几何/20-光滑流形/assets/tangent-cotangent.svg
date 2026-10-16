@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="350" viewBox="0 0 1000 350">
+<title>Direction and readout transform differently</title><desc>Same real line with y=2x, f=x squared at x=1. v changes 3 to 6, df changes 2 to 1, pairing stays 6. Fixed metric dx squared has y coefficient 1/4, gradient changes 2 to 4.</desc>
+<rect width="1000" height="350" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#172b4d">
+<text x="30" y="40" font-size="23">Direction and readout transform differently</text>
+<text x="35" y="95" font-size="17">coordinate</text>
+<text x="225" y="95" font-size="17">direction v</text>
+<text x="425" y="95" font-size="17">covector df</text>
+<text x="625" y="95" font-size="17">metric g</text>
+<text x="810" y="95" font-size="17">gradient</text>
+<rect x="25" y="114" width="940" height="49" rx="7" fill="#e5eff9"/>
+<text x="35" y="145" font-size="24">x=1</text>
+<text x="225" y="145" font-size="24">3</text>
+<text x="425" y="145" font-size="24">2</text>
+<text x="625" y="145" font-size="24">1</text>
+<text x="810" y="145" font-size="24">2</text>
+<rect x="25" y="184" width="940" height="49" rx="7" fill="#e5eff9"/>
+<text x="35" y="215" font-size="24">y=2</text>
+<text x="225" y="215" font-size="24">6</text>
+<text x="425" y="215" font-size="24">1</text>
+<text x="625" y="215" font-size="24">1/4</text>
+<text x="810" y="215" font-size="24">4</text>
+<text x="35" y="278" font-size="20">Pairing: 3 x 2 = 6 x 1 = 6</text>
+<text x="35" y="318" font-size="17">Setting g_y=1 would change the metric. A covector array is not already the metric gradient.</text>
+</g></svg>

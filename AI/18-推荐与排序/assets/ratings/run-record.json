@@ -1,0 +1,71 @@
+{
+  "recorded_at_utc": "2026-10-16T18:23:48.489418+00:00",
+  "python": "3.14.7",
+  "numpy": "2.5.2",
+  "runner": "/private/tmp/wwl-next-context/run_local.py --timeout 300 -- <actual argv>",
+  "formal_argv": [
+    "python3",
+    "-B",
+    "/private/tmp/wwl-next-162/AI/18-推荐与排序/code-sync/ratings_lab.py",
+    "--output",
+    "/private/tmp/wwl-next-162/AI/18-推荐与排序/assets/ratings"
+  ],
+  "pre_run_argv": [
+    "python3",
+    "-B",
+    "/private/tmp/wwl-next-162/AI/18-推荐与排序/code-sync/ratings_lab.py",
+    "--output",
+    "/private/tmp/wwl-next-162/pre-run",
+    "--pre-run-steps",
+    "20"
+  ],
+  "test_argv": [
+    "python3",
+    "-B",
+    "/private/tmp/wwl-next-162/AI/18-推荐与排序/code-sync/test_ratings_lab.py"
+  ],
+  "render_argv": [
+    ".venv/bin/python",
+    "-B",
+    "/private/tmp/wwl-next-162/AI/18-推荐与排序/code-sync/render_ratings.py",
+    "--results",
+    "/private/tmp/wwl-next-162/AI/18-推荐与排序/assets/ratings",
+    "--output",
+    "/private/tmp/wwl-next-162/AI/18-推荐与排序/assets/ratings"
+  ],
+  "reader_commands_location": "80-显式反馈矩阵分解复算.md",
+  "thread_limit_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "protocol": "fixed before pre-run: rank2 lambda.01 seed17 lr.1 epochs800 checkpoints0/50/200/800; no result-driven changes",
+  "pre_run": "20 training updates, train file only, no validation/test access; pre-run/pre-run.json",
+  "data": "original synthetic educational ratings/events, no third-party or human records; fixed warm-start identities shared across splits; no iid claim",
+  "inputs_and_sources_sha256": {
+    "inputs/protocol.json": "ae6c6074885330a5086563ee09d2954224e35f554b5f111aa91f103d35ac3cca",
+    "inputs/test.json": "b1a30b64a50035ea8c86d95747c4d8852826e697d271caaf6bb4800d5a4763ca",
+    "inputs/train.json": "f833c25b10b75f80e6d5765fe5e95c6738d097ba56a2988d6e8a018afcb6f363",
+    "inputs/val.json": "9bae519da53809da9958efffc9ce37f3b1290840e6584e9f704a0b8ab3187864",
+    "code-sync/make_ratings_inputs.py": "5b40d275f019598933918234253bca08aeda6f269921fd948d21976dd0cb9ce1",
+    "code-sync/ratings_lab.py": "9b23b6a2faac9b80c0173eb7f3025821b4bd0b6d60f42fcf91ab2d95b776924d",
+    "code-sync/render_ratings.py": "9bdad01d85e5b172f479ccad44989afb2c32a0895214df47bf0d10a4054a9c2d",
+    "code-sync/test_ratings_lab.py": "1c2016a87984ede35b4c175144555fa1559587209ab3a5c434aa5ac46e515eb1"
+  },
+  "saved_outputs_sha256": {
+    "author-tests.txt": "d46df16cef0d867be3fe39e754bebfd3f93f08a5c6e333c17114e05300a6ab4f",
+    "checkpoints.json": "fcda14ac5d6259aca18250f870f969361a09d82bb9cd6562c5eece4d71362e05",
+    "missing-worlds.svg": "755102b7df6a54d9263be7e707e81ba1c1c36adcd2f2cfab2b435034bf4d3fe4",
+    "predictions.jsonl": "fb2b2a76a826ac0b7d3203999ec3d6ad17c827e3b951878a72a7caf97e949408",
+    "ratings-learning.svg": "068cd84ea97fd537a6c6cd3ba2eb578fd73254b6d2a0c15ca000c762c7344f39",
+    "results.json": "999e87a5484ca756c8dc33b8f3b5ee249d537f763dda2a0315765e76eddaad08",
+    "train-curve.json": "39c7c78ab62810ce18fc9c227a5517acb319958233d7269499359fa7d7c2fd42",
+    "validation.json": "ca77a51f7b088b5e33260137369f3283236188d8e458de9cc8ddc26bc62897f2"
+  },
+  "tests": "4 new tests PASS, including all42 gradient coordinates, mask/hand step, item bias/metrics, test guard/pre-run; no mature old suite rerun",
+  "display": "Both SVG rendered with existing CairoSVG and viewed as PNG; deterministic rebuild available; live Obsidian and human outcomes not verified",
+  "outcome": "val chose200; MF test RMSE1.3512927313221155 vs mean1.1372786719963484; retained failure, no seed/architecture retune",
+  "timing": "formal numerical call about0.1s and under300s; no throughput claim; first plot temporary font cache separate"
+}

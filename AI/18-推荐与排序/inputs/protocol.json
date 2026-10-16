@@ -1,0 +1,54 @@
+{
+  "dataset": "original-synthetic-ratings-v1",
+  "provenance": "Hand specified pedagogical values; no downloaded or human records; no natural population claim.",
+  "users": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "items": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "rating_scale": [
+    1,
+    5
+  ],
+  "time_unit": "synthetic ordered event tick, not a date",
+  "split_cutoffs": {
+    "train_through": 26,
+    "val_through": 34,
+    "test_through": 42
+  },
+  "exposure_policy": "Fixed teaching event schedule, no estimated or known population propensities. Absence is not proof of zero propensity.",
+  "rank": 2,
+  "regularization": 0.01,
+  "seed": 17,
+  "initial_factor_std": 0.1,
+  "learning_rate": 0.1,
+  "epochs": 800,
+  "checkpoints": [
+    0,
+    50,
+    200,
+    800
+  ],
+  "selection": "lowest validation MSE; earliest epoch breaks exact ties",
+  "prediction": "raw unbounded real score; no clipping or rounding for loss/metrics",
+  "metrics": [
+    "MSE",
+    "RMSE",
+    "MAE"
+  ],
+  "iid_claim": false,
+  "pre_run": "20 training updates only; no validation selection or test read; not a performance result"
+}

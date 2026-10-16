@@ -1,0 +1,505 @@
+{
+  "status": "PASS",
+  "date": "2026-10-17",
+  "scope": "finite first-order model certificates; not a Henkin oracle, proof system, arithmetic truth enumeration or nonstandard model representation",
+  "ground_quotient": {
+    "classes": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "c",
+        "d",
+        "f(a)",
+        "f(b)"
+      ]
+    ],
+    "rounds": 2
+  },
+  "total_model_extension": {
+    "domain": [
+      0,
+      1
+    ],
+    "constants": {
+      "a": 0,
+      "b": 0,
+      "c": 1,
+      "d": 1
+    },
+    "f_table": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "equation_truth": [
+      true,
+      true,
+      true
+    ],
+    "c_equals_d": true,
+    "c_not_equals_d": false,
+    "extension_choice": "f(1)=1 is chosen, not forced by the listed ground equations"
+  },
+  "witness_models": [
+    {
+      "label": "old_term_only",
+      "domain": [
+        0
+      ],
+      "constants": {
+        "a": 0
+      },
+      "P": [
+        [
+          0
+        ]
+      ],
+      "P_a": true,
+      "exists_not_P": false
+    },
+    {
+      "label": "two_point_witness",
+      "domain": [
+        0,
+        1
+      ],
+      "constants": {
+        "a": 0,
+        "h": 1
+      },
+      "P": [
+        [
+          0
+        ]
+      ],
+      "P_a": true,
+      "exists_not_P": true,
+      "not_P_h": true
+    }
+  ],
+  "function_enumeration": [
+    {
+      "n": 1,
+      "total_functions": 1,
+      "injective": 1,
+      "surjective": 1,
+      "injective_non_surjective": 0,
+      "formula_checks": 2
+    },
+    {
+      "n": 2,
+      "total_functions": 4,
+      "injective": 2,
+      "surjective": 2,
+      "injective_non_surjective": 0,
+      "formula_checks": 8
+    },
+    {
+      "n": 3,
+      "total_functions": 27,
+      "injective": 6,
+      "surjective": 6,
+      "injective_non_surjective": 0,
+      "formula_checks": 54
+    },
+    {
+      "n": 4,
+      "total_functions": 256,
+      "injective": 24,
+      "surjective": 24,
+      "injective_non_surjective": 0,
+      "formula_checks": 512
+    },
+    {
+      "n": 5,
+      "total_functions": 3125,
+      "injective": 120,
+      "surjective": 120,
+      "injective_non_surjective": 0,
+      "formula_checks": 6250
+    }
+  ],
+  "distinct_sentences": [
+    {
+      "k": 1,
+      "size_k_satisfies": true,
+      "size_k_minus_one_satisfies": null
+    },
+    {
+      "k": 2,
+      "size_k_satisfies": true,
+      "size_k_minus_one_satisfies": false
+    },
+    {
+      "k": 3,
+      "size_k_satisfies": true,
+      "size_k_minus_one_satisfies": false
+    },
+    {
+      "k": 4,
+      "size_k_satisfies": true,
+      "size_k_minus_one_satisfies": false
+    },
+    {
+      "k": 5,
+      "size_k_satisfies": true,
+      "size_k_minus_one_satisfies": false
+    }
+  ],
+  "standard_numeral_prefixes": [
+    {
+      "largest_numeral": 0,
+      "chosen_c": 1,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 1,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    },
+    {
+      "largest_numeral": 1,
+      "chosen_c": 2,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 2,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 1,
+          "c": 2,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    },
+    {
+      "largest_numeral": 2,
+      "chosen_c": 3,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 3,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 1,
+          "c": 3,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 2,
+          "c": 3,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    },
+    {
+      "largest_numeral": 3,
+      "chosen_c": 4,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 4,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 1,
+          "c": 4,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 2,
+          "c": 4,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 3,
+          "c": 4,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    },
+    {
+      "largest_numeral": 4,
+      "chosen_c": 5,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 5,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 1,
+          "c": 5,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 2,
+          "c": 5,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 3,
+          "c": 5,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 4,
+          "c": 5,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    },
+    {
+      "largest_numeral": 5,
+      "chosen_c": 6,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 6,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 1,
+          "c": 6,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 2,
+          "c": 6,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 3,
+          "c": 6,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 4,
+          "c": 6,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 5,
+          "c": 6,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    },
+    {
+      "largest_numeral": 6,
+      "chosen_c": 7,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 7,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 1,
+          "c": 7,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 2,
+          "c": 7,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 3,
+          "c": 7,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 4,
+          "c": 7,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 5,
+          "c": 7,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 6,
+          "c": 7,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    },
+    {
+      "largest_numeral": 7,
+      "chosen_c": 8,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 8,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 1,
+          "c": 8,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 2,
+          "c": 8,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 3,
+          "c": 8,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 4,
+          "c": 8,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 5,
+          "c": 8,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 6,
+          "c": 8,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 7,
+          "c": 8,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    },
+    {
+      "largest_numeral": 8,
+      "chosen_c": 9,
+      "domain": "entire standard N, not a truncated finite domain",
+      "comparisons": [
+        {
+          "numeral": 0,
+          "c": 9,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 1,
+          "c": 9,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 2,
+          "c": 9,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 3,
+          "c": 9,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 4,
+          "c": 9,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 5,
+          "c": 9,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 6,
+          "c": 9,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 7,
+          "c": 9,
+          "true_in_standard_N": true
+        },
+        {
+          "numeral": 8,
+          "c": 9,
+          "true_in_standard_N": true
+        }
+      ],
+      "next_bound_fails_same_c": true
+    }
+  ],
+  "rejections": [
+    {
+      "case": "empty_domain",
+      "error": "nonempty distinct integer domain required"
+    },
+    {
+      "case": "duplicate_domain",
+      "error": "nonempty distinct integer domain required"
+    },
+    {
+      "case": "bool_domain",
+      "error": "nonempty distinct integer domain required"
+    },
+    {
+      "case": "constant_outside",
+      "error": "constant outside domain"
+    },
+    {
+      "case": "partial_function",
+      "error": "function must be total on the declared domain"
+    },
+    {
+      "case": "predicate_arity",
+      "error": "predicate tuple outside signature/domain"
+    },
+    {
+      "case": "free_assignment_missing",
+      "error": "free variable missing or assignment outside domain"
+    },
+    {
+      "case": "free_assignment_outside",
+      "error": "free variable missing or assignment outside domain"
+    },
+    {
+      "case": "unknown_symbol",
+      "error": "unknown symbol or formula arity"
+    },
+    {
+      "case": "term_arity",
+      "error": "unknown symbol or term arity"
+    },
+    {
+      "case": "bad_k",
+      "error": "positive k required"
+    },
+    {
+      "case": "cyclic_terms",
+      "error": "cyclic graph is not a finite ground term"
+    }
+  ]
+}

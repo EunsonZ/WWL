@@ -27,4 +27,4 @@ prerequisites:
 
 共用参数为球面 $r(\varphi,\theta)=2(\sin\varphi\cos\theta,\sin\varphi\sin\theta,\cos\varphi)$ 和圆柱 $c(\theta,z)=(2\cos\theta,2\sin\theta,z)$。角度用弧度；坐标 $z$、弧长 $s$ 和半径用同一长度单位。球面坐标限制在 $0<\varphi<\pi$ 的局部图，不能靠一张图跨过极点。
 
-结束能力是从正则参数复算长度、法向、曲率和测地线，并区分驻值、局部最短、全局最短。[[数学/35-微分几何/10-Gauss-Bonnet/00-Gauss-Bonnet-MOC|Gauss–Bonnet证明路线]]继续把局部结构方程、边界转角和三角剖分接到全局公式；可三角剖分及Euler示性数不变性仍是明示的拓扑前提。一般图册与切/余切已由 [[数学/35-微分几何/20-光滑流形/00-光滑流形-MOC|光滑流形首两课]] 建立；高阶形式、单位分解、整体Stokes及一般Riemannian联络/曲率仍须接续，本组也未分类曲面或建立共轭点理论。本组也不代表全部本科几何课程已覆盖。Mark Powell [原课程目录](https://www.maths.gla.ac.uk/~mpowell/DiffGeomCurvesSurfaces.html) 可用来寻找更完整的曲面拓扑和全局理论。
+结束能力是从正则参数复算长度、法向、曲率和测地线，并区分驻值、局部最短、全局最短。[[数学/35-微分几何/10-Gauss-Bonnet/00-Gauss-Bonnet-MOC|Gauss–Bonnet证明路线]]继续把局部结构方程、边界转角和三角剖分接到全局公式；可三角剖分及Euler示性数不变性仍是明示的拓扑前提。一般图册与切/余切已由 [[数学/35-微分几何/20-光滑流形/00-光滑流形-MOC|光滑流形首两课]] 建立；高阶形式、定向/单位分解、积分与整体Stokes已在 [[数学/35-微分几何/20-光滑流形/03-张量微分形式拉回与外微分|形式课]] 到 [[数学/35-微分几何/20-光滑流形/05-整体Stokes证明与物理返回|整体证明]] 接齐；一般Riemannian联络/曲率仍须接续，本组也未分类曲面或建立共轭点理论。本组也不代表全部本科几何课程已覆盖。Mark Powell [原课程目录](https://www.maths.gla.ac.uk/~mpowell/DiffGeomCurvesSurfaces.html) 可用来寻找更完整的曲面拓扑和全局理论。

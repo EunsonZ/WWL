@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+<title>Boundary orientation and the same Stokes integral</title>
+<desc>Left: H2 has interior above y=0; outward points down and induced boundary goes right. Right: unit disk with positive area, CCW boundary, integral pi on both sides. Values come from exact JSON sign and disk-circle records.</desc>
+<rect width="1000" height="420" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#172b4d">
+<text x="30" y="40" font-size="23">Boundary orientation: outward first</text>
+<rect x="40" y="85" width="400" height="150" fill="#e3eff9"/>
+<line x1="40" x2="440" y1="235" y2="235" stroke="#284d72" stroke-width="3"/>
+<path d="M200 235 L200 305 l-6 -10 m6 10 l6 -10" fill="none" stroke="#b74455" stroke-width="3"/>
+<path d="M200 235 L305 235 l-10 -6 m10 6 l-10 6" fill="none" stroke="#20826b" stroke-width="3"/>
+<text x="70" y="125" font-size="18">H2: x2 &gt;= 0</text>
+<text x="210" y="300" font-size="17">outward -e2</text>
+<text x="50" y="350" font-size="18">boundary sign (-1)^2 = 1</text>
+<text x="50" y="380" font-size="16">(-e2, +e1) has positive orientation.</text>
+<line x1="490" x2="490" y1="80" y2="385" stroke="#c3ceda"/>
+<circle cx="745" cy="205" r="105" fill="#e3eff9" stroke="#284d72" stroke-width="2"/>
+<path d="M850 205 A105 105 0 0 0 745 100 l11 -5 m-11 5 l10 6" fill="none" stroke="#20826b" stroke-width="4"/>
+<text x="630" y="70" font-size="18">positive disk, CCW boundary</text>
+<text x="680" y="195" font-size="19">d alpha = dx ^ dy</text>
+<text x="680" y="227" font-size="19">interior = 1 pi</text>
+<text x="620" y="350" font-size="18">boundary = 1 pi</text>
+<text x="550" y="382" font-size="16">Reverse both orientations: both values become -pi.</text>
+</g></svg>

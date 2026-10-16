@@ -1,0 +1,2962 @@
+{
+  "status": "PASS",
+  "date": "2026-10-17",
+  "d_squared_checks": [
+    {
+      "n": 1,
+      "degree": 0,
+      "d_squared_zero": true
+    },
+    {
+      "n": 1,
+      "degree": 1,
+      "d_squared_zero": true
+    },
+    {
+      "n": 2,
+      "degree": 0,
+      "d_squared_zero": true
+    },
+    {
+      "n": 2,
+      "degree": 1,
+      "d_squared_zero": true
+    },
+    {
+      "n": 2,
+      "degree": 2,
+      "d_squared_zero": true
+    },
+    {
+      "n": 3,
+      "degree": 0,
+      "d_squared_zero": true
+    },
+    {
+      "n": 3,
+      "degree": 1,
+      "d_squared_zero": true
+    },
+    {
+      "n": 3,
+      "degree": 2,
+      "d_squared_zero": true
+    },
+    {
+      "n": 3,
+      "degree": 3,
+      "d_squared_zero": true
+    },
+    {
+      "n": 4,
+      "degree": 0,
+      "d_squared_zero": true
+    },
+    {
+      "n": 4,
+      "degree": 1,
+      "d_squared_zero": true
+    },
+    {
+      "n": 4,
+      "degree": 2,
+      "d_squared_zero": true
+    },
+    {
+      "n": 4,
+      "degree": 3,
+      "d_squared_zero": true
+    },
+    {
+      "n": 4,
+      "degree": 4,
+      "d_squared_zero": true
+    }
+  ],
+  "pullback_checks": [
+    {
+      "source_n": 1,
+      "target_n": 3,
+      "degree": 0,
+      "map": [
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "2"
+          }
+        ],
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "3"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 1,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  1
+                ],
+                "coefficient": "12"
+              },
+              {
+                "powers": [
+                  2
+                ],
+                "coefficient": "84"
+              },
+              {
+                "powers": [
+                  3
+                ],
+                "coefficient": "144"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_n": 1,
+      "target_n": 3,
+      "degree": 1,
+      "map": [
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "2"
+          }
+        ],
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "3"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 1,
+        "degree": 2,
+        "terms": []
+      }
+    },
+    {
+      "source_n": 1,
+      "target_n": 3,
+      "degree": 2,
+      "map": [
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "2"
+          }
+        ],
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "3"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 1,
+        "degree": 3,
+        "terms": []
+      }
+    },
+    {
+      "source_n": 1,
+      "target_n": 3,
+      "degree": 3,
+      "map": [
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "2"
+          }
+        ],
+        [
+          {
+            "powers": [
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2
+            ],
+            "coefficient": "3"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 1,
+        "degree": 4,
+        "terms": []
+      }
+    },
+    {
+      "source_n": 2,
+      "target_n": 2,
+      "degree": 0,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0
+            ],
+            "coefficient": "2"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  1,
+                  1
+                ],
+                "coefficient": "16"
+              },
+              {
+                "powers": [
+                  3,
+                  0
+                ],
+                "coefficient": "32"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  1
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  0,
+                  3
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  1,
+                  1
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": "8"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_n": 2,
+      "target_n": 2,
+      "degree": 1,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0
+            ],
+            "coefficient": "2"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 2,
+        "degree": 2,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0,
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  1
+                ],
+                "coefficient": "-4"
+              },
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  1,
+                  2
+                ],
+                "coefficient": "32"
+              },
+              {
+                "powers": [
+                  1,
+                  3
+                ],
+                "coefficient": "-32"
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": "-8"
+              },
+              {
+                "powers": [
+                  2,
+                  1
+                ],
+                "coefficient": "-32"
+              },
+              {
+                "powers": [
+                  3,
+                  1
+                ],
+                "coefficient": "64"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_n": 2,
+      "target_n": 2,
+      "degree": 2,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0
+            ],
+            "coefficient": "2"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 2,
+        "degree": 3,
+        "terms": []
+      }
+    },
+    {
+      "source_n": 2,
+      "target_n": 3,
+      "degree": 0,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0
+            ],
+            "coefficient": "2"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "3"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": "20"
+              },
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": "8"
+              },
+              {
+                "powers": [
+                  1,
+                  1
+                ],
+                "coefficient": "16"
+              },
+              {
+                "powers": [
+                  3,
+                  0
+                ],
+                "coefficient": "32"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  1
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  0,
+                  3
+                ],
+                "coefficient": "112"
+              },
+              {
+                "powers": [
+                  1,
+                  1
+                ],
+                "coefficient": "40"
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": "8"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_n": 2,
+      "target_n": 3,
+      "degree": 1,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0
+            ],
+            "coefficient": "2"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "3"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 2,
+        "degree": 2,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0,
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  1
+                ],
+                "coefficient": "-12"
+              },
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": "28"
+              },
+              {
+                "powers": [
+                  0,
+                  3
+                ],
+                "coefficient": "-48"
+              },
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": "12"
+              },
+              {
+                "powers": [
+                  1,
+                  2
+                ],
+                "coefficient": "224"
+              },
+              {
+                "powers": [
+                  1,
+                  3
+                ],
+                "coefficient": "-608"
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": "-24"
+              },
+              {
+                "powers": [
+                  2,
+                  1
+                ],
+                "coefficient": "-224"
+              },
+              {
+                "powers": [
+                  3,
+                  1
+                ],
+                "coefficient": "448"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_n": 2,
+      "target_n": 3,
+      "degree": 2,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0
+            ],
+            "coefficient": "2"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "3"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 2,
+        "degree": 3,
+        "terms": []
+      }
+    },
+    {
+      "source_n": 2,
+      "target_n": 3,
+      "degree": 3,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0
+            ],
+            "coefficient": "2"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              2
+            ],
+            "coefficient": "3"
+          },
+          {
+            "powers": [
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 2,
+        "degree": 4,
+        "terms": []
+      }
+    },
+    {
+      "source_n": 3,
+      "target_n": 3,
+      "degree": 0,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2,
+              0
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              0,
+              2
+            ],
+            "coefficient": "2"
+          },
+          {
+            "powers": [
+              0,
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0,
+              0
+            ],
+            "coefficient": "3"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 3,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  0
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  1
+                ],
+                "coefficient": "36"
+              },
+              {
+                "powers": [
+                  3,
+                  0,
+                  0
+                ],
+                "coefficient": "108"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "8"
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  0,
+                  3,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  0
+                ],
+                "coefficient": "4"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              2
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  1
+                ],
+                "coefficient": "6"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  3
+                ],
+                "coefficient": "32"
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  1
+                ],
+                "coefficient": "16"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "18"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_n": 3,
+      "target_n": 3,
+      "degree": 1,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2,
+              0
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              0,
+              2
+            ],
+            "coefficient": "2"
+          },
+          {
+            "powers": [
+              0,
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0,
+              0
+            ],
+            "coefficient": "3"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 3,
+        "degree": 2,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0,
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "-8"
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  0
+                ],
+                "coefficient": "-4"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  1
+                ],
+                "coefficient": "48"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  2
+                ],
+                "coefficient": "-96"
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  0
+                ],
+                "coefficient": "-48"
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  1
+                ],
+                "coefficient": "72"
+              },
+              {
+                "powers": [
+                  1,
+                  3,
+                  0
+                ],
+                "coefficient": "-72"
+              },
+              {
+                "powers": [
+                  2,
+                  1,
+                  0
+                ],
+                "coefficient": "-72"
+              },
+              {
+                "powers": [
+                  3,
+                  0,
+                  0
+                ],
+                "coefficient": "144"
+              },
+              {
+                "powers": [
+                  3,
+                  1,
+                  0
+                ],
+                "coefficient": "216"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              0,
+              2
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  1
+                ],
+                "coefficient": "-6"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  3
+                ],
+                "coefficient": "-32"
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  1
+                ],
+                "coefficient": "-16"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "6"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  1
+                ],
+                "coefficient": "16"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  0
+                ],
+                "coefficient": "6"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  1
+                ],
+                "coefficient": "16"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  2
+                ],
+                "coefficient": "192"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  3
+                ],
+                "coefficient": "-384"
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  1
+                ],
+                "coefficient": "-192"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "-18"
+              },
+              {
+                "powers": [
+                  3,
+                  0,
+                  1
+                ],
+                "coefficient": "576"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1,
+              2
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  1
+                ],
+                "coefficient": "-8"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "16"
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  0
+                ],
+                "coefficient": "8"
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  1
+                ],
+                "coefficient": "-12"
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  3
+                ],
+                "coefficient": "-64"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  1
+                ],
+                "coefficient": "-32"
+              },
+              {
+                "powers": [
+                  0,
+                  3,
+                  0
+                ],
+                "coefficient": "12"
+              },
+              {
+                "powers": [
+                  0,
+                  3,
+                  1
+                ],
+                "coefficient": "32"
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  0
+                ],
+                "coefficient": "12"
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  1
+                ],
+                "coefficient": "32"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "-24"
+              },
+              {
+                "powers": [
+                  2,
+                  1,
+                  0
+                ],
+                "coefficient": "-36"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_n": 3,
+      "target_n": 3,
+      "degree": 2,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2,
+              0
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              0,
+              2
+            ],
+            "coefficient": "2"
+          },
+          {
+            "powers": [
+              0,
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0,
+              0
+            ],
+            "coefficient": "3"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 3,
+        "degree": 3,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0,
+              1,
+              2
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  1
+                ],
+                "coefficient": "6"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "-12"
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  0
+                ],
+                "coefficient": "-6"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "6"
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  0
+                ],
+                "coefficient": "6"
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  2
+                ],
+                "coefficient": "288"
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  3
+                ],
+                "coefficient": "-576"
+              },
+              {
+                "powers": [
+                  1,
+                  2,
+                  1
+                ],
+                "coefficient": "-288"
+              },
+              {
+                "powers": [
+                  1,
+                  3,
+                  1
+                ],
+                "coefficient": "288"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "18"
+              },
+              {
+                "powers": [
+                  2,
+                  1,
+                  1
+                ],
+                "coefficient": "288"
+              },
+              {
+                "powers": [
+                  3,
+                  1,
+                  1
+                ],
+                "coefficient": "864"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_n": 3,
+      "target_n": 3,
+      "degree": 3,
+      "map": [
+        [
+          {
+            "powers": [
+              0,
+              2,
+              0
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              1,
+              0,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              0,
+              2
+            ],
+            "coefficient": "2"
+          },
+          {
+            "powers": [
+              0,
+              1,
+              0
+            ],
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "powers": [
+              0,
+              0,
+              1
+            ],
+            "coefficient": "1"
+          },
+          {
+            "powers": [
+              2,
+              0,
+              0
+            ],
+            "coefficient": "3"
+          }
+        ]
+      ],
+      "result": {
+        "dimension": 3,
+        "degree": 4,
+        "terms": []
+      }
+    }
+  ],
+  "nonlinear_change": {
+    "original": {
+      "dimension": 2,
+      "degree": 1,
+      "terms": [
+        {
+          "axes_zero_based": [
+            0
+          ],
+          "polynomial": [
+            {
+              "powers": [
+                0,
+                1
+              ],
+              "coefficient": "2"
+            }
+          ]
+        },
+        {
+          "axes_zero_based": [
+            1
+          ],
+          "polynomial": [
+            {
+              "powers": [
+                1,
+                0
+              ],
+              "coefficient": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "pullback": {
+      "dimension": 2,
+      "degree": 1,
+      "terms": [
+        {
+          "axes_zero_based": [
+            0
+          ],
+          "polynomial": [
+            {
+              "powers": [
+                0,
+                1
+              ],
+              "coefficient": "2"
+            },
+            {
+              "powers": [
+                2,
+                0
+              ],
+              "coefficient": "4"
+            }
+          ]
+        },
+        {
+          "axes_zero_based": [
+            1
+          ],
+          "polynomial": [
+            {
+              "powers": [
+                1,
+                0
+              ],
+              "coefficient": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "d_pullback": {
+      "dimension": 2,
+      "degree": 2,
+      "terms": [
+        {
+          "axes_zero_based": [
+            0,
+            1
+          ],
+          "polynomial": [
+            {
+              "powers": [
+                0,
+                0
+              ],
+              "coefficient": "-1"
+            }
+          ]
+        }
+      ]
+    },
+    "interior": "-1",
+    "boundary_faces": [
+      {
+        "axis": 0,
+        "endpoint": 0,
+        "orientation": -1,
+        "integral": "0"
+      },
+      {
+        "axis": 0,
+        "endpoint": 1,
+        "orientation": 1,
+        "integral": "1"
+      },
+      {
+        "axis": 1,
+        "endpoint": 0,
+        "orientation": 1,
+        "integral": "4/3"
+      },
+      {
+        "axis": 1,
+        "endpoint": 1,
+        "orientation": -1,
+        "integral": "-10/3"
+      }
+    ]
+  },
+  "reflection": {
+    "standard_source": "-3/2",
+    "reversed_source": "3/2",
+    "density": "3/2"
+  },
+  "product_rule": {
+    "weights": [
+      [
+        {
+          "powers": [
+            0,
+            0
+          ],
+          "coefficient": "1/2"
+        },
+        {
+          "powers": [
+            1,
+            0
+          ],
+          "coefficient": "1/2"
+        }
+      ],
+      [
+        {
+          "powers": [
+            0,
+            0
+          ],
+          "coefficient": "1/2"
+        },
+        {
+          "powers": [
+            1,
+            0
+          ],
+          "coefficient": "-1/2"
+        }
+      ]
+    ],
+    "extra_terms": [
+      {
+        "dimension": 2,
+        "degree": 2,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0,
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": "1/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "dimension": 2,
+        "degree": 2,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0,
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": "-1/2"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sum_extras_zero": true,
+    "limitation": "algebra identity only, not a subordinate chart PoU"
+  },
+  "even_wedge_square": {
+    "dimension": 4,
+    "degree": 4,
+    "terms": [
+      {
+        "axes_zero_based": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "polynomial": [
+          {
+            "powers": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "coefficient": "2"
+          }
+        ]
+      }
+    ]
+  },
+  "box_FTC": [
+    {
+      "n": 1,
+      "form": {
+        "dimension": 1,
+        "degree": 0,
+        "terms": [
+          {
+            "axes_zero_based": [],
+            "polynomial": [
+              {
+                "powers": [
+                  0
+                ],
+                "coefficient": "1"
+              },
+              {
+                "powers": [
+                  2
+                ],
+                "coefficient": "1"
+              }
+            ]
+          }
+        ]
+      },
+      "interior": "1",
+      "boundary": "1",
+      "faces": [
+        {
+          "axis": 0,
+          "endpoint": 0,
+          "orientation": -1,
+          "integral": "-1"
+        },
+        {
+          "axis": 0,
+          "endpoint": 1,
+          "orientation": 1,
+          "integral": "2"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "form": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0
+                ],
+                "coefficient": "1"
+              },
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": "1"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": "3"
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": "2"
+              }
+            ]
+          }
+        ]
+      },
+      "interior": "0",
+      "boundary": "0",
+      "faces": [
+        {
+          "axis": 0,
+          "endpoint": 0,
+          "orientation": -1,
+          "integral": "-3"
+        },
+        {
+          "axis": 0,
+          "endpoint": 1,
+          "orientation": 1,
+          "integral": "5"
+        },
+        {
+          "axis": 1,
+          "endpoint": 0,
+          "orientation": 1,
+          "integral": "4/3"
+        },
+        {
+          "axis": 1,
+          "endpoint": 1,
+          "orientation": -1,
+          "integral": "-10/3"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "form": {
+        "dimension": 3,
+        "degree": 2,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0,
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "1"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "3"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "1"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              0,
+              2
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "3"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "2"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1,
+              2
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "3"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "5"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "3"
+              }
+            ]
+          }
+        ]
+      },
+      "interior": "3",
+      "boundary": "3",
+      "faces": [
+        {
+          "axis": 0,
+          "endpoint": 0,
+          "orientation": -1,
+          "integral": "-6"
+        },
+        {
+          "axis": 0,
+          "endpoint": 1,
+          "orientation": 1,
+          "integral": "9"
+        },
+        {
+          "axis": 1,
+          "endpoint": 0,
+          "orientation": 1,
+          "integral": "4"
+        },
+        {
+          "axis": 1,
+          "endpoint": 1,
+          "orientation": -1,
+          "integral": "-7"
+        },
+        {
+          "axis": 2,
+          "endpoint": 0,
+          "orientation": -1,
+          "integral": "-2"
+        },
+        {
+          "axis": 2,
+          "endpoint": 1,
+          "orientation": 1,
+          "integral": "5"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "form": {
+        "dimension": 4,
+        "degree": 3,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0,
+              1,
+              2
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "1"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "3"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "1"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              0,
+              1,
+              3
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "2"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "5"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "3"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "2"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              0,
+              2,
+              3
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "3"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "6"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "5"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "3"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1,
+              2,
+              3
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "4"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": "7"
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": "6"
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": "5"
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": "4"
+              }
+            ]
+          }
+        ]
+      },
+      "interior": "0",
+      "boundary": "0",
+      "faces": [
+        {
+          "axis": 0,
+          "endpoint": 0,
+          "orientation": -1,
+          "integral": "-10"
+        },
+        {
+          "axis": 0,
+          "endpoint": 1,
+          "orientation": 1,
+          "integral": "14"
+        },
+        {
+          "axis": 1,
+          "endpoint": 0,
+          "orientation": 1,
+          "integral": "23/3"
+        },
+        {
+          "axis": 1,
+          "endpoint": 1,
+          "orientation": -1,
+          "integral": "-35/3"
+        },
+        {
+          "axis": 2,
+          "endpoint": 0,
+          "orientation": -1,
+          "integral": "-16/3"
+        },
+        {
+          "axis": 2,
+          "endpoint": 1,
+          "orientation": 1,
+          "integral": "28/3"
+        },
+        {
+          "axis": 3,
+          "endpoint": 0,
+          "orientation": 1,
+          "integral": "3"
+        },
+        {
+          "axis": 3,
+          "endpoint": 1,
+          "orientation": -1,
+          "integral": "-7"
+        }
+      ]
+    }
+  ],
+  "disk_circle": [
+    {
+      "a": 0,
+      "b": 0,
+      "form": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  1
+                ],
+                "coefficient": "-1/2"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": "1/2"
+              }
+            ]
+          }
+        ]
+      },
+      "interior_pi": "1",
+      "boundary_pi": "1"
+    },
+    {
+      "a": 1,
+      "b": 0,
+      "form": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  1,
+                  1
+                ],
+                "coefficient": "-1/2"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": "1/2"
+              }
+            ]
+          }
+        ]
+      },
+      "interior_pi": "0",
+      "boundary_pi": "0"
+    },
+    {
+      "a": 0,
+      "b": 1,
+      "form": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": "-1/2"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  1,
+                  1
+                ],
+                "coefficient": "1/2"
+              }
+            ]
+          }
+        ]
+      },
+      "interior_pi": "0",
+      "boundary_pi": "0"
+    },
+    {
+      "a": 2,
+      "b": 0,
+      "form": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  2,
+                  1
+                ],
+                "coefficient": "-1/2"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  3,
+                  0
+                ],
+                "coefficient": "1/2"
+              }
+            ]
+          }
+        ]
+      },
+      "interior_pi": "1/2",
+      "boundary_pi": "1/2"
+    },
+    {
+      "a": 1,
+      "b": 1,
+      "form": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  1,
+                  2
+                ],
+                "coefficient": "-1/2"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  2,
+                  1
+                ],
+                "coefficient": "1/2"
+              }
+            ]
+          }
+        ]
+      },
+      "interior_pi": "0",
+      "boundary_pi": "0"
+    },
+    {
+      "a": 0,
+      "b": 2,
+      "form": {
+        "dimension": 2,
+        "degree": 1,
+        "terms": [
+          {
+            "axes_zero_based": [
+              0
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  0,
+                  3
+                ],
+                "coefficient": "-1/2"
+              }
+            ]
+          },
+          {
+            "axes_zero_based": [
+              1
+            ],
+            "polynomial": [
+              {
+                "powers": [
+                  1,
+                  2
+                ],
+                "coefficient": "1/2"
+              }
+            ]
+          }
+        ]
+      },
+      "interior_pi": "1/2",
+      "boundary_pi": "1/2"
+    }
+  ],
+  "halfspace_signs": [
+    {
+      "n": 1,
+      "chart_sign": 1,
+      "boundary_orientation": -1,
+      "normal_form_coefficient": 1,
+      "boundary_total_sign": -1,
+      "normal_FTC_sign": -1
+    },
+    {
+      "n": 1,
+      "chart_sign": -1,
+      "boundary_orientation": 1,
+      "normal_form_coefficient": 1,
+      "boundary_total_sign": 1,
+      "normal_FTC_sign": 1
+    },
+    {
+      "n": 2,
+      "chart_sign": 1,
+      "boundary_orientation": 1,
+      "normal_form_coefficient": -1,
+      "boundary_total_sign": -1,
+      "normal_FTC_sign": -1
+    },
+    {
+      "n": 2,
+      "chart_sign": -1,
+      "boundary_orientation": -1,
+      "normal_form_coefficient": -1,
+      "boundary_total_sign": 1,
+      "normal_FTC_sign": 1
+    },
+    {
+      "n": 3,
+      "chart_sign": 1,
+      "boundary_orientation": -1,
+      "normal_form_coefficient": 1,
+      "boundary_total_sign": -1,
+      "normal_FTC_sign": -1
+    },
+    {
+      "n": 3,
+      "chart_sign": -1,
+      "boundary_orientation": 1,
+      "normal_form_coefficient": 1,
+      "boundary_total_sign": 1,
+      "normal_FTC_sign": 1
+    },
+    {
+      "n": 4,
+      "chart_sign": 1,
+      "boundary_orientation": 1,
+      "normal_form_coefficient": -1,
+      "boundary_total_sign": -1,
+      "normal_FTC_sign": -1
+    },
+    {
+      "n": 4,
+      "chart_sign": -1,
+      "boundary_orientation": -1,
+      "normal_form_coefficient": -1,
+      "boundary_total_sign": 1,
+      "normal_FTC_sign": 1
+    },
+    {
+      "n": 5,
+      "chart_sign": 1,
+      "boundary_orientation": -1,
+      "normal_form_coefficient": 1,
+      "boundary_total_sign": -1,
+      "normal_FTC_sign": -1
+    },
+    {
+      "n": 5,
+      "chart_sign": -1,
+      "boundary_orientation": 1,
+      "normal_form_coefficient": 1,
+      "boundary_total_sign": 1,
+      "normal_FTC_sign": 1
+    },
+    {
+      "n": 6,
+      "chart_sign": 1,
+      "boundary_orientation": 1,
+      "normal_form_coefficient": -1,
+      "boundary_total_sign": -1,
+      "normal_FTC_sign": -1
+    },
+    {
+      "n": 6,
+      "chart_sign": -1,
+      "boundary_orientation": -1,
+      "normal_form_coefficient": -1,
+      "boundary_total_sign": 1,
+      "normal_FTC_sign": 1
+    },
+    {
+      "n": 7,
+      "chart_sign": 1,
+      "boundary_orientation": -1,
+      "normal_form_coefficient": 1,
+      "boundary_total_sign": -1,
+      "normal_FTC_sign": -1
+    },
+    {
+      "n": 7,
+      "chart_sign": -1,
+      "boundary_orientation": 1,
+      "normal_form_coefficient": 1,
+      "boundary_total_sign": 1,
+      "normal_FTC_sign": 1
+    }
+  ],
+  "hemisphere": {
+    "flux_pi": "1",
+    "area_pi": "2",
+    "boundary_CCW_pi": "1",
+    "inward_flux_pi": "-1"
+  },
+  "noncompact_counterexample": {
+    "M": "[0,infinity)",
+    "omega": "1",
+    "d_integral": "0",
+    "boundary_integral": "-1"
+  },
+  "invalid_inputs_rejected": 10,
+  "limits": "Exact finite polynomial identities/signs. Boxes use facewise FTC, not a claim that corners are smooth boundaries. PoU existence and general Stokes are proved in text; old labs not run."
+}

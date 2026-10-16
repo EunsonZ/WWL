@@ -1,0 +1,402 @@
+{
+  "contract": "affine-repeat-linear-gray-v1",
+  "renderer_sha256": "a69a5c55330dfc19141187ef446a06cd53296608ac6e46f2f3d7a85697ddf203",
+  "scene_sha256": "1f278238afbc80f3133ad6f7dfc734021e7bb6681c5662acf5734226d1cbd6a7",
+  "image_array_order": [
+    "phase",
+    "scale",
+    "method",
+    "y",
+    "x"
+  ],
+  "phases": [
+    0.0,
+    0.25
+  ],
+  "scales": [
+    1.0,
+    0.5,
+    0.25
+  ],
+  "methods": [
+    "nearest",
+    "bilinear",
+    "box",
+    "mip"
+  ],
+  "rows": [
+    {
+      "scale": 1.0,
+      "phase_texels_xy": [
+        0.0,
+        0.0
+      ],
+      "screen_vertices": [
+        [
+          7.999999999999993,
+          56.00000000000001
+        ],
+        [
+          7.999999999999993,
+          24.0
+        ],
+        [
+          40.0,
+          56.00000000000001
+        ]
+      ],
+      "jacobian_texels_per_pixel": [
+        [
+          0.9999999999999999,
+          0.0
+        ],
+        [
+          8.881784197001253e-17,
+          0.9999999999999998
+        ]
+      ],
+      "width_texels": [
+        0.9999999999999999,
+        0.9999999999999998
+      ],
+      "area_texels2": 0.9999999999999997,
+      "probe_pixel_xy": [
+        9,
+        54
+      ],
+      "probe_texel_xy": [
+        1.5000000000000062,
+        30.49999999999999
+      ],
+      "checker_fundamental_cycles_per_texel_axis": 0.5,
+      "projected_fundamental_cycles_per_pixel_axis": [
+        0.49999999999999994,
+        0.4999999999999999
+      ],
+      "mip_lod": -1.6017132519074588e-16,
+      "values": {
+        "nearest": 1.0,
+        "bilinear": 0.999999999999986,
+        "box": 0.9999999999999863,
+        "mip": 0.999999999999986
+      }
+    },
+    {
+      "scale": 0.5,
+      "phase_texels_xy": [
+        0.0,
+        0.0
+      ],
+      "screen_vertices": [
+        [
+          15.999999999999996,
+          48.0
+        ],
+        [
+          15.999999999999996,
+          32.0
+        ],
+        [
+          32.0,
+          48.0
+        ]
+      ],
+      "jacobian_texels_per_pixel": [
+        [
+          1.9999999999999996,
+          -7.401486830834375e-17
+        ],
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "width_texels": [
+        1.9999999999999996,
+        2.0
+      ],
+      "area_texels2": 3.999999999999999,
+      "probe_pixel_xy": [
+        17,
+        46
+      ],
+      "probe_texel_xy": [
+        3.0000000000000107,
+        29.0
+      ],
+      "checker_fundamental_cycles_per_texel_axis": 0.5,
+      "projected_fundamental_cycles_per_pixel_axis": [
+        0.9999999999999998,
+        1.0
+      ],
+      "mip_lod": 1.0,
+      "values": {
+        "nearest": 0.0,
+        "bilinear": 0.5,
+        "box": 0.5000000000000001,
+        "mip": 0.5
+      }
+    },
+    {
+      "scale": 0.25,
+      "phase_texels_xy": [
+        0.0,
+        0.0
+      ],
+      "screen_vertices": [
+        [
+          19.999999999999996,
+          44.0
+        ],
+        [
+          19.999999999999996,
+          36.0
+        ],
+        [
+          28.0,
+          44.0
+        ]
+      ],
+      "jacobian_texels_per_pixel": [
+        [
+          3.999999999999997,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "width_texels": [
+        3.999999999999997,
+        4.0
+      ],
+      "area_texels2": 15.999999999999988,
+      "probe_pixel_xy": [
+        21,
+        42
+      ],
+      "probe_texel_xy": [
+        6.000000000000014,
+        26.0
+      ],
+      "checker_fundamental_cycles_per_texel_axis": 0.5,
+      "projected_fundamental_cycles_per_pixel_axis": [
+        1.9999999999999984,
+        2.0
+      ],
+      "mip_lod": 2.0,
+      "values": {
+        "nearest": 0.0,
+        "bilinear": 0.5,
+        "box": 0.5000000000000001,
+        "mip": 0.5
+      }
+    },
+    {
+      "scale": 1.0,
+      "phase_texels_xy": [
+        0.25,
+        0.25
+      ],
+      "screen_vertices": [
+        [
+          7.999999999999993,
+          56.00000000000001
+        ],
+        [
+          7.999999999999993,
+          24.0
+        ],
+        [
+          40.0,
+          56.00000000000001
+        ]
+      ],
+      "jacobian_texels_per_pixel": [
+        [
+          0.9999999999999999,
+          0.0
+        ],
+        [
+          8.881784197001253e-17,
+          0.9999999999999998
+        ]
+      ],
+      "width_texels": [
+        0.9999999999999999,
+        0.9999999999999998
+      ],
+      "area_texels2": 0.9999999999999997,
+      "probe_pixel_xy": [
+        9,
+        54
+      ],
+      "probe_texel_xy": [
+        1.7500000000000062,
+        30.74999999999999
+      ],
+      "checker_fundamental_cycles_per_texel_axis": 0.5,
+      "projected_fundamental_cycles_per_pixel_axis": [
+        0.49999999999999994,
+        0.4999999999999999
+      ],
+      "mip_lod": -1.6017132519074588e-16,
+      "values": {
+        "nearest": 1.0,
+        "bilinear": 0.625,
+        "box": 0.6250000000000003,
+        "mip": 0.625
+      }
+    },
+    {
+      "scale": 0.5,
+      "phase_texels_xy": [
+        0.25,
+        0.25
+      ],
+      "screen_vertices": [
+        [
+          15.999999999999996,
+          48.0
+        ],
+        [
+          15.999999999999996,
+          32.0
+        ],
+        [
+          32.0,
+          48.0
+        ]
+      ],
+      "jacobian_texels_per_pixel": [
+        [
+          1.9999999999999996,
+          -7.401486830834375e-17
+        ],
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "width_texels": [
+        1.9999999999999996,
+        2.0
+      ],
+      "area_texels2": 3.999999999999999,
+      "probe_pixel_xy": [
+        17,
+        46
+      ],
+      "probe_texel_xy": [
+        3.2500000000000107,
+        29.25
+      ],
+      "checker_fundamental_cycles_per_texel_axis": 0.5,
+      "projected_fundamental_cycles_per_pixel_axis": [
+        0.9999999999999998,
+        1.0
+      ],
+      "mip_lod": 1.0,
+      "values": {
+        "nearest": 0.0,
+        "bilinear": 0.3749999999999969,
+        "box": 0.5000000000000001,
+        "mip": 0.5
+      }
+    },
+    {
+      "scale": 0.25,
+      "phase_texels_xy": [
+        0.25,
+        0.25
+      ],
+      "screen_vertices": [
+        [
+          19.999999999999996,
+          44.0
+        ],
+        [
+          19.999999999999996,
+          36.0
+        ],
+        [
+          28.0,
+          44.0
+        ]
+      ],
+      "jacobian_texels_per_pixel": [
+        [
+          3.999999999999997,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "width_texels": [
+        3.999999999999997,
+        4.0
+      ],
+      "area_texels2": 15.999999999999988,
+      "probe_pixel_xy": [
+        21,
+        42
+      ],
+      "probe_texel_xy": [
+        6.250000000000014,
+        26.25
+      ],
+      "checker_fundamental_cycles_per_texel_axis": 0.5,
+      "projected_fundamental_cycles_per_pixel_axis": [
+        1.9999999999999984,
+        2.0
+      ],
+      "mip_lod": 2.0,
+      "values": {
+        "nearest": 0.0,
+        "bilinear": 0.3749999999999942,
+        "box": 0.5000000000000001,
+        "mip": 0.5
+      }
+    }
+  ],
+  "edge": {
+    "pixel_xy": [
+      24,
+      40
+    ],
+    "shift_y": 0.2,
+    "exact_white_on_black_area": 0.32000000000000006,
+    "regular_n_by_n_coverage": {
+      "1": 0.0,
+      "4": 0.375,
+      "8": 0.328125,
+      "32": 0.3173828125
+    },
+    "shader": "constant white; texture filtering cannot change coverage"
+  },
+  "anisotropic_counterexample": {
+    "uv": [
+      0.015625,
+      0.015625
+    ],
+    "width_texels": [
+      1,
+      8
+    ],
+    "box": 0.0,
+    "isotropic_mip": 0.5
+  },
+  "linear_srgb": {
+    "linear_mean": 0.5,
+    "encoded_linear_mean": 0.7353569830524495,
+    "decoded_encoded_mean": 0.21404114048223255
+  },
+  "environment": {
+    "python": "3.14.7",
+    "numpy": "2.5.3",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  }
+}

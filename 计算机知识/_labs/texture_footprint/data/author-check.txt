@@ -1,0 +1,12 @@
+2026-10-17 author execution, single-thread two-slot runner, timeout120s.
+Runtime: main .venv Python3.14.7 / NumPy2.5.3 / matplotlib3.11.2 / macOS27.0.1 arm64.
+7 unittest tests PASS, 0.224s, exit0. CLI generation exit0.
+Actual command and fixed renderer/scene identity: README.md and results.json.
+24 linear 64x64 arrays; two phases x three scales x four sampling methods.
+phase .25 r1 probe: nearest1 / bilinear.625 / exact cell-box.625 / mip.625.
+phase .25 r2,r4 probes: nearest0 / bilinear.375 / exact cell-box.5 / mip.5.
+edge analytic .32; grid1/4/8/32: 0/.375/.328125/.3173828125.
+Author inspected both actual PNGs. Edge plot Y inverted afterward to match screen Y down;
+only plotting code changed and same retained arrays/results re-plotted, no sampling rerun.
+Formal data files copied from actual author-run-20261017 output.
+Not measured: GPU/API conformance, physical light, display calibration, Obsidian UI or human learning.

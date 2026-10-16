@@ -1,0 +1,39 @@
+test_arbitrary_full_packet_uses_transpose (test_db2_lab.Contracts.test_arbitrary_full_packet_uses_transpose) ... ERROR
+test_cascade_start_is_finite_piecewise_model (test_db2_lab.Contracts.test_cascade_start_is_finite_piecewise_model) ... ok
+test_circle_inverse_and_wrong_no_denominator (test_db2_lab.Contracts.test_circle_inverse_and_wrong_no_denominator) ... ok
+test_fixed_null_exact_direction (test_db2_lab.Contracts.test_fixed_null_exact_direction) ... ERROR
+test_odd_alternating_endpoint_instability (test_db2_lab.Contracts.test_odd_alternating_endpoint_instability) ... ok
+test_validation_bool_finite_and_budget (test_db2_lab.Contracts.test_validation_bool_finite_and_budget) ... ok
+test_zero_a_and_large_legal_amplitude (test_db2_lab.Contracts.test_zero_a_and_large_legal_amplitude) ... ok
+
+======================================================================
+ERROR: test_arbitrary_full_packet_uses_transpose (test_db2_lab.Contracts.test_arbitrary_full_packet_uses_transpose)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/wwl-next-182-final/信号与系统/80-实践/16-db2连续与长边界/test_db2_lab.py", line 33, in test_arbitrary_full_packet_uses_transpose
+    y,_=lab.synthesis(a,d,self.h,self.g,self.offline,10,'zero_full')
+        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/wwl-next-182-final/信号与系统/80-实践/16-db2连续与长边界/db2_lab.py", line 78, in synthesis
+    full = offline(u, h, 1, 0) + offline(v, g, 1, 0)
+           ~~~~~~~^^^^^^^^^^^^
+TypeError: offline() takes from 2 to 4 positional arguments but 5 were given
+
+======================================================================
+ERROR: test_fixed_null_exact_direction (test_db2_lab.Contracts.test_fixed_null_exact_direction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/wwl-next-182-final/信号与系统/80-实践/16-db2连续与长边界/test_db2_lab.py", line 22, in test_fixed_null_exact_direction
+    aa,dd=lab.analysis(x,self.h,self.g,self.offline,'zero_full')
+          ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/wwl-next-182-final/信号与系统/80-实践/16-db2连续与长边界/db2_lab.py", line 71, in analysis
+    return tuple(offline(x, z[::-1], 2, 1) for z in (h, g))
+           ^^^^^
+  File "/private/tmp/wwl-next-182-final/信号与系统/80-实践/16-db2连续与长边界/db2_lab.py", line 71, in <genexpr>
+    return tuple(offline(x, z[::-1], 2, 1) for z in (h, g))
+                 ~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: offline() takes from 2 to 4 positional arguments but 5 were given
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.017s
+
+FAILED (errors=2)

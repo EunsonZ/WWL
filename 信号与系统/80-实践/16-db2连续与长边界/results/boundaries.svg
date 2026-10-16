@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1000" viewBox="0 0 1100 1000" role="img">
+<title>长db2边界与改基的有限记录</title><desc>显示原输入全部N个样点及三种边界重建；漏左边界系数的解析rankone误差与双基系数平方和比较。</desc>
+<rect width="1100" height="1000" fill="#fff"/>
+<g font-family="Arial Unicode MS,PingFang SC,Noto Sans CJK SC,system-ui,sans-serif" fill="#172433">
+<text x="50" y="40" font-size="27" fill="#172433" text-anchor="start">同一记录：长滤波边界和改基分别改了什么？</text>
+<text x="50" y="70" font-size="16" fill="#172433" text-anchor="start">N=10，fs=16 Hz；横轴原样点n，电压V；完整原区间均显示。</text>
+<text x="82" y="109" font-size="20" fill="#172433" text-anchor="start">A  原样点与zero dropped重建：丢失方向在边缘可见</text>
+<text x="30" y="143" font-size="14" fill="#172433" text-anchor="start">V</text>
+<line x1="82" y1="325.0" x2="1045" y2="325.0" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="330.0" font-size="14" fill="#172433" text-anchor="end">-1.7</text>
+<line x1="82.0" y1="155" x2="82.0" y2="325" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="82.0" y="349" font-size="14" fill="#172433" text-anchor="middle">0</text>
+<line x1="82" y1="282.5" x2="1045" y2="282.5" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="287.5" font-size="14" fill="#172433" text-anchor="end">0.4</text>
+<line x1="322.75" y1="155" x2="322.75" y2="325" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="322.75" y="349" font-size="14" fill="#172433" text-anchor="middle">2.25</text>
+<line x1="82" y1="240.0" x2="1045" y2="240.0" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="245.0" font-size="14" fill="#172433" text-anchor="end">2.5</text>
+<line x1="563.5" y1="155" x2="563.5" y2="325" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="563.5" y="349" font-size="14" fill="#172433" text-anchor="middle">4.5</text>
+<line x1="82" y1="197.5" x2="1045" y2="197.5" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="202.5" font-size="14" fill="#172433" text-anchor="end">4.6</text>
+<line x1="804.25" y1="155" x2="804.25" y2="325" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="804.25" y="349" font-size="14" fill="#172433" text-anchor="middle">6.75</text>
+<line x1="82" y1="155.0" x2="1045" y2="155.0" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="160.0" font-size="14" fill="#172433" text-anchor="end">6.7</text>
+<line x1="1045.0" y1="155" x2="1045.0" y2="325" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="1045.0" y="349" font-size="14" fill="#172433" text-anchor="middle">9</text>
+<line x1="82" y1="290.5952380952381" x2="1045" y2="290.5952380952381" stroke="#8d9aa9" stroke-dasharray=""/>
+<line x1="85" y1="132" x2="113" y2="132" stroke="#286bad" stroke-dasharray=""/>
+<text x="121" y="137" font-size="15" fill="#172433" text-anchor="start">原输入</text>
+<line x1="365" y1="132" x2="393" y2="132" stroke="#c2572b" stroke-dasharray="5,3"/>
+<text x="401" y="137" font-size="15" fill="#172433" text-anchor="start">zero dropped</text>
+<path d="M82.000,270.357 L189.000,229.881 L296.000,250.119 L403.000,169.167 L510.000,189.405 L617.000,209.643 L724.000,290.595 L831.000,310.833 L938.000,250.119 L1045.000,270.357" fill="none" stroke="#286bad" stroke-width="2" stroke-dasharray=""/>
+<circle cx="82.000" cy="270.357" r="3.5" fill="#286bad"/>
+<circle cx="189.000" cy="229.881" r="3.5" fill="#286bad"/>
+<circle cx="296.000" cy="250.119" r="3.5" fill="#286bad"/>
+<circle cx="403.000" cy="169.167" r="3.5" fill="#286bad"/>
+<circle cx="510.000" cy="189.405" r="3.5" fill="#286bad"/>
+<circle cx="617.000" cy="209.643" r="3.5" fill="#286bad"/>
+<circle cx="724.000" cy="290.595" r="3.5" fill="#286bad"/>
+<circle cx="831.000" cy="310.833" r="3.5" fill="#286bad"/>
+<circle cx="938.000" cy="250.119" r="3.5" fill="#286bad"/>
+<circle cx="1045.000" cy="270.357" r="3.5" fill="#286bad"/>
+<path d="M82.000,259.246 L189.000,236.296 L296.000,250.119 L403.000,169.167 L510.000,189.405 L617.000,209.643 L724.000,290.595 L831.000,310.833 L938.000,250.119 L1045.000,270.357" fill="none" stroke="#c2572b" stroke-width="2" stroke-dasharray="5,3"/>
+<circle cx="82.000" cy="259.246" r="3.5" fill="#c2572b"/>
+<circle cx="189.000" cy="236.296" r="3.5" fill="#c2572b"/>
+<circle cx="296.000" cy="250.119" r="3.5" fill="#c2572b"/>
+<circle cx="403.000" cy="169.167" r="3.5" fill="#c2572b"/>
+<circle cx="510.000" cy="189.405" r="3.5" fill="#c2572b"/>
+<circle cx="617.000" cy="209.643" r="3.5" fill="#c2572b"/>
+<circle cx="724.000" cy="290.595" r="3.5" fill="#c2572b"/>
+<circle cx="831.000" cy="310.833" r="3.5" fill="#c2572b"/>
+<circle cx="938.000" cy="250.119" r="3.5" fill="#c2572b"/>
+<circle cx="1045.000" cy="270.357" r="3.5" fill="#c2572b"/>
+<text x="1045" y="370" font-size="15" fill="#172433" text-anchor="end">样点 n</text>
+<text x="82" y="399" font-size="20" fill="#172433" text-anchor="start">B  三种正确合同的重建残差（直接写浮点值，不设零floor）</text>
+<text x="30" y="433" font-size="14" fill="#172433" text-anchor="start">V</text>
+<line x1="82" y1="615.0" x2="1045" y2="615.0" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="620.0" font-size="14" fill="#172433" text-anchor="end">-2.03e-15</text>
+<line x1="82.0" y1="445" x2="82.0" y2="615" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="82.0" y="639" font-size="14" fill="#172433" text-anchor="middle">0</text>
+<line x1="82" y1="572.5" x2="1045" y2="572.5" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="577.5" font-size="14" fill="#172433" text-anchor="end">-1.27e-15</text>
+<line x1="322.75" y1="445" x2="322.75" y2="615" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="322.75" y="639" font-size="14" fill="#172433" text-anchor="middle">2.25</text>
+<line x1="82" y1="530.0" x2="1045" y2="530.0" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="535.0" font-size="14" fill="#172433" text-anchor="end">-5e-16</text>
+<line x1="563.5" y1="445" x2="563.5" y2="615" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="563.5" y="639" font-size="14" fill="#172433" text-anchor="middle">4.5</text>
+<line x1="82" y1="487.5" x2="1045" y2="487.5" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="492.5" font-size="14" fill="#172433" text-anchor="end">2.66e-16</text>
+<line x1="804.25" y1="445" x2="804.25" y2="615" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="804.25" y="639" font-size="14" fill="#172433" text-anchor="middle">6.75</text>
+<line x1="82" y1="445.0" x2="1045" y2="445.0" stroke="#cad3dd" stroke-dasharray=""/>
+<text x="70" y="450.0" font-size="14" fill="#172433" text-anchor="end">1.03e-15</text>
+<line x1="1045.0" y1="445" x2="1045.0" y2="615" stroke="#eef1f4" stroke-dasharray=""/>
+<text x="1045.0" y="639" font-size="14" fill="#172433" text-anchor="middle">9</text>
+<line x1="82" y1="502.2826086956522" x2="1045" y2="502.2826086956522" stroke="#8d9aa9" stroke-dasharray=""/>
+<line x1="85" y1="422" x2="113" y2="422" stroke="#286bad" stroke-dasharray=""/>
+<text x="121" y="427" font-size="15" fill="#172433" text-anchor="start">periodic</text>
+<line x1="365" y1="422" x2="393" y2="422" stroke="#c2572b" stroke-dasharray=""/>
+<text x="401" y="427" font-size="15" fill="#172433" text-anchor="start">zero_full</text>
+<line x1="645" y1="422" x2="673" y2="422" stroke="#218363" stroke-dasharray=""/>
+<text x="681" y="427" font-size="15" fill="#172433" text-anchor="start">biorth_periodic</text>
+<path d="M82.000,508.442 L189.000,526.920 L296.000,539.239 L403.000,600.833 L510.000,600.833 L617.000,576.196 L724.000,477.645 L831.000,459.167 L938.000,539.239 L1045.000,502.283" fill="none" stroke="#286bad" stroke-width="2" stroke-dasharray=""/>
+<path d="M82.000,526.920 L189.000,551.558 L296.000,539.239 L403.000,600.833 L510.000,600.833 L617.000,576.196 L724.000,477.645 L831.000,459.167 L938.000,539.239 L1045.000,526.920" fill="none" stroke="#c2572b" stroke-width="2" stroke-dasharray=""/>
+<path d="M82.000,520.761 L189.000,526.920 L296.000,539.239 L403.000,600.833 L510.000,600.833 L617.000,600.833 L724.000,465.326 L831.000,465.326 L938.000,526.920 L1045.000,502.283" fill="none" stroke="#218363" stroke-width="2" stroke-dasharray=""/>
+<text x="1045" y="660" font-size="15" fill="#172433" text-anchor="end">样点 n</text>
+<text x="75" y="740" font-size="21" fill="#172433" text-anchor="start">C  平方和账本：PR与等距是两份合同</text>
+<text x="80" y="775" font-size="17" fill="#172433" text-anchor="start">对象</text>
+<text x="550" y="775" font-size="17" fill="#172433" text-anchor="start">平方和 / V²</text>
+<text x="825" y="775" font-size="17" fill="#172433" text-anchor="start">重建SSE / V²</text>
+<text x="80" y="809" font-size="16" fill="#172433" text-anchor="start">输入</text>
+<text x="550" y="809" font-size="16" fill="#172433" text-anchor="start">97</text>
+<text x="825" y="809" font-size="16" fill="#172433" text-anchor="start">—</text>
+<text x="80" y="837" font-size="16" fill="#172433" text-anchor="start">periodic</text>
+<text x="550" y="837" font-size="16" fill="#172433" text-anchor="start">97</text>
+<text x="825" y="837" font-size="16" fill="#172433" text-anchor="start">9.984e-30</text>
+<text x="80" y="865" font-size="16" fill="#172433" text-anchor="start">zero full</text>
+<text x="550" y="865" font-size="16" fill="#172433" text-anchor="start">97</text>
+<text x="825" y="865" font-size="16" fill="#172433" text-anchor="start">1.096e-29</text>
+<text x="80" y="893" font-size="16" fill="#172433" text-anchor="start">periodic双基 a=0.5</text>
+<text x="550" y="893" font-size="16" fill="#172433" text-anchor="start">102.643632215</text>
+<text x="825" y="893" font-size="16" fill="#172433" text-anchor="start">1.13e-29</text>
+<text x="65" y="936" font-size="16" fill="#172433" text-anchor="start">漏m=−1：实测SSE 0.401923788647；解析 |v^T x|²=0.401923788647。</text>
+<text x="65" y="966" font-size="15" fill="#172433" text-anchor="start">有限PR经指定N全基向量检查；连续db2与Riesz双基由正文独立证明，不由这张图推出。</text>
+</g></svg>

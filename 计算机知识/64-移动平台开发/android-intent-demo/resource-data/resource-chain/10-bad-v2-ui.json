@@ -1,0 +1,16 @@
+{
+  "pid": 10399,
+  "activity_instance": "29d5602e-e5e0-4694-9239-57e7b1bc2439",
+  "generation": 1,
+  "foreground": true,
+  "actor": "D",
+  "intent_id": "resources-D-next-1",
+  "start_raw": "810",
+  "end_raw": "840",
+  "message": "本地待发送：尚无服务承诺。",
+  "resources_observation": {
+    "resource_storage": "unavailable"
+  },
+  "resource_message": "资源迁移/存储失败：原数据库保留，未清空；请安装修复版本。\n相机：尚未请求；预约不需要相机。\n加速度：未注册/已停止，样本=0，最新m/s²=尚无样本\n传感器值只作本机观察，不进入预约参数、不上传。",
+  "phase": "queued"
+}

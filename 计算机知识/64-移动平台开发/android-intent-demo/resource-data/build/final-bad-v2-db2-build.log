@@ -1,0 +1,57 @@
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/private/tmp/wwl-next-175-env/java-user -XX:ActiveProcessorCount=1
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :networkApp:preBuild UP-TO-DATE
+> Task :networkApp:preRDebugBuild UP-TO-DATE
+> Task :networkApp:mergeRDebugNativeDebugMetadata NO-SOURCE
+> Task :networkApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+
+> Task :networkApp:generateRDebugBuildConfig
+Caught exception: Could not start the FSEvents stream: /private/tmp/wwl-next-175-final-env/resource-final-source
+
+> Task :networkApp:checkRDebugAarMetadata UP-TO-DATE
+> Task :networkApp:generateRDebugResValues UP-TO-DATE
+> Task :networkApp:mapRDebugSourceSetPaths UP-TO-DATE
+> Task :networkApp:generateRDebugResources UP-TO-DATE
+> Task :networkApp:mergeRDebugResources UP-TO-DATE
+> Task :networkApp:packageRDebugResources UP-TO-DATE
+> Task :networkApp:parseRDebugLocalResources UP-TO-DATE
+> Task :networkApp:createRDebugCompatibleScreenManifests
+> Task :networkApp:extractDeepLinksRDebug UP-TO-DATE
+> Task :networkApp:processRDebugMainManifest
+> Task :networkApp:processRDebugManifest
+> Task :networkApp:processRDebugManifestForPackage
+> Task :networkApp:processRDebugResources
+
+> Task :networkApp:compileRDebugKotlin
+w: file:///private/tmp/wwl-next-175-final-env/resource-final-source/app/src/main/java/org/wwl/intentdemo/Stores.kt:56:105 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged. This will become an error in a future release.
+w: file:///private/tmp/wwl-next-175-final-env/resource-final-source/app/src/main/java/org/wwl/intentdemo/Stores.kt:104:178 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged. This will become an error in a future release.
+
+> Task :networkApp:javaPreCompileRDebug UP-TO-DATE
+> Task :networkApp:compileRDebugJavaWithJavac
+> Task :networkApp:mergeRDebugShaders UP-TO-DATE
+> Task :networkApp:compileRDebugShaders NO-SOURCE
+> Task :networkApp:generateRDebugAssets UP-TO-DATE
+> Task :networkApp:mergeRDebugAssets UP-TO-DATE
+> Task :networkApp:compressRDebugAssets UP-TO-DATE
+> Task :networkApp:checkRDebugDuplicateClasses UP-TO-DATE
+> Task :networkApp:desugarRDebugFileDependencies UP-TO-DATE
+> Task :networkApp:mergeExtDexRDebug UP-TO-DATE
+> Task :networkApp:mergeLibDexRDebug UP-TO-DATE
+> Task :networkApp:dexBuilderRDebug
+> Task :networkApp:mergeProjectDexRDebug
+> Task :networkApp:mergeRDebugGlobalSynthetics UP-TO-DATE
+> Task :networkApp:processRDebugJavaRes UP-TO-DATE
+> Task :networkApp:mergeRDebugJavaResource UP-TO-DATE
+> Task :networkApp:mergeRDebugJniLibFolders UP-TO-DATE
+> Task :networkApp:mergeRDebugNativeLibs NO-SOURCE
+> Task :networkApp:stripRDebugDebugSymbols NO-SOURCE
+> Task :networkApp:validateSigningRDebug UP-TO-DATE
+> Task :networkApp:writeRDebugAppMetadata UP-TO-DATE
+> Task :networkApp:writeRDebugSigningConfigVersions UP-TO-DATE
+> Task :networkApp:packageRDebug
+> Task :networkApp:createRDebugApkListingFileRedirect
+> Task :networkApp:assembleRDebug
+
+BUILD SUCCESSFUL in 10s
+35 actionable tasks: 12 executed, 23 up-to-date

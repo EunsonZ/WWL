@@ -1,0 +1,221 @@
+{
+  "version_code": 2,
+  "debuggable": true,
+  "resources": {
+    "schema_version": 2,
+    "work": [
+      {
+        "actor": "D",
+        "intent_id": "review-stop-original",
+        "fp": "365b9197a3397f7ee50806306d1e1201585232f3d9d927aac8b975413b6372dc",
+        "attempts": 1,
+        "last_http": "SocketException"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "kind": "job_scheduled",
+        "detail": "review-stop-original:365b9197a3397f7ee50806306d1e1201585232f3d9d927aac8b975413b6372dc"
+      },
+      {
+        "seq": 2,
+        "kind": "budget_taken",
+        "detail": "review-stop-original:1"
+      },
+      {
+        "seq": 3,
+        "kind": "job_started",
+        "detail": "review-stop-original:attempt=1"
+      },
+      {
+        "seq": 4,
+        "kind": "job_outcome",
+        "detail": "review-stop-original:SocketException"
+      },
+      {
+        "seq": 5,
+        "kind": "job_stopped",
+        "detail": "job=17503:reason=3"
+      }
+    ]
+  },
+  "network": {
+    "pid": 10711,
+    "uid": 10222,
+    "actor": "D",
+    "client": {
+      "current": {
+        "actor": "D",
+        "intent_id": "review-stop-original",
+        "start": 810,
+        "end": 840,
+        "fingerprint": "365b9197a3397f7ee50806306d1e1201585232f3d9d927aac8b975413b6372dc",
+        "phase": "unknown",
+        "result": null
+      },
+      "draft": {
+        "start_raw": "810",
+        "end_raw": "840"
+      },
+      "intents": [
+        {
+          "actor": "D",
+          "intent_id": "review-permission",
+          "start": 690,
+          "end": 720,
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+          "phase": "accepted",
+          "result": {
+            "protocol": "wwl-reservation-v2/1",
+            "actor": "D",
+            "intent_id": "review-permission",
+            "status": "accepted",
+            "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+            "policy_version": 2,
+            "writer_epoch": 2,
+            "reason": "created",
+            "event_id": "opaque-review-event",
+            "booking": {
+              "id": 4,
+              "owner": "D",
+              "start": 690,
+              "end": 720,
+              "policy_version": 2
+            }
+          }
+        },
+        {
+          "actor": "D",
+          "intent_id": "review-stop-original",
+          "start": 810,
+          "end": 840,
+          "fingerprint": "365b9197a3397f7ee50806306d1e1201585232f3d9d927aac8b975413b6372dc",
+          "phase": "unknown",
+          "result": null
+        }
+      ],
+      "trace": [
+        {
+          "seq": 1,
+          "kind": "process_store_open",
+          "detail": "inflight is uncertain, never inferred rejected"
+        },
+        {
+          "seq": 2,
+          "kind": "activity_create",
+          "detail": "pid=9751 instance=eac91d6b-ab7b-4068-8919-e655ece2f40c"
+        },
+        {
+          "seq": 3,
+          "kind": "activity_resume",
+          "detail": "eac91d6b-ab7b-4068-8919-e655ece2f40c"
+        },
+        {
+          "seq": 4,
+          "kind": "activity_pause",
+          "detail": "eac91d6b-ab7b-4068-8919-e655ece2f40c"
+        },
+        {
+          "seq": 5,
+          "kind": "activity_stop",
+          "detail": "eac91d6b-ab7b-4068-8919-e655ece2f40c"
+        },
+        {
+          "seq": 6,
+          "kind": "activity_destroy",
+          "detail": "eac91d6b-ab7b-4068-8919-e655ece2f40c"
+        },
+        {
+          "seq": 7,
+          "kind": "persisted_before_send",
+          "detail": "review-permission"
+        },
+        {
+          "seq": 8,
+          "kind": "durable_result",
+          "detail": "review-permission"
+        },
+        {
+          "seq": 9,
+          "kind": "activity_create",
+          "detail": "pid=9751 instance=3848f404-3c7e-4d3d-9c45-d6058455d33f"
+        },
+        {
+          "seq": 10,
+          "kind": "activity_resume",
+          "detail": "3848f404-3c7e-4d3d-9c45-d6058455d33f"
+        },
+        {
+          "seq": 11,
+          "kind": "activity_pause",
+          "detail": "3848f404-3c7e-4d3d-9c45-d6058455d33f"
+        },
+        {
+          "seq": 12,
+          "kind": "activity_resume",
+          "detail": "3848f404-3c7e-4d3d-9c45-d6058455d33f"
+        },
+        {
+          "seq": 13,
+          "kind": "activity_pause",
+          "detail": "3848f404-3c7e-4d3d-9c45-d6058455d33f"
+        },
+        {
+          "seq": 14,
+          "kind": "activity_stop",
+          "detail": "3848f404-3c7e-4d3d-9c45-d6058455d33f"
+        },
+        {
+          "seq": 15,
+          "kind": "process_store_open",
+          "detail": "inflight is uncertain, never inferred rejected"
+        },
+        {
+          "seq": 16,
+          "kind": "activity_create",
+          "detail": "pid=10711 instance=0b976b5d-be44-4e99-aa77-1bb773db137a"
+        },
+        {
+          "seq": 17,
+          "kind": "activity_resume",
+          "detail": "0b976b5d-be44-4e99-aa77-1bb773db137a"
+        },
+        {
+          "seq": 18,
+          "kind": "persisted_before_send",
+          "detail": "review-stop-original"
+        },
+        {
+          "seq": 19,
+          "kind": "activity_pause",
+          "detail": "0b976b5d-be44-4e99-aa77-1bb773db137a"
+        },
+        {
+          "seq": 20,
+          "kind": "activity_resume",
+          "detail": "0b976b5d-be44-4e99-aa77-1bb773db137a"
+        },
+        {
+          "seq": 21,
+          "kind": "ui_ignored",
+          "detail": "refresh:0b976b5d-be44-4e99-aa77-1bb773db137a:4"
+        },
+        {
+          "seq": 22,
+          "kind": "sending",
+          "detail": "review-stop-original"
+        },
+        {
+          "seq": 23,
+          "kind": "unknown",
+          "detail": "review-stop-original"
+        }
+      ]
+    },
+    "projection": null,
+    "credential_mode": "self",
+    "transport_hint": "只在本机落盘；未访问服务。"
+  },
+  "observation": {}
+}

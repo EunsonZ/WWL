@@ -11,7 +11,11 @@ import javax.net.ssl.HttpsURLConnection
 class HttpFailure(val code:Int):IOException("HTTP $code; no new business decision inferred")
 
 /** Default platform TLS/hostname verification; app's DEBUG resource adds only its lab CA. */
-class HttpsTransport(private val actor:String) {
+class HttpsTransport(private val actor:String,private val network:android.net.Network?=null) {
+    private val cancelled=java.util.concurrent.atomic.AtomicBoolean(false)
+    private val active=java.util.concurrent.atomic.AtomicReference<HttpsURLConnection?>(null)
+    /** Instance cancellation is used only by a bounded JobService attempt. Call off main. */
+    fun cancel() { cancelled.set(true);active.getAndSet(null)?.disconnect() }
     private val endpoint="https://127.0.0.1:18751"
     private fun token(mode:String):String = when(mode) {
         "self" -> "wwl175-public-$actor"
@@ -20,8 +24,12 @@ class HttpsTransport(private val actor:String) {
         else -> throw IllegalArgumentException("credential mode")
     }
     private fun request(path:String,mode:String,body:JSONObject?=null,drop:Boolean=false):JSONObject {
-        val connection=URL(endpoint+path).openConnection() as HttpsURLConnection
+        if(cancelled.get())throw java.io.InterruptedIOException("job stopped before connection")
+        val url=URL(endpoint+path)
+        val connection=(network?.openConnection(url)?:url.openConnection()) as HttpsURLConnection
+        active.set(connection)
         try {
+            if(cancelled.get())throw java.io.InterruptedIOException("job stopped during connection setup")
             connection.instanceFollowRedirects=false
             connection.connectTimeout=1500;connection.readTimeout=2000
             connection.requestMethod=if(body==null)"GET" else "POST"
@@ -50,7 +58,7 @@ class HttpsTransport(private val actor:String) {
             }
             if(bytes.size>65536)throw IOException("response too large")
             return JSONObject(String(bytes,Charsets.UTF_8))
-        } finally { connection.disconnect() }
+        } finally { active.compareAndSet(connection,null);connection.disconnect() }
     }
     fun snapshot(mode:String)=request("/v2/snapshot",mode)
     fun query(p:Pending,mode:String):JSONObject {

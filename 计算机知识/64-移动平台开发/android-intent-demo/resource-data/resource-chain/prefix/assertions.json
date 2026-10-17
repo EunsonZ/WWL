@@ -1,0 +1,58 @@
+[
+  {
+    "name": "resume explicit owned emulator",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "resume original immutable identity",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "resume exact observed second-attempt cut",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "resume no service decision",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "resume route still absent",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "old charging rejection identified from actual exit/stderr",
+    "passed": true,
+    "detail": {
+      "argv": [
+        "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5580",
+        "shell",
+        "cmd jobscheduler run -s org.wwl.networkdemo.resources 17503"
+      ],
+      "returncode": 22,
+      "stdout": "",
+      "stderr": "Job 17503 in package org.wwl.networkdemo.resources / user 0 has functional constraints but --force not specified\n"
+    }
+  },
+  {
+    "name": "single own app PID",
+    "passed": true,
+    "detail": "9285"
+  },
+  {
+    "name": "exact package PID cmdline",
+    "passed": true,
+    "detail": "'org.wwl.networkdemo.resources\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+  },
+  {
+    "name": "third background query reached explicit hold",
+    "passed": true,
+    "detail": null
+  }
+]

@@ -1,0 +1,781 @@
+[
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "getprop ro.kernel.qemu"
+    ],
+    "returncode": 0,
+    "stdout": "1\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "reverse",
+      "--list"
+    ],
+    "returncode": 0,
+    "stdout": "\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "install",
+      "-r",
+      "/private/tmp/wwl-next-175-final-env/resource-final-apks/v1-debug-db1.apk"
+    ],
+    "returncode": 0,
+    "stdout": "Performing Streamed Install\nSuccess\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity --es lab_command snapshot"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity (has extras) }\nStatus: ok\nLaunchState: COLD\nActivity: org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity\nTotalTime: 405\nWaitTime: 410\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "cat: files/resource-state.json: No such file or directory\n"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": null,\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"尚未联网。缓存不是容量承诺。\"\n  },\n  \"observation\": {}\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": null,\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"尚未联网。缓存不是容量承诺。\"\n  },\n  \"observation\": {}\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity --es lab_command queue --es intent_id resources-D-original-1 --es start_raw 690 --es end_raw 720"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity (has extras) }\nWarning: Activity not started, intent has been delivered to currently running top-most instance.\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity\nTotalTime: 0\nWaitTime: 10\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": null,\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"尚未联网。缓存不是容量承诺。\"\n  },\n  \"observation\": {}\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": null,\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"尚未联网。缓存不是容量承诺。\"\n  },\n  \"observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      },\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [\n        {\n          \"actor\": \"D\",\n          \"intent_id\": \"resources-D-original-1\",\n          \"start\": 690,\n          \"end\": 720,\n          \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n          \"phase\": \"queued\",\n          \"result\": null\n        }\n      ],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        },\n        {\n          \"seq\": 9,\n          \"kind\": \"persisted_before_send\",\n          \"detail\": \"resources-D-original-1\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"只在本机落盘；未访问服务。\"\n  },\n  \"observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      },\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [\n        {\n          \"actor\": \"D\",\n          \"intent_id\": \"resources-D-original-1\",\n          \"start\": 690,\n          \"end\": 720,\n          \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n          \"phase\": \"queued\",\n          \"result\": null\n        }\n      ],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        },\n        {\n          \"seq\": 9,\n          \"kind\": \"persisted_before_send\",\n          \"detail\": \"resources-D-original-1\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"只在本机落盘；未访问服务。\"\n  },\n  \"observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      },\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [\n        {\n          \"actor\": \"D\",\n          \"intent_id\": \"resources-D-original-1\",\n          \"start\": 690,\n          \"end\": 720,\n          \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n          \"phase\": \"queued\",\n          \"result\": null\n        }\n      ],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        },\n        {\n          \"seq\": 9,\n          \"kind\": \"persisted_before_send\",\n          \"detail\": \"resources-D-original-1\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"只在本机落盘；未访问服务。\"\n  },\n  \"observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      },\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [\n        {\n          \"actor\": \"D\",\n          \"intent_id\": \"resources-D-original-1\",\n          \"start\": 690,\n          \"end\": 720,\n          \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n          \"phase\": \"queued\",\n          \"result\": null\n        }\n      ],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        },\n        {\n          \"seq\": 9,\n          \"kind\": \"persisted_before_send\",\n          \"detail\": \"resources-D-original-1\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"只在本机落盘；未访问服务。\"\n  },\n  \"observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 5,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：尚未请求；预约不需要相机。\\n加速度：未注册\\/已停止，样本=0，最新m\\/s²=尚无样本\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "returncode": 0,
+    "stdout": null,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity --es lab_command camera"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity (has extras) }\nWarning: Activity not started, intent has been delivered to currently running top-most instance.\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity\nTotalTime: 0\nWaitTime: 3\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "uiautomator dump /sdcard/wwl175-resource-ui.xml"
+    ],
+    "returncode": 0,
+    "stdout": "UI hierchary dumped to: /sdcard/wwl175-resource-ui.xml\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "cat /sdcard/wwl175-resource-ui.xml"
+    ],
+    "returncode": 0,
+    "stdout": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"android:id/content\" class=\"android.widget.FrameLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ScrollView\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"com.android.permissioncontroller:id/grant_singleton\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"com.android.permissioncontroller:id/grant_dialog\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"com.android.permissioncontroller:id/content_container\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,780][1010,1155]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,843][947,1092]\"><node index=\"0\" text=\"\" resource-id=\"com.android.permissioncontroller:id/permission_icon\" class=\"android.widget.ImageView\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[498,843][582,927]\" /><node index=\"1\" text=\"Allow WWL175 resources to take pictures and record video?\" resource-id=\"com.android.permissioncontroller:id/permission_message\" class=\"android.widget.TextView\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,959][947,1092]\" /></node></node><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1155][1010,1684]\"><node index=\"0\" text=\"While using the app\" resource-id=\"com.android.permissioncontroller:id/permission_allow_foreground_only_button\" class=\"android.widget.Button\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,1160][947,1307]\" /><node index=\"1\" text=\"Only this time\" resource-id=\"com.android.permissioncontroller:id/permission_allow_one_time_button\" class=\"android.widget.Button\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,1317][947,1464]\" /><node index=\"2\" text=\"Don’t allow\" resource-id=\"com.android.permissioncontroller:id/permission_deny_button\" class=\"android.widget.Button\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,1474][947,1621]\" /></node></node></node></node></node></node></node></hierarchy>",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "input tap 540 1547"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 9,\n  \"foreground\": false,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0,\n    \"camera\": \"denied_booking_unchanged\"\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：已拒绝或取消：不打开相机，预约不撤销；需要时可再查看权限说明\\/设置。\\n加速度：未注册\\/已停止，样本=0，最新m\\/s²=尚无样本\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      },\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [\n        {\n          \"actor\": \"D\",\n          \"intent_id\": \"resources-D-original-1\",\n          \"start\": 690,\n          \"end\": 720,\n          \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n          \"phase\": \"queued\",\n          \"result\": null\n        }\n      ],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        },\n        {\n          \"seq\": 9,\n          \"kind\": \"persisted_before_send\",\n          \"detail\": \"resources-D-original-1\"\n        },\n        {\n          \"seq\": 10,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 11,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 12,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:7\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"只在本机落盘；未访问服务。\"\n  },\n  \"observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 10,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0,\n    \"camera\": \"denied_booking_unchanged\"\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：已拒绝或取消：不打开相机，预约不撤销；需要时可再查看权限说明\\/设置。\\n加速度：未注册\\/已停止，样本=0，最新m\\/s²=尚无样本\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "returncode": 0,
+    "stdout": null,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity --es lab_command camera"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity (has extras) }\nWarning: Activity not started, intent has been delivered to currently running top-most instance.\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity\nTotalTime: 0\nWaitTime: 2\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "uiautomator dump /sdcard/wwl175-resource-ui.xml"
+    ],
+    "returncode": 0,
+    "stdout": "UI hierchary dumped to: /sdcard/wwl175-resource-ui.xml\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "cat /sdcard/wwl175-resource-ui.xml"
+    ],
+    "returncode": 0,
+    "stdout": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,1024][1052,1441]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1066][1010,1399]\"><node index=\"0\" text=\"\" resource-id=\"android:id/content\" class=\"android.widget.FrameLayout\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1066][1010,1399]\"><node index=\"0\" text=\"\" resource-id=\"android:id/parentPanel\" class=\"android.widget.LinearLayout\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1066][1010,1399]\"><node index=\"0\" text=\"\" resource-id=\"android:id/contentPanel\" class=\"android.widget.FrameLayout\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1066][1010,1235]\"><node index=\"0\" text=\"\" resource-id=\"android:id/scrollView\" class=\"android.widget.ScrollView\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1066][1010,1235]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1066][1010,1235]\"><node index=\"0\" text=\"\" resource-id=\"android:id/textSpacerNoTitle\" class=\"android.view.View\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1066][1010,1113]\" /><node index=\"1\" text=\"仅在前台打开相机设备后立即关闭；不拍照、不上传。拒绝不影响预约。\" resource-id=\"android:id/message\" class=\"android.widget.TextView\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1113][1010,1235]\" /></node></node></node><node index=\"1\" text=\"\" resource-id=\"android:id/buttonPanel\" class=\"android.widget.ScrollView\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1235][1010,1399]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1235][1010,1399]\"><node index=\"0\" text=\"取消\" resource-id=\"android:id/button2\" class=\"android.widget.Button\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[600,1246][768,1388]\" /><node index=\"1\" text=\"继续请求\" resource-id=\"android:id/button1\" class=\"android.widget.Button\" package=\"org.wwl.networkdemo.resources\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[768,1246][978,1388]\" /></node></node></node></node></node></node></hierarchy>",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "input tap 873 1317"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "uiautomator dump /sdcard/wwl175-resource-ui.xml"
+    ],
+    "returncode": 0,
+    "stdout": "UI hierchary dumped to: /sdcard/wwl175-resource-ui.xml\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "cat /sdcard/wwl175-resource-ui.xml"
+    ],
+    "returncode": 0,
+    "stdout": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation=\"0\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.FrameLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"android:id/content\" class=\"android.widget.FrameLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.ScrollView\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"com.android.permissioncontroller:id/grant_singleton\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"com.android.permissioncontroller:id/grant_dialog\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[28,738][1052,1726]\"><node index=\"0\" text=\"\" resource-id=\"com.android.permissioncontroller:id/content_container\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,780][1010,1155]\"><node index=\"0\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,843][947,1092]\"><node index=\"0\" text=\"\" resource-id=\"com.android.permissioncontroller:id/permission_icon\" class=\"android.widget.ImageView\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[498,843][582,927]\" /><node index=\"1\" text=\"Allow WWL175 resources to take pictures and record video?\" resource-id=\"com.android.permissioncontroller:id/permission_message\" class=\"android.widget.TextView\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,959][947,1092]\" /></node></node><node index=\"1\" text=\"\" resource-id=\"\" class=\"android.widget.LinearLayout\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[70,1155][1010,1684]\"><node index=\"0\" text=\"While using the app\" resource-id=\"com.android.permissioncontroller:id/permission_allow_foreground_only_button\" class=\"android.widget.Button\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,1160][947,1307]\" /><node index=\"1\" text=\"Only this time\" resource-id=\"com.android.permissioncontroller:id/permission_allow_one_time_button\" class=\"android.widget.Button\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,1317][947,1464]\" /><node index=\"2\" text=\"Don’t allow\" resource-id=\"com.android.permissioncontroller:id/permission_deny_and_dont_ask_again_button\" class=\"android.widget.Button\" package=\"com.google.android.permissioncontroller\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[133,1474][947,1621]\" /></node></node></node></node></node></node></node></hierarchy>",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "input tap 540 1233"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 14,\n  \"foreground\": false,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0,\n    \"camera\": \"granted_click_to_open\"\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：已授权；再次点相机按钮才打开设备，随后立即关闭。\\n加速度：未注册\\/已停止，样本=0，最新m\\/s²=尚无样本\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity --es lab_command camera"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity (has extras) }\nWarning: Activity not started, intent has been delivered to currently running top-most instance.\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity\nTotalTime: 0\nWaitTime: 4\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 16,\n  \"foreground\": false,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0,\n    \"camera\": \"granted_click_to_open\"\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：已授权；再次点相机按钮才打开设备，随后立即关闭。\\n加速度：未注册\\/已停止，样本=0，最新m\\/s²=尚无样本\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 18,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\"\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=0，最新m\\/s²=尚无样本\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      },\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [\n        {\n          \"actor\": \"D\",\n          \"intent_id\": \"resources-D-original-1\",\n          \"start\": 690,\n          \"end\": 720,\n          \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n          \"phase\": \"queued\",\n          \"result\": null\n        }\n      ],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        },\n        {\n          \"seq\": 9,\n          \"kind\": \"persisted_before_send\",\n          \"detail\": \"resources-D-original-1\"\n        },\n        {\n          \"seq\": 10,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 11,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 12,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:7\"\n        },\n        {\n          \"seq\": 13,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 14,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 15,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 16,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 17,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:12\"\n        },\n        {\n          \"seq\": 18,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 19,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 20,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 21,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 22,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:17\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"只在本机落盘；未访问服务。\"\n  },\n  \"observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0,\n    \"camera\": \"granted_click_to_open\"\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 18,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\"\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=0，最新m\\/s²=尚无样本\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "returncode": 0,
+    "stdout": null,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity --es lab_command sensor_start"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity (has extras) }\nWarning: Activity not started, intent has been delivered to currently running top-most instance.\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity\nTotalTime: 0\nWaitTime: 3\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "emu",
+      "sensor",
+      "set",
+      "acceleration",
+      "1:2:9.81"
+    ],
+    "returncode": 0,
+    "stdout": "OK\r\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 21,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"registered_foreground\",\n    \"sensor_samples\": 1,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      0,\n      9.776321,\n      0.812345\n    ],\n    \"sensor_timestamp_ns\": 31118037131672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：仅前台观察中，样本=1，最新m\\/s²=[0,9.776321,0.812345]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 21,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"registered_foreground\",\n    \"sensor_samples\": 3,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118170465672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：仅前台观察中，样本=3，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/resource-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [],\n    \"events\": []\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"queued\",\n        \"result\": null\n      },\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [\n        {\n          \"actor\": \"D\",\n          \"intent_id\": \"resources-D-original-1\",\n          \"start\": 690,\n          \"end\": 720,\n          \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n          \"phase\": \"queued\",\n          \"result\": null\n        }\n      ],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        },\n        {\n          \"seq\": 9,\n          \"kind\": \"persisted_before_send\",\n          \"detail\": \"resources-D-original-1\"\n        },\n        {\n          \"seq\": 10,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 11,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 12,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:7\"\n        },\n        {\n          \"seq\": 13,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 14,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 15,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 16,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 17,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:12\"\n        },\n        {\n          \"seq\": 18,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 19,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 20,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 21,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 22,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:17\"\n        },\n        {\n          \"seq\": 23,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 24,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 25,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:20\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"只在本机落盘；未访问服务。\"\n  },\n  \"observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 0,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\"\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 21,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"registered_foreground\",\n    \"sensor_samples\": 4,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118237132672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：仅前台观察中，样本=4，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "returncode": 0,
+    "stdout": null,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "dumpsys sensorservice"
+    ],
+    "returncode": 0,
+    "stdout": "Captured at: 11:33:59.911\nSensor Device:\nTotal 12 h/w sensors, 12 running 0 disabled clients:\n0x00000000) active-count = 3; sampling_period(ms) = {66.7, 200.0, 200.0}, selected = 66.67 ms; batching_period(ms) = {100.0, 2000.0, 0.0}, selected = 100.00 ms\nSensor List:\n0000000000) Goldfish 3-axis Accelerometer | The Android Open Source Project | ver: 1 | type: android.sensor.accelerometer(1) | perm: n/a | flags: 0x00000050\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, has-additional-info, \n0x00000001) Goldfish 3-axis Gyroscope | The Android Open Source Project | ver: 1 | type: android.sensor.gyroscope(4) | perm: n/a | flags: 0x00000050\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, has-additional-info, \n0x00000002) Goldfish 3-axis Magnetic field sensor | The Android Open Source Project | ver: 1 | type: android.sensor.magnetic_field(2) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x00000003) Goldfish Orientation sensor | The Android Open Source Project | ver: 1 | type: android.sensor.orientation(3) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x00000004) Goldfish Ambient Temperature sensor | The Android Open Source Project | ver: 1 | type: android.sensor.ambient_temperature(13) | perm: n/a | flags: 0x00000012\n\ton-change | maxDelay=0us | minDelay=0us | no batching | non-wakeUp | data-injection, \n0x00000005) Goldfish Proximity sensor | The Android Open Source Project | ver: 1 | type: android.sensor.proximity(8) | perm: n/a | flags: 0x00000013\n\ton-change | maxDelay=0us | minDelay=0us | no batching | wakeUp | data-injection, \n0x00000006) Goldfish Light sensor     | The Android Open Source Project | ver: 1 | type: android.sensor.light(5) | perm: n/a | flags: 0x00000012\n\ton-change | maxDelay=0us | minDelay=0us | no batching | non-wakeUp | data-injection, \n0x00000007) Goldfish Pressure sensor  | The Android Open Source Project | ver: 1 | type: android.sensor.pressure(6) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x00000008) Goldfish Humidity sensor  | The Android Open Source Project | ver: 1 | type: android.sensor.relative_humidity(12) | perm: n/a | flags: 0x00000012\n\ton-change | maxDelay=0us | minDelay=0us | no batching | non-wakeUp | data-injection, \n0x00000009) Goldfish 3-axis Magnetic field sensor (uncalibrated) | The Android Open Source Project | ver: 1 | type: android.sensor.magnetic_field_uncalibrated(14) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x0000000a) Goldfish 3-axis Gyroscope (uncalibrated) | The Android Open Source Project | ver: 1 | type: android.sensor.gyroscope_uncalibrated(16) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x00000011) Goldfish 3-axis Accelerometer Uncalibrated | The Android Open Source Project | ver: 1 | type: android.sensor.accelerometer_uncalibrated(35) | perm: n/a | flags: 0x00000050\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, has-additional-info, \n0x5f636779) Corrected Gyroscope Sensor | AOSP            | ver: 1 | type: android.sensor.gyroscope(4) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f676172) Game Rotation Vector Sensor | AOSP            | ver: 3 | type: android.sensor.game_rotation_vector(15) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f676273) Gyroscope Bias (debug)    | AOSP            | ver: 1 | type: android.sensor.accelerometer(1) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f67656f) GeoMag Rotation Vector Sensor | AOSP            | ver: 3 | type: android.sensor.geomagnetic_rotation_vector(20) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f677276) Gravity Sensor            | AOSP            | ver: 3 | type: android.sensor.gravity(9) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f6c696e) Linear Acceleration Sensor | AOSP            | ver: 3 | type: android.sensor.linear_acceleration(10) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f726f76) Rotation Vector Sensor    | AOSP            | ver: 3 | type: android.sensor.rotation_vector(11) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f797072) Orientation Sensor        | AOSP            | ver: 1 | type: android.sensor.orientation(3) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \nFusion States:\n9-axis fusion disabled (0 clients), gyro-rate= 200.00Hz, q=< 0.6772, 5.39613e-07, 7.71638e-06, 0.735799 > (1), b=< 2.09564e-19, 3.54525e-16, 2.94566e-17 >\ngame fusion(no mag) disabled (0 clients), gyro-rate= 200.00Hz, q=< 0.478965, -0.47874, -0.520161, 0.520416 > (1), b=< 0, 0, 0 >\ngeomag fusion (no gyro) disabled (0 clients), gyro-rate= 200.00Hz, q=< 0, 0, 0, 0 > (0), b=< 0, 0, 0 >\nRecent Sensor events:\nRotation Vector Sensor: last 10 events\n\t 1 (ts=40.948542672, wall=02:56:02.403) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t 2 (ts=40.968542672, wall=02:56:02.423) 0.68, -0.00, 0.00, 0.74, 0.00, \n\t 3 (ts=40.988542672, wall=02:56:02.443) 0.68, -0.00, 0.00, 0.74, 0.00, \n\t 4 (ts=41.008542672, wall=02:56:02.463) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t 5 (ts=41.028542672, wall=02:56:02.483) 0.68, -0.00, 0.00, 0.74, 0.00, \n\t 6 (ts=41.048542672, wall=02:56:02.503) 0.68, -0.00, 0.00, 0.74, 0.00, \n\t 7 (ts=41.068542672, wall=02:56:02.523) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t 8 (ts=41.088542672, wall=02:56:02.543) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t 9 (ts=44.195224672, wall=02:56:05.651) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t10 (ts=2941.863045672, wall=03:44:23.318) 0.68, 0.00, 0.00, 0.74, 0.00, \nGoldfish 3-axis Gyroscope (uncalibrated): last 10 events\n\t 1 (ts=8812.653933868, wall=05:22:14.110) 0.00, 0.00, 0.00, 0.00, -0.00, -0.00, \n\t 2 (ts=16748.314791277, wall=07:34:29.770) 0.00, 0.00, 0.00, 0.00, 0.00, -0.00, \n\t 3 (ts=16748.319791277, wall=07:34:29.775) 0.00, 0.00, 0.00, 0.00, 0.00, -0.00, \n\t 4 (ts=16748.324791277, wall=07:34:29.780) 0.00, 0.00, 0.00, -0.00, 0.00, -0.00, \n\t 5 (ts=29919.128545182, wall=11:14:00.583) 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, \n\t 6 (ts=29919.133545182, wall=11:14:00.588) 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, \n\t 7 (ts=29919.138545182, wall=11:14:00.593) 0.00, 0.00, 0.00, -0.00, -0.00, -0.00, \n\t 8 (ts=29919.143545182, wall=11:14:00.599) 0.00, 0.00, 0.00, -0.00, -0.00, -0.00, \n\t 9 (ts=29919.148545182, wall=11:14:00.603) 0.00, 0.00, 0.00, -0.00, -0.00, 0.00, \n\t10 (ts=29919.153545182, wall=11:14:00.608) 0.00, 0.00, 0.00, -0.00, -0.00, 0.00, \nGoldfish Pressure sensor: last 10 events\n\t 1 (ts=22340.074143943, wall=09:07:41.533) 1013.25, 0.00, 0.00, \n\t 2 (ts=22340.174143943, wall=09:07:41.632) 1013.25, 0.00, 0.00, \n\t 3 (ts=22340.274143943, wall=09:07:41.733) 1013.25, 0.00, 0.00, \n\t 4 (ts=22340.374143943, wall=09:07:41.831) 1013.25, 0.00, 0.00, \n\t 5 (ts=22340.474143943, wall=09:07:41.934) 1013.25, 0.00, 0.00, \n\t 6 (ts=22340.574143943, wall=09:07:42.038) 1013.25, 0.00, 0.00, \n\t 7 (ts=22340.674143943, wall=09:07:42.130) 1013.25, 0.00, 0.00, \n\t 8 (ts=22340.774143943, wall=09:07:42.234) 1013.25, 0.00, 0.00, \n\t 9 (ts=22340.874143943, wall=09:07:42.330) 1013.25, 0.00, 0.00, \n\t10 (ts=22340.974143943, wall=09:07:42.433) 1013.25, 0.00, 0.00, \nLinear Acceleration Sensor: last 10 events\n\t 1 (ts=40.968542672, wall=02:56:02.423) -0.00, 0.00, 0.00, \n\t 2 (ts=40.988542672, wall=02:56:02.443) -0.00, 0.00, 0.00, \n\t 3 (ts=41.008542672, wall=02:56:02.463) -0.00, 0.00, 0.00, \n\t 4 (ts=41.028542672, wall=02:56:02.483) -0.00, 0.00, 0.00, \n\t 5 (ts=41.048542672, wall=02:56:02.503) -0.00, 0.00, 0.00, \n\t 6 (ts=41.068542672, wall=02:56:02.523) -0.00, 0.00, 0.00, \n\t 7 (ts=41.088542672, wall=02:56:02.543) -0.00, 0.00, 0.00, \n\t 8 (ts=44.195224672, wall=02:56:05.651) -0.00, 0.00, 0.00, \n\t 9 (ts=44.215224672, wall=02:56:05.670) -0.00, 0.00, 0.00, \n\t10 (ts=2941.863045672, wall=03:44:23.318) 0.00, 0.00, 0.00, \nGoldfish 3-axis Magnetic field sensor: last 10 events\n\t 1 (ts=2941.846642777, wall=03:44:23.301) 0.00, 9.88, -47.75, \n\t 2 (ts=2941.856642777, wall=03:44:23.311) 0.00, 9.88, -47.75, \n\t 3 (ts=2941.866642777, wall=03:44:23.321) 0.00, 9.88, -47.75, \n\t 4 (ts=2941.876642777, wall=03:44:23.331) 0.00, 9.88, -47.75, \n\t 5 (ts=4874.899072740, wall=04:16:36.354) 0.00, 9.88, -47.75, \n\t 6 (ts=8812.649531201, wall=05:22:14.104) 0.00, 9.88, -47.75, \n\t 7 (ts=16748.320081735, wall=07:34:29.775) 0.00, 9.88, -47.75, \n\t 8 (ts=29919.134154140, wall=11:14:00.589) 0.00, 9.88, -47.75, \n\t 9 (ts=29919.144154140, wall=11:14:00.599) 0.00, 9.88, -47.75, \n\t10 (ts=29919.154154140, wall=11:14:00.609) 0.00, 9.88, -47.75, \nGoldfish 3-axis Accelerometer: last 50 events\n\t 1 (ts=31115.237122672, wall=11:33:56.692) 0.00, 9.78, 0.81, \n\t 2 (ts=31115.303789672, wall=11:33:56.759) 0.00, 9.78, 0.81, \n\t 3 (ts=31115.370456672, wall=11:33:56.826) 0.00, 9.78, 0.81, \n\t 4 (ts=31115.437123672, wall=11:33:56.892) 0.00, 9.78, 0.81, \n\t 5 (ts=31115.503790672, wall=11:33:56.959) 0.00, 9.78, 0.81, \n\t 6 (ts=31115.570457672, wall=11:33:57.025) 0.00, 9.78, 0.81, \n\t 7 (ts=31115.637124672, wall=11:33:57.092) 0.00, 9.78, 0.81, \n\t 8 (ts=31115.703791672, wall=11:33:57.159) 0.00, 9.78, 0.81, \n\t 9 (ts=31115.770458672, wall=11:33:57.225) 0.00, 9.78, 0.81, \n\t10 (ts=31115.837125672, wall=11:33:57.292) 0.00, 9.78, 0.81, \n\t11 (ts=31115.903792672, wall=11:33:57.360) 0.00, 9.78, 0.81, \n\t12 (ts=31115.970459672, wall=11:33:57.427) 0.00, 9.78, 0.81, \n\t13 (ts=31116.037126672, wall=11:33:57.492) 0.00, 9.78, 0.81, \n\t14 (ts=31116.103793672, wall=11:33:57.559) 0.00, 9.78, 0.81, \n\t15 (ts=31116.170460672, wall=11:33:57.626) 0.00, 9.78, 0.81, \n\t16 (ts=31116.237127672, wall=11:33:57.693) 0.00, 9.78, 0.81, \n\t17 (ts=31116.303794672, wall=11:33:57.761) 0.00, 9.78, 0.81, \n\t18 (ts=31116.370461672, wall=11:33:57.828) 0.00, 9.78, 0.81, \n\t19 (ts=31116.437128672, wall=11:33:57.894) 0.00, 9.78, 0.81, \n\t20 (ts=31116.503795672, wall=11:33:57.960) 0.00, 9.78, 0.81, \n\t21 (ts=31116.570462672, wall=11:33:58.025) 0.00, 9.78, 0.81, \n\t22 (ts=31116.637129672, wall=11:33:58.093) 0.00, 9.78, 0.81, \n\t23 (ts=31116.703796672, wall=11:33:58.159) 0.00, 9.78, 0.81, \n\t24 (ts=31116.770463672, wall=11:33:58.226) 0.00, 9.78, 0.81, \n\t25 (ts=31116.837130672, wall=11:33:58.292) 0.00, 9.78, 0.81, \n\t26 (ts=31116.903797672, wall=11:33:58.361) 0.00, 9.78, 0.81, \n\t27 (ts=31116.970464672, wall=11:33:58.427) 0.00, 9.78, 0.81, \n\t28 (ts=31117.037131672, wall=11:33:58.494) 0.00, 9.78, 0.81, \n\t29 (ts=31117.103798672, wall=11:33:58.560) 0.00, 9.78, 0.81, \n\t30 (ts=31117.170465672, wall=11:33:58.626) 0.00, 9.78, 0.81, \n\t31 (ts=31117.237132672, wall=11:33:58.693) 0.00, 9.78, 0.81, \n\t32 (ts=31117.303799672, wall=11:33:58.759) 0.00, 9.78, 0.81, \n\t33 (ts=31117.370466672, wall=11:33:58.826) 0.00, 9.78, 0.81, \n\t34 (ts=31117.437133672, wall=11:33:58.892) 0.00, 9.78, 0.81, \n\t35 (ts=31117.503800672, wall=11:33:58.959) 0.00, 9.78, 0.81, \n\t36 (ts=31117.570467672, wall=11:33:59.025) 0.00, 9.78, 0.81, \n\t37 (ts=31117.637134672, wall=11:33:59.092) 0.00, 9.78, 0.81, \n\t38 (ts=31117.670465672, wall=11:33:59.126) 0.00, 9.78, 0.81, \n\t39 (ts=31117.703796672, wall=11:33:59.159) 0.00, 9.78, 0.81, \n\t40 (ts=31117.770463672, wall=11:33:59.226) 0.00, 9.78, 0.81, \n\t41 (ts=31117.837130672, wall=11:33:59.292) 0.00, 9.78, 0.81, \n\t42 (ts=31117.903797672, wall=11:33:59.359) 0.00, 9.78, 0.81, \n\t43 (ts=31117.970464672, wall=11:33:59.425) 0.00, 9.78, 0.81, \n\t44 (ts=31118.037131672, wall=11:33:59.493) 0.00, 9.78, 0.81, \n\t45 (ts=31118.103798672, wall=11:33:59.560) 1.00, 2.00, 9.81, \n\t46 (ts=31118.170465672, wall=11:33:59.626) 1.00, 2.00, 9.81, \n\t47 (ts=31118.237132672, wall=11:33:59.692) 1.00, 2.00, 9.81, \n\t48 (ts=31118.303799672, wall=11:33:59.759) 1.00, 2.00, 9.81, \n\t49 (ts=31118.370466672, wall=11:33:59.826) 1.00, 2.00, 9.81, \n\t50 (ts=31118.437133672, wall=11:33:59.892) 1.00, 2.00, 9.81, \nActive sensors:\nGoldfish 3-axis Accelerometer (handle=0x00000000, connections=3)\nSocket Buffer size = 39 events\nWakeLock Status: not held \nMode : NORMAL\nSensor Privacy: disabled\n3 active connections\nConnection Number: 0 \n\tOperating Mode: NORMAL\n\t com.android.server.wm.WindowOrientationListener$AccelSensorJudge | WakeLockRefCount 0 | uid 1000 | cache size 0 | max cache size 0\n\t Goldfish 3-axis Accelerometer 0x00000000 | status: active | pending flush events 0 \nConnection Number: 1 \n\tOperating Mode: NORMAL\n\t com.android.server.power.FaceDownDetector | WakeLockRefCount 0 | uid 1000 | cache size 0 | max cache size 0\n\t Goldfish 3-axis Accelerometer 0x00000000 | status: active | pending flush events 0 \nConnection Number: 2 \n\tOperating Mode: NORMAL\n\t org.wwl.networkdemo.ResourceActivity | WakeLockRefCount 0 | uid 10218 | cache size 0 | max cache size 0\n\t Goldfish 3-axis Accelerometer 0x00000000 | status: active | pending flush events 0 \n0 direct connections\nPrevious Registrations:\n11:33:59 + 0x00000000 pid= 9285 uid=10218 package=org.wwl.networkdemo.ResourceActivity samplingPeriod=200000us batchingPeriod=0us\n11:33:59 - 0x00000000 pid=  546 uid= 1000 package=hidl_client_pid_354\n11:33:59 + 0x00000000 pid=  546 uid= 1000 package=hidl_client_pid_354 samplingPeriod=33331us batchingPeriod=0us\n11:14:00 - 0x5f6c696e pid= 8841 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n11:14:00 - 0x5f726f76 pid= 8841 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n11:14:00 + 0x5f726f76 pid= 8841 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n11:14:00 + 0x5f6c696e pid= 8841 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n10:10:51 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n10:10:51 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:57:32 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:57:32 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:44:14 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:44:13 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:30:55 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:30:55 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:17:36 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:17:36 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:07:42 - 0x00000007 pid= 1150 uid=10144 package=com.google.android.location.fused.PressureProvider\n09:07:40 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:07:40 + 0x00000007 pid= 1150 uid=10144 package=com.google.android.location.fused.PressureProvider samplingPeriod=100000us batchingPeriod=0us\n09:07:40 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:54:22 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:54:21 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:41:03 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:41:03 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:27:44 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:27:44 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:14:26 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:14:25 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:01:07 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:01:07 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n07:47:48 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n07:47:48 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n07:34:30 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n07:34:29 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n07:34:29 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n07:34:29 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n07:34:29 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n07:34:29 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n07:21:11 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n07:21:11 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n07:07:52 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n07:07:49 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n06:56:39 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n06:56:35 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n06:45:25 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n06:45:21 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n06:45:16 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n06:45:13 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n06:45:08 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n06:45:05 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n05:22:14 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n05:22:14 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n05:22:14 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n05:22:14 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n04:16:36 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n04:16:36 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n04:16:36 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n04:16:36 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:44:23 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:44:23 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:44:23 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:44:23 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:22:43 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:22:43 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:22:43 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:22:43 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:08:41 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:08:41 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:08:41 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:08:41 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:01:59 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:01:59 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:01:59 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:01:59 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:58:29 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:58:29 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:58:29 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:58:29 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:45 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:45 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:45 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:45 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:14 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:14 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:14 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:14 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:05 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:05 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:05 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:05 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:02 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:02 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:02 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:02 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:58 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:58 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:58 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:58 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:58 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:58 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:57 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:57 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:57 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:57 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:57 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:57 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:53 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:53 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:52 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:52 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:52 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:52 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:46 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:46 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:37 + 0x00000000 pid=  546 uid= 1000 package=com.android.server.wm.WindowOrientationListener$AccelSensorJudge samplingPeriod=66667us batchingPeriod=100000us\n02:55:35 + 0x00000000 pid=  546 uid= 1000 package=com.android.server.power.FaceDownDetector samplingPeriod=200000us batchingPeriod=2000000us\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "input keyevent KEYCODE_HOME"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 22,\n  \"foreground\": false,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 7,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118437133672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=7，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 22,\n  \"foreground\": false,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 7,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118437133672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=7，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 22,\n  \"foreground\": false,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 7,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118437133672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=7，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "emu",
+      "sensor",
+      "set",
+      "acceleration",
+      "4:5:6"
+    ],
+    "returncode": 0,
+    "stdout": "OK\r\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 22,\n  \"foreground\": false,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 7,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118437133672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=7，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "dumpsys sensorservice"
+    ],
+    "returncode": 0,
+    "stdout": "Captured at: 11:34:00.633\nSensor Device:\nTotal 12 h/w sensors, 12 running 0 disabled clients:\n0x00000000) active-count = 2; sampling_period(ms) = {66.7, 200.0}, selected = 66.67 ms; batching_period(ms) = {100.0, 2000.0}, selected = 100.00 ms\nSensor List:\n0000000000) Goldfish 3-axis Accelerometer | The Android Open Source Project | ver: 1 | type: android.sensor.accelerometer(1) | perm: n/a | flags: 0x00000050\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, has-additional-info, \n0x00000001) Goldfish 3-axis Gyroscope | The Android Open Source Project | ver: 1 | type: android.sensor.gyroscope(4) | perm: n/a | flags: 0x00000050\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, has-additional-info, \n0x00000002) Goldfish 3-axis Magnetic field sensor | The Android Open Source Project | ver: 1 | type: android.sensor.magnetic_field(2) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x00000003) Goldfish Orientation sensor | The Android Open Source Project | ver: 1 | type: android.sensor.orientation(3) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x00000004) Goldfish Ambient Temperature sensor | The Android Open Source Project | ver: 1 | type: android.sensor.ambient_temperature(13) | perm: n/a | flags: 0x00000012\n\ton-change | maxDelay=0us | minDelay=0us | no batching | non-wakeUp | data-injection, \n0x00000005) Goldfish Proximity sensor | The Android Open Source Project | ver: 1 | type: android.sensor.proximity(8) | perm: n/a | flags: 0x00000013\n\ton-change | maxDelay=0us | minDelay=0us | no batching | wakeUp | data-injection, \n0x00000006) Goldfish Light sensor     | The Android Open Source Project | ver: 1 | type: android.sensor.light(5) | perm: n/a | flags: 0x00000012\n\ton-change | maxDelay=0us | minDelay=0us | no batching | non-wakeUp | data-injection, \n0x00000007) Goldfish Pressure sensor  | The Android Open Source Project | ver: 1 | type: android.sensor.pressure(6) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x00000008) Goldfish Humidity sensor  | The Android Open Source Project | ver: 1 | type: android.sensor.relative_humidity(12) | perm: n/a | flags: 0x00000012\n\ton-change | maxDelay=0us | minDelay=0us | no batching | non-wakeUp | data-injection, \n0x00000009) Goldfish 3-axis Magnetic field sensor (uncalibrated) | The Android Open Source Project | ver: 1 | type: android.sensor.magnetic_field_uncalibrated(14) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x0000000a) Goldfish 3-axis Gyroscope (uncalibrated) | The Android Open Source Project | ver: 1 | type: android.sensor.gyroscope_uncalibrated(16) | perm: n/a | flags: 0x00000010\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, \n0x00000011) Goldfish 3-axis Accelerometer Uncalibrated | The Android Open Source Project | ver: 1 | type: android.sensor.accelerometer_uncalibrated(35) | perm: n/a | flags: 0x00000050\n\tcontinuous | minRate=2.00Hz | maxRate=100.00Hz | no batching | non-wakeUp | data-injection, has-additional-info, \n0x5f636779) Corrected Gyroscope Sensor | AOSP            | ver: 1 | type: android.sensor.gyroscope(4) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f676172) Game Rotation Vector Sensor | AOSP            | ver: 3 | type: android.sensor.game_rotation_vector(15) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f676273) Gyroscope Bias (debug)    | AOSP            | ver: 1 | type: android.sensor.accelerometer(1) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f67656f) GeoMag Rotation Vector Sensor | AOSP            | ver: 3 | type: android.sensor.geomagnetic_rotation_vector(20) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f677276) Gravity Sensor            | AOSP            | ver: 3 | type: android.sensor.gravity(9) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f6c696e) Linear Acceleration Sensor | AOSP            | ver: 3 | type: android.sensor.linear_acceleration(10) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f726f76) Rotation Vector Sensor    | AOSP            | ver: 3 | type: android.sensor.rotation_vector(11) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \n0x5f797072) Orientation Sensor        | AOSP            | ver: 1 | type: android.sensor.orientation(3) | perm: n/a | flags: 0x00000000\n\tcontinuous | maxDelay=0us | maxRate=100.00Hz | no batching | non-wakeUp | \nFusion States:\n9-axis fusion disabled (0 clients), gyro-rate= 200.00Hz, q=< 0.6772, 5.39613e-07, 7.71638e-06, 0.735799 > (1), b=< 2.09564e-19, 3.54525e-16, 2.94566e-17 >\ngame fusion(no mag) disabled (0 clients), gyro-rate= 200.00Hz, q=< 0.478965, -0.47874, -0.520161, 0.520416 > (1), b=< 0, 0, 0 >\ngeomag fusion (no gyro) disabled (0 clients), gyro-rate= 200.00Hz, q=< 0, 0, 0, 0 > (0), b=< 0, 0, 0 >\nRecent Sensor events:\nRotation Vector Sensor: last 10 events\n\t 1 (ts=40.948542672, wall=02:56:02.403) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t 2 (ts=40.968542672, wall=02:56:02.423) 0.68, -0.00, 0.00, 0.74, 0.00, \n\t 3 (ts=40.988542672, wall=02:56:02.443) 0.68, -0.00, 0.00, 0.74, 0.00, \n\t 4 (ts=41.008542672, wall=02:56:02.463) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t 5 (ts=41.028542672, wall=02:56:02.483) 0.68, -0.00, 0.00, 0.74, 0.00, \n\t 6 (ts=41.048542672, wall=02:56:02.503) 0.68, -0.00, 0.00, 0.74, 0.00, \n\t 7 (ts=41.068542672, wall=02:56:02.523) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t 8 (ts=41.088542672, wall=02:56:02.543) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t 9 (ts=44.195224672, wall=02:56:05.651) 0.68, 0.00, 0.00, 0.74, 0.00, \n\t10 (ts=2941.863045672, wall=03:44:23.318) 0.68, 0.00, 0.00, 0.74, 0.00, \nGoldfish 3-axis Gyroscope (uncalibrated): last 10 events\n\t 1 (ts=8812.653933868, wall=05:22:14.110) 0.00, 0.00, 0.00, 0.00, -0.00, -0.00, \n\t 2 (ts=16748.314791277, wall=07:34:29.770) 0.00, 0.00, 0.00, 0.00, 0.00, -0.00, \n\t 3 (ts=16748.319791277, wall=07:34:29.775) 0.00, 0.00, 0.00, 0.00, 0.00, -0.00, \n\t 4 (ts=16748.324791277, wall=07:34:29.780) 0.00, 0.00, 0.00, -0.00, 0.00, -0.00, \n\t 5 (ts=29919.128545182, wall=11:14:00.583) 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, \n\t 6 (ts=29919.133545182, wall=11:14:00.588) 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, \n\t 7 (ts=29919.138545182, wall=11:14:00.593) 0.00, 0.00, 0.00, -0.00, -0.00, -0.00, \n\t 8 (ts=29919.143545182, wall=11:14:00.599) 0.00, 0.00, 0.00, -0.00, -0.00, -0.00, \n\t 9 (ts=29919.148545182, wall=11:14:00.603) 0.00, 0.00, 0.00, -0.00, -0.00, 0.00, \n\t10 (ts=29919.153545182, wall=11:14:00.608) 0.00, 0.00, 0.00, -0.00, -0.00, 0.00, \nGoldfish Pressure sensor: last 10 events\n\t 1 (ts=22340.074143943, wall=09:07:41.533) 1013.25, 0.00, 0.00, \n\t 2 (ts=22340.174143943, wall=09:07:41.632) 1013.25, 0.00, 0.00, \n\t 3 (ts=22340.274143943, wall=09:07:41.733) 1013.25, 0.00, 0.00, \n\t 4 (ts=22340.374143943, wall=09:07:41.831) 1013.25, 0.00, 0.00, \n\t 5 (ts=22340.474143943, wall=09:07:41.934) 1013.25, 0.00, 0.00, \n\t 6 (ts=22340.574143943, wall=09:07:42.038) 1013.25, 0.00, 0.00, \n\t 7 (ts=22340.674143943, wall=09:07:42.130) 1013.25, 0.00, 0.00, \n\t 8 (ts=22340.774143943, wall=09:07:42.234) 1013.25, 0.00, 0.00, \n\t 9 (ts=22340.874143943, wall=09:07:42.330) 1013.25, 0.00, 0.00, \n\t10 (ts=22340.974143943, wall=09:07:42.433) 1013.25, 0.00, 0.00, \nLinear Acceleration Sensor: last 10 events\n\t 1 (ts=40.968542672, wall=02:56:02.423) -0.00, 0.00, 0.00, \n\t 2 (ts=40.988542672, wall=02:56:02.443) -0.00, 0.00, 0.00, \n\t 3 (ts=41.008542672, wall=02:56:02.463) -0.00, 0.00, 0.00, \n\t 4 (ts=41.028542672, wall=02:56:02.483) -0.00, 0.00, 0.00, \n\t 5 (ts=41.048542672, wall=02:56:02.503) -0.00, 0.00, 0.00, \n\t 6 (ts=41.068542672, wall=02:56:02.523) -0.00, 0.00, 0.00, \n\t 7 (ts=41.088542672, wall=02:56:02.543) -0.00, 0.00, 0.00, \n\t 8 (ts=44.195224672, wall=02:56:05.651) -0.00, 0.00, 0.00, \n\t 9 (ts=44.215224672, wall=02:56:05.670) -0.00, 0.00, 0.00, \n\t10 (ts=2941.863045672, wall=03:44:23.318) 0.00, 0.00, 0.00, \nGoldfish 3-axis Magnetic field sensor: last 10 events\n\t 1 (ts=2941.846642777, wall=03:44:23.301) 0.00, 9.88, -47.75, \n\t 2 (ts=2941.856642777, wall=03:44:23.311) 0.00, 9.88, -47.75, \n\t 3 (ts=2941.866642777, wall=03:44:23.321) 0.00, 9.88, -47.75, \n\t 4 (ts=2941.876642777, wall=03:44:23.331) 0.00, 9.88, -47.75, \n\t 5 (ts=4874.899072740, wall=04:16:36.354) 0.00, 9.88, -47.75, \n\t 6 (ts=8812.649531201, wall=05:22:14.104) 0.00, 9.88, -47.75, \n\t 7 (ts=16748.320081735, wall=07:34:29.775) 0.00, 9.88, -47.75, \n\t 8 (ts=29919.134154140, wall=11:14:00.589) 0.00, 9.88, -47.75, \n\t 9 (ts=29919.144154140, wall=11:14:00.599) 0.00, 9.88, -47.75, \n\t10 (ts=29919.154154140, wall=11:14:00.609) 0.00, 9.88, -47.75, \nGoldfish 3-axis Accelerometer: last 50 events\n\t 1 (ts=31115.970459672, wall=11:33:57.427) 0.00, 9.78, 0.81, \n\t 2 (ts=31116.037126672, wall=11:33:57.492) 0.00, 9.78, 0.81, \n\t 3 (ts=31116.103793672, wall=11:33:57.559) 0.00, 9.78, 0.81, \n\t 4 (ts=31116.170460672, wall=11:33:57.626) 0.00, 9.78, 0.81, \n\t 5 (ts=31116.237127672, wall=11:33:57.693) 0.00, 9.78, 0.81, \n\t 6 (ts=31116.303794672, wall=11:33:57.761) 0.00, 9.78, 0.81, \n\t 7 (ts=31116.370461672, wall=11:33:57.828) 0.00, 9.78, 0.81, \n\t 8 (ts=31116.437128672, wall=11:33:57.894) 0.00, 9.78, 0.81, \n\t 9 (ts=31116.503795672, wall=11:33:57.960) 0.00, 9.78, 0.81, \n\t10 (ts=31116.570462672, wall=11:33:58.025) 0.00, 9.78, 0.81, \n\t11 (ts=31116.637129672, wall=11:33:58.093) 0.00, 9.78, 0.81, \n\t12 (ts=31116.703796672, wall=11:33:58.159) 0.00, 9.78, 0.81, \n\t13 (ts=31116.770463672, wall=11:33:58.226) 0.00, 9.78, 0.81, \n\t14 (ts=31116.837130672, wall=11:33:58.292) 0.00, 9.78, 0.81, \n\t15 (ts=31116.903797672, wall=11:33:58.361) 0.00, 9.78, 0.81, \n\t16 (ts=31116.970464672, wall=11:33:58.427) 0.00, 9.78, 0.81, \n\t17 (ts=31117.037131672, wall=11:33:58.494) 0.00, 9.78, 0.81, \n\t18 (ts=31117.103798672, wall=11:33:58.560) 0.00, 9.78, 0.81, \n\t19 (ts=31117.170465672, wall=11:33:58.626) 0.00, 9.78, 0.81, \n\t20 (ts=31117.237132672, wall=11:33:58.693) 0.00, 9.78, 0.81, \n\t21 (ts=31117.303799672, wall=11:33:58.759) 0.00, 9.78, 0.81, \n\t22 (ts=31117.370466672, wall=11:33:58.826) 0.00, 9.78, 0.81, \n\t23 (ts=31117.437133672, wall=11:33:58.892) 0.00, 9.78, 0.81, \n\t24 (ts=31117.503800672, wall=11:33:58.959) 0.00, 9.78, 0.81, \n\t25 (ts=31117.570467672, wall=11:33:59.025) 0.00, 9.78, 0.81, \n\t26 (ts=31117.637134672, wall=11:33:59.092) 0.00, 9.78, 0.81, \n\t27 (ts=31117.670465672, wall=11:33:59.126) 0.00, 9.78, 0.81, \n\t28 (ts=31117.703796672, wall=11:33:59.159) 0.00, 9.78, 0.81, \n\t29 (ts=31117.770463672, wall=11:33:59.226) 0.00, 9.78, 0.81, \n\t30 (ts=31117.837130672, wall=11:33:59.292) 0.00, 9.78, 0.81, \n\t31 (ts=31117.903797672, wall=11:33:59.359) 0.00, 9.78, 0.81, \n\t32 (ts=31117.970464672, wall=11:33:59.425) 0.00, 9.78, 0.81, \n\t33 (ts=31118.037131672, wall=11:33:59.493) 0.00, 9.78, 0.81, \n\t34 (ts=31118.103798672, wall=11:33:59.560) 1.00, 2.00, 9.81, \n\t35 (ts=31118.170465672, wall=11:33:59.626) 1.00, 2.00, 9.81, \n\t36 (ts=31118.237132672, wall=11:33:59.692) 1.00, 2.00, 9.81, \n\t37 (ts=31118.303799672, wall=11:33:59.759) 1.00, 2.00, 9.81, \n\t38 (ts=31118.370466672, wall=11:33:59.826) 1.00, 2.00, 9.81, \n\t39 (ts=31118.437133672, wall=11:33:59.892) 1.00, 2.00, 9.81, \n\t40 (ts=31118.503800672, wall=11:33:59.959) 1.00, 2.00, 9.81, \n\t41 (ts=31118.570467672, wall=11:34:00.026) 1.00, 2.00, 9.81, \n\t42 (ts=31118.637134672, wall=11:34:00.092) 4.00, 5.00, 6.00, \n\t43 (ts=31118.703801672, wall=11:34:00.159) 4.00, 5.00, 6.00, \n\t44 (ts=31118.770468672, wall=11:34:00.225) 4.00, 5.00, 6.00, \n\t45 (ts=31118.837135672, wall=11:34:00.292) 4.00, 5.00, 6.00, \n\t46 (ts=31118.903802672, wall=11:34:00.359) 4.00, 5.00, 6.00, \n\t47 (ts=31118.970469672, wall=11:34:00.426) 4.00, 5.00, 6.00, \n\t48 (ts=31119.037136672, wall=11:34:00.492) 4.00, 5.00, 6.00, \n\t49 (ts=31119.103803672, wall=11:34:00.559) 4.00, 5.00, 6.00, \n\t50 (ts=31119.170470672, wall=11:34:00.625) 4.00, 5.00, 6.00, \nActive sensors:\nGoldfish 3-axis Accelerometer (handle=0x00000000, connections=2)\nSocket Buffer size = 39 events\nWakeLock Status: not held \nMode : NORMAL\nSensor Privacy: disabled\n2 active connections\nConnection Number: 0 \n\tOperating Mode: NORMAL\n\t com.android.server.wm.WindowOrientationListener$AccelSensorJudge | WakeLockRefCount 0 | uid 1000 | cache size 0 | max cache size 0\n\t Goldfish 3-axis Accelerometer 0x00000000 | status: active | pending flush events 0 \nConnection Number: 1 \n\tOperating Mode: NORMAL\n\t com.android.server.power.FaceDownDetector | WakeLockRefCount 0 | uid 1000 | cache size 0 | max cache size 0\n\t Goldfish 3-axis Accelerometer 0x00000000 | status: active | pending flush events 0 \n0 direct connections\nPrevious Registrations:\n11:33:59 - 0x00000000 pid= 9285 uid=10218 package=org.wwl.networkdemo.ResourceActivity\n11:33:59 + 0x00000000 pid= 9285 uid=10218 package=org.wwl.networkdemo.ResourceActivity samplingPeriod=200000us batchingPeriod=0us\n11:33:59 - 0x00000000 pid=  546 uid= 1000 package=hidl_client_pid_354\n11:33:59 + 0x00000000 pid=  546 uid= 1000 package=hidl_client_pid_354 samplingPeriod=33331us batchingPeriod=0us\n11:14:00 - 0x5f6c696e pid= 8841 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n11:14:00 - 0x5f726f76 pid= 8841 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n11:14:00 + 0x5f726f76 pid= 8841 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n11:14:00 + 0x5f6c696e pid= 8841 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n10:10:51 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n10:10:51 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:57:32 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:57:32 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:44:14 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:44:13 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:30:55 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:30:55 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:17:36 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:17:36 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n09:07:42 - 0x00000007 pid= 1150 uid=10144 package=com.google.android.location.fused.PressureProvider\n09:07:40 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n09:07:40 + 0x00000007 pid= 1150 uid=10144 package=com.google.android.location.fused.PressureProvider samplingPeriod=100000us batchingPeriod=0us\n09:07:40 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:54:22 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:54:21 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:41:03 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:41:03 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:27:44 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:27:44 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:14:26 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:14:25 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n08:01:07 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n08:01:07 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n07:47:48 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n07:47:48 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n07:34:30 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n07:34:29 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n07:34:29 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n07:34:29 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n07:34:29 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n07:34:29 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n07:21:11 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n07:21:11 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n07:07:52 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n07:07:49 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n06:56:39 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n06:56:35 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n06:45:25 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n06:45:21 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n06:45:16 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n06:45:13 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n06:45:08 - 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner\n06:45:05 + 0x00000000 pid= 1150 uid=10144 package=com.google.android.location.collectionlib.SensorScanner samplingPeriod=20000us batchingPeriod=0us\n05:22:14 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n05:22:14 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n05:22:14 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n05:22:14 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n04:16:36 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n04:16:36 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n04:16:36 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n04:16:36 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:44:23 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:44:23 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:44:23 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:44:23 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:22:43 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:22:43 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:22:43 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:22:43 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:08:41 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:08:41 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:08:41 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:08:41 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:01:59 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:01:59 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n03:01:59 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n03:01:59 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:58:29 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:58:29 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:58:29 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:58:29 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:45 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:45 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:45 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:45 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:14 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:14 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:14 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:14 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:05 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:05 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:05 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:05 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:02 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:02 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:56:02 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:56:02 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:58 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:58 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:58 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:58 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:58 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:58 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:57 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:57 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:57 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:57 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:57 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:57 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:53 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:53 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:52 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:52 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:52 - 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:52 - 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b\n02:55:46 + 0x5f726f76 pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:46 + 0x5f6c696e pid= 2281 uid=10144 package=com.google.ccc.abuse.droidguard.events.b samplingPeriod=20000us batchingPeriod=0us\n02:55:37 + 0x00000000 pid=  546 uid= 1000 package=com.android.server.wm.WindowOrientationListener$AccelSensorJudge samplingPeriod=66667us batchingPeriod=100000us\n02:55:35 + 0x00000000 pid=  546 uid= 1000 package=com.android.server.power.FaceDownDetector samplingPeriod=200000us batchingPeriod=2000000us\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity --es lab_command snapshot"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity (has extras) }\nWarning: Activity not started, its current task has been brought to the front\nStatus: ok\nLaunchState: HOT\nActivity: org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity\nTotalTime: 42\nWaitTime: 49\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 24,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 7,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118437133672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=7，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "dumpsys battery unplug"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "dumpsys battery set status 3"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity --es lab_command schedule"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity (has extras) }\nWarning: Activity not started, intent has been delivered to currently running top-most instance.\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: org.wwl.networkdemo.resources/org.wwl.networkdemo.ResourceActivity\nTotalTime: 0\nWaitTime: 5\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 24,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"本地待发送：尚无服务承诺。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 7,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118437133672\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=7，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.resources cat files/network-ui.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 9285,\n  \"activity_instance\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\",\n  \"generation\": 28,\n  \"foreground\": true,\n  \"actor\": \"D\",\n  \"intent_id\": \"resources-D-original-1\",\n  \"start_raw\": \"690\",\n  \"end_raw\": \"720\",\n  \"message\": \"已登记系统任务：仍等网络\\/充电与调度，未承诺服务成功。\",\n  \"resources_observation\": {\n    \"resource_storage\": \"ready\",\n    \"sensor\": \"unregistered\",\n    \"sensor_samples\": 7,\n    \"camera\": \"opened_then_closed\",\n    \"camera_id\": \"1\",\n    \"acceleration_m_s2\": [\n      1,\n      2,\n      9.809989\n    ],\n    \"sensor_timestamp_ns\": 31118437133672,\n    \"schedule\": \"registered\"\n  },\n  \"resource_message\": \"资源schema=1 version=1 debuggable=true\\n[]\\n相机：设备已打开并关闭；没有采集照片或上传。\\n加速度：未注册\\/已停止，样本=7，最新m\\/s²=[1,2,9.809989]\\n传感器值只作本机观察，不进入预约参数、不上传。\",\n  \"phase\": \"queued\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "cmd jobscheduler run -s org.wwl.networkdemo.resources 17503"
+    ],
+    "returncode": 22,
+    "stdout": "",
+    "stderr": "Job 17503 in package org.wwl.networkdemo.resources / user 0 has functional constraints but --force not specified\n"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "cmd jobscheduler get-job-state org.wwl.networkdemo.resources 17503"
+    ],
+    "returncode": 0,
+    "stdout": "waiting\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "dumpsys battery"
+    ],
+    "returncode": 0,
+    "stdout": "Current Battery Service state:\n  (UPDATES STOPPED -- use 'reset' to restart)\n  AC powered: false\n  USB powered: false\n  Wireless powered: false\n  Dock powered: false\n  Max charging current: 5000000\n  Max charging voltage: 5000000\n  Charge counter: 10000\n  status: 3\n  health: 2\n  present: true\n  level: 100\n  scale: 100\n  voltage: 5000\n  temperature: 250\n  technology: Li-ion\n  Charging state: 0\n  Charging policy: 0\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "dumpsys battery reset"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

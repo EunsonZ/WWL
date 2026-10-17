@@ -1,0 +1,62 @@
+{
+  "good-v2-db2.apk": {
+    "sha256": "f0bbf7b8b053ea294686e3412b45be62bc555bcb58134cbe6e1f86f574900511",
+    "bytes": 942852,
+    "verify_argv": [
+      "/private/tmp/wwl-next-175-env/sdk/build-tools/34.0.0/apksigner",
+      "verify",
+      "--verbose",
+      "--print-certs",
+      "/private/tmp/wwl-next-175-final-env/resource-final-apks/good-v2-db2.apk"
+    ],
+    "certificate_output": "good-v2-db2-certificate.txt"
+  },
+  "bad-v2-db2.apk": {
+    "sha256": "10c3fb4269b8f2874dd25584acbda9c6d415660af4827286e515256b715aeea2",
+    "bytes": 894147,
+    "verify_argv": [
+      "/private/tmp/wwl-next-175-env/sdk/build-tools/34.0.0/apksigner",
+      "verify",
+      "--verbose",
+      "--print-certs",
+      "/private/tmp/wwl-next-175-final-env/resource-final-apks/bad-v2-db2.apk"
+    ],
+    "certificate_output": "bad-v2-db2-certificate.txt"
+  },
+  "v3-release-same-debugcert.apk": {
+    "sha256": "c272f20723b4e2f17470c0bb5d98a9d4a8ae7a92c1103e8c64b331f52a218b03",
+    "bytes": 681351,
+    "verify_argv": [
+      "/private/tmp/wwl-next-175-env/sdk/build-tools/34.0.0/apksigner",
+      "verify",
+      "--verbose",
+      "--print-certs",
+      "/private/tmp/wwl-next-175-final-env/resource-final-apks/v3-release-same-debugcert.apk"
+    ],
+    "certificate_output": "v3-release-same-debugcert-certificate.txt"
+  },
+  "v3-release-other-cert.apk": {
+    "sha256": "86e89f0e3dea1ffd9708c9c65120201db454790143629c1639d353b09580c01c",
+    "bytes": 681351,
+    "verify_argv": [
+      "/private/tmp/wwl-next-175-env/sdk/build-tools/34.0.0/apksigner",
+      "verify",
+      "--verbose",
+      "--print-certs",
+      "/private/tmp/wwl-next-175-final-env/resource-final-apks/v3-release-other-cert.apk"
+    ],
+    "certificate_output": "v3-release-other-cert-certificate.txt"
+  },
+  "v1-debug-db1.apk": {
+    "sha256": "a7ed92e1f720638f3915d2fd7b476a6692268529ad20518097ab14fe2e15e65a",
+    "bytes": 894147,
+    "verify_argv": [
+      "/private/tmp/wwl-next-175-env/sdk/build-tools/34.0.0/apksigner",
+      "verify",
+      "--verbose",
+      "--print-certs",
+      "/private/tmp/wwl-next-175-final-env/resource-final-apks/v1-debug-db1.apk"
+    ],
+    "certificate_output": "v1-debug-db1-certificate.txt"
+  }
+}

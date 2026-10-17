@@ -1,0 +1,92 @@
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/private/tmp/wwl-next-175-env/java-user -XX:ActiveProcessorCount=1
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :networkApp:preBuild UP-TO-DATE
+> Task :networkApp:preRDebugBuild UP-TO-DATE
+> Task :networkApp:mergeRDebugNativeDebugMetadata NO-SOURCE
+> Task :networkApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+
+> Task :networkApp:generateRDebugBuildConfig
+Caught exception: Could not start the FSEvents stream: /private/tmp/wwl-next-175-final-env/resource-final-source
+
+> Task :networkApp:checkRDebugAarMetadata
+> Task :networkApp:generateRDebugResValues
+> Task :networkApp:mapRDebugSourceSetPaths
+> Task :networkApp:generateRDebugResources
+> Task :networkApp:mergeRDebugResources
+> Task :networkApp:packageRDebugResources
+> Task :networkApp:parseRDebugLocalResources
+> Task :networkApp:createRDebugCompatibleScreenManifests
+> Task :networkApp:extractDeepLinksRDebug
+> Task :networkApp:processRDebugMainManifest
+> Task :networkApp:processRDebugManifest
+> Task :networkApp:processRDebugManifestForPackage
+> Task :networkApp:processRDebugResources
+
+> Task :networkApp:compileRDebugKotlin
+w: file:///private/tmp/wwl-next-175-final-env/resource-final-source/app/src/main/java/org/wwl/intentdemo/Stores.kt:56:105 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged. This will become an error in a future release.
+w: file:///private/tmp/wwl-next-175-final-env/resource-final-source/app/src/main/java/org/wwl/intentdemo/Stores.kt:104:178 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged. This will become an error in a future release.
+
+> Task :networkApp:javaPreCompileRDebug
+> Task :networkApp:compileRDebugJavaWithJavac
+> Task :networkApp:mergeRDebugShaders
+> Task :networkApp:compileRDebugShaders NO-SOURCE
+> Task :networkApp:generateRDebugAssets UP-TO-DATE
+> Task :networkApp:mergeRDebugAssets
+> Task :networkApp:compressRDebugAssets
+> Task :networkApp:checkRDebugDuplicateClasses
+> Task :networkApp:desugarRDebugFileDependencies
+> Task :networkApp:mergeExtDexRDebug
+> Task :networkApp:mergeLibDexRDebug
+> Task :networkApp:dexBuilderRDebug
+> Task :networkApp:mergeProjectDexRDebug
+> Task :networkApp:mergeRDebugGlobalSynthetics
+> Task :networkApp:processRDebugJavaRes
+> Task :networkApp:mergeRDebugJavaResource
+> Task :networkApp:mergeRDebugJniLibFolders
+> Task :networkApp:mergeRDebugNativeLibs NO-SOURCE
+> Task :networkApp:stripRDebugDebugSymbols NO-SOURCE
+> Task :networkApp:validateSigningRDebug
+> Task :networkApp:writeRDebugAppMetadata
+> Task :networkApp:writeRDebugSigningConfigVersions
+> Task :networkApp:packageRDebug
+> Task :networkApp:createRDebugApkListingFileRedirect
+> Task :networkApp:assembleRDebug
+> Task :networkApp:bundleRDebugClassesToCompileJar
+> Task :networkApp:preRDebugAndroidTestBuild SKIPPED
+> Task :networkApp:processRDebugAndroidTestManifest
+> Task :networkApp:generateRDebugAndroidTestBuildConfig
+> Task :networkApp:checkRDebugAndroidTestAarMetadata
+> Task :networkApp:generateRDebugAndroidTestResValues
+> Task :networkApp:mapRDebugAndroidTestSourceSetPaths
+> Task :networkApp:generateRDebugAndroidTestResources
+> Task :networkApp:mergeRDebugAndroidTestResources
+> Task :networkApp:processRDebugAndroidTestResources
+> Task :networkApp:compileRDebugAndroidTestKotlin
+> Task :networkApp:javaPreCompileRDebugAndroidTest
+> Task :networkApp:compileRDebugAndroidTestJavaWithJavac
+> Task :networkApp:mergeRDebugAndroidTestShaders
+> Task :networkApp:compileRDebugAndroidTestShaders NO-SOURCE
+> Task :networkApp:generateRDebugAndroidTestAssets UP-TO-DATE
+> Task :networkApp:mergeRDebugAndroidTestAssets
+> Task :networkApp:compressRDebugAndroidTestAssets
+> Task :networkApp:checkRDebugAndroidTestDuplicateClasses
+> Task :networkApp:desugarRDebugAndroidTestFileDependencies
+> Task :networkApp:mergeExtDexRDebugAndroidTest
+> Task :networkApp:mergeLibDexRDebugAndroidTest
+> Task :networkApp:dexBuilderRDebugAndroidTest
+> Task :networkApp:mergeProjectDexRDebugAndroidTest
+> Task :networkApp:mergeRDebugAndroidTestGlobalSynthetics
+> Task :networkApp:processRDebugAndroidTestJavaRes
+> Task :networkApp:mergeRDebugAndroidTestJavaResource
+> Task :networkApp:mergeRDebugAndroidTestJniLibFolders
+> Task :networkApp:mergeRDebugAndroidTestNativeLibs NO-SOURCE
+> Task :networkApp:stripRDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :networkApp:validateSigningRDebugAndroidTest
+> Task :networkApp:writeRDebugAndroidTestSigningConfigVersions
+> Task :networkApp:packageRDebugAndroidTest
+> Task :networkApp:createRDebugAndroidTestApkListingFileRedirect
+> Task :networkApp:assembleRDebugAndroidTest
+
+BUILD SUCCESSFUL in 14s
+64 actionable tasks: 64 executed

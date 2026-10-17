@@ -120,5 +120,7 @@ Android Network Security Configuration 可以按域配置明文策略和信任�
 
 [^v2-androidnetwork]: [Android：Network security configuration](https://developer.android.com/privacy-and-security/security-config)；定位：Trust anchors / domain-config / debug-overrides。本轮网页读取：2026-09-05；教学推演与本包实验另行标明。
 
+构建自己合成App后的下一问是“它申请的能力与保留的数据是否匹配”：读 [[计算机知识/64-移动平台开发/03-权限设备输入与后台资源#四种许可，谁有权作出哪一种决定|运行时许可与服务授权]]，把相机许可、沙箱UID和Bearer主体分开；再到 [[计算机知识/64-移动平台开发/04-构建签名与更新迁移#签名如何连接安装与后续更新|签名与更新身份]]核同签/异签安装与迁移保全。能在自有实验包观察这些机制，仍不等于已经完成他人APK的逆向或漏洞验证。
+
 ---
 **导航：** [[计算机知识/Kali/00-导航与方法/00-Kali知识地图|知识地图]] · [[计算机知识/Kali/00-导航与方法/05-常用工具覆盖矩阵|按任务查工具]]

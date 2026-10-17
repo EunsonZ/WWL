@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "explicit_forced_run": true,
+  "explicit_timeout_stop_reason": 3,
+  "not_charging_trigger": true,
+  "authority_database_used": false,
+  "attempts": 1,
+  "same_id_and_fp": true,
+  "business_phase": "unknown",
+  "server_events": [
+    {
+      "kind": "GET",
+      "path": "/v2/intent?intent_id=review-stop-original&fingerprint=365b9197a3397f7ee50806306d1e1201585232f3d9d927aac8b975413b6372dc"
+    }
+  ]
+}

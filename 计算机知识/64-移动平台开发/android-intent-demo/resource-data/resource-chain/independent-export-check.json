@@ -1,0 +1,99 @@
+{
+  "passed": 21,
+  "checks": [
+    {
+      "name": "09-v1-before-update/client.db integrity",
+      "passed": true
+    },
+    {
+      "name": "09-v1-before-update/resources.db integrity",
+      "passed": true
+    },
+    {
+      "name": "10-bad-v2-rollback/client.db integrity",
+      "passed": true
+    },
+    {
+      "name": "10-bad-v2-rollback/resources.db integrity",
+      "passed": true
+    },
+    {
+      "name": "11-good-v2/client.db integrity",
+      "passed": true
+    },
+    {
+      "name": "11-good-v2/resources.db integrity",
+      "passed": true
+    },
+    {
+      "name": "v1 and bad2 resource versions remain1",
+      "passed": true
+    },
+    {
+      "name": "bad2 rolled back columns",
+      "passed": true
+    },
+    {
+      "name": "bad2 exact original work",
+      "passed": true
+    },
+    {
+      "name": "good2 version2 new column",
+      "passed": true
+    },
+    {
+      "name": "work immutable id fp attempts3 retained",
+      "passed": true
+    },
+    {
+      "name": "all migrations preserve business intents",
+      "passed": true
+    },
+    {
+      "name": "exact accepted original result",
+      "passed": true
+    },
+    {
+      "name": "authority-snapshot.db integrity",
+      "passed": true
+    },
+    {
+      "name": "one original authority decision/event",
+      "passed": true
+    },
+    {
+      "name": "14-release-v3-explicit-export.json same release version/nondebug",
+      "passed": true
+    },
+    {
+      "name": "14-release-v3-explicit-export.json immutable accepted result",
+      "passed": true
+    },
+    {
+      "name": "14-release-v3-explicit-export.json current NEXT queued and work3",
+      "passed": true
+    },
+    {
+      "name": "15-release-no-debug-ca.json same release version/nondebug",
+      "passed": true
+    },
+    {
+      "name": "15-release-no-debug-ca.json immutable accepted result",
+      "passed": true
+    },
+    {
+      "name": "15-release-no-debug-ca.json current NEXT queued and work3",
+      "passed": true
+    }
+  ],
+  "mode": "SQLite read-only URI; required business rows and rollback, not generic WAL/power-loss proof",
+  "sha256": {
+    "10-bad-v2-rollback/resources.db": "ea689ba6f8486addc2c94ac4f0196ab93fcb47c94f9628b9d9498e4cc029d700",
+    "10-bad-v2-rollback/client.db": "2ae98931b34b3b11e9a5b5a5f37db2be2c952350e6d0fd46a73be651407da1c1",
+    "11-good-v2/resources.db": "a6178324c4df3f913896f8730717a97ad52638cceff990fe2b59a51a57c4759d",
+    "11-good-v2/client.db": "bfa6dc8d076871e701bca267ac450de86f2843e49018a424517260bfe6376e7d",
+    "09-v1-before-update/resources.db": "ea689ba6f8486addc2c94ac4f0196ab93fcb47c94f9628b9d9498e4cc029d700",
+    "09-v1-before-update/client.db": "8e5f369780ec0abe44e33cdc92927810c9bb17c1b87ab0748f668716085da88a"
+  },
+  "final_export_source": "release UI explicit synthetic-state JSON; release run-as correctly denied"
+}

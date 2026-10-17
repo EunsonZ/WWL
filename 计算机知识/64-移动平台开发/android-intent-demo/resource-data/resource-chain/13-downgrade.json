@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5580",
+    "install",
+    "-r",
+    "/private/tmp/wwl-next-175-final-env/resource-final-apks/v1-debug-db1.apk"
+  ],
+  "returncode": 1,
+  "stdout": "Performing Streamed Install\n",
+  "stderr": "adb: failed to install /private/tmp/wwl-next-175-final-env/resource-final-apks/v1-debug-db1.apk: Failure [INSTALL_FAILED_VERSION_DOWNGRADE: Downgrade detected: Update version code 1 is older than current 2]\n\n"
+}

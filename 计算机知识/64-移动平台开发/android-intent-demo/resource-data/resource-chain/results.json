@@ -1,0 +1,194 @@
+{
+  "passed": 31,
+  "original_result": {
+    "protocol": "wwl-reservation-v2/1",
+    "actor": "D",
+    "intent_id": "resources-D-original-1",
+    "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+    "policy_version": 2,
+    "writer_epoch": 2,
+    "status": "accepted",
+    "reason": "created",
+    "booking": {
+      "id": 4,
+      "owner": "D",
+      "start": 690,
+      "end": 720,
+      "policy_version": 2
+    },
+    "event_id": "booking:4:created"
+  },
+  "original_id": "resources-D-original-1",
+  "next_id": "resources-D-next-1",
+  "participants": 0,
+  "physical_sensor_measurement": false,
+  "resume_cut": "attempts3-timeout",
+  "assertions": [
+    {
+      "name": "resume explicit owned emulator",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "resume original immutable identity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "resume exact observed background budget cut",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "resume no service decision",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "resume exact route cut",
+      "passed": true,
+      "detail": "host-17 tcp:18751 tcp:18751"
+    },
+    {
+      "name": "old charging rejection identified from actual exit/stderr",
+      "passed": true,
+      "detail": {
+        "argv": [
+          "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+          "-s",
+          "emulator-5580",
+          "shell",
+          "cmd jobscheduler run -s org.wwl.networkdemo.resources 17503"
+        ],
+        "returncode": 22,
+        "stdout": "",
+        "stderr": "Job 17503 in package org.wwl.networkdemo.resources / user 0 has functional constraints but --force not specified\n"
+      }
+    },
+    {
+      "name": "prior third attempt was real read timeout not onStop",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "budget refuses a new background schedule",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "manual recovery retained original identity after budget",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "one effect after explicit user recovery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "permission revoke preserves accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "single own app PID",
+      "passed": true,
+      "detail": "10318"
+    },
+    {
+      "name": "exact package PID cmdline",
+      "passed": true,
+      "detail": "'org.wwl.networkdemo.resources\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+    },
+    {
+      "name": "v1 resource schema persisted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "single own app PID",
+      "passed": true,
+      "detail": "10399"
+    },
+    {
+      "name": "exact package PID cmdline",
+      "passed": true,
+      "detail": "'org.wwl.networkdemo.resources\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+    },
+    {
+      "name": "failed migration kept user_version one and no column",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "failed migration kept exact original budget rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "failed migration kept business intents",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "single own app PID",
+      "passed": true,
+      "detail": "10499"
+    },
+    {
+      "name": "exact package PID cmdline",
+      "passed": true,
+      "detail": "'org.wwl.networkdemo.resources\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+    },
+    {
+      "name": "successful migration retained identity and attempts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "successful migration preserved business rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "different signer update rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "lower version update rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "release nondebuggable same-id current draft preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "release preserved exact original accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "release preserved migrated budget",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "release run-as denied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "release does not silently trust debug CA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "release TLS failure does not erase accepted",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

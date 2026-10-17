@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Loopback HTTPS adapter. All booking decisions come from the given SE82 source.
-TLS keys are generated locally for this lab; bearer strings are deliberately PUBLIC.
+TLS materials are generated locally into an ignored directory; never publish private keys.
+The fixed Bearer strings are public synthetic lab inputs, not real accounts.
 No OAuth issuance, account management, production hosting or TLS implementation here.
 """
 import argparse
@@ -13,6 +14,7 @@ import socketserver
 import sqlite3
 import ssl
 import threading
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlsplit
 
@@ -46,11 +48,13 @@ def strict_json(raw):
 
 class LabServer(ThreadingHTTPServer):
     daemon_threads = True
-    def __init__(self, address, contract, database, events, *, allow_drop=False):
+    def __init__(self, address, contract, database, events, *, allow_drop=False, hold_first_query_seconds=0.0):
         self.contract, self.database = contract, Path(database)
         self.allow_drop, self.events = allow_drop, Path(events)
         self.lock = threading.Lock()
         self.sequence = 0
+        self.hold_first_query_seconds = hold_first_query_seconds
+        self.query_held = False
         existed = self.database.exists()
         self.database.parent.mkdir(parents=True, exist_ok=True)
         self.events.parent.mkdir(parents=True, exist_ok=True)
@@ -144,6 +148,12 @@ class Handler(BaseHTTPRequestHandler):
             with c.Authority(str(self.server.database)) as a:
                 return 200, {'protocol': PROTOCOL, 'bookings': a.snapshot()}, None
         if method == 'GET' and path.path == '/v2/intent':
+            with self.server.lock:
+                hold = self.server.hold_first_query_seconds if not self.server.query_held else 0
+                self.server.query_held = True
+            if hold:
+                self.server.event(kind='lab_query_held_before_read', seconds=hold)
+                time.sleep(hold) # Explicit server test delay; no business write has run.
             params = parse_qs(path.query, keep_blank_values=True, strict_parsing=True)
             if set(params) != {'intent_id', 'fingerprint'} or any(len(v) != 1 for v in params.values()):
                 raise ValueError('query shape')
@@ -199,9 +209,12 @@ def main():
     p.add_argument('--cert', type=Path, default=here / 'fixtures/generated/server.pem')
     p.add_argument('--key', type=Path, default=here / 'fixtures/generated/server-public-fixture.key')
     p.add_argument('--allow-lab-faults', action='store_true')
+    p.add_argument('--hold-first-query-seconds', type=float, default=0.0)
     args = p.parse_args()
+    if not 0 <= args.hold_first_query_seconds <= 10 or (args.hold_first_query_seconds and not args.allow_lab_faults):
+        p.error('query hold requires --allow-lab-faults, finite 0..10 seconds')
     c = load_contract(args.contract)
-    server = LabServer(('127.0.0.1', args.port), c, args.database, args.events, allow_drop=args.allow_lab_faults)
+    server = LabServer(('127.0.0.1', args.port), c, args.database, args.events, allow_drop=args.allow_lab_faults, hold_first_query_seconds=args.hold_first_query_seconds)
     context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
     context.minimum_version = ssl.TLSVersion.TLSv1_2
     context.load_cert_chain(args.cert, args.key)
@@ -209,7 +222,7 @@ def main():
     args.ready.parent.mkdir(parents=True, exist_ok=True)
     args.ready.write_text(json.dumps({'host': '127.0.0.1', 'port': server.server_port,
         'contract_sha256': hashlib.sha256(args.contract.read_bytes()).hexdigest(),
-        'fixture_only': True, 'allow_lab_faults': args.allow_lab_faults}, indent=2) + '\n')
+        'fixture_only': True, 'allow_lab_faults': args.allow_lab_faults, 'hold_first_query_seconds': args.hold_first_query_seconds}, indent=2) + '\n')
     try:
         server.serve_forever(poll_interval=.1)
     except KeyboardInterrupt:

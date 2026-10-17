@@ -1,0 +1,48 @@
+{
+  "bookings": [
+    {
+      "id": 1,
+      "owner": "A",
+      "start": 540,
+      "end": 600,
+      "policy_version": 1
+    },
+    {
+      "id": 2,
+      "owner": "B",
+      "start": 600,
+      "end": 630,
+      "policy_version": 1
+    },
+    {
+      "id": 3,
+      "owner": "C",
+      "start": 650,
+      "end": 680,
+      "policy_version": 1
+    },
+    {
+      "id": 4,
+      "owner": "D",
+      "start": 690,
+      "end": 720,
+      "policy_version": 2
+    }
+  ],
+  "intents": [
+    {
+      "actor": "D",
+      "intent_id": "resources-D-original-1",
+      "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+      "outcome": "{\"actor\":\"D\",\"booking\":{\"end\":720,\"id\":4,\"owner\":\"D\",\"policy_version\":2,\"start\":690},\"event_id\":\"booking:4:created\",\"fingerprint\":\"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\"intent_id\":\"resources-D-original-1\",\"policy_version\":2,\"protocol\":\"wwl-reservation-v2/1\",\"reason\":\"created\",\"status\":\"accepted\",\"writer_epoch\":2}"
+    }
+  ],
+  "outbox": [
+    {
+      "event_id": "booking:4:created",
+      "booking_id": 4,
+      "payload": "{\"actor\":\"D\",\"booking\":{\"end\":720,\"id\":4,\"owner\":\"D\",\"policy_version\":2,\"start\":690},\"event_id\":\"booking:4:created\",\"fingerprint\":\"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\"intent_id\":\"resources-D-original-1\",\"kind\":\"booking_created\",\"protocol\":\"wwl-reservation-v2/1\"}",
+      "acknowledged": 0
+    }
+  ]
+}

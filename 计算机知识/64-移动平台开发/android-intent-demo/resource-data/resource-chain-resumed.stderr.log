@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/private/tmp/wwl-next-175-final-env/resource-resume-source/check_resources.py", line 292, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/private/tmp/wwl-next-175-final-env/resource-resume-source/check_resources.py", line 287, in main
+    try:d.run()
+        ~~~~~^^
+  File "/private/tmp/wwl-next-175-final-env/resource-resume-source/check_resources.py", line 97, in run
+    if self.a.resume_from is not None:return self.resume()
+                                             ~~~~~~~~~~~^^
+  File "/private/tmp/wwl-next-175-final-env/resource-resume-source/check_resources.py", line 215, in resume
+    self.wait(lambda:any(e['kind']=='job_stopped' for e in self.state()['resources']['events']),20)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/wwl-next-175-final-env/resource-resume-source/check_resources.py", line 48, in wait
+    raise AssertionError('condition timeout; last='+str(last))
+AssertionError: condition timeout; last=False

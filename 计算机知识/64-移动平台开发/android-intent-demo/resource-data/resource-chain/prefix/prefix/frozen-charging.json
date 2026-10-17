@@ -1,0 +1,110 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+        "-P15037",
+        "-s",
+        "emulator-5580",
+        "shell",
+        "dumpsys",
+        "battery",
+        "unplug"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+        "-P15037",
+        "-s",
+        "emulator-5580",
+        "shell",
+        "dumpsys",
+        "battery",
+        "set",
+        "status",
+        "3"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+        "-P15037",
+        "-s",
+        "emulator-5580",
+        "shell",
+        "run-as",
+        "org.wwl.networkdemo.resources",
+        "cat",
+        "files/resource-state.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"version_code\": 1,\n  \"debuggable\": true,\n  \"resources\": {\n    \"schema_version\": 1,\n    \"work\": [\n      {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"fp\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"attempts\": 2\n      }\n    ],\n    \"events\": [\n      {\n        \"seq\": 1,\n        \"kind\": \"job_scheduled\",\n        \"detail\": \"resources-D-original-1:d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\"\n      },\n      {\n        \"seq\": 2,\n        \"kind\": \"budget_taken\",\n        \"detail\": \"resources-D-original-1:1\"\n      },\n      {\n        \"seq\": 3,\n        \"kind\": \"job_started\",\n        \"detail\": \"resources-D-original-1:attempt=1\"\n      },\n      {\n        \"seq\": 4,\n        \"kind\": \"job_outcome\",\n        \"detail\": \"resources-D-original-1:ConnectException\"\n      },\n      {\n        \"seq\": 5,\n        \"kind\": \"budget_taken\",\n        \"detail\": \"resources-D-original-1:2\"\n      },\n      {\n        \"seq\": 6,\n        \"kind\": \"job_started\",\n        \"detail\": \"resources-D-original-1:attempt=2\"\n      },\n      {\n        \"seq\": 7,\n        \"kind\": \"job_outcome\",\n        \"detail\": \"resources-D-original-1:ConnectException\"\n      }\n    ]\n  },\n  \"network\": {\n    \"pid\": 9285,\n    \"uid\": 10218,\n    \"actor\": \"D\",\n    \"client\": {\n      \"current\": {\n        \"actor\": \"D\",\n        \"intent_id\": \"resources-D-original-1\",\n        \"start\": 690,\n        \"end\": 720,\n        \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n        \"phase\": \"unknown\",\n        \"result\": null\n      },\n      \"draft\": {\n        \"start_raw\": \"690\",\n        \"end_raw\": \"720\"\n      },\n      \"intents\": [\n        {\n          \"actor\": \"D\",\n          \"intent_id\": \"resources-D-original-1\",\n          \"start\": 690,\n          \"end\": 720,\n          \"fingerprint\": \"d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867\",\n          \"phase\": \"unknown\",\n          \"result\": null\n        }\n      ],\n      \"trace\": [\n        {\n          \"seq\": 1,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 2,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 3,\n          \"kind\": \"process_store_open\",\n          \"detail\": \"inflight is uncertain, never inferred rejected\"\n        },\n        {\n          \"seq\": 4,\n          \"kind\": \"activity_create\",\n          \"detail\": \"pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 5,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 6,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 7,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 8,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3\"\n        },\n        {\n          \"seq\": 9,\n          \"kind\": \"persisted_before_send\",\n          \"detail\": \"resources-D-original-1\"\n        },\n        {\n          \"seq\": 10,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 11,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 12,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:7\"\n        },\n        {\n          \"seq\": 13,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 14,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 15,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 16,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 17,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:12\"\n        },\n        {\n          \"seq\": 18,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 19,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 20,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 21,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 22,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:17\"\n        },\n        {\n          \"seq\": 23,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 24,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 25,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:20\"\n        },\n        {\n          \"seq\": 26,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 27,\n          \"kind\": \"activity_stop\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 28,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 29,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:23\"\n        },\n        {\n          \"seq\": 30,\n          \"kind\": \"activity_pause\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 31,\n          \"kind\": \"activity_resume\",\n          \"detail\": \"157d2b44-c798-42f7-a8e4-85124b68dd19\"\n        },\n        {\n          \"seq\": 32,\n          \"kind\": \"ui_ignored\",\n          \"detail\": \"refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:26\"\n        },\n        {\n          \"seq\": 33,\n          \"kind\": \"sending\",\n          \"detail\": \"resources-D-original-1\"\n        },\n        {\n          \"seq\": 34,\n          \"kind\": \"unknown\",\n          \"detail\": \"resources-D-original-1\"\n        },\n        {\n          \"seq\": 35,\n          \"kind\": \"sending\",\n          \"detail\": \"resources-D-original-1\"\n        },\n        {\n          \"seq\": 36,\n          \"kind\": \"unknown\",\n          \"detail\": \"resources-D-original-1\"\n        }\n      ]\n    },\n    \"projection\": null,\n    \"credential_mode\": \"self\",\n    \"transport_hint\": \"\u53ea\u5728\u672c\u673a\u843d\u76d8\uff1b\u672a\u8bbf\u95ee\u670d\u52a1\u3002\"\n  },\n  \"observation\": {}\n}",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+        "-P15037",
+        "-s",
+        "emulator-5580",
+        "shell",
+        "cmd",
+        "jobscheduler",
+        "get-job-state",
+        "org.wwl.networkdemo.resources",
+        "17503"
+      ],
+      "returncode": 0,
+      "stdout": "waiting\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+        "-P15037",
+        "-s",
+        "emulator-5580",
+        "shell",
+        "dumpsys",
+        "battery"
+      ],
+      "returncode": 0,
+      "stdout": "Current Battery Service state:\n  (UPDATES STOPPED -- use 'reset' to restart)\n  AC powered: false\n  USB powered: false\n  Wireless powered: false\n  Dock powered: false\n  Max charging current: 5000000\n  Max charging voltage: 5000000\n  Charge counter: 10000\n  status: 3\n  health: 2\n  present: true\n  level: 100\n  scale: 100\n  voltage: 5000\n  temperature: 250\n  technology: Li-ion\n  Charging state: 0\n  Charging policy: 0\n",
+      "stderr": ""
+    }
+  ],
+  "authority": {
+    "bookings": [
+      {
+        "id": 1,
+        "owner": "A",
+        "start": 540,
+        "end": 600,
+        "policy_version": 1
+      },
+      {
+        "id": 2,
+        "owner": "B",
+        "start": 600,
+        "end": 630,
+        "policy_version": 1
+      },
+      {
+        "id": 3,
+        "owner": "C",
+        "start": 650,
+        "end": 680,
+        "policy_version": 1
+      }
+    ],
+    "intents": [],
+    "outbox": []
+  }
+}

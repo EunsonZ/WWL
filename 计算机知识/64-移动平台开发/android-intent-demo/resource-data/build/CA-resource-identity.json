@@ -1,0 +1,41 @@
+{
+  "CA_sha256": "18043a4993da56da402b8a177594bff04b7da8e8fddd34915c00ffab297fde58",
+  "variants": {
+    "good-v2-db2.apk": {
+      "apk_sha256": "f0bbf7b8b053ea294686e3412b45be62bc555bcb58134cbe6e1f86f574900511",
+      "debug_CA_present": true,
+      "CA_same_bytes": true,
+      "private_key_entries": false
+    },
+    "v3-release-unsigned.apk": {
+      "apk_sha256": "68b494f51cb0e1af87e78576a4c1b3e03786da5065903f7920b3d9114ebbd629",
+      "debug_CA_present": false,
+      "CA_same_bytes": false,
+      "private_key_entries": false
+    },
+    "bad-v2-db2.apk": {
+      "apk_sha256": "10c3fb4269b8f2874dd25584acbda9c6d415660af4827286e515256b715aeea2",
+      "debug_CA_present": true,
+      "CA_same_bytes": true,
+      "private_key_entries": false
+    },
+    "v3-release-same-debugcert.apk": {
+      "apk_sha256": "c272f20723b4e2f17470c0bb5d98a9d4a8ae7a92c1103e8c64b331f52a218b03",
+      "debug_CA_present": false,
+      "CA_same_bytes": false,
+      "private_key_entries": false
+    },
+    "v3-release-other-cert.apk": {
+      "apk_sha256": "86e89f0e3dea1ffd9708c9c65120201db454790143629c1639d353b09580c01c",
+      "debug_CA_present": false,
+      "CA_same_bytes": false,
+      "private_key_entries": false
+    },
+    "v1-debug-db1.apk": {
+      "apk_sha256": "a7ed92e1f720638f3915d2fd7b476a6692268529ad20518097ab14fe2e15e65a",
+      "debug_CA_present": true,
+      "CA_same_bytes": true,
+      "private_key_entries": false
+    }
+  }
+}

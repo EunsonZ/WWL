@@ -1,0 +1,46 @@
+{
+  "package": "org.wwl.networkdemo.resources",
+  "actor": "D",
+  "original_intent_id": "resources-D-original-1",
+  "start": 690,
+  "end": 720,
+  "next_intent_id": "resources-D-next-1",
+  "next_start": 810,
+  "next_end": 840,
+  "job_id": 17503,
+  "maximum_background_logical_attempts_per_id": 3,
+  "initial_backoff_ms": 30000,
+  "requires_charging": true,
+  "requires_network": true,
+  "acceleration_injection_m_s2": [
+    1,
+    2,
+    9.81
+  ],
+  "requested_sensor_period_us": 200000,
+  "versions": [
+    {
+      "apk_version_code": 1,
+      "db_version": 1,
+      "debuggable": true
+    },
+    {
+      "apk_version_code": 2,
+      "db_version": 2,
+      "fail_after_alter": true,
+      "debuggable": true
+    },
+    {
+      "apk_version_code": 2,
+      "db_version": 2,
+      "fail_after_alter": false,
+      "debuggable": true
+    },
+    {
+      "apk_version_code": 3,
+      "db_version": 2,
+      "debuggable": false
+    }
+  ],
+  "participants": 0
+}

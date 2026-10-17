@@ -1,0 +1,183 @@
+{
+  "state": {
+    "version_code": 1,
+    "debuggable": true,
+    "resources": {
+      "schema_version": 1,
+      "work": [],
+      "events": []
+    },
+    "network": {
+      "pid": 9285,
+      "uid": 10218,
+      "actor": "D",
+      "client": {
+        "current": {
+          "actor": "D",
+          "intent_id": "resources-D-original-1",
+          "start": 690,
+          "end": 720,
+          "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+          "phase": "queued",
+          "result": null
+        },
+        "draft": {
+          "start_raw": "690",
+          "end_raw": "720"
+        },
+        "intents": [
+          {
+            "actor": "D",
+            "intent_id": "resources-D-original-1",
+            "start": 690,
+            "end": 720,
+            "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+            "phase": "queued",
+            "result": null
+          }
+        ],
+        "trace": [
+          {
+            "seq": 1,
+            "kind": "process_store_open",
+            "detail": "inflight is uncertain, never inferred rejected"
+          },
+          {
+            "seq": 2,
+            "kind": "process_store_open",
+            "detail": "inflight is uncertain, never inferred rejected"
+          },
+          {
+            "seq": 3,
+            "kind": "process_store_open",
+            "detail": "inflight is uncertain, never inferred rejected"
+          },
+          {
+            "seq": 4,
+            "kind": "activity_create",
+            "detail": "pid=9285 instance=157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 5,
+            "kind": "activity_resume",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 6,
+            "kind": "activity_pause",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 7,
+            "kind": "activity_resume",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 8,
+            "kind": "ui_ignored",
+            "detail": "refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:3"
+          },
+          {
+            "seq": 9,
+            "kind": "persisted_before_send",
+            "detail": "resources-D-original-1"
+          },
+          {
+            "seq": 10,
+            "kind": "activity_pause",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 11,
+            "kind": "activity_resume",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 12,
+            "kind": "ui_ignored",
+            "detail": "refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:7"
+          },
+          {
+            "seq": 13,
+            "kind": "activity_pause",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 14,
+            "kind": "activity_resume",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 15,
+            "kind": "activity_pause",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 16,
+            "kind": "activity_resume",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 17,
+            "kind": "ui_ignored",
+            "detail": "refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:12"
+          },
+          {
+            "seq": 18,
+            "kind": "activity_pause",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 19,
+            "kind": "activity_resume",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 20,
+            "kind": "activity_pause",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 21,
+            "kind": "activity_resume",
+            "detail": "157d2b44-c798-42f7-a8e4-85124b68dd19"
+          },
+          {
+            "seq": 22,
+            "kind": "ui_ignored",
+            "detail": "refresh:157d2b44-c798-42f7-a8e4-85124b68dd19:17"
+          }
+        ]
+      },
+      "projection": null,
+      "credential_mode": "self",
+      "transport_hint": "只在本机落盘；未访问服务。"
+    },
+    "observation": {
+      "resource_storage": "ready",
+      "sensor": "unregistered",
+      "sensor_samples": 0,
+      "camera": "granted_click_to_open"
+    }
+  },
+  "ui": {
+    "pid": 9285,
+    "activity_instance": "157d2b44-c798-42f7-a8e4-85124b68dd19",
+    "generation": 18,
+    "foreground": true,
+    "actor": "D",
+    "intent_id": "resources-D-original-1",
+    "start_raw": "690",
+    "end_raw": "720",
+    "message": "本地待发送：尚无服务承诺。",
+    "resources_observation": {
+      "resource_storage": "ready",
+      "sensor": "unregistered",
+      "sensor_samples": 0,
+      "camera": "opened_then_closed",
+      "camera_id": "1"
+    },
+    "resource_message": "资源schema=1 version=1 debuggable=true\n[]\n相机：设备已打开并关闭；没有采集照片或上传。\n加速度：未注册/已停止，样本=0，最新m/s²=尚无样本\n传感器值只作本机观察，不进入预约参数、不上传。",
+    "phase": "queued"
+  }
+}

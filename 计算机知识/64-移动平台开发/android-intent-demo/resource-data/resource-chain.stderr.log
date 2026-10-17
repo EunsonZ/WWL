@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/private/tmp/wwl-next-175-final-env/resource-final-source/tools/check_resources.py", line 238, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/private/tmp/wwl-next-175-final-env/resource-final-source/tools/check_resources.py", line 233, in main
+    try:d.run()
+        ~~~~~^^
+  File "/private/tmp/wwl-next-175-final-env/resource-final-source/tools/check_resources.py", line 140, in run
+    self.require('charging constraint actually prevents run','not satisfied' in blocked.lower() or 'not currently' in blocked.lower(),blocked)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/wwl-next-175-final-env/resource-final-source/tools/check_resources.py", line 37, in require
+    if not v:raise AssertionError(n+': '+str(detail))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: charging constraint actually prevents run: 

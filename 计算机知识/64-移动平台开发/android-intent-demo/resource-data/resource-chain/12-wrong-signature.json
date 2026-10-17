@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5580",
+    "install",
+    "-r",
+    "/private/tmp/wwl-next-175-final-env/resource-final-apks/v3-release-other-cert.apk"
+  ],
+  "returncode": 1,
+  "stdout": "Serving...\nPerforming Incremental Install\nFailure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package org.wwl.networkdemo.resources signatures do not match newer version; ignoring!]\nPerforming Streamed Install\n",
+  "stderr": "All files should be loaded. Notifying the device.\nadb: failed to install /private/tmp/wwl-next-175-final-env/resource-final-apks/v3-release-other-cert.apk: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package org.wwl.networkdemo.resources signatures do not match newer version; ignoring!]\n\n"
+}

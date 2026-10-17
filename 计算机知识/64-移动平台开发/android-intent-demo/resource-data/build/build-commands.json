@@ -1,0 +1,47 @@
+[
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/gradle-8.9/bin/gradle",
+      "--no-daemon",
+      "--max-workers=1",
+      "-p",
+      "/private/tmp/wwl-next-175-final-env/resource-final-source",
+      ":networkApp:assembleRDebug",
+      "-PcourseVersion=2",
+      "-PcourseDbVersion=2",
+      "-PfailMigration=true"
+    ],
+    "output": "/private/tmp/wwl-next-175-final-env/resource-final-apks/bad-v2-db2.apk",
+    "sha256": "10c3fb4269b8f2874dd25584acbda9c6d415660af4827286e515256b715aeea2"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/gradle-8.9/bin/gradle",
+      "--no-daemon",
+      "--max-workers=1",
+      "-p",
+      "/private/tmp/wwl-next-175-final-env/resource-final-source",
+      ":networkApp:assembleRDebug",
+      "-PcourseVersion=2",
+      "-PcourseDbVersion=2",
+      "-PfailMigration=false"
+    ],
+    "output": "/private/tmp/wwl-next-175-final-env/resource-final-apks/good-v2-db2.apk",
+    "sha256": "f0bbf7b8b053ea294686e3412b45be62bc555bcb58134cbe6e1f86f574900511"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/gradle-8.9/bin/gradle",
+      "--no-daemon",
+      "--max-workers=1",
+      "-p",
+      "/private/tmp/wwl-next-175-final-env/resource-final-source",
+      ":networkApp:assembleRRelease",
+      "-PcourseVersion=3",
+      "-PcourseDbVersion=2",
+      "-PfailMigration=false"
+    ],
+    "output": "/private/tmp/wwl-next-175-final-env/resource-final-apks/v3-release-unsigned.apk",
+    "sha256": "68b494f51cb0e1af87e78576a4c1b3e03786da5065903f7920b3d9114ebbd629"
+  }
+]

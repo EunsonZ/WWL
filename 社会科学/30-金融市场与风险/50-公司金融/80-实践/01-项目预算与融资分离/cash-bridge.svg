@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
+<title>Cash creation, funding and incremental cash are different objects</title><desc>Synthetic input. Left: two-year operating project with opportunity cost and net working capital. Right: deterministic financing fee case, each date balances across counterparties; owner NPV is not operating asset value.</desc>
+<rect width="1100" height="520" fill="white"/>
+<style>text{font:15px Arial,sans-serif;fill:#183044}.small{font-size:13px}.title{font-size:20px;font-weight:bold}</style>
+<text x="25" y="30" class="title">Cash creation, funding and incremental cash are different objects</text>
+<text x="35" y="65" class="">Incremental unlevered cash (currency units)</text>
+<rect x="78" y="228.77" width="64" height="151.23" fill="#b9604a"/>
+<text x="80" y="402" class="small">-130</text>
+<text x="98" y="418" class="small">t=0</text>
+<rect x="213" y="167.696" width="64" height="61.0738" fill="#2b7d9a"/>
+<text x="215" y="157.696" class="small">105/2</text>
+<text x="233" y="418" class="small">t=1</text>
+<rect x="348" y="120" width="64" height="108.77" fill="#2b7d9a"/>
+<text x="350" y="110" class="small">187/2</text>
+<text x="368" y="418" class="small">t=2</text>
+<line x1="55" y1="228.77" x2="485" y2="228.77" stroke="#687d8c" stroke-width="1"/>
+<text x="35" y="455" class="small">Cash needed at t0: 110; foregone rent: 20</text>
+<text x="35" y="480" class="small">NPV: -5; direct receipts = accrual adjustment</text>
+<text x="570" y="65" class="">Deterministic funding / fee case</text>
+<text x="570" y="110" class="">t0 net financing</text>
+<text x="845" y="110" class="">t0 uses</text>
+<rect x="585" y="135" width="180" height="42" fill="#d58a32"/>
+<text x="600" y="162" class="">debt: 50</text>
+<rect x="585" y="200" width="180" height="42" fill="#2b7d9a"/>
+<text x="600" y="227" class="">owner net: 52</text>
+<text x="850" y="160" class="">investment: 100</text>
+<text x="850" y="195" class="">fee: 2</text>
+<line x1="775" y1="165" x2="830" y2="165" stroke="#687d8c" stroke-width="2"/>
+<text x="575" y="263" class="small">Negative owner net = distribution at t0.</text>
+<text x="590" y="290" class="">t1 customer pays 132</text>
+<text x="590" y="330" class="">debt receives 55</text>
+<text x="590" y="365" class="">equity receives 77</text>
+<text x="590" y="420" class="">Operating value: 120</text>
+<text x="590" y="455" class="">Owner NPV after fee: 18</text>
+<text x="590" y="480" class="small">Fee recipient receives 2 at t0.</text>
+</svg>

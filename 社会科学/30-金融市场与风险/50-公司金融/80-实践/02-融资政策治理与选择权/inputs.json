@@ -1,0 +1,13 @@
+{
+ "schema":"financing-governance-v1", "data_kind":"synthetic_not_market_or_tax_law",
+ "mm":{"P":["1/2","1/2"],"state_prices":["3/5","3/10"],"cash":["100","200"],"faces":["40","80","140","200"],"shares":"10"},
+ "valuation":{"fcf":["110","110"],"r":"1/10","tax":"1/4","debt_after_distribution":["80","40","0"],"target_debt_fraction":"2/5","initial_cost":"180"},
+ "distress":{"state_prices":["1/2","2/5"],"cash":["40","160"],"face":"60","loss_if_default":"10"},
+ "risk_shift":{"P":["1/2","1/2"],"safe":["100","100"],"risky":["0","180"],"old_face":"80"},
+ "overhang":{"old_assets":"80","old_face":"100","new_cost":"10","new_cash":"15","renegotiated_face":"82"},
+ "pledge":{"cost":"50","success_cash":"100","p_effort":"4/5","p_shirk":"2/5","private_benefit":"28","inside_cash":"30"},
+ "information":{"old_assets":["60","140"],"prior":["1/2","1/2"],"investment":"50","new_cash":"60","old_shareholders":"passive_no_rebalancing","actions":"issue_or_skip","only_low_issues_candidate":true},
+ "payout":{"operating_assets":"80","cash":"20","shares":"10","bad_investment_cash":"5","good_investment_cash":"30","manager_share":"1/10","private_benefit":"4"},
+ "options":{"P":["1/2","1/2"],"cost":"50","now_cash":["100","0"],"wait_no_loss_cash":["100","0"],"wait_loss_cash":["40","0"],"waiting_fee":"2","abandon_cost0":"50","continue_cost1":"30","continue_cash2":["100","10"],"salvage1":"20"},
+ "existing_ai":{"Q":"100","closed":["1/2","7/10"],"utilization":"4/5","price":"2","unit_cash_cost":"1","fixed_cash_cost":"10","initial_cost":"100","salvage2":"49","r":"1/10","debt_after_distribution":["40","20","0"],"founder_cash":"30","new_equity_cash":"30","founder_shares":"10","financing_fee":"3"}
+}

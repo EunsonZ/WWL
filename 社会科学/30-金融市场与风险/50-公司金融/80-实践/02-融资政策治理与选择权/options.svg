@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680"><title>有选择权值，不等于现在值得投入</title><desc>同一面板无贴现、风险中性；观察后的动作按当时信息决定。金额为合成货币。</desc><rect width="1200" height="100%" fill="#f7fafc"/><g font-family="PingFang SC, sans-serif">
+<text x="35" y="48" font-size="30" fill="#17324d">有选择权值，不等于现在值得投入</text>
+<text x="35" y="83" font-size="18" fill="#17324d">同一面板无贴现、风险中性；观察后的动作按当时信息决定。金额为合成货币。</text>
+<rect x="30" y="109" width="1140" height="44" fill="#e8eef5"/>
+<text x="45" y="137" font-size="22" fill="#17324d">立即投入NPV</text>
+<text x="1000" y="137" font-size="25" fill="#17324d">0</text>
+<rect x="30" y="160" width="1140" height="44" fill="#e4f2eb"/>
+<text x="45" y="188" font-size="22" fill="#17324d">免费且不损收入的等待</text>
+<text x="1000" y="188" font-size="25" fill="#17324d">25</text>
+<rect x="30" y="211" width="1140" height="44" fill="#e8eef5"/>
+<text x="45" y="239" font-size="22" fill="#17324d">等待收入损失后的等待</text>
+<text x="1000" y="239" font-size="25" fill="#17324d">0</text>
+<rect x="30" y="262" width="1140" height="44" fill="#e8eef5"/>
+<text x="45" y="290" font-size="22" fill="#17324d">已选择购买等待、再扣费用</text>
+<text x="1000" y="290" font-size="25" fill="#17324d">-2</text>
+<rect x="30" y="313" width="1140" height="44" fill="#e8eef5"/>
+<text x="45" y="341" font-size="22" fill="#17324d">强制续营NPV（另一个放弃项目）</text>
+<text x="1000" y="341" font-size="25" fill="#17324d">-25</text>
+<rect x="30" y="364" width="1140" height="44" fill="#e8eef5"/>
+<text x="45" y="392" font-size="22" fill="#17324d">可按状态放弃NPV</text>
+<text x="1000" y="392" font-size="25" fill="#17324d">-5</text>
+<rect x="30" y="415" width="1140" height="44" fill="#e4f2eb"/>
+<text x="45" y="443" font-size="22" fill="#17324d">放弃权增值</text>
+<text x="1000" y="443" font-size="25" fill="#17324d">20</text>
+<rect x="30" y="466" width="1140" height="44" fill="#e8eef5"/>
+<text x="45" y="494" font-size="22" fill="#17324d">0期可不投时的最优值</text>
+<text x="1000" y="494" font-size="25" fill="#17324d">0</text>
+<text x="40" y="590" font-size="20" fill="#17324d">放弃策略：[&#x27;continue&#x27;, &#x27;abandon&#x27;]；分支最优支付 [&#x27;70&#x27;, &#x27;20&#x27;]</text>
+<text x="40" y="635" font-size="21" fill="#a93628">扣费等待的负值不等于总体最优为负：可不买/不投；初始投入仍须另算。</text>
+</g></svg>

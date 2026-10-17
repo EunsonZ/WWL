@@ -1,0 +1,716 @@
+{
+  "schema": "financing-governance-result-v1",
+  "input": {
+    "schema": "financing-governance-v1",
+    "data_kind": "synthetic_not_market_or_tax_law",
+    "mm": {
+      "P": [
+        "1/2",
+        "1/2"
+      ],
+      "state_prices": [
+        "3/5",
+        "3/10"
+      ],
+      "cash": [
+        "100",
+        "200"
+      ],
+      "faces": [
+        "40",
+        "80",
+        "140",
+        "200"
+      ],
+      "shares": "10"
+    },
+    "valuation": {
+      "fcf": [
+        "110",
+        "110"
+      ],
+      "r": "1/10",
+      "tax": "1/4",
+      "debt_after_distribution": [
+        "80",
+        "40",
+        "0"
+      ],
+      "target_debt_fraction": "2/5",
+      "initial_cost": "180"
+    },
+    "distress": {
+      "state_prices": [
+        "1/2",
+        "2/5"
+      ],
+      "cash": [
+        "40",
+        "160"
+      ],
+      "face": "60",
+      "loss_if_default": "10"
+    },
+    "risk_shift": {
+      "P": [
+        "1/2",
+        "1/2"
+      ],
+      "safe": [
+        "100",
+        "100"
+      ],
+      "risky": [
+        "0",
+        "180"
+      ],
+      "old_face": "80"
+    },
+    "overhang": {
+      "old_assets": "80",
+      "old_face": "100",
+      "new_cost": "10",
+      "new_cash": "15",
+      "renegotiated_face": "82"
+    },
+    "pledge": {
+      "cost": "50",
+      "success_cash": "100",
+      "p_effort": "4/5",
+      "p_shirk": "2/5",
+      "private_benefit": "28",
+      "inside_cash": "30"
+    },
+    "information": {
+      "old_assets": [
+        "60",
+        "140"
+      ],
+      "prior": [
+        "1/2",
+        "1/2"
+      ],
+      "investment": "50",
+      "new_cash": "60",
+      "old_shareholders": "passive_no_rebalancing",
+      "actions": "issue_or_skip",
+      "only_low_issues_candidate": true
+    },
+    "payout": {
+      "operating_assets": "80",
+      "cash": "20",
+      "shares": "10",
+      "bad_investment_cash": "5",
+      "good_investment_cash": "30",
+      "manager_share": "1/10",
+      "private_benefit": "4"
+    },
+    "options": {
+      "P": [
+        "1/2",
+        "1/2"
+      ],
+      "cost": "50",
+      "now_cash": [
+        "100",
+        "0"
+      ],
+      "wait_no_loss_cash": [
+        "100",
+        "0"
+      ],
+      "wait_loss_cash": [
+        "40",
+        "0"
+      ],
+      "waiting_fee": "2",
+      "abandon_cost0": "50",
+      "continue_cost1": "30",
+      "continue_cash2": [
+        "100",
+        "10"
+      ],
+      "salvage1": "20"
+    },
+    "existing_ai": {
+      "Q": "100",
+      "closed": [
+        "1/2",
+        "7/10"
+      ],
+      "utilization": "4/5",
+      "price": "2",
+      "unit_cash_cost": "1",
+      "fixed_cash_cost": "10",
+      "initial_cost": "100",
+      "salvage2": "49",
+      "r": "1/10",
+      "debt_after_distribution": [
+        "40",
+        "20",
+        "0"
+      ],
+      "founder_cash": "30",
+      "new_equity_cash": "30",
+      "founder_shares": "10",
+      "financing_fee": "3"
+    }
+  },
+  "results": {
+    "mm": {
+      "rows": [
+        {
+          "cash": [
+            "100",
+            "200"
+          ],
+          "face": "40",
+          "debt_cash": [
+            "40",
+            "40"
+          ],
+          "equity_cash": [
+            "60",
+            "160"
+          ],
+          "V": "120",
+          "D": "36",
+          "E": "84",
+          "r_assets": "1/4",
+          "r_debt": "1/9",
+          "r_equity": "13/42",
+          "promised_yield": "1/9",
+          "equity_per_share": "42/5",
+          "oldholder_wealth_after_fair_recap": "120"
+        },
+        {
+          "cash": [
+            "100",
+            "200"
+          ],
+          "face": "80",
+          "debt_cash": [
+            "80",
+            "80"
+          ],
+          "equity_cash": [
+            "20",
+            "120"
+          ],
+          "V": "120",
+          "D": "72",
+          "E": "48",
+          "r_assets": "1/4",
+          "r_debt": "1/9",
+          "r_equity": "11/24",
+          "promised_yield": "1/9",
+          "equity_per_share": "24/5",
+          "oldholder_wealth_after_fair_recap": "120"
+        },
+        {
+          "cash": [
+            "100",
+            "200"
+          ],
+          "face": "140",
+          "debt_cash": [
+            "100",
+            "140"
+          ],
+          "equity_cash": [
+            "0",
+            "60"
+          ],
+          "V": "120",
+          "D": "102",
+          "E": "18",
+          "r_assets": "1/4",
+          "r_debt": "3/17",
+          "r_equity": "2/3",
+          "promised_yield": "19/51",
+          "equity_per_share": "9/5",
+          "oldholder_wealth_after_fair_recap": "120"
+        },
+        {
+          "cash": [
+            "100",
+            "200"
+          ],
+          "face": "200",
+          "debt_cash": [
+            "100",
+            "200"
+          ],
+          "equity_cash": [
+            "0",
+            "0"
+          ],
+          "V": "120",
+          "D": "120",
+          "E": "0",
+          "r_assets": "1/4",
+          "r_debt": "1/4",
+          "r_equity": null,
+          "promised_yield": "2/3",
+          "equity_per_share": "0",
+          "oldholder_wealth_after_fair_recap": "120"
+        }
+      ],
+      "risk_free_rate": "1/9",
+      "shares": "10",
+      "scope": "fixed operating cash; common pricing and freely tradable claims"
+    },
+    "valuation": {
+      "fixed_debt": {
+        "V_ex_distribution": [
+          "23420/121",
+          "1110/11",
+          "0"
+        ],
+        "D_ex_distribution": [
+          "80",
+          "40",
+          "0"
+        ],
+        "E_ex_distribution": [
+          "13740/121",
+          "670/11",
+          "0"
+        ],
+        "interest": [
+          "8",
+          "4"
+        ],
+        "shield": [
+          "2",
+          "1"
+        ],
+        "debt_cash": [
+          "48",
+          "44"
+        ],
+        "equity_cash": [
+          "64",
+          "67"
+        ],
+        "wacc": [
+          "105/1171",
+          "10/111"
+        ],
+        "unlevered": "2100/11",
+        "shield_PV": "320/121",
+        "APV": "23420/121",
+        "WACC_value": "23420/121",
+        "debt_claim_PV": "80",
+        "equity_claim_PV": "13740/121"
+      },
+      "constant_ratio": {
+        "V_ex_distribution": [
+          "2299000/11881",
+          "11000/109",
+          "0"
+        ],
+        "D_ex_distribution": [
+          "919600/11881",
+          "4400/109",
+          "0"
+        ],
+        "E_ex_distribution": [
+          "1379400/11881",
+          "6600/109",
+          "0"
+        ],
+        "interest": [
+          "91960/11881",
+          "440/109"
+        ],
+        "shield": [
+          "22990/11881",
+          "110/109"
+        ],
+        "debt_cash": [
+          "531960/11881",
+          "4840/109"
+        ],
+        "equity_cash": [
+          "797940/11881",
+          "7260/109"
+        ],
+        "wacc": [
+          "9/100",
+          "9/100"
+        ],
+        "unlevered": "2100/11",
+        "shield_PV": "338900/130691",
+        "APV": "2299000/11881",
+        "WACC_value": "2299000/11881",
+        "debt_claim_PV": "919600/11881",
+        "equity_claim_PV": "1379400/11881"
+      },
+      "fixed_debt_wrong_constant_target_WACC": "2299000/11881",
+      "wrong_minus_correct_fixed": "-74020/1437601",
+      "initial_cost": "180",
+      "fixed_NPV": "1640/121",
+      "target_NPV": "160420/11881"
+    },
+    "distress": {
+      "without_loss": {
+        "cash": [
+          "40",
+          "160"
+        ],
+        "face": "60",
+        "debt_cash": [
+          "40",
+          "60"
+        ],
+        "equity_cash": [
+          "0",
+          "100"
+        ],
+        "V": "84",
+        "D": "44",
+        "E": "40"
+      },
+      "with_loss": {
+        "cash": [
+          "30",
+          "160"
+        ],
+        "face": "60",
+        "debt_cash": [
+          "30",
+          "60"
+        ],
+        "equity_cash": [
+          "0",
+          "100"
+        ],
+        "V": "79",
+        "D": "39",
+        "E": "40"
+      },
+      "loss_cash": [
+        "10",
+        "0"
+      ],
+      "loss_PV": "5"
+    },
+    "risk_shift": {
+      "safe": {
+        "cash": [
+          "100",
+          "100"
+        ],
+        "face": "80",
+        "debt_cash": [
+          "80",
+          "80"
+        ],
+        "equity_cash": [
+          "20",
+          "20"
+        ],
+        "V": "100",
+        "D": "80",
+        "E": "20"
+      },
+      "risky": {
+        "cash": [
+          "0",
+          "180"
+        ],
+        "face": "80",
+        "debt_cash": [
+          "0",
+          "80"
+        ],
+        "equity_cash": [
+          "0",
+          "100"
+        ],
+        "V": "90",
+        "D": "40",
+        "E": "50"
+      },
+      "equity_gain": "30",
+      "old_debt_change": "-40",
+      "total_change": "-10"
+    },
+    "overhang": {
+      "old_D": "80",
+      "old_E": 0,
+      "new_assets": "95",
+      "new_D_original": "95",
+      "new_E_original": 0,
+      "total_increment_NPV": "5",
+      "equity_increment_original": "-10",
+      "renegotiated_D": "82",
+      "renegotiated_E": "13",
+      "old_creditor_increment": "2",
+      "equity_increment_renegotiated": "3"
+    },
+    "pledge": {
+      "effort_implementable_weak_IC": true,
+      "D_max_weak_IC": "30",
+      "maximum_outside_funding": "24",
+      "fundable_without_inside_cash_weak_IC": false,
+      "minimum_inside_funding_weak_IC": "26",
+      "cash_project_NPV_effort": "30",
+      "cash_project_NPV_shirk": "-10",
+      "cash_plus_private_benefit_shirk": "18",
+      "chosen_inside": "30",
+      "outside_needed": "20",
+      "success_repayment": "25",
+      "IC_effort_minus_shirk": "2",
+      "outside_break_even": "0",
+      "fundable_weak_IC": true
+    },
+    "information": {
+      "pooling_new_fraction": "5/16",
+      "pooling_deviations": [
+        {
+          "type_old_asset": "60",
+          "old_retained_value": "165/2",
+          "gain_vs_skip": "45/2",
+          "new_investor_receipt": "75/2"
+        },
+        {
+          "type_old_asset": "140",
+          "old_retained_value": "275/2",
+          "gain_vs_skip": "-5/2",
+          "new_investor_receipt": "125/2"
+        }
+      ],
+      "only_low_issues_posterior": [
+        "1",
+        "0"
+      ],
+      "only_low_new_fraction": "5/12",
+      "only_low_deviations": [
+        {
+          "type_old_asset": "60",
+          "old_retained_value": "70",
+          "gain_vs_skip": "10",
+          "new_investor_receipt": "50"
+        },
+        {
+          "type_old_asset": "140",
+          "old_retained_value": "350/3",
+          "gain_vs_skip": "-70/3",
+          "new_investor_receipt": "250/3"
+        }
+      ],
+      "candidate_is_self_consistent": true,
+      "safe_debt_available": true,
+      "debt_repayment": "50",
+      "old_value_with_safe_debt": [
+        "70",
+        "150"
+      ],
+      "scope": "equity-only separating candidate checked; adding safe debt changes the action set"
+    },
+    "payout": {
+      "before_value": "100",
+      "before_price": "10",
+      "dividend_per_share": "2",
+      "after_dividend_price": "8",
+      "repurchased_shares_fair": "2",
+      "remaining_shares": "8",
+      "after_fair_repurchase_price": "10",
+      "all_original_wealth_after": "100",
+      "bad_project_market_NPV": "-15",
+      "manager_increment_bad": "5/2",
+      "good_project_market_NPV": "10",
+      "scope": "fixed investment for payout irrelevance; investment variants explicitly change policy"
+    },
+    "options": {
+      "immediate_NPV": "0",
+      "free_wait_all_4_policies": [
+        {
+          "invest_by_state": [
+            false,
+            false
+          ],
+          "payoffs": [
+            "0",
+            "0"
+          ],
+          "value": "0"
+        },
+        {
+          "invest_by_state": [
+            false,
+            true
+          ],
+          "payoffs": [
+            "0",
+            "-50"
+          ],
+          "value": "-25"
+        },
+        {
+          "invest_by_state": [
+            true,
+            false
+          ],
+          "payoffs": [
+            "50",
+            "0"
+          ],
+          "value": "25"
+        },
+        {
+          "invest_by_state": [
+            true,
+            true
+          ],
+          "payoffs": [
+            "50",
+            "-50"
+          ],
+          "value": "0"
+        }
+      ],
+      "free_wait_value": "25",
+      "delayed_cash_all_4_policies": [
+        {
+          "invest_by_state": [
+            false,
+            false
+          ],
+          "payoffs": [
+            "0",
+            "0"
+          ],
+          "value": "0"
+        },
+        {
+          "invest_by_state": [
+            false,
+            true
+          ],
+          "payoffs": [
+            "0",
+            "-50"
+          ],
+          "value": "-25"
+        },
+        {
+          "invest_by_state": [
+            true,
+            false
+          ],
+          "payoffs": [
+            "-10",
+            "0"
+          ],
+          "value": "-5"
+        },
+        {
+          "invest_by_state": [
+            true,
+            true
+          ],
+          "payoffs": [
+            "-10",
+            "-50"
+          ],
+          "value": "-30"
+        }
+      ],
+      "delayed_cash_wait_value": "0",
+      "delayed_cash_with_fee_value": "-2",
+      "continue_net_by_state": [
+        "70",
+        "-20"
+      ],
+      "abandon_post_choice_by_state": [
+        "70",
+        "20"
+      ],
+      "abandon_actions": [
+        "continue",
+        "abandon"
+      ],
+      "forced_continue_NPV": "-25",
+      "with_abandon_NPV": "-5",
+      "option_increment": "20",
+      "date0_best_invest_or_skip": "0"
+    },
+    "existing_ai": {
+      "sold_tasks": [
+        "40",
+        "56"
+      ],
+      "FCF_including_terminal_salvage": [
+        "30",
+        "95"
+      ],
+      "asset_value": "12800/121",
+      "project_NPV": "700/121",
+      "debt": {
+        "V_ex_distribution": [
+          "12800/121",
+          "950/11",
+          "0"
+        ],
+        "D_ex_distribution": [
+          "40",
+          "20",
+          "0"
+        ],
+        "E_ex_distribution": [
+          "7960/121",
+          "730/11",
+          "0"
+        ],
+        "interest": [
+          "4",
+          "2"
+        ],
+        "shield": [
+          "0",
+          "0"
+        ],
+        "debt_cash": [
+          "24",
+          "22"
+        ],
+        "equity_cash": [
+          "6",
+          "73"
+        ],
+        "wacc": [
+          "1/10",
+          "1/10"
+        ],
+        "unlevered": "12800/121",
+        "shield_PV": "0",
+        "APV": "12800/121",
+        "WACC_value": "12800/121",
+        "debt_claim_PV": "40",
+        "equity_claim_PV": "7960/121"
+      },
+      "new_equity_fraction_fair": "363/796",
+      "founder_shares": "10",
+      "new_shares_fair": "3630/433",
+      "founder_claim_value": "4330/121",
+      "founder_initial_cash": "30",
+      "founder_NPV": "700/121",
+      "external_equity_PV": "30",
+      "founder_CF": [
+        "1299/398",
+        "31609/796"
+      ],
+      "external_CF": [
+        "1089/398",
+        "26499/796"
+      ],
+      "all_equity_NPV_after_fee": "337/121",
+      "founder_NPV_after_fee_with_extra_cash": "337/121",
+      "funding_gap_before_outside_equity": "30"
+    }
+  },
+  "scope": "separate synthetic panels; not empirical financing, tax law, real security advice or a full equilibrium calibration"
+}

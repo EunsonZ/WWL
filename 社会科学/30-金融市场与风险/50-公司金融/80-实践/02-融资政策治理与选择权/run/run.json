@@ -1,0 +1,38 @@
+{
+  "stages": [
+    {
+      "name": "fixed",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-197-financing/\u793e\u4f1a\u79d1\u5b66/30-\u91d1\u878d\u5e02\u573a\u4e0e\u98ce\u9669/50-\u516c\u53f8\u91d1\u878d/80-\u5b9e\u8df5/02-\u878d\u8d44\u653f\u7b56\u6cbb\u7406\u4e0e\u9009\u62e9\u6743/financing.py",
+        "--input",
+        "/private/tmp/wwl-next-197-financing/\u793e\u4f1a\u79d1\u5b66/30-\u91d1\u878d\u5e02\u573a\u4e0e\u98ce\u9669/50-\u516c\u53f8\u91d1\u878d/80-\u5b9e\u8df5/02-\u878d\u8d44\u653f\u7b56\u6cbb\u7406\u4e0e\u9009\u62e9\u6743/inputs.json",
+        "--out",
+        "/private/tmp/wwl-next-197-financing/corrected-run/results.json"
+      ],
+      "cwd": "/private/tmp/wwl-next-197-financing/\u793e\u4f1a\u79d1\u5b66/30-\u91d1\u878d\u5e02\u573a\u4e0e\u98ce\u9669/50-\u516c\u53f8\u91d1\u878d/80-\u5b9e\u8df5/02-\u878d\u8d44\u653f\u7b56\u6cbb\u7406\u4e0e\u9009\u62e9\u6743",
+      "exit_code": 0,
+      "elapsed_s": 0.038950499962083995
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_financing.py"
+      ],
+      "cwd": "/private/tmp/wwl-next-197-financing/\u793e\u4f1a\u79d1\u5b66/30-\u91d1\u878d\u5e02\u573a\u4e0e\u98ce\u9669/50-\u516c\u53f8\u91d1\u878d/80-\u5b9e\u8df5/02-\u878d\u8d44\u653f\u7b56\u6cbb\u7406\u4e0e\u9009\u62e9\u6743",
+      "exit_code": 0,
+      "elapsed_s": 0.057496583031024784
+    }
+  ],
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "threads": 1,
+  "source_sha256": "126b68eb44cd71af97723258cd889400c7b1052fdb23ad48caa56be3b8ba5577",
+  "input_sha256": "725f2d849304a10f0af07d127b33946b9331e7b8a521776e100b66f55b14d6c5",
+  "scope": "synthetic exact Fraction; no external market, tax or governance execution"
+}

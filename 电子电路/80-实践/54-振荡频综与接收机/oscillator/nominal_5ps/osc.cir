@@ -1,0 +1,28 @@
+Cross coupled NMOS LC oscillator nominal_5ps; educational LEVEL1 not PDK
+.temp 27
+.options reltol=1e-6 abstol=1e-13 vntol=1e-9 method=gear maxord=2
+VDD vdd 0 1.8
+RLP vdd lp 10.0
+RLN vdd ln 10.0
+LP lp p 9.9999999999999995e-08 IC=0.001
+LN ln n 9.9999999999999995e-08 IC=0.001
+CP p 0 2.5000000000000001e-11
+CN n 0 2.5000000000000001e-11
+M1 p n s 0 NN W=1.0000000000000001e-05 L=9.9999999999999995e-07
+M2 n p s 0 NN W=1.0000000000000001e-05 L=9.9999999999999995e-07
+IT s 0 DC 0.002
+.model NN NMOS LEVEL=1 KP=0.002 VTO=0.5 LAMBDA=0.02 GAMMA=0 TOX=2e-08 TNOM=27
+.ic v(p)=1.7905 v(n)=1.7895000000000001 v(s)=0.97631434844890119
+.control
+set noaskquit
+set numdgt=15
+op
+print v(p) v(n) v(s) @m1[id] @m1[gm] @m1[gds] @m1[cgs] @m1[cgd] @m1[cgb]
+save all @m1[id] @m2[id]
+tran 4.9999999999999997e-12 1.9999999999999999e-06 0 4.9999999999999997e-12 uic
+set wr_vecnames
+set wr_singlescale
+wrdata waveform.txt v(p) v(n) v(s) i(vdd) @m1[id] @m2[id]
+quit
+.endc
+.end

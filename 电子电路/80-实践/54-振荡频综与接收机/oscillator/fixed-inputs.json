@@ -1,0 +1,33 @@
+{
+  "VDD_V": 1.8,
+  "L_each_H": 1e-07,
+  "R_series_each_ohm": 10.0,
+  "C_each_F": 2.5e-11,
+  "tail_A": 0.002,
+  "seed_diff_V": 0.001,
+  "KP_A_V2": 0.002,
+  "W_m": 1e-05,
+  "L_m": 1e-06,
+  "VTO_V": 0.5,
+  "LAMBDA_V_inv": 0.02,
+  "TOX_m": 2e-08,
+  "TEMP_C": 27,
+  "stop_s": 2e-06,
+  "maxstep_s": 1e-11,
+  "method": "Gear2",
+  "cases": {
+    "nominal": {},
+    "zero_seed": {
+      "seed_diff_V": 0.0
+    },
+    "low_tail": {
+      "tail_A": 1e-06
+    },
+    "cap30p": {
+      "C_each_F": 3e-11
+    },
+    "nominal_5ps": {
+      "maxstep_s": 5e-12
+    }
+  }
+}

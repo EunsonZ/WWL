@@ -1,0 +1,45 @@
+{
+  "original_full_text_sha256": "526769577400dac5be206fede9c947d35ae39d46c4eecffeaf1e2b2df5f3290a",
+  "original_full_rows": 200011,
+  "source_columns": [
+    "t_s",
+    "vp_V",
+    "vn_V",
+    "vs_V",
+    "ivdd_A",
+    "id1_A",
+    "id2_A"
+  ],
+  "selection": "actual nonuniform rows; no resampling; startup0..200ns and late1..2us; omitted200ns..1us reproducible by deck",
+  "windows": {
+    "startup": {
+      "rows": 20010,
+      "first_actual_t_s": 1e-13,
+      "last_actual_t_s": 1.999996000000765e-07,
+      "columns": [
+        "t_s",
+        "vdiff_V",
+        "CM_V"
+      ],
+      "sha256": "37cf4895ae09d4c12cffc2f72f6f8aac7641f6622fc940e96a465b4a266c5969"
+    },
+    "late": {
+      "rows": 100001,
+      "first_actual_t_s": 1.000009599998705e-06,
+      "last_actual_t_s": 2e-06,
+      "columns": [
+        "t_s",
+        "vdiff_V",
+        "CM_V",
+        "ivdd_A"
+      ],
+      "sha256": "74c1b6399fd8f8d41b92d84047d52aeeaa6af6b3e58cc30792a7359f3bb3c6e5"
+    },
+    "device_cycle": {
+      "rows": 10002,
+      "first_actual_t_s": 1.89999960000449e-06,
+      "last_actual_t_s": 2e-06,
+      "sha256": "1419d62050fea0bdedff3845ff6029ce9154402186017945c137ead7eebb34f5"
+    }
+  }
+}

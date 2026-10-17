@@ -1,0 +1,123 @@
+{
+  "schema": "synth-rx-v1",
+  "pll": {
+    "reference_Hz": 10000000,
+    "center_Hz": 100000000,
+    "Kv_Hz_per_V": 20000000,
+    "center_voltage_V": 0.9,
+    "tune_limits_V": [
+      0,
+      1.8
+    ],
+    "N": 10,
+    "Icp_A": 0.0001,
+    "C_F": 1e-08,
+    "duration_s": 0.001,
+    "reset": "instantaneous simultaneous reset",
+    "filter": "series_RC_no_parallel_C",
+    "designs": [
+      {
+        "name": "narrow",
+        "R_ohm": 1000
+      },
+      {
+        "name": "balanced",
+        "R_ohm": 2000
+      },
+      {
+        "name": "wide",
+        "R_ohm": 8000
+      }
+    ],
+    "initials": [
+      {
+        "name": "near",
+        "z_V": 0.89,
+        "feedback_phase_cycles": 0.02,
+        "reference_Hz": 10000000
+      },
+      {
+        "name": "capture_low",
+        "z_V": 0.2,
+        "feedback_phase_cycles": 0.3,
+        "reference_Hz": 10000000
+      },
+      {
+        "name": "capture_high",
+        "z_V": 1.6,
+        "feedback_phase_cycles": 0.7,
+        "reference_Hz": 10000000
+      },
+      {
+        "name": "outside_tuning",
+        "z_V": 0.9,
+        "feedback_phase_cycles": 0.1,
+        "reference_Hz": 12000000
+      }
+    ]
+  },
+  "noise": {
+    "convention": "single_sided_phase_PSD_rad2_per_Hz",
+    "integration_Hz": [
+      100,
+      1000000
+    ],
+    "reference_white": 2e-15,
+    "reference_flicker": 2e-12,
+    "vco_white": 2e-14,
+    "vco_inverse_square": 0.002,
+    "vco_inverse_cube": 2,
+    "defined_offset_Hz": [
+      100,
+      80000000
+    ]
+  },
+  "rx": {
+    "temperature_K": 300.15,
+    "reference_ohm": 50,
+    "RF_Hz": 110000000,
+    "image_Hz": 90000000,
+    "LO_Hz": 100000000,
+    "blocker_Hz": [
+      130000000,
+      150000000
+    ],
+    "bandwidth_Hz": 100000,
+    "wanted_W": 1e-11,
+    "blocker_each_W": 3.162277660168379e-07,
+    "buffer": {
+      "available_gain": 1,
+      "F": 2,
+      "input_ohm": 1000,
+      "output_diff_ohm": 50,
+      "power_W": 0.001
+    },
+    "IF_gain": 100,
+    "IF_F": 5,
+    "IF_power_W": 0.002,
+    "PLL_control_power_W": 0.001,
+    "LNA_IIP3_W": 0.001,
+    "IF_peak_budget_W_sqrt": 0.01,
+    "preloss_cases": [
+      1,
+      2,
+      4
+    ],
+    "phase_noise_source": "separate_declared_teaching_card_not_extracted_from_LC",
+    "budgets": {
+      "NF_dB_max": 19,
+      "gain_dB_min": 8,
+      "thermal_plus_RM_SNR_dB_min": 24.5,
+      "C_to_IM3_dB_min": 35,
+      "power_W_max": 0.012,
+      "LO_jitter_s_max": 6e-13
+    },
+    "reciprocal_mixing_model": "real_IF_two_sidebands_fundamental_LO_phase_only",
+    "LO_driver_power_W": 0.0005,
+    "far_LO_model": "declared_output_Sphi_equals_scale_times_free_VCO_above_1MHz_not_continuous_PLL_extrapolation",
+    "far_LO_scale_cases": [
+      1,
+      10
+    ]
+  }
+}

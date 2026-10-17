@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="524" viewBox="0 0 1140 524">
+<title>Training windows and frozen cross-play</title><desc>Left individual-seed non-overlapping windows show sampled team reward. Right exact greedy deployment mismatch probabilities: rows agent zero from one seed, columns agent one from another. No learning during evaluation.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font:14px Arial,sans-serif;fill:#17212d}.head{font-weight:bold;font-size:19px}.grid{stroke:#d7dfe7;stroke-width:1}</style>
+<text x="25" y="30" class="head">A. Co-learning: sampled team return / episode</text>
+<text x="600" y="30" class="head">B. Frozen greedy cross-play: mismatch</text>
+<line x1="65" y1="375" x2="535" y2="375" class="grid"/>
+<text x="40" y="380">0</text>
+<line x1="65" y1="310" x2="535" y2="310" class="grid"/>
+<text x="40" y="315">1</text>
+<line x1="65" y1="245" x2="535" y2="245" class="grid"/>
+<text x="40" y="250">2</text>
+<line x1="65" y1="180" x2="535" y2="180" class="grid"/>
+<text x="40" y="185">3</text>
+<line x1="65" y1="115" x2="535" y2="115" class="grid"/>
+<text x="40" y="120">4</text>
+<polyline points="104.1667,146.2000 143.3333,142.3000 182.5000,133.2000 221.6667,141.0000 260.8333,151.4000 300.0000,133.2000 339.1667,146.2000 378.3333,147.5000 417.5000,143.6000 456.6667,142.3000 495.8333,143.6000 535.0000,141.0000" fill="none" stroke="#2563a6" stroke-width="1.6"/>
+<text x="65" y="415" style="fill:#2563a6">seed 3</text>
+<polyline points="104.1667,251.5000 143.3333,254.1000 182.5000,259.3000 221.6667,264.5000 260.8333,258.0000 300.0000,259.3000 339.1667,260.6000 378.3333,254.1000 417.5000,251.5000 456.6667,258.0000 495.8333,255.4000 535.0000,255.4000" fill="none" stroke="#b34438" stroke-width="1.6"/>
+<text x="187" y="415" style="fill:#b34438">seed 17</text>
+<polyline points="104.1667,135.8000 143.3333,151.4000 182.5000,135.8000 221.6667,138.4000 260.8333,150.1000 300.0000,130.6000 339.1667,125.4000 378.3333,143.6000 417.5000,134.5000 456.6667,151.4000 495.8333,143.6000 535.0000,146.2000" fill="none" stroke="#328451" stroke-width="1.6"/>
+<text x="309" y="415" style="fill:#328451">seed 41</text>
+<polyline points="104.1667,254.1000 143.3333,258.0000 182.5000,260.6000 221.6667,252.8000 260.8333,260.6000 300.0000,260.6000 339.1667,256.7000 378.3333,251.5000 417.5000,256.7000 456.6667,248.9000 495.8333,248.9000 535.0000,252.8000" fill="none" stroke="#9459a4" stroke-width="1.6"/>
+<text x="431" y="415" style="fill:#9459a4">seed 73</text>
+<polyline points="104.1667,264.5000 143.3333,254.1000 182.5000,258.0000 221.6667,252.8000 260.8333,256.7000 300.0000,258.0000 339.1667,258.0000 378.3333,254.1000 417.5000,256.7000 456.6667,256.7000 495.8333,261.9000 535.0000,259.3000" fill="none" stroke="#967009" stroke-width="1.6"/>
+<text x="65" y="435" style="fill:#967009">seed 101</text>
+<polyline points="104.1667,146.2000 143.3333,137.1000 182.5000,143.6000 221.6667,148.8000 260.8333,141.0000 300.0000,129.3000 339.1667,144.9000 378.3333,139.7000 417.5000,128.0000 456.6667,135.8000 495.8333,122.8000 535.0000,141.0000" fill="none" stroke="#178b9f" stroke-width="1.6"/>
+<text x="187" y="435" style="fill:#178b9f">seed 137</text>
+<polyline points="104.1667,267.1000 143.3333,252.8000 182.5000,259.3000 221.6667,251.5000 260.8333,255.4000 300.0000,258.0000 339.1667,259.3000 378.3333,255.4000 417.5000,252.8000 456.6667,260.6000 495.8333,250.2000 535.0000,252.8000" fill="none" stroke="#575861" stroke-width="1.6"/>
+<text x="309" y="435" style="fill:#575861">seed 181</text>
+<polyline points="104.1667,138.4000 143.3333,138.4000 182.5000,133.2000 221.6667,133.2000 260.8333,130.6000 300.0000,133.2000 339.1667,143.6000 378.3333,122.8000 417.5000,138.4000 456.6667,150.1000 495.8333,146.2000 535.0000,135.8000" fill="none" stroke="#d05b12" stroke-width="1.6"/>
+<text x="431" y="435" style="fill:#d05b12">seed 233</text>
+<text x="65" y="397">0</text><text x="490" y="397">1200 episodes</text>
+<text x="65" y="65">Window 100; team sum in [0,4], not equilibrium evidence</text>
+<text x="578" y="117.950">3</text>
+<text x="624.300" y="80">3</text>
+<rect x="620.000" y="90.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="635.050" y="117.950">0</text>
+<rect x="663.000" y="90.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="678.050" y="117.950">1</text>
+<rect x="706.000" y="90.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="721.050" y="117.950">0</text>
+<rect x="749.000" y="90.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="764.050" y="117.950">1</text>
+<rect x="792.000" y="90.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="807.050" y="117.950">1</text>
+<rect x="835.000" y="90.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="850.050" y="117.950">0</text>
+<rect x="878.000" y="90.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="893.050" y="117.950">1</text>
+<rect x="921.000" y="90.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="936.050" y="117.950">0</text>
+<text x="578" y="160.950">17</text>
+<text x="667.300" y="80">17</text>
+<rect x="620.000" y="133.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="635.050" y="160.950">1</text>
+<rect x="663.000" y="133.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="678.050" y="160.950">0</text>
+<rect x="706.000" y="133.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="721.050" y="160.950">1</text>
+<rect x="749.000" y="133.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="764.050" y="160.950">0</text>
+<rect x="792.000" y="133.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="807.050" y="160.950">0</text>
+<rect x="835.000" y="133.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="850.050" y="160.950">1</text>
+<rect x="878.000" y="133.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="893.050" y="160.950">0</text>
+<rect x="921.000" y="133.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="936.050" y="160.950">1</text>
+<text x="578" y="203.950">41</text>
+<text x="710.300" y="80">41</text>
+<rect x="620.000" y="176.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="635.050" y="203.950">0</text>
+<rect x="663.000" y="176.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="678.050" y="203.950">1</text>
+<rect x="706.000" y="176.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="721.050" y="203.950">0</text>
+<rect x="749.000" y="176.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="764.050" y="203.950">1</text>
+<rect x="792.000" y="176.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="807.050" y="203.950">1</text>
+<rect x="835.000" y="176.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="850.050" y="203.950">0</text>
+<rect x="878.000" y="176.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="893.050" y="203.950">1</text>
+<rect x="921.000" y="176.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="936.050" y="203.950">0</text>
+<text x="578" y="246.950">73</text>
+<text x="753.300" y="80">73</text>
+<rect x="620.000" y="219.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="635.050" y="246.950">1</text>
+<rect x="663.000" y="219.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="678.050" y="246.950">0</text>
+<rect x="706.000" y="219.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="721.050" y="246.950">1</text>
+<rect x="749.000" y="219.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="764.050" y="246.950">0</text>
+<rect x="792.000" y="219.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="807.050" y="246.950">0</text>
+<rect x="835.000" y="219.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="850.050" y="246.950">1</text>
+<rect x="878.000" y="219.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="893.050" y="246.950">0</text>
+<rect x="921.000" y="219.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="936.050" y="246.950">1</text>
+<text x="578" y="289.950">101</text>
+<text x="796.300" y="80">101</text>
+<rect x="620.000" y="262.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="635.050" y="289.950">1</text>
+<rect x="663.000" y="262.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="678.050" y="289.950">0</text>
+<rect x="706.000" y="262.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="721.050" y="289.950">1</text>
+<rect x="749.000" y="262.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="764.050" y="289.950">0</text>
+<rect x="792.000" y="262.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="807.050" y="289.950">0</text>
+<rect x="835.000" y="262.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="850.050" y="289.950">1</text>
+<rect x="878.000" y="262.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="893.050" y="289.950">0</text>
+<rect x="921.000" y="262.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="936.050" y="289.950">1</text>
+<text x="578" y="332.950">137</text>
+<text x="839.300" y="80">137</text>
+<rect x="620.000" y="305.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="635.050" y="332.950">0</text>
+<rect x="663.000" y="305.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="678.050" y="332.950">1</text>
+<rect x="706.000" y="305.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="721.050" y="332.950">0</text>
+<rect x="749.000" y="305.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="764.050" y="332.950">1</text>
+<rect x="792.000" y="305.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="807.050" y="332.950">1</text>
+<rect x="835.000" y="305.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="850.050" y="332.950">0</text>
+<rect x="878.000" y="305.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="893.050" y="332.950">1</text>
+<rect x="921.000" y="305.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="936.050" y="332.950">0</text>
+<text x="578" y="375.950">181</text>
+<text x="882.300" y="80">181</text>
+<rect x="620.000" y="348.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="635.050" y="375.950">1</text>
+<rect x="663.000" y="348.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="678.050" y="375.950">0</text>
+<rect x="706.000" y="348.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="721.050" y="375.950">1</text>
+<rect x="749.000" y="348.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="764.050" y="375.950">0</text>
+<rect x="792.000" y="348.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="807.050" y="375.950">0</text>
+<rect x="835.000" y="348.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="850.050" y="375.950">1</text>
+<rect x="878.000" y="348.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="893.050" y="375.950">0</text>
+<rect x="921.000" y="348.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="936.050" y="375.950">1</text>
+<text x="578" y="418.950">233</text>
+<text x="925.300" y="80">233</text>
+<rect x="620.000" y="391.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="635.050" y="418.950">0</text>
+<rect x="663.000" y="391.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="678.050" y="418.950">1</text>
+<rect x="706.000" y="391.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="721.050" y="418.950">0</text>
+<rect x="749.000" y="391.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="764.050" y="418.950">1</text>
+<rect x="792.000" y="391.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="807.050" y="418.950">1</text>
+<rect x="835.000" y="391.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="850.050" y="418.950">0</text>
+<rect x="878.000" y="391.000" width="43.000" height="43.000" fill="#f2ddd8" stroke="white"/>
+<text x="893.050" y="418.950">1</text>
+<rect x="921.000" y="391.000" width="43.000" height="43.000" fill="#dcebdd" stroke="white"/>
+<text x="936.050" y="418.950">0</text>
+<text x="600" y="464.000">Row: actor 0 seed; column: actor 1 seed</text>
+<text x="600" y="487.000">0 = coordinated; 1 = wrong convention. Units: probability.</text>
+</svg>

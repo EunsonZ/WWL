@@ -1,0 +1,6248 @@
+{
+  "config": {
+    "identity": "one-step-common-payoff-v1",
+    "episodes": 1200,
+    "alpha": 0.1,
+    "epsilon": 0.1,
+    "window": 100,
+    "seeds": [
+      3,
+      17,
+      41,
+      73,
+      101,
+      137,
+      181,
+      233
+    ],
+    "fixed_opponents": [
+      "4/5",
+      "1/5"
+    ],
+    "heldout_opponents": [
+      "0",
+      "1/3",
+      "1/2",
+      "1"
+    ]
+  },
+  "transition_table": [
+    {
+      "s": "ready",
+      "actions": [
+        0,
+        0
+      ],
+      "next": "success",
+      "rewards": [
+        2,
+        2
+      ]
+    },
+    {
+      "s": "ready",
+      "actions": [
+        0,
+        1
+      ],
+      "next": "failure",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "ready",
+      "actions": [
+        1,
+        0
+      ],
+      "next": "failure",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "ready",
+      "actions": [
+        1,
+        1
+      ],
+      "next": "success",
+      "rewards": [
+        1,
+        1
+      ]
+    },
+    {
+      "s": "success",
+      "actions": [
+        0,
+        0
+      ],
+      "next": "success",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "success",
+      "actions": [
+        0,
+        1
+      ],
+      "next": "success",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "success",
+      "actions": [
+        1,
+        0
+      ],
+      "next": "success",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "success",
+      "actions": [
+        1,
+        1
+      ],
+      "next": "success",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "failure",
+      "actions": [
+        0,
+        0
+      ],
+      "next": "failure",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "failure",
+      "actions": [
+        0,
+        1
+      ],
+      "next": "failure",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "failure",
+      "actions": [
+        1,
+        0
+      ],
+      "next": "failure",
+      "rewards": [
+        0,
+        0
+      ]
+    },
+    {
+      "s": "failure",
+      "actions": [
+        1,
+        1
+      ],
+      "next": "failure",
+      "rewards": [
+        0,
+        0
+      ]
+    }
+  ],
+  "effective": {
+    "4/5": {
+      "L": {
+        "success": "4/5",
+        "failure": "1/5",
+        "expected_reward": "8/5"
+      },
+      "R": {
+        "success": "1/5",
+        "failure": "4/5",
+        "expected_reward": "1/5"
+      }
+    },
+    "1/5": {
+      "L": {
+        "success": "1/5",
+        "failure": "4/5",
+        "expected_reward": "2/5"
+      },
+      "R": {
+        "success": "4/5",
+        "failure": "1/5",
+        "expected_reward": "4/5"
+      }
+    }
+  },
+  "pure_equilibria": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "mixed": {
+    "p": "1/3",
+    "q": "1/3",
+    "joint": [
+      "1/9",
+      "2/9",
+      "2/9",
+      "4/9"
+    ],
+    "individual": [
+      "2/3",
+      "2/3"
+    ],
+    "team": "4/3",
+    "success": "5/9",
+    "mismatch": "4/9",
+    "unilateral_gain": [
+      "0",
+      "0"
+    ]
+  },
+  "public_coin": {
+    "joint": [
+      "1/3",
+      "0",
+      "0",
+      "2/3"
+    ],
+    "success": "1",
+    "individual": [
+      "4/3",
+      "4/3"
+    ],
+    "team": "8/3"
+  },
+  "stale_best_response_cycle": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "colearn": [
+    {
+      "seed": 3,
+      "opponent": "colearn",
+      "Q": [
+        [
+          1.9906235629474787,
+          0.01959738362202926
+        ],
+        [
+          1.8568310991751868,
+          0.04153309390305317
+        ]
+      ],
+      "greedy": [
+        1.0,
+        1.0
+      ],
+      "behavior": [
+        0.95,
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.88,
+          "team": 3.52
+        },
+        {
+          "episode": 200,
+          "success": 0.9,
+          "team": 3.58
+        },
+        {
+          "episode": 300,
+          "success": 0.93,
+          "team": 3.72
+        },
+        {
+          "episode": 400,
+          "success": 0.9,
+          "team": 3.6
+        },
+        {
+          "episode": 500,
+          "success": 0.86,
+          "team": 3.44
+        },
+        {
+          "episode": 600,
+          "success": 0.93,
+          "team": 3.72
+        },
+        {
+          "episode": 700,
+          "success": 0.88,
+          "team": 3.52
+        },
+        {
+          "episode": 800,
+          "success": 0.88,
+          "team": 3.5
+        },
+        {
+          "episode": 900,
+          "success": 0.89,
+          "team": 3.56
+        },
+        {
+          "episode": 1000,
+          "success": 0.9,
+          "team": 3.58
+        },
+        {
+          "episode": 1100,
+          "success": 0.89,
+          "team": 3.56
+        },
+        {
+          "episode": 1200,
+          "success": 0.9,
+          "team": 3.6
+        }
+      ]
+    },
+    {
+      "seed": 17,
+      "opponent": "colearn",
+      "Q": [
+        [
+          0.08419167996591317,
+          0.9540563206770161
+        ],
+        [
+          0.07119715347832961,
+          0.9961487305722078
+        ]
+      ],
+      "greedy": [
+        0.0,
+        0.0
+      ],
+      "behavior": [
+        0.05,
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.95,
+          "team": 1.9
+        },
+        {
+          "episode": 200,
+          "success": 0.93,
+          "team": 1.86
+        },
+        {
+          "episode": 300,
+          "success": 0.89,
+          "team": 1.78
+        },
+        {
+          "episode": 400,
+          "success": 0.85,
+          "team": 1.7
+        },
+        {
+          "episode": 500,
+          "success": 0.9,
+          "team": 1.8
+        },
+        {
+          "episode": 600,
+          "success": 0.89,
+          "team": 1.78
+        },
+        {
+          "episode": 700,
+          "success": 0.88,
+          "team": 1.76
+        },
+        {
+          "episode": 800,
+          "success": 0.92,
+          "team": 1.86
+        },
+        {
+          "episode": 900,
+          "success": 0.94,
+          "team": 1.9
+        },
+        {
+          "episode": 1000,
+          "success": 0.9,
+          "team": 1.8
+        },
+        {
+          "episode": 1100,
+          "success": 0.92,
+          "team": 1.84
+        },
+        {
+          "episode": 1200,
+          "success": 0.92,
+          "team": 1.84
+        }
+      ]
+    },
+    {
+      "seed": 41,
+      "opponent": "colearn",
+      "Q": [
+        [
+          1.7673190227720081,
+          0.015546387551117659
+        ],
+        [
+          1.8700987409873062,
+          0.01445602637829395
+        ]
+      ],
+      "greedy": [
+        1.0,
+        1.0
+      ],
+      "behavior": [
+        0.95,
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.92,
+          "team": 3.68
+        },
+        {
+          "episode": 200,
+          "success": 0.87,
+          "team": 3.44
+        },
+        {
+          "episode": 300,
+          "success": 0.92,
+          "team": 3.68
+        },
+        {
+          "episode": 400,
+          "success": 0.91,
+          "team": 3.64
+        },
+        {
+          "episode": 500,
+          "success": 0.87,
+          "team": 3.46
+        },
+        {
+          "episode": 600,
+          "success": 0.94,
+          "team": 3.76
+        },
+        {
+          "episode": 700,
+          "success": 0.96,
+          "team": 3.84
+        },
+        {
+          "episode": 800,
+          "success": 0.89,
+          "team": 3.56
+        },
+        {
+          "episode": 900,
+          "success": 0.93,
+          "team": 3.7
+        },
+        {
+          "episode": 1000,
+          "success": 0.86,
+          "team": 3.44
+        },
+        {
+          "episode": 1100,
+          "success": 0.89,
+          "team": 3.56
+        },
+        {
+          "episode": 1200,
+          "success": 0.88,
+          "team": 3.52
+        }
+      ]
+    },
+    {
+      "seed": 73,
+      "opponent": "colearn",
+      "Q": [
+        [
+          0.37575738,
+          0.9872450346194943
+        ],
+        [
+          0.2612892729299221,
+          0.8997261069778532
+        ]
+      ],
+      "greedy": [
+        0.0,
+        0.0
+      ],
+      "behavior": [
+        0.05,
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.93,
+          "team": 1.86
+        },
+        {
+          "episode": 200,
+          "success": 0.9,
+          "team": 1.8
+        },
+        {
+          "episode": 300,
+          "success": 0.88,
+          "team": 1.76
+        },
+        {
+          "episode": 400,
+          "success": 0.94,
+          "team": 1.88
+        },
+        {
+          "episode": 500,
+          "success": 0.88,
+          "team": 1.76
+        },
+        {
+          "episode": 600,
+          "success": 0.88,
+          "team": 1.76
+        },
+        {
+          "episode": 700,
+          "success": 0.91,
+          "team": 1.82
+        },
+        {
+          "episode": 800,
+          "success": 0.95,
+          "team": 1.9
+        },
+        {
+          "episode": 900,
+          "success": 0.9,
+          "team": 1.82
+        },
+        {
+          "episode": 1000,
+          "success": 0.96,
+          "team": 1.94
+        },
+        {
+          "episode": 1100,
+          "success": 0.97,
+          "team": 1.94
+        },
+        {
+          "episode": 1200,
+          "success": 0.93,
+          "team": 1.88
+        }
+      ]
+    },
+    {
+      "seed": 101,
+      "opponent": "colearn",
+      "Q": [
+        [
+          0.027944713890777465,
+          0.9820857893227696
+        ],
+        [
+          0.042923819132547336,
+          0.9245036056949998
+        ]
+      ],
+      "greedy": [
+        0.0,
+        0.0
+      ],
+      "behavior": [
+        0.05,
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.85,
+          "team": 1.7
+        },
+        {
+          "episode": 200,
+          "success": 0.93,
+          "team": 1.86
+        },
+        {
+          "episode": 300,
+          "success": 0.89,
+          "team": 1.8
+        },
+        {
+          "episode": 400,
+          "success": 0.94,
+          "team": 1.88
+        },
+        {
+          "episode": 500,
+          "success": 0.91,
+          "team": 1.82
+        },
+        {
+          "episode": 600,
+          "success": 0.9,
+          "team": 1.8
+        },
+        {
+          "episode": 700,
+          "success": 0.9,
+          "team": 1.8
+        },
+        {
+          "episode": 800,
+          "success": 0.93,
+          "team": 1.86
+        },
+        {
+          "episode": 900,
+          "success": 0.91,
+          "team": 1.82
+        },
+        {
+          "episode": 1000,
+          "success": 0.9,
+          "team": 1.82
+        },
+        {
+          "episode": 1100,
+          "success": 0.87,
+          "team": 1.74
+        },
+        {
+          "episode": 1200,
+          "success": 0.89,
+          "team": 1.78
+        }
+      ]
+    },
+    {
+      "seed": 137,
+      "opponent": "colearn",
+      "Q": [
+        [
+          1.9806263892346399,
+          0.06477788662835533
+        ],
+        [
+          1.8184951500932787,
+          0.08740963659699368
+        ]
+      ],
+      "greedy": [
+        1.0,
+        1.0
+      ],
+      "behavior": [
+        0.95,
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.88,
+          "team": 3.52
+        },
+        {
+          "episode": 200,
+          "success": 0.92,
+          "team": 3.66
+        },
+        {
+          "episode": 300,
+          "success": 0.89,
+          "team": 3.56
+        },
+        {
+          "episode": 400,
+          "success": 0.88,
+          "team": 3.48
+        },
+        {
+          "episode": 500,
+          "success": 0.9,
+          "team": 3.6
+        },
+        {
+          "episode": 600,
+          "success": 0.95,
+          "team": 3.78
+        },
+        {
+          "episode": 700,
+          "success": 0.89,
+          "team": 3.54
+        },
+        {
+          "episode": 800,
+          "success": 0.92,
+          "team": 3.62
+        },
+        {
+          "episode": 900,
+          "success": 0.95,
+          "team": 3.8
+        },
+        {
+          "episode": 1000,
+          "success": 0.92,
+          "team": 3.68
+        },
+        {
+          "episode": 1100,
+          "success": 0.97,
+          "team": 3.88
+        },
+        {
+          "episode": 1200,
+          "success": 0.9,
+          "team": 3.6
+        }
+      ]
+    },
+    {
+      "seed": 181,
+      "opponent": "colearn",
+      "Q": [
+        [
+          0.4162598786505715,
+          0.89309931450549
+        ],
+        [
+          0.41654218811322724,
+          0.996506524948633
+        ]
+      ],
+      "greedy": [
+        0.0,
+        0.0
+      ],
+      "behavior": [
+        0.05,
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.83,
+          "team": 1.66
+        },
+        {
+          "episode": 200,
+          "success": 0.94,
+          "team": 1.88
+        },
+        {
+          "episode": 300,
+          "success": 0.89,
+          "team": 1.78
+        },
+        {
+          "episode": 400,
+          "success": 0.94,
+          "team": 1.9
+        },
+        {
+          "episode": 500,
+          "success": 0.91,
+          "team": 1.84
+        },
+        {
+          "episode": 600,
+          "success": 0.9,
+          "team": 1.8
+        },
+        {
+          "episode": 700,
+          "success": 0.89,
+          "team": 1.78
+        },
+        {
+          "episode": 800,
+          "success": 0.92,
+          "team": 1.84
+        },
+        {
+          "episode": 900,
+          "success": 0.94,
+          "team": 1.88
+        },
+        {
+          "episode": 1000,
+          "success": 0.88,
+          "team": 1.76
+        },
+        {
+          "episode": 1100,
+          "success": 0.94,
+          "team": 1.92
+        },
+        {
+          "episode": 1200,
+          "success": 0.93,
+          "team": 1.88
+        }
+      ]
+    },
+    {
+      "seed": 233,
+      "opponent": "colearn",
+      "Q": [
+        [
+          1.8514074678766348,
+          0.0531441
+        ],
+        [
+          1.9666417557020295,
+          0.009847709021836116
+        ]
+      ],
+      "greedy": [
+        1.0,
+        1.0
+      ],
+      "behavior": [
+        0.95,
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.91,
+          "team": 3.64
+        },
+        {
+          "episode": 200,
+          "success": 0.91,
+          "team": 3.64
+        },
+        {
+          "episode": 300,
+          "success": 0.93,
+          "team": 3.72
+        },
+        {
+          "episode": 400,
+          "success": 0.93,
+          "team": 3.72
+        },
+        {
+          "episode": 500,
+          "success": 0.94,
+          "team": 3.76
+        },
+        {
+          "episode": 600,
+          "success": 0.93,
+          "team": 3.72
+        },
+        {
+          "episode": 700,
+          "success": 0.89,
+          "team": 3.56
+        },
+        {
+          "episode": 800,
+          "success": 0.97,
+          "team": 3.88
+        },
+        {
+          "episode": 900,
+          "success": 0.91,
+          "team": 3.64
+        },
+        {
+          "episode": 1000,
+          "success": 0.87,
+          "team": 3.46
+        },
+        {
+          "episode": 1100,
+          "success": 0.88,
+          "team": 3.52
+        },
+        {
+          "episode": 1200,
+          "success": 0.92,
+          "team": 3.68
+        }
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "seed": 3,
+      "opponent": "4/5",
+      "Q": [
+        [
+          1.3773721277170665,
+          0.16382470497917925
+        ]
+      ],
+      "greedy": [
+        1.0
+      ],
+      "behavior": [
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.75,
+          "team": 3.0
+        },
+        {
+          "episode": 200,
+          "success": 0.79,
+          "team": 3.12
+        },
+        {
+          "episode": 300,
+          "success": 0.76,
+          "team": 3.02
+        },
+        {
+          "episode": 400,
+          "success": 0.8,
+          "team": 3.16
+        },
+        {
+          "episode": 500,
+          "success": 0.75,
+          "team": 3.0
+        },
+        {
+          "episode": 600,
+          "success": 0.75,
+          "team": 3.0
+        },
+        {
+          "episode": 700,
+          "success": 0.76,
+          "team": 3.02
+        },
+        {
+          "episode": 800,
+          "success": 0.71,
+          "team": 2.82
+        },
+        {
+          "episode": 900,
+          "success": 0.79,
+          "team": 3.14
+        },
+        {
+          "episode": 1000,
+          "success": 0.75,
+          "team": 2.98
+        },
+        {
+          "episode": 1100,
+          "success": 0.76,
+          "team": 3.02
+        },
+        {
+          "episode": 1200,
+          "success": 0.73,
+          "team": 2.9
+        }
+      ]
+    },
+    {
+      "seed": 17,
+      "opponent": "4/5",
+      "Q": [
+        [
+          1.5722757759680626,
+          0.19886671696621164
+        ]
+      ],
+      "greedy": [
+        1.0
+      ],
+      "behavior": [
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.2,
+          "team": 0.4
+        },
+        {
+          "episode": 200,
+          "success": 0.49,
+          "team": 1.8
+        },
+        {
+          "episode": 300,
+          "success": 0.8,
+          "team": 3.2
+        },
+        {
+          "episode": 400,
+          "success": 0.69,
+          "team": 2.74
+        },
+        {
+          "episode": 500,
+          "success": 0.79,
+          "team": 3.16
+        },
+        {
+          "episode": 600,
+          "success": 0.72,
+          "team": 2.88
+        },
+        {
+          "episode": 700,
+          "success": 0.74,
+          "team": 2.94
+        },
+        {
+          "episode": 800,
+          "success": 0.82,
+          "team": 3.28
+        },
+        {
+          "episode": 900,
+          "success": 0.79,
+          "team": 3.14
+        },
+        {
+          "episode": 1000,
+          "success": 0.77,
+          "team": 3.04
+        },
+        {
+          "episode": 1100,
+          "success": 0.79,
+          "team": 3.12
+        },
+        {
+          "episode": 1200,
+          "success": 0.81,
+          "team": 3.22
+        }
+      ]
+    },
+    {
+      "seed": 41,
+      "opponent": "4/5",
+      "Q": [
+        [
+          1.4104688996550907,
+          0.2251780192750828
+        ]
+      ],
+      "greedy": [
+        1.0
+      ],
+      "behavior": [
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.8,
+          "team": 3.18
+        },
+        {
+          "episode": 200,
+          "success": 0.72,
+          "team": 2.76
+        },
+        {
+          "episode": 300,
+          "success": 0.81,
+          "team": 3.22
+        },
+        {
+          "episode": 400,
+          "success": 0.77,
+          "team": 3.06
+        },
+        {
+          "episode": 500,
+          "success": 0.77,
+          "team": 3.04
+        },
+        {
+          "episode": 600,
+          "success": 0.79,
+          "team": 3.14
+        },
+        {
+          "episode": 700,
+          "success": 0.82,
+          "team": 3.28
+        },
+        {
+          "episode": 800,
+          "success": 0.77,
+          "team": 3.08
+        },
+        {
+          "episode": 900,
+          "success": 0.82,
+          "team": 3.24
+        },
+        {
+          "episode": 1000,
+          "success": 0.75,
+          "team": 2.98
+        },
+        {
+          "episode": 1100,
+          "success": 0.75,
+          "team": 2.98
+        },
+        {
+          "episode": 1200,
+          "success": 0.73,
+          "team": 2.9
+        }
+      ]
+    },
+    {
+      "seed": 73,
+      "opponent": "4/5",
+      "Q": [
+        [
+          1.6151965852935783,
+          0.046945327465507614
+        ]
+      ],
+      "greedy": [
+        1.0
+      ],
+      "behavior": [
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.85,
+          "team": 3.38
+        },
+        {
+          "episode": 200,
+          "success": 0.83,
+          "team": 3.3
+        },
+        {
+          "episode": 300,
+          "success": 0.74,
+          "team": 2.92
+        },
+        {
+          "episode": 400,
+          "success": 0.76,
+          "team": 3.0
+        },
+        {
+          "episode": 500,
+          "success": 0.82,
+          "team": 3.28
+        },
+        {
+          "episode": 600,
+          "success": 0.77,
+          "team": 3.06
+        },
+        {
+          "episode": 700,
+          "success": 0.84,
+          "team": 3.34
+        },
+        {
+          "episode": 800,
+          "success": 0.75,
+          "team": 3.0
+        },
+        {
+          "episode": 900,
+          "success": 0.8,
+          "team": 3.2
+        },
+        {
+          "episode": 1000,
+          "success": 0.65,
+          "team": 2.6
+        },
+        {
+          "episode": 1100,
+          "success": 0.74,
+          "team": 2.94
+        },
+        {
+          "episode": 1200,
+          "success": 0.77,
+          "team": 3.08
+        }
+      ]
+    },
+    {
+      "seed": 101,
+      "opponent": "4/5",
+      "Q": [
+        [
+          1.2840533769499112,
+          0.18434122660111096
+        ]
+      ],
+      "greedy": [
+        1.0
+      ],
+      "behavior": [
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.7,
+          "team": 2.7
+        },
+        {
+          "episode": 200,
+          "success": 0.78,
+          "team": 3.1
+        },
+        {
+          "episode": 300,
+          "success": 0.73,
+          "team": 2.9
+        },
+        {
+          "episode": 400,
+          "success": 0.85,
+          "team": 3.36
+        },
+        {
+          "episode": 500,
+          "success": 0.67,
+          "team": 2.64
+        },
+        {
+          "episode": 600,
+          "success": 0.67,
+          "team": 2.68
+        },
+        {
+          "episode": 700,
+          "success": 0.79,
+          "team": 3.14
+        },
+        {
+          "episode": 800,
+          "success": 0.82,
+          "team": 3.24
+        },
+        {
+          "episode": 900,
+          "success": 0.76,
+          "team": 3.04
+        },
+        {
+          "episode": 1000,
+          "success": 0.77,
+          "team": 3.08
+        },
+        {
+          "episode": 1100,
+          "success": 0.76,
+          "team": 3.02
+        },
+        {
+          "episode": 1200,
+          "success": 0.76,
+          "team": 3.0
+        }
+      ]
+    },
+    {
+      "seed": 137,
+      "opponent": "4/5",
+      "Q": [
+        [
+          1.4406801208959403,
+          0.2212678588065064
+        ]
+      ],
+      "greedy": [
+        1.0
+      ],
+      "behavior": [
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.79,
+          "team": 3.14
+        },
+        {
+          "episode": 200,
+          "success": 0.83,
+          "team": 3.28
+        },
+        {
+          "episode": 300,
+          "success": 0.79,
+          "team": 3.16
+        },
+        {
+          "episode": 400,
+          "success": 0.79,
+          "team": 3.08
+        },
+        {
+          "episode": 500,
+          "success": 0.72,
+          "team": 2.88
+        },
+        {
+          "episode": 600,
+          "success": 0.75,
+          "team": 2.98
+        },
+        {
+          "episode": 700,
+          "success": 0.78,
+          "team": 3.08
+        },
+        {
+          "episode": 800,
+          "success": 0.7,
+          "team": 2.72
+        },
+        {
+          "episode": 900,
+          "success": 0.85,
+          "team": 3.38
+        },
+        {
+          "episode": 1000,
+          "success": 0.8,
+          "team": 3.18
+        },
+        {
+          "episode": 1100,
+          "success": 0.82,
+          "team": 3.26
+        },
+        {
+          "episode": 1200,
+          "success": 0.73,
+          "team": 2.92
+        }
+      ]
+    },
+    {
+      "seed": 181,
+      "opponent": "4/5",
+      "Q": [
+        [
+          1.6379207506057714,
+          0.13600738134059723
+        ]
+      ],
+      "greedy": [
+        1.0
+      ],
+      "behavior": [
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.62,
+          "team": 2.38
+        },
+        {
+          "episode": 200,
+          "success": 0.73,
+          "team": 2.88
+        },
+        {
+          "episode": 300,
+          "success": 0.79,
+          "team": 3.1
+        },
+        {
+          "episode": 400,
+          "success": 0.76,
+          "team": 3.02
+        },
+        {
+          "episode": 500,
+          "success": 0.74,
+          "team": 2.9
+        },
+        {
+          "episode": 600,
+          "success": 0.79,
+          "team": 3.16
+        },
+        {
+          "episode": 700,
+          "success": 0.68,
+          "team": 2.72
+        },
+        {
+          "episode": 800,
+          "success": 0.73,
+          "team": 2.88
+        },
+        {
+          "episode": 900,
+          "success": 0.76,
+          "team": 3.0
+        },
+        {
+          "episode": 1000,
+          "success": 0.81,
+          "team": 3.24
+        },
+        {
+          "episode": 1100,
+          "success": 0.76,
+          "team": 3.0
+        },
+        {
+          "episode": 1200,
+          "success": 0.76,
+          "team": 3.04
+        }
+      ]
+    },
+    {
+      "seed": 233,
+      "opponent": "4/5",
+      "Q": [
+        [
+          1.7566578039296576,
+          0.19741243448582563
+        ]
+      ],
+      "greedy": [
+        1.0
+      ],
+      "behavior": [
+        0.95
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.79,
+          "team": 3.14
+        },
+        {
+          "episode": 200,
+          "success": 0.74,
+          "team": 2.94
+        },
+        {
+          "episode": 300,
+          "success": 0.82,
+          "team": 3.26
+        },
+        {
+          "episode": 400,
+          "success": 0.81,
+          "team": 3.2
+        },
+        {
+          "episode": 500,
+          "success": 0.81,
+          "team": 3.22
+        },
+        {
+          "episode": 600,
+          "success": 0.77,
+          "team": 3.08
+        },
+        {
+          "episode": 700,
+          "success": 0.81,
+          "team": 3.18
+        },
+        {
+          "episode": 800,
+          "success": 0.78,
+          "team": 3.12
+        },
+        {
+          "episode": 900,
+          "success": 0.83,
+          "team": 3.3
+        },
+        {
+          "episode": 1000,
+          "success": 0.74,
+          "team": 2.92
+        },
+        {
+          "episode": 1100,
+          "success": 0.74,
+          "team": 2.96
+        },
+        {
+          "episode": 1200,
+          "success": 0.74,
+          "team": 2.96
+        }
+      ]
+    },
+    {
+      "seed": 3,
+      "opponent": "1/5",
+      "Q": [
+        [
+          0.39801889154840037,
+          0.7317205446174734
+        ]
+      ],
+      "greedy": [
+        0.0
+      ],
+      "behavior": [
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.71,
+          "team": 1.42
+        },
+        {
+          "episode": 200,
+          "success": 0.76,
+          "team": 1.56
+        },
+        {
+          "episode": 300,
+          "success": 0.79,
+          "team": 1.6
+        },
+        {
+          "episode": 400,
+          "success": 0.72,
+          "team": 1.46
+        },
+        {
+          "episode": 500,
+          "success": 0.76,
+          "team": 1.56
+        },
+        {
+          "episode": 600,
+          "success": 0.8,
+          "team": 1.62
+        },
+        {
+          "episode": 700,
+          "success": 0.76,
+          "team": 1.56
+        },
+        {
+          "episode": 800,
+          "success": 0.78,
+          "team": 1.6
+        },
+        {
+          "episode": 900,
+          "success": 0.74,
+          "team": 1.54
+        },
+        {
+          "episode": 1000,
+          "success": 0.73,
+          "team": 1.54
+        },
+        {
+          "episode": 1100,
+          "success": 0.68,
+          "team": 1.36
+        },
+        {
+          "episode": 1200,
+          "success": 0.79,
+          "team": 1.6
+        }
+      ]
+    },
+    {
+      "seed": 17,
+      "opponent": "1/5",
+      "Q": [
+        [
+          0.4353195209397196,
+          0.7290645939112119
+        ]
+      ],
+      "greedy": [
+        0.0
+      ],
+      "behavior": [
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.77,
+          "team": 1.54
+        },
+        {
+          "episode": 200,
+          "success": 0.77,
+          "team": 1.56
+        },
+        {
+          "episode": 300,
+          "success": 0.74,
+          "team": 1.5
+        },
+        {
+          "episode": 400,
+          "success": 0.71,
+          "team": 1.44
+        },
+        {
+          "episode": 500,
+          "success": 0.74,
+          "team": 1.5
+        },
+        {
+          "episode": 600,
+          "success": 0.81,
+          "team": 1.64
+        },
+        {
+          "episode": 700,
+          "success": 0.64,
+          "team": 1.32
+        },
+        {
+          "episode": 800,
+          "success": 0.71,
+          "team": 1.44
+        },
+        {
+          "episode": 900,
+          "success": 0.78,
+          "team": 1.58
+        },
+        {
+          "episode": 1000,
+          "success": 0.74,
+          "team": 1.48
+        },
+        {
+          "episode": 1100,
+          "success": 0.77,
+          "team": 1.56
+        },
+        {
+          "episode": 1200,
+          "success": 0.82,
+          "team": 1.66
+        }
+      ]
+    },
+    {
+      "seed": 41,
+      "opponent": "1/5",
+      "Q": [
+        [
+          0.44247528990945384,
+          0.8990383550722262
+        ]
+      ],
+      "greedy": [
+        0.0
+      ],
+      "behavior": [
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.71,
+          "team": 1.42
+        },
+        {
+          "episode": 200,
+          "success": 0.86,
+          "team": 1.72
+        },
+        {
+          "episode": 300,
+          "success": 0.81,
+          "team": 1.7
+        },
+        {
+          "episode": 400,
+          "success": 0.88,
+          "team": 1.76
+        },
+        {
+          "episode": 500,
+          "success": 0.82,
+          "team": 1.66
+        },
+        {
+          "episode": 600,
+          "success": 0.8,
+          "team": 1.6
+        },
+        {
+          "episode": 700,
+          "success": 0.85,
+          "team": 1.7
+        },
+        {
+          "episode": 800,
+          "success": 0.68,
+          "team": 1.38
+        },
+        {
+          "episode": 900,
+          "success": 0.76,
+          "team": 1.52
+        },
+        {
+          "episode": 1000,
+          "success": 0.78,
+          "team": 1.58
+        },
+        {
+          "episode": 1100,
+          "success": 0.77,
+          "team": 1.6
+        },
+        {
+          "episode": 1200,
+          "success": 0.83,
+          "team": 1.66
+        }
+      ]
+    },
+    {
+      "seed": 73,
+      "opponent": "1/5",
+      "Q": [
+        [
+          0.3759942303949631,
+          0.8839361001769391
+        ]
+      ],
+      "greedy": [
+        0.0
+      ],
+      "behavior": [
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.76,
+          "team": 1.52
+        },
+        {
+          "episode": 200,
+          "success": 0.75,
+          "team": 1.5
+        },
+        {
+          "episode": 300,
+          "success": 0.78,
+          "team": 1.62
+        },
+        {
+          "episode": 400,
+          "success": 0.84,
+          "team": 1.68
+        },
+        {
+          "episode": 500,
+          "success": 0.77,
+          "team": 1.54
+        },
+        {
+          "episode": 600,
+          "success": 0.76,
+          "team": 1.54
+        },
+        {
+          "episode": 700,
+          "success": 0.74,
+          "team": 1.48
+        },
+        {
+          "episode": 800,
+          "success": 0.81,
+          "team": 1.62
+        },
+        {
+          "episode": 900,
+          "success": 0.69,
+          "team": 1.4
+        },
+        {
+          "episode": 1000,
+          "success": 0.83,
+          "team": 1.68
+        },
+        {
+          "episode": 1100,
+          "success": 0.82,
+          "team": 1.64
+        },
+        {
+          "episode": 1200,
+          "success": 0.74,
+          "team": 1.5
+        }
+      ]
+    },
+    {
+      "seed": 101,
+      "opponent": "1/5",
+      "Q": [
+        [
+          0.15572597809222083,
+          0.8394050451211135
+        ]
+      ],
+      "greedy": [
+        0.0
+      ],
+      "behavior": [
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.75,
+          "team": 1.52
+        },
+        {
+          "episode": 200,
+          "success": 0.79,
+          "team": 1.6
+        },
+        {
+          "episode": 300,
+          "success": 0.73,
+          "team": 1.52
+        },
+        {
+          "episode": 400,
+          "success": 0.75,
+          "team": 1.5
+        },
+        {
+          "episode": 500,
+          "success": 0.76,
+          "team": 1.52
+        },
+        {
+          "episode": 600,
+          "success": 0.75,
+          "team": 1.52
+        },
+        {
+          "episode": 700,
+          "success": 0.8,
+          "team": 1.62
+        },
+        {
+          "episode": 800,
+          "success": 0.77,
+          "team": 1.54
+        },
+        {
+          "episode": 900,
+          "success": 0.74,
+          "team": 1.5
+        },
+        {
+          "episode": 1000,
+          "success": 0.81,
+          "team": 1.7
+        },
+        {
+          "episode": 1100,
+          "success": 0.72,
+          "team": 1.44
+        },
+        {
+          "episode": 1200,
+          "success": 0.78,
+          "team": 1.56
+        }
+      ]
+    },
+    {
+      "seed": 137,
+      "opponent": "1/5",
+      "Q": [
+        [
+          0.3232205227377331,
+          0.8277744726123962
+        ]
+      ],
+      "greedy": [
+        0.0
+      ],
+      "behavior": [
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.73,
+          "team": 1.46
+        },
+        {
+          "episode": 200,
+          "success": 0.83,
+          "team": 1.66
+        },
+        {
+          "episode": 300,
+          "success": 0.74,
+          "team": 1.48
+        },
+        {
+          "episode": 400,
+          "success": 0.76,
+          "team": 1.54
+        },
+        {
+          "episode": 500,
+          "success": 0.82,
+          "team": 1.64
+        },
+        {
+          "episode": 600,
+          "success": 0.85,
+          "team": 1.74
+        },
+        {
+          "episode": 700,
+          "success": 0.78,
+          "team": 1.56
+        },
+        {
+          "episode": 800,
+          "success": 0.77,
+          "team": 1.58
+        },
+        {
+          "episode": 900,
+          "success": 0.74,
+          "team": 1.5
+        },
+        {
+          "episode": 1000,
+          "success": 0.67,
+          "team": 1.34
+        },
+        {
+          "episode": 1100,
+          "success": 0.71,
+          "team": 1.46
+        },
+        {
+          "episode": 1200,
+          "success": 0.8,
+          "team": 1.6
+        }
+      ]
+    },
+    {
+      "seed": 181,
+      "opponent": "1/5",
+      "Q": [
+        [
+          0.5083150520439649,
+          0.7954453800266272
+        ]
+      ],
+      "greedy": [
+        0.0
+      ],
+      "behavior": [
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.66,
+          "team": 1.32
+        },
+        {
+          "episode": 200,
+          "success": 0.76,
+          "team": 1.52
+        },
+        {
+          "episode": 300,
+          "success": 0.75,
+          "team": 1.52
+        },
+        {
+          "episode": 400,
+          "success": 0.8,
+          "team": 1.62
+        },
+        {
+          "episode": 500,
+          "success": 0.8,
+          "team": 1.64
+        },
+        {
+          "episode": 600,
+          "success": 0.8,
+          "team": 1.6
+        },
+        {
+          "episode": 700,
+          "success": 0.81,
+          "team": 1.64
+        },
+        {
+          "episode": 800,
+          "success": 0.66,
+          "team": 1.32
+        },
+        {
+          "episode": 900,
+          "success": 0.79,
+          "team": 1.58
+        },
+        {
+          "episode": 1000,
+          "success": 0.72,
+          "team": 1.48
+        },
+        {
+          "episode": 1100,
+          "success": 0.83,
+          "team": 1.7
+        },
+        {
+          "episode": 1200,
+          "success": 0.79,
+          "team": 1.6
+        }
+      ]
+    },
+    {
+      "seed": 233,
+      "opponent": "1/5",
+      "Q": [
+        [
+          0.5795001890668945,
+          0.7526506470168656
+        ]
+      ],
+      "greedy": [
+        0.0
+      ],
+      "behavior": [
+        0.05
+      ],
+      "checkpoints": [
+        {
+          "episode": 100,
+          "success": 0.82,
+          "team": 1.64
+        },
+        {
+          "episode": 200,
+          "success": 0.77,
+          "team": 1.58
+        },
+        {
+          "episode": 300,
+          "success": 0.79,
+          "team": 1.58
+        },
+        {
+          "episode": 400,
+          "success": 0.73,
+          "team": 1.46
+        },
+        {
+          "episode": 500,
+          "success": 0.74,
+          "team": 1.5
+        },
+        {
+          "episode": 600,
+          "success": 0.77,
+          "team": 1.54
+        },
+        {
+          "episode": 700,
+          "success": 0.82,
+          "team": 1.66
+        },
+        {
+          "episode": 800,
+          "success": 0.74,
+          "team": 1.5
+        },
+        {
+          "episode": 900,
+          "success": 0.79,
+          "team": 1.58
+        },
+        {
+          "episode": 1000,
+          "success": 0.84,
+          "team": 1.7
+        },
+        {
+          "episode": 1100,
+          "success": 0.78,
+          "team": 1.58
+        },
+        {
+          "episode": 1200,
+          "success": 0.74,
+          "team": 1.54
+        }
+      ]
+    }
+  ],
+  "crossplay": [
+    [
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    ],
+    [
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    ],
+    [
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    ],
+    [
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    ]
+  ],
+  "behavior_self": [
+    {
+      "p": "19/20",
+      "q": "19/20",
+      "joint": [
+        "361/400",
+        "19/400",
+        "19/400",
+        "1/400"
+      ],
+      "individual": [
+        "723/400",
+        "723/400"
+      ],
+      "team": "723/200",
+      "success": "181/200",
+      "mismatch": "19/200",
+      "unilateral_gain": [
+        "37/400",
+        "37/400"
+      ]
+    },
+    {
+      "p": "1/20",
+      "q": "1/20",
+      "joint": [
+        "1/400",
+        "19/400",
+        "19/400",
+        "361/400"
+      ],
+      "individual": [
+        "363/400",
+        "363/400"
+      ],
+      "team": "363/200",
+      "success": "181/200",
+      "mismatch": "19/200",
+      "unilateral_gain": [
+        "17/400",
+        "17/400"
+      ]
+    },
+    {
+      "p": "19/20",
+      "q": "19/20",
+      "joint": [
+        "361/400",
+        "19/400",
+        "19/400",
+        "1/400"
+      ],
+      "individual": [
+        "723/400",
+        "723/400"
+      ],
+      "team": "723/200",
+      "success": "181/200",
+      "mismatch": "19/200",
+      "unilateral_gain": [
+        "37/400",
+        "37/400"
+      ]
+    },
+    {
+      "p": "1/20",
+      "q": "1/20",
+      "joint": [
+        "1/400",
+        "19/400",
+        "19/400",
+        "361/400"
+      ],
+      "individual": [
+        "363/400",
+        "363/400"
+      ],
+      "team": "363/200",
+      "success": "181/200",
+      "mismatch": "19/200",
+      "unilateral_gain": [
+        "17/400",
+        "17/400"
+      ]
+    },
+    {
+      "p": "1/20",
+      "q": "1/20",
+      "joint": [
+        "1/400",
+        "19/400",
+        "19/400",
+        "361/400"
+      ],
+      "individual": [
+        "363/400",
+        "363/400"
+      ],
+      "team": "363/200",
+      "success": "181/200",
+      "mismatch": "19/200",
+      "unilateral_gain": [
+        "17/400",
+        "17/400"
+      ]
+    },
+    {
+      "p": "19/20",
+      "q": "19/20",
+      "joint": [
+        "361/400",
+        "19/400",
+        "19/400",
+        "1/400"
+      ],
+      "individual": [
+        "723/400",
+        "723/400"
+      ],
+      "team": "723/200",
+      "success": "181/200",
+      "mismatch": "19/200",
+      "unilateral_gain": [
+        "37/400",
+        "37/400"
+      ]
+    },
+    {
+      "p": "1/20",
+      "q": "1/20",
+      "joint": [
+        "1/400",
+        "19/400",
+        "19/400",
+        "361/400"
+      ],
+      "individual": [
+        "363/400",
+        "363/400"
+      ],
+      "team": "363/200",
+      "success": "181/200",
+      "mismatch": "19/200",
+      "unilateral_gain": [
+        "17/400",
+        "17/400"
+      ]
+    },
+    {
+      "p": "19/20",
+      "q": "19/20",
+      "joint": [
+        "361/400",
+        "19/400",
+        "19/400",
+        "1/400"
+      ],
+      "individual": [
+        "723/400",
+        "723/400"
+      ],
+      "team": "723/200",
+      "success": "181/200",
+      "mismatch": "19/200",
+      "unilateral_gain": [
+        "37/400",
+        "37/400"
+      ]
+    }
+  ],
+  "heldout": [
+    {
+      "seed": 3,
+      "trained_with": "colearn",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "colearn",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "colearn",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "colearn",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "colearn",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "colearn",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "colearn",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "colearn",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "colearn",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "colearn",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "colearn",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "colearn",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "colearn",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "colearn",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "colearn",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "colearn",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "colearn",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "colearn",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "colearn",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "colearn",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "colearn",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "colearn",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "colearn",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "colearn",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "colearn",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "colearn",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "colearn",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "colearn",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "colearn",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "colearn",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "colearn",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "colearn",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "4/5",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "4/5",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "4/5",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "4/5",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "4/5",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "4/5",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "4/5",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "4/5",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "4/5",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "4/5",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "4/5",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "4/5",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "4/5",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "4/5",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "4/5",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "4/5",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "4/5",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "4/5",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "4/5",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "4/5",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "4/5",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "4/5",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "4/5",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "4/5",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "4/5",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "4/5",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "4/5",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "4/5",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "4/5",
+      "q": "0",
+      "score": {
+        "p": "1",
+        "q": "0",
+        "joint": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "4/5",
+      "q": "1/3",
+      "score": {
+        "p": "1",
+        "q": "1/3",
+        "joint": [
+          "1/3",
+          "2/3",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "1/3",
+        "mismatch": "2/3",
+        "unilateral_gain": [
+          "0",
+          "4/3"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "4/5",
+      "q": "1/2",
+      "score": {
+        "p": "1",
+        "q": "1/2",
+        "joint": [
+          "1/2",
+          "1/2",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "4/5",
+      "q": "1",
+      "score": {
+        "p": "1",
+        "q": "1",
+        "joint": [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        "individual": [
+          "2",
+          "2"
+        ],
+        "team": "4",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "1/5",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "1/5",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "1/5",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "trained_with": "1/5",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "1/5",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "1/5",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "1/5",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "trained_with": "1/5",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "1/5",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "1/5",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "1/5",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 41,
+      "trained_with": "1/5",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "1/5",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "1/5",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "1/5",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "trained_with": "1/5",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "1/5",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "1/5",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "1/5",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 101,
+      "trained_with": "1/5",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "1/5",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "1/5",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "1/5",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 137,
+      "trained_with": "1/5",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "1/5",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "1/5",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "1/5",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 181,
+      "trained_with": "1/5",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "1/5",
+      "q": "0",
+      "score": {
+        "p": "0",
+        "q": "0",
+        "joint": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "individual": [
+          "1",
+          "1"
+        ],
+        "team": "2",
+        "success": "1",
+        "mismatch": "0",
+        "unilateral_gain": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "1/5",
+      "q": "1/3",
+      "score": {
+        "p": "0",
+        "q": "1/3",
+        "joint": [
+          "0",
+          "0",
+          "1/3",
+          "2/3"
+        ],
+        "individual": [
+          "2/3",
+          "2/3"
+        ],
+        "team": "4/3",
+        "success": "2/3",
+        "mismatch": "1/3",
+        "unilateral_gain": [
+          "0",
+          "1/3"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "1/5",
+      "q": "1/2",
+      "score": {
+        "p": "0",
+        "q": "1/2",
+        "joint": [
+          "0",
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        "individual": [
+          "1/2",
+          "1/2"
+        ],
+        "team": "1",
+        "success": "1/2",
+        "mismatch": "1/2",
+        "unilateral_gain": [
+          "1/2",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "seed": 233,
+      "trained_with": "1/5",
+      "q": "1",
+      "score": {
+        "p": "0",
+        "q": "1",
+        "joint": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "individual": [
+          "0",
+          "0"
+        ],
+        "team": "0",
+        "success": "0",
+        "mismatch": "1",
+        "unilateral_gain": [
+          "2",
+          "1"
+        ]
+      }
+    }
+  ],
+  "replay": {
+    "old_q": "4/5",
+    "current_q": "1/5",
+    "equal_version_pool": {
+      "L": {
+        "success": "1/2",
+        "failure": "1/2",
+        "expected_reward": "1"
+      },
+      "R": {
+        "success": "1/2",
+        "failure": "1/2",
+        "expected_reward": "1/2"
+      }
+    },
+    "weights_other_L": "1/4",
+    "weights_other_R": "4"
+  }
+}

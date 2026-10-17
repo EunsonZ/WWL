@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440">
+<title>代码、数码闭项与β列表是不同类型</title><desc>左：公式x0等于x0的自然数编码e，数码ν(e)是值为e的闭项，而d(e)是替换后公式的编码；不展示真实Gödel句。右：同一实际CRT输入2、0、3被β参数编码并正确解出，参数不唯一。</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#334155"/></marker></defs>
+<rect width="1200" height="440" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="30" y="36" font-size="24">A number, its numeral term, and a formula code have different types</text>
+<text x="40" y="86" font-size="21">A(x0) = (x0=x0)</text><text x="650" y="86" font-size="21">Exact beta list: [2, 0, 3]</text>
+<rect x="40" y="120" width="460" height="65" rx="7" fill="#dbeafe" stroke="#2563eb"/><text x="60" y="157" font-size="19">External number e = 303311381</text>
+<path d="M260,188 V215" stroke="#334155" marker-end="url(#a)"/><text x="42" y="251" font-size="19">nu(e): a closed arithmetic term, value = e</text>
+<path d="M260,267 V295" stroke="#334155" marker-end="url(#a)"/><text x="42" y="329" font-size="18">d(e): code of nu(e)=nu(e), 755 bits</text>
+<text x="650" y="139" font-size="19">b = 64827, c = 24</text><text x="650" y="177" font-size="19">moduli: 25, 49, 73</text>
+<rect x="650" y="210" width="95" height="65" fill="#dcfce7" stroke="#15803d"/><rect x="775" y="210" width="95" height="65" fill="#dcfce7" stroke="#15803d"/><rect x="900" y="210" width="95" height="65" fill="#dcfce7" stroke="#15803d"/>
+<text x="690" y="250" font-size="24">2</text><text x="815" y="250" font-size="24">0</text><text x="940" y="250" font-size="24">3</text>
+<text x="650" y="329" font-size="18">beta(b,c,i) = b mod [1+(i+1)c]</text>
+<text x="30" y="403" font-size="16">Fixed syntax/CRT inputs only. The general diagonal lemma and PA-internal proof transformations are proved in 05-07.</text>
+</g></svg>

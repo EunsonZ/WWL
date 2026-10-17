@@ -1,0 +1,9 @@
+{
+  "schema": "iv-gmm-finite-v1",
+  "rows": [[-1,-1,-2,-4],[-1,1,0,-2],[1,-1,-2,-4],[1,1,4,10]],
+  "weights": [["1","0"],["0","4"]],
+  "instrument_scale": "10",
+  "population": {"a":["1","2"],"beta":"2","epsilon_v":"1"},
+  "world_thetas": ["0","1","2"],
+  "weak": {"sizes":[4,16,64,256],"fixed_kappa":"1/2","local_c":"1","error_threshold":"1"}
+}

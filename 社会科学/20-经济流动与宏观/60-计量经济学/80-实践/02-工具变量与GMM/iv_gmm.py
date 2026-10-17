@@ -1,0 +1,127 @@
+#!/usr/bin/env python3
+"""Exact finite synthetic calculations; no random sampling or real causal estimate."""
+import argparse
+from fractions import Fraction as F
+from itertools import product
+from math import comb, isqrt
+import json
+from pathlib import Path
+from html import escape
+
+def dot(a,b): return sum((x*y for x,y in zip(a,b)),F(0))
+def tr(a): return list(map(list,zip(*a)))
+def mm(a,b): return [[dot(x,y) for y in tr(b)] for x in a]
+def mv(a,b): return [dot(x,b) for x in a]
+def inv(a):
+    n=len(a); assert n and all(len(x)==n for x in a), 'square matrix required'
+    b=[list(row)+[F(i==j) for j in range(n)] for i,row in enumerate(a)]
+    for j in range(n):
+        pivot=next((i for i in range(j,n) if b[i][j]),None)
+        if pivot is None: raise ValueError('singular matrix')
+        b[j],b[pivot]=b[pivot],b[j]
+        t=b[j][j]; b[j]=[v/t for v in b[j]]
+        for i in range(n):
+            if i!=j:
+                t=b[i][j]; b[i]=[v-t*w for v,w in zip(b[i],b[j])]
+    return [row[n:] for row in b]
+def score_cov(z,e):
+    return [[sum((row[j]*row[k]*v*v for row,v in zip(z,e)),F(0))/len(z) for k in range(2)] for j in range(2)]
+def fit(rows,w):
+    z=[r[:2] for r in rows];x=[r[2] for r in rows];y=[r[3] for r in rows];n=len(rows)
+    a=[sum((r[j]*v for r,v in zip(z,x)),F(0))/n for j in range(2)]
+    q=[sum((r[j]*v for r,v in zip(z,y)),F(0))/n for j in range(2)]
+    den=dot(a,mv(w,a))
+    if den<=0: raise ValueError('sample rank deficient')
+    beta=dot(a,mv(w,q))/den
+    g=[v-t*beta for v,t in zip(q,a)];e=[v-t*beta for v,t in zip(y,x)]
+    s=score_cov(z,e);aw=[v/den for v in mv(w,a)]
+    return dict(beta=beta,moments=g,criterion=dot(g,mv(w,g)),nQ=n*dot(g,mv(w,g)),residual=e,S_final=s,V=dot(aw,mv(s,aw)),variance_plugin=dot(aw,mv(s,aw))/n)
+def sample(rows,w,scale):
+    z=[r[:2] for r in rows];x=[r[2] for r in rows];y=[r[3] for r in rows];n=len(rows)
+    qzz=[[sum((r[j]*r[k] for r in z),F(0))/n for k in range(2)] for j in range(2)]
+    a=[sum((r[j]*v for r,v in zip(z,x)),F(0))/n for j in range(2)]
+    first=fit(rows,inv(qzz));s=first['S_final'];two=fit(rows,inv(s))
+    xhat=mv(z,mv(inv(qzz),a));naive=[v-t*first['beta'] for v,t in zip(y,xhat)]
+    transformed=[[r[0],scale*r[1],r[2],r[3]] for r in rows]
+    base_weight=inv(qzz)
+    invscale=[[base_weight[0][0],base_weight[0][1]/scale],[base_weight[1][0]/scale,base_weight[1][1]/(scale*scale)]]
+    return dict(n=n,Qzz=qzz,two_sls=first,Gamma=a,q=[sum((r[j]*v for r,v in zip(z,y)),F(0))/n for j in range(2)],OLS=dot(x,y)/dot(x,x),identity=fit(rows,[[F(1),F(0)],[F(0),F(1)]]),chosen=fit(rows,w),two_step=two,pilot_S=s,weight_two=inv(s),xhat=xhat,wrong_residual=naive,wrong_S=score_cov(z,naive),rescale_identity=fit(transformed,[[F(1),F(0)],[F(0),F(1)]])['beta'],rescale_adjusted=fit(transformed,invscale)['beta'])
+def population(p,thetas):
+    a=list(map(F,p['a']));beta=F(p['beta']);vcoef=F(p['epsilon_v']);rows=[];world=[]
+    for z1,z2,v,u in product((-1,1),repeat=4):
+        x=a[0]*z1+a[1]*z2+v;e=vcoef*v+u;y=beta*x+e
+        ys=[F(t)*x+(beta-F(t))*(a[0]*z1+a[1]*z2+v)+e for t in thetas]
+        assert all(y==b for b in ys)
+        rows.append([F(z1),F(z2),x,y]);world.append(dict(latent=[z1,z2,v,u],X=x,Y=y,world_Y=ys))
+    return dict(rows=world,moments=sample(rows,[[F(1),F(0)],[F(0),F(1)]],F(10)),causal_slopes=list(map(F,thetas)))
+def counts(n,kappa,threshold):
+    total=4**n;undefined=0;large=0;cells=[]
+    for i in range(n+1):
+        ai=2*i-n; den=kappa.numerator*n+ai*kappa.denominator
+        wi=comb(n,i)
+        for j in range(n+1):
+            bj=2*j-n;weight=wi*comb(n,j);num=(ai+bj)*kappa.denominator
+            bad=den!=0 and abs(num)>threshold*abs(den)
+            if den==0:undefined+=weight
+            elif bad:large+=weight
+            if n<=4:cells.append(dict(positive_zv=i,positive_zu=j,weight=weight,undefined=den==0,error=None if den==0 else F(num,den)))
+    return dict(n=n,kappa=kappa,undefined=F(undefined,total),large_error_defined=F(large,total),bad_or_undefined=F(large+undefined,total),total_weight=total,cells=cells)
+def convert(v):
+    if isinstance(v,F):return str(v)
+    if isinstance(v,dict):return {k:convert(a) for k,a in v.items()}
+    if isinstance(v,list):return [convert(a) for a in v]
+    return v
+
+def svg_base(title,desc,w=960,h=530):
+    return [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}"><title>{escape(title)}</title><desc>{escape(desc)}</desc><rect width="100%" height="100%" fill="white"/><g font-family="Arial, sans-serif" fill="#17212b">',f'<text x="35" y="35" font-size="22">{escape(title)}</text>']
+def gmm_svg(rows,weights,result):
+    title='Same fixed rows: the weight changes the compromise'
+    s=svg_base(title,'Synthetic fixed rows. Each curve uses its own weighted moment-distance scale; minimum locations, not curve height, compare estimators.')
+    colors=['#245dba','#bd4c18','#39754a']; ws=[[[F(1),F(0)],[F(0),F(1)]],weights,result['weight_two']];names=[('Identity / 2SLS' if result['Qzz']==[[F(1),F(0)],[F(0),F(1)]] else 'Identity GMM')+' (solid)','Chosen weight (dashed)','Two-step weight (dotted)']
+    bs=[fit(rows,w)['beta'] for w in ws];lo=min(bs)-F(3,4);hi=max(bs)+F(3,4)
+    grid=[lo+(hi-lo)*j/160 for j in range(161)]
+    a=result['Gamma'];q=result['q'];vals=[[dot([u-v*b for u,v in zip(q,a)],mv(w,[u-v*b for u,v in zip(q,a)])) for b in grid] for w in ws]
+    ymax=max(float(v) for vv in vals for v in vv)*1.08
+    xp=lambda v:90+800*float((v-lo)/(hi-lo));yp=lambda v:420-300*float(v)/ymax
+    s+=['<path d="M90 100V420H890" fill="none" stroke="#444"/>']
+    for j in range(5):
+        b=lo+(hi-lo)*F(j,4);s.append(f'<text x="{xp(b):.2f}" y="445" text-anchor="middle">{float(b):.3f}</text>')
+        y=ymax*j/4;s.append(f'<text x="82" y="{yp(y)+4:.2f}" text-anchor="end">{y:.2f}</text>')
+    for i,(w,vv,name,col,b) in enumerate(zip(ws,vals,names,colors,bs)):
+        points=' '.join(f'{xp(x):.2f},{yp(y):.2f}' for x,y in zip(grid,vv));s.append(f'<polyline points="{points}" fill="none" stroke="{col}" stroke-width="2.5" stroke-dasharray="{["none","8 5","2 4"][i]}"/>')
+        g=[u-v*b for u,v in zip(q,a)];v=dot(g,mv(w,g));s.append(f'<circle cx="{xp(b):.2f}" cy="{yp(v):.2f}" r="5" fill="{col}"/>')
+        s.append(f'<text x="110" y="{65+21*i}" fill="{col}" font-size="15">{name}: beta={b}</text>')
+    s+=['<text x="490" y="480" text-anchor="middle">Coefficient beta (no intercept in this table)</text>','<text x="90" y="510" font-size="14">Different weights define different vertical scales; lower curve height is not an efficiency test.</text></g></svg>']
+    return '\n'.join(s)+'\n'
+def weak_svg(results,weak):
+    s=svg_base('Valid instruments: exact finite failure probability','Synthetic iid Rademacher economy. Failure means undefined IV denominator OR defined absolute coefficient error above the input threshold. All samples retain their binomial weight.')
+    s.append('<path d="M90 100V420H890" fill="none" stroke="#444"/>')
+    colors=['#245dba','#bd4c18'];names=[f"Fixed kappa={weak['fixed_kappa']} (solid)",f"Local kappa={weak['local_c']}/sqrt(n) (dashed)"]
+    for j in range(6):
+        y=j/5;s.append(f'<text x="80" y="{424-300*y:.1f}" text-anchor="end">{y:.1f}</text>')
+    for si,(series,col,name) in enumerate(zip(('fixed','local'),colors,names)):
+        pts=[]
+        for j,r in enumerate(results[series]):
+            x=110+740*j/(len(results[series])-1);y=420-300*float(r['bad_or_undefined']);pts.append(f'{x:.2f},{y:.2f}')
+            s.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="5" fill="{col}"/>')
+        s.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-width="2.5" stroke-dasharray="{"none" if si==0 else "8 5"}"/>')
+        s.append(f'<text x="105" y="{65+22*si}" fill="{col}" font-size="16">{escape(name)}</text>')
+    for j,r in enumerate(results['fixed']):s.append(f'<text x="{110+740*j/(len(results["fixed"])-1):.2f}" y="445" text-anchor="middle">{r["n"]}</text>')
+    s.append(f'<text x="490" y="480" text-anchor="middle">n (equally spaced labels); error threshold = {escape(weak["error_threshold"])}</text>')
+    s.append('<text x="90" y="510" font-size="14">Not CI coverage. Undefined samples are retained. Finite curves do not prove an asymptotic theorem.</text></g></svg>')
+    return '\n'.join(s)+'\n'
+def run(inp,out):
+    p=json.loads(inp.read_text());rows=[list(map(F,row)) for row in p['rows']];w=[list(map(F,row)) for row in p['weights']];scale=F(p['instrument_scale']);weak=p['weak']
+    if len(rows)<3 or any(len(row)!=4 for row in rows):raise ValueError('rows need z1,z2,x,y and at least 3 observations')
+    if len(w)!=2 or any(len(row)!=2 for row in w) or w[0][1]!=w[1][0] or w[0][0]<=0 or w[0][0]*w[1][1]-w[0][1]*w[1][0]<=0:raise ValueError('weight must be 2x2 SPD')
+    if scale==0:raise ValueError('scale must be nonzero')
+    ns=weak['sizes'];fixed=F(weak['fixed_kappa']);c=F(weak['local_c']);threshold=F(weak['error_threshold'])
+    if len(ns)<2 or len(set(ns))!=len(ns) or any(type(n) is not int or n<1 or n>1024 or isqrt(n)**2!=n for n in ns):raise ValueError('sizes require distinct positive perfect squares <=1024')
+    if not fixed or not c or threshold<=0:raise ValueError('nonzero relevance constants and positive threshold required')
+    sm=sample(rows,w,scale);pop=population(p['population'],p['world_thetas']);resweak=dict(fixed=[counts(n,fixed,threshold) for n in ns],local=[counts(n,c/F(isqrt(n)),threshold) for n in ns])
+    result=dict(identity='entirely synthetic; finite sample tables are fixed, weak counts weight all iid samples',sample=sm,population=pop,weak=resweak)
+    out.mkdir(parents=True,exist_ok=True);out.joinpath('results.json').write_text(json.dumps(convert(result),ensure_ascii=False,indent=2)+'\n')
+    out.joinpath('gmm-distance.svg').write_text(gmm_svg(rows,w,sm));out.joinpath('weak-counts.svg').write_text(weak_svg(resweak,weak))
+    print('PASS exact finite population, fixed sample, observation twins and complete binomial counts; no Monte Carlo')
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--input',type=Path,required=True);parser.add_argument('--out',type=Path,required=True);args=parser.parse_args();run(args.input,args.out)

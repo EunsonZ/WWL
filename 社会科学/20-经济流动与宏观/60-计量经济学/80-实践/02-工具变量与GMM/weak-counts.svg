@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="530" viewBox="0 0 960 530"><title>Valid instruments: exact finite failure probability</title><desc>Synthetic iid Rademacher economy. Failure means undefined IV denominator OR defined absolute coefficient error above the input threshold. All samples retain their binomial weight.</desc><rect width="100%" height="100%" fill="white"/><g font-family="Arial, sans-serif" fill="#17212b">
+<text x="35" y="35" font-size="22">Valid instruments: exact finite failure probability</text>
+<path d="M90 100V420H890" fill="none" stroke="#444"/>
+<text x="80" y="424.0" text-anchor="end">0.0</text>
+<text x="80" y="364.0" text-anchor="end">0.2</text>
+<text x="80" y="304.0" text-anchor="end">0.4</text>
+<text x="80" y="244.0" text-anchor="end">0.6</text>
+<text x="80" y="184.0" text-anchor="end">0.8</text>
+<text x="80" y="124.0" text-anchor="end">1.0</text>
+<circle cx="110.00" cy="312.19" r="5" fill="#245dba"/>
+<circle cx="356.67" cy="369.21" r="5" fill="#245dba"/>
+<circle cx="603.33" cy="410.27" r="5" fill="#245dba"/>
+<circle cx="850.00" cy="419.95" r="5" fill="#245dba"/>
+<polyline points="110.00,312.19 356.67,369.21 603.33,410.27 850.00,419.95" fill="none" stroke="#245dba" stroke-width="2.5" stroke-dasharray="none"/>
+<text x="105" y="65" fill="#245dba" font-size="16">Fixed kappa=1/2 (solid)</text>
+<circle cx="110.00" cy="312.19" r="5" fill="#bd4c18"/>
+<circle cx="356.67" cy="306.62" r="5" fill="#bd4c18"/>
+<circle cx="603.33" cy="297.62" r="5" fill="#bd4c18"/>
+<circle cx="850.00" cy="291.59" r="5" fill="#bd4c18"/>
+<polyline points="110.00,312.19 356.67,306.62 603.33,297.62 850.00,291.59" fill="none" stroke="#bd4c18" stroke-width="2.5" stroke-dasharray="8 5"/>
+<text x="105" y="87" fill="#bd4c18" font-size="16">Local kappa=1/sqrt(n) (dashed)</text>
+<text x="110.00" y="445" text-anchor="middle">4</text>
+<text x="356.67" y="445" text-anchor="middle">16</text>
+<text x="603.33" y="445" text-anchor="middle">64</text>
+<text x="850.00" y="445" text-anchor="middle">256</text>
+<text x="490" y="480" text-anchor="middle">n (equally spaced labels); error threshold = 1</text>
+<text x="90" y="510" font-size="14">Not CI coverage. Undefined samples are retained. Finite curves do not prove an asymptotic theorem.</text></g></svg>

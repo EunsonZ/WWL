@@ -1,0 +1,1042 @@
+{
+  "schema": "read-barrier-v1",
+  "members": [
+    "A",
+    "B",
+    "C"
+  ],
+  "scenarios": [
+    {
+      "name": "ApplyLag",
+      "actions": [
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "write_begin",
+          "node": "A",
+          "id": "w7",
+          "value": 7
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "write_poll",
+          "node": "A",
+          "id": "w7",
+          "expect": {
+            "status": "success"
+          }
+        },
+        {
+          "op": "elect",
+          "node": "B",
+          "voters": [
+            "C"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "noop",
+          "node": "B"
+        },
+        {
+          "op": "replicate",
+          "node": "B",
+          "peer": "C"
+        },
+        {
+          "op": "read_begin",
+          "node": "B",
+          "id": "r7",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "B",
+          "peer": "C",
+          "id": "r7"
+        },
+        {
+          "op": "read_poll",
+          "node": "B",
+          "id": "r7",
+          "expect": {
+            "status": "wait_apply"
+          }
+        },
+        {
+          "op": "unsafe_read",
+          "node": "B",
+          "id": "badApply"
+        },
+        {
+          "op": "apply",
+          "node": "B"
+        },
+        {
+          "op": "read_poll",
+          "node": "B",
+          "id": "r7",
+          "expect": {
+            "status": "success",
+            "value": 7
+          }
+        }
+      ],
+      "expected_history": {
+        "good": true,
+        "bad": false
+      },
+      "bad_includes": []
+    },
+    {
+      "name": "TermGate",
+      "actions": [
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "write_begin",
+          "node": "A",
+          "id": "w7",
+          "value": 7
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "write_poll",
+          "node": "A",
+          "id": "w7",
+          "expect": {
+            "status": "success"
+          }
+        },
+        {
+          "op": "elect",
+          "node": "B",
+          "voters": [
+            "C"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "read_begin",
+          "node": "B",
+          "id": "rGate",
+          "expect": {
+            "status": "wait_current_term_commit"
+          }
+        },
+        {
+          "op": "manual_probe",
+          "node": "B",
+          "peer": "C",
+          "nonce": "fresh-without-term-gate"
+        },
+        {
+          "op": "unsafe_read",
+          "node": "B",
+          "id": "badGate"
+        },
+        {
+          "op": "noop",
+          "node": "B"
+        },
+        {
+          "op": "replicate",
+          "node": "B",
+          "peer": "C"
+        },
+        {
+          "op": "read_begin",
+          "node": "B",
+          "id": "rGate",
+          "retry": true,
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "B",
+          "peer": "C",
+          "id": "rGate"
+        },
+        {
+          "op": "apply",
+          "node": "B"
+        },
+        {
+          "op": "read_poll",
+          "node": "B",
+          "id": "rGate",
+          "expect": {
+            "status": "success",
+            "value": 7
+          }
+        }
+      ],
+      "expected_history": {
+        "good": true,
+        "bad": false
+      },
+      "bad_includes": []
+    },
+    {
+      "name": "OldLeader",
+      "actions": [
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "noop",
+          "node": "A"
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rOld",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rOld",
+          "hold": "earlier"
+        },
+        {
+          "op": "block",
+          "pairs": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "op": "elect",
+          "node": "B",
+          "voters": [
+            "C"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "write_begin",
+          "node": "B",
+          "id": "w7",
+          "value": 7
+        },
+        {
+          "op": "replicate",
+          "node": "B",
+          "peer": "C"
+        },
+        {
+          "op": "apply",
+          "node": "B"
+        },
+        {
+          "op": "write_poll",
+          "node": "B",
+          "id": "w7",
+          "expect": {
+            "status": "success"
+          }
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rLater",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "deliver_ack",
+          "node": "A",
+          "id": "rLater",
+          "hold": "earlier",
+          "expect": {
+            "status": "nonce_or_term_mismatch"
+          }
+        },
+        {
+          "op": "deliver_ack",
+          "node": "A",
+          "id": "rLater",
+          "hold": "earlier",
+          "expect": {
+            "status": "nonce_or_term_mismatch"
+          }
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rLater",
+          "expect": {
+            "status": "wait_quorum"
+          }
+        },
+        {
+          "op": "unsafe_read",
+          "node": "A",
+          "id": "badOld"
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rLater",
+          "expect": {
+            "status": "router_dropped"
+          }
+        },
+        {
+          "op": "heal"
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rLater"
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rLater",
+          "expect": {
+            "status": "cancelled_or_unknown"
+          }
+        },
+        {
+          "op": "read_begin",
+          "node": "B",
+          "id": "rGood",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "B",
+          "peer": "C",
+          "id": "rGood"
+        },
+        {
+          "op": "read_poll",
+          "node": "B",
+          "id": "rGood",
+          "expect": {
+            "status": "success",
+            "value": 7
+          }
+        }
+      ],
+      "expected_history": {
+        "good": true,
+        "bad": false
+      },
+      "bad_includes": []
+    },
+    {
+      "name": "Concurrent",
+      "actions": [
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "noop",
+          "node": "A"
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rConcurrent",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rConcurrent",
+          "hold": "barrier"
+        },
+        {
+          "op": "write_begin",
+          "node": "A",
+          "id": "w7",
+          "value": 7
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "C"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "write_poll",
+          "node": "A",
+          "id": "w7",
+          "expect": {
+            "status": "success"
+          }
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rConcurrent",
+          "expect": {
+            "status": "wait_quorum"
+          }
+        },
+        {
+          "op": "deliver_ack",
+          "node": "A",
+          "id": "rConcurrent",
+          "hold": "barrier"
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rConcurrent",
+          "expect": {
+            "status": "success",
+            "value": 7
+          }
+        }
+      ],
+      "expected_history": {
+        "good": true,
+        "bad": true
+      },
+      "bad_includes": []
+    },
+    {
+      "name": "DelayedTermReply",
+      "actions": [
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "noop",
+          "node": "A"
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rOverlap",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rOverlap",
+          "hold": "validEarlyReply"
+        },
+        {
+          "op": "elect",
+          "node": "B",
+          "voters": [
+            "C"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "write_begin",
+          "node": "B",
+          "id": "w7",
+          "value": 7
+        },
+        {
+          "op": "replicate",
+          "node": "B",
+          "peer": "C"
+        },
+        {
+          "op": "apply",
+          "node": "B"
+        },
+        {
+          "op": "write_poll",
+          "node": "B",
+          "id": "w7",
+          "expect": {
+            "status": "success"
+          }
+        },
+        {
+          "op": "deliver_ack",
+          "node": "A",
+          "id": "rOverlap",
+          "hold": "validEarlyReply"
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rOverlap",
+          "expect": {
+            "status": "success",
+            "value": 0
+          }
+        }
+      ],
+      "expected_history": {
+        "good": true,
+        "bad": true
+      },
+      "bad_includes": []
+    },
+    {
+      "name": "CrossTerm",
+      "actions": [
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "noop",
+          "node": "A"
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "block",
+          "pairs": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "op": "elect",
+          "node": "B",
+          "voters": [
+            "C"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "write_begin",
+          "node": "B",
+          "id": "w7",
+          "value": 7
+        },
+        {
+          "op": "replicate",
+          "node": "B",
+          "peer": "C"
+        },
+        {
+          "op": "apply",
+          "node": "B"
+        },
+        {
+          "op": "write_poll",
+          "node": "B",
+          "id": "w7",
+          "expect": {
+            "status": "success"
+          }
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rAcross",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "heal"
+        },
+        {
+          "op": "replicate",
+          "node": "B",
+          "peer": "A"
+        },
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "noop",
+          "node": "A"
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "manual_probe",
+          "node": "A",
+          "peer": "B",
+          "nonce": "new-term-with-old-index"
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rAcross",
+          "expect": {
+            "status": "cancelled_or_unknown"
+          }
+        },
+        {
+          "op": "unsafe_read",
+          "node": "A",
+          "id": "badAcross"
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rNew",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rNew"
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rNew",
+          "expect": {
+            "status": "wait_apply"
+          }
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rNew",
+          "expect": {
+            "status": "success",
+            "value": 7
+          }
+        }
+      ],
+      "expected_history": {
+        "good": true,
+        "bad": false
+      },
+      "bad_includes": []
+    },
+    {
+      "name": "Restart",
+      "actions": [
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "write_begin",
+          "node": "A",
+          "id": "w7",
+          "value": 7
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "write_poll",
+          "node": "A",
+          "id": "w7",
+          "expect": {
+            "status": "success"
+          }
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rRestart",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rRestart",
+          "hold": "oldBoot"
+        },
+        {
+          "op": "restart",
+          "node": "A"
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rRestart",
+          "expect": {
+            "status": "cancelled_or_unknown"
+          }
+        },
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "noop",
+          "node": "A"
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rRestart",
+          "retry": true,
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "deliver_ack",
+          "node": "A",
+          "id": "rRestart",
+          "hold": "oldBoot",
+          "expect": {
+            "status": "nonce_or_term_mismatch"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rRestart"
+        },
+        {
+          "op": "read_poll",
+          "node": "A",
+          "id": "rRestart",
+          "expect": {
+            "status": "success",
+            "value": 7
+          }
+        }
+      ],
+      "expected_history": {
+        "good": true,
+        "bad": true
+      },
+      "bad_includes": []
+    },
+    {
+      "name": "ReadReadOrder",
+      "actions": [
+        {
+          "op": "elect",
+          "node": "A",
+          "voters": [
+            "B"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "noop",
+          "node": "A"
+        },
+        {
+          "op": "replicate",
+          "node": "A",
+          "peer": "B"
+        },
+        {
+          "op": "apply",
+          "node": "A"
+        },
+        {
+          "op": "read_begin",
+          "node": "A",
+          "id": "rEarly",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "A",
+          "peer": "B",
+          "id": "rEarly",
+          "hold": "early"
+        },
+        {
+          "op": "elect",
+          "node": "B",
+          "voters": [
+            "C"
+          ],
+          "expect": {
+            "role": "leader"
+          }
+        },
+        {
+          "op": "write_begin",
+          "node": "B",
+          "id": "w7",
+          "value": 7
+        },
+        {
+          "op": "replicate",
+          "node": "B",
+          "peer": "C"
+        },
+        {
+          "op": "apply",
+          "node": "B"
+        },
+        {
+          "op": "write_poll",
+          "node": "B",
+          "id": "w7",
+          "hold_client": true,
+          "expect": {
+            "status": "success"
+          }
+        },
+        {
+          "op": "read_begin",
+          "node": "B",
+          "id": "rSaw7",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "B",
+          "peer": "C",
+          "id": "rSaw7"
+        },
+        {
+          "op": "read_poll",
+          "node": "B",
+          "id": "rSaw7",
+          "expect": {
+            "status": "success",
+            "value": 7
+          }
+        },
+        {
+          "op": "unsafe_read",
+          "node": "A",
+          "id": "badLater0"
+        },
+        {
+          "op": "write_release",
+          "id": "w7"
+        },
+        {
+          "op": "read_begin",
+          "node": "B",
+          "id": "rLast",
+          "expect": {
+            "status": "pending"
+          }
+        },
+        {
+          "op": "probe",
+          "node": "B",
+          "peer": "C",
+          "id": "rLast"
+        },
+        {
+          "op": "read_poll",
+          "node": "B",
+          "id": "rLast",
+          "expect": {
+            "status": "success",
+            "value": 7
+          }
+        }
+      ],
+      "expected_history": {
+        "good": true,
+        "bad": false
+      },
+      "bad_includes": [
+        "rSaw7"
+      ]
+    }
+  ]
+}

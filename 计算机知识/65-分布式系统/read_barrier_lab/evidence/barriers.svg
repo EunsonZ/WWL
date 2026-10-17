@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="550" viewBox="0 0 1200 550">
+<rect width="1200" height="100%" fill="#f7fafc"/>
+<g font-family="PingFang SC, sans-serif">
+<text x="40" y="48" font-size="30" fill="#17324d" font-weight="bold">多数确认后，为什么还不能返回？</text>
+<text x="40" y="82" font-size="18" fill="#17324d" font-weight="normal">ApplyLag：表中每行直接取正式结果的 B 状态；整数是日志位置，不是时间。</text>
+<text x="40" y="135" font-size="23" fill="#17324d" font-weight="bold">调度动作</text>
+<text x="445" y="135" font-size="23" fill="#17324d" font-weight="bold">term</text>
+<text x="610" y="135" font-size="23" fill="#17324d" font-weight="bold">commit</text>
+<text x="780" y="135" font-size="23" fill="#17324d" font-weight="bold">applied</text>
+<text x="940" y="135" font-size="23" fill="#17324d" font-weight="bold">value</text>
+<rect x="30" y="156" width="1140" height="56" rx="8" fill="#e8eff6"/>
+<text x="40" y="191" font-size="22" fill="#17324d" font-weight="normal">B 当选，继承 put7</text>
+<text x="445" y="191" font-size="22" fill="#17324d" font-weight="normal">2</text>
+<text x="610" y="191" font-size="22" fill="#17324d" font-weight="normal">0</text>
+<text x="780" y="191" font-size="22" fill="#17324d" font-weight="normal">0</text>
+<text x="940" y="191" font-size="22" fill="#17324d" font-weight="normal">0</text>
+<rect x="30" y="225" width="1140" height="56" rx="8" fill="#e8eff6"/>
+<text x="40" y="260" font-size="22" fill="#17324d" font-weight="normal">提交当前 term 的 no-op</text>
+<text x="445" y="260" font-size="22" fill="#17324d" font-weight="normal">2</text>
+<text x="610" y="260" font-size="22" fill="#17324d" font-weight="normal">2</text>
+<text x="780" y="260" font-size="22" fill="#17324d" font-weight="normal">0</text>
+<text x="940" y="260" font-size="22" fill="#17324d" font-weight="normal">0</text>
+<rect x="30" y="294" width="1140" height="56" rx="8" fill="#e8eff6"/>
+<text x="40" y="329" font-size="22" fill="#17324d" font-weight="normal">本次多数已到，poll</text>
+<text x="445" y="329" font-size="22" fill="#17324d" font-weight="normal">2</text>
+<text x="610" y="329" font-size="22" fill="#17324d" font-weight="normal">2</text>
+<text x="780" y="329" font-size="22" fill="#17324d" font-weight="normal">0</text>
+<text x="940" y="329" font-size="22" fill="#17324d" font-weight="normal">0</text>
+<text x="45" y="351" font-size="16" fill="#b94726" font-weight="normal">wait_apply</text>
+<rect x="30" y="363" width="1140" height="56" rx="8" fill="#e3f4ed"/>
+<text x="40" y="398" font-size="22" fill="#17324d" font-weight="normal">应用后再次 poll</text>
+<text x="445" y="398" font-size="22" fill="#17324d" font-weight="normal">2</text>
+<text x="610" y="398" font-size="22" fill="#17324d" font-weight="normal">2</text>
+<text x="780" y="398" font-size="22" fill="#17324d" font-weight="normal">2</text>
+<text x="940" y="398" font-size="22" fill="#17324d" font-weight="normal">7</text>
+<text x="45" y="420" font-size="16" fill="#147352" font-weight="normal">success</text>
+<text x="40" y="474" font-size="23" fill="#17324d" font-weight="bold">当前任期提交 → 捕获 readIndex → 本次同任期多数 → 应用到位 → 原子查询</text>
+<text x="40" y="515" font-size="20" fill="#17324d" font-weight="normal">commit=2 不等于 applied=2；等待状态不携带成功的寄存器读值。</text>
+</g></svg>

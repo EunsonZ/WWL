@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="830" viewBox="0 0 1200 830">
+<rect width="1200" height="100%" fill="#f7fafc"/>
+<g font-family="PingFang SC, sans-serif">
+<text x="40" y="48" font-size="30" fill="#17324d" font-weight="bold">一条晚到回复，可以构成两种不同的历史</text>
+<text x="40" y="82" font-size="18" fill="#17324d" font-weight="normal">区间来自逻辑客户端调用/返回序号；不是跨机器墙钟或生产延迟测量。</text>
+<text x="40" y="125" font-size="24" fill="#a93628" font-weight="bold">① 写已完成再调用读：返回 0 不可线性化</text>
+<line x1="450" y1="139" x2="450" y2="279" stroke="#d9e2eb"/>
+<text x="445" y="303" font-size="16" fill="#17324d" font-weight="normal">1</text>
+<line x1="518" y1="139" x2="518" y2="279" stroke="#d9e2eb"/>
+<text x="513" y="303" font-size="16" fill="#17324d" font-weight="normal">2</text>
+<line x1="586" y1="139" x2="586" y2="279" stroke="#d9e2eb"/>
+<text x="581" y="303" font-size="16" fill="#17324d" font-weight="normal">3</text>
+<line x1="654" y1="139" x2="654" y2="279" stroke="#d9e2eb"/>
+<text x="649" y="303" font-size="16" fill="#17324d" font-weight="normal">4</text>
+<line x1="722" y1="139" x2="722" y2="279" stroke="#d9e2eb"/>
+<text x="717" y="303" font-size="16" fill="#17324d" font-weight="normal">5</text>
+<line x1="790" y1="139" x2="790" y2="279" stroke="#d9e2eb"/>
+<text x="785" y="303" font-size="16" fill="#17324d" font-weight="normal">6</text>
+<line x1="858" y1="139" x2="858" y2="279" stroke="#d9e2eb"/>
+<text x="853" y="303" font-size="16" fill="#17324d" font-weight="normal">7</text>
+<line x1="926" y1="139" x2="926" y2="279" stroke="#d9e2eb"/>
+<text x="921" y="303" font-size="16" fill="#17324d" font-weight="normal">8</text>
+<line x1="994" y1="139" x2="994" y2="279" stroke="#d9e2eb"/>
+<text x="989" y="303" font-size="16" fill="#17324d" font-weight="normal">9</text>
+<text x="60" y="173" font-size="21" fill="#17324d" font-weight="normal">w7: put 7</text>
+<line x1="518" y1="167" x2="586" y2="167" stroke="#386dc1" stroke-width="10" stroke-linecap="round"/>
+<circle cx="518" cy="167" r="6" fill="white" stroke="#386dc1" stroke-width="3"/>
+<circle cx="586" cy="167" r="6" fill="white" stroke="#386dc1" stroke-width="3"/>
+<text x="60" y="218" font-size="21" fill="#17324d" font-weight="normal">badOld: get → 0</text>
+<line x1="722" y1="212" x2="790" y2="212" stroke="#d47b20" stroke-width="10" stroke-linecap="round"/>
+<circle cx="722" cy="212" r="6" fill="white" stroke="#d47b20" stroke-width="3"/>
+<circle cx="790" cy="212" r="6" fill="white" stroke="#d47b20" stroke-width="3"/>
+<text x="40" y="345" font-size="24" fill="#147352" font-weight="bold">② 读跨越新写：返回 0 可以排在 put7 之前</text>
+<line x1="450" y1="359" x2="450" y2="499" stroke="#d9e2eb"/>
+<text x="445" y="523" font-size="16" fill="#17324d" font-weight="normal">1</text>
+<line x1="518" y1="359" x2="518" y2="499" stroke="#d9e2eb"/>
+<text x="513" y="523" font-size="16" fill="#17324d" font-weight="normal">2</text>
+<line x1="586" y1="359" x2="586" y2="499" stroke="#d9e2eb"/>
+<text x="581" y="523" font-size="16" fill="#17324d" font-weight="normal">3</text>
+<line x1="654" y1="359" x2="654" y2="499" stroke="#d9e2eb"/>
+<text x="649" y="523" font-size="16" fill="#17324d" font-weight="normal">4</text>
+<line x1="722" y1="359" x2="722" y2="499" stroke="#d9e2eb"/>
+<text x="717" y="523" font-size="16" fill="#17324d" font-weight="normal">5</text>
+<line x1="790" y1="359" x2="790" y2="499" stroke="#d9e2eb"/>
+<text x="785" y="523" font-size="16" fill="#17324d" font-weight="normal">6</text>
+<line x1="858" y1="359" x2="858" y2="499" stroke="#d9e2eb"/>
+<text x="853" y="523" font-size="16" fill="#17324d" font-weight="normal">7</text>
+<line x1="926" y1="359" x2="926" y2="499" stroke="#d9e2eb"/>
+<text x="921" y="523" font-size="16" fill="#17324d" font-weight="normal">8</text>
+<line x1="994" y1="359" x2="994" y2="499" stroke="#d9e2eb"/>
+<text x="989" y="523" font-size="16" fill="#17324d" font-weight="normal">9</text>
+<text x="60" y="393" font-size="21" fill="#17324d" font-weight="normal">rOverlap: get → 0</text>
+<line x1="450" y1="387" x2="654" y2="387" stroke="#d47b20" stroke-width="10" stroke-linecap="round"/>
+<circle cx="450" cy="387" r="6" fill="white" stroke="#d47b20" stroke-width="3"/>
+<circle cx="654" cy="387" r="6" fill="white" stroke="#d47b20" stroke-width="3"/>
+<text x="60" y="438" font-size="21" fill="#17324d" font-weight="normal">w7: put 7</text>
+<line x1="518" y1="432" x2="586" y2="432" stroke="#386dc1" stroke-width="10" stroke-linecap="round"/>
+<circle cx="518" cy="432" r="6" fill="white" stroke="#386dc1" stroke-width="3"/>
+<circle cx="586" cy="432" r="6" fill="white" stroke="#386dc1" stroke-width="3"/>
+<text x="40" y="565" font-size="24" fill="#a93628" font-weight="bold">③ 两次读有先后：在途写不能解释先 7 后 0</text>
+<line x1="450" y1="579" x2="450" y2="719" stroke="#d9e2eb"/>
+<text x="445" y="743" font-size="16" fill="#17324d" font-weight="normal">1</text>
+<line x1="518" y1="579" x2="518" y2="719" stroke="#d9e2eb"/>
+<text x="513" y="743" font-size="16" fill="#17324d" font-weight="normal">2</text>
+<line x1="586" y1="579" x2="586" y2="719" stroke="#d9e2eb"/>
+<text x="581" y="743" font-size="16" fill="#17324d" font-weight="normal">3</text>
+<line x1="654" y1="579" x2="654" y2="719" stroke="#d9e2eb"/>
+<text x="649" y="743" font-size="16" fill="#17324d" font-weight="normal">4</text>
+<line x1="722" y1="579" x2="722" y2="719" stroke="#d9e2eb"/>
+<text x="717" y="743" font-size="16" fill="#17324d" font-weight="normal">5</text>
+<line x1="790" y1="579" x2="790" y2="719" stroke="#d9e2eb"/>
+<text x="785" y="743" font-size="16" fill="#17324d" font-weight="normal">6</text>
+<line x1="858" y1="579" x2="858" y2="719" stroke="#d9e2eb"/>
+<text x="853" y="743" font-size="16" fill="#17324d" font-weight="normal">7</text>
+<line x1="926" y1="579" x2="926" y2="719" stroke="#d9e2eb"/>
+<text x="921" y="743" font-size="16" fill="#17324d" font-weight="normal">8</text>
+<line x1="994" y1="579" x2="994" y2="719" stroke="#d9e2eb"/>
+<text x="989" y="743" font-size="16" fill="#17324d" font-weight="normal">9</text>
+<text x="60" y="613" font-size="21" fill="#17324d" font-weight="normal">w7: put 7</text>
+<line x1="518" y1="607" x2="858" y2="607" stroke="#386dc1" stroke-width="10" stroke-linecap="round"/>
+<circle cx="518" cy="607" r="6" fill="white" stroke="#386dc1" stroke-width="3"/>
+<circle cx="858" cy="607" r="6" fill="white" stroke="#386dc1" stroke-width="3"/>
+<text x="60" y="658" font-size="21" fill="#17324d" font-weight="normal">rSaw7: get → 7</text>
+<line x1="586" y1="652" x2="654" y2="652" stroke="#d47b20" stroke-width="10" stroke-linecap="round"/>
+<circle cx="586" cy="652" r="6" fill="white" stroke="#d47b20" stroke-width="3"/>
+<circle cx="654" cy="652" r="6" fill="white" stroke="#d47b20" stroke-width="3"/>
+<text x="60" y="703" font-size="21" fill="#17324d" font-weight="normal">badLater0: get → 0</text>
+<line x1="722" y1="697" x2="790" y2="697" stroke="#d47b20" stroke-width="10" stroke-linecap="round"/>
+<circle cx="722" cy="697" r="6" fill="white" stroke="#d47b20" stroke-width="3"/>
+<circle cx="790" cy="697" r="6" fill="white" stroke="#d47b20" stroke-width="3"/>
+<text x="40" y="810" font-size="20" fill="#17324d" font-weight="normal">蓝：put；橙：get。读的调用时点和整段实时顺序，比“返回时谁仍自称主”更关键。</text>
+</g></svg>

@@ -1,0 +1,182 @@
+{
+  "status": "PASS",
+  "mode": "memory",
+  "scenarios": [
+    {
+      "name": "ApplyLag",
+      "certificate": {
+        "atomic_state_prefixes": 42,
+        "successful_read_certificates": 1,
+        "committed_prefix_length": 2
+      },
+      "histories": {
+        "good": {
+          "linearizable": true,
+          "witness": [
+            "w7",
+            "r7"
+          ]
+        },
+        "bad": {
+          "linearizable": false,
+          "witness": null
+        }
+      }
+    },
+    {
+      "name": "TermGate",
+      "certificate": {
+        "atomic_state_prefixes": 45,
+        "successful_read_certificates": 1,
+        "committed_prefix_length": 2
+      },
+      "histories": {
+        "good": {
+          "linearizable": true,
+          "witness": [
+            "w7",
+            "rGate"
+          ]
+        },
+        "bad": {
+          "linearizable": false,
+          "witness": null
+        }
+      }
+    },
+    {
+      "name": "OldLeader",
+      "certificate": {
+        "atomic_state_prefixes": 72,
+        "successful_read_certificates": 1,
+        "committed_prefix_length": 2
+      },
+      "histories": {
+        "good": {
+          "linearizable": true,
+          "witness": [
+            "w7",
+            "rGood"
+          ]
+        },
+        "bad": {
+          "linearizable": false,
+          "witness": null
+        }
+      }
+    },
+    {
+      "name": "Concurrent",
+      "certificate": {
+        "atomic_state_prefixes": 39,
+        "successful_read_certificates": 1,
+        "committed_prefix_length": 2
+      },
+      "histories": {
+        "good": {
+          "linearizable": true,
+          "witness": [
+            "w7",
+            "rConcurrent"
+          ]
+        },
+        "bad": {
+          "linearizable": true,
+          "witness": [
+            "w7"
+          ]
+        }
+      }
+    },
+    {
+      "name": "DelayedTermReply",
+      "certificate": {
+        "atomic_state_prefixes": 39,
+        "successful_read_certificates": 1,
+        "committed_prefix_length": 2
+      },
+      "histories": {
+        "good": {
+          "linearizable": true,
+          "witness": [
+            "rOverlap",
+            "w7"
+          ]
+        },
+        "bad": {
+          "linearizable": true,
+          "witness": [
+            "w7"
+          ]
+        }
+      }
+    },
+    {
+      "name": "CrossTerm",
+      "certificate": {
+        "atomic_state_prefixes": 72,
+        "successful_read_certificates": 1,
+        "committed_prefix_length": 3
+      },
+      "histories": {
+        "good": {
+          "linearizable": true,
+          "witness": [
+            "w7",
+            "rNew"
+          ]
+        },
+        "bad": {
+          "linearizable": false,
+          "witness": null
+        }
+      }
+    },
+    {
+      "name": "Restart",
+      "certificate": {
+        "atomic_state_prefixes": 51,
+        "successful_read_certificates": 1,
+        "committed_prefix_length": 2
+      },
+      "histories": {
+        "good": {
+          "linearizable": true,
+          "witness": [
+            "w7",
+            "rRestart"
+          ]
+        },
+        "bad": {
+          "linearizable": true,
+          "witness": [
+            "w7"
+          ]
+        }
+      }
+    },
+    {
+      "name": "ReadReadOrder",
+      "certificate": {
+        "atomic_state_prefixes": 57,
+        "successful_read_certificates": 2,
+        "committed_prefix_length": 2
+      },
+      "histories": {
+        "good": {
+          "linearizable": true,
+          "witness": [
+            "w7",
+            "rSaw7",
+            "rLast"
+          ]
+        },
+        "bad": {
+          "linearizable": false,
+          "witness": null
+        }
+      }
+    }
+  ],
+  "scope": "finite completed+pending register histories; DP linear extension / source-independent prefix certificates; no full protocol proof"
+}

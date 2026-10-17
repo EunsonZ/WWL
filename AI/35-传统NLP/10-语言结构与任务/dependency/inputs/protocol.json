@@ -1,0 +1,115 @@
+{
+  "dataset": "UD Swedish-Talbanken",
+  "release": "r2.16",
+  "commit": "3fd9c4123f155560ebb68c324b346fa9fa33991c",
+  "source_sha256": {
+    "README.md": "f46b14ceec36998c5e41e7a83cb98ca7d259e679ee07f2d7de28a15bc8d018bc",
+    "LICENSE.txt": "55d116ac4f9bc34715c7823a5f5ca2e4c0cac4917db9e58a470a3d48033d261c",
+    "sv_talbanken-ud-train.conllu": "fcc4bed5885e3d95f34a0e1bf813783135d38ae76d5822c3530b371fe78fc35f",
+    "sv_talbanken-ud-dev.conllu": "2e30e94a73a6db89b09fe80767df0c8c1194a48525879126a793015e868f8265",
+    "sv_talbanken-ud-test.conllu": "eb3950dfb820d13634bed35c1d0f69872851754e0b19af1a9705ce6978580434"
+  },
+  "license": "Source treebank and selected projections/prediction adaptations: CC BY-SA4.0; attribution and full upstream license in dependency/data. Code/course license unchanged.",
+  "projection": "Integer basic syntactic words only; original FORM/UPOS/HEAD/DEPREL exact, no subtype collapse, no reference projectivization. MWT ranges and enhanced empty nodes/DEPS not basic targets.",
+  "selection": "Keep official train/dev/test; sha256(newdoc_id)mod4==0, then integer word count2..12. No reference-label or score filter.",
+  "models": [
+    "geometry",
+    "upos_geometry"
+  ],
+  "alphas": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "distance_buckets": [
+    1,
+    2,
+    3,
+    "4+"
+  ],
+  "selection_metric": "max dev micro LAS on reference UPOS!=PUNCT, include real root word; earliest alpha-list tie, independently per model; no train+dev refit",
+  "test_access": "After both model alpha decisions; public fixed benchmark, not external blind test.",
+  "input_visibility": "Gold integer-word boundaries/FORM and gold UPOS are oracle inputs; model uses positions/UPOS, not FORM/lemma/FEATS/XPOS/DEPS/HEAD/DEPREL. Train HEAD/DEPREL fit counts; dev targets select alpha; test targets score and diagnose only.",
+  "decoder": "Single-root projective Eisner; iterate real-root candidate, fixed-root cubic/global quartic; ordered root/split/label ties. Original nonprojective gold retained.",
+  "metrics": "Reuse published structure_lab.aligned_scores/validate; primary exclude reference PUNCT/include real root, secondary all words; exact full labels, same-word accuracy not official raw-text F1.",
+  "grouping": "Token micro, sentence macro, exact sentence and per-document descriptive results; test3 docs/dev1 doc do not support iid-sentence confidence claims.",
+  "audit": {
+    "train": {
+      "official_sentences": 4303,
+      "official_documents": 62,
+      "official_integer_words": 66646,
+      "excluded_row_kinds_full": {
+        "empty_node": 28
+      },
+      "selected_sentences": 351,
+      "selected_documents": [
+        "P101",
+        "P102",
+        "P103",
+        "P115",
+        "P117",
+        "P118",
+        "P120",
+        "P221",
+        "P303",
+        "P312",
+        "P313"
+      ],
+      "selected_words": 2885
+    },
+    "dev": {
+      "official_sentences": 504,
+      "official_documents": 8,
+      "official_integer_words": 9797,
+      "excluded_row_kinds_full": {
+        "empty_node": 2
+      },
+      "selected_sentences": 13,
+      "selected_documents": [
+        "P411"
+      ],
+      "selected_words": 101
+    },
+    "test": {
+      "official_sentences": 1219,
+      "official_documents": 15,
+      "official_integer_words": 20377,
+      "excluded_row_kinds_full": {
+        "empty_node": 9
+      },
+      "selected_sentences": 76,
+      "selected_documents": [
+        "P213",
+        "P218",
+        "P301"
+      ],
+      "selected_words": 628
+    }
+  },
+  "identity_overlap": [
+    {
+      "splits": [
+        "train",
+        "dev"
+      ],
+      "official_doc_overlap": [],
+      "selected_form_sequence_overlap": []
+    },
+    {
+      "splits": [
+        "train",
+        "test"
+      ],
+      "official_doc_overlap": [],
+      "selected_form_sequence_overlap": []
+    },
+    {
+      "splits": [
+        "dev",
+        "test"
+      ],
+      "official_doc_overlap": [],
+      "selected_form_sequence_overlap": []
+    }
+  ]
+}

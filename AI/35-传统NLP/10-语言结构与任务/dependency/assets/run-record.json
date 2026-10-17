@@ -1,0 +1,312 @@
+{
+  "python": "3.14.7",
+  "execution": "local CPU, two-slot fcntl runner; all five thread variables 1; no GPU/new dependency/model download",
+  "thread_limit_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "formal_seconds_excluding_download_queue": 0.3021667080465704,
+  "commands": {
+    "fetch": [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/code-sync/fetch_talbanken.py",
+      "--output",
+      "/private/tmp/wwl-next-163-baseline/evidence/talbanken-full"
+    ],
+    "prepare": [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/code-sync/prepare_talbanken.py",
+      "--raw-dir",
+      "/private/tmp/wwl-next-163-baseline/evidence/talbanken-full",
+      "--output",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/inputs"
+    ],
+    "pre_run": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/code-sync/dependency_lab.py",
+      "--structure-source",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/35-传统NLP/10-语言结构与任务/code-sync/structure_lab.py",
+      "--pre-run",
+      "--output",
+      "/private/tmp/wwl-next-163-baseline/pre-run"
+    ],
+    "formal": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/code-sync/dependency_lab.py",
+      "--structure-source",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/35-传统NLP/10-语言结构与任务/code-sync/structure_lab.py",
+      "--output",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/assets"
+    ],
+    "tests": {
+      "environment": {
+        "WWL_STRUCTURE_SOURCE": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/35-传统NLP/10-语言结构与任务/code-sync/structure_lab.py"
+      },
+      "argv": [
+        "python3",
+        "/private/tmp/wwl-next-context/run_local.py",
+        "--timeout",
+        "300",
+        "--",
+        "python3",
+        "-B",
+        "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/code-sync/test_dependency_lab.py"
+      ]
+    },
+    "render": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/code-sync/render_dependency.py",
+      "--results",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/assets",
+      "--output",
+      "/private/tmp/wwl-next-163-baseline/AI/35-传统NLP/10-语言结构与任务/dependency/assets"
+    ],
+    "display": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "300",
+      "--",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv/bin/python",
+      "-B",
+      "/private/tmp/wwl163-baseline-visual/render_saved.py"
+    ]
+  },
+  "visibility": {
+    "preparation": "prepare reads fixed original gold bytes including test, then writes separated features/targets. Public benchmark, not external/human blind test.",
+    "pre_run": "train features and targets only, no dev/test; test fixture has exactly protocol plus two train files.",
+    "formal": "two dev LAS decisions finish before test feature/target reader unlocks; no train+dev refit.",
+    "post_selection": "structural oracle and hash-ordered failure displays use test reference only after frozen predictions."
+  },
+  "pre_run_evidence": {
+    "mode": "train-only pre-run",
+    "samples": [
+      {
+        "model": "geometry",
+        "sample_id": "P101::sv-ud-train-1",
+        "heads": [
+          2,
+          3,
+          4,
+          0
+        ]
+      },
+      {
+        "model": "upos_geometry",
+        "sample_id": "P101::sv-ud-train-1",
+        "heads": [
+          2,
+          0,
+          4,
+          2
+        ]
+      }
+    ],
+    "access_events": [
+      {
+        "action": "features",
+        "split": "train",
+        "selection_finished": false
+      },
+      {
+        "action": "targets",
+        "split": "train",
+        "selection_finished": false
+      }
+    ]
+  },
+  "source": {
+    "dependency_lab.py": {
+      "bytes": 15839,
+      "sha256": "5ec8c2169300bb41c20490e415da047dcd4adb2ccd6a41c5fb81b4ff3f8ffbc8"
+    },
+    "fetch_talbanken.py": {
+      "bytes": 2200,
+      "sha256": "cb19ea01d1d662a5d0fea2786c0f4aee833a508e9fef10e42e8e97cd342a3f57"
+    },
+    "prepare_talbanken.py": {
+      "bytes": 6080,
+      "sha256": "5d436a840dfbf26eba214f198b6e338d2f9280c2b42a041f63918c6912bf13cb"
+    },
+    "render_dependency.py": {
+      "bytes": 6611,
+      "sha256": "323ad5c7c07c7989740fb9b44e33e9c71b1949a1822b151b6fb5aad89f136d08"
+    },
+    "test_dependency_lab.py": {
+      "bytes": 4077,
+      "sha256": "b30e55af9b82ac779d5e7c3a70bf4c1446e8cf19ec29f8e4f9b30694cd4390a5"
+    }
+  },
+  "parent_read_only": {
+    "path": "AI/35-传统NLP/10-语言结构与任务/code-sync/structure_lab.py",
+    "bytes": 9534,
+    "sha256": "805c9371dc5a601c713e9be740aa0e5f5ff873f135200483bdbf09d728be27fa"
+  },
+  "inputs": {
+    "dev-features.json": {
+      "bytes": 11318,
+      "sha256": "87cdcb0c688223d749a1a215f8a1a8b577081cc7c1c99309af0365d26199b843"
+    },
+    "dev-targets.json": {
+      "bytes": 9024,
+      "sha256": "0909062e0f590bd1b03182612905dd40b1b6c1a5928342d290844447722b072a"
+    },
+    "protocol.json": {
+      "bytes": 3990,
+      "sha256": "e1b6333ce9adf8f0242459c99ccb4128c8dd8b50cd926ec0cc54fe06559d643b"
+    },
+    "test-features.json": {
+      "bytes": 69704,
+      "sha256": "03da342c36c46da79055364486a3faebd80d82c759badab4b98a617fa9177c17"
+    },
+    "test-targets.json": {
+      "bytes": 55842,
+      "sha256": "ba9e1167c1a46989ab3045a455b36f52b9768c0873ed6b94b5fbeff8aedf4d52"
+    },
+    "train-features.json": {
+      "bytes": 321622,
+      "sha256": "8926a862e7504428dc33cf0ada7d433c3f4dfcb3c9e3ab6fec4292ebee14bb70"
+    },
+    "train-targets.json": {
+      "bytes": 257421,
+      "sha256": "1b995e8acdb8be7eac8aa34d693de368b27cd513a17379996948682c8fbc60d1"
+    }
+  },
+  "data": {
+    "LICENSE.txt": {
+      "bytes": 21038,
+      "sha256": "55d116ac4f9bc34715c7823a5f5ca2e4c0cac4917db9e58a470a3d48033d261c"
+    },
+    "README.md": {
+      "bytes": 2185,
+      "sha256": "4f8cc6d47b2649f79efcc8dd5a54bd2c72ffb77b57fda054b29ec773e881b5ad"
+    },
+    "UPSTREAM-README.md": {
+      "bytes": 9265,
+      "sha256": "f46b14ceec36998c5e41e7a83cb98ca7d259e679ee07f2d7de28a15bc8d018bc"
+    },
+    "source-record.json": {
+      "bytes": 2721,
+      "sha256": "160d77ef7dc13b71fb41e2bace007ab0f78d5e684080fb383434aed3e8fa72a4"
+    }
+  },
+  "outputs": {
+    "author-tests.txt": {
+      "bytes": 608,
+      "sha256": "3418da30c7f473335463f886b74496a3e999bab0775ef53395761adcdf88591f"
+    },
+    "dependency-baselines.svg": {
+      "bytes": 5358,
+      "sha256": "add6d513ebf1dcbdf1fe4d26a1e312fccfb1e9e83a5a906a9a75005010976c18"
+    },
+    "dependency-errors.svg": {
+      "bytes": 18068,
+      "sha256": "9534e0e4e30ebe44889d677ea2f70b7379bffda7470b8385ff52d7e97d255279"
+    },
+    "diagnostic-examples.json": {
+      "bytes": 607,
+      "sha256": "91e5635b0720e3a1b47590195d1a006b2c4833b375e42b3ad4f8d84f0305b8ec"
+    },
+    "models.json": {
+      "bytes": 75529,
+      "sha256": "7b354d4774a18ff03ecb2ddeab54ea43d3fc3c7b2ac91dfd1b12b77a1e00211e"
+    },
+    "oracle-bounds.json": {
+      "bytes": 36956,
+      "sha256": "0f1492c2a162b0d22d77b1ba215c958f184c0e9dd81a5b7180379906a06004cf"
+    },
+    "predictions.jsonl": {
+      "bytes": 321780,
+      "sha256": "effc84df8c06ceff4c408ace967d14a3be805abda7a2cf23b1f60228c5ee511d"
+    },
+    "results.json": {
+      "bytes": 19788,
+      "sha256": "c1bd2c5bc7bcd540a7680244b5c8091d30654b8017ebda17c09dd9842f1443f2"
+    },
+    "validation-predictions.jsonl": {
+      "bytes": 135295,
+      "sha256": "45cd1de076fccd1909ba7eb6049e05ed25f1dcb85e7f7dab70b65ae36d56df5e"
+    }
+  },
+  "source_record": {
+    "repository": "UniversalDependencies/UD_Swedish-Talbanken",
+    "release": "r2.16",
+    "commit": "3fd9c4123f155560ebb68c324b346fa9fa33991c",
+    "files": [
+      {
+        "name": "README.md",
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Swedish-Talbanken/3fd9c4123f155560ebb68c324b346fa9fa33991c/README.md",
+        "bytes": 9265,
+        "sha256": "f46b14ceec36998c5e41e7a83cb98ca7d259e679ee07f2d7de28a15bc8d018bc",
+        "retrieved_at_utc": "2026-10-17T02:11:41.836114+00:00",
+        "http_date": "Sat, 17 Oct 2026 02:11:41 GMT",
+        "etag": "\"68e58344ceffe3fc94fc64db4124018562bc182eb97673465f0a4fc0897d15c9\""
+      },
+      {
+        "name": "LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Swedish-Talbanken/3fd9c4123f155560ebb68c324b346fa9fa33991c/LICENSE.txt",
+        "bytes": 21038,
+        "sha256": "55d116ac4f9bc34715c7823a5f5ca2e4c0cac4917db9e58a470a3d48033d261c",
+        "retrieved_at_utc": "2026-10-17T02:11:42.262371+00:00",
+        "http_date": "Sat, 17 Oct 2026 02:11:42 GMT",
+        "etag": "\"ad32a9630c8e4e213d58b6f5a9e79fe733dced40489f79af1a9709f31a7eb0f4\""
+      },
+      {
+        "name": "sv_talbanken-ud-train.conllu",
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Swedish-Talbanken/3fd9c4123f155560ebb68c324b346fa9fa33991c/sv_talbanken-ud-train.conllu",
+        "bytes": 5907221,
+        "sha256": "fcc4bed5885e3d95f34a0e1bf813783135d38ae76d5822c3530b371fe78fc35f",
+        "retrieved_at_utc": "2026-10-17T02:11:43.459129+00:00",
+        "http_date": "Sat, 17 Oct 2026 02:11:42 GMT",
+        "etag": "\"464e9c98d99efca0725afb79b4cea63d82e85d7a5620bbf231867693e33d97d0\""
+      },
+      {
+        "name": "sv_talbanken-ud-dev.conllu",
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Swedish-Talbanken/3fd9c4123f155560ebb68c324b346fa9fa33991c/sv_talbanken-ud-dev.conllu",
+        "bytes": 863260,
+        "sha256": "2e30e94a73a6db89b09fe80767df0c8c1194a48525879126a793015e868f8265",
+        "retrieved_at_utc": "2026-10-17T02:11:44.684724+00:00",
+        "http_date": "Sat, 17 Oct 2026 02:11:44 GMT",
+        "etag": "\"cf74a66f3235918e3d3e55e2d3ffa661e77c6d946c23c2b4ab5f258f51421323\""
+      },
+      {
+        "name": "sv_talbanken-ud-test.conllu",
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Swedish-Talbanken/3fd9c4123f155560ebb68c324b346fa9fa33991c/sv_talbanken-ud-test.conllu",
+        "bytes": 1802238,
+        "sha256": "eb3950dfb820d13634bed35c1d0f69872851754e0b19af1a9705ce6978580434",
+        "retrieved_at_utc": "2026-10-17T02:11:45.426769+00:00",
+        "http_date": "Sat, 17 Oct 2026 02:11:45 GMT",
+        "etag": "\"4d2085657494d3c8a5c109e8f3c8480ac7ab3a013c81085df1c81dff34b18f81\""
+      }
+    ]
+  },
+  "limitations": [
+    "Gold tokenization and UPOS conditional task, not raw-text pipeline.",
+    "Selected 76 test sentences lie within three documents, not 76 independent linguistic populations.",
+    "Basic integer-node HEAD/DEPREL only; no enhanced-empty or deprel subtype mapping.",
+    "No Swedish human semantic adjudication, online deployment, or large-scale benchmark claim."
+  ]
+}

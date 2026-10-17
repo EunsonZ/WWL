@@ -1,0 +1,5148 @@
+{
+  "geometry": {
+    "mode": "geometry",
+    "labels": [
+      "acl",
+      "acl:relcl",
+      "advcl",
+      "advmod",
+      "amod",
+      "appos",
+      "aux",
+      "case",
+      "cc",
+      "ccomp",
+      "compound",
+      "compound:prt",
+      "conj",
+      "cop",
+      "csubj",
+      "csubj:pass",
+      "det",
+      "dislocated",
+      "expl",
+      "fixed",
+      "flat:name",
+      "iobj",
+      "mark",
+      "nmod",
+      "nmod:poss",
+      "nsubj",
+      "nsubj:outer",
+      "nsubj:pass",
+      "nummod",
+      "obj",
+      "obl",
+      "obl:agent",
+      "parataxis",
+      "punct",
+      "root",
+      "xcomp"
+    ],
+    "feature_domain_size": 281,
+    "conditions": {
+      "*": 2885
+    },
+    "counts": [
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "acl"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "acl:relcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "advmod"
+        ],
+        "count": 39
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "amod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "case"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "compound:prt"
+        ],
+        "count": 17
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "cop"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "expl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "flat:name"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "iobj"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "nmod"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "nsubj"
+        ],
+        "count": 34
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "nsubj:pass"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "nummod"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "obj"
+        ],
+        "count": 40
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "punct"
+        ],
+        "count": 62
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "1",
+          "xcomp"
+        ],
+        "count": 12
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "acl"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "acl:relcl"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "advmod"
+        ],
+        "count": 12
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "appos"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "compound:prt"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 39
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "csubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "fixed"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "iobj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "nmod"
+        ],
+        "count": 71
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "nsubj"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "nsubj:pass"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "nummod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "obj"
+        ],
+        "count": 42
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 44
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "obl:agent"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "punct"
+        ],
+        "count": 32
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "2",
+          "xcomp"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "acl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "acl:relcl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "advcl"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "advmod"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "appos"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "ccomp"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "compound:prt"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "conj"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "nmod"
+        ],
+        "count": 25
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "nsubj"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "nsubj:pass"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "obj"
+        ],
+        "count": 16
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "obl"
+        ],
+        "count": 29
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "obl:agent"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "parataxis"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "punct"
+        ],
+        "count": 38
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "3",
+          "xcomp"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "acl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "acl:relcl"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "advcl"
+        ],
+        "count": 11
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "advmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "ccomp"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "compound:prt"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "conj"
+        ],
+        "count": 16
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "csubj"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "csubj:pass"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "nmod"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "nsubj:pass"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "nummod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "obj"
+        ],
+        "count": 16
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "obl"
+        ],
+        "count": 77
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "obl:agent"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "parataxis"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "punct"
+        ],
+        "count": 200
+      },
+      {
+        "key": [
+          "*",
+          "L",
+          "4+",
+          "xcomp"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "advcl"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 95
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "amod"
+        ],
+        "count": 175
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "aux"
+        ],
+        "count": 41
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "case"
+        ],
+        "count": 192
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 46
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "compound"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "cop"
+        ],
+        "count": 17
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "det"
+        ],
+        "count": 72
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "expl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "mark"
+        ],
+        "count": 25
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "nmod"
+        ],
+        "count": 18
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "nmod:poss"
+        ],
+        "count": 46
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "nsubj"
+        ],
+        "count": 92
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "nsubj:pass"
+        ],
+        "count": 31
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "nummod"
+        ],
+        "count": 35
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "obj"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "obl"
+        ],
+        "count": 34
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "1",
+          "punct"
+        ],
+        "count": 13
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "advmod"
+        ],
+        "count": 11
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "amod"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "aux"
+        ],
+        "count": 23
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "case"
+        ],
+        "count": 90
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "cc"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "cop"
+        ],
+        "count": 19
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "det"
+        ],
+        "count": 54
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "dislocated"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "expl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "mark"
+        ],
+        "count": 17
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "nmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "nmod:poss"
+        ],
+        "count": 12
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 41
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "nsubj:pass"
+        ],
+        "count": 14
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "obl:agent"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "2",
+          "punct"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "advcl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "advmod"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "amod"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "aux"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "case"
+        ],
+        "count": 24
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "cc"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "cop"
+        ],
+        "count": 10
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "csubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "det"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "expl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "mark"
+        ],
+        "count": 10
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "nmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 30
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "nsubj:outer"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "nsubj:pass"
+        ],
+        "count": 12
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "obl"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "3",
+          "punct"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "advcl"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "advmod"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "aux"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "case"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "cc"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "cop"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "csubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "det"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "mark"
+        ],
+        "count": 10
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "nsubj"
+        ],
+        "count": 31
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "nsubj:pass"
+        ],
+        "count": 11
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "obj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "obl"
+        ],
+        "count": 12
+      },
+      {
+        "key": [
+          "*",
+          "R",
+          "4+",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "*",
+          "ROOT",
+          "0",
+          "root"
+        ],
+        "count": 351
+      }
+    ]
+  },
+  "upos_geometry": {
+    "mode": "upos_geometry",
+    "labels": [
+      "acl",
+      "acl:relcl",
+      "advcl",
+      "advmod",
+      "amod",
+      "appos",
+      "aux",
+      "case",
+      "cc",
+      "ccomp",
+      "compound",
+      "compound:prt",
+      "conj",
+      "cop",
+      "csubj",
+      "csubj:pass",
+      "det",
+      "dislocated",
+      "expl",
+      "fixed",
+      "flat:name",
+      "iobj",
+      "mark",
+      "nmod",
+      "nmod:poss",
+      "nsubj",
+      "nsubj:outer",
+      "nsubj:pass",
+      "nummod",
+      "obj",
+      "obl",
+      "obl:agent",
+      "parataxis",
+      "punct",
+      "root",
+      "xcomp"
+    ],
+    "feature_domain_size": 4761,
+    "conditions": {
+      "ADJ": 252,
+      "ADP": 326,
+      "ADV": 193,
+      "AUX": 135,
+      "CCONJ": 60,
+      "DET": 135,
+      "NOUN": 755,
+      "NUM": 49,
+      "PART": 34,
+      "PRON": 173,
+      "PROPN": 47,
+      "PUNCT": 357,
+      "SCONJ": 38,
+      "SYM": 4,
+      "VERB": 327
+    },
+    "counts": [
+      {
+        "key": [
+          "ADJ",
+          "<ROOT>",
+          "ROOT",
+          "0",
+          "root"
+        ],
+        "count": 30
+      },
+      {
+        "key": [
+          "ADJ",
+          "ADJ",
+          "L",
+          "1",
+          "acl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "ADJ",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "ADJ",
+          "ADJ",
+          "L",
+          "3",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "ADJ",
+          "L",
+          "4+",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "ADJ",
+          "R",
+          "4+",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "NOUN",
+          "L",
+          "2",
+          "acl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "NOUN",
+          "L",
+          "3",
+          "acl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "NOUN",
+          "L",
+          "4+",
+          "parataxis"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "NOUN",
+          "R",
+          "1",
+          "amod"
+        ],
+        "count": 174
+      },
+      {
+        "key": [
+          "ADJ",
+          "NOUN",
+          "R",
+          "2",
+          "amod"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "ADJ",
+          "NOUN",
+          "R",
+          "3",
+          "amod"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "ADJ",
+          "NUM",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "PRON",
+          "L",
+          "1",
+          "acl"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "L",
+          "1",
+          "amod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "L",
+          "1",
+          "xcomp"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "L",
+          "2",
+          "xcomp"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "L",
+          "3",
+          "xcomp"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "L",
+          "4+",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "L",
+          "4+",
+          "csubj:pass"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "L",
+          "4+",
+          "obl"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "L",
+          "4+",
+          "xcomp"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "R",
+          "1",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "R",
+          "1",
+          "nsubj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADJ",
+          "VERB",
+          "R",
+          "4+",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADP",
+          "<ROOT>",
+          "ROOT",
+          "0",
+          "root"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADP",
+          "ADJ",
+          "R",
+          "1",
+          "case"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "ADP",
+          "ADJ",
+          "R",
+          "2",
+          "case"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "ADP",
+          "ADP",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADP",
+          "ADV",
+          "R",
+          "1",
+          "case"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADP",
+          "NOUN",
+          "R",
+          "1",
+          "case"
+        ],
+        "count": 159
+      },
+      {
+        "key": [
+          "ADP",
+          "NOUN",
+          "R",
+          "1",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADP",
+          "NOUN",
+          "R",
+          "2",
+          "case"
+        ],
+        "count": 81
+      },
+      {
+        "key": [
+          "ADP",
+          "NOUN",
+          "R",
+          "3",
+          "case"
+        ],
+        "count": 23
+      },
+      {
+        "key": [
+          "ADP",
+          "NOUN",
+          "R",
+          "4+",
+          "case"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "ADP",
+          "NUM",
+          "R",
+          "1",
+          "case"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADP",
+          "NUM",
+          "R",
+          "2",
+          "case"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADP",
+          "PRON",
+          "R",
+          "1",
+          "case"
+        ],
+        "count": 11
+      },
+      {
+        "key": [
+          "ADP",
+          "PROPN",
+          "R",
+          "1",
+          "case"
+        ],
+        "count": 15
+      },
+      {
+        "key": [
+          "ADP",
+          "PROPN",
+          "R",
+          "2",
+          "case"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADP",
+          "VERB",
+          "L",
+          "1",
+          "compound:prt"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "ADP",
+          "VERB",
+          "L",
+          "1",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADP",
+          "VERB",
+          "L",
+          "3",
+          "compound:prt"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADP",
+          "VERB",
+          "R",
+          "2",
+          "mark"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADP",
+          "VERB",
+          "R",
+          "3",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADP",
+          "VERB",
+          "R",
+          "4+",
+          "mark"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "ADV",
+          "ADJ",
+          "L",
+          "1",
+          "advmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "ADJ",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 31
+      },
+      {
+        "key": [
+          "ADV",
+          "ADJ",
+          "R",
+          "2",
+          "advmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "ADJ",
+          "R",
+          "3",
+          "advmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "ADJ",
+          "R",
+          "4+",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "ADV",
+          "L",
+          "1",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "ADV",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "ADV",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "ADV",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "ADV",
+          "ADV",
+          "R",
+          "1",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "ADV",
+          "R",
+          "2",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "ADV",
+          "R",
+          "4+",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "DET",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "NOUN",
+          "L",
+          "1",
+          "nmod"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "ADV",
+          "NOUN",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "ADV",
+          "NOUN",
+          "R",
+          "2",
+          "advmod"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "ADV",
+          "NOUN",
+          "R",
+          "2",
+          "case"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "NOUN",
+          "R",
+          "3",
+          "case"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "NOUN",
+          "R",
+          "4+",
+          "advmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "NUM",
+          "L",
+          "1",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "NUM",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "ADV",
+          "PRON",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "PRON",
+          "R",
+          "1",
+          "case"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "1",
+          "advmod"
+        ],
+        "count": 29
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "1",
+          "compound:prt"
+        ],
+        "count": 12
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "1",
+          "xcomp"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "2",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "2",
+          "advmod"
+        ],
+        "count": 10
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "2",
+          "compound:prt"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "3",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "3",
+          "advmod"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "3",
+          "compound:prt"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "4+",
+          "advcl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "4+",
+          "advmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "L",
+          "4+",
+          "compound:prt"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "R",
+          "1",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 34
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "R",
+          "2",
+          "advmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "R",
+          "2",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "R",
+          "3",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "R",
+          "3",
+          "advmod"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "ADV",
+          "VERB",
+          "R",
+          "4+",
+          "advmod"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "AUX",
+          "ADJ",
+          "R",
+          "1",
+          "cop"
+        ],
+        "count": 13
+      },
+      {
+        "key": [
+          "AUX",
+          "ADJ",
+          "R",
+          "2",
+          "cop"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "AUX",
+          "ADJ",
+          "R",
+          "3",
+          "cop"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "AUX",
+          "ADJ",
+          "R",
+          "4+",
+          "aux"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "AUX",
+          "ADJ",
+          "R",
+          "4+",
+          "cop"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "AUX",
+          "ADP",
+          "R",
+          "1",
+          "cop"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "AUX",
+          "ADP",
+          "R",
+          "3",
+          "aux"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "AUX",
+          "ADV",
+          "R",
+          "1",
+          "cop"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "AUX",
+          "NOUN",
+          "L",
+          "1",
+          "cop"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "AUX",
+          "NOUN",
+          "R",
+          "1",
+          "cop"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "AUX",
+          "NOUN",
+          "R",
+          "2",
+          "cop"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "AUX",
+          "NOUN",
+          "R",
+          "3",
+          "cop"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "AUX",
+          "NOUN",
+          "R",
+          "4+",
+          "cop"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "AUX",
+          "NUM",
+          "R",
+          "2",
+          "cop"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "AUX",
+          "PRON",
+          "R",
+          "1",
+          "cop"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "AUX",
+          "VERB",
+          "R",
+          "1",
+          "aux"
+        ],
+        "count": 41
+      },
+      {
+        "key": [
+          "AUX",
+          "VERB",
+          "R",
+          "2",
+          "aux"
+        ],
+        "count": 23
+      },
+      {
+        "key": [
+          "AUX",
+          "VERB",
+          "R",
+          "2",
+          "cop"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "AUX",
+          "VERB",
+          "R",
+          "3",
+          "aux"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "AUX",
+          "VERB",
+          "R",
+          "4+",
+          "aux"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "CCONJ",
+          "ADJ",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "ADJ",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "CCONJ",
+          "ADJ",
+          "R",
+          "2",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "ADJ",
+          "R",
+          "3",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "ADP",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "ADV",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "CCONJ",
+          "AUX",
+          "R",
+          "4+",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "NOUN",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 27
+      },
+      {
+        "key": [
+          "CCONJ",
+          "NOUN",
+          "R",
+          "2",
+          "cc"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "CCONJ",
+          "NOUN",
+          "R",
+          "3",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "NUM",
+          "R",
+          "3",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "PRON",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "PROPN",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "CCONJ",
+          "VERB",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "CCONJ",
+          "VERB",
+          "R",
+          "2",
+          "cc"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "CCONJ",
+          "VERB",
+          "R",
+          "4+",
+          "cc"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "DET",
+          "ADJ",
+          "R",
+          "1",
+          "det"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "DET",
+          "NOUN",
+          "R",
+          "1",
+          "det"
+        ],
+        "count": 64
+      },
+      {
+        "key": [
+          "DET",
+          "NOUN",
+          "R",
+          "2",
+          "det"
+        ],
+        "count": 54
+      },
+      {
+        "key": [
+          "DET",
+          "NOUN",
+          "R",
+          "3",
+          "det"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "DET",
+          "NOUN",
+          "R",
+          "4+",
+          "det"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "DET",
+          "PRON",
+          "R",
+          "1",
+          "det"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "<ROOT>",
+          "ROOT",
+          "0",
+          "root"
+        ],
+        "count": 54
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "L",
+          "3",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "1",
+          "nmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "1",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "1",
+          "obl"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "2",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "2",
+          "obl:agent"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "4+",
+          "nsubj"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADJ",
+          "R",
+          "4+",
+          "obl"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADP",
+          "L",
+          "2",
+          "fixed"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADP",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADP",
+          "R",
+          "4+",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADV",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NOUN",
+          "ADV",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "2",
+          "acl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "2",
+          "appos"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 29
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "2",
+          "nmod"
+        ],
+        "count": 61
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "3",
+          "appos"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "3",
+          "conj"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "3",
+          "nmod"
+        ],
+        "count": 22
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "3",
+          "parataxis"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "4+",
+          "conj"
+        ],
+        "count": 10
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "4+",
+          "nmod"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "4+",
+          "obl"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "L",
+          "4+",
+          "parataxis"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "1",
+          "nmod"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "1",
+          "nmod:poss"
+        ],
+        "count": 18
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "2",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "2",
+          "nmod:poss"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "3",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "3",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "4+",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NOUN",
+          "R",
+          "4+",
+          "nsubj"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "NOUN",
+          "NUM",
+          "L",
+          "2",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NUM",
+          "R",
+          "1",
+          "nmod"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NOUN",
+          "NUM",
+          "R",
+          "2",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NUM",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "NUM",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "PRON",
+          "L",
+          "2",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "PRON",
+          "L",
+          "3",
+          "nmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NOUN",
+          "PRON",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "PROPN",
+          "L",
+          "2",
+          "appos"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "PROPN",
+          "L",
+          "3",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "PROPN",
+          "L",
+          "4+",
+          "xcomp"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NOUN",
+          "PROPN",
+          "R",
+          "1",
+          "nmod"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "NOUN",
+          "PROPN",
+          "R",
+          "3",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "1",
+          "iobj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "1",
+          "nsubj"
+        ],
+        "count": 15
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "1",
+          "nsubj:pass"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "1",
+          "obj"
+        ],
+        "count": 26
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "1",
+          "xcomp"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "2",
+          "nsubj"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "2",
+          "nsubj:pass"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "2",
+          "obj"
+        ],
+        "count": 40
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 24
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "2",
+          "xcomp"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "3",
+          "nsubj"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "3",
+          "nsubj:pass"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "3",
+          "obj"
+        ],
+        "count": 15
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "3",
+          "obl"
+        ],
+        "count": 21
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "3",
+          "xcomp"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "4+",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "4+",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "4+",
+          "nsubj:pass"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "4+",
+          "obj"
+        ],
+        "count": 16
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "4+",
+          "obl"
+        ],
+        "count": 62
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "4+",
+          "obl:agent"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "L",
+          "4+",
+          "xcomp"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "1",
+          "nsubj"
+        ],
+        "count": 40
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "1",
+          "nsubj:pass"
+        ],
+        "count": 25
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "1",
+          "obj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "1",
+          "obl"
+        ],
+        "count": 28
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 10
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "2",
+          "nsubj:pass"
+        ],
+        "count": 12
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "2",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 10
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "3",
+          "nsubj:outer"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "3",
+          "nsubj:pass"
+        ],
+        "count": 12
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "3",
+          "obl"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "4+",
+          "nsubj"
+        ],
+        "count": 11
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "4+",
+          "nsubj:pass"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "NOUN",
+          "VERB",
+          "R",
+          "4+",
+          "obl"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "NUM",
+          "<ROOT>",
+          "ROOT",
+          "0",
+          "root"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NUM",
+          "ADJ",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NUM",
+          "NOUN",
+          "L",
+          "1",
+          "nummod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NUM",
+          "NOUN",
+          "L",
+          "2",
+          "nmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NUM",
+          "NOUN",
+          "L",
+          "4+",
+          "nummod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NUM",
+          "NOUN",
+          "R",
+          "1",
+          "nummod"
+        ],
+        "count": 34
+      },
+      {
+        "key": [
+          "NUM",
+          "NUM",
+          "L",
+          "2",
+          "nummod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NUM",
+          "NUM",
+          "L",
+          "4+",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NUM",
+          "VERB",
+          "L",
+          "1",
+          "nummod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "NUM",
+          "VERB",
+          "L",
+          "3",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NUM",
+          "VERB",
+          "L",
+          "4+",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "NUM",
+          "VERB",
+          "R",
+          "1",
+          "nummod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PART",
+          "ADJ",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PART",
+          "NOUN",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PART",
+          "NOUN",
+          "R",
+          "2",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PART",
+          "VERB",
+          "L",
+          "1",
+          "advmod"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "PART",
+          "VERB",
+          "L",
+          "2",
+          "advmod"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PART",
+          "VERB",
+          "R",
+          "1",
+          "advmod"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "PART",
+          "VERB",
+          "R",
+          "1",
+          "mark"
+        ],
+        "count": 14
+      },
+      {
+        "key": [
+          "PART",
+          "VERB",
+          "R",
+          "2",
+          "advmod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PART",
+          "VERB",
+          "R",
+          "3",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "<ROOT>",
+          "ROOT",
+          "0",
+          "root"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "ADJ",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "ADJ",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "ADJ",
+          "R",
+          "2",
+          "expl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "ADJ",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "PRON",
+          "ADJ",
+          "R",
+          "3",
+          "expl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "ADJ",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "ADJ",
+          "R",
+          "4+",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "NOUN",
+          "R",
+          "1",
+          "nmod:poss"
+        ],
+        "count": 20
+      },
+      {
+        "key": [
+          "PRON",
+          "NOUN",
+          "R",
+          "2",
+          "nmod:poss"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "PRON",
+          "NOUN",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "NOUN",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "NOUN",
+          "R",
+          "3",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "NOUN",
+          "R",
+          "4+",
+          "nsubj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "1",
+          "expl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "1",
+          "iobj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "1",
+          "nsubj"
+        ],
+        "count": 18
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "1",
+          "nsubj:pass"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "1",
+          "obj"
+        ],
+        "count": 13
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "2",
+          "iobj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "2",
+          "obj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "3",
+          "obj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "3",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "L",
+          "4+",
+          "obl"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "1",
+          "expl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "1",
+          "nsubj"
+        ],
+        "count": 42
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "1",
+          "nsubj:pass"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "1",
+          "obj"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "1",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "2",
+          "dislocated"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "2",
+          "nsubj"
+        ],
+        "count": 15
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "2",
+          "nsubj:pass"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "3",
+          "nsubj"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "3",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "4+",
+          "nsubj:pass"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PRON",
+          "VERB",
+          "R",
+          "4+",
+          "obj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "<ROOT>",
+          "ROOT",
+          "0",
+          "root"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "PROPN",
+          "ADJ",
+          "R",
+          "4+",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "NOUN",
+          "L",
+          "2",
+          "nmod"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "PROPN",
+          "NOUN",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "NOUN",
+          "R",
+          "1",
+          "compound"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "NOUN",
+          "R",
+          "1",
+          "nmod:poss"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "PROPN",
+          "NOUN",
+          "R",
+          "1",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "NOUN",
+          "R",
+          "2",
+          "nmod:poss"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "PROPN",
+          "L",
+          "1",
+          "flat:name"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "PROPN",
+          "PROPN",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "1",
+          "iobj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "1",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "1",
+          "obj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "2",
+          "nsubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "2",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "2",
+          "obl:agent"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "3",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "3",
+          "obl:agent"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "L",
+          "4+",
+          "obl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "R",
+          "1",
+          "nsubj"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "PROPN",
+          "VERB",
+          "R",
+          "1",
+          "obl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "ADJ",
+          "L",
+          "1",
+          "punct"
+        ],
+        "count": 16
+      },
+      {
+        "key": [
+          "PUNCT",
+          "ADJ",
+          "L",
+          "2",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "ADJ",
+          "L",
+          "3",
+          "punct"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "PUNCT",
+          "ADJ",
+          "L",
+          "4+",
+          "punct"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "PUNCT",
+          "ADJ",
+          "R",
+          "1",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "ADJ",
+          "R",
+          "3",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "ADJ",
+          "R",
+          "4+",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "ADP",
+          "L",
+          "1",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NOUN",
+          "L",
+          "1",
+          "punct"
+        ],
+        "count": 24
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NOUN",
+          "L",
+          "2",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NOUN",
+          "L",
+          "3",
+          "punct"
+        ],
+        "count": 9
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NOUN",
+          "L",
+          "4+",
+          "punct"
+        ],
+        "count": 15
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NOUN",
+          "R",
+          "1",
+          "punct"
+        ],
+        "count": 10
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NOUN",
+          "R",
+          "2",
+          "punct"
+        ],
+        "count": 6
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NOUN",
+          "R",
+          "3",
+          "punct"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NUM",
+          "L",
+          "1",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "NUM",
+          "L",
+          "4+",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "PRON",
+          "L",
+          "1",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "PROPN",
+          "L",
+          "1",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "PROPN",
+          "L",
+          "2",
+          "punct"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "PUNCT",
+          "PROPN",
+          "L",
+          "4+",
+          "punct"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "PUNCT",
+          "VERB",
+          "L",
+          "1",
+          "punct"
+        ],
+        "count": 18
+      },
+      {
+        "key": [
+          "PUNCT",
+          "VERB",
+          "L",
+          "2",
+          "punct"
+        ],
+        "count": 27
+      },
+      {
+        "key": [
+          "PUNCT",
+          "VERB",
+          "L",
+          "3",
+          "punct"
+        ],
+        "count": 24
+      },
+      {
+        "key": [
+          "PUNCT",
+          "VERB",
+          "L",
+          "4+",
+          "punct"
+        ],
+        "count": 173
+      },
+      {
+        "key": [
+          "PUNCT",
+          "VERB",
+          "R",
+          "1",
+          "punct"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "PUNCT",
+          "VERB",
+          "R",
+          "2",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "PUNCT",
+          "VERB",
+          "R",
+          "3",
+          "punct"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "SCONJ",
+          "ADJ",
+          "R",
+          "1",
+          "mark"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "SCONJ",
+          "ADJ",
+          "R",
+          "2",
+          "mark"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "SCONJ",
+          "ADJ",
+          "R",
+          "3",
+          "mark"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "SCONJ",
+          "ADV",
+          "R",
+          "1",
+          "mark"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "SCONJ",
+          "ADV",
+          "R",
+          "4+",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "SCONJ",
+          "NOUN",
+          "R",
+          "1",
+          "mark"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "SCONJ",
+          "NOUN",
+          "R",
+          "2",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "SCONJ",
+          "NOUN",
+          "R",
+          "3",
+          "mark"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "SCONJ",
+          "VERB",
+          "L",
+          "1",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "SCONJ",
+          "VERB",
+          "R",
+          "2",
+          "mark"
+        ],
+        "count": 11
+      },
+      {
+        "key": [
+          "SCONJ",
+          "VERB",
+          "R",
+          "3",
+          "mark"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "SCONJ",
+          "VERB",
+          "R",
+          "4+",
+          "mark"
+        ],
+        "count": 5
+      },
+      {
+        "key": [
+          "SYM",
+          "NOUN",
+          "R",
+          "1",
+          "cc"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "SYM",
+          "NUM",
+          "L",
+          "1",
+          "case"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "<ROOT>",
+          "ROOT",
+          "0",
+          "root"
+        ],
+        "count": 259
+      },
+      {
+        "key": [
+          "VERB",
+          "ADJ",
+          "L",
+          "2",
+          "csubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "ADJ",
+          "L",
+          "3",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "ADJ",
+          "L",
+          "4+",
+          "csubj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "VERB",
+          "ADJ",
+          "R",
+          "4+",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "L",
+          "1",
+          "acl:relcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "L",
+          "2",
+          "acl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "L",
+          "2",
+          "acl:relcl"
+        ],
+        "count": 7
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "L",
+          "3",
+          "acl:relcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "L",
+          "4+",
+          "acl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "L",
+          "4+",
+          "acl:relcl"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "L",
+          "4+",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "L",
+          "4+",
+          "csubj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "R",
+          "1",
+          "amod"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "NOUN",
+          "R",
+          "4+",
+          "csubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "PRON",
+          "L",
+          "2",
+          "acl:relcl"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "VERB",
+          "PRON",
+          "L",
+          "3",
+          "acl:relcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "1",
+          "xcomp"
+        ],
+        "count": 4
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "2",
+          "conj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "2",
+          "xcomp"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "3",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "3",
+          "ccomp"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "3",
+          "conj"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "3",
+          "parataxis"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "3",
+          "xcomp"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "4+",
+          "advcl"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "4+",
+          "ccomp"
+        ],
+        "count": 8
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "4+",
+          "conj"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "L",
+          "4+",
+          "xcomp"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "R",
+          "1",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "R",
+          "3",
+          "advcl"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "R",
+          "3",
+          "csubj"
+        ],
+        "count": 1
+      },
+      {
+        "key": [
+          "VERB",
+          "VERB",
+          "R",
+          "4+",
+          "advcl"
+        ],
+        "count": 2
+      }
+    ]
+  }
+}

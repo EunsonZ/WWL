@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1000" viewBox="0 0 1240 1000" role="img" aria-labelledby="title desc">
+<title id="title">Literal reference and predicted arcs on two fixed diagnostic examples</title><desc id="desc">First two failing UPOS-model test sentences sorted by pre-existing FORM hash, selected only after the frozen evaluation for explanation. All positions and full labels are unchanged. Gray PUNCT rows are displayed but excluded from primary counts. Gold UPOS is supplied, not predicted. Text/annotations and derived display under CC BY-SA4.0 from UD Swedish-Talbanken fixed commit; see dependency/data for attribution. These are annotation comparisons, not human adjudications of meaning.</desc>
+<rect width="100%" height="100%" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<text x="30" y="34" font-size="22" fill="#185d9a" text-anchor="start">Actual failures: reference HEAD:relation versus frozen model prediction</text>
+<text x="30" y="65" font-size="15" fill="#58636e" text-anchor="start">Selection for explanation: first two failing test FORM hashes; no model or alpha changed.</text>
+<text x="30" y="110" font-size="18" fill="#185d9a" text-anchor="start">1. P301::sv-ud-test-649   UAS 6/10; LAS 6/10</text>
+<text x="30" y="139" font-size="13" fill="#58636e" text-anchor="start">ID</text>
+<text x="80" y="139" font-size="13" fill="#58636e" text-anchor="start">FORM</text>
+<text x="295" y="139" font-size="13" fill="#58636e" text-anchor="start">gold UPOS</text>
+<text x="420" y="139" font-size="13" fill="#58636e" text-anchor="start">reference head</text>
+<text x="570" y="139" font-size="13" fill="#58636e" text-anchor="start">reference relation</text>
+<text x="765" y="139" font-size="13" fill="#58636e" text-anchor="start">pred head</text>
+<text x="880" y="139" font-size="13" fill="#58636e" text-anchor="start">pred relation</text>
+<text x="1090" y="139" font-size="13" fill="#58636e" text-anchor="start">LAS arc?</text>
+<text x="30" y="152" font-size="13" fill="#23734c" text-anchor="start">1</text>
+<text x="295" y="152" font-size="13" fill="#23734c" text-anchor="start">SCONJ</text>
+<text x="420" y="152" font-size="13" fill="#23734c" text-anchor="start">3</text>
+<text x="570" y="152" font-size="13" fill="#23734c" text-anchor="start">mark</text>
+<text x="765" y="152" font-size="13" fill="#23734c" text-anchor="start">3</text>
+<text x="880" y="152" font-size="13" fill="#23734c" text-anchor="start">mark</text>
+<text x="1090" y="152" font-size="13" fill="#23734c" text-anchor="start">ok</text>
+<text x="80" y="152" font-size="13" fill="#23734c" text-anchor="start">Som</text>
+<text x="30" y="179" font-size="13" fill="#23734c" text-anchor="start">2</text>
+<text x="295" y="179" font-size="13" fill="#23734c" text-anchor="start">ADV</text>
+<text x="420" y="179" font-size="13" fill="#23734c" text-anchor="start">3</text>
+<text x="570" y="179" font-size="13" fill="#23734c" text-anchor="start">advmod</text>
+<text x="765" y="179" font-size="13" fill="#23734c" text-anchor="start">3</text>
+<text x="880" y="179" font-size="13" fill="#23734c" text-anchor="start">advmod</text>
+<text x="1090" y="179" font-size="13" fill="#23734c" text-anchor="start">ok</text>
+<text x="80" y="179" font-size="13" fill="#23734c" text-anchor="start">tidigare</text>
+<text x="30" y="206" font-size="13" fill="#a83c3c" text-anchor="start">3</text>
+<text x="295" y="206" font-size="13" fill="#a83c3c" text-anchor="start">VERB</text>
+<text x="420" y="206" font-size="13" fill="#a83c3c" text-anchor="start">7</text>
+<text x="570" y="206" font-size="13" fill="#a83c3c" text-anchor="start">advcl</text>
+<text x="765" y="206" font-size="13" fill="#a83c3c" text-anchor="start">0</text>
+<text x="880" y="206" font-size="13" fill="#a83c3c" text-anchor="start">root</text>
+<text x="1090" y="206" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="206" font-size="13" fill="#a83c3c" text-anchor="start">framhållits</text>
+<text x="30" y="233" font-size="13" fill="#a83c3c" text-anchor="start">4</text>
+<text x="295" y="233" font-size="13" fill="#a83c3c" text-anchor="start">AUX</text>
+<text x="420" y="233" font-size="13" fill="#a83c3c" text-anchor="start">7</text>
+<text x="570" y="233" font-size="13" fill="#a83c3c" text-anchor="start">aux</text>
+<text x="765" y="233" font-size="13" fill="#a83c3c" text-anchor="start">5</text>
+<text x="880" y="233" font-size="13" fill="#a83c3c" text-anchor="start">cop</text>
+<text x="1090" y="233" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="233" font-size="13" fill="#a83c3c" text-anchor="start">kan</text>
+<text x="30" y="260" font-size="13" fill="#23734c" text-anchor="start">5</text>
+<text x="295" y="260" font-size="13" fill="#23734c" text-anchor="start">ADJ</text>
+<text x="420" y="260" font-size="13" fill="#23734c" text-anchor="start">6</text>
+<text x="570" y="260" font-size="13" fill="#23734c" text-anchor="start">amod</text>
+<text x="765" y="260" font-size="13" fill="#23734c" text-anchor="start">6</text>
+<text x="880" y="260" font-size="13" fill="#23734c" text-anchor="start">amod</text>
+<text x="1090" y="260" font-size="13" fill="#23734c" text-anchor="start">ok</text>
+<text x="80" y="260" font-size="13" fill="#23734c" text-anchor="start">psykiska</text>
+<text x="30" y="287" font-size="13" fill="#23734c" text-anchor="start">6</text>
+<text x="295" y="287" font-size="13" fill="#23734c" text-anchor="start">NOUN</text>
+<text x="420" y="287" font-size="13" fill="#23734c" text-anchor="start">7</text>
+<text x="570" y="287" font-size="13" fill="#23734c" text-anchor="start">nsubj</text>
+<text x="765" y="287" font-size="13" fill="#23734c" text-anchor="start">7</text>
+<text x="880" y="287" font-size="13" fill="#23734c" text-anchor="start">nsubj</text>
+<text x="1090" y="287" font-size="13" fill="#23734c" text-anchor="start">ok</text>
+<text x="80" y="287" font-size="13" fill="#23734c" text-anchor="start">rubbningar</text>
+<text x="30" y="314" font-size="13" fill="#a83c3c" text-anchor="start">7</text>
+<text x="295" y="314" font-size="13" fill="#a83c3c" text-anchor="start">VERB</text>
+<text x="420" y="314" font-size="13" fill="#a83c3c" text-anchor="start">0</text>
+<text x="570" y="314" font-size="13" fill="#a83c3c" text-anchor="start">root</text>
+<text x="765" y="314" font-size="13" fill="#a83c3c" text-anchor="start">3</text>
+<text x="880" y="314" font-size="13" fill="#a83c3c" text-anchor="start">advcl</text>
+<text x="1090" y="314" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="314" font-size="13" fill="#a83c3c" text-anchor="start">uppstå</text>
+<text x="30" y="341" font-size="13" fill="#23734c" text-anchor="start">8</text>
+<text x="295" y="341" font-size="13" fill="#23734c" text-anchor="start">ADP</text>
+<text x="420" y="341" font-size="13" fill="#23734c" text-anchor="start">10</text>
+<text x="570" y="341" font-size="13" fill="#23734c" text-anchor="start">case</text>
+<text x="765" y="341" font-size="13" fill="#23734c" text-anchor="start">10</text>
+<text x="880" y="341" font-size="13" fill="#23734c" text-anchor="start">case</text>
+<text x="1090" y="341" font-size="13" fill="#23734c" text-anchor="start">ok</text>
+<text x="80" y="341" font-size="13" fill="#23734c" text-anchor="start">vid</text>
+<text x="30" y="368" font-size="13" fill="#23734c" text-anchor="start">9</text>
+<text x="295" y="368" font-size="13" fill="#23734c" text-anchor="start">ADJ</text>
+<text x="420" y="368" font-size="13" fill="#23734c" text-anchor="start">10</text>
+<text x="570" y="368" font-size="13" fill="#23734c" text-anchor="start">amod</text>
+<text x="765" y="368" font-size="13" fill="#23734c" text-anchor="start">10</text>
+<text x="880" y="368" font-size="13" fill="#23734c" text-anchor="start">amod</text>
+<text x="1090" y="368" font-size="13" fill="#23734c" text-anchor="start">ok</text>
+<text x="80" y="368" font-size="13" fill="#23734c" text-anchor="start">yttre</text>
+<text x="30" y="395" font-size="13" fill="#a83c3c" text-anchor="start">10</text>
+<text x="295" y="395" font-size="13" fill="#a83c3c" text-anchor="start">NOUN</text>
+<text x="420" y="395" font-size="13" fill="#a83c3c" text-anchor="start">7</text>
+<text x="570" y="395" font-size="13" fill="#a83c3c" text-anchor="start">obl</text>
+<text x="765" y="395" font-size="13" fill="#a83c3c" text-anchor="start">3</text>
+<text x="880" y="395" font-size="13" fill="#a83c3c" text-anchor="start">obl</text>
+<text x="1090" y="395" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="395" font-size="13" fill="#a83c3c" text-anchor="start">påfrestningar</text>
+<rect x="25" y="405" width="1190" height="27" fill="#f1f2f3"/>
+<text x="30" y="422" font-size="13" fill="#58636e" text-anchor="start">11</text>
+<text x="295" y="422" font-size="13" fill="#58636e" text-anchor="start">PUNCT</text>
+<text x="420" y="422" font-size="13" fill="#58636e" text-anchor="start">7</text>
+<text x="570" y="422" font-size="13" fill="#58636e" text-anchor="start">punct</text>
+<text x="765" y="422" font-size="13" fill="#58636e" text-anchor="start">3</text>
+<text x="880" y="422" font-size="13" fill="#58636e" text-anchor="start">punct</text>
+<text x="1090" y="422" font-size="13" fill="#58636e" text-anchor="start">excluded</text>
+<text x="80" y="422" font-size="13" fill="#58636e" text-anchor="start">.</text>
+<text x="30" y="502" font-size="18" fill="#185d9a" text-anchor="start">2. P301::sv-ud-test-634   UAS 4/8; LAS 2/8</text>
+<text x="30" y="531" font-size="13" fill="#58636e" text-anchor="start">ID</text>
+<text x="80" y="531" font-size="13" fill="#58636e" text-anchor="start">FORM</text>
+<text x="295" y="531" font-size="13" fill="#58636e" text-anchor="start">gold UPOS</text>
+<text x="420" y="531" font-size="13" fill="#58636e" text-anchor="start">reference head</text>
+<text x="570" y="531" font-size="13" fill="#58636e" text-anchor="start">reference relation</text>
+<text x="765" y="531" font-size="13" fill="#58636e" text-anchor="start">pred head</text>
+<text x="880" y="531" font-size="13" fill="#58636e" text-anchor="start">pred relation</text>
+<text x="1090" y="531" font-size="13" fill="#58636e" text-anchor="start">LAS arc?</text>
+<text x="30" y="544" font-size="13" fill="#23734c" text-anchor="start">1</text>
+<text x="295" y="544" font-size="13" fill="#23734c" text-anchor="start">PRON</text>
+<text x="420" y="544" font-size="13" fill="#23734c" text-anchor="start">2</text>
+<text x="570" y="544" font-size="13" fill="#23734c" text-anchor="start">nsubj</text>
+<text x="765" y="544" font-size="13" fill="#23734c" text-anchor="start">2</text>
+<text x="880" y="544" font-size="13" fill="#23734c" text-anchor="start">nsubj</text>
+<text x="1090" y="544" font-size="13" fill="#23734c" text-anchor="start">ok</text>
+<text x="80" y="544" font-size="13" fill="#23734c" text-anchor="start">Man</text>
+<text x="30" y="571" font-size="13" fill="#23734c" text-anchor="start">2</text>
+<text x="295" y="571" font-size="13" fill="#23734c" text-anchor="start">VERB</text>
+<text x="420" y="571" font-size="13" fill="#23734c" text-anchor="start">0</text>
+<text x="570" y="571" font-size="13" fill="#23734c" text-anchor="start">root</text>
+<text x="765" y="571" font-size="13" fill="#23734c" text-anchor="start">0</text>
+<text x="880" y="571" font-size="13" fill="#23734c" text-anchor="start">root</text>
+<text x="1090" y="571" font-size="13" fill="#23734c" text-anchor="start">ok</text>
+<text x="80" y="571" font-size="13" fill="#23734c" text-anchor="start">känner</text>
+<text x="30" y="598" font-size="13" fill="#a83c3c" text-anchor="start">3</text>
+<text x="295" y="598" font-size="13" fill="#a83c3c" text-anchor="start">PRON</text>
+<text x="420" y="598" font-size="13" fill="#a83c3c" text-anchor="start">2</text>
+<text x="570" y="598" font-size="13" fill="#a83c3c" text-anchor="start">obj</text>
+<text x="765" y="598" font-size="13" fill="#a83c3c" text-anchor="start">2</text>
+<text x="880" y="598" font-size="13" fill="#a83c3c" text-anchor="start">nsubj</text>
+<text x="1090" y="598" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="598" font-size="13" fill="#a83c3c" text-anchor="start">sig</text>
+<text x="30" y="625" font-size="13" fill="#a83c3c" text-anchor="start">4</text>
+<text x="295" y="625" font-size="13" fill="#a83c3c" text-anchor="start">ADJ</text>
+<text x="420" y="625" font-size="13" fill="#a83c3c" text-anchor="start">2</text>
+<text x="570" y="625" font-size="13" fill="#a83c3c" text-anchor="start">xcomp</text>
+<text x="765" y="625" font-size="13" fill="#a83c3c" text-anchor="start">6</text>
+<text x="880" y="625" font-size="13" fill="#a83c3c" text-anchor="start">amod</text>
+<text x="1090" y="625" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="625" font-size="13" fill="#a83c3c" text-anchor="start">nervös</text>
+<rect x="25" y="635" width="1190" height="27" fill="#f1f2f3"/>
+<text x="30" y="652" font-size="13" fill="#58636e" text-anchor="start">5</text>
+<text x="295" y="652" font-size="13" fill="#58636e" text-anchor="start">PUNCT</text>
+<text x="420" y="652" font-size="13" fill="#58636e" text-anchor="start">7</text>
+<text x="570" y="652" font-size="13" fill="#58636e" text-anchor="start">punct</text>
+<text x="765" y="652" font-size="13" fill="#58636e" text-anchor="start">4</text>
+<text x="880" y="652" font-size="13" fill="#58636e" text-anchor="start">punct</text>
+<text x="1090" y="652" font-size="13" fill="#58636e" text-anchor="start">excluded</text>
+<text x="80" y="652" font-size="13" fill="#58636e" text-anchor="start">,</text>
+<text x="30" y="679" font-size="13" fill="#a83c3c" text-anchor="start">6</text>
+<text x="295" y="679" font-size="13" fill="#a83c3c" text-anchor="start">NOUN</text>
+<text x="420" y="679" font-size="13" fill="#a83c3c" text-anchor="start">7</text>
+<text x="570" y="679" font-size="13" fill="#a83c3c" text-anchor="start">nsubj</text>
+<text x="765" y="679" font-size="13" fill="#a83c3c" text-anchor="start">2</text>
+<text x="880" y="679" font-size="13" fill="#a83c3c" text-anchor="start">obl</text>
+<text x="1090" y="679" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="679" font-size="13" fill="#a83c3c" text-anchor="start">nerverna</text>
+<text x="30" y="706" font-size="13" fill="#a83c3c" text-anchor="start">7</text>
+<text x="295" y="706" font-size="13" fill="#a83c3c" text-anchor="start">VERB</text>
+<text x="420" y="706" font-size="13" fill="#a83c3c" text-anchor="start">2</text>
+<text x="570" y="706" font-size="13" fill="#a83c3c" text-anchor="start">conj</text>
+<text x="765" y="706" font-size="13" fill="#a83c3c" text-anchor="start">2</text>
+<text x="880" y="706" font-size="13" fill="#a83c3c" text-anchor="start">advcl</text>
+<text x="1090" y="706" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="706" font-size="13" fill="#a83c3c" text-anchor="start">krånglar</text>
+<rect x="25" y="716" width="1190" height="27" fill="#f1f2f3"/>
+<text x="30" y="733" font-size="13" fill="#58636e" text-anchor="start">8</text>
+<text x="295" y="733" font-size="13" fill="#58636e" text-anchor="start">PUNCT</text>
+<text x="420" y="733" font-size="13" fill="#58636e" text-anchor="start">2</text>
+<text x="570" y="733" font-size="13" fill="#58636e" text-anchor="start">punct</text>
+<text x="765" y="733" font-size="13" fill="#58636e" text-anchor="start">2</text>
+<text x="880" y="733" font-size="13" fill="#58636e" text-anchor="start">punct</text>
+<text x="1090" y="733" font-size="13" fill="#58636e" text-anchor="start">excluded</text>
+<text x="80" y="733" font-size="13" fill="#58636e" text-anchor="start">,</text>
+<text x="30" y="760" font-size="13" fill="#a83c3c" text-anchor="start">9</text>
+<text x="295" y="760" font-size="13" fill="#a83c3c" text-anchor="start">VERB</text>
+<text x="420" y="760" font-size="13" fill="#a83c3c" text-anchor="start">10</text>
+<text x="570" y="760" font-size="13" fill="#a83c3c" text-anchor="start">nsubj</text>
+<text x="765" y="760" font-size="13" fill="#a83c3c" text-anchor="start">2</text>
+<text x="880" y="760" font-size="13" fill="#a83c3c" text-anchor="start">advcl</text>
+<text x="1090" y="760" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="760" font-size="13" fill="#a83c3c" text-anchor="start">säger</text>
+<text x="30" y="787" font-size="13" fill="#a83c3c" text-anchor="start">10</text>
+<text x="295" y="787" font-size="13" fill="#a83c3c" text-anchor="start">PRON</text>
+<text x="420" y="787" font-size="13" fill="#a83c3c" text-anchor="start">2</text>
+<text x="570" y="787" font-size="13" fill="#a83c3c" text-anchor="start">advcl</text>
+<text x="765" y="787" font-size="13" fill="#a83c3c" text-anchor="start">9</text>
+<text x="880" y="787" font-size="13" fill="#a83c3c" text-anchor="start">nsubj</text>
+<text x="1090" y="787" font-size="13" fill="#a83c3c" text-anchor="start">wrong</text>
+<text x="80" y="787" font-size="13" fill="#a83c3c" text-anchor="start">man</text>
+<rect x="25" y="797" width="1190" height="27" fill="#f1f2f3"/>
+<text x="30" y="814" font-size="13" fill="#58636e" text-anchor="start">11</text>
+<text x="295" y="814" font-size="13" fill="#58636e" text-anchor="start">PUNCT</text>
+<text x="420" y="814" font-size="13" fill="#58636e" text-anchor="start">2</text>
+<text x="570" y="814" font-size="13" fill="#58636e" text-anchor="start">punct</text>
+<text x="765" y="814" font-size="13" fill="#58636e" text-anchor="start">2</text>
+<text x="880" y="814" font-size="13" fill="#58636e" text-anchor="start">punct</text>
+<text x="1090" y="814" font-size="13" fill="#58636e" text-anchor="start">excluded</text>
+<text x="80" y="814" font-size="13" fill="#58636e" text-anchor="start">.</text>
+<text x="30" y="955" font-size="15" fill="#58636e" text-anchor="start">Gray rows are not deleted from trees. Full FORM, IDs and labels remain in raw predictions.</text>
+<text x="30" y="983" font-size="15" fill="#58636e" text-anchor="start">Reference labels are benchmark annotations; no new human Swedish meaning/adjudication study is claimed.</text>
+</g></svg>

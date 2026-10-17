@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Conditional reference-word dependency baseline and document slices</title><desc id="desc">Fixed Swedish-Talbanken r2.16 short-word sentences, gold words and gold UPOS as declared inputs. Exact complete relation labels, real root included, reference punctuation excluded. Bars are descriptive proportions, not confidence intervals or human meaning. P301 contributes435 of548 scored test words. Data-derived adaptations CC BY-SA4.0; upstream attribution in dependency/data.</desc>
+<rect width="100%" height="100%" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<text x="35" y="35" font-size="22" fill="#185d9a" text-anchor="start">Gold words + gold UPOS: conditional structure, not raw-text parsing</text>
+<text x="35" y="66" font-size="16" fill="#58636e" text-anchor="start">Train351 / dev13 / test76 sentences;11 /1 /3 documents. Test denominator548 non-PUNCT words.</text>
+<text x="35" y="112" font-size="18" fill="#185d9a" text-anchor="start">geometry</text>
+<text x="35" y="144" font-size="15" fill="#185d9a" text-anchor="start">UAS</text>
+<rect x="115" y="128" width="700" height="21" fill="#edf0f2"/>
+<rect x="115" y="128" width="117.51824817518248" height="21" fill="#185d9a"/>
+<text x="840" y="145" font-size="16" fill="#185d9a" text-anchor="start">92/548 = 0.167883</text>
+<text x="35" y="176" font-size="15" fill="#185d9a" text-anchor="start">LAS</text>
+<rect x="115" y="160" width="700" height="21" fill="#edf0f2"/>
+<rect x="115" y="160" width="31.934306569343065" height="21" fill="#185d9a"/>
+<text x="840" y="177" font-size="16" fill="#185d9a" text-anchor="start">25/548 = 0.045620</text>
+<text x="35" y="208" font-size="18" fill="#b55b14" text-anchor="start">UPOS + geometry</text>
+<text x="35" y="240" font-size="15" fill="#b55b14" text-anchor="start">UAS</text>
+<rect x="115" y="224" width="700" height="21" fill="#edf0f2"/>
+<rect x="115" y="224" width="560.7664233576643" height="21" fill="#b55b14"/>
+<text x="840" y="241" font-size="16" fill="#b55b14" text-anchor="start">439/548 = 0.801095</text>
+<text x="35" y="272" font-size="15" fill="#b55b14" text-anchor="start">LAS</text>
+<rect x="115" y="256" width="700" height="21" fill="#edf0f2"/>
+<rect x="115" y="256" width="462.4087591240876" height="21" fill="#b55b14"/>
+<text x="840" y="273" font-size="16" fill="#b55b14" text-anchor="start">362/548 = 0.660584</text>
+<text x="35" y="340" font-size="20" fill="#185d9a" text-anchor="start">Same selected models, grouped by original test document (LAS)</text>
+<text x="35" y="379" font-size="17" fill="#58636e" text-anchor="start">P213: 47 scored words</text>
+<text x="35" y="402" font-size="14" fill="#185d9a" text-anchor="start">geometry</text>
+<rect x="35" y="410" width="330" height="19" fill="#edf0f2"/>
+<rect x="35" y="410" width="28.085106382978722" height="19" fill="#185d9a"/>
+<text x="35" y="445" font-size="14" fill="#185d9a" text-anchor="start">4/47 = 0.085106</text>
+<text x="35" y="458" font-size="14" fill="#b55b14" text-anchor="start">UPOS + geometry</text>
+<rect x="35" y="466" width="330" height="19" fill="#edf0f2"/>
+<rect x="35" y="466" width="252.7659574468085" height="19" fill="#b55b14"/>
+<text x="35" y="501" font-size="14" fill="#b55b14" text-anchor="start">36/47 = 0.765957</text>
+<text x="425" y="379" font-size="17" fill="#58636e" text-anchor="start">P218: 66 scored words</text>
+<text x="425" y="402" font-size="14" fill="#185d9a" text-anchor="start">geometry</text>
+<rect x="425" y="410" width="330" height="19" fill="#edf0f2"/>
+<rect x="425" y="410" width="30.0" height="19" fill="#185d9a"/>
+<text x="425" y="445" font-size="14" fill="#185d9a" text-anchor="start">6/66 = 0.090909</text>
+<text x="425" y="458" font-size="14" fill="#b55b14" text-anchor="start">UPOS + geometry</text>
+<rect x="425" y="466" width="330" height="19" fill="#edf0f2"/>
+<rect x="425" y="466" width="255.0" height="19" fill="#b55b14"/>
+<text x="425" y="501" font-size="14" fill="#b55b14" text-anchor="start">51/66 = 0.772727</text>
+<text x="815" y="379" font-size="17" fill="#58636e" text-anchor="start">P301: 435 scored words</text>
+<text x="815" y="402" font-size="14" fill="#185d9a" text-anchor="start">geometry</text>
+<rect x="815" y="410" width="330" height="19" fill="#edf0f2"/>
+<rect x="815" y="410" width="11.379310344827585" height="19" fill="#185d9a"/>
+<text x="815" y="445" font-size="14" fill="#185d9a" text-anchor="start">15/435 = 0.034483</text>
+<text x="815" y="458" font-size="14" fill="#b55b14" text-anchor="start">UPOS + geometry</text>
+<rect x="815" y="466" width="330" height="19" fill="#edf0f2"/>
+<rect x="815" y="466" width="208.6206896551724" height="19" fill="#b55b14"/>
+<text x="815" y="501" font-size="14" fill="#b55b14" text-anchor="start">275/435 = 0.632184</text>
+<text x="35" y="562" font-size="16" fill="#58636e" text-anchor="start">No nonprojective test references in this subset; projective UAS ceiling =1.</text>
+<text x="35" y="590" font-size="16" fill="#58636e" text-anchor="start">Two unseen full relation labels limit LAS to546/548, even with ideal heads.</text>
+<text x="35" y="615" font-size="15" fill="#58636e" text-anchor="start">Not76 independent documents, not an end-to-end parser benchmark, not semantic correctness.</text>
+</g></svg>

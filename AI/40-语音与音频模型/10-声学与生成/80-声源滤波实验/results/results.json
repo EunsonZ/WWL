@@ -1,0 +1,207 @@
+{
+  "config": {
+    "fs_hz": 16000,
+    "duration_s": 1.0,
+    "warmup_s": 0.25,
+    "frame_length": 400,
+    "hop": 160,
+    "nfft": 512,
+    "pcm_peak": 0.8,
+    "cases": [
+      {
+        "name": "base",
+        "f0_hz": 125,
+        "formants_hz": [
+          500,
+          1500
+        ],
+        "decay_bandwidths_hz": [
+          80,
+          120
+        ]
+      },
+      {
+        "name": "pitch",
+        "f0_hz": 250,
+        "formants_hz": [
+          500,
+          1500
+        ],
+        "decay_bandwidths_hz": [
+          80,
+          120
+        ]
+      },
+      {
+        "name": "filter",
+        "f0_hz": 125,
+        "formants_hz": [
+          500,
+          2200
+        ],
+        "decay_bandwidths_hz": [
+          80,
+          120
+        ]
+      }
+    ]
+  },
+  "common_output_gain": 2.023810329075194,
+  "samples": 16000,
+  "warmup_samples": 4000,
+  "frames": 98,
+  "stft_shape": [
+    98,
+    257
+  ],
+  "frame_first_center_s": 0.01246875,
+  "frame_last_center_s": 0.98246875,
+  "hop_s": 0.01,
+  "window_s": 0.025,
+  "stft_grid_hz": 31.25,
+  "cases": [
+    {
+      "name": "base",
+      "f0_hz": 125,
+      "formants_hz": [
+        500,
+        1500
+      ],
+      "decay_bandwidths_hz": [
+        80,
+        120
+      ],
+      "period_samples": 128,
+      "sections": [
+        {
+          "radius": 0.9844147633517137,
+          "theta_rad": 0.19634954084936207,
+          "a1": -1.9309990194139806,
+          "a2": 0.9690724263048106,
+          "g": 0.03807340689083005,
+          "pole_frequency_hz": 500,
+          "decay_bandwidth_hz": 80
+        },
+        {
+          "radius": 0.9767134703747672,
+          "theta_rad": 0.5890486225480862,
+          "a1": -1.6242151410863623,
+          "a2": 0.9539692032115212,
+          "g": 0.3297540621251589,
+          "pole_frequency_hz": 1500,
+          "decay_bandwidth_hz": 120
+        }
+      ],
+      "peak": 0.6003525323536382,
+      "rms": 0.18812504763629426,
+      "steady_fft_max_complex_error": 1.1036995510350835e-11,
+      "period_repeat_max_error": 1.8596235662471372e-15,
+      "strongest_harmonic_hz": 500.0,
+      "envelope_peaks_hz": [
+        499.2287292480469,
+        1493.6112518310547
+      ],
+      "pcm_max_quantization_error": 1.4994957874533976e-05
+    },
+    {
+      "name": "pitch",
+      "f0_hz": 250,
+      "formants_hz": [
+        500,
+        1500
+      ],
+      "decay_bandwidths_hz": [
+        80,
+        120
+      ],
+      "period_samples": 64,
+      "sections": [
+        {
+          "radius": 0.9844147633517137,
+          "theta_rad": 0.19634954084936207,
+          "a1": -1.9309990194139806,
+          "a2": 0.9690724263048106,
+          "g": 0.03807340689083005,
+          "pole_frequency_hz": 500,
+          "decay_bandwidth_hz": 80
+        },
+        {
+          "radius": 0.9767134703747672,
+          "theta_rad": 0.5890486225480862,
+          "a1": -1.6242151410863623,
+          "a2": 0.9539692032115212,
+          "g": 0.3297540621251589,
+          "pole_frequency_hz": 1500,
+          "decay_bandwidth_hz": 120
+        }
+      ],
+      "peak": 0.8000000000000002,
+      "rms": 0.3397960506714524,
+      "steady_fft_max_complex_error": 6.9302362381350445e-12,
+      "period_repeat_max_error": 1.1102230246251565e-15,
+      "strongest_harmonic_hz": 500.0,
+      "envelope_peaks_hz": [
+        499.2287292480469,
+        1493.6112518310547
+      ],
+      "pcm_max_quantization_error": 1.5234868387947742e-05
+    },
+    {
+      "name": "filter",
+      "f0_hz": 125,
+      "formants_hz": [
+        500,
+        2200
+      ],
+      "decay_bandwidths_hz": [
+        80,
+        120
+      ],
+      "period_samples": 128,
+      "sections": [
+        {
+          "radius": 0.9844147633517137,
+          "theta_rad": 0.19634954084936207,
+          "a1": -1.9309990194139806,
+          "a2": 0.9690724263048106,
+          "g": 0.03807340689083005,
+          "pole_frequency_hz": 500,
+          "decay_bandwidth_hz": 80
+        },
+        {
+          "radius": 0.9767134703747672,
+          "theta_rad": 0.8639379797371931,
+          "a1": -1.2686493142253865,
+          "a2": 0.9539692032115212,
+          "g": 0.6853198889861347,
+          "pole_frequency_hz": 2200,
+          "decay_bandwidth_hz": 120
+        }
+      ],
+      "peak": 0.49442588314473546,
+      "rms": 0.17332918165803374,
+      "steady_fft_max_complex_error": 1.0533071710506618e-11,
+      "period_repeat_max_error": 1.5404344466674047e-15,
+      "strongest_harmonic_hz": 500.0,
+      "envelope_peaks_hz": [
+        498.7405090332031,
+        2196.160140991211
+      ],
+      "pcm_max_quantization_error": 1.5105238420076716e-05
+    }
+  ],
+  "listening": {
+    "status": "not_performed",
+    "materials": [
+      "base.wav",
+      "pitch.wav",
+      "filter.wav"
+    ],
+    "claims_not_measured": [
+      "human pitch",
+      "vowel identity",
+      "intelligibility",
+      "naturalness"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "provenance": "synthetic teaching model and summaries; no participants",
+  "signal_mean": 1,
+  "thresholds": [1, 0],
+  "priors": [0.5, 0.1],
+  "paired": [
+    {"id": "1", "A_ms": 500, "B_ms": 540, "trials_each": 20, "A_errors": 1, "B_errors": 2},
+    {"id": "2", "A_ms": 600, "B_ms": 660, "trials_each": 20, "A_errors": 0, "B_errors": 1},
+    {"id": "3", "A_ms": 450, "B_ms": 470, "trials_each": 20, "A_errors": 2, "B_errors": 2},
+    {"id": "4", "A_ms": 520, "B_ms": 510, "trials_each": 20, "A_errors": 0, "B_errors": 1},
+    {"id": "5", "A_ms": 480, "B_ms": 530, "trials_each": 20, "A_errors": 1, "B_errors": 0},
+    {"id": "6", "A_ms": 550, "B_ms": 570, "trials_each": 20, "A_errors": 1, "B_errors": 1}
+  ]
+}

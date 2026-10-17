@@ -1,0 +1,71 @@
+{
+  "provenance": "synthetic teaching model and summaries; no participants",
+  "gaussian_model": {
+    "noise_mean": 0,
+    "signal_mean": 1,
+    "both_sd": 1,
+    "points": [
+      {
+        "threshold_k": 1,
+        "F": 0.15865525393145705,
+        "H": 0.5,
+        "dprime_from_rates": 1.0,
+        "criterion_C": 0.5,
+        "accuracy": [
+          {
+            "prior": 0.5,
+            "value": 0.6706723730342714,
+            "equal_cost_optimal_k": 0.5
+          },
+          {
+            "prior": 0.1,
+            "value": 0.8072102714616887,
+            "equal_cost_optimal_k": 2.6972245773362196
+          }
+        ]
+      },
+      {
+        "threshold_k": 0,
+        "F": 0.5,
+        "H": 0.8413447460685429,
+        "dprime_from_rates": 1.0,
+        "criterion_C": -0.5,
+        "accuracy": [
+          {
+            "prior": 0.5,
+            "value": 0.6706723730342714,
+            "equal_cost_optimal_k": 0.5
+          },
+          {
+            "prior": 0.1,
+            "value": 0.5341344746068544,
+            "equal_cost_optimal_k": 2.6972245773362196
+          }
+        ]
+      }
+    ]
+  },
+  "paired": {
+    "n_people": 6,
+    "unit": "ms; mean of each person's correct-response median difference B-A",
+    "differences_ms": [
+      40,
+      60,
+      20,
+      -10,
+      50,
+      20
+    ],
+    "mean_ms_exact": "30",
+    "sample_variance_ms2_exact": "640",
+    "sample_sd_ms": 25.298221281347036,
+    "A_error_rate_exact": "1/24",
+    "B_error_rate_exact": "7/120",
+    "sign_flip_assumptions": "independent equal-probability block order; no carryover; sharp no-effect null at both periods",
+    "two_sided_rule": "absolute mean >= observed absolute mean; including ties",
+    "tail_count": 4,
+    "allocations": 64,
+    "p_exact": "1/16"
+  },
+  "boundary": "synthetic summaries only; no raw trials reconstructed; no real psychological or clinical effect estimated"
+}

@@ -1,0 +1,9 @@
+{
+  "kind": "synthetic-teaching-only",
+  "balance": {"start": 1000, "births": 20, "deaths": 10, "in": 50, "out": 30},
+  "traces": [["A", "0", "1"], ["B", "0", "1/4"], ["C", "1/2", "1"], ["D", "0", "1/2"]],
+  "rates": {"A": {"exposure": [800, 200], "deaths": [8, 20]}, "B": {"exposure": [200, 800], "deaths": [2, 80]}, "B_improved": {"exposure": [200, 800], "deaths": ["8/5", 64]}},
+  "standard_weights": ["1/2", "1/2"],
+  "life": {"radix": 1000, "finite": [{"x": 0, "n": 20, "m": "1/90", "a": 10}, {"x": 20, "n": 20, "m": "1/30", "a": 10}], "tail_x": 40, "tail_m": "1/20"},
+  "projection": {"step_years": 20, "start": [100, 100, 100, 100], "births_per_start_woman": [0, 1, "1/4", 0], "birth_survival": "4/5", "survival": ["9/10", "4/5", "3/4", "1/2"], "end_migration": [5, 10, -5, 0], "steps": 3}
+}

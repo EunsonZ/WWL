@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<title>Translation scores and preserved meaning</title><desc>同一inputs与results中的区间、角色、共指或译文计分；非真人语义认证。</desc>
+<rect width="1200" height="650" fill="#fbfcfe"/><g font-family="Arial, sans-serif" fill="#20334b">
+<text x="35" y="40" font-size="28" fill="#20334b">Lexical overlap is not a meaning certificate</text>
+<text x="35" y="80" font-size="20" fill="#20334b">Same Chinese source, same visible recipient-thanks-giver context</text>
+<text x="35" y="138" font-size="20" fill="#20334b">Candidate</text>
+<text x="450" y="138" font-size="20" fill="#20334b">BLEU1</text>
+<text x="600" y="138" font-size="20" fill="#20334b">BLEU4</text>
+<text x="760" y="138" font-size="20" fill="#20334b">Core facts</text>
+<text x="940" y="138" font-size="20" fill="#20334b">Manner same</text>
+<text x="35" y="190" font-size="22" fill="#20334b">active</text>
+<text x="450" y="190" font-size="22" fill="#20334b">1.000</text>
+<text x="600" y="190" font-size="22" fill="#20334b">1.000</text>
+<text x="760" y="190" font-size="22" fill="#20334b">same</text>
+<text x="940" y="190" font-size="22" fill="#20334b">True</text>
+<text x="35" y="257" font-size="22" fill="#20334b">passive</text>
+<text x="450" y="257" font-size="22" fill="#20334b">0.769</text>
+<text x="600" y="257" font-size="22" fill="#20334b">0.409</text>
+<text x="760" y="257" font-size="22" fill="#20334b">same</text>
+<text x="940" y="257" font-size="22" fill="#20334b">True</text>
+<text x="35" y="324" font-size="22" fill="#20334b">roles_swapped</text>
+<text x="450" y="324" font-size="22" fill="#20334b">1.000</text>
+<text x="600" y="324" font-size="22" fill="#20334b">0.679</text>
+<text x="760" y="324" font-size="22" fill="#b34e2b">CHANGED</text>
+<text x="940" y="324" font-size="22" fill="#20334b">True</text>
+<text x="35" y="391" font-size="22" fill="#20334b">negative</text>
+<text x="450" y="391" font-size="22" fill="#20334b">0.786</text>
+<text x="600" y="391" font-size="22" fill="#20334b">0.645</text>
+<text x="760" y="391" font-size="22" fill="#b34e2b">CHANGED</text>
+<text x="940" y="391" font-size="22" fill="#20334b">True</text>
+<text x="35" y="458" font-size="22" fill="#20334b">attitude</text>
+<text x="450" y="458" font-size="22" fill="#20334b">0.923</text>
+<text x="600" y="458" font-size="22" fill="#20334b">0.761</text>
+<text x="760" y="458" font-size="22" fill="#20334b">same</text>
+<text x="940" y="458" font-size="22" fill="#20334b">False</text>
+<text x="35" y="560" font-size="18" fill="#20334b">Scores: one aligned paragraph, lowercase word + punctuation tokens.</text>
+<text x="35" y="600" font-size="18" fill="#20334b">Manual semantic protocol is explicit; no learned general MT or human rating.</text>
+
+</g></svg>

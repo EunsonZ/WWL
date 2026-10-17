@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<title>Mentions, roles and identity</title><desc>同一inputs与results中的区间、角色、共指或译文计分；非真人语义认证。</desc>
+<rect width="1200" height="650" fill="#fbfcfe"/><g font-family="Arial, sans-serif" fill="#20334b">
+<text x="35" y="40" font-size="28" fill="#20334b">Same mentions, different entity assignments</text>
+<text x="35" y="80" font-size="22" fill="#20334b">Mira gave a red book to Lena. She thanked her.</text>
+<rect x="45" y="125" width="205" height="120" rx="8" fill="#e0ebf4"/><text x="57" y="157" font-size="19" fill="#20334b">m0: Mira</text>
+<text x="57" y="190" font-size="16" fill="#20334b">[0,1) PERSON</text>
+<text x="57" y="222" font-size="18" fill="#20334b">entity: M</text>
+<rect x="270" y="125" width="205" height="120" rx="8" fill="#e0ebf4"/><text x="282" y="157" font-size="19" fill="#20334b">m1: a red book</text>
+<text x="282" y="190" font-size="16" fill="#20334b">[2,5) THING</text>
+<text x="282" y="222" font-size="18" fill="#20334b">entity: b</text>
+<rect x="495" y="125" width="205" height="120" rx="8" fill="#e0ebf4"/><text x="507" y="157" font-size="19" fill="#20334b">m2: Lena</text>
+<text x="507" y="190" font-size="16" fill="#20334b">[6,7) PERSON</text>
+<text x="507" y="222" font-size="18" fill="#20334b">entity: L</text>
+<rect x="720" y="125" width="205" height="120" rx="8" fill="#e0ebf4"/><text x="732" y="157" font-size="19" fill="#20334b">m3: She</text>
+<text x="732" y="190" font-size="16" fill="#20334b">[8,9) PERSON</text>
+<text x="732" y="222" font-size="18" fill="#20334b">entity: L</text>
+<rect x="945" y="125" width="205" height="120" rx="8" fill="#e0ebf4"/><text x="957" y="157" font-size="19" fill="#20334b">m4: her</text>
+<text x="957" y="190" font-size="16" fill="#20334b">[10,11) PERSON</text>
+<text x="957" y="222" font-size="18" fill="#20334b">entity: M</text>
+<text x="45" y="295" font-size="24" fill="#20334b">GIVE: giver M / theme b / recipient L</text>
+<text x="45" y="342" font-size="24" fill="#176799">Context R: THANK L -&gt; M</text>
+<text x="45" y="387" font-size="24" fill="#b56425">Context G: THANK M -&gt; L</text>
+<text x="45" y="438" font-size="22" fill="#20334b">Unknown context: both assignments remain admissible.</text>
+<text x="45" y="495" font-size="19" fill="#20334b">Nearest baseline: mentions correct, positive-pair F1 = 1/3 P, 1/2 R -&gt; 0.40</text>
+<text x="45" y="548" font-size="21" fill="#20334b">Coreference is identity; discourse Result is a separate claim.</text>
+<text x="45" y="600" font-size="18" fill="#20334b">Offsets are half-open; codepoint and token spans are saved in JSON.</text>
+
+</g></svg>

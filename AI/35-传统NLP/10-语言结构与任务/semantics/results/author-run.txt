@@ -1,0 +1,10 @@
+PASS: raw controlled extraction, two admissible coreference partitions, explicit-context filtering
+pair F1=0.4; boundary F1=0.8; swapped-role F1=0.6
+typed 2x2 scope counts: FF=7, TF=2, TT=7, FT=0
+active: BLEU1=1.000000000 BLEU4=1.000000000 core=True manner=True
+passive: BLEU1=0.769230769 BLEU4=0.408960147 core=True manner=True
+roles_swapped: BLEU1=1.000000000 BLEU4=0.678650268 core=False manner=True
+negative: BLEU1=0.785714286 BLEU4=0.645000114 core=False manner=True
+attitude: BLEU1=0.923076923 BLEU4=0.761160600 core=True manner=False
+greedy=3/10; beam2=2/5; exact MAP=4/11 selects wrong paragraph roles
+rejected=5

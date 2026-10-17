@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "combined_children_peak_rss_bytes": 32423936,
+  "memory_budget_bytes": 8589934592,
+  "runs": [
+    {
+      "script": "semantics_lab.py",
+      "exit_code": 0,
+      "elapsed_seconds": 0.05988204199820757,
+      "stdout": "PASS: raw controlled extraction, two admissible coreference partitions, explicit-context filtering\npair F1=0.4; boundary F1=0.8; swapped-role F1=0.6\ntyped 2x2 scope counts: FF=7, TF=2, TT=7, FT=0\nactive: BLEU1=1.000000000 BLEU4=1.000000000 core=True manner=True\npassive: BLEU1=0.769230769 BLEU4=0.408960147 core=True manner=True\nroles_swapped: BLEU1=1.000000000 BLEU4=0.678650268 core=False manner=True\nnegative: BLEU1=0.785714286 BLEU4=0.645000114 core=False manner=True\nattitude: BLEU1=0.923076923 BLEU4=0.761160600 core=True manner=False\ngreedy=3/10; beam2=2/5; exact MAP=4/11 selects wrong paragraph roles\nrejected=5\n",
+      "stderr": ""
+    },
+    {
+      "script": "test_semantics_lab.py",
+      "exit_code": 0,
+      "elapsed_seconds": 0.07393970800330862,
+      "stdout": "",
+      "stderr": "test_empty_typed_domains (__main__.ContractTests.test_empty_typed_domains) ... ok\ntest_negation_and_additional_attitude (__main__.ContractTests.test_negation_and_additional_attitude) ... ok\ntest_no_antecedent_or_reflexive_guess (__main__.ContractTests.test_no_antecedent_or_reflexive_guess) ... ok\ntest_permutation_invariant_bag_does_not_preserve_roles (__main__.ContractTests.test_permutation_invariant_bag_does_not_preserve_roles) ... ok\ntest_prefix_mass_and_invalid_candidates (__main__.ContractTests.test_prefix_mass_and_invalid_candidates) ... ok\ntest_voice_and_theme_variants (__main__.ContractTests.test_voice_and_theme_variants) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n"
+    }
+  ],
+  "boundary": "Original controlled tasks, not a natural corpus benchmark or human judgment."
+}

@@ -1,0 +1,2529 @@
+{
+  "status": "PASS",
+  "input_scope": "Original controlled teaching texts and explicit annotations; no natural-corpus or human-consensus claim.",
+  "document": {
+    "text": "Mira gave a red book to Lena. She thanked her.",
+    "tokens": [
+      {
+        "form": "Mira",
+        "start": 0,
+        "end": 4
+      },
+      {
+        "form": "gave",
+        "start": 5,
+        "end": 9
+      },
+      {
+        "form": "a",
+        "start": 10,
+        "end": 11
+      },
+      {
+        "form": "red",
+        "start": 12,
+        "end": 15
+      },
+      {
+        "form": "book",
+        "start": 16,
+        "end": 20
+      },
+      {
+        "form": "to",
+        "start": 21,
+        "end": 23
+      },
+      {
+        "form": "Lena",
+        "start": 24,
+        "end": 28
+      },
+      {
+        "form": ".",
+        "start": 28,
+        "end": 29
+      },
+      {
+        "form": "She",
+        "start": 30,
+        "end": 33
+      },
+      {
+        "form": "thanked",
+        "start": 34,
+        "end": 41
+      },
+      {
+        "form": "her",
+        "start": 42,
+        "end": 45
+      },
+      {
+        "form": ".",
+        "start": 45,
+        "end": 46
+      }
+    ],
+    "mentions": [
+      {
+        "id": "m0",
+        "form": "Mira",
+        "type": "PERSON",
+        "token_span": [
+          0,
+          1
+        ],
+        "char_span": [
+          0,
+          4
+        ],
+        "sentence": 0,
+        "entity": "M"
+      },
+      {
+        "id": "m1",
+        "form": "a red book",
+        "type": "THING",
+        "token_span": [
+          2,
+          5
+        ],
+        "char_span": [
+          10,
+          20
+        ],
+        "sentence": 0,
+        "entity": "b"
+      },
+      {
+        "id": "m2",
+        "form": "Lena",
+        "type": "PERSON",
+        "token_span": [
+          6,
+          7
+        ],
+        "char_span": [
+          24,
+          28
+        ],
+        "sentence": 0,
+        "entity": "L"
+      },
+      {
+        "id": "m3",
+        "form": "She",
+        "type": "PERSON",
+        "token_span": [
+          8,
+          9
+        ],
+        "char_span": [
+          30,
+          33
+        ],
+        "sentence": 1,
+        "entity": null
+      },
+      {
+        "id": "m4",
+        "form": "her",
+        "type": "PERSON",
+        "token_span": [
+          10,
+          11
+        ],
+        "char_span": [
+          42,
+          45
+        ],
+        "sentence": 1,
+        "entity": null
+      }
+    ],
+    "events": [
+      {
+        "id": "e0",
+        "type": "GIVE",
+        "trigger": 1,
+        "polarity": "positive",
+        "roles": {
+          "giver": "m0",
+          "theme": "m1",
+          "recipient": "m2"
+        },
+        "manner": null,
+        "red_theme": true
+      },
+      {
+        "id": "e1",
+        "type": "THANK",
+        "trigger": 9,
+        "polarity": "positive",
+        "roles": {
+          "agent": "m3",
+          "target": "m4"
+        },
+        "manner": null,
+        "red_theme": false
+      }
+    ]
+  },
+  "coreference": {
+    "unknown": [
+      {
+        "m0": "M",
+        "m1": "b",
+        "m2": "L",
+        "m3": "L",
+        "m4": "M"
+      },
+      {
+        "m0": "M",
+        "m1": "b",
+        "m2": "L",
+        "m3": "M",
+        "m4": "L"
+      }
+    ],
+    "recipient_thanks_giver": [
+      {
+        "m0": "M",
+        "m1": "b",
+        "m2": "L",
+        "m3": "L",
+        "m4": "M"
+      }
+    ],
+    "giver_thanks_recipient": [
+      {
+        "m0": "M",
+        "m1": "b",
+        "m2": "L",
+        "m3": "M",
+        "m4": "L"
+      }
+    ]
+  },
+  "nearest_assignment": {
+    "m0": "M",
+    "m1": "b",
+    "m2": "L",
+    "m3": "L",
+    "m4": "L"
+  },
+  "layered_errors": {
+    "boundary": {
+      "predicted_spans": [
+        [
+          0,
+          1,
+          "PERSON"
+        ],
+        [
+          4,
+          5,
+          "THING"
+        ],
+        [
+          6,
+          7,
+          "PERSON"
+        ],
+        [
+          8,
+          9,
+          "PERSON"
+        ],
+        [
+          10,
+          11,
+          "PERSON"
+        ]
+      ],
+      "reference_spans": [
+        [
+          0,
+          1,
+          "PERSON"
+        ],
+        [
+          2,
+          5,
+          "THING"
+        ],
+        [
+          6,
+          7,
+          "PERSON"
+        ],
+        [
+          8,
+          9,
+          "PERSON"
+        ],
+        [
+          10,
+          11,
+          "PERSON"
+        ]
+      ],
+      "score": {
+        "tp": 4,
+        "predicted": 5,
+        "reference": 5,
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8
+      }
+    },
+    "role_swap": {
+      "predicted_frames": [
+        {
+          "type": "GIVE",
+          "polarity": "positive",
+          "roles": {
+            "giver": "L",
+            "theme": "b",
+            "recipient": "M"
+          },
+          "manner": null,
+          "theme_properties": [
+            "red"
+          ]
+        },
+        {
+          "type": "THANK",
+          "polarity": "positive",
+          "roles": {
+            "agent": "L",
+            "target": "M"
+          },
+          "manner": null,
+          "theme_properties": []
+        }
+      ],
+      "score": {
+        "tp": 3,
+        "predicted": 5,
+        "reference": 5,
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1": 0.6
+      }
+    },
+    "predicate": {
+      "raw_text": "Mira gave a red book to Lena. Lena praised Mira.",
+      "predicted_frames": [
+        {
+          "type": "GIVE",
+          "polarity": "positive",
+          "roles": {
+            "giver": "M",
+            "theme": "b",
+            "recipient": "L"
+          },
+          "manner": null,
+          "theme_properties": [
+            "red"
+          ]
+        },
+        {
+          "type": "PRAISE",
+          "polarity": "positive",
+          "roles": {
+            "agent": "L",
+            "target": "M"
+          },
+          "manner": null,
+          "theme_properties": []
+        }
+      ],
+      "type_correct": 1,
+      "type_total": 2
+    },
+    "nearest": {
+      "predicted_assignment": {
+        "m0": "M",
+        "m1": "b",
+        "m2": "L",
+        "m3": "L",
+        "m4": "L"
+      },
+      "predicted_frames": [
+        {
+          "type": "GIVE",
+          "polarity": "positive",
+          "roles": {
+            "giver": "M",
+            "theme": "b",
+            "recipient": "L"
+          },
+          "manner": null,
+          "theme_properties": [
+            "red"
+          ]
+        },
+        {
+          "type": "THANK",
+          "polarity": "positive",
+          "roles": {
+            "agent": "L",
+            "target": "L"
+          },
+          "manner": null,
+          "theme_properties": []
+        }
+      ],
+      "admissible": false
+    }
+  },
+  "scores": {
+    "nearest_pair": {
+      "tp": 1,
+      "predicted": 3,
+      "reference": 2,
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1": 0.4
+    },
+    "boundary": {
+      "tp": 4,
+      "predicted": 5,
+      "reference": 5,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1": 0.8
+    },
+    "swapped_roles": {
+      "tp": 3,
+      "predicted": 5,
+      "reference": 5,
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1": 0.6
+    },
+    "nearest_entity_roles": {
+      "tp": 4,
+      "predicted": 5,
+      "reference": 5,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1": 0.8
+    }
+  },
+  "scope": {
+    "diagonal": {
+      "A": true,
+      "C": false,
+      "not_A": false,
+      "each_has_unread": true,
+      "row_witnesses": {
+        "Ada": [
+          "red"
+        ],
+        "Bo": [
+          "blue"
+        ]
+      },
+      "common_books": []
+    },
+    "all_models": [
+      {
+        "matrix": [
+          [
+            false,
+            false
+          ],
+          [
+            false,
+            false
+          ]
+        ],
+        "A": false,
+        "C": false,
+        "not_A": true,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [],
+          "Bo": []
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            false,
+            false
+          ],
+          [
+            false,
+            true
+          ]
+        ],
+        "A": false,
+        "C": false,
+        "not_A": true,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [],
+          "Bo": [
+            "blue"
+          ]
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            false,
+            false
+          ],
+          [
+            true,
+            false
+          ]
+        ],
+        "A": false,
+        "C": false,
+        "not_A": true,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [],
+          "Bo": [
+            "red"
+          ]
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            false,
+            false
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "A": false,
+        "C": false,
+        "not_A": true,
+        "each_has_unread": false,
+        "row_witnesses": {
+          "Ada": [],
+          "Bo": [
+            "red",
+            "blue"
+          ]
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            false,
+            true
+          ],
+          [
+            false,
+            false
+          ]
+        ],
+        "A": false,
+        "C": false,
+        "not_A": true,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [
+            "blue"
+          ],
+          "Bo": []
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            false,
+            true
+          ],
+          [
+            false,
+            true
+          ]
+        ],
+        "A": true,
+        "C": true,
+        "not_A": false,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [
+            "blue"
+          ],
+          "Bo": [
+            "blue"
+          ]
+        },
+        "common_books": [
+          "blue"
+        ]
+      },
+      {
+        "matrix": [
+          [
+            false,
+            true
+          ],
+          [
+            true,
+            false
+          ]
+        ],
+        "A": true,
+        "C": false,
+        "not_A": false,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [
+            "blue"
+          ],
+          "Bo": [
+            "red"
+          ]
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            false,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "A": true,
+        "C": true,
+        "not_A": false,
+        "each_has_unread": false,
+        "row_witnesses": {
+          "Ada": [
+            "blue"
+          ],
+          "Bo": [
+            "red",
+            "blue"
+          ]
+        },
+        "common_books": [
+          "blue"
+        ]
+      },
+      {
+        "matrix": [
+          [
+            true,
+            false
+          ],
+          [
+            false,
+            false
+          ]
+        ],
+        "A": false,
+        "C": false,
+        "not_A": true,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [
+            "red"
+          ],
+          "Bo": []
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            true,
+            false
+          ],
+          [
+            false,
+            true
+          ]
+        ],
+        "A": true,
+        "C": false,
+        "not_A": false,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [
+            "red"
+          ],
+          "Bo": [
+            "blue"
+          ]
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            true,
+            false
+          ],
+          [
+            true,
+            false
+          ]
+        ],
+        "A": true,
+        "C": true,
+        "not_A": false,
+        "each_has_unread": true,
+        "row_witnesses": {
+          "Ada": [
+            "red"
+          ],
+          "Bo": [
+            "red"
+          ]
+        },
+        "common_books": [
+          "red"
+        ]
+      },
+      {
+        "matrix": [
+          [
+            true,
+            false
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "A": true,
+        "C": true,
+        "not_A": false,
+        "each_has_unread": false,
+        "row_witnesses": {
+          "Ada": [
+            "red"
+          ],
+          "Bo": [
+            "red",
+            "blue"
+          ]
+        },
+        "common_books": [
+          "red"
+        ]
+      },
+      {
+        "matrix": [
+          [
+            true,
+            true
+          ],
+          [
+            false,
+            false
+          ]
+        ],
+        "A": false,
+        "C": false,
+        "not_A": true,
+        "each_has_unread": false,
+        "row_witnesses": {
+          "Ada": [
+            "red",
+            "blue"
+          ],
+          "Bo": []
+        },
+        "common_books": []
+      },
+      {
+        "matrix": [
+          [
+            true,
+            true
+          ],
+          [
+            false,
+            true
+          ]
+        ],
+        "A": true,
+        "C": true,
+        "not_A": false,
+        "each_has_unread": false,
+        "row_witnesses": {
+          "Ada": [
+            "red",
+            "blue"
+          ],
+          "Bo": [
+            "blue"
+          ]
+        },
+        "common_books": [
+          "blue"
+        ]
+      },
+      {
+        "matrix": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            false
+          ]
+        ],
+        "A": true,
+        "C": true,
+        "not_A": false,
+        "each_has_unread": false,
+        "row_witnesses": {
+          "Ada": [
+            "red",
+            "blue"
+          ],
+          "Bo": [
+            "red"
+          ]
+        },
+        "common_books": [
+          "red"
+        ]
+      },
+      {
+        "matrix": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "A": true,
+        "C": true,
+        "not_A": false,
+        "each_has_unread": false,
+        "row_witnesses": {
+          "Ada": [
+            "red",
+            "blue"
+          ],
+          "Bo": [
+            "red",
+            "blue"
+          ]
+        },
+        "common_books": [
+          "red",
+          "blue"
+        ]
+      }
+    ],
+    "counts": {
+      "(False, False)": 7,
+      "(True, True)": 7,
+      "(True, False)": 2
+    },
+    "empty_students": {
+      "A": true,
+      "C": true,
+      "not_A": false,
+      "each_has_unread": true,
+      "row_witnesses": {},
+      "common_books": [
+        "red",
+        "blue"
+      ]
+    },
+    "empty_books": {
+      "A": false,
+      "C": false,
+      "not_A": true,
+      "each_has_unread": false,
+      "row_witnesses": {
+        "Ada": [],
+        "Bo": []
+      },
+      "common_books": []
+    },
+    "both_empty": {
+      "A": true,
+      "C": false,
+      "not_A": false,
+      "each_has_unread": true,
+      "row_witnesses": {},
+      "common_books": []
+    }
+  },
+  "translation": [
+    {
+      "id": "active",
+      "text": "Mira gave a red book to Lena. Lena thanked Mira.",
+      "parsed": {
+        "text": "Mira gave a red book to Lena. Lena thanked Mira.",
+        "tokens": [
+          {
+            "form": "Mira",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "form": "gave",
+            "start": 5,
+            "end": 9
+          },
+          {
+            "form": "a",
+            "start": 10,
+            "end": 11
+          },
+          {
+            "form": "red",
+            "start": 12,
+            "end": 15
+          },
+          {
+            "form": "book",
+            "start": 16,
+            "end": 20
+          },
+          {
+            "form": "to",
+            "start": 21,
+            "end": 23
+          },
+          {
+            "form": "Lena",
+            "start": 24,
+            "end": 28
+          },
+          {
+            "form": ".",
+            "start": 28,
+            "end": 29
+          },
+          {
+            "form": "Lena",
+            "start": 30,
+            "end": 34
+          },
+          {
+            "form": "thanked",
+            "start": 35,
+            "end": 42
+          },
+          {
+            "form": "Mira",
+            "start": 43,
+            "end": 47
+          },
+          {
+            "form": ".",
+            "start": 47,
+            "end": 48
+          }
+        ],
+        "mentions": [
+          {
+            "id": "m0",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              0,
+              1
+            ],
+            "char_span": [
+              0,
+              4
+            ],
+            "sentence": 0,
+            "entity": "M"
+          },
+          {
+            "id": "m1",
+            "form": "a red book",
+            "type": "THING",
+            "token_span": [
+              2,
+              5
+            ],
+            "char_span": [
+              10,
+              20
+            ],
+            "sentence": 0,
+            "entity": "b"
+          },
+          {
+            "id": "m2",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              6,
+              7
+            ],
+            "char_span": [
+              24,
+              28
+            ],
+            "sentence": 0,
+            "entity": "L"
+          },
+          {
+            "id": "m3",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              8,
+              9
+            ],
+            "char_span": [
+              30,
+              34
+            ],
+            "sentence": 1,
+            "entity": "L"
+          },
+          {
+            "id": "m4",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              10,
+              11
+            ],
+            "char_span": [
+              43,
+              47
+            ],
+            "sentence": 1,
+            "entity": "M"
+          }
+        ],
+        "events": [
+          {
+            "id": "e0",
+            "type": "GIVE",
+            "trigger": 1,
+            "polarity": "positive",
+            "roles": {
+              "giver": "m0",
+              "theme": "m1",
+              "recipient": "m2"
+            },
+            "manner": null,
+            "red_theme": true
+          },
+          {
+            "id": "e1",
+            "type": "THANK",
+            "trigger": 9,
+            "polarity": "positive",
+            "roles": {
+              "agent": "m3",
+              "target": "m4"
+            },
+            "manner": null,
+            "red_theme": false
+          }
+        ]
+      },
+      "frames": [
+        {
+          "type": "GIVE",
+          "polarity": "positive",
+          "roles": {
+            "giver": "M",
+            "theme": "b",
+            "recipient": "L"
+          },
+          "manner": null,
+          "theme_properties": [
+            "red"
+          ]
+        },
+        {
+          "type": "THANK",
+          "polarity": "positive",
+          "roles": {
+            "agent": "L",
+            "target": "M"
+          },
+          "manner": null,
+          "theme_properties": []
+        }
+      ],
+      "bleu1": {
+        "order": 1,
+        "candidate_length": 12,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 12,
+            "total": 12,
+            "precision": 1.0
+          }
+        ],
+        "score": 1.0
+      },
+      "bleu4": {
+        "order": 4,
+        "candidate_length": 12,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 12,
+            "total": 12,
+            "precision": 1.0
+          },
+          {
+            "n": 2,
+            "matched": 11,
+            "total": 11,
+            "precision": 1.0
+          },
+          {
+            "n": 3,
+            "matched": 10,
+            "total": 10,
+            "precision": 1.0
+          },
+          {
+            "n": 4,
+            "matched": 9,
+            "total": 9,
+            "precision": 1.0
+          }
+        ],
+        "score": 1.0
+      },
+      "core_equal": true,
+      "manner_equal": true
+    },
+    {
+      "id": "passive",
+      "text": "Lena was given a red book by Mira. Lena thanked Mira.",
+      "parsed": {
+        "text": "Lena was given a red book by Mira. Lena thanked Mira.",
+        "tokens": [
+          {
+            "form": "Lena",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "form": "was",
+            "start": 5,
+            "end": 8
+          },
+          {
+            "form": "given",
+            "start": 9,
+            "end": 14
+          },
+          {
+            "form": "a",
+            "start": 15,
+            "end": 16
+          },
+          {
+            "form": "red",
+            "start": 17,
+            "end": 20
+          },
+          {
+            "form": "book",
+            "start": 21,
+            "end": 25
+          },
+          {
+            "form": "by",
+            "start": 26,
+            "end": 28
+          },
+          {
+            "form": "Mira",
+            "start": 29,
+            "end": 33
+          },
+          {
+            "form": ".",
+            "start": 33,
+            "end": 34
+          },
+          {
+            "form": "Lena",
+            "start": 35,
+            "end": 39
+          },
+          {
+            "form": "thanked",
+            "start": 40,
+            "end": 47
+          },
+          {
+            "form": "Mira",
+            "start": 48,
+            "end": 52
+          },
+          {
+            "form": ".",
+            "start": 52,
+            "end": 53
+          }
+        ],
+        "mentions": [
+          {
+            "id": "m0",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              0,
+              1
+            ],
+            "char_span": [
+              0,
+              4
+            ],
+            "sentence": 0,
+            "entity": "L"
+          },
+          {
+            "id": "m1",
+            "form": "a red book",
+            "type": "THING",
+            "token_span": [
+              3,
+              6
+            ],
+            "char_span": [
+              15,
+              25
+            ],
+            "sentence": 0,
+            "entity": "b"
+          },
+          {
+            "id": "m2",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              7,
+              8
+            ],
+            "char_span": [
+              29,
+              33
+            ],
+            "sentence": 0,
+            "entity": "M"
+          },
+          {
+            "id": "m3",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              9,
+              10
+            ],
+            "char_span": [
+              35,
+              39
+            ],
+            "sentence": 1,
+            "entity": "L"
+          },
+          {
+            "id": "m4",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              11,
+              12
+            ],
+            "char_span": [
+              48,
+              52
+            ],
+            "sentence": 1,
+            "entity": "M"
+          }
+        ],
+        "events": [
+          {
+            "id": "e0",
+            "type": "GIVE",
+            "trigger": 2,
+            "polarity": "positive",
+            "roles": {
+              "recipient": "m0",
+              "theme": "m1",
+              "giver": "m2"
+            },
+            "manner": null,
+            "red_theme": true
+          },
+          {
+            "id": "e1",
+            "type": "THANK",
+            "trigger": 10,
+            "polarity": "positive",
+            "roles": {
+              "agent": "m3",
+              "target": "m4"
+            },
+            "manner": null,
+            "red_theme": false
+          }
+        ]
+      },
+      "frames": [
+        {
+          "type": "GIVE",
+          "polarity": "positive",
+          "roles": {
+            "recipient": "L",
+            "theme": "b",
+            "giver": "M"
+          },
+          "manner": null,
+          "theme_properties": [
+            "red"
+          ]
+        },
+        {
+          "type": "THANK",
+          "polarity": "positive",
+          "roles": {
+            "agent": "L",
+            "target": "M"
+          },
+          "manner": null,
+          "theme_properties": []
+        }
+      ],
+      "bleu1": {
+        "order": 1,
+        "candidate_length": 13,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 10,
+            "total": 13,
+            "precision": 0.7692307692307693
+          }
+        ],
+        "score": 0.7692307692307693
+      },
+      "bleu4": {
+        "order": 4,
+        "candidate_length": 13,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 10,
+            "total": 13,
+            "precision": 0.7692307692307693
+          },
+          {
+            "n": 2,
+            "matched": 6,
+            "total": 12,
+            "precision": 0.5
+          },
+          {
+            "n": 3,
+            "matched": 4,
+            "total": 11,
+            "precision": 0.36363636363636365
+          },
+          {
+            "n": 4,
+            "matched": 2,
+            "total": 10,
+            "precision": 0.2
+          }
+        ],
+        "score": 0.4089601472043678
+      },
+      "core_equal": true,
+      "manner_equal": true
+    },
+    {
+      "id": "roles_swapped",
+      "text": "Mira gave a red book to Lena. Mira thanked Lena.",
+      "parsed": {
+        "text": "Mira gave a red book to Lena. Mira thanked Lena.",
+        "tokens": [
+          {
+            "form": "Mira",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "form": "gave",
+            "start": 5,
+            "end": 9
+          },
+          {
+            "form": "a",
+            "start": 10,
+            "end": 11
+          },
+          {
+            "form": "red",
+            "start": 12,
+            "end": 15
+          },
+          {
+            "form": "book",
+            "start": 16,
+            "end": 20
+          },
+          {
+            "form": "to",
+            "start": 21,
+            "end": 23
+          },
+          {
+            "form": "Lena",
+            "start": 24,
+            "end": 28
+          },
+          {
+            "form": ".",
+            "start": 28,
+            "end": 29
+          },
+          {
+            "form": "Mira",
+            "start": 30,
+            "end": 34
+          },
+          {
+            "form": "thanked",
+            "start": 35,
+            "end": 42
+          },
+          {
+            "form": "Lena",
+            "start": 43,
+            "end": 47
+          },
+          {
+            "form": ".",
+            "start": 47,
+            "end": 48
+          }
+        ],
+        "mentions": [
+          {
+            "id": "m0",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              0,
+              1
+            ],
+            "char_span": [
+              0,
+              4
+            ],
+            "sentence": 0,
+            "entity": "M"
+          },
+          {
+            "id": "m1",
+            "form": "a red book",
+            "type": "THING",
+            "token_span": [
+              2,
+              5
+            ],
+            "char_span": [
+              10,
+              20
+            ],
+            "sentence": 0,
+            "entity": "b"
+          },
+          {
+            "id": "m2",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              6,
+              7
+            ],
+            "char_span": [
+              24,
+              28
+            ],
+            "sentence": 0,
+            "entity": "L"
+          },
+          {
+            "id": "m3",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              8,
+              9
+            ],
+            "char_span": [
+              30,
+              34
+            ],
+            "sentence": 1,
+            "entity": "M"
+          },
+          {
+            "id": "m4",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              10,
+              11
+            ],
+            "char_span": [
+              43,
+              47
+            ],
+            "sentence": 1,
+            "entity": "L"
+          }
+        ],
+        "events": [
+          {
+            "id": "e0",
+            "type": "GIVE",
+            "trigger": 1,
+            "polarity": "positive",
+            "roles": {
+              "giver": "m0",
+              "theme": "m1",
+              "recipient": "m2"
+            },
+            "manner": null,
+            "red_theme": true
+          },
+          {
+            "id": "e1",
+            "type": "THANK",
+            "trigger": 9,
+            "polarity": "positive",
+            "roles": {
+              "agent": "m3",
+              "target": "m4"
+            },
+            "manner": null,
+            "red_theme": false
+          }
+        ]
+      },
+      "frames": [
+        {
+          "type": "GIVE",
+          "polarity": "positive",
+          "roles": {
+            "giver": "M",
+            "theme": "b",
+            "recipient": "L"
+          },
+          "manner": null,
+          "theme_properties": [
+            "red"
+          ]
+        },
+        {
+          "type": "THANK",
+          "polarity": "positive",
+          "roles": {
+            "agent": "M",
+            "target": "L"
+          },
+          "manner": null,
+          "theme_properties": []
+        }
+      ],
+      "bleu1": {
+        "order": 1,
+        "candidate_length": 12,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 12,
+            "total": 12,
+            "precision": 1.0
+          }
+        ],
+        "score": 1.0
+      },
+      "bleu4": {
+        "order": 4,
+        "candidate_length": 12,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 12,
+            "total": 12,
+            "precision": 1.0
+          },
+          {
+            "n": 2,
+            "matched": 7,
+            "total": 11,
+            "precision": 0.6363636363636364
+          },
+          {
+            "n": 3,
+            "matched": 6,
+            "total": 10,
+            "precision": 0.6
+          },
+          {
+            "n": 4,
+            "matched": 5,
+            "total": 9,
+            "precision": 0.5555555555555556
+          }
+        ],
+        "score": 0.6786502681586727
+      },
+      "core_equal": false,
+      "manner_equal": true
+    },
+    {
+      "id": "negative",
+      "text": "Mira gave a red book to Lena. Lena did not thank Mira.",
+      "parsed": {
+        "text": "Mira gave a red book to Lena. Lena did not thank Mira.",
+        "tokens": [
+          {
+            "form": "Mira",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "form": "gave",
+            "start": 5,
+            "end": 9
+          },
+          {
+            "form": "a",
+            "start": 10,
+            "end": 11
+          },
+          {
+            "form": "red",
+            "start": 12,
+            "end": 15
+          },
+          {
+            "form": "book",
+            "start": 16,
+            "end": 20
+          },
+          {
+            "form": "to",
+            "start": 21,
+            "end": 23
+          },
+          {
+            "form": "Lena",
+            "start": 24,
+            "end": 28
+          },
+          {
+            "form": ".",
+            "start": 28,
+            "end": 29
+          },
+          {
+            "form": "Lena",
+            "start": 30,
+            "end": 34
+          },
+          {
+            "form": "did",
+            "start": 35,
+            "end": 38
+          },
+          {
+            "form": "not",
+            "start": 39,
+            "end": 42
+          },
+          {
+            "form": "thank",
+            "start": 43,
+            "end": 48
+          },
+          {
+            "form": "Mira",
+            "start": 49,
+            "end": 53
+          },
+          {
+            "form": ".",
+            "start": 53,
+            "end": 54
+          }
+        ],
+        "mentions": [
+          {
+            "id": "m0",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              0,
+              1
+            ],
+            "char_span": [
+              0,
+              4
+            ],
+            "sentence": 0,
+            "entity": "M"
+          },
+          {
+            "id": "m1",
+            "form": "a red book",
+            "type": "THING",
+            "token_span": [
+              2,
+              5
+            ],
+            "char_span": [
+              10,
+              20
+            ],
+            "sentence": 0,
+            "entity": "b"
+          },
+          {
+            "id": "m2",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              6,
+              7
+            ],
+            "char_span": [
+              24,
+              28
+            ],
+            "sentence": 0,
+            "entity": "L"
+          },
+          {
+            "id": "m3",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              8,
+              9
+            ],
+            "char_span": [
+              30,
+              34
+            ],
+            "sentence": 1,
+            "entity": "L"
+          },
+          {
+            "id": "m4",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              12,
+              13
+            ],
+            "char_span": [
+              49,
+              53
+            ],
+            "sentence": 1,
+            "entity": "M"
+          }
+        ],
+        "events": [
+          {
+            "id": "e0",
+            "type": "GIVE",
+            "trigger": 1,
+            "polarity": "positive",
+            "roles": {
+              "giver": "m0",
+              "theme": "m1",
+              "recipient": "m2"
+            },
+            "manner": null,
+            "red_theme": true
+          },
+          {
+            "id": "e1",
+            "type": "THANK",
+            "trigger": 11,
+            "polarity": "negative",
+            "roles": {
+              "agent": "m3",
+              "target": "m4"
+            },
+            "manner": null,
+            "red_theme": false
+          }
+        ]
+      },
+      "frames": [
+        {
+          "type": "GIVE",
+          "polarity": "positive",
+          "roles": {
+            "giver": "M",
+            "theme": "b",
+            "recipient": "L"
+          },
+          "manner": null,
+          "theme_properties": [
+            "red"
+          ]
+        },
+        {
+          "type": "THANK",
+          "polarity": "negative",
+          "roles": {
+            "agent": "L",
+            "target": "M"
+          },
+          "manner": null,
+          "theme_properties": []
+        }
+      ],
+      "bleu1": {
+        "order": 1,
+        "candidate_length": 14,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 11,
+            "total": 14,
+            "precision": 0.7857142857142857
+          }
+        ],
+        "score": 0.7857142857142857
+      },
+      "bleu4": {
+        "order": 4,
+        "candidate_length": 14,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 11,
+            "total": 14,
+            "precision": 0.7857142857142857
+          },
+          {
+            "n": 2,
+            "matched": 9,
+            "total": 13,
+            "precision": 0.6923076923076923
+          },
+          {
+            "n": 3,
+            "matched": 7,
+            "total": 12,
+            "precision": 0.5833333333333334
+          },
+          {
+            "n": 4,
+            "matched": 6,
+            "total": 11,
+            "precision": 0.5454545454545454
+          }
+        ],
+        "score": 0.6450001140844255
+      },
+      "core_equal": false,
+      "manner_equal": true
+    },
+    {
+      "id": "attitude",
+      "text": "Mira gave a red book to Lena. Lena reluctantly thanked Mira.",
+      "parsed": {
+        "text": "Mira gave a red book to Lena. Lena reluctantly thanked Mira.",
+        "tokens": [
+          {
+            "form": "Mira",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "form": "gave",
+            "start": 5,
+            "end": 9
+          },
+          {
+            "form": "a",
+            "start": 10,
+            "end": 11
+          },
+          {
+            "form": "red",
+            "start": 12,
+            "end": 15
+          },
+          {
+            "form": "book",
+            "start": 16,
+            "end": 20
+          },
+          {
+            "form": "to",
+            "start": 21,
+            "end": 23
+          },
+          {
+            "form": "Lena",
+            "start": 24,
+            "end": 28
+          },
+          {
+            "form": ".",
+            "start": 28,
+            "end": 29
+          },
+          {
+            "form": "Lena",
+            "start": 30,
+            "end": 34
+          },
+          {
+            "form": "reluctantly",
+            "start": 35,
+            "end": 46
+          },
+          {
+            "form": "thanked",
+            "start": 47,
+            "end": 54
+          },
+          {
+            "form": "Mira",
+            "start": 55,
+            "end": 59
+          },
+          {
+            "form": ".",
+            "start": 59,
+            "end": 60
+          }
+        ],
+        "mentions": [
+          {
+            "id": "m0",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              0,
+              1
+            ],
+            "char_span": [
+              0,
+              4
+            ],
+            "sentence": 0,
+            "entity": "M"
+          },
+          {
+            "id": "m1",
+            "form": "a red book",
+            "type": "THING",
+            "token_span": [
+              2,
+              5
+            ],
+            "char_span": [
+              10,
+              20
+            ],
+            "sentence": 0,
+            "entity": "b"
+          },
+          {
+            "id": "m2",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              6,
+              7
+            ],
+            "char_span": [
+              24,
+              28
+            ],
+            "sentence": 0,
+            "entity": "L"
+          },
+          {
+            "id": "m3",
+            "form": "Lena",
+            "type": "PERSON",
+            "token_span": [
+              8,
+              9
+            ],
+            "char_span": [
+              30,
+              34
+            ],
+            "sentence": 1,
+            "entity": "L"
+          },
+          {
+            "id": "m4",
+            "form": "Mira",
+            "type": "PERSON",
+            "token_span": [
+              11,
+              12
+            ],
+            "char_span": [
+              55,
+              59
+            ],
+            "sentence": 1,
+            "entity": "M"
+          }
+        ],
+        "events": [
+          {
+            "id": "e0",
+            "type": "GIVE",
+            "trigger": 1,
+            "polarity": "positive",
+            "roles": {
+              "giver": "m0",
+              "theme": "m1",
+              "recipient": "m2"
+            },
+            "manner": null,
+            "red_theme": true
+          },
+          {
+            "id": "e1",
+            "type": "THANK",
+            "trigger": 10,
+            "polarity": "positive",
+            "roles": {
+              "agent": "m3",
+              "target": "m4"
+            },
+            "manner": "reluctant",
+            "red_theme": false
+          }
+        ]
+      },
+      "frames": [
+        {
+          "type": "GIVE",
+          "polarity": "positive",
+          "roles": {
+            "giver": "M",
+            "theme": "b",
+            "recipient": "L"
+          },
+          "manner": null,
+          "theme_properties": [
+            "red"
+          ]
+        },
+        {
+          "type": "THANK",
+          "polarity": "positive",
+          "roles": {
+            "agent": "L",
+            "target": "M"
+          },
+          "manner": "reluctant",
+          "theme_properties": []
+        }
+      ],
+      "bleu1": {
+        "order": 1,
+        "candidate_length": 13,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 12,
+            "total": 13,
+            "precision": 0.9230769230769231
+          }
+        ],
+        "score": 0.9230769230769231
+      },
+      "bleu4": {
+        "order": 4,
+        "candidate_length": 13,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 12,
+            "total": 13,
+            "precision": 0.9230769230769231
+          },
+          {
+            "n": 2,
+            "matched": 10,
+            "total": 12,
+            "precision": 0.8333333333333334
+          },
+          {
+            "n": 3,
+            "matched": 8,
+            "total": 11,
+            "precision": 0.7272727272727273
+          },
+          {
+            "n": 4,
+            "matched": 6,
+            "total": 10,
+            "precision": 0.6
+          }
+        ],
+        "score": 0.7611606003349892
+      },
+      "core_equal": true,
+      "manner_equal": false
+    }
+  ],
+  "alignment": {
+    "source": [
+      "米拉",
+      "送给",
+      "莉娜",
+      "一",
+      "本",
+      "红",
+      "书",
+      "。"
+    ],
+    "target": [
+      "Mira",
+      "gave",
+      "a",
+      "red",
+      "book",
+      "to",
+      "Lena",
+      "."
+    ],
+    "links": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        7,
+        7
+      ]
+    ]
+  },
+  "decoder": {
+    "greedy": {
+      "tokens": [
+        "Mira",
+        "praised",
+        "Lena",
+        "."
+      ],
+      "probability": "3/10",
+      "trace": [
+        [
+          {
+            "tokens": [
+              "Mira"
+            ],
+            "probability": "3/5"
+          }
+        ],
+        [
+          {
+            "tokens": [
+              "Mira",
+              "praised"
+            ],
+            "probability": "3/10"
+          }
+        ],
+        [
+          {
+            "tokens": [
+              "Mira",
+              "praised",
+              "Lena"
+            ],
+            "probability": "3/10"
+          }
+        ],
+        [
+          {
+            "tokens": [
+              "Mira",
+              "praised",
+              "Lena",
+              "."
+            ],
+            "probability": "3/10"
+          }
+        ],
+        [
+          {
+            "tokens": [
+              "Mira",
+              "praised",
+              "Lena",
+              ".",
+              "<EOS>"
+            ],
+            "probability": "3/10"
+          }
+        ]
+      ]
+    },
+    "beam2": {
+      "tokens": [
+        "Lena",
+        "thanked",
+        "Mira",
+        "."
+      ],
+      "probability": "2/5",
+      "trace": [
+        [
+          {
+            "tokens": [
+              "Mira"
+            ],
+            "probability": "3/5"
+          },
+          {
+            "tokens": [
+              "Lena"
+            ],
+            "probability": "2/5"
+          }
+        ],
+        [
+          {
+            "tokens": [
+              "Lena",
+              "thanked"
+            ],
+            "probability": "2/5"
+          },
+          {
+            "tokens": [
+              "Mira",
+              "praised"
+            ],
+            "probability": "3/10"
+          }
+        ],
+        [
+          {
+            "tokens": [
+              "Lena",
+              "thanked",
+              "Mira"
+            ],
+            "probability": "2/5"
+          },
+          {
+            "tokens": [
+              "Mira",
+              "praised",
+              "Lena"
+            ],
+            "probability": "3/10"
+          }
+        ],
+        [
+          {
+            "tokens": [
+              "Lena",
+              "thanked",
+              "Mira",
+              "."
+            ],
+            "probability": "2/5"
+          },
+          {
+            "tokens": [
+              "Mira",
+              "praised",
+              "Lena",
+              "."
+            ],
+            "probability": "3/10"
+          }
+        ],
+        [
+          {
+            "tokens": [
+              "Lena",
+              "thanked",
+              "Mira",
+              ".",
+              "<EOS>"
+            ],
+            "probability": "2/5"
+          },
+          {
+            "tokens": [
+              "Mira",
+              "praised",
+              "Lena",
+              ".",
+              "<EOS>"
+            ],
+            "probability": "3/10"
+          }
+        ]
+      ]
+    },
+    "exact_probability": "2/5",
+    "paragraph_map_tokens": [
+      "Mira",
+      "gave",
+      "a",
+      "red",
+      "book",
+      "to",
+      "Lena",
+      ".",
+      "Mira",
+      "thanked",
+      "Lena",
+      "."
+    ],
+    "paragraph_map_probability": "4/11"
+  },
+  "padding": [
+    {
+      "added_sentences": 0,
+      "bleu4": {
+        "order": 4,
+        "candidate_length": 12,
+        "reference_length": 12,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 12,
+            "total": 12,
+            "precision": 1.0
+          },
+          {
+            "n": 2,
+            "matched": 7,
+            "total": 11,
+            "precision": 0.6363636363636364
+          },
+          {
+            "n": 3,
+            "matched": 6,
+            "total": 10,
+            "precision": 0.6
+          },
+          {
+            "n": 4,
+            "matched": 5,
+            "total": 9,
+            "precision": 0.5555555555555556
+          }
+        ],
+        "score": 0.6786502681586727
+      }
+    },
+    {
+      "added_sentences": 8,
+      "bleu4": {
+        "order": 4,
+        "candidate_length": 52,
+        "reference_length": 52,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 52,
+            "total": 52,
+            "precision": 1.0
+          },
+          {
+            "n": 2,
+            "matched": 47,
+            "total": 51,
+            "precision": 0.9215686274509803
+          },
+          {
+            "n": 3,
+            "matched": 45,
+            "total": 50,
+            "precision": 0.9
+          },
+          {
+            "n": 4,
+            "matched": 43,
+            "total": 49,
+            "precision": 0.8775510204081632
+          }
+        ],
+        "score": 0.9236568209081443
+      }
+    },
+    {
+      "added_sentences": 64,
+      "bleu4": {
+        "order": 4,
+        "candidate_length": 332,
+        "reference_length": 332,
+        "bp": 1.0,
+        "ngrams": [
+          {
+            "n": 1,
+            "matched": 332,
+            "total": 332,
+            "precision": 1.0
+          },
+          {
+            "n": 2,
+            "matched": 327,
+            "total": 331,
+            "precision": 0.9879154078549849
+          },
+          {
+            "n": 3,
+            "matched": 325,
+            "total": 330,
+            "precision": 0.9848484848484849
+          },
+          {
+            "n": 4,
+            "matched": 323,
+            "total": 329,
+            "precision": 0.9817629179331308
+          }
+        ],
+        "score": 0.9886076142966639
+      }
+    }
+  ],
+  "short_bleu4": {
+    "order": 4,
+    "candidate_length": 3,
+    "reference_length": 4,
+    "bp": 0.7165313105737893,
+    "ngrams": [
+      {
+        "n": 1,
+        "matched": 3,
+        "total": 3,
+        "precision": 1.0
+      },
+      {
+        "n": 2,
+        "matched": 2,
+        "total": 2,
+        "precision": 1.0
+      },
+      {
+        "n": 3,
+        "matched": 1,
+        "total": 1,
+        "precision": 1.0
+      },
+      {
+        "n": 4,
+        "matched": 0,
+        "total": 0,
+        "precision": null
+      }
+    ],
+    "score": null
+  },
+  "rejected": [
+    "Mira promised to give a book to Lena.",
+    "Mira did not give a book to Lena.",
+    "Mira gave a book to Lena?",
+    "米拉感谢莉娜。",
+    "Read outside book domain"
+  ]
+}

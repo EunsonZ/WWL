@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="770" viewBox="0 0 1100 770"><title>同质量教学请求的单位强度与窗口总摊分</title><desc>操作能耗与制造摊分均为模型；每行参数来自对应输入卡，不能把单位下降直接说成总量下降。</desc><rect width="1100" height="100%" fill="#f7fafc"/><g font-family="PingFang SC, sans-serif">
+<text x="35" y="46" font-size="30" fill="#17324d">单位数值变好，总量也一定下降吗？</text>
+<text x="35" y="80" font-size="20" fill="#17324d">每行采用输入卡的窗口/寿命/碳强度；全为教学模型，非测量或认证。</text>
+<text x="35" y="127" font-size="22" fill="#17324d">方案与输入</text>
+<text x="290" y="127" font-size="22" fill="#17324d">总分摊 C（gCO₂e）</text>
+<text x="800" y="127" font-size="22" fill="#17324d">mgCO₂e / 成功请求</text>
+<g><title>A; N=1000000; e=2J; T=720h; EL=35040h; I=400</title>
+<text x="35" y="179" font-size="21" fill="#17324d">A</text>
+<text x="35" y="201" font-size="15" fill="#17324d">N=1000000; e=2J</text>
+<text x="35" y="219" font-size="12" fill="#17324d">T=720h; EL=35040h; I=400</text>
+<rect x="290" y="163" width="182.32761335012592" height="30" fill="#3975b7"/>
+<rect x="472.32761335012594" y="163" width="84.12704659949621" height="30" fill="#d88a38"/>
+<text x="566.4546599496222" y="187" font-size="18" fill="#17324d">3254.064</text>
+<text x="845" y="188" font-size="22" fill="#17324d">3.254064</text>
+</g>
+<g><title>B_double; N=2000000; e=1.2J; T=720h; EL=35040h; I=400</title>
+<text x="35" y="254" font-size="21" fill="#17324d">B_double</text>
+<text x="35" y="276" font-size="15" fill="#17324d">N=2000000; e=1.2J</text>
+<text x="35" y="294" font-size="12" fill="#17324d">T=720h; EL=35040h; I=400</text>
+<rect x="290" y="238" width="186.694741813602" height="30" fill="#3975b7"/>
+<rect x="476.69474181360204" y="238" width="84.12704659949621" height="30" fill="#d88a38"/>
+<text x="570.8217884130981" y="262" font-size="18" fill="#17324d">3307.397</text>
+<text x="845" y="263" font-size="22" fill="#17324d">1.653699</text>
+</g>
+<g><title>B_same; N=1000000; e=1.2J; T=720h; EL=35040h; I=400</title>
+<text x="35" y="329" font-size="21" fill="#17324d">B_same</text>
+<text x="35" y="351" font-size="15" fill="#17324d">N=1000000; e=1.2J</text>
+<text x="35" y="369" font-size="12" fill="#17324d">T=720h; EL=35040h; I=400</text>
+<rect x="290" y="313" width="173.5933564231738" height="30" fill="#3975b7"/>
+<rect x="463.59335642317376" y="313" width="84.12704659949621" height="30" fill="#d88a38"/>
+<text x="557.72040302267" y="337" font-size="18" fill="#17324d">3147.397</text>
+<text x="845" y="338" font-size="22" fill="#17324d">3.147397</text>
+</g>
+<g><title>B_retries; N=2000000; e=1.2J; T=720h; EL=35040h; I=400</title>
+<text x="35" y="404" font-size="21" fill="#17324d">B_retries</text>
+<text x="35" y="426" font-size="15" fill="#17324d">N=2000000; e=1.2J</text>
+<text x="35" y="444" font-size="12" fill="#17324d">T=720h; EL=35040h; I=400</text>
+<rect x="290" y="388" width="295.8729534005038" height="30" fill="#3975b7"/>
+<rect x="585.8729534005038" y="388" width="84.12704659949621" height="30" fill="#d88a38"/>
+<text x="680.0" y="412" font-size="18" fill="#17324d">4640.731</text>
+<text x="845" y="413" font-size="22" fill="#17324d">2.320365</text>
+</g>
+<g><title>A_life8; N=1000000; e=2J; T=720h; EL=70080h; I=400</title>
+<text x="35" y="479" font-size="21" fill="#17324d">A_life8</text>
+<text x="35" y="501" font-size="15" fill="#17324d">N=1000000; e=2J</text>
+<text x="35" y="519" font-size="12" fill="#17324d">T=720h; EL=70080h; I=400</text>
+<rect x="290" y="463" width="182.32761335012592" height="30" fill="#3975b7"/>
+<rect x="472.32761335012594" y="463" width="42.063523299748105" height="30" fill="#d88a38"/>
+<text x="524.391136649874" y="487" font-size="18" fill="#17324d">2740.365</text>
+<text x="845" y="488" font-size="22" fill="#17324d">2.740365</text>
+</g>
+<g><title>B_low_grid; N=2000000; e=1.2J; T=720h; EL=35040h; I=40</title>
+<text x="35" y="554" font-size="21" fill="#17324d">B_low_grid</text>
+<text x="35" y="576" font-size="15" fill="#17324d">N=2000000; e=1.2J</text>
+<text x="35" y="594" font-size="12" fill="#17324d">T=720h; EL=35040h; I=40</text>
+<rect x="290" y="538" width="18.6694741813602" height="30" fill="#3975b7"/>
+<rect x="308.6694741813602" y="538" width="84.12704659949621" height="30" fill="#d88a38"/>
+<text x="402.79652078085644" y="562" font-size="18" fill="#17324d">1255.397</text>
+<text x="845" y="563" font-size="22" fill="#17324d">0.627699</text>
+</g>
+<text x="35" y="640" font-size="20" fill="#17324d">蓝：运行 O；橙：制造分摊 M。条长比较窗口总 C，右列另有成功请求分母。</text>
+<text x="35" y="676" font-size="20" fill="#17324d">质量不达声明门槛的卡共 1 项：不输出同功能单位强度；完整拒因留在JSON。</text>
+<text x="35" y="712" font-size="18" fill="#17324d">设施系数只乘 IT；外部网络另计。寿命与碳强度改变是敏感性，不是已发生事实。</text>
+</g></svg>

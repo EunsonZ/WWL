@@ -1,0 +1,16 @@
+{
+  "schema": "professional-energy-v1",
+  "data_kind": "synthetic_no_hardware_measurement",
+  "functional_unit": "one correct completed reservation-status query, same Q1 response contract",
+  "quality_gate": {"min_correct_rate": "0.999", "max_p99_ms": "500"},
+  "common": {"window_h": "720", "idle_node_W": "20", "reserved_share": "0.25", "aux_IT_kWh": "0.4", "facility_factor": "1.2", "external_network_kWh": "0.1", "grid_g_per_kWh": "400", "hardware_TE_g": "200000", "hardware_life_h": "35040"},
+  "cases": [
+    {"id":"A", "successful_requests":1000000,"success_J":"2","failed_attempts":0,"failed_J":"1","correct_rate":"1","p99_ms":"400","override":{}},
+    {"id":"B_double", "successful_requests":2000000,"success_J":"1.2","failed_attempts":0,"failed_J":"1","correct_rate":"1","p99_ms":"400","override":{}},
+    {"id":"B_same", "successful_requests":1000000,"success_J":"1.2","failed_attempts":0,"failed_J":"1","correct_rate":"1","p99_ms":"400","override":{}},
+    {"id":"B_retries", "successful_requests":2000000,"success_J":"1.2","failed_attempts":2000000,"failed_J":"5","correct_rate":"1","p99_ms":"400","override":{}},
+    {"id":"A_life8", "successful_requests":1000000,"success_J":"2","failed_attempts":0,"failed_J":"1","correct_rate":"1","p99_ms":"400","override":{"hardware_life_h":"70080"}},
+    {"id":"B_low_grid", "successful_requests":2000000,"success_J":"1.2","failed_attempts":0,"failed_J":"1","correct_rate":"1","p99_ms":"400","override":{"grid_g_per_kWh":"40"}},
+    {"id":"B_bad_quality", "successful_requests":2000000,"success_J":"1.2","failed_attempts":0,"failed_J":"1","correct_rate":"0.98","p99_ms":"400","override":{}}
+  ]
+}

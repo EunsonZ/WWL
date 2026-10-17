@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "input": {
+    "M": 8,
+    "c_m_per_s": 343.0,
+    "carrier_hz": 3430.0,
+    "d_m": 0.05,
+    "baseband_fs_hz": 32.0,
+    "declared_baseband_total_width_hz": 5.0,
+    "train_samples": 128,
+    "test_samples": 256,
+    "look_q": 0.0,
+    "interference_q": 0.3,
+    "interference_power_pa2": 100.0,
+    "channel_noise_power_pa2": 1.0,
+    "delta_pa2": 10.0,
+    "fixture": "orthogonal deterministic complex exponentials, not random population evidence"
+  },
+  "versions": {
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  },
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "covariance_max_abs_error": 5.68510288445715e-14,
+  "metrics": {
+    "fixed": {
+      "mse_pa2": 2.744171080834744,
+      "model_noise_pa2": 2.7441710808347453,
+      "distortionless_residual": 0.0,
+      "weight_norm": 0.3535533905932738,
+      "interference_gain": 0.1618385331382716
+    },
+    "mvdr": {
+      "mse_pa2": 0.12835771090542453,
+      "model_noise_pa2": 0.128357710905427,
+      "distortionless_residual": 4.872368567697774e-15,
+      "weight_norm": 0.3582644364225855,
+      "interference_gain": 0.00020747289537995748
+    },
+    "loaded": {
+      "mse_pa2": 0.12877679512107637,
+      "model_noise_pa2": 0.1287767951210773,
+      "distortionless_residual": 5.610027061456275e-16,
+      "weight_norm": 0.3581466910453392,
+      "interference_gain": 0.0022533149232869154
+    }
+  },
+  "independent_expected": {
+    "fixed_noise_pa2": 2.7441710808347435,
+    "mvdr_noise_pa2": 0.12835771090542455
+  },
+  "rank_one_weight_max_error": 1.082784100929357e-14,
+  "alias_residual": 5.266250202865051e-15,
+  "halfwave_endpoint_residual": 1.7145055188062944e-15,
+  "singular_example": {
+    "optimal_cost": 0.0,
+    "naive_pseudoinverse_cost": 1.0,
+    "constraints": [
+      1.0,
+      1.0
+    ]
+  },
+  "four_snapshot_rank": 4,
+  "mismatch": {
+    "q_true": 0.08,
+    "formula_max_error": 4.002966042486721e-16,
+    "last_power": 10000.0,
+    "last_gain": {
+      "fixed": 0.8420830428315916,
+      "mvdr": 3.6183310714281794e-05,
+      "loaded": 0.00039784546837430166
+    }
+  },
+  "elapsed_seconds": 0.5201639160513878,
+  "unverified": [
+    "real sensor calibration",
+    "real propagation/multipath",
+    "random covariance estimation consistency",
+    "Obsidian display",
+    "human transfer learning"
+  ]
+}

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="1050" viewBox="0 0 1260 1050" role="img" aria-labelledby="title desc">
+<title id="title">Two constituent trees and their declared dependency conversions</title><desc id="desc">The same five words keep IDs1..5. On the left are the two published CKY trees. On the right arrows point from head to dependent, with artificial ROOT0. Only the incoming head and relation of scopes differ: birds to scopes nmod versus saw to scopes obl. with is case dependent of scopes in both. Grammar and head rules allow analyses; neither diagram proves which situation occurred.</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#56616c"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<text x="35" y="32" font-size="24" fill="#185d9a" text-anchor="start">Same words, different PP attachment</text>
+<text x="35" y="59" font-size="16" fill="#56616c" text-anchor="start">Constituency: phrase nodes remain</text>
+<text x="655" y="59" font-size="16" fill="#56616c" text-anchor="start">Dependencies: word heads; head -&gt; dependent</text>
+<text x="35" y="88" font-size="19" fill="#793f91" text-anchor="start">A. NP attachment: birds have scopes</text>
+<line x1="184.375" y1="129" x2="85" y2="159" stroke="#56616c" stroke-width="1.8"/>
+<line x1="184.375" y1="129" x2="283.75" y2="159" stroke="#56616c" stroke-width="1.8"/>
+<text x="184.375" y="122" font-size="16" fill="#185d9a" text-anchor="middle">S</text>
+<text x="85" y="177" font-size="16" fill="#185d9a" text-anchor="middle">NP</text>
+<line x1="85" y1="184" x2="85" y2="433" stroke="#56616c" stroke-width="1.8"/>
+<text x="85" y="457" font-size="15" fill="#56616c" text-anchor="middle">1: I</text>
+<line x1="283.75" y1="184" x2="191" y2="214" stroke="#56616c" stroke-width="1.8"/>
+<line x1="283.75" y1="184" x2="376.5" y2="214" stroke="#56616c" stroke-width="1.8"/>
+<text x="283.75" y="177" font-size="16" fill="#185d9a" text-anchor="middle">VP</text>
+<text x="191" y="232" font-size="16" fill="#185d9a" text-anchor="middle">V</text>
+<line x1="191" y1="239" x2="191" y2="433" stroke="#56616c" stroke-width="1.8"/>
+<text x="191" y="457" font-size="15" fill="#56616c" text-anchor="middle">2: saw</text>
+<line x1="376.5" y1="239" x2="297" y2="269" stroke="#56616c" stroke-width="1.8"/>
+<line x1="376.5" y1="239" x2="456.0" y2="269" stroke="#56616c" stroke-width="1.8"/>
+<text x="376.5" y="232" font-size="16" fill="#185d9a" text-anchor="middle">NP</text>
+<text x="297" y="287" font-size="16" fill="#185d9a" text-anchor="middle">NP</text>
+<line x1="297" y1="294" x2="297" y2="433" stroke="#56616c" stroke-width="1.8"/>
+<text x="297" y="457" font-size="15" fill="#56616c" text-anchor="middle">3: birds</text>
+<line x1="456.0" y1="294" x2="403" y2="324" stroke="#56616c" stroke-width="1.8"/>
+<line x1="456.0" y1="294" x2="509" y2="324" stroke="#56616c" stroke-width="1.8"/>
+<text x="456.0" y="287" font-size="16" fill="#793f91" text-anchor="middle">PP</text>
+<text x="403" y="342" font-size="16" fill="#185d9a" text-anchor="middle">P</text>
+<line x1="403" y1="349" x2="403" y2="433" stroke="#56616c" stroke-width="1.8"/>
+<text x="403" y="457" font-size="15" fill="#56616c" text-anchor="middle">4: with</text>
+<text x="509" y="342" font-size="16" fill="#185d9a" text-anchor="middle">NP</text>
+<line x1="509" y1="349" x2="509" y2="433" stroke="#56616c" stroke-width="1.8"/>
+<text x="509" y="457" font-size="15" fill="#56616c" text-anchor="middle">5: scopes</text>
+<line x1="855" y1="215" x2="700" y2="270" stroke="#56616c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="753.5" y="251.0" font-size="14" fill="#56616c" text-anchor="middle">nsubj</text>
+<line x1="855" y1="135" x2="855" y2="180" stroke="#56616c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="879.0" y="166.0" font-size="14" fill="#56616c" text-anchor="middle">root</text>
+<line x1="855" y1="215" x2="930" y2="270" stroke="#56616c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="868.5" y="251.0" font-size="14" fill="#56616c" text-anchor="middle">obj</text>
+<line x1="1035" y1="385" x2="1120" y2="425" stroke="#56616c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="1101.5" y="413.5" font-size="14" fill="#56616c" text-anchor="middle">case</text>
+<line x1="930" y1="305" x2="1035" y2="350" stroke="#793f91" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="1006.5" y="336.0" font-size="14" fill="#793f91" text-anchor="middle">nmod</text>
+<rect x="783" y="102" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="855" y="124" font-size="14" fill="#185d9a" text-anchor="middle">0: ROOT (artificial)</text>
+<rect x="783" y="182" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="855" y="204" font-size="14" fill="#185d9a" text-anchor="middle">2: saw</text>
+<rect x="628" y="272" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="700" y="294" font-size="14" fill="#185d9a" text-anchor="middle">1: I</text>
+<rect x="858" y="272" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="930" y="294" font-size="14" fill="#185d9a" text-anchor="middle">3: birds</text>
+<rect x="963" y="352" width="144" height="32" rx="7" fill="#f0e7f6"/>
+<text x="1035" y="374" font-size="14" fill="#793f91" text-anchor="middle">5: scopes</text>
+<rect x="1048" y="427" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="1120" y="449" font-size="14" fill="#185d9a" text-anchor="middle">4: with</text>
+<line x1="35" y1="495" x2="1225" y2="495" stroke="#d4dce3" stroke-width="1.8"/>
+<text x="35" y="568" font-size="19" fill="#793f91" text-anchor="start">B. VP attachment: scopes used in seeing</text>
+<line x1="217.5" y1="609" x2="85" y2="639" stroke="#56616c" stroke-width="1.8"/>
+<line x1="217.5" y1="609" x2="350.0" y2="639" stroke="#56616c" stroke-width="1.8"/>
+<text x="217.5" y="602" font-size="16" fill="#185d9a" text-anchor="middle">S</text>
+<text x="85" y="657" font-size="16" fill="#185d9a" text-anchor="middle">NP</text>
+<line x1="85" y1="664" x2="85" y2="913" stroke="#56616c" stroke-width="1.8"/>
+<text x="85" y="937" font-size="15" fill="#56616c" text-anchor="middle">1: I</text>
+<line x1="350.0" y1="664" x2="244.0" y2="694" stroke="#56616c" stroke-width="1.8"/>
+<line x1="350.0" y1="664" x2="456.0" y2="694" stroke="#56616c" stroke-width="1.8"/>
+<text x="350.0" y="657" font-size="16" fill="#185d9a" text-anchor="middle">VP</text>
+<line x1="244.0" y1="719" x2="191" y2="749" stroke="#56616c" stroke-width="1.8"/>
+<line x1="244.0" y1="719" x2="297" y2="749" stroke="#56616c" stroke-width="1.8"/>
+<text x="244.0" y="712" font-size="16" fill="#185d9a" text-anchor="middle">VP</text>
+<text x="191" y="767" font-size="16" fill="#185d9a" text-anchor="middle">V</text>
+<line x1="191" y1="774" x2="191" y2="913" stroke="#56616c" stroke-width="1.8"/>
+<text x="191" y="937" font-size="15" fill="#56616c" text-anchor="middle">2: saw</text>
+<text x="297" y="767" font-size="16" fill="#185d9a" text-anchor="middle">NP</text>
+<line x1="297" y1="774" x2="297" y2="913" stroke="#56616c" stroke-width="1.8"/>
+<text x="297" y="937" font-size="15" fill="#56616c" text-anchor="middle">3: birds</text>
+<line x1="456.0" y1="719" x2="403" y2="749" stroke="#56616c" stroke-width="1.8"/>
+<line x1="456.0" y1="719" x2="509" y2="749" stroke="#56616c" stroke-width="1.8"/>
+<text x="456.0" y="712" font-size="16" fill="#793f91" text-anchor="middle">PP</text>
+<text x="403" y="767" font-size="16" fill="#185d9a" text-anchor="middle">P</text>
+<line x1="403" y1="774" x2="403" y2="913" stroke="#56616c" stroke-width="1.8"/>
+<text x="403" y="937" font-size="15" fill="#56616c" text-anchor="middle">4: with</text>
+<text x="509" y="767" font-size="16" fill="#185d9a" text-anchor="middle">NP</text>
+<line x1="509" y1="774" x2="509" y2="913" stroke="#56616c" stroke-width="1.8"/>
+<text x="509" y="937" font-size="15" fill="#56616c" text-anchor="middle">5: scopes</text>
+<line x1="855" y1="695" x2="700" y2="750" stroke="#56616c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="753.5" y="731.0" font-size="14" fill="#56616c" text-anchor="middle">nsubj</text>
+<line x1="855" y1="615" x2="855" y2="660" stroke="#56616c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="879.0" y="646.0" font-size="14" fill="#56616c" text-anchor="middle">root</text>
+<line x1="855" y1="695" x2="930" y2="750" stroke="#56616c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="868.5" y="731.0" font-size="14" fill="#56616c" text-anchor="middle">obj</text>
+<line x1="1100" y1="785" x2="1100" y2="845" stroke="#56616c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="1124.0" y="823.5" font-size="14" fill="#56616c" text-anchor="middle">case</text>
+<line x1="855" y1="695" x2="1100" y2="750" stroke="#793f91" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="1001.5" y="731.0" font-size="14" fill="#793f91" text-anchor="middle">obl</text>
+<rect x="783" y="582" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="855" y="604" font-size="14" fill="#185d9a" text-anchor="middle">0: ROOT (artificial)</text>
+<rect x="783" y="662" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="855" y="684" font-size="14" fill="#185d9a" text-anchor="middle">2: saw</text>
+<rect x="628" y="752" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="700" y="774" font-size="14" fill="#185d9a" text-anchor="middle">1: I</text>
+<rect x="858" y="752" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="930" y="774" font-size="14" fill="#185d9a" text-anchor="middle">3: birds</text>
+<rect x="1028" y="752" width="144" height="32" rx="7" fill="#f0e7f6"/>
+<text x="1100" y="774" font-size="14" fill="#793f91" text-anchor="middle">5: scopes</text>
+<rect x="1028" y="847" width="144" height="32" rx="7" fill="#edf4f9"/>
+<text x="1100" y="869" font-size="14" fill="#185d9a" text-anchor="middle">4: with</text>
+<line x1="35" y1="975" x2="1225" y2="975" stroke="#d4dce3" stroke-width="1.8"/>
+<text x="35" y="1010" font-size="16" fill="#56616c" text-anchor="start">Both: saw -&gt; I (nsubj), saw -&gt; birds (obj), scopes -&gt; with (case), ROOT -&gt; saw (root).</text>
+<text x="35" y="1036" font-size="16" fill="#793f91" text-anchor="start">Changed: birds -&gt; scopes (nmod)  versus  saw -&gt; scopes (obl). IDs denote positions, not word meanings.</text>
+</g></svg>

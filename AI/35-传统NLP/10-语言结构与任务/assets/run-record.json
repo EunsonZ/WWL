@@ -1,0 +1,86 @@
+{
+  "task": "#163 first complete constituent/dependency and evaluation unit",
+  "recorded_at_utc": "2026-10-17T01:56:14.143539+00:00",
+  "python": "3.14.7",
+  "dependencies": "Python stdlib for algorithms/tests/SVG; existing CairoSVG for actual view only, no installation",
+  "measured": {
+    "operation": "structure_lab.run including fixed input, original CKY import/conversion/finite candidates and output writes; excludes runner queue and process startup",
+    "seconds": 0.003932541003450751
+  },
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "runner": "/private/tmp/wwl-next-context/run_local.py --timeout 300 -- <interpreter> -B <argv>; two global CPU slots, one numerical thread",
+  "actual_commands": [
+    [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163/AI/35-传统NLP/10-语言结构与任务/code-sync/structure_lab.py",
+      "--parent",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/35-传统NLP/nlp_lab.py",
+      "--output",
+      "/private/tmp/wwl-next-163/pre-run"
+    ],
+    [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163/AI/35-传统NLP/10-语言结构与任务/code-sync/structure_lab.py",
+      "--parent",
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/35-传统NLP/nlp_lab.py",
+      "--output",
+      "/private/tmp/wwl-next-163/AI/35-传统NLP/10-语言结构与任务/assets"
+    ],
+    [
+      "python3",
+      "-B",
+      "/private/tmp/wwl163-record.py"
+    ],
+    [
+      "env",
+      "WWL_NLP_SOURCE=/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/AI/35-传统NLP/nlp_lab.py",
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163/AI/35-传统NLP/10-语言结构与任务/code-sync/test_structure_lab.py"
+    ],
+    [
+      "python3",
+      "-B",
+      "/private/tmp/wwl-next-163/AI/35-传统NLP/10-语言结构与任务/code-sync/render_structure.py",
+      "--results",
+      "/private/tmp/wwl-next-163/AI/35-传统NLP/10-语言结构与任务/assets",
+      "--output",
+      "/private/tmp/wwl-next-163/AI/35-传统NLP/10-语言结构与任务/assets"
+    ],
+    [
+      "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/.venv/bin/python",
+      "-B",
+      "/private/tmp/wwl163-visual/render_saved.py"
+    ]
+  ],
+  "protocol": "All inputs/scoring masks/NP reference are fixed public teaching fixtures. No fitting/data split/dev selection or blind test performance claim. Short pre-run then formal; finite-score-domain guard added before final formal source binding. Renderer text arrows changed to ASCII after actual Cairo missing-glyph observation; final diagrams re-rendered and inspected.",
+  "identity": {
+    "source": {
+      "render_structure.py": "a4cd647510b262259873de222e9f30bbed64c836862b6980add90808711c17dd",
+      "structure_lab.py": "805c9371dc5a601c713e9be740aa0e5f5ff873f135200483bdbf09d728be27fa",
+      "test_structure_lab.py": "2be5f197b0a77e655378cb2ee96df9273670377e81e77a3919aa6f7cc9565109"
+    },
+    "input": {
+      "structure.json": "86234551162204b060b20f46d2c6e1292c3da7901873b9adcbbae7e2e31f0520"
+    },
+    "reused_parent": {
+      "AI/35-传统NLP/nlp_lab.py": "fe1e5e64764a87b96160e5ce7f092982b9af444180a52025249c6ce49bfb89ba"
+    },
+    "output": {
+      "arc-comparisons.jsonl": "c5cff898ca1a8d85e0b0bbaa0bf03cd251ee8d8d7f0e4333a58d55d015447d74",
+      "attachment-denominators.svg": "54959334fa49c362f6eb0cb92c7e9e3a0676d09d72ee8c8ec8d6c1f7f9b1b501",
+      "author-tests.txt": "4b78997ac0cce9349f368ebee94830606c58ebc0cf3df59eb76f28b24717507d",
+      "constituency-dependencies.svg": "163f8aa4c474cd5c94298064c63bd14c371755977a4c48bd2202405915e9883f",
+      "structure-results.json": "34e037c78c928010bb482ef20cec7484e1d86ef4a26de3692a3fbe0425daf7bc"
+    }
+  },
+  "evidence_boundaries": "No real dependency parsing benchmark/training, raw-text official scorer reproduction, human annotation/understanding, broad semantic interpretation, machine translation, Obsidian display or production result. Small real UD dependency baseline remains locally possible next original scope; not externalized. Large training and human evaluation need their actual resources/permissions, not a blanket unavailable label."
+}

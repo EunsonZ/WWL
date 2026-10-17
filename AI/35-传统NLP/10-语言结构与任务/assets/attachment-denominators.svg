@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500" viewBox="0 0 1120 500" role="img" aria-labelledby="title desc">
+<title id="title">Attachment scores depend on which reference words are evaluated</title><desc id="desc">All bars use the NP reference and VP prediction. Correct punctuation raises both from4/5 to5/6 without repairing scopes. Excluding punctuation restores4/5, also excluding the real root word yields3/4. Artificial ROOT0 never adds a denominator unit. A label-only error has UAS5/5 and LAS4/5. All units are proportions, not semantic accuracy.</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#56616c"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<text x="35" y="32" font-size="23" fill="#185d9a" text-anchor="start">One attachment error; denominator policy changes the number</text>
+<text x="35" y="62" font-size="16" fill="#56616c" text-anchor="start">UAS = correct heads / scored words; LAS = correct head AND label / scored words</text>
+<text x="35" y="130" font-size="15" fill="#56616c" text-anchor="start">5 words</text>
+<rect x="300" y="110" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="110" width="480.0" height="17" fill="#185d9a"/>
+<text x="925" y="124" font-size="14" fill="#185d9a" text-anchor="start">UAS 4/5 = 0.800</text>
+<rect x="300" y="132" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="132" width="480.0" height="17" fill="#b75a14"/>
+<text x="925" y="146" font-size="14" fill="#b75a14" text-anchor="start">LAS 4/5 = 0.800</text>
+<text x="35" y="195" font-size="15" fill="#56616c" text-anchor="start">add correct punctuation</text>
+<rect x="300" y="175" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="175" width="500.0" height="17" fill="#185d9a"/>
+<text x="925" y="189" font-size="14" fill="#185d9a" text-anchor="start">UAS 5/6 = 0.833</text>
+<rect x="300" y="197" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="197" width="500.0" height="17" fill="#b75a14"/>
+<text x="925" y="211" font-size="14" fill="#b75a14" text-anchor="start">LAS 5/6 = 0.833</text>
+<text x="35" y="260" font-size="15" fill="#56616c" text-anchor="start">exclude punctuation</text>
+<rect x="300" y="240" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="240" width="480.0" height="17" fill="#185d9a"/>
+<text x="925" y="254" font-size="14" fill="#185d9a" text-anchor="start">UAS 4/5 = 0.800</text>
+<rect x="300" y="262" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="262" width="480.0" height="17" fill="#b75a14"/>
+<text x="925" y="276" font-size="14" fill="#b75a14" text-anchor="start">LAS 4/5 = 0.800</text>
+<text x="35" y="325" font-size="15" fill="#56616c" text-anchor="start">also exclude real root</text>
+<rect x="300" y="305" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="305" width="450.0" height="17" fill="#185d9a"/>
+<text x="925" y="319" font-size="14" fill="#185d9a" text-anchor="start">UAS 3/4 = 0.750</text>
+<rect x="300" y="327" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="327" width="450.0" height="17" fill="#b75a14"/>
+<text x="925" y="341" font-size="14" fill="#b75a14" text-anchor="start">LAS 3/4 = 0.750</text>
+<text x="35" y="390" font-size="15" fill="#56616c" text-anchor="start">label-only error</text>
+<rect x="300" y="370" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="370" width="600.0" height="17" fill="#185d9a"/>
+<text x="925" y="384" font-size="14" fill="#185d9a" text-anchor="start">UAS 5/5 = 1.000</text>
+<rect x="300" y="392" width="600" height="17" fill="#edf0f2"/>
+<rect x="300" y="392" width="480.0" height="17" fill="#b75a14"/>
+<text x="925" y="406" font-size="14" fill="#b75a14" text-anchor="start">LAS 4/5 = 0.800</text>
+<text x="35" y="469" font-size="15" fill="#56616c" text-anchor="start">None of these policies resolves meaning. ROOT0 is not a scored word; saw (the root word) can be.</text>
+</g></svg>

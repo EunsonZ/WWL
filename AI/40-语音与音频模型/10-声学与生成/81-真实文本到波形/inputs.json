@@ -1,0 +1,17 @@
+{
+  "engine_version": "1.52.0",
+  "engine_commit": "4870adfa25b1a32b4361592f1be8a40337c58d6c",
+  "voice": "en-us",
+  "rate_wpm": 175,
+  "pitch_parameter": 50,
+  "volume_parameter": 100,
+  "probe": "I paid $12.50 on 03/04.",
+  "application_contract": {"currency":"USD","amount_cents":1250,"date_order":"DD/MM","day":3,"month":4},
+  "expanded": "I paid twelve dollars and fifty cents on April third.",
+  "bad_normalized": "I paid 1250 on 0304.",
+  "slow_rate_wpm": 140,
+  "raised_pitch_parameter": 75,
+  "clip_gain": 4,
+  "corpus_ids": ["1272-128104-0000","1272-128104-0001","1272-128104-0002"],
+  "hf_revision": "5be91486e11a2d616f4ec5db8d3fd248585ac07a"
+}

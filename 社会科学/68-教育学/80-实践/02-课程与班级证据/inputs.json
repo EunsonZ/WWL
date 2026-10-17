@@ -1,0 +1,13 @@
+{
+  "provenance": "synthetic teaching counts; no participants or school records",
+  "classes": [
+    {"id": "1", "plan": "A", "n": 10, "success": 9},
+    {"id": "2", "plan": "A", "n": 30, "success": 15},
+    {"id": "3", "plan": "B", "n": 30, "success": 24},
+    {"id": "4", "plan": "B", "n": 10, "success": 4}
+  ],
+  "missing_scenario": {
+    "A": {"assigned": 40, "observed": 32, "success": 24},
+    "B": {"assigned": 40, "observed": 36, "success": 25}
+  }
+}

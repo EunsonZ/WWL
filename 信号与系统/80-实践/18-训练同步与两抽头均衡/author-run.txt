@@ -1,0 +1,156 @@
+{
+  "noiseless": {
+    "delay_hat": 3,
+    "cfo_hat_Hz": 40.0,
+    "max_channel_error": 2.0014830212433607e-16,
+    "max_symbol_error": 8.983610933839718e-16,
+    "residual": -7.105427357601002e-15
+  },
+  "cases": [
+    {
+      "name": "normal",
+      "N0_over_Eb": 0.4,
+      "fade": 1.0,
+      "seed": 1812026101,
+      "h_LS_RMSE_given_sync": 0.15873617319814073,
+      "results": [
+        {
+          "equalizer": "ZF",
+          "attempted": 12000,
+          "synchronized": 11770,
+          "sync_failures": 230,
+          "compared_bits": 82390,
+          "bit_errors": 4428,
+          "frame_errors": 3365,
+          "crc_pass": 8431,
+          "undetected_errors": 26,
+          "BER_given_sync": 0.05374438645466683,
+          "FER_given_sync": 0.2858963466440102,
+          "undetected_per_attempt": 0.0021666666666666666,
+          "undetected_given_sync": 0.0022090059473237043,
+          "undetected_given_frame_error": 0.007726597325408618,
+          "symbol_MSE_over_Eb_given_sync": 0.785617708098944
+        },
+        {
+          "equalizer": "LMMSE",
+          "attempted": 12000,
+          "synchronized": 11770,
+          "sync_failures": 230,
+          "compared_bits": 82390,
+          "bit_errors": 2753,
+          "frame_errors": 2391,
+          "crc_pass": 9382,
+          "undetected_errors": 3,
+          "BER_given_sync": 0.03341424930209977,
+          "FER_given_sync": 0.20314358538657604,
+          "undetected_per_attempt": 0.00025,
+          "undetected_given_sync": 0.0002548853016142736,
+          "undetected_given_frame_error": 0.0012547051442910915,
+          "symbol_MSE_over_Eb_given_sync": 0.3560171788643811
+        }
+      ]
+    },
+    {
+      "name": "noisy",
+      "N0_over_Eb": 1.2,
+      "fade": 1.0,
+      "seed": 1812026102,
+      "h_LS_RMSE_given_sync": 0.2757421041653672,
+      "results": [
+        {
+          "equalizer": "ZF",
+          "attempted": 12000,
+          "synchronized": 8460,
+          "sync_failures": 3540,
+          "compared_bits": 59220,
+          "bit_errors": 10746,
+          "frame_errors": 6103,
+          "crc_pass": 2539,
+          "undetected_errors": 182,
+          "BER_given_sync": 0.18145896656534954,
+          "FER_given_sync": 0.7213947990543735,
+          "undetected_per_attempt": 0.015166666666666667,
+          "undetected_given_sync": 0.021513002364066194,
+          "undetected_given_frame_error": 0.02982139931181386,
+          "symbol_MSE_over_Eb_given_sync": 2.1217697276774126
+        },
+        {
+          "equalizer": "LMMSE",
+          "attempted": 12000,
+          "synchronized": 8460,
+          "sync_failures": 3540,
+          "compared_bits": 59220,
+          "bit_errors": 7806,
+          "frame_errors": 5324,
+          "crc_pass": 3205,
+          "undetected_errors": 69,
+          "BER_given_sync": 0.13181357649442757,
+          "FER_given_sync": 0.6293144208037825,
+          "undetected_per_attempt": 0.00575,
+          "undetected_given_sync": 0.008156028368794326,
+          "undetected_given_frame_error": 0.012960180315552216,
+          "symbol_MSE_over_Eb_given_sync": 0.5969665114719097
+        }
+      ]
+    },
+    {
+      "name": "deep",
+      "N0_over_Eb": 0.4,
+      "fade": 0.12,
+      "seed": 1812026103,
+      "h_LS_RMSE_given_sync": 0.23906892845813593,
+      "results": [
+        {
+          "equalizer": "ZF",
+          "attempted": 12000,
+          "synchronized": 338,
+          "sync_failures": 11662,
+          "compared_bits": 2366,
+          "bit_errors": 1024,
+          "frame_errors": 333,
+          "crc_pass": 37,
+          "undetected_errors": 32,
+          "BER_given_sync": 0.4327979712595097,
+          "FER_given_sync": 0.985207100591716,
+          "undetected_per_attempt": 0.0026666666666666666,
+          "undetected_given_sync": 0.09467455621301775,
+          "undetected_given_frame_error": 0.0960960960960961,
+          "symbol_MSE_over_Eb_given_sync": 5.618380912550179
+        },
+        {
+          "equalizer": "LMMSE",
+          "attempted": 12000,
+          "synchronized": 338,
+          "sync_failures": 11662,
+          "compared_bits": 2366,
+          "bit_errors": 1001,
+          "frame_errors": 329,
+          "crc_pass": 50,
+          "undetected_errors": 41,
+          "BER_given_sync": 0.4230769230769231,
+          "FER_given_sync": 0.9733727810650887,
+          "undetected_per_attempt": 0.003416666666666667,
+          "undetected_given_sync": 0.12130177514792899,
+          "undetected_given_frame_error": 0.12462006079027356,
+          "symbol_MSE_over_Eb_given_sync": 1.0558815706075084
+        }
+      ]
+    }
+  ],
+  "known_channel_MC": [
+    {
+      "equalizer": "ZF",
+      "empirical_MSE": 0.6937218958907083,
+      "expected_MSE": 0.6888122111888049,
+      "SE": 0.003460034628066838,
+      "diagnostic_tolerance": 0.020760207769401025
+    },
+    {
+      "equalizer": "LMMSE",
+      "empirical_MSE": 0.33411223224685926,
+      "expected_MSE": 0.33208193787696294,
+      "SE": 0.001205292180632276,
+      "diagnostic_tolerance": 0.007231753084793657
+    }
+  ]
+}

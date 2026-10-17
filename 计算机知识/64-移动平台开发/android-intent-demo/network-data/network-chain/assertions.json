@@ -1,0 +1,180 @@
+[
+  {
+    "name": "explicit synthetic serial",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "emulator guest",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "fresh private intent store D",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "fresh private intent store E",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "fresh authority seeds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "two independent UIDs",
+    "passed": true,
+    "detail": [
+      10214,
+      10215
+    ]
+  },
+  {
+    "name": "same cached empty interval",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "offline original id D",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "cached 3 retained D",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "offline original id E",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "cached 3 retained E",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "real IO failure no authority effect",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "D committed but client has no result",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "E same text id separate actor key",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "one accepted capacity and event",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "HTTP 401 not business final",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "HTTP 403 not business final",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "exact single PID D",
+    "passed": true,
+    "detail": "7836"
+  },
+  {
+    "name": "PID cmdline belongs to exact app D",
+    "passed": true,
+    "detail": "'org.wwl.networkdemo.d\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+  },
+  {
+    "name": "old PID gone D",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "new process same id/fp unknown",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "credential mode separately persisted",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "recovered ORIGINAL complete accepted",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "same id replay ORIGINAL complete accepted",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "E query cannot read D accepted",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "no new booking from recovery",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "late response persisted ORIGINAL row",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "late response does not replace new UI",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "publication guard actually rejected old callback",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "exact single PID D",
+    "passed": true,
+    "detail": "8125"
+  },
+  {
+    "name": "PID cmdline belongs to exact app D",
+    "passed": true,
+    "detail": "'org.wwl.networkdemo.d\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+  },
+  {
+    "name": "old PID gone D",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "exact single PID E",
+    "passed": true,
+    "detail": "7921"
+  },
+  {
+    "name": "PID cmdline belongs to exact app E",
+    "passed": true,
+    "detail": "'org.wwl.networkdemo.e\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+  },
+  {
+    "name": "old PID gone E",
+    "passed": true,
+    "detail": null
+  }
+]

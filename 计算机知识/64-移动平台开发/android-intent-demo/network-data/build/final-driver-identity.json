@@ -1,0 +1,8 @@
+{
+  "meaning": "Build source-identities captured before the read-only driver column fix; Kotlin/CA/server bytes stayed unchanged. This records actual final driver separately without replacing the old hash.",
+  "current_normative_driver_sha256": "f4780932bed1c11965dba70a2bcaeb59704b6727958678b795135a0c4a209c7a",
+  "actual_v2_executed_driver_sha256": "f4780932bed1c11965dba70a2bcaeb59704b6727958678b795135a0c4a209c7a",
+  "first_failed_executed_driver_sha256": "c47c1e5efba6a3357ba6064901317794b0d206b28d4c02671819f8e10beea950",
+  "final_driver_equals_normative": true,
+  "same_APKs_no_rebuild_after_driver_only_SQL_column_fix": true
+}

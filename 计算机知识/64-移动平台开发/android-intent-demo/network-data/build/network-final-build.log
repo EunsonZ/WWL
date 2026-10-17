@@ -1,0 +1,103 @@
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/private/tmp/wwl-next-175-env/java-user -XX:ActiveProcessorCount=1
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :networkApp:preBuild UP-TO-DATE
+> Task :networkApp:preDDebugBuild UP-TO-DATE
+> Task :networkApp:mergeDDebugNativeDebugMetadata NO-SOURCE
+> Task :networkApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+
+> Task :networkApp:generateDDebugBuildConfig
+Caught exception: Could not start the FSEvents stream: /private/tmp/wwl-next-175-next-env/network-final-source
+
+> Task :networkApp:checkDDebugAarMetadata
+> Task :networkApp:generateDDebugResValues
+> Task :networkApp:mapDDebugSourceSetPaths
+> Task :networkApp:generateDDebugResources
+> Task :networkApp:mergeDDebugResources
+> Task :networkApp:packageDDebugResources
+> Task :networkApp:parseDDebugLocalResources
+> Task :networkApp:createDDebugCompatibleScreenManifests
+> Task :networkApp:extractDeepLinksDDebug
+> Task :networkApp:processDDebugMainManifest
+> Task :networkApp:processDDebugManifest
+> Task :networkApp:processDDebugManifestForPackage
+> Task :networkApp:processDDebugResources
+
+> Task :networkApp:compileDDebugKotlin
+w: file:///private/tmp/wwl-next-175-next-env/network-final-source/app/src/main/java/org/wwl/intentdemo/Stores.kt:56:105 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged. This will become an error in a future release.
+w: file:///private/tmp/wwl-next-175-next-env/network-final-source/app/src/main/java/org/wwl/intentdemo/Stores.kt:104:178 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged. This will become an error in a future release.
+
+> Task :networkApp:javaPreCompileDDebug
+> Task :networkApp:compileDDebugJavaWithJavac
+> Task :networkApp:mergeDDebugShaders
+> Task :networkApp:compileDDebugShaders NO-SOURCE
+> Task :networkApp:generateDDebugAssets UP-TO-DATE
+> Task :networkApp:mergeDDebugAssets
+> Task :networkApp:compressDDebugAssets
+> Task :networkApp:desugarDDebugFileDependencies
+> Task :networkApp:dexBuilderDDebug
+> Task :networkApp:mergeDDebugGlobalSynthetics
+> Task :networkApp:processDDebugJavaRes
+> Task :networkApp:mergeDDebugJavaResource
+> Task :networkApp:checkDDebugDuplicateClasses
+> Task :networkApp:mergeExtDexDDebug
+> Task :networkApp:mergeLibDexDDebug
+> Task :networkApp:mergeProjectDexDDebug
+> Task :networkApp:mergeDDebugJniLibFolders
+> Task :networkApp:mergeDDebugNativeLibs NO-SOURCE
+> Task :networkApp:stripDDebugDebugSymbols NO-SOURCE
+> Task :networkApp:validateSigningDDebug
+> Task :networkApp:writeDDebugAppMetadata
+> Task :networkApp:writeDDebugSigningConfigVersions
+> Task :networkApp:packageDDebug
+> Task :networkApp:createDDebugApkListingFileRedirect
+> Task :networkApp:assembleDDebug
+> Task :networkApp:preEDebugBuild UP-TO-DATE
+> Task :networkApp:mergeEDebugNativeDebugMetadata NO-SOURCE
+> Task :networkApp:generateEDebugBuildConfig
+> Task :networkApp:checkEDebugAarMetadata
+> Task :networkApp:generateEDebugResValues
+> Task :networkApp:mapEDebugSourceSetPaths
+> Task :networkApp:generateEDebugResources
+> Task :networkApp:mergeEDebugResources
+> Task :networkApp:packageEDebugResources
+> Task :networkApp:parseEDebugLocalResources
+> Task :networkApp:createEDebugCompatibleScreenManifests
+> Task :networkApp:extractDeepLinksEDebug
+> Task :networkApp:processEDebugMainManifest
+> Task :networkApp:processEDebugManifest
+> Task :networkApp:processEDebugManifestForPackage
+> Task :networkApp:processEDebugResources
+
+> Task :networkApp:compileEDebugKotlin
+w: file:///private/tmp/wwl-next-175-next-env/network-final-source/app/src/main/java/org/wwl/intentdemo/Stores.kt:56:105 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged. This will become an error in a future release.
+w: file:///private/tmp/wwl-next-175-next-env/network-final-source/app/src/main/java/org/wwl/intentdemo/Stores.kt:104:178 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged. This will become an error in a future release.
+
+> Task :networkApp:javaPreCompileEDebug
+> Task :networkApp:compileEDebugJavaWithJavac
+> Task :networkApp:mergeEDebugShaders
+> Task :networkApp:compileEDebugShaders NO-SOURCE
+> Task :networkApp:generateEDebugAssets UP-TO-DATE
+> Task :networkApp:mergeEDebugAssets
+> Task :networkApp:compressEDebugAssets
+> Task :networkApp:desugarEDebugFileDependencies
+> Task :networkApp:dexBuilderEDebug
+> Task :networkApp:mergeEDebugGlobalSynthetics
+> Task :networkApp:processEDebugJavaRes
+> Task :networkApp:mergeEDebugJavaResource
+> Task :networkApp:checkEDebugDuplicateClasses
+> Task :networkApp:mergeExtDexEDebug
+> Task :networkApp:mergeLibDexEDebug
+> Task :networkApp:mergeProjectDexEDebug
+> Task :networkApp:mergeEDebugJniLibFolders
+> Task :networkApp:mergeEDebugNativeLibs NO-SOURCE
+> Task :networkApp:stripEDebugDebugSymbols NO-SOURCE
+> Task :networkApp:validateSigningEDebug
+> Task :networkApp:writeEDebugAppMetadata
+> Task :networkApp:writeEDebugSigningConfigVersions
+> Task :networkApp:packageEDebug
+> Task :networkApp:createEDebugApkListingFileRedirect
+> Task :networkApp:assembleEDebug
+
+BUILD SUCCESSFUL in 13s
+70 actionable tasks: 70 executed

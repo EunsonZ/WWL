@@ -1,0 +1,62 @@
+[
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "getprop ro.kernel.qemu"
+    ],
+    "returncode": 0,
+    "stdout": "1\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.d/org.wwl.networkdemo.NetworkActivity --es lab_command snapshot"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.d/org.wwl.networkdemo.NetworkActivity (has extras) }\nStatus: ok\nLaunchState: COLD\nActivity: org.wwl.networkdemo.d/org.wwl.networkdemo.NetworkActivity\nTotalTime: 615\nWaitTime: 620\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.d cat files/network-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 7836,\n  \"uid\": 10214,\n  \"actor\": \"D\",\n  \"client\": {\n    \"current\": null,\n    \"draft\": {\n      \"start_raw\": \"690\",\n      \"end_raw\": \"720\"\n    },\n    \"intents\": [],\n    \"trace\": [\n      {\n        \"seq\": 1,\n        \"kind\": \"process_store_open\",\n        \"detail\": \"inflight is uncertain, never inferred rejected\"\n      },\n      {\n        \"seq\": 2,\n        \"kind\": \"activity_create\",\n        \"detail\": \"pid=7836 instance=589ae4ab-1fa7-478e-820c-e3c23e952ca5\"\n      },\n      {\n        \"seq\": 3,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"589ae4ab-1fa7-478e-820c-e3c23e952ca5\"\n      }\n    ]\n  },\n  \"projection\": null,\n  \"credential_mode\": \"self\",\n  \"transport_hint\": \"尚未联网。缓存不是容量承诺。\"\n}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am start -W -n org.wwl.networkdemo.e/org.wwl.networkdemo.NetworkActivity --es lab_command snapshot"
+    ],
+    "returncode": 0,
+    "stdout": "Starting: Intent { cmp=org.wwl.networkdemo.e/org.wwl.networkdemo.NetworkActivity (has extras) }\nStatus: ok\nLaunchState: COLD\nActivity: org.wwl.networkdemo.e/org.wwl.networkdemo.NetworkActivity\nTotalTime: 529\nWaitTime: 531\nComplete\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "run-as org.wwl.networkdemo.e cat files/network-state.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"pid\": 7921,\n  \"uid\": 10215,\n  \"actor\": \"E\",\n  \"client\": {\n    \"current\": null,\n    \"draft\": {\n      \"start_raw\": \"690\",\n      \"end_raw\": \"720\"\n    },\n    \"intents\": [],\n    \"trace\": [\n      {\n        \"seq\": 1,\n        \"kind\": \"process_store_open\",\n        \"detail\": \"inflight is uncertain, never inferred rejected\"\n      },\n      {\n        \"seq\": 2,\n        \"kind\": \"activity_create\",\n        \"detail\": \"pid=7921 instance=83f30c75-437d-4c23-8785-f9c988b4ed3d\"\n      },\n      {\n        \"seq\": 3,\n        \"kind\": \"activity_resume\",\n        \"detail\": \"83f30c75-437d-4c23-8785-f9c988b4ed3d\"\n      }\n    ]\n  },\n  \"projection\": null,\n  \"credential_mode\": \"self\",\n  \"transport_hint\": \"尚未联网。缓存不是容量承诺。\"\n}",
+    "stderr": ""
+  }
+]

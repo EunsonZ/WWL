@@ -1,0 +1,75 @@
+{
+  "passed": 16,
+  "mode": "SQLite read-only URI; required rows verified, no universal WAL/power-failure guarantee",
+  "checks": [
+    {
+      "name": "D-client.db integrity",
+      "passed": true
+    },
+    {
+      "name": "E-client.db integrity",
+      "passed": true
+    },
+    {
+      "name": "authority-snapshot.db integrity",
+      "passed": true
+    },
+    {
+      "name": "D two intents",
+      "passed": true
+    },
+    {
+      "name": "E one intent",
+      "passed": true
+    },
+    {
+      "name": "D original identity parameters accepted",
+      "passed": true
+    },
+    {
+      "name": "D result exact original complete",
+      "passed": true
+    },
+    {
+      "name": "new D retained queued without result",
+      "passed": true
+    },
+    {
+      "name": "D meta current next",
+      "passed": true
+    },
+    {
+      "name": "D draft new params",
+      "passed": true
+    },
+    {
+      "name": "E exact same text distinct actor rejected",
+      "passed": true
+    },
+    {
+      "name": "exact four authority bookings",
+      "passed": true
+    },
+    {
+      "name": "authority two actor keys",
+      "passed": true
+    },
+    {
+      "name": "D exact authority/client fingerprint outcome",
+      "passed": true
+    },
+    {
+      "name": "E exact authority/client fingerprint outcome",
+      "passed": true
+    },
+    {
+      "name": "one exact outbox effect",
+      "passed": true
+    }
+  ],
+  "sha256": {
+    "D-client.db": "16984f7ecd626b49d8a55d7dd7198aa26ca49fcb174df6622248e205b531102b",
+    "E-client.db": "18041a42cca4e59c9e990b3592f0f8b9458b0845a05c4a8b070220d77407f35f",
+    "authority-snapshot.db": "6be2c82cf096ce92966591599e07f2ec7f99253e75e93b85dceccfbe5d69f2d2"
+  }
+}

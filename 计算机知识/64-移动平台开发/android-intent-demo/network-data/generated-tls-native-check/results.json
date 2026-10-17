@@ -1,0 +1,11 @@
+{
+  "passed": 3,
+  "methods": {
+    "generatedCaTrustedByActualTransport": "PASS",
+    "sameCaWrongHostnameRejected": "PASS",
+    "differentCaWithCorrectNameRejected": "PASS"
+  },
+  "scope": "same frozen generated CA actual Android HttpsTransport in isolated fixturecheck.d only; no old35/r-resource replay",
+  "reverse_before": "\n",
+  "reverse_final": "\n"
+}

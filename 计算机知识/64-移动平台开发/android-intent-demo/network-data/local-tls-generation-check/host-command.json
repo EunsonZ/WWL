@@ -1,0 +1,30 @@
+{
+  "cwd": "/private/tmp/wwl-175-fixture-contract/validation/project",
+  "environment": {
+    "SE82_SOURCE": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/计算机知识/75-软件工程与人机交互/reservation_v2.py",
+    "SE82_source_sha256": "5261d679746802ff71ba0065d15bf69226be41506a0a55d84ef1563fb8a65de2",
+    "WWL_TLS_FIXTURE_DIR": "/private/tmp/wwl-175-fixture-contract/validation/project/network-server/fixtures/generated"
+  },
+  "argv": [
+    "python3",
+    "-B",
+    "/private/tmp/wwl-next-context/run_local.py",
+    "--timeout",
+    "120",
+    "--",
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "network-server",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "fixture_ca_sha256": "a314e642a29e770d8c965f3f455e0fd8d22f81d2d4cbfff7cd2171376ea93433",
+  "fixture_server_certificate_sha256": "be2a6cb55f476daca9c28fbb464373f9e05b136ef5005f58846f6d34af002727",
+  "source_scope": "new generator candidate, not the old fixed-fixture run"
+}

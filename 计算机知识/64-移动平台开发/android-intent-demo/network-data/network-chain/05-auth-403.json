@@ -1,0 +1,314 @@
+{
+  "pid": 7836,
+  "uid": 10214,
+  "actor": "D",
+  "client": {
+    "current": {
+      "actor": "D",
+      "intent_id": "dual-shared-1",
+      "start": 690,
+      "end": 720,
+      "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+      "phase": "unknown",
+      "result": null
+    },
+    "draft": {
+      "start_raw": "690",
+      "end_raw": "720"
+    },
+    "intents": [
+      {
+        "actor": "D",
+        "intent_id": "dual-shared-1",
+        "start": 690,
+        "end": 720,
+        "fingerprint": "d644656f03ece17dcce05e3855ec43ae1c4b50186e8b58c631c77ed2f846a867",
+        "phase": "unknown",
+        "result": null
+      }
+    ],
+    "trace": [
+      {
+        "seq": 1,
+        "kind": "process_store_open",
+        "detail": "inflight is uncertain, never inferred rejected"
+      },
+      {
+        "seq": 2,
+        "kind": "activity_create",
+        "detail": "pid=7836 instance=589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 3,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 4,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 5,
+        "kind": "activity_stop",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 6,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 7,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:3"
+      },
+      {
+        "seq": 8,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 9,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 10,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:6"
+      },
+      {
+        "seq": 11,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 12,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:10"
+      },
+      {
+        "seq": 13,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 14,
+        "kind": "persisted_before_send",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 15,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 16,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 17,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:14"
+      },
+      {
+        "seq": 18,
+        "kind": "sending",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 19,
+        "kind": "https_attempt",
+        "detail": "dual-shared-1:send"
+      },
+      {
+        "seq": 20,
+        "kind": "unknown",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 21,
+        "kind": "https_uncertain",
+        "detail": "传输/校验失败 ConnectException：结果可能未知，保留原id。"
+      },
+      {
+        "seq": 22,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 23,
+        "kind": "activity_stop",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 24,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 25,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:18"
+      },
+      {
+        "seq": 26,
+        "kind": "sending",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 27,
+        "kind": "https_attempt",
+        "detail": "dual-shared-1:drop"
+      },
+      {
+        "seq": 28,
+        "kind": "unknown",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 29,
+        "kind": "https_uncertain",
+        "detail": "传输/校验失败 IOException：结果可能未知，保留原id。"
+      },
+      {
+        "seq": 30,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 31,
+        "kind": "activity_stop",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 32,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 33,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:22"
+      },
+      {
+        "seq": 34,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 35,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 36,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:26"
+      },
+      {
+        "seq": 37,
+        "kind": "sending",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 38,
+        "kind": "https_attempt",
+        "detail": "dual-shared-1:send"
+      },
+      {
+        "seq": 39,
+        "kind": "unknown",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 40,
+        "kind": "https_uncertain",
+        "detail": "HTTP 401：未据此改判业务；保留原id。"
+      },
+      {
+        "seq": 41,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 42,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 43,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:30"
+      },
+      {
+        "seq": 44,
+        "kind": "activity_pause",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 45,
+        "kind": "activity_resume",
+        "detail": "589ae4ab-1fa7-478e-820c-e3c23e952ca5"
+      },
+      {
+        "seq": 46,
+        "kind": "ui_ignored",
+        "detail": "refresh:589ae4ab-1fa7-478e-820c-e3c23e952ca5:34"
+      },
+      {
+        "seq": 47,
+        "kind": "sending",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 48,
+        "kind": "https_attempt",
+        "detail": "dual-shared-1:send"
+      },
+      {
+        "seq": 49,
+        "kind": "unknown",
+        "detail": "dual-shared-1"
+      },
+      {
+        "seq": 50,
+        "kind": "https_uncertain",
+        "detail": "HTTP 403：未据此改判业务；保留原id。"
+      }
+    ]
+  },
+  "projection": {
+    "snapshot": {
+      "protocol": "wwl-reservation-v2/1",
+      "bookings": [
+        {
+          "id": 1,
+          "owner": "A",
+          "start": 540,
+          "end": 600,
+          "policy_version": 1
+        },
+        {
+          "id": 2,
+          "owner": "B",
+          "start": 600,
+          "end": 630,
+          "policy_version": 1
+        },
+        {
+          "id": 3,
+          "owner": "C",
+          "start": 650,
+          "end": 680,
+          "policy_version": 1
+        }
+      ]
+    },
+    "received_at_ms": 1792202991146
+  },
+  "credential_mode": "other",
+  "transport_hint": "HTTP 403：未据此改判业务；保留原id。"
+}

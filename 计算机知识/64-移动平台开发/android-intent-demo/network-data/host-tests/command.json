@@ -1,0 +1,20 @@
+{
+  "cwd": "android-intent-demo/network-server",
+  "SE82_SOURCE": "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/计算机知识/75-软件工程与人机交互/reservation_v2.py",
+  "argv": [
+    "python3",
+    "-B",
+    "/private/tmp/wwl-next-context/run_local.py",
+    "--timeout",
+    "120",
+    "--",
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_http_authority"
+  ],
+  "exit_code": 0,
+  "source_status": "current normative test and server, fixed public TLS fixtures"
+}

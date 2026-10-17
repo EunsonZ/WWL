@@ -1,0 +1,45 @@
+{
+  "protocol": "wwl-reservation-v2/1",
+  "policy_version": 2,
+  "writer_epoch": 2,
+  "endpoint": "https://127.0.0.1:18751",
+  "actors": [
+    "D",
+    "E"
+  ],
+  "application_ids": [
+    "org.wwl.networkdemo.d",
+    "org.wwl.networkdemo.e"
+  ],
+  "shared_intent_id": "dual-shared-1",
+  "start": 690,
+  "end": 720,
+  "next_D_intent": {
+    "intent_id": "dual-next-D",
+    "start": 810,
+    "end": 840
+  },
+  "seeds": [
+    [
+      "A",
+      540,
+      600
+    ],
+    [
+      "B",
+      600,
+      630
+    ],
+    [
+      "C",
+      650,
+      680
+    ]
+  ],
+  "public_fixture_tokens": {
+    "D": "wwl175-public-D",
+    "E": "wwl175-public-E"
+  },
+  "participants": 0,
+  "physical_devices": 0
+}

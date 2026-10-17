@@ -1,0 +1,60 @@
+{
+  "scope": "New local TLS fixture and debug build only; no new device run or old 35-chain replay.",
+  "baseline_commit": "ec9e86b87050ad3c87588a9e31a9e29012e6f84d",
+  "protocol_changed": false,
+  "tls_materials": {
+    "ca_sha256": "a314e642a29e770d8c965f3f455e0fd8d22f81d2d4cbfff7cd2171376ea93433",
+    "debug_ca_sha256": "a314e642a29e770d8c965f3f455e0fd8d22f81d2d4cbfff7cd2171376ea93433",
+    "server_certificate_sha256": "be2a6cb55f476daca9c28fbb464373f9e05b136ef5005f58846f6d34af002727",
+    "openssl": "LibreSSL 3.3.6",
+    "SAN": [
+      "localhost",
+      "127.0.0.1"
+    ],
+    "ca_name_constraints": false,
+    "private_keys_in_distribution": false
+  },
+  "source_sha256": {
+    "network-server/http_authority.py": "4eddf05be81e1681b723f6772f244813859b526e368078e2c2e00f3efd2ed7e2",
+    "network-server/test_tls_fixtures.py": "e5bb6bbe01e98540487aa7b9768e5d51b357c6c29fbdb04f2b3bb8cfe3591db2",
+    "network-server/test_http_authority.py": "d50d51bcf7bb0777b2e884349c741081aca2fa0f759878346dbda6b2c01a2f02",
+    "networkApp/build.gradle.kts": "bb4e949664df128601d029d15751717f74c5f6b4eb2a328911cbc6161d2bd24b",
+    "network-server/fixtures/generate-fixtures.sh": "142a372b8d243897960066e80c5cd75f8721ebf389887b7383101333f05fae26"
+  },
+  "debug_apks": {
+    "d": {
+      "sha256": "76c47dbe0cc6eda2af678c74c7fe32f31a5168ad97359fcfcb29ca0ef7305a84",
+      "ca_resource": "res/raw/wwl_public_ca.pem",
+      "ca_sha256": "a314e642a29e770d8c965f3f455e0fd8d22f81d2d4cbfff7cd2171376ea93433",
+      "private_key_entries": 0
+    },
+    "e": {
+      "sha256": "aae3e3ca30995db907a70519c4b35333a14f736bdba2df4ac095e6cca72229b1",
+      "ca_resource": "res/raw/wwl_public_ca.pem",
+      "ca_sha256": "a314e642a29e770d8c965f3f455e0fd8d22f81d2d4cbfff7cd2171376ea93433",
+      "private_key_entries": 0
+    }
+  },
+  "host_tests": {
+    "passed": 8,
+    "same_material_as_debug_apks": true,
+    "default_temp_generation_tested_separately": true
+  },
+  "build": {
+    "exit_code": 0,
+    "tasks": [
+      ":networkApp:assembleDDebug",
+      ":networkApp:assembleEDebug"
+    ],
+    "offline": true,
+    "workers": 1,
+    "elapsed_gradle_seconds": 18
+  },
+  "native_android_runtime": "New frozen CA native 3-case evidence recorded separately in ../generated-tls-native-check; original 35-chain and old native observations are unchanged.",
+  "default_service": {
+    "exit_code": 0,
+    "HTTPS_status": 200,
+    "peer_matches_generated_server_certificate": true,
+    "owned_process_stopped": true
+  }
+}

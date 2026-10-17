@@ -1,0 +1,22 @@
+Generating a 2048 bit RSA private key
+..............................................................+++++
+......+++++
+writing new private key to '/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.key'
+-----
+Signature ok
+subject=/CN=wrong.invalid
+Getting CA Private Key
+Generating a 2048 bit RSA private key
+..........+++++
+.......................+++++
+writing new private key to 'ca-public-fixture.key'
+-----
+Generating a 2048 bit RSA private key
+................................................+++++
+..........................+++++
+writing new private key to 'server-public-fixture.key'
+-----
+Signature ok
+subject=/CN=localhost
+Getting CA Private Key
+server.pem: OK

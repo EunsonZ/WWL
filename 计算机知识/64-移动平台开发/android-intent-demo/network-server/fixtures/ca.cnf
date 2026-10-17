@@ -1,0 +1,10 @@
+[req]
+distinguished_name=dn
+x509_extensions=ca
+prompt=no
+[dn]
+CN=WWL175 Public Teaching CA NEVER PRODUCTION
+[ca]
+basicConstraints=critical,CA:true,pathlen:0
+keyUsage=critical,keyCertSign,cRLSign
+subjectKeyIdentifier=hash

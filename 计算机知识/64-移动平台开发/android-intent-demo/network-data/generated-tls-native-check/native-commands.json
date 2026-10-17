@@ -1,0 +1,184 @@
+[
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "install",
+      "-r",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/networkApp/build/outputs/apk/d/debug/networkApp-d-debug.apk"
+    ],
+    "returncode": 0,
+    "stdout": "install-app.stdout.txt",
+    "stderr": "install-app.stderr.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "install",
+      "-r",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/networkApp/build/outputs/apk/androidTest/d/debug/networkApp-d-debug-androidTest.apk"
+    ],
+    "returncode": 0,
+    "stdout": "install-tests.stdout.txt",
+    "stderr": "install-tests.stderr.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "reverse",
+      "--list"
+    ],
+    "returncode": 0,
+    "stdout": "reverse-before.stdout.txt",
+    "stderr": "reverse-before.stderr.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "reverse",
+      "tcp:18751",
+      "tcp:54390"
+    ],
+    "returncode": 0,
+    "stdout": "reverse-positive.stdout.txt",
+    "stderr": "reverse-positive.stderr.txt"
+  },
+  {
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "180",
+      "--",
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am",
+      "instrument",
+      "-w",
+      "-e",
+      "class",
+      "org.wwl.networkdemo.GeneratedTlsContractTest#generatedCaTrustedByActualTransport",
+      "org.wwl.networkdemo.fixturecheck.d.test/androidx.test.runner.AndroidJUnitRunner"
+    ],
+    "returncode": 0,
+    "stdout": "test-positive.stdout.txt",
+    "stderr": "test-positive.stderr.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "reverse",
+      "tcp:18751",
+      "tcp:54391"
+    ],
+    "returncode": 0,
+    "stdout": "reverse-wrong-host.stdout.txt",
+    "stderr": "reverse-wrong-host.stderr.txt"
+  },
+  {
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "180",
+      "--",
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am",
+      "instrument",
+      "-w",
+      "-e",
+      "class",
+      "org.wwl.networkdemo.GeneratedTlsContractTest#sameCaWrongHostnameRejected",
+      "org.wwl.networkdemo.fixturecheck.d.test/androidx.test.runner.AndroidJUnitRunner"
+    ],
+    "returncode": 0,
+    "stdout": "test-wrong-host.stdout.txt",
+    "stderr": "test-wrong-host.stderr.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "reverse",
+      "tcp:18751",
+      "tcp:54392"
+    ],
+    "returncode": 0,
+    "stdout": "reverse-unknown-ca.stdout.txt",
+    "stderr": "reverse-unknown-ca.stderr.txt"
+  },
+  {
+    "argv": [
+      "python3",
+      "/private/tmp/wwl-next-context/run_local.py",
+      "--timeout",
+      "180",
+      "--",
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "shell",
+      "am",
+      "instrument",
+      "-w",
+      "-e",
+      "class",
+      "org.wwl.networkdemo.GeneratedTlsContractTest#differentCaWithCorrectNameRejected",
+      "org.wwl.networkdemo.fixturecheck.d.test/androidx.test.runner.AndroidJUnitRunner"
+    ],
+    "returncode": 0,
+    "stdout": "test-unknown-ca.stdout.txt",
+    "stderr": "test-unknown-ca.stderr.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "reverse",
+      "--remove",
+      "tcp:18751"
+    ],
+    "returncode": 0,
+    "stdout": "remove-own-reverse.stdout.txt",
+    "stderr": "remove-own-reverse.stderr.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/wwl-next-175-env/sdk/platform-tools/adb",
+      "-P15037",
+      "-s",
+      "emulator-5580",
+      "reverse",
+      "--list"
+    ],
+    "returncode": 0,
+    "stdout": "reverse-after.stdout.txt",
+    "stderr": "reverse-after.stderr.txt"
+  }
+]

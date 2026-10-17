@@ -1,0 +1,13 @@
+{"error": null, "http_status": 200, "intent_id": null, "method": "GET", "outcome": null, "path": "/v2/snapshot", "sequence": 1, "subject": "D", "tls": "TLSv1.3"}
+{"error": null, "http_status": 200, "intent_id": null, "method": "GET", "outcome": null, "path": "/v2/snapshot", "sequence": 2, "subject": "E", "tls": "TLSv1.3"}
+{"error": null, "http_status": 200, "intent_id": "dual-shared-1", "method": "POST", "outcome": "accepted", "path": "/v2/reserve", "sequence": 3, "subject": "D", "tls": "TLSv1.3"}
+{"intent_id": "dual-shared-1", "kind": "committed_then_wire_closed", "outcome": "accepted", "sequence": 4, "subject": "D"}
+{"error": null, "http_status": 200, "intent_id": "dual-shared-1", "method": "POST", "outcome": "rejected", "path": "/v2/reserve", "sequence": 5, "subject": "E", "tls": "TLSv1.3"}
+{"error": "invalid_token", "http_status": 401, "intent_id": null, "method": "POST", "outcome": null, "path": "/v2/reserve", "sequence": 6, "subject": null, "tls": "TLSv1.3"}
+{"error": "actor_mismatch", "http_status": 403, "intent_id": null, "method": "POST", "outcome": null, "path": "/v2/reserve", "sequence": 7, "subject": "E", "tls": "TLSv1.3"}
+{"error": null, "http_status": 200, "intent_id": "dual-shared-1", "method": "GET", "outcome": "accepted", "path": "/v2/intent", "sequence": 8, "subject": "D", "tls": "TLSv1.3"}
+{"error": null, "http_status": 200, "intent_id": "dual-shared-1", "method": "POST", "outcome": "accepted", "path": "/v2/reserve", "sequence": 9, "subject": "D", "tls": "TLSv1.3"}
+{"error": null, "http_status": 200, "intent_id": "dual-shared-1", "method": "GET", "outcome": "rejected", "path": "/v2/intent", "sequence": 10, "subject": "E", "tls": "TLSv1.3"}
+{"error": null, "http_status": 200, "intent_id": null, "method": "GET", "outcome": null, "path": "/v2/snapshot", "sequence": 11, "subject": "D", "tls": "TLSv1.3"}
+{"error": null, "http_status": 200, "intent_id": null, "method": "GET", "outcome": null, "path": "/v2/snapshot", "sequence": 12, "subject": "E", "tls": "TLSv1.3"}
+{"error": null, "http_status": 200, "intent_id": "dual-shared-1", "method": "POST", "outcome": "accepted", "path": "/v2/reserve", "sequence": 13, "subject": "D", "tls": "TLSv1.3"}

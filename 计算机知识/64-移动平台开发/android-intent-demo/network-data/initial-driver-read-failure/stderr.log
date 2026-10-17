@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/private/tmp/wwl-next-175-next-env/network-final-source/tools/check_network.py", line 166, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/private/tmp/wwl-next-175-next-env/network-final-source/tools/check_network.py", line 164, in main
+    try:d.run()
+        ~~~~~^^
+  File "/private/tmp/wwl-next-175-next-env/network-final-source/tools/check_network.py", line 83, in run
+    self.assert_('fresh authority seeds',len(self.authority()['bookings'])==3 and not self.authority()['intents'])
+                                             ~~~~~~~~~~~~~~^^
+  File "/private/tmp/wwl-next-175-next-env/network-final-source/tools/check_network.py", line 58, in authority
+    try:return {t:[dict(x) for x in db.execute('SELECT * FROM '+t+' ORDER BY '+('id' if t=='bookings' else 'actor,id' if t=='intents' else 'booking_id'))] for t in ['bookings','intents','outbox']}
+                                    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: id

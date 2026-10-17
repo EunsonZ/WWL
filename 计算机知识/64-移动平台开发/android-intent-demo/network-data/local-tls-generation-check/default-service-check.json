@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "/private/tmp/wwl-175-fixture-contract/validation/project/network-server/http_authority.py",
+    "--contract",
+    "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/计算机知识/75-软件工程与人机交互/reservation_v2.py",
+    "--database",
+    "/private/tmp/wwl-175-fixture-contract/validation/cli-service/authority.db",
+    "--events",
+    "/private/tmp/wwl-175-fixture-contract/validation/cli-service/events.jsonl",
+    "--ready",
+    "/private/tmp/wwl-175-fixture-contract/validation/cli-service/ready.json",
+    "--port",
+    "0"
+  ],
+  "http_status": 200,
+  "default_tls_directory_used": true,
+  "peer_certificate_der_sha256": "abcf4102cac354dfa1b48c266364bdd36ec1b9f6d80f70ff1ed066be18abd781",
+  "peer_matches_generated_server_certificate": true,
+  "snapshot_received": true,
+  "port": 53973,
+  "exit_code": 0,
+  "owned_process_stopped": true
+}

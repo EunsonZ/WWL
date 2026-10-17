@@ -13,7 +13,7 @@ sources:
 ---
 # Android意图恢复：最小工程、固定输入与实测
 
-这里是 [[计算机知识/64-移动平台开发/01-生命周期状态归属与离线同步|状态归属主文]] 的执行入口。源代码是相邻`.kt/.kts/.xml/.py`，[[计算机知识/64-移动平台开发/android-intent-demo/源码与测试|源码与测试]]是逐字镜像。只有合成的一天预约，没有账号、HTTP、真实日历、付费云或用户设备数据。正式记录保持原样；**复建一律复制工程到新的库外目录，输出到新目录**，不覆盖本页data/中的记录。
+这里是 [[计算机知识/64-移动平台开发/01-生命周期状态归属与离线同步|状态归属主文]] 的执行入口。源代码是相邻`.kt/.kts/.xml/.py`，[[计算机知识/64-移动平台开发/android-intent-demo/源码与测试|源码与测试]]是逐字镜像。本页只说明原`:app`的合成一天预约，没有账号、HTTP、真实日历、付费云或用户设备数据；新增`:networkApp`两独立UID与真实HTTPS请进入 [[计算机知识/64-移动平台开发/android-intent-demo/网络实践|网络实践]]，两套输出分别读。正式记录保持原样；**复建一律复制工程到新的库外目录，输出到新目录**，不覆盖本页data/中的记录。
 
 ## 本实验为何重要
 
@@ -41,7 +41,7 @@ sources:
 | 仅androidTest依赖 | AndroidX runner `1.6.2`、rules `1.6.1`、core `1.6.1`、ext:junit `1.2.1` |
 | 运行时结构 | 原生Activity/Views、SQLiteOpenHelper、单ScheduledThreadPoolExecutor；无Compose/Room/HTTP库 |
 
-[AGP8.7兼容表](https://developer.android.com/build/releases/agp-8-7-0-release-notes)与[Kotlin Gradle表](https://kotlinlang.org/docs/gradle-configure-project.html)支持这组固定选择；不是“升级到最新”。`settings.gradle.kts`从google/mavenCentral/Gradle插件库解析所声明依赖。SDK/JDK/Gradle缓存不进入本工程，`local.properties`不交付，本机绝对SDK路径用环境变量传入。首次联网下载依赖不等于应用进行网络访问；Manifest没有INTERNET权限。
+[AGP8.7兼容表](https://developer.android.com/build/releases/agp-8-7-0-release-notes)与[Kotlin Gradle表](https://kotlinlang.org/docs/gradle-configure-project.html)支持这组固定选择；不是“升级到最新”。`settings.gradle.kts`从google/mavenCentral/Gradle插件库解析所声明依赖。SDK/JDK/Gradle缓存不进入本工程，`local.properties`不交付，本机绝对SDK路径用环境变量传入。首次联网下载依赖不等于应用进行网络访问；原`:app`的Manifest没有INTERNET权限，新增`:networkApp`单独声明。
 
 wrapper脚本/Jar来自[Gradle官方v8.9.0](https://github.com/gradle/gradle/tree/v8.9.0)，保留原脚本声明与[许可证](GRADLE-LICENSE.txt)。`gradle-wrapper.properties`含distributionSha256Sum，Gradle8.9二进制zip为`d725d707bfabd4dfdc958c624003b3c80accc03f7037b5122c4b1d0ef15cecab`，wrapperJar为`498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17`；它们是第三方启动输入，不是本课程自己实现的Gradle。
 
@@ -55,7 +55,7 @@ export GRADLE_USER_HOME=/absolute/path/to/new-gradle-cache
 export ANDROID_USER_HOME=/absolute/path/to/new-android-user
 export ANDROID_AVD_HOME=/absolute/path/to/new-avd-directory
 ./gradlew --version
-./gradlew --no-daemon --max-workers=1 assembleDebug testDebugUnitTest assembleDebugAndroidTest
+./gradlew --no-daemon --max-workers=1 :app:assembleDebug :app:testDebugUnitTest :app:assembleDebugAndroidTest
 ```
 
 wrapper需要可用网络/已核下载缓存，JDK17与SDK平台/API工具需事先按[官方SDK工具](https://developer.android.com/tools/sdkmanager)准备。本机SDK组件为platforms;android-35、build-tools;34.0.0及platform-tools；模拟器另外需要emulator和system-images;android-35;google_apis;arm64-v8a。SDK许可按实际环境接受，不复制他机许可作为已同意。默认构建workers1、Xmx1GiB、Kotlin进程内、无并行；冷依赖安装另计，暖编译和本轮测试耗时见实际回执。
@@ -91,7 +91,7 @@ python3 -B tools/check_lifecycle.py \
   org.wwl.intentdemo.test/androidx.test.runner.AndroidJUnitRunner
 ```
 
-或者在只暴露该专用模拟器的隔离adb环境中运行`./gradlew --no-daemon --max-workers=1 connectedDebugAndroidTest`。不把未限定设备选择的connected任务指向自己的所有已连接设备。实际本机自建AVD、资源限制、专用端口/注册和命令保存在下面环境回执中，不依赖读者拥有相同`/private/tmp`目录。
+或者在只暴露该专用模拟器的隔离adb环境中运行`./gradlew --no-daemon --max-workers=1 :app:connectedDebugAndroidTest`。不把未限定设备选择的connected任务指向自己的所有已连接设备。实际本机自建AVD、资源限制、专用端口/注册和命令保存在下面环境回执中，不依赖读者拥有相同`/private/tmp`目录。
 
 手动复现不用实验命令extra：先输入690/720，点“新意图：仅本地排队”；看到待发送后点“提交后丢回复”；切后台，针对这份合成包执行am kill并核pid空；若它按平台安全策略保留进程，不得声称已终止。本轮另以同UID run-as核原PID与/proc包名后SIGKILL，只作用自建合成包；再打开，点“查询/同意图重放”。手动新意图id为随机UUID，因而不能拿它逐字对照固定id的自动记录。CLI用debug-only的lab_command/start_raw/end_raw/intent_id extras提供确定输入；每次创建后删除这些extra，保留原launcher Intent身份，旋转不重放实验操作。release不执行这条实验控制入口；本轮没有发布release或认证其攻击面。
 

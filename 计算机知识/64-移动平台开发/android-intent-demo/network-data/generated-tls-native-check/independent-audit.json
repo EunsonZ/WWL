@@ -1,0 +1,16 @@
+{
+  "native_evidence": "/private/tmp/wwl-next-175-final-env/tls-generated-native/evidence",
+  "methods_pass": 3,
+  "test_source_identical_to_independent_spec": true,
+  "transport_unchanged": true,
+  "only_appId_changed_in_build": true,
+  "same_ca_sha256": "a314e642a29e770d8c965f3f455e0fd8d22f81d2d4cbfff7cd2171376ea93433",
+  "same_ca_wrong_san_chain_valid": true,
+  "different_ca_correct_san_chain_untrusted": true,
+  "exact_host_and_trust_exceptions": true,
+  "actual_apk_identities_match": true,
+  "private_key_headers_in_apk": false,
+  "owned_servers_stopped": 3,
+  "owned_reverse_removed": true,
+  "old35_not_replayed": true
+}

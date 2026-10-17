@@ -1,0 +1,63 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 17502 (0x445e)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=WWL175 Public Teaching CA NEVER PRODUCTION
+        Validity
+            Not Before: Oct 17 03:26:55 2026 GMT
+            Not After : Oct 14 03:26:55 2036 GMT
+        Subject: CN=localhost
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b1:a1:6b:d0:82:17:86:99:ab:b6:7b:0c:98:a5:
+                    64:83:b8:f5:ac:dc:0d:90:d1:9c:1c:f5:0b:22:69:
+                    b1:d0:b9:3c:c3:64:1e:44:0a:f0:5a:0a:9c:f3:0f:
+                    be:0b:ad:7c:c8:06:df:7b:0e:8b:ca:96:20:8c:4a:
+                    94:f4:b7:77:89:0c:cc:d0:c6:1e:24:6e:7f:c5:dc:
+                    23:54:8f:20:16:46:a1:ac:ab:4e:60:bd:99:47:6d:
+                    d1:8a:32:b3:6d:c5:d4:5f:3a:9d:ed:fb:77:0b:a3:
+                    fd:bb:ce:a6:a6:fc:4e:7f:15:06:d7:5b:29:a0:6d:
+                    74:0d:8c:0a:d3:a3:52:d4:0f:b2:29:56:dc:b7:76:
+                    e7:da:2f:c2:f2:92:5e:68:94:f3:f1:cf:27:39:15:
+                    d6:21:c1:9a:bf:71:a7:3a:59:64:87:70:10:d5:8b:
+                    d2:dc:72:39:71:77:d5:7e:63:6b:c9:68:58:e8:29:
+                    2a:e7:cd:c1:a4:d5:8e:2b:43:23:74:2f:d4:1a:3b:
+                    85:47:ab:1b:61:33:05:e1:57:81:44:38:c6:3f:54:
+                    50:41:2b:c5:97:63:c0:13:98:b6:0d:c7:36:2d:e8:
+                    8f:cb:95:1e:a6:91:66:a4:6c:71:54:9b:0a:5c:93:
+                    26:ea:53:c0:66:c4:2d:f2:ab:0b:75:df:79:7a:46:
+                    fa:59
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Subject Key Identifier: 
+                D9:B4:95:AA:66:68:1C:69:96:47:D7:08:0B:96:66:5E:18:45:80:CD
+            X509v3 Authority Key Identifier: 
+                keyid:A4:FB:EF:D8:82:16:33:8E:A9:5D:69:AD:98:66:D6:D2:B4:3F:E1:32
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Subject Alternative Name: 
+                DNS:localhost, IP Address:127.0.0.1
+    Signature Algorithm: sha256WithRSAEncryption
+         5a:02:29:2b:25:92:10:c6:46:e9:9c:0a:c8:fc:dd:1f:54:02:
+         cf:d4:2d:9a:04:9d:20:eb:86:76:4f:42:3f:b9:1d:2d:c7:c2:
+         69:42:4f:31:8c:a6:28:26:7d:8f:8f:95:41:69:ce:12:12:e2:
+         d1:70:53:6a:04:68:2c:18:3f:34:2f:21:7d:0b:ac:65:d4:67:
+         d8:04:b3:49:b3:72:2c:61:71:8b:ec:2d:2c:03:2b:95:8c:09:
+         05:c0:f3:d7:65:ee:89:1f:b5:79:40:db:74:69:e1:32:e1:0e:
+         e0:6a:e7:93:e3:49:f9:03:11:ec:35:84:83:87:67:f7:fd:56:
+         c9:41:a4:ab:2d:02:05:17:b9:f4:d4:61:3b:09:07:4c:b7:3a:
+         08:95:81:8e:a3:ac:8b:78:1d:af:dd:09:7f:e9:a0:7f:9e:36:
+         be:7d:6b:da:1f:f1:18:85:e9:11:82:4b:c8:c0:74:2c:85:56:
+         4b:ab:ad:e8:05:fb:48:c8:93:9c:ac:40:19:1d:b4:e7:e9:38:
+         11:2f:a1:09:f6:10:96:c1:9c:db:5b:d9:30:27:2b:46:61:6b:
+         37:4e:0d:8c:10:20:b6:cd:06:a7:48:c4:03:76:32:7f:1f:37:
+         27:8c:92:c6:6f:54:52:59:0a:5d:e0:10:ee:07:57:ae:2b:92:
+         c8:f2:86:c5

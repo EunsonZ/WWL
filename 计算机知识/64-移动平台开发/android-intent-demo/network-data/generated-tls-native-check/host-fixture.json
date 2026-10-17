@@ -1,0 +1,125 @@
+{
+  "trusted_ca_sha256": "a314e642a29e770d8c965f3f455e0fd8d22f81d2d4cbfff7cd2171376ea93433",
+  "unknown_ca_sha256": "1391eca09b57200a197d614bea12b5de91e427d1fc6110382a47e09eacd66a4a",
+  "generation_argv": [
+    [
+      "/usr/bin/openssl",
+      "req",
+      "-new",
+      "-newkey",
+      "rsa:2048",
+      "-nodes",
+      "-sha256",
+      "-config",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.cnf",
+      "-keyout",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.key",
+      "-out",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.csr"
+    ],
+    [
+      "/usr/bin/openssl",
+      "x509",
+      "-req",
+      "-in",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.csr",
+      "-CA",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/network-server/fixtures/generated/ca.pem",
+      "-CAkey",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/network-server/fixtures/generated/ca-public-fixture.key",
+      "-set_serial",
+      "17503",
+      "-days",
+      "3650",
+      "-sha256",
+      "-extfile",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.cnf",
+      "-extensions",
+      "server",
+      "-out",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.pem"
+    ],
+    [
+      "sh",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/network-server/fixtures/generate-fixtures.sh",
+      "/private/tmp/wwl-next-175-final-env/tls-generated-native/unknown-ca"
+    ]
+  ],
+  "servers": [
+    {
+      "name": "positive",
+      "pid": 7324,
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/network-server/http_authority.py",
+        "--contract",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u8ba1\u7b97\u673a\u77e5\u8bc6/75-\u8f6f\u4ef6\u5de5\u7a0b\u4e0e\u4eba\u673a\u4ea4\u4e92/reservation_v2.py",
+        "--database",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-positive/authority.db",
+        "--events",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-positive/events.jsonl",
+        "--ready",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-positive/ready.json",
+        "--port",
+        "0",
+        "--cert",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/network-server/fixtures/generated/server.pem",
+        "--key",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/network-server/fixtures/generated/server-public-fixture.key"
+      ],
+      "port": 54390,
+      "cert_sha256": "be2a6cb55f476daca9c28fbb464373f9e05b136ef5005f58846f6d34af002727"
+    },
+    {
+      "name": "wrong-host",
+      "pid": 7325,
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/network-server/http_authority.py",
+        "--contract",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u8ba1\u7b97\u673a\u77e5\u8bc6/75-\u8f6f\u4ef6\u5de5\u7a0b\u4e0e\u4eba\u673a\u4ea4\u4e92/reservation_v2.py",
+        "--database",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-wrong-host/authority.db",
+        "--events",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-wrong-host/events.jsonl",
+        "--ready",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-wrong-host/ready.json",
+        "--port",
+        "0",
+        "--cert",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.pem",
+        "--key",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/wrong-host/server.key"
+      ],
+      "port": 54391,
+      "cert_sha256": "abaeada5a72a7d34d5d2b2889952a38a1a59c6576c49f5dc7c567092fdcd4145"
+    },
+    {
+      "name": "unknown-ca",
+      "pid": 7326,
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/project/network-server/http_authority.py",
+        "--contract",
+        "/Users/ysz/Misc/Obsidian/Valults/WLM/WWL/\u8ba1\u7b97\u673a\u77e5\u8bc6/75-\u8f6f\u4ef6\u5de5\u7a0b\u4e0e\u4eba\u673a\u4ea4\u4e92/reservation_v2.py",
+        "--database",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-unknown-ca/authority.db",
+        "--events",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-unknown-ca/events.jsonl",
+        "--ready",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/server-unknown-ca/ready.json",
+        "--port",
+        "0",
+        "--cert",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/unknown-ca/server.pem",
+        "--key",
+        "/private/tmp/wwl-next-175-final-env/tls-generated-native/unknown-ca/server-public-fixture.key"
+      ],
+      "port": 54392,
+      "cert_sha256": "413fb3367864bdb3812e8864e7c7c6fac54ee95772a917a5ec15fffdb98d117f"
+    }
+  ]
+}

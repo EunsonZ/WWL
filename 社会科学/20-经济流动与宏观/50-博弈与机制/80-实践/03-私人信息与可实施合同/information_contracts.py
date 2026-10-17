@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+"""Exact synthetic information games and enforceable-contract examples; no empirical effect."""
+import argparse,json
+from fractions import Fraction as F
+from itertools import product,combinations
+from pathlib import Path
+from html import escape
+
+def best(v):
+    m=max(v.values());return [k for k,x in v.items() if x==m]
+def dot(a,b):return sum((x*y for x,y in zip(a,b)),F(0))
+def vertices(A,b):
+    points=set()
+    for j,k in combinations(range(len(A)),2):
+        a,c=A[j];d,e=A[k];det=a*e-c*d
+        if not det:continue
+        x=(b[j]*e-c*b[k])/det;y=(a*b[k]-b[j]*d)/det
+        if all(dot(row,[x,y])<=rhs for row,rhs in zip(A,b)):points.add((x,y))
+    return sorted(points)
+def signal_model(raw):
+    p,B,cL,cH=[F(raw[k]) for k in ('prior_H','benefit','cost_L','cost_H')]
+    if not 0<p<1 or B<=0 or min(cL,cH)<0:raise ValueError('signal needs 0<p<1, B>0, nonnegative costs')
+    profiles=[];all_checks=[]
+    for l,h,a0,a1 in product((0,1),repeat=4):
+        actions=[a0,a1];belief=[];ok=True
+        for s in (0,1):
+            mass=(1-p)*(l==s)+p*(h==s)
+            mu=p*(h==s)/mass if mass else None
+            lo=hi=mu if mu is not None else F(0)
+            if mu is None:hi=F(1)
+            if actions[s]:lo=max(lo,F(1,2))
+            else:hi=min(hi,F(1,2))
+            if lo>hi:ok=False
+            belief.append(dict(signal=s,mass=mass,on_path_posterior=mu,allowed_interval=[lo,hi]))
+        utilities={};ic=True
+        for name,chosen,cost in [('L',l,cL),('H',h,cH)]:
+            u=[B*actions[s]-cost*s for s in (0,1)];utilities[name]=u
+            if u[chosen]<max(u):ic=False
+        all_checks.append(dict(sender=[l,h],receiver=actions,sender_IC=ic,receiver_beliefs_feasible=ok))
+        if ic and ok:profiles.append(dict(sender=[l,h],receiver=actions,beliefs=belief,utilities=utilities))
+    separating=cH<=B<=cL
+    twin=[dict(type=t,mass=mass,signal=h,accept=h,world_A_Y=h,world_B_Y=h) for t,mass,h in [('L',1-p,0),('H',p,1)]]
+    return dict(parameters=dict(prior_H=p,benefit=B,cost_L=cL,cost_H=cH),all_pure_checks=all_checks,pure_PBE=profiles,count=len(profiles),specified_separation_is_equilibrium=separating,observational_twins=twin,forced_low_signal1_Y={'A':0,'B':1})
+def service_model(same):
+    if not 0<=same<=1:raise ValueError('same probability in [0,1] required')
+    joint={(a,b):(same/2 if a==b else (1-same)/2) for a,b in product((0,1),repeat=2)}
+    interim=[];dsic=[];ir=[]
+    for i in (0,1):
+        for t in (0,1):
+            marginal=sum(v for key,v in joint.items() if key[i]==t)
+            for r in (0,1):
+                truth=sum(v*t*(key[1-i]==t) for key,v in joint.items() if key[i]==t)/marginal
+                dev=sum(v*t*(key[1-i]==r) for key,v in joint.items() if key[i]==t)/marginal
+                interim.append(dict(player=i,type=t,report=r,truth=truth,deviation=dev,gain=dev-truth))
+            for other in (0,1):
+                for report in (0,1):dsic.append(dict(player=i,type=t,other_report=other,report=report,gain=F(t*((report==other)-(t==other)))))
+        for ts in product((0,1),repeat=2):ir.append(F(ts[i]*(ts[0]==ts[1])))
+    return dict(same_probability=same,joint=[dict(types=list(k),probability=v) for k,v in joint.items()],interim=interim,DSIC=all(x['gain']<=0 for x in dsic),BIC=all(x['gain']<=0 for x in interim),ex_post_IR=all(x>=0 for x in ir),dominant_checks=dsic)
+def screening_model(raw):
+    l,h,p,Q,r=[F(raw[k]) for k in ('theta_L','theta_H','prior_H','cap','outside_L')];N=raw['grid_divisions']
+    if not 0<l<h<=Q or not 0<p<1 or r<0:raise ValueError('screening needs 0<l<h<=cap, 0<p<1, outsideL>=0')
+    if type(N) is not int or not 2<=N<=60:raise ValueError('grid_divisions integer2..60 required')
+    D=h-l;qL=max(F(0),l-p*D/(1-p));qH=h;uL=r;uH=r+D*qL;tL=l*qL-uL;tH=h*qH-uH
+    pb=(1-p)*(tL-qL*qL/2)+p*(tH-qH*qH/2);ph=p*h*h/2
+    choices={'both':pb,'high_only':ph,'none':F(0)}
+    qs=sorted(set([Q*j/N for j in range(N+1)]+[qL,qH]))
+    table=[];maxprofit=None
+    A=[[F(1),F(0)],[F(0),F(1)],[F(1),F(-1)],[F(-1),F(1)]]
+    for a,b in product(qs,repeat=2):
+        bs=[l*a-r,h*b,l*(a-b),h*(b-a)]
+        vs=vertices(A,bs)
+        if not vs:continue
+        vals=[((1-p)*(x-a*a/2)+p*(y-b*b/2),(x,y)) for x,y in vs]
+        value,prices=max(vals)
+        if maxprofit is None or value>maxprofit:maxprofit=value;table=[]
+        if value==maxprofit:table.append(dict(qL=a,qH=b,tL=prices[0],tH=prices[1],profit=value))
+    assert maxprofit==pb
+    payoff=[[l*qL-tL,l*qH-tH],[h*qL-tL,h*qH-tH]]
+    assert payoff[0][0]>=r and payoff[0][0]>=payoff[0][1] and payoff[1][1]>=0 and payoff[1][1]>=payoff[1][0]
+    return dict(parameters=dict(theta_L=l,theta_H=h,prior_H=p,cap=Q,outside_L=r),both=dict(q=[qL,qH],t=[tL,tH],U=[uL,uH],all_report_utilities=payoff,profit=pb),high_only=dict(q=h,t=h*h,profit=ph,low_if_buy=-D*h),candidate_profits=choices,optimal_options=best(choices),optimal_profit=max(choices.values()),full_information_profit=(1-p)*max(F(0),l*l/2-r)+p*h*h/2,zero_outside_full_information_profit=(1-p)*l*l/2+p*h*h/2,quantity_grid=qs,quantity_pairs=len(qs)**2,price_vertex_best=table,price_vertex_max_profit=maxprofit)
+def auction(bids,reserve):
+    high=max(bids)
+    if high<reserve:return None,F(0)
+    win=bids.index(high);price=max([reserve]+[b for j,b in enumerate(bids) if j!=win]);return win,price
+def auction_model(raw):
+    values=list(map(F,raw['values']));r=F(raw['reserve']);cap=raw['bid_cap'];n=len(values)
+    if type(cap) is not int or not 1<=cap<=8 or not 2<=n<=4 or not 0<=r<=cap or any(not 0<=v<=cap for v in values):raise ValueError('auction requires integer cap1..8, n2..4, values/reserve within cap')
+    grid=sorted(set(list(map(F,range(cap+1)))+values+[r]));count=0;max_gain=None
+    for i,v in product(range(n),grid):
+        for others in product(grid,repeat=n-1):
+            original=list(others);original.insert(i,v);w,price=auction(original,r);u=v-price if w==i else F(0)
+            for bid in grid:
+                bs=list(original);bs[i]=bid;wd,pd=auction(bs,r);gain=(v-pd if wd==i else F(0))-u
+                assert gain<=0;count+=1;max_gain=gain if max_gain is None else max(max_gain,gain)
+    winner,price=auction(values,r);u=[v-price if i==winner else F(0) for i,v in enumerate(values)]
+    w0,p0=auction(values,F(0));witness=None
+    if w0 is not None:
+        other=max(v for j,v in enumerate(values) if j!=w0)
+        if values[w0]>other:
+            bid=(values[w0]+other)/2;witness=dict(winner=w0,truthful_bid=values[w0],changed_bid=bid,truthful_utility=F(0),changed_utility=values[w0]-bid)
+    return dict(values=values,reserve=r,bid_grid=grid,winner=winner,payment=price,utilities=u,finite_dominant_checks=count,maximum_deviation_gain=max_gain,first_price_counterexample=witness)
+def effort_model(raw):
+    l,h,c,V=[F(raw[k]) for k in ('p_L','p_H','cost_H','success_value')]
+    if not 0<l<h<1 or c<=0 or V<=0:raise ValueError('effort requires 0<pL<pH<1, positive cost/value')
+    D=c/(h-l);wS=D;wF=F(0);wage=h*wS+(1-h)*wF;uH=wage-c;uL=l*wS+(1-l)*wF
+    A=[[-(h-l),h-l],[-h,-(1-h)],[F(-1),F(0)],[F(0),F(-1)]];bs=[-c,-c,F(0),F(0)];vs=vertices(A,bs)
+    exact=min((h*x+(1-h)*y,(x,y)) for x,y in vs);assert exact[0]==wage and uH==uL and uH>=0
+    choices={'H':h*V-wage,'L':l*V,'none':F(0)};unF=c-h*D;unS=unF+D
+    assert h*unS+(1-h)*unF==c
+    return dict(parameters=dict(p_L=l,p_H=h,cost_H=c,success_value=V),high_contract=dict(wS=wS,wF=wF,expected_wage=wage,utility_H=uH,utility_L=uL,profit=choices['H'],IC_gap=uH-uL),limited_liability_vertices=[list(x) for x in vs],vertex_minimum_wage=exact[0],low_profit=choices['L'],optimal_actions=best(choices),unrestricted_example=dict(wS=unS,wF=unF,expected_wage=c,agent_utility=F(0),principal_profit=h*V-c),verifiable_H_profit=h*V-c)
+def bargaining_model(raw):
+    R,dW,dF,dW2=[raw[k] for k in ('total','outside_W','outside_F','changed_outside_W')];a=F(raw['weight_W'])
+    if any(type(v) is not int for v in (R,dW,dF,dW2)) or not 1<=R<=300 or min(dW,dF,dW2)<0 or R<=max(dW,dW2)+dF or not 0<a<1 or a.denominator>20:raise ValueError('bargaining needs integer positive surplus/cap300, weight in (0,1) denominator<=20')
+    out=[]
+    for dw in (dW,dW2):
+        S=F(R-dw-dF);w=F(dw)+a*S;points=sorted(set([F(i) for i in range(dw,R-dF+1)]+[w]));power=lambda x:(x-dw)**a.numerator*(R-x-dF)**(a.denominator-a.numerator)
+        assert power(w)==max(map(power,points))
+        Woffers={y:F(R-y if y>=dF else dw) for y in range(R+1)};Foffers={x:F(R-x if x>=dw else dF) for x in range(R+1)}
+        out.append(dict(outside_W=dw,nash_bargaining=[w,F(R)-w],worker_proposes_offers=best(Woffers),worker_proposes_allocation=[F(R-dF),F(dF)],firm_proposes_offers=best(Foffers),firm_proposes_allocation=[F(dw),F(R-dw)],finite_product_grid_max=power(w)))
+    return dict(weight_W=a,total=R,outside_F=dF,worlds=out)
+def contest_model(raw):
+    V,c=F(raw['prize']),F(raw['cost'])
+    if V<=0 or c<=0:raise ValueError('contest prize and cost positive required')
+    def pay(x,y):return [V*F(x,x+y)-c*x,V*F(y,x+y)-c*y] if x+y else [V/2,V/2]
+    response={x:best({y:pay(x,y)[1] for y in (0,1)}) for x in (0,1)};profiles=[]
+    for f0,f1 in product(response[0],response[1]):
+        fp={0:f0,1:f1};choices=best({x:pay(x,fp[x])[0] for x in (0,1)})
+        for x in choices:profiles.append(dict(first=x,follower=[f0,f1],payoff=pay(x,fp[x])))
+    return dict(prize=V,cost=c,continuous_zero_subgame_has_maximum=False,discrete_grid=[0,1],pure_SPNE=profiles)
+def convert(v):
+    if isinstance(v,F):return str(v)
+    if isinstance(v,dict):return {k:convert(x) for k,x in v.items()}
+    if isinstance(v,(list,tuple)):return [convert(x) for x in v]
+    return v
+
+def start(title,desc,w,h):return [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}"><title>{escape(title)}</title><desc>{escape(desc)}</desc><rect width="100%" height="100%" fill="white"/><g font-family="Arial, sans-serif" fill="#17212b"><text x="25" y="35" font-size="23">{escape(title)}</text>']
+def pbe_svg(result):
+    ps=result['pure_PBE'];h=185+65*len(ps);s=start('Pure-behavior PBE: beliefs must also support the response','Each row is a complete pure strategy profile. Bars show exact allowed receiver beliefs at signal0 and signal1; on-path Bayes beliefs are points. Mixed equilibria are not enumerated.',1050,h)
+    s.append(f'<text x="25" y="66" font-size="16">Prior H={result["parameters"]["prior_H"]}; {len(ps)} pure profiles. Intervals include endpoints; zero-probability signals are not 0/0 updates.</text>')
+    for left,name in [(420,'mu(H | signal 0)'),(760,'mu(H | signal 1)')]:
+        s.append(f'<text x="{left}" y="95" font-size="17">{name}</text>')
+        for val in [0,F(1,2),1]:s.append(f'<text x="{left+240*float(val)}" y="117" text-anchor="middle">{val}</text>')
+    for j,p in enumerate(ps):
+        y=145+65*j;l,hh=p['sender'];a0,a1=p['receiver'];label=f'L:{l}, H:{hh}; response0:{"A" if a0 else "R"}, response1:{"A" if a1 else "R"}'
+        s.append(f'<text x="25" y="{y+6}" font-size="16">{label}</text>')
+        for left,b in zip((420,760),p['beliefs']):
+            lo,hi=b['allowed_interval'];x1=left+240*float(lo);x2=left+240*float(hi)
+            s.append(f'<line x1="{left}" x2="{left+240}" y1="{y}" y2="{y}" stroke="#ddd"/><line x1="{x1}" x2="{x2}" y1="{y}" y2="{y}" stroke="#245dba" stroke-width="5"/>')
+            for x in [x1,x2]:s.append(f'<circle cx="{x}" cy="{y}" r="4" fill="#245dba"/>')
+            s.append(f'<text x="{left}" y="{y+26}" font-size="14">{lo} to {hi}; {"on path" if b["mass"] else "off path"}</text>')
+    s.append(f'<text x="25" y="{h-18}" font-size="14">Synthetic strategies and beliefs. Equilibrium does not certify ability, productivity effects, or actual behavior.</text></g></svg>');return '\n'.join(s)+'\n'
+def screening_svg(result):
+    p=result['parameters'];base=result['candidate_profits']['both']+p['outside_L'];high=result['candidate_profits']['high_only'];xmax=max(F(1),2*abs(base-high),2*p['outside_L']);ymin=min(F(0),base-xmax);ymax=max(base,high,F(1))*F(11,10);s=start('Outside option: recompute participation, not just the old price','Synthetic deterministic menus. Blue solid serves both types; red dashed serves high type only; black dotted is the best profit. Type-dependent outside utility is not a seller-paid transfer.',980,550)
+    xp=lambda x:100+780*float(x/xmax);yp=lambda y:420-290*float((y-ymin)/(ymax-ymin));s.append('<path d="M100 100V420H880" stroke="#444" fill="none"/>')
+    for j in range(5):
+        x=xmax*j/4;y=ymin+(ymax-ymin)*j/4;s.append(f'<text x="{xp(x)}" y="447" text-anchor="middle">{float(x):.3f}</text><text x="88" y="{yp(y)+5}" text-anchor="end">{float(y):.3f}</text>')
+    for mode,color,dash in [('both','#245dba','none'),('high','#bd4c18','9 5'),('best','#17212b','2 4')]:
+        pts=[]
+        for j in range(101):
+            x=xmax*j/100;y=base-x if mode=='both' else high if mode=='high' else max(base-x,high,F(0));pts.append(f'{xp(x):.2f},{yp(y):.2f}')
+        s.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{color}" stroke-width="{3 if mode=="best" else 2}" stroke-dasharray="{dash}"/>')
+    s.append(f'<text x="105" y="67" font-size="16">Solid: both; dashed: high only; dotted: optimal. theta=({p["theta_L"]},{p["theta_H"]}), Pr(H)={p["prior_H"]}.</text>')
+    s.append(f'<text x="105" y="94" font-size="15">Input outsideL={p["outside_L"]}; optimal option(s)={",".join(result["optimal_options"])}; profit={result["optimal_profit"]}.</text>')
+    s.append('<text x="490" y="487" text-anchor="middle">Low-type outside utility (not seller expenditure)</text><text x="100" y="520" font-size="14">Vertical: seller expected profit. Weak IC/IR permit ties; profit is not a complete social objective.</text></g></svg>');return '\n'.join(s)+'\n'
+def run(inp,out):
+    raw=json.loads(inp.read_text());signal=signal_model(raw['signal']);sc=screening_model(raw['screening']);res=dict(identity='entirely synthetic; general proofs are separate from finite verification',signal=signal,service_default=service_model(F(raw['service']['same_probability'])),service_changed=service_model(F(raw['service']['changed_same_probability'])),screening=sc,auction=auction_model(raw['auction']),effort=effort_model(raw['effort']),bargaining=bargaining_model(raw['bargaining']),contest=contest_model(raw['contest']))
+    out.mkdir(parents=True,exist_ok=True);out.joinpath('results.json').write_text(json.dumps(convert(res),ensure_ascii=False,indent=2)+'\n');out.joinpath('pbe-beliefs.svg').write_text(pbe_svg(signal));out.joinpath('screening-profit.svg').write_text(screening_svg(sc));print('PASS exact pure-PBE intervals, conditional IC, price vertices, finite auction deviations, effort wages and bargaining')
+if __name__=='__main__':
+    ap=argparse.ArgumentParser();ap.add_argument('--input',type=Path,required=True);ap.add_argument('--out',type=Path,required=True);a=ap.parse_args();run(a.input,a.out)

@@ -1,0 +1,10 @@
+{
+  "schema":"information-contracts-v1",
+  "signal":{"prior_H":"1/2","benefit":"2","cost_L":"3","cost_H":"1"},
+  "service":{"same_probability":"1/2","changed_same_probability":"1/4"},
+  "screening":{"theta_L":"1","theta_H":"2","prior_H":"1/4","cap":"3","outside_L":"0","grid_divisions":18},
+  "auction":{"values":["4","2","1"],"reserve":"0","bid_cap":6},
+  "effort":{"p_L":"1/4","p_H":"3/4","cost_H":"1","success_value":"4"},
+  "bargaining":{"total":100,"outside_W":20,"outside_F":10,"changed_outside_W":40,"weight_W":"1/2"},
+  "contest":{"prize":"100","cost":"1"}
+}

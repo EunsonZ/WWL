@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="445" viewBox="0 0 1050 445"><title>Pure-behavior PBE: beliefs must also support the response</title><desc>Each row is a complete pure strategy profile. Bars show exact allowed receiver beliefs at signal0 and signal1; on-path Bayes beliefs are points. Mixed equilibria are not enumerated.</desc><rect width="100%" height="100%" fill="white"/><g font-family="Arial, sans-serif" fill="#17212b"><text x="25" y="35" font-size="23">Pure-behavior PBE: beliefs must also support the response</text>
+<text x="25" y="66" font-size="16">Prior H=1/2; 4 pure profiles. Intervals include endpoints; zero-probability signals are not 0/0 updates.</text>
+<text x="420" y="95" font-size="17">mu(H | signal 0)</text>
+<text x="420.0" y="117" text-anchor="middle">0</text>
+<text x="540.0" y="117" text-anchor="middle">1/2</text>
+<text x="660.0" y="117" text-anchor="middle">1</text>
+<text x="760" y="95" font-size="17">mu(H | signal 1)</text>
+<text x="760.0" y="117" text-anchor="middle">0</text>
+<text x="880.0" y="117" text-anchor="middle">1/2</text>
+<text x="1000.0" y="117" text-anchor="middle">1</text>
+<text x="25" y="151" font-size="16">L:0, H:0; response0:R, response1:R</text>
+<line x1="420" x2="660" y1="145" y2="145" stroke="#ddd"/><line x1="540.0" x2="540.0" y1="145" y2="145" stroke="#245dba" stroke-width="5"/>
+<circle cx="540.0" cy="145" r="4" fill="#245dba"/>
+<circle cx="540.0" cy="145" r="4" fill="#245dba"/>
+<text x="420" y="171" font-size="14">1/2 to 1/2; on path</text>
+<line x1="760" x2="1000" y1="145" y2="145" stroke="#ddd"/><line x1="760.0" x2="880.0" y1="145" y2="145" stroke="#245dba" stroke-width="5"/>
+<circle cx="760.0" cy="145" r="4" fill="#245dba"/>
+<circle cx="880.0" cy="145" r="4" fill="#245dba"/>
+<text x="760" y="171" font-size="14">0 to 1/2; off path</text>
+<text x="25" y="216" font-size="16">L:0, H:0; response0:A, response1:R</text>
+<line x1="420" x2="660" y1="210" y2="210" stroke="#ddd"/><line x1="540.0" x2="540.0" y1="210" y2="210" stroke="#245dba" stroke-width="5"/>
+<circle cx="540.0" cy="210" r="4" fill="#245dba"/>
+<circle cx="540.0" cy="210" r="4" fill="#245dba"/>
+<text x="420" y="236" font-size="14">1/2 to 1/2; on path</text>
+<line x1="760" x2="1000" y1="210" y2="210" stroke="#ddd"/><line x1="760.0" x2="880.0" y1="210" y2="210" stroke="#245dba" stroke-width="5"/>
+<circle cx="760.0" cy="210" r="4" fill="#245dba"/>
+<circle cx="880.0" cy="210" r="4" fill="#245dba"/>
+<text x="760" y="236" font-size="14">0 to 1/2; off path</text>
+<text x="25" y="281" font-size="16">L:0, H:0; response0:A, response1:A</text>
+<line x1="420" x2="660" y1="275" y2="275" stroke="#ddd"/><line x1="540.0" x2="540.0" y1="275" y2="275" stroke="#245dba" stroke-width="5"/>
+<circle cx="540.0" cy="275" r="4" fill="#245dba"/>
+<circle cx="540.0" cy="275" r="4" fill="#245dba"/>
+<text x="420" y="301" font-size="14">1/2 to 1/2; on path</text>
+<line x1="760" x2="1000" y1="275" y2="275" stroke="#ddd"/><line x1="880.0" x2="1000.0" y1="275" y2="275" stroke="#245dba" stroke-width="5"/>
+<circle cx="880.0" cy="275" r="4" fill="#245dba"/>
+<circle cx="1000.0" cy="275" r="4" fill="#245dba"/>
+<text x="760" y="301" font-size="14">1/2 to 1; off path</text>
+<text x="25" y="346" font-size="16">L:0, H:1; response0:R, response1:A</text>
+<line x1="420" x2="660" y1="340" y2="340" stroke="#ddd"/><line x1="420.0" x2="420.0" y1="340" y2="340" stroke="#245dba" stroke-width="5"/>
+<circle cx="420.0" cy="340" r="4" fill="#245dba"/>
+<circle cx="420.0" cy="340" r="4" fill="#245dba"/>
+<text x="420" y="366" font-size="14">0 to 0; on path</text>
+<line x1="760" x2="1000" y1="340" y2="340" stroke="#ddd"/><line x1="1000.0" x2="1000.0" y1="340" y2="340" stroke="#245dba" stroke-width="5"/>
+<circle cx="1000.0" cy="340" r="4" fill="#245dba"/>
+<circle cx="1000.0" cy="340" r="4" fill="#245dba"/>
+<text x="760" y="366" font-size="14">1 to 1; on path</text>
+<text x="25" y="427" font-size="14">Synthetic strategies and beliefs. Equilibrium does not certify ability, productivity effects, or actual behavior.</text></g></svg>

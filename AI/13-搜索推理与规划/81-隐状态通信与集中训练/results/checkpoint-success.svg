@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="510" viewBox="0 0 1050 510">
+<title>Frozen local actor success at checkpoints</title><desc>Lines are exact 16-event expected success averaged over the fixed seed family. x is each trainable role update count, not equal environment cost. Snapshot uses twice as many environment episodes. Dashed limits are noisy channel optimum and no-message upper bound.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font:14px Arial,sans-serif;fill:#17212d}.head{font-size:19px;font-weight:bold}.grid{stroke:#dbe1e7;stroke-width:1}</style>
+<text x="30" y="30" class="head">A. Legal frozen actors: exact success, average over fixed seeds</text>
+<line x1="75" y1="390.0000" x2="925" y2="390.0000" class="grid"/>
+<text x="30" y="395.0000">0</text>
+<line x1="75" y1="315.0000" x2="925" y2="315.0000" class="grid"/>
+<text x="30" y="320.0000">0.25</text>
+<line x1="75" y1="240.0000" x2="925" y2="240.0000" class="grid"/>
+<text x="30" y="245.0000">0.5</text>
+<line x1="75" y1="165.0000" x2="925" y2="165.0000" class="grid"/>
+<text x="30" y="170.0000">0.75</text>
+<line x1="75" y1="90.0000" x2="925" y2="90.0000" class="grid"/>
+<text x="30" y="95.0000">1</text>
+<line x1="75" y1="120.0000" x2="925" y2="120.0000" stroke="#727b85" stroke-dasharray="6 4"/>
+<text x="790" y="113.0000">channel optimum</text>
+<line x1="75" y1="240.0000" x2="925" y2="240.0000" stroke="#727b85" stroke-dasharray="6 4"/>
+<text x="790" y="233.0000">no-message bound</text>
+<polyline points="75.0000,238.9003 160.0000,151.6865 245.0000,141.0484 330.0000,137.5442 415.0000,136.1388 500.0000,135.3139 585.0000,134.7954 670.0000,134.2857 755.0000,133.9653 840.0000,133.7763 925.0000,133.5585" fill="none" stroke="#3267ad" stroke-width="2.2"/>
+<text x="70" y="452" style="fill:#3267ad">fixed_sender</text>
+<polyline points="75.0000,240.2798 160.0000,152.1674 245.0000,141.3771 330.0000,138.2970 415.0000,136.4925 500.0000,135.4859 585.0000,134.8868 670.0000,134.4297 755.0000,134.2046 840.0000,133.8677 925.0000,133.6291" fill="none" stroke="#bc4b3d" stroke-width="2.2"/>
+<text x="370" y="452" style="fill:#bc4b3d">fixed_receiver</text>
+<polyline points="75.0000,240.0629 160.0000,207.8775 245.0000,160.4232 330.0000,139.5321 415.0000,132.3710 500.0000,129.0465 585.0000,127.1354 670.0000,125.7680 755.0000,124.7951 840.0000,124.2108 925.0000,123.6763" fill="none" stroke="#317c52" stroke-width="2.2"/>
+<text x="670" y="452" style="fill:#317c52">independent</text>
+<polyline points="75.0000,240.0629 160.0000,212.9677 245.0000,164.8203 330.0000,140.5847 415.0000,132.3359 500.0000,129.3794 585.0000,127.3313 670.0000,125.9732 755.0000,124.9213 840.0000,124.0240 925.0000,123.5068" fill="none" stroke="#965aa6" stroke-width="2.2"/>
+<text x="70" y="475" style="fill:#965aa6">ctde</text>
+<polyline points="75.0000,240.0629 160.0000,236.9019 245.0000,226.1103 330.0000,216.0474 415.0000,197.1883 500.0000,174.6164 585.0000,158.4483 670.0000,146.4103 755.0000,140.6550 840.0000,135.0103 925.0000,133.4985" fill="none" stroke="#a67714" stroke-width="2.2"/>
+<text x="370" y="475" style="fill:#a67714">snapshot</text>
+<polyline points="75.0000,240.0000 160.0000,240.0000 245.0000,240.0000 330.0000,240.0000 415.0000,240.0000 500.0000,240.0000 585.0000,240.0000 670.0000,240.0000 755.0000,240.0000 840.0000,240.0000 925.0000,240.0000" fill="none" stroke="#148896" stroke-width="2.2"/>
+<text x="670" y="475" style="fill:#148896">no_comm</text>
+<text x="75" y="417">0</text><text x="760" y="417">2000 role updates</text>
+<text x="75" y="497">No learning in these evaluations; no error bars or general convergence claim.</text>
+</svg>

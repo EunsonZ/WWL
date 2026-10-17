@@ -1,0 +1,14 @@
+{
+  "identity": "binary-signaling-bsc-v1",
+  "eta": 0.1,
+  "actor_step": 0.2,
+  "logit_bound": 6.0,
+  "initial_range": 0.25,
+  "role_updates": 2000,
+  "checkpoint_every": 200,
+  "seeds": [3, 17, 41, 73, 101, 137],
+  "modes": ["fixed_sender", "fixed_receiver", "independent", "ctde", "snapshot", "no_comm"],
+  "fixed_truth_probabilities": [0.05, 0.95],
+  "adapt_episodes": 400,
+  "adapt_checkpoints": [0, 50, 100, 200, 400]
+}

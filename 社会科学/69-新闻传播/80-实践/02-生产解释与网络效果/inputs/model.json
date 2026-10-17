@@ -1,0 +1,111 @@
+{
+  "identity": "synthetic; no human or platform records",
+  "newsroom": {
+    "lambda": "1",
+    "budget": "5",
+    "p_grid": [
+      "0",
+      "1/2",
+      "1"
+    ],
+    "candidates": [
+      {
+        "id": "S",
+        "v": 4,
+        "r": 6,
+        "cost_hours": 4,
+        "verified": true
+      },
+      {
+        "id": "F",
+        "v": 7,
+        "r": 2,
+        "cost_hours": 5,
+        "verified": true
+      },
+      {
+        "id": "V",
+        "v": 9,
+        "r": 1,
+        "cost_hours": 8,
+        "verified": true
+      },
+      {
+        "id": "H",
+        "v": 1,
+        "r": 10,
+        "cost_hours": 3,
+        "verified": false
+      },
+      {
+        "id": "O",
+        "v": 0,
+        "r": 0,
+        "cost_hours": 0,
+        "verified": true
+      }
+    ]
+  },
+  "network": {
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "n": 4,
+    "probability": "1/2",
+    "exposure": "own assignment and any assigned neighbor",
+    "knowledge_base": [
+      1,
+      2,
+      1,
+      0
+    ],
+    "attitude_base": 3,
+    "attitude_direct": [
+      1,
+      1,
+      -1,
+      -1
+    ],
+    "attitude_neighbor": [
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "behavior": [
+      0,
+      1,
+      0,
+      1
+    ]
+  },
+  "missing": {
+    "minimum": 0,
+    "maximum": 4,
+    "A": {
+      "total": 20,
+      "observed": 16,
+      "sum": 40
+    },
+    "B": {
+      "total": 20,
+      "observed": 18,
+      "sum": 45
+    }
+  }
+}

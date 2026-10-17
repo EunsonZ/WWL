@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+<title>Synthetic cycle exposure probabilities and exact design expectations</title>
+<desc>Generated from the fixed synthetic model.json input; no real audience or platform observations.</desc>
+<rect width="100%" height="100%" fill="#f7f8fa"/>
+<g font-family="sans-serif" fill="#182a3a">
+<text x="30" y="37" font-size="25" fill="#182a3a">Assignment is not understanding, endorsement, or behavior</text>
+<text x="30" y="70" font-size="18" fill="#182a3a">Any assigned neighbor: e = 1. Four-node cycle; independent Bernoulli(1/2).</text>
+<line x1="85" y1="150" x2="290" y2="150" stroke="#8195a5" stroke-width="4"/>
+<line x1="290" y1="150" x2="290" y2="330" stroke="#8195a5" stroke-width="4"/>
+<line x1="290" y1="330" x2="85" y2="330" stroke="#8195a5" stroke-width="4"/>
+<line x1="85" y1="330" x2="85" y2="150" stroke="#8195a5" stroke-width="4"/>
+<circle cx="85" cy="150" r="24" fill="#e4eff4" stroke="#167d9a" stroke-width="3"/>
+<text x="79" y="157" font-size="21" fill="#182a3a">0</text>
+<circle cx="290" cy="150" r="24" fill="#e4eff4" stroke="#167d9a" stroke-width="3"/>
+<text x="284" y="157" font-size="21" fill="#182a3a">1</text>
+<circle cx="290" cy="330" r="24" fill="#e4eff4" stroke="#167d9a" stroke-width="3"/>
+<text x="284" y="337" font-size="21" fill="#182a3a">2</text>
+<circle cx="85" cy="330" r="24" fill="#e4eff4" stroke="#167d9a" stroke-width="3"/>
+<text x="79" y="337" font-size="21" fill="#182a3a">3</text>
+<text x="38" y="405" font-size="17" fill="#182a3a">16 assignments, each probability 1/16</text>
+<text x="420" y="117" font-size="20" fill="#182a3a">Condition (z,e)</text>
+<text x="690" y="117" font-size="18" fill="#182a3a">(0, 0)</text>
+<text x="805" y="117" font-size="18" fill="#182a3a">(0, 1)</text>
+<text x="920" y="117" font-size="18" fill="#182a3a">(1, 0)</text>
+<text x="1035" y="117" font-size="18" fill="#182a3a">(1, 1)</text>
+<text x="420" y="163" font-size="17" fill="#182a3a">P(exposure), Bernoulli</text>
+<text x="705" y="163" font-size="19" fill="#182a3a">1/8</text>
+<text x="820" y="163" font-size="19" fill="#182a3a">3/8</text>
+<text x="935" y="163" font-size="19" fill="#182a3a">1/8</text>
+<text x="1050" y="163" font-size="19" fill="#182a3a">3/8</text>
+<text x="420" y="208" font-size="17" fill="#182a3a">P(exposure), exactly 2 treated</text>
+<text x="705" y="208" font-size="19" fill="#b33d26">0</text>
+<text x="820" y="208" font-size="19" fill="#182a3a">1/2</text>
+<text x="935" y="208" font-size="19" fill="#182a3a">1/6</text>
+<text x="1050" y="208" font-size="19" fill="#182a3a">1/3</text>
+<text x="420" y="253" font-size="17" fill="#182a3a">Knowledge: true mean</text>
+<text x="705" y="253" font-size="19" fill="#182a3a">1</text>
+<text x="820" y="253" font-size="19" fill="#182a3a">2</text>
+<text x="935" y="253" font-size="19" fill="#182a3a">2</text>
+<text x="1050" y="253" font-size="19" fill="#182a3a">3</text>
+<text x="420" y="298" font-size="17" fill="#182a3a">Knowledge: expected HT</text>
+<text x="705" y="298" font-size="19" fill="#182a3a">1</text>
+<text x="820" y="298" font-size="19" fill="#182a3a">2</text>
+<text x="935" y="298" font-size="19" fill="#182a3a">2</text>
+<text x="1050" y="298" font-size="19" fill="#182a3a">3</text>
+<text x="420" y="343" font-size="17" fill="#182a3a">Attitude: true / expected HT</text>
+<text x="705" y="343" font-size="19" fill="#182a3a">3</text>
+<text x="820" y="343" font-size="19" fill="#182a3a">3</text>
+<text x="935" y="343" font-size="19" fill="#182a3a">3</text>
+<text x="1050" y="343" font-size="19" fill="#182a3a">3</text>
+<text x="420" y="388" font-size="17" fill="#182a3a">Behavior: true / expected HT</text>
+<text x="705" y="388" font-size="19" fill="#182a3a">1/2</text>
+<text x="820" y="388" font-size="19" fill="#182a3a">1/2</text>
+<text x="935" y="388" font-size="19" fill="#182a3a">1/2</text>
+<text x="1050" y="388" font-size="19" fill="#182a3a">1/2</text>
+<text x="35" y="474" font-size="19" fill="#182a3a">One draw 0000: knowledge HT for (0,0) = 8, true mean = 1. Unbiasedness is an expectation.</text>
+<text x="35" y="510" font-size="19" fill="#b33d26">Exactly 2 treated: (0,0) impossible. No inverse weight can recover that missing exposure.</text>
+<text x="35" y="542" font-size="17" fill="#182a3a">All numbers are synthetic. Scores and design come from inputs/model.json; no real audience observations.</text>
+</g></svg>
